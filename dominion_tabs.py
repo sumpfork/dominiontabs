@@ -1,4 +1,6 @@
 import re,pprint
+from optparse import OptionParser
+
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import cm,inch
@@ -46,7 +48,7 @@ def drawTab(card,x,y,useExtra=False):
     c.resetTransforms()
     c.translate(horizontalMargin,verticalMargin)
     if useExtra:
-        c.translate(5,0)
+        c.translate(options.back_offset,0)
     c.translate(x*tabWidth,y*tabTotalHeight)
     
     #draw outline
@@ -83,7 +85,7 @@ def drawTab(card,x,y,useExtra=False):
     width = pdfmetrics.stringWidth(name,'MinionPro-Regular',fontSize)
     while width > 85 and fontSize > 8:
         fontSize -= 1
-        print 'decreasing font size for tab of',name,'now',fontSize
+        #print 'decreasing font size for tab of',name,'now',fontSize
         width = pdfmetrics.stringWidth(name,'MinionPro-Regular',fontSize)
     #c.drawString(tabLabelWidth/2+8,tabLabelHeight/2-7,name[0])
     w = 0
@@ -120,7 +122,7 @@ def drawTab(card,x,y,useExtra=False):
         while h > textHeight:
             s.fontSize -= 1
             s.leading -= 1
-            print 'decreasing fontsize on description for',card.name,'now',s.fontSize
+            #print 'decreasing fontsize on description for',card.name,'now',s.fontSize
             p = Paragraph(d,s)
             w,h = p.wrap(textWidth,textHeight)
         p.drawOn(c,cm/2.0,textHeight-height-h-0.5*cm)
@@ -207,13 +209,13 @@ def split(l,n):
 def drawCards(c,cards):
     cards = split(cards,6)
     for pageCards in cards:
-        #print 'pageCards:',pageCards
+        print 'pageCards:',pageCards
         for i,card in enumerate(pageCards):       
             #print card
             x = i % numTabsHorizontal
             y = i / numTabsHorizontal
             c.saveState()
-            drawTab(card,x,y)
+            drawTab(card,x,2-y)
             c.restoreState()
         c.showPage()
         for i,card in enumerate(pageCards):       
@@ -221,14 +223,21 @@ def drawCards(c,cards):
             x = (i+1) % numTabsHorizontal
             y = i / numTabsHorizontal
             c.saveState()
-            drawTab(card,x,y,useExtra=True)
+            drawTab(card,x,2-y,useExtra=True)
             c.restoreState()
         c.showPage()
     
 if __name__=='__main__':
+
+    parser = OptionParser()
+    parser.add_option("--back_offset",type="int",dest="back_offset",default=5,
+                      help="Points to offset the back page to the right; needed for some printers")
+    (options,args) = parser.parse_args()
+
     pdfmetrics.registerFont(TTFont('MinionPro-Regular','MinionPro-Regular.ttf'))
     pdfmetrics.registerFont(TTFont('MinionPro-Bold','MinionPro-Bold.ttf'))
     cards = read_card_defs("dominion_cards.txt")
+    cards.sort(cmp=lambda x,y: cmp((x.cardset,x.name),(y.cardset,y.name)))
     extras = read_card_extras("dominion_card_extras.txt",cards)
     print '%d cards read' % len(cards)
     sets = {}
