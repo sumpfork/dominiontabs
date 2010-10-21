@@ -9,27 +9,6 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 
-tabWidth = 9.1*cm
-tabBaseHeight = 5.9*cm
-tabLabelHeight = 0.9*cm
-tabLabelWidth = 3.5*cm
-tabTotalHeight = tabBaseHeight + tabLabelHeight
-numTabsVertical = 3
-numTabsHorizontal = 2
-
-tabOutline = [(0,0,tabWidth,0),
-              (tabWidth,0,tabWidth,tabTotalHeight),
-              (tabWidth,tabTotalHeight,tabWidth-tabLabelWidth,tabTotalHeight),
-              (tabWidth-tabLabelWidth,tabTotalHeight,tabWidth-tabLabelWidth,tabBaseHeight),
-              (tabWidth-tabLabelWidth,tabBaseHeight,0,tabBaseHeight),
-              (0,tabBaseHeight,0,0)]
-
-allTabsHeight = numTabsVertical*tabTotalHeight
-allTabsWidth = numTabsHorizontal*tabWidth
-
-horizontalMargin = (8.5*inch-allTabsWidth)/2
-verticalMargin = (11*inch-allTabsHeight)/2
-
 labelImages = {
     ('Action',) : 'action.png',
     ('Action','Attack') : 'action.png',
@@ -44,7 +23,11 @@ labelImages = {
 }
     
 def drawTab(card,x,y,useExtra=False):
-    rightSide = x%2 == 1
+    #rightSide = False
+    if numTabsHorizontal == 2:
+        rightSide = x%2 == 1
+    else:
+        rightSide = useExtra
     c.resetTransforms()
     c.translate(horizontalMargin,verticalMargin)
     if useExtra:
@@ -207,7 +190,7 @@ def split(l,n):
     yield l[i:]
 
 def drawCards(c,cards):
-    cards = split(cards,6)
+    cards = split(cards,numTabsVertical*numTabsHorizontal)
     for pageCards in cards:
         print 'pageCards:',pageCards
         for i,card in enumerate(pageCards):       
@@ -215,15 +198,15 @@ def drawCards(c,cards):
             x = i % numTabsHorizontal
             y = i / numTabsHorizontal
             c.saveState()
-            drawTab(card,x,2-y)
+            drawTab(card,x,numTabsVertical-1-y)
             c.restoreState()
         c.showPage()
         for i,card in enumerate(pageCards):       
             #print card
-            x = (i+1) % numTabsHorizontal
+            x = (numTabsHorizontal-1-i) % numTabsHorizontal
             y = i / numTabsHorizontal
             c.saveState()
-            drawTab(card,x,2-y,useExtra=True)
+            drawTab(card,x,numTabsVertical-1-y,useExtra=True)
             c.restoreState()
         c.showPage()
     
@@ -232,8 +215,54 @@ if __name__=='__main__':
     parser = OptionParser()
     parser.add_option("--back_offset",type="int",dest="back_offset",default=5,
                       help="Points to offset the back page to the right; needed for some printers")
+    parser.add_option("--orientation",type="string",dest="orientation",default="horizontal",
+                      help="horizontal or vertical, default:horizontal")
+    parser.add_option("--sleeved",action="store_true",dest="sleeved")
+
     (options,args) = parser.parse_args()
 
+    dominionCardWidth = 9.1*cm
+    dominionCardHeight = 5.9*cm
+    sleeveCardWidth = 9.4*cm
+    sleeveCardHeight = 6.15*cm
+
+    if options.orientation == "vertical":
+        if options.sleeved:
+            tabWidth = sleeveCardHeight
+            tabBaseHeight = sleeveCardWidth
+        else:
+            tabWidth = dominionCardHeight
+            tabBaseHeight = dominionCardWidth
+        numTabsVertical = 2
+        numTabsHorizontal = 3
+    else:
+        if options.sleeved:
+            tabWidth = sleeveCardWidth
+            tabBaseHeight = sleeveCardHeight
+        else:
+            tabWidth = dominionCardWidth
+            tabBaseHeight = dominionCardHeight
+
+        numTabsVertical = 3
+        numTabsHorizontal = 2
+    
+    tabLabelHeight = 0.9*cm
+    tabLabelWidth = 3.5*cm
+    tabTotalHeight = tabBaseHeight + tabLabelHeight
+    
+    tabOutline = [(0,0,tabWidth,0),
+                  (tabWidth,0,tabWidth,tabTotalHeight),
+                  (tabWidth,tabTotalHeight,tabWidth-tabLabelWidth,tabTotalHeight),
+                  (tabWidth-tabLabelWidth,tabTotalHeight,tabWidth-tabLabelWidth,tabBaseHeight),
+                  (tabWidth-tabLabelWidth,tabBaseHeight,0,tabBaseHeight),
+                  (0,tabBaseHeight,0,0)]
+    
+    allTabsHeight = numTabsVertical*tabTotalHeight
+    allTabsWidth = numTabsHorizontal*tabWidth
+    
+    horizontalMargin = (8.5*inch-allTabsWidth)/2
+    verticalMargin = (11*inch-allTabsHeight)/2
+    
     pdfmetrics.registerFont(TTFont('MinionPro-Regular','MinionPro-Regular.ttf'))
     pdfmetrics.registerFont(TTFont('MinionPro-Bold','MinionPro-Bold.ttf'))
     cards = read_card_defs("dominion_cards.txt")
