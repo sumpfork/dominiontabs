@@ -57,30 +57,55 @@ def drawTab(card,x,y,useExtra=False):
     if card.types == ('Treasure',) or card.types == ('Curse',):
         textHeight = tabLabelHeight/2-4
         costHeight = textHeight
+        potSize = 12
+        potHeight = 5
     else:
         textHeight = tabLabelHeight/2-7
         costHeight = textHeight-1
+        potSize = 11
+        potHeight = 2
+
+    textInset = 22
+    textWidth = 85
+
+    if card.potcost:
+        c.drawImage("potion.png",21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
+        textInset += potSize
+        textWidth -= potSize
+
     c.setFont('MinionPro-Bold',12)
     c.drawCentredString(12,costHeight,str(card.cost))
     fontSize = 12
     name = card.name.upper()
     name_parts = name.split()
     width = pdfmetrics.stringWidth(name,'MinionPro-Regular',fontSize)
-    while width > 85 and fontSize > 8:
+    while width > textWidth and fontSize > 8:
         fontSize -= 1
         #print 'decreasing font size for tab of',name,'now',fontSize
         width = pdfmetrics.stringWidth(name,'MinionPro-Regular',fontSize)
+    tooLong = width > textWidth
+    #if tooLong:
+    #    print name
+
     #c.drawString(tabLabelWidth/2+8,tabLabelHeight/2-7,name[0])
     w = 0
-    for n in name_parts:
+    for i,n in enumerate(name_parts):
         c.setFont('MinionPro-Regular',fontSize)
-        c.drawString(22+w,textHeight,n[0])
+        h = textHeight
+        if tooLong:
+            if i == 0:
+                h += h/2
+            else:
+                h -= h/2
+        c.drawString(textInset+w,h,n[0])
         w += pdfmetrics.stringWidth(n[0],'MinionPro-Regular',fontSize)
         #c.drawString(tabLabelWidth/2+8+w,tabLabelHeight/2-7,name[1:])
         c.setFont('MinionPro-Regular',fontSize-2)
-        c.drawString(22+w,textHeight,n[1:])
+        c.drawString(textInset+w,h,n[1:])
         w += pdfmetrics.stringWidth(n[1:],'MinionPro-Regular',fontSize-2)
         w += pdfmetrics.stringWidth(' ','MinionPro-Regular',fontSize)
+        if tooLong:
+            w = 0
     c.restoreState()
     
     #draw text
@@ -162,11 +187,16 @@ def read_card_defs(fname):
     for line in f:
         m = carddef.match(line)
         if m:
+            if m.groupdict()["potioncost"]:
+                potcost = int(m.groupdict()["potioncost"])
+            else:
+                potcost = 0
             currentCard = Card(m.groupdict()["name"],
-                     m.groupdict()["set"],
-                     tuple([t.strip() for t in m.groupdict()["type"].split("-")]),
-                     int(m.groupdict()["cost"]),
-                     m.groupdict()["description"])
+                               m.groupdict()["set"],
+                               tuple([t.strip() for t in m.groupdict()["type"].split("-")]),
+                               int(m.groupdict()["cost"]),
+                               m.groupdict()["description"],
+                               potcost)
             cards.append(currentCard)
         elif line.strip():
             if not currentCard.description.strip().endswith(';')\
@@ -277,7 +307,11 @@ if __name__=='__main__':
     pprint.pprint(sets)
     pprint.pprint(types)
 
-    c = canvas.Canvas("dominion_tabs.pdf", pagesize=letter)
+    if args:
+        fname = args[0]
+    else:
+        fname = "dominion_tabs.pdf"
+    c = canvas.Canvas(fname, pagesize=letter)
     #pprint.pprint(c.getAvailableFonts())
     drawCards(c,cards)
     c.save()
