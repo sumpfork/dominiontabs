@@ -2,7 +2,7 @@ import re,pprint
 from optparse import OptionParser
 
 from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import LETTER,A4,portrait,landscape
 from reportlab.lib.units import cm,inch
 from reportlab.platypus import Frame,Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
@@ -247,39 +247,62 @@ if __name__=='__main__':
                       help="Points to offset the back page to the right; needed for some printers")
     parser.add_option("--orientation",type="string",dest="orientation",default="horizontal",
                       help="horizontal or vertical, default:horizontal")
-    parser.add_option("--sleeved",action="store_true",dest="sleeved")
+    parser.add_option("--sleeved",action="store_true",dest="sleeved",help="use --size=sleeved instead")
+    parser.add_option("--size",type="string",dest="size",default=None,help="'<%f>x<%f>' (size in cm), or 'normal' = '9.1x5.9', or 'sleeved' = '9.4x6.15'")
+    parser.add_option("--minmargin",type="string",dest="minmargin",default="1x1",help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
+    parser.add_option("--papersize",type="string",dest="papersize",default=None,help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
 
     (options,args) = parser.parse_args()
 
-    dominionCardWidth = 9.1*cm
-    dominionCardHeight = 5.9*cm
-    sleeveCardWidth = 9.4*cm
-    sleeveCardHeight = 6.15*cm
+    if options.sleeved:
+        dominionCardWidth, dominionCardHeight = (9.4*cm, 6.15*cm)
+    else:
+        dominionCardWidth, dominionCardHeight = (9.1*cm, 5.9*cm)
+    if options.size != None:
+        x, y = options.size.split ("x", 1)
+        dominionCardWidth, dominionCardHeight = (float (x) * cm, float (y) * cm)
+
+    if options.papersize == 'A4' or options.papersize == 'a4':
+        print "Using A4 sized paper."
+        paperwidth, paperheight = A4
+    elif options.papersize == 'LETTER' or options.papersize == 'letter':
+        print "Using letter sized paper."
+        paperwidth, paperheight = LETTER
+    elif open ("/etc/papersize").readline == "letter":
+        print "Using letter sized paper."
+        paperwidth, paperheight = LETTER
+    else:
+        print "Using A4 sized paper."
+        paperwidth, paperheight = A4
+    
+    minmarginwidth, minmarginheight = options.minmargin.split ("x", 1)
+    minmarginwidth, minmarginheight = float (minmarginwidth) * cm, float (minmarginheight) * cm
 
     if options.orientation == "vertical":
-        if options.sleeved:
-            tabWidth = sleeveCardHeight
-            tabBaseHeight = sleeveCardWidth
-        else:
-            tabWidth = dominionCardHeight
-            tabBaseHeight = dominionCardWidth
-        numTabsVertical = 2
-        numTabsHorizontal = 3
+        tabWidth, tabBaseHeight = dominionCardHeight, dominionCardWidth
     else:
-        if options.sleeved:
-            tabWidth = sleeveCardWidth
-            tabBaseHeight = sleeveCardHeight
-        else:
-            tabWidth = dominionCardWidth
-            tabBaseHeight = dominionCardHeight
-
-        numTabsVertical = 3
-        numTabsHorizontal = 2
+        tabWidth, tabBaseHeight = dominionCardWidth, dominionCardHeight
     
     tabLabelHeight = 0.9*cm
     tabLabelWidth = 3.5*cm
     tabTotalHeight = tabBaseHeight + tabLabelHeight
     
+    numTabsVerticalP = int ((paperheight - 2*minmarginheight) / tabTotalHeight)
+    numTabsHorizontalP = int ((paperwidth - 2*minmarginwidth) / tabWidth)
+    numTabsVerticalL = int ((paperwidth - 2*minmarginwidth) / tabWidth)
+    numTabsHorizontalL = int ((paperheight - 2*minmarginheight) / tabtotalHeight)
+    
+    if numTabsVerticalL * numTabsHorizontalL > numTabsVerticalP * numTabsHorizontalP:
+        numTabsVertical, numTabsHorizontal = numTabsVerticalL, numTabsHorizontalL
+        paperheight, paperwidth = paperwidth, paperheight
+    else:
+        numTabsVertical, numTabsHorizontal = numTabsVerticalP, numTabsHorizontalP
+
+    horizontalMargin = (paperwidth-numTabsHorizontal*tabWidth)/2
+    verticalMargin = (paperheight-numTabsVertical*tabTotalHeight)/2
+    
+    print "Offset: %fcm h, %fcm v\n" % (horizontalMargin / cm, verticalMargin / cm)
+
     tabOutline = [(0,0,tabWidth,0),
                   (tabWidth,0,tabWidth,tabTotalHeight),
                   (tabWidth,tabTotalHeight,tabWidth-tabLabelWidth,tabTotalHeight),
@@ -287,14 +310,12 @@ if __name__=='__main__':
                   (tabWidth-tabLabelWidth,tabBaseHeight,0,tabBaseHeight),
                   (0,tabBaseHeight,0,0)]
     
-    allTabsHeight = numTabsVertical*tabTotalHeight
-    allTabsWidth = numTabsHorizontal*tabWidth
-    
-    horizontalMargin = (8.5*inch-allTabsWidth)/2
-    verticalMargin = (11*inch-allTabsHeight)/2
-    
-    pdfmetrics.registerFont(TTFont('MinionPro-Regular','MinionPro-Regular.ttf'))
-    pdfmetrics.registerFont(TTFont('MinionPro-Bold','MinionPro-Bold.ttf'))
+    try:
+        pdfmetrics.registerFont(TTFont('MinionPro-Regular','MinionPro-Regular.ttf'))
+        pdfmetrics.registerFont(TTFont('MinionPro-Bold','MinionPro-Bold.ttf'))
+    except:
+        pdfmetrics.registerFont(TTFont('MinionPro-Regular','OptimusPrincepsSemiBold.ttf'))
+        pdfmetrics.registerFont(TTFont('MinionPro-Bold','OptimusPrinceps.ttf'))
     cards = read_card_defs("dominion_cards.txt")
     cards.sort(cmp=lambda x,y: cmp((x.cardset,x.name),(y.cardset,y.name)))
     extras = read_card_extras("dominion_card_extras.txt",cards)
@@ -311,7 +332,7 @@ if __name__=='__main__':
         fname = args[0]
     else:
         fname = "dominion_tabs.pdf"
-    c = canvas.Canvas(fname, pagesize=letter)
+    c = canvas.Canvas(fname, pagesize=(paperwidth, paperheight))
     #pprint.pprint(c.getAvailableFonts())
     drawCards(c,cards)
     c.save()
