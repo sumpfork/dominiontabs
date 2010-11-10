@@ -1,5 +1,6 @@
 import re,pprint
 from optparse import OptionParser
+import os.path
 
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import LETTER,A4,portrait,landscape
@@ -248,27 +249,35 @@ if __name__=='__main__':
     parser.add_option("--orientation",type="string",dest="orientation",default="horizontal",
                       help="horizontal or vertical, default:horizontal")
     parser.add_option("--sleeved",action="store_true",dest="sleeved",help="use --size=sleeved instead")
-    parser.add_option("--size",type="string",dest="size",default=None,help="'<%f>x<%f>' (size in cm), or 'normal' = '9.1x5.9', or 'sleeved' = '9.4x6.15'")
-    parser.add_option("--minmargin",type="string",dest="minmargin",default="1x1",help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
-    parser.add_option("--papersize",type="string",dest="papersize",default=None,help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
+    parser.add_option("--size",type="string",dest="size",default='normal',
+                      help="'<%f>x<%f>' (size in cm), or 'normal' = '9.1x5.9', or 'sleeved' = '9.4x6.15'")
+    parser.add_option("--minmargin",type="string",dest="minmargin",default="1x1",
+                      help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
+    parser.add_option("--papersize",type="string",dest="papersize",default='letter',
+                      help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
 
     (options,args) = parser.parse_args()
 
-    if options.sleeved:
+    size = options.size.upper()
+    if size == 'SLEEVED' or options.sleeved:
         dominionCardWidth, dominionCardHeight = (9.4*cm, 6.15*cm)
-    else:
+        print 'Using sleeved card size, %.2fcm x %.2fcm' % (dominionCardWidth/cm,dominionCardHeight/cm)
+    elif size == 'NORMAL':
         dominionCardWidth, dominionCardHeight = (9.1*cm, 5.9*cm)
-    if options.size != None:
-        x, y = options.size.split ("x", 1)
+        print 'Using normal card size, %.2fcm x%.2fcm' % (dominionCardWidth/cm,dominionCardHeight/cm)
+    else:
+        x, y = size.split ("X", 1)
         dominionCardWidth, dominionCardHeight = (float (x) * cm, float (y) * cm)
+        print 'Using custom card size, %.2fcm x %.2fcm' % (dominionCardWidth/cm,dominionCardHeight/cm)
 
-    if options.papersize == 'A4' or options.papersize == 'a4':
+    papersize = options.papersize.upper()
+    if papersize == 'A4':
         print "Using A4 sized paper."
         paperwidth, paperheight = A4
-    elif options.papersize == 'LETTER' or options.papersize == 'letter':
+    elif papersize == 'LETTER':
         print "Using letter sized paper."
         paperwidth, paperheight = LETTER
-    elif open ("/etc/papersize").readline == "letter":
+    elif os.path.exists("/etc/papersize") and open ("/etc/papersize").readline == "letter":
         print "Using letter sized paper."
         paperwidth, paperheight = LETTER
     else:
@@ -290,7 +299,7 @@ if __name__=='__main__':
     numTabsVerticalP = int ((paperheight - 2*minmarginheight) / tabTotalHeight)
     numTabsHorizontalP = int ((paperwidth - 2*minmarginwidth) / tabWidth)
     numTabsVerticalL = int ((paperwidth - 2*minmarginwidth) / tabWidth)
-    numTabsHorizontalL = int ((paperheight - 2*minmarginheight) / tabtotalHeight)
+    numTabsHorizontalL = int ((paperheight - 2*minmarginheight) / tabTotalHeight)
     
     if numTabsVerticalL * numTabsHorizontalL > numTabsVerticalP * numTabsHorizontalP:
         numTabsVertical, numTabsHorizontal = numTabsVerticalL, numTabsHorizontalL
