@@ -253,7 +253,7 @@ if __name__=='__main__':
                       help="'<%f>x<%f>' (size in cm), or 'normal' = '9.1x5.9', or 'sleeved' = '9.4x6.15'")
     parser.add_option("--minmargin",type="string",dest="minmargin",default="1x1",
                       help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
-    parser.add_option("--papersize",type="string",dest="papersize",default='letter',
+    parser.add_option("--papersize",type="string",dest="papersize",default=None,
                       help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
 
     (options,args) = parser.parse_args()
@@ -270,20 +270,20 @@ if __name__=='__main__':
         dominionCardWidth, dominionCardHeight = (float (x) * cm, float (y) * cm)
         print 'Using custom card size, %.2fcm x %.2fcm' % (dominionCardWidth/cm,dominionCardHeight/cm)
 
-    papersize = options.papersize.upper()
+    papersize = None
+    if not options.papersize:
+        if os.path.exists("/etc/papersize"):
+            papersize = open ("/etc/papersize").readline().upper()
+    else:
+        papersize = options.papersize.upper()
+
     if papersize == 'A4':
         print "Using A4 sized paper."
         paperwidth, paperheight = A4
-    elif papersize == 'LETTER':
-        print "Using letter sized paper."
-        paperwidth, paperheight = LETTER
-    elif os.path.exists("/etc/papersize") and open ("/etc/papersize").readline == "letter":
-        print "Using letter sized paper."
-        paperwidth, paperheight = LETTER
     else:
-        print "Using A4 sized paper."
-        paperwidth, paperheight = A4
-    
+        print "Using letter sized paper."
+        paperwidth, paperheight = LETTER
+        
     minmarginwidth, minmarginheight = options.minmargin.split ("x", 1)
     minmarginwidth, minmarginheight = float (minmarginwidth) * cm, float (minmarginheight) * cm
 
@@ -310,7 +310,7 @@ if __name__=='__main__':
     horizontalMargin = (paperwidth-numTabsHorizontal*tabWidth)/2
     verticalMargin = (paperheight-numTabsVertical*tabTotalHeight)/2
     
-    print "Offset: %fcm h, %fcm v\n" % (horizontalMargin / cm, verticalMargin / cm)
+    print "Margins: %fcm h, %fcm v\n" % (horizontalMargin / cm, verticalMargin / cm)
 
     tabOutline = [(0,0,tabWidth,0),
                   (tabWidth,0,tabWidth,tabTotalHeight),
