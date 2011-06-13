@@ -5,7 +5,7 @@ from setuptools import setup,find_packages
 
 setup(
     name="dominiontabs",
-    version="1.1",
+    version="1.2",
     packages=find_packages(),
     scripts=["dominion_tabs.py"],
     install_requires=["reportlab>=2.5",
