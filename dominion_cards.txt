@@ -189,3 +189,49 @@ During your Buy phase, this costs $2 less per Action card you have in play, but 
 5	Duchy	Common	Victory	$5	3 Victory.
 6	Gold	Common	Treasure	$6	3 Coins.
 7	Province	Common	Victory	$8	6 Victory.
+1	Bag of Gold	Cornucopia	Action - Prize	$0	+1 Action 
+Gain a Gold, putting it on top of your deck. 
+(This is not in the Supply.)
+2	Diadem	Cornucopia	Treasure - Prize	$0	Worth $2. 
+When you play this, +$1 per unused Action you have (Action, not Action card). 
+(This is not in the Supply.)
+3	Followers	Cornucopia	Action - Attack - Prize	$0	+2 Cards 
+Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand. 
+(This is not in the Supply.)
+4	Princess	Cornucopia	Action - Prize	$0	+1 Buy 
+While this is in play, cards cost $2 less, but not less than $0. 
+(This is not in the Supply.)
+5	Trusty Steed	Cornucopia	Action - Prize	$0	Choose two: +2 Cards; or +2 Actions; or +$2; or gain 4 Silvers and put your deck into your discard pile. 
+(This is not in the Supply.)
+6	Hamlet	Cornucopia	Action	$2	+1 Card 
++1 Action 
+You may discard a card; If you do +1 Action. 
+You may discard a card; If you do +1 Buy
+7	Fortune Teller	Cornucopia	Action - Attack	$3	+2 Coin 
+Each other player reveals cards from the top of his deck until he reveals a Victory of Curse card. He puts it on top and discards the other revealed cards.
+8	Menagerie	Cornucopia	Action	$3	+1 Action 
+Reveal your hand. 
+If there are no duplicate cards in it, +3 Cards. 
+Otherwise, +1 Card.
+9	Farming Village	Cornucopia	Action	$4	+2 Actions 
+Reveal cards from the top of your deck until you reveal an Action or Treasure card. Put that card into your hand and discard the other cards.
+10	Horse Traders	Cornucopia	Action - Reaction	$4	+1 Buy 
++3 Coin 
+Discard 2 Cards 
+When another player plays an Attack card, you may set this aside from your hand. If you do, then at the start of your next turn, +1 Card and return this to your hand.
+11	Remake	Cornucopia	Action	$4	Do this twice: Trash a card from your hand then gain a card costing exactly 1 more than the trashed card.
+12	Tournament	Cornucopia	Action	$4	+1 Action 
+Each player may reveal a Province from his hand. If you do, discard it and gain a Prize (from the Prize pile) or a Duchy, putting it on top of your deck. If no-one else does, +1 Card +1 Coin.
+13	Young Witch	Cornucopia	Action - Attack	$4	+2 Cards 
+Discard 2 cards. Each other player may reveal a Bane card from his hand. 
+If he doesn’t, he gains a Curse. 
+Setup: Add an extra Kingdom card pile costing 2 or 3 to the Supply. Cards from that pile are Bane cards.
+14	Harvest	Cornucopia	Action	$5	Reveal the top 4 cards of your deck, then discard them. +1 Coin per differently named card revealed.
+15	Horn of Plenty	Cornucopia	Treasure	$5	0 Coins 
+When you play this, gain a card costing up to 1 Coin per differently named card you have in play, counting this. If it’s a Victory card, trash this.
+16	Hunting Party	Cornucopia	Action	$5	+1 Card 
++1 Action 
+Reveal your hand. Reveal cards from your deck until you reveal a card that isn’t in a duplicate of one in your hand and discard the rest.
+17	Jester	Cornucopia	Action - Attack	$5	+2 Coins 
+Each other player discards the top card of his deck. If it’s a Victory card he gains a Curse. Otherwise he gains a copy of the discarded card or you do, your choice.
+18	Fairgrounds	Cornucopia	Victory	$6	Worth 2 VP for every 5 differently named cards in your deck (rounded down)
