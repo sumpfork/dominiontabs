@@ -13,12 +13,15 @@ from reportlab.pdfbase import pdfmetrics
 labelImages = {
     ('Action',) : 'action.png',
     ('Action','Attack') : 'action.png',
+    ('Action','Attack','Prize') : 'action.png',
     ('Action','Reaction') : 'reaction.png',
     ('Action','Victory') : 'action-victory.png',
     ('Action','Duration') : 'duration.png',
+    ('Action','Prize') : 'action.png',
     ('Reaction',) : 'reaction.png',
     ('Treasure',) : 'treasure.png',
     ('Treasure','Victory') : 'treasure-victory.png',
+    ('Treasure','Prize') : 'treasure.png',
     ('Victory',) : 'victory.png',
     ('Curse',) : 'curse.png'
 }
@@ -40,7 +43,7 @@ def drawTab(card,x,y,useExtra=False):
     if not useExtra:
         c.saveState()
         c.setLineWidth(0.1)
-        if rightSide:
+        if rightSide and not options.sameside:
             c.translate(tabWidth,0)
             c.scale(-1,1)
         c.lines(tabOutline)
@@ -48,14 +51,14 @@ def drawTab(card,x,y,useExtra=False):
 
     #draw tab flap
     c.saveState()
-    if not rightSide:
+    if not rightSide or options.sameside:
         c.translate(tabWidth-tabLabelWidth,tabTotalHeight-tabLabelHeight)
     else:
         c.translate(0,tabTotalHeight-tabLabelHeight)
     c.drawImage(labelImages[card.types],1,0,
                 tabLabelWidth-2,tabLabelHeight-1,
                 preserveAspectRatio=False,anchor='n')
-    if card.types == ('Treasure',) or card.types == ('Curse',):
+    if card.types[0] == 'Treasure' or card.types == ('Curse',):
         textHeight = tabLabelHeight/2-4
         costHeight = textHeight
         potSize = 12
@@ -75,7 +78,10 @@ def drawTab(card,x,y,useExtra=False):
         textWidth -= potSize
 
     c.setFont('MinionPro-Bold',12)
-    c.drawCentredString(12,costHeight,str(card.cost))
+    cost = str(card.cost)
+    if 'Prize' in card.types:
+        cost += '*'
+    c.drawCentredString(12,costHeight,cost)
     fontSize = 12
     name = card.name.upper()
     name_parts = name.split()
@@ -124,7 +130,7 @@ def drawTab(card,x,y,useExtra=False):
         s = getSampleStyleSheet()['BodyText']
         s.fontName = "Times-Roman"
         p = Paragraph(d,s)
-        textHeight = tabTotalHeight - tabLabelHeight + 0.3*cm
+        textHeight = tabTotalHeight - tabLabelHeight + 0.2*cm
         textWidth = tabWidth - cm
         
         w,h = p.wrap(textWidth,textHeight)
@@ -193,7 +199,7 @@ def read_card_defs(fname):
             else:
                 potcost = 0
             currentCard = Card(m.groupdict()["name"],
-                               m.groupdict()["set"],
+                               m.groupdict()["set"].lower(),
                                tuple([t.strip() for t in m.groupdict()["type"].split("-")]),
                                int(m.groupdict()["cost"]),
                                m.groupdict()["description"],
@@ -255,7 +261,10 @@ if __name__=='__main__':
                       help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
     parser.add_option("--papersize",type="string",dest="papersize",default=None,
                       help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
-
+    parser.add_option("--samesidelabels",action="store_true",dest="sameside",
+                      help="force all label tabs to be on the same side")
+    parser.add_option("--expansions",action="append",type="string",
+                      help="subset of dominion expansions to produce tabs for")
     (options,args) = parser.parse_args()
 
     size = options.size.upper()
@@ -326,6 +335,9 @@ if __name__=='__main__':
         pdfmetrics.registerFont(TTFont('MinionPro-Regular','OptimusPrincepsSemiBold.ttf'))
         pdfmetrics.registerFont(TTFont('MinionPro-Bold','OptimusPrinceps.ttf'))
     cards = read_card_defs("dominion_cards.txt")
+    if options.expansions:
+        options.expansions = [o.lower() for o in options.expansions]
+        cards=[c for c in cards if c.cardset in options.expansions]
     cards.sort(cmp=lambda x,y: cmp((x.cardset,x.name),(y.cardset,y.name)))
     extras = read_card_extras("dominion_card_extras.txt",cards)
     print '%d cards read' % len(cards)
