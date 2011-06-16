@@ -231,7 +231,7 @@ class DominionTabs:
     def drawCards(self,cards):
         cards = split(cards,self.numTabsVertical*self.numTabsHorizontal)
         for pageCards in cards:
-            print 'pageCards:',pageCards
+            #print 'pageCards:',pageCards
             for i,card in enumerate(pageCards):       
                 #print card
                 x = i % self.numTabsHorizontal
@@ -348,14 +348,14 @@ class DominionTabs:
             cards=[c for c in cards if c.cardset in self.options.expansions]
         cards.sort(cmp=lambda x,y: cmp((x.cardset,x.name),(y.cardset,y.name)))
         extras = self.read_card_extras("dominion_card_extras.txt",cards)
-        print '%d cards read' % len(cards)
+        #print '%d cards read' % len(cards)
         sets = {}
         types = {}
         for c in cards:
             sets[c.cardset] = sets.get(c.cardset,0) + 1
             types[c.types] = types.get(c.types,0) + 1
-        pprint.pprint(sets)
-        pprint.pprint(types)
+        #pprint.pprint(sets)
+        #pprint.pprint(types)
 
         if args:
             fname = args[0]

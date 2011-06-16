@@ -1,3 +1,4 @@
+from __init__ import __version__
 from distribute_setup import use_setuptools
 use_setuptools()
 
@@ -5,7 +6,7 @@ from setuptools import setup,find_packages
 
 setup(
     name="dominiontabs",
-    version="1.2",
+    version=__version__,
     packages=find_packages(),
     scripts=["dominion_tabs.py"],
     install_requires=["reportlab>=2.5",
