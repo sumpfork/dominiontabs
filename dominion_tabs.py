@@ -50,37 +50,37 @@ class DominionTabs:
         ('Curse',) : 'curse.png'
         }
     
-    def drawTab(self,c,card,x,y,useExtra=False):
+    def drawTab(self,card,x,y,useExtra=False):
     #rightSide = False
         if self.numTabsHorizontal == 2:
             rightSide = x%2 == 1
         else:
             rightSide = useExtra
-        c.resetTransforms()
-        c.translate(self.horizontalMargin,self.verticalMargin)
+        self.canvas.resetTransforms()
+        self.canvas.translate(self.horizontalMargin,self.verticalMargin)
         if useExtra:
-            c.translate(self.options.back_offset,0)
-        c.translate(x*self.tabWidth,y*self.tabTotalHeight)
+            self.canvas.translate(self.options.back_offset,0)
+        self.canvas.translate(x*self.tabWidth,y*self.tabTotalHeight)
     
         #draw outline
         #don't draw outline on back, in case lines don't line up with front
         if not useExtra:
-            c.saveState()
-            c.setLineWidth(0.1)
+            self.canvas.saveState()
+            self.canvas.setLineWidth(0.1)
             if rightSide and not self.options.sameside:
-                c.translate(self.tabWidth,0)
-                c.scale(-1,1)
-            c.lines(self.tabOutline)
-            c.restoreState()
+                self.canvas.translate(self.tabWidth,0)
+                self.canvas.scale(-1,1)
+            self.canvas.lines(self.tabOutline)
+            self.canvas.restoreState()
 
         #draw tab flap
-        c.saveState()
+        self.canvas.saveState()
         if not rightSide or self.options.sameside:
-            c.translate(self.tabWidth-self.tabLabelWidth,
+            self.canvas.translate(self.tabWidth-self.tabLabelWidth,
                         self.tabTotalHeight-self.tabLabelHeight)
         else:
-            c.translate(0,self.tabTotalHeight-self.tabLabelHeight)
-        c.drawImage(DominionTabs.labelImages[card.types],1,0,
+            self.canvas.translate(0,self.tabTotalHeight-self.tabLabelHeight)
+        self.canvas.drawImage(DominionTabs.labelImages[card.types],1,0,
                     self.tabLabelWidth-2,self.tabLabelHeight-1,
                     preserveAspectRatio=False,anchor='n')
         if card.types[0] == 'Treasure' or card.types == ('Curse',):
@@ -98,15 +98,15 @@ class DominionTabs:
         textWidth = 85
 
         if card.potcost:
-            c.drawImage("potion.png",21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
+            self.canvas.drawImage("potion.png",21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
             textInset += potSize
             textWidth -= potSize
 
-        c.setFont('MinionPro-Bold',12)
+        self.canvas.setFont('MinionPro-Bold',12)
         cost = str(card.cost)
         if 'Prize' in card.types:
             cost += '*'
-        c.drawCentredString(12,costHeight,cost)
+        self.canvas.drawCentredString(12,costHeight,cost)
         fontSize = 12
         name = card.name.upper()
         name_parts = name.split()
@@ -119,26 +119,26 @@ class DominionTabs:
         #if tooLong:
         #    print name
 
-        #c.drawString(tabLabelWidth/2+8,tabLabelHeight/2-7,name[0])
+        #self.canvas.drawString(tabLabelWidth/2+8,tabLabelHeight/2-7,name[0])
         w = 0
         for i,n in enumerate(name_parts):
-            c.setFont('MinionPro-Regular',fontSize)
+            self.canvas.setFont('MinionPro-Regular',fontSize)
             h = textHeight
             if tooLong:
                 if i == 0:
                     h += h/2
                 else:
                     h -= h/2
-            c.drawString(textInset+w,h,n[0])
+            self.canvas.drawString(textInset+w,h,n[0])
             w += pdfmetrics.stringWidth(n[0],'MinionPro-Regular',fontSize)
-            #c.drawString(tabLabelWidth/2+8+w,tabLabelHeight/2-7,name[1:])
-            c.setFont('MinionPro-Regular',fontSize-2)
-            c.drawString(textInset+w,h,n[1:])
+            #self.canvas.drawString(tabLabelWidth/2+8+w,tabLabelHeight/2-7,name[1:])
+            self.canvas.setFont('MinionPro-Regular',fontSize-2)
+            self.canvas.drawString(textInset+w,h,n[1:])
             w += pdfmetrics.stringWidth(n[1:],'MinionPro-Regular',fontSize-2)
             w += pdfmetrics.stringWidth(' ','MinionPro-Regular',fontSize)
             if tooLong:
                 w = 0
-        c.restoreState()
+        self.canvas.restoreState()
 
         #draw text
         if useExtra and card.extra:
@@ -165,7 +165,7 @@ class DominionTabs:
                 #print 'decreasing fontsize on description for',card.name,'now',s.fontSize
                 p = Paragraph(d,s)
                 w,h = p.wrap(textWidth,textHeight)
-            p.drawOn(c,cm/2.0,textHeight-height-h-0.5*cm)
+            p.drawOn(self.canvas,cm/2.0,textHeight-height-h-0.5*cm)
             height += h + 0.2*cm
 
     def read_card_extras(self,fname,cards):
@@ -228,7 +228,7 @@ class DominionTabs:
             #print '----'
         return cards
 
-    def drawCards(self,c,cards):
+    def drawCards(self,cards):
         cards = split(cards,self.numTabsVertical*self.numTabsHorizontal)
         for pageCards in cards:
             print 'pageCards:',pageCards
@@ -236,18 +236,18 @@ class DominionTabs:
                 #print card
                 x = i % self.numTabsHorizontal
                 y = i / self.numTabsHorizontal
-                c.saveState()
-                self.drawTab(c,card,x,self.numTabsVertical-1-y)
-                c.restoreState()
-            c.showPage()
+                self.canvas.saveState()
+                self.drawTab(card,x,self.numTabsVertical-1-y)
+                self.canvas.restoreState()
+            self.canvas.showPage()
             for i,card in enumerate(pageCards):       
                 #print card
                 x = (self.numTabsHorizontal-1-i) % self.numTabsHorizontal
                 y = i / self.numTabsHorizontal
-                c.saveState()
-                self.drawTab(c,card,x,self.numTabsVertical-1-y,useExtra=True)
-                c.restoreState()
-            c.showPage()
+                self.canvas.saveState()
+                self.drawTab(card,x,self.numTabsVertical-1-y,useExtra=True)
+                self.canvas.restoreState()
+            self.canvas.showPage()
 
     def main(self,argstring):
         parser = OptionParser()
@@ -361,10 +361,10 @@ class DominionTabs:
             fname = args[0]
         else:
             fname = "dominion_tabs.pdf"
-        c = canvas.Canvas(fname, pagesize=(paperwidth, paperheight))
-        #pprint.pprint(c.getAvailableFonts())
-        self.drawCards(c,cards)
-        c.save()
+        self.canvas = canvas.Canvas(fname, pagesize=(paperwidth, paperheight))
+        #pprint.pprint(self.canvas.getAvailableFonts())
+        self.drawCards(cards)
+        self.canvas.save()
     
 if __name__=='__main__':
     import sys
