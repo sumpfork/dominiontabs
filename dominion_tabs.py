@@ -149,9 +149,9 @@ class DominionTabs:
             descriptions = re.split("--+",card.description)
         height = 0
         for d in descriptions:
-            if not usingExtra:
+            #if not usingExtra:
             #d = re.sub(r"\n",";",d,flags=re.MULTILINE)
-                d = re.sub(r"([^ ;])\+",r"\1; +",d)
+            #    d = re.sub(r"([^ ;])\+",r"\1; +",d)
             s = getSampleStyleSheet()['BodyText']
             s.fontName = "Times-Roman"
             p = Paragraph(d,s)
@@ -195,12 +195,29 @@ class DominionTabs:
                 c.extra = extras[c.name]
                 #print c.name + ' ::: ' + extra
 
+    def add_definition_line(self,card,line):
+        baseaction = re.compile("^\s*(\+\d+\s+\w+)(?:[,.;])")
+        m = baseaction.match(line)
+        prefix = ''
+        while m:
+            prefix += line[m.start(1):m.end(1)] + '----'
+            line = line[m.end():]
+            m = baseaction.match(line)
+        line = prefix + line
+        if not card.description.strip().endswith(';')\
+                and not card.description.strip().endswith('---')\
+                and not line.startswith('---'):
+            card.description += '----' + line
+        else:
+            card.description += line
+
     def read_card_defs(self,fname):
         cards = []
         f = open(fname)
         carddef = re.compile("^\d+\t+(?P<name>[\w' ]+)\t+(?P<set>\w+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)")
         currentCard = None
         for line in f:
+            line = line.strip()
             m = carddef.match(line)
             if m:
                 if m.groupdict()["potioncost"]:
@@ -211,19 +228,12 @@ class DominionTabs:
                                    m.groupdict()["set"].lower(),
                                    tuple([t.strip() for t in m.groupdict()["type"].split("-")]),
                                    int(m.groupdict()["cost"]),
-                                   m.groupdict()["description"],
+                                   '',
                                    potcost)
+                self.add_definition_line(currentCard,m.groupdict()["description"])
                 cards.append(currentCard)
-            elif line.strip():
-                if not currentCard.description.strip().endswith(';')\
-                        and not currentCard.description.strip().endswith('.')\
-                        and not currentCard.description.strip().endswith('---')\
-                        and not line.startswith('---'):
-                    #print currentCard.description
-                    #print line
-                    currentCard.description += '; ' + line
-                else:
-                    currentCard.description += line
+            elif line:
+                self.add_definition_line(currentCard,line)
             #print currentCard
             #print '----'
         return cards

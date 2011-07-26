@@ -26,7 +26,7 @@
 1	Courtyard	Intrigue	Action	$2	+3 Card, Put a card from your hand on top of your deck.
 2	Pawn	Intrigue	Action	$2	Choose two: +1 Card, +1 Action, +1 Buy, +1 Coin. (The choices must be different.).
 3	Secret Chamber	Intrigue	Action - Reaction	$2	Discard any number of cards. +1 Coin per card discarded. - When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.
-4	Great Hall	Intrigue	Action - Victory	$3	1 Victory, +1 Card, +1 Action.
+4	Great Hall	Intrigue	Action - Victory	$3	+1 Card, +1 Action, 1 Victory
 5	Masquerade	Intrigue	Action	$3	+2 Card, Each player passes a card in their hand to the player on their left. You may trash a card from your hand.
 6	Shanty Town	Intrigue	Action	$3	+2 Actions, Reveal your hand. If you have no Action cards in hand, +2 Cards.
 7	Steward	Intrigue	Action	$3	Choose one: +2 Cards; or +2 Coins; or trash 2 cards from your hand.
@@ -46,8 +46,9 @@
 21	Trading Post	Intrigue	Action	$5	Trash 2 cards from your hand. If you do, gain a silver card; put it into your hand.
 22	Tribute	Intrigue	Action	$5	The player to your left reveals then discards the top 2 cards of his deck. For each differently named card revealed, if it is an... Action Card, +2 Actions; Treasure Card, +2 Coins; Victory Card, +2 Cards.
 23	Upgrade	Intrigue	Action	$5	+1 Card, +1 Action, Trash a card from your hand. Gain a card costing exactly 1 Coin more than it.
-24	Harem	Intrigue	Treasure - Victory	$6	2 Coins, 2 Victory.
-25	Nobles	Intrigue	Action - Victory	$6	2 Victory, Choose one: +3 Cards, or +2 Actions.
+24	Harem	Intrigue	Treasure - Victory	$6	2 Coins, 2 Victory
+25	Nobles	Intrigue	Action - Victory	$6	2 Victory
+Choose one: +3 Cards, or +2 Actions.
 1	Embargo	Seaside	Action	$2	+2 Coins, Trash this card. Put an Embargo token on top of a Supply pile. - When a player buys a card, he gains a Curse card per Embargo token on that pile.
 2	Haven	Seaside	Action - Duration	$2	+1 Card, +1 Action, Set aside a card from your hand face down. At the start of your next turn, put it into your hand.
 3	Lighthouse	Seaside	Action - Duration	$2	+1 Action, Now and at the start of your next turn: +1 Coin. - While this is in play, when another player plays an Attack card, it doesn't affect you.
@@ -111,30 +112,30 @@ Trash a card from your hand.
 1	Loan	Prosperity	Treasure	$3	Worth 1 Coin.
 When you play this, reveal cards from your deck until you reveal a Treasure. Discard it or trash it. Discard the other cards.
 2	Trade Route	Prosperity	Action	$3	+1 Buy
-+$1 per token on the Trade Route mat.
++1 Coin per token on the Trade Route mat.
 Trash a card from your hand.
 ----------
 Setup: Put a token on each Victory card Supply pile. When a card is gained from that pile, move the token to the Trade Route mat.
 3	Watchtower	Prosperity	Reaction	$3	Draw until you have 6 cards in hand.
 ----------
 When you gain a card, you may reveal this from your hand. If you do, either trash that card, or put it on top of your deck.
-4	Bishop	Prosperity	Action	$4	+$1
+4	Bishop	Prosperity	Action	$4	+1 Coin
 +1 <VP>
 Trash a card from your hand. +<VP> equal to half its cost in coins, rounded down.
 Each other player may trash a card from his hand.
-5	Monument	Prosperity	Action	$4	+$2; +1 <VP>
+5	Monument	Prosperity	Action	$4	+2 Coins; +1 <VP>
 6	Quarry	Prosperity	Treasure	$4	Worth 1 Coin.
 ----------
-While this is in play, Action cards cost $2 less, but not less than $0.
+While this is in play, Action cards cost 2 Coins less, but not less than 0 Coins.
 7	Talisman	Prosperity	Treasure	$4	Worth 1 Coin.
 ----------
-While this is in play, when you buy a card costing $4 or less that is not a Victory card, gain a copy of it.
+While this is in play, when you buy a card costing 4 Coins or less that is not a Victory card, gain a copy of it.
 8	Worker's Village	Prosperity	Action	$4	+1 Card
 +2 Actions
 +1 Buy
 9	City	Prosperity	Action	$5	+1 Card
 +2 Actions
-If there are one or more empty Supply piles, +1 Card. If there are two or more, +$1 and +1 Buy.
+If there are one or more empty Supply piles, +1 Card. If there are two or more, +1 Coin and +1 Buy.
 10	Contraband	Prosperity	Treasure	$5	Worth 3 Coins.
 +1 Buy
 When you play this, the player to your left names a card. You can't buy that card this turn.
@@ -150,19 +151,19 @@ Each other player reveals the top 3 cards of his deck, discards the revealed Act
 ----------
 While this is in play, when you gain a card, you may put that card on top of your deck.
 16	Vault	Prosperity	Action	$5	+2 Cards 
-Discard any number of cards. +$1 per card discarded. 
+Discard any number of cards. +1 Coin per card discarded. 
 Each other player may discard 2 cards. If he does, he draws a card.
 17	Venture	Prosperity	Treasure	$5	Worth 1 Coin.
 When you play this, reveal cards from your deck until you reveal a Treasure. Discard the other cards. Play that Treasure.
 18	Goons	Prosperity	Action - Attack	$6	+1 Buy
-+$2
++2 Coins
 Each other player discards down to 3 cards in hand.
 ----------
 While this is in play, when you buy a card, +1 <VP>.
 19	Grand Market	Prosperity	Action	$6	+1 Card
 +1 Action
 +1 Buy
-+$2
++2 Coins
 ----------
 You can't buy this if you have any Copper in play.
 20	Hoard	Prosperity	Treasure	$6	Worth 2 Coins.
@@ -182,6 +183,9 @@ During your Buy phase, this costs $2 less per Action card you have in play, but 
 (Before the game, make a Black Market deck out of one copy of each Kingdom card not in the supply.).
 2	Envoy	Promo	Action	$4	Reveal the top 5 cards of your deck. The player to your left chooses one for you to discard. Draw the rest.
 3	Stash	Promo	Treasure	$5	Worth 2 Coins. When you shuffle, you may put this anywhere in your deck.
+4	Walled Village	Promo	Action	$4	+1 Card
++2 Actions
+At the start of Clean-up, if you have this and no more than one other Action card in play, you may put this on top of your deck.
 1	Copper	Common	Treasure	$0	1 Coin.
 2	Curse	Common	Curse	$0	-1 Victory.
 3	Estate	Common	Victory	$2	1 Victory.
@@ -193,7 +197,7 @@ During your Buy phase, this costs $2 less per Action card you have in play, but 
 Gain a Gold, putting it on top of your deck. 
 (This is not in the Supply.)
 2	Diadem	Cornucopia	Treasure - Prize	$0	Worth $2. 
-When you play this, +$1 per unused Action you have (Action, not Action card). 
+When you play this, +1 Coins per unused Action you have (Action, not Action card). 
 (This is not in the Supply.)
 3	Followers	Cornucopia	Action - Attack - Prize	$0	+2 Cards 
 Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand. 
@@ -201,7 +205,7 @@ Gain an Estate. Each other player gains a Curse and discards down to 3 cards in 
 4	Princess	Cornucopia	Action - Prize	$0	+1 Buy 
 While this is in play, cards cost $2 less, but not less than $0. 
 (This is not in the Supply.)
-5	Trusty Steed	Cornucopia	Action - Prize	$0	Choose two: +2 Cards; or +2 Actions; or +$2; or gain 4 Silvers and put your deck into your discard pile. 
+5	Trusty Steed	Cornucopia	Action - Prize	$0	Choose two: +2 Cards; or +2 Actions; or +2 Coins; or gain 4 Silvers and put your deck into your discard pile. 
 (This is not in the Supply.)
 6	Hamlet	Cornucopia	Action	$2	+1 Card 
 +1 Action 
