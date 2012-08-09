@@ -46,7 +46,9 @@ class DominionTabs:
         ('Treasure',) : 'treasure.png',
         ('Treasure','Victory') : 'treasure-victory.png',
         ('Treasure','Prize') : 'treasure.png',
+        ('Treasure','Reaction') : 'treasure.png',
         ('Victory',) : 'victory.png',
+        ('Victory','Reaction') : 'victory.png',
         ('Curse',) : 'curse.png'
         }
     
@@ -142,16 +144,12 @@ class DominionTabs:
 
         #draw text
         if useExtra and card.extra:
-            usingExtra = True
             descriptions = (card.extra,)
         else:
-            usingExtra = False
             descriptions = re.split("--+",card.description)
+
         height = 0
         for d in descriptions:
-            #if not usingExtra:
-            #d = re.sub(r"\n",";",d,flags=re.MULTILINE)
-            #    d = re.sub(r"([^ ;])\+",r"\1; +",d)
             s = getSampleStyleSheet()['BodyText']
             s.fontName = "Times-Roman"
             p = Paragraph(d,s)
@@ -170,7 +168,7 @@ class DominionTabs:
 
     def read_card_extras(self,fname,cards):
         f = open(fname)
-        cardName = re.compile("^:::(?P<name>[ \w']*)")
+        cardName = re.compile("^:::(?P<name>[ \w\-']*)")
         extras = {}
         currentCard = ""
         extra = ""
@@ -187,7 +185,7 @@ class DominionTabs:
             else:
                 extra += line
         if currentCard and extra:
-            extras[currentCard] = extra
+            extras[currentCard] = extra.strip()
         for c in cards:
             if not c.name in extras:
                 print c.name + ' missing from extras'
@@ -214,7 +212,7 @@ class DominionTabs:
     def read_card_defs(self,fname):
         cards = []
         f = open(fname)
-        carddef = re.compile("^\d+\t+(?P<name>[\w' ]+)\t+(?P<set>\w+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)")
+        carddef = re.compile("^\d+\t+(?P<name>[\w\-' ]+)\t+(?P<set>\w+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)")
         currentCard = None
         for line in f:
             line = line.strip()
