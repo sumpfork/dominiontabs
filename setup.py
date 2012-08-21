@@ -7,8 +7,8 @@ from setuptools import setup,find_packages
 setup(
     name="dominiontabs",
     version=__version__,
-    packages=find_packages(),
     scripts=["dominion_tabs.py"],
+    packages=find_packages(),
     install_requires=["reportlab>=2.5",
                       "PIL>=1.1.7"],
     package_data = {
@@ -18,3 +18,4 @@ setup(
     author_email="sumpfork@mailmight.net",
     description="Tab Divider Generation for the Dominion Card Game"
     )
+

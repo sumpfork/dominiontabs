@@ -246,10 +246,10 @@ Each other player discards the top card of his deck. If it’s a Victory card he
 +1 Card per Victory card revealed. If this is the first time you played a Crossroads this turn, +3 Actions.
 2	Duchess	Hinterlands	Action	$2	+2 Coins 
 Each player (including you) looks at the top card of his deck, and discards it or puts it back. 
----------- 
+______________________
 In games using this, when you gain a Duchy, you may gain a Duchess.
 3	Fool's Gold	Hinterlands	Treasure - Reaction	$2	If this is the first time you played a Fool's Gold this turn, this is worth 1 coin, otherwise it's worth 4 coins. 
----------------------- 
+______________________
 When another player gains a Province, you may trash this from your hand. If you do, gain a Gold, putting it on your deck.
 4	Develop	Hinterlands	Action	$3	Trash a card from your hand. Gain a card costing exactly 1 coin more than it and a card costing exactly 1 less than it, in either order, putting them on top of your deck.
 5	Oasis	Hinterlands	Action	$3	+1 Card 
@@ -262,7 +262,7 @@ Discard a card.
 +1 Action 
 At the start of Clean-up this turn, you may choose an Action card you have in play. If you discard it from play this turn, put it on your deck.
 8	Tunnel	Hinterlands	Victory - Reaction	$3	2 VP 
----------- 
+______________________
 When you discard this other than during a Clean-up phase, you may reveal it. If you do, gain a Gold.
 9	Jack of all Trades	Hinterlands	Action	$4	Gain a Silver. 
 Look at the top card of your deck; discard it or put it back. 
@@ -272,40 +272,40 @@ You may trash a card from your hand that is not a Treasure.
 When you buy this or play it, each other player reveals the top 2 cards of his deck, trashes a revealed Silver or Gold you choose, and discards the rest. If he didn't reveal a Treasure, he gains a Copper. You gain the trashed cards.
 11	Nomad Camp	Hinterlands	Action	$4	+1 Buy 
 +2 Coins 
----------------------- 
+______________________ 
 When you gain this, put it on top of your deck.
 12	Silk Road	Hinterlands	Victory	$4	Worth 1 VP for every 4 Victory cards in your deck (round down).
 13	Spice Merchant	Hinterlands	Action	$4	You may trash a Treasure from your hand. If you do, choose one: 
 +2 Cards and +1 Action; 
 or +2 Coins and +1 Buy.
 14	Trader	Hinterlands	Action - Reaction	$4	Trash a card from your hand. Gain a number of Silvers equal to its cost in coins. 
----------------------- 
+______________________ 
 When you would gain a card, you may reveal this from your hand. If you do, instead, gain a silver.
 15	Cache	Hinterlands	Treasure	$5	Worth 3 coins 
----------- 
+______________________
 When you gain this, gain two Coppers.
 16	Cartographer	Hinterlands	Action	$5	+1 Card 
 +1 Action 
 Look at the top 4 cards of your deck. Discard any number of them. Put the rest back on top in any order.
 17	Embassy	Hinterlands	Action	$5	+5 Cards 
 Discard 3 cards. 
----------- 
+______________________
 When you gain this, each other player gains a Silver.
 18	Haggler	Hinterlands	Action	$5	+2 Coins 
----------- 
+______________________
 While this is in play, when you buy a card, gain a card costing less than it that is not a Victory card.
 19	Highway	Hinterlands	Action	$5	+1 Card 
 +1 Action 
----------- 
+______________________ 
 While this is in play, cards cost $1 less, but not less than $0.
 20	Ill-Gotten Gains	Hinterlands	Treasure	$5	Worth 1 Coin 
 When you play this, you may gain a Copper, putting it into your hand. 
----------------------- 
+______________________ 
 When you gain this, each other player gains a Curse.
 21	Inn	Hinterlands	Action	$5	+2 Cards 
 +2 Actions 
 Discard 2 cards. 
----------- 
+______________________
 When you gain this, look through your discard pile (including this), reveal any number of Action cards from it, and shuffle them into your deck.
 22	Mandarin	Hinterlands	Action	$5	+3 coins 
 Put a card from your hand on top of your deck. 
@@ -322,3 +322,148 @@ When you gain this, gain a card costing less than this.
 26	Farmland	Hinterlands	Victory	$6	2 VP 
 ---------- 
 When you buy this, trash a card from your hand. Gain a card costing exactly $2 more than the trashed card.
+1	Ruins	Dark Ages	Action - Ruins	$0	Abandoned Mine: +1 Coin
+Ruined Library: +1 Card
+Ruined Marked: :1 Buy
+Ruined Village: +1 Action
+Survivors: Look at the top 2 cards of your deck. Discard them or put them back in any order.
+2	Madman	Dark Ages	Action	$0	+2 Actions
+Return this to the Madman pile. If you do, +1 Card per card in your hand.
+(This card is not in the supply.)
+3	Spoils	Dark Ages	Treasure	$0	3 Coins
+When you play this, return it to the Spoils pile.
+(This is not in the Supply.)
+4	Hovel	Dark Ages	Reaction - Shelter	$1	When you buy a Victory card, you may trash this from your hand.
+5	Necropolis	Dark Ages	Action - Shelter	$1	+2 Actions
+6	Overgrown Estate	Dark Ages	Victory - Shelter	$1	0 Victory
+______________________
+When you trash this, +1 Card.
+7	Poor House	Dark Ages	Action	$1	+4 Coins
+Reveal your hand. -1 Coin per Treasure card in your hand, to a minimum of 0 Coins.
+8	Squire	Dark Ages	Action	$2	+1 Coin
+Choose one: +2 Actions; or +2 Buys; or gain a Silver.
+______________________
+When you trash this, gain an Action card.
+9	Vagrant	Dark Ages	Action	$2	+1 Card, +1 Action
+Reveal the top card of your deck. If it's a Curse, Ruins, Shelter, or Victory card, put it into your hand.
+10	Hermit	Dark Ages	Action	$3	Look through your discard pile. You may trash a card from your discard pile or hand that is not a Treasure. Gain a card costing up to 3 Coins.
+When you discard this from play, if you did not buy any cards this turn, trash this and gain a Madman from the Madman pile.
+11	Sage	Dark Ages	Action	$3	+1 Action
+Reveal cards from the top of your deck until you reveal one costing 3 Coins or more. Put that card into your hand and discard the rest.
+12	Feodum	Dark Ages	Victory	$4	Worth 1 Victory for every 3 Silvers in your deck (round down).
+______________________
+When you trash this, gain 3 Silvers.
+13	Fortress	Dark Ages	Action	$4	+1 Card, +2 Actions
+______________________
+When you trash this, put it into your hand.
+14	Ironmonger	Dark Ages	Action	$4	+1 Card, +1 Action
+Reveal the top card of your deck; you may discard it. Either way, if it is an…
+Action card, +1 Action
+Treasure card, +1 Coin
+Victory card, +1 Card
+15	Procession	Dark Ages	Action	$4	You may play an Action card from your hand twice. Trash it. Gain an Action card costing exactly 1 Coin more than it.
+16	Rats	Dark Ages	Action	$4	+1 Card, +1 Action
+Gain a Rats. Trash a card from your hand other than a Rats (or reveal a hand of all Rats).
+______________________
+When you tash this, +1 Card.
+17	Band of Misfits	Dark Ages	Action	$5	Play this as if it were an Action card in the Supply costing less than it that you choose.
+This is that card until it leaves play.
+18	Bandit Camp	Dark Ages	Action	$5	+1 Card, +2 Actions
+Gain a Spoils from the Spoils pile.
+19	Count	Dark Ages	Action	$5	Choose one: Discard 2 cards; or put a card from your hand on top of your deck; or gain a Copper.
+Choose one: +3 Coins; or trash your hand; or gain a Duchy.
+20	Cultist	Dark Ages	Action - Attack - Looter	$5	+2 Cards
+Each other player gains a Ruins. You may play a Cultist from your hand.
+______________________
+When you trash this, +3 Cards.
+21	Graverobber	Dark Ages	Action	$5	Choose one: Gain a card from the trash costing from 3 Coins to 6 Coins, putting it on top of your deck; or trash an Action card from your hand and gain a card costing up to 3 Coins more than it.
+22	Pillage	Dark Ages	Action - Attack	$5	Trash this. Each other player with 5 or more cards in hand reveals his hand and discards a card that you choose.
+Gain 2 Spoils from the Spoils pile.
+23	Scavenger	Dark Ages	Action	$5	+1 Coins
+You may put your deck into your discard pile. Look through your discard pile and put one card from it on top of your deck.
+24	Altar	Dark Ages	Action	$6	Trash a card from your hand. Gain a card costing up to 5 Coins.
+29	Armory	Dark Ages	Action	$4	Gain a card costing up to 4 Coins,putting it on top of your deck.
+25	Beggar	Dark Ages	Action - Reaction	$2	Gain 3 Coppers, putting them into your hand.
+______________________
+When another player plays an Attack card, you may discard this. 
+If you do, gain two Silvers, putting one on top of your deck.
+26	Catacombs	Dark Ages	Action	$5	Look at the top 3 cards of your deck. 
+Choose one: Put them into your hand; 
+or discard them and +3 Cards.
+______________________
+When you trash this, gain a cheaper card.
+27	Counterfeit	Dark Ages	Treasure	$5	Worth 1 Coin
++1 Buy
+When you play this, you may play a Treasure from your hand twice. If you do, trash that Treasure
+28	Death Cart	Dark Ages	Action - Looter	$4	+5 Coins
+You may trash an Action card from your hand. If you don’t, trash this.
+______________________
+When you gain this, gain 2 Ruins.
+29	Forager	Dark Ages	Action	$3	+1 Action
++1 Buy
+Trash a card from your hand. 
++1 Coin per differently named Treasure 
+in the trash. 
+30	Junk Dealer	Dark Ages	Action	$5	+1 Card
++1 Action
++1 Coin
+Trash a card from your hand.
+31	Knights	Dark Ages	Action	$3	This is a pile in which each card is different. There is the same basic ability on each card, but also another ability unique to that card in the pile, and they all have different names. Shuffle the Knights pile before playing with it, keeping it face down except for the top one, which is the only card that can be gained from the pile. See Additional Rules for Dark Ages and Preparation. Follow the rules on Knights in order from top to bottom; Sir Michael causes players to discard before it trashes cards.
+32	Marauder	Dark Ages	Action	$4	Gain a Spoils from the Spoils pile. 
+Each other player gains a Ruins.
+33	Market Square	Dark Ages	Action - Reaction	$3	+1 Card
++1 Action
++1 Buy
+______________________
+When one of your cards is trashed, 
+you may discard this from your 
+hand. If you do, gain a Gold.
+34	Rebuild	Dark Ages	Action	$5	+ 1Action
+Name a card. Reveal cards from the 
+top of your deck until you reveal a 
+Victory card that is not the named 
+card. Discard the other cards. Trash the 
+Victory card and gain a Victory card 
+costing up to 3 Coins more than it.
+35	Rogue	Dark Ages	Action - Attack	$5	+ 2 Coins
+If there are any cards in the trash 
+costing from 3 Coins to 6 Coins, gain one of 
+them. Otherwise, each other player 
+reveals the top 2 cards of his deck, 
+trashes one of them costing from 3 Coins
+to 6 Coins, and discards the rest.
+36	Storeroom	Dark Ages	Action	$3	+ 1 Buy 
+Discard any number of cards. 
++1 Card per card discarded. 
+Discard any number of cards. 
++ 1 Coins per card discarded the second time.
+37	Urchin	Dark Ages	Action - Attack	$3	+1 Card
++1 Action
+Each other player discards down to 
+4 cards in hand.
+______________________
+When you play another Attack card 
+with this in play, you may trash this. 
+If you do, gain a Mercenary from 
+the Mercenary pile.
+38	Wandering Minstrel	Dark Ages	Action	$4	+1 Card
++2 Actions
+Reveal the top 3 cards of your deck. 
+Put the Actions back on top in any 
+order and discard the rest.
+39	Hunting Grounds	Dark Ages	Action	$6	+ 4 Cards
+______________________
+When you trash this,
+gain a Duchy or 3 Estates.
+40	Mercenary	Dark Ages	Action - Attack	$0	You may trash 2 cards from your 
+hand. 
+If you do, +2 Cards, + 2 Coins,
+and each other player discards down 
+to 3 cards in hand.
+(This is not in the Supply.)
+41	Mystic	Dark Ages	Action	$5	+1Action
++ 2 Coins
+Name a card. 
+Reveal the top card of your deck. 
+If it’s the named card, put it into your 
+hand.
