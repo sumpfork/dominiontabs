@@ -41,14 +41,20 @@ class DominionTabs:
         ('Action','Reaction') : 'reaction.png',
         ('Action','Victory') : 'action-victory.png',
         ('Action','Duration') : 'duration.png',
+        ('Action','Looter') : 'action.png',
         ('Action','Prize') : 'action.png',
+        ('Action','Ruins') : 'action.png',
+        ('Action','Shelter') : 'action.png',
+        ('Action','Attack','Looter') : 'action.png',
         ('Reaction',) : 'reaction.png',
+        ('Reaction','Shelter') : 'reaction.png',
         ('Treasure',) : 'treasure.png',
         ('Treasure','Victory') : 'treasure-victory.png',
         ('Treasure','Prize') : 'treasure.png',
         ('Treasure','Reaction') : 'treasure.png',
         ('Victory',) : 'victory.png',
         ('Victory','Reaction') : 'victory.png',
+        ('Victory','Shelter') : 'victory.png',
         ('Curse',) : 'curse.png'
         }
     
@@ -82,7 +88,7 @@ class DominionTabs:
                         self.tabTotalHeight-self.tabLabelHeight)
         else:
             self.canvas.translate(0,self.tabTotalHeight-self.tabLabelHeight)
-        self.canvas.drawImage(DominionTabs.labelImages[card.types],1,0,
+        self.canvas.drawImage(os.path.join('images',DominionTabs.labelImages[card.types]),1,0,
                     self.tabLabelWidth-2,self.tabLabelHeight-1,
                     preserveAspectRatio=False,anchor='n')
         if card.types[0] == 'Treasure' or card.types == ('Curse',):
@@ -100,7 +106,7 @@ class DominionTabs:
         textWidth = 85
 
         if card.potcost:
-            self.canvas.drawImage("potion.png",21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
+            self.canvas.drawImage("images/potion.png",21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
             textInset += potSize
             textWidth -= potSize
 
@@ -152,7 +158,9 @@ class DominionTabs:
         for d in descriptions:
             s = getSampleStyleSheet()['BodyText']
             s.fontName = "Times-Roman"
-            p = Paragraph(d,s)
+            replace = '<img src='"'images/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>&nbsp;' % s.fontSize
+            dmod = re.sub('(\d) Coin(s)?', replace,d)
+            p = Paragraph(dmod,s)
             textHeight = self.tabTotalHeight - self.tabLabelHeight + 0.2*cm
             textWidth = self.tabWidth - cm
 
@@ -161,7 +169,9 @@ class DominionTabs:
                 s.fontSize -= 1
                 s.leading -= 1
                 #print 'decreasing fontsize on description for',card.name,'now',s.fontSize
-                p = Paragraph(d,s)
+                replace = '<img src='"'images/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % s.fontSize
+                dmod = re.sub('(\d) Coin(s)?', replace,d)
+                p = Paragraph(dmod,s)
                 w,h = p.wrap(textWidth,textHeight)
             p.drawOn(self.canvas,cm/2.0,textHeight-height-h-0.5*cm)
             height += h + 0.2*cm
@@ -182,6 +192,8 @@ class DominionTabs:
                     extras[currentCard] = extra
                 currentCard = m.groupdict()["name"]
                 extra = ""
+                if currentCard and (currentCard not in (c.name for c in cards)):
+                    print currentCard + ' has extra description, but is not in cards'
             else:
                 extra += line
         if currentCard and extra:
@@ -212,7 +224,7 @@ class DominionTabs:
     def read_card_defs(self,fname):
         cards = []
         f = open(fname)
-        carddef = re.compile("^\d+\t+(?P<name>[\w\-' ]+)\t+(?P<set>\w+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)")
+        carddef = re.compile("^\d+\t+(?P<name>[\w\-' ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)")
         currentCard = None
         for line in f:
             line = line.strip()
@@ -231,6 +243,7 @@ class DominionTabs:
                 self.add_definition_line(currentCard,m.groupdict()["description"])
                 cards.append(currentCard)
             elif line:
+                assert currentCard
                 self.add_definition_line(currentCard,line)
             #print currentCard
             #print '----'
