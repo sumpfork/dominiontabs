@@ -358,8 +358,8 @@ class DominionTabs:
                       (0,self.tabBaseHeight,0,0)]
 
         try:
-            pdfmetrics.registerFont(TTFont('MinionPro-Regular','MinionPro-Regular.ttf'))
-            pdfmetrics.registerFont(TTFont('MinionPro-Bold','MinionPro-Bold.ttf'))
+            pdfmetrics.registerFont(TTFont('MinionPro-Regular','fonts/MinionPro-Regular.ttf'))
+            pdfmetrics.registerFont(TTFont('MinionPro-Bold','fonts/MinionPro-Bold.ttf'))
         except:
             pdfmetrics.registerFont(TTFont('MinionPro-Regular','OptimusPrincepsSemiBold.ttf'))
             pdfmetrics.registerFont(TTFont('MinionPro-Bold','OptimusPrinceps.ttf'))
