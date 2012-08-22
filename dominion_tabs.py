@@ -58,6 +58,13 @@ class DominionTabs:
         ('Curse',) : 'curse.png'
         }
     
+    def add_inline_images(self, text, fontsize):
+        replace = '<img src='"'images/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (fontsize*1.2)
+        text = re.sub('(\d)\s(c|C)oin(s)?', replace,text)
+        replace = '<img src='"'images/coin_small_question.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (fontsize*1.2)
+        text = re.sub('\?\s(c|C)oin(s)?', replace,text)
+        return text
+
     def drawTab(self,card,x,y,useExtra=False):
     #rightSide = False
         if self.numTabsHorizontal == 2:
@@ -158,19 +165,17 @@ class DominionTabs:
         for d in descriptions:
             s = getSampleStyleSheet()['BodyText']
             s.fontName = "Times-Roman"
-            replace = '<img src='"'images/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>&nbsp;' % s.fontSize
-            dmod = re.sub('(\d) Coin(s)?', replace,d)
+            dmod = self.add_inline_images(d,s.fontSize)
             p = Paragraph(dmod,s)
             textHeight = self.tabTotalHeight - self.tabLabelHeight + 0.2*cm
             textWidth = self.tabWidth - cm
-
+            
             w,h = p.wrap(textWidth,textHeight)
             while h > textHeight:
                 s.fontSize -= 1
                 s.leading -= 1
                 #print 'decreasing fontsize on description for',card.name,'now',s.fontSize
-                replace = '<img src='"'images/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % s.fontSize
-                dmod = re.sub('(\d) Coin(s)?', replace,d)
+                dmod = self.add_inline_images(d,s.fontSize)
                 p = Paragraph(dmod,s)
                 w,h = p.wrap(textWidth,textHeight)
             p.drawOn(self.canvas,cm/2.0,textHeight-height-h-0.5*cm)
