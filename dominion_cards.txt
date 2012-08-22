@@ -7,7 +7,7 @@
 7	Workshop	Base	Action	$3	Gain a card costing up to 4 Coins.
 8	Bureaucrat	Base	Action - Attack	$4	Gain a silver card; put it on top of your deck. Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards).
 9	Feast	Base	Action	$4	Trash this card. Gain a card costing up to 5 Coins.
-10	Gardens	Base	Victory	$4	Variable, Worth 1 Victory for every 10 cards in your deck (rounded down).
+10	Gardens	Base	Victory	$4	Variable, Worth 1 <VP> for every 10 cards in your deck (rounded down).
 11	Militia	Base	Action - Attack	$4	+2 Coins, Each other player discards down to 3 cards in his hand.
 12	Moneylender	Base	Action	$4	Trash a Copper from your hand. If you do, +3 Coins.
 13	Remodel	Base	Action	$4	Trash a card from your hand. Gain a card costing up to 2 Coins more than the trashed card.
@@ -26,7 +26,7 @@
 1	Courtyard	Intrigue	Action	$2	+3 Card, Put a card from your hand on top of your deck.
 2	Pawn	Intrigue	Action	$2	Choose two: +1 Card, +1 Action, +1 Buy, +1 Coin. (The choices must be different.).
 3	Secret Chamber	Intrigue	Action - Reaction	$2	Discard any number of cards. +1 Coin per card discarded. - When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.
-4	Great Hall	Intrigue	Action - Victory	$3	+1 Card, +1 Action, 1 Victory
+4	Great Hall	Intrigue	Action - Victory	$3	+1 Card, +1 Action, 1 <VP>
 5	Masquerade	Intrigue	Action	$3	+2 Card, Each player passes a card in their hand to the player on their left. You may trash a card from your hand.
 6	Shanty Town	Intrigue	Action	$3	+2 Actions, Reveal your hand. If you have no Action cards in hand, +2 Cards.
 7	Steward	Intrigue	Action	$3	Choose one: +2 Cards; or +2 Coins; or trash 2 cards from your hand.
@@ -39,15 +39,15 @@
 14	Ironworks	Intrigue	Action	$4	Gain a card costing up to 4 Coins. If it is an... Action card, +1 Action. Treasure card, +1 Coin. Victory card, +1 Card.
 15	Mining Village	Intrigue	Action	$4	+1 Card, +2 Actions. You may trash this card immediately. If you do, +2 Coins.
 16	Scout	Intrigue	Action	$4	+1 Action. Reveal the top 4 cards of your deck. Put the revealed Victory cards into your hand. Put the other cards on top of your deck in any order.
-17	Duke	Intrigue	Victory	$5	Worth 1 Victory per Duchy you have.
+17	Duke	Intrigue	Victory	$5	Worth 1 <VP> per Duchy you have.
 18	Minion	Intrigue	Action - Attack	$5	+1 Action, Choose one: +2 Coins; or discard your hand, +4 Cards, and each other player with at least 5 cards in hand discards his hand and draws 4 cards.
 19	Saboteur	Intrigue	Action - Attack	$5	Each other player reveals cards from the top of his deck until revealing one costing 3 Coins or more. He trashes that card and may gain a card costing at most 2 Coins less than it. He discards the other revealed cards.
 20	Torturer	Intrigue	Action - Attack	$5	+3 Card, Each other player chooses one: he discards 2 cards; or he gains a Curse card, putting it in his hand.
 21	Trading Post	Intrigue	Action	$5	Trash 2 cards from your hand. If you do, gain a silver card; put it into your hand.
 22	Tribute	Intrigue	Action	$5	The player to your left reveals then discards the top 2 cards of his deck. For each differently named card revealed, if it is an... Action Card, +2 Actions; Treasure Card, +2 Coins; Victory Card, +2 Cards.
 23	Upgrade	Intrigue	Action	$5	+1 Card, +1 Action, Trash a card from your hand. Gain a card costing exactly 1 Coin more than it.
-24	Harem	Intrigue	Treasure - Victory	$6	2 Coins, 2 Victory
-25	Nobles	Intrigue	Action - Victory	$6	2 Victory
+24	Harem	Intrigue	Treasure - Victory	$6	Worth 2 Coins, 2 <VP>
+25	Nobles	Intrigue	Action - Victory	$6	2 <VP>
 Choose one: +3 Cards, or +2 Actions.
 1	Embargo	Seaside	Action	$2	+2 Coins, Trash this card. Put an Embargo token on top of a Supply pile. - When a player buys a card, he gains a Curse card per Embargo token on that pile.
 2	Haven	Seaside	Action - Duration	$2	+1 Card, +1 Action, Set aside a card from your hand face down. At the start of your next turn, put it into your hand.
@@ -80,7 +80,7 @@ At the start of your next turn, +1 Card.
 Action card, gain a Duchy
 Treasure card, gain a Transmute
 Victory card, gain a Gold
-2	Vineyard	Alchemy	Victory	$0 1P	Worth 1 Victory for every 3 Action cards in your deck (rounded down).
+2	Vineyard	Alchemy	Victory	$0 1P	Worth 1 <VP> for every 3 Action cards in your deck (rounded down).
 3	Apothecary	Alchemy	Action	$2 1P	+1 Card
 +1 Action
 Reveal the top 4 cards of your deck. Put the revealed Coppers and Potions into your hand. Put the other cards back on top in any order.
@@ -178,7 +178,7 @@ When you play this, it`s worth 1 Coin per Treasure card you have in play (counti
 ----------
 During your Buy phase, this costs 2 Coins less per Action card you have in play, but not less than 0 Coins.
 26	Platinum	Prosperity	Treasure	$9	Worth 5 Coins.
-27	Colony	Prosperity	Victory	$11	10 Victory.
+27	Colony	Prosperity	Victory	$11	10 <VP>.
 1	Black Market	Promo	Action	$3	+2 Coins, Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought cards on the bottom of the Black Market deck in any order. 
 (Before the game, make a Black Market deck out of one copy of each Kingdom card not in the supply.).
 2	Envoy	Promo	Action	$4	Reveal the top 5 cards of your deck. The player to your left chooses one for you to discard. Draw the rest.
@@ -189,13 +189,13 @@ At the start of Clean-up, if you have this and no more than one other Action car
 5	Governor	Promo	Action	$5	+1 Action 
 
 Choose one; you get the version in parentheses: Each player gets +1 (+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly 1 Coin (2 Coins) more.
-1	Copper	Common	Treasure	$0	1 Coin.
-2	Curse	Common	Curse	$0	-1 Victory.
-3	Estate	Common	Victory	$2	1 Victory.
-4	Silver	Common	Treasure	$3	2 Coins.
-5	Duchy	Common	Victory	$5	3 Victory.
-6	Gold	Common	Treasure	$6	3 Coins.
-7	Province	Common	Victory	$8	6 Victory.
+1	Copper	Common	Treasure	$0	Worth 1 Coin.
+2	Curse	Common	Curse	$0	-1 <VP>.
+3	Estate	Common	Victory	$2	1 <VP>.
+4	Silver	Common	Treasure	$3	Worth 2 Coins.
+5	Duchy	Common	Victory	$5	3 <VP>.
+6	Gold	Common	Treasure	$6	Worth 3 Coins.
+7	Province	Common	Victory	$8	6 <VP>.
 1	Bag of Gold	Cornucopia	Action - Prize	$0	+1 Action 
 Gain a Gold, putting it on top of your deck. 
 (This is not in the Supply.)
@@ -234,14 +234,14 @@ Discard 2 cards. Each other player may reveal a Bane card from his hand.
 If he doesn’t, he gains a Curse. 
 Setup: Add an extra Kingdom card pile costing 2 or 3 to the Supply. Cards from that pile are Bane cards.
 14	Harvest	Cornucopia	Action	$5	Reveal the top 4 cards of your deck, then discard them. +1 Coin per differently named card revealed.
-15	Horn of Plenty	Cornucopia	Treasure	$5	0 Coins 
+15	Horn of Plenty	Cornucopia	Treasure	$5	Worth 0 Coins 
 When you play this, gain a card costing up to 1 Coin per differently named card you have in play, counting this. If it’s a Victory card, trash this.
 16	Hunting Party	Cornucopia	Action	$5	+1 Card 
 +1 Action 
 Reveal your hand. Reveal cards from your deck until you reveal a card that isn’t in a duplicate of one in your hand and discard the rest.
 17	Jester	Cornucopia	Action - Attack	$5	+2 Coins 
 Each other player discards the top card of his deck. If it’s a Victory card he gains a Curse. Otherwise he gains a copy of the discarded card or you do, your choice.
-18	Fairgrounds	Cornucopia	Victory	$6	Worth 2 VP for every 5 differently named cards in your deck (rounded down)
+18	Fairgrounds	Cornucopia	Victory	$6	Worth 2 <VP> for every 5 differently named cards in your deck (rounded down)
 1	Crossroads	Hinterlands	Action	$2	Reveal your hand. 
 +1 Card per Victory card revealed. If this is the first time you played a Crossroads this turn, +3 Actions.
 2	Duchess	Hinterlands	Action	$2	+2 Coins 
@@ -261,7 +261,7 @@ Discard a card.
 7	Scheme	Hinterlands	Action	$3	+1 Card 
 +1 Action 
 At the start of Clean-up this turn, you may choose an Action card you have in play. If you discard it from play this turn, put it on your deck.
-8	Tunnel	Hinterlands	Victory - Reaction	$3	2 VP 
+8	Tunnel	Hinterlands	Victory - Reaction	$3	2 <VP> 
 ______________________
 When you discard this other than during a Clean-up phase, you may reveal it. If you do, gain a Gold.
 9	Jack of all Trades	Hinterlands	Action	$4	Gain a Silver. 
@@ -274,7 +274,7 @@ When you buy this or play it, each other player reveals the top 2 cards of his d
 +2 Coins 
 ______________________ 
 When you gain this, put it on top of your deck.
-12	Silk Road	Hinterlands	Victory	$4	Worth 1 VP for every 4 Victory cards in your deck (round down).
+12	Silk Road	Hinterlands	Victory	$4	Worth 1 <VP> for every 4 Victory cards in your deck (round down).
 13	Spice Merchant	Hinterlands	Action	$4	You may trash a Treasure from your hand. If you do, choose one: 
 +2 Cards and +1 Action; 
 or +2 Coins and +1 Buy.
@@ -319,7 +319,7 @@ Each other player draws a card, then discards down to 3 cards in hand.
 +2 Actions 
 ---------------------- 
 When you gain this, gain a card costing less than this.
-26	Farmland	Hinterlands	Victory	$6	2 VP 
+26	Farmland	Hinterlands	Victory	$6	2 <VP> 
 ---------- 
 When you buy this, trash a card from your hand. Gain a card costing exactly 2 Coins more than the trashed card.
 1	Ruins	Dark Ages	Action - Ruins	$0	Abandoned Mine: +1 Coin
@@ -330,12 +330,12 @@ Survivors: Look at the top 2 cards of your deck. Discard them or put them back i
 2	Madman	Dark Ages	Action	$0	+2 Actions
 Return this to the Madman pile. If you do, +1 Card per card in your hand.
 (This card is not in the supply.)
-3	Spoils	Dark Ages	Treasure	$0	3 Coins
+3	Spoils	Dark Ages	Treasure	$0	Worth 3 Coins
 When you play this, return it to the Spoils pile.
 (This is not in the Supply.)
 4	Hovel	Dark Ages	Reaction - Shelter	$1	When you buy a Victory card, you may trash this from your hand.
 5	Necropolis	Dark Ages	Action - Shelter	$1	+2 Actions
-6	Overgrown Estate	Dark Ages	Victory - Shelter	$1	0 Victory
+6	Overgrown Estate	Dark Ages	Victory - Shelter	$1	0 <VP>
 ______________________
 When you trash this, +1 Card.
 7	Poor House	Dark Ages	Action	$1	+4 Coins
@@ -350,7 +350,7 @@ Reveal the top card of your deck. If it's a Curse, Ruins, Shelter, or Victory ca
 When you discard this from play, if you did not buy any cards this turn, trash this and gain a Madman from the Madman pile.
 11	Sage	Dark Ages	Action	$3	+1 Action
 Reveal cards from the top of your deck until you reveal one costing 3 Coins or more. Put that card into your hand and discard the rest.
-12	Feodum	Dark Ages	Victory	$4	Worth 1 Victory for every 3 Silvers in your deck (round down).
+12	Feodum	Dark Ages	Victory	$4	Worth 1 <VP> for every 3 Silvers in your deck (round down).
 ______________________
 When you trash this, gain 3 Silvers.
 13	Fortress	Dark Ages	Action	$4	+1 Card, +2 Actions

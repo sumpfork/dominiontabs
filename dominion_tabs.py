@@ -63,6 +63,8 @@ class DominionTabs:
         text = re.sub('(\d)\s(c|C)oin(s)?', replace,text)
         replace = '<img src='"'images/coin_small_question.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (fontsize*1.2)
         text = re.sub('\?\s(c|C)oin(s)?', replace,text)
+        replace = '<img src='"'images/victory_emblem.png'"' width=%d height='"'120%%'"' valign='"'middle'"'/>' % (fontsize*1.5)
+        text = re.sub('\<VP\>', replace,text)
         return text
 
     def drawTab(self,card,x,y,useExtra=False):
