@@ -170,14 +170,14 @@ You can't buy this if you have any Copper in play.
 ----------
 While this is in play, when you buy a Victory card, gain a Gold.
 21	Bank	Prosperity	Treasure	$7	Worth ? Coins.
-When you play this, it`s worth $1 per Treasure card you have in play (counting this).
-22	Expand	Prosperity	Action	$7	Trash a card from your hand. Gain a card costing up to $3 more than the trashed card.
+When you play this, it`s worth 1 Coin per Treasure card you have in play (counting this).
+22	Expand	Prosperity	Action	$7	Trash a card from your hand. Gain a card costing up to 3 Coins more than the trashed card.
 23	Forge	Prosperity	Action	$7	Trash any number of cards from your hand. Gain a card with cost exactly equal to the total cost in coins of the trashed cards.
 24	King's Court	Prosperity	Action	$7	You may choose an Action card in your hand. Play it three times.
 25	Peddler	Prosperity	Action	$8	+1 Card; +1 Action; +2 Coin
 ----------
-During your Buy phase, this costs $2 less per Action card you have in play, but not less than $0.
-26	Platinum	Prosperity	Treasure	$9	5 Coins.
+During your Buy phase, this costs 2 Coins less per Action card you have in play, but not less than 0 Coins.
+26	Platinum	Prosperity	Treasure	$9	Worth 5 Coins.
 27	Colony	Prosperity	Victory	$11	10 Victory.
 1	Black Market	Promo	Action	$3	+2 Coins, Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought cards on the bottom of the Black Market deck in any order. 
 (Before the game, make a Black Market deck out of one copy of each Kingdom card not in the supply.).
@@ -188,7 +188,7 @@ During your Buy phase, this costs $2 less per Action card you have in play, but 
 At the start of Clean-up, if you have this and no more than one other Action card in play, you may put this on top of your deck.
 5	Governor	Promo	Action	$5	+1 Action 
 
-Choose one; you get the version in parentheses: Each player gets +1 (+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly $1 ($2) more.
+Choose one; you get the version in parentheses: Each player gets +1 (+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly 1 Coin (2 Coins) more.
 1	Copper	Common	Treasure	$0	1 Coin.
 2	Curse	Common	Curse	$0	-1 Victory.
 3	Estate	Common	Victory	$2	1 Victory.
@@ -199,14 +199,14 @@ Choose one; you get the version in parentheses: Each player gets +1 (+3) Cards; 
 1	Bag of Gold	Cornucopia	Action - Prize	$0	+1 Action 
 Gain a Gold, putting it on top of your deck. 
 (This is not in the Supply.)
-2	Diadem	Cornucopia	Treasure - Prize	$0	Worth $2. 
+2	Diadem	Cornucopia	Treasure - Prize	$0	Worth 2 Coins. 
 When you play this, +1 Coins per unused Action you have (Action, not Action card). 
 (This is not in the Supply.)
 3	Followers	Cornucopia	Action - Attack - Prize	$0	+2 Cards 
 Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand. 
 (This is not in the Supply.)
 4	Princess	Cornucopia	Action - Prize	$0	+1 Buy 
-While this is in play, cards cost $2 less, but not less than $0. 
+While this is in play, cards cost 2 Coins less, but not less than 0 Coins. 
 (This is not in the Supply.)
 5	Trusty Steed	Cornucopia	Action - Prize	$0	Choose two: +2 Cards; or +2 Actions; or +2 Coins; or gain 4 Silvers and put your deck into your discard pile. 
 (This is not in the Supply.)
@@ -297,7 +297,7 @@ While this is in play, when you buy a card, gain a card costing less than it tha
 19	Highway	Hinterlands	Action	$5	+1 Card 
 +1 Action 
 ______________________ 
-While this is in play, cards cost $1 less, but not less than $0.
+While this is in play, cards cost 1 Coin less, but not less than 0 Coins.
 20	Ill-Gotten Gains	Hinterlands	Treasure	$5	Worth 1 Coin 
 When you play this, you may gain a Copper, putting it into your hand. 
 ______________________ 
@@ -307,7 +307,7 @@ When you gain this, each other player gains a Curse.
 Discard 2 cards. 
 ______________________
 When you gain this, look through your discard pile (including this), reveal any number of Action cards from it, and shuffle them into your deck.
-22	Mandarin	Hinterlands	Action	$5	+3 coins 
+22	Mandarin	Hinterlands	Action	$5	+3 Coins 
 Put a card from your hand on top of your deck. 
 ---------------------- 
 When you gain this, put all Treasures you have in play on top of your deck in any order.
@@ -321,7 +321,7 @@ Each other player draws a card, then discards down to 3 cards in hand.
 When you gain this, gain a card costing less than this.
 26	Farmland	Hinterlands	Victory	$6	2 VP 
 ---------- 
-When you buy this, trash a card from your hand. Gain a card costing exactly $2 more than the trashed card.
+When you buy this, trash a card from your hand. Gain a card costing exactly 2 Coins more than the trashed card.
 1	Ruins	Dark Ages	Action - Ruins	$0	Abandoned Mine: +1 Coin
 Ruined Library: +1 Card
 Ruined Marked: :1 Buy
