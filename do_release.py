@@ -19,7 +19,7 @@ argsets = [
     ('',''),
     ('--orientation=vertical','vertical_'),
     ('--papersize=A4','A4_'),
-    ('--papersize=A4','vertical_A4_'),
+    ('--papersize=A4 --orientation=vertical','vertical_A4_'),
     ('--size=sleeved','sleeved_'),
     ('--size=sleeved --orientation=vertical','vertical_sleeved_')
 ]
