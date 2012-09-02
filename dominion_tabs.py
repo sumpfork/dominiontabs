@@ -51,9 +51,9 @@ class DominionTabs:
         ('Treasure',) : 'treasure.png',
         ('Treasure','Victory') : 'treasure-victory.png',
         ('Treasure','Prize') : 'treasure.png',
-        ('Treasure','Reaction') : 'treasure.png',
+        ('Treasure','Reaction') : 'treasure-reaction.png',
         ('Victory',) : 'victory.png',
-        ('Victory','Reaction') : 'victory.png',
+        ('Victory','Reaction') : 'victory-reaction.png',
         ('Victory','Shelter') : 'victory.png',
         ('Curse',) : 'curse.png'
         }
@@ -100,7 +100,8 @@ class DominionTabs:
         self.canvas.drawImage(os.path.join('images',DominionTabs.labelImages[card.types]),1,0,
                     self.tabLabelWidth-2,self.tabLabelHeight-1,
                     preserveAspectRatio=False,anchor='n')
-        if card.types[0] == 'Treasure' or card.types == ('Curse',):
+        if card.types[0] == 'Treasure' and (len(card.types) == 1 or card.types[1] != 'Reaction')\
+                or card.types == ('Curse',):
             textHeight = self.tabLabelHeight/2-4
             costHeight = textHeight
             potSize = 12
@@ -108,6 +109,9 @@ class DominionTabs:
         else:
             textHeight = self.tabLabelHeight/2-7
             costHeight = textHeight-1
+            if card.types == ('Victory','Reaction') or\
+                    card.types == ('Treasure','Reaction'):
+                costHeight = textHeight+1
             potSize = 11
             potHeight = 2
 
