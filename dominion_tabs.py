@@ -43,21 +43,25 @@ class DominionTabs:
         ('Action','Duration') : 'duration.png',
         ('Action','Looter') : 'action.png',
         ('Action','Prize') : 'action.png',
-        ('Action','Ruins') : 'action.png',
-        ('Action','Shelter') : 'action.png',
+        ('Action','Ruins') : 'ruins.png',
+        ('Action','Shelter') : 'shelter.png',
         ('Action','Attack','Looter') : 'action.png',
         ('Reaction',) : 'reaction.png',
-        ('Reaction','Shelter') : 'reaction.png',
+        ('Reaction','Shelter') : 'Shelter.png',
         ('Treasure',) : 'treasure.png',
         ('Treasure','Victory') : 'treasure-victory.png',
         ('Treasure','Prize') : 'treasure.png',
-        ('Treasure','Reaction') : 'treasure.png',
+        ('Treasure','Reaction') : 'treasure-reaction.png',
         ('Victory',) : 'victory.png',
-        ('Victory','Reaction') : 'victory.png',
-        ('Victory','Shelter') : 'victory.png',
+        ('Victory','Reaction') : 'victory-reaction.png',
+        ('Victory','Shelter') : 'shelter.png',
         ('Curse',) : 'curse.png'
         }
     
+    setImages = {
+        'base' : 'base_set.png',
+        }
+
     def add_inline_images(self, text, fontsize):
         replace = '<img src='"'images/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (fontsize*1.2)
         text = re.sub('(\d)\s(c|C)oin(s)?', replace,text)
@@ -99,8 +103,9 @@ class DominionTabs:
             self.canvas.translate(0,self.tabTotalHeight-self.tabLabelHeight)
         self.canvas.drawImage(os.path.join('images',DominionTabs.labelImages[card.types]),1,0,
                     self.tabLabelWidth-2,self.tabLabelHeight-1,
-                    preserveAspectRatio=False,anchor='n')
-        if card.types[0] == 'Treasure' or card.types == ('Curse',):
+                    preserveAspectRatio=False,anchor='n',mask='auto')
+        if card.types[0] == 'Treasure' and (len(card.types) == 1 or card.types[1] != 'Reaction')\
+                or card.types == ('Curse',):
             textHeight = self.tabLabelHeight/2-4
             costHeight = textHeight
             potSize = 12
@@ -108,6 +113,10 @@ class DominionTabs:
         else:
             textHeight = self.tabLabelHeight/2-7
             costHeight = textHeight-1
+            if card.types == ('Victory','Reaction') or\
+                    card.types == ('Treasure','Reaction') or\
+                    card.types == ('Action','Ruins'):
+                costHeight = textHeight+1
             potSize = 11
             potHeight = 2
 
@@ -118,6 +127,11 @@ class DominionTabs:
             self.canvas.drawImage("images/potion.png",21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
             textInset += potSize
             textWidth -= potSize
+
+        #set image
+        setImage = DominionTabs.setImages.get(card.cardset, None)
+        #if setImage:
+        #    self.canvas.drawImage(os.path.join('images',setImage), self.tabLabelWidth-20, 3, 14, 12, mask='auto')
 
         self.canvas.setFont('MinionPro-Bold',12)
         cost = str(card.cost)
@@ -231,7 +245,7 @@ class DominionTabs:
     def read_card_defs(self,fname):
         cards = []
         f = open(fname)
-        carddef = re.compile("^\d+\t+(?P<name>[\w\-' ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)")
+        carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)")
         currentCard = None
         for line in f:
             line = line.strip()
