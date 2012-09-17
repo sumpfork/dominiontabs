@@ -453,15 +453,5 @@ If it’s the named card, put it into your hand.
 42	Shelters	Dark Ages Extras	Action - Shelter	$1	Hovel: When you buy a Victory card, you may trash this from your hand.
 Necropolis: +2 Actions
 Overgrown Estate: 0 <VP>; when you trash this, +1 Card.
-43	Urchin / Mercenary	Dark Ages Extras	Action	$3		Urchin: 
-+1 Card +1 Action
-Each other player discards down to 4 cards in hand. When you play another Attack card with this in play, you may trash this. If you do, gain a Mercenary from the Mercenary pile.
-
-Mercenary:
-You may trash 2 cards from your hand. If you do, +2 Cards, + 2 Coins, and each other player discards down to 3 cards in hand. (This is not in the Supply.)
-44	Hermit / Madman	Dark Ages	Action	$3	Hermit: Look through your discard pile. You may trash a card from your discard pile or hand that is not a Treasure. Gain a card costing up to 3 Coins.
-When you discard this from play, if you did not buy any cards this turn, trash this and gain a Madman from the Madman pile.
-Madman:
-+2 Actions
-Return this to the Madman pile. If you do, +1 Card per card in your hand.
-(This card is not in the supply.)
+43	Urchin / Mercenary	Dark Ages Extras	Action	$3		Urchin: When you play this, you draw a card and get +1 Action, then each other player discards down to 4 cards in hand. Players who already have 4 or fewer cards in hand do not do anything. While Urchin is in play, when you play another Attack card, before resolving it, you may trash the Urchin. If you do, you gain a Mercenary. If there are no Mercenaries left you do not gain one. If you play the same Urchin twice in one turn, such as via Procession, that does not let you trash it for a Mercenary. If you play two different Urchins however, playing the second one will let you trash the first one.
+44	Hermit / Madman	Dark Ages	Action	$3	Hermit: When you play this, look through your discard pile, and then you may choose to trash a card that is not a Treasure, from either your hand or your discard pile. You do not have to trash a card and cannot trash Treasures. A card with multiple types, one of which is Treasure (such as Harem from Intrigue), is a Treasure. After trashing or not, you gain a card costing up to 3 Coins. The card you gain comes from the Supply and is put into your discard pile. Gaining a card is mandatory if it is possible. Then, when you discard Hermit from play - normally, in Clean-up, after playing it in your Action phase - if you did not buy any cards this turn, you trash Hermit and gain a Madman. It does not matter whether or not you gained cards other ways, only whether or not you bought a card. If there are no Madman cards left, you do not gain one. If Hermit is not discarded from play during Clean-up - for example, if you put it on your deck with Scheme (from Hinterlands) - then the ability that trashes it will not trigger.

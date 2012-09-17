@@ -140,7 +140,12 @@ class DominionTabs:
         self.canvas.drawCentredString(12,costHeight,cost)
         fontSize = 12
         name = card.name.upper()
-        name_parts = name.split()
+        name_parts = name.partition(' / ')
+        if name_parts[1]:
+            name_parts = (name_parts[0] + ' /', name_parts[2])
+        else:
+            name_parts = name.split()
+            
         width = pdfmetrics.stringWidth(name,'MinionPro-Regular',fontSize)
         while width > textWidth and fontSize > 8:
             fontSize -= 1
@@ -199,7 +204,7 @@ class DominionTabs:
 
     def read_card_extras(self,fname,cards):
         f = open(fname)
-        cardName = re.compile("^:::(?P<name>[ \w\-']*)")
+        cardName = re.compile("^:::(?P<name>[ \w\-/']*)")
         extras = {}
         currentCard = ""
         extra = ""
