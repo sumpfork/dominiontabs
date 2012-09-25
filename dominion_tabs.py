@@ -83,16 +83,30 @@ class DominionTabs:
             self.canvas.translate(self.options.back_offset,0)
         self.canvas.translate(x*self.tabWidth,y*self.tabTotalHeight)
     
-        #draw outline
-        #don't draw outline on back, in case lines don't line up with front
-        if not useExtra:
-            self.canvas.saveState()
-            self.canvas.setLineWidth(0.1)
-            if rightSide and not self.options.sameside:
-                self.canvas.translate(self.tabWidth,0)
-                self.canvas.scale(-1,1)
+        #draw outline or cropmarks
+        self.canvas.saveState()
+        self.canvas.setLineWidth(0.1)
+        if rightSide and not self.options.sameside:
+            self.canvas.translate(self.tabWidth,0)
+            self.canvas.scale(-1,1)
+        if not self.options.cropmarks and not useExtra:
+            #don't draw outline on back, in case lines don't line up with front
             self.canvas.lines(self.tabOutline)
-            self.canvas.restoreState()
+        elif self.options.cropmarks:
+            cmw = 0.5*cm
+            if x == 0 or x == self.numTabsHorizontal-1:
+                self.canvas.line(-2*cmw,0,-cmw,0)
+                self.canvas.line(-2*cmw,self.tabBaseHeight,-cmw,self.tabBaseHeight)
+                if y == 0:
+                    self.canvas.line(0,-2*cmw,0,-cmw)
+                    self.canvas.line(self.tabWidth,-2*cmw,self.tabWidth,-cmw)
+                    self.canvas.line(self.tabWidth-self.tabLabelWidth,-2*cmw,self.tabWidth-self.tabLabelWidth,-cmw)
+                elif y == self.numTabsVertical-1:
+                    self.canvas.line(0,self.tabTotalHeight+cmw,0,self.tabTotalHeight+2*cmw)
+                    self.canvas.line(self.tabWidth,self.tabTotalHeight+cmw,self.tabWidth,self.tabTotalHeight+2*cmw)
+                    self.canvas.line(self.tabWidth-self.tabLabelWidth,self.tabTotalHeight+cmw,self.tabWidth-self.tabLabelWidth,self.tabTotalHeight+2*cmw)
+                
+        self.canvas.restoreState()
 
         #draw tab flap
         self.canvas.saveState()
@@ -313,6 +327,8 @@ class DominionTabs:
                           help="force all label tabs to be on the same side")
         parser.add_option("--expansions",action="append",type="string",
                           help="subset of dominion expansions to produce tabs for")
+        parser.add_option("--cropmarks",action="store_true",dest="cropmarks",
+                           help="print crop marks on both sides, rather than tab outlines on one")
         (self.options,args) = parser.parse_args(argstring)
 
         size = self.options.size.upper()
