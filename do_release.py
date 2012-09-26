@@ -2,7 +2,7 @@ import dominion_tabs
 from __init__ import __version__
 from zipfile import ZipFile,ZIP_DEFLATED
 
-prefix = 'sumpfork_dominion_tabs_'
+prefix = 'generated/sumpfork_dominion_tabs_'
 postfix = 'v' + __version__ + '.pdf'
 
 tabs = dominion_tabs.DominionTabs()
@@ -27,7 +27,7 @@ argsets = [
 fnames = [doit(args[0],args[1]) for args in argsets]
 print fnames
 
-zip = ZipFile('sumpfork_dominion_tabs_v' + __version__ + '.zip','w',ZIP_DEFLATED)
+zip = ZipFile('generated/sumpfork_dominion_tabs_v' + __version__ + '.zip','w',ZIP_DEFLATED)
 for f in fnames:
     zip.write(f)
 zip.close()
