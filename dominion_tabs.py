@@ -293,6 +293,18 @@ class DominionTabs:
         cards = split(cards,self.numTabsVertical*self.numTabsHorizontal)
         for pageCards in cards:
             #print 'pageCards:',pageCards
+
+            #print sets for this page
+            self.canvas.saveState()
+            self.canvas.setFont('MinionPro-Regular',12)
+            sets = []
+            for c in pageCards:
+                setTitle = c.cardset.title() 
+                if setTitle not in sets:
+                    sets.append(setTitle)
+            self.canvas.drawCentredString(self.paperwidth/2,20,'/'.join(sets))
+            self.canvas.restoreState()
+
             for i,card in enumerate(pageCards):       
                 #print card
                 x = i % self.numTabsHorizontal
@@ -352,10 +364,10 @@ class DominionTabs:
 
         if papersize == 'A4':
             print "Using A4 sized paper."
-            paperwidth, paperheight = A4
+            self.paperwidth, self.paperheight = A4
         else:
             print "Using letter sized paper."
-            paperwidth, paperheight = LETTER
+            self.paperwidth, self.paperheight = LETTER
 
         minmarginwidth, minmarginheight = self.options.minmargin.split ("x", 1)
         minmarginwidth, minmarginheight = float (minmarginwidth) * cm, float (minmarginheight) * cm
@@ -369,21 +381,21 @@ class DominionTabs:
         self.tabLabelWidth = 3.5*cm
         self.tabTotalHeight = self.tabBaseHeight + self.tabLabelHeight
 
-        numTabsVerticalP = int ((paperheight - 2*minmarginheight) / self.tabTotalHeight)
-        numTabsHorizontalP = int ((paperwidth - 2*minmarginwidth) / self.tabWidth)
-        numTabsVerticalL = int ((paperwidth - 2*minmarginwidth) / self.tabWidth)
-        numTabsHorizontalL = int ((paperheight - 2*minmarginheight) / self.tabTotalHeight)
+        numTabsVerticalP = int ((self.paperheight - 2*minmarginheight) / self.tabTotalHeight)
+        numTabsHorizontalP = int ((self.paperwidth - 2*minmarginwidth) / self.tabWidth)
+        numTabsVerticalL = int ((self.paperwidth - 2*minmarginwidth) / self.tabWidth)
+        numTabsHorizontalL = int ((self.paperheight - 2*minmarginheight) / self.tabTotalHeight)
 
         if numTabsVerticalL * numTabsHorizontalL > numTabsVerticalP * numTabsHorizontalP:
             self.numTabsVertical, self.numTabsHorizontal\
                 = numTabsVerticalL, numTabsHorizontalL
-            paperheight, paperwidth = paperwidth, paperheight
+            self.paperheight, self.paperwidth = self.paperwidth, self.paperheight
         else:
             self.numTabsVertical, self.numTabsHorizontal\
                 = numTabsVerticalP, numTabsHorizontalP
 
-        self.horizontalMargin = (paperwidth-self.numTabsHorizontal*self.tabWidth)/2
-        self.verticalMargin = (paperheight-self.numTabsVertical*self.tabTotalHeight)/2
+        self.horizontalMargin = (self.paperwidth-self.numTabsHorizontal*self.tabWidth)/2
+        self.verticalMargin = (self.paperheight-self.numTabsVertical*self.tabTotalHeight)/2
 
         print "Margins: %fcm h, %fcm v\n" % (self.horizontalMargin / cm, 
                                              self.verticalMargin / cm)
@@ -424,7 +436,7 @@ class DominionTabs:
             fname = args[0]
         else:
             fname = "dominion_tabs.pdf"
-        self.canvas = canvas.Canvas(fname, pagesize=(paperwidth, paperheight))
+        self.canvas = canvas.Canvas(fname, pagesize=(self.paperwidth, self.paperheight))
         #pprint.pprint(self.canvas.getAvailableFonts())
         self.drawCards(cards)
         self.canvas.save()
