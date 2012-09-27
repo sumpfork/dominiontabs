@@ -86,7 +86,9 @@ class DominionTabs:
         #draw outline or cropmarks
         self.canvas.saveState()
         self.canvas.setLineWidth(0.1)
-        if rightSide and not self.options.sameside:
+        cropmarksright = (x == self.numTabsHorizontal-1)
+        cropmarksleft = (x == 0)
+        if rightSide and not self.options.sameside and not cropmarksleft or cropmarksright:
             self.canvas.translate(self.tabWidth,0)
             self.canvas.scale(-1,1)
         if not self.options.cropmarks and not useExtra:
@@ -94,7 +96,7 @@ class DominionTabs:
             self.canvas.lines(self.tabOutline)
         elif self.options.cropmarks:
             cmw = 0.5*cm
-            if x == 0 or x == self.numTabsHorizontal-1:
+            if cropmarksleft or cropmarksright:
                 self.canvas.line(-2*cmw,0,-cmw,0)
                 self.canvas.line(-2*cmw,self.tabBaseHeight,-cmw,self.tabBaseHeight)
                 if y == 0:
