@@ -96,7 +96,8 @@ class DominionTabs:
             self.canvas.lines(self.tabOutline)
         elif self.options.cropmarks:
             cmw = 0.5*cm
-            if cropmarksright and not rightSide:
+            mirror = cropmarksright and not rightSide or cropmarksleft and rightSide
+            if mirror:
                 self.canvas.saveState()
                 self.canvas.translate(self.tabWidth,0)
                 self.canvas.scale(-1,1)
@@ -105,7 +106,7 @@ class DominionTabs:
                 self.canvas.line(-2*cmw,self.tabBaseHeight,-cmw,self.tabBaseHeight)
                 if y > 0:
                     self.canvas.line(-2*cmw,self.tabTotalHeight,-cmw,self.tabTotalHeight)
-            if cropmarksright and not rightSide:
+            if mirror:
                 self.canvas.restoreState()
             if y == 0:
                 self.canvas.line(self.tabWidth,-2*cmw,self.tabWidth,-cmw)
@@ -114,7 +115,10 @@ class DominionTabs:
                     self.canvas.line(0,-2*cmw,0,-cmw)
             elif y == self.numTabsVertical-1:
                 self.canvas.line(self.tabWidth,self.tabTotalHeight+cmw,self.tabWidth,self.tabTotalHeight+2*cmw)
-                self.canvas.line(self.tabWidth-self.tabLabelWidth,self.tabTotalHeight+cmw,self.tabWidth-self.tabLabelWidth,self.tabTotalHeight+2*cmw)
+                self.canvas.line(self.tabWidth-self.tabLabelWidth,
+                                 self.tabTotalHeight+cmw,
+                                 self.tabWidth-self.tabLabelWidth,
+                                 self.tabTotalHeight+2*cmw)
                 if x == 0:
                     self.canvas.line(0,self.tabTotalHeight+cmw,0,self.tabTotalHeight+2*cmw)
                 
