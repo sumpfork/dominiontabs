@@ -145,7 +145,8 @@ class DominionTabs:
             costHeight = textHeight-1
             if card.types == ('Victory','Reaction') or\
                     card.types == ('Treasure','Reaction') or\
-                    card.types == ('Action','Ruins'):
+                    card.types == ('Action','Ruins') or\
+                    len(card.types) > 1 and card.types[1].lower() == 'shelter':
                 costHeight = textHeight+1
             potSize = 11
             potHeight = 2
@@ -167,7 +168,10 @@ class DominionTabs:
         cost = str(card.cost)
         if 'Prize' in card.types:
             cost += '*'
-        self.canvas.drawCentredString(12,costHeight,cost)
+        costWidthOffset = 12
+        if len(card.types) > 1 and card.types[1].lower() == 'shelter':
+            costWidthOffset = 10
+        self.canvas.drawCentredString(costWidthOffset,costHeight,cost)
         fontSize = 12
         name = card.name.upper()
         name_parts = name.partition(' / ')
