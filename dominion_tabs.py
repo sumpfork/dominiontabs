@@ -57,7 +57,8 @@ class DominionTabs:
         ('Victory','Shelter') : 'shelter.png',
         ('Curse',) : 'curse.png'
         }
-    
+
+    noCoinLabelImages = dict(((name,''.join((os.path.splitext(fname)[0]+'_nc',os.path.splitext(fname)[1]))) for name,fname in labelImages.iteritems()))
     setImages = {
         'base' : 'base_set.png',
         }
@@ -131,7 +132,7 @@ class DominionTabs:
                         self.tabTotalHeight-self.tabLabelHeight)
         else:
             self.canvas.translate(0,self.tabTotalHeight-self.tabLabelHeight)
-        self.canvas.drawImage(os.path.join('images',DominionTabs.labelImages[card.types]),1,0,
+        self.canvas.drawImage(os.path.join('images',DominionTabs.noCoinLabelImages[card.types]),1,0,
                     self.tabLabelWidth-2,self.tabLabelHeight-1,
                     preserveAspectRatio=False,anchor='n',mask='auto')
         if card.types[0] == 'Treasure' and (len(card.types) == 1 or card.types[1] != 'Reaction')\
@@ -151,6 +152,7 @@ class DominionTabs:
             potSize = 11
             potHeight = 2
 
+        self.canvas.drawImage("images/coin_small.png",4,costHeight-5,16,16,preserveAspectRatio=True,mask='auto')
         textInset = 22
         textWidth = 85
 
@@ -169,8 +171,8 @@ class DominionTabs:
         if 'Prize' in card.types:
             cost += '*'
         costWidthOffset = 12
-        if len(card.types) > 1 and card.types[1].lower() == 'shelter':
-            costWidthOffset = 10
+        #if len(card.types) > 1 and card.types[1].lower() == 'shelter':
+        #    costWidthOffset = 10
         self.canvas.drawCentredString(costWidthOffset,costHeight,cost)
         fontSize = 12
         name = card.name.upper()
