@@ -163,8 +163,8 @@ class DominionTabs:
 
         #set image
         setImage = DominionTabs.setImages.get(card.cardset, None)
-        #if setImage:
-        #    self.canvas.drawImage(os.path.join('images',setImage), self.tabLabelWidth-20, 3, 14, 12, mask='auto')
+        if setImage:
+            self.canvas.drawImage(os.path.join('images',setImage), self.tabLabelWidth-20, 3, 14, 12, mask='auto')
 
         self.canvas.setFont('MinionPro-Bold',12)
         cost = str(card.cost)
@@ -400,7 +400,7 @@ class DominionTabs:
             self.tabWidth, self.tabBaseHeight = dominionCardWidth, dominionCardHeight
 
         self.tabLabelHeight = 0.9*cm
-        self.tabLabelWidth = 3.5*cm
+        self.tabLabelWidth = 4*cm
         self.tabTotalHeight = self.tabBaseHeight + self.tabLabelHeight
 
         numTabsVerticalP = int ((self.paperheight - 2*minmarginheight) / self.tabTotalHeight)
