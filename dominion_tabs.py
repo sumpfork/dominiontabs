@@ -109,6 +109,7 @@ class DominionTabs:
         'intrigue' : 'intrigue_set.png',
         'seaside' : 'seaside_set.png',
         'prosperity' : 'prosperity_set.png',
+        'alchemy' : 'alchemy_set.png',
         }
 
     def add_inline_images(self, text, fontsize):
