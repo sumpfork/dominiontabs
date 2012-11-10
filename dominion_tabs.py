@@ -217,7 +217,7 @@ class DominionTabs:
             
         if setImage:
             self.canvas.drawImage(os.path.join('images',setImage), self.tabLabelWidth-20, potHeight, 14, 12, mask='auto')
-        elif setImage == None:
+        elif setImage == None and card.cardset != 'common':
             print 'warning, no set image for set "%s" card "%s"' % (card.cardset, card.name)
             DominionTabs.setImages[card.cardset] = 0
             DominionTabs.promoImages[card.name.lower()] = 0
