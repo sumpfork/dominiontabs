@@ -27,6 +27,9 @@ class Card:
         self.description = description
         self.extra = ""
 
+    def getType(self):
+        return DominionTabs.cardTypes[self.types]
+
     def __repr__(self):
         return '"' + self.name + '"'
 
@@ -34,10 +37,11 @@ class Card:
         return self.name + ' ' + self.cardset + ' ' + '-'.join(self.types) + ' ' + `self.cost` + ' ' + self.description + ' ' + self.extra
 
 class CardType:
-    def __init__(self, typeNames, tabImageFile, contentHeightOffset):
+    def __init__(self, typeNames, tabImageFile, tabTextHeightOffset=0, tabCostHeightOffset=-1):
         self.typeNames = typeNames
         self.tabImageFile = tabImageFile
-        self.contentHeightOffset = contentHeightOffset
+        self.tabTextHeightOffset = tabTextHeightOffset
+        self.tabCostHeightOffset = tabCostHeightOffset
 
     def getTypeNames(self):
         return self.typeNames
@@ -48,61 +52,38 @@ class CardType:
     def getNoCoinTabImageFile(self):
         return ''.join(os.path.splitext(self.tabImageFile)[0] + '_nc' + os.path.splitext(self.tabImageFile)[1])
 
-    def getTabContentHeightOffset(self):
-        return self.contentHeightOffset
+    def getTabTextHeightOffset(self):
+        return self.tabTextHeightOffset
+
+    def getTabCostHeightOffset(self):
+        return self.tabCostHeightOffset
 
 class DominionTabs:
     cardTypes = [
-        CardType(('Action',), 'action.png', 0),
-        CardType(('Action','Attack'), 'action.png', 0),
-        CardType(('Action','Attack','Prize'), 'action.png', 0),
-        CardType(('Action','Reaction'), 'reaction.png', 0),
-        CardType(('Action','Victory'), 'action-victory.png', 0),
-        CardType(('Action','Duration'), 'duration.png', 0),
-        CardType(('Action','Looter'), 'action.png', 0),
-        CardType(('Action','Prize'), 'action.png', 0),
-        CardType(('Action','Ruins'), 'ruins.png', 0),
-        CardType(('Action','Shelter'), 'shelter.png', 0),
-        CardType(('Action','Attack','Looter'), 'action.png', 0),
-        CardType(('Reaction',), 'reaction.png', 0),
-        CardType(('Reaction','Shelter'), 'Shelter.png', 0),
-        CardType(('Treasure',), 'treasure.png', 0),
-        CardType(('Treasure','Victory'), 'treasure-victory.png', 0),
-        CardType(('Treasure','Prize'), 'treasure.png', 0),
-        CardType(('Treasure','Reaction'), 'treasure-reaction.png', 0),
-        CardType(('Victory',), 'victory.png', 0),
-        CardType(('Victory','Reaction'), 'victory-reaction.png', 0),
-        CardType(('Victory','Shelter'), 'shelter.png', 0),
-        CardType(('Curse',), 'curse.png', 0),
+        CardType(('Action',), 'action.png'),
+        CardType(('Action','Attack'), 'action.png'),
+        CardType(('Action','Attack','Prize'), 'action.png'),
+        CardType(('Action','Reaction'), 'reaction.png'),
+        CardType(('Action','Victory'), 'action-victory.png'),
+        CardType(('Action','Duration'), 'duration.png'),
+        CardType(('Action','Looter'), 'action.png'),
+        CardType(('Action','Prize'), 'action.png'),
+        CardType(('Action','Ruins'), 'ruins.png', 0, 1),
+        CardType(('Action','Shelter'), 'shelter.png', 0, 1),
+        CardType(('Action','Attack','Looter'), 'action.png'),
+        CardType(('Reaction',), 'reaction.png'),
+        CardType(('Reaction','Shelter'), 'Shelter.png', 0, 1),
+        CardType(('Treasure',), 'treasure.png',3,0),
+        CardType(('Treasure','Victory'), 'treasure-victory.png'),
+        CardType(('Treasure','Prize'), 'treasure.png',3,0),
+        CardType(('Treasure','Reaction'), 'treasure-reaction.png', 0, 1),
+        CardType(('Victory',), 'victory.png'),
+        CardType(('Victory','Reaction'), 'victory-reaction.png', 0, 1),
+        CardType(('Victory','Shelter'), 'shelter.png', 0, 1),
+        CardType(('Curse',), 'curse.png',3),
         ]
 
     cardTypes = dict(((c.getTypeNames(),c) for c in cardTypes))
-
-    labelImages = {
-        ('Action',) : 'action.png',
-        ('Action','Attack') : 'action.png',
-        ('Action','Attack','Prize') : 'action.png',
-        ('Action','Reaction') : 'reaction.png',
-        ('Action','Victory') : 'action-victory.png',
-        ('Action','Duration') : 'duration.png',
-        ('Action','Looter') : 'action.png',
-        ('Action','Prize') : 'action.png',
-        ('Action','Ruins') : 'ruins.png',
-        ('Action','Shelter') : 'shelter.png',
-        ('Action','Attack','Looter') : 'action.png',
-        ('Reaction',) : 'reaction.png',
-        ('Reaction','Shelter') : 'Shelter.png',
-        ('Treasure',) : 'treasure.png',
-        ('Treasure','Victory') : 'treasure-victory.png',
-        ('Treasure','Prize') : 'treasure.png',
-        ('Treasure','Reaction') : 'treasure-reaction.png',
-        ('Victory',) : 'victory.png',
-        ('Victory','Reaction') : 'victory-reaction.png',
-        ('Victory','Shelter') : 'shelter.png',
-        ('Curse',) : 'curse.png'
-        }
-
-    noCoinLabelImages = dict(((name,''.join((os.path.splitext(fname)[0]+'_nc',os.path.splitext(fname)[1]))) for name,fname in labelImages.iteritems()))
 
     setImages = {
         'base' : 'base_set.png',
@@ -110,6 +91,17 @@ class DominionTabs:
         'seaside' : 'seaside_set.png',
         'prosperity' : 'prosperity_set.png',
         'alchemy' : 'alchemy_set.png',
+        'cornucopia' : 'cornucopia_set.png',
+        'hinterlands' : 'hinterlands_set.png',
+        'dark ages' : 'dark_ages_set.png',
+        'dark ages extras' : 'dark_ages_set.png',
+        }
+    promoImages = {
+        'walled village' : 'walled_village_set.png',
+        'stash' : 'stash_set.png',
+        'governor' : 'governor_set.png',
+        'black market' : 'black_market_set.png',
+        'envoy' : 'envoy_set.png'
         }
 
     def add_inline_images(self, text, fontsize):
@@ -181,26 +173,33 @@ class DominionTabs:
                         self.tabTotalHeight-self.tabLabelHeight)
         else:
             self.canvas.translate(0,self.tabTotalHeight-self.tabLabelHeight)
-        self.canvas.drawImage(os.path.join('images',DominionTabs.noCoinLabelImages[card.types]),1,0,
+        self.canvas.drawImage(os.path.join('images',card.getType().getNoCoinTabImageFile()),1,0,
                     self.tabLabelWidth-2,self.tabLabelHeight-1,
                     preserveAspectRatio=False,anchor='n',mask='auto')
-        if card.types[0] == 'Treasure' and (len(card.types) == 1 or card.types[1] != 'Reaction'
-                                            and card.types[1] != 'Victory')\
-                or card.types == ('Curse',):
-            textHeight = self.tabLabelHeight/2-4
-            costHeight = textHeight
-            potSize = 12
-            potHeight = 5
-        else:
-            textHeight = self.tabLabelHeight/2-7
-            costHeight = textHeight-1
-            if card.types == ('Victory','Reaction') or\
-                    card.types == ('Treasure','Reaction') or\
-                    card.types == ('Action','Ruins') or\
-                    len(card.types) > 1 and card.types[1].lower() == 'shelter':
-                costHeight = textHeight+1
-            potSize = 11
-            potHeight = 2
+
+
+        textHeight = self.tabLabelHeight/2-7+card.getType().getTabTextHeightOffset()
+        costHeight = textHeight + card.getType().getTabCostHeightOffset()
+        potHeight = 3 + card.getType().getTabTextHeightOffset()
+        potSize = 11
+
+        # if card.types[0] == 'Treasure' and (len(card.types) == 1 or card.types[1] != 'Reaction'
+        #                                     and card.types[1] != 'Victory')\
+        #         or card.types == ('Curse',):
+        #     textHeight = self.tabLabelHeight/2-4
+        #     costHeight = textHeight
+        #     potSize = 12
+        #     potHeight = 5
+        # else:
+        #     textHeight = self.tabLabelHeight/2-7
+        #     costHeight = textHeight-1
+        #     if card.types == ('Victory','Reaction') or\
+        #             card.types == ('Treasure','Reaction') or\
+        #             card.types == ('Action','Ruins') or\
+        #             len(card.types) > 1 and card.types[1].lower() == 'shelter':
+        #         costHeight = textHeight+1
+        #     potSize = 11
+        #     potHeight = 2
 
         self.canvas.drawImage("images/coin_small.png",4,costHeight-5,16,16,preserveAspectRatio=True,mask='auto')
         textInset = 22
@@ -213,11 +212,15 @@ class DominionTabs:
 
         #set image
         setImage = DominionTabs.setImages.get(card.cardset, None)
+        if not setImage:
+            setImage = DominionTabs.promoImages.get(card.name.lower(), None)
+            
         if setImage:
             self.canvas.drawImage(os.path.join('images',setImage), self.tabLabelWidth-20, potHeight, 14, 12, mask='auto')
         elif setImage == None:
-            print 'warning, no image for set',card.cardset
+            print 'warning, no set image for set "%s" card "%s"' % (card.cardset, card.name)
             DominionTabs.setImages[card.cardset] = 0
+            DominionTabs.promoImages[card.name.lower()] = 0
 
         self.canvas.setFont('MinionPro-Bold',12)
         cost = str(card.cost)
