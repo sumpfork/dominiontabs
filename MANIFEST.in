@@ -1,6 +1,7 @@
 include dominion_cards.txt
 include dominion_card_extras.txt
 include *.png
+include images/*.png
 exclude card_images/*
 exclude old_images/*
 
