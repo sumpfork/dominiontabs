@@ -104,12 +104,16 @@ class DominionTabs:
         'envoy' : 'envoy_set.png'
         }
 
+    def __init__(self):
+        self.filedir = os.path.dirname(__file__)
+
     def add_inline_images(self, text, fontsize):
-        replace = '<img src='"'images/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (fontsize*1.2)
+        path = os.path.join(self.filedir,'images')
+        replace = '<img src='"'%s/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (path,fontsize*1.2)
         text = re.sub('(\d)\s(c|C)oin(s)?', replace,text)
-        replace = '<img src='"'images/coin_small_question.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (fontsize*1.2)
+        replace = '<img src='"'%s/coin_small_question.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (path,fontsize*1.2)
         text = re.sub('\?\s(c|C)oin(s)?', replace,text)
-        replace = '<img src='"'images/victory_emblem.png'"' width=%d height='"'120%%'"' valign='"'middle'"'/>' % (fontsize*1.5)
+        replace = '<img src='"'%s/victory_emblem.png'"' width=%d height='"'120%%'"' valign='"'middle'"'/>' % (path,fontsize*1.5)
         text = re.sub('\<VP\>', replace,text)
         return text
 
@@ -173,7 +177,7 @@ class DominionTabs:
                         self.tabTotalHeight-self.tabLabelHeight)
         else:
             self.canvas.translate(0,self.tabTotalHeight-self.tabLabelHeight)
-        self.canvas.drawImage(os.path.join('images',card.getType().getNoCoinTabImageFile()),1,0,
+        self.canvas.drawImage(os.path.join(self.filedir,'images',card.getType().getNoCoinTabImageFile()),1,0,
                     self.tabLabelWidth-2,self.tabLabelHeight-1,
                     preserveAspectRatio=False,anchor='n',mask='auto')
 
@@ -201,12 +205,12 @@ class DominionTabs:
         #     potSize = 11
         #     potHeight = 2
 
-        self.canvas.drawImage("images/coin_small.png",4,costHeight-5,16,16,preserveAspectRatio=True,mask='auto')
+        self.canvas.drawImage(os.path.join(self.filedir,'images','coin_small.png'),4,costHeight-5,16,16,preserveAspectRatio=True,mask='auto')
         textInset = 22
         textWidth = 85
 
         if card.potcost:
-            self.canvas.drawImage("images/potion.png",21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
+            self.canvas.drawImage(os.path.join(self.filedir,'images','potion.png'),21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
             textInset += potSize
             textWidth -= potSize
 
@@ -216,7 +220,7 @@ class DominionTabs:
             setImage = DominionTabs.promoImages.get(card.name.lower(), None)
             
         if setImage:
-            self.canvas.drawImage(os.path.join('images',setImage), self.tabLabelWidth-20, potHeight, 14, 12, mask='auto')
+            self.canvas.drawImage(os.path.join(self.filedir,'images',setImage), self.tabLabelWidth-20, potHeight, 14, 12, mask='auto')
         elif setImage == None and card.cardset != 'common':
             print 'warning, no set image for set "%s" card "%s"' % (card.cardset, card.name)
             DominionTabs.setImages[card.cardset] = 0
@@ -310,7 +314,7 @@ class DominionTabs:
                     extras[currentCard] = extra
                 currentCard = m.groupdict()["name"]
                 extra = ""
-                if currentCard and (currentCard not in (c.name for c in cards)):
+                if not self.options.expansions and currentCard and (currentCard not in (c.name for c in cards)):
                     print currentCard + ' has extra description, but is not in cards'
             else:
                 extra += line
@@ -339,7 +343,7 @@ class DominionTabs:
         else:
             card.description += line
 
-    def read_card_defs(self,fname):
+    def read_card_defs(self,fname,fileobject=None):
         cards = []
         f = open(fname)
         carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)")
@@ -400,7 +404,8 @@ class DominionTabs:
                 self.canvas.restoreState()
             self.canvas.showPage()
 
-    def main(self,argstring):
+    @staticmethod
+    def parse_opts(argstring):
         parser = OptionParser()
         parser.add_option("--back_offset",type="int",dest="back_offset",default=0,
                           help="Points to offset the back page to the right; needed for some printers")
@@ -419,13 +424,22 @@ class DominionTabs:
                           help="subset of dominion expansions to produce tabs for")
         parser.add_option("--cropmarks",action="store_true",dest="cropmarks",
                            help="print crop marks on both sides, rather than tab outlines on one")
-        (self.options,args) = parser.parse_args(argstring)
+        return parser.parse_args(argstring)
+        
+    def main(self,argstring):
+        options,args = DominionTabs.parse_opts(argstring)
+        fname = None
+        if args:
+            fname = args[0]
+        return self.generate(options,fname)
 
+    def generate(self,options,f):
+        self.options = options
         size = self.options.size.upper()
         if size == 'SLEEVED' or self.options.sleeved:
             dominionCardWidth, dominionCardHeight = (9.4*cm, 6.15*cm)
             print 'Using sleeved card size, %.2fcm x %.2fcm' % (dominionCardWidth/cm,dominionCardHeight/cm)
-        elif size == 'NORMAL':
+        elif size in ['NORMAL','UNSLEEVED']:
             dominionCardWidth, dominionCardHeight = (9.1*cm, 5.9*cm)
             print 'Using normal card size, %.2fcm x%.2fcm' % (dominionCardWidth/cm,dominionCardHeight/cm)
         else:
@@ -490,17 +504,19 @@ class DominionTabs:
                       (0,self.tabBaseHeight,0,0)]
 
         try:
-            pdfmetrics.registerFont(TTFont('MinionPro-Regular','fonts/MinionPro-Regular.ttf'))
-            pdfmetrics.registerFont(TTFont('MinionPro-Bold','fonts/MinionPro-Bold.ttf'))
+            dirn = os.path.join(self.filedir,'fonts')
+            pdfmetrics.registerFont(TTFont('MinionPro-Regular',os.path.join(dirn,'MinionPro-Regular.ttf')))
+            pdfmetrics.registerFont(TTFont('MinionPro-Bold',os.path.join(dirn,'MinionPro-Bold.ttf')))
         except:
+            raise
             pdfmetrics.registerFont(TTFont('MinionPro-Regular','OptimusPrincepsSemiBold.ttf'))
             pdfmetrics.registerFont(TTFont('MinionPro-Bold','OptimusPrinceps.ttf'))
-        cards = self.read_card_defs("dominion_cards.txt")
+        cards = self.read_card_defs(os.path.join(self.filedir,"dominion_cards.txt"))
         if self.options.expansions:
             self.options.expansions = [o.lower() for o in self.options.expansions]
             cards=[c for c in cards if c.cardset in self.options.expansions]
         cards.sort(cmp=lambda x,y: cmp((x.cardset,x.name),(y.cardset,y.name)))
-        extras = self.read_card_extras("dominion_card_extras.txt",cards)
+        extras = self.read_card_extras(os.path.join(self.filedir,"dominion_card_extras.txt"),cards)
         #print '%d cards read' % len(cards)
         sets = {}
         types = {}
@@ -510,11 +526,9 @@ class DominionTabs:
         #pprint.pprint(sets)
         #pprint.pprint(types)
 
-        if args:
-            fname = args[0]
-        else:
-            fname = "dominion_tabs.pdf"
-        self.canvas = canvas.Canvas(fname, pagesize=(self.paperwidth, self.paperheight))
+        if not f:
+            f = "dominion_tabs.pdf"
+        self.canvas = canvas.Canvas(f, pagesize=(self.paperwidth, self.paperheight))
         #pprint.pprint(self.canvas.getAvailableFonts())
         self.drawCards(cards)
         self.canvas.save()
