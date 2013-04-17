@@ -1,28 +1,28 @@
-1	Cellar	Base	Action	$2	+1 Action, Discard any number of cards. +1 Card per card discarded.
-2	Chapel	Base	Action	$2	Trash up to 4 cards from your hand.
-3	Moat	Base	Action - Reaction	$2	+2 Cards, When another player plays an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack.
-4	Chancellor	Base	Action	$3	+2 Coins, You may immediately put your deck into your discard pile.
-5	Village	Base	Action	$3	+1 Card, +2 Actions.
-6	Woodcutter	Base	Action	$3	+1 Buy, +2 Coins.
-7	Workshop	Base	Action	$3	Gain a card costing up to 4 Coins.
-8	Bureaucrat	Base	Action - Attack	$4	Gain a silver card; put it on top of your deck. Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards).
-9	Feast	Base	Action	$4	Trash this card. Gain a card costing up to 5 Coins.
-10	Gardens	Base	Victory	$4	Variable, Worth 1 <VP> for every 10 cards in your deck (rounded down).
-11	Militia	Base	Action - Attack	$4	+2 Coins, Each other player discards down to 3 cards in his hand.
-12	Moneylender	Base	Action	$4	Trash a Copper from your hand. If you do, +3 Coins.
-13	Remodel	Base	Action	$4	Trash a card from your hand. Gain a card costing up to 2 Coins more than the trashed card.
-14	Smithy	Base	Action	$4	+3 Cards.
-15	Spy	Base	Action - Attack	$4	+1 Card, +1 Action, Each player (including you) reveals the top card of his deck and either discards it or puts it back, your chouce.
-16	Thief	Base	Action - Attack	$4	Each other player reveals the top 2 cards of his deck. If they revealed any Treasure cards, they trash one of them that you choose. You may gain any or all of these trashed cards. They discard the other revealed cards.
-17	Throne Room	Base	Action	$4	Choose an Action card in your hand. Play it twice.
-18	Council Room	Base	Action	$5	+4 Cards, +1 Buy, Each other player draws a card.
-19	Festival	Base	Action	$5	+2 Actions, +1 Buy, +2 Coins.
-20	Laboratory	Base	Action	$5	+2 Cards, +1 Action.
-21	Library	Base	Action	$5	Draw until you have 7 cards in hand. You may set aside any Action cards drawn this way, as you draw them; discard the set aside cards after you finish drawing.
-22	Market	Base	Action	$5	+1 Card, +1 Action, +1 Buy, +1 Coin.
-23	Mine	Base	Action	$5	Trash a Treasure card from your hand. Gain a Treasure card costing up to 3 Coins more; put it into your hand.
-24	Witch	Base	Action - Attack	$5	+2 Cards, Each other player gains a Curse card.
-25	Adventurer	Base	Action	$6	Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards in your hand and discard the other revealed cards.
+1	Cellar	Dominion	Action	$2	+1 Action, Discard any number of cards. +1 Card per card discarded.
+2	Chapel	Dominion	Action	$2	Trash up to 4 cards from your hand.
+3	Moat	Dominion	Action - Reaction	$2	+2 Cards, When another player plays an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack.
+4	Chancellor	Dominion	Action	$3	+2 Coins, You may immediately put your deck into your discard pile.
+5	Village	Dominion	Action	$3	+1 Card, +2 Actions.
+6	Woodcutter	Dominion	Action	$3	+1 Buy, +2 Coins.
+7	Workshop	Dominion	Action	$3	Gain a card costing up to 4 Coins.
+8	Bureaucrat	Dominion	Action - Attack	$4	Gain a silver card; put it on top of your deck. Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards).
+9	Feast	Dominion	Action	$4	Trash this card. Gain a card costing up to 5 Coins.
+10	Gardens	Dominion	Victory	$4	Variable, Worth 1 <VP> for every 10 cards in your deck (rounded down).
+11	Militia	Dominion	Action - Attack	$4	+2 Coins, Each other player discards down to 3 cards in his hand.
+12	Moneylender	Dominion	Action	$4	Trash a Copper from your hand. If you do, +3 Coins.
+13	Remodel	Dominion	Action	$4	Trash a card from your hand. Gain a card costing up to 2 Coins more than the trashed card.
+14	Smithy	Dominion	Action	$4	+3 Cards.
+15	Spy	Dominion	Action - Attack	$4	+1 Card, +1 Action, Each player (including you) reveals the top card of his deck and either discards it or puts it back, your chouce.
+16	Thief	Dominion	Action - Attack	$4	Each other player reveals the top 2 cards of his deck. If they revealed any Treasure cards, they trash one of them that you choose. You may gain any or all of these trashed cards. They discard the other revealed cards.
+17	Throne Room	Dominion	Action	$4	Choose an Action card in your hand. Play it twice.
+18	Council Room	Dominion	Action	$5	+4 Cards, +1 Buy, Each other player draws a card.
+19	Festival	Dominion	Action	$5	+2 Actions, +1 Buy, +2 Coins.
+20	Laboratory	Dominion	Action	$5	+2 Cards, +1 Action.
+21	Library	Dominion	Action	$5	Draw until you have 7 cards in hand. You may set aside any Action cards drawn this way, as you draw them; discard the set aside cards after you finish drawing.
+22	Market	Dominion	Action	$5	+1 Card, +1 Action, +1 Buy, +1 Coin.
+23	Mine	Dominion	Action	$5	Trash a Treasure card from your hand. Gain a Treasure card costing up to 3 Coins more; put it into your hand.
+24	Witch	Dominion	Action - Attack	$5	+2 Cards, Each other player gains a Curse card.
+25	Adventurer	Dominion	Action	$6	Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards in your hand and discard the other revealed cards.
 1	Courtyard	Intrigue	Action	$2	+3 Card, Put a card from your hand on top of your deck.
 2	Pawn	Intrigue	Action	$2	Choose two: +1 Card, +1 Action, +1 Buy, +1 Coin. (The choices must be different.).
 3	Secret Chamber	Intrigue	Action - Reaction	$2	Discard any number of cards. +1 Coin per card discarded. - When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.
@@ -189,13 +189,19 @@ At the start of Clean-up, if you have this and no more than one other Action car
 5	Governor	Promo	Action	$5	+1 Action 
 
 Choose one; you get the version in parentheses: Each player gets +1 (+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly 1 Coin (2 Coins) more.
-1	Copper	Common	Treasure	$0	Worth 1 Coin.
-2	Curse	Common	Curse	$0	-1 <VP>.
-3	Estate	Common	Victory	$2	1 <VP>.
-4	Silver	Common	Treasure	$3	Worth 2 Coins.
-5	Duchy	Common	Victory	$5	3 <VP>.
-6	Gold	Common	Treasure	$6	Worth 3 Coins.
-7	Province	Common	Victory	$8	6 <VP>.
+1	Copper	Base	Treasure	$0	Worth 1 Coin.
+2	Curse	Base	Curse	$0	-1 <VP>
+3	Estate	Base	Victory	$2	1 <VP>
+4	Silver	Base	Treasure	$3	Worth 2 Coins.
+5	Duchy	Base	Victory	$5	3 <VP>
+6	Gold	Base	Treasure	$6	Worth 3 Coins.
+7	Province	Base	Victory	$8	6 <VP>
+8	Potion	Base	Treasure	$4	Worth 1 Potion.
+9	Platinum	Base	Treasure	$9	Worth 5 Coins.
+10	Colony	Base	Victory	$11	10 <VP>
+11	Trash	Base	Action	$0	Pile of trash.
+
+
 1	Bag of Gold	Cornucopia	Action - Prize	$0	+1 Action 
 Gain a Gold, putting it on top of your deck. 
 (This is not in the Supply.)

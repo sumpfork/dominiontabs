@@ -86,7 +86,7 @@ class DominionTabs:
     cardTypes = dict(((c.getTypeNames(),c) for c in cardTypes))
 
     setImages = {
-        'base' : 'base_set.png',
+        'dominion' : 'base_set.png',
         'intrigue' : 'intrigue_set.png',
         'seaside' : 'seaside_set.png',
         'prosperity' : 'prosperity_set.png',
@@ -221,7 +221,7 @@ class DominionTabs:
             
         if setImage:
             self.canvas.drawImage(os.path.join(self.filedir,'images',setImage), self.tabLabelWidth-20, potHeight, 14, 12, mask='auto')
-        elif setImage == None and card.cardset != 'common':
+        elif setImage == None and card.cardset != 'base':
             print 'warning, no set image for set "%s" card "%s"' % (card.cardset, card.name)
             DominionTabs.setImages[card.cardset] = 0
             DominionTabs.promoImages[card.name.lower()] = 0
