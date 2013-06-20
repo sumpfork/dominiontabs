@@ -95,6 +95,7 @@ class DominionTabs:
         'hinterlands' : 'hinterlands_set.png',
         'dark ages' : 'dark_ages_set.png',
         'dark ages extras' : 'dark_ages_set.png',
+        'guilds' : 'guilds_set.png'
         }
     promoImages = {
         'walled village' : 'walled_village_set.png',
