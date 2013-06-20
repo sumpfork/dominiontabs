@@ -329,6 +329,7 @@ class DominionTabs:
                 #print c.name + ' ::: ' + extra
 
     def add_definition_line(self,card,line):
+        #try to figure out if this a 'basic action' like +X Cards or +Y Actions
         baseaction = re.compile("^\s*(\+\d+\s+\w+)(?:[,.;])")
         m = baseaction.match(line)
         prefix = ''
@@ -337,12 +338,17 @@ class DominionTabs:
             line = line[m.end():]
             m = baseaction.match(line)
         line = prefix + line
+        #this is a messy way to preserve the way the card spec file indicates separation
+        #and add our own via '---' sequences. Needs to be completely replaced, probably
+        #at the same time as changing the card spec file format.
         if not card.description.strip().endswith(';')\
                 and not card.description.strip().endswith('---')\
-                and not line.startswith('---'):
+                and not line.startswith('-'):
             card.description += '----' + line
         else:
             card.description += line
+        if card.name == 'Curse':
+            print card.description
 
     def read_card_defs(self,fname,fileobject=None):
         cards = []
