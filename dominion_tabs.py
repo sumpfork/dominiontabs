@@ -1,11 +1,11 @@
-import re,pprint
+import re
 from optparse import OptionParser
 import os.path
 
 from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import LETTER,A4,portrait,landscape
-from reportlab.lib.units import cm,inch
-from reportlab.platypus import Frame,Paragraph
+from reportlab.lib.pagesizes import LETTER,A4
+from reportlab.lib.units import cm
+from reportlab.platypus import Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
@@ -277,7 +277,10 @@ class DominionTabs:
         if useExtra and card.extra:
             descriptions = (card.extra,)
         else:
-            descriptions = re.split("--+",card.description)
+            if self.options.read_yaml:
+                descriptions = re.split("\n",card.description)
+            else:
+                descriptions = re.split("--+",card.description)                
 
         height = 0
         for d in descriptions:
@@ -318,7 +321,7 @@ class DominionTabs:
                 if not self.options.expansions and currentCard and (currentCard not in (c.name for c in cards)):
                     print currentCard + ' has extra description, but is not in cards'
             else:
-                extra += line
+                extra += line.strip()
         if currentCard and extra:
             extras[currentCard] = extra.strip()
         for c in cards:
@@ -347,8 +350,6 @@ class DominionTabs:
             card.description += '----' + line
         else:
             card.description += line
-        if card.name == 'Curse':
-            print card.description
 
     def read_card_defs(self,fname,fileobject=None):
         cards = []
@@ -430,7 +431,11 @@ class DominionTabs:
         parser.add_option("--expansions",action="append",type="string",
                           help="subset of dominion expansions to produce tabs for")
         parser.add_option("--cropmarks",action="store_true",dest="cropmarks",
-                           help="print crop marks on both sides, rather than tab outlines on one")
+                          help="print crop marks on both sides, rather than tab outlines on one")
+        parser.add_option("--read_yaml", action="store_true",dest="read_yaml",
+                          help="read yaml version of card definitions and extras")
+        parser.add_option("--write_yaml", action="store_true",dest="write_yaml",
+                          help="write yaml version of card definitions and extras")
         return parser.parse_args(argstring)
         
     def main(self,argstring):
@@ -518,18 +523,29 @@ class DominionTabs:
             raise
             pdfmetrics.registerFont(TTFont('MinionPro-Regular','OptimusPrincepsSemiBold.ttf'))
             pdfmetrics.registerFont(TTFont('MinionPro-Bold','OptimusPrinceps.ttf'))
-        cards = self.read_card_defs(os.path.join(self.filedir,"dominion_cards.txt"))
-        if self.options.expansions:
-            self.options.expansions = [o.lower() for o in self.options.expansions]
-            cards=[c for c in cards if c.cardset in self.options.expansions]
-        cards.sort(cmp=lambda x,y: cmp((x.cardset,x.name),(y.cardset,y.name)))
-        extras = self.read_card_extras(os.path.join(self.filedir,"dominion_card_extras.txt"),cards)
-        #print '%d cards read' % len(cards)
-        sets = {}
-        types = {}
-        for c in cards:
-            sets[c.cardset] = sets.get(c.cardset,0) + 1
-            types[c.types] = types.get(c.types,0) + 1
+        if options.read_yaml:
+            import yaml
+            cardfile = open("cards.yaml","r")
+            cards = yaml.load(cardfile)
+        else:
+            cards = self.read_card_defs(os.path.join(self.filedir,"dominion_cards.txt"))
+            if self.options.expansions:
+                self.options.expansions = [o.lower() for o in self.options.expansions]
+                cards=[c for c in cards if c.cardset in self.options.expansions]
+            cards.sort(cmp=lambda x,y: cmp((x.cardset,x.name),(y.cardset,y.name)))
+            self.read_card_extras(os.path.join(self.filedir,"dominion_card_extras.txt"),cards)
+            #print '%d cards read' % len(cards)
+            sets = {}
+            types = {}
+            for c in cards:
+                sets[c.cardset] = sets.get(c.cardset,0) + 1
+                types[c.types] = types.get(c.types,0) + 1
+                c.description = re.sub('----+','\n',c.description)
+                c.description = re.sub('\n\s*\n','\n',c.description)
+        if options.write_yaml:
+            import yaml
+            out = yaml.dump(cards)
+            open('cards.yaml','w').write(out)
         #pprint.pprint(sets)
         #pprint.pprint(types)
 
