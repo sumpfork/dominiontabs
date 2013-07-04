@@ -118,18 +118,7 @@ class DominionTabs:
         text = re.sub('\<VP\>', replace,text)
         return text
 
-    def drawTab(self,card,x,y,useExtra=False):
-    #rightSide = False
-        if self.numTabsHorizontal == 2:
-            rightSide = x%2 == 1
-        else:
-            rightSide = useExtra
-        self.canvas.resetTransforms()
-        self.canvas.translate(self.horizontalMargin,self.verticalMargin)
-        if useExtra:
-            self.canvas.translate(self.options.back_offset,0)
-        self.canvas.translate(x*self.tabWidth,y*self.tabTotalHeight)
-    
+    def drawOutline(self, x, y, rightSide, isBack=False):
         #draw outline or cropmarks
         self.canvas.saveState()
         self.canvas.setLineWidth(0.1)
@@ -138,7 +127,7 @@ class DominionTabs:
         if rightSide and not self.options.sameside:
             self.canvas.translate(self.tabWidth,0)
             self.canvas.scale(-1,1)
-        if not self.options.cropmarks and not useExtra:
+        if not self.options.cropmarks and not isBack:
             #don't draw outline on back, in case lines don't line up with front
             self.canvas.lines(self.tabOutline)
         elif self.options.cropmarks:
@@ -171,6 +160,7 @@ class DominionTabs:
                 
         self.canvas.restoreState()
 
+    def drawTab(self, card, rightSide):
         #draw tab flap
         self.canvas.saveState()
         if not rightSide or self.options.sameside:
@@ -187,24 +177,6 @@ class DominionTabs:
         costHeight = textHeight + card.getType().getTabCostHeightOffset()
         potHeight = 3 + card.getType().getTabTextHeightOffset()
         potSize = 11
-
-        # if card.types[0] == 'Treasure' and (len(card.types) == 1 or card.types[1] != 'Reaction'
-        #                                     and card.types[1] != 'Victory')\
-        #         or card.types == ('Curse',):
-        #     textHeight = self.tabLabelHeight/2-4
-        #     costHeight = textHeight
-        #     potSize = 12
-        #     potHeight = 5
-        # else:
-        #     textHeight = self.tabLabelHeight/2-7
-        #     costHeight = textHeight-1
-        #     if card.types == ('Victory','Reaction') or\
-        #             card.types == ('Treasure','Reaction') or\
-        #             card.types == ('Action','Ruins') or\
-        #             len(card.types) > 1 and card.types[1].lower() == 'shelter':
-        #         costHeight = textHeight+1
-        #     potSize = 11
-        #     potHeight = 2
 
         self.canvas.drawImage(os.path.join(self.filedir,'images','coin_small.png'),4,costHeight-5,16,16,preserveAspectRatio=True,mask='auto')
         textInset = 22
@@ -273,6 +245,7 @@ class DominionTabs:
                 w = 0
         self.canvas.restoreState()
 
+    def drawText(self, card, useExtra=False):
         #draw text
         if useExtra and card.extra:
             descriptions = (card.extra,)
@@ -301,6 +274,24 @@ class DominionTabs:
                 w,h = p.wrap(textWidth,textHeight)
             p.drawOn(self.canvas,cm/2.0,textHeight-height-h-0.5*cm)
             height += h + 0.2*cm
+
+    def drawDivider(self,card,x,y,useExtra=False):
+        #figure out whether the tab should go on the right side or not
+        if self.numTabsHorizontal == 2:
+            rightSide = x%2 == 1
+        else:
+            rightSide = useExtra
+        #apply the transforms to get us to the corner of the current card
+        self.canvas.resetTransforms()
+        self.canvas.translate(self.horizontalMargin,self.verticalMargin)
+        if useExtra:
+            self.canvas.translate(self.options.back_offset,0)
+        self.canvas.translate(x*self.tabWidth,y*self.tabTotalHeight)
+
+        #actual drawing
+        self.drawOutline(x, y, rightSide, useExtra)
+        self.drawTab(card, rightSide)
+        self.drawText(card, useExtra)
 
     def read_card_extras(self,fname,cards):
         f = open(fname)
@@ -379,7 +370,7 @@ class DominionTabs:
             #print '----'
         return cards
 
-    def drawCards(self,cards):
+    def drawDividers(self,cards):
         cards = split(cards,self.numTabsVertical*self.numTabsHorizontal)
         for pageCards in cards:
             #print 'pageCards:',pageCards
@@ -400,7 +391,7 @@ class DominionTabs:
                 x = i % self.numTabsHorizontal
                 y = i / self.numTabsHorizontal
                 self.canvas.saveState()
-                self.drawTab(card,x,self.numTabsVertical-1-y)
+                self.drawDivider(card,x,self.numTabsVertical-1-y)
                 self.canvas.restoreState()
             self.canvas.showPage()
             for i,card in enumerate(pageCards):       
@@ -408,7 +399,7 @@ class DominionTabs:
                 x = (self.numTabsHorizontal-1-i) % self.numTabsHorizontal
                 y = i / self.numTabsHorizontal
                 self.canvas.saveState()
-                self.drawTab(card,x,self.numTabsVertical-1-y,useExtra=True)
+                self.drawDivider(card,x,self.numTabsVertical-1-y,useExtra=True)
                 self.canvas.restoreState()
             self.canvas.showPage()
 
@@ -553,7 +544,7 @@ class DominionTabs:
             f = "dominion_tabs.pdf"
         self.canvas = canvas.Canvas(f, pagesize=(self.paperwidth, self.paperheight))
         #pprint.pprint(self.canvas.getAvailableFonts())
-        self.drawCards(cards)
+        self.drawDividers(cards)
         self.canvas.save()
     
 if __name__=='__main__':
