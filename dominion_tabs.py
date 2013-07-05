@@ -286,12 +286,14 @@ class DominionTabs:
         self.canvas.translate(self.horizontalMargin,self.verticalMargin)
         if useExtra:
             self.canvas.translate(self.options.back_offset,0)
-        self.canvas.translate(x*self.tabWidth,y*self.tabTotalHeight)
+        self.canvas.translate(x*(self.tabWidth+self.horizontalBorderSpace),y*(self.tabTotalHeight+self.verticalBorderSpace))
 
         #actual drawing
-        self.drawOutline(x, y, rightSide, useExtra)
+        if not self.options.tabs_only:
+            self.drawOutline(x, y, rightSide, useExtra)
         self.drawTab(card, rightSide)
-        self.drawText(card, useExtra)
+        if not self.options.tabs_only:
+            self.drawText(card, useExtra)
 
     def read_card_extras(self,fname,cards):
         f = open(fname)
@@ -427,6 +429,8 @@ class DominionTabs:
                           help="read yaml version of card definitions and extras")
         parser.add_option("--write_yaml", action="store_true",dest="write_yaml",
                           help="write yaml version of card definitions and extras")
+        parser.add_option("--tabs-only", action="store_true", dest="tabs_only",
+                          help="draw only tabs to be printed on labels, no divider outlines")
         return parser.parse_args(argstring)
         
     def main(self,argstring):
@@ -464,16 +468,33 @@ class DominionTabs:
             print "Using letter sized paper."
             self.paperwidth, self.paperheight = LETTER
 
-        minmarginwidth, minmarginheight = self.options.minmargin.split ("x", 1)
-        minmarginwidth, minmarginheight = float (minmarginwidth) * cm, float (minmarginheight) * cm
 
         if self.options.orientation == "vertical":
             self.tabWidth, self.tabBaseHeight = dominionCardHeight, dominionCardWidth
         else:
             self.tabWidth, self.tabBaseHeight = dominionCardWidth, dominionCardHeight
 
-        self.tabLabelHeight = 0.9*cm
-        self.tabLabelWidth = 4*cm
+        fixedMargins = False
+        if self.options.tabs_only:
+            #fixed for Avery 8867 for now
+            minmarginwidth=0.76*cm
+            minmarginheight=1.27*cm 
+            self.tabLabelHeight = 1.27*cm
+            self.tabLabelWidth = 4.44*cm
+            self.tabBaseHeight = 0
+            self.tabWidth = self.tabLabelWidth
+            self.horizontalBorderSpace = 0.76*cm
+            self.verticalBorderSpace = 0.01*cm
+            fixedMargins = True
+        else:
+            minmarginwidth, minmarginheight = self.options.minmargin.split ("x", 1)
+            minmarginwidth, minmarginheight = float (minmarginwidth) * cm, float (minmarginheight) * cm
+            
+            self.tabLabelHeight = 0.9*cm
+            self.tabLabelWidth = 4*cm
+            self.horizontalBorderSpace = 0*cm
+            self.verticalBorderSpace = 0*cm
+            
         self.tabTotalHeight = self.tabBaseHeight + self.tabLabelHeight
 
         numTabsVerticalP = int ((self.paperheight - 2*minmarginheight) / self.tabTotalHeight)
@@ -489,8 +510,13 @@ class DominionTabs:
             self.numTabsVertical, self.numTabsHorizontal\
                 = numTabsVerticalP, numTabsHorizontalP
 
-        self.horizontalMargin = (self.paperwidth-self.numTabsHorizontal*self.tabWidth)/2
-        self.verticalMargin = (self.paperheight-self.numTabsVertical*self.tabTotalHeight)/2
+        if not fixedMargins:
+            #dynamically max margins
+            self.horizontalMargin = (self.paperwidth-self.numTabsHorizontal*self.tabWidth)/2
+            self.verticalMargin = (self.paperheight-self.numTabsVertical*self.tabTotalHeight)/2
+        else:
+            self.horizontalMargin = minmarginwidth
+            self.verticalMargin = minmarginheight
 
         print "Margins: %fcm h, %fcm v\n" % (self.horizontalMargin / cm, 
                                              self.verticalMargin / cm)
