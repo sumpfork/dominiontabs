@@ -372,22 +372,23 @@ class DominionTabs:
             #print '----'
         return cards
 
+    def drawSetNames(self, pageCards):
+        #print sets for this page
+        self.canvas.saveState()
+        self.canvas.setFont('MinionPro-Regular',12)
+        sets = []
+        for c in pageCards:
+            setTitle = c.cardset.title() 
+            if setTitle not in sets:
+                sets.append(setTitle)
+        self.canvas.drawCentredString(self.paperwidth/2,20,'/'.join(sets))
+        self.canvas.restoreState()
+        
     def drawDividers(self,cards):
         cards = split(cards,self.numTabsVertical*self.numTabsHorizontal)
         for pageCards in cards:
-            #print 'pageCards:',pageCards
-
-            #print sets for this page
-            self.canvas.saveState()
-            self.canvas.setFont('MinionPro-Regular',12)
-            sets = []
-            for c in pageCards:
-                setTitle = c.cardset.title() 
-                if setTitle not in sets:
-                    sets.append(setTitle)
-            self.canvas.drawCentredString(self.paperwidth/2,20,'/'.join(sets))
-            self.canvas.restoreState()
-
+            if self.options.order != "global":
+                self.drawSetNames(pageCards)
             for i,card in enumerate(pageCards):       
                 #print card
                 x = i % self.numTabsHorizontal
@@ -396,6 +397,8 @@ class DominionTabs:
                 self.drawDivider(card,x,self.numTabsVertical-1-y)
                 self.canvas.restoreState()
             self.canvas.showPage()
+            if self.options.order != "global":
+                self.drawSetNames(pageCards)
             for i,card in enumerate(pageCards):       
                 #print card
                 x = (self.numTabsHorizontal-1-i) % self.numTabsHorizontal
@@ -410,7 +413,7 @@ class DominionTabs:
         parser = OptionParser()
         parser.add_option("--back_offset",type="int",dest="back_offset",default=0,
                           help="Points to offset the back page to the right; needed for some printers")
-        parser.add_option("--orientation",type="string",dest="orientation",default="horizontal",
+        parser.add_option("--orientation",type="choice",choices=["horizontal","vertical"],dest="orientation",default="horizontal",
                           help="horizontal or vertical, default:horizontal")
         parser.add_option("--sleeved",action="store_true",dest="sleeved",help="use --size=sleeved instead")
         parser.add_option("--size",type="string",dest="size",default='normal',
@@ -431,6 +434,9 @@ class DominionTabs:
                           help="write yaml version of card definitions and extras")
         parser.add_option("--tabs-only", action="store_true", dest="tabs_only",
                           help="draw only tabs to be printed on labels, no divider outlines")
+        parser.add_option("--order", type="choice", choices=["expansion","global"], dest="order",
+                          help="sort order for the cards, whether by expansion or globally alphabetical")
+                                                             
         return parser.parse_args(argstring)
         
     def main(self,argstring):
@@ -549,7 +555,6 @@ class DominionTabs:
             if self.options.expansions:
                 self.options.expansions = [o.lower() for o in self.options.expansions]
                 cards=[c for c in cards if c.cardset in self.options.expansions]
-            cards.sort(cmp=lambda x,y: cmp((x.cardset,x.name),(y.cardset,y.name)))
             self.read_card_extras(os.path.join(self.filedir,"dominion_card_extras.txt"),cards)
             #print '%d cards read' % len(cards)
             sets = {}
@@ -563,13 +568,16 @@ class DominionTabs:
             import yaml
             out = yaml.dump(cards)
             open('cards.yaml','w').write(out)
-        #pprint.pprint(sets)
-        #pprint.pprint(types)
+
+        if options.order == "global":
+            sf = lambda x,y: cmp(x.name,y.name)
+        else:
+            sf = lambda x,y: cmp((x.cardset,x.name),(y.cardset,y.name))
+        cards.sort(cmp=sf)
 
         if not f:
             f = "dominion_tabs.pdf"
         self.canvas = canvas.Canvas(f, pagesize=(self.paperwidth, self.paperheight))
-        #pprint.pprint(self.canvas.getAvailableFonts())
         self.drawDividers(cards)
         self.canvas.save()
     
