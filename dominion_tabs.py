@@ -81,6 +81,7 @@ class DominionTabs:
         CardType(('Victory','Reaction'), 'victory-reaction.png', 0, 1),
         CardType(('Victory','Shelter'), 'shelter.png', 0, 1),
         CardType(('Curse',), 'curse.png',3),
+        CardType(('Expansion',), '')
         ]
 
     cardTypes = dict(((c.getTypeNames(),c) for c in cardTypes))
@@ -168,45 +169,52 @@ class DominionTabs:
                         self.tabTotalHeight-self.tabLabelHeight)
         else:
             self.canvas.translate(0,self.tabTotalHeight-self.tabLabelHeight)
-        self.canvas.drawImage(os.path.join(self.filedir,'images',card.getType().getNoCoinTabImageFile()),1,0,
+                
+        textWidth = 85
+        textHeight = self.tabLabelHeight/2-7+card.getType().getTabTextHeightOffset()
+
+        if card.getType().getTypeNames() != ('Expansion',):
+            textInset = 22
+            self.canvas.drawImage(os.path.join(self.filedir,'images',card.getType().getNoCoinTabImageFile()),1,0,
                     self.tabLabelWidth-2,self.tabLabelHeight-1,
                     preserveAspectRatio=False,anchor='n',mask='auto')
 
 
-        textHeight = self.tabLabelHeight/2-7+card.getType().getTabTextHeightOffset()
-        costHeight = textHeight + card.getType().getTabCostHeightOffset()
-        potHeight = 3 + card.getType().getTabTextHeightOffset()
-        potSize = 11
+            costHeight = textHeight + card.getType().getTabCostHeightOffset()
+            potHeight = 3 + card.getType().getTabTextHeightOffset()
+            potSize = 11
 
-        self.canvas.drawImage(os.path.join(self.filedir,'images','coin_small.png'),4,costHeight-5,16,16,preserveAspectRatio=True,mask='auto')
-        textInset = 22
-        textWidth = 85
+            self.canvas.drawImage(os.path.join(self.filedir,'images','coin_small.png'),4,costHeight-5,16,16,preserveAspectRatio=True,mask='auto')
 
-        if card.potcost:
-            self.canvas.drawImage(os.path.join(self.filedir,'images','potion.png'),21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
-            textInset += potSize
-            textWidth -= potSize
+            if card.potcost:
+                self.canvas.drawImage(os.path.join(self.filedir,'images','potion.png'),21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
+                textInset += potSize
+                textWidth -= potSize
+            setImageHeight = potHeight
 
+            self.canvas.setFont('MinionPro-Bold',12)
+            cost = str(card.cost)
+            if 'Prize' in card.types:
+                cost += '*'
+            costWidthOffset = 12
+            self.canvas.drawCentredString(costWidthOffset,costHeight,cost)
+
+        else:
+            textInset = 13
+            setImageHeight = 3 + card.getType().getTabTextHeightOffset()
+             
         #set image
         setImage = DominionTabs.setImages.get(card.cardset, None)
         if not setImage:
             setImage = DominionTabs.promoImages.get(card.name.lower(), None)
             
         if setImage:
-            self.canvas.drawImage(os.path.join(self.filedir,'images',setImage), self.tabLabelWidth-20, potHeight, 14, 12, mask='auto')
-        elif setImage == None and card.cardset != 'base':
+            self.canvas.drawImage(os.path.join(self.filedir,'images',setImage), self.tabLabelWidth-20, setImageHeight, 14, 12, mask='auto')
+        elif setImage == None and card.cardset != 'base' and card.getType().getTypeNames() != ('Expansion',):
             print 'warning, no set image for set "%s" card "%s"' % (card.cardset, card.name)
             DominionTabs.setImages[card.cardset] = 0
             DominionTabs.promoImages[card.name.lower()] = 0
 
-        self.canvas.setFont('MinionPro-Bold',12)
-        cost = str(card.cost)
-        if 'Prize' in card.types:
-            cost += '*'
-        costWidthOffset = 12
-        #if len(card.types) > 1 and card.types[1].lower() == 'shelter':
-        #    costWidthOffset = 10
-        self.canvas.drawCentredString(costWidthOffset,costHeight,cost)
         fontSize = 12
         name = card.name.upper()
         name_parts = name.partition(' / ')
@@ -436,6 +444,8 @@ class DominionTabs:
                           help="draw only tabs to be printed on labels, no divider outlines")
         parser.add_option("--order", type="choice", choices=["expansion","global"], dest="order",
                           help="sort order for the cards, whether by expansion or globally alphabetical")
+        parser.add_option("--expansion_dividers", action="store_true", dest="expansion_dividers",
+                          help="add dividers describing each expansion set")
                                                              
         return parser.parse_args(argstring)
         
@@ -556,6 +566,13 @@ class DominionTabs:
                 self.options.expansions = [o.lower() for o in self.options.expansions]
                 cards=[c for c in cards if c.cardset in self.options.expansions]
             self.read_card_extras(os.path.join(self.filedir,"dominion_card_extras.txt"),cards)
+            if options.expansion_dividers:
+                cardnamesByExpansion = {}
+                for c in cards:
+                    cardnamesByExpansion.setdefault(c.cardset,[]).append(c.name.strip())
+                for exp,names in cardnamesByExpansion.iteritems():
+                    c = Card(exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
+                    cards.append(c)
             #print '%d cards read' % len(cards)
             sets = {}
             types = {}
