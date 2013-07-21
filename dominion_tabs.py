@@ -81,7 +81,7 @@ class DominionTabs:
         CardType(('Victory','Reaction'), 'victory-reaction.png', 0, 1),
         CardType(('Victory','Shelter'), 'shelter.png', 0, 1),
         CardType(('Curse',), 'curse.png',3),
-        CardType(('Expansion',), '')
+        CardType(('Expansion',), 'expansion.png',4)
         ]
 
     cardTypes = dict(((c.getTypeNames(),c) for c in cardTypes))
@@ -173,11 +173,12 @@ class DominionTabs:
         textWidth = 85
         textHeight = self.tabLabelHeight/2-7+card.getType().getTabTextHeightOffset()
 
+        self.canvas.drawImage(os.path.join(self.filedir,'images',card.getType().getNoCoinTabImageFile()),1,0,
+            self.tabLabelWidth-2,self.tabLabelHeight-1,
+            preserveAspectRatio=False,anchor='n',mask='auto')
+        
         if card.getType().getTypeNames() != ('Expansion',):
             textInset = 22
-            self.canvas.drawImage(os.path.join(self.filedir,'images',card.getType().getNoCoinTabImageFile()),1,0,
-                    self.tabLabelWidth-2,self.tabLabelHeight-1,
-                    preserveAspectRatio=False,anchor='n',mask='auto')
 
 
             costHeight = textHeight + card.getType().getTabCostHeightOffset()
