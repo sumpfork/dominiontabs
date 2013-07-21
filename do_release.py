@@ -23,8 +23,9 @@ argsets = [
     ('--size=sleeved','sleeved_'),
     ('--size=sleeved --orientation=vertical','vertical_sleeved_')
 ]
+additional = ['--expansion_dividers']
 
-fnames = [doit(args[0],args[1]) for args in argsets]
+fnames = [doit(args[0] + ' ' + ' '.join(additional),args[1]) for args in argsets]
 print fnames
 
 zip = ZipFile('generated/sumpfork_dominion_tabs_v' + __version__ + '.zip','w',ZIP_DEFLATED)
