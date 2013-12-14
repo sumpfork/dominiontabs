@@ -618,25 +618,23 @@ class DominionTabs:
             cards = yaml.load(cardfile)
         else:
             cards = self.read_card_defs(os.path.join(self.filedir,"dominion_cards.txt"))
-            if self.options.expansions:
-                self.options.expansions = [o.lower() for o in self.options.expansions]
-                cards=[c for c in cards if c.cardset in self.options.expansions]
-            self.read_card_extras(os.path.join(self.filedir,"dominion_card_extras.txt"),cards)
-            if options.expansion_dividers:
-                cardnamesByExpansion = {}
-                for c in cards:
-                    cardnamesByExpansion.setdefault(c.cardset,[]).append(c.name.strip())
-                for exp,names in cardnamesByExpansion.iteritems():
-                    c = Card(exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
-                    cards.append(c)
-            #print '%d cards read' % len(cards)
-            sets = {}
-            types = {}
             for c in cards:
-                sets[c.cardset] = sets.get(c.cardset,0) + 1
-                types[c.types] = types.get(c.types,0) + 1
                 c.description = re.sub('----+','\n',c.description)
                 c.description = re.sub('\n\s*\n','\n',c.description)
+            self.read_card_extras(os.path.join(self.filedir,"dominion_card_extras.txt"),cards)
+
+        if self.options.expansions:
+            self.options.expansions = [o.lower() for o in self.options.expansions]
+            cards=[c for c in cards if c.cardset in self.options.expansions]
+
+        if options.expansion_dividers:
+            cardnamesByExpansion = {}
+            for c in cards:
+                cardnamesByExpansion.setdefault(c.cardset,[]).append(c.name.strip())
+            for exp,names in cardnamesByExpansion.iteritems():
+                c = Card(exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
+                cards.append(c)
+
         if options.write_yaml:
             import yaml
             out = yaml.dump(cards)
