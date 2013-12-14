@@ -122,7 +122,7 @@ class DominionTabs:
     def drawOutline(self, x, y, rightSide, isBack=False):
         #draw outline or cropmarks
         self.canvas.saveState()
-        self.canvas.setLineWidth(0.1)
+        self.canvas.setLineWidth(self.options.linewidth)
         cropmarksright = (x == self.numTabsHorizontal-1)
         cropmarksleft = (x == 0)
         if rightSide and not self.options.sameside:
@@ -480,6 +480,8 @@ class DominionTabs:
                           help="subset of dominion expansions to produce tabs for")
         parser.add_option("--cropmarks",action="store_true",dest="cropmarks",
                           help="print crop marks on both sides, rather than tab outlines on one")
+        parser.add_option("--linewidth",type="float",default=.1,
+                          help="width of lines for card outlines/crop marks")
         parser.add_option("--read_yaml", action="store_true",dest="read_yaml",
                           help="read yaml version of card definitions and extras")
         parser.add_option("--write_yaml", action="store_true",dest="write_yaml",
