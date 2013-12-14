@@ -142,7 +142,7 @@ class DominionTabs:
                 self.canvas.line(-2*cmw,0,-cmw,0)
                 self.canvas.line(-2*cmw,self.tabBaseHeight,-cmw,self.tabBaseHeight)
                 if y > 0:
-                    self.canvas.line(-2*cmw,self.tabTotalHeight,-cmw,self.tabTotalHeight)
+                    self.canvas.line(-2*cmw,self.tabHeight,-cmw,self.tabHeight)
             if mirror:
                 self.canvas.restoreState()
             if y == 0:
@@ -151,14 +151,14 @@ class DominionTabs:
                 if x == 0:
                     self.canvas.line(0,-2*cmw,0,-cmw)
             elif y == self.numTabsVertical-1:
-                self.canvas.line(self.tabWidth,self.tabTotalHeight+cmw,self.tabWidth,self.tabTotalHeight+2*cmw)
+                self.canvas.line(self.tabWidth,self.tabHeight+cmw,self.tabWidth,self.tabHeight+2*cmw)
                 self.canvas.line(self.tabWidth-self.tabLabelWidth,
-                                 self.tabTotalHeight+cmw,
+                                 self.tabHeight+cmw,
                                  self.tabWidth-self.tabLabelWidth,
-                                 self.tabTotalHeight+2*cmw)
+                                 self.tabHeight+2*cmw)
                 if x == 0:
-                    self.canvas.line(0,self.tabTotalHeight+cmw,0,self.tabTotalHeight+2*cmw)
-                
+                    self.canvas.line(0,self.tabHeight+cmw,0,self.tabHeight+2*cmw)
+
         self.canvas.restoreState()
 
     def drawTab(self, card, rightSide):
@@ -166,17 +166,17 @@ class DominionTabs:
         self.canvas.saveState()
         if not rightSide or self.options.sameside:
             self.canvas.translate(self.tabWidth-self.tabLabelWidth,
-                        self.tabTotalHeight-self.tabLabelHeight)
+                        self.tabHeight-self.tabLabelHeight)
         else:
-            self.canvas.translate(0,self.tabTotalHeight-self.tabLabelHeight)
-                
+            self.canvas.translate(0,self.tabHeight-self.tabLabelHeight)
+
         textWidth = 85
         textHeight = self.tabLabelHeight/2-7+card.getType().getTabTextHeightOffset()
 
         self.canvas.drawImage(os.path.join(self.filedir,'images',card.getType().getNoCoinTabImageFile()),1,0,
             self.tabLabelWidth-2,self.tabLabelHeight-1,
             preserveAspectRatio=False,anchor='n',mask='auto')
-        
+
         if card.getType().getTypeNames() != ('Expansion',):
             textInset = 22
 
@@ -203,12 +203,12 @@ class DominionTabs:
         else:
             textInset = 13
             setImageHeight = 3 + card.getType().getTabTextHeightOffset()
-             
+
         #set image
         setImage = DominionTabs.setImages.get(card.cardset, None)
         if not setImage:
             setImage = DominionTabs.promoImages.get(card.name.lower(), None)
-            
+
         if setImage:
             self.canvas.drawImage(os.path.join(self.filedir,'images',setImage), self.tabLabelWidth-20, setImageHeight, 14, 12, mask='auto')
         elif setImage == None and card.cardset != 'base' and card.getType().getTypeNames() != ('Expansion',):
@@ -223,7 +223,7 @@ class DominionTabs:
             name_parts = (name_parts[0] + ' /', name_parts[2])
         else:
             name_parts = name.split()
-            
+
         width = pdfmetrics.stringWidth(name,'MinionPro-Regular',fontSize)
         while width > textWidth and fontSize > 8:
             fontSize -= 1
@@ -262,7 +262,7 @@ class DominionTabs:
             if self.options.read_yaml:
                 descriptions = re.split("\n",card.description)
             else:
-                descriptions = re.split("--+",card.description)                
+                descriptions = re.split("--+",card.description)
 
         height = 0
         for d in descriptions:
@@ -270,9 +270,9 @@ class DominionTabs:
             s.fontName = "Times-Roman"
             dmod = self.add_inline_images(d,s.fontSize)
             p = Paragraph(dmod,s)
-            textHeight = self.tabTotalHeight - self.tabLabelHeight + 0.2*cm
+            textHeight = self.tabHeight - self.tabLabelHeight + 0.2*cm
             textWidth = self.tabWidth - cm
-            
+
             w,h = p.wrap(textWidth,textHeight)
             while h > textHeight:
                 s.fontSize -= 1
@@ -286,7 +286,7 @@ class DominionTabs:
 
     def drawDivider(self,card,x,y,useExtra=False):
         #figure out whether the tab should go on the right side or not
-        if self.numTabsHorizontal == 2:
+        if self.numTabsHorizontal % 2 == 0:
             rightSide = x%2 == 1
         else:
             rightSide = useExtra
@@ -295,7 +295,7 @@ class DominionTabs:
         self.canvas.translate(self.horizontalMargin,self.verticalMargin)
         if useExtra:
             self.canvas.translate(self.options.back_offset,0)
-        self.canvas.translate(x*(self.tabWidth+self.horizontalBorderSpace),y*(self.tabTotalHeight+self.verticalBorderSpace))
+        self.canvas.translate(x*self.totalTabWidth,y*self.totalTabHeight)
 
         #actual drawing
         if not self.options.tabs_only:
@@ -311,7 +311,7 @@ class DominionTabs:
         currentCard = ""
         extra = ""
         for line in f:
-            m = cardName.match(line)        
+            m = cardName.match(line)
             if m:
                 if currentCard:
                     #print 'found',currentCard
@@ -384,21 +384,64 @@ class DominionTabs:
     def drawSetNames(self, pageCards):
         #print sets for this page
         self.canvas.saveState()
-        self.canvas.setFont('MinionPro-Regular',12)
-        sets = []
-        for c in pageCards:
-            setTitle = c.cardset.title() 
-            if setTitle not in sets:
-                sets.append(setTitle)
-        self.canvas.drawCentredString(self.paperwidth/2,20,'/'.join(sets))
-        self.canvas.restoreState()
-        
+
+        try:
+            # calculate the text height, font size, and orientation
+            maxFontsize = 12
+            minFontsize = 6
+            fontname = 'MinionPro-Regular'
+            font = pdfmetrics.getFont(fontname)
+            fontHeightRelative = (font.face.ascent + font.face.descent) / 1000
+
+            canFit = False
+
+            layouts = [{'rotation': 0,
+                        'minMarginHeight': self.minVerticalMargin,
+                        'totalMarginHeight': self.verticalMargin,
+                        'width': self.paperwidth},
+                       {'rotation': 90,
+                        'minMarginHeight': self.minHorizontalMargin,
+                        'totalMarginHeight': self.horizontalMargin,
+                        'width': self.paperheight}]
+
+            for layout in layouts:
+                availableMargin = layout['totalMarginHeight'] - layout['minMarginHeight']
+                fontsize = availableMargin / fontHeightRelative
+                fontsize = min(maxFontsize, fontsize)
+                if fontsize >= minFontsize:
+                    canFit = True
+                    break
+
+            if not canFit:
+                import warnings
+                warnings.warn("Not enough space to display set names")
+                return
+
+            self.canvas.setFont(fontname,fontsize)
+
+            sets = []
+            for c in pageCards:
+                setTitle = c.cardset.title()
+                if setTitle not in sets:
+                    sets.append(setTitle)
+
+            xPos = layout['width'] / 2
+            yPos = layout['minMarginHeight'] + availableMargin / 2
+
+            if layout['rotation']:
+                self.canvas.rotate(layout['rotation'])
+                yPos = -yPos
+
+            self.canvas.drawCentredString(xPos,yPos,'/'.join(sets))
+        finally:
+            self.canvas.restoreState()
+
     def drawDividers(self,cards):
         cards = split(cards,self.numTabsVertical*self.numTabsHorizontal)
         for pageCards in cards:
             if self.options.order != "global":
                 self.drawSetNames(pageCards)
-            for i,card in enumerate(pageCards):       
+            for i,card in enumerate(pageCards):
                 #print card
                 x = i % self.numTabsHorizontal
                 y = i / self.numTabsHorizontal
@@ -408,7 +451,7 @@ class DominionTabs:
             self.canvas.showPage()
             if self.options.order != "global":
                 self.drawSetNames(pageCards)
-            for i,card in enumerate(pageCards):       
+            for i,card in enumerate(pageCards):
                 #print card
                 x = (self.numTabsHorizontal-1-i) % self.numTabsHorizontal
                 y = i / self.numTabsHorizontal
@@ -447,9 +490,9 @@ class DominionTabs:
                           help="sort order for the cards, whether by expansion or globally alphabetical")
         parser.add_option("--expansion_dividers", action="store_true", dest="expansion_dividers",
                           help="add dividers describing each expansion set")
-                                                             
+
         return parser.parse_args(argstring)
-        
+
     def main(self,argstring):
         options,args = DominionTabs.parse_opts(argstring)
         fname = None
@@ -495,7 +538,7 @@ class DominionTabs:
         if self.options.tabs_only:
             #fixed for Avery 8867 for now
             minmarginwidth=0.76*cm
-            minmarginheight=1.27*cm 
+            minmarginheight=1.27*cm
             self.tabLabelHeight = 1.27*cm
             self.tabLabelWidth = 4.44*cm
             self.tabBaseHeight = 0
@@ -506,44 +549,54 @@ class DominionTabs:
         else:
             minmarginwidth, minmarginheight = self.options.minmargin.split ("x", 1)
             minmarginwidth, minmarginheight = float (minmarginwidth) * cm, float (minmarginheight) * cm
-            
+
             self.tabLabelHeight = 0.9*cm
             self.tabLabelWidth = 4*cm
             self.horizontalBorderSpace = 0*cm
             self.verticalBorderSpace = 0*cm
-            
-        self.tabTotalHeight = self.tabBaseHeight + self.tabLabelHeight
 
-        numTabsVerticalP = int ((self.paperheight - 2*minmarginheight) / self.tabTotalHeight)
-        numTabsHorizontalP = int ((self.paperwidth - 2*minmarginwidth) / self.tabWidth)
-        numTabsVerticalL = int ((self.paperwidth - 2*minmarginwidth) / self.tabWidth)
-        numTabsHorizontalL = int ((self.paperheight - 2*minmarginheight) / self.tabTotalHeight)
+        self.tabHeight = self.tabBaseHeight + self.tabLabelHeight
 
-        if numTabsVerticalL * numTabsHorizontalL > numTabsVerticalP * numTabsHorizontalP:
+        self.totalTabWidth = self.tabWidth + self.horizontalBorderSpace
+        self.totalTabHeight = self.tabHeight + self.verticalBorderSpace
+
+        print "Paper dimensions: %fcm (w) x %fcm (h)" % (self.paperwidth / cm, self.paperheight / cm)
+        print "Tab dimensions: %fcm (w) x %fcm (h)" % (self.totalTabWidth / cm, self.totalTabHeight / cm)
+
+        numTabsVerticalP = int ((self.paperheight - 2*minmarginheight) / self.totalTabHeight)
+        numTabsHorizontalP = int ((self.paperwidth - 2*minmarginwidth) / self.totalTabWidth)
+        numTabsVerticalL = int ((self.paperwidth - 2*minmarginwidth) / self.totalTabHeight)
+        numTabsHorizontalL = int ((self.paperheight - 2*minmarginheight) / self.totalTabWidth)
+
+        if numTabsVerticalL * numTabsHorizontalL > numTabsVerticalP * numTabsHorizontalP and not fixedMargins:
             self.numTabsVertical, self.numTabsHorizontal\
                 = numTabsVerticalL, numTabsHorizontalL
             self.paperheight, self.paperwidth = self.paperwidth, self.paperheight
+            self.minHorizontalMargin = minmarginheight
+            self.minVerticalMargin = minmarginwidth
         else:
             self.numTabsVertical, self.numTabsHorizontal\
                 = numTabsVerticalP, numTabsHorizontalP
+            self.minHorizontalMargin = minmarginwidth
+            self.minVerticalMargin = minmarginheight
 
         if not fixedMargins:
             #dynamically max margins
-            self.horizontalMargin = (self.paperwidth-self.numTabsHorizontal*self.tabWidth)/2
-            self.verticalMargin = (self.paperheight-self.numTabsVertical*self.tabTotalHeight)/2
+            self.horizontalMargin = (self.paperwidth-self.numTabsHorizontal*self.totalTabWidth)/2
+            self.verticalMargin = (self.paperheight-self.numTabsVertical*self.totalTabHeight)/2
         else:
             self.horizontalMargin = minmarginwidth
             self.verticalMargin = minmarginheight
 
-        print "Margins: %fcm h, %fcm v\n" % (self.horizontalMargin / cm, 
+        print "Margins: %fcm h, %fcm v\n" % (self.horizontalMargin / cm,
                                              self.verticalMargin / cm)
 
         self.tabOutline = [(0,0,self.tabWidth,0),
-                      (self.tabWidth,0,self.tabWidth,self.tabTotalHeight),
-                      (self.tabWidth,self.tabTotalHeight,
-                       self.tabWidth-self.tabLabelWidth,self.tabTotalHeight),
+                      (self.tabWidth,0,self.tabWidth,self.tabHeight),
+                      (self.tabWidth,self.tabHeight,
+                       self.tabWidth-self.tabLabelWidth,self.tabHeight),
                       (self.tabWidth-self.tabLabelWidth,
-                       self.tabTotalHeight,self.tabWidth-self.tabLabelWidth,
+                       self.tabHeight,self.tabWidth-self.tabLabelWidth,
                        self.tabBaseHeight),
                       (self.tabWidth-self.tabLabelWidth,
                        self.tabBaseHeight,0,self.tabBaseHeight),
@@ -598,7 +651,7 @@ class DominionTabs:
         self.canvas = canvas.Canvas(f, pagesize=(self.paperwidth, self.paperheight))
         self.drawDividers(cards)
         self.canvas.save()
-    
+
 if __name__=='__main__':
     import sys
     tabs = DominionTabs()
