@@ -259,10 +259,7 @@ class DominionTabs:
         if useExtra and card.extra:
             descriptions = (card.extra,)
         else:
-            if self.options.read_yaml:
-                descriptions = re.split("\n",card.description)
-            else:
-                descriptions = re.split("--+",card.description)
+            descriptions = re.split("\n",card.description)
 
         height = 0
         for d in descriptions:
@@ -333,25 +330,42 @@ class DominionTabs:
                 c.extra = extras[c.name]
                 #print c.name + ' ::: ' + extra
 
+    baseactionRE = re.compile("^\s*(\+\d+\s+\w+)(?:[,.;])")
+
     def add_definition_line(self,card,line):
+        # Unfortunately, the way things are specified in the old card spec
+        # format is somewhat haphazard. In particular:
+        #   1) Sometimes "basic actions", which would be separated on the
+        #      actual card text by separate lines, are instead only separated
+        #      by punctuation ('.', ',', or ';')
+        #      [Example: Intrigue - Courtyard]
+        #   2) When there is an actual horizontal line drawn on the card, this
+        #      can be represented using either '____'  or '-----'
+        #   3) There are sometimes random blank lines
+
+        # To solve:
+
+        # 1)
         #try to figure out if this a 'basic action' like +X Cards or +Y Actions
-        baseaction = re.compile("^\s*(\+\d+\s+\w+)(?:[,.;])")
-        m = baseaction.match(line)
-        prefix = ''
-        while m:
-            prefix += line[m.start(1):m.end(1)] + '----'
+        descriptions = [card.description]
+        while True:
+            m = self.baseactionRE.match(line)
+            if not m:
+                break
+            descriptions.append(m.group(1))
             line = line[m.end():]
-            m = baseaction.match(line)
-        line = prefix + line
-        #this is a messy way to preserve the way the card spec file indicates separation
-        #and add our own via '---' sequences. Needs to be completely replaced, probably
-        #at the same time as changing the card spec file format.
-        if not card.description.strip().endswith(';')\
-                and not card.description.strip().endswith('---')\
-                and not line.startswith('-'):
-            card.description += '----' + line
-        else:
-            card.description += line
+
+        # 2) Standardize on '____' as the format for a divider line
+        line = line.strip()
+        if not line.strip('-'):
+            line = line.replace('-', '_')
+
+        # 3) get rid of blank lines
+        descriptions.append(line)
+        descriptions = [x.strip() for x in descriptions]
+        descriptions = [x for x in descriptions if x]
+
+        card.description = '\n'.join(descriptions)
 
     def read_card_defs(self,fname,fileobject=None):
         cards = []
@@ -618,9 +632,6 @@ class DominionTabs:
             cards = yaml.load(cardfile)
         else:
             cards = self.read_card_defs(os.path.join(self.filedir,"dominion_cards.txt"))
-            for c in cards:
-                c.description = re.sub('----+','\n',c.description)
-                c.description = re.sub('\n\s*\n','\n',c.description)
             self.read_card_extras(os.path.join(self.filedir,"dominion_card_extras.txt"),cards)
 
         if self.options.expansions:
