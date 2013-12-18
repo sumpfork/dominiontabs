@@ -125,7 +125,7 @@ class DominionTabs:
         self.canvas.setLineWidth(self.options.linewidth)
         cropmarksright = (x == self.numTabsHorizontal-1)
         cropmarksleft = (x == 0)
-        if rightSide and not self.options.sameside:
+        if rightSide:
             self.canvas.translate(self.tabWidth,0)
             self.canvas.scale(-1,1)
         if not self.options.cropmarks and not isBack:
@@ -175,7 +175,7 @@ class DominionTabs:
     def drawTab(self, card, rightSide):
         #draw tab flap
         self.canvas.saveState()
-        if not rightSide or self.options.sameside:
+        if not rightSide:
             self.canvas.translate(self.tabWidth-self.tabLabelWidth,
                         self.tabHeight-self.tabLabelHeight)
         else:
