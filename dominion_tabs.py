@@ -119,7 +119,7 @@ class DominionTabs:
         text = re.sub('\<VP\>', replace,text)
         return text
 
-    def drawOutline(self, x, y, rightSide, isBack=False):
+    def drawOutline(self, x, y, rightSide, isBack=False, isExpansionDivider=False):
         #draw outline or cropmarks
         self.canvas.saveState()
         self.canvas.setLineWidth(0.1)
@@ -130,7 +130,11 @@ class DominionTabs:
             self.canvas.scale(-1,1)
         if not self.options.cropmarks and not isBack:
             #don't draw outline on back, in case lines don't line up with front
-            self.canvas.lines(self.tabOutline)
+            if isExpansionDivider:
+                outline = self.expansionTabOutline
+            else:
+                outline = self.tabOutline
+            self.canvas.lines(outline)
         elif self.options.cropmarks:
             cmw = 0.5*cm
             mirror = cropmarksright and not rightSide or cropmarksleft and rightSide
@@ -147,7 +151,11 @@ class DominionTabs:
                 self.canvas.restoreState()
             if y == 0:
                 self.canvas.line(self.tabWidth,-2*cmw,self.tabWidth,-cmw)
-                self.canvas.line(self.tabWidth-self.tabLabelWidth,-2*cmw,self.tabWidth-self.tabLabelWidth,-cmw)
+                #if isExpansionDivider:
+                #    xpos = self.tabWidth/2+self.tabLabelWidth/2
+                #else:
+                xpos = self.tabWidth-self.tabLabelWidth
+                self.canvas.line(xpos,-2*cmw,xpos,-cmw)
                 if x == 0:
                     self.canvas.line(0,-2*cmw,0,-cmw)
             elif y == self.numTabsVertical-1:
@@ -164,7 +172,11 @@ class DominionTabs:
     def drawTab(self, card, rightSide):
         #draw tab flap
         self.canvas.saveState()
-        if not rightSide or self.options.sameside:
+        isExpansionIntro = card.getType().getTypeNames() == ('Expansion',)
+        if isExpansionIntro:
+            self.canvas.translate(self.tabWidth/2-self.tabLabelWidth/2,
+                                  self.tabTotalHeight-self.tabLabelHeight)
+        elif not rightSide or self.options.sameside:
             self.canvas.translate(self.tabWidth-self.tabLabelWidth,
                         self.tabTotalHeight-self.tabLabelHeight)
         else:
@@ -177,7 +189,7 @@ class DominionTabs:
             self.tabLabelWidth-2,self.tabLabelHeight-1,
             preserveAspectRatio=False,anchor='n',mask='auto')
         
-        if card.getType().getTypeNames() != ('Expansion',):
+        if not isExpansionIntro:
             textInset = 22
 
 
@@ -299,7 +311,7 @@ class DominionTabs:
 
         #actual drawing
         if not self.options.tabs_only:
-            self.drawOutline(x, y, rightSide, useExtra)
+            self.drawOutline(x, y, rightSide, useExtra,card.getType().getTypeNames() == ('Expansion',))
         self.drawTab(card, rightSide)
         if not self.options.tabs_only:
             self.drawText(card, useExtra)
@@ -549,6 +561,20 @@ class DominionTabs:
                        self.tabBaseHeight,0,self.tabBaseHeight),
                       (0,self.tabBaseHeight,0,0)]
 
+        self.expansionTabOutline = [(0,0,self.tabWidth,0),
+                      (self.tabWidth,0,self.tabWidth,self.tabBaseHeight),
+                      (self.tabWidth,self.tabBaseHeight,
+                       self.tabWidth/2+self.tabLabelWidth/2,self.tabBaseHeight),
+                      (self.tabWidth/2+self.tabLabelWidth/2,self.tabBaseHeight,
+                       self.tabWidth/2+self.tabLabelWidth/2,self.tabTotalHeight),
+                      (self.tabWidth/2+self.tabLabelWidth/2,self.tabTotalHeight,
+                       self.tabWidth/2-self.tabLabelWidth/2,self.tabTotalHeight),
+                      (self.tabWidth/2-self.tabLabelWidth/2,self.tabTotalHeight,
+                       self.tabWidth/2-self.tabLabelWidth/2,self.tabBaseHeight),
+                      (self.tabWidth/2-self.tabLabelWidth/2,self.tabBaseHeight,
+                       0,self.tabBaseHeight),
+                      (0,self.tabBaseHeight,0,0)]
+        
         try:
             dirn = os.path.join(self.filedir,'fonts')
             pdfmetrics.registerFont(TTFont('MinionPro-Regular',os.path.join(dirn,'MinionPro-Regular.ttf')))
