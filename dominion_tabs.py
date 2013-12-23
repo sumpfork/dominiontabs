@@ -250,7 +250,7 @@ class DominionTabs:
             self.canvas.drawString(textInset+w,h,n[1:])
             w += pdfmetrics.stringWidth(n[1:],'MinionPro-Regular',fontSize-2)
             w += pdfmetrics.stringWidth(' ','MinionPro-Regular',fontSize)
-            if tooLong:
+            if tooLong and i == 0:
                 w = 0
         self.canvas.restoreState()
 
