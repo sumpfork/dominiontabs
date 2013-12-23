@@ -10,6 +10,7 @@ from reportlab.platypus import Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
+from reportlab.lib.enums import TA_JUSTIFY
 
 def split(l,n):
     i = 0
@@ -360,6 +361,7 @@ class DominionTabs:
 
         s = getSampleStyleSheet()['BodyText']
         s.fontName = "Times-Roman"
+        s.alignment = TA_JUSTIFY
 
         textHorizontalMargin = .5*cm
         textVerticalMargin = .3*cm
