@@ -19,8 +19,8 @@ def split(l,n):
 
 class Card:
     def __init__(self,name,cardset,types,cost,description,potcost=0):
-        self.name = name
-        self.cardset = cardset
+        self.name = name.strip()
+        self.cardset = cardset.strip()
         self.types = types
         self.cost = cost
         self.potcost = potcost
@@ -161,6 +161,17 @@ class DominionTabs:
 
         self.canvas.restoreState()
 
+    @classmethod
+    def nameWidth(self, name, fontSize):
+        w = 0
+        name_parts = name.split()
+        for i, part in enumerate(name_parts):
+            if i != 0:
+                w += pdfmetrics.stringWidth(' ','MinionPro-Regular',fontSize)
+            w += pdfmetrics.stringWidth(part[0],'MinionPro-Regular',fontSize)
+            w += pdfmetrics.stringWidth(part[1:],'MinionPro-Regular',fontSize-2)
+        return w
+
     def drawTab(self, card, rightSide):
         #draw tab flap
         self.canvas.saveState()
@@ -202,15 +213,17 @@ class DominionTabs:
             textInset = 13
             setImageHeight = 3 + card.getType().getTabTextHeightOffset()
 
-        textWidth -= textInset
-
         #set image
         setImage = DominionTabs.setImages.get(card.cardset, None)
         if not setImage:
             setImage = DominionTabs.promoImages.get(card.name.lower(), None)
 
+        # always need to offset from right edge, to make sure it stays on
+        # banner
+        textInsetRight = 6
         if setImage:
             self.canvas.drawImage(os.path.join(self.filedir,'images',setImage), self.tabLabelWidth-20, setImageHeight, 14, 12, mask='auto')
+            textInsetRight = 20
         elif setImage == None and card.cardset != 'base' and card.getType().getTypeNames() != ('Expansion',):
             print 'warning, no set image for set "%s" card "%s"' % (card.cardset, card.name)
             DominionTabs.setImages[card.cardset] = 0
@@ -218,40 +231,61 @@ class DominionTabs:
 
         fontSize = 12
         name = card.name.upper()
-        name_parts = name.partition(' / ')
-        if name_parts[1]:
-            name_parts = (name_parts[0] + ' /', name_parts[2])
-        else:
-            name_parts = name.split()
 
-        width = pdfmetrics.stringWidth(name,'MinionPro-Regular',fontSize)
+        textWidth -= textInset
+        textWidth -= textInsetRight
+
+        width = self.nameWidth(name, fontSize)
         while width > textWidth and fontSize > 8:
             fontSize -= 1
             #print 'decreasing font size for tab of',name,'now',fontSize
-            width = pdfmetrics.stringWidth(name,'MinionPro-Regular',fontSize)
+            width = self.nameWidth(name, fontSize)
         tooLong = width > textWidth
+        if tooLong:
+            name_lines = name.partition(' / ')
+            if name_lines[1]:
+                name_lines = (name_lines[0] + ' /', name_lines[2])
+            else:
+                name_lines = name.split(None, 1)
+        else:
+            name_lines = [name]
         #if tooLong:
         #    print name
 
-        #self.canvas.drawString(tabLabelWidth/2+8,tabLabelHeight/2-7,name[0])
-        w = 0
-        for i,n in enumerate(name_parts):
-            self.canvas.setFont('MinionPro-Regular',fontSize)
+        for linenum, line in enumerate(name_lines):
             h = textHeight
-            if tooLong:
-                if i == 0:
+            if tooLong and len(name_lines) > 1:
+                if linenum == 0:
                     h += h/2
                 else:
                     h -= h/2
-            self.canvas.drawString(textInset+w,h,n[0])
-            w += pdfmetrics.stringWidth(n[0],'MinionPro-Regular',fontSize)
-            #self.canvas.drawString(tabLabelWidth/2+8+w,tabLabelHeight/2-7,name[1:])
-            self.canvas.setFont('MinionPro-Regular',fontSize-2)
-            self.canvas.drawString(textInset+w,h,n[1:])
-            w += pdfmetrics.stringWidth(n[1:],'MinionPro-Regular',fontSize-2)
-            w += pdfmetrics.stringWidth(' ','MinionPro-Regular',fontSize)
-            if tooLong and i == 0:
-                w = 0
+
+            if rightSide or not self.options.edge_align_name:
+                w = textInset
+                name_parts = line.split()
+                def drawWordPiece(text, fontSize):
+                    self.canvas.setFont('MinionPro-Regular',fontSize)
+                    if text != ' ':
+                        self.canvas.drawString(w,h,text)
+                    return pdfmetrics.stringWidth(text,'MinionPro-Regular',fontSize)
+                for word in name_parts:
+                    w += drawWordPiece(word[0], fontSize)
+                    w += drawWordPiece(word[1:], fontSize-2)
+            else:
+                # align text to the right if tab is on right side, to make
+                # tabs easier to read when grouped together extra 3pt is for
+                # space between text + set symbol
+
+                w = self.tabLabelWidth - textInsetRight - 3
+                name_parts = reversed(line.split())
+                def drawWordPiece(text, fontSize):
+                    self.canvas.setFont('MinionPro-Regular',fontSize)
+                    if text != ' ':
+                        self.canvas.drawRightString(w,h,text)
+                    return -pdfmetrics.stringWidth(text,'MinionPro-Regular',fontSize)
+                for word in name_parts:
+                    w += drawWordPiece(word[1:], fontSize-2)
+                    w += drawWordPiece(word[0], fontSize)
         self.canvas.restoreState()
 
     def drawText(self, card, useExtra=False):
@@ -283,7 +317,7 @@ class DominionTabs:
 
     def drawDivider(self,card,x,y,useExtra=False):
         #figure out whether the tab should go on the right side or not
-        if self.numTabsHorizontal % 2 == 0:
+        if not self.options.sameside:
             rightSide = x%2 == 1
         else:
             rightSide = useExtra
@@ -380,8 +414,8 @@ class DominionTabs:
                     potcost = int(m.groupdict()["potioncost"])
                 else:
                     potcost = 0
-                currentCard = Card(m.groupdict()["name"],
-                                   m.groupdict()["set"].lower(),
+                currentCard = Card(m.groupdict()["name"].strip(),
+                                   m.groupdict()["set"].lower().strip(),
                                    tuple([t.strip() for t in m.groupdict()["type"].split("-")]),
                                    int(m.groupdict()["cost"]),
                                    '',
@@ -491,7 +525,14 @@ class DominionTabs:
         parser.add_option("--tabwidth",type="float",default=4,
                           help="width in cm of stick-up tab (ignored if tabs-only used)")
         parser.add_option("--samesidelabels",action="store_true",dest="sameside",
-                          help="force all label tabs to be on the same side")
+                          help="force all label tabs to be on the same side"
+                          " (this will be forced on if there is an uneven"
+                          " number of cards horizontally across the page)")
+        parser.add_option("--edge-align-name",action="store_true",
+                          help="align the card name to the outside edge of the"
+                          " tab, so that when using tabs on alternating sides,"
+                          " the name is less likely to be hidden by the tab"
+                          " in front; ignored if samesidelabels is on")
         parser.add_option("--expansions",action="append",type="string",
                           help="subset of dominion expansions to produce tabs for")
         parser.add_option("--cropmarks",action="store_true",dest="cropmarks",
@@ -602,6 +643,10 @@ class DominionTabs:
                 = numTabsVerticalP, numTabsHorizontalP
             self.minHorizontalMargin = minmarginwidth
             self.minVerticalMargin = minmarginheight
+
+        if self.numTabsHorizontal % 2 != 0:
+            # force on sameside if an uneven # of tabs horizontally
+            self.options.sameside = True
 
         if not fixedMargins:
             #dynamically max margins
