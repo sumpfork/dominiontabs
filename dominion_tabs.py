@@ -133,6 +133,8 @@ class DominionTabs:
             self.canvas.lines(self.tabOutline)
         elif self.options.cropmarks:
             cmw = 0.5*cm
+
+            # Horizontal-line cropmarks
             mirror = cropmarksright and not rightSide or cropmarksleft and rightSide
             if mirror:
                 self.canvas.saveState()
@@ -145,19 +147,35 @@ class DominionTabs:
                     self.canvas.line(-2*cmw,self.tabHeight,-cmw,self.tabHeight)
             if mirror:
                 self.canvas.restoreState()
+
+            # Vertical-line cropmarks
+
+            # want to always draw the right-edge and middle-label-edge lines..
+            # ...and draw the left-edge if this is the first card on the left
+
+            # ...but we need to take mirroring into account, to know "where"
+            # to draw the left / right lines...
+            if rightSide:
+                leftLine = self.tabWidth
+                rightLine = 0
+            else:
+                leftLine = 0
+                rightLine = self.tabWidth
+            middleLine = self.tabWidth-self.tabLabelWidth
+
             if y == 0:
-                self.canvas.line(self.tabWidth,-2*cmw,self.tabWidth,-cmw)
-                self.canvas.line(self.tabWidth-self.tabLabelWidth,-2*cmw,self.tabWidth-self.tabLabelWidth,-cmw)
-                if x == 0:
-                    self.canvas.line(0,-2*cmw,0,-cmw)
-            elif y == self.numTabsVertical-1:
-                self.canvas.line(self.tabWidth,self.tabHeight+cmw,self.tabWidth,self.tabHeight+2*cmw)
-                self.canvas.line(self.tabWidth-self.tabLabelWidth,
-                                 self.tabHeight+cmw,
-                                 self.tabWidth-self.tabLabelWidth,
-                                 self.tabHeight+2*cmw)
-                if x == 0:
-                    self.canvas.line(0,self.tabHeight+cmw,0,self.tabHeight+2*cmw)
+                self.canvas.line(rightLine,-2*cmw,rightLine,-cmw)
+                self.canvas.line(middleLine,-2*cmw,middleLine,-cmw)
+                if cropmarksleft:
+                    self.canvas.line(leftLine,-2*cmw,leftLine,-cmw)
+            if y == self.numTabsVertical-1:
+                self.canvas.line(rightLine,self.tabHeight+cmw,
+                                 rightLine,self.tabHeight+2*cmw)
+                self.canvas.line(middleLine, self.tabHeight+cmw,
+                                 middleLine, self.tabHeight+2*cmw)
+                if cropmarksleft:
+                    self.canvas.line(leftLine,self.tabHeight+cmw,
+                                     leftLine,self.tabHeight+2*cmw)
 
         self.canvas.restoreState()
 
