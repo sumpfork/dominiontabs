@@ -40,6 +40,17 @@ class Card:
     def isExpansion(self):
         return self.getType().getTypeNames() == ('Expansion',)
 
+    def setImage(self):
+        setImage = DominionTabs.setImages.get(self.cardset, None)
+        if not setImage:
+            setImage = DominionTabs.promoImages.get(self.name.lower(), None)
+        if setImage == None and self.cardset != 'base' and not self.isExpansion():
+            print 'warning, no set image for set "%s" card "%s"' % (self.cardset, self.name)
+            DominionTabs.setImages[self.cardset] = 0
+            DominionTabs.promoImages[self.name.lower()] = 0
+        return setImage
+
+
 class CardType:
     def __init__(self, typeNames, tabImageFile, tabTextHeightOffset=0, tabCostHeightOffset=-1):
         self.typeNames = typeNames
@@ -204,6 +215,10 @@ class DominionTabs:
         self.canvas.drawCentredString(x+8,costHeight,cost)
         return width
 
+    def drawSetIcon(self, setImage, x, y):
+        # set image
+        self.canvas.drawImage(os.path.join(self.filedir,'images',setImage), x, y, 14, 12, mask='auto')
+
     @classmethod
     def nameWidth(self, name, fontSize):
         w = 0
@@ -227,12 +242,12 @@ class DominionTabs:
         textWidth = self.tabLabelWidth - 6 # allow for 3 pt border on each side
         textHeight = self.tabLabelHeight/2-7+card.getType().getTabTextHeightOffset()
 
+        # draw banner
         self.canvas.drawImage(os.path.join(self.filedir,'images',card.getType().getNoCoinTabImageFile()),1,0,
             self.tabLabelWidth-2,self.tabLabelHeight-1,
             preserveAspectRatio=False,anchor='n',mask='auto')
 
-        setImageHeight = 3 + card.getType().getTabTextHeightOffset()
-
+        # draw cost
         if not card.isExpansion():
             if 'tab' in self.options.cost:
                 textInset = 4
@@ -243,22 +258,19 @@ class DominionTabs:
         else:
             textInset = 13
 
-        #set image
-        setImage = DominionTabs.setImages.get(card.cardset, None)
-        if not setImage:
-            setImage = DominionTabs.promoImages.get(card.name.lower(), None)
-
-        # always need to offset from right edge, to make sure it stays on
-        # banner
-        textInsetRight = 6
-        if setImage:
-            self.canvas.drawImage(os.path.join(self.filedir,'images',setImage), self.tabLabelWidth-20, setImageHeight, 14, 12, mask='auto')
+        # draw set image
+        setImage = card.setImage()
+        if setImage and 'tab' in self.options.set_icon:
+            setImageHeight = 3 + card.getType().getTabTextHeightOffset()
+            self.drawSetIcon(setImage, self.tabLabelWidth-20,
+                             setImageHeight)
             textInsetRight = 20
-        elif setImage == None and card.cardset != 'base' and not card.isExpansion():
-            print 'warning, no set image for set "%s" card "%s"' % (card.cardset, card.name)
-            DominionTabs.setImages[card.cardset] = 0
-            DominionTabs.promoImages[card.name.lower()] = 0
+        else:
+            # always need to offset from right edge, to make sure it stays on
+            # banner
+            textInsetRight = 6
 
+        # draw name
         fontSize = 12
         name = card.name.upper()
 
@@ -326,8 +338,18 @@ class DominionTabs:
         height = 0
         textHeight = self.tabHeight - self.tabLabelHeight + 0.2*cm
 
+        drewTopIcon = False
         if 'body-top' in self.options.cost and not card.isExpansion():
             self.drawCost(card, cm/4.0, textHeight-0.7*cm)
+            drewTopIcon = True
+
+        if 'body-top' in self.options.set_icon and not card.isExpansion():
+            setImage = card.setImage()
+            if setImage:
+                self.drawSetIcon(setImage, self.tabWidth-16,
+                                 textHeight-0.7*cm-3)
+                drewTopIcon = True
+        if drewTopIcon:
             height += 15
 
         #draw text
@@ -578,6 +600,12 @@ class DominionTabs:
                           " 'hide' to indicate it should not be displayed, or"
                           " given multiple times to show it in multiple"
                           " places - defaults to 'tab'", default=[])
+        parser.add_option("--set-icon",action="append",type="choice",
+                          choices=["tab", "body-top", "hide"],
+                          help="where to display the set icon; may be set to"
+                          " 'hide' to indicate it should not be displayed, or"
+                          " given multiple times to show it in multiple"
+                          " places - defaults to 'tab'", default=[])
         parser.add_option("--expansions",action="append",type="string",
                           help="subset of dominion expansions to produce tabs for")
         parser.add_option("--cropmarks",action="store_true",dest="cropmarks",
@@ -598,6 +626,8 @@ class DominionTabs:
         options, args = parser.parse_args(argstring)
         if not options.cost:
             options.cost = ['tab']
+        if not options.set_icon:
+            options.set_icon = ['tab']
         return options, args
 
     def main(self,argstring):
