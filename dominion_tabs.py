@@ -170,7 +170,7 @@ class DominionTabs:
         else:
             self.canvas.translate(0,self.tabHeight-self.tabLabelHeight)
 
-        textWidth = 85
+        textWidth = self.tabLabelWidth - 6 # allow for 3 pt border on each side
         textHeight = self.tabLabelHeight/2-7+card.getType().getTabTextHeightOffset()
 
         self.canvas.drawImage(os.path.join(self.filedir,'images',card.getType().getNoCoinTabImageFile()),1,0,
@@ -179,7 +179,6 @@ class DominionTabs:
 
         if card.getType().getTypeNames() != ('Expansion',):
             textInset = 22
-
 
             costHeight = textHeight + card.getType().getTabCostHeightOffset()
             potHeight = 3 + card.getType().getTabTextHeightOffset()
@@ -190,7 +189,6 @@ class DominionTabs:
             if card.potcost:
                 self.canvas.drawImage(os.path.join(self.filedir,'images','potion.png'),21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
                 textInset += potSize
-                textWidth -= potSize
             setImageHeight = potHeight
 
             self.canvas.setFont('MinionPro-Bold',12)
@@ -203,6 +201,8 @@ class DominionTabs:
         else:
             textInset = 13
             setImageHeight = 3 + card.getType().getTabTextHeightOffset()
+
+        textWidth -= textInset
 
         #set image
         setImage = DominionTabs.setImages.get(card.cardset, None)
@@ -488,6 +488,8 @@ class DominionTabs:
                           help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
         parser.add_option("--papersize",type="string",dest="papersize",default=None,
                           help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
+        parser.add_option("--tabwidth",type="float",default=4,
+                          help="width in cm of stick-up tab (ignored if tabs-only used)")
         parser.add_option("--samesidelabels",action="store_true",dest="sameside",
                           help="force all label tabs to be on the same side")
         parser.add_option("--expansions",action="append",type="string",
@@ -571,9 +573,8 @@ class DominionTabs:
             fixedMargins = True
         else:
             minmarginwidth, minmarginheight = self.parseDimensions(self.options.minmargin)
-
-            self.tabLabelHeight = 0.9*cm
-            self.tabLabelWidth = 4*cm
+            self.tabLabelWidth = self.options.tabwidth * cm
+            self.tabLabelHeight = .9*cm
             self.horizontalBorderSpace = 0*cm
             self.verticalBorderSpace = 0*cm
 
