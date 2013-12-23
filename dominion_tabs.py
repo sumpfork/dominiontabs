@@ -37,6 +37,9 @@ class Card:
     def toString(self):
         return self.name + ' ' + self.cardset + ' ' + '-'.join(self.types) + ' ' + `self.cost` + ' ' + self.description + ' ' + self.extra
 
+    def isExpansion(self):
+        return self.getType().getTypeNames() == ('Expansion',)
+
 class CardType:
     def __init__(self, typeNames, tabImageFile, tabTextHeightOffset=0, tabCostHeightOffset=-1):
         self.typeNames = typeNames
@@ -180,6 +183,27 @@ class DominionTabs:
 
         self.canvas.restoreState()
 
+    def drawCost(self, card, x, y, costOffset=-1):
+        # base width is 16 (for image) + 2 (1 pt border on each side)
+        width = 18
+
+        costHeight = y + costOffset
+        coinHeight = costHeight - 5
+        potHeight = y - 3
+        potSize = 11
+
+        self.canvas.drawImage(os.path.join(self.filedir,'images','coin_small.png'),x,coinHeight,16,16,preserveAspectRatio=True,mask='auto')
+        if card.potcost:
+            self.canvas.drawImage(os.path.join(self.filedir,'images','potion.png'),x+17,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
+            width += potSize
+
+        self.canvas.setFont('MinionPro-Bold',12)
+        cost = str(card.cost)
+        if 'Prize' in card.types:
+            cost += '*'
+        self.canvas.drawCentredString(x+8,costHeight,cost)
+        return width
+
     @classmethod
     def nameWidth(self, name, fontSize):
         w = 0
@@ -207,30 +231,17 @@ class DominionTabs:
             self.tabLabelWidth-2,self.tabLabelHeight-1,
             preserveAspectRatio=False,anchor='n',mask='auto')
 
-        if card.getType().getTypeNames() != ('Expansion',):
-            textInset = 22
+        setImageHeight = 3 + card.getType().getTabTextHeightOffset()
 
-            costHeight = textHeight + card.getType().getTabCostHeightOffset()
-            potHeight = 3 + card.getType().getTabTextHeightOffset()
-            potSize = 11
-
-            self.canvas.drawImage(os.path.join(self.filedir,'images','coin_small.png'),4,costHeight-5,16,16,preserveAspectRatio=True,mask='auto')
-
-            if card.potcost:
-                self.canvas.drawImage(os.path.join(self.filedir,'images','potion.png'),21,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
-                textInset += potSize
-            setImageHeight = potHeight
-
-            self.canvas.setFont('MinionPro-Bold',12)
-            cost = str(card.cost)
-            if 'Prize' in card.types:
-                cost += '*'
-            costWidthOffset = 12
-            self.canvas.drawCentredString(costWidthOffset,costHeight,cost)
-
+        if not card.isExpansion():
+            if 'tab' in self.options.cost:
+                textInset = 4
+                textInset += self.drawCost(card, textInset, textHeight,
+                                           card.getType().getTabCostHeightOffset())
+            else:
+                textInset = 6
         else:
             textInset = 13
-            setImageHeight = 3 + card.getType().getTabTextHeightOffset()
 
         #set image
         setImage = DominionTabs.setImages.get(card.cardset, None)
@@ -243,7 +254,7 @@ class DominionTabs:
         if setImage:
             self.canvas.drawImage(os.path.join(self.filedir,'images',setImage), self.tabLabelWidth-20, setImageHeight, 14, 12, mask='auto')
             textInsetRight = 20
-        elif setImage == None and card.cardset != 'base' and card.getType().getTypeNames() != ('Expansion',):
+        elif setImage == None and card.cardset != 'base' and not card.isExpansion():
             print 'warning, no set image for set "%s" card "%s"' % (card.cardset, card.name)
             DominionTabs.setImages[card.cardset] = 0
             DominionTabs.promoImages[card.name.lower()] = 0
@@ -312,19 +323,24 @@ class DominionTabs:
         self.canvas.restoreState()
 
     def drawText(self, card, useExtra=False):
+        height = 0
+        textHeight = self.tabHeight - self.tabLabelHeight + 0.2*cm
+
+        if 'body-top' in self.options.cost and not card.isExpansion():
+            self.drawCost(card, cm/4.0, textHeight-0.7*cm)
+            height += 15
+
         #draw text
         if useExtra and card.extra:
             descriptions = (card.extra,)
         else:
             descriptions = re.split("\n",card.description)
 
-        height = 0
         for d in descriptions:
             s = getSampleStyleSheet()['BodyText']
             s.fontName = "Times-Roman"
             dmod = self.add_inline_images(d,s.fontSize)
             p = Paragraph(dmod,s)
-            textHeight = self.tabHeight - self.tabLabelHeight + 0.2*cm
             textWidth = self.tabWidth - cm
 
             w,h = p.wrap(textWidth,textHeight)
@@ -556,6 +572,12 @@ class DominionTabs:
                           " tab, so that when using tabs on alternating sides,"
                           " the name is less likely to be hidden by the tab"
                           " in front; ignored if samesidelabels is on")
+        parser.add_option("--cost",action="append",type="choice",
+                          choices=["tab", "body-top", "hide"],
+                          help="where to display the card cost; may be set to"
+                          " 'hide' to indicate it should not be displayed, or"
+                          " given multiple times to show it in multiple"
+                          " places - defaults to 'tab'", default=[])
         parser.add_option("--expansions",action="append",type="string",
                           help="subset of dominion expansions to produce tabs for")
         parser.add_option("--cropmarks",action="store_true",dest="cropmarks",
@@ -573,7 +595,10 @@ class DominionTabs:
         parser.add_option("--expansion_dividers", action="store_true", dest="expansion_dividers",
                           help="add dividers describing each expansion set")
 
-        return parser.parse_args(argstring)
+        options, args = parser.parse_args(argstring)
+        if not options.cost:
+            options.cost = ['tab']
+        return options, args
 
     def main(self,argstring):
         options,args = DominionTabs.parse_opts(argstring)
