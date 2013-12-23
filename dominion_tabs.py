@@ -706,7 +706,18 @@ class DominionTabs:
 
         if self.options.expansions:
             self.options.expansions = [o.lower() for o in self.options.expansions]
-            cards=[c for c in cards if c.cardset in self.options.expansions]
+            filteredCards = []
+            knownExpansions = set()
+            for c in cards:
+                knownExpansions.add(c.cardset)
+                if c.cardset in self.options.expansions:
+                    filteredCards.append(c)
+            unknownExpansions = set(self.options.expansions) - knownExpansions
+            if unknownExpansions:
+                print "Error - unknown expansion(s): %s" % ", ".join(unknownExpansions)
+                return
+
+            cards = filteredCards
 
         if options.expansion_dividers:
             cardnamesByExpansion = {}
