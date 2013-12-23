@@ -278,15 +278,17 @@ class DominionTabs:
                 else:
                     h -= h/2
 
+            words = line.split()
             if rightSide or not self.options.edge_align_name:
                 w = textInset
-                name_parts = line.split()
                 def drawWordPiece(text, fontSize):
                     self.canvas.setFont('MinionPro-Regular',fontSize)
                     if text != ' ':
                         self.canvas.drawString(w,h,text)
                     return pdfmetrics.stringWidth(text,'MinionPro-Regular',fontSize)
-                for word in name_parts:
+                for i, word in enumerate(words):
+                    if i != 0:
+                        w += drawWordPiece(' ', fontSize)
                     w += drawWordPiece(word[0], fontSize)
                     w += drawWordPiece(word[1:], fontSize-2)
             else:
@@ -295,15 +297,17 @@ class DominionTabs:
                 # space between text + set symbol
 
                 w = self.tabLabelWidth - textInsetRight - 3
-                name_parts = reversed(line.split())
+                words.reverse()
                 def drawWordPiece(text, fontSize):
                     self.canvas.setFont('MinionPro-Regular',fontSize)
                     if text != ' ':
                         self.canvas.drawRightString(w,h,text)
                     return -pdfmetrics.stringWidth(text,'MinionPro-Regular',fontSize)
-                for word in name_parts:
+                for i, word in enumerate(words):
                     w += drawWordPiece(word[1:], fontSize-2)
                     w += drawWordPiece(word[0], fontSize)
+                    if i != len(words) - 1:
+                        w += drawWordPiece(' ', fontSize)
         self.canvas.restoreState()
 
     def drawText(self, card, useExtra=False):
