@@ -255,7 +255,7 @@ class DominionTabs:
 
         width = self.nameWidth(name, fontSize)
         while width > textWidth and fontSize > 8:
-            fontSize -= 1
+            fontSize -= .01
             #print 'decreasing font size for tab of',name,'now',fontSize
             width = self.nameWidth(name, fontSize)
         tooLong = width > textWidth
