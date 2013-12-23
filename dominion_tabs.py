@@ -516,6 +516,10 @@ class DominionTabs:
             fname = args[0]
         return self.generate(options,fname)
 
+    def parseDimensions(self, dimensionsStr):
+        x, y = dimensionsStr.upper().split('X', 1)
+        return (float (x) * cm, float (y) * cm)
+
     def generate(self,options,f):
         self.options = options
         size = self.options.size.upper()
@@ -526,24 +530,27 @@ class DominionTabs:
             dominionCardWidth, dominionCardHeight = (9.1*cm, 5.9*cm)
             print 'Using normal card size, %.2fcm x%.2fcm' % (dominionCardWidth/cm,dominionCardHeight/cm)
         else:
-            x, y = size.split ("X", 1)
-            dominionCardWidth, dominionCardHeight = (float (x) * cm, float (y) * cm)
+            dominionCardWidth, dominionCardHeight = self.parseDimensions(size)
             print 'Using custom card size, %.2fcm x %.2fcm' % (dominionCardWidth/cm,dominionCardHeight/cm)
 
         papersize = None
         if not self.options.papersize:
             if os.path.exists("/etc/papersize"):
                 papersize = open ("/etc/papersize").readline().upper()
+            else:
+                papersize = 'LETTER'
         else:
             papersize = self.options.papersize.upper()
 
         if papersize == 'A4':
             print "Using A4 sized paper."
             self.paperwidth, self.paperheight = A4
-        else:
+        elif papersize == 'LETTER':
             print "Using letter sized paper."
             self.paperwidth, self.paperheight = LETTER
-
+        else:
+            self.paperwidth, self.paperheight = self.parseDimensions(papersize)
+            print 'Using custom paper size, %.2fcm x %.2fcm' % (self.paperwidth/cm,self.paperheight/cm)
 
         if self.options.orientation == "vertical":
             self.tabWidth, self.tabBaseHeight = dominionCardHeight, dominionCardWidth
@@ -563,8 +570,7 @@ class DominionTabs:
             self.verticalBorderSpace = 0.01*cm
             fixedMargins = True
         else:
-            minmarginwidth, minmarginheight = self.options.minmargin.split ("x", 1)
-            minmarginwidth, minmarginheight = float (minmarginwidth) * cm, float (minmarginheight) * cm
+            minmarginwidth, minmarginheight = self.parseDimensions(self.options.minmargin)
 
             self.tabLabelHeight = 0.9*cm
             self.tabLabelWidth = 4*cm
