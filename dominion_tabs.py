@@ -320,7 +320,7 @@ class DominionTabs:
                 if not self.options.expansions and currentCard and (currentCard not in (c.name for c in cards)):
                     print currentCard + ' has extra description, but is not in cards'
             else:
-                extra += line.strip()
+                extra += ' ' + line.strip()
         if currentCard and extra:
             extras[currentCard] = extra.strip()
         for c in cards:
@@ -659,10 +659,10 @@ class DominionTabs:
             open('cards.yaml','w').write(out)
 
         if options.order == "global":
-            sf = lambda x,y: cmp(x.name,y.name)
+            sortKey = lambda x: x.name
         else:
-            sf = lambda x,y: cmp((x.cardset,x.name),(y.cardset,y.name))
-        cards.sort(cmp=sf)
+            sortKey = lambda x: (x.cardset,x.name)
+        cards.sort(key=sortKey)
 
         if not f:
             f = "dominion_tabs.pdf"
