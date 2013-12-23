@@ -335,22 +335,22 @@ class DominionTabs:
         self.canvas.restoreState()
 
     def drawText(self, card, useExtra=False):
-        height = 0
-        textHeight = self.tabHeight - self.tabLabelHeight + 0.2*cm
+        usedHeight = 0
+        totalHeight = self.tabHeight - self.tabLabelHeight
 
         drewTopIcon = False
         if 'body-top' in self.options.cost and not card.isExpansion():
-            self.drawCost(card, cm/4.0, textHeight-0.7*cm)
+            self.drawCost(card, cm/4.0, totalHeight - 0.5*cm)
             drewTopIcon = True
 
         if 'body-top' in self.options.set_icon and not card.isExpansion():
             setImage = card.setImage()
             if setImage:
                 self.drawSetIcon(setImage, self.tabWidth-16,
-                                 textHeight-0.7*cm-3)
+                                 totalHeight-0.5*cm-3)
                 drewTopIcon = True
         if drewTopIcon:
-            height += 15
+            usedHeight += 15
 
         #draw text
         if useExtra and card.extra:
@@ -358,23 +358,38 @@ class DominionTabs:
         else:
             descriptions = re.split("\n",card.description)
 
-        for d in descriptions:
-            s = getSampleStyleSheet()['BodyText']
-            s.fontName = "Times-Roman"
-            dmod = self.add_inline_images(d,s.fontSize)
-            p = Paragraph(dmod,s)
-            textWidth = self.tabWidth - cm
+        s = getSampleStyleSheet()['BodyText']
+        s.fontName = "Times-Roman"
 
-            w,h = p.wrap(textWidth,textHeight)
-            while h > textHeight:
-                s.fontSize -= 1
-                s.leading -= 1
-                #print 'decreasing fontsize on description for',card.name,'now',s.fontSize
+        textHorizontalMargin = .5*cm
+        textVerticalMargin = .3*cm
+        textBoxWidth = self.tabWidth - 2*textHorizontalMargin
+        textBoxHeight = totalHeight - usedHeight - 2*textVerticalMargin
+        spacerHeight = 0.2*cm
+        minSpacerHeight = 0.05*cm
+
+        while True:
+            paragraphs = []
+            # this accounts for the spacers we insert between paragraphs
+            h = (len(descriptions) - 1) * spacerHeight
+            for d in descriptions:
                 dmod = self.add_inline_images(d,s.fontSize)
                 p = Paragraph(dmod,s)
-                w,h = p.wrap(textWidth,textHeight)
-            p.drawOn(self.canvas,cm/2.0,textHeight-height-h-0.5*cm)
-            height += h + 0.2*cm
+                h += p.wrap(textBoxWidth, textBoxHeight)[1]
+                paragraphs.append(p)
+
+            if h <= textBoxHeight or s.fontSize <= 1 or s.leading <= 1:
+                break
+            else:
+                s.fontSize -= 1
+                s.leading -= 1
+                spacerHeight = max(spacerHeight - 1, minSpacerHeight)
+
+        h = totalHeight - usedHeight - textVerticalMargin
+        for p in paragraphs:
+            h -= p.height
+            p.drawOn(self.canvas, textHorizontalMargin, h)
+            h -= spacerHeight
 
     def drawDivider(self,card,x,y,useExtra=False):
         #figure out whether the tab should go on the right side or not
