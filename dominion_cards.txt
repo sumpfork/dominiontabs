@@ -23,6 +23,14 @@
 23	Mine	Dominion	Action	$5	Trash a Treasure card from your hand. Gain a Treasure card costing up to 3 Coins more; put it into your hand.
 24	Witch	Dominion	Action - Attack	$5	+2 Cards, Each other player gains a Curse card.
 25	Adventurer	Dominion	Action	$6	Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards in your hand and discard the other revealed cards.
+26	Copper	Dominion	Treasure	$0	Worth 1 Coin.
+27	Silver	Dominion	Treasure	$3	Worth 2 Coins.
+28	Gold	Dominion	Treasure	$6	Worth 3 Coins.
+29	Curse	Dominion	Curse	$0	-1 <VP>
+30	Estate	Dominion	Victory	$2	1 <VP>
+31	Duchy	Dominion	Victory	$5	3 <VP>
+32	Province	Dominion	Victory	$8	6 <VP>
+33	Trash	Dominion	Action	$0	Pile of trash.
 
 1	Courtyard	Intrigue	Action	$2	+3 Card, Put a card from your hand on top of your deck.
 2	Pawn	Intrigue	Action	$2	Choose two: +1 Card, +1 Action, +1 Buy, +1 Coin. (The choices must be different.).
@@ -50,6 +58,14 @@
 24	Harem	Intrigue	Treasure - Victory	$6	Worth 2 Coins, 2 <VP>
 25	Nobles	Intrigue	Action - Victory	$6	2 <VP>
 Choose one: +3 Cards, or +2 Actions.
+26	Copper	Intrigue	Treasure	$0	Worth 1 Coin.
+27	Silver	Intrigue	Treasure	$3	Worth 2 Coins.
+28	Gold	Intrigue	Treasure	$6	Worth 3 Coins.
+29	Curse	Intrigue	Curse	$0	-1 <VP>
+30	Estate	Intrigue	Victory	$2	1 <VP>
+31	Duchy	Intrigue	Victory	$5	3 <VP>
+32	Province	Intrigue	Victory	$8	6 <VP>
+33	Trash	Intrigue	Action	$0	Pile of trash.
 
 1	Embargo	Seaside	Action	$2	+2 Coins, Trash this card. Put an Embargo token on top of a Supply pile. - When a player buys a card, he gains a Curse card per Embargo token on that pile.
 2	Haven	Seaside	Action - Duration	$2	+1 Card, +1 Action, Set aside a card from your hand face down. At the start of your next turn, put it into your hand.
@@ -194,14 +210,14 @@ At the start of Clean-up, if you have this and no more than one other Action car
 Choose one; you get the version in parentheses: Each player gets +1 (+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly 1 Coin (2 Coins) more.
 
 1	Copper	Base	Treasure	$0	Worth 1 Coin.
-2	Curse	Base	Curse	$0	-1 <VP>
-3	Estate	Base	Victory	$2	1 <VP>
-4	Silver	Base	Treasure	$3	Worth 2 Coins.
-5	Duchy	Base	Victory	$5	3 <VP>
-6	Gold	Base	Treasure	$6	Worth 3 Coins.
-7	Province	Base	Victory	$8	6 <VP>
-8	Potion	Base	Treasure	$4	Worth 1 Potion.
-9	Platinum	Base	Treasure	$9	Worth 5 Coins.
+2	Silver	Base	Treasure	$3	Worth 2 Coins.
+3	Gold	Base	Treasure	$6	Worth 3 Coins.
+4	Platinum	Base	Treasure	$9	Worth 5 Coins.
+5	Potion	Base	Treasure	$4	Worth 1 Potion.
+6	Curse	Base	Curse	$0	-1 <VP>
+7	Estate	Base	Victory	$2	1 <VP>
+8	Duchy	Base	Victory	$5	3 <VP>
+9	Province	Base	Victory	$8	6 <VP>
 10	Colony	Base	Victory	$11	10 <VP>
 11	Trash	Base	Action	$0	Pile of trash.
 
