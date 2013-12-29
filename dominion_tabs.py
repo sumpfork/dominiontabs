@@ -586,8 +586,12 @@ class DominionTabs:
                 self.canvas.restoreState()
             self.canvas.showPage()
 
-    @staticmethod
-    def parse_opts(argstring):
+
+
+    LOCATION_CHOICES = ["tab", "body-top", "hide"]
+
+    @classmethod
+    def parse_opts(cls, argstring):
         parser = OptionParser()
         parser.add_option("--back_offset",type="float",dest="back_offset",default=0,
                           help="Points to offset the back page to the right; needed for some printers")
@@ -612,17 +616,19 @@ class DominionTabs:
                           " the name is less likely to be hidden by the tab"
                           " in front; ignored if samesidelabels is on")
         parser.add_option("--cost",action="append",type="choice",
-                          choices=["tab", "body-top", "hide"],
+                          choices=cls.LOCATION_CHOICES,  default=[],
                           help="where to display the card cost; may be set to"
                           " 'hide' to indicate it should not be displayed, or"
                           " given multiple times to show it in multiple"
-                          " places - defaults to 'tab'", default=[])
+                          " places; valid values are: %s; defaults to 'tab'"
+                          % ", ".join("'%s'" % x for x in cls.LOCATION_CHOICES))
         parser.add_option("--set-icon",action="append",type="choice",
-                          choices=["tab", "body-top", "hide"],
+                          choices=cls.LOCATION_CHOICES,  default=[],
                           help="where to display the set icon; may be set to"
                           " 'hide' to indicate it should not be displayed, or"
                           " given multiple times to show it in multiple"
-                          " places - defaults to 'tab'", default=[])
+                          " places; valid values are: %s; defaults to 'tab'"
+                          % ", ".join("'%s'" % x for x in cls.LOCATION_CHOICES))
         parser.add_option("--expansions",action="append",type="string",
                           help="subset of dominion expansions to produce tabs for")
         parser.add_option("--cropmarks",action="store_true",dest="cropmarks",
