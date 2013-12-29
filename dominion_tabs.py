@@ -610,7 +610,7 @@ class DominionTabs:
                           help="force all label tabs to be on the same side"
                           " (this will be forced on if there is an uneven"
                           " number of cards horizontally across the page)")
-        parser.add_option("--edge-align-name",action="store_true",
+        parser.add_option("--edge_align_name",action="store_true",
                           help="align the card name to the outside edge of the"
                           " tab, so that when using tabs on alternating sides,"
                           " the name is less likely to be hidden by the tab"
@@ -622,7 +622,7 @@ class DominionTabs:
                           " given multiple times to show it in multiple"
                           " places; valid values are: %s; defaults to 'tab'"
                           % ", ".join("'%s'" % x for x in cls.LOCATION_CHOICES))
-        parser.add_option("--set-icon",action="append",type="choice",
+        parser.add_option("--set_icon",action="append",type="choice",
                           choices=cls.LOCATION_CHOICES,  default=[],
                           help="where to display the set icon; may be set to"
                           " 'hide' to indicate it should not be displayed, or"
