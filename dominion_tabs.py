@@ -589,7 +589,7 @@ class DominionTabs:
     @staticmethod
     def parse_opts(argstring):
         parser = OptionParser()
-        parser.add_option("--back_offset",type="int",dest="back_offset",default=0,
+        parser.add_option("--back_offset",type="float",dest="back_offset",default=0,
                           help="Points to offset the back page to the right; needed for some printers")
         parser.add_option("--orientation",type="choice",choices=["horizontal","vertical"],dest="orientation",default="horizontal",
                           help="horizontal or vertical, default:horizontal")
