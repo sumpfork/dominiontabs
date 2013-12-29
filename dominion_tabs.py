@@ -645,6 +645,10 @@ class DominionTabs:
                           help="sort order for the cards, whether by expansion or globally alphabetical")
         parser.add_option("--expansion_dividers", action="store_true", dest="expansion_dividers",
                           help="add dividers describing each expansion set")
+        parser.add_option("--base_cards_with_expansion", action="store_true",
+                          help='print the base cards as part of the expansion; ie, a divider for "Silver"'
+                          'will be printed as both a "Dominion" card and as an "Intrigue" card; if this'
+                          'option is not given, all base cards are placed in their own "Base" expansion')
 
         options, args = parser.parse_args(argstring)
         if not options.cost:
@@ -787,6 +791,15 @@ class DominionTabs:
             cards = self.read_card_defs(os.path.join(self.filedir,"dominion_cards.txt"))
             self.read_card_extras(os.path.join(self.filedir,"dominion_card_extras.txt"),cards)
 
+
+        baseCards = [card.name for card in cards if card.cardset.lower() == 'base']
+        def isBaseExpansionCard(card):
+            return card.cardset.lower() != base and card.name in baseCards
+        if self.options.base_cards_with_expansion:
+            cards = [card for card in cards if card.cardset.lower() != 'base']
+        else:
+            cards = [card for card in cards if not isBaseExpansionCard(card)]
+
         if self.options.expansions:
             self.options.expansions = [o.lower() for o in self.options.expansions]
             filteredCards = []
@@ -805,6 +818,8 @@ class DominionTabs:
         if options.expansion_dividers:
             cardnamesByExpansion = {}
             for c in cards:
+                if isBaseExpansionCard(c):
+                    continue
                 cardnamesByExpansion.setdefault(c.cardset,[]).append(c.name.strip())
             for exp,names in cardnamesByExpansion.iteritems():
                 c = Card(exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
@@ -815,10 +830,21 @@ class DominionTabs:
             out = yaml.dump(cards)
             open('cards.yaml','w').write(out)
 
+        # When sorting cards, want to always put "base" cards after all
+        # kingdom cards, and order the base cards in a set order - the
+        # order they are listed in the database (ie, all normal treasures
+        # by worth, then potion, then all normal VP cards by worth, then
+        # trash)
+        def baseIndex(name):
+            try:
+                return baseCards.index(name)
+            except Exception:
+                return -1
+
         if options.order == "global":
-            sortKey = lambda x: x.name
+            sortKey = lambda x: (int(x.isExpansion()), baseIndex(x.name),x.name)
         else:
-            sortKey = lambda x: (x.cardset,x.name)
+            sortKey = lambda x: (x.cardset,int(x.isExpansion()),baseIndex(x.name),x.name)
         cards.sort(key=sortKey)
 
         if not f:
