@@ -146,7 +146,7 @@ class DominionTabs:
             self.canvas.scale(-1,1)
         if not self.options.cropmarks and not isBack:
             #don't draw outline on back, in case lines don't line up with front
-            if isExpansionDivider:
+            if isExpansionDivider and self.options.centre_expansion_dividers:
                 outline = self.expansionTabOutline
             else:
                 outline = self.tabOutline
@@ -238,7 +238,7 @@ class DominionTabs:
     def drawTab(self, card, rightSide):
         #draw tab flap
         self.canvas.saveState()
-        if card.isExpansion():
+        if card.isExpansion() and self.options.centre_expansion_dividers:
              self.canvas.translate(self.tabWidth/2-self.tabLabelWidth/2,
                                    self.tabHeight-self.tabLabelHeight)
         elif not rightSide:
@@ -656,6 +656,8 @@ class DominionTabs:
                           help='print the base cards as part of the expansion; ie, a divider for "Silver"'
                           'will be printed as both a "Dominion" card and as an "Intrigue" card; if this'
                           'option is not given, all base cards are placed in their own "Base" expansion')
+        parser.add_option("--centre_expansion_dividers", action="store_true", dest="centre_expansion_dividers",
+                          help='centre the tabs on expansion dividers')
 
         options, args = parser.parse_args(argstring)
         if not options.cost:
