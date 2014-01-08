@@ -124,6 +124,7 @@ class DominionTabs:
 
     def __init__(self):
         self.filedir = os.path.dirname(__file__)
+        self.odd = True
 
     def add_inline_images(self, text, fontsize):
         path = os.path.join(self.filedir,'images')
@@ -364,7 +365,7 @@ class DominionTabs:
         if useExtra and card.extra:
             descriptions = (card.extra,)
         else:
-                descriptions = re.split("\n",card.description)
+            descriptions = re.split("\n",card.description)
 
         s = getSampleStyleSheet()['BodyText']
         s.fontName = "Times-Roman"
@@ -403,7 +404,10 @@ class DominionTabs:
     def drawDivider(self,card,x,y,useExtra=False):
         #figure out whether the tab should go on the right side or not
         if not self.options.sameside:
-            rightSide = x%2 == 1
+            if not useExtra:
+                rightSide = not self.odd
+            else:
+                rightSide = self.odd
         else:
             rightSide = useExtra
         #apply the transforms to get us to the corner of the current card
@@ -571,7 +575,10 @@ class DominionTabs:
 
     def drawDividers(self,cards):
         cards = split(cards,self.numTabsVertical*self.numTabsHorizontal)
+        self.odd = True
         for pageCards in cards:
+            #remember whether we start with odd or even divider for tab location
+            pageStartOdd = self.odd
             if self.options.order != "global":
                 self.drawSetNames(pageCards)
             for i,card in enumerate(pageCards):
@@ -581,9 +588,12 @@ class DominionTabs:
                 self.canvas.saveState()
                 self.drawDivider(card,x,self.numTabsVertical-1-y)
                 self.canvas.restoreState()
+                self.odd = not self.odd
             self.canvas.showPage()
             if self.options.order != "global":
                 self.drawSetNames(pageCards)
+            #start at same oddness
+            self.odd = pageStartOdd
             for i,card in enumerate(pageCards):
                 #print card
                 x = (self.numTabsHorizontal-1-i) % self.numTabsHorizontal
@@ -591,6 +601,7 @@ class DominionTabs:
                 self.canvas.saveState()
                 self.drawDivider(card,x,self.numTabsVertical-1-y,useExtra=True)
                 self.canvas.restoreState()
+                self.odd = not self.odd
             self.canvas.showPage()
 
 
@@ -757,10 +768,6 @@ class DominionTabs:
                 = numTabsVerticalP, numTabsHorizontalP
             self.minHorizontalMargin = minmarginwidth
             self.minVerticalMargin = minmarginheight
-
-        if self.numTabsHorizontal % 2 != 0:
-            # force on sameside if an uneven # of tabs horizontally
-            self.options.sameside = True
 
         if not fixedMargins:
             #dynamically max margins
