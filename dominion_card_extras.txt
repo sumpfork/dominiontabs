@@ -1399,34 +1399,357 @@ This card causes there to be an extra pile in the Supply, called the Bane pile; 
 When you play Young Witch, after you draw 2 cards and discard 2 cards, each other player may reveal a Bane card from his hand; if he does not, he gains a Curse. This attack hits other players in turn order, which matters when the Curse pile is low. Players may still respond to a Young Witch with Reaction cards like Horse Traders or Moat (from Dominion); those happen before Bane cards are revealed. If Secret Chamber (from Dominion: Intrigue) is the Bane card, first you can reveal it for its Reaction ability, and then, if it's still in your hand, you can reveal it to avoid getting a Curse.
 
 :::Walled Village:
+
 :::Governor:
 
 :::Crossroads:
+First reveal your hand, and draw a card for each
+Victory card you revealed, if any. The revealed cards all stay in
+your hand. Cards with two types, one of which is Victory, are
+Victory cards. Then, if this is the first time you played a
+Crossroads this turn, you get +3 Actions. Subsequent Crossroads
+this turn will give you cards but not Actions. Using a card that
+lets you play a card several times (like Throne Room from
+Dominion) on Crossroads, you will play Crossroads multiple
+times, getting +3 Actions the first time but not the others.
+
 :::Duchess:
+When you play this, you get +2 coins, and each player,
+including you, looks at the top card of his own deck and either
+discards it or puts it back on top, his choice. Any player with no
+cards in his deck shuffles his discard pile first; any player who
+still has no cards to look at does not look at one. When a player
+gains a Duchy in a game with Duchess in the Supply, that player
+may also gain a Duchess from the Supply. This works whether
+the player gained a Duchy due to buying one, or gained a Duchy
+some other way. Duchess does not interact in any special way
+with the promotional card Black Market.
+
 :::Fool's Gold:
+This is both a Treasure and a Reaction. It can be
+played in your Buy phase like other Treasures. When you play it,
+it is worth 1 coin if this is the first time you played a Fool's Gold
+this turn, and otherwise it is worth 4 coins. So if your lay three
+Fool's Golds in the same turn, the first is worth 1, the second is
+worth 4, and the third is worth 4 coins. Fool's Gold is also a
+Reaction. When another player gains a Province, you may trash
+Fool's Gold from your hand; if you do, you gain a Gold from the
+Supply, putting it on top of your deck rather than into your
+discard pile. If there are no cards in your deck, the Gold becomes the
+only card in your deck. If there are no Gold cards left in the
+Supply, you do not gain one, but can still trash Fool's Gold. This
+Reaction is only usable when another player gains a Province, not
+you. It is usable whether a Province was gained due to being
+bought, or gained some other way.
+
 :::Develop:
+First trash a card from your hand, if you have any cards
+in hand. Develop itself is no longer in your hand and so cannot
+trash itself (though it can trash other copies of Develop). If you
+trashed a card, gain two cards, one costing exactly 1 more than
+the trashed card, and one costing exactly 1 less than the trashed
+card. The gained cards come from the Supply; gain them in
+either order. If there is no card in the Supply at one of the costs,
+you still gain the other card if you can. Put the gained cards on
+top of your deck rather than into your discard pile. If you trash a
+Copper with Develop, which costs 0 coins, you will try and fail to
+gain a card costing -1 coins (and also try to gain a card costing 1 coin).
+
 :::Oasis:
+You draw before discarding. You can discard the card you
+drew. If you are unable to draw a card (due to having no cards in
+your deck, and none in your discard pile to shuffle), you still
+discard a card if able.
+
 :::Oracle:
+First, each player including you, reveals the top two
+cards of his deck, and either discards both of them or puts both
+of them back on top, your choice. A player putting the cards
+back puts them back in an order he chooses, and without
+needing to reveal that order. Then, you draw two cards. So if you
+put back the cards you revealed, you will draw them.
+
 :::Scheme:
+When you play this, you draw a card, get +1 Action, and
+set up an effect to happen later in the turn, at the start of Clean-
+up. At that time, you may optionally choose an Action card you
+have in play. If you discard that Action card from play this turn,
+as you normally do, you will put it on top of your deck. This
+happens before you draw cards for next turn. The Action card
+you choose can be Scheme itself, or any other Action card you
+have in play, which might have been played before or after you
+played Scheme. If the Action card is not discarded during Clean-
+up, for example due to being a Duration card from Dominion:
+Seaside that was played this turn, then it does not get put on top
+of your deck.
+
 :::Tunnel:
+This is both a Victory card and a Reaction. At the end of
+the game, Tunnel is worth 2 victory points. Tunnel's Reaction ability
+functions when you discard it. You cannot simply choose to
+discard it; something has to let you or make you discard it. This
+ability functions whether you discard Tunnel on your own turn
+(such as due to Oasis) or on someone else's (such as due to
+Margrave). It functions if Tunnel is discarded from your hand
+(such as due to Oasis) or from your deck, or when set aside
+(such as due to Cartographer). If Tunnel would normally not
+necessarily be revealed (such as when discarding multiple cards
+to Cartographer), you have to reveal it to get the Gold. Revealing
+it is optional, even if Tunnel was already revealed for some other
+reason; you are not forced to gain a Gold. This ability does not
+function if cards are put into your discard pile without being
+discarded, such as when you buy a card, when you gain a card
+directly (such as with Border Village), when your deck is put into
+your discard pile, such as with Chancellor from Dominion, or
+with Possession from Dominion: Alchemy, when trashed cards
+are returned to you at end of turn. It also does not function
+during Clean-up, when you normally discard all of your played
+and unplayed cards. The key thing to look for is a card actually
+telling you to "discard" cards. The Gold you gain comes from the
+Supply and is put into your discard pile; if there is no Gold left
+in the Supply, you do not gain one.
+
 :::Jack of all Trades:
+This card does four separate things, in the
+order listed; you do all of them (the last one is optional). First,
+gain a Silver from the Supply, putting it into your discard pile. If
+there are no Silvers left in the Supply, you do not gain one.
+Second, look at the top card of your deck, and either discard it
+or put it back on top. If there are no cards left in your deck,
+shuffle your discard pile to get a card to look at (this will shuffle
+in the Silver you just gained). If there are still no cards, you do
+not look at one. Third, draw cards until you have at least five
+cards in hand. If you already have five or more cards in hand,
+you do not draw any cards. If there are not enough cards left to
+draw between your deck and discard pile, just draw what you
+can. Fourth, you may trash a card from your hand that is not a
+Treasure card. Cards with two types, one of which is Treasure, are
+Treasures.
+
 :::Noble Brigand:
+When you play this, you get +1 coin. When you play
+this and also when you buy it, each other player reveals the top
+two cards of his deck, trashes a Silver or Gold he revealed that
+you choose, and discards the rest. Each of these players that did
+not reveal a Treasure at all gains a Copper from the Supply,
+putting it into his discard pile. Finally, you gain all of the Silvers
+and Golds trashed this way. This cannot trash any Treasures
+except Silver or Gold. Gaining a Noble Brigand without buying it
+does not cause this ability to happen. Noble Brigand is an Attack
+card, and when you play it, players can use cards like Moat from
+Dominion or Secret Chamber from Intrigue in response.
+However, buying a Noble Brigand is not "playing an Attack card,"
+and so cads like Moat cannot respond to that.
+
 :::Nomad Camp:
+When you gain this card, it goes on top of your
+deck rather than into your discard pile. This is true whether you
+gained it due to buying it or gained it some other way. If there
+were no cards in your deck, it becomes the only card in your
+deck.
+
 :::Silk Road:
+This is a Victory card, not an Action card. It does
+nothing until the end of the game, when it is worth 1 victory point for
+every four Victory cards in your Deck (counting all of your cards
+- your Discard pile and hand are part of your Deck at that
+point). Silk Roads count themselves. Round down; if you have 11
+Victory cards, Silk Road is worth 2 victory points. During set-up, put all 12
+Silk Roads in the Supply for a game with 3 or more players, but
+only 8 in the Supply for a 2-player game. Cards with multiple
+types, one of which is Victory, are Victory cards and so are
+counted by Silk Road.
+
 :::Spice Merchant:
+You may trash a Treasure card from your hand.
+This is optional. If you did trash a Treasure card, you choose
+either to get +2 Cards and +1 Action, or +2 coins and +1 Buy.
+
 :::Trader:
+When you play this, trash a card from your hand, and if
+you did, gain a number of Silvers equal to the cost of that card
+in coins. The Silvers come from the Supply and are put into your
+discard pile. If there are not enough Silvers left, just gain all of
+the Silvers that you can. You only gain Silvers if you trashed a
+card. If you trash a card costing 0, such as Copper, you will gain
+zero Silvers. You can trash Silver if you want; you will gain three
+Silvers for it normally. If costs are different, such as due to
+playing Highway, then Trader will give you a different number of
+Silvers, based on the current costs. For example ifyou play
+Highway and then Trader, trashing an Estate you will only gain
+one Silver. If you trash a card with Potion in its cost from
+Dominion: Alchemy, you do not get anything for the Potion, just
+for the coins that the card cost.
+Trader is also a Reaction. When you gain a card, whether due to
+buying it or due to gaining it some other way, you may reveal
+Trader from your hand to instead gain a Silver from the Supply.
+If you do this, you gain a Silver, not the card you would have
+gained; if something would have happened due to gaining the
+other card, it does not happen, because you did not gain it. For
+example if you buy Ill-Gotten Gains but use Trader to gain Silver
+instead, no-one will gain a Curse. However if something happens
+when you buy a card, that will still happen if you replace gaining
+the card with gaining Silver. For example you can buy Farmland,
+trash a card from your hand and gain one costing 2 more, then
+use Trader to gain Silver rather than Farmland. If the card you
+were going to gain was not going to your discard pile, the Silver
+still goes to your discard pile; if the card you were going to gain
+did not come from the Supply, the Silver still comes from the
+Supply. If there are no Silvers left in the Supply, you can still
+reveal Trader when you gain a card; you gain nothing instead of
+the card you would have gained.
+
 :::Cache:
+This is a treasure worth 3 coins, like Gold. When you gain it,
+you also gain two Coppers from the Supply. if there are not two
+Coppers left, just gain as many as you can. You only gain
+Coppers when you gain Cache, not when you play it. You gain
+Coppers whether you gained Cache due to buying it, or gained it
+some other way.
+
 :::Cartographer:
+You draw a card first, then look at the top 4 cards
+of your deck. If there are fewer than 4 cards left in your deck,
+look at the remaining cards, and shuffle your discard pile (which
+does not include those cards) to get the remainder needed to
+look at. If there are still not enough cards, just look at as many as
+you can. Discard any number of the cards you looked at - none,
+all four, or something in-between - and put the rest back on top
+of your deck in any order. if there were no cards left in your
+deck, these become the only cards in your deck. You do not
+reveal the cards you put back.
+
 :::Embassy:
+When you play this, you draw five cards, then discard
+three cards. The cards you discard can be ones that were in your
+hand and/or ones you just drew. You discard three cards if able,
+even if you were unable to draw the full five cards (due to not
+having enough cards in your deck and discard pile). If you do
+not have three cards to discard, you discard as many as you can.
+When you gain this, each other player gains a Silver. Players only
+gain Silvers when you gain this, not when you play this. They
+gain Silvers whether you gained Embassy due to buying it, or
+gained it some other way. Gaining Silvers is not optional for
+them. The Silvers come from the Supply. If there are not enough
+Silvers left to go around, deal them out in turn order, starting
+with the player to the left of the player who gained Embassy.
+
 :::Haggler:
+When you play this, you get +2 coins. While this is in play,
+whenever you buy a card, you gain a cheaper card that is not a
+Victory card. For example, you could buy a Province, and gain a
+Gold via Haggler. Gaining a card is not optional. The gained card
+comes from the Supply and is put into your discard pile. Haggler
+only gives you an extra card when you buy a card, not when you
+gain a card some other way (such as with Haggler itself). If there
+is no cheaper card available in the Supply (e.g., if you buy a
+Copper), you do not gain a card. Using a card that lets you play a
+card several times (like Throne Room from Dominion) on
+Haggler does not gain you two or more cards per card bought, as
+there is still only one copy of Haggler in play. The bonus is
+cumulative if you have three Hagglers in play, you will gain three
+more cards for each card you buy. Cards with two types, one of
+which is Victory, are Victory cards and so cannot be gained with
+Haggler.
+
 :::Highway:
+This makes all cards cheaper (to a minimum of 0 coins) as
+long as it is in play. When it leaves play, it stops making cards
+cheaper This applies to cards everywhere - cards in the Supply,
+cards in hand, cards in Decks. For example if you played
+Highway, then Develop, trashing a Copper, you could gain an
+Estate, as Estate would cost 4 while Copper would still cost 0.
+Using a card that lets you play a card several times (like Throne
+Room from Dominion) on Highway will not make cards cost
+less, as there is still only one copy of Highway in play. The bonus
+is cumulative; if you have three Highways in play, all cards cost
+1 less (to a minimum of 0).
+
 :::Ill-Gotten Gains:
+This is a Treasure worth 2 coins like Copper. When
+you play it, you may gain a Copper. The gained Copper comes
+from the Supply and is put into your hand; you can immediately
+play it. If there is no Copper left in the Supply, you do not gain
+one. When you gain Ill-Gotten Gains, each other player gains a
+Curse. This happens whether you gain Ill-Gotten Gains due to
+buying it, or you gain it some other way. The Curses come from
+the Supply and go into discard piles. If there are not enough
+Curses left to go around, deal them out in turn order, starting
+with the player to the left of the player who gained Ill-Gotten
+Gains. III-Gotten Gains is not an Attack, and gaining it is not
+playing an Attack; cards like Moat from Dominion do not work
+against it.
+
 :::Inn:
+When you play this, you draw 2 cards, get +2 Actions, then
+discard 2 cards. The cards you discard can be ones that were in
+your hand and/or ones you just drew. You discard cards if able,
+even if you were unable to draw 2 cards. When you gain this,
+you look through your discard pile (something normally not
+allowed) and shuffle any number of Action cards from it into
+your deck (leaving the rest of your discard pile in your discard
+pile). You do not have to shuffle any Action cards into your deck.
+You can shuffle the Inn you just gained into your deck; it is an
+Action card in your discard pile. Cards with two types, one of
+which is Action, are Action cards. You must reveal the Action
+cards that you choose to shuffle into your deck. It does not
+matter what order you leave your discard pile in afterwards. This
+ability functions if you gain Inn due to buying it, or gain Inn
+some other way.
+
 :::Mandarin:
+When you play this, you get +3 coins, and put a card from
+your hand on top of your deck. If you have no cards left in hand,
+you do not put a card on top of your deck. If there are no cards
+left in your deck, the card you put on top becomes the only card
+in your deck. When you gain this, you put all of your Treasures
+from play on top of your deck in any order. You do not have to
+show this order to other players. You have to put all of your
+Treasures on top; you cannot leave some out. You only put
+Treasures from play on top of your deck, not unplayed Treasures
+from your hand. This does not stop you from having the coins
+you got from playing those Treasures; for example, if you have +1
+Buy and play four Golds and buy a Mandarin, you put the Golds
+on top of your deck, and still have 7 left to spend. Mandarin
+puts your played Treasures on your deck whether you gained it
+due to buying it or gained it some other way, although normally
+you will only have Treasures in play in your Buy phase.
+
 :::Margrave:
+You draw 3 cards and get +1 Buy. Each other player
+draws a card, then discards down to 3 cards in hand. Drawing a
+card is not optional for them. A player who only has 3 cards or
+fewer after drawing does not discard.
+
 :::Stables:
+You may discard a Treasure card from your hand. This is
+optional. If you did discard one, you get +3 Cards and +1 Action.
+You draw after discarding, so if you have to shuffle to get the 3
+cards, you will end up shuffling in the card you discarded.
+
 :::Border Village:
+When you play this, you draw a card and can play
+two more Actions this turn. When you gain this, you also gain a
+card from the Supply that costs less than Border Village.
+Normally that will be a card costing up to 5, but if Border
+Village costs less than normal, such as due to Highway, then the
+card you gain will have a lower maximum cost. You only gain a
+card when you gain Border Village, not when you play it. You
+gain a card whether you gained Border Village due to buying it,
+or gained it some other way.
+
 :::Farmland:
+This is a Victory card, not an Action card. It is worth 2
+victory points at the end of the game. When you buy it, you trash a card
+from your hand if able, and if you did, you gain a card from the
+supply costing exactly 2 more than the trashed card if able. If
+there are no cards left in your hand to trash, you do not trash or
+gain a card, and if you trashed a card but there are no cards in
+the supply costing exactly 2 more than the trashed card, you do
+not gain a card. This ability only functions when you buy
+Farmland, not when you gain it some other way. During set-up,
+put all 12 Farmlands in the Supply for a game with 3 or more
+players, but only 8 in the Supply for a 2-player game.
 
 :::Altar
 You trash a card from your hand if you can, and then gain a
