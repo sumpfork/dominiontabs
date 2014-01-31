@@ -746,16 +746,19 @@ class DominionTabs:
 
         self.tabHeight = self.tabBaseHeight + self.tabLabelHeight
 
+        #note: this is convenient, but somewhat inaccurate as the border space isn't actually part of the tab width
         self.totalTabWidth = self.tabWidth + self.horizontalBorderSpace
         self.totalTabHeight = self.tabHeight + self.verticalBorderSpace
 
         print "Paper dimensions: %fcm (w) x %fcm (h)" % (self.paperwidth / cm, self.paperheight / cm)
         print "Tab dimensions: %fcm (w) x %fcm (h)" % (self.totalTabWidth / cm, self.totalTabHeight / cm)
 
-        numTabsVerticalP = int ((self.paperheight - 2*minmarginheight) / self.totalTabHeight)
-        numTabsHorizontalP = int ((self.paperwidth - 2*minmarginwidth) / self.totalTabWidth)
-        numTabsVerticalL = int ((self.paperwidth - 2*minmarginwidth) / self.totalTabHeight)
-        numTabsHorizontalL = int ((self.paperheight - 2*minmarginheight) / self.totalTabWidth)
+        #as we don't draw anything in the final border, it shouldn't count towards how many tabs we can fit
+        #so it gets added back in to the page size here
+        numTabsVerticalP = int ((self.paperheight - 2*minmarginheight + self.verticalBorderSpace) / self.totalTabHeight)
+        numTabsHorizontalP = int ((self.paperwidth - 2*minmarginwidth + self.horizontalBorderSpace) / self.totalTabWidth)
+        numTabsVerticalL = int ((self.paperwidth - 2*minmarginwidth + self.verticalBorderSpace) / self.totalTabHeight)
+        numTabsHorizontalL = int ((self.paperheight - 2*minmarginheight + self.horizontalBorderSpace) / self.totalTabWidth)
 
         if numTabsVerticalL * numTabsHorizontalL > numTabsVerticalP * numTabsHorizontalP and not fixedMargins:
             self.numTabsVertical, self.numTabsHorizontal\
