@@ -1430,8 +1430,8 @@ This is both a Treasure and a Reaction. It can be
 played in your Buy phase like other Treasures. When you play it,
 it is worth 1 coin if this is the first time you played a Fool's Gold
 this turn, and otherwise it is worth 4 coins. So if your lay three
-Fool's Golds in the same turn, the first is worth 1, the second is
-worth 4, and the third is worth 4 coins. Fool's Gold is also a
+Fool's Golds in the same turn, the first is worth 1 coin, the second is
+worth 4 coins, and the third is worth 4 coins. Fool's Gold is also a
 Reaction. When another player gains a Province, you may trash
 Fool's Gold from your hand; if you do, you gain a Gold from the
 Supply, putting it on top of your deck rather than into your
@@ -1446,8 +1446,8 @@ bought, or gained some other way.
 First trash a card from your hand, if you have any cards
 in hand. Develop itself is no longer in your hand and so cannot
 trash itself (though it can trash other copies of Develop). If you
-trashed a card, gain two cards, one costing exactly 1 more than
-the trashed card, and one costing exactly 1 less than the trashed
+trashed a card, gain two cards, one costing exactly 1 coin more than
+the trashed card, and one costing exactly 1 coin less than the trashed
 card. The gained cards come from the Supply; gain them in
 either order. If there is no card in the Supply at one of the costs,
 you still gain the other card if you can. Put the gained cards on
@@ -1571,7 +1571,7 @@ you did, gain a number of Silvers equal to the cost of that card
 in coins. The Silvers come from the Supply and are put into your
 discard pile. If there are not enough Silvers left, just gain all of
 the Silvers that you can. You only gain Silvers if you trashed a
-card. If you trash a card costing 0, such as Copper, you will gain
+card. If you trash a card costing 0 coins, such as Copper, you will gain
 zero Silvers. You can trash Silver if you want; you will gain three
 Silvers for it normally. If costs are different, such as due to
 playing Highway, then Trader will give you a different number of
@@ -1658,12 +1658,12 @@ long as it is in play. When it leaves play, it stops making cards
 cheaper This applies to cards everywhere - cards in the Supply,
 cards in hand, cards in Decks. For example if you played
 Highway, then Develop, trashing a Copper, you could gain an
-Estate, as Estate would cost 4 while Copper would still cost 0.
+Estate, as Estate would cost 4 coins while Copper would still cost 0 coins.
 Using a card that lets you play a card several times (like Throne
 Room from Dominion) on Highway will not make cards cost
 less, as there is still only one copy of Highway in play. The bonus
 is cumulative; if you have three Highways in play, all cards cost
-1 less (to a minimum of 0).
+1 coins less (to a minimum of 0 coins).
 
 :::Ill-Gotten Gains:
 This is a Treasure worth 2 coins like Copper. When
@@ -1710,7 +1710,7 @@ Treasures from play on top of your deck, not unplayed Treasures
 from your hand. This does not stop you from having the coins
 you got from playing those Treasures; for example, if you have +1
 Buy and play four Golds and buy a Mandarin, you put the Golds
-on top of your deck, and still have 7 left to spend. Mandarin
+on top of your deck, and still have 7 coins left to spend. Mandarin
 puts your played Treasures on your deck whether you gained it
 due to buying it or gained it some other way, although normally
 you will only have Treasures in play in your Buy phase.
@@ -1731,7 +1731,7 @@ cards, you will end up shuffling in the card you discarded.
 When you play this, you draw a card and can play
 two more Actions this turn. When you gain this, you also gain a
 card from the Supply that costs less than Border Village.
-Normally that will be a card costing up to 5, but if Border
+Normally that will be a card costing up to 5 coins, but if Border
 Village costs less than normal, such as due to Highway, then the
 card you gain will have a lower maximum cost. You only gain a
 card when you gain Border Village, not when you play it. You
@@ -1742,10 +1742,10 @@ or gained it some other way.
 This is a Victory card, not an Action card. It is worth 2
 victory points at the end of the game. When you buy it, you trash a card
 from your hand if able, and if you did, you gain a card from the
-supply costing exactly 2 more than the trashed card if able. If
+supply costing exactly 2 coins more than the trashed card if able. If
 there are no cards left in your hand to trash, you do not trash or
 gain a card, and if you trashed a card but there are no cards in
-the supply costing exactly 2 more than the trashed card, you do
+the supply costing exactly 2 coins more than the trashed card, you do
 not gain a card. This ability only functions when you buy
 Farmland, not when you gain it some other way. During set-up,
 put all 12 Farmlands in the Supply for a game with 3 or more
