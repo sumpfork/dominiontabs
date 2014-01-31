@@ -579,7 +579,7 @@ class DominionTabs:
         for pageCards in cards:
             #remember whether we start with odd or even divider for tab location
             pageStartOdd = self.odd
-            if self.options.order != "global":
+            if not self.options.tabs_only and self.options.order != "global":
                 self.drawSetNames(pageCards)
             for i,card in enumerate(pageCards):
                 #print card
@@ -590,6 +590,9 @@ class DominionTabs:
                 self.canvas.restoreState()
                 self.odd = not self.odd
             self.canvas.showPage()
+            if self.options.tabs_only:
+                #no set names or card backs for label-only sheets
+                continue
             if self.options.order != "global":
                 self.drawSetNames(pageCards)
             #start at same oddness
