@@ -240,7 +240,7 @@ class DominionTabs:
         #draw tab flap
         self.canvas.saveState()
         if card.isExpansion() and self.options.centre_expansion_dividers:
-             self.canvas.translate(self.tabWidth/2-self.tabLabelWidth/2,
+            self.canvas.translate(self.tabWidth/2-self.tabLabelWidth/2,
                                    self.tabHeight-self.tabLabelHeight)
         elif not rightSide:
             self.canvas.translate(self.tabWidth-self.tabLabelWidth,
@@ -574,9 +574,10 @@ class DominionTabs:
             self.canvas.restoreState()
 
     def drawDividers(self,cards):
+        #split into pages
         cards = split(cards,self.numTabsVertical*self.numTabsHorizontal)
         self.odd = True
-        for pageCards in cards:
+        for pageNum,pageCards in enumerate(cards):
             #remember whether we start with odd or even divider for tab location
             pageStartOdd = self.odd
             if not self.options.tabs_only and self.options.order != "global":
@@ -590,6 +591,8 @@ class DominionTabs:
                 self.canvas.restoreState()
                 self.odd = not self.odd
             self.canvas.showPage()
+            if pageNum + 1 == self.options.num_pages:
+                break
             if self.options.tabs_only:
                 #no set names or card backs for label-only sheets
                 continue
@@ -606,6 +609,8 @@ class DominionTabs:
                 self.canvas.restoreState()
                 self.odd = not self.odd
             self.canvas.showPage()
+            if pageNum + 1 == self.options.num_pages:
+                break
 
 
 
@@ -672,6 +677,8 @@ class DominionTabs:
                           'option is not given, all base cards are placed in their own "Base" expansion')
         parser.add_option("--centre_expansion_dividers", action="store_true", dest="centre_expansion_dividers",
                           help='centre the tabs on expansion dividers')
+        parser.add_option("--num_pages", type="int", default=-1,
+                          help="stop generating after this many pages, -1 for all")
 
         options, args = parser.parse_args(argstring)
         if not options.cost:
@@ -690,6 +697,16 @@ class DominionTabs:
     def parseDimensions(self, dimensionsStr):
         x, y = dimensionsStr.upper().split('X', 1)
         return (float (x) * cm, float (y) * cm)
+
+    def generate_sample(self, options):
+        import cStringIO
+        from wand.image import Image
+        buf = cStringIO.StringIO()
+        options.num_pages = 1
+        self.generate(options, buf)
+        with Image(blob=buf.getvalue()) as sample:
+            sample.format = 'png'
+            sample.save(filename='sample.png')
 
     def generate(self,options,f):
         self.options = options
@@ -810,7 +827,7 @@ class DominionTabs:
                       (self.tabWidth/2-self.tabLabelWidth/2,self.tabBaseHeight,
                        0,self.tabBaseHeight),
                       (0,self.tabBaseHeight,0,0)]
-        
+
         try:
             dirn = os.path.join(self.filedir,'fonts')
             pdfmetrics.registerFont(TTFont('MinionPro-Regular',os.path.join(dirn,'MinionPro-Regular.ttf')))
