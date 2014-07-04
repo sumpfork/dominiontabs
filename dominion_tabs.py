@@ -119,7 +119,8 @@ class DominionTabs:
         'stash' : 'stash_set.png',
         'governor' : 'governor_set.png',
         'black market' : 'black_market_set.png',
-        'envoy' : 'envoy_set.png'
+        'envoy' : 'envoy_set.png',
+        'prince' : 'prince_set.png'
         }
 
     def __init__(self):
