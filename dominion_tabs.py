@@ -4,13 +4,14 @@ from optparse import OptionParser
 import os.path
 
 from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import LETTER,A4
+from reportlab.lib.pagesizes import LETTER, A4
 from reportlab.lib.units import cm
 from reportlab.platypus import Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.enums import TA_JUSTIFY
+
 
 def split(l,n):
     i = 0
@@ -431,6 +432,8 @@ class DominionTabs:
         extras = {}
         currentCard = ""
         extra = ""
+        blank = 1
+        blanks = {}
         for line in f:
             m = cardName.match(line)
             if m:
@@ -440,15 +443,21 @@ class DominionTabs:
                     #print '------------------'
                     extras[currentCard] = extra
                 currentCard = m.groupdict()["name"]
+                if not currentCard:
+                    currentCard = 'Blank' + str(blank)
+                    blank += 1
                 extra = ""
                 if not self.options.expansions and currentCard and (currentCard not in (c.name for c in cards)):
                     print currentCard + ' has extra description, but is not in cards'
             else:
                 extra += ' ' + line.strip()
         if currentCard and extra:
-            extras[currentCard] = extra.strip()
+            if currentCard.startswith('Blank'):
+                blanks[currentCard] = extra.strip()
+            else:
+                extras[currentCard] = extra.strip()
         for c in cards:
-            if not c.name in extras:
+            if c.name not in extras:
                 print c.name + ' missing from extras'
             else:
                 c.extra = extras[c.name]
@@ -491,7 +500,7 @@ class DominionTabs:
 
         card.description = '\n'.join(descriptions)
 
-    def read_card_defs(self,fname,fileobject=None):
+    def read_card_defs(self, fname, fileobject=None):
         cards = []
         f = open(fname)
         carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)")
@@ -499,7 +508,9 @@ class DominionTabs:
         for line in f:
             line = line.strip()
             m = carddef.match(line)
+            print line
             if m:
+                print 'card:',m.group()
                 if m.groupdict()["potioncost"]:
                     potcost = int(m.groupdict()["potioncost"])
                 else:
@@ -510,7 +521,7 @@ class DominionTabs:
                                    int(m.groupdict()["cost"]),
                                    '',
                                    potcost)
-                self.add_definition_line(currentCard,m.groupdict()["description"])
+                self.add_definition_line(currentCard, m.groupdict()["description"])
                 cards.append(currentCard)
             elif line:
                 assert currentCard
@@ -680,6 +691,7 @@ class DominionTabs:
                           help='centre the tabs on expansion dividers')
         parser.add_option("--num_pages", type="int", default=-1,
                           help="stop generating after this many pages, -1 for all")
+        parser.add_option("--language", default='en_us', help="language of card texts")
 
         options, args = parser.parse_args(argstring)
         if not options.cost:
@@ -839,11 +851,11 @@ class DominionTabs:
             pdfmetrics.registerFont(TTFont('MinionPro-Bold','OptimusPrinceps.ttf'))
         if options.read_yaml:
             import yaml
-            cardfile = open("cards.yaml","r")
+            cardfile = open(os.path.join(self.filedir, "card_db", options.language, "cards.yaml"), "r")
             cards = yaml.load(cardfile)
         else:
-            cards = self.read_card_defs(os.path.join(self.filedir,"dominion_cards.txt"))
-            self.read_card_extras(os.path.join(self.filedir,"dominion_card_extras.txt"),cards)
+            cards = self.read_card_defs(os.path.join(self.filedir, "card_db", options.language, "dominion_cards.txt"))
+            self.read_card_extras(os.path.join(self.filedir, "card_db", options.language, "dominion_card_extras.txt"), cards)
 
 
         baseCards = [card.name for card in cards if card.cardset.lower() == 'base']
@@ -874,15 +886,15 @@ class DominionTabs:
             for c in cards:
                 if isBaseExpansionCard(c):
                     continue
-                cardnamesByExpansion.setdefault(c.cardset,[]).append(c.name.strip())
-            for exp,names in cardnamesByExpansion.iteritems():
+                cardnamesByExpansion.setdefault(c.cardset, []).append(c.name.strip())
+            for exp, names in cardnamesByExpansion.iteritems():
                 c = Card(exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
                 cards.append(c)
 
         if options.write_yaml:
             import yaml
             out = yaml.dump(cards)
-            open('cards.yaml','w').write(out)
+            open(os.path.join(self.filedir, "card_db", options.language, "cards.yaml"), 'w').write(out)
 
         # When sorting cards, want to always put "base" cards after all
         # kingdom cards, and order the base cards in a set order - the
@@ -896,9 +908,9 @@ class DominionTabs:
                 return -1
 
         if options.order == "global":
-            sortKey = lambda x: (int(x.isExpansion()), baseIndex(x.name),x.name)
+            sortKey = lambda x: (int(x.isExpansion()), baseIndex(x.name), x.name)
         else:
-            sortKey = lambda x: (x.cardset,int(x.isExpansion()),baseIndex(x.name),x.name)
+            sortKey = lambda x: (x.cardset, int(x.isExpansion()), baseIndex(x.name), x.name)
         cards.sort(key=sortKey)
 
         if not f:
