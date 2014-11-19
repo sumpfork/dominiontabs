@@ -1,4 +1,4 @@
-﻿1	Sotterraneo	Dominion	Azione	$2	+1 Azione, Scarta qualsiadi numero di carte. +1 Carta per carta scartata.
+1	Sotterraneo	Dominion	Azione	$2	+1 Azione, Scarta qualsiadi numero di carte. +1 Carta per carta scartata.
 2	Cappella	Dominion	Azione	$2	Elimina fino a 4 carte dalla tua mano.
 3	Fossato	Dominion	Azione - Reazione	$2	+2 Carte, Quando un altro giocatore usa una carta Attacco, puoi rivelare questa carta dalla tua mano. Se lo fai, l'Attacco non ha effetto su di te.
 4	Cancelliere	Dominion	Azione	$3	+2 Monete, Puoi mettere immediatamente il tuo mazzo nella pila degli scarti.
@@ -77,7 +77,7 @@ Scegli: +3 Carte, o +2 Azioni.
 8	Vedetta	Seaside	Azione	$3	+1 Azione, Guarda le prime 3 carte del tuo mazzo. Eliminane una. Scartane una. Rimetti l'altra in cima al mazzo.
 9	Contrabbandieri	Seaside	Azione	$3	Ottieni una copia di una carta che costi fino a 6 Monete che il giocatore alla tua destra abbia ottenuto nel suo ultimo turno.
 10	Magazzino	Seaside	Azione	$3	+3 Carte, +1 Azione, scarta 3 carte.
-11	Carovana	Seaside	Azione - Durata	$4	+1 Carta, +1 Azione 
+11	Carovana	Seaside	Azione - Durata	$4	+1 Carta, +1 Azione
 All'inizio del tuo prossimo turno, +1 Carta.
 12	Borseggiatore	Seaside	Azione - Attacco	$4	+2 Monete, Ogni altro giocatore scarta una carta Rame (o rivela una carta senza Rame).
 13	Isola	Seaside	Azione - Vittoria	$4	Metti da parte questa e un'altra carta dalla tua mano sulla tua plancia Isola. Rimettile nel tuo mazzo alla fine della partita. 2 <VP>
@@ -166,8 +166,8 @@ Ogni altro giocatore rivela le prime 3 carte del suo mazzo, elimina le carte Azi
 15	Sigillo Reale	Prosperità	Tesoro	$5	Vale 2 Monete.
 ----------
 Mentre questa carta è in gioco, quando ottieni una carta, puoi mettere quella carta in cima al tuo mazzo.
-16	Nascondiglio	Prosperità	Azione	$5	+2 Carte 
-Scarta qualsiasi numero di  carte. +1 Moneta per carta scartata. 
+16	Nascondiglio	Prosperità	Azione	$5	+2 Carte
+Scarta qualsiasi numero di  carte. +1 Moneta per carta scartata.
 Ogni altro giocatore può scartare 2 carte. Se lo fa, pesca una carta.
 17	Soldo	Prosperità	Tesoro	$5	Vale 1 Moneta.
 Quando giochi questa carta, rivela carte dal tuo mazzo fino a rivelare una carta Tesoro. Scarta le altre carte, e gioca quella carta Tesoro.
@@ -196,14 +196,14 @@ Durante la tua fase Acquisto, questa carta costas 2 Monete in meno per ogni cart
 26	Platino	Prosperità	Tesoro	$9	Vale 5 Monete.
 27	Colonia	Prosperità	Vittoria	$11	10 <VP>.
 
-1	Black Market	Promo	Azione	$3	+2 Coins, Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought carte on the bottom of the Black Market deck in any order. 
+1	Black Market	Promo	Azione	$3	+2 Coins, Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought carte on the bottom of the Black Market deck in any order.
 (Before the game, make a Black Market deck out of one copy of each Kingdom carta not in the supply.).
 2	Envoy	Promo	Action	$4	Reveal the top 5 cards of your deck. The player to your left chooses one for you to discard. Draw the rest.
 3	Stash	Promo	Treasure	$5	Worth 2 Coins. When you shuffle, you may put this anywhere in your deck.
 4	Walled Village	Promo	Action	$4	+1 Card
 +2 Actions
 At the start of Clean-up, if you have this and no more than one other Action carta in play, you may put this on top of your deck.
-5	Governor	Promo	Action	$5	+1 Action 
+5	Governor	Promo	Action	$5	+1 Action
 Choose one; you get the version in parentheses: Each player gets +1 (+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly 1 Coin (2 Coins) more.
 6	Prince	Promo	Action	$8	You may set this aside. If you do, set aside an Action card from your hand costing up to 4 coins. At the start of each of your turns, play that Action, setting it aside again when you discard it from play. (Stop playing it if you fail to set it aside on a turn you play it).
 
@@ -219,132 +219,132 @@ Choose one; you get the version in parentheses: Each player gets +1 (+3) Cards; 
 10	Colonia	Base	Vittoria	$11	10 <VP>
 11	Carte Eliminate	Base	Azione	$0	Pila delle carte eliminate.
 
-1	Borsa d'Oro	Cornucopia	Azione - Premio	$0	+1 Azione 
-Ottieni una carta Oro, mettendola in cima al tuo mazzo. 
+1	Borsa d'Oro	Cornucopia	Azione - Premio	$0	+1 Azione
+Ottieni una carta Oro, mettendola in cima al tuo mazzo.
 (Questa carta non è nella Riserva.)
-2	Diadema	Cornucopia	Tesoro - Premio	$0	Vale 2 Monete. 
-Quando giochi questa carta, +1 Moneta per ogni Azione inutilizzata che ti rimane (Azioni, non carte Azione). 
+2	Diadema	Cornucopia	Tesoro - Premio	$0	Vale 2 Monete.
+Quando giochi questa carta, +1 Moneta per ogni Azione inutilizzata che ti rimane (Azioni, non carte Azione).
 (Questa carta non è nella Riserva.)
 3	Seguaci	Cornucopia	Azione - Attacco - Premio	$0	+2 Carte
-Ottieni una Tenuta. Ogni altro giocatore ottiene una Maledizione e scarta fino ad avere 3 carte in mano. 
+Ottieni una Tenuta. Ogni altro giocatore ottiene una Maledizione e scarta fino ad avere 3 carte in mano.
 (Questa carta non è nella Riserva.)
-4	Principessa	Cornucopia	Azione - Premio	$0	+1 Acquisto 
-Mentre questa carta è in gioco, le carte costano 2 Monete in meno, ma non meno di 0 Monete. 
+4	Principessa	Cornucopia	Azione - Premio	$0	+1 Acquisto
+Mentre questa carta è in gioco, le carte costano 2 Monete in meno, ma non meno di 0 Monete.
 (Questa carta non è nella Riserva.)
-5	Destriero Fedele	Cornucopia	Azione - Premio	$0	Scegli due: +2 Carte; o +2 Azioni; o +2 Monete; o ottieni 4 carte Argento e metti tutto il tuo mazzo nella pila degli scarti. 
+5	Destriero Fedele	Cornucopia	Azione - Premio	$0	Scegli due: +2 Carte; o +2 Azioni; o +2 Monete; o ottieni 4 carte Argento e metti tutto il tuo mazzo nella pila degli scarti.
 (Questa carta non è nella Riserva.)
-6	Borgo	Cornucopia	Azione	$2	+1 Carta 
-+1 Azione 
-Puoi scartare una carta; Se lo fai, +1 Azione. 
+6	Borgo	Cornucopia	Azione	$2	+1 Carta
++1 Azione
+Puoi scartare una carta; Se lo fai, +1 Azione.
 Puoi scartare una carta; Se lo fai, +1 Acquisto.
-7	Indovina	Cornucopia	Azione - Attacco	$3	+2 Monete 
+7	Indovina	Cornucopia	Azione - Attacco	$3	+2 Monete
 Ogni altro giocatore rivela carte dalla cima del proprio mazzo fino a rivelare una carta Vittoria o una Maledizione. La mette in cima al proprio mazzo e scarta le altre carte rivelate.
-8	Serraglio	Cornucopia	Azione	$3	+1 Azione 
-Rivela la tua mano. 
-Se non ci sono carte con lo stesso nome, +3 Carte. 
+8	Serraglio	Cornucopia	Azione	$3	+1 Azione
+Rivela la tua mano.
+Se non ci sono carte con lo stesso nome, +3 Carte.
 Altrimenti, +1 Carta.
-9	Villaggio Agricolo	Cornucopia	Azione	$4	+2 Azioni 
+9	Villaggio Agricolo	Cornucopia	Azione	$4	+2 Azioni
 Rivela carte dalla cima del tuo mazzo fin quando non riveli una carta Azione o una Carta Tesoro. Metti quella carta nella tua mano e scarta le altre carte rivelate.
-10	Mercante di Cavalli	Cornucopia	Azione - Reazione	$4	+1 Acquisto 
-+3 Monete 
+10	Mercante di Cavalli	Cornucopia	Azione - Reazione	$4	+1 Acquisto
++3 Monete
 Scarta 2 Carte
 Quando un altro giocatore usa una carta Attacco, puoi mettere da parte questa carta dalla tua mano. Se lo fai, all'inizio del tuo prossimo turno +1 Carta e rimetti nella tua mano il Mercante di Cavalli.
 11	Rifacimento	Cornucopia	Azione	$4	Fallo due volte: Elimina una carta della tua mano, quindi ottiene una carta che costi esattamente 1 Moneta in più della carta eliminata.
-12	Torneo	Cornucopia	Azione	$4	+1 Azione 
+12	Torneo	Cornucopia	Azione	$4	+1 Azione
 Ogni giocatore può rivelare una carta Provincia dalla sua mano. Se tu lo fai, scartala ed ottieni un Premio (dal mazzetto Premio) o un Ducato, mettendo la carta ottenuta in cima al tuo mazzo. Se nessun'altro rivela una carta Provincia, +1 Carta +1 Moneta.
-13	Giovane Strega	Cornucopia	Azione - Attacco	$4	+2 Carte 
-Scarta 2 carte. Ogni altro giocatore può rivelare una carta Scongiuro dalla sua mano. 
-Se non lo fa, ottiene una Maledizione. 
+13	Giovane Strega	Cornucopia	Azione - Attacco	$4	+2 Carte
+Scarta 2 carte. Ogni altro giocatore può rivelare una carta Scongiuro dalla sua mano.
+Se non lo fa, ottiene una Maledizione.
 Preparazione: Aggiungi un mazzetto extra di carte Regno che costi 2 o 3 Monete alla Riserva. Le carte da quel mazzetto sono carte Scongiuro.
 14	Mietitura	Cornucopia	Azione	$5	Rivela le prima 4 carte del tuo mazzo, quindi scartele. +1 Moneta per ogni carta dal nome differente rivelata.
-15	Cornucopia	Cornucopia	Tesoro	$5	Vale 0 Monete 
+15	Cornucopia	Cornucopia	Tesoro	$5	Vale 0 Monete
 Quando giochi questa carta, ottieni una carta che costi fino a 1 Moneta per ogni carta di nome differente che tu abbia in gioco, inclusa questa. Se usi Cornucopia per ottenere una carta Vittoria, elimina Cornucopia.
-16	Battuta di Caccia	Cornucopia	Azione	$5	+1 Carta 
-+1 Azione 
+16	Battuta di Caccia	Cornucopia	Azione	$5	+1 Carta
++1 Azione
 Rivela la tua mano. Rivela carte dalla cima del tuo mazzo fino a rivelare una carta che non sia un duplicato di nessuna delle tua carte in mano, metti in mano quella carta e scarta le altre carte rivelate.
-17	Giullare	Cornucopia	Azione - Attacco	$5	+2 Monete 
+17	Giullare	Cornucopia	Azione - Attacco	$5	+2 Monete
 Ogni altro giocatore scarta la carta in cima al proprio mazzo. Se è una carta Vittoria ottiene una Maledizione. Altrimenti, ottiene una copia della carta scartata o la ottieni tu, a tua scelta.
 18	Mercatino	Cornucopia	Vittoria	$6	Vale 2 <VP> per ogni 5 carte dal nome diverso nel tuo mazzo (per difetto)
 
-1	Incrocio	Nuovi Orizzonti	Azione	$2	Rivela la tua mano. 
+1	Incrocio	Nuovi Orizzonti	Azione	$2	Rivela la tua mano.
 +1 Carta per ogni carta Vittoria rivelata. Se questa è la prima volta che giochi una carta Incrocio in questo turno, +3 Azioni.
-2	Duchessa	Nuovi Orizzonti	Azione	$2	+2 Monete 
-Ogni giocatore (te incluso) guarda la prima carta del suo mazzo, e sceglie se scartarla o lasciarla al suo posto. 
+2	Duchessa	Nuovi Orizzonti	Azione	$2	+2 Monete
+Ogni giocatore (te incluso) guarda la prima carta del suo mazzo, e sceglie se scartarla o lasciarla al suo posto.
 ______________________
 In partite che usano questa carta, quando ottieni un Ducato puoi ottenere una Duchessa.
-3	Oro dello Stolto	Nuovi Orizzonti	Tesoro - Reazione	$2	Se questa è la prima volta che giochi un Oro dello Stolto in questo turno, questa carta vale 1 Moneta, altrimenti vale 4 Monete. 
+3	Oro dello Stolto	Nuovi Orizzonti	Tesoro - Reazione	$2	Se questa è la prima volta che giochi un Oro dello Stolto in questo turno, questa carta vale 1 Moneta, altrimenti vale 4 Monete.
 ______________________
 Quando un altro giocatore ottiene una Provincia, puoi eliminare questa carta dalla tua mano. Se lo fai, ottieni un Oro, mettendolo in cima al tuo mazzo.
 4	Sviluppo	Nuovi Orizzonti	Azione	$3	Elimina una carta dalla tua mano. Ottieni una carta che costi esattamente una Moneta più essa e una carta che costi esattamente 1 Moneta meno di essa, nell'ordine che preferisci, mettendole poi in cima al tuo mazzo.
-5	Oasi	Nuovi Orizzonti	Azione	$3	+1 Carta 
-+1 Azione 
-+1 Monete 
+5	Oasi	Nuovi Orizzonti	Azione	$3	+1 Carta
++1 Azione
++1 Monete
 Scarta una carta.
-6	Oracolo	Nuovi Orizzonti	Azione - Attacco	$3	Ogni giocatore (te incluso) rivela le prima carte del proprio mazzo, e tu scegli se scartarle o lasciarle sul mazzo nell'ordine che il proprietario preferisce. 
+6	Oracolo	Nuovi Orizzonti	Azione - Attacco	$3	Ogni giocatore (te incluso) rivela le prima carte del proprio mazzo, e tu scegli se scartarle o lasciarle sul mazzo nell'ordine che il proprietario preferisce.
 +2 Carte
-7	Macchinazione	Nuovi Orizzonti	Azione	$3	+1 Carta 
-+1 Azione 
+7	Macchinazione	Nuovi Orizzonti	Azione	$3	+1 Carta
++1 Azione
 All'inizio della fase di Pulizia in questo turno, puoi scegliere una carta Azione che hai in gioco. Se la scarti dal gioco in questo turno, mettila sul tuo mazzo.
-8	Galleria	Nuovi Orizzonti	Vittoria - Reazione	$3	2 <VP> 
+8	Galleria	Nuovi Orizzonti	Vittoria - Reazione	$3	2 <VP>
 ______________________
 Quando scarti questa carta in qualsiasi momento che non sia la fase di Pulizia, puoi rivelarla. Se lo fai, ottieni un Oro.
-9	Tuttofare	Nuovi Orizzonti	Azione	$4	Ottieni un Argento. 
-Guarda la prima carta del tuo mazzo; scartala o rimettila al suo posto. 
-Pesca fino ad avere 5 carte in mano. 
+9	Tuttofare	Nuovi Orizzonti	Azione	$4	Ottieni un Argento.
+Guarda la prima carta del tuo mazzo; scartala o rimettila al suo posto.
+Pesca fino ad avere 5 carte in mano.
 Puoi eliminare una carta dalla tua mano che non sia una carta Tesoro.
-10	Ladro Gentiluomo	Nuovi Orizzonti	Azione - Attacco	$4	+1 Moneta 
+10	Ladro Gentiluomo	Nuovi Orizzonti	Azione - Attacco	$4	+1 Moneta
 Quando acquisti o giochi questa carta, ogni altro giocatore rivela le prime 2 carte del suo mazzo, elimina una carta Argento o Oro rivelata di tua scelta, e scarta il resto. Se non ha rivelato una carta Tesoro, ottiene una carta Rame. Tu ottieni le carte eliminate.
-11	Campo Nomadi	Nuovi Orizzonti	Azione	$4	+1 Acquisto 
-+2 Monete 
-______________________ 
+11	Campo Nomadi	Nuovi Orizzonti	Azione	$4	+1 Acquisto
++2 Monete
+______________________
 Quando ottieni questa carta mettila in cima al tuo mazzo.
 12	Via della Seta	Nuovi Orizzonti	Vittoria	$4	Vale 1 <VP> ogni 4 carte Vittoria nel tuo mazzo (per difetto).
-13	Mercante di Spezia	Nuovi Orizzonti	Azione	$4	Puoi eliminare una carta Tesoro dalla tua mano. Se lo fai, scegli: 
-+2 Carte e +1 Azione; 
+13	Mercante di Spezia	Nuovi Orizzonti	Azione	$4	Puoi eliminare una carta Tesoro dalla tua mano. Se lo fai, scegli:
++2 Carte e +1 Azione;
 o +2 Monete e +1 Acquisto.
-14	Commerciante	Nuovi Orizzonti	Azione - Reazione	$4	Elimina una carta dalla tua mano. Guadagni tante carte Argento quanto è il suo costo in Monete. 
-______________________ 
+14	Commerciante	Nuovi Orizzonti	Azione - Reazione	$4	Elimina una carta dalla tua mano. Guadagni tante carte Argento quanto è il suo costo in Monete.
+______________________
 Quando ottieni una carta, puoi rivelare questa carta dalla tua mano. Se lo fai, guadagni un Argento al posto della carta che dovresti ottenere.
-15	Forziere	Nuovi Orizzonti	Tesoro	$5	Vale 3 monete 
+15	Forziere	Nuovi Orizzonti	Tesoro	$5	Vale 3 monete
 ______________________
 Quando ottieni questa carta, ottieni 2 carte Rame.
-16	Cartografo	Nuovi Orizzonti	Azione	$5	+1 Carta 
-+1 Azione 
+16	Cartografo	Nuovi Orizzonti	Azione	$5	+1 Carta
++1 Azione
 Guarda le prima 4 carte del tuo mazzo. Scartane un qualsiasi numero. Metti il resto delle carte in cima al tuo mazzo nell'ordine che preferisci.
-17	Diplomatico	Nuovi Orizzonti	Azione	$5	+5 Carte 
-Scarta 3 carte. 
+17	Diplomatico	Nuovi Orizzonti	Azione	$5	+5 Carte
+Scarta 3 carte.
 ______________________
 Quando ottieni questa carta, ogni altro giocatore ottiene una carta Argento.
-18	Contrattazione	Nuovi Orizzonti	Azione	$5	+2 Monete 
+18	Contrattazione	Nuovi Orizzonti	Azione	$5	+2 Monete
 ______________________
 Mentre questa carta è in gioco, quando acquisti una carta ottieni anche una carta che costi meno di quella acquistata e che non sia una carta Vittoria.
-19	Strada Maestra	Nuovi Orizzonti	Azione	$5	+1 Carta 
-+1 Azione 
-______________________ 
+19	Strada Maestra	Nuovi Orizzonti	Azione	$5	+1 Carta
++1 Azione
+______________________
 Mentre questa carta è in gioco, le carte costano una Moneta in mano, ma non meno di 0 Monete.
-20	Infame Profitto	Nuovi Orizzonti	Tesoro	$5	Vale 1 Coin 
-Quando giochi questa carta puoi ottenere una carta Rame, mettendola nella tua mano. 
-______________________ 
+20	Infame Profitto	Nuovi Orizzonti	Tesoro	$5	Vale 1 Coin
+Quando giochi questa carta puoi ottenere una carta Rame, mettendola nella tua mano.
+______________________
 Quando ottieni questa carta, ogni altro giocatore ottiene una Maledizione.
 21	Locanda	Nuovi Orizzonti	Azione	$5	+2 Carte
-+2 Azioni 
-Scarta 2 carte. 
++2 Azioni
+Scarta 2 carte.
 ______________________
 Quando ottieni questa carta, cerca nel tuo mazzo degli scarti (inclusa questa carta), rivela qualsiasi numero di carte Azione da esso, e rimischiale nel tuo mazzo.
-22	Mandarino	Nuovi Orizzonti	Azione	$5	+3 Monete 
-Metti una carta dalla tua mano in cima al tuo mazzo. 
----------------------- 
+22	Mandarino	Nuovi Orizzonti	Azione	$5	+3 Monete
+Metti una carta dalla tua mano in cima al tuo mazzo.
+----------------------
 Quando ottieni questa carta, metti tutte le carte Tesoro che hai in gioco in cima al tuo mazzo nell'ordine che preferisci.
 23	Margravio	Nuovi Orizzonti	Azione - Attacco	$5	+3 Carte
-+1 Acquisto 
++1 Acquisto
 Ogni altro giocatore pesca una carta, quindi scarta fino ad avere 3 carte nella sua mano.
 24	Stalla	Nuovi Orizzonti	Azione	$5	Puoi scartare una carta Tesoro. Se lo fai, +3 Carte e +1 Azione.
-25	Villaggio di Frontiera	Nuovi Orizzonti	Azione	$6	+1 Carta 
-+2 Azione 
----------------------- 
+25	Villaggio di Frontiera	Nuovi Orizzonti	Azione	$6	+1 Carta
++2 Azione
+----------------------
 Quando ottieni questa carta, ottieni anche una carta che costi meno di questa carta.
-26	Terra Coltivata	Nuovi Orizzonti	Vittoria	$6	2 <VP> 
----------- 
+26	Terra Coltivata	Nuovi Orizzonti	Vittoria	$6	2 <VP>
+----------
 Quando acquisti questa carta, elimina una carta dalla tua mano. Ottieni una carta che costi esattamente 2 Monete in più della carta eliminata.
 
 1	Ruins	Dark Ages	Azione - Ruins	$0	Abandoned Mine: +1 Coin
@@ -410,10 +410,10 @@ You may put your deck into your discarta pile. Look through your discarta pile a
 29	Armory	Dark Ages	Azione	$4	Gain a carta costing up to 4 Monete,putting it on top of your deck.
 25	Beggar	Dark Ages	Azione - Reazione	$2	Gain 3 Coppers, putting them into your hand.
 ______________________
-When another player plays an Attacco carta, you may discarta this. 
+When another player plays an Attacco carta, you may discarta this.
 If you do, gain two Silvers, putting one on top of your deck.
-26	Catacombs	Dark Ages	Azione	$5	Look at the top 3 carte of your deck. 
-Choose one: Put them into your hand; 
+26	Catacombs	Dark Ages	Azione	$5	Look at the top 3 carte of your deck.
+Choose one: Put them into your hand;
 or discarta them and +3 Cartas.
 ______________________
 When you trash this, gain a cheaper carta.
@@ -426,54 +426,54 @@ ______________________
 When you gain this, gain 2 Ruins.
 29	Forager	Dark Ages	Azione	$3	+1 Azione
 +1 Acquisto
-Trash a carta from your hand. 
-+1 Coin per differently named Tesoro 
-in the trash. 
+Trash a carta from your hand.
++1 Coin per differently named Tesoro
+in the trash.
 30	Junk Dealer	Dark Ages	Azione	$5	+1 Carta
 +1 Azione
 +1 Coin
 Trash a carta from your hand.
 31	Knights	Dark Ages	Azione	$5	This is a pile in which each carta is different. There is the same basic ability on each carta, but also another ability unique to that carta in the pile, and they all have different names. Shuffle the Knights pile before playing with it, keeping it face down except for the top one, which is the only carta that can be gained from the pile. See Additional Rules for Dark Ages and Preparation. Follow the rules on Knights in order from top to bottom; Sir Michael causes players to discarta before it trashes carte.
-32	Marauder	Dark Ages	Azione	$4	Gain a Spoils from the Spoils pile. 
+32	Marauder	Dark Ages	Azione	$4	Gain a Spoils from the Spoils pile.
 Each other player gains a Ruins.
 33	Market Square	Dark Ages	Azione - Reazione	$3	+1 Carta
 +1 Azione
 +1 Acquisto
 ______________________
-When one of your carte is trashed, 
-you may discarta this from your 
+When one of your carte is trashed,
+you may discarta this from your
 hand. If you do, gain a Gold.
 34	Rebuild	Dark Ages	Azione	$5	+ 1Azione
 Name a carta. Reveal carte from the top of your deck until you reveal a Vittoria carta that is not the named carta. Discarta the other carte. Trash the Vittoria carta and gain a Vittoria carta costing up to 3 Monete more than it.
 35	Rogue	Dark Ages	Azione - Attacco	$5	+ 2 Monete
 If there are any carte in the trash costing from 3 Monete to 6 Monete, gain one of them. Otherwise, each other player reveals the top 2 carte of his deck, trashes one of them costing from 3 Monete to 6 Monete, and discarte the rest.
-36	Storeroom	Dark Ages	Azione	$3	+ 1 Acquisto 
-Discarta any number of carte. 
-+1 Carta per carta discartaed. 
-Discarta any number of carte. 
+36	Storeroom	Dark Ages	Azione	$3	+ 1 Acquisto
+Discarta any number of carte.
++1 Carta per carta discartaed.
+Discarta any number of carte.
 + 1 Monete per carta discartaed the second time.
 37	Urchin	Dark Ages	Azione - Attacco	$3	+1 Carta
 +1 Azione
 Each other player discarte down to 4 carte in hand.
 ______________________
-When you play another Attacco carta with this in play, you may trash this. 
+When you play another Attacco carta with this in play, you may trash this.
 If you do, gain a Mercenary from the Mercenary pile.
 38	Wandering Minstrel	Dark Ages	Azione	$4	+1 Carta
 +2 Aziones
-Reveal the top 3 carte of your deck. 
+Reveal the top 3 carte of your deck.
 Put the Aziones back on top in any order and discarta the rest.
 39	Hunting Grounds	Dark Ages	Azione	$6	+ 4 Cartas
 ______________________
 When you trash this,
 gain a Duchy or 3 Estates.
-40	Mercenary	Dark Ages	Azione - Attacco	$0	You may trash 2 carte from your hand. 
+40	Mercenary	Dark Ages	Azione - Attacco	$0	You may trash 2 carte from your hand.
 If you do, +2 Cartas, + 2 Monete,
 and each other player discarte down to 3 carte in hand.
 (This is not in the Supply.)
 41	Mystic	Dark Ages	Azione	$5	+1Azione
 + 2 Monete
-Name a carta. 
-Reveal the top carta of your deck. 
+Name a carta.
+Reveal the top carta of your deck.
 If it’s the named carta, put it into your hand.
 42	Shelters	Dark Ages Extras	Azione - Shelter	$1	Hovel: When you buy a Vittoria carta, you may trash this from your hand.
 Necropolis: +2 Aziones
