@@ -12,6 +12,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.enums import TA_JUSTIFY
 
+import yaml
 
 def split(l,n):
     i = 0
@@ -31,7 +32,7 @@ class Card:
         self.extra = ""
 
     def getType(self):
-        return DominionTabs.cardTypes[self.types]
+        return DominionTabs.getType(self.types)
 
     def __repr__(self):
         return '"' + self.name + '"'
@@ -43,10 +44,8 @@ class Card:
         return self.getType().getTypeNames() == ('Expansion',)
 
     def setImage(self):
-        setImage = DominionTabs.setImages.get(self.cardset, None)
-        if not setImage:
-            setImage = DominionTabs.promoImages.get(self.name.lower(), None)
-        if setImage == None and self.cardset != 'base' and not self.isExpansion():
+        setImage = DominionTabs.getSetImage(self.cardset, self.name)
+        if setImage is None and self.cardset != 'base' and not self.isExpansion():
             print 'warning, no set image for set "%s" card "%s"' % (self.cardset, self.name)
             DominionTabs.setImages[self.cardset] = 0
             DominionTabs.promoImages[self.name.lower()] = 0
@@ -78,51 +77,74 @@ class CardType:
 class DominionTabs:
     cardTypes = [
         CardType(('Action',), 'action.png'),
-        CardType(('Action','Attack'), 'action.png'),
-        CardType(('Action','Attack','Prize'), 'action.png'),
-        CardType(('Action','Reaction'), 'reaction.png'),
-        CardType(('Action','Victory'), 'action-victory.png'),
-        CardType(('Action','Duration'), 'duration.png'),
-        CardType(('Action','Looter'), 'action.png'),
-        CardType(('Action','Prize'), 'action.png'),
-        CardType(('Action','Ruins'), 'ruins.png', 0, 1),
-        CardType(('Action','Shelter'), 'shelter.png', 0, 1),
-        CardType(('Action','Attack','Looter'), 'action.png'),
+        CardType(('Action', 'Attack'), 'action.png'),
+        CardType(('Action', 'Attack', 'Prize'), 'action.png'),
+        CardType(('Action', 'Reaction'), 'reaction.png'),
+        CardType(('Action', 'Victory'), 'action-victory.png'),
+        CardType(('Action', 'Duration'), 'duration.png'),
+        CardType(('Action', 'Looter'), 'action.png'),
+        CardType(('Action', 'Prize'), 'action.png'),
+        CardType(('Action', 'Ruins'), 'ruins.png', 0, 1),
+        CardType(('Action', 'Shelter'), 'shelter.png', 0, 1),
+        CardType(('Action', 'Attack', 'Looter'), 'action.png'),
         CardType(('Reaction',), 'reaction.png'),
-        CardType(('Reaction','Shelter'), 'shelter.png', 0, 1),
-        CardType(('Treasure',), 'treasure.png',3,0),
-        CardType(('Treasure','Victory'), 'treasure-victory.png'),
-        CardType(('Treasure','Prize'), 'treasure.png',3,0),
-        CardType(('Treasure','Reaction'), 'treasure-reaction.png', 0, 1),
+        CardType(('Reaction', 'Shelter'), 'shelter.png', 0, 1),
+        CardType(('Treasure',), 'treasure.png', 3, 0),
+        CardType(('Treasure', 'Victory'), 'treasure-victory.png'),
+        CardType(('Treasure', 'Prize'), 'treasure.png', 3, 0),
+        CardType(('Treasure', 'Reaction'), 'treasure-reaction.png', 0, 1),
         CardType(('Victory',), 'victory.png'),
-        CardType(('Victory','Reaction'), 'victory-reaction.png', 0, 1),
-        CardType(('Victory','Shelter'), 'shelter.png', 0, 1),
-        CardType(('Curse',), 'curse.png',3),
-        CardType(('Expansion',), 'expansion.png',4)
-        ]
+        CardType(('Victory', 'Reaction'), 'victory-reaction.png', 0, 1),
+        CardType(('Victory', 'Shelter'), 'shelter.png', 0, 1),
+        CardType(('Curse',), 'curse.png', 3),
+        CardType(('Expansion',), 'expansion.png', 4)
+    ]
 
-    cardTypes = dict(((c.getTypeNames(),c) for c in cardTypes))
+    cardTypes = dict(((c.getTypeNames(), c) for c in cardTypes))
+    language_mapping = None
+
+    @classmethod
+    def getType(cls, typespec):
+        mapped_spec = tuple([cls.language_mapping[t] for t in typespec])
+        return cls.cardTypes[mapped_spec]
 
     setImages = {
-        'dominion' : 'base_set.png',
-        'intrigue' : 'intrigue_set.png',
-        'seaside' : 'seaside_set.png',
-        'prosperity' : 'prosperity_set.png',
-        'alchemy' : 'alchemy_set.png',
-        'cornucopia' : 'cornucopia_set.png',
-        'hinterlands' : 'hinterlands_set.png',
-        'dark ages' : 'dark_ages_set.png',
-        'dark ages extras' : 'dark_ages_set.png',
-        'guilds' : 'guilds_set.png'
-        }
+        'dominion': 'base_set.png',
+        'intrigue': 'intrigue_set.png',
+        'seaside': 'seaside_set.png',
+        'prosperity': 'prosperity_set.png',
+        'alchemy': 'alchemy_set.png',
+        'cornucopia': 'cornucopia_set.png',
+        'hinterlands': 'hinterlands_set.png',
+        'dark ages': 'dark_ages_set.png',
+        'dark ages extras': 'dark_ages_set.png',
+        'guilds': 'guilds_set.png'
+    }
     promoImages = {
-        'walled village' : 'walled_village_set.png',
-        'stash' : 'stash_set.png',
-        'governor' : 'governor_set.png',
-        'black market' : 'black_market_set.png',
-        'envoy' : 'envoy_set.png',
-        'prince' : 'prince_set.png'
-        }
+        'walled village': 'walled_village_set.png',
+        'stash': 'stash_set.png',
+        'governor': 'governor_set.png',
+        'black market': 'black_market_set.png',
+        'envoy': 'envoy_set.png',
+        'prince': 'prince_set.png'
+    }
+    
+    @classmethod
+    def getSetImage(cls, setName, cardName):
+        #print setName, cardName
+        if setName in cls.setImages:
+            return cls.setImages[setName]
+        if cardName.lower() in cls.promoImages:
+            return cls.promoImages[cardName.lower()]
+        if setName in cls.language_mapping:
+            trans = cls.language_mapping[setName]
+            if trans in cls.setImages:
+                return cls.setImages[trans]
+        if cardName in cls.language_mapping:
+            trans = cls.language_mapping[cardName]
+            if trans.lower() in cls.promoImages:
+                return cls.promoImages[trans.lower()]
+        return None
 
     def __init__(self):
         self.filedir = os.path.dirname(__file__)
@@ -508,9 +530,8 @@ class DominionTabs:
         for line in f:
             line = line.strip()
             m = carddef.match(line)
-            print line
             if m:
-                print 'card:',m.group()
+                print 'card:', m.group()
                 if m.groupdict()["potioncost"]:
                     potcost = int(m.groupdict()["potioncost"])
                 else:
@@ -850,12 +871,13 @@ class DominionTabs:
             pdfmetrics.registerFont(TTFont('MinionPro-Regular','OptimusPrincepsSemiBold.ttf'))
             pdfmetrics.registerFont(TTFont('MinionPro-Bold','OptimusPrinceps.ttf'))
         if options.read_yaml:
-            import yaml
             cardfile = open(os.path.join(self.filedir, "card_db", options.language, "cards.yaml"), "r")
             cards = yaml.load(cardfile)
         else:
             cards = self.read_card_defs(os.path.join(self.filedir, "card_db", options.language, "dominion_cards.txt"))
             self.read_card_extras(os.path.join(self.filedir, "card_db", options.language, "dominion_card_extras.txt"), cards)
+            DominionTabs.language_mapping = yaml.load(open(os.path.join(self.filedir, "card_db", options.language, "mapping.yaml")))
+            print DominionTabs.language_mapping
 
 
         baseCards = [card.name for card in cards if card.cardset.lower() == 'base']
@@ -892,7 +914,6 @@ class DominionTabs:
                 cards.append(c)
 
         if options.write_yaml:
-            import yaml
             out = yaml.dump(cards)
             open(os.path.join(self.filedir, "card_db", options.language, "cards.yaml"), 'w').write(out)
 

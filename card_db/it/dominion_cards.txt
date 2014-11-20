@@ -81,7 +81,7 @@ Scegli: +3 Carte, o +2 Azioni.
 All'inizio del tuo prossimo turno, +1 Carta.
 12	Borseggiatore	Seaside	Azione - Attacco	$4	+2 Monete, Ogni altro giocatore scarta una carta Rame (o rivela una carta senza Rame).
 13	Isola	Seaside	Azione - Vittoria	$4	Metti da parte questa e un'altra carta dalla tua mano sulla tua plancia Isola. Rimettile nel tuo mazzo alla fine della partita. 2 <VP>
-14	Navigatorw	Seaside	Azione	$4	+2 Monete, Guarda le prima 5 carte del tuo mazzo. Scartale tutte, o rimettile in cima al tuo mazzo nell'ordine che preferisci.
+14	Navigatore	Seaside	Azione	$4	+2 Monete, Guarda le prima 5 carte del tuo mazzo. Scartale tutte, o rimettile in cima al tuo mazzo nell'ordine che preferisci.
 15	Nave Pirata	Seaside	Azione - Attacco	$4	Scegli: Ogni altro giocatore rivela le prime 2 carte del suo mazzo, elimina una carta Tesoro rivelata di tua scelta, scarta il resto e se è stata eliminata almeno una carta tesoro metti un segnalino Moneta sulla tua plancia Nave Pirata; o, +1 Moneta per ogni segnalino Moneta presente sulla tua plancia Nave Pirata.
 16	Recupero	Seaside	Azione	$4	+1 Acquisto, Elimina una carta dalla tua mano. +X Monete, X è il costo della carta eliminata.
 17	Megera dei Mari	Seaside	Azione - Attacco	$4	Ogni altro giocatore scarta la carta in cime al proprio mazzo, quindi ottiene una carta Maledizione che mette in cima al proprio mazzo.
@@ -198,14 +198,14 @@ Durante la tua fase Acquisto, questa carta costas 2 Monete in meno per ogni cart
 
 1	Black Market	Promo	Azione	$3	+2 Coins, Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought carte on the bottom of the Black Market deck in any order.
 (Before the game, make a Black Market deck out of one copy of each Kingdom carta not in the supply.).
-2	Envoy	Promo	Action	$4	Reveal the top 5 cards of your deck. The player to your left chooses one for you to discard. Draw the rest.
-3	Stash	Promo	Treasure	$5	Worth 2 Coins. When you shuffle, you may put this anywhere in your deck.
-4	Walled Village	Promo	Action	$4	+1 Card
+2	Envoy	Promo	Azione	$4	Reveal the top 5 cards of your deck. The player to your left chooses one for you to discard. Draw the rest.
+3	Stash	Promo	Tesoro	$5	Worth 2 Coins. When you shuffle, you may put this anywhere in your deck.
+4	Walled Village	Promo	Azione	$4	+1 Card
 +2 Actions
 At the start of Clean-up, if you have this and no more than one other Action carta in play, you may put this on top of your deck.
-5	Governor	Promo	Action	$5	+1 Action
+5	Governor	Promo	Azione	$5	+1 Action
 Choose one; you get the version in parentheses: Each player gets +1 (+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly 1 Coin (2 Coins) more.
-6	Prince	Promo	Action	$8	You may set this aside. If you do, set aside an Action card from your hand costing up to 4 coins. At the start of each of your turns, play that Action, setting it aside again when you discard it from play. (Stop playing it if you fail to set it aside on a turn you play it).
+6	Prince	Promo	Azione	$8	You may set this aside. If you do, set aside an Action card from your hand costing up to 4 coins. At the start of each of your turns, play that Action, setting it aside again when you discard it from play. (Stop playing it if you fail to set it aside on a turn you play it).
 
 1	Rame	Base	Tesoro	$0	Vale 1 Moneta.
 2	Argento	Base	Tesoro	$3	Vale 2 Monete.
