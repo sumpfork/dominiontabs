@@ -448,15 +448,16 @@ class DominionTabs:
         if not self.options.tabs_only:
             self.drawText(card, useExtra)
 
-    def read_card_extras(self,fname,cards):
+    def read_card_extras(self, fname, cards):
         f = open(fname)
-        cardName = re.compile("^:::(?P<name>[ \w\-/']*)")
+        cardName = re.compile("^:::(?P<name>[ \w\-/']*)", re.UNICODE)
         extras = {}
         currentCard = ""
         extra = ""
         blank = 1
         blanks = {}
         for line in f:
+            line = line.decode('utf-8')
             m = cardName.match(line)
             if m:
                 if currentCard:
@@ -504,7 +505,7 @@ class DominionTabs:
         #try to figure out if this a 'basic action' like +X Cards or +Y Actions
         descriptions = [card.description]
         while True:
-            m = self.baseactionRE.match(line)
+            m = self.baseactionRE.match(line, re.UNICODE)
             if not m:
                 break
             descriptions.append(m.group(1))
@@ -519,19 +520,19 @@ class DominionTabs:
         descriptions.append(line)
         descriptions = [x.strip() for x in descriptions]
         descriptions = [x for x in descriptions if x]
+        card.description = u'\n'.join(descriptions)
 
-        card.description = '\n'.join(descriptions)
 
     def read_card_defs(self, fname, fileobject=None):
         cards = []
         f = open(fname)
-        carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)")
+        carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)",
+                             re.UNICODE)
         currentCard = None
         for line in f:
-            line = line.strip()
+            line = line.decode('utf-8').strip()
             m = carddef.match(line)
             if m:
-                print 'card:', m.group()
                 if m.groupdict()["potioncost"]:
                     potcost = int(m.groupdict()["potioncost"])
                 else:
