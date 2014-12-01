@@ -14,15 +14,17 @@ from reportlab.lib.enums import TA_JUSTIFY
 
 import yaml
 
-def split(l,n):
+
+def split(l, n):
     i = 0
     while i < len(l) - n:
-        yield l[i:i+n]
+        yield l[i:i + n]
         i += n
     yield l[i:]
 
+
 class Card:
-    def __init__(self,name,cardset,types,cost,description,potcost=0):
+    def __init__(self, name, cardset, types, cost, description='', potcost=0):
         self.name = name.strip()
         self.cardset = cardset.strip()
         self.types = types
@@ -38,18 +40,30 @@ class Card:
         return '"' + self.name + '"'
 
     def toString(self):
-        return self.name + ' ' + self.cardset + ' ' + '-'.join(self.types) + ' ' + `self.cost` + ' ' + self.description + ' ' + self.extra
+        return self.name + ' ' + self.cardset + ' ' + '-'.join(self.types)\
+            + ' ' + self.cost + ' ' + self.description + ' ' + self.extra
 
     def isExpansion(self):
         return self.getType().getTypeNames() == ('Expansion',)
 
     def setImage(self):
         setImage = DominionTabs.getSetImage(self.cardset, self.name)
-        if setImage is None and self.cardset != 'base' and not self.isExpansion():
+        if setImage is None and self.cardset not in ['base', 'extra'] and not self.isExpansion():
             print 'warning, no set image for set "%s" card "%s"' % (self.cardset, self.name)
             DominionTabs.setImages[self.cardset] = 0
             DominionTabs.promoImages[self.name.lower()] = 0
         return setImage
+
+    def isBlank(self):
+        return False
+
+
+class BlankCard(Card):
+    def __init__(self, num):
+        Card.__init__(self, str(num), 'extra', ('Blank',), 0)
+
+    def isBlank(self):
+        return True
 
 
 class CardType:
@@ -63,9 +77,13 @@ class CardType:
         return self.typeNames
 
     def getTabImageFile(self):
+        if not self.tabImageFile:
+            return None
         return self.tabImageFile
 
     def getNoCoinTabImageFile(self):
+        if not self.tabImageFile:
+            return None
         return ''.join(os.path.splitext(self.tabImageFile)[0] + '_nc' + os.path.splitext(self.tabImageFile)[1])
 
     def getTabTextHeightOffset(self):
@@ -97,7 +115,8 @@ class DominionTabs:
         CardType(('Victory', 'Reaction'), 'victory-reaction.png', 0, 1),
         CardType(('Victory', 'Shelter'), 'shelter.png', 0, 1),
         CardType(('Curse',), 'curse.png', 3),
-        CardType(('Expansion',), 'expansion.png', 4)
+        CardType(('Expansion',), 'expansion.png', 4),
+        CardType(('Blank',), '')
     ]
 
     cardTypes = dict(((c.getTypeNames(), c) for c in cardTypes))
@@ -131,7 +150,6 @@ class DominionTabs:
     
     @classmethod
     def getSetImage(cls, setName, cardName):
-        #print setName, cardName
         if setName in cls.setImages:
             return cls.setImages[setName]
         if cardName.lower() in cls.promoImages:
@@ -206,7 +224,7 @@ class DominionTabs:
             else:
                 leftLine = 0
                 rightLine = self.tabWidth
-            middleLine = self.tabWidth-self.tabLabelWidth
+            middleLine = self.tabWidth - self.tabLabelWidth
 
             if y == 0:
                 self.canvas.line(rightLine,-2*cmw,rightLine,-cmw)
@@ -261,7 +279,7 @@ class DominionTabs:
         return w
 
     def drawTab(self, card, rightSide):
-        #draw tab flap
+        # draw tab flap
         self.canvas.saveState()
         if card.isExpansion() and self.options.centre_expansion_dividers:
             self.canvas.translate(self.tabWidth/2-self.tabLabelWidth/2,
@@ -276,12 +294,14 @@ class DominionTabs:
         textHeight = self.tabLabelHeight/2-7+card.getType().getTabTextHeightOffset()
 
         # draw banner
-        self.canvas.drawImage(os.path.join(self.filedir,'images',card.getType().getNoCoinTabImageFile()),1,0,
-            self.tabLabelWidth-2,self.tabLabelHeight-1,
-            preserveAspectRatio=False,anchor='n',mask='auto')
+        img = card.getType().getNoCoinTabImageFile()
+        if img:
+            self.canvas.drawImage(os.path.join(self.filedir, 'images', img), 1, 0,
+                                  self.tabLabelWidth - 2, self.tabLabelHeight - 1,
+                                  preserveAspectRatio=False, anchor='n', mask='auto')
 
         # draw cost
-        if not card.isExpansion():
+        if not card.isExpansion() and not card.isBlank():
             if 'tab' in self.options.cost:
                 textInset = 4
                 textInset += self.drawCost(card, textInset, textHeight,
@@ -425,8 +445,8 @@ class DominionTabs:
             p.drawOn(self.canvas, textHorizontalMargin, h)
             h -= spacerHeight
 
-    def drawDivider(self,card,x,y,useExtra=False):
-        #figure out whether the tab should go on the right side or not
+    def drawDivider(self, card, x, y, useExtra=False):
+        # figure out whether the tab should go on the right side or not
         if not self.options.sameside:
             if not useExtra:
                 rightSide = not self.odd
@@ -434,16 +454,16 @@ class DominionTabs:
                 rightSide = self.odd
         else:
             rightSide = useExtra
-        #apply the transforms to get us to the corner of the current card
+        # apply the transforms to get us to the corner of the current card
         self.canvas.resetTransforms()
-        self.canvas.translate(self.horizontalMargin,self.verticalMargin)
+        self.canvas.translate(self.horizontalMargin, self.verticalMargin)
         if useExtra:
-            self.canvas.translate(self.options.back_offset,0)
-        self.canvas.translate(x*self.totalTabWidth,y*self.totalTabHeight)
+            self.canvas.translate(self.options.back_offset, 0)
+        self.canvas.translate(x * self.totalTabWidth, y * self.totalTabHeight)
 
-        #actual drawing
+        # actual drawing
         if not self.options.tabs_only:
-            self.drawOutline(x, y, rightSide, useExtra,card.getType().getTypeNames() == ('Expansion',))
+            self.drawOutline(x, y, rightSide, useExtra, card.getType().getTypeNames() == ('Expansion',))
         self.drawTab(card, rightSide)
         if not self.options.tabs_only:
             self.drawText(card, useExtra)
@@ -455,40 +475,49 @@ class DominionTabs:
         currentCard = ""
         extra = ""
         blank = 1
+        isBlank = False
         blanks = {}
         for line in f:
             line = line.decode('utf-8')
             m = cardName.match(line)
             if m:
                 if currentCard:
-                    #print 'found',currentCard
-                    #print extra
-                    #print '------------------'
-                    extras[currentCard] = extra
+                    if isBlank:
+                        blanks[currentCard] = extra
+                    else:
+                        extras[currentCard] = extra
                 currentCard = m.groupdict()["name"]
-                if not currentCard:
-                    currentCard = 'Blank' + str(blank)
-                    blank += 1
                 extra = ""
-                if not self.options.expansions and currentCard and (currentCard not in (c.name for c in cards)):
-                    print currentCard + ' has extra description, but is not in cards'
+                if not currentCard:
+                    currentCard = blank
+                    blank += 1
+                    isBlank = True
+                else:
+                    isBlank = False
+                    if not self.options.expansions\
+                       and currentCard and (currentCard not in (c.name for c in cards)):
+                        print currentCard + ' has extra description, but is not in cards'
             else:
                 extra += ' ' + line.strip()
         if currentCard and extra:
-            if currentCard.startswith('Blank'):
+            if isBlank:
                 blanks[currentCard] = extra.strip()
             else:
                 extras[currentCard] = extra.strip()
+        if self.options.include_blanks:
+            for blank, extra in blanks.iteritems():
+                card = BlankCard(blank)
+                cards.append(card)
+                extras[card.name] = extra
         for c in cards:
             if c.name not in extras:
                 print c.name + ' missing from extras'
             else:
                 c.extra = extras[c.name]
-                #print c.name + ' ::: ' + extra
 
     baseactionRE = re.compile("^\s*(\+\d+\s+\w+)(?:[,.;])")
 
-    def add_definition_line(self,card,line):
+    def add_definition_line(self, card, line):
         # Unfortunately, the way things are specified in the old card spec
         # format is somewhat haphazard. In particular:
         #   1) Sometimes "basic actions", which would be separated on the
@@ -502,7 +531,7 @@ class DominionTabs:
         # To solve:
 
         # 1)
-        #try to figure out if this a 'basic action' like +X Cards or +Y Actions
+        # try to figure out if this a 'basic action' like +X Cards or +Y Actions
         descriptions = [card.description]
         while True:
             m = self.baseactionRE.match(line, re.UNICODE)
@@ -521,7 +550,6 @@ class DominionTabs:
         descriptions = [x.strip() for x in descriptions]
         descriptions = [x for x in descriptions if x]
         card.description = u'\n'.join(descriptions)
-
 
     def read_card_defs(self, fname, fileobject=None):
         cards = []
@@ -547,13 +575,11 @@ class DominionTabs:
                 cards.append(currentCard)
             elif line:
                 assert currentCard
-                self.add_definition_line(currentCard,line)
-            #print currentCard
-            #print '----'
+                self.add_definition_line(currentCard, line)
         return cards
 
     def drawSetNames(self, pageCards):
-        #print sets for this page
+        # print sets for this page
         self.canvas.saveState()
 
         try:
@@ -646,62 +672,61 @@ class DominionTabs:
             if pageNum + 1 == self.options.num_pages:
                 break
 
-
-
     LOCATION_CHOICES = ["tab", "body-top", "hide"]
 
     @classmethod
     def parse_opts(cls, argstring):
         parser = OptionParser()
-        parser.add_option("--back_offset",type="float",dest="back_offset",default=0,
+        parser.add_option("--back_offset", type="float", dest="back_offset", default=0,
                           help="Points to offset the back page to the right; needed for some printers")
-        parser.add_option("--orientation",type="choice",choices=["horizontal","vertical"],dest="orientation",default="horizontal",
+        parser.add_option("--orientation", type="choice", choices=["horizontal", "vertical"],
+                          dest="orientation", default="horizontal",
                           help="horizontal or vertical, default:horizontal")
-        parser.add_option("--sleeved",action="store_true",dest="sleeved",help="use --size=sleeved instead")
-        parser.add_option("--size",type="string",dest="size",default='normal',
+        parser.add_option("--sleeved", action="store_true", dest="sleeved", help="use --size=sleeved instead")
+        parser.add_option("--size", type="string", dest="size", default='normal',
                           help="'<%f>x<%f>' (size in cm), or 'normal' = '9.1x5.9', or 'sleeved' = '9.4x6.15'")
-        parser.add_option("--minmargin",type="string",dest="minmargin",default="1x1",
+        parser.add_option("--minmargin", type="string", dest="minmargin", default="1x1",
                           help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
-        parser.add_option("--papersize",type="string",dest="papersize",default=None,
+        parser.add_option("--papersize", type="string", dest="papersize", default=None,
                           help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
-        parser.add_option("--tabwidth",type="float",default=4,
+        parser.add_option("--tabwidth", type="float", default=4,
                           help="width in cm of stick-up tab (ignored if tabs-only used)")
-        parser.add_option("--samesidelabels",action="store_true",dest="sameside",
+        parser.add_option("--samesidelabels", action="store_true", dest="sameside",
                           help="force all label tabs to be on the same side"
                           " (this will be forced on if there is an uneven"
                           " number of cards horizontally across the page)")
-        parser.add_option("--edge_align_name",action="store_true",
+        parser.add_option("--edge_align_name", action="store_true",
                           help="align the card name to the outside edge of the"
                           " tab, so that when using tabs on alternating sides,"
                           " the name is less likely to be hidden by the tab"
                           " in front; ignored if samesidelabels is on")
-        parser.add_option("--cost",action="append",type="choice",
-                          choices=cls.LOCATION_CHOICES,  default=[],
+        parser.add_option("--cost", action="append", type="choice",
+                          choices=cls.LOCATION_CHOICES, default=[],
                           help="where to display the card cost; may be set to"
                           " 'hide' to indicate it should not be displayed, or"
                           " given multiple times to show it in multiple"
                           " places; valid values are: %s; defaults to 'tab'"
                           % ", ".join("'%s'" % x for x in cls.LOCATION_CHOICES))
-        parser.add_option("--set_icon",action="append",type="choice",
-                          choices=cls.LOCATION_CHOICES,  default=[],
+        parser.add_option("--set_icon", action="append", type="choice",
+                          choices=cls.LOCATION_CHOICES, default=[],
                           help="where to display the set icon; may be set to"
                           " 'hide' to indicate it should not be displayed, or"
                           " given multiple times to show it in multiple"
                           " places; valid values are: %s; defaults to 'tab'"
                           % ", ".join("'%s'" % x for x in cls.LOCATION_CHOICES))
-        parser.add_option("--expansions",action="append",type="string",
+        parser.add_option("--expansions", action="append", type="string",
                           help="subset of dominion expansions to produce tabs for")
-        parser.add_option("--cropmarks",action="store_true",dest="cropmarks",
+        parser.add_option("--cropmarks", action="store_true", dest="cropmarks",
                           help="print crop marks on both sides, rather than tab outlines on one")
-        parser.add_option("--linewidth",type="float",default=.1,
+        parser.add_option("--linewidth", type="float", default=.1,
                           help="width of lines for card outlines/crop marks")
-        parser.add_option("--read_yaml", action="store_true",dest="read_yaml",
+        parser.add_option("--read_yaml", action="store_true", dest="read_yaml",
                           help="read yaml version of card definitions and extras")
-        parser.add_option("--write_yaml", action="store_true",dest="write_yaml",
+        parser.add_option("--write_yaml", action="store_true", dest="write_yaml",
                           help="write yaml version of card definitions and extras")
         parser.add_option("--tabs-only", action="store_true", dest="tabs_only",
                           help="draw only tabs to be printed on labels, no divider outlines")
-        parser.add_option("--order", type="choice", choices=["expansion","global"], dest="order",
+        parser.add_option("--order", type="choice", choices=["expansion", "global"], dest="order",
                           help="sort order for the cards, whether by expansion or globally alphabetical")
         parser.add_option("--expansion_dividers", action="store_true", dest="expansion_dividers",
                           help="add dividers describing each expansion set")
@@ -714,7 +739,7 @@ class DominionTabs:
         parser.add_option("--num_pages", type="int", default=-1,
                           help="stop generating after this many pages, -1 for all")
         parser.add_option("--language", default='en_us', help="language of card texts")
-
+        parser.add_option("--include_blanks", action="store_true", help="include a few dividers with extra text")
         options, args = parser.parse_args(argstring)
         if not options.cost:
             options.cost = ['tab']
@@ -878,12 +903,12 @@ class DominionTabs:
             cards = self.read_card_defs(os.path.join(self.filedir, "card_db", options.language, "dominion_cards.txt"))
             self.read_card_extras(os.path.join(self.filedir, "card_db", options.language, "dominion_card_extras.txt"), cards)
             DominionTabs.language_mapping = yaml.load(open(os.path.join(self.filedir, "card_db", options.language, "mapping.yaml")))
-            print DominionTabs.language_mapping
-
 
         baseCards = [card.name for card in cards if card.cardset.lower() == 'base']
+
         def isBaseExpansionCard(card):
             return card.cardset.lower() != 'base' and card.name in baseCards
+
         if self.options.base_cards_with_expansion:
             cards = [card for card in cards if card.cardset.lower() != 'base']
         else:
