@@ -916,6 +916,8 @@ class DominionTabs:
 
         if self.options.expansions:
             self.options.expansions = [o.lower() for o in self.options.expansions]
+            reverseMapping = {v: k for k, v in DominionTabs.language_mapping.iteritems()}
+            self.options.expansions = [reverseMapping.get(e, e) for e in self.options.expansions]
             filteredCards = []
             knownExpansions = set()
             for c in cards:
