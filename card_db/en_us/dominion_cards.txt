@@ -133,10 +133,10 @@ When you play this, reveal cards from your deck until you reveal a Treasure. Dis
 2	Trade Route	Prosperity	Action	$3	+1 Buy
 +1 Coin per token on the Trade Route mat.
 Trash a card from your hand.
-----------
+______________________
 Setup: Put a token on each Victory card Supply pile. When a card is gained from that pile, move the token to the Trade Route mat.
 3	Watchtower	Prosperity	Reaction	$3	Draw until you have 6 cards in hand.
-----------
+______________________
 When you gain a card, you may reveal this from your hand. If you do, either trash that card, or put it on top of your deck.
 4	Bishop	Prosperity	Action	$4	+1 Coin
 +1 <VP>
@@ -144,10 +144,10 @@ Trash a card from your hand. +<VP> equal to half its cost in coins, rounded down
 Each other player may trash a card from his hand.
 5	Monument	Prosperity	Action	$4	+2 Coins; +1 <VP>
 6	Quarry	Prosperity	Treasure	$4	Worth 1 Coin.
-----------
+______________________
 While this is in play, Action cards cost 2 Coins less, but not less than 0 Coins.
 7	Talisman	Prosperity	Treasure	$4	Worth 1 Coin.
-----------
+______________________
 While this is in play, when you buy a card costing 4 Coins or less that is not a Victory card, gain a copy of it.
 8	Worker's Village	Prosperity	Action	$4	+1 Card
 +2 Actions
@@ -160,14 +160,14 @@ If there are one or more empty Supply piles, +1 Card. If there are two or more, 
 When you play this, the player to your left names a card. You can't buy that card this turn.
 11	Counting House	Prosperity	Action	$5	Look through your discard pile, reveal any number of Copper cards from it, and put them into your hand.
 12	Mint	Prosperity	Action	$5	You may reveal a Treasure card from your hand. Gain a copy of it.
-----------
+______________________
 When you buy this, trash all Treasures you have in play.
 13	Mountebank	Prosperity	Action - Attack	$5	+2 Coins
 Each other player may discard a Curse. If he doesn't, he gains a Curse and a Copper.
 14	Rabble	Prosperity	Action - Attack	$5	+3 Cards
 Each other player reveals the top 3 cards of his deck, discards the revealed Actions and Treasures, and puts the rest back on top in any order he chooses.
 15	Royal Seal	Prosperity	Treasure	$5	Worth 2 Coins.
-----------
+______________________
 While this is in play, when you gain a card, you may put that card on top of your deck.
 16	Vault	Prosperity	Action	$5	+2 Cards
 Discard any number of cards. +1 Coin per card discarded.
@@ -177,16 +177,16 @@ When you play this, reveal cards from your deck until you reveal a Treasure. Dis
 18	Goons	Prosperity	Action - Attack	$6	+1 Buy
 +2 Coins
 Each other player discards down to 3 cards in hand.
-----------
+______________________
 While this is in play, when you buy a card, +1 <VP>.
 19	Grand Market	Prosperity	Action	$6	+1 Card
 +1 Action
 +1 Buy
 +2 Coins
-----------
+______________________
 You can't buy this if you have any Copper in play.
 20	Hoard	Prosperity	Treasure	$6	Worth 2 Coins.
-----------
+______________________
 While this is in play, when you buy a Victory card, gain a Gold.
 21	Bank	Prosperity	Treasure	$7	Worth ? Coins.
 When you play this, it`s worth 1 Coin per Treasure card you have in play (counting this).
@@ -194,7 +194,7 @@ When you play this, it`s worth 1 Coin per Treasure card you have in play (counti
 23	Forge	Prosperity	Action	$7	Trash any number of cards from your hand. Gain a card with cost exactly equal to the total cost in coins of the trashed cards.
 24	King's Court	Prosperity	Action	$7	You may choose an Action card in your hand. Play it three times.
 25	Peddler	Prosperity	Action	$8	+1 Card; +1 Action; +2 Coin
-----------
+______________________
 During your Buy phase, this costs 2 Coins less per Action card you have in play, but not less than 0 Coins.
 26	Platinum	Prosperity	Treasure	$9	Worth 5 Coins.
 27	Colony	Prosperity	Victory	$11	10 <VP>.
@@ -336,7 +336,7 @@ ______________________
 When you gain this, look through your discard pile (including this), reveal any number of Action cards from it, and shuffle them into your deck.
 22	Mandarin	Hinterlands	Action	$5	+3 Coins
 Put a card from your hand on top of your deck.
-----------
+______________________
 When you gain this, put all Treasures you have in play on top of your deck in any order.
 23	Margrave	Hinterlands	Action - Attack	$5	+3 Cards
 +1 Buy
@@ -344,10 +344,10 @@ Each other player draws a card, then discards down to 3 cards in hand.
 24	Stables	Hinterlands	Action	$5	You may discard a Treasure. If you do, +3 Cards and +1 Action.
 25	Border Village	Hinterlands	Action	$6	+1 Card
 +2 Actions
-----------
+______________________
 When you gain this, gain a card costing less than this.
 26	Farmland	Hinterlands	Victory	$6	2 <VP>
-----------
+______________________
 When you buy this, trash a card from your hand. Gain a card costing exactly 2 Coins more than the trashed card.
 
 1	Ruins	Dark Ages	Action - Ruins	$0	Abandoned Mine: +1 Coin
