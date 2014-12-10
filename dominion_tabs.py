@@ -124,8 +124,9 @@ class DominionTabs:
 
     @classmethod
     def getType(cls, typespec):
-        if typespec == 'Expansion':
-            return typespec
+        # Expansion is a custom tag inserted by code below
+        if typespec == ('Expansion',):
+            return cls.cardTypes[typespec]
         mapped_spec = tuple([cls.language_mapping[t] for t in typespec])
         return cls.cardTypes[mapped_spec]
 
