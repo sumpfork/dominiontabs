@@ -46,6 +46,9 @@ class Card:
     def isExpansion(self):
         return self.getType().getTypeNames() == ('Expansion',)
 
+    def isEvent(self):
+        return self.getType().getTypeNames() == ('Event',)
+
     def setImage(self):
         setImage = DominionTabs.getSetImage(self.cardset, self.name)
         if setImage is None and self.cardset not in ['base', 'extra'] and not self.isExpansion():
@@ -111,6 +114,7 @@ class DominionTabs:
         CardType(('Action', 'Reserve'), 'action.png'),
         CardType(('Action', 'Reserve', 'Victory'), 'action.png'),
         CardType(('Action', 'Traveller'), 'action.png'),
+        CardType(('Event',), 'action.png'),
         CardType(('Reaction',), 'reaction.png'),
         CardType(('Reaction', 'Shelter'), 'shelter.png', 0, 1),
         CardType(('Reserve'), 'action.png'),
@@ -753,6 +757,7 @@ class DominionTabs:
                           help="stop generating after this many pages, -1 for all")
         parser.add_option("--language", default='en_us', help="language of card texts")
         parser.add_option("--include_blanks", action="store_true", help="include a few dividers with extra text")
+        parser.add_option("--exclude_events", action="store_true", default=False, help="exclude individual dividers for events")
         options, args = parser.parse_args(argstring)
         if not options.cost:
             options.cost = ['tab']
@@ -943,6 +948,9 @@ class DominionTabs:
                 return
 
             cards = filteredCards
+
+        if self.options.exclude_events:
+            cards = [card for card in cards if not card.isEvent()]
 
         if options.expansion_dividers:
             cardnamesByExpansion = {}
