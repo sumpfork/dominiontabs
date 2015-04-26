@@ -107,6 +107,7 @@ class DominionTabs:
         CardType(('Action', 'Ruins'), 'ruins.png', 0, 1),
         CardType(('Action', 'Shelter'), 'shelter.png', 0, 1),
         CardType(('Action', 'Attack', 'Looter'), 'action.png'),
+        CardType(('Action', 'Attack', 'Traveller'), 'action.png'),
         CardType(('Action', 'Reserve'), 'action.png'),
         CardType(('Action', 'Reserve', 'Victory'), 'action.png'),
         CardType(('Action', 'Traveller'), 'action.png'),
@@ -118,6 +119,7 @@ class DominionTabs:
         CardType(('Treasure', 'Victory'), 'treasure-victory.png'),
         CardType(('Treasure', 'Prize'), 'treasure.png', 3, 0),
         CardType(('Treasure', 'Reaction'), 'treasure-reaction.png', 0, 1),
+        CardType(('Treasure', 'Reserve'), 'treasure.png', 0, 1),
         CardType(('Victory',), 'victory.png'),
         CardType(('Victory', 'Reaction'), 'victory-reaction.png', 0, 1),
         CardType(('Victory', 'Shelter'), 'shelter.png', 0, 1),
@@ -147,7 +149,8 @@ class DominionTabs:
         'hinterlands': 'hinterlands_set.png',
         'dark ages': 'dark_ages_set.png',
         'dark ages extras': 'dark_ages_set.png',
-        'guilds': 'guilds_set.png'
+        'guilds': 'guilds_set.png',
+        'adventures': 'adventures_set.png'
     }
     promoImages = {
         'walled village': 'walled_village_set.png',
