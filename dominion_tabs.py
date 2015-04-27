@@ -154,7 +154,8 @@ class DominionTabs:
         'dark ages': 'dark_ages_set.png',
         'dark ages extras': 'dark_ages_set.png',
         'guilds': 'guilds_set.png',
-        'adventures': 'adventures_set.png'
+        'adventures': 'adventures_set.png',
+        'adventures extras': 'adventures_set.png'
     }
     promoImages = {
         'walled village': 'walled_village_set.png',
@@ -164,7 +165,7 @@ class DominionTabs:
         'envoy': 'envoy_set.png',
         'prince': 'prince_set.png'
     }
-    
+
     @classmethod
     def getSetImage(cls, setName, cardName):
         if setName in cls.setImages:
@@ -571,7 +572,7 @@ class DominionTabs:
     def read_card_defs(self, fname, fileobject=None):
         cards = []
         f = open(fname)
-        carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>\d+)( (?P<potioncost>\d)+P)?\t+(?P<description>.*)",
+        carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>(\d+|\*))( (?P<potioncost>\d)+P)?\t+(?P<description>.*)",
                              re.UNICODE)
         currentCard = None
         for line in f:
@@ -585,7 +586,7 @@ class DominionTabs:
                 currentCard = Card(m.groupdict()["name"].strip(),
                                    m.groupdict()["set"].lower().strip(),
                                    tuple([t.strip() for t in m.groupdict()["type"].split("-")]),
-                                   int(m.groupdict()["cost"]),
+                                   m.groupdict()["cost"],
                                    '',
                                    potcost)
                 self.add_definition_line(currentCard, m.groupdict()["description"])
@@ -758,6 +759,7 @@ class DominionTabs:
         parser.add_option("--language", default='en_us', help="language of card texts")
         parser.add_option("--include_blanks", action="store_true", help="include a few dividers with extra text")
         parser.add_option("--exclude_events", action="store_true", default=False, help="exclude individual dividers for events")
+
         options, args = parser.parse_args(argstring)
         if not options.cost:
             options.cost = ['tab']
