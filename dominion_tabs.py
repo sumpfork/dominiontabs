@@ -1003,7 +1003,7 @@ class DominionTabs:
             cards = filteredCards
 
         if self.options.exclude_events:
-            cards = [card for card in cards if not card.isEvent()]
+            cards = [card for card in cards if not card.isEvent() or card.name == 'Events']
 
         if options.expansion_dividers:
             cardnamesByExpansion = {}
