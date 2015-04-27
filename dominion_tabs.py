@@ -993,7 +993,7 @@ class DominionTabs:
             knownExpansions = set()
             for c in cards:
                 knownExpansions.add(c.cardset)
-                if c.cardset in self.options.expansions:
+                if next((e for e in self.options.expansions if c.cardset.startswith(e)), None):
                     filteredCards.append(c)
             unknownExpansions = set(self.options.expansions) - knownExpansions
             if unknownExpansions:
