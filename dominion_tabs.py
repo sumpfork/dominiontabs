@@ -24,6 +24,7 @@ def split(l, n):
 
 
 class Card:
+
     def __init__(self, name, cardset, types, cost, description='', potcost=0):
         self.name = name.strip()
         self.cardset = cardset.strip()
@@ -62,6 +63,7 @@ class Card:
 
 
 class BlankCard(Card):
+
     def __init__(self, num):
         Card.__init__(self, str(num), 'extra', ('Blank',), 0)
 
@@ -70,6 +72,7 @@ class BlankCard(Card):
 
 
 class CardType:
+
     def __init__(self, typeNames, tabImageFile, tabTextHeightOffset=0, tabCostHeightOffset=-1):
         self.typeNames = typeNames
         self.tabImageFile = tabImageFile
@@ -94,6 +97,7 @@ class CardType:
 
     def getTabCostHeightOffset(self):
         return self.tabCostHeightOffset
+
 
 class DominionTabs:
     cardTypes = [
@@ -187,45 +191,51 @@ class DominionTabs:
         self.odd = True
 
     def add_inline_images(self, text, fontsize):
-        path = os.path.join(self.filedir,'images')
-        replace = '<img src='"'%s/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (path,fontsize*1.2)
-        text = re.sub('(\d)\s(c|C)oin(s)?', replace,text)
-        replace = '<img src='"'%s/coin_small_question.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (path,fontsize*1.2)
-        text = re.sub('\?\s(c|C)oin(s)?', replace,text)
-        replace = '<img src='"'%s/victory_emblem.png'"' width=%d height='"'120%%'"' valign='"'middle'"'/>' % (path,fontsize*1.5)
-        text = re.sub('\<VP\>', replace,text)
+        path = os.path.join(self.filedir, 'images')
+        replace = '<img src='"'%s/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (
+            path, fontsize * 1.2)
+        text = re.sub('(\d)\s(c|C)oin(s)?', replace, text)
+        replace = '<img src='"'%s/coin_small_question.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (
+            path, fontsize * 1.2)
+        text = re.sub('\?\s(c|C)oin(s)?', replace, text)
+        replace = '<img src='"'%s/victory_emblem.png'"' width=%d height='"'120%%'"' valign='"'middle'"'/>' % (
+            path, fontsize * 1.5)
+        text = re.sub('\<VP\>', replace, text)
         return text
 
     def drawOutline(self, x, y, rightSide, isBack=False, isExpansionDivider=False):
-        #draw outline or cropmarks
+        # draw outline or cropmarks
         self.canvas.saveState()
         self.canvas.setLineWidth(self.options.linewidth)
-        cropmarksright = (x == self.numTabsHorizontal-1)
+        cropmarksright = (x == self.numTabsHorizontal - 1)
         cropmarksleft = (x == 0)
         if rightSide:
-            self.canvas.translate(self.tabWidth,0)
-            self.canvas.scale(-1,1)
+            self.canvas.translate(self.tabWidth, 0)
+            self.canvas.scale(-1, 1)
         if not self.options.cropmarks and not isBack:
-            #don't draw outline on back, in case lines don't line up with front
+            # don't draw outline on back, in case lines don't line up with
+            # front
             if isExpansionDivider and self.options.centre_expansion_dividers:
                 outline = self.expansionTabOutline
             else:
                 outline = self.tabOutline
             self.canvas.lines(outline)
         elif self.options.cropmarks:
-            cmw = 0.5*cm
+            cmw = 0.5 * cm
 
             # Horizontal-line cropmarks
             mirror = cropmarksright and not rightSide or cropmarksleft and rightSide
             if mirror:
                 self.canvas.saveState()
-                self.canvas.translate(self.tabWidth,0)
-                self.canvas.scale(-1,1)
+                self.canvas.translate(self.tabWidth, 0)
+                self.canvas.scale(-1, 1)
             if cropmarksleft or cropmarksright:
-                self.canvas.line(-2*cmw,0,-cmw,0)
-                self.canvas.line(-2*cmw,self.tabBaseHeight,-cmw,self.tabBaseHeight)
+                self.canvas.line(-2 * cmw, 0, -cmw, 0)
+                self.canvas.line(-2 * cmw,
+                                 self.tabBaseHeight, -cmw, self.tabBaseHeight)
                 if y > 0:
-                    self.canvas.line(-2*cmw,self.tabHeight,-cmw,self.tabHeight)
+                    self.canvas.line(-2 * cmw,
+                                     self.tabHeight, -cmw, self.tabHeight)
             if mirror:
                 self.canvas.restoreState()
 
@@ -245,18 +255,18 @@ class DominionTabs:
             middleLine = self.tabWidth - self.tabLabelWidth
 
             if y == 0:
-                self.canvas.line(rightLine,-2*cmw,rightLine,-cmw)
-                self.canvas.line(middleLine,-2*cmw,middleLine,-cmw)
+                self.canvas.line(rightLine, -2 * cmw, rightLine, -cmw)
+                self.canvas.line(middleLine, -2 * cmw, middleLine, -cmw)
                 if cropmarksleft:
-                    self.canvas.line(leftLine,-2*cmw,leftLine,-cmw)
-            if y == self.numTabsVertical-1:
-                self.canvas.line(rightLine,self.tabHeight+cmw,
-                                 rightLine,self.tabHeight+2*cmw)
-                self.canvas.line(middleLine, self.tabHeight+cmw,
-                                 middleLine, self.tabHeight+2*cmw)
+                    self.canvas.line(leftLine, -2 * cmw, leftLine, -cmw)
+            if y == self.numTabsVertical - 1:
+                self.canvas.line(rightLine, self.tabHeight + cmw,
+                                 rightLine, self.tabHeight + 2 * cmw)
+                self.canvas.line(middleLine, self.tabHeight + cmw,
+                                 middleLine, self.tabHeight + 2 * cmw)
                 if cropmarksleft:
-                    self.canvas.line(leftLine,self.tabHeight+cmw,
-                                     leftLine,self.tabHeight+2*cmw)
+                    self.canvas.line(leftLine, self.tabHeight + cmw,
+                                     leftLine, self.tabHeight + 2 * cmw)
 
         self.canvas.restoreState()
 
@@ -269,21 +279,24 @@ class DominionTabs:
         potHeight = y - 3
         potSize = 11
 
-        self.canvas.drawImage(os.path.join(self.filedir,'images','coin_small.png'),x,coinHeight,16,16,preserveAspectRatio=True,mask='auto')
+        self.canvas.drawImage(os.path.join(self.filedir, 'images', 'coin_small.png'),
+                              x, coinHeight, 16, 16, preserveAspectRatio=True, mask='auto')
         if card.potcost:
-            self.canvas.drawImage(os.path.join(self.filedir,'images','potion.png'),x+17,potHeight,potSize,potSize,preserveAspectRatio=True,mask=[255,255,255,255,255,255])
+            self.canvas.drawImage(os.path.join(self.filedir, 'images', 'potion.png'), x + 17,
+                                  potHeight, potSize, potSize, preserveAspectRatio=True, mask=[255, 255, 255, 255, 255, 255])
             width += potSize
 
-        self.canvas.setFont('MinionPro-Bold',12)
+        self.canvas.setFont('MinionPro-Bold', 12)
         cost = str(card.cost)
         if 'Prize' in card.types:
             cost += '*'
-        self.canvas.drawCentredString(x+8,costHeight,cost)
+        self.canvas.drawCentredString(x + 8, costHeight, cost)
         return width
 
     def drawSetIcon(self, setImage, x, y):
         # set image
-        self.canvas.drawImage(os.path.join(self.filedir,'images',setImage), x, y, 14, 12, mask='auto')
+        self.canvas.drawImage(
+            os.path.join(self.filedir, 'images', setImage), x, y, 14, 12, mask='auto')
 
     @classmethod
     def nameWidth(self, name, fontSize):
@@ -291,31 +304,35 @@ class DominionTabs:
         name_parts = name.split()
         for i, part in enumerate(name_parts):
             if i != 0:
-                w += pdfmetrics.stringWidth(' ','MinionPro-Regular',fontSize)
-            w += pdfmetrics.stringWidth(part[0],'MinionPro-Regular',fontSize)
-            w += pdfmetrics.stringWidth(part[1:],'MinionPro-Regular',fontSize-2)
+                w += pdfmetrics.stringWidth(' ', 'MinionPro-Regular', fontSize)
+            w += pdfmetrics.stringWidth(part[0], 'MinionPro-Regular', fontSize)
+            w += pdfmetrics.stringWidth(part[1:],
+                                        'MinionPro-Regular', fontSize - 2)
         return w
 
     def drawTab(self, card, rightSide):
         # draw tab flap
         self.canvas.saveState()
         if card.isExpansion() and self.options.centre_expansion_dividers:
-            self.canvas.translate(self.tabWidth/2-self.tabLabelWidth/2,
-                                   self.tabHeight-self.tabLabelHeight)
+            self.canvas.translate(self.tabWidth / 2 - self.tabLabelWidth / 2,
+                                  self.tabHeight - self.tabLabelHeight)
         elif not rightSide:
-            self.canvas.translate(self.tabWidth-self.tabLabelWidth,
-                        self.tabHeight-self.tabLabelHeight)
+            self.canvas.translate(self.tabWidth - self.tabLabelWidth,
+                                  self.tabHeight - self.tabLabelHeight)
         else:
-            self.canvas.translate(0,self.tabHeight-self.tabLabelHeight)
+            self.canvas.translate(0, self.tabHeight - self.tabLabelHeight)
 
-        textWidth = self.tabLabelWidth - 6 # allow for 3 pt border on each side
-        textHeight = self.tabLabelHeight/2-7+card.getType().getTabTextHeightOffset()
+        # allow for 3 pt border on each side
+        textWidth = self.tabLabelWidth - 6
+        textHeight = self.tabLabelHeight / 2 - 7 + \
+            card.getType().getTabTextHeightOffset()
 
         # draw banner
         img = card.getType().getNoCoinTabImageFile()
         if img:
             self.canvas.drawImage(os.path.join(self.filedir, 'images', img), 1, 0,
-                                  self.tabLabelWidth - 2, self.tabLabelHeight - 1,
+                                  self.tabLabelWidth -
+                                  2, self.tabLabelHeight - 1,
                                   preserveAspectRatio=False, anchor='n', mask='auto')
 
         # draw cost
@@ -333,7 +350,7 @@ class DominionTabs:
         setImage = card.setImage()
         if setImage and 'tab' in self.options.set_icon:
             setImageHeight = 3 + card.getType().getTabTextHeightOffset()
-            self.drawSetIcon(setImage, self.tabLabelWidth-20,
+            self.drawSetIcon(setImage, self.tabLabelWidth - 20,
                              setImageHeight)
             textInsetRight = 20
         else:
@@ -351,7 +368,7 @@ class DominionTabs:
         width = self.nameWidth(name, fontSize)
         while width > textWidth and fontSize > 8:
             fontSize -= .01
-            #print 'decreasing font size for tab of',name,'now',fontSize
+            # print 'decreasing font size for tab of',name,'now',fontSize
             width = self.nameWidth(name, fontSize)
         tooLong = width > textWidth
         if tooLong:
@@ -362,30 +379,31 @@ class DominionTabs:
                 name_lines = name.split(None, 1)
         else:
             name_lines = [name]
-        #if tooLong:
+        # if tooLong:
         #    print name
 
         for linenum, line in enumerate(name_lines):
             h = textHeight
             if tooLong and len(name_lines) > 1:
                 if linenum == 0:
-                    h += h/2
+                    h += h / 2
                 else:
-                    h -= h/2
+                    h -= h / 2
 
             words = line.split()
             if rightSide or not self.options.edge_align_name:
                 w = textInset
+
                 def drawWordPiece(text, fontSize):
-                    self.canvas.setFont('MinionPro-Regular',fontSize)
+                    self.canvas.setFont('MinionPro-Regular', fontSize)
                     if text != ' ':
-                        self.canvas.drawString(w,h,text)
-                    return pdfmetrics.stringWidth(text,'MinionPro-Regular',fontSize)
+                        self.canvas.drawString(w, h, text)
+                    return pdfmetrics.stringWidth(text, 'MinionPro-Regular', fontSize)
                 for i, word in enumerate(words):
                     if i != 0:
                         w += drawWordPiece(' ', fontSize)
                     w += drawWordPiece(word[0], fontSize)
-                    w += drawWordPiece(word[1:], fontSize-2)
+                    w += drawWordPiece(word[1:], fontSize - 2)
             else:
                 # align text to the right if tab is on right side, to make
                 # tabs easier to read when grouped together extra 3pt is for
@@ -393,13 +411,14 @@ class DominionTabs:
 
                 w = self.tabLabelWidth - textInsetRight - 3
                 words.reverse()
+
                 def drawWordPiece(text, fontSize):
-                    self.canvas.setFont('MinionPro-Regular',fontSize)
+                    self.canvas.setFont('MinionPro-Regular', fontSize)
                     if text != ' ':
-                        self.canvas.drawRightString(w,h,text)
-                    return -pdfmetrics.stringWidth(text,'MinionPro-Regular',fontSize)
+                        self.canvas.drawRightString(w, h, text)
+                    return -pdfmetrics.stringWidth(text, 'MinionPro-Regular', fontSize)
                 for i, word in enumerate(words):
-                    w += drawWordPiece(word[1:], fontSize-2)
+                    w += drawWordPiece(word[1:], fontSize - 2)
                     w += drawWordPiece(word[0], fontSize)
                     if i != len(words) - 1:
                         w += drawWordPiece(' ', fontSize)
@@ -411,42 +430,42 @@ class DominionTabs:
 
         drewTopIcon = False
         if 'body-top' in self.options.cost and not card.isExpansion():
-            self.drawCost(card, cm/4.0, totalHeight - 0.5*cm)
+            self.drawCost(card, cm / 4.0, totalHeight - 0.5 * cm)
             drewTopIcon = True
 
         if 'body-top' in self.options.set_icon and not card.isExpansion():
             setImage = card.setImage()
             if setImage:
-                self.drawSetIcon(setImage, self.tabWidth-16,
-                                 totalHeight-0.5*cm-3)
+                self.drawSetIcon(setImage, self.tabWidth - 16,
+                                 totalHeight - 0.5 * cm - 3)
                 drewTopIcon = True
         if drewTopIcon:
             usedHeight += 15
 
-        #draw text
+        # draw text
         if useExtra and card.extra:
             descriptions = (card.extra,)
         else:
-            descriptions = re.split("\n",card.description)
+            descriptions = re.split("\n", card.description)
 
         s = getSampleStyleSheet()['BodyText']
         s.fontName = "Times-Roman"
         s.alignment = TA_JUSTIFY
 
-        textHorizontalMargin = .5*cm
-        textVerticalMargin = .3*cm
-        textBoxWidth = self.tabWidth - 2*textHorizontalMargin
-        textBoxHeight = totalHeight - usedHeight - 2*textVerticalMargin
-        spacerHeight = 0.2*cm
-        minSpacerHeight = 0.05*cm
+        textHorizontalMargin = .5 * cm
+        textVerticalMargin = .3 * cm
+        textBoxWidth = self.tabWidth - 2 * textHorizontalMargin
+        textBoxHeight = totalHeight - usedHeight - 2 * textVerticalMargin
+        spacerHeight = 0.2 * cm
+        minSpacerHeight = 0.05 * cm
 
         while True:
             paragraphs = []
             # this accounts for the spacers we insert between paragraphs
             h = (len(descriptions) - 1) * spacerHeight
             for d in descriptions:
-                dmod = self.add_inline_images(d,s.fontSize)
-                p = Paragraph(dmod,s)
+                dmod = self.add_inline_images(d, s.fontSize)
+                p = Paragraph(dmod, s)
                 h += p.wrap(textBoxWidth, textBoxHeight)[1]
                 paragraphs.append(p)
 
@@ -481,7 +500,8 @@ class DominionTabs:
 
         # actual drawing
         if not self.options.tabs_only:
-            self.drawOutline(x, y, rightSide, useExtra, card.getType().getTypeNames() == ('Expansion',))
+            self.drawOutline(
+                x, y, rightSide, useExtra, card.getType().getTypeNames() == ('Expansion',))
         self.drawTab(card, rightSide)
         if not self.options.tabs_only:
             self.drawText(card, useExtra)
@@ -549,7 +569,8 @@ class DominionTabs:
         # To solve:
 
         # 1)
-        # try to figure out if this a 'basic action' like +X Cards or +Y Actions
+        # try to figure out if this a 'basic action' like +X Cards or +Y
+        # Actions
         descriptions = [card.description]
         while True:
             m = self.baseactionRE.match(line, re.UNICODE)
@@ -585,11 +606,13 @@ class DominionTabs:
                     potcost = 0
                 currentCard = Card(m.groupdict()["name"].strip(),
                                    m.groupdict()["set"].lower().strip(),
-                                   tuple([t.strip() for t in m.groupdict()["type"].split("-")]),
+                                   tuple(
+                                       [t.strip() for t in m.groupdict()["type"].split("-")]),
                                    m.groupdict()["cost"],
                                    '',
                                    potcost)
-                self.add_definition_line(currentCard, m.groupdict()["description"])
+                self.add_definition_line(
+                    currentCard, m.groupdict()["description"])
                 cards.append(currentCard)
             elif line:
                 assert currentCard
@@ -620,7 +643,8 @@ class DominionTabs:
                         'width': self.paperheight}]
 
             for layout in layouts:
-                availableMargin = layout['totalMarginHeight'] - layout['minMarginHeight']
+                availableMargin = layout[
+                    'totalMarginHeight'] - layout['minMarginHeight']
                 fontsize = availableMargin / fontHeightRelative
                 fontsize = min(maxFontsize, fontsize)
                 if fontsize >= minFontsize:
@@ -632,7 +656,7 @@ class DominionTabs:
                 warnings.warn("Not enough space to display set names")
                 return
 
-            self.canvas.setFont(fontname,fontsize)
+            self.canvas.setFont(fontname, fontsize)
 
             sets = []
             for c in pageCards:
@@ -647,43 +671,45 @@ class DominionTabs:
                     self.canvas.rotate(layout['rotation'])
                     yPos = -yPos
 
-            self.canvas.drawCentredString(xPos,yPos,'/'.join(sets))
+            self.canvas.drawCentredString(xPos, yPos, '/'.join(sets))
         finally:
             self.canvas.restoreState()
 
-    def drawDividers(self,cards):
-        #split into pages
-        cards = split(cards,self.numTabsVertical*self.numTabsHorizontal)
+    def drawDividers(self, cards):
+        # split into pages
+        cards = split(cards, self.numTabsVertical * self.numTabsHorizontal)
         self.odd = True
-        for pageNum,pageCards in enumerate(cards):
-            #remember whether we start with odd or even divider for tab location
+        for pageNum, pageCards in enumerate(cards):
+            # remember whether we start with odd or even divider for tab
+            # location
             pageStartOdd = self.odd
             if not self.options.tabs_only and self.options.order != "global":
                 self.drawSetNames(pageCards)
-            for i,card in enumerate(pageCards):
-                #print card
+            for i, card in enumerate(pageCards):
+                # print card
                 x = i % self.numTabsHorizontal
                 y = i / self.numTabsHorizontal
                 self.canvas.saveState()
-                self.drawDivider(card,x,self.numTabsVertical-1-y)
+                self.drawDivider(card, x, self.numTabsVertical - 1 - y)
                 self.canvas.restoreState()
                 self.odd = not self.odd
             self.canvas.showPage()
             if pageNum + 1 == self.options.num_pages:
                 break
             if self.options.tabs_only:
-                #no set names or card backs for label-only sheets
+                # no set names or card backs for label-only sheets
                 continue
             if self.options.order != "global":
                 self.drawSetNames(pageCards)
-            #start at same oddness
+            # start at same oddness
             self.odd = pageStartOdd
-            for i,card in enumerate(pageCards):
-                #print card
-                x = (self.numTabsHorizontal-1-i) % self.numTabsHorizontal
+            for i, card in enumerate(pageCards):
+                # print card
+                x = (self.numTabsHorizontal - 1 - i) % self.numTabsHorizontal
                 y = i / self.numTabsHorizontal
                 self.canvas.saveState()
-                self.drawDivider(card,x,self.numTabsVertical-1-y,useExtra=True)
+                self.drawDivider(
+                    card, x, self.numTabsVertical - 1 - y, useExtra=True)
                 self.canvas.restoreState()
                 self.odd = not self.odd
             self.canvas.showPage()
@@ -700,7 +726,8 @@ class DominionTabs:
         parser.add_option("--orientation", type="choice", choices=["horizontal", "vertical"],
                           dest="orientation", default="horizontal",
                           help="horizontal or vertical, default:horizontal")
-        parser.add_option("--sleeved", action="store_true", dest="sleeved", help="use --size=sleeved instead")
+        parser.add_option("--sleeved", action="store_true",
+                          dest="sleeved", help="use --size=sleeved instead")
         parser.add_option("--size", type="string", dest="size", default='normal',
                           help="'<%f>x<%f>' (size in cm), or 'normal' = '9.1x5.9', or 'sleeved' = '9.4x6.15'")
         parser.add_option("--minmargin", type="string", dest="minmargin", default="1x1",
@@ -756,9 +783,12 @@ class DominionTabs:
                           help='centre the tabs on expansion dividers')
         parser.add_option("--num_pages", type="int", default=-1,
                           help="stop generating after this many pages, -1 for all")
-        parser.add_option("--language", default='en_us', help="language of card texts")
-        parser.add_option("--include_blanks", action="store_true", help="include a few dividers with extra text")
-        parser.add_option("--exclude_events", action="store_true", default=False, help="exclude individual dividers for events")
+        parser.add_option(
+            "--language", default='en_us', help="language of card texts")
+        parser.add_option("--include_blanks", action="store_true",
+                          help="include a few dividers with extra text")
+        parser.add_option("--exclude_events", action="store_true",
+                          default=False, help="exclude individual dividers for events")
 
         options, args = parser.parse_args(argstring)
         if not options.cost:
@@ -767,16 +797,16 @@ class DominionTabs:
             options.set_icon = ['tab']
         return options, args
 
-    def main(self,argstring):
-        options,args = DominionTabs.parse_opts(argstring)
+    def main(self, argstring):
+        options, args = DominionTabs.parse_opts(argstring)
         fname = None
         if args:
             fname = args[0]
-        return self.generate(options,fname)
+        return self.generate(options, fname)
 
     def parseDimensions(self, dimensionsStr):
         x, y = dimensionsStr.upper().split('X', 1)
-        return (float (x) * cm, float (y) * cm)
+        return (float(x) * cm, float(y) * cm)
 
     def generate_sample(self, options):
         import cStringIO
@@ -788,23 +818,23 @@ class DominionTabs:
             sample.format = 'png'
             sample.save(filename='sample.png')
 
-    def generate(self,options,f):
+    def generate(self, options, f):
         self.options = options
         size = self.options.size.upper()
         if size == 'SLEEVED' or self.options.sleeved:
-            dominionCardWidth, dominionCardHeight = (9.4*cm, 6.15*cm)
-            print 'Using sleeved card size, %.2fcm x %.2fcm' % (dominionCardWidth/cm,dominionCardHeight/cm)
-        elif size in ['NORMAL','UNSLEEVED']:
-            dominionCardWidth, dominionCardHeight = (9.1*cm, 5.9*cm)
-            print 'Using normal card size, %.2fcm x%.2fcm' % (dominionCardWidth/cm,dominionCardHeight/cm)
+            dominionCardWidth, dominionCardHeight = (9.4 * cm, 6.15 * cm)
+            print 'Using sleeved card size, %.2fcm x %.2fcm' % (dominionCardWidth / cm, dominionCardHeight / cm)
+        elif size in ['NORMAL', 'UNSLEEVED']:
+            dominionCardWidth, dominionCardHeight = (9.1 * cm, 5.9 * cm)
+            print 'Using normal card size, %.2fcm x%.2fcm' % (dominionCardWidth / cm, dominionCardHeight / cm)
         else:
             dominionCardWidth, dominionCardHeight = self.parseDimensions(size)
-            print 'Using custom card size, %.2fcm x %.2fcm' % (dominionCardWidth/cm,dominionCardHeight/cm)
+            print 'Using custom card size, %.2fcm x %.2fcm' % (dominionCardWidth / cm, dominionCardHeight / cm)
 
         papersize = None
         if not self.options.papersize:
             if os.path.exists("/etc/papersize"):
-                papersize = open ("/etc/papersize").readline().upper()
+                papersize = open("/etc/papersize").readline().upper()
             else:
                 papersize = 'LETTER'
         else:
@@ -818,7 +848,7 @@ class DominionTabs:
             self.paperwidth, self.paperheight = LETTER
         else:
             self.paperwidth, self.paperheight = self.parseDimensions(papersize)
-            print 'Using custom paper size, %.2fcm x %.2fcm' % (self.paperwidth/cm,self.paperheight/cm)
+            print 'Using custom paper size, %.2fcm x %.2fcm' % (self.paperwidth / cm, self.paperheight / cm)
 
         if self.options.orientation == "vertical":
             self.tabWidth, self.tabBaseHeight = dominionCardHeight, dominionCardWidth
@@ -827,38 +857,44 @@ class DominionTabs:
 
         fixedMargins = False
         if self.options.tabs_only:
-            #fixed for Avery 8867 for now
-            minmarginwidth=0.76*cm
-            minmarginheight=1.27*cm
-            self.tabLabelHeight = 1.27*cm
-            self.tabLabelWidth = 4.44*cm
+            # fixed for Avery 8867 for now
+            minmarginwidth = 0.76 * cm
+            minmarginheight = 1.27 * cm
+            self.tabLabelHeight = 1.27 * cm
+            self.tabLabelWidth = 4.44 * cm
             self.tabBaseHeight = 0
             self.tabWidth = self.tabLabelWidth
-            self.horizontalBorderSpace = 0.76*cm
-            self.verticalBorderSpace = 0.01*cm
+            self.horizontalBorderSpace = 0.76 * cm
+            self.verticalBorderSpace = 0.01 * cm
             fixedMargins = True
         else:
-            minmarginwidth, minmarginheight = self.parseDimensions(self.options.minmargin)
+            minmarginwidth, minmarginheight = self.parseDimensions(
+                self.options.minmargin)
             self.tabLabelWidth = self.options.tabwidth * cm
-            self.tabLabelHeight = .9*cm
-            self.horizontalBorderSpace = 0*cm
-            self.verticalBorderSpace = 0*cm
+            self.tabLabelHeight = .9 * cm
+            self.horizontalBorderSpace = 0 * cm
+            self.verticalBorderSpace = 0 * cm
 
         self.tabHeight = self.tabBaseHeight + self.tabLabelHeight
 
-        #note: this is convenient, but somewhat inaccurate as the border space isn't actually part of the tab width
+        # note: this is convenient, but somewhat inaccurate as the border space
+        # isn't actually part of the tab width
         self.totalTabWidth = self.tabWidth + self.horizontalBorderSpace
         self.totalTabHeight = self.tabHeight + self.verticalBorderSpace
 
         print "Paper dimensions: %fcm (w) x %fcm (h)" % (self.paperwidth / cm, self.paperheight / cm)
         print "Tab dimensions: %fcm (w) x %fcm (h)" % (self.totalTabWidth / cm, self.totalTabHeight / cm)
 
-        #as we don't draw anything in the final border, it shouldn't count towards how many tabs we can fit
-        #so it gets added back in to the page size here
-        numTabsVerticalP = int ((self.paperheight - 2*minmarginheight + self.verticalBorderSpace) / self.totalTabHeight)
-        numTabsHorizontalP = int ((self.paperwidth - 2*minmarginwidth + self.horizontalBorderSpace) / self.totalTabWidth)
-        numTabsVerticalL = int ((self.paperwidth - 2*minmarginwidth + self.verticalBorderSpace) / self.totalTabHeight)
-        numTabsHorizontalL = int ((self.paperheight - 2*minmarginheight + self.horizontalBorderSpace) / self.totalTabWidth)
+        # as we don't draw anything in the final border, it shouldn't count towards how many tabs we can fit
+        # so it gets added back in to the page size here
+        numTabsVerticalP = int(
+            (self.paperheight - 2 * minmarginheight + self.verticalBorderSpace) / self.totalTabHeight)
+        numTabsHorizontalP = int(
+            (self.paperwidth - 2 * minmarginwidth + self.horizontalBorderSpace) / self.totalTabWidth)
+        numTabsVerticalL = int(
+            (self.paperwidth - 2 * minmarginwidth + self.verticalBorderSpace) / self.totalTabHeight)
+        numTabsHorizontalL = int(
+            (self.paperheight - 2 * minmarginheight + self.horizontalBorderSpace) / self.totalTabWidth)
 
         if numTabsVerticalL * numTabsHorizontalL > numTabsVerticalP * numTabsHorizontalP and not fixedMargins:
             self.numTabsVertical, self.numTabsHorizontal\
@@ -873,9 +909,11 @@ class DominionTabs:
             self.minVerticalMargin = minmarginheight
 
         if not fixedMargins:
-            #dynamically max margins
-            self.horizontalMargin = (self.paperwidth-self.numTabsHorizontal*self.totalTabWidth)/2
-            self.verticalMargin = (self.paperheight-self.numTabsVertical*self.totalTabHeight)/2
+            # dynamically max margins
+            self.horizontalMargin = (
+                self.paperwidth - self.numTabsHorizontal * self.totalTabWidth) / 2
+            self.verticalMargin = (
+                self.paperheight - self.numTabsVertical * self.totalTabHeight) / 2
         else:
             self.horizontalMargin = minmarginwidth
             self.verticalMargin = minmarginheight
@@ -883,48 +921,58 @@ class DominionTabs:
         print "Margins: %fcm h, %fcm v\n" % (self.horizontalMargin / cm,
                                              self.verticalMargin / cm)
 
-        self.tabOutline = [(0,0,self.tabWidth,0),
-                      (self.tabWidth,0,self.tabWidth,self.tabHeight),
-                      (self.tabWidth,self.tabHeight,
-                       self.tabWidth-self.tabLabelWidth,self.tabHeight),
-                      (self.tabWidth-self.tabLabelWidth,
-                       self.tabHeight,self.tabWidth-self.tabLabelWidth,
-                       self.tabBaseHeight),
-                      (self.tabWidth-self.tabLabelWidth,
-                       self.tabBaseHeight,0,self.tabBaseHeight),
-                      (0,self.tabBaseHeight,0,0)]
+        self.tabOutline = [(0, 0, self.tabWidth, 0),
+                           (self.tabWidth, 0, self.tabWidth, self.tabHeight),
+                           (self.tabWidth, self.tabHeight,
+                            self.tabWidth - self.tabLabelWidth, self.tabHeight),
+                           (self.tabWidth - self.tabLabelWidth,
+                            self.tabHeight, self.tabWidth - self.tabLabelWidth,
+                            self.tabBaseHeight),
+                           (self.tabWidth - self.tabLabelWidth,
+                            self.tabBaseHeight, 0, self.tabBaseHeight),
+                           (0, self.tabBaseHeight, 0, 0)]
 
-        self.expansionTabOutline = [(0,0,self.tabWidth,0),
-                      (self.tabWidth,0,self.tabWidth,self.tabBaseHeight),
-                      (self.tabWidth,self.tabBaseHeight,
-                       self.tabWidth/2+self.tabLabelWidth/2,self.tabBaseHeight),
-                      (self.tabWidth/2+self.tabLabelWidth/2,self.tabBaseHeight,
-                       self.tabWidth/2+self.tabLabelWidth/2,self.tabHeight),
-                      (self.tabWidth/2+self.tabLabelWidth/2,self.tabHeight,
-                       self.tabWidth/2-self.tabLabelWidth/2,self.tabHeight),
-                      (self.tabWidth/2-self.tabLabelWidth/2,self.tabHeight,
-                       self.tabWidth/2-self.tabLabelWidth/2,self.tabBaseHeight),
-                      (self.tabWidth/2-self.tabLabelWidth/2,self.tabBaseHeight,
-                       0,self.tabBaseHeight),
-                      (0,self.tabBaseHeight,0,0)]
+        self.expansionTabOutline = [(0, 0, self.tabWidth, 0),
+                                    (self.tabWidth, 0, self.tabWidth,
+                                     self.tabBaseHeight),
+                                    (self.tabWidth, self.tabBaseHeight,
+                                     self.tabWidth / 2 + self.tabLabelWidth / 2, self.tabBaseHeight),
+                                    (self.tabWidth / 2 + self.tabLabelWidth / 2, self.tabBaseHeight,
+                                     self.tabWidth / 2 + self.tabLabelWidth / 2, self.tabHeight),
+                                    (self.tabWidth / 2 + self.tabLabelWidth / 2, self.tabHeight,
+                                     self.tabWidth / 2 - self.tabLabelWidth / 2, self.tabHeight),
+                                    (self.tabWidth / 2 - self.tabLabelWidth / 2, self.tabHeight,
+                                     self.tabWidth / 2 - self.tabLabelWidth / 2, self.tabBaseHeight),
+                                    (self.tabWidth / 2 - self.tabLabelWidth / 2, self.tabBaseHeight,
+                                     0, self.tabBaseHeight),
+                                    (0, self.tabBaseHeight, 0, 0)]
 
         try:
-            dirn = os.path.join(self.filedir,'fonts')
-            pdfmetrics.registerFont(TTFont('MinionPro-Regular',os.path.join(dirn,'MinionPro-Regular.ttf')))
-            pdfmetrics.registerFont(TTFont('MinionPro-Bold',os.path.join(dirn,'MinionPro-Bold.ttf')))
+            dirn = os.path.join(self.filedir, 'fonts')
+            pdfmetrics.registerFont(
+                TTFont('MinionPro-Regular', os.path.join(dirn, 'MinionPro-Regular.ttf')))
+            pdfmetrics.registerFont(
+                TTFont('MinionPro-Bold', os.path.join(dirn, 'MinionPro-Bold.ttf')))
         except:
             raise
-            pdfmetrics.registerFont(TTFont('MinionPro-Regular','OptimusPrincepsSemiBold.ttf'))
-            pdfmetrics.registerFont(TTFont('MinionPro-Bold','OptimusPrinceps.ttf'))
+            pdfmetrics.registerFont(
+                TTFont('MinionPro-Regular', 'OptimusPrincepsSemiBold.ttf'))
+            pdfmetrics.registerFont(
+                TTFont('MinionPro-Bold', 'OptimusPrinceps.ttf'))
         if options.read_yaml:
-            cardfile = open(os.path.join(self.filedir, "card_db", options.language, "cards.yaml"), "r")
+            cardfile = open(
+                os.path.join(self.filedir, "card_db", options.language, "cards.yaml"), "r")
             cards = yaml.load(cardfile)
         else:
-            cards = self.read_card_defs(os.path.join(self.filedir, "card_db", options.language, "dominion_cards.txt"))
-            self.read_card_extras(os.path.join(self.filedir, "card_db", options.language, "dominion_card_extras.txt"), cards)
-            DominionTabs.language_mapping = yaml.load(open(os.path.join(self.filedir, "card_db", options.language, "mapping.yaml")))
+            cards = self.read_card_defs(
+                os.path.join(self.filedir, "card_db", options.language, "dominion_cards.txt"))
+            self.read_card_extras(os.path.join(
+                self.filedir, "card_db", options.language, "dominion_card_extras.txt"), cards)
+            DominionTabs.language_mapping = yaml.load(
+                open(os.path.join(self.filedir, "card_db", options.language, "mapping.yaml")))
 
-        baseCards = [card.name for card in cards if card.cardset.lower() == 'base']
+        baseCards = [
+            card.name for card in cards if card.cardset.lower() == 'base']
 
         def isBaseExpansionCard(card):
             return card.cardset.lower() != 'base' and card.name in baseCards
@@ -935,9 +983,12 @@ class DominionTabs:
             cards = [card for card in cards if not isBaseExpansionCard(card)]
 
         if self.options.expansions:
-            self.options.expansions = [o.lower() for o in self.options.expansions]
-            reverseMapping = {v: k for k, v in DominionTabs.language_mapping.iteritems()}
-            self.options.expansions = [reverseMapping.get(e, e) for e in self.options.expansions]
+            self.options.expansions = [o.lower()
+                                       for o in self.options.expansions]
+            reverseMapping = {
+                v: k for k, v in DominionTabs.language_mapping.iteritems()}
+            self.options.expansions = [
+                reverseMapping.get(e, e) for e in self.options.expansions]
             filteredCards = []
             knownExpansions = set()
             for c in cards:
@@ -959,14 +1010,17 @@ class DominionTabs:
             for c in cards:
                 if isBaseExpansionCard(c):
                     continue
-                cardnamesByExpansion.setdefault(c.cardset, []).append(c.name.strip())
+                cardnamesByExpansion.setdefault(
+                    c.cardset, []).append(c.name.strip())
             for exp, names in cardnamesByExpansion.iteritems():
-                c = Card(exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
+                c = Card(
+                    exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
                 cards.append(c)
 
         if options.write_yaml:
             out = yaml.dump(cards)
-            open(os.path.join(self.filedir, "card_db", options.language, "cards.yaml"), 'w').write(out)
+            open(os.path.join(
+                self.filedir, "card_db", options.language, "cards.yaml"), 'w').write(out)
 
         # When sorting cards, want to always put "base" cards after all
         # kingdom cards, and order the base cards in a set order - the
@@ -980,18 +1034,21 @@ class DominionTabs:
                 return -1
 
         if options.order == "global":
-            sortKey = lambda x: (int(x.isExpansion()), baseIndex(x.name), x.name)
+            sortKey = lambda x: (
+                int(x.isExpansion()), baseIndex(x.name), x.name)
         else:
-            sortKey = lambda x: (x.cardset, int(x.isExpansion()), baseIndex(x.name), x.name)
+            sortKey = lambda x: (
+                x.cardset, int(x.isExpansion()), baseIndex(x.name), x.name)
         cards.sort(key=sortKey)
 
         if not f:
             f = "dominion_tabs.pdf"
-        self.canvas = canvas.Canvas(f, pagesize=(self.paperwidth, self.paperheight))
+        self.canvas = canvas.Canvas(
+            f, pagesize=(self.paperwidth, self.paperheight))
         self.drawDividers(cards)
         self.canvas.save()
 
-if __name__=='__main__':
+if __name__ == '__main__':
     import sys
     tabs = DominionTabs()
     tabs.main(sys.argv[1:])
