@@ -119,7 +119,7 @@ class DominionTabs:
         CardType(('Action', 'Reserve', 'Victory'), 'reserve-victory.png'),
         CardType(('Action', 'Traveller'), 'action.png'),
         CardType(('Prize',), 'action.png'),
-        CardType(('Event',), 'action.png'),
+        CardType(('Event',), 'event.png'),
         CardType(('Reaction',), 'reaction.png'),
         CardType(('Reaction', 'Shelter'), 'reaction-shelter.png'),
         CardType(('Treasure',), 'treasure.png', 3, 0),
