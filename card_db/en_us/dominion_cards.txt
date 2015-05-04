@@ -127,6 +127,10 @@ Trash a card from your hand.
 +1 Card per Coin it costs.
 +2 Cards if it has Potion in its cost.
 13	Possession	Alchemy	Action	$6 1P	The player to your left takes an extra turn after this one, in which you can see all cards he can and make all decisions for him. Any cards he would gain on that turn, you gain instead; any cards of his that are trashed are set aside and returned to his discard pile at end of turn.
+14	Possession 2/2	Alchemy	Action	$6 1P	-During the Possessed turn, whenever one of that player's cards is trashed, set it aside, and that player puts it into his discard pile at the end of the turn, after Clean-up. This counts as the card being trashed, so, for example, you could trash a Mining Village (from Intrigue) and get the 2 coins. Getting those cards back at end of turn does not count as those cards being gained (so for example, you won't get them). Other players' cards that are trashed during that turn are not returned.
+-If you make another player play an Attack via Possession, that Attack will hit you like it would normally. If you want to use a Reaction in response to that Attack (such as Secret Chamber from Intrigue), you would be the one revealing the Reaction, not the player being Possessed.
+-Possession is cumulative; if you play it twice in one turn, there will be two extra turns after this one.
+-Cards passed with Masquerade (from Intrigue) are not being gained or trashed, and so are passed normally. Cards returned to the Supply with Ambassador (from Seaside) are also not being trashed, and so return to the Supply normally.
 
 1	Loan	Prosperity	Treasure	$3	Worth 1 Coin.
 When you play this, reveal cards from your deck until you reveal a Treasure. Discard it or trash it. Discard the other cards.
