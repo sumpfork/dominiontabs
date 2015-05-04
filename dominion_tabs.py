@@ -107,7 +107,7 @@ class DominionTabs:
         CardType(('Action', 'Reaction'), 'reaction.png'),
         CardType(('Action', 'Victory'), 'action-victory.png'),
         CardType(('Action', 'Duration'), 'duration.png'),
-        CardType(('Action', 'Duration', 'Reaction'), 'duration.png'),
+        CardType(('Action', 'Duration', 'Reaction'), 'duration-reaction.png'),
         CardType(('Action', 'Attack', 'Duration'), 'duration.png'),
         CardType(('Action', 'Looter'), 'action.png'),
         CardType(('Action', 'Prize'), 'action.png'),
