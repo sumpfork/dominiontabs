@@ -127,6 +127,10 @@ Trash a card from your hand.
 +1 Card per Coin it costs.
 +2 Cards if it has Potion in its cost.
 13	Possession	Alchemy	Action	$6 1P	The player to your left takes an extra turn after this one, in which you can see all cards he can and make all decisions for him. Any cards he would gain on that turn, you gain instead; any cards of his that are trashed are set aside and returned to his discard pile at end of turn.
+14	Possession 2/2	Alchemy	Action	$6 1P	-During the Possessed turn, whenever one of that player's cards is trashed, set it aside, and that player puts it into his discard pile at the end of the turn, after Clean-up. This counts as the card being trashed, so, for example, you could trash a Mining Village (from Intrigue) and get the 2 coins. Getting those cards back at end of turn does not count as those cards being gained (so for example, you won't get them). Other players' cards that are trashed during that turn are not returned.
+-If you make another player play an Attack via Possession, that Attack will hit you like it would normally. If you want to use a Reaction in response to that Attack (such as Secret Chamber from Intrigue), you would be the one revealing the Reaction, not the player being Possessed.
+-Possession is cumulative; if you play it twice in one turn, there will be two extra turns after this one.
+-Cards passed with Masquerade (from Intrigue) are not being gained or trashed, and so are passed normally. Cards returned to the Supply with Ambassador (from Seaside) are also not being trashed, and so return to the Supply normally.
 
 1	Loan	Prosperity	Treasure	$3	Worth 1 Coin.
 When you play this, reveal cards from your deck until you reveal a Treasure. Discard it or trash it. Discard the other cards.
@@ -268,6 +272,12 @@ Reveal your hand. Reveal cards from your deck until you reveal a card that isnâ€
 17	Jester	Cornucopia	Action - Attack	$5	+2 Coins
 Each other player discards the top card of his deck. If itâ€™s a Victory card he gains a Curse. Otherwise he gains a copy of the discarded card or you do, your choice.
 18	Fairgrounds	Cornucopia	Victory	$6	Worth 2 <VP> for every 5 differently named cards in your deck (rounded down)
+19	Prizes	Cornucopia Extras	Prize	$0	Prizes are never in the supply. They can only be obtained via Tournament.
+Bag of Gold: +1 Action; Gain a Gold, putting it on top of your deck.
+Diadem: +2 Coins; When you play this, +1 Coins per unused Action you have.
+Followers: +2 Cards; Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand.
+Princess: +1 Buy; While this is in play, cards cost 2 Coins less, but not less than 0 Coins.
+Trusty Steed: Choose two: +2 Cards; or +2 Actions; or +2 Coins; or gain 4 Silvers and put your deck into your discard pile.
 
 1	Crossroads	Hinterlands	Action	$2	Reveal your hand.
 +1 Card per Victory card revealed. If this is the first time you played a Crossroads this turn, +3 Actions.
@@ -407,7 +417,7 @@ When you trash this, +3 Cards.
 21	Graverobber	Dark Ages	Action	$5	Choose one: Gain a card from the trash costing from 3 Coins to 6 Coins, putting it on top of your deck; or trash an Action card from your hand and gain a card costing up to 3 Coins more than it.
 22	Pillage	Dark Ages	Action - Attack	$5	Trash this. Each other player with 5 or more cards in hand reveals his hand and discards a card that you choose.
 Gain 2 Spoils from the Spoils pile.
-23	Scavenger	Dark Ages	Action	$5	+1 Coins
+23	Scavenger	Dark Ages	Action	$4	+2 Coins
 You may put your deck into your discard pile. Look through your discard pile and put one card from it on top of your deck.
 24	Altar	Dark Ages	Action	$6	Trash a card from your hand. Gain a card costing up to 5 Coins.
 29	Armory	Dark Ages	Action	$4	Gain a card costing up to 4 Coins,putting it on top of your deck.
@@ -521,7 +531,7 @@ When you buy this, you may overpay for it.  If you do, gain 2 Action cards each 
 13	Taxman	Guilds	Action - Attack	$4	You may trash a Treasure from your hand.  Each other player with 5 or more cards in hand discards a copy of it (or reveals a hand without it).  Gain a Treasure card costing up to 3 Coins more than the trashed card, putting it on top of your deck.
 
 1	Amulet	Adventures	Action - Duration	$3	Now and at the start of your next turn, choose one: +1 Coin; or trash a card from your hand; or gain a Silver.
-2	Artificer	Adventures	Action	$4	+1 Card
+2	Artificer	Adventures	Action	$5	+1 Card
 +1 Action
 +1 Coin
 Discard any number of cards. You may gain a card costing exactly 1 Coin per card discarded, putting it on top of your deck.

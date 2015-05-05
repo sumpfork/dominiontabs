@@ -107,30 +107,30 @@ class DominionTabs:
         CardType(('Action', 'Reaction'), 'reaction.png'),
         CardType(('Action', 'Victory'), 'action-victory.png'),
         CardType(('Action', 'Duration'), 'duration.png'),
-        CardType(('Action', 'Duration', 'Reaction'), 'duration.png'),
+        CardType(('Action', 'Duration', 'Reaction'), 'duration-reaction.png'),
         CardType(('Action', 'Attack', 'Duration'), 'duration.png'),
         CardType(('Action', 'Looter'), 'action.png'),
         CardType(('Action', 'Prize'), 'action.png'),
         CardType(('Action', 'Ruins'), 'ruins.png', 0, 1),
-        CardType(('Action', 'Shelter'), 'shelter.png', 0, 1),
+        CardType(('Action', 'Shelter'), 'action-shelter.png'),
         CardType(('Action', 'Attack', 'Looter'), 'action.png'),
         CardType(('Action', 'Attack', 'Traveller'), 'action.png'),
-        CardType(('Action', 'Reserve'), 'action.png'),
-        CardType(('Action', 'Reserve', 'Victory'), 'action.png'),
+        CardType(('Action', 'Reserve'), 'reserve.png'),
+        CardType(('Action', 'Reserve', 'Victory'), 'reserve-victory.png'),
         CardType(('Action', 'Traveller'), 'action.png'),
-        CardType(('Event',), 'action.png'),
+        CardType(('Prize',), 'action.png'),
+        CardType(('Event',), 'event.png'),
         CardType(('Reaction',), 'reaction.png'),
-        CardType(('Reaction', 'Shelter'), 'shelter.png', 0, 1),
-        CardType(('Reserve'), 'action.png'),
+        CardType(('Reaction', 'Shelter'), 'reaction-shelter.png'),
         CardType(('Treasure',), 'treasure.png', 3, 0),
         CardType(('Treasure', 'Attack'), 'treasure.png'),
         CardType(('Treasure', 'Victory'), 'treasure-victory.png'),
         CardType(('Treasure', 'Prize'), 'treasure.png', 3, 0),
         CardType(('Treasure', 'Reaction'), 'treasure-reaction.png', 0, 1),
-        CardType(('Treasure', 'Reserve'), 'treasure.png', 0, 1),
+        CardType(('Treasure', 'Reserve'), 'reserve-treasure.png'),
         CardType(('Victory',), 'victory.png'),
         CardType(('Victory', 'Reaction'), 'victory-reaction.png', 0, 1),
-        CardType(('Victory', 'Shelter'), 'shelter.png', 0, 1),
+        CardType(('Victory', 'Shelter'), 'victory-shelter.png'),
         CardType(('Curse',), 'curse.png', 3),
         CardType(('Expansion',), 'expansion.png', 4),
         CardType(('Blank',), '')
@@ -154,6 +154,7 @@ class DominionTabs:
         'prosperity': 'prosperity_set.png',
         'alchemy': 'alchemy_set.png',
         'cornucopia': 'cornucopia_set.png',
+        'cornucopia extras': 'cornucopia_set.png',
         'hinterlands': 'hinterlands_set.png',
         'dark ages': 'dark_ages_set.png',
         'dark ages extras': 'dark_ages_set.png',
@@ -789,6 +790,8 @@ class DominionTabs:
                           help="include a few dividers with extra text")
         parser.add_option("--exclude_events", action="store_true",
                           default=False, help="exclude individual dividers for events")
+        parser.add_option("--cardlist", type="string", dest="cardlist", default=None,
+                          help="Path to file that enumerates each card to be printed on its own line.")
 
         options, args = parser.parse_args(argstring)
         if not options.cost:
@@ -849,6 +852,15 @@ class DominionTabs:
         else:
             self.paperwidth, self.paperheight = self.parseDimensions(papersize)
             print 'Using custom paper size, %.2fcm x %.2fcm' % (self.paperwidth / cm, self.paperheight / cm)
+
+        self.cardlist = None
+        if self.options.cardlist:
+            print self.options.cardlist
+            self.cardlist = set()
+            with open(self.options.cardlist) as cardfile:
+                for line in cardfile:
+                    self.cardlist.add(line.strip())
+
 
         if self.options.orientation == "vertical":
             self.tabWidth, self.tabBaseHeight = dominionCardHeight, dominionCardWidth
@@ -1004,6 +1016,9 @@ class DominionTabs:
 
         if self.options.exclude_events:
             cards = [card for card in cards if not card.isEvent() or card.name == 'Events']
+
+        if self.cardlist:
+            cards = [card for card in cards if card.name in self.cardlist]
 
         if options.expansion_dividers:
             cardnamesByExpansion = {}
