@@ -790,6 +790,8 @@ class DominionTabs:
                           help="include a few dividers with extra text")
         parser.add_option("--exclude_events", action="store_true",
                           default=False, help="exclude individual dividers for events")
+        parser.add_option("--cardlist", type="string", dest="cardlist", default=None,
+                          help="Path to file that enumerates each card to be printed on its own line.")
 
         options, args = parser.parse_args(argstring)
         if not options.cost:
@@ -850,6 +852,15 @@ class DominionTabs:
         else:
             self.paperwidth, self.paperheight = self.parseDimensions(papersize)
             print 'Using custom paper size, %.2fcm x %.2fcm' % (self.paperwidth / cm, self.paperheight / cm)
+
+        self.cardlist = None
+        if self.options.cardlist:
+            print self.options.cardlist
+            self.cardlist = set()
+            with open(self.options.cardlist) as cardfile:
+                for line in cardfile:
+                    self.cardlist.add(line.strip())
+
 
         if self.options.orientation == "vertical":
             self.tabWidth, self.tabBaseHeight = dominionCardHeight, dominionCardWidth
@@ -1005,6 +1016,9 @@ class DominionTabs:
 
         if self.options.exclude_events:
             cards = [card for card in cards if not card.isEvent() or card.name == 'Events']
+
+        if self.cardlist:
+            cards = [card for card in cards if card.name in self.cardlist]
 
         if options.expansion_dividers:
             cardnamesByExpansion = {}
