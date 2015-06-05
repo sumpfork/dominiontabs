@@ -330,7 +330,7 @@ class DominionTabs:
 
         # draw banner
         img = card.getType().getNoCoinTabImageFile()
-        if img:
+        if not self.options.no_tab_artwork and img:
             self.canvas.drawImage(os.path.join(self.filedir, 'images', img), 1, 0,
                                   self.tabLabelWidth -
                                   2, self.tabLabelHeight - 1,
@@ -792,6 +792,8 @@ class DominionTabs:
                           default=False, help="exclude individual dividers for events")
         parser.add_option("--cardlist", type="string", dest="cardlist", default=None,
                           help="Path to file that enumerates each card to be printed on its own line.")
+        parser.add_option("--no-tab-artwork", action="store_true", dest="no_tab_artwork",
+                          help="don't show background artwork on tabs")
 
         options, args = parser.parse_args(argstring)
         if not options.cost:
