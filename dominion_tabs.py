@@ -443,6 +443,9 @@ class DominionTabs:
         if drewTopIcon:
             usedHeight += 15
 
+        if self.options.no_card_rules:
+            return
+        
         # draw text
         if useExtra and card.extra:
             descriptions = (card.extra,)
@@ -794,6 +797,8 @@ class DominionTabs:
                           help="Path to file that enumerates each card to be printed on its own line.")
         parser.add_option("--no-tab-artwork", action="store_true", dest="no_tab_artwork",
                           help="don't show background artwork on tabs")
+        parser.add_option("--no-card-rules", action="store_true", dest="no_card_rules",
+                          help="don't print the card's rules on the tab body")
 
         options, args = parser.parse_args(argstring)
         if not options.cost:
