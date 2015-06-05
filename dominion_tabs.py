@@ -57,6 +57,14 @@ class Card:
             DominionTabs.setImages[self.cardset] = 0
             DominionTabs.promoImages[self.name.lower()] = 0
         return setImage
+        
+    def setTextIcon(self):
+        setTextIcon = DominionTabs.getSetText(self.cardset, self.name)
+        if setTextIcon is None and self.cardset not in ['base', 'extra'] and not self.isExpansion():
+            print 'warning, no set text for set "%s" card "%s"' % (self.cardset, self.name)
+            DominionTabs.setTextIcons[self.cardset] = 0
+            DominionTabs.promoTextIcons[self.name.lower()] = 0
+        return setTextIcon
 
     def isBlank(self):
         return False
@@ -170,6 +178,31 @@ class DominionTabs:
         'envoy': 'envoy_set.png',
         'prince': 'prince_set.png'
     }
+    
+    setTextIcons = {
+        'dominion': 'D',
+        'intrigue': 'I',
+        'seaside': 'S',
+        'prosperity': 'P',
+        'alchemy': 'A',
+        'cornucopia': 'C',
+        'cornucopia extras': 'C',
+        'hinterlands': 'H',
+        'dark ages': 'DA',
+        'dark ages extras': 'DA',
+        'guilds': 'G',
+        'adventures': 'Ad',
+        'adventures extras': 'Ad'
+    }
+    
+    promoTextIcons = {
+        'walled village': '',
+        'stash': '',
+        'governor': '',
+        'black market': '',
+        'envoy': '',
+        'prince': ''
+    }
 
     @classmethod
     def getSetImage(cls, setName, cardName):
@@ -185,6 +218,14 @@ class DominionTabs:
             trans = cls.language_mapping[cardName]
             if trans.lower() in cls.promoImages:
                 return cls.promoImages[trans.lower()]
+        return None
+
+    @classmethod
+    def getSetText(cls, setName, cardName):
+        if setName in cls.setTextIcons:
+            return cls.setTextIcons[setName]
+        if cardName.lower() in cls.promoTextIcons:
+            return cls.promoTextIcons[cardName.lower()]
         return None
 
     def __init__(self):
@@ -325,7 +366,10 @@ class DominionTabs:
 
         # allow for 3 pt border on each side
         textWidth = self.tabLabelWidth - 6
-        textHeight = self.tabLabelHeight / 2 - 7 + \
+        textHeight = 7
+        if self.options.no_tab_artwork:
+            textHeight = 4
+        textHeight = self.tabLabelHeight / 2 - textHeight + \
             card.getType().getTabTextHeightOffset()
 
         # draw banner
@@ -348,16 +392,28 @@ class DominionTabs:
             textInset = 13
 
         # draw set image
-        setImage = card.setImage()
-        if setImage and 'tab' in self.options.set_icon:
-            setImageHeight = 3 + card.getType().getTabTextHeightOffset()
-            self.drawSetIcon(setImage, self.tabLabelWidth - 20,
-                             setImageHeight)
-            textInsetRight = 20
+        # always need to offset from right edge, to make sure it stays on
+        # banner
+        textInsetRight = 6
+        if self.options.use_text_set_icon:
+            setImageHeight = card.getType().getTabTextHeightOffset()
+            #self.canvas.rect(self.tabLabelWidth - 20, setImageHeight, 20, 20, 1 )
+            setText = card.setTextIcon()
+            self.canvas.setFont('MinionPro-Oblique', 8)
+            if setText is None:
+                setText = ""
+                
+            self.canvas.drawCentredString( self.tabLabelWidth - 10, textHeight + 2, setText)
+            textInsetRight = 15
         else:
-            # always need to offset from right edge, to make sure it stays on
-            # banner
-            textInsetRight = 6
+            setImage = card.setImage()
+            if setImage and 'tab' in self.options.set_icon:
+                setImageHeight = 3 + card.getType().getTabTextHeightOffset()
+
+                self.drawSetIcon(setImage, self.tabLabelWidth - 20,
+                                 setImageHeight)
+                                 
+                textInsetRight = 20
 
         # draw name
         fontSize = 12
@@ -799,6 +855,8 @@ class DominionTabs:
                           help="don't show background artwork on tabs")
         parser.add_option("--no-card-rules", action="store_true", dest="no_card_rules",
                           help="don't print the card's rules on the tab body")
+        parser.add_option("--use-text-set-icon", action="store_true", dest="use_text_set_icon",
+                          help="use text/letters to represent a card's set instead of the set icon")
 
         options, args = parser.parse_args(argstring)
         if not options.cost:
@@ -972,6 +1030,8 @@ class DominionTabs:
                 TTFont('MinionPro-Regular', os.path.join(dirn, 'MinionPro-Regular.ttf')))
             pdfmetrics.registerFont(
                 TTFont('MinionPro-Bold', os.path.join(dirn, 'MinionPro-Bold.ttf')))
+            pdfmetrics.registerFont(
+                TTFont('MinionPro-Oblique', os.path.join(dirn, 'MinionPro-It.ttf')))
         except:
             raise
             pdfmetrics.registerFont(
