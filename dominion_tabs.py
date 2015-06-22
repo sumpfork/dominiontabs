@@ -1,4 +1,5 @@
 #!python
+import csv
 import re
 from optparse import OptionParser
 import os.path
@@ -569,6 +570,15 @@ class DominionTabs:
         if not self.options.tabs_only:
             self.drawText(card, useExtra)
 
+    def read_card_groups(self, fname):
+        groups = {}
+        with open(fname, 'r') as f:
+            for row in csv.reader(f, delimiter=','):
+                groups[row[0].strip()] = {
+                         "subcards":[x.strip() for x in row[1:-1]],
+                         "text":row[-1].strip()}
+        return groups
+                
     def read_card_extras(self, fname, cards):
         f = open(fname)
         cardName = re.compile("^:::(?P<name>[ \w\-/']*)", re.UNICODE)
@@ -852,8 +862,10 @@ class DominionTabs:
                           help="include a few dividers with extra text")
         parser.add_option("--exclude_events", action="store_true",
                           default=False, help="exclude individual dividers for events")
+        parser.add_option("--exclude_card_groups", action="store_true",
+                          default=False, help="exclude individual dividers for events")
         parser.add_option("--exclude_prizes", action="store_true",
-                          default=False, help="exclude individual dividers for prizes (cornicopia)")
+                          default=False, help="exclude individual dividers for prizes (cornucopia)")
         parser.add_option("--cardlist", type="string", dest="cardlist", default=None,
                           help="Path to file that enumerates each card to be printed on its own line.")
         parser.add_option("--no-tab-artwork", action="store_true", dest="no_tab_artwork",
@@ -1069,6 +1081,22 @@ class DominionTabs:
             cards = [card for card in cards if card.cardset.lower() != 'base']
         else:
             cards = [card for card in cards if not isBaseExpansionCard(card)]
+
+        if self.options.exclude_card_groups:
+            # Load the card groupos file
+            card_groups = self.read_card_groups(os.path.join(self.filedir, "card_db", options.language, "card_groups.txt"))
+            # pull out any cards which are a subcard, and rename the master card
+            new_cards = []
+            all_subcards = []
+            for subs in [card_groups[x]["subcards"] for x in card_groups]:
+                all_subcards += subs
+            for card in cards:
+                if card.name in card_groups.keys():
+                    card.name = card_groups[card.name]["text"]
+                elif card.name in all_subcards:
+                    continue
+                new_cards.append(card)
+            cards = new_cards
 
         if self.options.expansions:
             self.options.expansions = [o.lower()
