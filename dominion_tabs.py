@@ -1,4 +1,5 @@
 #!python
+import csv
 import re
 from optparse import OptionParser
 import os.path
@@ -49,6 +50,9 @@ class Card:
 
     def isEvent(self):
         return self.getType().getTypeNames() == ('Event',)
+
+    def isPrize(self):
+        return 'Prize' in self.getType().getTypeNames()
 
     def setImage(self):
         setImage = DominionTabs.getSetImage(self.cardset, self.name)
@@ -566,6 +570,15 @@ class DominionTabs:
         if not self.options.tabs_only:
             self.drawText(card, useExtra)
 
+    def read_card_groups(self, fname):
+        groups = {}
+        with open(fname, 'r') as f:
+            for row in csv.reader(f, delimiter=','):
+                groups[row[0].strip()] = {
+                         "subcards":[x.strip() for x in row[1:-1]],
+                         "text":row[-1].strip()}
+        return groups
+                
     def read_card_extras(self, fname, cards):
         f = open(fname)
         cardName = re.compile("^:::(?P<name>[ \w\-/']*)", re.UNICODE)
@@ -743,7 +756,7 @@ class DominionTabs:
             # remember whether we start with odd or even divider for tab
             # location
             pageStartOdd = self.odd
-            if not self.options.tabs_only and self.options.order != "global":
+            if not self.options.no_page_footer and (not self.options.tabs_only and self.options.order != "global"):
                 self.drawSetNames(pageCards)
             for i, card in enumerate(pageCards):
                 # print card
@@ -756,10 +769,10 @@ class DominionTabs:
             self.canvas.showPage()
             if pageNum + 1 == self.options.num_pages:
                 break
-            if self.options.tabs_only:
+            if self.options.tabs_only or self.options.no_card_backs:
                 # no set names or card backs for label-only sheets
                 continue
-            if self.options.order != "global":
+            if not self.options.no_page_footer and self.options.order != "global":
                 self.drawSetNames(pageCards)
             # start at same oddness
             self.odd = pageStartOdd
@@ -849,6 +862,10 @@ class DominionTabs:
                           help="include a few dividers with extra text")
         parser.add_option("--exclude_events", action="store_true",
                           default=False, help="exclude individual dividers for events")
+        parser.add_option("--exclude_card_groups", action="store_true",
+                          default=False, help="exclude individual dividers for events")
+        parser.add_option("--exclude_prizes", action="store_true",
+                          default=False, help="exclude individual dividers for prizes (cornucopia)")
         parser.add_option("--cardlist", type="string", dest="cardlist", default=None,
                           help="Path to file that enumerates each card to be printed on its own line.")
         parser.add_option("--no-tab-artwork", action="store_true", dest="no_tab_artwork",
@@ -857,6 +874,10 @@ class DominionTabs:
                           help="don't print the card's rules on the tab body")
         parser.add_option("--use-text-set-icon", action="store_true", dest="use_text_set_icon",
                           help="use text/letters to represent a card's set instead of the set icon")
+        parser.add_option("--no-page-footer", action="store_true", dest="no_page_footer",
+                          help="don't print the set name at the bottom of the page.")
+        parser.add_option("--no-card-backs", action="store_true", dest="no_card_backs",
+                          help="don't print the back page of the card sheets.")
 
         options, args = parser.parse_args(argstring)
         if not options.cost:
@@ -1061,6 +1082,22 @@ class DominionTabs:
         else:
             cards = [card for card in cards if not isBaseExpansionCard(card)]
 
+        if self.options.exclude_card_groups:
+            # Load the card groupos file
+            card_groups = self.read_card_groups(os.path.join(self.filedir, "card_db", options.language, "card_groups.txt"))
+            # pull out any cards which are a subcard, and rename the master card
+            new_cards = []
+            all_subcards = []
+            for subs in [card_groups[x]["subcards"] for x in card_groups]:
+                all_subcards += subs
+            for card in cards:
+                if card.name in card_groups.keys():
+                    card.name = card_groups[card.name]["text"]
+                elif card.name in all_subcards:
+                    continue
+                new_cards.append(card)
+            cards = new_cards
+
         if self.options.expansions:
             self.options.expansions = [o.lower()
                                        for o in self.options.expansions]
@@ -1083,6 +1120,9 @@ class DominionTabs:
 
         if self.options.exclude_events:
             cards = [card for card in cards if not card.isEvent() or card.name == 'Events']
+
+        if self.options.exclude_prizes:
+            cards = [card for card in cards if not card.isPrize()]
 
         if self.cardlist:
             cards = [card for card in cards if card.name in self.cardlist]
