@@ -434,7 +434,7 @@
   types: !!python/tuple [Action]
 - !!python/object:__main__.Card
   cardset: cornucopia
-  cost: 0
+  cost: 0*
   description: '
 
     +1 Action
@@ -451,7 +451,7 @@
   types: !!python/tuple [Action, Prize]
 - !!python/object:__main__.Card
   cardset: cornucopia
-  cost: 0
+  cost: 0*
   description: '
 
     Worth 2 Coins.
@@ -508,7 +508,7 @@
   types: !!python/tuple [Action]
 - !!python/object:__main__.Card
   cardset: cornucopia
-  cost: 0
+  cost: 0*
   description: '
 
     +2 Cards
@@ -694,7 +694,7 @@
   types: !!python/tuple [Action]
 - !!python/object:__main__.Card
   cardset: cornucopia
-  cost: 0
+  cost: 0*
   description: '
 
     +1 Buy
@@ -758,7 +758,7 @@
   types: !!python/tuple [Action]
 - !!python/object:__main__.Card
   cardset: cornucopia
-  cost: 0
+  cost: 0*
   description: '
 
     Choose two: +2 Cards; or +2 Actions; or +2 Coins; or gain 4 Silvers and put your
@@ -1244,7 +1244,7 @@
   types: !!python/tuple [Action]
 - !!python/object:__main__.Card
   cardset: dark ages
-  cost: 0
+  cost: 0*
   description: '
 
     +2 Actions
@@ -1311,7 +1311,7 @@
   types: !!python/tuple [Action, Reaction]
 - !!python/object:__main__.Card
   cardset: dark ages
-  cost: 0
+  cost: 0*
   description: '
 
     You may trash 2 cards from your hand.
@@ -1563,7 +1563,7 @@
   types: !!python/tuple [Action]
 - !!python/object:__main__.Card
   cardset: dark ages
-  cost: 0
+  cost: 0*
   description: '
 
     Worth 3 Coins
@@ -2160,7 +2160,7 @@
   types: !!python/tuple [Action]
 - !!python/object:__main__.Card
   cardset: guilds
-  cost: 3
+  cost: 3+
   description: '
 
     Name a card.  Reveal the top 3 cards of your deck.  Trash the matches.  Put the
@@ -2191,7 +2191,7 @@
   types: !!python/tuple [Action]
 - !!python/object:__main__.Card
   cardset: guilds
-  cost: 4
+  cost: 4+
   description: '
 
     +1 Card
@@ -2242,7 +2242,7 @@
   types: !!python/tuple [Action]
 - !!python/object:__main__.Card
   cardset: guilds
-  cost: 3
+  cost: 3+
   description: '
 
     Worth 1 Coin.
@@ -2317,7 +2317,7 @@
   types: !!python/tuple [Action, Attack]
 - !!python/object:__main__.Card
   cardset: guilds
-  cost: 2
+  cost: 2+
   description: '
 
     Trash a card from your hand.  Gain 2 cards each costing less than it.
@@ -3557,7 +3557,7 @@
   types: !!python/tuple [Action, Attack]
 - !!python/object:__main__.Card
   cardset: prosperity
-  cost: 8
+  cost: 8*
   description: "\n+1 Card\n+1 Action\n +2 Coin\nDuring your Buy phase, this costs\
     \ 2 Coins less per Action card you have in play, but not less than 0 Coins."
   extra: Most of the time, this costs 8 coins. During Buyphases, this costs 2 coins

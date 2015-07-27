@@ -197,7 +197,7 @@ When you play this, it`s worth 1 Coin per Treasure card you have in play (counti
 22	Expand	Prosperity	Action	$7	Trash a card from your hand. Gain a card costing up to 3 Coins more than the trashed card.
 23	Forge	Prosperity	Action	$7	Trash any number of cards from your hand. Gain a card with cost exactly equal to the total cost in coins of the trashed cards.
 24	King's Court	Prosperity	Action	$7	You may choose an Action card in your hand. Play it three times.
-25	Peddler	Prosperity	Action	$8	+1 Card; +1 Action; +2 Coin
+25	Peddler	Prosperity	Action	$8*	+1 Card; +1 Action; +2 Coin
 ______________________
 During your Buy phase, this costs 2 Coins less per Action card you have in play, but not less than 0 Coins.
 26	Platinum	Prosperity	Treasure	$9	Worth 5 Coins.
@@ -226,19 +226,19 @@ Choose one; you get the version in parentheses: Each player gets +1 (+3) Cards; 
 10	Colony	Base	Victory	$11	10 <VP>
 11	Trash	Base	Action	$0	Pile of trash.
 
-1	Bag of Gold	Cornucopia	Action - Prize	$0	+1 Action
+1	Bag of Gold	Cornucopia	Action - Prize	$0*	+1 Action
 Gain a Gold, putting it on top of your deck.
 (This is not in the Supply.)
-2	Diadem	Cornucopia	Treasure - Prize	$0	Worth 2 Coins.
+2	Diadem	Cornucopia	Treasure - Prize	$0*	Worth 2 Coins.
 When you play this, +1 Coins per unused Action you have (Action, not Action card).
 (This is not in the Supply.)
-3	Followers	Cornucopia	Action - Attack - Prize	$0	+2 Cards
+3	Followers	Cornucopia	Action - Attack - Prize	$0*	+2 Cards
 Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand.
 (This is not in the Supply.)
-4	Princess	Cornucopia	Action - Prize	$0	+1 Buy
+4	Princess	Cornucopia	Action - Prize	$0*	+1 Buy
 While this is in play, cards cost 2 Coins less, but not less than 0 Coins.
 (This is not in the Supply.)
-5	Trusty Steed	Cornucopia	Action - Prize	$0	Choose two: +2 Cards; or +2 Actions; or +2 Coins; or gain 4 Silvers and put your deck into your discard pile.
+5	Trusty Steed	Cornucopia	Action - Prize	$0*	Choose two: +2 Cards; or +2 Actions; or +2 Coins; or gain 4 Silvers and put your deck into your discard pile.
 (This is not in the Supply.)
 6	Hamlet	Cornucopia	Action	$2	+1 Card
 +1 Action
@@ -274,7 +274,7 @@ Reveal your hand. Reveal cards from your deck until you reveal a card that isnâ€
 17	Jester	Cornucopia	Action - Attack	$5	+2 Coins
 Each other player discards the top card of his deck. If itâ€™s a Victory card he gains a Curse. Otherwise he gains a copy of the discarded card or you do, your choice.
 18	Fairgrounds	Cornucopia	Victory	$6	Worth 2 <VP> for every 5 differently named cards in your deck (rounded down)
-19	Prizes	Cornucopia Extras	Prize	$0	Prizes are never in the supply. They can only be obtained via Tournament.
+19	Prizes	Cornucopia Extras	Prize	$0*	Prizes are never in the supply. They can only be obtained via Tournament.
 Bag of Gold: +1 Action; Gain a Gold, putting it on top of your deck.
 Diadem: +2 Coins; When you play this, +1 Coins per unused Action you have.
 Followers: +2 Cards; Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand.
@@ -367,10 +367,10 @@ Ruined Library: +1 Card
 Ruined Marked: :1 Buy
 Ruined Village: +1 Action
 Survivors: Look at the top 2 cards of your deck. Discard them or put them back in any order.
-2	Madman	Dark Ages	Action	$0	+2 Actions
+2	Madman	Dark Ages	Action	$0*	+2 Actions
 Return this to the Madman pile. If you do, +1 Card per card in your hand.
 (This card is not in the supply.)
-3	Spoils	Dark Ages	Treasure	$0	Worth 3 Coins
+3	Spoils	Dark Ages	Treasure	$0*	Worth 3 Coins
 When you play this, return it to the Spoils pile.
 (This is not in the Supply.)
 4	Hovel	Dark Ages	Reaction - Shelter	$1	When you buy a Victory card, you may trash this from your hand.
@@ -481,7 +481,7 @@ Put the Actions back on top in any order and discard the rest.
 ______________________
 When you trash this,
 gain a Duchy or 3 Estates.
-40	Mercenary	Dark Ages	Action - Attack	$0	You may trash 2 cards from your hand.
+40	Mercenary	Dark Ages	Action - Attack	$0*	You may trash 2 cards from your hand.
 If you do, +2 Cards, + 2 Coins,
 and each other player discards down to 3 cards in hand.
 (This is not in the Supply.)
@@ -507,16 +507,16 @@ Setup: Each player takes a Coin token.
 4	Candlestick Maker	Guilds	Action	$2	+1 Action
 +1 Buy
 Take a Coin token.
-5	Doctor	Guilds	Action	$3	Name a card.  Reveal the top 3 cards of your deck.  Trash the matches.  Put the rest back on top in any order.
+5	Doctor	Guilds	Action	$3+	Name a card.  Reveal the top 3 cards of your deck.  Trash the matches.  Put the rest back on top in any order.
 ______________________
 When you buy this, you may overpay for it.  For each 1 Coin you overpaid, look at the top card of your deck; trash it, discard it, or put it back.
-6	Herald	Guilds	Action	$4	+1 Card
+6	Herald	Guilds	Action	$4+	+1 Card
 +1 Action
 Reveal the top card of your deck.  If it is an Action, play it.
 ______________________
 When you buy this, you may overpay for it.  For each 1 Coin you overpaid, look through your discard pile and put a card from it on top of your deck.
 7	Journeyman	Guilds	Action	$5	Name a card.  Reveal cards from the top of your deck until you reveal 3 cards that are not the named card.  Put those cards into your hand and discard the rest.
-8	Masterpiece	Guilds	Treasure	$3	Worth 1 Coin.
+8	Masterpiece	Guilds	Treasure	$3+	Worth 1 Coin.
 ______________________
 When you buy this, you may overpay for it.  If you do, gain a Silver per 1 Coin you overpaid.
 9	Merchant Guild	Guilds	Action	$5	+1 Buy
@@ -527,7 +527,7 @@ While this is in play, when you buy a card, take a Coin token.
 +2 Actions
 You may discard a Treasure card.  If you do, take a Coin token.
 11	Soothsayer	Guilds	Action - Attack	$5	Gain a Gold.  Each other player gains a Curse.  Each player who did draws a card.
-12	Stonemason	Guilds	Action	$2	Trash a card from your hand.  Gain 2 cards each costing less than it.
+12	Stonemason	Guilds	Action	$2+	Trash a card from your hand.  Gain 2 cards each costing less than it.
 ______________________
 When you buy this, you may overpay for it.  If you do, gain 2 Action cards each costing the amount you overpaid.
 13	Taxman	Guilds	Action - Attack	$4	You may trash a Treasure from your hand.  Each other player with 5 or more cards in hand discards a copy of it (or reveals a hand without it).  Gain a Treasure card costing up to 3 Coins more than the trashed card, putting it on top of your deck.
@@ -629,41 +629,41 @@ When you discard this from play, you may exchange it for a Treasure Hunter.
 +1 Coin
 ______________________
 When you discard this from play, you may exchange it for a Soldier.
-31	Treasure Hunter	Adventures	Action - Traveller	$3	+1 Action
+31	Treasure Hunter	Adventures	Action - Traveller	$3*	+1 Action
 +1 Coin
 Gain a Silver per card the player to your right gained in his last turn.
 ______________________
 When you discard this from play, you may exchange it for a Warrior.
 (This is not in the Supply.)
-32	Warrior	Adventures	Action - Attack - Traveller	$4	+2 Cards
+32	Warrior	Adventures	Action - Attack - Traveller	$4*	+2 Cards
 For each Traveller you have in play (including this), each other player discards the top card of his deck and trashes it if it costs 3 Coins or 4 Coins.
 ______________________
 When you discard this from play, you may exchange it for a Hero.
 (This is not in the Supply.)
-33	Hero	Adventures	Action - Traveller	$5	+2 Coins
+33	Hero	Adventures	Action - Traveller	$5*	+2 Coins
 Gain a Treasure.
 ______________________
 When you discard this from play, you may exchange it for a Champion.
 (This is not in the Supply.)
-34	Champion	Adventures	Action - Duration	$6	+1 Action
+34	Champion	Adventures	Action - Duration	$6*	+1 Action
 For the rest of the game, when another player plays an Attack, it doesn't affect you, and when you play an Action, +1 Action.
 (This stays in play. This is not in the Supply.)
-35	Soldier	Adventures	Action - Attack - Traveller	$3	+2 Coins
+35	Soldier	Adventures	Action - Attack - Traveller	$3*	+2 Coins
 +1 Coin per other Attack you have in play. Each other player with 4 or more cards in hand discards a card.
 ______________________
 When you discard this from play, you may exchange it for a Fugitive.
 (This is not in the Supply.)
-36	Fugitive	Adventures	Action - Traveller	$4	+2 Cards
+36	Fugitive	Adventures	Action - Traveller	$4*	+2 Cards
 +1 Action
 Discard a card.
 ______________________
 When you discard this from play, you may exchange it for a Disciple.
 (This is not in the Supply.)
-37	Disciple	Adventures	Action - Traveller	$5	You may play an Action card from your hand twice. Gain a copy of it.
+37	Disciple	Adventures	Action - Traveller	$5*	You may play an Action card from your hand twice. Gain a copy of it.
 ______________________
 When you discard this from play, you may exchange it for a Teacher.
 (This is not in the Supply.)
-38	Teacher	Adventures	Action - Reserve	$6	Put this on your Tavern mat.
+38	Teacher	Adventures	Action - Reserve	$6*	Put this on your Tavern mat.
 ______________________
 At the start of your turn, you may call this, to move your +1 Card, +1 Action, +1 Buy, or +1 Coin token to an Action Supply pile you have no tokens on (when you play a card from that pile, you first get that bonus).
 (This is not in the Supply.)

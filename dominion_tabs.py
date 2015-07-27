@@ -334,8 +334,6 @@ class DominionTabs:
 
         self.canvas.setFont('MinionPro-Bold', 12)
         cost = str(card.cost)
-        if 'Prize' in card.types:
-            cost += '*'
         self.canvas.drawCentredString(x + 8, costHeight, cost)
         return width
 
@@ -666,7 +664,7 @@ class DominionTabs:
     def read_card_defs(self, fname, fileobject=None):
         cards = []
         f = open(fname)
-        carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>(\d+|\*))( (?P<potioncost>\d)+P)?\t+(?P<description>.*)",
+        carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>(\d+(\+|\*)?|\*))( (?P<potioncost>\d)+P)?\t+(?P<description>.*)",
                              re.UNICODE)
         currentCard = None
         for line in f:
