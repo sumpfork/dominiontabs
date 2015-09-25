@@ -3049,7 +3049,7 @@
 
     Ruined Library: +1 Card
 
-    Ruined Marked: :1 Buy
+    Ruined Market: +1 Buy
 
     Ruined Village: +1 Action
 
@@ -3492,8 +3492,8 @@
 - !!python/object:__main__.Card
   cardset: !!python/unicode 'dark ages'
   cost: !!python/unicode '4'
-  description: !!python/unicode 'Gain a card costing up to 4 Coins,putting it on top
-    of your deck.'
+  description: !!python/unicode 'Gain a card costing up to 4 Coins, putting it on
+    top of your deck.'
   extra: !!python/unicode ' The card you gain comes from the Supply and is put on
     top of your deck.'
   name: !!python/unicode 'Armory'
@@ -4264,7 +4264,7 @@
 
     ______________________
 
-    When another player plays an Attack card, you may pla this from your hand. (+1
+    When another player plays an Attack card, you may play this from your hand. (+1
     Action has no effect if it''s not your turn.)'
   extra: " This gives you +1 Card and +1 Action when you play it, and then + 1 Coin\
     \ at the start of your next turn after that. This card has a Reaction ability\
