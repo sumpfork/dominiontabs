@@ -450,8 +450,11 @@ class DominionTabs:
                     h -= h / 2
 
             words = line.split()
-            if rightSide or not self.options.edge_align_name:
-                w = textInset
+            if rightSide or not self.options.edge_align_name or self.options.center_name:
+                if self.options.center_name:
+                    w = self.tabLabelWidth / 2 - self.nameWidth(line, fontSize) / 2
+                else:
+                    w = textInset
 
                 def drawWordPiece(text, fontSize):
                     self.canvas.setFont('MinionPro-Regular', fontSize)
@@ -557,7 +560,7 @@ class DominionTabs:
         self.canvas.resetTransforms()
         self.canvas.translate(self.horizontalMargin, self.verticalMargin)
         if useExtra:
-            self.canvas.translate(self.options.back_offset, 0)
+            self.canvas.translate(self.options.back_offset, self.options.back_offset_height)
         self.canvas.translate(x * self.totalTabWidth, y * self.totalTabHeight)
 
         # actual drawing
@@ -794,6 +797,8 @@ class DominionTabs:
         parser = OptionParser()
         parser.add_option("--back_offset", type="float", dest="back_offset", default=0,
                           help="Points to offset the back page to the right; needed for some printers")
+        parser.add_option("--back_offset_height", type="float", dest="back_offset_height", default=0,
+                          help="Points to offset the back page upward; needed for some printers")
         parser.add_option("--orientation", type="choice", choices=["horizontal", "vertical"],
                           dest="orientation", default="horizontal",
                           help="horizontal or vertical, default:horizontal")
@@ -807,6 +812,10 @@ class DominionTabs:
                           help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
         parser.add_option("--tabwidth", type="float", default=4,
                           help="width in cm of stick-up tab (ignored if tabs-only used)")
+        parser.add_option("--fulltab", action="store_true", dest="fulltab",
+                          help="force all label tabs to be full width with name centered")
+        parser.add_option("--center_name", action="store_true",
+                          help="Center the card name on the tab")
         parser.add_option("--samesidelabels", action="store_true", dest="sameside",
                           help="force all label tabs to be on the same side"
                           " (this will be forced on if there is an uneven"
@@ -966,7 +975,10 @@ class DominionTabs:
         else:
             minmarginwidth, minmarginheight = self.parseDimensions(
                 self.options.minmargin)
-            self.tabLabelWidth = self.options.tabwidth * cm
+            if self.options.fulltab:
+                self.tabLabelWidth = self.tabWidth
+            else:
+                self.tabLabelWidth = self.options.tabwidth * cm
             self.tabLabelHeight = .9 * cm
             self.horizontalBorderSpace = 0 * cm
             self.verticalBorderSpace = 0 * cm
