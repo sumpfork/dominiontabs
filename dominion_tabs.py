@@ -450,8 +450,8 @@ class DominionTabs:
                     h -= h / 2
 
             words = line.split()
-            if rightSide or not self.options.edge_align_name or self.options.center_name:
-                if self.options.center_name:
+            if (not self.options.tab_name_align == "right") and (self.options.tab_name_align == "centre" or rightSide or not self.options.tab_name_align == "edge" ):
+                if self.options.tab_name_align == "centre":
                     w = self.tabLabelWidth / 2 - self.nameWidth(line, fontSize) / 2
                 else:
                     w = textInset
@@ -549,13 +549,16 @@ class DominionTabs:
 
     def drawDivider(self, card, x, y, useExtra=False):
         # figure out whether the tab should go on the right side or not
-        if not self.options.sameside:
+        if self.options.tab_side == "right":
+            rightSide = useExtra
+        elif self.options.tab_side == "left" or self.options.tab_side == "full":
+            rightSide = not useExtra
+        else:
             if not useExtra:
                 rightSide = not self.odd
             else:
                 rightSide = self.odd
-        else:
-            rightSide = useExtra
+
         # apply the transforms to get us to the corner of the current card
         self.canvas.resetTransforms()
         self.canvas.translate(self.horizontalMargin, self.verticalMargin)
@@ -810,21 +813,22 @@ class DominionTabs:
                           help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
         parser.add_option("--papersize", type="string", dest="papersize", default=None,
                           help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
+        parser.add_option("--tab_name_align", type="choice", choices=["left", "right", "center", "centre", "edge"],
+                          dest="tab_name_align", default="left",
+                          help="Alignment of text on the tab.  choices: left, centre (or center), edge."
+                          " The edge option will align the card name to the outside edge of the"
+                          " tab, so that when using tabs on alternating sides,"
+                          " the name is less likely to be hidden by the tab in front;"
+                          " default:left")
+        parser.add_option("--tab_side", type="choice", choices=["left", "right", "alternate", "full"],
+                          dest="tab_side", default="alternate",
+                          help="Alignment of tab.  choices: left, right, alternate, full;"
+                          " left/right forces all tabs to that side;"
+                          " alternate will toggle between left and right for the tabs;"
+                          " full will force all label tabs to be full width of the divider"
+                          " default:alternate")
         parser.add_option("--tabwidth", type="float", default=4,
                           help="width in cm of stick-up tab (ignored if tabs-only used)")
-        parser.add_option("--fulltab", action="store_true", dest="fulltab",
-                          help="force all label tabs to be full width with name centered")
-        parser.add_option("--center_name", action="store_true",
-                          help="Center the card name on the tab")
-        parser.add_option("--samesidelabels", action="store_true", dest="sameside",
-                          help="force all label tabs to be on the same side"
-                          " (this will be forced on if there is an uneven"
-                          " number of cards horizontally across the page)")
-        parser.add_option("--edge_align_name", action="store_true",
-                          help="align the card name to the outside edge of the"
-                          " tab, so that when using tabs on alternating sides,"
-                          " the name is less likely to be hidden by the tab"
-                          " in front; ignored if samesidelabels is on")
         parser.add_option("--cost", action="append", type="choice",
                           choices=cls.LOCATION_CHOICES, default=[],
                           help="where to display the card cost; may be set to"
@@ -960,6 +964,9 @@ class DominionTabs:
         else:
             self.tabWidth, self.tabBaseHeight = dominionCardWidth, dominionCardHeight
 
+        if self.options.tab_name_align == "center":
+            self.options.tab_name_align = "centre"
+            
         fixedMargins = False
         if self.options.tabs_only:
             # fixed for Avery 8867 for now
@@ -975,7 +982,7 @@ class DominionTabs:
         else:
             minmarginwidth, minmarginheight = self.parseDimensions(
                 self.options.minmargin)
-            if self.options.fulltab:
+            if self.options.tab_side == "full":
                 self.tabLabelWidth = self.tabWidth
             else:
                 self.tabLabelWidth = self.options.tabwidth * cm
