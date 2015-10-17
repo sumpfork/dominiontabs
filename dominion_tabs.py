@@ -554,6 +554,7 @@ class DominionTabs:
         elif self.options.tab_side == "left" or self.options.tab_side == "full":
             rightSide = not useExtra
         else:
+            # alternate the cards
             if not useExtra:
                 rightSide = not self.odd
             else:
@@ -755,7 +756,14 @@ class DominionTabs:
     def drawDividers(self, cards):
         # split into pages
         cards = split(cards, self.numTabsVertical * self.numTabsHorizontal)
-        self.odd = True
+        
+        # Starting with tabs on the left or the right?
+        if self.options.tab_side == "right-alternate" or self.options.tab_side == "right":
+            self.odd = True
+        else:
+            # left-alternate, left, full
+            self.odd = False
+            
         for pageNum, pageCards in enumerate(cards):
             # remember whether we start with odd or even divider for tab
             # location
@@ -815,20 +823,22 @@ class DominionTabs:
                           help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
         parser.add_option("--tab_name_align", type="choice", choices=["left", "right", "center", "centre", "edge"],
                           dest="tab_name_align", default="left",
-                          help="Alignment of text on the tab.  choices: left, centre (or center), edge."
+                          help="Alignment of text on the tab.  choices: left, right, centre (or center), edge."
                           " The edge option will align the card name to the outside edge of the"
                           " tab, so that when using tabs on alternating sides,"
-                          " the name is less likely to be hidden by the tab in front;"
+                          " the name is less likely to be hidden by the tab in front"
+                          " (edge will revert to left when tab_side is full since there is no edge in that case);"
                           " default:left")
-        parser.add_option("--tab_side", type="choice", choices=["left", "right", "alternate", "full"],
-                          dest="tab_side", default="alternate",
-                          help="Alignment of tab.  choices: left, right, alternate, full;"
-                          " left/right forces all tabs to that side;"
-                          " alternate will toggle between left and right for the tabs;"
+        parser.add_option("--tab_side", type="choice", choices=["left", "right", "left-alternate", "right-alternate", "full"],
+                          dest="tab_side", default="right-alternate",
+                          help="Alignment of tab.  choices: left, right, left-alternate, right-alternate, full;"
+                          " left/right forces all tabs to left/right side;"
+                          " left-alternate will start on the left and then toggle between left and right for the tabs;"
+                          " right-alternate will start on the right and then toggle between right and left for the tabs;"
                           " full will force all label tabs to be full width of the divider"
-                          " default:alternate")
+                          " default:right-alternate")
         parser.add_option("--tabwidth", type="float", default=4,
-                          help="width in cm of stick-up tab (ignored if tabs-only used)")
+                          help="width in cm of stick-up tab (ignored if tab_side is full or tabs-only is used)")
         parser.add_option("--cost", action="append", type="choice",
                           choices=cls.LOCATION_CHOICES, default=[],
                           help="where to display the card cost; may be set to"
@@ -966,7 +976,11 @@ class DominionTabs:
 
         if self.options.tab_name_align == "center":
             self.options.tab_name_align = "centre"
-            
+
+        if self.options.tab_side == "full" and self.options.tab_name_align == "edge":
+            # This case does not make sense since there are two tab edges in this case.  So picking left edge.
+            self.options.tab_name_align == "left"
+
         fixedMargins = False
         if self.options.tabs_only:
             # fixed for Avery 8867 for now
