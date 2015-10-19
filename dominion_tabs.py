@@ -804,6 +804,8 @@ class DominionTabs:
                 break
 
     LOCATION_CHOICES = ["tab", "body-top", "hide"]
+    NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
+    TAB_SIDE_CHOICES = ["left", "right", "left-alternate", "right-alternate", "full"]
 
     @classmethod
     def parse_opts(cls, argstring):
@@ -823,7 +825,7 @@ class DominionTabs:
                           help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
         parser.add_option("--papersize", type="string", dest="papersize", default=None,
                           help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
-        parser.add_option("--tab_name_align", type="choice", choices=["left", "right", "center", "centre", "edge"],
+        parser.add_option("--tab_name_align", type="choice", choices=DominionTabs.NAME_ALIGN_CHOICES + ["center"],
                           dest="tab_name_align", default="left",
                           help="Alignment of text on the tab.  choices: left, right, centre (or center), edge."
                           " The edge option will align the card name to the outside edge of the"
@@ -831,11 +833,7 @@ class DominionTabs:
                           " the name is less likely to be hidden by the tab in front"
                           " (edge will revert to left when tab_side is full since there is no edge in that case);"
                           " default:left")
-        parser.add_option("--tab_side", type="choice", choices=["left",
-                                                                "right",
-                                                                "left-alternate",
-                                                                "right-alternate",
-                                                                "full"],
+        parser.add_option("--tab_side", type="choice", choices=DominionTabs.TAB_SIDE_CHOICES,
                           dest="tab_side", default="right-alternate",
                           help="Alignment of tab.  choices: left, right, left-alternate, right-alternate, full;"
                           " left/right forces all tabs to left/right side;"
