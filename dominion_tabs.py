@@ -450,8 +450,11 @@ class DominionTabs:
                     h -= h / 2
 
             words = line.split()
-            if rightSide or not self.options.edge_align_name:
-                w = textInset
+            if (not self.options.tab_name_align == "right") and (self.options.tab_name_align == "centre" or rightSide or not self.options.tab_name_align == "edge" ):
+                if self.options.tab_name_align == "centre":
+                    w = self.tabLabelWidth / 2 - self.nameWidth(line, fontSize) / 2
+                else:
+                    w = textInset
 
                 def drawWordPiece(text, fontSize):
                     self.canvas.setFont('MinionPro-Regular', fontSize)
@@ -546,18 +549,22 @@ class DominionTabs:
 
     def drawDivider(self, card, x, y, useExtra=False):
         # figure out whether the tab should go on the right side or not
-        if not self.options.sameside:
+        if self.options.tab_side == "right":
+            rightSide = useExtra
+        elif self.options.tab_side == "left" or self.options.tab_side == "full":
+            rightSide = not useExtra
+        else:
+            # alternate the cards
             if not useExtra:
                 rightSide = not self.odd
             else:
                 rightSide = self.odd
-        else:
-            rightSide = useExtra
+
         # apply the transforms to get us to the corner of the current card
         self.canvas.resetTransforms()
         self.canvas.translate(self.horizontalMargin, self.verticalMargin)
         if useExtra:
-            self.canvas.translate(self.options.back_offset, 0)
+            self.canvas.translate(self.options.back_offset, self.options.back_offset_height)
         self.canvas.translate(x * self.totalTabWidth, y * self.totalTabHeight)
 
         # actual drawing
@@ -749,7 +756,14 @@ class DominionTabs:
     def drawDividers(self, cards):
         # split into pages
         cards = split(cards, self.numTabsVertical * self.numTabsHorizontal)
-        self.odd = True
+        
+        # Starting with tabs on the left or the right?
+        if self.options.tab_side == "right-alternate" or self.options.tab_side == "right":
+            self.odd = True
+        else:
+            # left-alternate, left, full
+            self.odd = False
+            
         for pageNum, pageCards in enumerate(cards):
             # remember whether we start with odd or even divider for tab
             # location
@@ -794,6 +808,8 @@ class DominionTabs:
         parser = OptionParser()
         parser.add_option("--back_offset", type="float", dest="back_offset", default=0,
                           help="Points to offset the back page to the right; needed for some printers")
+        parser.add_option("--back_offset_height", type="float", dest="back_offset_height", default=0,
+                          help="Points to offset the back page upward; needed for some printers")
         parser.add_option("--orientation", type="choice", choices=["horizontal", "vertical"],
                           dest="orientation", default="horizontal",
                           help="horizontal or vertical, default:horizontal")
@@ -805,17 +821,24 @@ class DominionTabs:
                           help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
         parser.add_option("--papersize", type="string", dest="papersize", default=None,
                           help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
-        parser.add_option("--tabwidth", type="float", default=4,
-                          help="width in cm of stick-up tab (ignored if tabs-only used)")
-        parser.add_option("--samesidelabels", action="store_true", dest="sameside",
-                          help="force all label tabs to be on the same side"
-                          " (this will be forced on if there is an uneven"
-                          " number of cards horizontally across the page)")
-        parser.add_option("--edge_align_name", action="store_true",
-                          help="align the card name to the outside edge of the"
+        parser.add_option("--tab_name_align", type="choice", choices=["left", "right", "center", "centre", "edge"],
+                          dest="tab_name_align", default="left",
+                          help="Alignment of text on the tab.  choices: left, right, centre (or center), edge."
+                          " The edge option will align the card name to the outside edge of the"
                           " tab, so that when using tabs on alternating sides,"
-                          " the name is less likely to be hidden by the tab"
-                          " in front; ignored if samesidelabels is on")
+                          " the name is less likely to be hidden by the tab in front"
+                          " (edge will revert to left when tab_side is full since there is no edge in that case);"
+                          " default:left")
+        parser.add_option("--tab_side", type="choice", choices=["left", "right", "left-alternate", "right-alternate", "full"],
+                          dest="tab_side", default="right-alternate",
+                          help="Alignment of tab.  choices: left, right, left-alternate, right-alternate, full;"
+                          " left/right forces all tabs to left/right side;"
+                          " left-alternate will start on the left and then toggle between left and right for the tabs;"
+                          " right-alternate will start on the right and then toggle between right and left for the tabs;"
+                          " full will force all label tabs to be full width of the divider"
+                          " default:right-alternate")
+        parser.add_option("--tabwidth", type="float", default=4,
+                          help="width in cm of stick-up tab (ignored if tab_side is full or tabs-only is used)")
         parser.add_option("--cost", action="append", type="choice",
                           choices=cls.LOCATION_CHOICES, default=[],
                           help="where to display the card cost; may be set to"
@@ -951,6 +974,13 @@ class DominionTabs:
         else:
             self.tabWidth, self.tabBaseHeight = dominionCardWidth, dominionCardHeight
 
+        if self.options.tab_name_align == "center":
+            self.options.tab_name_align = "centre"
+
+        if self.options.tab_side == "full" and self.options.tab_name_align == "edge":
+            # This case does not make sense since there are two tab edges in this case.  So picking left edge.
+            self.options.tab_name_align == "left"
+
         fixedMargins = False
         if self.options.tabs_only:
             # fixed for Avery 8867 for now
@@ -966,7 +996,10 @@ class DominionTabs:
         else:
             minmarginwidth, minmarginheight = self.parseDimensions(
                 self.options.minmargin)
-            self.tabLabelWidth = self.options.tabwidth * cm
+            if self.options.tab_side == "full":
+                self.tabLabelWidth = self.tabWidth
+            else:
+                self.tabLabelWidth = self.options.tabwidth * cm
             self.tabLabelHeight = .9 * cm
             self.horizontalBorderSpace = 0 * cm
             self.verticalBorderSpace = 0 * cm
