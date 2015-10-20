@@ -61,7 +61,7 @@ class Card:
             DominionTabs.setImages[self.cardset] = 0
             DominionTabs.promoImages[self.name.lower()] = 0
         return setImage
-        
+
     def setTextIcon(self):
         setTextIcon = DominionTabs.getSetText(self.cardset, self.name)
         if setTextIcon is None and self.cardset not in ['base', 'extra'] and not self.isExpansion():
@@ -182,7 +182,7 @@ class DominionTabs:
         'envoy': 'envoy_set.png',
         'prince': 'prince_set.png'
     }
-    
+
     setTextIcons = {
         'dominion': 'D',
         'intrigue': 'I',
@@ -198,7 +198,7 @@ class DominionTabs:
         'adventures': 'Ad',
         'adventures extras': 'Ad'
     }
-    
+
     promoTextIcons = {
         'walled village': '',
         'stash': '',
@@ -329,7 +329,8 @@ class DominionTabs:
                               x, coinHeight, 16, 16, preserveAspectRatio=True, mask='auto')
         if card.potcost:
             self.canvas.drawImage(os.path.join(self.filedir, 'images', 'potion.png'), x + 17,
-                                  potHeight, potSize, potSize, preserveAspectRatio=True, mask=[255, 255, 255, 255, 255, 255])
+                                  potHeight, potSize, potSize, preserveAspectRatio=True,
+                                  mask=[255, 255, 255, 255, 255, 255])
             width += potSize
 
         self.canvas.setFont('MinionPro-Bold', 12)
@@ -399,13 +400,12 @@ class DominionTabs:
         textInsetRight = 6
         if self.options.use_text_set_icon:
             setImageHeight = card.getType().getTabTextHeightOffset()
-            #self.canvas.rect(self.tabLabelWidth - 20, setImageHeight, 20, 20, 1 )
             setText = card.setTextIcon()
             self.canvas.setFont('MinionPro-Oblique', 8)
             if setText is None:
                 setText = ""
-                
-            self.canvas.drawCentredString( self.tabLabelWidth - 10, textHeight + 2, setText)
+
+            self.canvas.drawCentredString(self.tabLabelWidth - 10, textHeight + 2, setText)
             textInsetRight = 15
         else:
             setImage = card.setImage()
@@ -414,7 +414,7 @@ class DominionTabs:
 
                 self.drawSetIcon(setImage, self.tabLabelWidth - 20,
                                  setImageHeight)
-                                 
+
                 textInsetRight = 20
 
         # draw name
@@ -450,7 +450,9 @@ class DominionTabs:
                     h -= h / 2
 
             words = line.split()
-            if (not self.options.tab_name_align == "right") and (self.options.tab_name_align == "centre" or rightSide or not self.options.tab_name_align == "edge" ):
+            if (not self.options.tab_name_align == "right") and (self.options.tab_name_align == "centre" or
+                                                                 rightSide or
+                                                                 not self.options.tab_name_align == "edge"):
                 if self.options.tab_name_align == "centre":
                     w = self.tabLabelWidth / 2 - self.nameWidth(line, fontSize) / 2
                 else:
@@ -506,7 +508,7 @@ class DominionTabs:
 
         if self.options.no_card_rules:
             return
-        
+
         # draw text
         if useExtra and card.extra:
             descriptions = (card.extra,)
@@ -551,7 +553,7 @@ class DominionTabs:
         # figure out whether the tab should go on the right side or not
         if self.options.tab_side == "right":
             rightSide = useExtra
-        elif self.options.tab_side == "left" or self.options.tab_side == "full":
+        elif self.options.tab_side in ["left", "full"]:
             rightSide = not useExtra
         else:
             # alternate the cards
@@ -580,10 +582,10 @@ class DominionTabs:
         with open(fname, 'r') as f:
             for row in csv.reader(f, delimiter=','):
                 groups[row[0].strip()] = {
-                         "subcards":[x.strip() for x in row[1:-1]],
-                         "text":row[-1].strip()}
+                    "subcards": [x.strip() for x in row[1:-1]],
+                    "text": row[-1].strip()}
         return groups
-                
+
     def read_card_extras(self, fname, cards):
         f = open(fname)
         cardName = re.compile("^:::(?P<name>[ \w\-/']*)", re.UNICODE)
@@ -671,7 +673,7 @@ class DominionTabs:
     def read_card_defs(self, fname, fileobject=None):
         cards = []
         f = open(fname)
-        carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>(\d+(\+|\*)?|\*))( (?P<potioncost>\d)+P)?\t+(?P<description>.*)",
+        carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>(\d+(\+|\*)?|\*))( (?P<potioncost>\d)+P)?\t+(?P<description>.*)",  # noqa
                              re.UNICODE)
         currentCard = None
         for line in f:
@@ -756,14 +758,14 @@ class DominionTabs:
     def drawDividers(self, cards):
         # split into pages
         cards = split(cards, self.numTabsVertical * self.numTabsHorizontal)
-        
+
         # Starting with tabs on the left or the right?
-        if self.options.tab_side == "right-alternate" or self.options.tab_side == "right":
+        if self.options.tab_side in ["right-alternate", "right"]:
             self.odd = True
         else:
             # left-alternate, left, full
             self.odd = False
-            
+
         for pageNum, pageCards in enumerate(cards):
             # remember whether we start with odd or even divider for tab
             # location
@@ -802,6 +804,8 @@ class DominionTabs:
                 break
 
     LOCATION_CHOICES = ["tab", "body-top", "hide"]
+    NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
+    TAB_SIDE_CHOICES = ["left", "right", "left-alternate", "right-alternate", "full"]
 
     @classmethod
     def parse_opts(cls, argstring):
@@ -821,7 +825,7 @@ class DominionTabs:
                           help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
         parser.add_option("--papersize", type="string", dest="papersize", default=None,
                           help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
-        parser.add_option("--tab_name_align", type="choice", choices=["left", "right", "center", "centre", "edge"],
+        parser.add_option("--tab_name_align", type="choice", choices=DominionTabs.NAME_ALIGN_CHOICES + ["center"],
                           dest="tab_name_align", default="left",
                           help="Alignment of text on the tab.  choices: left, right, centre (or center), edge."
                           " The edge option will align the card name to the outside edge of the"
@@ -829,12 +833,12 @@ class DominionTabs:
                           " the name is less likely to be hidden by the tab in front"
                           " (edge will revert to left when tab_side is full since there is no edge in that case);"
                           " default:left")
-        parser.add_option("--tab_side", type="choice", choices=["left", "right", "left-alternate", "right-alternate", "full"],
+        parser.add_option("--tab_side", type="choice", choices=DominionTabs.TAB_SIDE_CHOICES,
                           dest="tab_side", default="right-alternate",
                           help="Alignment of tab.  choices: left, right, left-alternate, right-alternate, full;"
                           " left/right forces all tabs to left/right side;"
                           " left-alternate will start on the left and then toggle between left and right for the tabs;"
-                          " right-alternate will start on the right and then toggle between right and left for the tabs;"
+                          " right-alternate will start on the right and then toggle between right and left for the tabs;"  # noqa
                           " full will force all label tabs to be full width of the divider"
                           " default:right-alternate")
         parser.add_option("--tabwidth", type="float", default=4,
@@ -871,20 +875,19 @@ class DominionTabs:
                           help="add dividers describing each expansion set")
         parser.add_option("--base_cards_with_expansion", action="store_true",
                           help='print the base cards as part of the expansion; ie, a divider for "Silver"'
-                          'will be printed as both a "Dominion" card and as an "Intrigue" card; if this'
-                          'option is not given, all base cards are placed in their own "Base" expansion')
+                          ' will be printed as both a "Dominion" card and as an "Intrigue" card; if this'
+                          ' option is not given, all base cards are placed in their own "Base" expansion')
         parser.add_option("--centre_expansion_dividers", action="store_true", dest="centre_expansion_dividers",
                           help='centre the tabs on expansion dividers')
         parser.add_option("--num_pages", type="int", default=-1,
                           help="stop generating after this many pages, -1 for all")
-        parser.add_option(
-            "--language", default='en_us', help="language of card texts")
+        parser.add_option("--language", default='en_us', help="language of card texts")
         parser.add_option("--include_blanks", action="store_true",
                           help="include a few dividers with extra text")
         parser.add_option("--exclude_events", action="store_true",
                           default=False, help="exclude individual dividers for events")
-        parser.add_option("--exclude_card_groups", action="store_true",
-                          default=False, help="exclude individual dividers for events")
+        parser.add_option("--special_card_groups", action="store_true",
+                          default=False, help="group some cards under special dividers (e.g. Shelters, Prizes)")
         parser.add_option("--exclude_prizes", action="store_true",
                           default=False, help="exclude individual dividers for prizes (cornucopia)")
         parser.add_option("--cardlist", type="string", dest="cardlist", default=None,
@@ -968,7 +971,6 @@ class DominionTabs:
                 for line in cardfile:
                     self.cardlist.add(line.strip())
 
-
         if self.options.orientation == "vertical":
             self.tabWidth, self.tabBaseHeight = dominionCardHeight, dominionCardWidth
         else:
@@ -979,6 +981,7 @@ class DominionTabs:
 
         if self.options.tab_side == "full" and self.options.tab_name_align == "edge":
             # This case does not make sense since there are two tab edges in this case.  So picking left edge.
+            print >>sys.stderr, "** Warning: Aligning card name as 'left' for 'full' tabs **"
             self.options.tab_name_align == "left"
 
         fixedMargins = False
@@ -1113,9 +1116,12 @@ class DominionTabs:
         else:
             cards = [card for card in cards if not isBaseExpansionCard(card)]
 
-        if self.options.exclude_card_groups:
-            # Load the card groupos file
-            card_groups = self.read_card_groups(os.path.join(self.filedir, "card_db", options.language, "card_groups.txt"))
+        if self.options.special_card_groups:
+            # Load the card groups file
+            card_groups = self.read_card_groups(os.path.join(self.filedir,
+                                                             "card_db",
+                                                             options.language,
+                                                             "card_groups.txt"))
             # pull out any cards which are a subcard, and rename the master card
             new_cards = []
             all_subcards = []
