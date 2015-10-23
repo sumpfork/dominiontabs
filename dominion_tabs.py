@@ -709,7 +709,7 @@ class DominionTabs:
             minFontsize = 6
             fontname = 'MinionPro-Regular'
             font = pdfmetrics.getFont(fontname)
-            fontHeightRelative = (font.face.ascent + font.face.descent) / 1000
+            fontHeightRelative = (font.face.ascent + abs(font.face.descent) ) / 1000.0
 
             canFit = False
 
@@ -744,8 +744,10 @@ class DominionTabs:
                 if setTitle not in sets:
                     sets.append(setTitle)
 
+                # Centered on page
                 xPos = layout['width'] / 2
-                yPos = layout['minMarginHeight'] + availableMargin / 2
+                # Place at the very edge of the margin
+                yPos = layout['minMarginHeight']
 
                 if layout['rotation']:
                     self.canvas.rotate(layout['rotation'])
