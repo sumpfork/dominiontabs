@@ -709,7 +709,7 @@ class DominionTabs:
             minFontsize = 6
             fontname = 'MinionPro-Regular'
             font = pdfmetrics.getFont(fontname)
-            fontHeightRelative = (font.face.ascent + abs(font.face.descent) ) / 1000.0
+            fontHeightRelative = (font.face.ascent + abs(font.face.descent)) / 1000.0
 
             canFit = False
 
