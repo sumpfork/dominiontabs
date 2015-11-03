@@ -3,6 +3,8 @@ import csv
 import re
 from optparse import OptionParser
 import os.path
+import json
+import codecs
 
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import LETTER, A4
@@ -13,8 +15,6 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.enums import TA_JUSTIFY
 
-import yaml
-
 
 def split(l, n):
     i = 0
@@ -24,16 +24,26 @@ def split(l, n):
     yield l[i:]
 
 
-class Card:
+class Card(object):
 
-    def __init__(self, name, cardset, types, cost, description='', potcost=0):
+    class CardJSONEncoder(json.JSONEncoder):
+        def default(self, obj):
+            if isinstance(obj, Card):
+                return obj.__dict__
+            return json.JSONEncoder.default(self, obj)
+
+    @staticmethod
+    def decode_json(obj):
+        return Card(**obj)
+
+    def __init__(self, name, cardset, types, cost, description='', potcost=0, extra=''):
         self.name = name.strip()
         self.cardset = cardset.strip()
         self.types = types
         self.cost = cost
         self.potcost = potcost
         self.description = description
-        self.extra = ""
+        self.extra = extra
 
     def getType(self):
         return DominionTabs.getType(self.types)
@@ -83,7 +93,7 @@ class BlankCard(Card):
         return True
 
 
-class CardType:
+class CardType(object):
 
     def __init__(self, typeNames, tabImageFile, tabTextHeightOffset=0, tabCostHeightOffset=-1):
         self.typeNames = typeNames
@@ -865,10 +875,10 @@ class DominionTabs:
                           help="print crop marks on both sides, rather than tab outlines on one")
         parser.add_option("--linewidth", type="float", default=.1,
                           help="width of lines for card outlines/crop marks")
-        parser.add_option("--read_yaml", action="store_true", dest="read_yaml",
-                          help="read yaml version of card definitions and extras")
-        parser.add_option("--write_yaml", action="store_true", dest="write_yaml",
-                          help="write yaml version of card definitions and extras")
+        parser.add_option("--read_json", action="store_true", dest="read_json",
+                          help="read json version of card definitions and extras")
+        parser.add_option("--write_json", action="store_true", dest="write_json",
+                          help="write json version of card definitions and extras")
         parser.add_option("--tabs-only", action="store_true", dest="tabs_only",
                           help="draw only tabs to be printed on labels, no divider outlines")
         parser.add_option("--order", type="choice", choices=["expansion", "global"], dest="order",
@@ -1095,17 +1105,21 @@ class DominionTabs:
                 TTFont('MinionPro-Regular', 'OptimusPrincepsSemiBold.ttf'))
             pdfmetrics.registerFont(
                 TTFont('MinionPro-Bold', 'OptimusPrinceps.ttf'))
-        if options.read_yaml:
-            cardfile = open(
-                os.path.join(self.filedir, "card_db", options.language, "cards.yaml"), "r")
-            cards = yaml.load(cardfile)
+        if options.read_json:
+            print 'reading JSON'
+            cardfile = codecs.open(
+                os.path.join(self.filedir, "card_db", options.language, "cards.json"), "r", "utf-8")
+            cards = json.load(cardfile, object_hook=Card.decode_json)
+            print 'read {} cards'.format(len(cards))
         else:
             cards = self.read_card_defs(
                 os.path.join(self.filedir, "card_db", options.language, "dominion_cards.txt"))
             self.read_card_extras(os.path.join(
                 self.filedir, "card_db", options.language, "dominion_card_extras.txt"), cards)
-            DominionTabs.language_mapping = yaml.load(
-                open(os.path.join(self.filedir, "card_db", options.language, "mapping.yaml")))
+        DominionTabs.language_mapping = json.load(
+            codecs.open(os.path.join(self.filedir, "card_db", options.language, "mapping.json"),
+                        "r",
+                        "utf-8"))
 
         baseCards = [
             card.name for card in cards if card.cardset.lower() == 'base']
@@ -1178,10 +1192,15 @@ class DominionTabs:
                     exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
                 cards.append(c)
 
-        if options.write_yaml:
-            out = yaml.dump(cards)
-            open(os.path.join(
-                self.filedir, "card_db", options.language, "cards.yaml"), 'w').write(out)
+        if options.write_json:
+            fpath = os.path.join(self.filedir, "card_db", options.language, "cards.json")
+            with codecs.open(fpath, 'w', encoding='utf-8') as ofile:
+                json.dump(cards,
+                          ofile,
+                          cls=Card.CardJSONEncoder,
+                          ensure_ascii=False,
+                          indent=True,
+                          sort_keys=True)
 
         # When sorting cards, want to always put "base" cards after all
         # kingdom cards, and order the base cards in a set order - the

@@ -11,8 +11,7 @@ setup(
     scripts=["dominion_tabs.py"],
     packages=find_packages(),
     install_requires=["reportlab>=2.5",
-                      "Pillow>=2.1.0",
-                      "PyYAML"],
+                      "Pillow>=2.1.0"],
     package_data={
         '': ['*.txt', '*.png']
     },
