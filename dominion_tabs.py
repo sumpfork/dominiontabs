@@ -1,5 +1,4 @@
 #!python
-import csv
 import re
 from optparse import OptionParser
 import os.path
@@ -587,128 +586,6 @@ class DominionTabs:
         if not self.options.tabs_only:
             self.drawText(card, useExtra)
 
-    def read_card_groups(self, fname):
-        groups = {}
-        with open(fname, 'r') as f:
-            for row in csv.reader(f, delimiter=','):
-                groups[row[0].strip()] = {
-                    "subcards": [x.strip() for x in row[1:-1]],
-                    "text": row[-1].strip()}
-        return groups
-
-    def read_card_extras(self, fname, cards):
-        f = open(fname)
-        cardName = re.compile("^:::(?P<name>[ \w\-/']*)", re.UNICODE)
-        extras = {}
-        currentCard = ""
-        extra = ""
-        blank = 1
-        isBlank = False
-        blanks = {}
-        for line in f:
-            line = line.decode('utf-8')
-            m = cardName.match(line)
-            if m:
-                if currentCard:
-                    if isBlank:
-                        blanks[currentCard] = extra
-                    else:
-                        extras[currentCard] = extra
-                currentCard = m.groupdict()["name"]
-                extra = ""
-                if not currentCard:
-                    currentCard = blank
-                    blank += 1
-                    isBlank = True
-                else:
-                    isBlank = False
-                    if not self.options.expansions\
-                       and currentCard and (currentCard not in (c.name for c in cards)):
-                        print currentCard + ' has extra description, but is not in cards'
-            else:
-                extra += ' ' + line.strip()
-        if currentCard and extra:
-            if isBlank:
-                blanks[currentCard] = extra.strip()
-            else:
-                extras[currentCard] = extra.strip()
-        if self.options.include_blanks:
-            for blank, extra in blanks.iteritems():
-                card = BlankCard(blank)
-                cards.append(card)
-                extras[card.name] = extra
-        for c in cards:
-            if c.name not in extras:
-                print c.name + ' missing from extras'
-            else:
-                c.extra = extras[c.name]
-
-    baseactionRE = re.compile("^\s*(\+\d+\s+\w+)(?:[,.;])")
-
-    def add_definition_line(self, card, line):
-        # Unfortunately, the way things are specified in the old card spec
-        # format is somewhat haphazard. In particular:
-        #   1) Sometimes "basic actions", which would be separated on the
-        #      actual card text by separate lines, are instead only separated
-        #      by punctuation ('.', ',', or ';')
-        #      [Example: Intrigue - Courtyard]
-        #   2) When there is an actual horizontal line drawn on the card, this
-        #      can be represented using either '____'  or '-----'
-        #   3) There are sometimes random blank lines
-
-        # To solve:
-
-        # 1)
-        # try to figure out if this a 'basic action' like +X Cards or +Y
-        # Actions
-        descriptions = [card.description]
-        while True:
-            m = self.baseactionRE.match(line, re.UNICODE)
-            if not m:
-                break
-            descriptions.append(m.group(1))
-            line = line[m.end():]
-
-        # 2) Standardize on '____' as the format for a divider line
-        line = line.strip()
-        if not line.strip('-'):
-            line = line.replace('-', '_')
-
-        # 3) get rid of blank lines
-        descriptions.append(line)
-        descriptions = [x.strip() for x in descriptions]
-        descriptions = [x for x in descriptions if x]
-        card.description = u'\n'.join(descriptions)
-
-    def read_card_defs(self, fname, fileobject=None):
-        cards = []
-        f = open(fname)
-        carddef = re.compile("^\d+\t+(?P<name>[\w\-'/ ]+)\t+(?P<set>[\w ]+)\t+(?P<type>[-\w ]+)\t+\$(?P<cost>(\d+(\+|\*)?|\*))( (?P<potioncost>\d)+P)?\t+(?P<description>.*)",  # noqa
-                             re.UNICODE)
-        currentCard = None
-        for line in f:
-            line = line.decode('utf-8').strip()
-            m = carddef.match(line)
-            if m:
-                if m.groupdict()["potioncost"]:
-                    potcost = int(m.groupdict()["potioncost"])
-                else:
-                    potcost = 0
-                currentCard = Card(m.groupdict()["name"].strip(),
-                                   m.groupdict()["set"].lower().strip(),
-                                   tuple(
-                                       [t.strip() for t in m.groupdict()["type"].split("-")]),
-                                   m.groupdict()["cost"],
-                                   '',
-                                   potcost)
-                self.add_definition_line(
-                    currentCard, m.groupdict()["description"])
-                cards.append(currentCard)
-            elif line:
-                assert currentCard
-                self.add_definition_line(currentCard, line)
-        return cards
-
     def drawSetNames(self, pageCards):
         # print sets for this page
         self.canvas.saveState()
@@ -875,8 +752,6 @@ class DominionTabs:
                           help="print crop marks on both sides, rather than tab outlines on one")
         parser.add_option("--linewidth", type="float", default=.1,
                           help="width of lines for card outlines/crop marks")
-        parser.add_option("--read_json", action="store_true", dest="read_json",
-                          help="read json version of card definitions and extras")
         parser.add_option("--write_json", action="store_true", dest="write_json",
                           help="write json version of card definitions and extras")
         parser.add_option("--tabs-only", action="store_true", dest="tabs_only",
@@ -1105,21 +980,15 @@ class DominionTabs:
                 TTFont('MinionPro-Regular', 'OptimusPrincepsSemiBold.ttf'))
             pdfmetrics.registerFont(
                 TTFont('MinionPro-Bold', 'OptimusPrinceps.ttf'))
-        if options.read_json:
-            print 'reading JSON'
-            cardfile = codecs.open(
-                os.path.join(self.filedir, "card_db", options.language, "cards.json"), "r", "utf-8")
+
+        data_dir = os.path.join(self.filedir, "card_db", options.language)
+        card_db_filepath = os.path.join(data_dir, "cards.json")
+        with codecs.open(card_db_filepath, "r", "utf-8") as cardfile:
             cards = json.load(cardfile, object_hook=Card.decode_json)
-            print 'read {} cards'.format(len(cards))
-        else:
-            cards = self.read_card_defs(
-                os.path.join(self.filedir, "card_db", options.language, "dominion_cards.txt"))
-            self.read_card_extras(os.path.join(
-                self.filedir, "card_db", options.language, "dominion_card_extras.txt"), cards)
-        DominionTabs.language_mapping = json.load(
-            codecs.open(os.path.join(self.filedir, "card_db", options.language, "mapping.json"),
-                        "r",
-                        "utf-8"))
+
+        language_mapping_filepath = os.path.join(data_dir, "mapping.json")
+        with codecs.open(language_mapping_filepath, 'r', 'utf-8') as mapping_file:
+            DominionTabs.language_mapping = json.load(mapping_file)
 
         baseCards = [
             card.name for card in cards if card.cardset.lower() == 'base']
@@ -1134,22 +1003,21 @@ class DominionTabs:
 
         if self.options.special_card_groups:
             # Load the card groups file
-            card_groups = self.read_card_groups(os.path.join(self.filedir,
-                                                             "card_db",
-                                                             options.language,
-                                                             "card_groups.txt"))
-            # pull out any cards which are a subcard, and rename the master card
-            new_cards = []
-            all_subcards = []
-            for subs in [card_groups[x]["subcards"] for x in card_groups]:
-                all_subcards += subs
-            for card in cards:
-                if card.name in card_groups.keys():
-                    card.name = card_groups[card.name]["text"]
-                elif card.name in all_subcards:
-                    continue
-                new_cards.append(card)
-            cards = new_cards
+            card_groups_file = os.path.join(data_dir, "card_groups.json")
+            with codecs.open(card_groups_file, 'r', 'utf-8') as cardgroup_file:
+                card_groups = json.load(cardgroup_file)
+                # pull out any cards which are a subcard, and rename the master card
+                new_cards = []
+                all_subcards = []
+                for subs in [card_groups[x]["subcards"] for x in card_groups]:
+                    all_subcards += subs
+                for card in cards:
+                    if card.name in card_groups.keys():
+                        card.name = card_groups[card.name]["new_name"]
+                    elif card.name in all_subcards:
+                        continue
+                    new_cards.append(card)
+                cards = new_cards
 
         if self.options.expansions:
             self.options.expansions = [o.lower()
