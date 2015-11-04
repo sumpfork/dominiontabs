@@ -26,6 +26,7 @@ def split(l, n):
 class Card(object):
 
     class CardJSONEncoder(json.JSONEncoder):
+
         def default(self, obj):
             if isinstance(obj, Card):
                 return obj.__dict__
@@ -870,14 +871,14 @@ class DominionTabs:
         fixedMargins = False
         if self.options.tabs_only:
             # fixed for Avery 8867 for now
-            minmarginwidth = 0.76 * cm
-            minmarginheight = 1.27 * cm
-            self.tabLabelHeight = 1.27 * cm
-            self.tabLabelWidth = 4.44 * cm
+            minmarginwidth = 0.86 * cm   # was 0.76
+            minmarginheight = 1.37 * cm   # was 1.27
+            self.tabLabelHeight = 1.07 * cm   # was 1.27
+            self.tabLabelWidth = 4.24 * cm   # was 4.44
+            self.horizontalBorderSpace = 0.96 * cm   # was 0.76
+            self.verticalBorderSpace = 0.20 * cm   # was 0.01
             self.tabBaseHeight = 0
             self.tabWidth = self.tabLabelWidth
-            self.horizontalBorderSpace = 0.76 * cm
-            self.verticalBorderSpace = 0.01 * cm
             fixedMargins = True
         else:
             minmarginwidth, minmarginheight = self.parseDimensions(
@@ -896,9 +897,6 @@ class DominionTabs:
         # isn't actually part of the tab width
         self.totalTabWidth = self.tabWidth + self.horizontalBorderSpace
         self.totalTabHeight = self.tabHeight + self.verticalBorderSpace
-
-        print "Paper dimensions: %fcm (w) x %fcm (h)" % (self.paperwidth / cm, self.paperheight / cm)
-        print "Tab dimensions: %fcm (w) x %fcm (h)" % (self.totalTabWidth / cm, self.totalTabHeight / cm)
 
         # as we don't draw anything in the final border, it shouldn't count towards how many tabs we can fit
         # so it gets added back in to the page size here
@@ -923,6 +921,10 @@ class DominionTabs:
             self.minHorizontalMargin = minmarginwidth
             self.minVerticalMargin = minmarginheight
 
+        print "Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(self.paperwidth / cm, self.paperheight / cm)
+        print "Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(self.totalTabWidth / cm, self.totalTabHeight / cm)
+        print '{} dividers horizontally, {} vertically'.format(self.numTabsHorizontal, self.numTabsVertical)
+
         if not fixedMargins:
             # dynamically max margins
             self.horizontalMargin = (
@@ -933,8 +935,8 @@ class DominionTabs:
             self.horizontalMargin = minmarginwidth
             self.verticalMargin = minmarginheight
 
-        print "Margins: %fcm h, %fcm v\n" % (self.horizontalMargin / cm,
-                                             self.verticalMargin / cm)
+        print "Margins: {:.2f}cm h, {:.2f}cm v\n".format(self.horizontalMargin / cm,
+                                                         self.verticalMargin / cm)
 
         self.tabOutline = [(0, 0, self.tabWidth, 0),
                            (self.tabWidth, 0, self.tabWidth, self.tabHeight),
