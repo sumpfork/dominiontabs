@@ -281,6 +281,94 @@
   ]
  }, 
  {
+  "cardset": "dominion", 
+  "cost": "0", 
+  "description": "Vale 1 Moneta.", 
+  "extra": " 60 carte per partita.", 
+  "name": "Rame", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "3", 
+  "description": "Vale 2 Monete.", 
+  "extra": " 40 carte per partita.", 
+  "name": "Argento", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "6", 
+  "description": "Vale 3 Monete.", 
+  "extra": " 30 carte per partita.", 
+  "name": "Oro", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "0", 
+  "description": "-1 <VP>", 
+  "extra": " Le Maledizioni sono un mazzetto disponibile nella Riserva a prescindere di quali altre carte ci siano nella Riserva. Con 2 giocatori, piazzare 10 Maledizioni nella Riserva. Con 3 giocatori, piazzare 20 Maledizioni nella Riserva. Con 4 giocatori, piazzare 30 Maledizioni nella Riserva. Con 5 giocatori, piazzare 40 Maledizioni nella Riserva. Con 6 giocatori, piazzare 50 Maledizioni nella Riserva.", 
+  "name": "Maledizione", 
+  "potcost": 0, 
+  "types": [
+   "Curse"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "2", 
+  "description": "1 <VP>", 
+  "extra": " Metti 8 carte nella Riserva in una partita con due giocatori. Mettine 12 nella Riserva in una partita con tre o più giocatori.", 
+  "name": "Tenuta", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "5", 
+  "description": "3 <VP>", 
+  "extra": " Metti 8 carte nella Riserva in una partita con due giocatori. Mettine 12 nella Riserva in una partita con tre o più giocatori..", 
+  "name": "Ducato", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "8", 
+  "description": "6 <VP>", 
+  "extra": " Metti 8 carte nella Riserva in una partita con due giocatori. Mettine 12 nella Riserva in una partita con tre o più giocatori. Mettine 15 nella Riserva in un gioco con cinque giocatori. Mettine 18 nella Riserva in un gioco con sei giocatori.", 
+  "name": "Provincia", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "0", 
+  "description": "Pila delle carte eliminate.", 
+  "extra": "", 
+  "name": "Carte Eliminate", 
+  "potcost": 0, 
+  "types": [
+   "Action"
+  ]
+ }, 
+ {
   "cardset": "intrigo", 
   "cost": "2", 
   "description": "+3 Carte, Metti una carta dalla tua mano in cima al tuo mazzo.", 
@@ -561,6 +649,94 @@
   "types": [
    "Action", 
    "Victory"
+  ]
+ }, 
+ {
+  "cardset": "intrigo", 
+  "cost": "0", 
+  "description": "Vale 1 Moneta.", 
+  "extra": " 60 carte per partita.", 
+  "name": "Rame", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "intrigo", 
+  "cost": "3", 
+  "description": "Vale 2 Monete.", 
+  "extra": " 40 carte per partita.", 
+  "name": "Argento", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "intrigo", 
+  "cost": "6", 
+  "description": "Vale 3 Monete.", 
+  "extra": " 30 carte per partita.", 
+  "name": "Oro", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "intrigo", 
+  "cost": "0", 
+  "description": "-1 <VP>", 
+  "extra": " Le Maledizioni sono un mazzetto disponibile nella Riserva a prescindere di quali altre carte ci siano nella Riserva. Con 2 giocatori, piazzare 10 Maledizioni nella Riserva. Con 3 giocatori, piazzare 20 Maledizioni nella Riserva. Con 4 giocatori, piazzare 30 Maledizioni nella Riserva. Con 5 giocatori, piazzare 40 Maledizioni nella Riserva. Con 6 giocatori, piazzare 50 Maledizioni nella Riserva.", 
+  "name": "Maledizione", 
+  "potcost": 0, 
+  "types": [
+   "Curse"
+  ]
+ }, 
+ {
+  "cardset": "intrigo", 
+  "cost": "2", 
+  "description": "1 <VP>", 
+  "extra": " Metti 8 carte nella Riserva in una partita con due giocatori. Mettine 12 nella Riserva in una partita con tre o più giocatori.", 
+  "name": "Tenuta", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "intrigo", 
+  "cost": "5", 
+  "description": "3 <VP>", 
+  "extra": " Metti 8 carte nella Riserva in una partita con due giocatori. Mettine 12 nella Riserva in una partita con tre o più giocatori..", 
+  "name": "Ducato", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "intrigo", 
+  "cost": "8", 
+  "description": "6 <VP>", 
+  "extra": " Metti 8 carte nella Riserva in una partita con due giocatori. Mettine 12 nella Riserva in una partita con tre o più giocatori. Mettine 15 nella Riserva in un gioco con cinque giocatori. Mettine 18 nella Riserva in un gioco con sei giocatori.", 
+  "name": "Provincia", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "intrigo", 
+  "cost": "0", 
+  "description": "Pila delle carte eliminate.", 
+  "extra": "", 
+  "name": "Carte Eliminate", 
+  "potcost": 0, 
+  "types": [
+   "Action"
   ]
  }, 
  {
@@ -998,6 +1174,17 @@
   ]
  }, 
  {
+  "cardset": "alchimia", 
+  "cost": "4", 
+  "description": "Vale 1 Pozione.", 
+  "extra": " Questa è una carta Tesoro base. Costa 4 Monete e produce una Pozione. Non è una carta Regno. Dopo che hai scelto 10 carte Regno per la Riserva, se qualsiasi di loro ha Pozioni nel costo aggiungi il mazzetto Pozione alla Riserva. Aggiungi il mazzetto Pozione se stai usando la carta promo Mercato Nero ed il suo mazzetto include almeno una carta con la Pozione nel costo. Se non hai carte con la Pozione nel costo nella Riserva o nel mazzetto del Mercato Nero, non usare il mazzetto Pozione in questa partita. Se hai un mazzetto Pozione, mettici tutte e 16 le Pozioni a prescindere dal numero di giocatori. In partite con questo mazzetto, se il mazzetto si svuota conta come uno dei tre che determinano il fine partita.", 
+  "name": "Pozione", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
   "cardset": "prosperità", 
   "cost": "3", 
   "description": "Vale 1 Moneta.\nQuando giochi questa carta, rivela carte dal tuo mazzo fino a rivelare una carta Tesoro. Scartala o eliminala. Scarta le altre carte.", 
@@ -1275,6 +1462,29 @@
    "Action"
   ]
  }, 
+ {
+  "cardset": "prosperità", 
+  "cost": "11", 
+  "description": "10 <VP>", 
+  "extra": " Questa non è una carta Regno. Non la usi in ogni partita. E' una carta Vittoria che vale 10 PV. Se ci sono solo carte da Prosperità in questa partita, aggiungi i mazzetti Platino e Colonia alle carte base nella Riserva per la partita. Se è un mix di carte regno da Prosperità e da altri set, l'inclusione di Platino e Colonia va determinata casualmente, in base alla proporzione di carte Prosperità e non-Prosperità in uso. Per esempio, scegli una carta Regno a caso fra quelle usate (come la prima carta uscita di quelle scelte a caso, il che è equivalente a tirare 1d10 dopo che son state scelte tutte le carte) e se viene da Prosperità, aggiungi Platino e Colonia alla Riserva. Platino e Colonia non sono carte Regno; quando sono incluse, ci sono 10 carte Regno, più Rame, Argento, Oro, Platino, Tenuta, Ducato, Provincia, Colonia e Maledizione nella Riserva. Durante la preparazione, metti 12 Colonie nella Riserva per una partita con 3, 4, 5 o 6 giocatori, 8 nella Riserva per una partita a 2 giocatori. [Usa tutti e 12 i Platino a prescindere dal numero dei giocatori. Platino e Colonia si usano assieme, non una senza l'altra.]", 
+  "name": "Colonia", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ },
+{
+  "cardset": "prosperità", 
+  "cost": "9", 
+  "description": "Vale 5 Monete.", 
+  "extra": " Questa non è una carta Regno. Non la usi in ogni partita. E' un tesoro che vale 5 Monete. Se ci sono solo carte da Prosperità in questa partita, aggiungi i mazzetti Platino e Colonia alle carte base nella Riserva per la partita. Se è un mix di carte regno da Prosperità e da altri set, l'inclusione di Platino e Colonia va determinata casualmente, in base alla proporzione di carte Prosperità e non-Prosperità in uso. Per esempio, scegli una carta Regno a caso fra quelle usate (come la prima carta uscita di quelle scelte a caso, il che è equivalente a tirare 1d10 dopo che son state scelte tutte le carte) e se viene da Prosperità, aggiungi Platino e Colonia alla Riserva. Platino e Colonia non sono carte Regno; quando sono incluse, ci sono 10 carte Regno, più Rame, Argento, Oro, Platino, Tenuta, Ducato, Provincia, Colonia e Maledizione nella Riserva. Durante la preparazione, metti 12 Colonie nella Riserva per una partita con 3, 4, 5 o 6 giocatori, 8 nella Riserva per una partita a 2 giocatori. [Usa tutti e 12 i Platino a prescindere dal numero dei giocatori. Platino e Colonia si usano assieme, non una senza l'altra.]", 
+  "name": "Platino", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+
  {
   "cardset": "promo", 
   "cost": "3", 
