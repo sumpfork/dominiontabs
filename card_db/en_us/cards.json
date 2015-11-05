@@ -279,6 +279,94 @@
   "types": [
    "Action"
   ]
+ },
+ {
+  "cardset": "dominion", 
+  "cost": "0", 
+  "description": "Worth 1 Coin.", 
+  "extra": " 60 cards per game.", 
+  "name": "Copper", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "3", 
+  "description": "Worth 2 Coins.", 
+  "extra": " 40 cards per game.", 
+  "name": "Silver", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "6", 
+  "description": "Worth 3 Coins.", 
+  "extra": " 30 cards per game.", 
+  "name": "Gold", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "0", 
+  "description": "-1 <VP>", 
+  "extra": " Curses are an available pile in the Supply regardless of what other cards are in the Supply.  With 2 players, place 10 Curses in the Supply.  With 3 players, place 20 Curses in the Supply.  With 4 players, place 30 Curses in the Supply.  With 5 players, place 40 Curses in the Supply.  With 6 players, place 50 Curses in the Supply.", 
+  "name": "Curse", 
+  "potcost": 0, 
+  "types": [
+   "Curse"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "2", 
+  "description": "1 <VP>", 
+  "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.", 
+  "name": "Estate", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "5", 
+  "description": "3 <VP>", 
+  "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.", 
+  "name": "Duchy", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "8", 
+  "description": "6 <VP>", 
+  "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or four players. Put 15 in the Supply in a game with five players.  Put 18 in the Supply in a game with six players.", 
+  "name": "Province", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "dominion", 
+  "cost": "0", 
+  "description": "Pile of trash.", 
+  "extra": "", 
+  "name": "Trash", 
+  "potcost": 0, 
+  "types": [
+   "Action"
+  ]
  }, 
  {
   "cardset": "intrigue", 
@@ -561,6 +649,94 @@
   "types": [
    "Action", 
    "Victory"
+  ]
+ }, 
+ {
+  "cardset": "intrigue", 
+  "cost": "0", 
+  "description": "Worth 1 Coin.", 
+  "extra": " 60 cards per game.", 
+  "name": "Copper", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "intrigue", 
+  "cost": "3", 
+  "description": "Worth 2 Coins.", 
+  "extra": " 40 cards per game.", 
+  "name": "Silver", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "intrigue", 
+  "cost": "6", 
+  "description": "Worth 3 Coins.", 
+  "extra": " 30 cards per game.", 
+  "name": "Gold", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ }, 
+ {
+  "cardset": "intrigue", 
+  "cost": "0", 
+  "description": "-1 <VP>", 
+  "extra": " Curses are an available pile in the Supply regardless of what other cards are in the Supply.  With 2 players, place 10 Curses in the Supply.  With 3 players, place 20 Curses in the Supply.  With 4 players, place 30 Curses in the Supply.  With 5 players, place 40 Curses in the Supply.  With 6 players, place 50 Curses in the Supply.", 
+  "name": "Curse", 
+  "potcost": 0, 
+  "types": [
+   "Curse"
+  ]
+ }, 
+ {
+  "cardset": "intrigue", 
+  "cost": "2", 
+  "description": "1 <VP>", 
+  "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.", 
+  "name": "Estate", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "intrigue", 
+  "cost": "5", 
+  "description": "3 <VP>", 
+  "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.", 
+  "name": "Duchy", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "intrigue", 
+  "cost": "8", 
+  "description": "6 <VP>", 
+  "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or four players. Put 15 in the Supply in a game with five players.  Put 18 in the Supply in a game with six players.", 
+  "name": "Province", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
+  ]
+ }, 
+ {
+  "cardset": "intrigue", 
+  "cost": "0", 
+  "description": "Pile of trash.", 
+  "extra": "", 
+  "name": "Trash", 
+  "potcost": 0, 
+  "types": [
+   "Action"
   ]
  }, 
  {
@@ -1007,7 +1183,18 @@
   "types": [
    "Action"
   ]
- }, 
+ },
+ {
+  "cardset": "alchemy", 
+  "cost": "4", 
+  "description": "Worth 1 Potion.", 
+  "extra": " This is a basic Treasure card. It costs 4 Coins and produces Potion. It is not a Kingdom card.  After you choose 10 Kingdom cards for the Supply, if any of them have Potion in the cost, add the Potion pile to the Supply. Also add the Potion pile if you are using the promotional card Black Market, and the Black Market deck includes at least one card with Potion in the cost. If you don't have any cards with Potion in the cost in the Supply or the Black Market deck, do not use the Potion pile in this game. When you have a Potion pile, put all 16 Potions in it, no matter how many players there are. In games using this pile, if the pile becomes empty, that will count towards the game ending condition.", 
+  "name": "Potion", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+ },    
  {
   "cardset": "prosperity", 
   "cost": "3", 
@@ -1284,6 +1471,28 @@
   "potcost": 0, 
   "types": [
    "Action"
+  ]
+ },
+{
+  "cardset": "prosperity", 
+  "cost": "9", 
+  "description": "Worth 5 Coins.", 
+  "extra": " This is not a Kingdom card. You do not use it every game. It is a Treasure worth 5 coins.  If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]", 
+  "name": "Platinum", 
+  "potcost": 0, 
+  "types": [
+   "Treasure"
+  ]
+},
+ {
+  "cardset": "prosperity", 
+  "cost": "11", 
+  "description": "10 <VP>", 
+  "extra": " This is not a Kingdom card. You do not use it every game. It is a Victory card worth 10 VP.  If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]", 
+  "name": "Colony", 
+  "potcost": 0, 
+  "types": [
+   "Victory"
   ]
  }, 
  {

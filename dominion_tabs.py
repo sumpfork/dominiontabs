@@ -988,6 +988,17 @@ class DominionTabs:
         with codecs.open(language_mapping_filepath, 'r', 'utf-8') as mapping_file:
             DominionTabs.language_mapping = json.load(mapping_file)
 
+
+        if options.write_json:
+            fpath = os.path.join(self.filedir, "card_db", options.language, "cards.json")
+            with codecs.open(fpath, 'w', encoding='utf-8') as ofile:
+                json.dump(cards,
+                          ofile,
+                          cls=Card.CardJSONEncoder,
+                          ensure_ascii=False,
+                          indent=True,
+                          sort_keys=True)
+
         baseCards = [
             card.name for card in cards if card.cardset.lower() == 'base']
 
@@ -1057,16 +1068,6 @@ class DominionTabs:
                 c = Card(
                     exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
                 cards.append(c)
-
-        if options.write_json:
-            fpath = os.path.join(self.filedir, "card_db", options.language, "cards.json")
-            with codecs.open(fpath, 'w', encoding='utf-8') as ofile:
-                json.dump(cards,
-                          ofile,
-                          cls=Card.CardJSONEncoder,
-                          ensure_ascii=False,
-                          indent=True,
-                          sort_keys=True)
 
         # When sorting cards, want to always put "base" cards after all
         # kingdom cards, and order the base cards in a set order - the
