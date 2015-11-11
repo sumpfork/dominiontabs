@@ -8,15 +8,19 @@ use_setuptools()
 setup(
     name="dominiontabs",
     version=__version__,
-    scripts=["dominion_tabs.py"],
-    packages=find_packages(),
+    entry_points={
+        'console_scripts': [
+            "dominion_dividers = domdiv.main:main"
+        ],
+    },
+    packages=find_packages(exclude=['tests']),
     install_requires=["reportlab>=2.5",
                       "Pillow>=2.1.0"],
     package_data={
-        '': ['*.txt', '*.png']
+        'domdiv': ['images/*.png', 'card_db/*/*.json']
     },
     author="Sumpfork",
     author_email="sumpfork@mailmight.net",
-    description="Tab Divider Generation for the Dominion Card Game"
+    description="Divider Generation for the Dominion Card Game"
 )
 
