@@ -62,7 +62,7 @@ class DividerDrawer(object):
         self.canvas.save()
 
     def add_inline_images(self, text, fontsize):
-        path = 'images'
+        path = os.path.join(self.options.data_path, 'images')
         replace = '<img src='"'%s/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (
             path, fontsize * 1.2)
         text = re.sub('(\d)\s(c|C)oin(s)?', replace, text)
@@ -103,7 +103,7 @@ class DividerDrawer(object):
             if cropmarksleft or cropmarksright:
                 self.canvas.line(-2 * cmw, 0, -cmw, 0)
                 self.canvas.line(-2 * cmw,
-                                 self.tabBaseHeight, -cmw, self.tabBaseHeight)
+                                 self.dividerHeight, -cmw, self.dividerHeight)
                 if y > 0:
                     self.canvas.line(-2 * cmw,
                                      self.options.dividerHeight, -cmw, self.options.dividerHeight)
@@ -150,10 +150,10 @@ class DividerDrawer(object):
         potHeight = y - 3
         potSize = 11
 
-        self.canvas.drawImage(os.path.join('images', 'coin_small.png'),
+        self.canvas.drawImage(os.path.join(self.options.data_path, 'images', 'coin_small.png'),
                               x, coinHeight, 16, 16, preserveAspectRatio=True, mask='auto')
         if card.potcost:
-            self.canvas.drawImage(os.path.join('images', 'potion.png'), x + 17,
+            self.canvas.drawImage(os.path.join(self.options.data_path, 'images', 'potion.png'), x + 17,
                                   potHeight, potSize, potSize, preserveAspectRatio=True,
                                   mask=[255, 255, 255, 255, 255, 255])
             width += potSize
@@ -166,7 +166,7 @@ class DividerDrawer(object):
     def drawSetIcon(self, setImage, x, y):
         # set image
         self.canvas.drawImage(
-            os.path.join('images', setImage), x, y, 14, 12, mask='auto')
+            os.path.join(self.options.data_path, 'images', setImage), x, y, 14, 12, mask='auto')
 
     @classmethod
     def nameWidth(self, name, fontSize):
@@ -203,7 +203,7 @@ class DividerDrawer(object):
         # draw banner
         img = card.getType().getNoCoinTabImageFile()
         if not self.options.no_tab_artwork and img:
-            self.canvas.drawImage(os.path.join('images', img), 1, 0,
+            self.canvas.drawImage(os.path.join(self.options.data_path, 'images', img), 1, 0,
                                   self.options.labelWidth -
                                   2, self.options.labelHeight - 1,
                                   preserveAspectRatio=False, anchor='n', mask='auto')
@@ -392,7 +392,8 @@ class DividerDrawer(object):
         self.canvas.translate(self.options.horizontalMargin, self.options.verticalMargin)
         if useExtra:
             self.canvas.translate(self.options.back_offset, self.options.back_offset_height)
-        self.canvas.translate(x * self.options.totalTabWidth, y * self.options.totalTabHeight)
+        self.canvas.translate(x * self.options.dividerWidthReserved,
+                              y * self.options.dividerHeightReserved)
 
         # actual drawing
         if not self.options.tabs_only:

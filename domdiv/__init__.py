@@ -2,6 +2,7 @@ from optparse import OptionParser
 import os
 import codecs
 import json
+import sys
 
 from reportlab.lib.pagesizes import LETTER, A4
 from reportlab.lib.units import cm
@@ -138,26 +139,15 @@ def generate_sample(options):
         sample.save(filename='sample.png')
 
 
-def generate(options, data_path, f):
-    size = options.size.upper()
-    if size == 'SLEEVED' or options.sleeved:
-        dominionCardWidth, dominionCardHeight = (9.4 * cm, 6.15 * cm)
-        print 'Using sleeved card size, %.2fcm x %.2fcm' % (dominionCardWidth / cm, dominionCardHeight / cm)
-    elif size in ['NORMAL', 'UNSLEEVED']:
-        dominionCardWidth, dominionCardHeight = (9.1 * cm, 5.9 * cm)
-        print 'Using normal card size, %.2fcm x%.2fcm' % (dominionCardWidth / cm, dominionCardHeight / cm)
-    else:
-        dominionCardWidth, dominionCardHeight = parseDimensions(size)
-        print 'Using custom card size, %.2fcm x %.2fcm' % (dominionCardWidth / cm, dominionCardHeight / cm)
-
+def parse_papersize(spec):
     papersize = None
-    if not options.papersize:
+    if not spec:
         if os.path.exists("/etc/papersize"):
             papersize = open("/etc/papersize").readline().upper()
         else:
             papersize = 'LETTER'
     else:
-        papersize = options.papersize.upper()
+        papersize = spec.upper()
 
     if papersize == 'A4':
         print "Using A4 sized paper."
@@ -169,6 +159,33 @@ def generate(options, data_path, f):
         paperwidth, paperheight = parseDimensions(papersize)
         print 'Using custom paper size, %.2fcm x %.2fcm' % (paperwidth / cm, paperheight / cm)
 
+    return paperwidth, paperheight
+
+
+def parse_cardsize(spec, sleeved):
+    spec = spec.upper()
+    if spec == 'SLEEVED' or sleeved:
+        dominionCardWidth, dominionCardHeight = (9.4 * cm, 6.15 * cm)
+        print 'Using sleeved card size, %.2fcm x %.2fcm' % (dominionCardWidth / cm,
+                                                            dominionCardHeight / cm)
+    elif spec in ['NORMAL', 'UNSLEEVED']:
+        dominionCardWidth, dominionCardHeight = (9.1 * cm, 5.9 * cm)
+        print 'Using normal card size, %.2fcm x%.2fcm' % (dominionCardWidth / cm,
+                                                          dominionCardHeight / cm)
+    else:
+        dominionCardWidth, dominionCardHeight = parseDimensions(spec)
+        print 'Using custom card size, %.2fcm x %.2fcm' % (dominionCardWidth / cm,
+                                                           dominionCardHeight / cm)
+    return dominionCardWidth, dominionCardHeight
+
+
+def generate(options, data_path, f):
+
+    add_opt(options, 'data_path', data_path)
+
+    dominionCardWidth, dominionCardHeight = parse_cardsize(options.size, options.sleeved)
+    paperwidth, paperheight = parse_papersize(options.papersize)
+
     cardlist = None
     if options.cardlist:
         print options.cardlist
@@ -178,9 +195,9 @@ def generate(options, data_path, f):
                 cardlist.add(line.strip())
 
     if options.orientation == "vertical":
-        tabWidth, tabBaseHeight = dominionCardHeight, dominionCardWidth
+        dividerWidth, dividerBaseHeight = dominionCardHeight, dominionCardWidth
     else:
-        tabWidth, tabBaseHeight = dominionCardWidth, dominionCardHeight
+        dividerWidth, dividerBaseHeight = dominionCardWidth, dominionCardHeight
 
     if options.tab_name_align == "center":
         options.tab_name_align = "centre"
@@ -195,47 +212,46 @@ def generate(options, data_path, f):
         # fixed for Avery 8867 for now
         minmarginwidth = 0.86 * cm   # was 0.76
         minmarginheight = 1.37 * cm   # was 1.27
-        tabLabelHeight = 1.07 * cm   # was 1.27
-        tabLabelWidth = 4.24 * cm   # was 4.44
+        labelHeight = 1.07 * cm   # was 1.27
+        labelWidth = 4.24 * cm   # was 4.44
         horizontalBorderSpace = 0.96 * cm   # was 0.76
         verticalBorderSpace = 0.20 * cm   # was 0.01
-        tabBaseHeight = 0
-        tabWidth = tabLabelWidth
+        dividerBaseHeight = 0
+        dividerWidth = labelWidth
         fixedMargins = True
     else:
         minmarginwidth, minmarginheight = parseDimensions(
             options.minmargin)
         if options.tab_side == "full":
-            tabLabelWidth = tabWidth
+            labelWidth = dividerWidth
         else:
-            tabLabelWidth = options.tabwidth * cm
-        tabLabelHeight = .9 * cm
+            labelWidth = options.tabwidth * cm
+        labelHeight = .9 * cm
         horizontalBorderSpace = 0 * cm
         verticalBorderSpace = 0 * cm
 
-    tabHeight = tabBaseHeight + tabLabelHeight
+    dividerHeight = dividerBaseHeight + labelHeight
 
-    # note: this is convenient, but somewhat inaccurate as the border space
-    # isn't actually part of the tab width
-    add_opt(options, 'dividerWidth', tabWidth)
-    add_opt(options, 'dividerHeight', tabHeight)
-    add_opt(options, 'totalTabWidth', tabWidth + horizontalBorderSpace)
-    add_opt(options, 'totalTabHeight', tabHeight + verticalBorderSpace)
-    add_opt(options, 'labelWidth', tabLabelWidth)
-    add_opt(options, 'labelHeight', tabLabelHeight)
+    add_opt(options, 'dividerWidth', dividerWidth)
+    add_opt(options, 'dividerHeight', dividerHeight)
+    add_opt(options, 'dividerWidthReserved', dividerWidth + horizontalBorderSpace)
+    add_opt(options, 'dividerHeightReserved', dividerHeight + verticalBorderSpace)
+    add_opt(options, 'labelWidth', labelWidth)
+    add_opt(options, 'labelHeight', labelHeight)
 
     # as we don't draw anything in the final border, it shouldn't count towards how many tabs we can fit
     # so it gets added back in to the page size here
     numTabsVerticalP = int(
-        (paperheight - 2 * minmarginheight + verticalBorderSpace) / options.totalTabHeight)
+        (paperheight - 2 * minmarginheight + verticalBorderSpace) / options.dividerHeightReserved)
     numTabsHorizontalP = int(
-        (paperwidth - 2 * minmarginwidth + horizontalBorderSpace) / options.totalTabWidth)
+        (paperwidth - 2 * minmarginwidth + horizontalBorderSpace) / options.dividerWidthReserved)
     numTabsVerticalL = int(
-        (paperwidth - 2 * minmarginwidth + verticalBorderSpace) / options.totalTabHeight)
+        (paperwidth - 2 * minmarginwidth + verticalBorderSpace) / options.dividerHeightReserved)
     numTabsHorizontalL = int(
-        (paperheight - 2 * minmarginheight + horizontalBorderSpace) / options.totalTabWidth)
+        (paperheight - 2 * minmarginheight + horizontalBorderSpace) / options.dividerWidthReserved)
 
-    if numTabsVerticalL * numTabsHorizontalL > numTabsVerticalP * numTabsHorizontalP and not fixedMargins:
+    if ((numTabsVerticalL * numTabsHorizontalL >
+         numTabsVerticalP * numTabsHorizontalP) and not fixedMargins):
         add_opt(options, 'numTabsVertical', numTabsVerticalL)
         add_opt(options, 'numTabsHorizontal', numTabsHorizontalL)
         add_opt(options, 'paperheight', paperwidth)
@@ -252,8 +268,8 @@ def generate(options, data_path, f):
 
     print "Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(options.paperwidth / cm,
                                                                  options.paperheight / cm)
-    print "Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(options.totalTabWidth / cm,
-                                                               options.totalTabHeight / cm)
+    print "Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(options.dividerWidthReserved / cm,
+                                                               options.dividerHeightReserved / cm)
     print '{} dividers horizontally, {} vertically'.format(options.numTabsHorizontal,
                                                            options.numTabsVertical)
 
@@ -261,10 +277,10 @@ def generate(options, data_path, f):
         # dynamically max margins
         add_opt(options, 'horizontalMargin',
                 (options.paperwidth -
-                 options.numTabsHorizontal * options.totalTabWidth) / 2)
+                 options.numTabsHorizontal * options.dividerWidthReserved) / 2)
         add_opt(options, 'verticalMargin',
                 (options.paperheight -
-                 options.numTabsVertical * options.totalTabHeight) / 2)
+                 options.numTabsVertical * options.dividerHeightReserved) / 2)
     else:
         add_opt(options, 'horizontalMargin', minmarginwidth)
         add_opt(options, 'verticalMargin', minmarginheight)
