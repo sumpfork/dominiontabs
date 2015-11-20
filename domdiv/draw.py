@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 
 from reportlab.lib.units import cm
 from reportlab.pdfbase import pdfmetrics
@@ -7,6 +8,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph
 from reportlab.lib.enums import TA_JUSTIFY
 from reportlab.pdfgen import canvas
+from reportlab.pdfbase.ttfonts import TTFont
 
 
 def split(l, n):
@@ -23,8 +25,28 @@ class DividerDrawer(object):
         self.odd = True
         self.canvas = None
 
+    def registerFonts(self):
+        try:
+            dirn = os.path.join(self.options.data_path, 'fonts')
+            self.fontNameRegular = 'MinionPro-Regular'
+            pdfmetrics.registerFont(
+                TTFont(self.fontNameRegular, os.path.join(dirn, 'MinionPro-Regular.ttf')))
+            self.fontNameBold = 'MinionPro-Bold'
+            pdfmetrics.registerFont(
+                TTFont(self.fontNameBold, os.path.join(dirn, 'MinionPro-Bold.ttf')))
+            self.fontNameOblique = 'MinionPro-Oblique'
+            pdfmetrics.registerFont(
+                TTFont(self.fontNameOblique, os.path.join(dirn, 'MinionPro-It.ttf')))
+        except:
+            print >>sys.stderr, "Warning, Minion Pro Font ttf file not found! Falling back on Times"
+            self.fontNameRegular = 'Times-Roman'
+            self.fontNameBold = 'Times-Bold'
+            self.fontNameOblique = 'Times-Oblique'
+
     def draw(self, fname, cards, options):
         self.options = options
+
+        self.registerFonts()
 
         dividerWidth = options.dividerWidth
         dividerHeight = options.dividerHeight
@@ -158,7 +180,7 @@ class DividerDrawer(object):
                                   mask=[255, 255, 255, 255, 255, 255])
             width += potSize
 
-        self.canvas.setFont('MinionPro-Bold', 12)
+        self.canvas.setFont(self.fontNameBold, 12)
         cost = str(card.cost)
         self.canvas.drawCentredString(x + 8, costHeight, cost)
         return width
@@ -168,16 +190,15 @@ class DividerDrawer(object):
         self.canvas.drawImage(
             os.path.join(self.options.data_path, 'images', setImage), x, y, 14, 12, mask='auto')
 
-    @classmethod
     def nameWidth(self, name, fontSize):
         w = 0
         name_parts = name.split()
         for i, part in enumerate(name_parts):
             if i != 0:
-                w += pdfmetrics.stringWidth(' ', 'MinionPro-Regular', fontSize)
-            w += pdfmetrics.stringWidth(part[0], 'MinionPro-Regular', fontSize)
+                w += pdfmetrics.stringWidth(' ', self.fontNameRegular, fontSize)
+            w += pdfmetrics.stringWidth(part[0], self.fontNameRegular, fontSize)
             w += pdfmetrics.stringWidth(part[1:],
-                                        'MinionPro-Regular', fontSize - 2)
+                                        self.fontNameRegular, fontSize - 2)
         return w
 
     def drawTab(self, card, rightSide):
@@ -226,7 +247,7 @@ class DividerDrawer(object):
         if self.options.use_text_set_icon:
             setImageHeight = card.getType().getTabTextHeightOffset()
             setText = card.setTextIcon()
-            self.canvas.setFont('MinionPro-Oblique', 8)
+            self.canvas.setFont(self.fontNameOblique, 8)
             if setText is None:
                 setText = ""
 
@@ -284,10 +305,10 @@ class DividerDrawer(object):
                     w = textInset
 
                 def drawWordPiece(text, fontSize):
-                    self.canvas.setFont('MinionPro-Regular', fontSize)
+                    self.canvas.setFont(self.fontNameRegular, fontSize)
                     if text != ' ':
                         self.canvas.drawString(w, h, text)
-                    return pdfmetrics.stringWidth(text, 'MinionPro-Regular', fontSize)
+                    return pdfmetrics.stringWidth(text, self.fontNameRegular, fontSize)
                 for i, word in enumerate(words):
                     if i != 0:
                         w += drawWordPiece(' ', fontSize)
@@ -302,10 +323,10 @@ class DividerDrawer(object):
                 words.reverse()
 
                 def drawWordPiece(text, fontSize):
-                    self.canvas.setFont('MinionPro-Regular', fontSize)
+                    self.canvas.setFont(self.fontNameRegular, fontSize)
                     if text != ' ':
                         self.canvas.drawRightString(w, h, text)
-                    return -pdfmetrics.stringWidth(text, 'MinionPro-Regular', fontSize)
+                    return -pdfmetrics.stringWidth(text, self.fontNameRegular, fontSize)
                 for i, word in enumerate(words):
                     w += drawWordPiece(word[1:], fontSize - 2)
                     w += drawWordPiece(word[0], fontSize)
@@ -411,7 +432,7 @@ class DividerDrawer(object):
             # calculate the text height, font size, and orientation
             maxFontsize = 12
             minFontsize = 6
-            fontname = 'MinionPro-Regular'
+            fontname = self.fontNameRegular
             font = pdfmetrics.getFont(fontname)
             fontHeightRelative = (font.face.ascent + abs(font.face.descent)) / 1000.0
 

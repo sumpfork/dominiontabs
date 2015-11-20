@@ -6,8 +6,6 @@ import sys
 
 from reportlab.lib.pagesizes import LETTER, A4
 from reportlab.lib.units import cm
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
 
 from cards import Card
 from draw import DividerDrawer
@@ -180,21 +178,6 @@ def parse_cardsize(spec, sleeved):
 
 
 def read_write_card_data(options):
-    try:
-        dirn = os.path.join(options.data_path, 'fonts')
-        pdfmetrics.registerFont(
-            TTFont('MinionPro-Regular', os.path.join(dirn, 'MinionPro-Regular.ttf')))
-        pdfmetrics.registerFont(
-            TTFont('MinionPro-Bold', os.path.join(dirn, 'MinionPro-Bold.ttf')))
-        pdfmetrics.registerFont(
-            TTFont('MinionPro-Oblique', os.path.join(dirn, 'MinionPro-It.ttf')))
-    except:
-        raise
-        pdfmetrics.registerFont(
-            TTFont('MinionPro-Regular', 'OptimusPrincepsSemiBold.ttf'))
-        pdfmetrics.registerFont(
-            TTFont('MinionPro-Bold', 'OptimusPrinceps.ttf'))
-
     data_dir = os.path.join(options.data_path, "card_db", options.language)
     card_db_filepath = os.path.join(data_dir, "cards.json")
     with codecs.open(card_db_filepath, "r", "utf-8") as cardfile:
