@@ -4,7 +4,7 @@ import codecs
 import json
 import sys
 
-from reportlab.lib.pagesizes import LETTER, A4
+import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
 
 from cards import Card
@@ -147,16 +147,14 @@ def parse_papersize(spec):
     else:
         papersize = spec.upper()
 
-    if papersize == 'A4':
-        print "Using A4 sized paper."
-        paperwidth, paperheight = A4
-    elif papersize == 'LETTER':
-        print "Using letter sized paper."
-        paperwidth, paperheight = LETTER
-    else:
-        paperwidth, paperheight = parseDimensions(papersize)
-        print 'Using custom paper size, %.2fcm x %.2fcm' % (paperwidth / cm, paperheight / cm)
-
+    try:
+        paperwidth, paperheight = getattr(pagesizes, papersize)
+    except AttributeError:
+        try:
+            paperwidth, paperheight = parseDimensions(papersize)
+            print 'Using custom paper size, %.2fcm x %.2fcm' % (paperwidth / cm, paperheight / cm)
+        except ValueError:
+            paperwidth, paperheight = pagesizes.LETTER
     return paperwidth, paperheight
 
 
