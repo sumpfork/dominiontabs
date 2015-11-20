@@ -78,7 +78,7 @@ class DividerDrawer(object):
         # draw outline or cropmarks
         self.canvas.saveState()
         self.canvas.setLineWidth(self.options.linewidth)
-        cropmarksright = (x == self.options.numTabsHorizontal - 1)
+        cropmarksright = (x == self.options.numDividersHorizontal - 1)
         cropmarksleft = (x == 0)
         if rightSide:
             self.canvas.translate(self.options.dividerWidth, 0)
@@ -130,7 +130,7 @@ class DividerDrawer(object):
                 self.canvas.line(middleLine, -2 * cmw, middleLine, -cmw)
                 if cropmarksleft:
                     self.canvas.line(leftLine, -2 * cmw, leftLine, -cmw)
-            if y == self.options.numTabsVertical - 1:
+            if y == self.options.numDividersVertical - 1:
                 self.canvas.line(rightLine, self.options.dividerHeight + cmw,
                                  rightLine, self.options.dividerHeight + 2 * cmw)
                 self.canvas.line(middleLine, self.options.dividerHeight + cmw,
@@ -463,7 +463,7 @@ class DividerDrawer(object):
 
     def drawDividers(self, cards):
         # split into pages
-        cards = split(cards, self.options.numTabsVertical * self.options.numTabsHorizontal)
+        cards = split(cards, self.options.numDividersVertical * self.options.numDividersHorizontal)
 
         # Starting with tabs on the left or the right?
         if self.options.tab_side in ["right-alternate", "right"]:
@@ -480,10 +480,10 @@ class DividerDrawer(object):
                 self.drawSetNames(pageCards)
             for i, card in enumerate(pageCards):
                 # print card
-                x = i % self.options.numTabsHorizontal
-                y = i / self.options.numTabsHorizontal
+                x = i % self.options.numDividersHorizontal
+                y = i / self.options.numDividersHorizontal
                 self.canvas.saveState()
-                self.drawDivider(card, x, self.options.numTabsVertical - 1 - y)
+                self.drawDivider(card, x, self.options.numDividersVertical - 1 - y)
                 self.canvas.restoreState()
                 self.odd = not self.odd
             self.canvas.showPage()
@@ -498,11 +498,11 @@ class DividerDrawer(object):
             self.odd = pageStartOdd
             for i, card in enumerate(pageCards):
                 # print card
-                x = (self.options.numTabsHorizontal - 1 - i) % self.options.numTabsHorizontal
-                y = i / self.options.numTabsHorizontal
+                x = (self.options.numDividersHorizontal - 1 - i) % self.options.numDividersHorizontal
+                y = i / self.options.numDividersHorizontal
                 self.canvas.saveState()
                 self.drawDivider(
-                    card, x, self.options.numTabsVertical - 1 - y, useExtra=True)
+                    card, x, self.options.numDividersVertical - 1 - y, useExtra=True)
                 self.canvas.restoreState()
                 self.odd = not self.odd
             self.canvas.showPage()

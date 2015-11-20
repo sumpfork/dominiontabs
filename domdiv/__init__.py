@@ -179,20 +179,160 @@ def parse_cardsize(spec, sleeved):
     return dominionCardWidth, dominionCardHeight
 
 
-def generate(options, data_path, f):
+def read_write_card_data(options):
+    try:
+        dirn = os.path.join(options.data_path, 'fonts')
+        pdfmetrics.registerFont(
+            TTFont('MinionPro-Regular', os.path.join(dirn, 'MinionPro-Regular.ttf')))
+        pdfmetrics.registerFont(
+            TTFont('MinionPro-Bold', os.path.join(dirn, 'MinionPro-Bold.ttf')))
+        pdfmetrics.registerFont(
+            TTFont('MinionPro-Oblique', os.path.join(dirn, 'MinionPro-It.ttf')))
+    except:
+        raise
+        pdfmetrics.registerFont(
+            TTFont('MinionPro-Regular', 'OptimusPrincepsSemiBold.ttf'))
+        pdfmetrics.registerFont(
+            TTFont('MinionPro-Bold', 'OptimusPrinceps.ttf'))
 
-    add_opt(options, 'data_path', data_path)
+    data_dir = os.path.join(options.data_path, "card_db", options.language)
+    card_db_filepath = os.path.join(data_dir, "cards.json")
+    with codecs.open(card_db_filepath, "r", "utf-8") as cardfile:
+        cards = json.load(cardfile, object_hook=Card.decode_json)
 
-    dominionCardWidth, dominionCardHeight = parse_cardsize(options.size, options.sleeved)
-    paperwidth, paperheight = parse_papersize(options.papersize)
+    language_mapping_filepath = os.path.join(data_dir, "mapping.json")
+    with codecs.open(language_mapping_filepath, 'r', 'utf-8') as mapping_file:
+        Card.language_mapping = json.load(mapping_file)
 
-    cardlist = None
+    if options.write_json:
+        fpath = "cards.json"
+        with codecs.open(fpath, 'w', encoding='utf-8') as ofile:
+            json.dump(cards,
+                      ofile,
+                      cls=Card.CardJSONEncoder,
+                      ensure_ascii=False,
+                      indent=True,
+                      sort_keys=True)
+    return cards
+
+
+class CardSorter(object):
+
+    def __init__(self, order, baseCards):
+        self.order = order
+        if order == "global":
+            self.sort_key = self.global_sort_key
+        else:
+            self.sort_key = self.by_expansion_sort_key
+
+        self.baseCards = baseCards
+
+    # When sorting cards, want to always put "base" cards after all
+    # kingdom cards, and order the base cards in a set order - the
+    # order they are listed in the database (ie, all normal treasures
+    # by worth, then potion, then all normal VP cards by worth, then
+    # trash)
+    def baseIndex(self, name):
+        try:
+            return self.baseCards.index(name)
+        except Exception:
+            return -1
+
+    def isBaseExpansionCard(self, card):
+        return card.cardset.lower() != 'base' and card.name in self.baseCards
+
+    def global_sort_key(self, card):
+        return int(card.isExpansion()), self.baseIndex(card.name), card.name
+
+    def by_expansion_sort_key(self, card):
+        return card.cardset, int(card.isExpansion()), self.baseIndex(card.name), card.name
+
+    def __call__(self, card):
+        return self.sort_key(card)
+
+
+def filter_sort_cards(cards, options):
+
+    cardSorter = CardSorter(options.order,
+                            [card.name for card in cards if card.cardset.lower() == 'base'])
+    if options.base_cards_with_expansion:
+        cards = [card for card in cards if card.cardset.lower() != 'base']
+    else:
+        cards = [card for card in cards if not cardSorter.isBaseExpansionCard(card)]
+
+    if options.special_card_groups:
+        # Load the card groups file
+        card_groups_file = os.path.join(options.data_dir, "card_groups.json")
+        with codecs.open(card_groups_file, 'r', 'utf-8') as cardgroup_file:
+            card_groups = json.load(cardgroup_file)
+            # pull out any cards which are a subcard, and rename the master card
+            new_cards = []
+            all_subcards = []
+            for subs in [card_groups[x]["subcards"] for x in card_groups]:
+                all_subcards += subs
+            for card in cards:
+                if card.name in card_groups.keys():
+                    card.name = card_groups[card.name]["new_name"]
+                elif card.name in all_subcards:
+                    continue
+                new_cards.append(card)
+            cards = new_cards
+
+    if options.expansions:
+        options.expansions = [o.lower()
+                              for o in options.expansions]
+        reverseMapping = {
+            v: k for k, v in Card.language_mapping.iteritems()}
+        options.expansions = [
+            reverseMapping.get(e, e) for e in options.expansions]
+        filteredCards = []
+        knownExpansions = set()
+        for c in cards:
+            knownExpansions.add(c.cardset)
+            if next((e for e in options.expansions if c.cardset.startswith(e)), None):
+                filteredCards.append(c)
+        unknownExpansions = set(options.expansions) - knownExpansions
+        if unknownExpansions:
+            print "Error - unknown expansion(s): %s" % ", ".join(unknownExpansions)
+            return
+
+        cards = filteredCards
+
+    if options.exclude_events:
+        cards = [card for card in cards if not card.isEvent() or card.name == 'Events']
+
+    if options.exclude_prizes:
+        cards = [card for card in cards if not card.isPrize()]
+
     if options.cardlist:
-        print options.cardlist
         cardlist = set()
         with open(options.cardlist) as cardfile:
             for line in cardfile:
                 cardlist.add(line.strip())
+        if cardlist:
+            cards = [card for card in cards if card.name in cardlist]
+
+    if options.expansion_dividers:
+        cardnamesByExpansion = {}
+        for c in cards:
+            if cardSorter.isBaseExpansionCard(c):
+                continue
+            cardnamesByExpansion.setdefault(
+                c.cardset, []).append(c.name.strip())
+        for exp, names in cardnamesByExpansion.iteritems():
+            c = Card(
+                exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
+            cards.append(c)
+
+    cards.sort(key=cardSorter)
+
+    return cards
+
+
+def calculate_layout(options):
+
+    dominionCardWidth, dominionCardHeight = parse_cardsize(options.size, options.sleeved)
+    paperwidth, paperheight = parse_papersize(options.papersize)
 
     if options.orientation == "vertical":
         dividerWidth, dividerBaseHeight = dominionCardHeight, dominionCardWidth
@@ -241,176 +381,61 @@ def generate(options, data_path, f):
 
     # as we don't draw anything in the final border, it shouldn't count towards how many tabs we can fit
     # so it gets added back in to the page size here
-    numTabsVerticalP = int(
+    numDividersVerticalP = int(
         (paperheight - 2 * minmarginheight + verticalBorderSpace) / options.dividerHeightReserved)
-    numTabsHorizontalP = int(
+    numDividersHorizontalP = int(
         (paperwidth - 2 * minmarginwidth + horizontalBorderSpace) / options.dividerWidthReserved)
-    numTabsVerticalL = int(
+    numDividersVerticalL = int(
         (paperwidth - 2 * minmarginwidth + verticalBorderSpace) / options.dividerHeightReserved)
-    numTabsHorizontalL = int(
+    numDividersHorizontalL = int(
         (paperheight - 2 * minmarginheight + horizontalBorderSpace) / options.dividerWidthReserved)
 
-    if ((numTabsVerticalL * numTabsHorizontalL >
-         numTabsVerticalP * numTabsHorizontalP) and not fixedMargins):
-        add_opt(options, 'numTabsVertical', numTabsVerticalL)
-        add_opt(options, 'numTabsHorizontal', numTabsHorizontalL)
+    if ((numDividersVerticalL * numDividersHorizontalL >
+         numDividersVerticalP * numDividersHorizontalP) and not fixedMargins):
+        add_opt(options, 'numDividersVertical', numDividersVerticalL)
+        add_opt(options, 'numDividersHorizontal', numDividersHorizontalL)
         add_opt(options, 'paperheight', paperwidth)
         add_opt(options, 'paperwidth', paperheight)
         add_opt(options, 'minHorizontalMargin', minmarginheight)
         add_opt(options, 'minVerticalMargin', minmarginwidth)
     else:
-        add_opt(options, 'numTabsVertical', numTabsVerticalP)
-        add_opt(options, 'numTabsHorizontal', numTabsHorizontalP)
+        add_opt(options, 'numDividersVertical', numDividersVerticalP)
+        add_opt(options, 'numDividersHorizontal', numDividersHorizontalP)
         add_opt(options, 'paperheight', paperheight)
         add_opt(options, 'paperwidth', paperwidth)
         add_opt(options, 'minHorizontalMargin', minmarginheight)
         add_opt(options, 'minVerticalMargin', minmarginwidth)
 
-    print "Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(options.paperwidth / cm,
-                                                                 options.paperheight / cm)
-    print "Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(options.dividerWidthReserved / cm,
-                                                               options.dividerHeightReserved / cm)
-    print '{} dividers horizontally, {} vertically'.format(options.numTabsHorizontal,
-                                                           options.numTabsVertical)
-
     if not fixedMargins:
         # dynamically max margins
         add_opt(options, 'horizontalMargin',
                 (options.paperwidth -
-                 options.numTabsHorizontal * options.dividerWidthReserved) / 2)
+                 options.numDividersHorizontal * options.dividerWidthReserved) / 2)
         add_opt(options, 'verticalMargin',
                 (options.paperheight -
-                 options.numTabsVertical * options.dividerHeightReserved) / 2)
+                 options.numDividersVertical * options.dividerHeightReserved) / 2)
     else:
         add_opt(options, 'horizontalMargin', minmarginwidth)
         add_opt(options, 'verticalMargin', minmarginheight)
 
+
+def generate(options, data_path, f):
+
+    add_opt(options, 'data_path', data_path)
+
+    calculate_layout(options)
+
+    print "Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(options.paperwidth / cm,
+                                                                 options.paperheight / cm)
+    print "Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(options.dividerWidthReserved / cm,
+                                                               options.dividerHeightReserved / cm)
+    print '{} dividers horizontally, {} vertically'.format(options.numDividersHorizontal,
+                                                           options.numDividersVertical)
     print "Margins: {:.2f}cm h, {:.2f}cm v\n".format(options.horizontalMargin / cm,
                                                      options.verticalMargin / cm)
 
-    try:
-        dirn = os.path.join(data_path, 'fonts')
-        pdfmetrics.registerFont(
-            TTFont('MinionPro-Regular', os.path.join(dirn, 'MinionPro-Regular.ttf')))
-        pdfmetrics.registerFont(
-            TTFont('MinionPro-Bold', os.path.join(dirn, 'MinionPro-Bold.ttf')))
-        pdfmetrics.registerFont(
-            TTFont('MinionPro-Oblique', os.path.join(dirn, 'MinionPro-It.ttf')))
-    except:
-        raise
-        pdfmetrics.registerFont(
-            TTFont('MinionPro-Regular', 'OptimusPrincepsSemiBold.ttf'))
-        pdfmetrics.registerFont(
-            TTFont('MinionPro-Bold', 'OptimusPrinceps.ttf'))
-
-    data_dir = os.path.join(data_path, "card_db", options.language)
-    card_db_filepath = os.path.join(data_dir, "cards.json")
-    with codecs.open(card_db_filepath, "r", "utf-8") as cardfile:
-        cards = json.load(cardfile, object_hook=Card.decode_json)
-
-    language_mapping_filepath = os.path.join(data_dir, "mapping.json")
-    with codecs.open(language_mapping_filepath, 'r', 'utf-8') as mapping_file:
-        language_mapping = json.load(mapping_file)
-        Card.language_mapping = language_mapping
-
-    baseCards = [
-        card.name for card in cards if card.cardset.lower() == 'base']
-
-    def isBaseExpansionCard(card):
-        return card.cardset.lower() != 'base' and card.name in baseCards
-
-    if options.base_cards_with_expansion:
-        cards = [card for card in cards if card.cardset.lower() != 'base']
-    else:
-        cards = [card for card in cards if not isBaseExpansionCard(card)]
-
-    if options.special_card_groups:
-        # Load the card groups file
-        card_groups_file = os.path.join(data_dir, "card_groups.json")
-        with codecs.open(card_groups_file, 'r', 'utf-8') as cardgroup_file:
-            card_groups = json.load(cardgroup_file)
-            # pull out any cards which are a subcard, and rename the master card
-            new_cards = []
-            all_subcards = []
-            for subs in [card_groups[x]["subcards"] for x in card_groups]:
-                all_subcards += subs
-            for card in cards:
-                if card.name in card_groups.keys():
-                    card.name = card_groups[card.name]["new_name"]
-                elif card.name in all_subcards:
-                    continue
-                new_cards.append(card)
-            cards = new_cards
-
-    if options.expansions:
-        options.expansions = [o.lower()
-                              for o in options.expansions]
-        reverseMapping = {
-            v: k for k, v in language_mapping.iteritems()}
-        options.expansions = [
-            reverseMapping.get(e, e) for e in options.expansions]
-        filteredCards = []
-        knownExpansions = set()
-        for c in cards:
-            knownExpansions.add(c.cardset)
-            if next((e for e in options.expansions if c.cardset.startswith(e)), None):
-                filteredCards.append(c)
-        unknownExpansions = set(options.expansions) - knownExpansions
-        if unknownExpansions:
-            print "Error - unknown expansion(s): %s" % ", ".join(unknownExpansions)
-            return
-
-        cards = filteredCards
-
-    if options.exclude_events:
-        cards = [card for card in cards if not card.isEvent() or card.name == 'Events']
-
-    if options.exclude_prizes:
-        cards = [card for card in cards if not card.isPrize()]
-
-    if cardlist:
-        cards = [card for card in cards if card.name in cardlist]
-
-    if options.expansion_dividers:
-        cardnamesByExpansion = {}
-        for c in cards:
-            if isBaseExpansionCard(c):
-                continue
-            cardnamesByExpansion.setdefault(
-                c.cardset, []).append(c.name.strip())
-        for exp, names in cardnamesByExpansion.iteritems():
-            c = Card(
-                exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
-            cards.append(c)
-
-    if options.write_json:
-        fpath = "cards.json"
-        with codecs.open(fpath, 'w', encoding='utf-8') as ofile:
-            json.dump(cards,
-                      ofile,
-                      cls=Card.CardJSONEncoder,
-                      ensure_ascii=False,
-                      indent=True,
-                      sort_keys=True)
-
-    # When sorting cards, want to always put "base" cards after all
-    # kingdom cards, and order the base cards in a set order - the
-    # order they are listed in the database (ie, all normal treasures
-    # by worth, then potion, then all normal VP cards by worth, then
-    # trash)
-    def baseIndex(name):
-        try:
-            return baseCards.index(name)
-        except Exception:
-            return -1
-
-    if options.order == "global":
-        sortKey = lambda x: (
-            int(x.isExpansion()), baseIndex(x.name), x.name)
-    else:
-        sortKey = lambda x: (
-            x.cardset, int(x.isExpansion()), baseIndex(x.name), x.name)
-    cards.sort(key=sortKey)
+    cards = read_write_card_data(options)
+    cards = filter_sort_cards(cards, options)
 
     if not f:
         f = "dominion_dividers.pdf"
