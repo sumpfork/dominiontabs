@@ -31,3 +31,17 @@ class TestCardDB(unittest.TestCase):
         for c in cards:
             self.assertIsInstance(c, domdiv_cards.Card)
             self.assertIn(c.cardset, valid_cardsets)
+
+    def test_languages(self):
+        # for now, just test that they load
+        options, args = domdiv.parse_opts(['commandname', '--language', 'it'])
+        options.data_path = '.'
+        cards = domdiv.read_write_card_data(options)
+        self.assertTrue(cards, 'Italians cards did not read properly')
+        self.assertIn("Maledizione", [card.name for card in cards])
+
+        options, args = domdiv.parse_opts(['commandname', '--language', 'de'])
+        options.data_path = '.'
+        cards = domdiv.read_write_card_data(options)
+        self.assertTrue(cards, 'German cards did not read properly')
+        self.assertIn("Fluch", [card.name for card in cards])
