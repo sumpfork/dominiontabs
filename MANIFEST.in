@@ -1,7 +1,3 @@
-include dominion_cards.txt
-include dominion_card_extras.txt
-include *.png
+include card_db/*/*.json
 include images/*.png
-exclude card_images/*
-exclude old_images/*
 
