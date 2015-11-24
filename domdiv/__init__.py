@@ -339,7 +339,7 @@ def calculate_layout(options):
     if options.tab_side == "full" and options.tab_name_align == "edge":
         # This case does not make sense since there are two tab edges in this case.  So picking left edge.
         print >>sys.stderr, "** Warning: Aligning card name as 'left' for 'full' tabs **"
-        options.tab_name_align == "left"
+        options.tab_name_align = "left"
 
     fixedMargins = False
     if options.tabs_only:
