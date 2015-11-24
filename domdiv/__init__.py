@@ -13,6 +13,7 @@ from draw import DividerDrawer
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
 TAB_SIDE_CHOICES = ["left", "right", "left-alternate", "right-alternate", "full"]
+TEXT_CHOICES = ["card", "rules", "blank"]
 
 
 def add_opt(options, option, value):
@@ -37,6 +38,21 @@ def parse_opts(argstring):
                       help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
     parser.add_option("--papersize", type="string", dest="papersize", default=None,
                       help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
+    parser.add_option("--front", type="choice", choices=TEXT_CHOICES,
+                      dest="text_front", default="card",
+                      help="Text to print on the front of the divider.  choices: card, rules, blank;"
+                      " 'card' will print the text from the game card;"
+                      " 'rules' will print additional rules for the game card;"
+                      " 'blank' will not print text on the divider;"
+                      " default:card")
+    parser.add_option("--back", type="choice", choices=TEXT_CHOICES + ["none"],
+                      dest="text_back", default="rules",
+                      help="Text to print on the back of the divider.  choices: card, rules, blank, none;"
+                      " 'card' will print the text from the game card;"
+                      " 'rules' will print additional rules for the game card;"
+                      " 'blank' will not print text on the divider;"
+                      " 'none' will prevent the back pages from printing;"
+                      " default:rules")
     parser.add_option("--tab_name_align", type="choice", choices=NAME_ALIGN_CHOICES + ["center"],
                       dest="tab_name_align", default="left",
                       help="Alignment of text on the tab.  choices: left, right, centre (or center), edge."
@@ -104,14 +120,10 @@ def parse_opts(argstring):
                       help="Path to file that enumerates each card to be printed on its own line.")
     parser.add_option("--no-tab-artwork", action="store_true", dest="no_tab_artwork",
                       help="don't show background artwork on tabs")
-    parser.add_option("--no-card-rules", action="store_true", dest="no_card_rules",
-                      help="don't print the card's rules on the tab body")
     parser.add_option("--use-text-set-icon", action="store_true", dest="use_text_set_icon",
                       help="use text/letters to represent a card's set instead of the set icon")
     parser.add_option("--no-page-footer", action="store_true", dest="no_page_footer",
                       help="don't print the set name at the bottom of the page.")
-    parser.add_option("--no-card-backs", action="store_true", dest="no_card_backs",
-                      help="don't print the back page of the card sheets.")
 
     options, args = parser.parse_args(argstring)
     if not options.cost:
@@ -177,6 +189,7 @@ def parse_cardsize(spec, sleeved):
 
 def read_write_card_data(options):
     data_dir = os.path.join(options.data_path, "card_db", options.language)
+    add_opt(options, 'data_dir', data_dir)
     card_db_filepath = os.path.join(data_dir, "cards.json")
     with codecs.open(card_db_filepath, "r", "utf-8") as cardfile:
         cards = json.load(cardfile, object_hook=Card.decode_json)
@@ -355,6 +368,7 @@ def calculate_layout(options):
 
     add_opt(options, 'dividerWidth', dividerWidth)
     add_opt(options, 'dividerHeight', dividerHeight)
+    add_opt(options, 'dividerBaseHeight', dividerBaseHeight)
     add_opt(options, 'dividerWidthReserved', dividerWidth + horizontalBorderSpace)
     add_opt(options, 'dividerHeightReserved', dividerHeight + verticalBorderSpace)
     add_opt(options, 'labelWidth', labelWidth)

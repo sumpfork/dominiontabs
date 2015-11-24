@@ -50,6 +50,7 @@ class DividerDrawer(object):
 
         dividerWidth = options.dividerWidth
         dividerHeight = options.dividerHeight
+        dividerBaseHeight = options.dividerBaseHeight
         tabLabelWidth = options.labelWidth
 
         self.tabOutline = [(0, 0, dividerWidth, 0),
@@ -58,25 +59,25 @@ class DividerDrawer(object):
                             dividerWidth - tabLabelWidth, dividerHeight),
                            (dividerWidth - tabLabelWidth,
                             dividerHeight, dividerWidth - tabLabelWidth,
-                            dividerHeight),
+                            dividerBaseHeight),
                            (dividerWidth - tabLabelWidth,
-                            dividerHeight, 0, dividerHeight),
-                           (0, dividerHeight, 0, 0)]
+                            dividerBaseHeight, 0, dividerBaseHeight),
+                           (0, dividerBaseHeight, 0, 0)]
 
         self.expansionTabOutline = [(0, 0, dividerWidth, 0),
                                     (dividerWidth, 0, dividerWidth,
-                                     dividerHeight),
-                                    (dividerWidth, dividerHeight,
-                                     dividerWidth / 2 + tabLabelWidth / 2, dividerHeight),
-                                    (dividerWidth / 2 + tabLabelWidth / 2, dividerHeight,
+                                     dividerBaseHeight),
+                                    (dividerWidth, dividerBaseHeight,
+                                     dividerWidth / 2 + tabLabelWidth / 2, dividerBaseHeight),
+                                    (dividerWidth / 2 + tabLabelWidth / 2, dividerBaseHeight,
                                      dividerWidth / 2 + tabLabelWidth / 2, dividerHeight),
                                     (dividerWidth / 2 + tabLabelWidth / 2, dividerHeight,
                                      dividerWidth / 2 - tabLabelWidth / 2, dividerHeight),
                                     (dividerWidth / 2 - tabLabelWidth / 2, dividerHeight,
-                                     dividerWidth / 2 - tabLabelWidth / 2, dividerHeight),
-                                    (dividerWidth / 2 - tabLabelWidth / 2, dividerHeight,
-                                     0, dividerHeight),
-                                    (0, dividerHeight, 0, 0)]
+                                     dividerWidth / 2 - tabLabelWidth / 2, dividerBaseHeight),
+                                    (dividerWidth / 2 - tabLabelWidth / 2, dividerBaseHeight,
+                                     0, dividerBaseHeight),
+                                    (0, dividerBaseHeight, 0, 0)]
 
         self.canvas = canvas.Canvas(
             fname, pagesize=(options.paperwidth, options.paperheight))
@@ -334,7 +335,7 @@ class DividerDrawer(object):
                         w += drawWordPiece(' ', fontSize)
         self.canvas.restoreState()
 
-    def drawText(self, card, useExtra=False):
+    def drawText(self, card, divider_text="card"):
         usedHeight = 0
         totalHeight = self.options.dividerHeight - self.options.labelHeight
 
@@ -352,14 +353,23 @@ class DividerDrawer(object):
         if drewTopIcon:
             usedHeight += 15
 
-        if self.options.no_card_rules:
+        # Figure out what text is to be printed on this divider
+        if divider_text == "blank":
+            # blank divider, no need to go on
             return
-
-        # draw text
-        if useExtra and card.extra:
-            descriptions = (card.extra,)
-        else:
+        elif divider_text == "rules":
+            # Add the extra rules text to the divider
+            if card.extra:
+                descriptions = (card.extra,)
+            else:
+                # Asked for rules and they don't exist, so don't print anything
+                return
+        elif divider_text == "card":
+            # Add the card text to the divider
             descriptions = re.split("\n", card.description)
+        else:
+            # Don't know what was asked, so don't print anything
+            return
 
         s = getSampleStyleSheet()['BodyText']
         s.fontName = "Times-Roman"
@@ -395,15 +405,15 @@ class DividerDrawer(object):
             p.drawOn(self.canvas, textHorizontalMargin, h)
             h -= spacerHeight
 
-    def drawDivider(self, card, x, y, useExtra=False):
+    def drawDivider(self, card, x, y, isBack=False, divider_text="card"):
         # figure out whether the tab should go on the right side or not
         if self.options.tab_side == "right":
-            rightSide = useExtra
+            rightSide = isBack
         elif self.options.tab_side in ["left", "full"]:
-            rightSide = not useExtra
+            rightSide = not isBack
         else:
             # alternate the cards
-            if not useExtra:
+            if not isBack:
                 rightSide = not self.odd
             else:
                 rightSide = self.odd
@@ -411,7 +421,7 @@ class DividerDrawer(object):
         # apply the transforms to get us to the corner of the current card
         self.canvas.resetTransforms()
         self.canvas.translate(self.options.horizontalMargin, self.options.verticalMargin)
-        if useExtra:
+        if isBack:
             self.canvas.translate(self.options.back_offset, self.options.back_offset_height)
         self.canvas.translate(x * self.options.dividerWidthReserved,
                               y * self.options.dividerHeightReserved)
@@ -419,10 +429,10 @@ class DividerDrawer(object):
         # actual drawing
         if not self.options.tabs_only:
             self.drawOutline(
-                x, y, rightSide, useExtra, card.getType().getTypeNames() == ('Expansion',))
+                x, y, rightSide, isBack, card.getType().getTypeNames() == ('Expansion',))
         self.drawTab(card, rightSide)
         if not self.options.tabs_only:
-            self.drawText(card, useExtra)
+            self.drawText(card, divider_text)
 
     def drawSetNames(self, pageCards):
         # print sets for this page
@@ -504,14 +514,14 @@ class DividerDrawer(object):
                 x = i % self.options.numDividersHorizontal
                 y = i / self.options.numDividersHorizontal
                 self.canvas.saveState()
-                self.drawDivider(card, x, self.options.numDividersVertical - 1 - y)
+                self.drawDivider(card, x, self.options.numDividersVertical - 1 - y, isBack=False, divider_text=self.options.text_front)
                 self.canvas.restoreState()
                 self.odd = not self.odd
             self.canvas.showPage()
             if pageNum + 1 == self.options.num_pages:
                 break
-            if self.options.tabs_only or self.options.no_card_backs:
-                # no set names or card backs for label-only sheets
+            if self.options.tabs_only or self.options.text_back == "none":
+                # Don't print the sheets with the back of the dividers
                 continue
             if not self.options.no_page_footer and self.options.order != "global":
                 self.drawSetNames(pageCards)
@@ -522,8 +532,7 @@ class DividerDrawer(object):
                 x = (self.options.numDividersHorizontal - 1 - i) % self.options.numDividersHorizontal
                 y = i / self.options.numDividersHorizontal
                 self.canvas.saveState()
-                self.drawDivider(
-                    card, x, self.options.numDividersVertical - 1 - y, useExtra=True)
+                self.drawDivider(card, x, self.options.numDividersVertical - 1 - y, isBack=True, divider_text=self.options.text_back)
                 self.canvas.restoreState()
                 self.odd = not self.odd
             self.canvas.showPage()
