@@ -189,7 +189,6 @@ def parse_cardsize(spec, sleeved):
 
 def read_write_card_data(options):
     data_dir = os.path.join(options.data_path, "card_db", options.language)
-    add_opt(options, 'data_dir', data_dir)
     card_db_filepath = os.path.join(data_dir, "cards.json")
     with codecs.open(card_db_filepath, "r", "utf-8") as cardfile:
         cards = json.load(cardfile, object_hook=Card.decode_json)
@@ -256,7 +255,8 @@ def filter_sort_cards(cards, options):
 
     if options.special_card_groups:
         # Load the card groups file
-        card_groups_file = os.path.join(options.data_dir, "card_groups.json")
+        data_dir = os.path.join(options.data_path, "card_db", options.language)
+        card_groups_file = os.path.join(data_dir, "card_groups.json")
         with codecs.open(card_groups_file, 'r', 'utf-8') as cardgroup_file:
             card_groups = json.load(cardgroup_file)
             # pull out any cards which are a subcard, and rename the master card
