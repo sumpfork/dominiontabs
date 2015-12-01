@@ -17,8 +17,8 @@ typemap = {'Aktion': 'Action',
            'Ritter': 'Knight',
            'Ruine': 'Ruins',
            'Unterschlupf': 'Shelter',
-           'Reisender': 'Traveler',
-           'Reserve': 'Reserves'}
+           'Reisender': 'Traveller',
+           'Reserve': 'Reserve'}
 
 with open(sys.argv[1], 'U') as csvfile:
     reader = csv.DictReader(csvfile)
@@ -27,13 +27,14 @@ with open(sys.argv[1], 'U') as csvfile:
             continue
         # row = {k: v.decode('ISO-8859-2').encode('utf-8') if type(v) == str else v for k, v in row.iteritems()}
         #print chardet.detect(row['Kartentext'])
-        print row
+        if 'Ritter' in row['Typ'] and row['Kartenname'] != 'Ritter':
+            continue
         converted_row = {'name': row['Kartenname'],
                          'cost': row['Kosten'],
                          'cardset': row['Edition'],
                          'description': row['Kartentext'],
                          'extra': row['Lange Erklärung'],
-                         'types': [typemap[t.strip()] for t in row['Typ'].split('/')],
+                         'types': [typemap[t.strip()] for t in row['Typ'].split('/') if not t.strip() == 'Ritter'],
                          'potcost': row.get('potcost', 0)}
         converted.append(converted_row)
 json.dump(converted, open(sys.argv[2], 'wb'), indent=True)
