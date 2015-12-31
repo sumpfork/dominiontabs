@@ -126,7 +126,7 @@ class DividerDrawer(object):
             if cropmarksleft or cropmarksright:
                 self.canvas.line(-2 * cmw, 0, -cmw, 0)
                 self.canvas.line(-2 * cmw,
-                                 self.dividerHeight, -cmw, self.dividerHeight)
+                                 self.options.dividerBaseHeight, -cmw, self.options.dividerBaseHeight)
                 if y > 0:
                     self.canvas.line(-2 * cmw,
                                      self.options.dividerHeight, -cmw, self.options.dividerHeight)
