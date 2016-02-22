@@ -2,7 +2,7 @@
  {
   "potcost": 0, 
   "description": "+1 Aktion, Lege eine beliebige Anzahl Handkarten ab. Ziehe f\u00fcr jede abgelegte Karte eine Karte nach.", 
-  "extra": "Der ausgespielte KELLER selbst darf nicht abgelegt werden, da er sich nicht mehr in deiner Hand befindet. Sage an, wie viele Karten du ablegst und lege diese auf deinen Ablagestapel. Danach ziehst du die gleiche Anzahl Karten vom Nachziehstapel. Sollte w\u00e4hrend dieses Vorgangs der Nachziehstapel aufgebraucht werden, wird dein Ablagestapel zusammen mit den soeben abgelegten Karten gemischt und als neuer Nachziehstapel bereitgelegt.", 
+  "extra": "Der ausgespielte KELLER selbst darf nicht abgelegt werden, da er sich nicht mehr in deiner Hand befindet. Sage an, wie viele Karten du ablegst und lege diese auf deinen Ablagestapel. Danach ziehst du die gleiche Anzahl Karten vom Nachziehstapel. Sollte während dieses Vorgangs der Nachziehstapel aufgebraucht werden, wird dein Ablagestapel zusammen mit den soeben abgelegten Karten gemischt und als neuer Nachziehstapel bereitgelegt.", 
   "cost": "2", 
   "cardset": "Dominion", 
   "types": [
@@ -13,7 +13,7 @@
  {
   "potcost": 0, 
   "description": "Entsorge bis zu vier Karten aus deiner Hand.", 
-  "extra": "Die ausgespielte KAPELLE selbst darf nicht entsorgt werden, da sie sich nicht mehr auf der Hand befindet. Weitere KAPELLEN  auf der Hand d\u00fcrfen entsorgt werden.", 
+  "extra": "Die ausgespielte KAPELLE selbst darf nicht entsorgt werden, da sie sich nicht mehr auf der Hand befindet. Weitere KAPELLEN auf der Hand dürfen entsorgt werden.", 
   "cost": "2", 
   "cardset": "Dominion", 
   "types": [
@@ -24,7 +24,7 @@
  {
   "potcost": 0, 
   "description": "+2 Karten. Wenn ein Mitspieler eine Angriffskarte ausspielt, kannst du diese Karte aus deiner Hand vorzeigen. Der Angriff hat dann keine Wirkung auf dich.", 
-  "extra": "Spielt ein anderer Spieler eine Angriffskarte (mit der Aufschrift AKTION \u2013 ANGRIFF), kannst du die Karte BURGGRABEN vorzeigen, falls du sie in diesem Moment auf der Hand hast. In diesem Fall bist du von den Auswirkungen des Angriffs nicht betroffen, d.h. du musst bei der HEXE keine Fluchkarte nehmen usw. Haben mehrere Spieler einen BURGGRABEN auf der Hand, d\u00fcrfen diese auch eingesetzt und vorgezeigt werden. Danach nehmen die Spieler ihre Karte zur\u00fcck auf die Hand. Der Spieler, der den Angriff gespielt hat, darf unabh\u00e4ngig davon, ob ein oder mehrere BURGGR\u00c4BEN\ngespielt werden, die weiteren Anweisungen seiner Aktionskarte ausf\u00fchren. Der BURGGRABEN darf auch in der eigenen Aktionsphase gespielt werden \u2013 dann ziehst du 2 Karten nach. ", 
+  "extra": "Spielt ein anderer Spieler eine Angriffskarte (mit der Aufschrift AKTION – ANGRIFF), kannst du die Karte BURGGRABEN vorzeigen, falls du sie in diesem Moment auf der Hand hast. In diesem Fall bist du von den Auswirkungen des Angriffs nicht betroffen, d. h. du musst bei der HEXE keine Fluchkarte nehmen usw. Haben mehrere Spieler einen BURGGRABEN auf der Hand, dürfen diese auch eingesetzt und vorgezeigt werden. Danach nehmen die Spieler ihre Karte zurück auf die Hand. Der Spieler, der den Angriff gespielt hat, darf unabhängig davon, ob ein oder mehrere BURGGRÄBEN gespielt werden, die weiteren Anweisungen seiner Aktionskarte ausführen. Der BURGGRABEN darf auch in der eigenen Aktionsphase gespielt werden – dann ziehst du 2 Karten nach.", 
   "cost": "2", 
   "cardset": "Dominion", 
   "types": [
@@ -36,7 +36,7 @@
  {
   "potcost": 0, 
   "description": "+2 Geld. Du kannst sofort deinen kompletten Nachziehstapel ablegen.", 
-  "extra": "Legst du deinen Nachziehstapel auf deinen Ablagestapel, musst du dies tun, bevor du eine weitere Aktion ausspielst oder zur Kaufphase \u00fcbergehst. Du darfst deinen Nachziehstapel nicht einsehen, bevor du ihn ablegst.", 
+  "extra": "Legst du deinen Nachziehstapel auf deinen Ablagestapel, musst du dies tun, bevor du eine weitere Aktion ausspielst oder zur Kaufphase übergehst. Du darfst deinen Nachziehstapel nicht einsehen, bevor du ihn ablegst.", 
   "cost": "3", 
   "cardset": "Dominion", 
   "types": [
@@ -47,7 +47,7 @@
  {
   "potcost": 0, 
   "description": "+1 Karte. +2 Aktionen.", 
-  "extra": "Spielst du mehrere D\u00d6RFER hintereinander, z\u00e4hlst du am besten laut mit, wie viele Aktionen du noch ausspielen darfst, damit du den \u00dcberblick beh\u00e4ltst.  ", 
+  "extra": "Spielst du mehrere DÖRFER hintereinander, zählst du am besten laut mit, wie viele Aktionen du noch ausspielen darfst, damit du den Überblick behältst.", 
   "cost": "3", 
   "cardset": "Dominion", 
   "types": [
@@ -58,18 +58,18 @@
  {
   "potcost": 0, 
   "description": "+1 Kauf.  +2 Geld.", 
-  "extra": "In der Kaufphase darfst du 1 zus\u00e4tzliche Karte kaufen, also insgesamt 2 K\u00e4ufe t\u00e4tigen. F\u00fcr deine K\u00e4ufe stehen dir in diesem Zug insgesamt 2 Geld zus\u00e4tzlich zur Verf\u00fcgung.", 
+  "extra": "In der Kaufphase darfst du 1 zusätzliche Karte kaufen, also insgesamt 2 Käufe tätigen. Für deine Käufe stehen dir in diesem Zug insgesamt 2 Geld zusätzlich zur Verfügung.", 
   "cost": "3", 
   "cardset": "Dominion", 
   "types": [
    "Action"
   ], 
-  "name": "Holzf\u00e4ller"
+  "name": "Holzfäller"
  }, 
  {
   "potcost": 0, 
   "description": "Nimm dir eine Karte, die bis zu vier kostet.", 
-  "extra": "Nimm dir eine Karte aus dem Vorrat und lege diese sofort auf deinen Ablagestapel. Du kannst weder Geldkarten noch zus\u00e4tzlich \u00fcber Aktionskarten erhaltenes Geld oder M\u00fcnzen (bei Erweiterungen mit M\u00fcnzen) einsetzen, um den angegebenen Betrag auf der Karte zu erh\u00f6hen.", 
+  "extra": "Nimm dir eine Karte aus dem Vorrat und lege diese sofort auf deinen Ablagestapel. Du kannst weder Geldkarten noch zusätzlich über Aktionskarten erhaltenes Geld oder Münzen (bei Erweiterungen mit Münzen) einsetzen, um den angegebenen Betrag auf der Karte zu erhöhen.", 
   "cost": "3", 
   "cardset": "Dominion", 
   "types": [
@@ -80,19 +80,19 @@
  {
   "potcost": 0, 
   "description": "Nimm dir ein Silber und lege es verdeckt auf deinen Nachziehstapel. Jeder Mitspieler deckt eine Punktekarte aus seiner Hand auf und legt sie verdeckt auf seinen Nachziehstapel. Hat ein Spieler keine Punktekarte auf der Hand, muss er seine Kartenhand vorzeigen.", 
-  "extra": "Ist dein Nachziehstapel aufgebraucht, wenn du diese Karte spielst, legst du die Silberkarte verdeckt ab. Sie bildet dann deinen Nachziehstapel. Das Gleiche gilt f\u00fcr alle Mitspieler, die eine Punktekarte verdeckt auf den eigenen Nachziehstapel legen m\u00fcssen.", 
+  "extra": "Ist dein Nachziehstapel aufgebraucht, wenn du diese Karte spielst, legst du die Silberkarte verdeckt ab. Sie bildet dann deinen Nachziehstapel. Das Gleiche gilt für alle Mitspieler, die eine Punktekarte verdeckt auf den eigenen Nachziehstapel legen müssen.", 
   "cost": "3", 
   "cardset": "Dominion", 
   "types": [
    "Action", 
    "Attack"
   ], 
-  "name": "B\u00fcrokrat"
+  "name": "Bürokrat"
  }, 
  {
   "potcost": 0, 
   "description": "Entsorge diese Karte. Nimm dir eine Karte, die bis zu 5 kostet.", 
-  "extra": "Du nimmst dir eine beliebige Karte aus dem Vorrat, die h\u00f6chstens kostet  und legst sie sofort auf deinen Ablagestapel. Du darfst den Betrag weder durch weitere Geldkarten, M\u00fcnzen oder zus\u00e4tzliches Geld von anderen Aktionskarten erh\u00f6hen. Spielst du das FESTMAHL  direkt nach dem THRONSAAL , erh\u00e4ltst du 2 Karten, obwohl du das FESTMAHL  nur einmal entsorgen kannst. ", 
+  "extra": "Du nimmst dir eine beliebige Karte aus dem Vorrat, die höchstens 5 Coins kostet und legst sie sofort auf deinen Ablagestapel. Du darfst den Betrag weder durch weitere Geldkarten, Münzen oder zusätzliches Geld von anderen Aktionskarten erhöhen. Spielst du das FESTMAHL direkt nach dem THRONSAAL, erhältst du 2 Karten, obwohl du das FESTMAHL nur einmal entsorgen kannst.", 
   "cost": "4", 
   "cardset": "Dominion", 
   "types": [
@@ -103,18 +103,18 @@
  {
   "potcost": 0, 
   "description": "Ein Siegpunkt f\u00fcr je zehn Karten im eigenen Kartensatz (abgerundet).", 
-  "extra": "Diese Karte ist die einzige Punktekarte unter den K\u00f6nigreichkarten. Sie hat bis zum Ende des Spiels keine Funktion. Bei der Wertung des Spiels erh\u00e4lt der Spieler, der diese Karte in seinem Kartensatz (Nachziehstapel, Handkarten und Ablagestapel) hat, f\u00fcr jeweils 10 Karten einen Siegpunkt. Es wird immer abgerundet, d. h. 39 Karten ergeben 3 Siegpunkte, ebenso wie 31 Karten 3 Siegpunkte ergeben. Wer mehrere G\u00c4RTEN  besitzt, erh\u00e4lt f\u00fcr jeden GARTEN  die entsprechende Anzahl an Siegpunkten.", 
+  "extra": "Diese Karte ist die einzige Punktekarte unter den Königreichkarten. Sie hat bis zum Ende des Spiels keine Funktion. Bei der Wertung des Spiels erhält der Spieler, der diese Karte in seinem Kartensatz (Nachziehstapel, Handkarten und Ablagestapel) hat, für jeweils 10 Karten einen Siegpunkt. Es wird immer abgerundet, d. h. 39 Karten ergeben 3 Siegpunkte, ebenso wie 31 Karten 3 Siegpunkte ergeben. Wer mehrere GÄRTEN besitzt, erhält für jeden GARTEN die entsprechende Anzahl an Siegpunkten.", 
   "cost": "4", 
   "cardset": "Dominion", 
   "types": [
    "Victory"
   ], 
-  "name": "G\u00e4rten"
+  "name": "Gärten"
  }, 
  {
   "potcost": 0, 
   "description": "+2 Geld. Jeder Mitspieler legt Karten ab, bis er nur noch drei Karten auf der Hand hat.", 
-  "extra": "Deine Mitspieler m\u00fcssen Karten aus ihrer Hand ablegen, bis sie nur noch 3 Karten auf der Hand haben. Spieler, die zum Zeitpunkt des Angriffs bereits 3 oder weniger Karten auf der Hand haben, m\u00fcssen keine weiteren Karten ablegen.", 
+  "extra": "Deine Mitspieler müssen Karten aus ihrer Hand ablegen, bis sie nur noch 3 Karten auf der Hand haben. Spieler, die zum Zeitpunkt des Angriffs bereits 3 oder weniger Karten auf der Hand haben, müssen keine weiteren Karten ablegen.", 
   "cost": "4", 
   "cardset": "Dominion", 
   "types": [
@@ -126,7 +126,7 @@
  {
   "potcost": 0, 
   "description": "Entsorge ein Kupfer aus deiner Hand. Wenn du das machst, +3 Geld.", 
-  "extra": "Wenn du kein Kupfer zum Entsorgen auf der Hand hast, erh\u00e4ltst du kein zus\u00e4tzliches Geld f\u00fcr die Kaufphase.", 
+  "extra": "Wenn du kein Kupfer zum Entsorgen auf der Hand hast, erhältst du kein zusätzliches Geld für die Kaufphase.", 
   "cost": "4", 
   "cardset": "Dominion", 
   "types": [
@@ -137,7 +137,7 @@
  {
   "potcost": 0, 
   "description": "Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die bis zu zwei mehr kostet als die entsorgte Karte.", 
-  "extra": "Der ausgespielte UMBAU selbst darf nicht entsorgt werden, da er sich nicht mehr in deiner Hand befindet. Weitere UMBAU-Karten in deiner Hand d\u00fcrfen entsorgt werden. Wenn du keine Karte zum Entsorgen auf der Hand hast, darfst du dir auch keine neue Karte nehmen. Die neue Karte, die du dir nimmst, darf maximal bis zu mehr als die entsorgte Karte kosten. Der Betrag darf weder durch weitere Geldkarten, M\u00fcnzen oder zus\u00e4tzliches Geld von anderen Aktionskarten erh\u00f6ht werden. Die neue Karte kann die gleiche Karte sein wie die, die du entsorgt hast. Lege die neue Karte auf deinen Ablagestapel.", 
+  "extra": "Der ausgespielte UMBAU selbst darf nicht entsorgt werden, da er sich nicht mehr in deiner Hand befindet. Weitere UMBAU-Karten in deiner Hand dürfen entsorgt werden. Wenn du keine Karte zum Entsorgen auf der Hand hast, darfst du dir auch keine neue Karte nehmen. Die neue Karte, die du dir nimmst, darf maximal bis zu 2 Coins mehr als die entsorgte Karte kosten. Der Betrag darf weder durch weitere Geldkarten, Münzen oder zusätzliches Geld von anderen Aktionskarten erhöht werden. Die neue Karte kann die gleiche Karte sein wie die, die du entsorgt hast. Lege die neue Karte auf deinen Ablagestapel. ", 
   "cost": "4", 
   "cardset": "Dominion", 
   "types": [
@@ -215,7 +215,7 @@
  {
   "potcost": 0, 
   "description": "+2 Karten. +1 Aktion.", 
-  "extra": "Du musst  zuerst zwei Karten vom Nachziehstapel auf die Hand nehmen. Dann darfst du eine weitere Aktionskarte ausspielen. ", 
+  "extra": "Du musst  zuerst zwei Karten vom Nachziehstapel auf die Hand nehmen. Dann darfst du eine weitere Aktionskarte ausspielen.", 
   "cost": "5", 
   "cardset": "Dominion", 
   "types": [
@@ -226,7 +226,7 @@
  {
   "potcost": 0, 
   "description": "Ziehe solange Karten nach, bis du sieben Karten auf der Hand hast. Aktionskarten kannst du zur Seite legen, sobald du sie ziehst. Die zur Seite gelegten Karten werden am Ende der Aktion abgelegt.", 
-  "extra": "Aktionskarten darfst du zur Seite legen, sobald du sie ziehst, musst dies aber nicht tun. Hast du bereits 7 oder mehr Karten auf der Hand, wenn du die BIBLIOTHEK  ausspielst, ziehst du keine Karten nach. Wenn dein Nachziehstapel w\u00e4hrend des Ziehens aufgebraucht ist, mischst du den Ablagestapel, mischst aber die zur Seite gelegten Aktionskarten nicht mit ein. Diese werden erst auf den Ablagestapel gelegt, sobald du 7 Karten auf der Hand hast. Sollten die Karten nicht reichen, ziehst du nur so viele Karten wie m\u00f6glich. ", 
+  "extra": "Aktionskarten darfst du zur Seite legen, sobald du sie ziehst, musst dies aber nicht tun. Hast du bereits 7 oder mehr Karten auf der Hand, wenn du die BIBLIOTHEK  ausspielst, ziehst du keine Karten nach. Wenn dein Nachziehstapel w\u00e4hrend des Ziehens aufgebraucht ist, mischst du den Ablagestapel, mischst aber die zur Seite gelegten Aktionskarten nicht mit ein. Diese werden erst auf den Ablagestapel gelegt, sobald du 7 Karten auf der Hand hast. Sollten die Karten nicht reichen, ziehst du nur so viele Karten wie m\u00f6glich.", 
   "cost": "5", 
   "cardset": "Dominion", 
   "types": [
@@ -282,7 +282,7 @@
  {
   "potcost": 0, 
   "description": "+1 Geld", 
-  "extra": "", 
+  "extra": "60 Karten pro Spiel.", 
   "cost": "0", 
   "cardset": "Dominion", 
   "types": [
@@ -293,7 +293,7 @@
  {
   "potcost": 0, 
   "description": "+2 Geld", 
-  "extra": "", 
+  "extra": "40 Karten pro Spiel", 
   "cost": "3", 
   "cardset": "Dominion", 
   "types": [
@@ -304,7 +304,7 @@
  {
   "potcost": 0, 
   "description": "+3 Geld", 
-  "extra": "", 
+  "extra": "30 Karten pro Spiel", 
   "cost": "6", 
   "cardset": "Dominion", 
   "types": [
@@ -315,7 +315,7 @@
  {
   "potcost": 0, 
   "description": "-1 Punkt", 
-  "extra": "", 
+  "extra": "Flüche sind immer im Spiel.\n2 Spieler =  10 Flüche\n3 Spieler = 20 Flüche\n4Spieler = 30 Flüche\n5 Spieler = 40 Flüche\n6 Spieler = 50 Flüche", 
   "cost": "0", 
   "cardset": "Dominion", 
   "types": [
@@ -326,7 +326,7 @@
  {
   "potcost": 0, 
   "description": "1 Punkt", 
-  "extra": "", 
+  "extra": "8 Karten bei 2 Spielern. Bei 3 oder mehr Spielern alle 12 Karten.", 
   "cost": "2", 
   "cardset": "Dominion", 
   "types": [
@@ -337,7 +337,7 @@
  {
   "potcost": 0, 
   "description": "3 Punkte", 
-  "extra": "", 
+  "extra": "8 Karten bei 2 Spielern. Bei 3 oder mehr Spielern alle 12 Karten.", 
   "cost": "5", 
   "cardset": "Dominion", 
   "types": [
@@ -348,24 +348,13 @@
  {
   "potcost": 0, 
   "description": "6 Punkte", 
-  "extra": "", 
+  "extra": "8 Karten bei 2 Spielern. Bei 3 oder mehr Spielern alle 12 Karten.", 
   "cost": "8", 
   "cardset": "Dominion", 
   "types": [
    "Victory"
   ], 
   "name": "Provinz"
- }, 
- {
-  "potcost": 0, 
-  "description": "", 
-  "extra": "", 
-  "cost": "", 
-  "cardset": "Dominion", 
-  "types": [
-   "Action"
-  ], 
-  "name": "M\u00fcll"
  }, 
  {
   "potcost": 0, 
