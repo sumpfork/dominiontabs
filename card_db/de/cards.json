@@ -741,7 +741,7 @@
  {
   "potcost": 0, 
   "description": "Decke eine Karte aus deiner Hand auf. Lege bis zu 2 dieser Karten aus deiner Hand zur\u00fcck in den Vorrat. Jeder Mitspieler muss sich eine solche Karte vom Vorrat nehmen.", 
-  "extra": "", 
+  "extra": "Wähle eine beliebige Handkarte und zeige sie deinen Mitspielern. Du darfst dann bis zu 2 dieser Karten von deiner Hand zurück in den Vorrat legen. Jeder Mitspieler nimmt sich anschließend eine solche Karte aus dem Vorrat (reihum im Uhrzeigersinn, beginnend beim linken Mitspieler). Der ausgespielte Botschafter kann nicht in den Vorrat zurückgelegt werden.", 
   "cost": "3", 
   "cardset": "Seaside", 
   "types": [
@@ -753,7 +753,7 @@
  {
   "potcost": 0, 
   "description": "+1 Karte +2 Aktionen + 1 Geld", 
-  "extra": "", 
+  "extra": "Du musst eine Karte nachziehen, darfst 2 weitere Aktionen ausführen und erhältst für die Kaufphase + 2 Coins.", 
   "cost": "5", 
   "cardset": "Seaside", 
   "types": [
@@ -764,7 +764,7 @@
  {
   "potcost": 0, 
   "description": "+1 Karte +1 Aktion  -  Bei Beginn deines n\u00e4chsten Zuges: +1 Karte ", 
-  "extra": "", 
+  "extra": "Die KARAWANE ist eine Dauerkarte. Sie wird in der Aufräumphase nicht abgelegt. Ziehe zu Beginn des nächsten Zuges eine Karte und lege die KARAWANE in der Aufräumphase dieses Zuges ab.", 
   "cost": "4", 
   "cardset": "Seaside", 
   "types": [
@@ -776,7 +776,7 @@
  {
   "potcost": 0, 
   "description": "+ 2 Geld - Jeder Mitspieler muss ein Kupfer aus seiner Hand ablegen. Hat ein Spieler kein Kupfer auf der Hand, muss er seine Kartenhand vorzeigen.", 
-  "extra": "", 
+  "extra": "Alle Mitspieler müssen eine Kupferkarte aus der Hand ablegen. Da der Beutelschneider eine Angriffskarte ist, dürfen die Mitspieler mit einer Reaktionskarte auf diesen Angriff reagieren.", 
   "cost": "4", 
   "cardset": "Seaside", 
   "types": [
@@ -788,7 +788,7 @@
  {
   "potcost": 0, 
   "description": "+ 2 Geld - Entsorge diese Karte. Lege einen Embargomarker auf einen Stapel im Vorrat.  - Wenn ein Spieler eine Karte von diesem Stapel kauft, muss er sich f\u00fcr jeden Embargomarker einen Fluch nehmen.", 
-  "extra": "", 
+  "extra": "Wenn du das EMBARGO in deiner Aktionsphase ausspielst, musst du es entsorgen und einen Embargomarker auf einen beliebigen Vorratsstapel (Königreichkarten und Geldkarten sind erlaubt) legen. Um die + 2 Coins in der Kaufphase nicht zu „vergessen“, empfehlen wir, das entsorgte EMBARGO zunächst separat neben den Müllstapel zu legen und erst in der Aufräumphase endgültig zu entsorgen. Wenn du das EMBARGO auf einen THRONSAAL folgend ausspielst, legst du 2 Embargomarker. Du kannst sie auf denselben oder unterschiedliche Stapel legen. Wenn keine Embargomarker mehr vorhanden sind, benutze einen geeigneten Ersatz (z. B. echte Geldmünzen). Auf jeden Vorratsstapel dürfen beliebig viele Embargomarker gelegt werden. Spieler, die Karten von einem Vorratsstapel mit einem oder mehreren Embargomarkern kaufen, müssen pro Marker eine Fluchkarte nehmen. Wer Karten von einem Stapel mit Embargomarker(n) auf eine andere Weise nimmt (z. B. durch den SCHMUGGLER), nimmt keine Fluchkarte. Wenn keine Fluchkarten mehr vorrätig sind, haben die Marker keinen Effekt.", 
   "cost": "2", 
   "cardset": "Seaside", 
   "types": [
@@ -799,7 +799,7 @@
  {
   "potcost": 0, 
   "description": "Du darfst eine Provinz aus deiner Hand aufdecken. Wenn du das machst: Nimm dir ein Gold auf die Hand. Ansonsten: Nimm dir ein Silber auf die Hand.", 
-  "extra": "", 
+  "extra": "Wenn du eine Provinz aus der Hand aufdeckst, erhältst du ein Gold. Wenn  du das nicht tun kannst (weil du keine Provinz auf der Hand hast) oder willst (weil du  deine Provinz nicht zeigen möchtest), erhältst du ein Silber. Nimm das Gold oder Silber  auf die Hand.", 
   "cost": "5", 
   "cardset": "Seaside", 
   "types": [
@@ -810,7 +810,7 @@
  {
   "potcost": 0, 
   "description": "+2 Aktionen, +1 Geld  - Bei Beginn deines n\u00e4chsten Zuges: +1 Aktion, + 1 Geld", 
-  "extra": "", 
+  "extra": "Das FISCHERDORF ist eine Dauerkarte. Du darfst 2 weitere Aktionen ausführen und erhältst für die Kaufphase + 1 Coins. In deinem nächsten Zug darfst du eine weitere Aktion ausführen und erhältst für die Kaufphase + 1 Coins.", 
   "cost": "3", 
   "cardset": "Seaside", 
   "types": [
@@ -822,7 +822,7 @@
  {
   "potcost": 0, 
   "description": "+2 Karten. Jeder Mitspieler, der mindestens 4 Karten auf der Hand hat, muss solange Karten aus seiner Hand verdeckt auf seinen Nachziehstapel legen, bis er nur noch 3 Karten auf der Hand hat.", 
-  "extra": "", 
+  "extra": "Deine Mitspieler müssen Karten aus ihrer Hand verdeckt auf den Nachziehstapel legen, bis sie nur noch 3 Karten auf der Hand haben. Welche Karten sie auf  den Nachziehstapel legen, entscheiden die Mitspieler selbst. Spieler, die zum Zeitpunkt  des Angriffs bereits 3 oder weniger Karten auf der Hand haben, müssen keine Karten auf  den Nachziehstapel legen.", 
   "cost": "5", 
   "cardset": "Seaside", 
   "types": [
@@ -834,7 +834,7 @@
  {
   "potcost": 0, 
   "description": "+1 Karte, +1 Aktion, Lege eine Karte aus deiner Hand  verdeckt zur Seite. Bei Beginn deines n\u00e4chsten Zuges:  Nimm die zur Seite gelegte Karte auf die Hand.", 
-  "extra": "", 
+  "extra": "Der HAFEN ist eine Dauerkarte. Lege eine Handkarte verdeckt auf den HAFEN. Diese und der HAFEN werden in der Aufräumphase nicht abgelegt. Nimm zu Beginn deines nächsten Zuges die zur Seite gelegte Karte auf die Hand. Lege den HAFEN in der Aufräumphase ab.", 
   "cost": "2", 
   "cardset": "Seaside", 
   "types": [
@@ -846,7 +846,7 @@
  {
   "potcost": 0, 
   "description": "Lege diese Karte und eine andere Karte aus deiner Hand offen zur Seite auf dein Tableau Insel. Nimm die Karten am Ende des Spiels zur\u00fcck in deinen Kartenstapel.  2 Punkte", 
-  "extra": "", 
+  "extra": "Die INSEL ist eine kombinierte Aktions- und Punktekarte. Sie kann in der Aktionsphase eingesetzt werden und bringt zusätzlich bei Spielende 2 Punkte. Wenn du deine erste INSEL nimmst oder kaufst, erhältst du ein Insel-Tableau und legst es vor dir ab. Immer wenn du eine INSEL ausspielst, legst du die ausgespielte INSEL und eine beliebige Handkarte offen auf dein Insel-Tableau. Dort verbleiben sie bis zum Spielende. Wenn du mindestens eine Karte auf der Hand hast, musst du eine Handkarte auf dein Insel- Tableau legen. Wenn du keine Karte auf der Hand hast, nachdem du die INSEL ausgespielt hast, legst du nur die INSEL auf das Tableau. Bei Spielende nimmst du alle Karten vom Insel-Tableau zu deinen Karten.", 
   "cost": "4", 
   "cardset": "Seaside", 
   "types": [
@@ -858,19 +858,19 @@
  {
   "potcost": 0, 
   "description": "+1 Aktion, +1 Geld, - Bei Beginn deines n\u00e4chsten Zuges: +1 Geld - Solange diese Karte im Spiel ist, bist du von Angriffen deiner Mitspieler nicht betroffen.", 
-  "extra": "", 
+  "extra": "Der LEUCHTTURM ist eine Dauerkarte. Solange der LEUCHTTURM offen vor dir liegt (im Spielbereich oder darüber), bist du grundsätzlich nicht betroffen, wenn Mitspieler Angriffskarten ausspielen (sogar wenn du das möchtest). Selber ausgespielte Angriffskarten werden vom LEUCHTTURM nicht abgewehrt. Auf Angriffe von Mitspielern darfst du weiterhin zusätzlich Reaktionskarten ausspielen. Lege den LEUCHTTURM in der Aufräumphase des nächsten Zuges ab.", 
   "cost": "2", 
   "cardset": "Seaside", 
   "types": [
    "Action", 
    "Duration"
   ], 
-  "name": "Leutturm"
+  "name": "Leuchtturm"
  }, 
  {
   "potcost": 0, 
   "description": "+1 Aktion, Sieh dir die obersten 3 Karten von deinem Nachziehstapel an. Entsorge eine davon. Lege eine davon ab. Lege eine davon verdeckt zur\u00fcck auf deinen Nachziehstapel.", 
-  "extra": "", 
+  "extra": "Sieh dir erst alle 3 Karten an, bevor du die Anweisungen ausführst. Solltest du weniger als 3 Karten im Nachziehstapel haben, auch nachdem du ggf. den Ablagestapel gemischt hast, führst du die Anweisungen der Reihenfolge nach aus. Anweisungen, für die es keine Karten mehr im Stapel gibt, entfallen.", 
   "cost": "3", 
   "cardset": "Seaside", 
   "types": [
@@ -881,7 +881,7 @@
  {
   "potcost": 0, 
   "description": "+ 2 Geld  -  Bei Beginn deines n\u00e4chsten Zuges:  + 2 Geld", 
-  "extra": "", 
+  "extra": "Das HANDELSSCHIFF ist eine Dauerkarte. Du erhältst für deine Kaufphase + 2 Coins.  Zu Beginn deines nächsten Zuges erhältst du + 2 Coins für die Kaufphase. Lege das HANDELS-  SCHIFF in der Aufräumphase dieses Zuges ab.", 
   "cost": "5", 
   "cardset": "Seaside", 
   "types": [
@@ -893,18 +893,19 @@
  {
   "potcost": 0, 
   "description": "+2 Aktionen. W\u00e4hle eins: Lege die oberste Karte von deinem Nachziehstapel verdeckt zur Seite auf dein Tableau Eingeborenendorf oder nimm alle Karten von deinem Tableau Eingeborenendorf auf die Hand. ", 
-  "extra": "", 
+  "extra": "Wenn du dein erstes EINGEBORENENDORF nimmst oder kaufst, erhältst du ein Eingeborenen-Tableau und legst es vor dir ab. Immer wenn du ein EINGEBORENENDORF ausspielst, wählst du genau eine der beiden Anweisungen und führst sie wenn möglich aus. Du darfst eine Anweisung auch wählen, wenn du sie nicht ausführen kannst. Karten, die du auf das Tableau legst, werden immer verdeckt abgelegt. Du darfst dir jederzeit die Karten auf deinem Tableau ansehen. Die ausgespielte Aktionskarte EINGEBORENENDORF legst du in der Aufräumphase ab. Alle Karten auf dem Tableau gehören auch zum Kartensatz eines Spielers. Alle Karten auf den Tableaus werden bei Spielende mit berücksichtigt.", 
   "cost": "2", 
   "cardset": "Seaside", 
   "types": [
    "Action"
   ], 
-  "name": "Eingeborenendorf"
+  "name": "
+  "
  }, 
  {
   "potcost": 0, 
   "description": "+ 2 Geld. Sieh dir die obersten 5 Karten von deinem Nachziehstapel an. Lege entweder alle diese Karten ab oder lege sie in beliebiger Reihenfolge verdeckt zur\u00fcck auf deinen Nachziehstapel.", 
-  "extra": "", 
+  "extra": "Schau dir die obersten 5 Karten deines Nachziehstapels an. Sind nicht genügend Karten im Stapel, mischst du deinen Ablagestapel und legst ihn verdeckt unter deinen Nachziehstapel. Sind es nun immer noch weniger als 5 Karten, schaust du dir alle an und legst sie dann entweder ab oder in einer beliebigen Reihenfolge zurück auf den Nachziehstapel.", 
   "cost": "4", 
   "cardset": "Seaside", 
   "types": [
@@ -915,7 +916,7 @@
  {
   "potcost": 0, 
   "description": "Ziehe in der folgenden Aufr\u00e4umphase nur 3 Karten nach. F\u00fchre danach sofort einen weiteren Zug aus. Du kannst auf diese Weise nur einen weiteren Zug ausf\u00fchren. ", 
-  "extra": "", 
+  "extra": "Der AUSSENPOSTEN ist eine Dauerkarte, die bis zum Ende des nächsten Zuges (Extrazug) im Spiel bleibt und erst in der Aufräumphase des nächsten Zuges  (Extrazug) abgelegt wird. Der AUSSENPOSTEN kommt erst in der Aufräumphase des  Zuges, in dem er ausgespielt wird, zum Einsatz. Du ziehst in diesem Fall nur 3 statt 5  Karten nach und führst den Extrazug sofort aus.  Wenn du den AUSSENPOSTEN zusammen mit weiteren Dauerkarten ausgespielt hast,  kommen die „Zu Beginn deines nächsten Zuges“-Anweisungen der Dauerkarten in deinem Extrazug zum Einsatz. Spielst du in deinem Extrazug einen weiteren AUSSENPOSTEN, erhältst du keinen weiteren Extrazug. Am Ende deines Extrazuges legst du den  AUSSENPOSTEN ab und ziehst 5 Karten nach.", 
   "cost": "5", 
   "cardset": "Seaside", 
   "types": [
@@ -926,8 +927,8 @@
  }, 
  {
   "potcost": 0, 
-  "description": "+1 Karte, +1 Aktion. Sieh dir die unterste Karte von deinem Nachziehstapel an. Du darfst diese Karte verdeckt auf deinen Nachziehstapel legen. ", 
-  "extra": "", 
+  "description": "+1 Karte, +1 Aktion. Sieh dir die unterste Karte von deinem Nachziehstapel an. Du darfst diese Karte verdeckt auf deinen Nachziehstapel legen.", 
+  "extra": "Zieh die unterste Karte des Nachziehstapels so hervor, dass du die benachbarte Karte nicht sehen kannst. Schaue sie dir an und lege sie dann verdeckt oben auf den Nachziehstapel oder zurück unter den Nachziehstapel.", 
   "cost": "2", 
   "cardset": "Seaside", 
   "types": [
@@ -938,7 +939,7 @@
  {
   "potcost": 0, 
   "description": "W\u00e4hle eins: Jeder Mitspieler muss die obersten beiden Karten von seinem Nachziehstapel aufdecken. Haben die Mitspieler eine oder mehrere Geldkarten aufgedeckt, muss jeder eine davon (nach deiner Wahl) entsorgen. Wenn auf diese Weise mindestens 1 Geldkarte entsorgt wird, erh\u00e4ltst du 1 Geldmarker auf dein Tableau Piratenschiff. Die \u00fcbrigen aufgedeckten Karten legen die Spieler bei sich ab. Oder: + 1 f\u00fcr jeden deiner Geldmarker auf deinem Tableau Piratenschiff. ", 
-  "extra": "", 
+  "extra": "Wenn du dein erstes PIRATENSCHIFF nimmst oder kaufst, erhältst du ein Piratenschiff-Tableau und legst es vor dir ab. Immer wenn du ein PIRATENSCHIFF ausspielst, wählst du eine der beiden Anweisungen: Entweder die erste Anweisung:Alle Mitspieler decken die beiden obersten Karten ihres Nachziehstapels auf. Dann entsorgen sie jeweils eine Geldkarte nach deiner Wahl. Hat ein Mitspieler keine Geldkarte aufgedeckt, entsorgt er keine Karte. Die restlichen aufgedeckten Karten werden abgelegt. Wird mindestens eine Karte entsorgt, erhältst du einen Geldmarker und legst ihn auf dein Tableau; oder die zweite Anweisung: Du erhältst pro Geldmarker auf deinem Piratenschiff-Tableau in der Kaufphase + 1 Coins. Nach der Nutzung in der Kaufphase verbleiben die Geldmarker auf dem Tableau und können beim erneuten Ausspielen eines PIRATENSCHIFFES wieder eingesetzt werden. Mitspieler können auf das Ausspielen eines PIRATENSCHIFFES mit Reaktionskarten reagieren, auch wenn du die zweite Anweisung wählst, die deine Mitspieler nicht direkt betrifft.", 
   "cost": "4", 
   "cardset": "Seaside", 
   "types": [
@@ -950,18 +951,18 @@
  {
   "potcost": 0, 
   "description": "+1 Kauf. Entsorge eine Karte aus deiner Hand. + X entsprechend den Kosten der entsorgten Karte.", 
-  "extra": "", 
+  "extra": "Du musst eine Karte entsorgen, sofern du eine auf der Hand hast. Entsprechend der Kosten der entsorgten Karte erhältst du für die Kaufphase + X Coins. Wenn du keine Karte entsorgen kannst, erhältst du kein zusätzliches Geld.", 
   "cost": "4", 
   "cardset": "Seaside", 
   "types": [
    "Action"
   ], 
-  "name": "M\u00fcllverwerter"
+  "name": "Müllverwerter"
  }, 
  {
   "potcost": 0, 
   "description": "Jeder Mitspieler muss die oberste Karte seines Nachziehstapels ablegen und sich dann einen Fluch nehmen, den er verdeckt auf seinen Nachziehstapel legt. ", 
-  "extra": "", 
+  "extra": "Sollte der Nachziehstapel eines Mitspielers leer sein, mischt er seinen Ablagestapel und legt die oberste Karte des neuen Nachziehstapels ab. Hat ein Spieler keine Karten mehr in seinem Nachziehstapel, kann er zwar keine Karte ablegen, nimmt sich aber  trotzdem eine Fluchkarte. Beginnend mit dem Mitspieler links von dem Spieler, der die  SEEHEXE ausgespielt hat, nimmt sich jeder Mitspieler einen FLUCH vom Vorrat. Sollten  nicht mehr genügend Fluchkarten für alle Spieler vorhanden sein, werden die restlichen  in o. g. Reihenfolge verteilt.", 
   "cost": "4", 
   "cardset": "Seaside", 
   "types": [
@@ -973,7 +974,7 @@
  {
   "potcost": 0, 
   "description": "Nimm dir eine Karte, die der Spieler rechts von dir in seinem letzten Zug genommen oder gekauft hat und die bis zu 6 kostet. ", 
-  "extra": "", 
+  "extra": "Hat der rechts von dir sitzende Mitspieler in seinem letzten Zug eine Karte mit Kosten von 6 Coins oder weniger genommen, gekauft oder auf andere Art erhalten, nimmst du dir eine gleiche Karte vom Vorrat. Hat der Spieler mehrere Karten genommen, darfst du wählen, welche du nimmst. Da der SCHMUGGLER keine Angriffskarte ist, dürfen keine Reaktionskarten ausgespielt werden.", 
   "cost": "3", 
   "cardset": "Seaside", 
   "types": [
@@ -984,7 +985,7 @@
  {
   "potcost": 0, 
   "description": "Lege deine \u00fcbrigen Handkarten ab. - Wenn du auf diese Weise mindestens eine Karte abgelegt hast: Bei Beginn deines n\u00e4chsten Zuges: +5 Karten, +1 Aktion, +1 Kauf", 
-  "extra": "", 
+  "extra": "Der TAKTIKER ist eine Dauerkarte. Sobald du diese Karte ausspielst, legst du  alle Handkarten ab. Nur wenn du auf diese Weise mindestens eine Handkarte abgelegt  hast, ziehst du zu Beginn deines nächsten Zuges 5 Karten. Außerdem erhältst du dann im  nächsten Zug eine zusätzliche Aktion und einen zusätzlichen Kauf.\nGrundsätzlich gilt: Nur wenn du mindestens eine Handkarte ablegen kannst,  erhältst du den Bonus im nächsten Zug. Wenn du den TAKTIKER auf einen THRONSAAL spielst, erhältst du den Bonus im  nächsten Zug nur einmal, da du beim zweiten Ausspielen des TAKTIKERS keine Handkarte mehr auf der Hand hast und damit die Bedingung nicht erfüllst.", 
   "cost": "5", 
   "cardset": "Seaside", 
   "types": [
@@ -996,7 +997,7 @@
  {
   "potcost": 0, 
   "description": "Entsorge diese und eine weitere Schatzkarte aus deiner Hand. Wenn du das machst: Nimm dir 4 Gold und lege diese verdeckt auf deinen Nachziehstapel. ", 
-  "extra": "", 
+  "extra": "Nur wenn du zusätzlich zu der ausgespielten SCHATZKARTE noch eine  weitere auf der Hand hast und beide entsorgst, erhältst du 4 Gold. Sollten weniger als  4 Gold im Vorrat sein, nimmst du dir soviele Goldkarten wie vorhanden sind. Lege alle  auf diese Weise erhaltenen Goldkarten verdeckt auf den Nachziehstapel. Solltest du nur  eine SCHATZKARTE auf der Hand haben und diese ausspielen, musst du diese Karte  entsorgen, erhältst aber nichts dafür.", 
   "cost": "4", 
   "cardset": "Seaside", 
   "types": [
@@ -1007,7 +1008,7 @@
  {
   "potcost": 0, 
   "description": "+1 Karte, +1 Aktion, +1 Geld. Wenn du in diesem Zug keine Punktekarte gekauft hast und diese Karte im Spiel ist, darfst du diese Karte verdeckt auf deinen Nachziehstapel legen, anstatt sie abzulegen. ", 
-  "extra": "", 
+  "extra": "Wenn du eine SCHATZKAMMER spielst und in diesem Zug keine  Punktekarte gekauft hast, darfst du die ausgespielte SCHATZKAMMER in der Aufräumphase zurück auf den Nachziehstapel legen.  Wenn du mehrere SCHATZKAMMERN ausgespielt hast, darfst du auch diese SCHATZKAMMERN auf den Nachziehstapel zurücklegen.  Wenn du eine Punktekarte auf andere Art nimmst bzw. erhältst (d. h. nicht kaufst), darfst  du SCHATZKAMMERN zurück auf den Nachziehstapel legen.  Wenn du deine ausgespielte SCHATZKAMMER gern zurücklegen möchtest, das aber in  der Aufräumphase vergisst und die Karte bereits auf den Ablagestapel gelegt hast, darfst  du dies nachträglich nicht rückgängig machen.", 
   "cost": "5", 
   "cardset": "Seaside", 
   "types": [
@@ -1018,7 +1019,7 @@
  {
   "potcost": 0, 
   "description": "+3 Karten, +1 Aktion. Lege 3 Karten aus deiner Hand ab. ", 
-  "extra": "", 
+  "extra": "Ziehe 3 Karten und spiele dann eine Aktionskarte. Danach legst du 3 Handkarten ab. Wenn du weniger als 3 Karten auf der Hand hast, legst du alle Handkarten ab.", 
   "cost": "3", 
   "cardset": "Seaside", 
   "types": [
@@ -1029,7 +1030,7 @@
  {
   "potcost": 0, 
   "description": "+2 Karten, +1 Kauf.  Bei Beginn deines n\u00e4chsten Zuges: +2 Karten, +1 Kauf. ", 
-  "extra": "", 
+  "extra": "Die WERFT ist eine Dauerkarte. Du musst sofort 2 Karten nachziehen und  darfst einen weiteren Kauf tätigen.  Zu Beginn deines nächsten Zuges (nicht vorher) musst du wieder 2 Karten ziehen und  darfst einen weiteren Kauf tätigen.", 
   "cost": "5", 
   "cardset": "Seaside", 
   "types": [
