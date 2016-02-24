@@ -2692,5 +2692,16 @@
    "Duration"
   ], 
   "name": "Champion"
- }
+ },
+ {
+"name":"Geschichtenerzähler",
+"cost": "5", 
+"description": "",
+"extra":"Du erhältst + 1 Aktion sowie + 1 Coins. Spiele bis zu 3 Geldkarten aus deiner Hand aus und zahle alle empty Coin, die du bisher in diesem Zug ausgespielt hast. Das beinhaltet alle Geldwerte von ausgespielten Geldkarten sowie alle, z. B. durch ausgespielte Aktionskarten, erhaltene zusätzliche Geldwerte (+ 1 Coins) inkl. dem + 1 Coins dieses GESCHICHTENERZÄHLERS. Du hast danach 0 Coins. Für jedes gezahlte 1 Coins erhältst du + 1 Karte. Trank-Kosten aus Die Alchemisten sind davon nicht betroffen.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+}
 ]
