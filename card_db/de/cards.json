@@ -2573,9 +2573,9 @@
   "name": "Kleinbauer"
  }, 
  {
-  "potcost": 0, 
+     "potcost": 0,
   "description": "+ 2 Geld, + 1 Geld pro anderer Angriffskarte, die du im Spiel hast. Jeder Mitspieler mit 4 oder mehr Handkarten legt eine Handkarte ab. Ist diese Karte im Spiel, darfst du sie gegen einen Fl\u00fcchtling eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.) ", 
-  "extra": "Einen SOLDATEN erh\u00e4ltst du nur, wenn du einen KLEINBAUERN eintauschst. Der SOLDAT ist ein Reisender, der im Spielverlauf in einen FL\u00dcCHTLING eingetauscht werden kann. Wenn du den SOLDATEN ausspielst, erh\u00e4ltst du + 2 sowie f\u00fcr jede andere Angriffskarte (au\u00dfer diesem SOLDATEN), die du zu diesem Zeitpunkt im Spiel hast, + 1 . Au\u00dferdem muss jeder Mitspieler, der 4 oder mehr Karten auf der Hand hat, +1 Karte ablegen. In der Aufr\u00e4umphase darfst du entscheiden, ob du den SOLDATEN ablegst oder zur\u00fcck auf den entsprechenden Stapel legst. Wenn du das tust, erh\u00e4ltst du einen FL\u00dcCHTLING und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt. ", 
+     "extra": "Einen SOLDATEN erh\u00e4ltst du nur, wenn du einen KLEINBAUERN eintauschst. Der SOLDAT ist ein Reisender, der im Spielverlauf in einen FL\u00dcCHTLING eingetauscht werden kann. Wenn du den SOLDATEN ausspielst, erh\u00e4ltst du + 2 sowie f\u00fcr jede andere Angriffskarte (au\u00dfer diesem SOLDATEN), die du zu diesem Zeitpunkt im Spiel hast, + 1 . Au\u00dferdem muss jeder Mitspieler, der 4 oder mehr Karten auf der Hand hat, +1 Karte ablegen. In der Aufr\u00e4umphase darfst du entscheiden, ob du den SOLDATEN ablegst oder zur\u00fcck auf den entsprechenden Stapel legst. Wenn du das tust, erh\u00e4ltst du einen FL\u00dcCHTLING und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt. ",
   "cost": "3*", 
   "cardset": "Abenteuer", 
   "types": [
@@ -2683,13 +2683,14 @@
   "name": "Champion"
  },
  {
-"name":"Geschichtenerzähler",
-"cost": "5", 
-"description": "",
-"extra":"Du erhältst + 1 Aktion sowie + 1 Coins. Spiele bis zu 3 Geldkarten aus deiner Hand aus und zahle alle empty Coin, die du bisher in diesem Zug ausgespielt hast. Das beinhaltet alle Geldwerte von ausgespielten Geldkarten sowie alle, z. B. durch ausgespielte Aktionskarten, erhaltene zusätzliche Geldwerte (+ 1 Coins) inkl. dem + 1 Coins dieses GESCHICHTENERZÄHLERS. Du hast danach 0 Coins. Für jedes gezahlte 1 Coins erhältst du + 1 Karte. Trank-Kosten aus Die Alchemisten sind davon nicht betroffen.",
-"cardset": "Abenteuer",
-"potcost": 0,
-"types": [
-"Action"
-}
+     "name":"Geschichtenerzähler",
+     "cost": "5", 
+     "description": "",
+     "extra":"Du erhältst + 1 Aktion sowie + 1 Coins. Spiele bis zu 3 Geldkarten aus deiner Hand aus und zahle alle empty Coin, die du bisher in diesem Zug ausgespielt hast. Das beinhaltet alle Geldwerte von ausgespielten Geldkarten sowie alle, z. B. durch ausgespielte Aktionskarten, erhaltene zusätzliche Geldwerte (+ 1 Coins) inkl. dem + 1 Coins dieses GESCHICHTENERZÄHLERS. Du hast danach 0 Coins. Für jedes gezahlte 1 Coins erhältst du + 1 Karte. Trank-Kosten aus Die Alchemisten sind davon nicht betroffen.",
+     "cardset": "Abenteuer",
+     "potcost": 0,
+     "types": [
+         "Action"
+     ]
+ }
 ]
