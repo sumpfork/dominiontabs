@@ -17,7 +17,7 @@ I believe I cannot distribute one font (Minion Pro) dominion\_tabs uses as they 
 Sadly, these fonts use features of the otf format that are not support by the reportlab package. Thus, they need to first be converted to ttf (TrueType) format. I used the open source package fontforge to do the conversion. Included as 'convert.ff' is a script for fontforge to do the conversion, on Mac OS X with fontforge installed through macports you can just run './convert.ff MinionPro-Regular.otf' and './convert.ff MinionPro-Bold.otf'. With other fontforge installations, you'll need to change the first line of convert.ff to point to your fontforge executable. I have not done this step under Windows - I imagine it may be possible with a cygwin install of fontforge or some such method.
 
 ## Install/Running
-Once the prerequisites exist, just run 'python dominiontabs.py <outfile>' to produce a pdf file of dominion tabs. You can use a '-h' flag to see various options, such as changing to vertical tabs.
+Once the prerequisites exist, just run 'python dominion_dividers.py <outfile>' to produce a pdf file of dominion tabs. You can use a '-h' flag to see various options, such as changing to vertical tabs.
 
 Feel free to comment on boardgamegeek at <http://boardgamegeek.com/filepage/59848/horizontal-double-sided-dominion-tabs-for-all-expa> or file issues on github (<https://github.com/sumpfork/dominiontabs/issues>).
 

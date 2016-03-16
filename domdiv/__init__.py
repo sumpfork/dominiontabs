@@ -124,6 +124,10 @@ def parse_opts(argstring):
                       help="use text/letters to represent a card's set instead of the set icon")
     parser.add_option("--no-page-footer", action="store_true", dest="no_page_footer",
                       help="don't print the set name at the bottom of the page.")
+    parser.add_option("--horizontal_gap", type=float, default=0.,
+                      help="horizontal gap between dividers in centimeters")
+    parser.add_option("--vertical_gap", type=float, default=0.,
+                      help="vertical gap between dividers in centimeters")
 
     options, args = parser.parse_args(argstring)
     if not options.cost:
@@ -361,8 +365,8 @@ def calculate_layout(options):
         else:
             labelWidth = options.tabwidth * cm
         labelHeight = .9 * cm
-        horizontalBorderSpace = 0 * cm
-        verticalBorderSpace = 0 * cm
+        horizontalBorderSpace = options.horizontal_gap * cm
+        verticalBorderSpace = options.vertical_gap * cm
 
     dividerHeight = dividerBaseHeight + labelHeight
 
@@ -405,10 +409,10 @@ def calculate_layout(options):
         # dynamically max margins
         add_opt(options, 'horizontalMargin',
                 (options.paperwidth -
-                 options.numDividersHorizontal * options.dividerWidthReserved) / 2)
+                 options.numDividersHorizontal * options.dividerWidthReserved + horizontalBorderSpace) / 2)
         add_opt(options, 'verticalMargin',
                 (options.paperheight -
-                 options.numDividersVertical * options.dividerHeightReserved) / 2)
+                 options.numDividersVertical * options.dividerHeightReserved + verticalBorderSpace) / 2)
     else:
         add_opt(options, 'horizontalMargin', minmarginwidth)
         add_opt(options, 'verticalMargin', minmarginheight)
