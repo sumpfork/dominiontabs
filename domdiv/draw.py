@@ -92,6 +92,9 @@ class DividerDrawer(object):
         replace = '<img src='"'%s/coin_small_question.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (
             path, fontsize * 1.2)
         text = re.sub('\?\s(c|C)oin(s)?', replace, text)
+        replace = '<img src='"'%s/coin_small_empty.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (
+            path, fontsize * 1.2)
+        text = re.sub('empty\s(c|C)oin(s)?', replace, text)
         replace = '<img src='"'%s/victory_emblem.png'"' width=%d height='"'120%%'"' valign='"'middle'"'/>' % (
             path, fontsize * 1.5)
         text = re.sub('\<VP\>', replace, text)
