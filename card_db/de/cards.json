@@ -2563,7 +2563,7 @@
  {
   "potcost": 0, 
   "description": "+ 1 Kauf, +1 Geld.     Ist diese Karte im Spiel, darfst du sie gegen einen Soldaten eintauschen anstatt sie abzulegen. ", 
-  "extra": "Der KLEINBAUER ist eine K\u00f6nigreichkarte und kann wie jede andere K\u00f6nigreichkarte gekauft oder genommen werden. Der KLEINBAUER ist  au\u00dferdem ein Reisender, der im Spielverlauf in einen SOLDATEN eingetauscht werden kann. Wenn du den KLEINBAUERN ausspielst, erh\u00e4ltst du + 1 Kauf sowie + 1 Geld. In der Aufr\u00e4umphase darfst du entscheiden, ob du den KLEINBAUERN ablegst oder zur\u00fcck auf den Vorratsstapel legst. Wenn du das tust, erh\u00e4ltst du einen SOLDATEN und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt. ", 
+  "extra": "Der KLEINBAUER ist eine Königreichkarte und kann wie jede andere Königreichkarte gekauft oder genommen werden. Der KLEINBAUER ist außerdem ein Reisender, der im Spielverlauf in einen SOLDATEN eingetauscht werden kann. Wenn du den KLEINBAUERN ausspielst, erhältst du + 1 Kauf sowie + 1 Coins. In der Aufräumphase darfst du entscheiden, ob du den KLEINBAUERN ablegst oder zurück auf den Vorratsstapel legst. Wenn du das tust, erhältst du einen SOLDATEN und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
   "cost": "2", 
   "cardset": "Abenteuer", 
   "types": [
@@ -2575,7 +2575,7 @@
  {
      "potcost": 0,
   "description": "+ 2 Geld, + 1 Geld pro anderer Angriffskarte, die du im Spiel hast. Jeder Mitspieler mit 4 oder mehr Handkarten legt eine Handkarte ab. Ist diese Karte im Spiel, darfst du sie gegen einen Fl\u00fcchtling eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.) ", 
-     "extra": "Einen SOLDATEN erh\u00e4ltst du nur, wenn du einen KLEINBAUERN eintauschst. Der SOLDAT ist ein Reisender, der im Spielverlauf in einen FL\u00dcCHTLING eingetauscht werden kann. Wenn du den SOLDATEN ausspielst, erh\u00e4ltst du + 2 sowie f\u00fcr jede andere Angriffskarte (au\u00dfer diesem SOLDATEN), die du zu diesem Zeitpunkt im Spiel hast, + 1 . Au\u00dferdem muss jeder Mitspieler, der 4 oder mehr Karten auf der Hand hat, +1 Karte ablegen. In der Aufr\u00e4umphase darfst du entscheiden, ob du den SOLDATEN ablegst oder zur\u00fcck auf den entsprechenden Stapel legst. Wenn du das tust, erh\u00e4ltst du einen FL\u00dcCHTLING und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt. ",
+  "extra": "Einen SOLDATEN erhältst du nur, wenn du einen KLEINBAUERN eintauschst. Der SOLDAT ist ein Reisender, der im Spielverlauf in einen FLÜCHTLING eingetauscht werden kann. Wenn du den SOLDATEN ausspielst, erhältst du + 2 Coins sowie für jede andere Angriffskarte (außer diesem SOLDATEN), die du zu diesem Zeitpunkt im Spiel hast, + 1 Coins. Außerdem muss jeder Mitspieler, der 4 oder mehr Karten auf der Hand hat, 1 Karte ablegen. In der Aufräumphase darfst du entscheiden, ob du den SOLDATEN ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen FLÜCHTLING und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
   "cost": "3*", 
   "cardset": "Abenteuer", 
   "types": [
@@ -2588,31 +2588,31 @@
  {
   "potcost": 0, 
   "description": "2 Karten, + 1 Aktion. Lege eine Handkarte ab.   Ist diese Karte im Spiel, darfst du sie gegen einen Sch\u00fcler eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.)", 
-  "extra": "Einen FL\u00dcCHTLING erh\u00e4ltst du nur, wenn du einen SOLDATEN eintauschst. Der FL\u00dcCHTLING ist ein Reisender, der im Spielverlauf in einen SCH\u00dcLER eingetauscht werden kann. Wenn du den FL\u00dcCHTLING ausspielst, erh\u00e4ltst du + 2 Karten sowie + 1 Aktion und du musst eine  Handkarte ablegen. In der Aufr\u00e4umphase darfst du entscheiden, ob du den SOLDATEN ablegst oder zur\u00fcck auf den entsprechenden Stapel legst. Wenn du das tust, erh\u00e4ltst du einen SCH\u00dcLER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt. ", 
+  "extra": "Einen FLÜCHTLING erhältst du nur, wenn du einen SOLDATEN eintauschst. Der FLÜCHTLING ist ein Reisender, der im Spielverlauf in einen SCHÜLER eingetauscht werden kann. Wenn du den FLÜCHTLING ausspielst, erhältst du + 2 Karten sowie + 1 Aktion und du musst eine Handkarte ablegen. In der Aufräumphase darfst du entscheiden, ob du den SOLDATEN ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen SCHÜLER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
   "cost": "4*", 
   "cardset": "Abenteuer", 
   "types": [
    "Action", 
    "Traveller"
   ], 
-  "name": "Fl\u00fcchtling"
+  "name": "Flüchtling"
  }, 
  {
   "potcost": 0, 
   "description": "Du darfst eine Aktionskarte zweimal ausspielen. Nimm dir eine Karte mit gleichem Namen. Ist diese Karte im Spiel, darfst du sie gegen einen Lehrer eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.)", 
-  "extra": "Einen SCH\u00dcLER erh\u00e4ltst du nur, wenn du einen FL\u00dcCHTLING eintauschst. Der SCH\u00dcLER ist ein Reisender, der im Spielverlauf in einen LEHRER\neingetauscht werden kann. Wenn du den SCH\u00dcLER ausspielst, darfst du eine beliebige Aktionskarte aus deiner Hand zweimal direkt hintereinander ausspielen. Ist die ausgespielte Aktionskarte eine Karte vom Vorrat, nimm dir eine Karte mit gleichem Namen vom Vorrat und lege sie ab. Geh\u00f6rt der Stapel der ausgespielten Karte nicht zum Vorrat (z. B. Eintausch-Karten oder Preiskarten aus Reiche Ernte), darfst du dir keine weitere Karte nehmen. In der Aufr\u00e4umphase darfst du entscheiden, ob du den SCH\u00dcLER ablegst oder zur\u00fcck auf den entsprechenden Stapel legst. Wenn du das tust, erh\u00e4ltst du einen LEHRER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt. ", 
+  "extra": "Einen SCHÜLER erhältst du nur, wenn du einen FLÜCHTLING eintauschst. Der SCHÜLER ist ein Reisender, der im Spielverlauf in einen LEHRER eingetauscht werden kann. Wenn du den SCHÜLER ausspielst, darfst du eine beliebige Aktionskarte aus deiner Hand zweimal direkt hintereinander ausspielen. Ist die ausgespielte Aktionskarte eine Karte vom Vorrat, nimm dir eine Karte mit gleichem Namen vom Vorrat und lege sie ab. Gehört der Stapel der ausgespielten Karte nicht zum Vorrat (z. B. Eintausch-Karten oder Preiskarten aus Reiche Ernte), darfst du dir keine weitere Karte nehmen. In der Aufräumphase darfst du entscheiden, ob du den SCHÜLER ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen LEHRER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
   "cost": "5*", 
   "cardset": "Abenteuer", 
   "types": [
    "Action", 
    "Traveller"
   ], 
-  "name": "Sch\u00fcler"
+  "name": "Schüler"
  }, 
  {
   "potcost": 0, 
   "description": "Lege diese Karte auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust, darfst du deinen + 1 Karte-, + 1 Aktion-, + 1 Kauf oder + 1 -Marker auf einen Aktions-Vorratsstapel legen, auf dem keiner deiner Marker liegt. (Wenn du eine Karte von diesem Stapel ausspielst, erh\u00e4ltst du zuerst den Bonus des Markers.)   (Diese Karte geh\u00f6rt nicht zum Vorrat.)", 
-  "extra": "Einen LEHRER erh\u00e4ltst du nur, wenn du einen SCH\u00dcLER eintauschst. Er kann in keine andere Karte eingetauscht werden. Wenn du den LEHRER ausspielst, lege ihn auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du den LEHRER von deinem Tableau aufrufen und in den Spielbereich legen. Wenn du das tust, legst du entweder den +1 Karte-, +1 Aktion-, +1 Kauf- oder + 1 -Marker auf einen beliebigen Aktions-Vorratsstapel, auf dem du zu diesem Zeitpunkt keine weiteren eigenen Marker liegen hast. Immer wenn du eine Karte, die von diesem Stapel stammt, spielst, erh\u00e4ltst du zuerst (bevor die Anweisungen der Karte ausgef\u00fchrt werden) den entsprechenden Bonus des Markers. Lege den LEHRER in der Aufr\u00e4umphase ab.", 
+  "extra": "Einen LEHRER erhältst du nur, wenn du einen SCHÜLER eintauschst. Er kann in keine andere Karte eingetauscht werden. Wenn du den LEHRER ausspielst, lege ihn auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du den LEHRER von deinem Tableau aufrufen und in den Spielbereich legen. Wenn du das tust, legst du entweder den +1 Karte-, +1 Aktion-, +1 Kauf- oder + 1 Coins -Marker auf einen beliebigen Aktions-Vorratsstapel, auf dem du zu diesem Zeitpunkt keine weiteren eigenen Marker liegen hast. Immer wenn du eine Karte, die von diesem Stapel stammt, spielst, erhältst du zuerst (bevor die Anweisungen der Karte ausgeführt werden) den entsprechenden Bonus des Markers. Lege den LEHRER in der Aufräumphase ab.", 
   "cost": "6*", 
   "cardset": "Abenteuer", 
   "types": [
@@ -2624,7 +2624,7 @@
  {
   "potcost": 0, 
   "description": "+ 1 Karte, +1 Aktion. Ist diese Karte im Spiel, darfst du sie gegen einen Schatzsucher eintauschen anstatt sie abzulegen. ", 
-  "extra": "Der PAGE ist eine K\u00f6nigreichkarte und kann wie jede andere K\u00f6nigreichkarte gekauft oder genommen werden. Der PAGE ist au\u00dferdem ein Reisender, der im Spielverlauf in einen SCHATZSUCHER eingetauscht werden kann. Wenn du den PAGEN ausspielst, erh\u00e4ltst du + 1 Karte sowie + 1 Aktion. In der Aufr\u00e4umphase darfst du entscheiden, ob du den PAGEN ablegst oder zur\u00fcck auf den Vorratsstapel legst. Wenn du das tust, erh\u00e4ltst du einen SCHATZSUCHER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt. ", 
+  "extra": "Der PAGE ist eine Königreichkarte und kann wie jede andere Königreichkarte gekauft oder genommen werden. Der PAGE ist außerdem ein Reisender, der im Spielverlauf in einen SCHATZSUCHER eingetauscht werden kann. Wenn du den PAGEN ausspielst, erhältst du + 1 Karte sowie + 1 Aktion. In der Aufräumphase darfst du entscheiden, ob du den PAGEN ablegst oder zurück auf den Vorratsstapel legst. Wenn du das tust, erhältst du einen SCHATZSUCHER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
   "cost": "2", 
   "cardset": "Abenteuer", 
   "types": [
@@ -2636,7 +2636,7 @@
  {
   "potcost": 0, 
   "description": "+ 1 Aktion, + 1 Geld. Nimm dir pro Karte, die dein rechter Mitspieler in seinem letzten Zug genommen hat, ein Silber. Ist diese Karte im Spiel, darfst du sie gegen einen Krieger eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.) ", 
-  "extra": "Einen SCHATZSUCHER erh\u00e4ltst du nur, wenn du einen PAGEN eintauschst. Der SCHATZSUCHER ist ein Reisender, der im Spielverlauf in einen KRIEGER eingetauscht werden kann. Wenn du den SCHATZSUCHER ausspielst, erh\u00e4ltst du + 1 Aktion sowie + 1 Geld. F\u00fcr jede Karte, die dein rechter Mitspieler in seinem letzten Zug gekauft oder genommen hat, nimmst du ein SILBER vom Vorrat und legst es ab. In der Aufr\u00e4umphase darfst du entscheiden, ob du den SCHATZSUCHER ablegst oder zur\u00fcck auf den entsprechenden Stapel legst. Wenn du das tust, erh\u00e4ltst du einen KRIEGER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
+  "extra": "Einen SCHATZSUCHER erhältst du nur, wenn du einen PAGEN eintauschst. Der SCHATZSUCHER ist ein Reisender, der im Spielverlauf in einen KRIEGER eingetauscht werden kann. Wenn du den SCHATZSUCHER ausspielst, erhältst du + 1 Aktion sowie + 1 Coins. Für jede Karte, die dein rechter Mitspieler in seinem letzten Zug gekauft oder genommen hat, nimmst du ein SILBER vom Vorrat und legst es ab. In der Aufräumphase darfst du entscheiden, ob du den SCHATZSUCHER ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen KRIEGER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
   "cost": "3*", 
   "cardset": "Abenteuer", 
   "types": [
@@ -2648,7 +2648,7 @@
  {
   "potcost": 0, 
   "description": "+ 2 Karten. F\u00fcr jeden Reisenden (inkl. diesem), den du im Spiel hast, m\u00fcssen alle Mitspieler die oberste Karte ihres Nachziehstapels ablegen und sie entsorgen, wenn sie 3 oder 4 kostet. Ist diese Karte im Spiel, darfst du sie gegen einen Helden eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.)", 
-  "extra": "Einen KRIEGER erh\u00e4ltst du nur, wenn du einen SCHATZSUCHER eintauschst. Der KRIEGER ist ein Reisender, der im Spielverlauf in einen HELDEN eingetauscht werden kann. Wenn du den KRIEGER ausspielst, erh\u00e4ltst du + 2 Karten. F\u00fcr jeden Reisenden, den du (inkl. dieses KRIEGERS) zu diesem Zeitpunkt im Spiel hast, m\u00fcssen alle Mitspieler \u2013 beginnend bei deinem linken Nachbarn \u2013 die oberste Karte ihres Nachziehstapels aufdecken und ablegen. Abgelegte Karten, die genau 3 oder 4 kosten, m\u00fcssen entsorgt werden. Karten mit -Kosten m\u00fcssen nicht entsorgt werden. Karten mit * oder + m\u00fcssen entsorgt werden, wenn sie 3 oder 4 kosten. Alle aufgedeckten Karten, die nicht genau 3 oder 4 kosten, m\u00fcssen abgelegt werden. In der Aufr\u00e4umphase darfst du entscheiden, ob du den KRIEGER ablegst oder zur\u00fcck auf den entsprechenden Stapel legst. Wenn du das tust, erh\u00e4ltst du einen HELDEN und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt. ", 
+  "extra": "Einen KRIEGER erhältst du nur, wenn du einen SCHATZSUCHER eintauschst. Der KRIEGER ist ein Reisender, der im Spielverlauf in einen HELDEN eingetauscht werden kann. Wenn du den KRIEGER ausspielst, erhältst du + 2 Karten. Für jeden Reisenden, den du (inkl. dieses KRIEGERS) zu diesem Zeitpunkt im Spiel hast, müssen alle Mitspieler – beginnend bei deinem linken Nachbarn – die oberste Karte ihres Nachziehstapels aufdecken und ablegen. Abgelegte Karten, die genau 3 Coins oder 4 Coins kosten, müssen entsorgt werden. Karten mit Trank-Kosten müssen nicht entsorgt werden. Karten mit * Coins oder + Coins müssen entsorgt werden, wenn sie 3 Coins oder 4 Coins kosten. Alle aufgedeckten Karten, die nicht genau 3 Coins oder 4 Coins kosten, müssen abgelegt werden. In der Aufräumphase darfst du entscheiden, ob du den KRIEGER ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen HELDEN und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
   "cost": "4*", 
   "cardset": "Abenteuer", 
   "types": [
@@ -2661,7 +2661,7 @@
  {
   "potcost": 0, 
   "description": "+ 2 Geld. Nimm dir eine Geldkarte.   Ist diese Karte im Spiel, darfst du sie gegen einen Champion eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.)", 
-  "extra": "Einen HELDEN erh\u00e4ltst du nur, wenn du einen KRIEGER eintauschst. Der HELD ist ein Reisender, der im Spielverlauf in einen CHAMPION eingetauscht werden kann. Wenn du den HELDEN ausspielst, erh\u00e4ltst du + 2 und darfst dir eine beliebige Geldkarte nehmen, die in diesem Spiel verwendet wird. Dazu geh\u00f6ren auch Geldkarten, die zu den K\u00f6nigreichkarten geh\u00f6ren. Lege die Geldkarte ab. In der Aufr\u00e4umphase darfst du entscheiden, ob du den HELDEN ablegst oder zur\u00fcck auf den entsprechenden Stapel legst. Wenn du das tust, erh\u00e4ltst du einen CHAMPION und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
+  "extra": "Einen HELDEN erhältst du nur, wenn du einen KRIEGER eintauschst. Der HELD ist ein Reisender, der im Spielverlauf in einen CHAMPION eingetauscht werden kann. Wenn du den HELDEN ausspielst, erhältst du + 2 Coins und darfst dir eine beliebige Geldkarte nehmen, die in diesem Spiel verwendet wird. Dazu gehören auch Geldkarten, die zu den Königreichkarten gehören. Lege die Geldkarte ab. In der Aufräumphase darfst du entscheiden, ob du den HELDEN ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen CHAMPION und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
   "cost": "5*", 
   "cardset": "Abenteuer", 
   "types": [
@@ -2673,7 +2673,7 @@
  {
   "potcost": 0, 
   "description": "+1 Aktion.  Immer wenn ein Mitspieler eine Angriffskarte spielt, bist du davon nicht betroffen. Immer wenn du eine Aktionskarte spielst: + 1 Aktion (Diese Karte bleibt bis zum Spielende im Spiel und geh\u00f6rt nicht zum Vorrat.) ", 
-  "extra": "Einen CHAMPION erh\u00e4ltst du nur, wenn du einen HELDEN eintauschst. Er kann in keine andere Karte eingetauscht werden. Wenn du den CHAMPION ausspielst, erh\u00e4ltst du + 1 Aktion. Der CHAMPION ist eine Dauerkarte. Er bleibt bis zum Spielende im Spiel. Immer wenn ein Mitspieler ab jetzt eine Angriffskarte ausspielt, bist du davon nicht betroffen (auch wenn du das m\u00f6chtest). F\u00fcr den Rest des Spiels erh\u00e4ltst du jedes Mal, wenn du eine Aktionskarte ausspielst, + 1 Aktion. Die Anweisung \u00fcber der Trennlinie wird nur beim Ausspielen des CHAMPION ausgef\u00fchrt.", 
+  "extra": "Einen CHAMPION erhältst du nur, wenn du einen HELDEN eintauschst. Er kann in keine andere Karte eingetauscht werden. Wenn du den CHAMPION ausspielst, erhältst du + 1 Aktion. Der CHAMPION ist eine Dauerkarte. Er bleibt bis zum Spielende im Spiel. Immer wenn ein Mitspieler ab jetzt eine Angriffskarte ausspielt, bist du davon nicht betroffen (auch wenn du das möchtest). Für den Rest des Spiels erhältst du jedes Mal, wenn du eine Aktionskarte ausspielst, + 1 Aktion. Die Anweisung über der Trennlinie wird nur beim Ausspielen des CHAMPION ausgeführt.", 
   "cost": "6*", 
   "cardset": "Abenteuer", 
   "types": [
@@ -2692,5 +2692,326 @@
      "types": [
          "Action"
      ]
- }
+},
+{
+"name":"Amulett",
+"cost": "3", 
+"description": "Jetzt und zu Beginn deines nächsten Zuges, wähle jeweils eins: + 1 Geld oder entsorge 1 Handkarte oder nimm dir 1 Silber.",
+"extra":"Diese Karte ist eine Dauerkarte. Wähle sowohl in diesem als auch zu Beginn deines nächsten Zuges jeweils eine der folgenden Optionen: + 1 Coins oder entsorge eine Handkarte oder nimm ein SILBER vom Vorrat. Du darfst beim 2. Mal etwas anderes wählen. Lege die Karte in der Aufräumphase des nächsten Zuges ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Duration"
 ]
+},
+{
+"name":"Königliche Münzen",
+"cost": "2", 
+"description": "",
+"extra":"Diese Karte ist eine kombinierte Geld- und Reservekarte. Sie hat den Wert 1 Coins. Spiele sie in der Kaufphase aus und lege sie anschließend auf das Wirtshaustableau. Sobald du eine Aktionskarte ausspielst und die Anweisungen darauf ausgeführt hast, darfst du die KÖNIGLICHEN MÜNZEN von deinem Wirtshaustableau aufrufen. Lege die Karte in deinen Spielbereich und du erhältst + 2 Aktionen, nicht aber + 1 Coins, da diese Anweisung nur beim Ausspielen der Karte ausgeführt wird. Bis zum Ende der Aufräumphase befinden sich die KÖNIGLICHEN MÜNZEN im Spiel und werden dann abgelegt.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Treasure",
+"Reserve"
+]
+},
+{
+"name":"Rattenfänger",
+"cost": "2", 
+"description": "",
+"extra":"Du erhältst + 1 Karte und + 1 Aktion. Lege diese Karte auf dein Wirtshaustableau. Du darfst diese Karte zu Beginn deines Zuges vom Tableau aufrufen. Wenn du das tust, lege die Karte in deinen Spielbereich. Dann musst du eine beliebige Karte aus deiner Hand entsorgen. Lege den RATTENFÄNGER in der Aufräumphase ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Zerstörung",
+"cost": "2", 
+"description": "",
+"extra":"Du erhältst + 1 Aktion. Dann musst du entweder diese ZERSTÖRUNG oder eine Handkarte entsorgen. Je nach Höhe der Kosten der entsorgten Karte siehst du dir die entsprechende Anzahl Karten oben von deinem Nachziehstapel an. Nimm eine davon auf die Hand und lege den Rest ab. Liegt der -Karte-Marker auf dem Nachziehstapel, wird dieser kurz zur Seite gelegt und nach dem Ziehen der Karten wieder oben auf den Stapel zurückgelegt.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Ausrüstung",
+"cost": "3", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Du erhältst + 2 Karten und legst dann bis zu 2 Karten (inkl. eventuell gerade gezogener Karten) verdeckt zur Seite. Entscheidest du dich dafür, keine Karten zur Seite zu legen, legst du die AUSRÜSTUNG am Ende des Zuges ab. Legst du 1 oder 2 Karten zur Seite, nimmst du zu Beginn deines nächsten Zuges die zur Seite gelegten Karten auf die Hand. Lege die AUSRÜSTUNG am Ende dieses Zuges ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Duration"
+]
+},
+{
+"name":"Karawanenwächter",
+"cost": "3", 
+"description": "",
+"extra":"Diese Karte ist eine kombinierte Dauer- und Reaktionskarte. Wenn du sie ausspielst, erhältst du + 1 Karte und + 1 Aktion. Zu Beginn deines nächsten Zuges erhältst du + 1 Coins. Lege die Karte am Ende dieses Zuges ab. Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du diese Karte aus deiner Hand ausspielen. Du erhältst + 1 Karte und + 1 Aktion. Die Anweisung + 1 Aktion kann in diesem Fall – da gerade ein anderer Spieler am Zug ist – nicht ausgeführt werden. Zu Beginn deines nächsten Zuges erhältst du + 1 Coins. Die Karte wird erst in der Aufräumphase deines nächsten Zuges abgelegt.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Duration",
+"Reaction"
+]
+},
+{
+"name":"Kundschafter",
+"cost": "3", 
+"description": "",
+"extra":"Diese Karte ist eine Reservekarte. Wenn du sie ausspielst erhältst du + 1 Karte und + 1 Aktion. Dann legst du die Karte auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte aufrufen. Wenn du das tust, legst du alle Karten, die du auf der Hand hast, ab und ziehst 5 Karten nach. Lege die Karte am Ende der Aufräumphase ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Verlies",
+"cost": "3", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Du erhältst + 2 Karten, + 1 Aktion und legst 2 Karten ab. Zu Beginn deines nächsten Zuges erhältst du + 2 Karten und legst 2 Karten ab. Lege das VERLIES am Ende dieses Zuges ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Duration"
+]
+},
+{
+"name":"Duplikat",
+"cost": "4", 
+"description": "",
+"extra":"Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, legst du sie auf dein Wirtshaustableau. Sobald du (auch außerhalb deines eigenen Zuges) eine Karte nimmst, die bis zu 6 Coins kostet, darfst du diese Karte aufrufen. Wenn du das tust, nimmst du dir eine Karte mit gleichem Namen vom Vorrat. Lege diese Karte ab. Wenn keine solche Karte mehr im Vorrat ist, erhältst du nichts. Wenn du eine Karte von einem Stapel nimmst, der nicht zum Vorrat gehört, darfst du dir keine weitere Karte mit gleichem Namen nehmen. Das DUPLIKAT wird in der Aufräumphase des Zuges, in dem es aufgerufen wird (auch außerhalb deines Zuges) abgelegt.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Elster",
+"cost": "4", 
+"description": "",
+"extra":"Du erhältst + 1 Karte und + 1 Aktion. Decke die oberste Karte deines Nachziehstapels auf. Ist dies ein Geldkarte (auch eine kombinierte oder Königreichkarte), nimm sie auf die Hand. Ist es eine Aktions- oder Punktekarte, nimmst du eine ELSTER vom Vorrat. Wenn keine ELSTER mehr im Vorrat ist, erhältst du nichts. Lege die aufgedeckte Karte zurück auf den Nachziehstapel. Ist es eine kombinierte Punkte- und Geldkarte, nimmst du die Karte auf die Hand und nimmst eine ELSTER vom Vorrat.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Geizhals",
+"cost": "4", 
+"description": "",
+"extra":"Du darfst entweder ein KUPFER aus deiner Hand auf dein Wirtshaustableau legen oder du erhältst pro KUPFER auf deinem Tableau + 1 Coins. KUPFER auf deinem Wirtshaustableau befinden sich nicht im Spiel, zählen aber bei Spielende zu deinen Karten.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Hafenstadt",
+"cost": "4", 
+"description": "",
+"extra":"Wenn du diese Karte ausspielst, erhältst du + 1 Karte und + 2 Aktionen. Wenn du diese Karte kaufst (nicht wenn du sie auf andere Art und Weise erhältst), nimm dir eine HAFENSTADT vom Vorrat.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Kurier",
+"cost": "4", 
+"description": "",
+"extra":"Wenn du diese Karte ausspielst, erhältst du + 1 Kauf sowie + 2 Coins. Außerdem darfst du deinen Nachziehstapel sofort komplett auf deinen Ablagestapel legen. Karten, die auf diese Weise abgelegt werden, gelten nicht als „abgelegt“. Wenn du diese Karte kaufst und dies der erste Kauf (inklusive eventuell erworbener Ereignisse) in deinem Zug ist, nimmst du eine Karte vom Vorrat, die bis zu 4 Coins kostet. Jeder Mitspieler nimmt sich – beginnend bei deinem linken Mitspieler – eine Karte mit gleichem Namen vom Vorrat. Karten, die nicht zum Vorrat gehören, dürfen nicht genommen werden.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Transformation",
+"cost": "4", 
+"description": "",
+"extra":"Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du + 1 Aktion. Lege sie dann auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte aufrufen. Wenn du das tust, entsorgst du eine Handkarte und nimmst eine Karte vom Vorrat, die bis zu 1 Coins mehr kostet als die entsorgte Karte. Nimm die Karte auf die Hand. Du darfst nur Karten aus dem Vorrat nehmen. Lege die TRANSFORMATION in der Aufräumphase ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Wildhüter",
+"cost": "4", 
+"description": "",
+"extra":"Du erhältst + 1 Kauf. Drehe deinen Reise-Marker um (zu Beginn des Spiels liegt der Marker mit der Vorderseite nach oben). Liegt jetzt die Vorderseite oben, ziehst du 5 Karten nach. Liegt die Rückseite oben, passiert nichts. Du darfst in einem Zug mehrere WILDHÜTER ausspielen und drehst bei jedem WILDHÜTER den Marker um.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Brückentroll",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Alle Mitspieler müssen ihren -Coins-Marker vor sich ablegen. Sie erhalten beim nächsten Mal, wenn sie in irgendeiner Art und Weise mindestens 1 Coins erhalten würden, 1 Coins weniger. Danach wird der Marker wieder neben den Vorrat gelegt. Du erhältst jetzt und zu Beginn deines nächsten Zuges + 1 Kauf. So lange diese Karte im Spiel ist, kosten alle Karten in deinem Zug 1 Coins weniger, allerdings nie weniger als 0 Coins. Dies betrifft nicht nur den Kauf, sondern alle Aktionen, bei denen die Kosten einer Karte eine Rolle spielen. Der BRÜCKENTROLL beeinflusst nicht die Kosten von Ereignissen. Die Wirkung des BRÜCKENTROLLS ist kumulativ, d. h. wenn du zwei oder mehr BRÜCKENTROLLE gleichzeitig im Spiel hast, kannst du die Kosten um 2 Coins oder mehr verringern.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Attack",
+"Duration"
+]
+},
+{
+"name":"Ferne Lande",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine kombinierte Aktions-, Reserve- und Punktekarte. Wenn du sie ausspielst, lege sie auf dein Wirtshaustableau. Dort bleibt sie bis zum Spielende. Pro FERNE LANDE, die du bei Spielende auf deinem Tableau liegen hast, erhältst du 4 <VP>. Alle anderen FERNE LANDE zählen 0 <VP>.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve",
+"Victory"
+]
+},
+{
+"name":"Geisterwald",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Bis zu Beginn deines nächsten Zuges muss jeder Mitspieler, der eine Karte kauft, sofort alle restlichen Handkarten in beliebiger Reihenfolge auf den Nachziehstapel legen. Das Erwerben eines Ereignisses ist nicht mit dem Kauf einer Karte gleichzusetzen. Spieler, die mit einer Reaktionskarte reagieren wollen, müssen dies sofort beim Ausspielen des GEISTERWALDS tun. Ziehe zu Beginn deines nächsten Zuges 3 Karten nach. Lege die Karte in der Aufräumphase des nächsten Zuges ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Attack",
+"Duration"
+]
+},
+
+{
+"name":"Kunsthandwerker",
+"cost": "5", 
+"description": "",
+"extra":"Du erhältst + 1 Karte, + 1 Aktion und + 1 Coins. Lege beliebig viele Handkarten ab. Du darfst eine Karte vom Vorrat nehmen, die genau so viel kostet, wie du Karten abgelegt hast. Du kannst dich auch entscheiden, keine Karte abzulegen. Dann darfst du eine Karte nehmen, die genau 0 Coins kostet. Lege die genommene Karte verdeckt auf deinen Nachziehstapel.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Königliche Kutsche",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du + 1 Aktion und legst sie dann auf dein Wirtshaustableau. Sobald du eine Aktionskarte ausspielst und die Anweisungen darauf ausgeführt hast, darfst du die KÖNIGLICHE KUTSCHE sofort danach aufrufen, falls die Aktionskarte noch im Spiel ist. Wenn du das tust, führst du die Aktion sofort noch einmal aus. Du kannst die KÖNIGLICHE KUTSCHE nicht aufrufen, wenn die Aktion bereits entsorgt wurde oder auf Reservekarten, die bereits auf das Tableau gelegt wurden. Lege die KÖNIGLICHE KUTSCHE in der Aufräumphase ab. Wird die KÖNIGLICHE KUTSCHE auf eine Dauerkarte gespielt, bleibt sie solange im Spiel, bis die Dauerkarte abgelegt wird.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Relikt",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Jeder Mitspieler muss seinen -Karte-Marker auf seinen Nachziehstapel legen. Sobald ein Mitspieler Karten nachziehen muss, zieht er 1 Karte weniger. Dann legt er den Marker neben den Vorrat zurück. Bei Anweisungen, durch die man seine Kartenhand auf X Karten auffüllen darf, wird zunächst der Marker zurückgelegt und dann die Kartenhand auf X Karten aufgefüllt. Das RELIKT ist eine Angriffskarte. Entsprechend kann darauf mit Reaktionskarten reagiert werden. Reagiert ein Spieler mit dem KARAWANENWÄCHTER, führt er zunächst die Anweisungen aus (inkl. + 1 Karte) und legt dann den Marker auf seinen Nachziehstapel.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Treasure",
+"Attack"
+]
+},
+{
+"name":"Riese",
+"cost": "5", 
+"description": "",
+"extra":"Drehe deinen Reise-Marker um (zu Beginn des Spiels liegt der Marker mit der Vorderseite nach oben). Liegt jetzt die Rückseite oben, erhältst du + 1 Coins. Liegt die Vorderseite oben, erhältst du + 5 Coins und alle Mitspieler – beginnend bei deinem linken Mitspieler – müssen die oberste Karte ihres Nachziehstapels aufdecken. Aufgedeckte Karten, die 3 Coins bis 6 Coins kosten, müssen entsorgt werden. Karten mit Trank-Kosten müssen nicht entsorgt werden, Karten mit + Coins (z. B. aus Die Gilden) oder * Coins müssen entsorgt werden. Ansonsten legt der Spieler die aufgedeckte Karte ab und nimmt sich einen FLUCH vom Vorrat. Die Mitspieler können auf das Ausspielen eines RIESEN mit einer Reaktionskarte reagieren, auch wenn die Rückseite des Reise-Markers oben liegt und der Angriff gar nicht ausgeführt wird.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Attack"
+]
+},
+{
+"name":"Schatz",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Nimm ein GOLD und ein KUPFER (in beliebiger Reihenfolge) vom Vorrat und lege sie ab. Ist ein Stapel leer, erhältst du nur die andere Karte.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Treasure"
+]
+},
+{
+"name":"Sumpfhexe",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Bis zu Beginn deines nächsten Zuges muss jeder Mitspieler für jede Karte, die er kauft, jeweils einen FLUCH vom Vorrat nehmen. Das Erwerben eines Ereignisses ist nicht mit dem Kauf einer Karte gleichzusetzen. Spieler, die mit einer Reaktionskarte reagieren wollen, müssen dies sofort beim Ausspielen der SUMPFHEXE tun. Zu Beginn deines nächsten Zuges erhältst du + 3 Coins. Lege die Karte in der Aufräumphase des nächsten Zuges ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Attack",
+"Duration"
+]
+},
+{
+"name":"Verlorene Stadt",
+"cost": "5", 
+"description": "",
+"extra":"Wenn du diese Karte ausspielst, erhältst du + 2 Karten und + 2 Aktionen. Wenn du diese Karte nimmst, zieht jeder Mitspieler 1 Karte.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Weinhändler",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du + 1 Kauf sowie + 4 Coins und legst die Karte dann auf dein Wirtshaustableau. Wenn du am Ende deiner Kaufphase mindestens 2 Coins nicht ausgegeben hast, darfst du diese Karte von deinem Wirtshaustableau ablegen. Hast du mehrere WEINHÄNDLER auf deinem Tableau liegen, kannst du alle ablegen. Du brauchst nicht für jeden WEINHÄNDLER 2 Coins übrig zu haben.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Gefolgsmann",
+"cost": "6", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Wenn du sie ausspielst, lege sie neben deinen Spielbereich. Sie bleibt bis zum Spielende im Spiel und wird nicht abgelegt. Für den Rest des Spiels erhältst du zu Beginn deines Zuges + 1 Karte. Wenn du einen GEFOLGSMANN zweimal ausspielen darfst (z. B. durch den THRONSAAL aus der Basis), lege beide Karten zur Seite und du erhältst bis zum Spielende zu Beginn jedes Zuges + 2 Karten.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Duration"
+]
+}
+    ]
