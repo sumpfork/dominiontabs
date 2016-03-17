@@ -197,6 +197,8 @@ def read_write_card_data(options):
     with codecs.open(card_db_filepath, "r", "utf-8") as cardfile:
         cards = json.load(cardfile, object_hook=Card.decode_json)
 
+    assert cards, "Could not load any cards from database"
+
     language_mapping_filepath = os.path.join(data_dir, "mapping.json")
     with codecs.open(language_mapping_filepath, 'r', 'utf-8') as mapping_file:
         Card.language_mapping = json.load(mapping_file)
@@ -292,7 +294,6 @@ def filter_sort_cards(cards, options):
         unknownExpansions = set(options.expansions) - knownExpansions
         if unknownExpansions:
             print "Error - unknown expansion(s): %s" % ", ".join(unknownExpansions)
-            return
 
         cards = filteredCards
 
@@ -434,7 +435,9 @@ def generate(options, data_path, f):
                                                      options.verticalMargin / cm)
 
     cards = read_write_card_data(options)
+    assert cards, "No cards after reading"
     cards = filter_sort_cards(cards, options)
+    assert cards, "No cards after filtering/sorting"
 
     if not f:
         f = "dominion_dividers.pdf"
