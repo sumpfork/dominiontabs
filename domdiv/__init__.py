@@ -95,7 +95,7 @@ def parse_opts(argstring):
                       help="write json version of card definitions and extras")
     parser.add_option("--tabs-only", action="store_true", dest="tabs_only",
                       help="draw only tabs to be printed on labels, no divider outlines")
-    parser.add_option("--order", type="choice", choices=["expansion", "global"], dest="order",
+    parser.add_option("--order", type="choice", choices=["expansion", "global", "colour"], dest="order",
                       help="sort order for the cards, whether by expansion or globally alphabetical")
     parser.add_option("--expansion_dividers", action="store_true", dest="expansion_dividers",
                       help="add dividers describing each expansion set")
@@ -221,6 +221,8 @@ class CardSorter(object):
         self.order = order
         if order == "global":
             self.sort_key = self.global_sort_key
+        elif order == "colour":
+            self.sort_key = self.colour_sort_key
         else:
             self.sort_key = self.by_expansion_sort_key
 
@@ -245,6 +247,9 @@ class CardSorter(object):
 
     def by_expansion_sort_key(self, card):
         return card.cardset, int(card.isExpansion()), self.baseIndex(card.name), card.name
+
+    def colour_sort_key(self, card):
+        return card.getType().getTypeNames(), card.name
 
     def __call__(self, card):
         return self.sort_key(card)
