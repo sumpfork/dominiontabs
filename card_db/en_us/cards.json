@@ -3530,5 +3530,422 @@
   "types": [
    "Event"
   ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "+1 Action\nSet aside the top 3 cards of your deck face down (you may look at them). Now and at the start of your next two turns, put one into your hand.",
+  "extra": "",
+  "name": "Archive",
+  "potcost": 0,
+  "types":[
+   "Action",
+   "Duration"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "+1 Card\n+3 Actions\nLook through your discard pile. You may reveal a Settlers from it and put it into your hand.",
+  "extra": "",
+  "name": "Bustling Village",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "2",
+  "description": "+1 Card\n+1 Action\nLook through your discard pile. You may reveal a Copper from it and put it into your hand.",
+  "extra": "",
+  "name": "Settlers",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "6 Coins\n+1 Buy\n______________________\nWhen you discard this from play, take 6 Debt, and then you may pay off Debt.",
+  "extra": "",
+  "name": "Capital",
+  "potcost": 0,
+  "types":[
+   "Treasure"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "3",
+  "description": "",
+  "extra": "",
+  "name": "Castles",
+  "potcost": 0,
+  "types":[
+   "Victory",
+   "Castle"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "3",
+  "description": "+1 Coin\nTrash a card from your hand. If it costs 3 Coins or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.",
+  "extra": "",
+  "name": "Catapult",
+  "potcost": 0,
+  "types":[
+   "Action",
+   "Attack"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "3",
+  "description": "+1 Action\nReveal the top card of your deck and put it into your hand. The player to your left reveals the top card of their deck. If your card costs more, +1 Coin and +1 Victory Token.",
+  "extra": "",
+  "name": "Chariot Race",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "When you play this, choose on: +1 Buy and +2 Coin; or the next time you buy a card this turn, you may also gain a differently named card with the same cost.",
+  "extra": "",
+  "name": "Charm",
+  "potcost": 0,
+  "types":[
+   "Treasure"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "-8",
+  "description": "+2 Actions\nReveal your hand. +1 Card per Action card revealed.",
+  "extra": "",
+  "name": "City Quarter",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "If it's your Action phase, you may play an Action from your hand twice. If it's your Buy phase, you may play a Treasure from your hand twice.",
+  "extra": "",
+  "name": "Crown",
+  "potcost": 0,
+  "types":[
+   "Action",
+   "Treasure"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "+1 Card\n+1 Action\n+1 Coin\n______________________\nWhen you gain this, if you have at least 5 Action cards in play, +2 Victory Tokens.",
+  "extra": "",
+  "name": "Emporium",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "2",
+  "description": "+2 Cards\n+2 Actions\nYou may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up.",
+  "extra": "",
+  "name": "Encampment",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "3",
+  "description": "Until your next turn, the first time each other play plays an Action card on their turn, they get +1 Card and +1 Action instead of following its instructions.\n\nAt the start of your next turn, +2 Cards.",
+  "extra": "",
+  "name": "Enchantress",
+  "potcost": 0,
+  "types":[
+   "Action",
+   "Attack",
+   "Duration"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "-4",
+  "description": "Gain a card costing up to 4 Coins. You may trash this. If you do, gain a card costing up to 4 Coins.",
+  "extra": "",
+  "name": "Engineer",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "3",
+  "description": "+1 Buy\nIf there are 4 Victory Tokens or more on the Farmers' Market Supply pile, take them and trash this. Otherwise, add 1 Victory Token to the pile and then +1 Coin per 1 Victory Token on the pile.",
+  "extra": "",
+  "name": "Farmers' Market",
+  "potcost": 0,
+  "types":[
+   "Action",
+   "Gathering"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "8/-8",
+  "description": "",
+  "extra": "",
+  "name": "Fortune",
+  "potcost": 0,
+  "types":[
+   "Treasure"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "",
+  "extra": "",
+  "name": "Forum",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "3",
+  "description": "",
+  "extra": "",
+  "name": "Gladiator",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "",
+  "extra": "",
+  "name": "Groundskeeper",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "",
+  "extra": "",
+  "name": "Legionary",
+  "potcost": 0,
+  "types":[
+   "Action",
+   "Attack"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "-8",
+  "description": "",
+  "extra": "",
+  "name": "Royal Blacksmith",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "-8",
+  "description": "",
+  "extra": "",
+  "name": "Overlord",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "2",
+  "description": "",
+  "extra": "",
+  "name": "Patrician",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "",
+  "extra": "",
+  "name": "Plunder",
+  "potcost": 0,
+  "types":[
+   "Treasure"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "4",
+  "description": "",
+  "extra": "",
+  "name": "Rocks",
+  "potcost": 0,
+  "types":[
+   "Treasure"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "4",
+  "description": "",
+  "extra": "",
+  "name": "Sacrifice",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "2",
+  "description": "",
+  "extra": "",
+  "name": "Settlers",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "4",
+  "description": "",
+  "extra": "",
+  "name": "Temple",
+  "potcost": 0,
+  "types":[
+   "Action",
+   "Gathering"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "4",
+  "description": "",
+  "extra": "",
+  "name": "Villa",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "",
+  "extra": "",
+  "name": "Wild Hunt",
+  "potcost": 0,
+  "types":[
+   "Action",
+   "Gathering"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "*",
+  "description": "",
+  "extra": "",
+  "name": "Events",
+  "potcost": 0,
+  "types":[
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "*",
+  "description": "",
+  "extra": "",
+  "name": "Landmarks",
+  "potcost": 0,
+  "types":[
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "*",
+  "description": "",
+  "extra": "",
+  "name": "Catapult \/ Rocks",
+  "potcost": 0,
+  "types":[
+   "Blank"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "*",
+  "description": "",
+  "extra": "",
+  "name": "Encampment \/ Plunder",
+  "potcost": 0,
+  "types":[
+   "Blank"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "*",
+  "description": "",
+  "extra": "",
+  "name": "Gladiator \/ Fortune",
+  "potcost": 0,
+  "types":[
+   "Blank"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "*",
+  "description": "",
+  "extra": "",
+  "name": "Patrician \/ Emporium",
+  "potcost": 0,
+  "types":[
+   "Blank"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "*",
+  "description": "",
+  "extra": "",
+  "name": "Bustling Village \/ Settlers",
+  "potcost": 0,
+  "types":[
+   "Blank"
+  ]
  }
 ]
