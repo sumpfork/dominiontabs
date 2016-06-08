@@ -90,10 +90,10 @@ class Card(object):
 
     @classmethod
     def getSetText(cls, setName, cardName):
-        if setName in cls.setTextIcons:
-            return cls.setTextIcons[setName]
-        if cardName.lower() in cls.promoTextIcons:
-            return cls.promoTextIcons[cardName.lower()]
+        if setName in setTextIcons:
+            return setTextIcons[setName]
+        if cardName.lower() in promoTextIcons:
+            return promoTextIcons[cardName.lower()]
         return None
 
     def __init__(self, name, cardset, types, cost, description='', potcost=0, extra=''):
@@ -133,7 +133,7 @@ class Card(object):
         return setImage
 
     def setTextIcon(self):
-        setTextIcon = getSetText(self.cardset, self.name)
+        setTextIcon = Card.getSetText(self.cardset, self.name)
         if setTextIcon is None and self.cardset not in ['base', 'extra'] and not self.isExpansion():
             print 'warning, no set text for set "%s" card "%s"' % (self.cardset, self.name)
             setTextIcons[self.cardset] = 0
