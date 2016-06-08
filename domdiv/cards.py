@@ -18,7 +18,8 @@ setImages = {
     'dark ages extras': 'dark_ages_set.png',
     'guilds': 'guilds_set.png',
     'adventures': 'adventures_set.png',
-    'adventures extras': 'adventures_set.png'
+    'adventures extras': 'adventures_set.png',
+    'empires': "base_set.png"
 }
 promoImages = {
     'walled village': 'walled_village_set.png',
@@ -42,7 +43,8 @@ setTextIcons = {
     'dark ages extras': 'DA',
     'guilds': 'G',
     'adventures': 'Ad',
-    'adventures extras': 'Ad'
+    'adventures extras': 'Ad',
+    'empires': 'E'
 }
 
 promoTextIcons = {
@@ -193,11 +195,14 @@ cardTypes = [
     CardType(('Action', 'Prize'), 'action.png'),
     CardType(('Action', 'Ruins'), 'ruins.png', 0, 1),
     CardType(('Action', 'Shelter'), 'action-shelter.png'),
+    CardType(('Action', 'Attack', 'Duration'), 'duration.png'),
     CardType(('Action', 'Attack', 'Looter'), 'action.png'),
     CardType(('Action', 'Attack', 'Traveller'), 'action.png'),
     CardType(('Action', 'Reserve'), 'reserve.png'),
     CardType(('Action', 'Reserve', 'Victory'), 'reserve-victory.png'),
     CardType(('Action', 'Traveller'), 'action.png'),
+    CardType(('Action', 'Gathering'), 'action.png'),
+    CardType(('Action', 'Treasure'), 'treasre.png'),
     CardType(('Prize',), 'action.png'),
     CardType(('Event',), 'event.png'),
     CardType(('Reaction',), 'reaction.png'),
@@ -211,9 +216,11 @@ cardTypes = [
     CardType(('Victory',), 'victory.png'),
     CardType(('Victory', 'Reaction'), 'victory-reaction.png', 0, 1),
     CardType(('Victory', 'Shelter'), 'victory-shelter.png'),
+    CardType(('Victory', 'Castle'), 'victory.png'),
     CardType(('Curse',), 'curse.png', 3),
     CardType(('Expansion',), 'expansion.png', 4),
-    CardType(('Blank',), '')
+    CardType(('Blank',), ''),
+    CardType(('Landmark',), '')
 ]
 
 cardTypes = dict(((c.getTypeNames(), c) for c in cardTypes))
