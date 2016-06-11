@@ -19,7 +19,7 @@ setImages = {
     'guilds': 'guilds_set.png',
     'adventures': 'adventures_set.png',
     'adventures extras': 'adventures_set.png',
-    'empires': "base_set.png"
+    'empires': 'empires_set.png'
 }
 promoImages = {
     'walled village': 'walled_village_set.png',
@@ -98,12 +98,13 @@ class Card(object):
             return promoTextIcons[cardName.lower()]
         return None
 
-    def __init__(self, name, cardset, types, cost, description='', potcost=0, extra=''):
+    def __init__(self, name, cardset, types, cost, description='', potcost=0, debtcost=0, extra=''):
         self.name = name.strip()
         self.cardset = cardset.strip()
         self.types = types
         self.cost = cost
         self.potcost = potcost
+        self.debtcost = debtcost
         self.description = description
         self.extra = extra
 
