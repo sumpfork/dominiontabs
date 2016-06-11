@@ -98,6 +98,9 @@ class DividerDrawer(object):
         replace = '<img src='"'%s/victory_emblem.png'"' width=%d height='"'120%%'"' valign='"'middle'"'/>' % (
             path, fontsize * 1.5)
         text = re.sub('\<VP\>', replace, text)
+        replace = '<img src='"'%s/debt.png'"' width=%d height='"'105%%'"' valign='"'middle'"'/>' % (
+            path, fontsize * 1.2)
+        text = re.sub('Debt', replace, text)
         return text
 
     def drawOutline(self, x, y, rightSide, isBack=False, isExpansionDivider=False):
@@ -176,8 +179,16 @@ class DividerDrawer(object):
         potHeight = y - 3
         potSize = 11
 
-        self.canvas.drawImage(os.path.join(self.options.data_path, 'images', 'coin_small.png'),
-                              x, coinHeight, 16, 16, preserveAspectRatio=True, mask='auto')
+        if card.debtcost:
+            self.canvas.drawImage(os.path.join(self.options.data_path, 'images', 'debt.png'),
+                                  x, coinHeight, 16, 16, preserveAspectRatio=True,
+                                  mask=[255, 255, 255, 255, 255, 255])
+            self.canvas.setFillColorRGB(1, 1, 1)
+            cost = str(card.debtcost)
+        else:
+            self.canvas.drawImage(os.path.join(self.options.data_path, 'images', 'coin_small.png'),
+                                  x, coinHeight, 16, 16, preserveAspectRatio=True, mask='auto')
+            cost = str(card.cost)
         if card.potcost:
             self.canvas.drawImage(os.path.join(self.options.data_path, 'images', 'potion.png'), x + 17,
                                   potHeight, potSize, potSize, preserveAspectRatio=True,
@@ -185,8 +196,8 @@ class DividerDrawer(object):
             width += potSize
 
         self.canvas.setFont(self.fontNameBold, 12)
-        cost = str(card.cost)
         self.canvas.drawCentredString(x + 8, costHeight, cost)
+        self.canvas.setFillColorRGB(0, 0, 0)
         return width
 
     def drawSetIcon(self, setImage, x, y):
