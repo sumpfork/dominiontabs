@@ -19,7 +19,7 @@ setImages = {
     'guilds': 'guilds_set.png',
     'adventures': 'adventures_set.png',
     'adventures extras': 'adventures_set.png',
-    'empires': "base_set.png"
+    'empires': 'empires_set.png'
 }
 promoImages = {
     'walled village': 'walled_village_set.png',
