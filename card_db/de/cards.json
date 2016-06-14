@@ -1,0 +1,3017 @@
+[
+ {
+  "potcost": 0, 
+  "description": "+1 Aktion, Lege eine beliebige Anzahl Handkarten ab. Ziehe f\u00fcr jede abgelegte Karte eine Karte nach.", 
+  "extra": "Der ausgespielte KELLER selbst darf nicht abgelegt werden, da er sich nicht mehr in deiner Hand befindet. Sage an, wie viele Karten du ablegst und lege diese auf deinen Ablagestapel. Danach ziehst du die gleiche Anzahl Karten vom Nachziehstapel. Sollte während dieses Vorgangs der Nachziehstapel aufgebraucht werden, wird dein Ablagestapel zusammen mit den soeben abgelegten Karten gemischt und als neuer Nachziehstapel bereitgelegt.", 
+  "cost": "2", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Keller"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge bis zu vier Karten aus deiner Hand.", 
+  "extra": "Die ausgespielte KAPELLE selbst darf nicht entsorgt werden, da sie sich nicht mehr auf der Hand befindet. Weitere KAPELLEN auf der Hand dürfen entsorgt werden.", 
+  "cost": "2", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Kapelle"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Karten. Wenn ein Mitspieler eine Angriffskarte ausspielt, kannst du diese Karte aus deiner Hand vorzeigen. Der Angriff hat dann keine Wirkung auf dich.", 
+  "extra": "Spielt ein anderer Spieler eine Angriffskarte (mit der Aufschrift AKTION – ANGRIFF), kannst du die Karte BURGGRABEN vorzeigen, falls du sie in diesem Moment auf der Hand hast. In diesem Fall bist du von den Auswirkungen des Angriffs nicht betroffen, d. h. du musst bei der HEXE keine Fluchkarte nehmen usw. Haben mehrere Spieler einen BURGGRABEN auf der Hand, dürfen diese auch eingesetzt und vorgezeigt werden. Danach nehmen die Spieler ihre Karte zurück auf die Hand. Der Spieler, der den Angriff gespielt hat, darf unabhängig davon, ob ein oder mehrere BURGGRÄBEN gespielt werden, die weiteren Anweisungen seiner Aktionskarte ausführen. Der BURGGRABEN darf auch in der eigenen Aktionsphase gespielt werden – dann ziehst du 2 Karten nach.", 
+  "cost": "2", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action", 
+   "Reaction"
+  ], 
+  "name": "Burggraben"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Geld. Du kannst sofort deinen kompletten Nachziehstapel ablegen.", 
+  "extra": "Legst du deinen Nachziehstapel auf deinen Ablagestapel, musst du dies tun, bevor du eine weitere Aktion ausspielst oder zur Kaufphase übergehst. Du darfst deinen Nachziehstapel nicht einsehen, bevor du ihn ablegst.", 
+  "cost": "3", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Kanzler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte. +2 Aktionen.", 
+  "extra": "Spielst du mehrere DÖRFER hintereinander, zählst du am besten laut mit, wie viele Aktionen du noch ausspielen darfst, damit du den Überblick behältst.", 
+  "cost": "3", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Dorf"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Kauf.  +2 Geld.", 
+  "extra": "In der Kaufphase darfst du 1 zusätzliche Karte kaufen, also insgesamt 2 Käufe tätigen. Für deine Käufe stehen dir in diesem Zug insgesamt 2 Geld zusätzlich zur Verfügung.", 
+  "cost": "3", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Holzfäller"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nimm dir eine Karte, die bis zu vier kostet.", 
+  "extra": "Nimm dir eine Karte aus dem Vorrat und lege diese sofort auf deinen Ablagestapel. Du kannst weder Geldkarten noch zusätzlich über Aktionskarten erhaltenes Geld oder Münzen (bei Erweiterungen mit Münzen) einsetzen, um den angegebenen Betrag auf der Karte zu erhöhen.", 
+  "cost": "3", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Werkstatt"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nimm dir ein Silber und lege es verdeckt auf deinen Nachziehstapel. Jeder Mitspieler deckt eine Punktekarte aus seiner Hand auf und legt sie verdeckt auf seinen Nachziehstapel. Hat ein Spieler keine Punktekarte auf der Hand, muss er seine Kartenhand vorzeigen.", 
+  "extra": "Ist dein Nachziehstapel aufgebraucht, wenn du diese Karte spielst, legst du die Silberkarte verdeckt ab. Sie bildet dann deinen Nachziehstapel. Das Gleiche gilt für alle Mitspieler, die eine Punktekarte verdeckt auf den eigenen Nachziehstapel legen müssen.", 
+  "cost": "4", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Bürokrat"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge diese Karte. Nimm dir eine Karte, die bis zu 5 kostet.", 
+  "extra": "Du nimmst dir eine beliebige Karte aus dem Vorrat, die höchstens 5 Coins kostet und legst sie sofort auf deinen Ablagestapel. Du darfst den Betrag weder durch weitere Geldkarten, Münzen oder zusätzliches Geld von anderen Aktionskarten erhöhen. Spielst du das FESTMAHL direkt nach dem THRONSAAL, erhältst du 2 Karten, obwohl du das FESTMAHL nur einmal entsorgen kannst.", 
+  "cost": "4", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Festmahl"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Ein Siegpunkt f\u00fcr je zehn Karten im eigenen Kartensatz (abgerundet).", 
+  "extra": "Diese Karte ist die einzige Punktekarte unter den Königreichkarten. Sie hat bis zum Ende des Spiels keine Funktion. Bei der Wertung des Spiels erhält der Spieler, der diese Karte in seinem Kartensatz (Nachziehstapel, Handkarten und Ablagestapel) hat, für jeweils 10 Karten einen Siegpunkt. Es wird immer abgerundet, d. h. 39 Karten ergeben 3 Siegpunkte, ebenso wie 31 Karten 3 Siegpunkte ergeben. Wer mehrere GÄRTEN besitzt, erhält für jeden GARTEN die entsprechende Anzahl an Siegpunkten.", 
+  "cost": "4", 
+  "cardset": "Dominion", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Gärten"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Geld. Jeder Mitspieler legt Karten ab, bis er nur noch drei Karten auf der Hand hat.", 
+  "extra": "Deine Mitspieler müssen Karten aus ihrer Hand ablegen, bis sie nur noch 3 Karten auf der Hand haben. Spieler, die zum Zeitpunkt des Angriffs bereits 3 oder weniger Karten auf der Hand haben, müssen keine weiteren Karten ablegen.", 
+  "cost": "4", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Miliz"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge ein Kupfer aus deiner Hand. Wenn du das machst, +3 Geld.", 
+  "extra": "Wenn du kein Kupfer zum Entsorgen auf der Hand hast, erhältst du kein zusätzliches Geld für die Kaufphase.", 
+  "cost": "4", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Geldverleiher"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die bis zu zwei mehr kostet als die entsorgte Karte.", 
+  "extra": "Der ausgespielte UMBAU selbst darf nicht entsorgt werden, da er sich nicht mehr in deiner Hand befindet. Weitere UMBAU-Karten in deiner Hand dürfen entsorgt werden. Wenn du keine Karte zum Entsorgen auf der Hand hast, darfst du dir auch keine neue Karte nehmen. Die neue Karte, die du dir nimmst, darf maximal bis zu 2 Coins mehr als die entsorgte Karte kosten. Der Betrag darf weder durch weitere Geldkarten, Münzen oder zusätzliches Geld von anderen Aktionskarten erhöht werden. Die neue Karte kann die gleiche Karte sein wie die, die du entsorgt hast. Lege die neue Karte auf deinen Ablagestapel. ", 
+  "cost": "4", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Umbau"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+3 Karten.", 
+  "extra": "Schmiede:  Du musst 3 Karten von deinem Nachziehstapel ziehen und auf die Hand nehmen.", 
+  "cost": "4", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Schmiede"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte. +1 Aktion. Jeder Spieler (auch du selbst) deckt die oberste Karte seines Nachziehstapels auf. Du entscheidest, ob er sie ablegt oder zur\u00fcck auf seinen Nachziehstapel legt.", 
+  "extra": "Zuerst musst du eine Karte vom Nachziehstapel auf die Hand nehmen. Dann muss  jeder Spieler (auch du) die oberste Karte seines Nachziehstapels aufdecken. Du entscheidest f\u00fcr jeden Spieler, ob die aufgedeckte Karte auf den Nachziehstapel zur\u00fcck- oder auf den Ablagestapel abgelegt werden soll. Spieler, deren Nachziehstapel aufgebraucht ist, mischen ihren Ablagestapel und legen ihn als neuen Nachziehstapel bereit. Nur wer weder einen Nachzieh- noch einen Ablagestapel hat, braucht keine Karte aufzudecken. Ist den Mitspielern die Reihenfolge des Aufdeckens wichtig, deckst du zuerst auf \u2013 die anderen Spieler folgen im Uhrzeigersinn. ", 
+  "cost": "4", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Spion"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Jeder Mitspieler deckt die obersten beiden Karten seines Nachziehstapels auf. Haben die Mitspieler eine oder mehrere Geldkarten aufgedeckt, muss jeder eine davon (nach deiner Wahl) entsorgen. Du kannst eine beliebige Zahl der entsorgten Karten bei dir ablegen. Die \u00fcbrigen aufgedeckten Karten legen die Spieler bei sich ab.", 
+  "extra": "Jeder Mitspieler legt die beiden aufgedeckten Karten zun\u00e4chst offen vor sich ab. Wer nur noch 1 Karte im Nachziehstapel hat, legt diese vor sich ab und mischt erst dann seinen Ablagestapel. Hat ein Spieler nach dem Mischen noch immer nicht genug Karten, deckt er nur so viele auf wie m\u00f6glich. Hat ein Spieler 2 Geldkarten offen liegen, w\u00e4hlst du eine davon aus, die der Spieler entsorgen muss. Die andere Karte legt er auf seinen Ablagestapel. Hat ein Spieler 1 Geldkarte offen liegen, muss er diese entsorgen. Hat ein Spieler keine Geldkarte aufgedeckt, muss er keine Karte entsorgen. Von den auf diese Weise entsorgten Karten darfst du eine beliebige Anzahl nehmen.", 
+  "cost": "4", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Dieb"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "W\u00e4hle eine Aktionskarte aus deiner Hand. Spiele diese Aktionskarte zweimal aus.", 
+  "extra": "W\u00e4hle eine Aktionskarte aus deiner Hand und spiele sie zweimal aus, d. h. du legst die Aktionskarte aus, f\u00fchrst die Anweisungen der Karte komplett aus, nimmst die Karte zur\u00fcck auf die Hand, legst sie noch einmal aus und f\u00fchrst die Anweisungen erneut aus. F\u00fcr das doppelte Ausspielen dieser Aktionskarte muss der Spieler keine zus\u00e4tzlichen Aktionen (+1 Aktion) zur Verf\u00fcgung haben \u2013 sie ist sozusagen \u201ekostenlos\u201c. Legst du zwei THRONSAAL- Karten aus, darfst du zuerst eine Aktion doppelt ausf\u00fchren und dann eine andere Aktion ebenfalls doppelt ausf\u00fchren. Du darfst aber nicht ein und dieselbe Aktion viermal ausf\u00fchren. Erlaubt die doppelt ausgespielte Karte +1 Aktion (z. B. der MARKT ), hast du nach der vollst\u00e4ndigen Ausf\u00fchrung des THRONSAALS  zwei weitere Aktionen zur Verf\u00fcgung. H\u00e4t - test du zwei MARKT- Karten regul\u00e4r hintereinander ausgespielt, bliebe dir nur noch eine zus\u00e4tzliche Aktion zur Verf\u00fcgung, da das Ausspielen der zweiten Marktkarte schon die zus\u00e4tzliche Aktion der ersten Karte aufgebraucht h\u00e4tte. Beim THRONSAAL  ist es be - sonders wichtig, laut die verbleibende Anzahl an Aktionen mitzuz\u00e4hlen. Du darfst keine weitere Aktion ausspielen, bevor der THRONSAAL komplett abgearbeitet ist.", 
+  "cost": "4", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Thronsaal"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+4 Karten. +1 Kauf. Jeder Mitspieler zieht sofort eine Karte nach.", 
+  "extra": "Die Mitspieler m\u00fcssen eine Karte nachziehen, auch wenn sie nicht wollen.", 
+  "cost": "5", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Ratsversammlung"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Aktionen. +1 Kauf. +2 Geld.", 
+  "extra": "Spielst du mehrere JAHRM\u00c4RKTE hintereinander, z\u00e4hlst du am besten laut mit, wie viele Aktionen du noch ausspielen darfst, damit du den \u00dcberblick beh\u00e4ltst.", 
+  "cost": "5", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Jahrmarkt"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Karten. +1 Aktion.", 
+  "extra": "Du musst  zuerst zwei Karten vom Nachziehstapel auf die Hand nehmen. Dann darfst du eine weitere Aktionskarte ausspielen.", 
+  "cost": "5", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Laboratorium"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Ziehe solange Karten nach, bis du sieben Karten auf der Hand hast. Aktionskarten kannst du zur Seite legen, sobald du sie ziehst. Die zur Seite gelegten Karten werden am Ende der Aktion abgelegt.", 
+  "extra": "Aktionskarten darfst du zur Seite legen, sobald du sie ziehst, musst dies aber nicht tun. Hast du bereits 7 oder mehr Karten auf der Hand, wenn du die BIBLIOTHEK  ausspielst, ziehst du keine Karten nach. Wenn dein Nachziehstapel w\u00e4hrend des Ziehens aufgebraucht ist, mischst du den Ablagestapel, mischst aber die zur Seite gelegten Aktionskarten nicht mit ein. Diese werden erst auf den Ablagestapel gelegt, sobald du 7 Karten auf der Hand hast. Sollten die Karten nicht reichen, ziehst du nur so viele Karten wie m\u00f6glich.", 
+  "cost": "5", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Bibliothek"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte. +1 Aktion. +1 Kauf. +1 Geld.", 
+  "extra": "Du musst eine Karte vom Nachziehstapel auf die Hand nehmen. Du darfst in der Aktionsphase eine weitere Aktionskarte ausspielen. Du darfst in der Kaufphase einen zus\u00e4tzlichen Kauf t\u00e4tigen und hast daf\u00fcr ein zus\u00e4tzliches Geld zur Verf\u00fcgung.", 
+  "cost": "5", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Markt"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge eine Geldkarte aus deiner Hand. Nimm dir eine Geldkarte, die bis zu drei mehr kostet. Nimm diese Geldkarte sofort auf die Hand.", 
+  "extra": "Normalerweise entsorgst du ein Kupfer und nimmst dir daf\u00fcr ein Silber, oder du entsorgst ein Silber und nimmst dir ein Gold. Du kannst dir aber auch eine gleichwertige oder billigere Karte nehmen. Die neue Karte nimmst du sofort auf die Hand und darfst sie noch w\u00e4hrend deines Zuges einsetzen. Wer keine Geldkarte zum Entsorgen hat, erh\u00e4lt keine neue Karte.", 
+  "cost": "5", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Mine"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Karten. Jeder Mitspieler muss sich eine Fluchkarte nehmen.", 
+  "extra": "Wenn du die HEXE spielst und nicht mehr gen\u00fcgend Fluchkarten vorr\u00e4tig sind, werden diese im Uhrzeigersinn (beginnend mit deinem linken Nachbarn) verteilt. Die Mitspieler legen die Fluchkarten sofort auf ihren Ablagestapel. Du ziehst immer 2 Karten von deinem Nachziehstapel, auch wenn keine Fluchkarten mehr im Vorrat sind. ", 
+  "cost": "5", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Hexe"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Decke Karten vom Nachziehstapel auf, bis zwei Schatzkarten offenliegen. Nimm die Schatzkarten auf die Hand, lege die \u00fcbrigen aufgedeckten Karten ab.", 
+  "extra": "Sollte dein Nachziehstapel w\u00e4hrend des Aufdeckens aufgebraucht werden, mische deinen Ablagestapel. Die bereits aufgedeckten Karten werden nicht mit gemischt, sondern bleiben zun\u00e4chst offen liegen. Solltest du auch mit Hilfe des neuen Nachziehstapels nicht gen\u00fcgend Geldkarten aufdecken, bekommst du nur diejenigen Geldkarten, die du aufgedeckt hast.", 
+  "cost": "6", 
+  "cardset": "Dominion", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Abenteurer"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Geld", 
+  "extra": "60 Karten pro Spiel.", 
+  "cost": "0", 
+  "cardset": "Dominion", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Kupfer"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Geld", 
+  "extra": "40 Karten pro Spiel", 
+  "cost": "3", 
+  "cardset": "Dominion", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Silber"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+3 Geld", 
+  "extra": "30 Karten pro Spiel", 
+  "cost": "6", 
+  "cardset": "Dominion", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Gold"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "-1 Punkt", 
+  "extra": "Flüche sind immer im Spiel.\n2 Spieler =  10 Flüche\n3 Spieler = 20 Flüche\n4Spieler = 30 Flüche\n5 Spieler = 40 Flüche\n6 Spieler = 50 Flüche", 
+  "cost": "0", 
+  "cardset": "Dominion", 
+  "types": [
+   "Curse"
+  ], 
+  "name": "Fluch"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "1 Punkt", 
+  "extra": "8 Karten bei 2 Spielern. Bei 3 oder mehr Spielern alle 12 Karten.", 
+  "cost": "2", 
+  "cardset": "Dominion", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Anwesen"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "3 Punkte", 
+  "extra": "8 Karten bei 2 Spielern. Bei 3 oder mehr Spielern alle 12 Karten.", 
+  "cost": "5", 
+  "cardset": "Dominion", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Herzogtum"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "6 Punkte", 
+  "extra": "8 Karten bei 2 Spielern. Bei 3 oder mehr Spielern alle 12 Karten.", 
+  "cost": "8", 
+  "cardset": "Dominion", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Provinz"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 3 Karten, Lege eine Karte aus deiner Hand verdeckt auf deinen Nachziehstapel.", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Burghof"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "W\u00e4hle zwei verschiedene: + 1 Aktion, + 1 Karte, + 1 Kauf, + 1 Geld", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Handlanger"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Lege eine beliebige Anzahl Karten aus deiner Hand ab: + 1 Geld f\u00fcr jede abgelegte Karte.", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action", 
+   "Reaction"
+  ], 
+  "name": "Geheimkammer"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Karte, + 1 Aktion, 1 Siegpunkt", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action", 
+   "Victory"
+  ], 
+  "name": "Gro\u00dfe Halle"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Karten, Alle Spieler (auch du selbst) m\u00fcssen gleichzeitig eine Karte aus ihrer Hand an ihren linken Nachbarn weiter geben. Danach darfst du eine Karte aus deiner Hand entsorgen.", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Maskerade"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Aktionen. Decke deine Kartenhand auf. Wenn du keine Aktionskarte auf der Hand hast: +2 Karten.", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Armenviertel"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "W\u00e4hle eins: + 2 Karten oder + 2 Geld oder entsorge genau 2 Karten aus deiner Hand.", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Verwalter"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Geld. Jeder Mitspieler muss die oberste Karte seines Nachziehstapels entsorgen. Der aktive Spieler w\u00e4hlt daf\u00fcr jeweils eine andere Karte mit gleichem Kartenwert aus, die die Mitspieler dann daf\u00fcr erhalten.", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Trickser"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Karte, + 1 Aktion, Benenne eine Karte. Decke die oberste Karte von deinem Nachziehstapel auf. Wenn es die benannte Karte ist, nimm sie auf die Hand.", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Wunschbrunnen"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Kauf. Der Baron kann ein Anwesen ablegen und erh\u00e4lt dann daf\u00fcr vier Geld. Kann oder will er kein Anwesen ablegen, muss er eines vom Vorrat ziehen.", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Baron"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Kauf, + 1 Geld, Alle Karten (auch die Karten die die Spieler auf der Hand halten) kosten in diesem Zug 1 weniger, niemals jedoch weniger als 0.", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Br\u00fccke"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Geld. Wenn du in diesem Zug 3 oder mehr Aktionskarten ausgespielt hast (diese eingeschlossen): +1 Karte, +1 Aktion", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Verschw\u00f6rer"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Kupfer produziert in diesem Zug 1 mehr.", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Kupferschmied"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nimm dir eine Karte, die bis zu 4 kostet. Ist es eine\u2026   Aktionskarte : + 1 Aktion; Geldkarte: + 1 Geld; Punktekarte: + 1 Karte", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Eisenh\u00fctte"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Karte, + 2 Aktionen, Du darfst diese Karte sofort entsorgen. Wenn du das machst: + 2 Geld", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Bergwerk"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Decke die obersten 4 Karten von deinem Nachziehstapel auf. Nimm alle aufgedeckten Punktekarten auf die Hand. Lege die \u00fcbrigen Karten in beliebiger Reihenfolge verdeckt zur\u00fcck auf deinen Nachziehstapel.", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Sp\u00e4her"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Wert 1 Siegpunkt pro Herzogtum im eigenen Kartensatz.", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Intrige", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Herzog"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Aktion, W\u00e4hle eins: + 2 Geld ; Oder lege alle deine Handkarten ab: + 4 Karten. Jeder Mitspieler, der mindestens 5 Karten auf der Hand hat, muss alle seine Handkarten ablegen und 4 Karten nachziehen.", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Lakai"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Jeder Mitspieler muss solange Karten von seinem Nachziehstapel aufdecken, bis er eine Karte aufdeckt, die 3 oder mehr kostet. Er muss diese Karte entsorgen und darf sich eine Karte nehmen, die mindestens 2 weniger kostet. Die \u00fcbrigen aufgedeckten Karten legt er ab.", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Saboteur"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 3 Karten, Jeder Spieler muss eins w\u00e4hlen: 2 Karten ablegen oder eine Fluchkarte auf die Hand nehmen.", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Kerkermeister"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge 2 Karten aus deiner Hand. Wenn du das machst: Nimm dir ein Silber auf die Hand.", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Handelposten"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Dein linker Nachbar muss die beiden obersten Karten von seinem Nachziehstapel aufdecken und diese ablegen. F\u00fcr jede Karte mit unterschiedlichem Namen erh\u00e4ltst du etwas. Bei einer\u2026 Aktionskarte: + 2 Aktionen; Geldkarte: + 2 Geld; Punktekarte: + 2 Karten", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Tribut"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Aktion, + 1 Karte, Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die genau 1 mehr kostet als die entsorgte Karte.", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Anbau"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "2 Geld, 2 Siegpunkte", 
+  "extra": "", 
+  "cost": "6", 
+  "cardset": "Intrige", 
+  "types": [
+   "Treasure", 
+   "Victory"
+  ], 
+  "name": "Harem"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "W\u00e4hle eins: + 3 Karten oder + 2 Aktionen. 2 Siegpunkte", 
+  "extra": "", 
+  "cost": "6", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action", 
+   "Victory"
+  ], 
+  "name": "Adlige"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Geld", 
+  "extra": "", 
+  "cost": "0", 
+  "cardset": "Intrige", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Kupfer"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Geld", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Intrige", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Silber"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+3 Geld", 
+  "extra": "", 
+  "cost": "6", 
+  "cardset": "Intrige", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Gold"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "-1 Punkt", 
+  "extra": "", 
+  "cost": "0", 
+  "cardset": "Intrige", 
+  "types": [
+   "Curse"
+  ], 
+  "name": "Fluch"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "1 Punkt", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Intrige", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Anwesen"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "3 Punkte", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Intrige", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Herzogtum"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "6 Punkte", 
+  "extra": "", 
+  "cost": "8", 
+  "cardset": "Intrige", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Provinz"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "", 
+  "extra": "", 
+  "cost": "", 
+  "cardset": "Intrige", 
+  "types": [
+   "Action"
+  ], 
+  "name": "M\u00fcll"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Decke eine Karte aus deiner Hand auf. Lege bis zu 2 dieser Karten aus deiner Hand zur\u00fcck in den Vorrat. Jeder Mitspieler muss sich eine solche Karte vom Vorrat nehmen.", 
+  "extra": "Wähle eine beliebige Handkarte und zeige sie deinen Mitspielern. Du darfst dann bis zu 2 dieser Karten von deiner Hand zurück in den Vorrat legen. Jeder Mitspieler nimmt sich anschließend eine solche Karte aus dem Vorrat (reihum im Uhrzeigersinn, beginnend beim linken Mitspieler). Der ausgespielte Botschafter kann nicht in den Vorrat zurückgelegt werden.", 
+  "cost": "3", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Botschafter"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte +2 Aktionen + 1 Geld", 
+  "extra": "Du musst eine Karte nachziehen, darfst 2 weitere Aktionen ausführen und erhältst für die Kaufphase + 2 Coins.", 
+  "cost": "5", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Bazar"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte +1 Aktion  -  Bei Beginn deines n\u00e4chsten Zuges: +1 Karte ", 
+  "extra": "Die KARAWANE ist eine Dauerkarte. Sie wird in der Aufräumphase nicht abgelegt. Ziehe zu Beginn des nächsten Zuges eine Karte und lege die KARAWANE in der Aufräumphase dieses Zuges ab.", 
+  "cost": "4", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Duration"
+  ], 
+  "name": "Karawane"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Geld - Jeder Mitspieler muss ein Kupfer aus seiner Hand ablegen. Hat ein Spieler kein Kupfer auf der Hand, muss er seine Kartenhand vorzeigen.", 
+  "extra": "Alle Mitspieler müssen eine Kupferkarte aus der Hand ablegen. Da der Beutelschneider eine Angriffskarte ist, dürfen die Mitspieler mit einer Reaktionskarte auf diesen Angriff reagieren.", 
+  "cost": "4", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Beutelschneider"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Geld - Entsorge diese Karte. Lege einen Embargomarker auf einen Stapel im Vorrat.  - Wenn ein Spieler eine Karte von diesem Stapel kauft, muss er sich f\u00fcr jeden Embargomarker einen Fluch nehmen.", 
+  "extra": "Wenn du das EMBARGO in deiner Aktionsphase ausspielst, musst du es entsorgen und einen Embargomarker auf einen beliebigen Vorratsstapel (Königreichkarten und Geldkarten sind erlaubt) legen. Um die + 2 Coins in der Kaufphase nicht zu „vergessen“, empfehlen wir, das entsorgte EMBARGO zunächst separat neben den Müllstapel zu legen und erst in der Aufräumphase endgültig zu entsorgen. Wenn du das EMBARGO auf einen THRONSAAL folgend ausspielst, legst du 2 Embargomarker. Du kannst sie auf denselben oder unterschiedliche Stapel legen. Wenn keine Embargomarker mehr vorhanden sind, benutze einen geeigneten Ersatz (z. B. echte Geldmünzen). Auf jeden Vorratsstapel dürfen beliebig viele Embargomarker gelegt werden. Spieler, die Karten von einem Vorratsstapel mit einem oder mehreren Embargomarkern kaufen, müssen pro Marker eine Fluchkarte nehmen. Wer Karten von einem Stapel mit Embargomarker(n) auf eine andere Weise nimmt (z. B. durch den SCHMUGGLER), nimmt keine Fluchkarte. Wenn keine Fluchkarten mehr vorrätig sind, haben die Marker keinen Effekt.", 
+  "cost": "2", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Embargo"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Du darfst eine Provinz aus deiner Hand aufdecken. Wenn du das machst: Nimm dir ein Gold auf die Hand. Ansonsten: Nimm dir ein Silber auf die Hand.", 
+  "extra": "Wenn du eine Provinz aus der Hand aufdeckst, erhältst du ein Gold. Wenn  du das nicht tun kannst (weil du keine Provinz auf der Hand hast) oder willst (weil du  deine Provinz nicht zeigen möchtest), erhältst du ein Silber. Nimm das Gold oder Silber  auf die Hand.", 
+  "cost": "5", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Entdecker"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Aktionen, +1 Geld  - Bei Beginn deines n\u00e4chsten Zuges: +1 Aktion, + 1 Geld", 
+  "extra": "Das FISCHERDORF ist eine Dauerkarte. Du darfst 2 weitere Aktionen ausführen und erhältst für die Kaufphase + 1 Coins. In deinem nächsten Zug darfst du eine weitere Aktion ausführen und erhältst für die Kaufphase + 1 Coins.", 
+  "cost": "3", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Duration"
+  ], 
+  "name": "Fischerdorf"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Karten. Jeder Mitspieler, der mindestens 4 Karten auf der Hand hat, muss solange Karten aus seiner Hand verdeckt auf seinen Nachziehstapel legen, bis er nur noch 3 Karten auf der Hand hat.", 
+  "extra": "Deine Mitspieler müssen Karten aus ihrer Hand verdeckt auf den Nachziehstapel legen, bis sie nur noch 3 Karten auf der Hand haben. Welche Karten sie auf  den Nachziehstapel legen, entscheiden die Mitspieler selbst. Spieler, die zum Zeitpunkt  des Angriffs bereits 3 oder weniger Karten auf der Hand haben, müssen keine Karten auf  den Nachziehstapel legen.", 
+  "cost": "5", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Geisterschiff"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion, Lege eine Karte aus deiner Hand  verdeckt zur Seite. Bei Beginn deines n\u00e4chsten Zuges:  Nimm die zur Seite gelegte Karte auf die Hand.", 
+  "extra": "Der HAFEN ist eine Dauerkarte. Lege eine Handkarte verdeckt auf den HAFEN. Diese und der HAFEN werden in der Aufräumphase nicht abgelegt. Nimm zu Beginn deines nächsten Zuges die zur Seite gelegte Karte auf die Hand. Lege den HAFEN in der Aufräumphase ab.", 
+  "cost": "2", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Duration"
+  ], 
+  "name": "Hafen"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Lege diese Karte und eine andere Karte aus deiner Hand offen zur Seite auf dein Tableau Insel. Nimm die Karten am Ende des Spiels zur\u00fcck in deinen Kartenstapel.  2 Punkte", 
+  "extra": "Die INSEL ist eine kombinierte Aktions- und Punktekarte. Sie kann in der Aktionsphase eingesetzt werden und bringt zusätzlich bei Spielende 2 Punkte. Wenn du deine erste INSEL nimmst oder kaufst, erhältst du ein Insel-Tableau und legst es vor dir ab. Immer wenn du eine INSEL ausspielst, legst du die ausgespielte INSEL und eine beliebige Handkarte offen auf dein Insel-Tableau. Dort verbleiben sie bis zum Spielende. Wenn du mindestens eine Karte auf der Hand hast, musst du eine Handkarte auf dein Insel- Tableau legen. Wenn du keine Karte auf der Hand hast, nachdem du die INSEL ausgespielt hast, legst du nur die INSEL auf das Tableau. Bei Spielende nimmst du alle Karten vom Insel-Tableau zu deinen Karten.", 
+  "cost": "4", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Victory"
+  ], 
+  "name": "Insel"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Aktion, +1 Geld, - Bei Beginn deines n\u00e4chsten Zuges: +1 Geld - Solange diese Karte im Spiel ist, bist du von Angriffen deiner Mitspieler nicht betroffen.", 
+  "extra": "Der LEUCHTTURM ist eine Dauerkarte. Solange der LEUCHTTURM offen vor dir liegt (im Spielbereich oder darüber), bist du grundsätzlich nicht betroffen, wenn Mitspieler Angriffskarten ausspielen (sogar wenn du das möchtest). Selber ausgespielte Angriffskarten werden vom LEUCHTTURM nicht abgewehrt. Auf Angriffe von Mitspielern darfst du weiterhin zusätzlich Reaktionskarten ausspielen. Lege den LEUCHTTURM in der Aufräumphase des nächsten Zuges ab.", 
+  "cost": "2", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Duration"
+  ], 
+  "name": "Leuchtturm"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Aktion, Sieh dir die obersten 3 Karten von deinem Nachziehstapel an. Entsorge eine davon. Lege eine davon ab. Lege eine davon verdeckt zur\u00fcck auf deinen Nachziehstapel.", 
+  "extra": "Sieh dir erst alle 3 Karten an, bevor du die Anweisungen ausführst. Solltest du weniger als 3 Karten im Nachziehstapel haben, auch nachdem du ggf. den Ablagestapel gemischt hast, führst du die Anweisungen der Reihenfolge nach aus. Anweisungen, für die es keine Karten mehr im Stapel gibt, entfallen.", 
+  "cost": "3", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Ausguck"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Geld  -  Bei Beginn deines n\u00e4chsten Zuges:  + 2 Geld", 
+  "extra": "Das HANDELSSCHIFF ist eine Dauerkarte. Du erhältst für deine Kaufphase + 2 Coins.  Zu Beginn deines nächsten Zuges erhältst du + 2 Coins für die Kaufphase. Lege das HANDELS-  SCHIFF in der Aufräumphase dieses Zuges ab.", 
+  "cost": "5", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Duration"
+  ], 
+  "name": "Handelsschiff"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Aktionen. W\u00e4hle eins: Lege die oberste Karte von deinem Nachziehstapel verdeckt zur Seite auf dein Tableau Eingeborenendorf oder nimm alle Karten von deinem Tableau Eingeborenendorf auf die Hand. ", 
+  "extra": "Wenn du dein erstes EINGEBORENENDORF nimmst oder kaufst, erhältst du ein Eingeborenen-Tableau und legst es vor dir ab. Immer wenn du ein EINGEBORENENDORF ausspielst, wählst du genau eine der beiden Anweisungen und führst sie wenn möglich aus. Du darfst eine Anweisung auch wählen, wenn du sie nicht ausführen kannst. Karten, die du auf das Tableau legst, werden immer verdeckt abgelegt. Du darfst dir jederzeit die Karten auf deinem Tableau ansehen. Die ausgespielte Aktionskarte EINGEBORENENDORF legst du in der Aufräumphase ab. Alle Karten auf dem Tableau gehören auch zum Kartensatz eines Spielers. Alle Karten auf den Tableaus werden bei Spielende mit berücksichtigt.", 
+  "cost": "2", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Eingeborenendorf"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Geld. Sieh dir die obersten 5 Karten von deinem Nachziehstapel an. Lege entweder alle diese Karten ab oder lege sie in beliebiger Reihenfolge verdeckt zur\u00fcck auf deinen Nachziehstapel.", 
+  "extra": "Schau dir die obersten 5 Karten deines Nachziehstapels an. Sind nicht genügend Karten im Stapel, mischst du deinen Ablagestapel und legst ihn verdeckt unter deinen Nachziehstapel. Sind es nun immer noch weniger als 5 Karten, schaust du dir alle an und legst sie dann entweder ab oder in einer beliebigen Reihenfolge zurück auf den Nachziehstapel.", 
+  "cost": "4", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Navigator"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Ziehe in der folgenden Aufr\u00e4umphase nur 3 Karten nach. F\u00fchre danach sofort einen weiteren Zug aus. Du kannst auf diese Weise nur einen weiteren Zug ausf\u00fchren. ", 
+  "extra": "Der AUSSENPOSTEN ist eine Dauerkarte, die bis zum Ende des nächsten Zuges (Extrazug) im Spiel bleibt und erst in der Aufräumphase des nächsten Zuges  (Extrazug) abgelegt wird. Der AUSSENPOSTEN kommt erst in der Aufräumphase des  Zuges, in dem er ausgespielt wird, zum Einsatz. Du ziehst in diesem Fall nur 3 statt 5  Karten nach und führst den Extrazug sofort aus.  Wenn du den AUSSENPOSTEN zusammen mit weiteren Dauerkarten ausgespielt hast,  kommen die „Zu Beginn deines nächsten Zuges“-Anweisungen der Dauerkarten in deinem Extrazug zum Einsatz. Spielst du in deinem Extrazug einen weiteren AUSSENPOSTEN, erhältst du keinen weiteren Extrazug. Am Ende deines Extrazuges legst du den  AUSSENPOSTEN ab und ziehst 5 Karten nach.", 
+  "cost": "5", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Duration"
+  ], 
+  "name": "Aussenposten"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion. Sieh dir die unterste Karte von deinem Nachziehstapel an. Du darfst diese Karte verdeckt auf deinen Nachziehstapel legen.", 
+  "extra": "Zieh die unterste Karte des Nachziehstapels so hervor, dass du die benachbarte Karte nicht sehen kannst. Schaue sie dir an und lege sie dann verdeckt oben auf den Nachziehstapel oder zurück unter den Nachziehstapel.", 
+  "cost": "2", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Perlentaucher"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "W\u00e4hle eins: Jeder Mitspieler muss die obersten beiden Karten von seinem Nachziehstapel aufdecken. Haben die Mitspieler eine oder mehrere Geldkarten aufgedeckt, muss jeder eine davon (nach deiner Wahl) entsorgen. Wenn auf diese Weise mindestens 1 Geldkarte entsorgt wird, erh\u00e4ltst du 1 Geldmarker auf dein Tableau Piratenschiff. Die \u00fcbrigen aufgedeckten Karten legen die Spieler bei sich ab. Oder: + 1 f\u00fcr jeden deiner Geldmarker auf deinem Tableau Piratenschiff. ", 
+  "extra": "Wenn du dein erstes PIRATENSCHIFF nimmst oder kaufst, erhältst du ein Piratenschiff-Tableau und legst es vor dir ab. Immer wenn du ein PIRATENSCHIFF ausspielst, wählst du eine der beiden Anweisungen: Entweder die erste Anweisung:Alle Mitspieler decken die beiden obersten Karten ihres Nachziehstapels auf. Dann entsorgen sie jeweils eine Geldkarte nach deiner Wahl. Hat ein Mitspieler keine Geldkarte aufgedeckt, entsorgt er keine Karte. Die restlichen aufgedeckten Karten werden abgelegt. Wird mindestens eine Karte entsorgt, erhältst du einen Geldmarker und legst ihn auf dein Tableau; oder die zweite Anweisung: Du erhältst pro Geldmarker auf deinem Piratenschiff-Tableau in der Kaufphase + 1 Coins. Nach der Nutzung in der Kaufphase verbleiben die Geldmarker auf dem Tableau und können beim erneuten Ausspielen eines PIRATENSCHIFFES wieder eingesetzt werden. Mitspieler können auf das Ausspielen eines PIRATENSCHIFFES mit Reaktionskarten reagieren, auch wenn du die zweite Anweisung wählst, die deine Mitspieler nicht direkt betrifft.", 
+  "cost": "4", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Piratenschiff"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Kauf. Entsorge eine Karte aus deiner Hand. + X entsprechend den Kosten der entsorgten Karte.", 
+  "extra": "Du musst eine Karte entsorgen, sofern du eine auf der Hand hast. Entsprechend der Kosten der entsorgten Karte erhältst du für die Kaufphase + X Coins. Wenn du keine Karte entsorgen kannst, erhältst du kein zusätzliches Geld.", 
+  "cost": "4", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Müllverwerter"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Jeder Mitspieler muss die oberste Karte seines Nachziehstapels ablegen und sich dann einen Fluch nehmen, den er verdeckt auf seinen Nachziehstapel legt. ", 
+  "extra": "Sollte der Nachziehstapel eines Mitspielers leer sein, mischt er seinen Ablagestapel und legt die oberste Karte des neuen Nachziehstapels ab. Hat ein Spieler keine Karten mehr in seinem Nachziehstapel, kann er zwar keine Karte ablegen, nimmt sich aber  trotzdem eine Fluchkarte. Beginnend mit dem Mitspieler links von dem Spieler, der die  SEEHEXE ausgespielt hat, nimmt sich jeder Mitspieler einen FLUCH vom Vorrat. Sollten  nicht mehr genügend Fluchkarten für alle Spieler vorhanden sein, werden die restlichen  in o. g. Reihenfolge verteilt.", 
+  "cost": "4", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Seehexe"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nimm dir eine Karte, die der Spieler rechts von dir in seinem letzten Zug genommen oder gekauft hat und die bis zu 6 kostet. ", 
+  "extra": "Hat der rechts von dir sitzende Mitspieler in seinem letzten Zug eine Karte mit Kosten von 6 Coins oder weniger genommen, gekauft oder auf andere Art erhalten, nimmst du dir eine gleiche Karte vom Vorrat. Hat der Spieler mehrere Karten genommen, darfst du wählen, welche du nimmst. Da der SCHMUGGLER keine Angriffskarte ist, dürfen keine Reaktionskarten ausgespielt werden.", 
+  "cost": "3", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Schmuggler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Lege deine \u00fcbrigen Handkarten ab. - Wenn du auf diese Weise mindestens eine Karte abgelegt hast: Bei Beginn deines n\u00e4chsten Zuges: +5 Karten, +1 Aktion, +1 Kauf", 
+  "extra": "Der TAKTIKER ist eine Dauerkarte. Sobald du diese Karte ausspielst, legst du  alle Handkarten ab. Nur wenn du auf diese Weise mindestens eine Handkarte abgelegt  hast, ziehst du zu Beginn deines nächsten Zuges 5 Karten. Außerdem erhältst du dann im  nächsten Zug eine zusätzliche Aktion und einen zusätzlichen Kauf.\nGrundsätzlich gilt: Nur wenn du mindestens eine Handkarte ablegen kannst,  erhältst du den Bonus im nächsten Zug. Wenn du den TAKTIKER auf einen THRONSAAL spielst, erhältst du den Bonus im  nächsten Zug nur einmal, da du beim zweiten Ausspielen des TAKTIKERS keine Handkarte mehr auf der Hand hast und damit die Bedingung nicht erfüllst.", 
+  "cost": "5", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Duration"
+  ], 
+  "name": "Taktiker"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge diese und eine weitere Schatzkarte aus deiner Hand. Wenn du das machst: Nimm dir 4 Gold und lege diese verdeckt auf deinen Nachziehstapel. ", 
+  "extra": "Nur wenn du zusätzlich zu der ausgespielten SCHATZKARTE noch eine  weitere auf der Hand hast und beide entsorgst, erhältst du 4 Gold. Sollten weniger als  4 Gold im Vorrat sein, nimmst du dir soviele Goldkarten wie vorhanden sind. Lege alle  auf diese Weise erhaltenen Goldkarten verdeckt auf den Nachziehstapel. Solltest du nur  eine SCHATZKARTE auf der Hand haben und diese ausspielen, musst du diese Karte  entsorgen, erhältst aber nichts dafür.", 
+  "cost": "4", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Schatzkarte"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion, +1 Geld. Wenn du in diesem Zug keine Punktekarte gekauft hast und diese Karte im Spiel ist, darfst du diese Karte verdeckt auf deinen Nachziehstapel legen, anstatt sie abzulegen. ", 
+  "extra": "Wenn du eine SCHATZKAMMER spielst und in diesem Zug keine  Punktekarte gekauft hast, darfst du die ausgespielte SCHATZKAMMER in der Aufräumphase zurück auf den Nachziehstapel legen.  Wenn du mehrere SCHATZKAMMERN ausgespielt hast, darfst du auch diese SCHATZKAMMERN auf den Nachziehstapel zurücklegen.  Wenn du eine Punktekarte auf andere Art nimmst bzw. erhältst (d. h. nicht kaufst), darfst  du SCHATZKAMMERN zurück auf den Nachziehstapel legen.  Wenn du deine ausgespielte SCHATZKAMMER gern zurücklegen möchtest, das aber in  der Aufräumphase vergisst und die Karte bereits auf den Ablagestapel gelegt hast, darfst  du dies nachträglich nicht rückgängig machen.", 
+  "cost": "5", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Schatzkammer"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+3 Karten, +1 Aktion. Lege 3 Karten aus deiner Hand ab. ", 
+  "extra": "Ziehe 3 Karten und spiele dann eine Aktionskarte. Danach legst du 3 Handkarten ab. Wenn du weniger als 3 Karten auf der Hand hast, legst du alle Handkarten ab.", 
+  "cost": "3", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Lagerhaus"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Karten, +1 Kauf.  Bei Beginn deines n\u00e4chsten Zuges: +2 Karten, +1 Kauf. ", 
+  "extra": "Die WERFT ist eine Dauerkarte. Du musst sofort 2 Karten nachziehen und  darfst einen weiteren Kauf tätigen.  Zu Beginn deines nächsten Zuges (nicht vorher) musst du wieder 2 Karten ziehen und  darfst einen weiteren Kauf tätigen.", 
+  "cost": "5", 
+  "cardset": "Seaside", 
+  "types": [
+   "Action", 
+   "Duration"
+  ], 
+  "name": "Werft"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Karten, +1 Aktion. Wenn diese Karte und ein Trank im Spiel sind und du den Alchemisten ablegst, darfst du diesen verdeckt oben auf deinen Nachziehstapel legen. ", 
+  "extra": "", 
+  "cost": "3T", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Alchemist"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion, Decke die obersten 4 Karten von deinem Nachziehstapel auf. Nimm alle aufgedeckten Kupfer und Tr\u00e4nke auf die Hand. Lege die \u00fcbrigen Karten in beliebiger Reihenfolge verdeckt zur\u00fcck auf deinen Nachziehstapel.", 
+  "extra": "", 
+  "cost": "2T", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Apotheker"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Aktion. Entsorge eine Karte aus deiner Hand. +1 Karte pro 1 Geld das die Karte kostet und zus\u00e4tzlich +2 Karten wenn sie Trank kostet.", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Lehrling"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion. Jeder Mitspieler muss sich eine Fluchkarte nehmen. ", 
+  "extra": "", 
+  "cost": "3T", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Vertrauter"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Decke solange Karten von deinem Nachziehstapel auf, bis 2 Aktionskarten (ausser Golem-Karten) offen liegen. Lege sofort alle \u00fcbrigen aufgedeckten Karten ab und spiele die beiden Aktionskarten in beliebiger Reihenfolge.", 
+  "extra": "", 
+  "cost": "4T", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Golem"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Kauf, + 1 Geld.  Wenn diese Karte im Spiel ist und du sie ablegst, darfst du eine deiner Geldkarten im Spiel verdeckt oben auf deinen Nachziehstapel legen. ", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Kr\u00e4uterkundiger"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Z\u00e4hle die Karten in deinem Nachziehstapel und die Karten in deinem Ablagestapel. Wert 1 f\u00fcr je 5 Karten der Summe beider Stapel (abgerundet). ", 
+  "extra": "", 
+  "cost": "3T", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Stein der Weisen"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Der Spieler links von dir f\u00fchrt einen Extra-Zug direkt nach diesem aus. Dabei siehst du alle Karten, die auch er sieht und du f\u00e4llst alle Entscheidungen f\u00fcr ihn. Alle Karten, die er nimmt oder kauft, legst du auf einen Ablagestapel. Alle Karten, die er in diesem Zug entsorgt, werden zur Seite gelegt und am Ende des Zuges auf seinen Ablagestapel gelegt. ", 
+  "extra": "", 
+  "cost": "6T", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Besessenheit"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Aktion. Jeder Spieler (auch du selbst) muss die oberste Karte von seinem Nachziehstapel aufdecken. Du entscheidest, ob er sie ablegen oder auf seinen Nachziehstapel zur\u00fccklegen muss. Dann deckst du solange Karten von deinem Nachziehstapel auf, bis du eine Karte aufdeckst, die keine Aktionskarte ist. Nimm alle aufgedeckten Karten auf die Hand. ", 
+  "extra": "", 
+  "cost": "2T", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Vision"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge eine Karte aus deiner Hand. Ist es eine\u2026 Aktionskarte: Nimm dir ein Herzogtum   Geldkarte: Nimm dir eine Verwandlung   Punktekarte: Nimm dir ein Gold ", 
+  "extra": "", 
+  "cost": "T", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Verwandlung"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Aktionen. Du darfst dir eine Aktionskarte nehmen, die bis zu 5 kostet. ", 
+  "extra": "", 
+  "cost": "2T", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Universit\u00e4t"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Wert 1 Punkt f\u00fcr je 3 Aktionskarten im eigenen Kartensatz (abgerundet).", 
+  "extra": "", 
+  "cost": "T", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Weinberg"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Trank", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Die Alchemisten", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Trank"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Wert 1 Geld f\u00fcr jede Geldkarte, die im Spiel ist (diese eingeschlossen).", 
+  "extra": "", 
+  "cost": "7", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Bank"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Geld,  + 1 Punkt. Entsorge eine Karte aus deiner Hand. Wenn du das machst: + Punkte entsprechend der H\u00e4lfte der Geld-Kosten der entsorgten Karte (abgerundet). Jeder Mitspieler darf sofort eine Karte seiner Hand entsorgen.", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Bischof"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Karte, +2 Aktionen. Wenn im Vorrat genau 1 Stapel leer ist: +1 Karte. Oder, wenn 2 oder mehr Stapel leer sind: +1 Karte, + 1 Geld, +1 Kauf.", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Stadt"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "3 Geld. +1 Kauf. Wenn du diese Karte auslegst, benennt der Spieler links von dir eine Karte. Du darfst diese Karte nicht kaufen. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Schmuggelware"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Sieh deinen Ablagestapel durch, decke eine beliebige Anzahl Kupfer daraus auf und nimm diese auf die Hand. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Leihhaus"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die bis zu 3 Geld mehr kostet, als die entsorgte Karte. ", 
+  "extra": "", 
+  "cost": "7", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Ausbau"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge eine beliebige Anzahl Karten aus deiner Hand. Nimm dir eine Karte mit genau den gleichen Geld-Kosten, wie die entsorgten Karten zusammen gekostet haben. ", 
+  "extra": "", 
+  "cost": "7", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Kunstschmiede"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Kauf, + 2 Geld. Jeder Mitspieler muss solange Karten ablegen, bis er nur noch 3 Karten auf der Hand hat. Wenn diese Karte im Spiel ist und du eine Karte kaufst: +1 Punkt. ", 
+  "extra": "", 
+  "cost": "6", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Halsabschneider"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion, +1 Kauf, +2 Geld. Du darfst diese Karte nicht kaufen, wenn du Kupfer im Spiel hast. ", 
+  "extra": "", 
+  "cost": "6", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Gro\u00dfer Markt"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "2 Geld. Wenn diese Karte im Spiel ist und du eine Punktekarte kaufst: Nimm dir ein Gold. ", 
+  "extra": "", 
+  "cost": "6", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Hort"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Du darfst eine Aktionskarte aus deiner Hand w\u00e4hlen. Spiele diese Aktionskarte dreimal aus. ", 
+  "extra": "", 
+  "cost": "7", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "K\u00f6nigshof"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "1 Geld. Wenn du diese Karte ausspielst, decke solange Karten von deinem Nachziehstapel auf, bis eine Geldkarte offen liegt. Entsorge die Geldkarte oder lege sie ab. Lege die \u00fcbrigen aufgedeckten Karten ab. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Lohn"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Du darfst eine Geldkarte aus deiner Hand aufdecken. Nimm dir eine  Geldkarte mit gleichem Namen. Wenn du den M\u00fcnzer kaufst, entsorge alle Geldkarten, die du im Spiel hast. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "M\u00fcnzer"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Geld, +1 Punkt", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Denkmal"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Geld. Jeder Mitspieler darf eine Fluchkarte aus seiner Hand ablegen. Wenn er das nicht macht, muss er sich einen Fluch und ein Kupfer nehmen. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Quacksalber"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion, +1 Geld. Diese Karte kostet in der Kaufphase 2 Geld weniger f\u00fcr jede Aktionskarte, die du im Spiel hast, niemals jedoch weniger als 0 . ", 
+  "extra": "", 
+  "cost": "8", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Hausierer"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "1 Geld. Wenn diese Karte im Spiel ist, kostet jede Aktionskarte 2 weniger, niemals jedoch weniger als 0 . ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Steinbruch"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+3 Karten. Jeder Mitspieler deckt die obersten 3 Karten von seinem Nachziehstapel auf. Er muss alle aufgedeckten Aktionsund Geldkarten ablegen. Die \u00fcbrigen aufgedeckten Karten legt er in beliebiger  Reihenfolge zur\u00fcck auf seinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Gesindel"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "2 Geld. Wenn diese Karte im Spiel ist und du eine Karte nimmst oder kaufst, darfst du die neue Karte sofort auf deinen Nachziehstapel legen. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "K\u00f6nigliches Siegel"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "1 Geld. Wenn diese Karte im Spiel ist und du eine Karte kaufst, die 4 oder weniger kostet und keine Punktekarte ist, nimm dir eine weitere Karte mit gleichem Namen. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Talisman"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Kauf, + 1 Geld pro Marker auf dem Tableau Handelsroute. Entsorge eine Karte aus deiner Hand. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Handelsroute"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Karten. Lege eine beliebige Anzahl Karten aus deiner Hand ab: + 1 f\u00fcr jede abgelegte Karte. Jeder Mitspieler darf 2 Karten aus seiner Hand ablegen. Wenn er genau 2 Karten ablegt, zieht er eine Karte nach. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Gew\u00f6lbe"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "1 Geld.  Wenn du diese Karte ausspielst, decke solange Karten von deinem Nachziehstapel auf, bis eine Geldkarte offen liegt. Lege diese Geldkarte aus. Lege die \u00fcbrigen aufgedeckten Karten ab. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Abenteuer"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Ziehe solange Karten nach, bis du 6 Karten auf der Hand hast.   Wenn du eine Karte nimmst oder kaufst, darfst du den Wachturm aus deiner Hand aufdecken. Wenn du das machst: Entsorge die neue Karte oder  Lege sie sofort auf deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action", 
+   "Reaction"
+  ], 
+  "name": "Wachturm"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +2 Aktionen, +1 Kauf", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Bl\u00fctezeit", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Arbeiterdorf"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Aktionen. Decke solange Karten vom Nachziehstapel auf, bis entweder eine Aktionskarte oder eine Geldkarte offen liegt. Nimm diese Karte auf die Hand, lege die \u00fcbrigen aufgedeckten Karten ab. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Bauerndorf"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Geld. Jeder Mitspieler muss solange Karten von seinem Nachziehstapel aufdecken, bis entweder eine Punktekarte oder eine Fluchkarte offen liegt. Diese aufgedeckte Karte muss er auf seinen Nachziehstapel legen. Die \u00fcbrigen aufgedeckten Karten legt er ab. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Wahrsagerin"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion. Du darfst eine Karte aus deiner Hand ablegen. Wenn du das machst: +1 Aktion   Du darfst eine Karte aus deiner Hand ablegen. Wenn du das machst: +1 Kauf ", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Weiler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Decke die obersten 4 Karten von deinem Nachziehstapel auf. + 1 Geld pro aufgedeckter Karte mit unterschiedlichem Namen. Lege die aufgedeckten Karten ab. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Ernte"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "0 Geld. Nimm dir eine Karte, die bis zu 1 Geld pro Karte mit unterschiedlichem Namen im Spiel kostet (diese eingeschlossen). Wenn du dir eine Punktekarte nimmst: Entsorge das F\u00fcllhorn. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "F\u00fcllhorn"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Kauf, + 3 Geld. Lege 2 Karten aus deiner Hand ab. Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du diese Karte aus deiner Hand zur Seite legen. Wenn du das machst: Bei Beginn deines n\u00e4chsten  Zuges +1 Karte und nimm diese Karte wieder auf die Hand. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Action", 
+   "Reaction"
+  ], 
+  "name": "Pferdeh\u00e4ndler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion. Decke deine Handkarten auf. Decke solange Karten von deinem Nachziehstapel auf, bis eine Karte mit anderem Namen als deine Handkarten offen liegt. Nimm diese aufgedeckte Karte und deine Handkarten zur\u00fcck auf die Hand. Lege die \u00fcbrigen aufgedeckten Karten ab. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Treibjagd"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Geld. Jeder Mitspieler muss die oberste Karte seines Nachziehstapels ablegen. Ist es eine Punktekarte, muss er sich einen Fluch nehmen. Ansonsten muss sich entweder er oder du eine Karte mit gleichem Namen nehmen (Du entscheidest). ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Harlekin"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Aktion.  Decke deine Handkarten auf. Hast du keine Karte mit gleichem Namen auf der Hand: +3 Karten Ansonsten: +1 Karte ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Menagerie"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Mache dies zweimal: Entsorge eine Karte aus deiner Hand. Dann nimm dir eine Karte, die genau 1 mehr kostet, als die entsorgte Karte. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Nachbau"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Aktion. Du darfst eine Provinz aus deiner Hand ablegen. Wenn du das machst: Nimm dir einen Preis vom Preisstapel oder ein Herzogtum. Lege die neue Karte sofort auf deinen Nachziehstapel. Jeder  Mitspieler darf eine Provinz aus seiner Hand aufdecken. Wenn das keiner macht: +1 Karte, + 1 Geld. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Turnier"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Karten. Lege 2 Karten aus deiner Hand ab. Jeder Mitspieler darf eine Bannkarte aus seiner Hand aufdecken. Wenn er das nicht macht, muss er sich einen Fluch nehmen. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Junge Hexe"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Wert 2 Punkte f\u00fcr je 5 Karten mit unterschiedlichem Namen im eigenen Kartensatz (abgerundet). ", 
+  "extra": "", 
+  "cost": "6", 
+  "cardset": "Reiche Ernte", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Festplatz"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +2 Aktionen. Wenn du das Grenzdorf nimmst, nimm dir eine Karte, die weniger kostet als das Grenzdorf. ", 
+  "extra": "", 
+  "cost": "6", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Grenzdorf"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "3 Geld. Wenn du die Schatztruhe nimmst, nimm dir 2 Kupfer.", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Schatztruhe"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion. Sieh dir die obersten 4 Karten von deinem Nachziehstapel an. Lege beliebig viele davon ab. Lege den Rest davon in beliebiger Reihenfolge zur\u00fcck auf deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Kartograph"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Decke deine Kartenhand auf. +1 Karte pro aufgedeckter Punktekarte. Wenn du zum ersten Mal in diesem Zug eine Wegkreuzung ausspielst: +3 Aktionen ", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Wegkreuzung"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die genau 1 Geld mehr kostet als die entsorgte Karte und nimm dir eine Karte, die genau 1 Geld weniger kostet als die entsorgte Karte. Du entscheidest,  in welcher Reihenfolge du diese beiden Karten nimmst. Lege beide Karten sofort auf deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Aufbau"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Geld. Jeder Spieler (auch du selbst) sieht sich die oberste Karte von seinem Nachziehstapel an und entscheidet, ob er die Karte ablegt oder zur\u00fcck auf den Nachziestapel legt.   Wird die Herzogin im Spiel verwendet, darfst du dir immer, wenn du ein Herzogtum nimmst, eine Herzogin nehmen. ", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Herzogin"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+5 Karten. Lege 3 Karten auf deiner Hand ab. Wenn du die Botschaft nimmst, muss sich jeder Mitspieler ein Silber nehmen. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Botschaft"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Wenn du Katzengold zum ersten Mal in diesem Zug ausspielst, ist es 1 Geld wert, ansonsten ist es 4 Geld wert. Wenn ein Mitspieler eine Provinz nimmt, darfst du diese Karte aus deiner Hand entsorgen. Wenn du das machst: Nimm dir ein Gold und lege es auf deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Treasure", 
+   "Reaction"
+  ], 
+  "name": "Katzengold"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Geld.   Wenn du eine Karte kaufst und der Feilscher im Spiel ist: Nimm dir eine Karte, die weniger kostet als die gerade gekaufte und die keine Punktekarte ist. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Feilscher"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion.  Wenn diese Karte im Spiel ist, kosten alle Karten 1 weniger, niemals jedoch weniger als 0 . ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Fernstra\u00dfe"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "1 Geld. Wenn du den Blutzoll ausspielst, darfst du dir ein Kupfer nehmen. Nimm dieses Kupfer sofort auf die Hand.  Wenn du den Blutzoll nimmst, muss sich jeder Mitspieler einen Fluch nehmen. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Blutzoll"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Karten, +2 Aktionen. Lege 2 Karten aus deiner Hand ab. Wenn du das Gasthaus nimmst, sieh dir deinen Ablagestapel durch, decke beliebig viele Aktionskarten (auch dieses Gasthaus) daraus auf und mische die aufgedeckten Karten in deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Gasthaus"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nimm dir ein Silber. Sieh dir die oberste Karte von deinem Nachziehstapel an und entscheide, ob du die Karte ablegst oder zur\u00fcck auf deinen Nachziehstapel legst. Ziehe so lange Karten nach, bis du 5 Karten auf  der Hand hast. Du darfst eine Karte aus deiner Hand entsorgen, die keine Geldkarte ist. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Lebensk\u00fcnstler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 3 Geld. Lege eine Karte aus deiner Hand zur\u00fcck auf deinen Nachziehstapel. Wenn du den Mandarin nimmst, lege alle Geldkarten, die du im Spiel hast, in beliebiger Reihenfolge zur\u00fcck auf deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Mandarin"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+3 Karten, +1 Kauf. Jeder Mitspieler muss 1 Karte nachziehen und dann Karten ablegen, bis er nur noch 3 Karten auf der Hand hat. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Markgraf"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Geld. Wenn du diese Karte kaufst oder ausspielst, muss jeder Mitspieler die obersten 2 Karten von seinem Nachziehstapel aufdecken. Hat er ein Gold oder ein Silber aufgedeckt, muss er dieses entsorgen. Hat der Spieler beides aufgedeckt, entscheidest du, welche er entsorgen muss. Hat der Spieler keine Geldkarte aufgedeckt, muss er sich ein Kupfer nehmen. Die \u00fcbrigen aufgedeckten Karten muss der Spieler  ablegen. Du musst alle entsorgten Karten nehmen. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Edler R\u00e4uber"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Kauf, +2 Geld.  Wenn du das Nomadencamp nimmst, lege es sofort auf deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Nomadencamp"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion, + 1 Geld. Lege eine Karte aus deiner Hand ab. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Oase"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Jeder Spieler (auch du selbst) muss die obersten 2 Karten von seinem Nachziehstapel aufdecken. Du entscheidest, ob er beide Karten ablegen oder (in der von ihm bestimmten Reihenfolge) zur\u00fcck auf seinen Nachziehstapel legen muss. +2 Karten. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Orakel"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion. Zu Beginn deiner Aufr\u00e4umphase darfst du eine deiner ausgespielten Aktionskarten w\u00e4hlen. Wenn du die gew\u00e4hlte Karte in dieser Aufr\u00e4umphase ablegen w\u00fcrdest, darfst du sie stattdessen auf deinen Nachziehstapel legen. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Komplott"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Du darfst eine Geldkarte aus deiner Hand entsorgen. Wenn du das machst, w\u00e4hle eins: +2 Karten und +1 Aktion oder + 2 und +1 Kauf. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Gew\u00fcrzh\u00e4ndler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Du darfst eine Geldkarte aus deiner Hand ablegen. Wenn du das machst: +3 Karten, +1 Aktion. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Stallungen"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge eine Karte aus deiner Hand. Nimm dir so viele Silber, wie die x-Kosten der entsorgten Karte.  Wenn du eine Karte nehmen w\u00fcrdest, darfst du den Fahrenden H\u00e4ndler aus deiner Hand aufdecken. Wenn  du das machst: Nimm dir statt der anderen Karte ein Silber. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Action", 
+   "Reaction"
+  ], 
+  "name": "Fahrender H\u00e4ndler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "2 Punkte.  Wenn du das Fruchtbare Land kaufst, entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die genau 2 mehr kostet als die entsorgte Karte. ", 
+  "extra": "", 
+  "cost": "6", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Fruchtbares Land"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Wert 1 Punkt f\u00fcr je 4 Punktekarten im eigenen Kartensatz (abgerundet). ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Seidenstra\u00dfe"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "2 Punkte. Wenn du diese Karte au\u00dferhalb der Aufr\u00e4umphase ablegst, darfst du sie aufdecken. Wenn du das machst: Nimm dir ein Gold. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Hinterland", 
+  "types": [
+   "Victory", 
+   "Reaction"
+  ], 
+  "name": "Tunnel"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die bis zu 5 Geld kostet. ", 
+  "extra": "", 
+  "cost": "6", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Altar"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nimm dir eine Karte, die bis zu 4 kostet. Lege diese Karte sofort auf deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Waffenkammer"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "W\u00e4hle eine Aktionskarte aus dem Vorrat, die weniger kostet als diese Vogelfreien. F\u00fchre die gew\u00e4hlte Karte aus, so als h\u00e4ttest du sie ausgespielt. Solange diese Vogelfreien im Spiel sind, gelten sie als die gew\u00e4hlte Karte. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Vogelfreie"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +2 Aktionen. Nimm dir eine Karte vom Beute-Stapel ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Banditenlager"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nimm dir 3 Kupfer. Nimm diese sofort auf die Hand. Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du diese Karte ablegen. Wenn du das machst: Nimm dir 2 Silber. Lege eines davon sofort auf deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Reaction"
+  ], 
+  "name": "Bettler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Sieh dir die obersten 3 Karten von deinem Nachziehstapel an. W\u00e4hle eins: Nimm die Karten auf die Hand oder lege die Karten ab und +3 Karten. Wenn du diese Karte entsorgst: Nimm dir eine Karte, die weniger kostet. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Katakomben"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "W\u00e4hle eins: Lege 2 Karten aus deiner Hand ab oder lege eine Karte aus deiner Hand auf den Nachziehstapel oder nimm dir ein Kupfer. W\u00e4hle eins: + 3 Geld oder entsorge alle deine Handkarten oder nimm dir ein Herzogtum. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Graf"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "1 Geld, +1 Kauf. Wenn du diese Karte ausspielst, darfst du eine Geldkarte aus deiner Hand w\u00e4hlen und zweimal ausspielen. Wenn du das machst: Entsorge die gew\u00e4hlte Geldkarte. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Falschgeld"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Karten. Jeder Mitspieler muss sich eine Ruinen-Karte nehmen. Du darfst einen weiteren Kultisten aus deiner Hand ausspielen. Wenn du diese Karte entsorgst: +3 Karten. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Attack", 
+   "Looter"
+  ], 
+  "name": "Kultist"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 5 Geld. Du darfst eine Aktionskarte aus deiner Hand entsorgen. Wenn du das nicht machst: Entsorge diese Karte. Wenn du diese Karte nimmst, nimm dir 2 Ruinen-Karten. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Looter"
+  ], 
+  "name": "Leichenkarren"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Aktion, +1 Kauf. Entsorge eine Karte aus deiner Hand. + 1 Geld pro Geldkarte mit unterschiedlichem Namen im M\u00fcllstapel. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Mundraub"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +2 Aktionen. Wenn du diese Karte entsorgst, nimm sie zur\u00fcck auf die Hand. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Festung"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "W\u00e4hle eins: Nimm dir eine Karte vom M\u00fcll-Stapel die 3 bis 6 Geld kostet. Lege die so genommene Karte sofort auf deinen Nachziehstapel oder Entsorge eine Aktionskarte aus deiner Hand und nimm dir eine Karte, die bis zu 3 Geld mehr kostet.  ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Grabr\u00e4uber"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Sieh deinen Ablagestapel durch. Du darfst eine Karte, die keine Geldkarte ist, aus deinem Ablagestapel oder aus deiner Hand entsorgen. Nimm dir eine Karte, die bis zu 3 Geld kostet.     Wenn du diese Karte aus dem Spiel ablegst ablegst und in diesem Zug keine Karte gekauft hast, entsorge diese Karte und nimm dir einen Verr\u00fcckten. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Eremit"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+4 Karten. Wenn du diese Karte entsorgst: Nimm dir ein Herzogtum oder 3 Anwesen. ", 
+  "extra": "", 
+  "cost": "6", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Jagdgr\u00fcnde"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion. Decke die oberste Karte von deinem Nachziehstapel auf. Ist es eine \u2026 Aktionskarte: +1 Aktion ...Geldkarte: + 1 Geld...Punktekarte: +1 Karte. Lege die aufgedeckte Karte ab oder zur\u00fcck auf deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Eisenh\u00e4ndler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion, + 1 Geld.  Entsorge eine Karte aus deiner Hand. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Schrotth\u00e4ndler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nimm dir eine Karte vom Beute-Stapel. Jeder Mitspieler muss sich eine Ruinen-Karte nehmen. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Attack", 
+   "Looter"
+  ], 
+  "name": "Marodeur"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion, +1 Kauf.   Wenn du eine Karte entsorgst, darfst du diesen Marktplatz aus deiner Hand ablegen. Wenn du das machst: Nimm dir ein Gold.", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Reaction"
+  ], 
+  "name": "Marktplatz"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Aktion, + 2 Geld. Benenne eine Karte. Decke die oberste Karte von deinem Nachziehstapel auf. Wenn es die benannte Karte ist, nimm sie auf die Hand. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Medium"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge diese Karte. Jeder Mitspieler, der 5 oder mehr Karten auf der Hand hat, muss seine Handkarten aufdecken. Du w\u00e4hlst von jedem Mitspieler eine Karte aus, die er ablegen muss. Nimm dir 2 Karten vom Beute-Stapel. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Raubzug"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 4 Geld.  Decke deine Handkarten auf. - 1 f\u00fcr jede Geldkarte, auf deiner Hand (niemals jedoch weniger als 0 ). ", 
+  "extra": "", 
+  "cost": "1", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Armenhaus"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Du darfst eine Aktionskarte aus deiner  Hand zweimal ausspielen. Entsorge die ausgespielte Karte und nimm dir eine Aktionskarte, die genau 1 Geld mehr kostet. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Prozession"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Aktion. Benenne eine Karte. Decke so lange Karten von deinem Nachziehstapel auf, bis eine Punktekarte, die nicht die benannte Karte ist, offen liegt. Entsorge diese Punktekarte und nimm dir eine Punktekarte, die bis zu 3 Geld mehr kostet. Lege die \u00fcbrigen aufgedeckten Karten ab. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Neubau"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Geld. Wenn im M\u00fcll-Stapel eine oder mehrere Karten sind, die 3 bis 6 Geld kosten, nimm dir eine davon. Wenn das nicht der Fall ist, muss jeder Mitspieler die obersten beiden Karten von seinem Nachziehstapel aufdecken und eine solche Karte entsorgen.  Lege die \u00fcbrigen aufgedeckten Karten ab. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Schurke"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Aktion. Decke so lange Karten von deinem Nachziehstapel auf, bis eine Karte offen liegt, die mindestens 3 Geld kostet. Nimm diese Karte auf die Hand. Lege die \u00fcbrigen aufgedeckten Karten ab. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Weiser"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Geld. Du darfst sofort deinen kompletten Nachziehstapel ablegen. Sieh dir deinen Ablagestapel durch und lege eine Karte daraus verdeckt oben auf deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Lumpensammler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "1 Geld.  W\u00e4hle eins: +2 Aktionen oder +2 K\u00e4ufe oder nimm dir ein Silber.  Wenn du diese Karte entsorgst: Nimm dir eine Angriffskarte. ", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Knappe"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Kauf. Lege eine beliebige Anzahl Karten aus deiner Hand ab. +1 Karte pro abgelegter Karte. Lege eine beliebige Anzahl Karten aus deiner Hand ab. + 1 pro nun abgelegter Karte. ", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Lagerraum"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion.  Jeder Mitspieler muss Karten ablegen, bis er nur noch 4 Karten auf der Hand hat. Wenn diese Karte im Spiel ist und du eine andere Angriffskarte auslegst, darfst du diesen Gassenjungen entsorgen. Wenn du das machst: Nimm dir einen S\u00f6ldner.", 
+  "extra": "", 
+  "cost": "3", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Gassenjunge"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion. Decke die oberste Karte von deinem Nachziehstapel auf. Wenn es ein Fluch, eine Ruine, ein Unterschlupf oder eine Punktekarte ist: Nimm die aufgedeckte Karte auf die Hand. ", 
+  "extra": "", 
+  "cost": "2", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Landstreicher"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +2 Aktionen.  Decke die obersten 3 Karten von deinem Nachziehstapel auf. Lege aufgedeckte Aktionskarten in beliebiger Reihenfolge zur\u00fcck auf den Nachziehstapel. Lege die \u00fcbrigen aufgedeckten Karten ab. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Barde"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Wert 1 Punkt f\u00fcr je 3 Silber im eigenen Kartensatz (abgerundet).  Wenn du diese Karte entsorgst: Nimm dir 3 Silber. ", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Victory"
+  ], 
+  "name": "Lehen"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte, +1 Aktion. Nimm dir eine Ratten-Karte. Entsorge eine Karte aus deiner Hand, die keine Ratten-Karte ist. (Decke deine Handkarten auf, wenn du nur Ratten auf der Hand hast). Wenn du diese Karte entsorgst: +1 Karte.", 
+  "extra": "", 
+  "cost": "4", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Ratten"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Werden die Ritter im Spiel verwendet, werden alle Ritter-Karten gemischt und als verdeckter Stapel in den Vorrat gelegt. Die oberste Karte wird aufgedeckt. Nur die oberste Karte kann gekauft oder genommen werden. ", 
+  "extra": "", 
+  "cost": "5", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Ritter"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Geld", 
+  "extra": "", 
+  "cost": "0", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Ruins"
+  ], 
+  "name": "Verlassene Mine"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Karte", 
+  "extra": "", 
+  "cost": "0", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Ruins"
+  ], 
+  "name": "Zerst\u00f6rte Bibliothek"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Kauf", 
+  "extra": "", 
+  "cost": "0", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Ruins"
+  ], 
+  "name": "Zerst\u00f6rter Markt"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Aktion", 
+  "extra": "", 
+  "cost": "0", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Ruins"
+  ], 
+  "name": "Zerst\u00f6rtes Dorf"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Sieh dir die obersten beiden Karten von deinem Nachziehstapel an. Lege beide Karten ab oder lege beide Karten in beliebiger Reihenfolge zur\u00fcck auf deinen Nachziehstapel. ", 
+  "extra": "", 
+  "cost": "0", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Ruins"
+  ], 
+  "name": "\u00dcberlebende"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Wenn du eine Punktekarte kaufst, darfst du diese H\u00fctte entsogen. ", 
+  "extra": "", 
+  "cost": "1", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Reaction", 
+   "Shelter"
+  ], 
+  "name": "H\u00fctte"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Aktionen.  ", 
+  "extra": "", 
+  "cost": "1", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Shelter"
+  ], 
+  "name": "Totenstadt"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "0 Punkte.  Wenn du diese Karte entsorgst: +1 Karte. ", 
+  "extra": "", 
+  "cost": "1", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Victory", 
+   "Shelter"
+  ], 
+  "name": "Verfallenes Anwesen"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "3 Geld. Wenn du diese Karte ausspielst, lege sie zur\u00fcck auf den Beute-Stapel. (Der Beute-Stapel ist  nicht Teil des Vorrats.) ", 
+  "extra": "", 
+  "cost": "0", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Beute"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+2 Aktionen. Lege diese Karte zur\u00fcck auf den Verr\u00fcckten-Stapel. Wenn du das machst: +1 Karte pro Karte, die du auf der Hand hast. (Der Verr\u00fcckten-Stapel ist nicht Teil des Vorrats.)", 
+  "extra": "", 
+  "cost": "0", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Verr\u00fcckter"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Du darfst 2 Karten aus deiner Hand entsorgen. Wenn du das machst: +2 Karten, + 2 Geld. Jeder Mitspieler muss Karten ablegen, bis er nur noch 3 Karten auf der Hand hat. (Der S\u00f6ldner-Stapel ist nicht Teil des \nVorrats)", 
+  "extra": "", 
+  "cost": "0", 
+  "cardset": "Dark Ages", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "S\u00f6ldner"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Aktion,  + 1 Kauf. Nimm eine M\u00fcnze. ", 
+  "extra": "Du darfst in der Aktionsphase eine weitere Aktionskarte ausspielen. Du darfst in der Kaufphase einen zus\u00e4tzlichen Kauf t\u00e4tigen. Nimm dir eine M\u00fcnze. ", 
+  "cost": "2", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Leuchtenmacher"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Entsorge eine Karte aus deiner Hand. Nimm 2 Karten, die jeweils weniger als die entsorgte Karte kosten.     Wenn du diese Karte kaufst, darfst du mehr daf\u00fcr zahlen. Falls du das tust, nimmst du 2 Aktionskarten,  die jeweils so viel kosten, wie du zus\u00e4tzlich bezahlt hast.", 
+  "extra": " Wenn du die Karte STEINMETZ  kaufst, darfst du mehr daf\u00fcr bezahlen.  Wenn du das tust, nimmst du dir zwei Aktionskarten, die beide jeweils genau so viel  kosten, wie du \u00fcberzahlt hast. Du kannst dir zweimal  die gleiche oder zwei verschiedene  Karten nehmen. Wenn du zum Beispiel den  STEINMETZ f\u00fcr 6 Geld kaufst, k\u00f6nntest du dir zwei HEROLDE nehmen. Die Aktionskarten stammen aus dem Vorrat und werden auf deinen Ablagestapel gelegt. Sollten keine Karten mit den entsprechenden Kosten im Vorrat sein, bekommst du keine. Wenn du mit einem TRANK (Die Alchemisten) \u00fcberzahlst, bekommst du Karten im Wert des TRANKS. Karten, die mehreren Kartentypen angeh\u00f6ren, von denen einer AKTION ist (wie die GROSSE HALLE aus Die Intrige), sind Aktionskarten. Wenn du beschlie\u00dft, nicht mehr als die normalen Kosten zu zahlen, bekommst du keine Karten. Es ist nicht m\u00f6glich, dann Aktionskarten zu nehmen, die 0 Geld kosten. Wenn du diese Karte spielst, entsorgst du eine Karte aus deiner Hand und nimmst dir zwei Karten, die jeweils weniger kosten als die Karte, die du entsorgt hast. Wenn du keine Karte zum Entsorgen mehr auf der Hand hast, bekommst du keine Karten. Du kannst dir zweimal die gleiche oder zwei verschiedene Karten aus dem Vorrat nehmen. Diese werden auf deinen Ablagestapel gelegt. Falls es keine preiswerteren Karten im Vorrat gibt (weil du beispielsweise ein Kupfer entsorgst), bekommst du keine Karten. Wenn es im Vorrat nur noch eine einzige Karte gibt, die preiswerter ist als die entsorgte Karte, nimmst du dir diese. Du nimmst dir die Karten einzeln nacheinander; das kann bei Karten eine Rolle spielen, die beim nehmen eine Auswirkung haben (wie das GASTHAUS aus Hinterland).", 
+  "cost": "2+", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Steinmetz"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nenne eine Karte, dann decke die 3 obersten Karten vom Nachziehstapel auf. \u00dcbereinstimmungen werden entsorgt. Der Rest wird in beliebiger Reihenfolge wieder auf den Nachziehstapel gelegt.   Wenn du diese Karte kaufst, darfst du mehr daf\u00fcr zahlen. Pro, das du zus\u00e4tzlich zahlst, darfst du dir die oberste Karte vom Nachziehstapel ansehen und sie entsorgen, ablegen oder zur\u00fccklegen. ", 
+  "extra": "Wenn du diese Karte kaufst, darfst du mehr daf\u00fcr zahlen. Pro 1 Geld, das du zus\u00e4tzlich zahlst (d.h. \u201e\u00fcberzahlst\u201c), darfst du dir die oberste Karte deines Nachziehstapels ansehen und sie entsorgen, ablegen oder auf den Nachziehstapel zur\u00fccklegen. Wenn dein Nachziehstapel aufgebraucht ist, mischst du deinen Ablagestapel und machst ihn zum neuen Nachziehstapel. Wenn dann noch immer nicht gen\u00fcgend Karten im Nachziehstapel sind, siehst du dir keine Karten an. Auch wenn du mehr als 1 Geld \u00fcberzahlst, wird jede oberste Karte vom Nachziehstapel einzeln komplett abgehandelt, bevor du die n\u00e4chste Karte ziehst. Wenn du diese Karte in der Aktionsphase spielst, nennst du den Namen einer beliebigen Karte, deckst die obersten drei Karten deines Nachziehstapels auf und entsorgst jede Karte mit dem von dir genannten Namen. Die \u00fcbrigen Karten legst du in beliebiger Reihenfolge wieder oben auf deinen Nachziehstapel. Du musst keine Karte nennen, die in diesem Spiel verwendet wird. Wenn dein Nachziehstapel keine drei Karten ehr umfasst, deckst du die darin noch enthaltenen Karten auf, mischst dann deinen Ablagestapel (der die bereits aufgedeckten Karten nicht umfasst) und machst ihn zum neuen Nachziehstapel, von dem du die noch fehlenden Karten aufdeckst. Sind dann noch immer nicht gen\u00fcgend Karten aufgedeckt, bel\u00e4sst du es bei den bereits aufgedeckten Karten. ", 
+  "cost": "3+", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Arzt"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Aktion. Decke die 3 obersten Karten vom Nachziehstapel auf. Dein linker Nachbar w\u00e4hlt eine davon aus, die du dann ablegst. Die anderen Karten nimmst du auf die Hand. ", 
+  "extra": "Wenn dein Nachziehstapel keine drei Karten mehr umfasst, deckst du die darin noch enthaltenen Karten auf, mischst dann deinen Ablagestapel und machst ihn zum neuen Nachziehstapel, von dem du die noch fehlenden Karten aufdeckst. Sind dann noch immer nicht gen\u00fcgend Karten aufgedeckt, bel\u00e4sst du es bei den bereits aufgedeckten Karten. Unabh\u00e4ngig davon, wie viele Karten du aufgedeckt hast, w\u00e4hlt dein linker Nachbar eine davon aus, die du ablegst. Die verbleibenden Karten nimmst du auf die Hand.", 
+  "cost": "4", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Berater"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Karte, + 2 Aktionen. Du darfst eine Geldkarte ablegen. Falls du das tust, nimm dir eine M\u00fcnze.", 
+  "extra": "Zuerst ziehst du eine Karte. Du erh\u00e4ltst zwei weitere Aktionen, die du spielen darfst, nachdem du alle Anweisungen dieser Karte (soweit m\u00f6glich) erf\u00fcllt hast. Dann darfst du eine Geldkarte (auch ein MEISTERST\u00dcCK) ablegen. Du kannst die Karte ablegen, die du eben gezogen hast, falls es sich um eine Geldkarte handelt. Wenn du eine Geldkarte abgelegt hast, nimmst du dir eine M\u00fcnze. Karten, die mehreren Kartentypen angeh\u00f6ren, von denen einer GELD ist (wie der HAREM aus Die Intrige), sind Geldkarten.", 
+  "cost": "4", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Platz"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Du darfst eine Geldkarte aus deiner Hand entsorgen. Jeder Mitspieler mit 5 oder mehr Karten auf der Hand muss die gleiche Karte ablegen (oder zeigt seine Handkarten ohne die entsprechende Karte). Nimm dir eine Geldkarte, die bis zu 3 Geld mehr kostet als die entsorgte Karte und lege sie auf deinen Nachziehstapel.", 
+  "extra": "Du darfst eine Geldkarte aus deiner Hand entsorgen. Karten, die mehreren Kartentypen angeh\u00f6ren, von denen einer GELD ist (wie der HAREM aus Die Intrige), sind Geldkarten. Wenn du eine Geldkarte entsorgst, muss jeder Mitspieler, der mindestens f\u00fcnf Karten in der Hand hat, die gleiche Karte aus seiner Hand auf seinen Ablagestapel legen oder seine Handkarten vorzeigen, damit die anderen Spieler sehen, dass er diese Karte nicht auf der Hand hat. Nimm dir f\u00fcr die entsorgte Karte eine Geldkarte, die bis zu 3 Geld mehr kostet als die entsorgte Geldkarte, und lege sie oben auf deinen Nachziehstapel. Wenn dein Nachziehstapel aufgebraucht ist, wird dies die einzige Karte deines Nachziehstapels. Du musst dir keine teurere Geldkarte nehmen, sondern darfst dir auch eine gleich teure oder preiswertere Geldkarte nehmen.", 
+  "cost": "4", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Steuereintreiber"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Karte, + 1 Aktion. Decke die oberste Karte vom Nachziehstapel auf. Falls es sich um eine Aktion handelt, spielst du sie. Wenn du diese Karte kaufst, darfst du mehr daf\u00fcr zahlen.  Pro 1 Geld, das du zus\u00e4tzlich zahlst, darfst du den Ablagestapel durchsehen und eine beliebige Karte davon oben auf den Nachziehstapel legen.", 
+  "extra": "Wenn du diese Karte kaufst, darfst du mehr daf\u00fcr zahlen. Wenn du das tust  legst du pro 1 Geld, das du \u00fcberzahlst, eine beliebige Karte deines Ablagestapels oben auf deinen Nachziehstapel. Du darfst dir daf\u00fcr die Karten deines Ablagestapels ansehen, was normalerweise nicht m\u00f6glich ist. Allerdings darfst du nicht zuerst deinen Ablagestapel durchsehen, um zu entscheiden, wie viel du \u00fcberzahlen willst. Sobald du \u00fcberzahlt hast, musst du die entsprechende Anzahl an Karten in beliebiger Reihenfolge oben auf deinen Nachziehstapel legen, sofern m\u00f6glich. Wenn du so viel \u00fcberzahlst, dass du mehr Karten auf deinen Nachziehstapel legen m\u00fcsstest, als sich in deinem Ablagestapel befinden, legst du einfach alle Karten deines Ablagestapels in beliebiger Reihenfolge auf deinen Nachziehstapel. Falls du den HEROLD kaufst, ohne zu \u00fcberzahlen, darfst du deinen Ablagestapel nicht durchsehen.  Wenn du diese Karte in der Aktionsphase spielst, ziehst du zuerst eine Karte. Du erh\u00e4ltst dann eine weitere Aktion, die du spielen darfst, nachdem du alle Anweisungen dieser Karte (soweit m\u00f6glich) erf\u00fcllt hast. Dann deckst du die oberste Karte deines Nachziehstapels auf. Wenn es sich um eine Aktionskarte handelt, musst du sie spielen. Die Karte zu spielen, verbraucht keine Aktion. Karten, die mehreren Kartentypen angeh\u00f6ren, von denen einer AKTION ist (z.B. GROSSE HALLE aus Die Intrige), sind Aktionskarten. Alle anderen Kartentypen werden auf den Nachziehstapel zur\u00fcckgelegt, ohne sie zu spielen.  Hinweis: Wenn durch den  HEROLD eine Dauer-Karte (aus Seaside) ausgespielt wird, wird der HEROLD dennoch am Ende der Runde wie gewohnt abgelegt, da er nicht gebraucht wird, um an etwas zu erinnern.", 
+  "cost": "4+", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Herold"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "1 Geld. Wenn du diese Karte kaufst, darfst du mehr daf\u00fcr zahlen.  Pro 1 Geld, das du zus\u00e4tzlich zahlst, nimmst du dir ein Silber.", 
+  "extra": " Dies ist eine Geldkarte mit dem Wert 1, wie Kupfer. Wenn du sie kaufst, nimmst du dir ein Silber pro 1 Geld, das du \u00fcberzahlst. Falls du zum Beispiel 6 Geld f\u00fcr das MEISTERST\u00dcCK zahlst, erh\u00e4ltst du drei Silber. Das MEISTERST\u00dcCK ist eine Geldkarte und wird regeltechnisch auch so behandelt. ", 
+  "cost": "3+", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Treasure"
+  ], 
+  "name": "Meisterst\u00fcck"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Karte, + 1 Aktion. Nimm eine M\u00fcnze.   Spielvorbereitung: Zu Spielbeginn erh\u00e4lt jeder Spieler eine M\u00fcnze.", 
+  "extra": " Wenn du diese Karte spielst, ziehst du eine Karte, darfst eine weitere Aktionskarte ausspielen und nimmst dir eine M\u00fcnze. Wird ein Spiel mit dieser Karte gespielt, erh\u00e4lt jeder Spieler zu Beginn des Spiels eine M\u00fcnze. Das gilt auch f\u00fcr Partien mit dem SCHWARZMARKT, bei denen der B\u00c4CKER sich im SCHWARZMARKT-Stapel befindet.", 
+  "cost": "5", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action"
+  ], 
+  "name": "B\u00e4cker"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Kauf, + 1 Geld. Wenn diese Karte im Spiel ist, nimm f\u00fcr jede Karte, die du kaufst, jeweils eine M\u00fcnze. ", 
+  "extra": "Wenn diese Karte im Spiel ist (d.h. du hast sie in der Aktionsphase gespielt), darfst du eine weitere Karte kaufen und hast  zus\u00e4tzlich zur Verf\u00fcgung. Jedes Mal, wenn du eine Karte kaufst, nimmst du dir eine M\u00fcnze (1 M\u00fcnze, wenn du eine Karte kaufst; 2 M\u00fcnzen, wenn du zwei Karten kaufst etc.). Denke daran, dass du M\u00fcnzen nur einsetzen kannst, bevor du Karten kaufst: Du darfst also diese M\u00fcnze nicht sofort aufwenden. Diese Anweisung ist kumulativ: Wenn du zwei KAUFMANNSGILDEN ausgespielt hast, bringt dir jede Karte, die du kaufst, zwei M\u00fcnzen ein. Wenn du jedoch eine KAUFMANNSGILDE mehrfach spielst, aber nur eine im Spiel hast \u2013 wie beim THRONSAAL (DOMINION) oder K\u00f6NIGSHOF (Bl\u00fctezeit) \u2013, bekommst du beim Kauf einer Karte nur eine M\u00fcnze.", 
+  "cost": "5", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Kaufmannsgilde"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nimm 2 M\u00fcnzen. Du darfst eine Karte aus deiner Hand entsorgen und eine beliebige Anzahl M\u00fcnzen zahlen. Wenn du eine Karte entsorgt hast, nimmst du dir eine Karte, deren Kosten maximal so hoch sein d\u00fcrfen wie die Summe aus den Kosten der entsorgten Karte und der Anzahl der gezahlten M\u00fcnzen. ", 
+  "extra": "Zuerst nimmst du dir 2 M\u00fcnzen. Dann darfst du eine Karte aus deiner Hand entsorgen und eine beliebige Anzahl an M\u00fcnzen einsetzen (auch 0 M\u00fcnzen). Da du den Metzger nicht mehr auf der Hand hast, kannst du diese Karte nicht entsorgen. Allerdings kannst du eine andere Metzger -Karte entsorgen. Wenn du eine Karte entsorgt hast, nimmst du dir eine Karte, deren Kosten h\u00f6chstens der Summe aus den Kosten der entsorgten Karte und der Anzahl der eingesetzten M\u00fcnzen entsprechen darf. So k\u00f6nntest du beispielsweise ein Anwesen entsorgen und sechs M\u00fcnzen zahlen, um dir eine Provinz zu nehmen; oder du k\u00f6nntest einen weiteren Metzger entsorgen und null M\u00fcnzen zahlen, um dir ein Herzogtum zu nehmen. Die M\u00fcnzen, die du einsetzt, werden in den Vorrat zur\u00fcckgelegt und d\u00fcrfen in der Kaufphase nicht mehr benutzt werden, um andere Karten zu kaufen. ", 
+  "cost": "5", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Metzger"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nimm dir ein Gold. Jeder Mitspieler nimmt sich eine Fluchkarte. Wer eine Fluchkarte nimmt, zieht eine Karte vom Nachziehstapel. ", 
+  "extra": "Das Gold und die Fluchkarten stammen aus dem Vorrat und werden auf den Ablagestapel gelegt. Wenn kein Gold mehr vorhanden ist, erh\u00e4ltst du keins. Sind nicht mehr gen\u00fcgend Fluchkarten da, teilst du sie reihum aus, beginnend mit deinem linken Nachbarn. Jeder Spieler, der eine Fluchkarte erhalten hat, muss eine Karte vom Nachziehstapel ziehen. Falls ein Spieler keine Fluchkarte bekommen hat \u2013 weil nicht gen\u00fcgend Fluchkarten da waren oder aus einem anderen Grund \u2013, zieht er keine Karte. Nutzt ein Spieler den Wachturm (Bl\u00fctezeit), um den Fluch zu entsorgen, hat er dennoch eine Fluchkarte erhalten und zieht deshalb eine Karte. Nutzt ein Spieler den Fahrenden H\u00e4ndler (Hinterland), um stattdessen ein Silber zu nehmen, hat er keine Fluchkarte erhalten und zieht infolgedessen auch keine Karte. ", 
+  "cost": "5", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action", 
+   "Attack"
+  ], 
+  "name": "Wahrsager"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Nenne eine Karte, dann decke solange Karten vom Nachziehstapel auf, bis du 3 Karten aufgedeckt hast, die nicht der genannten Karte  entsprechen. Nimm diese Karten auf die Hand und lege die restlichen ab. ", 
+  "extra": "Zun\u00e4chst nennst du eine Karte. Dabei muss es sich nicht um den Namen einer Karte handeln, die in diesem Spiel verwendet wird. Dann deckst du solange Karten vom Nachziehstapel auf, bis du drei Karten aufgedeckt hast, die nicht dem von dir genannten Namen entsprechen. Nimm diese Karten auf die Hand und lege die anderen ab. Sollte dabei der Nachziehstapel aufgebraucht werden, bevor du auf drei entsprechende Karten gesto\u00dfen bist, mischst du deinen Ablagestapel und nutzt ihn als neuen Nachziehstapel. Wenn du beim weiteren Aufdecken noch immer nicht auf drei Karten mit einem anderen als dem genannten Namen kommst, beendest du das Aufdecken. Nimm die gefundenen Karten anderen Namens auf die Hand und lege den Rest auf deinen Ablagestapel. ", 
+  "cost": "5", 
+  "cardset": "Die Gilden", 
+  "types": [
+   "Action"
+  ], 
+  "name": "Wandergeselle"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Kauf, +1 Geld.     Ist diese Karte im Spiel, darfst du sie gegen einen Soldaten eintauschen anstatt sie abzulegen. ", 
+  "extra": "Der KLEINBAUER ist eine Königreichkarte und kann wie jede andere Königreichkarte gekauft oder genommen werden. Der KLEINBAUER ist außerdem ein Reisender, der im Spielverlauf in einen SOLDATEN eingetauscht werden kann. Wenn du den KLEINBAUERN ausspielst, erhältst du + 1 Kauf sowie + 1 Coins. In der Aufräumphase darfst du entscheiden, ob du den KLEINBAUERN ablegst oder zurück auf den Vorratsstapel legst. Wenn du das tust, erhältst du einen SOLDATEN und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
+  "cost": "2", 
+  "cardset": "Abenteuer", 
+  "types": [
+   "Action", 
+   "Traveller"
+  ], 
+  "name": "Kleinbauer"
+ }, 
+ {
+     "potcost": 0,
+  "description": "+ 2 Geld, + 1 Geld pro anderer Angriffskarte, die du im Spiel hast. Jeder Mitspieler mit 4 oder mehr Handkarten legt eine Handkarte ab. Ist diese Karte im Spiel, darfst du sie gegen einen Fl\u00fcchtling eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.) ", 
+  "extra": "Einen SOLDATEN erhältst du nur, wenn du einen KLEINBAUERN eintauschst. Der SOLDAT ist ein Reisender, der im Spielverlauf in einen FLÜCHTLING eingetauscht werden kann. Wenn du den SOLDATEN ausspielst, erhältst du + 2 Coins sowie für jede andere Angriffskarte (außer diesem SOLDATEN), die du zu diesem Zeitpunkt im Spiel hast, + 1 Coins. Außerdem muss jeder Mitspieler, der 4 oder mehr Karten auf der Hand hat, 1 Karte ablegen. In der Aufräumphase darfst du entscheiden, ob du den SOLDATEN ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen FLÜCHTLING und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
+  "cost": "3*", 
+  "cardset": "Abenteuer", 
+  "types": [
+   "Action", 
+   "Attack", 
+   "Traveller"
+  ], 
+  "name": "Soldat"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "2 Karten, + 1 Aktion. Lege eine Handkarte ab.   Ist diese Karte im Spiel, darfst du sie gegen einen Sch\u00fcler eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.)", 
+  "extra": "Einen FLÜCHTLING erhältst du nur, wenn du einen SOLDATEN eintauschst. Der FLÜCHTLING ist ein Reisender, der im Spielverlauf in einen SCHÜLER eingetauscht werden kann. Wenn du den FLÜCHTLING ausspielst, erhältst du + 2 Karten sowie + 1 Aktion und du musst eine Handkarte ablegen. In der Aufräumphase darfst du entscheiden, ob du den SOLDATEN ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen SCHÜLER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
+  "cost": "4*", 
+  "cardset": "Abenteuer", 
+  "types": [
+   "Action", 
+   "Traveller"
+  ], 
+  "name": "Flüchtling"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Du darfst eine Aktionskarte zweimal ausspielen. Nimm dir eine Karte mit gleichem Namen. Ist diese Karte im Spiel, darfst du sie gegen einen Lehrer eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.)", 
+  "extra": "Einen SCHÜLER erhältst du nur, wenn du einen FLÜCHTLING eintauschst. Der SCHÜLER ist ein Reisender, der im Spielverlauf in einen LEHRER eingetauscht werden kann. Wenn du den SCHÜLER ausspielst, darfst du eine beliebige Aktionskarte aus deiner Hand zweimal direkt hintereinander ausspielen. Ist die ausgespielte Aktionskarte eine Karte vom Vorrat, nimm dir eine Karte mit gleichem Namen vom Vorrat und lege sie ab. Gehört der Stapel der ausgespielten Karte nicht zum Vorrat (z. B. Eintausch-Karten oder Preiskarten aus Reiche Ernte), darfst du dir keine weitere Karte nehmen. In der Aufräumphase darfst du entscheiden, ob du den SCHÜLER ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen LEHRER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
+  "cost": "5*", 
+  "cardset": "Abenteuer", 
+  "types": [
+   "Action", 
+   "Traveller"
+  ], 
+  "name": "Schüler"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "Lege diese Karte auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust, darfst du deinen + 1 Karte-, + 1 Aktion-, + 1 Kauf oder + 1 -Marker auf einen Aktions-Vorratsstapel legen, auf dem keiner deiner Marker liegt. (Wenn du eine Karte von diesem Stapel ausspielst, erh\u00e4ltst du zuerst den Bonus des Markers.)   (Diese Karte geh\u00f6rt nicht zum Vorrat.)", 
+  "extra": "Einen LEHRER erhältst du nur, wenn du einen SCHÜLER eintauschst. Er kann in keine andere Karte eingetauscht werden. Wenn du den LEHRER ausspielst, lege ihn auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du den LEHRER von deinem Tableau aufrufen und in den Spielbereich legen. Wenn du das tust, legst du entweder den +1 Karte-, +1 Aktion-, +1 Kauf- oder + 1 Coins -Marker auf einen beliebigen Aktions-Vorratsstapel, auf dem du zu diesem Zeitpunkt keine weiteren eigenen Marker liegen hast. Immer wenn du eine Karte, die von diesem Stapel stammt, spielst, erhältst du zuerst (bevor die Anweisungen der Karte ausgeführt werden) den entsprechenden Bonus des Markers. Lege den LEHRER in der Aufräumphase ab.", 
+  "cost": "6*", 
+  "cardset": "Abenteuer", 
+  "types": [
+   "Action", 
+   "Reserve"
+  ], 
+  "name": "Lehrer"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Karte, +1 Aktion. Ist diese Karte im Spiel, darfst du sie gegen einen Schatzsucher eintauschen anstatt sie abzulegen. ", 
+  "extra": "Der PAGE ist eine Königreichkarte und kann wie jede andere Königreichkarte gekauft oder genommen werden. Der PAGE ist außerdem ein Reisender, der im Spielverlauf in einen SCHATZSUCHER eingetauscht werden kann. Wenn du den PAGEN ausspielst, erhältst du + 1 Karte sowie + 1 Aktion. In der Aufräumphase darfst du entscheiden, ob du den PAGEN ablegst oder zurück auf den Vorratsstapel legst. Wenn du das tust, erhältst du einen SCHATZSUCHER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
+  "cost": "2", 
+  "cardset": "Abenteuer", 
+  "types": [
+   "Action", 
+   "Traveller"
+  ], 
+  "name": "Page"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 1 Aktion, + 1 Geld. Nimm dir pro Karte, die dein rechter Mitspieler in seinem letzten Zug genommen hat, ein Silber. Ist diese Karte im Spiel, darfst du sie gegen einen Krieger eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.) ", 
+  "extra": "Einen SCHATZSUCHER erhältst du nur, wenn du einen PAGEN eintauschst. Der SCHATZSUCHER ist ein Reisender, der im Spielverlauf in einen KRIEGER eingetauscht werden kann. Wenn du den SCHATZSUCHER ausspielst, erhältst du + 1 Aktion sowie + 1 Coins. Für jede Karte, die dein rechter Mitspieler in seinem letzten Zug gekauft oder genommen hat, nimmst du ein SILBER vom Vorrat und legst es ab. In der Aufräumphase darfst du entscheiden, ob du den SCHATZSUCHER ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen KRIEGER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
+  "cost": "3*", 
+  "cardset": "Abenteuer", 
+  "types": [
+   "Action", 
+   "Traveller"
+  ], 
+  "name": "Schatzsucher"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Karten. F\u00fcr jeden Reisenden (inkl. diesem), den du im Spiel hast, m\u00fcssen alle Mitspieler die oberste Karte ihres Nachziehstapels ablegen und sie entsorgen, wenn sie 3 oder 4 kostet. Ist diese Karte im Spiel, darfst du sie gegen einen Helden eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.)", 
+  "extra": "Einen KRIEGER erhältst du nur, wenn du einen SCHATZSUCHER eintauschst. Der KRIEGER ist ein Reisender, der im Spielverlauf in einen HELDEN eingetauscht werden kann. Wenn du den KRIEGER ausspielst, erhältst du + 2 Karten. Für jeden Reisenden, den du (inkl. dieses KRIEGERS) zu diesem Zeitpunkt im Spiel hast, müssen alle Mitspieler – beginnend bei deinem linken Nachbarn – die oberste Karte ihres Nachziehstapels aufdecken und ablegen. Abgelegte Karten, die genau 3 Coins oder 4 Coins kosten, müssen entsorgt werden. Karten mit Trank-Kosten müssen nicht entsorgt werden. Karten mit * Coins oder + Coins müssen entsorgt werden, wenn sie 3 Coins oder 4 Coins kosten. Alle aufgedeckten Karten, die nicht genau 3 Coins oder 4 Coins kosten, müssen abgelegt werden. In der Aufräumphase darfst du entscheiden, ob du den KRIEGER ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen HELDEN und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
+  "cost": "4*", 
+  "cardset": "Abenteuer", 
+  "types": [
+   "Action", 
+   "Attack", 
+   "Traveller"
+  ], 
+  "name": "Krieger"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+ 2 Geld. Nimm dir eine Geldkarte.   Ist diese Karte im Spiel, darfst du sie gegen einen Champion eintauschen anstatt sie abzulegen. (Diese Karte geh\u00f6rt nicht zum Vorrat.)", 
+  "extra": "Einen HELDEN erhältst du nur, wenn du einen KRIEGER eintauschst. Der HELD ist ein Reisender, der im Spielverlauf in einen CHAMPION eingetauscht werden kann. Wenn du den HELDEN ausspielst, erhältst du + 2 Coins und darfst dir eine beliebige Geldkarte nehmen, die in diesem Spiel verwendet wird. Dazu gehören auch Geldkarten, die zu den Königreichkarten gehören. Lege die Geldkarte ab. In der Aufräumphase darfst du entscheiden, ob du den HELDEN ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen CHAMPION und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
+  "cost": "5*", 
+  "cardset": "Abenteuer", 
+  "types": [
+   "Action", 
+   "Traveller"
+  ], 
+  "name": "Held"
+ }, 
+ {
+  "potcost": 0, 
+  "description": "+1 Aktion.  Immer wenn ein Mitspieler eine Angriffskarte spielt, bist du davon nicht betroffen. Immer wenn du eine Aktionskarte spielst: + 1 Aktion (Diese Karte bleibt bis zum Spielende im Spiel und geh\u00f6rt nicht zum Vorrat.) ", 
+  "extra": "Einen CHAMPION erhältst du nur, wenn du einen HELDEN eintauschst. Er kann in keine andere Karte eingetauscht werden. Wenn du den CHAMPION ausspielst, erhältst du + 1 Aktion. Der CHAMPION ist eine Dauerkarte. Er bleibt bis zum Spielende im Spiel. Immer wenn ein Mitspieler ab jetzt eine Angriffskarte ausspielt, bist du davon nicht betroffen (auch wenn du das möchtest). Für den Rest des Spiels erhältst du jedes Mal, wenn du eine Aktionskarte ausspielst, + 1 Aktion. Die Anweisung über der Trennlinie wird nur beim Ausspielen des CHAMPION ausgeführt.", 
+  "cost": "6*", 
+  "cardset": "Abenteuer", 
+  "types": [
+   "Action", 
+   "Duration"
+  ], 
+  "name": "Champion"
+ },
+ {
+     "name":"Geschichtenerzähler",
+     "cost": "5", 
+     "description": "",
+     "extra":"Du erhältst + 1 Aktion sowie + 1 Coins. Spiele bis zu 3 Geldkarten aus deiner Hand aus und zahle alle empty Coin, die du bisher in diesem Zug ausgespielt hast. Das beinhaltet alle Geldwerte von ausgespielten Geldkarten sowie alle, z. B. durch ausgespielte Aktionskarten, erhaltene zusätzliche Geldwerte (+ 1 Coins) inkl. dem + 1 Coins dieses GESCHICHTENERZÄHLERS. Du hast danach 0 Coins. Für jedes gezahlte 1 Coins erhältst du + 1 Karte. Trank-Kosten aus Die Alchemisten sind davon nicht betroffen.",
+     "cardset": "Abenteuer",
+     "potcost": 0,
+     "types": [
+         "Action"
+     ]
+},
+{
+"name":"Amulett",
+"cost": "3", 
+"description": "Jetzt und zu Beginn deines nächsten Zuges, wähle jeweils eins: + 1 Geld oder entsorge 1 Handkarte oder nimm dir 1 Silber.",
+"extra":"Diese Karte ist eine Dauerkarte. Wähle sowohl in diesem als auch zu Beginn deines nächsten Zuges jeweils eine der folgenden Optionen: + 1 Coins oder entsorge eine Handkarte oder nimm ein SILBER vom Vorrat. Du darfst beim 2. Mal etwas anderes wählen. Lege die Karte in der Aufräumphase des nächsten Zuges ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Duration"
+]
+},
+{
+"name":"Königliche Münzen",
+"cost": "2", 
+"description": "",
+"extra":"Diese Karte ist eine kombinierte Geld- und Reservekarte. Sie hat den Wert 1 Coins. Spiele sie in der Kaufphase aus und lege sie anschließend auf das Wirtshaustableau. Sobald du eine Aktionskarte ausspielst und die Anweisungen darauf ausgeführt hast, darfst du die KÖNIGLICHEN MÜNZEN von deinem Wirtshaustableau aufrufen. Lege die Karte in deinen Spielbereich und du erhältst + 2 Aktionen, nicht aber + 1 Coins, da diese Anweisung nur beim Ausspielen der Karte ausgeführt wird. Bis zum Ende der Aufräumphase befinden sich die KÖNIGLICHEN MÜNZEN im Spiel und werden dann abgelegt.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Treasure",
+"Reserve"
+]
+},
+{
+"name":"Rattenfänger",
+"cost": "2", 
+"description": "",
+"extra":"Du erhältst + 1 Karte und + 1 Aktion. Lege diese Karte auf dein Wirtshaustableau. Du darfst diese Karte zu Beginn deines Zuges vom Tableau aufrufen. Wenn du das tust, lege die Karte in deinen Spielbereich. Dann musst du eine beliebige Karte aus deiner Hand entsorgen. Lege den RATTENFÄNGER in der Aufräumphase ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Zerstörung",
+"cost": "2", 
+"description": "",
+"extra":"Du erhältst + 1 Aktion. Dann musst du entweder diese ZERSTÖRUNG oder eine Handkarte entsorgen. Je nach Höhe der Kosten der entsorgten Karte siehst du dir die entsprechende Anzahl Karten oben von deinem Nachziehstapel an. Nimm eine davon auf die Hand und lege den Rest ab. Liegt der -Karte-Marker auf dem Nachziehstapel, wird dieser kurz zur Seite gelegt und nach dem Ziehen der Karten wieder oben auf den Stapel zurückgelegt.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Ausrüstung",
+"cost": "3", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Du erhältst + 2 Karten und legst dann bis zu 2 Karten (inkl. eventuell gerade gezogener Karten) verdeckt zur Seite. Entscheidest du dich dafür, keine Karten zur Seite zu legen, legst du die AUSRÜSTUNG am Ende des Zuges ab. Legst du 1 oder 2 Karten zur Seite, nimmst du zu Beginn deines nächsten Zuges die zur Seite gelegten Karten auf die Hand. Lege die AUSRÜSTUNG am Ende dieses Zuges ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Duration"
+]
+},
+{
+"name":"Karawanenwächter",
+"cost": "3", 
+"description": "",
+"extra":"Diese Karte ist eine kombinierte Dauer- und Reaktionskarte. Wenn du sie ausspielst, erhältst du + 1 Karte und + 1 Aktion. Zu Beginn deines nächsten Zuges erhältst du + 1 Coins. Lege die Karte am Ende dieses Zuges ab. Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du diese Karte aus deiner Hand ausspielen. Du erhältst + 1 Karte und + 1 Aktion. Die Anweisung + 1 Aktion kann in diesem Fall – da gerade ein anderer Spieler am Zug ist – nicht ausgeführt werden. Zu Beginn deines nächsten Zuges erhältst du + 1 Coins. Die Karte wird erst in der Aufräumphase deines nächsten Zuges abgelegt.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Duration",
+"Reaction"
+]
+},
+{
+"name":"Kundschafter",
+"cost": "3", 
+"description": "",
+"extra":"Diese Karte ist eine Reservekarte. Wenn du sie ausspielst erhältst du + 1 Karte und + 1 Aktion. Dann legst du die Karte auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte aufrufen. Wenn du das tust, legst du alle Karten, die du auf der Hand hast, ab und ziehst 5 Karten nach. Lege die Karte am Ende der Aufräumphase ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Verlies",
+"cost": "3", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Du erhältst + 2 Karten, + 1 Aktion und legst 2 Karten ab. Zu Beginn deines nächsten Zuges erhältst du + 2 Karten und legst 2 Karten ab. Lege das VERLIES am Ende dieses Zuges ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Duration"
+]
+},
+{
+"name":"Duplikat",
+"cost": "4", 
+"description": "",
+"extra":"Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, legst du sie auf dein Wirtshaustableau. Sobald du (auch außerhalb deines eigenen Zuges) eine Karte nimmst, die bis zu 6 Coins kostet, darfst du diese Karte aufrufen. Wenn du das tust, nimmst du dir eine Karte mit gleichem Namen vom Vorrat. Lege diese Karte ab. Wenn keine solche Karte mehr im Vorrat ist, erhältst du nichts. Wenn du eine Karte von einem Stapel nimmst, der nicht zum Vorrat gehört, darfst du dir keine weitere Karte mit gleichem Namen nehmen. Das DUPLIKAT wird in der Aufräumphase des Zuges, in dem es aufgerufen wird (auch außerhalb deines Zuges) abgelegt.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Elster",
+"cost": "4", 
+"description": "",
+"extra":"Du erhältst + 1 Karte und + 1 Aktion. Decke die oberste Karte deines Nachziehstapels auf. Ist dies ein Geldkarte (auch eine kombinierte oder Königreichkarte), nimm sie auf die Hand. Ist es eine Aktions- oder Punktekarte, nimmst du eine ELSTER vom Vorrat. Wenn keine ELSTER mehr im Vorrat ist, erhältst du nichts. Lege die aufgedeckte Karte zurück auf den Nachziehstapel. Ist es eine kombinierte Punkte- und Geldkarte, nimmst du die Karte auf die Hand und nimmst eine ELSTER vom Vorrat.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Geizhals",
+"cost": "4", 
+"description": "",
+"extra":"Du darfst entweder ein KUPFER aus deiner Hand auf dein Wirtshaustableau legen oder du erhältst pro KUPFER auf deinem Tableau + 1 Coins. KUPFER auf deinem Wirtshaustableau befinden sich nicht im Spiel, zählen aber bei Spielende zu deinen Karten.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Hafenstadt",
+"cost": "4", 
+"description": "",
+"extra":"Wenn du diese Karte ausspielst, erhältst du + 1 Karte und + 2 Aktionen. Wenn du diese Karte kaufst (nicht wenn du sie auf andere Art und Weise erhältst), nimm dir eine HAFENSTADT vom Vorrat.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Kurier",
+"cost": "4", 
+"description": "",
+"extra":"Wenn du diese Karte ausspielst, erhältst du + 1 Kauf sowie + 2 Coins. Außerdem darfst du deinen Nachziehstapel sofort komplett auf deinen Ablagestapel legen. Karten, die auf diese Weise abgelegt werden, gelten nicht als „abgelegt“. Wenn du diese Karte kaufst und dies der erste Kauf (inklusive eventuell erworbener Ereignisse) in deinem Zug ist, nimmst du eine Karte vom Vorrat, die bis zu 4 Coins kostet. Jeder Mitspieler nimmt sich – beginnend bei deinem linken Mitspieler – eine Karte mit gleichem Namen vom Vorrat. Karten, die nicht zum Vorrat gehören, dürfen nicht genommen werden.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Transformation",
+"cost": "4", 
+"description": "",
+"extra":"Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du + 1 Aktion. Lege sie dann auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte aufrufen. Wenn du das tust, entsorgst du eine Handkarte und nimmst eine Karte vom Vorrat, die bis zu 1 Coins mehr kostet als die entsorgte Karte. Nimm die Karte auf die Hand. Du darfst nur Karten aus dem Vorrat nehmen. Lege die TRANSFORMATION in der Aufräumphase ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Wildhüter",
+"cost": "4", 
+"description": "",
+"extra":"Du erhältst + 1 Kauf. Drehe deinen Reise-Marker um (zu Beginn des Spiels liegt der Marker mit der Vorderseite nach oben). Liegt jetzt die Vorderseite oben, ziehst du 5 Karten nach. Liegt die Rückseite oben, passiert nichts. Du darfst in einem Zug mehrere WILDHÜTER ausspielen und drehst bei jedem WILDHÜTER den Marker um.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Brückentroll",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Alle Mitspieler müssen ihren -Coins-Marker vor sich ablegen. Sie erhalten beim nächsten Mal, wenn sie in irgendeiner Art und Weise mindestens 1 Coins erhalten würden, 1 Coins weniger. Danach wird der Marker wieder neben den Vorrat gelegt. Du erhältst jetzt und zu Beginn deines nächsten Zuges + 1 Kauf. So lange diese Karte im Spiel ist, kosten alle Karten in deinem Zug 1 Coins weniger, allerdings nie weniger als 0 Coins. Dies betrifft nicht nur den Kauf, sondern alle Aktionen, bei denen die Kosten einer Karte eine Rolle spielen. Der BRÜCKENTROLL beeinflusst nicht die Kosten von Ereignissen. Die Wirkung des BRÜCKENTROLLS ist kumulativ, d. h. wenn du zwei oder mehr BRÜCKENTROLLE gleichzeitig im Spiel hast, kannst du die Kosten um 2 Coins oder mehr verringern.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Attack",
+"Duration"
+]
+},
+{
+"name":"Ferne Lande",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine kombinierte Aktions-, Reserve- und Punktekarte. Wenn du sie ausspielst, lege sie auf dein Wirtshaustableau. Dort bleibt sie bis zum Spielende. Pro FERNE LANDE, die du bei Spielende auf deinem Tableau liegen hast, erhältst du 4 <VP>. Alle anderen FERNE LANDE zählen 0 <VP>.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve",
+"Victory"
+]
+},
+{
+"name":"Geisterwald",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Bis zu Beginn deines nächsten Zuges muss jeder Mitspieler, der eine Karte kauft, sofort alle restlichen Handkarten in beliebiger Reihenfolge auf den Nachziehstapel legen. Das Erwerben eines Ereignisses ist nicht mit dem Kauf einer Karte gleichzusetzen. Spieler, die mit einer Reaktionskarte reagieren wollen, müssen dies sofort beim Ausspielen des GEISTERWALDS tun. Ziehe zu Beginn deines nächsten Zuges 3 Karten nach. Lege die Karte in der Aufräumphase des nächsten Zuges ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Attack",
+"Duration"
+]
+},
+
+{
+"name":"Kunsthandwerker",
+"cost": "5", 
+"description": "",
+"extra":"Du erhältst + 1 Karte, + 1 Aktion und + 1 Coins. Lege beliebig viele Handkarten ab. Du darfst eine Karte vom Vorrat nehmen, die genau so viel kostet, wie du Karten abgelegt hast. Du kannst dich auch entscheiden, keine Karte abzulegen. Dann darfst du eine Karte nehmen, die genau 0 Coins kostet. Lege die genommene Karte verdeckt auf deinen Nachziehstapel.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Königliche Kutsche",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du + 1 Aktion und legst sie dann auf dein Wirtshaustableau. Sobald du eine Aktionskarte ausspielst und die Anweisungen darauf ausgeführt hast, darfst du die KÖNIGLICHE KUTSCHE sofort danach aufrufen, falls die Aktionskarte noch im Spiel ist. Wenn du das tust, führst du die Aktion sofort noch einmal aus. Du kannst die KÖNIGLICHE KUTSCHE nicht aufrufen, wenn die Aktion bereits entsorgt wurde oder auf Reservekarten, die bereits auf das Tableau gelegt wurden. Lege die KÖNIGLICHE KUTSCHE in der Aufräumphase ab. Wird die KÖNIGLICHE KUTSCHE auf eine Dauerkarte gespielt, bleibt sie solange im Spiel, bis die Dauerkarte abgelegt wird.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Relikt",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Jeder Mitspieler muss seinen -Karte-Marker auf seinen Nachziehstapel legen. Sobald ein Mitspieler Karten nachziehen muss, zieht er 1 Karte weniger. Dann legt er den Marker neben den Vorrat zurück. Bei Anweisungen, durch die man seine Kartenhand auf X Karten auffüllen darf, wird zunächst der Marker zurückgelegt und dann die Kartenhand auf X Karten aufgefüllt. Das RELIKT ist eine Angriffskarte. Entsprechend kann darauf mit Reaktionskarten reagiert werden. Reagiert ein Spieler mit dem KARAWANENWÄCHTER, führt er zunächst die Anweisungen aus (inkl. + 1 Karte) und legt dann den Marker auf seinen Nachziehstapel.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Treasure",
+"Attack"
+]
+},
+{
+"name":"Riese",
+"cost": "5", 
+"description": "",
+"extra":"Drehe deinen Reise-Marker um (zu Beginn des Spiels liegt der Marker mit der Vorderseite nach oben). Liegt jetzt die Rückseite oben, erhältst du + 1 Coins. Liegt die Vorderseite oben, erhältst du + 5 Coins und alle Mitspieler – beginnend bei deinem linken Mitspieler – müssen die oberste Karte ihres Nachziehstapels aufdecken. Aufgedeckte Karten, die 3 Coins bis 6 Coins kosten, müssen entsorgt werden. Karten mit Trank-Kosten müssen nicht entsorgt werden, Karten mit + Coins (z. B. aus Die Gilden) oder * Coins müssen entsorgt werden. Ansonsten legt der Spieler die aufgedeckte Karte ab und nimmt sich einen FLUCH vom Vorrat. Die Mitspieler können auf das Ausspielen eines RIESEN mit einer Reaktionskarte reagieren, auch wenn die Rückseite des Reise-Markers oben liegt und der Angriff gar nicht ausgeführt wird.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Attack"
+]
+},
+{
+"name":"Schatz",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Nimm ein GOLD und ein KUPFER (in beliebiger Reihenfolge) vom Vorrat und lege sie ab. Ist ein Stapel leer, erhältst du nur die andere Karte.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Treasure"
+]
+},
+{
+"name":"Sumpfhexe",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Bis zu Beginn deines nächsten Zuges muss jeder Mitspieler für jede Karte, die er kauft, jeweils einen FLUCH vom Vorrat nehmen. Das Erwerben eines Ereignisses ist nicht mit dem Kauf einer Karte gleichzusetzen. Spieler, die mit einer Reaktionskarte reagieren wollen, müssen dies sofort beim Ausspielen der SUMPFHEXE tun. Zu Beginn deines nächsten Zuges erhältst du + 3 Coins. Lege die Karte in der Aufräumphase des nächsten Zuges ab.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Attack",
+"Duration"
+]
+},
+{
+"name":"Verlorene Stadt",
+"cost": "5", 
+"description": "",
+"extra":"Wenn du diese Karte ausspielst, erhältst du + 2 Karten und + 2 Aktionen. Wenn du diese Karte nimmst, zieht jeder Mitspieler 1 Karte.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name":"Weinhändler",
+"cost": "5", 
+"description": "",
+"extra":"Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du + 1 Kauf sowie + 4 Coins und legst die Karte dann auf dein Wirtshaustableau. Wenn du am Ende deiner Kaufphase mindestens 2 Coins nicht ausgegeben hast, darfst du diese Karte von deinem Wirtshaustableau ablegen. Hast du mehrere WEINHÄNDLER auf deinem Tableau liegen, kannst du alle ablegen. Du brauchst nicht für jeden WEINHÄNDLER 2 Coins übrig zu haben.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Reserve"
+]
+},
+{
+"name":"Gefolgsmann",
+"cost": "6", 
+"description": "",
+"extra":"Diese Karte ist eine Dauerkarte. Wenn du sie ausspielst, lege sie neben deinen Spielbereich. Sie bleibt bis zum Spielende im Spiel und wird nicht abgelegt. Für den Rest des Spiels erhältst du zu Beginn deines Zuges + 1 Karte. Wenn du einen GEFOLGSMANN zweimal ausspielen darfst (z. B. durch den THRONSAAL aus der Basis), lege beide Karten zur Seite und du erhältst bis zum Spielende zu Beginn jedes Zuges + 2 Karten.",
+"cardset": "Abenteuer",
+"potcost": 0,
+"types": [
+"Action", 
+"Duration"
+]
+}
+    ]

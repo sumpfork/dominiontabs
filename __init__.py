@@ -1,3 +1,3 @@
-#main package
+# main package
 
-__version__ = '1.8.5'
+__version__ = '2.1'
