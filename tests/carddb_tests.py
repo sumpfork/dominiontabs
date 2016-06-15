@@ -27,7 +27,8 @@ class TestCardDB(unittest.TestCase):
             u'dominion',
             u'guilds',
             u'intrigue',
-            u'empires'
+            u'empires',
+            u'empires extras',
         }
         for c in cards:
             self.assertIsInstance(c, domdiv_cards.Card)
