@@ -98,7 +98,10 @@ class DividerDrawer(object):
         replace = '<img src='"'%s/victory_emblem.png'"' width=%d height='"'120%%'"' valign='"'middle'"'/>' % (
             path, fontsize * 1.5)
         text = re.sub('\<VP\>', replace, text)
-        replace = '<img src='"'%s/debt.png'"' width=%d height='"'105%%'"' valign='"'middle'"'/>' % (
+        replace = '<img src='"'%s/debt_\\1.png'"' width=%d height='"'105%%'"' valign='"'middle'"'/>&thinsp;' % (
+            path, fontsize * 1.2)
+        text = re.sub('(\d+)\sDebt', replace, text)
+        replace = '<img src='"'%s/debt.png'"' width=%d height='"'105%%'"' valign='"'middle'"'/>&thinsp;' % (
             path, fontsize * 1.2)
         text = re.sub('Debt', replace, text)
         return text
@@ -183,8 +186,16 @@ class DividerDrawer(object):
             self.canvas.drawImage(os.path.join(self.options.data_path, 'images', 'debt.png'),
                                   x, coinHeight, 16, 16, preserveAspectRatio=True,
                                   mask=[255, 255, 255, 255, 255, 255])
-            self.canvas.setFillColorRGB(1, 1, 1)
             cost = str(card.debtcost)
+            if card.cost != "" and int(card.cost) > 0:
+                self.canvas.drawImage(os.path.join(self.options.data_path, 'images', 'coin_small.png'), x + 17,
+                                      coinHeight, 16, 16, preserveAspectRatio=True,
+                                      mask=[255, 255, 255, 255, 255, 255])
+                self.canvas.setFont(self.fontNameBold, 12)
+                self.canvas.drawCentredString(x + 8 + 17, costHeight, str(card.cost))
+                self.canvas.setFillColorRGB(0, 0, 0)
+                width += 16
+            self.canvas.setFillColorRGB(1, 1, 1)
         else:
             self.canvas.drawImage(os.path.join(self.options.data_path, 'images', 'coin_small.png'),
                                   x, coinHeight, 16, 16, preserveAspectRatio=True, mask='auto')
@@ -245,7 +256,7 @@ class DividerDrawer(object):
                                   preserveAspectRatio=False, anchor='n', mask='auto')
 
         # draw cost
-        if not card.isExpansion() and not card.isBlank():
+        if not card.isExpansion() and not card.isBlank() and not card.isLandmark():
             if 'tab' in self.options.cost:
                 textInset = 4
                 textInset += self.drawCost(card, textInset, textHeight,
