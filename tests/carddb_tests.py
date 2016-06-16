@@ -9,7 +9,7 @@ class TestCardDB(unittest.TestCase):
         options, args = domdiv.parse_opts(['commandname'])
         options.data_path = '.'
         cards = domdiv.read_write_card_data(options)
-        self.assertEquals(len(cards), 348)
+        self.assertEquals(len(cards), 383)
         print set(c.cardset for c in cards)
         valid_cardsets = {
             u'prosperity',
@@ -27,7 +27,8 @@ class TestCardDB(unittest.TestCase):
             u'dominion',
             u'guilds',
             u'intrigue',
-            u'empires'
+            u'empires',
+            u'empires extras',
         }
         for c in cards:
             self.assertIsInstance(c, domdiv_cards.Card)

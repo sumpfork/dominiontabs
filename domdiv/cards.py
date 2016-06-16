@@ -19,7 +19,8 @@ setImages = {
     'guilds': 'guilds_set.png',
     'adventures': 'adventures_set.png',
     'adventures extras': 'adventures_set.png',
-    'empires': 'empires_set.png'
+    'empires': 'empires_set.png',
+    'empires extras': 'empires_set.png'
 }
 promoImages = {
     'walled village': 'walled_village_set.png',
@@ -27,7 +28,8 @@ promoImages = {
     'governor': 'governor_set.png',
     'black market': 'black_market_set.png',
     'envoy': 'envoy_set.png',
-    'prince': 'prince_set.png'
+    'prince': 'prince_set.png',
+    'summon': 'summon_set.png'
 }
 
 setTextIcons = {
@@ -44,7 +46,8 @@ setTextIcons = {
     'guilds': 'G',
     'adventures': 'Ad',
     'adventures extras': 'Ad',
-    'empires': 'E'
+    'empires': 'E',
+    'empires extras': 'E'
 }
 
 promoTextIcons = {
@@ -123,6 +126,9 @@ class Card(object):
 
     def isEvent(self):
         return self.getType().getTypeNames() == ('Event',)
+
+    def isLandmark(self):
+        return self.getType().getTypeNames() == ('Landmark',)
 
     def isPrize(self):
         return 'Prize' in self.getType().getTypeNames()
@@ -221,7 +227,7 @@ cardTypes = [
     CardType(('Curse',), 'curse.png', 3),
     CardType(('Expansion',), 'expansion.png', 4),
     CardType(('Blank',), ''),
-    CardType(('Landmark',), '')
+    CardType(('Landmark',), 'landmark.png')
 ]
 
 cardTypes = dict(((c.getTypeNames(), c) for c in cardTypes))

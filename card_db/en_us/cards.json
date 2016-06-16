@@ -1561,6 +1561,17 @@
    "Action"
   ]
  },
+  {
+  "cardset": "promo",
+  "cost": "5",
+  "description": "Gain an Action card costing up to 4 coins. Set it aside. If you do, then at the start of your next turn, play it.",
+  "extra": "When you buy this, you gain an Action card costing up to 4 coins from the Supply and set it aside face up.\nIf you did set it aside, then at the start of your next turn, play that Action card. This doesn't use up your default Action for the turn.\nIn order to remember to play the card on your next turn, you may want to turn it sideways or diagonally, turning it right side up when you play it.\nIf you move the Action card after you gain it but before you set it aside (e.g. by putting it on top of your deck with Watchtower, from Dominion: Prosperity), then Summon will ''lose track'' of it and be unable to set it aside; in that case you will not play it at the start of your next turn.\nIf you use Summon to gain a Nomad Camp (from Dominion: Hinterlands), Summon will know to find the Nomad Camp on your deck, so you will set it aside in that case (unless you have moved it elsewhere via another ability).",
+  "name": "Summon",
+  "potcost": 0,
+  "types": [
+   "Event"
+  ]
+ },
  {
   "cardset": "base",
   "cost": "0",
@@ -3866,7 +3877,7 @@
   ]
  },
  {
-  "cardset": "empires",
+  "cardset": "empires extras",
   "cost": "*",
   "description": "",
   "extra": "",
@@ -3878,6 +3889,363 @@
  },
  {
   "cardset": "empires",
+  "cost": "0",
+  "description": "Gain an Estate.\nIf you did, +1<VP> per card you've gained this turn.",
+  "extra": "You get +1<VP> per card you have gained, including the Estate, and any other cards bought or gained other ways; you do not get <VP> for Events bought.\nOnce the Estate pile is empty, this does nothing.",
+  "name": "Triumph",
+  "potcost": 0,
+  "debtcost": 5,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "0",
+  "description": "Look through your discard pile. Shuffle all but up to 5 cards from it into your deck. Gain a Duchy.",
+  "extra": "You can do this even if the Duchy pile is empty.\nThe chosen cards stay in your discard pile when the other cards are shuffled into your deck.",
+  "name": "Annex",
+  "potcost": 0,
+  "debtcost": 8,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "0",
+  "description": "After this turn, put all cards from your deck and discard pile into your hand, trash any number, shuffle your hand into your deck, then draw 5 cards.",
+  "extra": "Effects that happen due to trashing cards (such as Rocks) will happen before you shuffle.\nThis happens between turns, and so Possession (from Dominion: Alchemy) will no longer be doing anything.",
+  "name": "Donate",
+  "potcost": 0,
+  "debtcost": 8,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "0",
+  "description": "You may trash an Action card from your hand. If you do, gain an Action card costing up to 6 Coins.",
+  "extra": "If you do not trash an Action, nothing else happens.",
+  "name": "Advance",
+  "potcost": 0,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "2",
+  "description": "+1 Buy\nGain a Silver.",
+  "extra": "Each purchase of Delve gives you back the Buy you used on it.\nFor example, if you have 7 Coins, you can Delve, then Delve, then buy a card for 3 Coins.",
+  "name": "Delve",
+  "potcost": 0,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "2",
+  "description": "Add 2 Debt to a Supply pile.\n______________________\nSetup: Add 1 Debt to each Supply pile. When a player buys a card, they take the Debt from its pile.",
+  "extra": "Every Supply pile starts with 1 Debt, including Kingdom cards and basic cards like Silver.\nThe Event itself, when bought, adds 2 Debt to a single pile, whether or not that pile has any Debt on it already.\nThe Debt is taken by the next player to buy a card from that pile; gaining a card without buying it leaves the Debt on the pile.",
+  "name": "Tax",
+  "potcost": 0,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "3",
+  "description": "Gain 2 Coppers and a non-Victory card costing up to 5 Coins.",
+  "extra": "You can do this even if the Copper pile is empty.",
+  "name": "Banquet",
+  "potcost": 0,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "4",
+  "description": "Gain a Curse. If you do, trash a card from your hand. +1<VP> per 1 Coin it cost.",
+  "extra": "This does nothing once the Curse pile is empty.\nThis only gives you +1<VP> per 1 Coin the trashed card cost; it does not give anything for Debt or Potion in costs.",
+  "name": "Ritual",
+  "potcost": 0,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "4",
+  "description": "+1<VP>\nTrash a Victory card from the Supply.",
+  "extra": "If the trashed card does something when trashed (such as Crumbling Castle), you do that thing.",
+  "name": "Salt the Earth",
+  "potcost": 0,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "4",
+  "description": "+1<VP>\nGain a Gold.",
+  "extra": "You get the <VP> even if there are no Golds left.",
+  "name": "Wedding",
+  "potcost": 0,
+  "debtcost": 3,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "5",
+  "description": "If your deck and discard pile are empty, gain 3 Golds.",
+  "extra": "If there are fewer than 3 Golds in the pile, just gain the remaining Golds.",
+  "name": "Windfall",
+  "potcost": 0,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "6",
+  "description": "Gain 2 Silvers.\n+1<VP> per Silver you've gained this turn.",
+  "extra": "This counts the two Silvers it gives you (provided that there were Silvers left to gain).\nFor example, with 12 Coin and 2 Buys and having gained no Silvers earlier in the turn, you could buy Conquest twice, getting two Silvers, then +2<VP>, then two more Silvers, then +4<VP>.",
+  "name": "Conquest",
+  "potcost": 0,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "cost": "14",
+  "description": "Gain a Province. If you do, +9<VP>.",
+  "extra": "This does nothing once the Province pile is empty.",
+  "name": "Dominate",
+  "potcost": 0,
+  "types": [
+   "Event"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When you gain a Treasure, move 1<VP> from its pile to this. When you gain a Victory card, take the <VP> from this\n______________________\nSetup: Put 8<VP> on the Silver and Gold piles.",
+  "cost": "",
+  "extra": "If you gain a card that is both a Treasure and a Victory card, such as Humble Castle, you can resolve the abilities in either order.",
+  "name": "Aqueduct",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "At the start of your Buy phase, you may discard an Action card. If you do, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.",
+  "cost": "",
+  "extra": "With Villa it is possible for your Buy phase to start twice or more in a turn; you can make use of Arena each time.",
+  "name": "Arena",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When scoring, -2<VP> for each Silver and each Gold you have.",
+  "cost": "",
+  "extra": "For example with 3 Silvers and 1 Gold, you would get -8<VP>.\nScores can go negative.",
+  "name": "Bandit Fort",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When you buy a card, if you have 2 Coins or more left, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.",
+  "cost": "",
+  "extra": "This happens each time you buy a card.\nFor example with 4 Coin and 3 Buys, you could buy Copper, then Copper, then Silver, taking 2<VP>, then 2<VP>, then none.",
+  "name": "Basilica",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When you end your turn without having gained a card, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.",
+  "cost": "",
+  "extra": "Any way you gain a card will stop you from getting <VP> from this that turn.",
+  "name": "Baths",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When you gain a Victory card, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.",
+  "cost": "",
+  "extra": "You take the <VP> whether you bought the Victory card or gained it another way.",
+  "name": "Battlefield",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When you buy an Action card, if you have a copy of it in play, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.",
+  "cost": "",
+  "extra": "For example with Settlers in play, buying another Settlers gets you 2<VP> from here.\nCards from the same pile are not necessarily copies of each other; for example Bustling Village is not a copy of Settlers.",
+  "name": "Colonnade",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When you gain an Action, move 1<VP> from its pile to this. When you buy a Curse, take the <VP> from this.\n______________________\nSetup: Put 2<VP> on each non-Gathering Action Supply pile.",
+  "cost": "",
+  "extra": "Note that this triggers on gaining an Action, whether bought or otherwise gained, but only on buying Curse, not on gaining Curse other ways.\n<VP> tokens will go on Ruins (from Dominion: Dark Ages) when used, but not on Farmers' Market, Temple, or Wild Hunt (the three Action - Gathering cards).",
+  "name": "Defiled Shrine",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When scoring, 15<VP> if you have at least 10 Coppers.",
+  "cost": "",
+  "extra": "You either get 15<VP> or 0<VP>; there is no extra bonus for having 20 Coppers.",
+  "name": "Fountain",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When scoring, 5<VP> per differently named Treasure you have, that you have more copies of than each other player, or tied for most.",
+  "cost": "",
+  "extra": "This applies to each different Treasure being used in the game.\nIf all players have the same number of copies of a Treasure, they all get the 5<VP> for that Treasure.",
+  "name": "Keep",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When you gain a 2nd card in one of your turns, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.",
+  "cost": "",
+  "extra": "This can only happen once per turn per player.\nFor example if you gain 4 cards in the same turn, only the second one will come with 2<VP>. ",
+  "name": "Labyrinth",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When you are the first player to gain a Province, after that turn, each player bids once, up to 40 Debt, ending with you. High bidder gets +8<VP> and takes the Debt they bid.",
+  "cost": "",
+  "extra": "This only happens the first time a player gains a Province; it does not matter if the Province was bought or not, or if Provinces have left the pile earlier due to Salt the Earth.\nThis happens between turns; Possession (from Dominion: Alchemy) will not be in effect.\nThe player to the left of the player who got the Province bids first, then the player to their left and so on, ending with the player who got the Province.\nEach bid can be a pass, or a higher bid than the previous bid.\nBids are in amounts of Debt, from 1 Debt to 40 Debt; a bid of 40 Debt cannot be beaten.\nThe player who bid the highest (if any) gets +8<VP> and takes the amount of Debt of their bid.",
+  "name": "Montain Pass",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When scoring, 2<VP> per differently named card you have.",
+  "cost": "",
+  "extra": "Multiple cards from the same pile can score for this as long as they have different names.",
+  "name": "Museum",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When scoring, 2<VP> per card you have from the chosen pile.\n______________________\nSetup: Choose a random Action Supply pile.",
+  "cost": "",
+  "extra": "All cards from the chosen pile count, even if they have different names (such as when it is a split pile).\nRuins (from Dominion: Dark Ages), when used, can be the pile.",
+  "name": "Obelisk",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When scoring, 4<VP> per differently named Action card you have 3 or more copies of.",
+  "cost": "",
+  "extra": "Having 6 or more copies of a card confers no additional bonus.",
+  "name": "Orchard",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When scoring, 3<VP> per set you have of Copper - Silver - Gold.",
+  "cost": "",
+  "extra": "For example, if you had 7 Coppers, 5 Silvers, and 2 Golds, that would be two sets of Copper - Silver - Gold, for 6<VP> total.",
+  "name": "Palace",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When you trash a card, +1<VP>.",
+  "cost": "",
+  "extra": "This works even when it is not your turn, such as when you trash a card to Swindler (from Dominion: Intrigue), and works when told to trash a card that is not yours, such as with Salt the Earth.",
+  "name": "Tomb",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When scoring, 1<VP> per non-Victory card you have from an empty Supply pile.",
+  "cost": "",
+  "extra": "A Supply pile is only empty if it has no cards in it; a split pile with half of the cards gone is not empty.\nVictory cards do not count, but Curses do.",
+  "name": "Tower",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When scoring, 3<VP> per copy you have of the 2nd most common Action card among your cards (if it’s a tie, count either).",
+  "cost": "",
+  "extra": "For example, if you had 7 copies of Villa and 4 copies of Wild Hunt, you would score 12<VP>.",
+  "name": "Triumphal Arch",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When scoring, -1<VP> per card you have after the first 15.",
+  "cost": "",
+  "extra": "For example, if you had 27 cards in your deck, you would score -12<VP> for Wall.\nScores can go negative.",
+  "name": "Wall",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires",
+  "description": "When scoring, -3<VP> per card you have exactly one copy of.",
+  "cost": "",
+  "extra": "Having no copies of a card, or two or more copies of a card, confers no penalty.\nScores can go negative.",
+  "name": "Wolf Den",
+  "types": [
+   "Landmark"
+  ]
+ },
+ {
+  "cardset": "empires extras",
   "cost": "",
   "description": "",
   "extra": "",

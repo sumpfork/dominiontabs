@@ -112,6 +112,8 @@ def parse_opts(argstring):
                       help="include a few dividers with extra text")
     parser.add_option("--exclude_events", action="store_true",
                       default=False, help="exclude individual dividers for events")
+    parser.add_option("--exclude_landmarks", action="store_true",
+                      default=False, help="exclude individual dividers for landmarks")
     parser.add_option("--special_card_groups", action="store_true",
                       default=False, help="group some cards under special dividers (e.g. Shelters, Prizes)")
     parser.add_option("--exclude_prizes", action="store_true",
@@ -304,6 +306,9 @@ def filter_sort_cards(cards, options):
 
     if options.exclude_events:
         cards = [card for card in cards if not card.isEvent() or card.name == 'Events']
+
+    if options.exclude_landmarks:
+        cards = [card for card in cards if not card.isLandmark() or card.name == 'Landmarks']
 
     if options.exclude_prizes:
         cards = [card for card in cards if not card.isPrize()]
