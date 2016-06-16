@@ -88,7 +88,7 @@ class DividerDrawer(object):
         path = os.path.join(self.options.data_path, 'images')
         replace = '<img src='"'%s/coin_small_\\1.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (
             path, fontsize * 1.2)
-        text = re.sub('(\d)\s(c|C)oin(s)?', replace, text)
+        text = re.sub('(\d+)\s(c|C)oin(s)?', replace, text)
         replace = '<img src='"'%s/coin_small_question.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (
             path, fontsize * 1.2)
         text = re.sub('\?\s(c|C)oin(s)?', replace, text)
@@ -104,6 +104,9 @@ class DividerDrawer(object):
         replace = '<img src='"'%s/debt.png'"' width=%d height='"'105%%'"' valign='"'middle'"'/>&thinsp;' % (
             path, fontsize * 1.2)
         text = re.sub('Debt', replace, text)
+        replace = '<img src='"'%s/potion_small.png'"' width=%d height='"'100%%'"' valign='"'middle'"'/>' % (
+            path, fontsize * 1.2)
+        text = re.sub('Potion', replace, text)
         return text
 
     def drawOutline(self, x, y, rightSide, isBack=False, isExpansionDivider=False):
