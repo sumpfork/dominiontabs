@@ -130,12 +130,44 @@ def parse_opts(argstring):
                       help="horizontal gap between dividers in centimeters")
     parser.add_option("--vertical_gap", type=float, default=0.,
                       help="vertical gap between dividers in centimeters")
+    parser.add_option("--count", action="store_true", dest="count",
+                      default=False, help="Display card count on body of the divider.")
+    parser.add_option("--wrapper", action="store_true", dest="wrapper",
+                      help="Draw wrapper for cards instead of a divider for the cards")
+    parser.add_option("--thickness", type=float, default=2.0,
+                      help="Thickness of a stack of 60 cards (Copper) in centimeters."
+                      " Typically unsleeved cards are 2.0, thin sleeved cards are 2.4, and thick sleeved cards are 3.2."
+                      " This is only valid with the --wrapper option."
+                      " default:2.0")
+    parser.add_option("--sleeved_thick", action="store_true",
+                      dest="sleeved_thick", help="same as --size=sleeved --thickness 3.2")
+    parser.add_option("--sleeved_thin", action="store_true",
+                      dest="sleeved_thin", help="same as --size=sleeved --thickness 2.4")
+    parser.add_option("--notch_length", type=float, default=0.0,
+                      help="Length of thumb notch on wrapper in centimeters."
+                      " This can make it easier to remove the cards from the wrapper."
+                      " This is only valid with the --wrapper option."
+                      " default:0.0 (i.e., no notch on wrapper)")
+    parser.add_option("--notch", action="store_true",
+                      dest="notch", help="same as --notch_length thickness 1.5")
 
     options, args = parser.parse_args(argstring)
     if not options.cost:
         options.cost = ['tab']
     if not options.set_icon:
         options.set_icon = ['tab']
+        
+    if options.sleeved_thick:
+        options.thickness = 3.2
+        options.sleeved   = True
+
+    if options.sleeved_thin:
+        options.thickness = 2.4
+        options.sleeved   = True
+        
+    if options.notch:
+        options.notch_length = 1.5
+        
     return options, args
 
 
@@ -273,12 +305,27 @@ def filter_sort_cards(cards, options):
         with codecs.open(card_groups_file, 'r', 'utf-8') as cardgroup_file:
             card_groups = json.load(cardgroup_file)
             # pull out any cards which are a subcard, and rename the master card
-            new_cards = []
-            all_subcards = []
-            for subs in [card_groups[x]["subcards"] for x in card_groups]:
-                all_subcards += subs
+            new_cards = []        # holds the cards that are to be kept
+            all_subcards = []     # holds names of cards that will be removed
+            subcard_parent = {}   # holds reverse map of subcard name to group name
+            subcard_count = {}    # holds total card count of the subcards for a group
+            
+            # Initialize each of the new card groups
+            for group in card_groups: 
+                subcard_count[group] = 0
+                for subs in card_groups[group]["subcards"]:
+                    all_subcards.append(subs)         # add card names to the list for removal
+                    subcard_parent[subs] = group      # create the reverse mapping of subgroup to group
+                    
+            # go through the cards and add up the number of subgroup cards
+            for card in cards:
+                if card.name in all_subcards:
+                    subcard_count[ subcard_parent[card.name] ] += card.getCardCount()
+                    
+            # fix up the group card holders count & name, and weed out the subgroup cards
             for card in cards:
                 if card.name in card_groups.keys():
+                    card.count += subcard_count[card.name]
                     card.name = card_groups[card.name]["new_name"]
                 elif card.name in all_subcards:
                     continue
@@ -305,13 +352,54 @@ def filter_sort_cards(cards, options):
         cards = filteredCards
 
     if options.exclude_events:
-        cards = [card for card in cards if not card.isEvent() or card.name == 'Events']
+        filteredCards = []
+        count = 0
+        holder = False
+        for c in cards:
+            if 'Events' in c.getType().getTypeNames():  # Language Independant by using Type
+                holder = c
+                filteredCards.append(c)
+            elif c.isEvent():
+                count += c.getCardCount()
+            else:
+                filteredCards.append(c)
+        if holder and count > 0:
+            holder.setCardCount(count)
+        cards = filteredCards
 
     if options.exclude_landmarks:
-        cards = [card for card in cards if not card.isLandmark() or card.name == 'Landmarks']
+        filteredCards = []
+        count = 0
+        holder = False
+        for c in cards:
+            if 'Landmarks' in c.getType().getTypeNames():  # Language Independant, use Type
+                holder = c
+                filteredCards.append(c)
+            elif c.isLandmark():
+                count += c.getCardCount()
+            else:
+                filteredCards.append(c)
+        if holder and count > 0:
+            holder.setCardCount(count)
+        cards = filteredCards
 
     if options.exclude_prizes:
-        cards = [card for card in cards if not card.isPrize()]
+        filteredCards = []
+        count = 0
+        holder = False
+        for c in cards:
+            if 'Prizes' in c.getType().getTypeNames():  # Language Independant, use Type
+                holder = c
+                filteredCards.append(c)
+            elif c.isPrize():
+                count += c.getCardCount()
+            else:
+                filteredCards.append(c)
+        if holder and count > 0:
+            holder.setCardCount(count)
+        cards = filteredCards
+        
+
 
     if options.cardlist:
         cardlist = set()
@@ -330,7 +418,7 @@ def filter_sort_cards(cards, options):
                 c.cardset, []).append(c.name.strip())
         for exp, names in cardnamesByExpansion.iteritems():
             c = Card(
-                exp, exp, ("Expansion",), None, ' | '.join(sorted(names)))
+                exp, exp, ("Expansion",), None, ' | '.join(sorted(names)), count=len(names))
             cards.append(c)
 
     cards.sort(key=cardSorter)
@@ -338,7 +426,7 @@ def filter_sort_cards(cards, options):
     return cards
 
 
-def calculate_layout(options):
+def calculate_layout(options, cards=[]):
 
     dominionCardWidth, dominionCardHeight = parse_cardsize(options.size, options.sleeved)
     paperwidth, paperheight = parse_papersize(options.papersize)
@@ -380,14 +468,29 @@ def calculate_layout(options):
         verticalBorderSpace = options.vertical_gap * cm
 
     dividerHeight = dividerBaseHeight + labelHeight
+    
+    dividerWidthReserved  = dividerWidth  + horizontalBorderSpace
+    dividerHeightReserved = dividerHeight + verticalBorderSpace
+    if options.wrapper:
+        max_card_stack_height  = max(c.getStackHeight(options.thickness) for c in cards)
+        dividerHeightReserved = (dividerHeightReserved * 2) + (max_card_stack_height * 2)
+        print "Max Card Stack Height: {:.2f}cm ".format(max_card_stack_height)
+
+    # Notch measurements
+    notch_height      = 0.25 * cm                  # thumb notch height
+    notch_width1      = options.notch_length * cm  # thumb notch width: top away from tab
+    notch_width2      = 0.00 * cm                  # thumb notch width: bottom on side of tab
 
     add_opt(options, 'dividerWidth', dividerWidth)
     add_opt(options, 'dividerHeight', dividerHeight)
     add_opt(options, 'dividerBaseHeight', dividerBaseHeight)
-    add_opt(options, 'dividerWidthReserved', dividerWidth + horizontalBorderSpace)
-    add_opt(options, 'dividerHeightReserved', dividerHeight + verticalBorderSpace)
+    add_opt(options, 'dividerWidthReserved', dividerWidthReserved)
+    add_opt(options, 'dividerHeightReserved', dividerHeightReserved)
     add_opt(options, 'labelWidth', labelWidth)
     add_opt(options, 'labelHeight', labelHeight)
+    add_opt(options, 'notch_height', notch_height)
+    add_opt(options, 'notch_width1', notch_width1)
+    add_opt(options, 'notch_width2', notch_width2)
 
     # as we don't draw anything in the final border, it shouldn't count towards how many tabs we can fit
     # so it gets added back in to the page size here
@@ -433,7 +536,12 @@ def generate(options, data_path, f):
 
     add_opt(options, 'data_path', data_path)
 
-    calculate_layout(options)
+    cards = read_write_card_data(options)
+    assert cards, "No cards after reading"
+    cards = filter_sort_cards(cards, options)
+    assert cards, "No cards after filtering/sorting"
+
+    calculate_layout(options, cards)
 
     print "Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(options.paperwidth / cm,
                                                                  options.paperheight / cm)
@@ -444,10 +552,6 @@ def generate(options, data_path, f):
     print "Margins: {:.2f}cm h, {:.2f}cm v\n".format(options.horizontalMargin / cm,
                                                      options.verticalMargin / cm)
 
-    cards = read_write_card_data(options)
-    assert cards, "No cards after reading"
-    cards = filter_sort_cards(cards, options)
-    assert cards, "No cards after filtering/sorting"
 
     if not f:
         f = "dominion_dividers.pdf"

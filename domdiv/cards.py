@@ -1,6 +1,6 @@
 import json
 import os
-
+from reportlab.lib.units import cm
 
 def getType(typespec):
     return cardTypes[tuple(typespec)]
@@ -101,7 +101,8 @@ class Card(object):
             return promoTextIcons[cardName.lower()]
         return None
 
-    def __init__(self, name, cardset, types, cost, description='', potcost=0, debtcost=0, extra=''):
+
+    def __init__(self, name, cardset, types, cost, description='', potcost=0, debtcost=0, extra='', count=-1):
         self.name = name.strip()
         self.cardset = cardset.strip()
         self.types = types
@@ -110,6 +111,20 @@ class Card(object):
         self.debtcost = debtcost
         self.description = description
         self.extra = extra
+        if count < 0:
+            self.count = getType(self.types).getTypeDefaultCardCount()
+        else:
+            self.count = count
+            
+    def getCardCount(self):
+        return self.count
+        
+    def setCardCount(self, value):
+        self.count = value
+        
+    def getStackHeight(self, thickness):
+        # return height of the stacked cards in cm.  Using hight in cm of a stack of 60 Copper cards as thickness.
+        return self.count * cm * (thickness / 60.0) + 2
 
     def getType(self):
         return getType(self.types)
@@ -122,16 +137,20 @@ class Card(object):
             + ' ' + self.cost + ' ' + self.description + ' ' + self.extra
 
     def isExpansion(self):
-        return self.getType().getTypeNames() == ('Expansion',)
+        return 'Expansion' in self.getType().getTypeNames()
 
     def isEvent(self):
-        return self.getType().getTypeNames() == ('Event',)
+        return 'Event' in self.getType().getTypeNames()
 
     def isLandmark(self):
-        return self.getType().getTypeNames() == ('Landmark',)
+        return 'Landmark' in self.getType().getTypeNames()
 
     def isPrize(self):
         return 'Prize' in self.getType().getTypeNames()
+        
+    def isType(self, what):
+        return what in self.getType().getTypeNames()
+
 
     def setImage(self):
         setImage = Card.getSetImage(self.cardset, self.name)
@@ -164,11 +183,15 @@ class BlankCard(Card):
 
 class CardType(object):
 
-    def __init__(self, typeNames, tabImageFile, tabTextHeightOffset=0, tabCostHeightOffset=-1):
+    def __init__(self, typeNames, tabImageFile, defaultCardCount=10, tabTextHeightOffset=0, tabCostHeightOffset=-1):
         self.typeNames = typeNames
         self.tabImageFile = tabImageFile
         self.tabTextHeightOffset = tabTextHeightOffset
         self.tabCostHeightOffset = tabCostHeightOffset
+        self.defaultCardCount = defaultCardCount
+
+    def getTypeDefaultCardCount(self):
+        return self.defaultCardCount
 
     def getTypeNames(self):
         return self.typeNames
@@ -192,42 +215,47 @@ class CardType(object):
 cardTypes = [
     CardType(('Action',), 'action.png'),
     CardType(('Action', 'Attack'), 'action.png'),
-    CardType(('Action', 'Attack', 'Prize'), 'action.png'),
+    CardType(('Action', 'Attack', 'Prize'), 'action.png',1),
     CardType(('Action', 'Reaction'), 'reaction.png'),
-    CardType(('Action', 'Victory'), 'action-victory.png'),
-    CardType(('Action', 'Duration'), 'duration.png'),
+    CardType(('Action', 'Victory'), 'action-victory.png',12),
+    CardType(('Action', 'Duration'), 'duration.png',5),
     CardType(('Action', 'Duration', 'Reaction'), 'duration-reaction.png'),
     CardType(('Action', 'Attack', 'Duration'), 'duration.png'),
     CardType(('Action', 'Looter'), 'action.png'),
-    CardType(('Action', 'Prize'), 'action.png'),
-    CardType(('Action', 'Ruins'), 'ruins.png', 0, 1),
-    CardType(('Action', 'Shelter'), 'action-shelter.png'),
+    CardType(('Action', 'Prize'), 'action.png',1),
+    CardType(('Action', 'Ruins'), 'ruins.png',10, 0, 1),
+    CardType(('Action', 'Shelter'), 'action-shelter.png',6),
     CardType(('Action', 'Attack', 'Duration'), 'duration.png'),
     CardType(('Action', 'Attack', 'Looter'), 'action.png'),
-    CardType(('Action', 'Attack', 'Traveller'), 'action.png'),
-    CardType(('Action', 'Reserve'), 'reserve.png'),
-    CardType(('Action', 'Reserve', 'Victory'), 'reserve-victory.png'),
-    CardType(('Action', 'Traveller'), 'action.png'),
+    CardType(('Action', 'Attack', 'Traveller'), 'action.png',5),
+    CardType(('Action', 'Reserve'), 'reserve.png',5),
+    CardType(('Action', 'Reserve', 'Victory'), 'reserve-victory.png',12),
+    CardType(('Action', 'Traveller'), 'action.png',5),
     CardType(('Action', 'Gathering'), 'action.png'),
     CardType(('Action', 'Treasure'), 'action-treasure.png'),
-    CardType(('Prize',), 'action.png'),
-    CardType(('Event',), 'event.png'),
+    CardType(('Prize',), 'action.png',1),
+    CardType(('Event',), 'event.png',1),
     CardType(('Reaction',), 'reaction.png'),
-    CardType(('Reaction', 'Shelter'), 'reaction-shelter.png'),
-    CardType(('Treasure',), 'treasure.png', 3, 0),
+    CardType(('Reaction', 'Shelter'), 'reaction-shelter.png',6),
+    CardType(('Treasure',), 'treasure.png',10, 3, 0),
     CardType(('Treasure', 'Attack'), 'treasure.png'),
-    CardType(('Treasure', 'Victory'), 'treasure-victory.png'),
-    CardType(('Treasure', 'Prize'), 'treasure.png', 3, 0),
-    CardType(('Treasure', 'Reaction'), 'treasure-reaction.png', 0, 1),
+    CardType(('Treasure', 'Victory'), 'treasure-victory.png',12),
+    CardType(('Treasure', 'Prize'), 'treasure.png',1, 3, 0),
+    CardType(('Treasure', 'Reaction'), 'treasure-reaction.png',10, 0, 1),
     CardType(('Treasure', 'Reserve'), 'reserve-treasure.png'),
-    CardType(('Victory',), 'victory.png'),
-    CardType(('Victory', 'Reaction'), 'victory-reaction.png', 0, 1),
-    CardType(('Victory', 'Shelter'), 'victory-shelter.png'),
-    CardType(('Victory', 'Castle'), 'victory.png'),
-    CardType(('Curse',), 'curse.png', 3),
-    CardType(('Expansion',), 'expansion.png', 4),
+    CardType(('Victory',), 'victory.png',12),
+    CardType(('Victory', 'Reaction'), 'victory-reaction.png',12, 0, 1),
+    CardType(('Victory', 'Shelter'), 'victory-shelter.png',6),
+    CardType(('Victory', 'Castle'), 'victory.png',12),
+    CardType(('Curse',), 'curse.png', 30, 3),
+    CardType(('Trash',), 'action.png', 1),
+    CardType(('Prizes',), 'action.png',0), 
+    CardType(('Events',), 'event.png',0), 
+    CardType(('Shelters',), 'shelter.png',0), 
+    CardType(('Expansion',), 'expansion.png',0, 4),
     CardType(('Blank',), ''),
-    CardType(('Landmark',), 'landmark.png')
+    CardType(('Landmark',), 'landmark.png',1),
+    CardType(('Landmarks',), 'landmark.png',0)
 ]
 
 cardTypes = dict(((c.getTypeNames(), c) for c in cardTypes))

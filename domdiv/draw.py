@@ -43,42 +43,150 @@ class DividerDrawer(object):
             self.fontNameBold = 'Times-Bold'
             self.fontNameOblique = 'Times-Oblique'
 
+    def getOutline(self, card, isExpansionDivider = False):
+    
+        dividerWidth      = self.options.dividerWidth
+        dividerHeight     = self.options.dividerHeight
+        dividerBaseHeight = self.options.dividerBaseHeight
+        tabLabelWidth     = self.options.labelWidth
+        notch_height      = self.options.notch_height    # thumb notch height
+        notch_width1      = self.options.notch_width1    # thumb notch width: top away from tab
+        notch_width2      = self.options.notch_width2    # thumb notch width: bottom on side of tab
+        
+        theTabHeight      = dividerHeight - dividerBaseHeight
+        theTabWidth       = self.options.labelWidth
+        
+        if isExpansionDivider:
+            side_2_tab = (dividerWidth - theTabWidth) / 2
+        else:
+            side_2_tab = 0
+            
+        nonTabWidth = dividerWidth - tabLabelWidth - side_2_tab
+        
+        def DeltaXYtoLines(delta):
+            result  = []
+            started = False
+            for x,y in delta:
+                if not started:
+                    last_x   = x
+                    last_y   = y
+                    started  = True
+                else:
+                    result.append( (last_x , last_y, last_x + x, last_y + y) )
+                    last_x = last_x + x
+                    last_y = last_y + y
+            return result
+        
+        self.canvas.saveState()
+                    
+        if not self.options.wrapper:
+            # Normal Card Outline
+            #    +                      F+-------------------+E
+            #                            |                   |
+            #   H+-----------------------+G                 D+-----+C
+            #    |                                                 | 
+            #    |             Generic Divider                     |
+            #    |          Tab Centered or to the Side            |
+            #    |                                                 |
+            #   A+-------------------------------------------------+B
+            #             delta x          delta y
+            delta = [ (       0      ,         0            ), #  to A
+                      (  dividerWidth  ,       0            ), #A to B
+                      (           0    ,  dividerBaseHeight ), #B to C
+                      ( -side_2_tab    ,       0            ), #C to D
+                      (       0        ,    theTabHeight    ), #D to E
+                      ( -theTabWidth   ,       0            ), #E to F
+                      (       0        ,  -theTabHeight     ), #F to G
+                      ( -nonTabWidth   ,       0            ), #G to H
+                      (       0        , -dividerBaseHeight )] #H to A
+            self.canvas.lines(DeltaXYtoLines(delta))
+        
+        else:
+            # Card Wrapper Outline
+            notch_width3      = notch_width1          # thumb notch width: bottom away from tab 
+            stackHeight       = card.getStackHeight(self.options.thickness)
+            body_minus_notches = dividerBaseHeight - (2.0 * notch_height)
+            tab_2_notch = dividerWidth - theTabWidth - side_2_tab - notch_width1
+            if (tab_2_notch < 0):
+                tab_2_notch = dividerWidth - theTabWidth - side_2_tab
+                notch_width1 = 0
+            #    +                            U+-------------------+T   +
+            #                                  |                   |     
+            #    +                            V+. . . . . . . . . .+S   +
+            #                                  |                   |     
+            #    +      X+---------------------+W . . . . . . . . R+----+Q
+            #            |                                              |
+            #   Z+-------+Y                                             +P
+            #    |                                                      |
+            #    |                    Generic Wrapper                   |
+            #    |                      Normal Side                     |
+            #    |                                                      |
+            #  AA+-------+BB                                   N+-------+O
+            #            |                                      |
+            #    +       +CC. . . . . . . . . . . . . . . . . .M+       +  
+            #            |                                      |
+            #    +       +DD. . . . . . . . . . . . . . . . . .L+       +
+            #            |                                      | 
+            #  FF+-------+EE                                   K+-------+J
+            #    |                                                      |
+            #    |                      Reverse Side                    |
+            #    |                       rotated 180                    |
+            #    |                                                      |
+            #   A+-------+B                                             +I
+            #            |                                              |
+            #    +      C+---------------------+D                 G+----+H
+            #                                  |                   |    
+            #    +                            E+-------------------+F   + 
+            #
+            #           delta x              delta y
+            delta = [ (     0     , theTabHeight+notch_height), #   to A 
+                    ( notch_width1,       0                  ), #A  to B
+                    (       0     , -notch_height            ), #B  to C
+                    ( tab_2_notch ,       0                  ), #C  to D
+                    (       0     , -theTabHeight            ), #D  to E
+                    ( theTabWidth ,       0                  ), #E  to F
+                    (       0     ,  theTabHeight            ), #F  to G
+                    ( side_2_tab  ,       0                  ), #G  to H
+                    (       0     , notch_height             ), #H  to I
+                    (       0     , body_minus_notches       ), #I  to J
+                    (-notch_width2,       0                  ), #J  to K
+                    (       0     , notch_height             ), #K  to L
+                    (       0     , stackHeight              ), #L  to M
+                    (       0     , notch_height             ), #M  to N
+                    ( notch_width2,       0                  ), #N  to O
+                    (       0     , body_minus_notches       ), #O  to P
+                    (       0     , notch_height             ), #P  to Q
+                    (-side_2_tab  ,       0                  ), #Q  to R
+                    (       0     , stackHeight              ), #R  to S
+                    (       0     , theTabHeight             ), #S  to T
+                    (-theTabWidth ,       0                  ), #T  to U
+                    (       0     , -theTabHeight            ), #U  to V
+                    (       0     , -stackHeight             ), #V  to W
+                    (-tab_2_notch ,       0                  ), #W  to X
+                    (       0     , -notch_height            ), #X  to Y
+                    (-notch_width1,       0                  ), #Y  to Z
+                    (       0     , -body_minus_notches      ), #Z  to AA
+                    ( notch_width3,       0                  ), #AA to BB
+                    (       0     , -notch_height            ), #BB to CC
+                    (       0     , -stackHeight             ), #CC to DD
+                    (       0     , -notch_height            ), #DD to EE
+                    (-notch_width3,       0                  ), #EE to FF
+                    (       0     , -body_minus_notches      )] #FF to A
+
+            self.canvas.lines(DeltaXYtoLines(delta))
+            
+            self.canvas.setStrokeGray(0.9)
+            self.canvas.line(dividerWidth-side_2_tab, dividerHeight + dividerBaseHeight + stackHeight   , dividerWidth-side_2_tab-theTabWidth  , dividerHeight + dividerBaseHeight + stackHeight  )
+            self.canvas.line(dividerWidth-side_2_tab, dividerHeight + dividerBaseHeight + 2*stackHeight , dividerWidth-side_2_tab-theTabWidth  , dividerHeight + dividerBaseHeight + 2*stackHeight )
+            self.canvas.line(notch_width1 , dividerHeight                                     , dividerWidth - notch_width2, dividerHeight )
+            self.canvas.line(notch_width1 , dividerHeight + stackHeight                       , dividerWidth - notch_width2, dividerHeight + stackHeight )
+
+        self.canvas.restoreState()
+    
     def draw(self, fname, cards, options):
         self.options = options
 
         self.registerFonts()
-
-        dividerWidth = options.dividerWidth
-        dividerHeight = options.dividerHeight
-        dividerBaseHeight = options.dividerBaseHeight
-        tabLabelWidth = options.labelWidth
-
-        self.tabOutline = [(0, 0, dividerWidth, 0),
-                           (dividerWidth, 0, dividerWidth, dividerHeight),
-                           (dividerWidth, dividerHeight,
-                            dividerWidth - tabLabelWidth, dividerHeight),
-                           (dividerWidth - tabLabelWidth,
-                            dividerHeight, dividerWidth - tabLabelWidth,
-                            dividerBaseHeight),
-                           (dividerWidth - tabLabelWidth,
-                            dividerBaseHeight, 0, dividerBaseHeight),
-                           (0, dividerBaseHeight, 0, 0)]
-
-        self.expansionTabOutline = [(0, 0, dividerWidth, 0),
-                                    (dividerWidth, 0, dividerWidth,
-                                     dividerBaseHeight),
-                                    (dividerWidth, dividerBaseHeight,
-                                     dividerWidth / 2 + tabLabelWidth / 2, dividerBaseHeight),
-                                    (dividerWidth / 2 + tabLabelWidth / 2, dividerBaseHeight,
-                                     dividerWidth / 2 + tabLabelWidth / 2, dividerHeight),
-                                    (dividerWidth / 2 + tabLabelWidth / 2, dividerHeight,
-                                     dividerWidth / 2 - tabLabelWidth / 2, dividerHeight),
-                                    (dividerWidth / 2 - tabLabelWidth / 2, dividerHeight,
-                                     dividerWidth / 2 - tabLabelWidth / 2, dividerBaseHeight),
-                                    (dividerWidth / 2 - tabLabelWidth / 2, dividerBaseHeight,
-                                     0, dividerBaseHeight),
-                                    (0, dividerBaseHeight, 0, 0)]
-
         self.canvas = canvas.Canvas(
             fname, pagesize=(options.paperwidth, options.paperheight))
         self.drawDividers(cards)
@@ -109,7 +217,7 @@ class DividerDrawer(object):
         text = re.sub('Potion', replace, text)
         return text
 
-    def drawOutline(self, x, y, rightSide, isBack=False, isExpansionDivider=False):
+    def drawOutline(self, card, x, y, rightSide, isBack=False, isExpansionDivider=False):
         # draw outline or cropmarks
         self.canvas.saveState()
         self.canvas.setLineWidth(self.options.linewidth)
@@ -122,11 +230,11 @@ class DividerDrawer(object):
             # don't draw outline on back, in case lines don't line up with
             # front
             if isExpansionDivider and self.options.centre_expansion_dividers:
-                outline = self.expansionTabOutline
+                self.getOutline(card, isExpansionDivider=True)
             else:
-                outline = self.tabOutline
-            self.canvas.lines(outline)
-        elif self.options.cropmarks:
+                self.getOutline(card)
+            
+        elif self.options.cropmarks and not self.options.wrapper:
             cmw = 0.5 * cm
 
             # Horizontal-line cropmarks
@@ -175,7 +283,25 @@ class DividerDrawer(object):
                                      leftLine, self.options.dividerHeight + 2 * cmw)
 
         self.canvas.restoreState()
+        
+    def drawCardCount(self, card, x, y, offset=-1):
+        if card.count < 1:
+            return 0
+            
+        # base width is 16 (for image) + 2 (1 pt border on each side)
+        width = 18
 
+        cardIconHeight = y + offset
+        countHeight = cardIconHeight - 4
+
+        self.canvas.drawImage(os.path.join(self.options.data_path, 'images', 'card.png'),
+                              x, countHeight, 16, 16, preserveAspectRatio=True, mask='auto')
+
+        self.canvas.setFont(self.fontNameBold, 10)
+        count = str(card.count)
+        self.canvas.drawCentredString(x + 8, countHeight + 4, count)
+        return width
+        
     def drawCost(self, card, x, y, costOffset=-1):
         # base width is 16 (for image) + 2 (1 pt border on each side)
         width = 18
@@ -230,18 +356,36 @@ class DividerDrawer(object):
                                         self.fontNameRegular, fontSize - 2)
         return w
 
-    def drawTab(self, card, rightSide):
+    def drawTab(self, card, rightSide, wrapper="no"):
         # draw tab flap
         self.canvas.saveState()
         if card.isExpansion() and self.options.centre_expansion_dividers:
-            self.canvas.translate(self.options.dividerWidth / 2 - self.options.labelWidth / 2,
-                                  self.options.dividerHeight - self.options.labelHeight)
+            translate_x = self.options.dividerWidth / 2 - self.options.labelWidth / 2
+            translate_y = self.options.dividerHeight - self.options.labelHeight
         elif not rightSide:
-            self.canvas.translate(self.options.dividerWidth - self.options.labelWidth,
-                                  self.options.dividerHeight - self.options.labelHeight)
+            translate_x = self.options.dividerWidth  - self.options.labelWidth
+            translate_y = self.options.dividerHeight - self.options.labelHeight
         else:
-            self.canvas.translate(0, self.options.dividerHeight - self.options.labelHeight)
+            translate_x = 0
+            translate_y = self.options.dividerHeight - self.options.labelHeight
 
+        if wrapper == "back":
+            translate_y =  self.options.labelHeight
+            if card.isExpansion() and self.options.centre_expansion_dividers:
+                translate_x = self.options.dividerWidth / 2 + self.options.labelWidth / 2
+            elif not rightSide:
+                translate_x =  self.options.dividerWidth
+            else:
+                translate_x =  self.options.labelWidth
+                
+        if wrapper == "front":
+                translate_y = translate_y + self.options.dividerHeight + 2.0 * card.getStackHeight(self.options.thickness)
+            
+        self.canvas.translate(translate_x, translate_y)
+        
+        if wrapper == "back":
+            self.canvas.rotate(180)
+        
         # allow for 3 pt border on each side
         textWidth = self.options.labelWidth - 6
         textHeight = 7
@@ -259,7 +403,7 @@ class DividerDrawer(object):
                                   preserveAspectRatio=False, anchor='n', mask='auto')
 
         # draw cost
-        if not card.isExpansion() and not card.isBlank() and not card.isLandmark():
+        if not card.isExpansion() and not card.isBlank() and not card.isLandmark() and not card.isType('Trash'):
             if 'tab' in self.options.cost:
                 textInset = 4
                 textInset += self.drawCost(card, textInset, textHeight,
@@ -325,9 +469,11 @@ class DividerDrawer(object):
                     h -= h / 2
 
             words = line.split()
-            if (not self.options.tab_name_align == "right") and (self.options.tab_name_align == "centre" or
-                                                                 rightSide or
-                                                                 not self.options.tab_name_align == "edge"):
+            NotRightEdge = ( not self.options.tab_name_align == "right"
+                            and (self.options.tab_name_align == "centre" or rightSide or not self.options.tab_name_align == "edge"))
+            if wrapper == "back":
+                NotRightEdge = not NotRightEdge
+            if NotRightEdge:
                 if self.options.tab_name_align == "centre":
                     w = self.options.labelWidth / 2 - self.nameWidth(line, fontSize) / 2
                 else:
@@ -361,23 +507,67 @@ class DividerDrawer(object):
                     w += drawWordPiece(word[0], fontSize)
                     if i != len(words) - 1:
                         w += drawWordPiece(' ', fontSize)
+                        
+        if wrapper == "front" and card.getCardCount() >= 5:
+            # Print smaller version of name on the top wrapper edge
+            self.canvas.translate(0 , -card.getStackHeight(self.options.thickness)) # move into area used by the wrapper
+            fontSize = 8 # use the smallest font
+            self.canvas.setFont(self.fontNameRegular, fontSize)
+
+            textHeight = fontSize - 2
+            textHeight = card.getStackHeight(self.options.thickness) / 2 - textHeight / 2
+            h = textHeight
+            words = name.split()
+            w = self.options.labelWidth / 2 - self.nameWidth(name, fontSize) / 2
+            def drawWordPiece(text, fontSize):
+                self.canvas.setFont(self.fontNameRegular, fontSize)
+                if text != ' ':
+                    self.canvas.drawString(w, h, text)
+                return pdfmetrics.stringWidth(text, self.fontNameRegular, fontSize)
+            for i, word in enumerate(words):
+                if i != 0:
+                    w += drawWordPiece(' ', fontSize)
+                w += drawWordPiece(word[0], fontSize)
+                w += drawWordPiece(word[1:], fontSize - 2)
+            
         self.canvas.restoreState()
 
-    def drawText(self, card, divider_text="card"):
+    def drawText(self, card, divider_text="card", wrapper="no"):
+    
+        self.canvas.saveState()
         usedHeight = 0
         totalHeight = self.options.dividerHeight - self.options.labelHeight
+        
+        # Figure out if any translation needs to be done
+        if wrapper == "back":
+            self.canvas.translate(self.options.dividerWidth, self.options.dividerHeight)
+            self.canvas.rotate(180)
 
+        if wrapper == "front":
+            self.canvas.translate( 0 , self.options.dividerHeight + card.getStackHeight(self.options.thickness))
+            
+        if wrapper == "front" or wrapper == "back":
+            if self.options.notch_width1 > 0:
+                usedHeight += self.options.notch_height
+        
         drewTopIcon = False
         if 'body-top' in self.options.cost and not card.isExpansion():
-            self.drawCost(card, cm / 4.0, totalHeight - 0.5 * cm)
+            self.drawCost(card, cm / 4.0, totalHeight - usedHeight - 0.5 * cm)
             drewTopIcon = True
 
+        Image_x = self.options.dividerWidth - 16
         if 'body-top' in self.options.set_icon and not card.isExpansion():
             setImage = card.setImage()
             if setImage:
-                self.drawSetIcon(setImage, self.options.dividerWidth - 16,
-                                 totalHeight - 0.5 * cm - 3)
+                self.drawSetIcon(setImage, Image_x,
+                                 totalHeight - usedHeight - 0.5 * cm - 3)
+                Image_x -= 16
                 drewTopIcon = True
+            
+        if self.options.count:
+            self.drawCardCount(card, Image_x, totalHeight - usedHeight - 0.5 * cm)
+            drewTopIcon = True
+                
         if drewTopIcon:
             usedHeight += 15
 
@@ -432,8 +622,10 @@ class DividerDrawer(object):
             h -= p.height
             p.drawOn(self.canvas, textHorizontalMargin, h)
             h -= spacerHeight
+            
+        self.canvas.restoreState()
 
-    def drawDivider(self, card, x, y, isBack=False, divider_text="card"):
+    def drawDivider(self, card, x, y, isBack=False, divider_text="card", divider_text2="rules"):
         # figure out whether the tab should go on the right side or not
         if self.options.tab_side == "right":
             rightSide = isBack
@@ -456,11 +648,18 @@ class DividerDrawer(object):
 
         # actual drawing
         if not self.options.tabs_only:
-            self.drawOutline(
-                x, y, rightSide, isBack, card.getType().getTypeNames() == ('Expansion',))
-        self.drawTab(card, rightSide)
+            self.drawOutline(card, x, y, rightSide, isBack, card.getType().getTypeNames() == ('Expansion',))
+         
+        if self.options.wrapper:
+            wrap = "front"
+        else:
+            wrap = "no"
+        self.drawTab(card, rightSide, wrapper=wrap)
         if not self.options.tabs_only:
-            self.drawText(card, divider_text)
+            self.drawText(card, divider_text, wrapper=wrap)
+            if self.options.wrapper:
+                self.drawTab(card, rightSide, wrapper="back")
+                self.drawText(card, divider_text2, wrapper="back") 
 
     def drawSetNames(self, pageCards):
         # print sets for this page
@@ -500,7 +699,11 @@ class DividerDrawer(object):
                 return
 
             self.canvas.setFont(fontname, fontsize)
-
+            
+            xPos = layout['width'] / 2
+            # Place at the very edge of the margin
+            yPos = layout['minMarginHeight']
+            
             sets = []
             for c in pageCards:
                 setTitle = c.cardset.title()
@@ -542,13 +745,13 @@ class DividerDrawer(object):
                 x = i % self.options.numDividersHorizontal
                 y = i / self.options.numDividersHorizontal
                 self.canvas.saveState()
-                self.drawDivider(card, x, self.options.numDividersVertical - 1 - y, isBack=False, divider_text=self.options.text_front)
+                self.drawDivider(card, x, self.options.numDividersVertical - 1 - y, isBack=False, divider_text=self.options.text_front, divider_text2=self.options.text_back)
                 self.canvas.restoreState()
                 self.odd = not self.odd
             self.canvas.showPage()
             if pageNum + 1 == self.options.num_pages:
                 break
-            if self.options.tabs_only or self.options.text_back == "none":
+            if self.options.tabs_only or self.options.text_back == "none" or self.options.wrapper:
                 # Don't print the sheets with the back of the dividers
                 continue
             if not self.options.no_page_footer and self.options.order != "global":
