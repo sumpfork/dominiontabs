@@ -471,7 +471,7 @@ class DividerDrawer(object):
             words = line.split()
             NotRightEdge = ( not self.options.tab_name_align == "right"
                             and (self.options.tab_name_align == "centre" or rightSide or not self.options.tab_name_align == "edge"))
-            if wrapper == "back":
+            if wrapper == "back" and not self.options.tab_name_align == "centre":
                 NotRightEdge = not NotRightEdge
             if NotRightEdge:
                 if self.options.tab_name_align == "centre":
