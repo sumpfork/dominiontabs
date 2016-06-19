@@ -209,7 +209,7 @@ cardTypes = [
     CardType(('Action', 'Reserve', 'Victory'), 'reserve-victory.png'),
     CardType(('Action', 'Traveller'), 'action.png'),
     CardType(('Action', 'Gathering'), 'action.png'),
-    CardType(('Action', 'Treasure'), 'treasure.png'),
+    CardType(('Action', 'Treasure'), 'action-treasure.png'),
     CardType(('Prize',), 'action.png'),
     CardType(('Event',), 'event.png'),
     CardType(('Reaction',), 'reaction.png'),
