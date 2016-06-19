@@ -1,18 +1,16 @@
-import dominion_tabs
+import domdiv
 from __init__ import __version__
 from zipfile import ZipFile,ZIP_DEFLATED
 
 prefix = 'generated/sumpfork_dominion_tabs_'
 postfix = 'v' + __version__ + '.pdf'
 
-tabs = dominion_tabs.DominionTabs()
-
 def doit(args,main):
     args = args + ' ' + prefix+main+postfix
     args = args.split()
     fname = args[-1]
     print ':::Generating ' + fname
-    tabs.main(args)
+    domdiv.main(args, '.')
     return fname
 
 argsets = [
