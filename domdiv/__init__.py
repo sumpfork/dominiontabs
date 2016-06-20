@@ -356,7 +356,7 @@ def filter_sort_cards(cards, options):
         count = 0
         holder = False
         for c in cards:
-            if 'Events' in c.getType().getTypeNames():  # Language Independant by using Type
+            if c.isType('Events'):  # Language Independant by using Type
                 holder = c
                 filteredCards.append(c)
             elif c.isEvent():
@@ -372,7 +372,7 @@ def filter_sort_cards(cards, options):
         count = 0
         holder = False
         for c in cards:
-            if 'Landmarks' in c.getType().getTypeNames():  # Language Independant, use Type
+            if c.isType('Landmarks'):  # Language Independant, use Type
                 holder = c
                 filteredCards.append(c)
             elif c.isLandmark():
@@ -388,7 +388,7 @@ def filter_sort_cards(cards, options):
         count = 0
         holder = False
         for c in cards:
-            if 'Prizes' in c.getType().getTypeNames():  # Language Independant, use Type
+            if c.isType('Prizes'):  # Language Independant, use Type
                 holder = c
                 filteredCards.append(c)
             elif c.isPrize():
