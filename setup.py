@@ -1,9 +1,5 @@
 from __init__ import __version__
-from ez_setup import use_setuptools
 from setuptools import setup, find_packages
-
-use_setuptools()
-
 
 setup(
     name="dominiontabs",
