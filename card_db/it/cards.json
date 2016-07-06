@@ -287,6 +287,7 @@
   "extra": " 60 carte per partita.", 
   "name": "Rame", 
   "potcost": 0, 
+  "count": 60, 
   "types": [
    "Treasure"
   ]
@@ -298,6 +299,7 @@
   "extra": " 40 carte per partita.", 
   "name": "Argento", 
   "potcost": 0, 
+  "count": 40, 
   "types": [
    "Treasure"
   ]
@@ -309,6 +311,7 @@
   "extra": " 30 carte per partita.", 
   "name": "Oro", 
   "potcost": 0, 
+  "count": 30, 
   "types": [
    "Treasure"
   ]
@@ -320,6 +323,7 @@
   "extra": " Le Maledizioni sono un mazzetto disponibile nella Riserva a prescindere di quali altre carte ci siano nella Riserva. Con 2 giocatori, piazzare 10 Maledizioni nella Riserva. Con 3 giocatori, piazzare 20 Maledizioni nella Riserva. Con 4 giocatori, piazzare 30 Maledizioni nella Riserva. Con 5 giocatori, piazzare 40 Maledizioni nella Riserva. Con 6 giocatori, piazzare 50 Maledizioni nella Riserva.", 
   "name": "Maledizione", 
   "potcost": 0, 
+  "count": 30, 
   "types": [
    "Curse"
   ]
@@ -331,6 +335,7 @@
   "extra": " Metti 8 carte nella Riserva in una partita con due giocatori. Mettine 12 nella Riserva in una partita con tre o più giocatori.", 
   "name": "Tenuta", 
   "potcost": 0, 
+  "count": 24, 
   "types": [
    "Victory"
   ]
@@ -359,13 +364,14 @@
  }, 
  {
   "cardset": "dominion", 
-  "cost": "0", 
+  "cost": "", 
   "description": "Pila delle carte eliminate.", 
   "extra": "", 
   "name": "Carte Eliminate", 
   "potcost": 0, 
+  "count": 1,
   "types": [
-   "Action"
+   "Trash"
   ]
  }, 
  {
@@ -658,6 +664,7 @@
   "extra": " 60 carte per partita.", 
   "name": "Rame", 
   "potcost": 0, 
+  "count": 60, 
   "types": [
    "Treasure"
   ]
@@ -669,6 +676,7 @@
   "extra": " 40 carte per partita.", 
   "name": "Argento", 
   "potcost": 0, 
+  "count": 40, 
   "types": [
    "Treasure"
   ]
@@ -680,6 +688,7 @@
   "extra": " 30 carte per partita.", 
   "name": "Oro", 
   "potcost": 0, 
+  "count": 30, 
   "types": [
    "Treasure"
   ]
@@ -691,6 +700,7 @@
   "extra": " Le Maledizioni sono un mazzetto disponibile nella Riserva a prescindere di quali altre carte ci siano nella Riserva. Con 2 giocatori, piazzare 10 Maledizioni nella Riserva. Con 3 giocatori, piazzare 20 Maledizioni nella Riserva. Con 4 giocatori, piazzare 30 Maledizioni nella Riserva. Con 5 giocatori, piazzare 40 Maledizioni nella Riserva. Con 6 giocatori, piazzare 50 Maledizioni nella Riserva.", 
   "name": "Maledizione", 
   "potcost": 0, 
+  "count": 30, 
   "types": [
    "Curse"
   ]
@@ -702,6 +712,7 @@
   "extra": " Metti 8 carte nella Riserva in una partita con due giocatori. Mettine 12 nella Riserva in una partita con tre o più giocatori.", 
   "name": "Tenuta", 
   "potcost": 0, 
+  "count": 24, 
   "types": [
    "Victory"
   ]
@@ -730,13 +741,14 @@
  }, 
  {
   "cardset": "intrigo", 
-  "cost": "0", 
+  "cost": "", 
   "description": "Pila delle carte eliminate.", 
   "extra": "", 
   "name": "Carte Eliminate", 
   "potcost": 0, 
+  "count": 1,
   "types": [
-   "Action"
+   "Trash"
   ]
  }, 
  {
@@ -1180,6 +1192,7 @@
   "extra": " Questa è una carta Tesoro base. Costa 4 Monete e produce una Pozione. Non è una carta Regno. Dopo che hai scelto 10 carte Regno per la Riserva, se qualsiasi di loro ha Pozioni nel costo aggiungi il mazzetto Pozione alla Riserva. Aggiungi il mazzetto Pozione se stai usando la carta promo Mercato Nero ed il suo mazzetto include almeno una carta con la Pozione nel costo. Se non hai carte con la Pozione nel costo nella Riserva o nel mazzetto del Mercato Nero, non usare il mazzetto Pozione in questa partita. Se hai un mazzetto Pozione, mettici tutte e 16 le Pozioni a prescindere dal numero di giocatori. In partite con questo mazzetto, se il mazzetto si svuota conta come uno dei tre che determinano il fine partita.", 
   "name": "Pozione", 
   "potcost": 0, 
+  "count": 16, 
   "types": [
    "Treasure"
   ]
@@ -1480,6 +1493,7 @@
   "extra": " Questa non è una carta Regno. Non la usi in ogni partita. E' un tesoro che vale 5 Monete. Se ci sono solo carte da Prosperità in questa partita, aggiungi i mazzetti Platino e Colonia alle carte base nella Riserva per la partita. Se è un mix di carte regno da Prosperità e da altri set, l'inclusione di Platino e Colonia va determinata casualmente, in base alla proporzione di carte Prosperità e non-Prosperità in uso. Per esempio, scegli una carta Regno a caso fra quelle usate (come la prima carta uscita di quelle scelte a caso, il che è equivalente a tirare 1d10 dopo che son state scelte tutte le carte) e se viene da Prosperità, aggiungi Platino e Colonia alla Riserva. Platino e Colonia non sono carte Regno; quando sono incluse, ci sono 10 carte Regno, più Rame, Argento, Oro, Platino, Tenuta, Ducato, Provincia, Colonia e Maledizione nella Riserva. Durante la preparazione, metti 12 Colonie nella Riserva per una partita con 3, 4, 5 o 6 giocatori, 8 nella Riserva per una partita a 2 giocatori. [Usa tutti e 12 i Platino a prescindere dal numero dei giocatori. Platino e Colonia si usano assieme, non una senza l'altra.]", 
   "name": "Platino", 
   "potcost": 0, 
+  "count": 12, 
   "types": [
    "Treasure"
   ]
@@ -1558,6 +1572,7 @@
   "extra": " 60 carte per partita.", 
   "name": "Rame", 
   "potcost": 0, 
+  "count": 60, 
   "types": [
    "Treasure"
   ]
@@ -1569,6 +1584,7 @@
   "extra": " 40 carte per partita.", 
   "name": "Argento", 
   "potcost": 0, 
+  "count": 40, 
   "types": [
    "Treasure"
   ]
@@ -1580,6 +1596,7 @@
   "extra": " 30 carte per partita.", 
   "name": "Oro", 
   "potcost": 0, 
+  "count": 30, 
   "types": [
    "Treasure"
   ]
@@ -1591,6 +1608,7 @@
   "extra": " Questa non è una carta Regno. Non la usi in ogni partita. E' un tesoro che vale 5 Monete. Se ci sono solo carte da Prosperità in questa partita, aggiungi i mazzetti Platino e Colonia alle carte base nella Riserva per la partita. Se è un mix di carte regno da Prosperità e da altri set, l'inclusione di Platino e Colonia va determinata casualmente, in base alla proporzione di carte Prosperità e non-Prosperità in uso. Per esempio, scegli una carta Regno a caso fra quelle usate (come la prima carta uscita di quelle scelte a caso, il che è equivalente a tirare 1d10 dopo che son state scelte tutte le carte) e se viene da Prosperità, aggiungi Platino e Colonia alla Riserva. Platino e Colonia non sono carte Regno; quando sono incluse, ci sono 10 carte Regno, più Rame, Argento, Oro, Platino, Tenuta, Ducato, Provincia, Colonia e Maledizione nella Riserva. Durante la preparazione, metti 12 Colonie nella Riserva per una partita con 3, 4, 5 o 6 giocatori, 8 nella Riserva per una partita a 2 giocatori. [Usa tutti e 12 i Platino a prescindere dal numero dei giocatori. Platino e Colonia si usano assieme, non una senza l'altra.]", 
   "name": "Platino", 
   "potcost": 0, 
+  "count": 12, 
   "types": [
    "Treasure"
   ]
@@ -1602,6 +1620,7 @@
   "extra": " Questa è una carta Tesoro base. Costa 4 Monete e produce una Pozione. Non è una carta Regno. Dopo che hai scelto 10 carte Regno per la Riserva, se qualsiasi di loro ha Pozioni nel costo aggiungi il mazzetto Pozione alla Riserva. Aggiungi il mazzetto Pozione se stai usando la carta promo Mercato Nero ed il suo mazzetto include almeno una carta con la Pozione nel costo. Se non hai carte con la Pozione nel costo nella Riserva o nel mazzetto del Mercato Nero, non usare il mazzetto Pozione in questa partita. Se hai un mazzetto Pozione, mettici tutte e 16 le Pozioni a prescindere dal numero di giocatori. In partite con questo mazzetto, se il mazzetto si svuota conta come uno dei tre che determinano il fine partita.", 
   "name": "Pozione", 
   "potcost": 0, 
+  "count": 16, 
   "types": [
    "Treasure"
   ]
@@ -1613,6 +1632,7 @@
   "extra": " Le Maledizioni sono un mazzetto disponibile nella Riserva a prescindere di quali altre carte ci siano nella Riserva. Con 2 giocatori, piazzare 10 Maledizioni nella Riserva. Con 3 giocatori, piazzare 20 Maledizioni nella Riserva. Con 4 giocatori, piazzare 30 Maledizioni nella Riserva. Con 5 giocatori, piazzare 40 Maledizioni nella Riserva. Con 6 giocatori, piazzare 50 Maledizioni nella Riserva.", 
   "name": "Maledizione", 
   "potcost": 0, 
+  "count": 30, 
   "types": [
    "Curse"
   ]
@@ -1624,6 +1644,7 @@
   "extra": " Metti 8 carte nella Riserva in una partita con due giocatori. Mettine 12 nella Riserva in una partita con tre o più giocatori.", 
   "name": "Tenuta", 
   "potcost": 0, 
+  "count": 24, 
   "types": [
    "Victory"
   ]
@@ -1663,13 +1684,14 @@
  }, 
  {
   "cardset": "base", 
-  "cost": "0", 
+  "cost": "", 
   "description": "Pila delle carte eliminate.", 
   "extra": "", 
   "name": "Carte Eliminate", 
   "potcost": 0, 
+  "count": 1,
   "types": [
-   "Action"
+   "Trash"
   ]
  }, 
  {
@@ -2202,6 +2224,7 @@
   "extra": " This is never in the Supply; it can only be obtained via Bandit Camp, Marauder, and Pillage. When you play Spoils, you get +3 Coins to spend this turn, and return that copy of Spoils to its pile. You are not forced to play Treasures in your hand.", 
   "name": "Spoils", 
   "potcost": 0, 
+  "count": 15, 
   "types": [
    "Treasure"
   ]
@@ -2348,6 +2371,7 @@
   "extra": " Follow the instructions in order. First draw a card; then gain a Rats from the Supply, putting it into your discard pile; then trash a card from your hand that is not a Rats card. If there are no Rats cards left, you do not gain one. If you have no cards in your hand other than Rats, reveal your hand and you do not trash a card. If Rats is trashed, you draw a card. This happens whether it is your turn or another player's, and regardless of which player has the card that trashed Rats. There are 20 copies of Rats, rather than the usual 10; the pile starts with all 20, regardless of the number of players.", 
   "name": "Rats", 
   "potcost": 0, 
+  "count": 20, 
   "types": [
    "Action"
   ]
@@ -2655,8 +2679,7 @@
   "name": "Shelters", 
   "potcost": 0, 
   "types": [
-   "Action", 
-   "Shelter"
+    "Shelters"
   ]
  }, 
  {
@@ -2666,6 +2689,7 @@
   "extra": " This card is not in the Supply; it can only be obtained via Urchin. When you play it, you may trash 2 cards from your hand. If you do, you draw two cards, get +2 Coins, and each other player discards down to 3 cards in hand. Players who already have 3 or fewer cards in hand do nothing. Players responding to this Attack with cards like Beggar must choose to do so before you decide whether or not to trash 2 cards from your hand. If you play this with only one card in hand, you may choose to trash that card, but then will fail the \"if you do\" and will not draw cards and so on. If the cards you trash do things when trashed, first trash them both, then choose what order to resolve the things they do when trashed. ", 
   "name": "Urchin / Mercenary", 
   "potcost": 0, 
+  "count": 0, 
   "types": [
    "Action"
   ]
@@ -2677,6 +2701,7 @@
   "extra": " Madman: This card is not in the Supply; it can only be obtained via Hermit. When you play it, you get +2 Actions, return it to the Madman pile if you can (this is not optional), and if you did return it, you draw a card per card in your hand. For example if you had three cards in hand after playing Madman, you would draw three cards. Normally, nothing will prevent you from returning Madman to the Madman pile, but you may fail to due to playing Madman twice via Procession, Throne Room (from Dominion), or King's Court (from Prosperity). So, for example, if you Procession a Madman, you will get +2 Actions, return Madman to the Madman pile, draw a card per card in your hand, get another +2 Actions, fail to return Madman and so not draw cards the second time, fail to trash Madman, and then gain an Action card costing exactly 1 Coin if you can. ", 
   "name": "Hermit / Madman", 
   "potcost": 0, 
+  "count": 0,
   "types": [
    "Action"
   ]

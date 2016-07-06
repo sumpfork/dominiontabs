@@ -287,6 +287,7 @@
   "extra": " 60 cards per game.",
   "name": "Copper",
   "potcost": 0,
+  "count": 60, 
   "types": [
    "Treasure"
   ]
@@ -298,6 +299,7 @@
   "extra": " 40 cards per game.",
   "name": "Silver",
   "potcost": 0,
+  "count": 40, 
   "types": [
    "Treasure"
   ]
@@ -309,6 +311,7 @@
   "extra": " 30 cards per game.",
   "name": "Gold",
   "potcost": 0,
+  "count": 30, 
   "types": [
    "Treasure"
   ]
@@ -320,6 +323,7 @@
   "extra": " Curses are an available pile in the Supply regardless of what other cards are in the Supply.  With 2 players, place 10 Curses in the Supply.  With 3 players, place 20 Curses in the Supply.  With 4 players, place 30 Curses in the Supply.  With 5 players, place 40 Curses in the Supply.  With 6 players, place 50 Curses in the Supply.",
   "name": "Curse",
   "potcost": 0,
+  "count": 30, 
   "types": [
    "Curse"
   ]
@@ -331,6 +335,7 @@
   "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.",
   "name": "Estate",
   "potcost": 0,
+  "count": 24, 
   "types": [
    "Victory"
   ]
@@ -359,13 +364,14 @@
  },
  {
   "cardset": "dominion",
-  "cost": "0",
+  "cost": "",
   "description": "Pile of trash.",
   "extra": "",
   "name": "Trash",
   "potcost": 0,
+  "count": 1,
   "types": [
-   "Action"
+   "Trash"
   ]
  },
  {
@@ -658,6 +664,7 @@
   "extra": " 60 cards per game.",
   "name": "Copper",
   "potcost": 0,
+  "count": 60, 
   "types": [
    "Treasure"
   ]
@@ -669,6 +676,7 @@
   "extra": " 40 cards per game.",
   "name": "Silver",
   "potcost": 0,
+  "count": 40,
   "types": [
    "Treasure"
   ]
@@ -680,6 +688,7 @@
   "extra": " 30 cards per game.",
   "name": "Gold",
   "potcost": 0,
+  "count": 30, 
   "types": [
    "Treasure"
   ]
@@ -702,6 +711,7 @@
   "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.",
   "name": "Estate",
   "potcost": 0,
+  "count": 24, 
   "types": [
    "Victory"
   ]
@@ -730,13 +740,13 @@
  },
  {
   "cardset": "intrigue",
-  "cost": "0",
+  "cost": "",
   "description": "Pile of trash.",
   "extra": "",
   "name": "Trash",
   "potcost": 0,
   "types": [
-   "Action"
+   "Trash"
   ]
  },
  {
@@ -1191,6 +1201,7 @@
   "extra": " This is a basic Treasure card. It costs 4 Coins and produces Potion. It is not a Kingdom card.  After you choose 10 Kingdom cards for the Supply, if any of them have Potion in the cost, add the Potion pile to the Supply. Also add the Potion pile if you are using the promotional card Black Market, and the Black Market deck includes at least one card with Potion in the cost. If you don't have any cards with Potion in the cost in the Supply or the Black Market deck, do not use the Potion pile in this game. When you have a Potion pile, put all 16 Potions in it, no matter how many players there are. In games using this pile, if the pile becomes empty, that will count towards the game ending condition.",
   "name": "Potion",
   "potcost": 0,
+  "count": 16, 
   "types": [
    "Treasure"
   ]
@@ -1579,6 +1590,7 @@
   "extra": " 60 cards per game.",
   "name": "Copper",
   "potcost": 0,
+  "count": 60, 
   "types": [
    "Treasure"
   ]
@@ -1590,6 +1602,7 @@
   "extra": " 40 cards per game.",
   "name": "Silver",
   "potcost": 0,
+  "count": 40, 
   "types": [
    "Treasure"
   ]
@@ -1601,6 +1614,7 @@
   "extra": " 30 cards per game.",
   "name": "Gold",
   "potcost": 0,
+  "count": 30, 
   "types": [
    "Treasure"
   ]
@@ -1612,6 +1626,7 @@
   "extra": " This is not a Kingdom card. You do not use it every game. It is a Treasure worth 5 coins.  If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]",
   "name": "Platinum",
   "potcost": 0,
+  "count": 12, 
   "types": [
    "Treasure"
   ]
@@ -1623,6 +1638,7 @@
   "extra": " This is a basic Treasure card. It costs 4 Coins and produces Potion. It is not a Kingdom card.  After you choose 10 Kingdom cards for the Supply, if any of them have Potion in the cost, add the Potion pile to the Supply. Also add the Potion pile if you are using the promotional card Black Market, and the Black Market deck includes at least one card with Potion in the cost. If you don't have any cards with Potion in the cost in the Supply or the Black Market deck, do not use the Potion pile in this game. When you have a Potion pile, put all 16 Potions in it, no matter how many players there are. In games using this pile, if the pile becomes empty, that will count towards the game ending condition.",
   "name": "Potion",
   "potcost": 0,
+  "count": 16,
   "types": [
    "Treasure"
   ]
@@ -1645,6 +1661,7 @@
   "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.",
   "name": "Estate",
   "potcost": 0,
+  "count": 24, 
   "types": [
    "Victory"
   ]
@@ -1684,13 +1701,13 @@
  },
  {
   "cardset": "base",
-  "cost": "0",
+  "cost": "",
   "description": "Pile of trash.",
   "extra": "",
   "name": "Trash",
   "potcost": 0,
   "types": [
-   "Action"
+   "Trash"
   ]
  },
  {
@@ -1908,8 +1925,9 @@
   "extra": " Prizes are never in the supply. They can only be obtained via Tournament. When Tournament is one of the Kingdom cards, set out the pile of five Prizes at the start of the game. ",
   "name": "Prizes",
   "potcost": 0,
+  "count": 0,
   "types": [
-   "Prize"
+   "Prizes"
   ]
  },
  {
@@ -2234,6 +2252,7 @@
   "extra": " This is never in the Supply; it can only be obtained via Bandit Camp, Marauder, and Pillage. When you play Spoils, you get +3 Coins to spend this turn, and return that copy of Spoils to its pile. You are not forced to play Treasures in your hand.",
   "name": "Spoils",
   "potcost": 0,
+  "count": 15,
   "types": [
    "Treasure"
   ]
@@ -2380,6 +2399,7 @@
   "extra": " Follow the instructions in order. First draw a card; then gain a Rats from the Supply, putting it into your discard pile; then trash a card from your hand that is not a Rats card. If there are no Rats cards left, you do not gain one. If you have no cards in your hand other than Rats, reveal your hand and you do not trash a card. If Rats is trashed, you draw a card. This happens whether it is your turn or another player's, and regardless of which player has the card that trashed Rats. There are 20 copies of Rats, rather than the usual 10; the pile starts with all 20, regardless of the number of players.",
   "name": "Rats",
   "potcost": 0,
+  "count": 20, 
   "types": [
    "Action"
   ]
@@ -2687,8 +2707,7 @@
   "name": "Shelters",
   "potcost": 0,
   "types": [
-   "Action",
-   "Shelter"
+   "Shelters"
   ]
  },
  {
@@ -2698,6 +2717,7 @@
   "extra": " Mercenary: This card is not in the Supply; it can only be obtained via Urchin. When you play it, you may trash 2 cards from your hand. If you do, you draw two cards, get +2 Coins, and each other player discards down to 3 cards in hand. Players who already have 3 or fewer cards in hand do nothing. Players responding to this Attack with cards like Beggar must choose to do so before you decide whether or not to trash 2 cards from your hand. If you play this with only one card in hand, you may choose to trash that card, but then will fail the \"if you do\" and will not draw cards and so on. If the cards you trash do things when trashed, first trash them both, then choose what order to resolve the things they do when trashed. ",
   "name": "Urchin / Mercenary",
   "potcost": 0,
+  "count": 0,
   "types": [
    "Action"
   ]
@@ -2709,6 +2729,7 @@
   "extra": " Madman: This card is not in the Supply; it can only be obtained via Hermit. When you play it, you get +2 Actions, return it to the Madman pile if you can (this is not optional), and if you did return it, you draw a card per card in your hand. For example if you had three cards in hand after playing Madman, you would draw three cards. Normally, nothing will prevent you from returning Madman to the Madman pile, but you may fail to due to playing Madman twice via Procession, Throne Room (from Dominion), or King's Court (from Prosperity). So, for example, if you Procession a Madman, you will get +2 Actions, return Madman to the Madman pile, draw a card per card in your hand, get another +2 Actions, fail to return Madman and so not draw cards the second time, fail to trash Madman, and then gain an Action card costing exactly 1 Coin if you can. ",
   "name": "Hermit / Madman",
   "potcost": 0,
+  "count": 0,
   "types": [
    "Action"
   ]
@@ -3257,6 +3278,7 @@
   "extra": " Champion stays in play for the rest of the game once played. For the rest of the game, it provides you with an additional +1 Action each time you play an Action, which means you will always be able to play all of your Actions; and it protects you from all further Attacks played (whether you want the protection or not). Champion only protects you from Attacks played after it; for example it does not stop a previously played Swamp Hag from giving you Curses that turn. ",
   "name": "Champion",
   "potcost": 0,
+  "count": 5, 
   "types": [
    "Action",
    "Duration"
@@ -3306,6 +3328,7 @@
   "extra": " When you play this, put it on your Tavern mat. It stays on your mat until you call it at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Teacher, it moves from the mat into play, and you choose your +1 Action, +1 Card, +1 Buy, or + 1 Coin token, and move it to an Action Supply pile that you have no tokens on. The token on the pile means that every time you play a card from that pile, you will get the corresponding bonus - if you put your +1 Action token on a pile, you will get an extra +1 Action when playing a card from that pile. See the Tokens section. This cannot put a token on a pile you have tokens on, including the tokens Teacher places as well as your - 2 Coin cost token and Trashing token. This can put a token on a pile that other players have tokens on. Other things can put tokens on a pile you put a token on with Teacher; it is just Teacher itself that cannot put a token on a pile you have a token on. It is okay if the pile has a token that does not belong to you or anyone, such as an Embargo token (from Seaside) or coin token for Trade Route (from Prosperity). It is okay if you have an Estate token on a card set aside from that pile. ",
   "name": "Teacher",
   "potcost": 0,
+  "count": 5,
   "types": [
    "Action",
    "Reserve"
@@ -3538,8 +3561,9 @@
   "extra": "Events are not Kingdom cards. In a player’s Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.",
   "name": "Events",
   "potcost": 0,
+  "count": 0,
   "types": [
-   "Event"
+   "Events"
   ]
  },
  {
@@ -3561,6 +3585,7 @@
   "extra": "You can look through your discard pile even if you know there are no Settlers in it.",
   "name": "Bustling Village",
   "potcost": 0,
+  "count": 5,
   "types":[
    "Action"
   ]
@@ -3583,6 +3608,7 @@
   "extra": "Humble Castle and King's Castle count themselves. Small Castle gains you the top Castle, whichever one that is. Haunted Castle works whether you buy it or gain it some other way, provided that it is your turn. You can pick either option on Sprawling Castle regardless of how many Duchies and Estates are left in the piles. Grand Castle counts both Victory cards in play - such as an Opulent Castle - and Victory cards in your hand.",
   "name": "Castles",
   "potcost": 0,
+  "count": 12,
   "types":[
    "Victory",
    "Castle"
@@ -3595,6 +3621,7 @@
   "extra": "If the card you trash is a treasure, each other player discards down to 3 cards in hand; if the card you trash costs 3 Coins or more, each other player gains a Curse; if it is both (e.g. Silver), both things happen; if it is neither, neither thing happens. If you have no cards in hand left to trash, neither thing happens.",
   "name": "Catapult",
   "potcost": 0,
+  "count": 5,
   "types":[
    "Action",
    "Attack"
@@ -3653,6 +3680,7 @@
   "extra": "This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Dominion: Adventures) called into play this turn.",
   "name": "Emporium",
   "potcost": 0,
+  "count": 5,
   "types":[
    "Action"
   ]
@@ -3664,6 +3692,7 @@
   "extra": "Revealing a Plunder or Gold is optional. When you return Encampment to the Supply, it goes on top of its pile, potentially covering up a Plunder.",
   "name": "Encampment",
   "potcost": 0,
+  "count": 5,
   "types":[
    "Action"
   ]
@@ -3713,6 +3742,7 @@
   "name": "Fortune",
   "potcost": 0,
   "debtcost": 8,
+  "count": 5,
   "types":[
    "Treasure"
   ]
@@ -3735,6 +3765,7 @@
   "extra": "If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator.",
   "name": "Gladiator",
   "potcost": 0,
+  "count": 5,
   "types":[
    "Action"
   ]
@@ -3793,6 +3824,7 @@
   "extra": "Cards costing Debt do not cost 5 Coin or more unless they also have a Coin cost of 5 Coin or more. So Fortune does but City Quarter does not.",
   "name": "Patrician",
   "potcost": 0,
+  "count": 5,
   "types":[
    "Action"
   ]
@@ -3804,6 +3836,7 @@
   "extra": "This gives you a <VP> token every time you play it.",
   "name": "Plunder",
   "potcost": 0,
+  "count": 5,
   "types":[
    "Treasure"
   ]
@@ -3815,6 +3848,7 @@
   "extra": "If it is another player's turn, then it is not your Buy phase, so the Silver goes to your hand.",
   "name": "Rocks",
   "potcost": 0,
+  "count": 5,
   "types":[
    "Treasure"
   ]
@@ -3837,6 +3871,7 @@
   "extra": "You can look through your discard pile even if you know there is no Copper in it.",
   "name": "Settlers",
   "potcost": 0,
+  "count": 5,
   "types":[
    "Action"
   ]
@@ -3883,8 +3918,9 @@
   "extra": "",
   "name": "Events",
   "potcost": 0,
+  "count": 0,
   "types":[
-   "Event"
+   "Events"
   ]
  },
  {
@@ -4251,8 +4287,9 @@
   "extra": "",
   "name": "Landmarks",
   "potcost": 0,
+  "count": 0,
   "types":[
-   "Landmark"
+   "Landmarks"
   ]
  },
  {
