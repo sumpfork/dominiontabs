@@ -23,4 +23,3 @@ setup(
     author_email="sumpfork@mailmight.net",
     description="Divider Generation for the Dominion Card Game"
 )
-

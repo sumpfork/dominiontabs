@@ -6,7 +6,7 @@ from ..domdiv import cards as domdiv_cards
 class TestCardDB(unittest.TestCase):
 
     def test_cardread(self):
-        options, args = domdiv.parse_opts(['commandname'])
+        options = domdiv.parse_opts([])
         options.data_path = '.'
         cards = domdiv.read_write_card_data(options)
         self.assertEquals(len(cards), 383)
@@ -36,13 +36,13 @@ class TestCardDB(unittest.TestCase):
 
     def test_languages(self):
         # for now, just test that they load
-        options, args = domdiv.parse_opts(['commandname', '--language', 'it'])
+        options = domdiv.parse_opts(['--language', 'it'])
         options.data_path = '.'
         cards = domdiv.read_write_card_data(options)
         self.assertTrue(cards, 'Italians cards did not read properly')
         self.assertIn("Maledizione", [card.name for card in cards])
 
-        options, args = domdiv.parse_opts(['commandname', '--language', 'de'])
+        options = domdiv.parse_opts(['--language', 'de'])
         options.data_path = '.'
         cards = domdiv.read_write_card_data(options)
         self.assertTrue(cards, 'German cards did not read properly')
