@@ -13,7 +13,7 @@ from draw import DividerDrawer
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
 TAB_SIDE_CHOICES = ["left", "right", "left-alternate", "right-alternate",
-                    "full"]
+                    "centre", "full"]
 TEXT_CHOICES = ["card", "rules", "blank"]
 
 
@@ -101,6 +101,7 @@ def parse_opts(arglist):
         " left/right forces all tabs to left/right side;"
         " left-alternate will start on the left and then toggle between left and right for the tabs;"
         " right-alternate will start on the right and then toggle between right and left for the tabs;"  # noqa
+        " centre will force all label tabs to the centre;"
         " full will force all label tabs to be full width of the divider"
         " default:right-alternate")
     parser.add_argument(

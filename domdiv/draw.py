@@ -42,7 +42,10 @@ class DividerDrawer(object):
             self.fontNameBold = 'Times-Bold'
             self.fontNameOblique = 'Times-Oblique'
 
-    def getOutline(self, card, isExpansionDivider=False):
+    def wantCentreTab(self,card):
+        return (card.isExpansion() and self.options.centre_expansion_dividers) or self.options.tab_side == "centre"
+        
+    def getOutline(self, card):
 
         dividerWidth = self.options.dividerWidth
         dividerHeight = self.options.dividerHeight
@@ -55,7 +58,7 @@ class DividerDrawer(object):
         theTabHeight = dividerHeight - dividerBaseHeight
         theTabWidth = self.options.labelWidth
 
-        if isExpansionDivider:
+        if self.wantCentreTab(card):
             side_2_tab = (dividerWidth - theTabWidth) / 2
         else:
             side_2_tab = 0
@@ -231,8 +234,7 @@ class DividerDrawer(object):
                     x,
                     y,
                     rightSide,
-                    isBack=False,
-                    isExpansionDivider=False):
+                    isBack=False):
         # draw outline or cropmarks
         self.canvas.saveState()
         self.canvas.setLineWidth(self.options.linewidth)
@@ -244,10 +246,7 @@ class DividerDrawer(object):
         if not self.options.cropmarks and not isBack:
             # don't draw outline on back, in case lines don't line up with
             # front
-            if isExpansionDivider and self.options.centre_expansion_dividers:
-                self.getOutline(card, isExpansionDivider=True)
-            else:
-                self.getOutline(card)
+            self.getOutline(card)
 
         elif self.options.cropmarks and not self.options.wrapper:
             cmw = 0.5 * cm
@@ -414,7 +413,7 @@ class DividerDrawer(object):
     def drawTab(self, card, rightSide, wrapper="no"):
         # draw tab flap
         self.canvas.saveState()
-        if card.isExpansion() and self.options.centre_expansion_dividers:
+        if self.wantCentreTab(card):
             translate_x = self.options.dividerWidth / 2 - self.options.labelWidth / 2
             translate_y = self.options.dividerHeight - self.options.labelHeight
         elif not rightSide:
@@ -426,7 +425,7 @@ class DividerDrawer(object):
 
         if wrapper == "back":
             translate_y = self.options.labelHeight
-            if card.isExpansion() and self.options.centre_expansion_dividers:
+            if self.wantCentreTab(card):
                 translate_x = self.options.dividerWidth / 2 + self.options.labelWidth / 2
             elif not rightSide:
                 translate_x = self.options.dividerWidth
@@ -736,8 +735,7 @@ class DividerDrawer(object):
 
         # actual drawing
         if not self.options.tabs_only:
-            self.drawOutline(card, x, y, rightSide, isBack,
-                             card.getType().getTypeNames() == ('Expansion', ))
+            self.drawOutline(card, x, y, rightSide, isBack)
 
         if self.options.wrapper:
             wrap = "front"
