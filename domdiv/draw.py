@@ -44,7 +44,7 @@ class DividerDrawer(object):
 
     def wantCentreTab(self, card):
         return (card.isExpansion() and self.options.centre_expansion_dividers) or self.options.tab_side == "centre"
- 
+
     def getOutline(self, card):
 
         dividerWidth = self.options.dividerWidth
