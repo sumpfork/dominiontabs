@@ -50,16 +50,16 @@ def parse_opts(arglist):
         "--size",
         dest="size",
         default='normal',
-        help="'<%f>x<%f>' (size in cm), or 'normal' = '9.1x5.9', or 'sleeved' = '9.4x6.15'")
+        help="'<%%f>x<%%f>' (size in cm), or 'normal' = '9.1x5.9', or 'sleeved' = '9.4x6.15'")
     parser.add_argument(
         "--minmargin",
         dest="minmargin",
         default="1x1",
-        help="'<%f>x<%f>' (size in cm, left/right, top/bottom), default: 1x1")
+        help="'<%%f>x<%%f>' (size in cm, left/right, top/bottom), default: 1x1")
     parser.add_argument("--papersize",
                         dest="papersize",
                         default=None,
-                        help="'<%f>x<%f>' (size in cm), or 'A4', or 'LETTER'")
+                        help="'<%%f>x<%%f>' (size in cm), or 'A4', or 'LETTER'")
     parser.add_argument(
         "--front",
         choices=TEXT_CHOICES,
