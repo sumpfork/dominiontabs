@@ -3026,5 +3026,83 @@
 "Action", 
 "Duration"
 ]
+},
+{
+"name": "Schwarzmarkt",
+"cost": "3",
+"description": "+2 Coins\nDecke die obersten 3 Karten vom Schwarzmarkt-Stapel auf. Du darfst sofort eine der aufgedeckten Karten kaufen. Lege die nicht gekauften Karten in beliebiger Reihenfolge unter den Schwarzmarkt-Stapel zurück.\n(Vor dem Spiel wird ein Schwarzmarkt-Stapel gebildet. Der Schwarzmarkt-Stapel enthält je eine Karte aller Königreichkarten, die nicht im Vorrat sind.",
+"extra": "",
+"cardset": "promo",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+
+"name": "Gesandter",
+"cost": "4",
+"description": "Decke die obersten 5 Karten von deinem Nachziehstapel auf. Der Spieler links von dir wählt eine der aufgedeckten Karten aus. Lege die gewählte Karte ab. Nimm die übrigen Karten auf die Hand.",
+"extra": "",
+"cardset": "promo",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name": "Geldversteck",
+"cost": "5",
+"description": "2 Coins\nNachdem du deinen Ablagestapel gemischt hast, darfst du diese Karte an eine beliebige Stelle in deinem Nachziehstapel einsortieren.",
+"extra": "",
+"cardset": "promo",
+"potcost": 0,
+"types": [
+"Treasure"
+]
+},
+{
+"name": "Carcassonne",
+"cost": "4",
+"description": "+1 Karte\n+2 Aktionen\nWenn du zu Beginn deiner Aufräumphase außer dieser Karte nur noch eine weitere Aktionskarte im Spiel hast, darfst du die Karte Carcassonne auf deinen Nachziehstapel legen.",
+"extra": "",
+"cardset": "promo",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name": "Gouverneur",
+"cost": "5",
+"description": "+1 Aktion\nWähle eins (deine Mitspieler erhalten, was in Klammern angegeben ist): +3 Karten (+1 Karte)\noder\nNimm dir ein Gold (Silber)\noder\nJeder Spieler darf eine Karte aus seiner Hand entsorgen und nimmt sich dafür eine Karte, die genau 2 Coins (1 Coin) mehr kostet.",
+"extra": " ",
+"cardset": "promo",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name": "Prinz",
+"cost": "8",
+"description": "Du darfst diese Karte zur Seite legen. Wenn du das tust: Lege eine Aktionskarte aus deiner Hand zur Seite, die bis zu 4 Coins kostet.\nZu Beginn deines Zuges: Spiele die zur Seite gelegte Aktionskarte. Sobald du sie ablegen musst, legst du sie stattdessen wieder zur Seite. Solltest du sie nicht ablegen müssen, legst du sie nicht wieder zur Seite. Die Wirkung der Karte Prinz wird sofort aufgehoben. Sie bleibt bis zum Spielende beiseitegelegt und kommt nicht mehr zum Einsatz.",
+"extra": "",
+"cardset": "promo",
+"potcost": 0,
+"types": [
+"Action"
+]
+},
+{
+"name": "Einladung",
+"cost": "5",
+"description": "Nimm eine Aktionskarte, die bis zu 4 Coins kostet und lege sie zur Seite. Spiele sie zu Beginn deines nächsten Zuges.",
+"extra": "",
+"cardset": "promo",
+"potcost": 0,
+"types": [
+"Event"
+]
 }
     ]
