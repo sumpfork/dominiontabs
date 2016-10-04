@@ -285,6 +285,7 @@
   "extra": "60 Karten pro Spiel.", 
   "cost": "0", 
   "cardset": "Dominion", 
+  "count": 60,
   "types": [
    "Treasure"
   ], 
@@ -296,6 +297,7 @@
   "extra": "40 Karten pro Spiel", 
   "cost": "3", 
   "cardset": "Dominion", 
+  "count": 40, 
   "types": [
    "Treasure"
   ], 
@@ -307,6 +309,7 @@
   "extra": "30 Karten pro Spiel", 
   "cost": "6", 
   "cardset": "Dominion", 
+  "count": 30, 
   "types": [
    "Treasure"
   ], 
@@ -318,6 +321,7 @@
   "extra": "Flüche sind immer im Spiel.\n2 Spieler =  10 Flüche\n3 Spieler = 20 Flüche\n4Spieler = 30 Flüche\n5 Spieler = 40 Flüche\n6 Spieler = 50 Flüche", 
   "cost": "0", 
   "cardset": "Dominion", 
+  "count": 30, 
   "types": [
    "Curse"
   ], 
@@ -329,6 +333,7 @@
   "extra": "8 Karten bei 2 Spielern. Bei 3 oder mehr Spielern alle 12 Karten.", 
   "cost": "2", 
   "cardset": "Dominion", 
+  "count": 24, 
   "types": [
    "Victory"
   ], 
@@ -645,6 +650,7 @@
   "extra": "", 
   "cost": "0", 
   "cardset": "Intrige", 
+  "count": 60,
   "types": [
    "Treasure"
   ], 
@@ -656,6 +662,7 @@
   "extra": "", 
   "cost": "3", 
   "cardset": "Intrige", 
+  "count": 40, 
   "types": [
    "Treasure"
   ], 
@@ -667,6 +674,7 @@
   "extra": "", 
   "cost": "6", 
   "cardset": "Intrige", 
+  "count": 30, 
   "types": [
    "Treasure"
   ], 
@@ -678,6 +686,7 @@
   "extra": "", 
   "cost": "0", 
   "cardset": "Intrige", 
+  "count": 30, 
   "types": [
    "Curse"
   ], 
@@ -689,6 +698,7 @@
   "extra": "", 
   "cost": "2", 
   "cardset": "Intrige", 
+  "count": 24, 
   "types": [
    "Victory"
   ], 
@@ -1167,6 +1177,7 @@
   "extra": "", 
   "cost": "4", 
   "cardset": "Die Alchemisten", 
+  "count": 16, 
   "types": [
    "Treasure"
   ], 
@@ -2615,6 +2626,7 @@
   "extra": "Einen LEHRER erhältst du nur, wenn du einen SCHÜLER eintauschst. Er kann in keine andere Karte eingetauscht werden. Wenn du den LEHRER ausspielst, lege ihn auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du den LEHRER von deinem Tableau aufrufen und in den Spielbereich legen. Wenn du das tust, legst du entweder den +1 Karte-, +1 Aktion-, +1 Kauf- oder + 1 Coins -Marker auf einen beliebigen Aktions-Vorratsstapel, auf dem du zu diesem Zeitpunkt keine weiteren eigenen Marker liegen hast. Immer wenn du eine Karte, die von diesem Stapel stammt, spielst, erhältst du zuerst (bevor die Anweisungen der Karte ausgeführt werden) den entsprechenden Bonus des Markers. Lege den LEHRER in der Aufräumphase ab.", 
   "cost": "6*", 
   "cardset": "Abenteuer", 
+  "count": 5,
   "types": [
    "Action", 
    "Reserve"
@@ -2676,6 +2688,7 @@
   "extra": "Einen CHAMPION erhältst du nur, wenn du einen HELDEN eintauschst. Er kann in keine andere Karte eingetauscht werden. Wenn du den CHAMPION ausspielst, erhältst du + 1 Aktion. Der CHAMPION ist eine Dauerkarte. Er bleibt bis zum Spielende im Spiel. Immer wenn ein Mitspieler ab jetzt eine Angriffskarte ausspielt, bist du davon nicht betroffen (auch wenn du das möchtest). Für den Rest des Spiels erhältst du jedes Mal, wenn du eine Aktionskarte ausspielst, + 1 Aktion. Die Anweisung über der Trennlinie wird nur beim Ausspielen des CHAMPION ausgeführt.", 
   "cost": "6*", 
   "cardset": "Abenteuer", 
+  "count": 5, 
   "types": [
    "Action", 
    "Duration"
