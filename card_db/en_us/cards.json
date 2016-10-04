@@ -1584,6 +1584,39 @@
   ]
  },
  {
+  "cardset": "promo",
+  "cost": "4",
+  "description": "+1 Card\n+1 Action\nYou may play an Avanto from your hand.\nWhile this is in play, when you play a Silver, you may trash a card from your hand.",
+  "extra": "Sauna is a promotional Action card. It's a cantrip that allows you to trash a card when you play a Silver. It is a split pile card, with five copies of Sauna sitting on top of five copies of Avanto.",
+  "name": "Sauna",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "promo",
+  "cost": "5",
+  "description": "+3 Cards\nYou may play a Sauna from your hand.",
+  "extra": "Avanto is a promotional Action card. It's a terminal draw card that can potentially become non-terminal if you have a Sauna in your hand to play. It is a split pile card, with five copies of Avanto sitting under five copies of Sauna.",
+  "name": "Avanto",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
+  "cardset": "promo",
+  "cost": "4",
+  "description": "Sauna:\n+1 Card\n+1 Action\nYou may play an Avanto from your hand.\nWhile this is in play, when you play a Silver, you may trash a card from your hand.\nAvanto:\n+3 Cards\nYou may play a Sauna from your hand.",
+  "extra": "Sauna \/ Avanto is a split pile with five copies of Sauna placed on top of five copies of Avanto during setup. Sauna is a cantrip that allows you to trash a card when you play a Silver. Avanto is a terminal draw card that can potentially become non-terminal if you have a Sauna in your hand to play.",
+  "name": "Sauna \/ Avanto",
+  "potcost": 0,
+  "types":[
+   "Action"
+  ]
+ },
+ {
   "cardset": "base",
   "cost": "0",
   "description": "Worth 1 Coin.",
