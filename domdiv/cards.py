@@ -153,18 +153,14 @@ class Card(object):
 
     def setImage(self):
         setImage = Card.getSetImage(self.cardset, self.name)
-        if setImage is None and self.cardset not in ['base', 'extra'] and not self.isExpansion():
-            print 'warning, no set image for set "%s" card "%s"' % (self.cardset, self.name)
-            setImages[self.cardset] = 0
-            promoImages[self.name.lower()] = 0
+        if setImage is None and self.cardset != 'base':
+            print 'warning, no set image for set "{}" card "{}"'.format(self.cardset, self.name)
         return setImage
 
     def setTextIcon(self):
         setTextIcon = Card.getSetText(self.cardset, self.name)
-        if setTextIcon is None and self.cardset not in ['base', 'extra'] and not self.isExpansion():
-            print 'warning, no set text for set "%s" card "%s"' % (self.cardset, self.name)
-            setTextIcons[self.cardset] = 0
-            promoTextIcons[self.name.lower()] = 0
+        if setTextIcon is None and self.cardset != 'base':
+            print 'warning, no set text for set "{}" card "{}"'.format(self.cardset, self.name)
         return setTextIcon
 
     def isBlank(self):
