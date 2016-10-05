@@ -3104,5 +3104,38 @@
 "types": [
 "Event"
 ]
+},
+ {
+"cardset": "promo",
+"cost": "4",
+"description": "+1 Karte\n+1 Aktion\nDu darfst ein Eisloch aus deiner Hand ausspielen.\nSolange diese Karte im Spiel ist: Wenn du ein Silber ausspielst, darfst du eine Handkarte entsorgen.",
+"extra": "",
+"name": "Sauna",
+"potcost": 0,
+"types":[
+ "Action"
+]
+},
+{
+"cardset": "promo",
+"cost": "5",
+"description": "+3 Karten\nDu darfst eine Sauna aus deiner Hand ausspielen.",
+"extra": "",
+"name": "Eisloch",
+"potcost": 0,
+"types":[
+ "Action"
+]
+},
+{
+"cardset": "promo",
+"cost": "4",
+"description": "Sauna:\n+1 Karte\n+1 Aktion\nDu darfst ein Eisloch aus deiner Hand ausspielen.\nSolange diese Karte im Spiel ist: Wenn du ein Silber ausspielst, darfst du eine Handkarte entsorgen.\nEisloch:\n+3 Karten\nDu darfst eine Sauna aus deiner Hand ausspielen.",
+"extra": "",
+"name": "Sauna \/ Eisloch",
+"potcost": 0,
+"types":[
+ "Action"
+]
 }
     ]
