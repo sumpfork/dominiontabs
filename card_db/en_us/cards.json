@@ -287,7 +287,7 @@
   "extra": " 60 cards per game.",
   "name": "Copper",
   "potcost": 0,
-  "count": 60, 
+  "count": 60,
   "types": [
    "Treasure"
   ]
@@ -299,7 +299,7 @@
   "extra": " 40 cards per game.",
   "name": "Silver",
   "potcost": 0,
-  "count": 40, 
+  "count": 40,
   "types": [
    "Treasure"
   ]
@@ -311,7 +311,7 @@
   "extra": " 30 cards per game.",
   "name": "Gold",
   "potcost": 0,
-  "count": 30, 
+  "count": 30,
   "types": [
    "Treasure"
   ]
@@ -323,7 +323,7 @@
   "extra": " Curses are an available pile in the Supply regardless of what other cards are in the Supply.  With 2 players, place 10 Curses in the Supply.  With 3 players, place 20 Curses in the Supply.  With 4 players, place 30 Curses in the Supply.  With 5 players, place 40 Curses in the Supply.  With 6 players, place 50 Curses in the Supply.",
   "name": "Curse",
   "potcost": 0,
-  "count": 30, 
+  "count": 30,
   "types": [
    "Curse"
   ]
@@ -335,7 +335,7 @@
   "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.",
   "name": "Estate",
   "potcost": 0,
-  "count": 24, 
+  "count": 24,
   "types": [
    "Victory"
   ]
@@ -664,7 +664,7 @@
   "extra": " 60 cards per game.",
   "name": "Copper",
   "potcost": 0,
-  "count": 60, 
+  "count": 60,
   "types": [
    "Treasure"
   ]
@@ -688,7 +688,7 @@
   "extra": " 30 cards per game.",
   "name": "Gold",
   "potcost": 0,
-  "count": 30, 
+  "count": 30,
   "types": [
    "Treasure"
   ]
@@ -711,7 +711,7 @@
   "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.",
   "name": "Estate",
   "potcost": 0,
-  "count": 24, 
+  "count": 24,
   "types": [
    "Victory"
   ]
@@ -1201,7 +1201,7 @@
   "extra": " This is a basic Treasure card. It costs 4 Coins and produces Potion. It is not a Kingdom card.  After you choose 10 Kingdom cards for the Supply, if any of them have Potion in the cost, add the Potion pile to the Supply. Also add the Potion pile if you are using the promotional card Black Market, and the Black Market deck includes at least one card with Potion in the cost. If you don't have any cards with Potion in the cost in the Supply or the Black Market deck, do not use the Potion pile in this game. When you have a Potion pile, put all 16 Potions in it, no matter how many players there are. In games using this pile, if the pile becomes empty, that will count towards the game ending condition.",
   "name": "Potion",
   "potcost": 0,
-  "count": 16, 
+  "count": 16,
   "types": [
    "Treasure"
   ]
@@ -1623,7 +1623,7 @@
   "extra": " 60 cards per game.",
   "name": "Copper",
   "potcost": 0,
-  "count": 60, 
+  "count": 60,
   "types": [
    "Treasure"
   ]
@@ -1635,7 +1635,7 @@
   "extra": " 40 cards per game.",
   "name": "Silver",
   "potcost": 0,
-  "count": 40, 
+  "count": 40,
   "types": [
    "Treasure"
   ]
@@ -1647,7 +1647,7 @@
   "extra": " 30 cards per game.",
   "name": "Gold",
   "potcost": 0,
-  "count": 30, 
+  "count": 30,
   "types": [
    "Treasure"
   ]
@@ -1659,7 +1659,7 @@
   "extra": " This is not a Kingdom card. You do not use it every game. It is a Treasure worth 5 coins.  If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]",
   "name": "Platinum",
   "potcost": 0,
-  "count": 12, 
+  "count": 12,
   "types": [
    "Treasure"
   ]
@@ -1694,7 +1694,7 @@
   "extra": " Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.",
   "name": "Estate",
   "potcost": 0,
-  "count": 24, 
+  "count": 24,
   "types": [
    "Victory"
   ]
@@ -2432,7 +2432,7 @@
   "extra": " Follow the instructions in order. First draw a card; then gain a Rats from the Supply, putting it into your discard pile; then trash a card from your hand that is not a Rats card. If there are no Rats cards left, you do not gain one. If you have no cards in your hand other than Rats, reveal your hand and you do not trash a card. If Rats is trashed, you draw a card. This happens whether it is your turn or another player's, and regardless of which player has the card that trashed Rats. There are 20 copies of Rats, rather than the usual 10; the pile starts with all 20, regardless of the number of players.",
   "name": "Rats",
   "potcost": 0,
-  "count": 20, 
+  "count": 20,
   "types": [
    "Action"
   ]
@@ -3191,6 +3191,7 @@
   "extra": " When you buy a Port, you gain another Port. If you gain a Port some other way, you do not get an extra Port. There are 12 Ports in the pile; use all 12. ",
   "name": "Port",
   "potcost": 0,
+  "count": 12,
   "types": [
    "Action"
   ]
@@ -3250,6 +3251,7 @@
   "extra": " See the section on Travelers. When you play Page, you get +1 Card and +1 Action. When you discard it from play, you may return it to its pile and take a Treasure Hunter, putting it into your discard pile. ",
   "name": "Page",
   "potcost": 0,
+  "count": 10,
   "types": [
    "Action",
    "Traveller"
@@ -3262,6 +3264,7 @@
   "extra": " See the section on Travelers. When you play Peasant, you get +1 Buy and + 1 Coin. When you discard it from play, you may return it to its pile and take a Soldier, putting it into your discard pile. ",
   "name": "Peasant",
   "potcost": 0,
+  "count": 10,
   "types": [
    "Action",
    "Traveller"
@@ -3311,7 +3314,7 @@
   "extra": " Champion stays in play for the rest of the game once played. For the rest of the game, it provides you with an additional +1 Action each time you play an Action, which means you will always be able to play all of your Actions; and it protects you from all further Attacks played (whether you want the protection or not). Champion only protects you from Attacks played after it; for example it does not stop a previously played Swamp Hag from giving you Curses that turn. ",
   "name": "Champion",
   "potcost": 0,
-  "count": 5, 
+  "count": 5,
   "types": [
    "Action",
    "Duration"
@@ -3606,6 +3609,7 @@
   "extra": "You look at three cards, and get one now, one next turn, and one the turn after that. Put the set-aside cards under Archive. If you play two Archives, they get separate sets of cards. If you Throne Room an Archive, keep the sets of cards separate; you get one from each each turn. If there are fewer than three cards, just set aside what you can, and Archive will run out of cards faster and still be discarded the turn it has no cards left.",
   "name": "Archive",
   "potcost": 0,
+  "count": 10,
   "types":[
    "Action",
    "Duration"
@@ -3947,8 +3951,8 @@
  {
   "cardset": "empires extras",
   "cost": "*",
-  "description": "",
-  "extra": "",
+  "description": "Events are not Kingdom cards. In a player’s Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.",
+  "extra": "Events are not Kingdom cards. In a player’s Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.",
   "name": "Events",
   "potcost": 0,
   "count": 0,
@@ -4316,8 +4320,8 @@
  {
   "cardset": "empires extras",
   "cost": "",
-  "description": "",
-  "extra": "",
+  "description": "Landmarks are not Kingdom cards. Landmarks provide new ways for players to score. Players may choose how to determine what Landmarks to play with. Landmarks in use are visible to all from the start of the game. Many Landmarks only apply when scoring at the end of the game.",
+  "extra": "Landmarks are not Kingdom cards. It is recommended that no more than two Landmarks be used per game. Players may choose how to determine what Landmarks to play with. They may shuffle them with Events and deal out 2 cards from that pile every game; they may shuffle them into the Randomizer deck and use 0-2 depending on how many come up before finding 10 Kingdom cards; or they may use any method they like.",
   "name": "Landmarks",
   "potcost": 0,
   "count": 0,
@@ -4332,6 +4336,7 @@
   "extra": "If the card you trash is a treasure, each other player discards down to 3 cards in hand; if the card you trash costs 3 Coins or more, each other player gains a Curse; if it is both (e.g. Silver), both things happen; if it is neither, neither thing happens. Rocks: If you have no cards in hand left to trash, neither thing happens. If it is another player's turn, then it is not your Buy phase, so the Silver goes to your hand.",
   "name": "Catapult \/ Rocks",
   "potcost": 0,
+  "count": 0,
   "types":[
    "Action",
    "Treasure"
@@ -4344,6 +4349,7 @@
   "extra": "Revealing a Plunder or Gold is optional. When you return Encampment to the Supply, it goes on top of its pile, potentially covering up a Plunder. Plunder: This gives you a <VP> token every time you play it.",
   "name": "Encampment \/ Plunder",
   "potcost": 0,
+  "count": 0,
   "types":[
    "Action",
    "Treasure"
@@ -4356,6 +4362,7 @@
   "extra": "If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator. Fortune: You only double your Coin the first time you play a Fortune in a turn; any further times only get you +1 Buy.",
   "name": "Gladiator \/ Fortune",
   "potcost": 0,
+  "count": 0,
   "types":[
    "Action",
    "Treasure"
@@ -4368,6 +4375,7 @@
   "extra": "Cards costing Debt do not cost 5 Coin or more unless they also have a Coin cost of 5 Coin or more. So Fortune does but City Quarter does not. Emporium: This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Dominion: Adventures) called into play this turn.",
   "name": "Patrician \/ Emporium",
   "potcost": 0,
+  "count": 0,
   "types":[
    "Action"
   ]
@@ -4379,6 +4387,7 @@
   "extra": "You can look through your discard pile even if you know there is no Copper in it. Bustling Village: You can look through your discard pile even if you know there are no Settlers in it.",
   "name": "Settlers \/ Bustling Village",
   "potcost": 0,
+  "count": 10,
   "types":[
    "Action"
   ]
