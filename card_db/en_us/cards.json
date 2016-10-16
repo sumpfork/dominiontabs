@@ -4500,8 +4500,8 @@
     "potcost": 0,
     "cost": 4,
     "name": "Mill",
-    "extra": "You can choose to discard 2 cards even if you only have one card in hand, but you only get +2 Coin if you actually discarded 2 cards.<br></br>Use 8 Mills for games with 2 players, 12 for games with 3 or more players.",
-    "description": "+1 Card\n+1 Action\n\nYou may discard 2 cards, for +2 Coin.\n\u2013\nWorth 1 VP",
+    "extra": "You can choose to discard 2 cards even if you only have one card in hand, but you only get +2 Coin if you actually discarded 2 cards.<br></br>\u2013<br></br>Use 8 Mills for games with 2 players, 12 for games with 3 or more players.",
+    "description": "+1 Card\n+1 Action\n\nYou may discard 2 cards, for +2 Coin.\n\n\u2013\n\nWorth 1 VP",
     "types": [
       "Action",
       "Victory"
@@ -4517,14 +4517,14 @@
     "types": [
       "Action"
     ],
-    "description": "+3 Cards\n\nReveal the top 4 cards of your deck. Put the Victory cards and Curses into your hand. Put the rest back in any order.\n"
+    "description": "+3 Cards\n\nReveal the top 4 cards of your deck. Put the Victory cards and Curses into your hand. Put the rest back in any order."
   },
   {
     "potcost": 0,
     "cost": 5,
     "name": "Replace",
     "extra": "Like Remodel, you first trash a card from your hand, then gain a card from the Supply costing up to 2 Coin more than the trashed card, putting the gained card into your discard pile.<br></br><br></br>Replace gives you an additional bonus based on the types of the gained card; if it is an Action or Treasure you move it to the top of your deck, and if it is a Victory card the other players each gain a Curse.<br></br><br></br>It is possible to get both bonuses; if you gain Harem, Mill, or Nobles with Replace, it both goes on your deck and causes the other players to each gain a Curse.",
-    "description": "Trash a card from your hand. Gain a card costing up to 2 Coins more than it. If the gained card is an Action or Treasure, put it onto your deck; if it's a Victory card, each other player gains a Curse.\n",
+    "description": "Trash a card from your hand. Gain a card costing up to 2 Coins more than it. If the gained card is an Action or Treasure, put it onto your deck; if it's a Victory card, each other player gains a Curse.",
     "types": [
       "Action",
       "Attack"
@@ -4540,6 +4540,6 @@
     "types": [
       "Action"
     ],
-    "description": "+2 Cards\n+1 Action\n\nTake a card from your hand and put it anywhere in your deck.\n"
+    "description": "+2 Cards\n+1 Action\n\nTake a card from your hand and put it anywhere in your deck."
   }
 ]
