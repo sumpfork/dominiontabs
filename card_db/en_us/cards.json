@@ -4382,5 +4382,84 @@
   "types":[
    "Action"
   ]
+ },
+ {
+  "cardset": "dominion",
+  "cost": "3",
+  "description": "+2 Coin\nDiscard the top card of your deck.  If it's an Action card, you may play it",
+  "extra": "If the card is an Action card, you can play it, but do not have to.\nIf you do play it, you move it into your play area and follow its instructions; this does not use up one of your Action plays for the turn.",
+  "name": "Vassal",
+  "potcost": 0,
+  "types":[
+    "Action"
+  ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 5,
+   "description": "+1 Card\n+1 Action\nLook at the top 2 cards of your deck.  Trash and/or discard any number of them.  Put the rest back on top in any order.",
+   "extra": "First you draw a card and get +1 Action.\n  Then you look at the top 2 cards of your deck.\n  You can trash both, or discard both, or put both back in either order; or you can trash one and discard one, or trash one and put one back, or discard one and put one back.",
+   "name": "Sentry",
+   "potcost": 0,
+   "types":[
+    "Action"
+    ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 4,
+   "description": "+1 Card\n+1 Action\n+1 Coin\nDiscard a card per empty Supply pile.",
+   "extra": "You draw your one card before discarding.\n If there are no empty piles, you do not discard.\n If there is one empty pile, you discard one card; if there are two empty piles, you discard two cards, and so on.\n This includes all Supply piles, including Curses, Coppers, Poacher itself, etc.\n If you do not have enough cards to discard, just discard the rest of your hand.\n\n  Non-Supply piles, such as Spoils, do not matter to Poacher.",
+   "name": "Poacher",
+   "potcost": 0,
+   "types":[
+     "Action"
+   ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 3,
+   "description": "+1 Card\n+1 Action\nThe first time you play a Silver this turn, +1 Coin.",
+   "extra": "When you play Merchant, you draw a card and get +1 Action.\n If you end up playing a Silver later in the turn, it comes with 1 Coin.\n If you play more than one Merchant, each gives you 1 Coin when you play that first Silver; but if you play more than one Silver, you only get the 1 Coin for the first Silver.\n\n If you manage to play a Merchant after playing a Silver, the Merchant gives you no bonus (for the previous Silver or for any Silvers you might play later in the turn).\n Playing Throne Room on Merchant will give you 2 Coin when you play your first Silver.",
+   "name": "Merchant",
+   "potcost": 0,
+   "types":[
+     "Action"
+   ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 5,
+   "description": "Gain a Gold.  Each other player reveals the top 2 cards of their deck, trashes a revealed Treasure other than Copper, and discards the rest.",
+   "extra": "First you gain a Gold from the Supply, putting it into your discard pile.\n  Then each other player, in turn order, reveals their top 2 cards, trashes one they choose that is a Treasure other than Copper (e.g. Silver or Gold), and discards the other revealed cards.\n  A player who did not reveal a Treasure card other than Copper simply discards both cards.",
+   "name": "Bandit",
+   "potcost": 0,
+   "types":[
+     "Action",
+     "Attack"
+   ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 3,
+   "description": "+1 Card\n+1 Action\nLook through your discard pile.  You may put a card from it onto your deck.",
+   "extra": "First draw a card and get +1 Action; then look through your discard pile, and you may put a card from it on top of your deck.\nPutting a card on top is optional.",
+   "name": "Harbinger",
+   "potcost": 0,
+   "count": 10,
+   "types":[
+     "Action"
+   ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 6,
+   "description": "Gain a card to your hand costing up to 5 Coins.  Put a card from your hand onto your deck.",
+   "extra": "The card you gain comes from the Supply and is put into your hand.\nYou cannot use empty Coin &nbsp;to increase how expensive of a card you gain; it always costs from 0 Coins to 5 Coins.\n After gaining the card, you put a card from your hand onto your deck; that can be the card you just gained, or a different card.",
+   "name": "Artisan",
+   "potcost": 0,
+   "types":[
+     "Action"
+   ]
  }
 ]
