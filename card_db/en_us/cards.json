@@ -4391,5 +4391,164 @@
   "types":[
    "Action"
   ]
- }
+ },
+ {
+  "cardset": "dominion",
+  "cost": "3",
+  "description": "+2 Coin\nDiscard the top card of your deck.  If it's an Action card, you may play it",
+  "extra": "If the card is an Action card, you can play it, but do not have to.\nIf you do play it, you move it into your play area and follow its instructions; this does not use up one of your Action plays for the turn.",
+  "name": "Vassal",
+  "potcost": 0,
+  "types":[
+    "Action"
+  ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 5,
+   "description": "+1 Card\n+1 Action\nLook at the top 2 cards of your deck.  Trash and/or discard any number of them.  Put the rest back on top in any order.",
+   "extra": "First you draw a card and get +1 Action.\n  Then you look at the top 2 cards of your deck.\n  You can trash both, or discard both, or put both back in either order; or you can trash one and discard one, or trash one and put one back, or discard one and put one back.",
+   "name": "Sentry",
+   "potcost": 0,
+   "types":[
+    "Action"
+    ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 4,
+   "description": "+1 Card\n+1 Action\n+1 Coin\nDiscard a card per empty Supply pile.",
+   "extra": "You draw your one card before discarding.\n If there are no empty piles, you do not discard.\n If there is one empty pile, you discard one card; if there are two empty piles, you discard two cards, and so on.\n This includes all Supply piles, including Curses, Coppers, Poacher itself, etc.\n If you do not have enough cards to discard, just discard the rest of your hand.\n\n  Non-Supply piles, such as Spoils, do not matter to Poacher.",
+   "name": "Poacher",
+   "potcost": 0,
+   "types":[
+     "Action"
+   ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 3,
+   "description": "+1 Card\n+1 Action\nThe first time you play a Silver this turn, +1 Coin.",
+   "extra": "When you play Merchant, you draw a card and get +1 Action.\n If you end up playing a Silver later in the turn, it comes with 1 Coin.\n If you play more than one Merchant, each gives you 1 Coin when you play that first Silver; but if you play more than one Silver, you only get the 1 Coin for the first Silver.\n\n If you manage to play a Merchant after playing a Silver, the Merchant gives you no bonus (for the previous Silver or for any Silvers you might play later in the turn).\n Playing Throne Room on Merchant will give you 2 Coin when you play your first Silver.",
+   "name": "Merchant",
+   "potcost": 0,
+   "types":[
+     "Action"
+   ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 5,
+   "description": "Gain a Gold.  Each other player reveals the top 2 cards of their deck, trashes a revealed Treasure other than Copper, and discards the rest.",
+   "extra": "First you gain a Gold from the Supply, putting it into your discard pile.\n  Then each other player, in turn order, reveals their top 2 cards, trashes one they choose that is a Treasure other than Copper (e.g. Silver or Gold), and discards the other revealed cards.\n  A player who did not reveal a Treasure card other than Copper simply discards both cards.",
+   "name": "Bandit",
+   "potcost": 0,
+   "types":[
+     "Action",
+     "Attack"
+   ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 3,
+   "description": "+1 Card\n+1 Action\nLook through your discard pile.  You may put a card from it onto your deck.",
+   "extra": "First draw a card and get +1 Action; then look through your discard pile, and you may put a card from it on top of your deck.\nPutting a card on top is optional.",
+   "name": "Harbinger",
+   "potcost": 0,
+   "count": 10,
+   "types":[
+     "Action"
+   ]
+ },
+ {
+   "cardset": "dominion",
+   "cost": 6,
+   "description": "Gain a card to your hand costing up to 5 Coins.  Put a card from your hand onto your deck.",
+   "extra": "The card you gain comes from the Supply and is put into your hand.\nYou cannot use empty Coin &nbsp;to increase how expensive of a card you gain; it always costs from 0 Coins to 5 Coins.\n After gaining the card, you put a card from your hand onto your deck; that can be the card you just gained, or a different card.",
+   "name": "Artisan",
+   "potcost": 0,
+   "types":[
+     "Action"
+   ]
+  },
+  {
+    "potcost": 0,
+    "description": "Reveal a card from your hand. For each type it has (Action, Attack, etc.), choose one: +1 Action; or +1 Buy; or +3 Coin; or gain a Gold.  The choices must be different.",
+    "extra": "First reveal a card from your hand, then count the types.<br></br>The types are the words on the bottom line \u2013 including Action, Attack, Curse, Reaction, Treasure, and Victory (with more in expansions).<br></br><br></br>Then choose one different thing per type the card had; if you revealed a card with two types, you pick two things.<br></br><br></br>For example you could reveal a Copper and choose \"gain a Gold,\" or reveal a Mill and choose \"+1 Action\" and \"+3 Coin\".<br></br><br></br>If you gain a Gold, put the Gold into your discard pile.",
+    "name": "Courtier",
+    "cost": 5,
+    "types": [
+      "Action"
+    ],
+    "cardset": "intrigue"
+  },
+  {
+    "potcost": 0,
+    "cost": 4,
+    "name": "Diplomat",
+    "extra": "When playing this, you get +2 Cards, then count your cards in hand, and if you have 5 cards or fewer, you get +2 Actions.<br></br><br></br>So, for example if you play this from a hand of 5 cards, you will put it into play, going down to 4 cards, then draw 2 cards, going up to 6 cards, and that is more than 5 cards so you would not get the +2 Actions.<br></br><br></br>Diplomat can also be used when another player plays an Attack card, if you have at least 5 cards in hand.<br></br><br></br>Before the Attack card does anything, you can reveal a Diplomat from your hand; if you do, you draw 2 cards, then discard 3 cards (which can include the Diplomat).<br></br><br></br>If you still have at least 5 cards in hand after doing that (such as due to Council Rooms), you can reveal Diplomat again and do it again.<br></br><br></br>You reveal Reactions one at a time; you cannot reveal two Diplomats simultaneously.<br></br><br></br>You can reveal a Moat from your hand (to be unaffected by an Attack) either before or after revealing and resolving a Diplomat (even if the Moat was not in your hand until after resolving Diplomat).",
+    "description": "+ 2 Cards\n\nIf you have 5 or fewer cards in hand (after drawing), +2 Actions.\n\u2013\nWhen another player plays an Attack card, you may first reveal this from a hand of 5 or more cards, to draw 2 cards then discard 3.",
+    "types": [
+      "Action",
+      "Reaction"
+    ],
+    "cardset": "intrigue"
+  },
+  {
+    "potcost": 0,
+    "cost": 2,
+    "name": "Lurker",
+    "extra": "The card trashed or gained has to be an Action card, but can have other types too. For example Lurker can trash Nobles from the Supply and can gain Nobles from the trash.<br></br><br></br>When gaining a card with Lurker, put the gained card into your discard pile.<br></br><br></br>When you trash a card from the supply that has a special effect when trashed, the on-trash effect activates. However, trashing from the supply does not allow you to react with Market Square.",
+    "cardset": "intrigue",
+    "types": [
+      "Action"
+    ],
+    "description": "+1 Action\n\nChoose one: Trash an Action card from the Supply; or gain an Action card from the trash.\n\n"
+  },
+  {
+    "potcost": 0,
+    "cost": 4,
+    "name": "Mill",
+    "extra": "You can choose to discard 2 cards even if you only have one card in hand, but you only get +2 Coin if you actually discarded 2 cards.<br></br>\u2013<br></br>Use 8 Mills for games with 2 players, 12 for games with 3 or more players.",
+    "description": "+1 Card\n+1 Action\n\nYou may discard 2 cards, for +2 Coin.\n\n\u2013\n\nWorth 1 VP",
+    "types": [
+      "Action",
+      "Victory"
+    ],
+    "cardset": "intrigue"
+  },
+  {
+    "potcost": 0,
+    "cost": 5,
+    "name": "Patrol",
+    "extra": "First draw 3 cards, then reveal the top 4 cards of your deck.<br></br><br></br>Put the revealed Victory cards and Curses into your hand; you have to take them all.<br></br><br></br>Put the rest of the cards back on your deck in any order you choose.",
+    "cardset": "intrigue",
+    "types": [
+      "Action"
+    ],
+    "description": "+3 Cards\n\nReveal the top 4 cards of your deck. Put the Victory cards and Curses into your hand. Put the rest back in any order."
+  },
+  {
+    "potcost": 0,
+    "cost": 5,
+    "name": "Replace",
+    "extra": "Like Remodel, you first trash a card from your hand, then gain a card from the Supply costing up to 2 Coin more than the trashed card, putting the gained card into your discard pile.<br></br><br></br>Replace gives you an additional bonus based on the types of the gained card; if it is an Action or Treasure you move it to the top of your deck, and if it is a Victory card the other players each gain a Curse.<br></br><br></br>It is possible to get both bonuses; if you gain Harem, Mill, or Nobles with Replace, it both goes on your deck and causes the other players to each gain a Curse.",
+    "description": "Trash a card from your hand. Gain a card costing up to 2 Coins more than it. If the gained card is an Action or Treasure, put it onto your deck; if it's a Victory card, each other player gains a Curse.",
+    "types": [
+      "Action",
+      "Attack"
+    ],
+    "cardset": "intrigue"
+  },
+  {
+    "potcost": 0,
+    "name": "Secret Passage",
+    "extra": "First draw 2 cards and get +1 Action; then put a card from your hand anywhere in your deck.<br></br><br></br>The card can be one you just drew or any other card from your hand.<br></br><br></br>It can go on top of your deck, on the bottom, or anywhere in-between; you can count out a specific place to put it, e.g. four cards down.<br></br><br></br>If there are no cards left in your deck, the card put back becomes the only card in your deck.<br></br><br></br>Where you put the card is public knowledge.<br></br><br></br>You don't have to put the card into a specific spot, you can just shove it into your deck if you want.",
+    "cost": 4,
+    "cardset": "intrigue",
+    "types": [
+      "Action"
+    ],
+    "description": "+2 Cards\n+1 Action\n\nTake a card from your hand and put it anywhere in your deck."
+  }
 ]
