@@ -794,7 +794,7 @@ class DividerDrawer(object):
 
             sets = []
             for c in pageCards:
-                setTitle = c.cardset.title()
+                setTitle = c.cardset
                 if setTitle not in sets:
                     sets.append(setTitle)
 
