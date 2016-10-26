@@ -2,73 +2,12 @@ import json
 import os
 from reportlab.lib.units import cm
 
-
 def getType(typespec):
     return cardTypes[tuple(typespec)]
 
-setImages = {
-    'dominion': 'base_set.png',
-    'intrigue': 'intrigue_set.png',
-    'seaside': 'seaside_set.png',
-    'prosperity': 'prosperity_set.png',
-    'alchemy': 'alchemy_set.png',
-    'cornucopia': 'cornucopia_set.png',
-    'cornucopia extras': 'cornucopia_set.png',
-    'hinterlands': 'hinterlands_set.png',
-    'dark ages': 'dark_ages_set.png',
-    'dark ages extras': 'dark_ages_set.png',
-    'guilds': 'guilds_set.png',
-    'adventures': 'adventures_set.png',
-    'adventures extras': 'adventures_set.png',
-    'empires': 'empires_set.png',
-    'empires extras': 'empires_set.png'
-}
-promoImages = {
-    'walled village': 'walled_village_set.png',
-    'stash': 'stash_set.png',
-    'governor': 'governor_set.png',
-    'black market': 'black_market_set.png',
-    'envoy': 'envoy_set.png',
-    'prince': 'prince_set.png',
-    'summon': 'promo_set.png',
-    'sauna': 'promo_set.png',
-    'avanto': 'promo_set.png',
-    'sauna \/ avanto': 'promo_set.png'
-}
-
-setTextIcons = {
-    'dominion': 'D',
-    'intrigue': 'I',
-    'seaside': 'S',
-    'prosperity': 'P',
-    'alchemy': 'A',
-    'cornucopia': 'C',
-    'cornucopia extras': 'C',
-    'hinterlands': 'H',
-    'dark ages': 'DA',
-    'dark ages extras': 'DA',
-    'guilds': 'G',
-    'adventures': 'Ad',
-    'adventures extras': 'Ad',
-    'empires': 'E',
-    'empires extras': 'E'
-}
-
-promoTextIcons = {
-    'walled village': '',
-    'stash': '',
-    'governor': '',
-    'black market': '',
-    'envoy': '',
-    'prince': ''
-}
-
-language_mapping = None
-
-
 class Card(object):
 
-    language_mapping = None
+    sets = None
 
     class CardJSONEncoder(json.JSONEncoder):
 
@@ -81,39 +20,31 @@ class Card(object):
     def decode_json(obj):
         return Card(**obj)
 
-    @classmethod
-    def getSetImage(cls, setName, cardName):
-        if setName in setImages:
-            return setImages[setName]
-        if cardName.lower() in promoImages:
-            return promoImages[cardName.lower()]
-        if setName in cls.language_mapping:
-            trans = cls.language_mapping[setName]
-            if trans in setImages:
-                return setImages[trans]
-        if cardName in cls.language_mapping:
-            trans = cls.language_mapping[cardName]
-            if trans.lower() in promoImages:
-                return promoImages[trans.lower()]
-        return None
+    def __init__(self, name=None, cardset='', types=None, cost='', description='',
+                 potcost=0, debtcost=0, extra='', count=-1, card_tag='missing card_tag',
+                 cardset_tags=None, group_tag='', image=None, text_icon=None, cardset_tag=''):
 
-    @classmethod
-    def getSetText(cls, setName, cardName):
-        if setName in setTextIcons:
-            return setTextIcons[setName]
-        if cardName.lower() in promoTextIcons:
-            return promoTextIcons[cardName.lower()]
-        return None
+        if types is None:
+            types = []  # make sure types is a list
+        if cardset_tags is None:
+            cardset_tags = [] # make sure cardset_tags is a list
+        if name is None:
+            name = card_tag # make sure there is a meaningful default name
 
-    def __init__(self, name, cardset, types, cost, description='', potcost=0, debtcost=0, extra='', count=-1):
         self.name = name.strip()
         self.cardset = cardset.strip()
         self.types = types
         self.cost = cost
+        self.description = description
         self.potcost = potcost
         self.debtcost = debtcost
-        self.description = description
         self.extra = extra
+        self.card_tag = card_tag
+        self.cardset_tags = cardset_tags
+        self.group_tag = group_tag
+        self.image = image
+        self.text_icon = text_icon
+        self.cardset_tag = cardset_tag
         if count < 0:
             self.count = getType(self.types).getTypeDefaultCardCount()
         else:
@@ -139,31 +70,45 @@ class Card(object):
         return self.name + ' ' + self.cardset + ' ' + '-'.join(self.types)\
             + ' ' + self.cost + ' ' + self.description + ' ' + self.extra
 
-    def isExpansion(self):
-        return 'Expansion' in self.getType().getTypeNames()
-
-    def isEvent(self):
-        return 'Event' in self.getType().getTypeNames()
-
-    def isLandmark(self):
-        return 'Landmark' in self.getType().getTypeNames()
-
-    def isPrize(self):
-        return 'Prize' in self.getType().getTypeNames()
-
     def isType(self, what):
         return what in self.getType().getTypeNames()
 
+    def isExpansion(self):
+        return self.isType('Expansion')
+
+    def isEvent(self):
+        return self.isType('Event')
+
+    def isLandmark(self):
+        return self.isType('Landmark')
+
+    def isPrize(self):
+        return self.isType('Prize')
+
     def setImage(self):
-        setImage = Card.getSetImage(self.cardset, self.name)
+        setImage = None
+        if self.image is not None:
+            setImage = self.image
+        else:
+            if self.cardset_tag in Card.sets:
+                if 'image' in Card.sets[self.cardset_tag]:
+                    setImage = Card.sets[self.cardset_tag]['image']
+
         if setImage is None and self.cardset != 'base':
-            print 'warning, no set image for set "{}" card "{}"'.format(self.cardset, self.name)
+            print 'warning, no set image for set "{}", card "{}"'.format(self.cardset, self.name)
         return setImage
 
     def setTextIcon(self):
-        setTextIcon = Card.getSetText(self.cardset, self.name)
+        setTextIcon = None
+        if self.text_icon:
+            setTextIcon = self.text_icon
+        else:
+            if self.cardset_tag in Card.sets:
+                if 'text_icon' in Card.sets[self.cardset_tag]:
+                    setTextIcon = Card.sets[self.cardset_tag]['text_icon']
+
         if setTextIcon is None and self.cardset != 'base':
-            print 'warning, no set text for set "{}" card "{}"'.format(self.cardset, self.name)
+            print 'warning, no set text for set "{}", card "{}"'.format(self.cardset, self.name)
         return setTextIcon
 
     def isBlank(self):
