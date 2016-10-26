@@ -3,6 +3,7 @@ import codecs
 import json
 import sys
 import argparse
+import copy
 
 import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
@@ -15,7 +16,10 @@ NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
 TAB_SIDE_CHOICES = ["left", "right", "left-alternate", "right-alternate",
                     "centre", "full"]
 TEXT_CHOICES = ["card", "rules", "blank"]
+EDITION_CHOICES = ["1", "2", "latest", "all"]
 
+LANGUAGE_CHOICES = ["en_us", "de", "fr", "it"]
+LANGUAGE_DEFAULT = 'en_us'
 
 def add_opt(options, option, value):
     assert not hasattr(options, option)
@@ -175,8 +179,10 @@ def parse_opts(arglist):
         default=-1,
         help="stop generating after this many pages, -1 for all")
     parser.add_argument("--language",
-                        default='en_us',
-                        help="language of card texts")
+                        default=LANGUAGE_DEFAULT,
+                        help="language of card texts; valid values are: %s; defaults to '%s' " % (
+                        ", ".join("'%s'" % x for x in LANGUAGE_CHOICES), LANGUAGE_DEFAULT)
+                        )
     parser.add_argument("--include_blanks",
                         action="store_true",
                         help="include a few dividers with extra text")
@@ -257,6 +263,23 @@ def parse_opts(arglist):
                         action="store_true",
                         dest="notch",
                         help="same as --notch_length thickness 1.5")
+    parser.add_argument(
+        "--edition",
+        choices=EDITION_CHOICES,
+        dest="edition",
+        default="all",
+        help="Editions to include. Choices: 1, 2, latest, all;"
+        " '1' is for all 1st Editions;"
+        " '2' is for all 2nd Editions;"
+        " 'latest' is for the latest edition for each expansion;"
+        " 'all' is for all editions of expansions;"
+        " This can be combined with other options to refine the expansions to include in the output."
+        " default:all")
+    parser.add_argument(
+        "--upgrade_with_expansion",
+        action="store_true",
+        dest="upgrade_with_expansion",
+        help="include any new edition upgrade cards with the upgraded expansion")
 
     options = parser.parse_args(arglist)
     if not options.cost:
@@ -332,18 +355,33 @@ def parse_cardsize(spec, sleeved):
             dominionCardWidth / cm, dominionCardHeight / cm)
     return dominionCardWidth, dominionCardHeight
 
-
 def read_write_card_data(options):
-    data_dir = os.path.join(options.data_path, "card_db", options.language)
-    card_db_filepath = os.path.join(data_dir, "cards.json")
+    # Read in the card database
+    card_db_filepath = os.path.join(options.data_path, "card_db", "cards_db.json")
     with codecs.open(card_db_filepath, "r", "utf-8") as cardfile:
         cards = json.load(cardfile, object_hook=Card.decode_json)
-
     assert cards, "Could not load any cards from database"
 
-    language_mapping_filepath = os.path.join(data_dir, "mapping.json")
-    with codecs.open(language_mapping_filepath, 'r', 'utf-8') as mapping_file:
-        Card.language_mapping = json.load(mapping_file)
+    set_db_filepath = os.path.join(options.data_path, "card_db", "sets_db.json")
+    with codecs.open(set_db_filepath, "r", "utf-8") as setfile:
+        Card.sets = json.load(setfile)
+    assert Card.sets, "Could not load any sets from database"
+
+    # Need to expand cards that are used in multiple sets
+    new_cards = []
+    for card in cards:
+        sets = list(card.cardset_tags)
+        if len(sets) > 0:
+            # Set and save the first one
+            card.cardset_tag = sets.pop(0)
+            new_cards.append(card)
+            for set in sets:
+                # for the rest, create a copy of the first
+                if set:
+                    new_card = copy.deepcopy(card)
+                    new_card.cardset_tag = set
+                    new_cards.append(new_card)
+    cards = new_cards
 
     if options.write_json:
         fpath = "cards.json"
@@ -396,60 +434,163 @@ class CardSorter(object):
     def __call__(self, card):
         return self.sort_key(card)
 
+def add_card_text(options, cards, language='en_us'):
+
+    # Read in the card text file
+    card_text_filepath = os.path.join(options.data_path, "card_db", language, "cards_text.json")
+    with codecs.open(card_text_filepath, 'r', 'utf-8') as card_text_file:
+        card_text = json.load(card_text_file)
+    assert language, "Could not load card text for %r" % language
+
+    # Now apply to all the cards
+    for card in cards:
+        if card.card_tag in card_text:
+            if 'name' in card_text[card.card_tag].keys():
+                card.name = card_text[card.card_tag]['name']
+            if 'description' in card_text[card.card_tag].keys():
+                card.description = card_text[card.card_tag]['description']
+            if 'extra' in card_text[card.card_tag].keys():
+                card.extra = card_text[card.card_tag]['extra']
+    return cards
+
+def add_set_text(options, sets, language='en_us'):
+
+    # Read in the set text and store for later
+    set_text_filepath = os.path.join(options.data_path, "card_db", language, "sets_text.json")
+    with codecs.open(set_text_filepath, 'r', 'utf-8') as set_text_file:
+        set_text = json.load(set_text_file)
+    assert set_text, "Could not load set text for %r" % language
+
+    # Now apply to all the sets
+    for set in sets:
+        if set in set_text:
+            for key in set_text[set]:
+                sets[set][key] = set_text[set][key]
+    return sets
+
+def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None, new_type=None ):
+    filteredCards = []
+    holder = None
+    for c in cards:
+        if c.isType(old_card_type):
+            if holder is None:
+                # Save the first one as a holder/container for it and all the rest
+                holder = c
+                count  = c.count
+                holder.card_tag = new_card_tag # assign the new card_tag
+                holder.group_tag = new_card_tag
+                holder.cost = "*"
+                if new_cardset_tag is not None:
+                    holder.cardset_tag = new_cardset_tag
+                if new_type is not None:
+                    holder.types=(new_type, )
+                filteredCards.append(holder)
+            else:
+                # already have holder, so just keep track of count and skip card
+                count += c.count
+        else:
+            # Not the right type
+            filteredCards.append(c)
+
+    if holder is not None:
+        # update holder to have the correct count
+        holder.setCardCount(count)
+
+    return filteredCards
 
 def filter_sort_cards(cards, options):
 
-    cardSorter = CardSorter(
-        options.order,
-        [card.name for card in cards if card.cardset.lower() == 'base'])
-    if options.base_cards_with_expansion:
-        cards = [card for card in cards if card.cardset.lower() != 'base']
-    else:
-        cards = [card for card in cards
-                 if not cardSorter.isBaseExpansionCard(card)]
+    # Filter out cards by edition
+    if options.edition and options.edition != "all":
+        keep_sets = []
+        for set_tag in Card.sets:
+            for edition in Card.sets[set_tag]["edition"]:
+                if options.edition == edition:
+                    keep_sets.append(set_tag)
 
+        keep_cards = []  # holds the cards that are to be kept
+        for card in cards:
+            if card.cardset_tag in keep_sets:
+                keep_cards.append(card)
+
+        cards = keep_cards
+
+    # Combine upgrade cards with their expansion
+    if options.upgrade_with_expansion:
+        for card in cards:
+            if card.cardset_tag == 'dominion2ndEditionUpgrade':
+                card.cardset_tag = 'dominion1stEdition'
+            elif card.cardset_tag == 'intrigue2ndEditionUpgrade':
+                card.cardset_tag = 'intrigue1stEdition'
+
+
+    # Combine all Events across all expansions
+    if options.exclude_events:
+        cards = combine_cards(cards, old_card_type="Event",
+                                     new_type="Events",
+                                     new_card_tag='events',
+                                     new_cardset_tag='extras')
+
+    # Combine all Landmarks across all expansions
+    if options.exclude_landmarks:
+        cards = combine_cards(cards, old_card_type="Landmark",
+                                     new_type="Landmarks",
+                                     new_card_tag='landmarks',
+                                     new_cardset_tag='extras')
+
+    # FIX THIS: Combine all Prizes across all expansions
+    #if options.exclude_prizes:
+    #    cards = combine_cards(cards, 'Prize', 'prizes')
+
+    # Group all the special cards together
     if options.special_card_groups:
-        # Load the card groups file
-        data_dir = os.path.join(options.data_path, "card_db", options.language)
-        card_groups_file = os.path.join(data_dir, "card_groups.json")
-        with codecs.open(card_groups_file, 'r', 'utf-8') as cardgroup_file:
-            card_groups = json.load(cardgroup_file)
-            # pull out any cards which are a subcard, and rename the master card
-            new_cards = []  # holds the cards that are to be kept
-            all_subcards = []  # holds names of cards that will be removed
-            subcard_parent = {
-            }  # holds reverse map of subcard name to group name
-            subcard_count = {
-            }  # holds total card count of the subcards for a group
+        keep_cards = []  # holds the cards that are to be kept
+        group_count = {} # holds the card count for each group of cards
+        for card in cards:
+            if not card.group_tag:
+                keep_cards.append(card) # not part of a group, so just keep the card
+            else:
+                # have a card in a group
+                if card.group_tag not in group_count:
+                    # First card of a group
+                    group_count[card.group_tag] = card.count # start the count for the group
 
-            # Initialize each of the new card groups
-            for group in card_groups:
-                subcard_count[group] = 0
-                for subs in card_groups[group]["subcards"]:
-                    all_subcards.append(
-                        subs)  # add card names to the list for removal
-                    subcard_parent[
-                        subs] = group  # create the reverse mapping of subgroup to group
+                    # this card becomes the card holder for the whole group.
+                    card.card_tag = card.group_tag
+                    if card.isEvent() or card.isLandmark():
+                        card.cost = ""
 
-                    # go through the cards and add up the number of subgroup cards
-            for card in cards:
-                if card.name in all_subcards:
-                    subcard_count[subcard_parent[
-                        card.name]] += card.getCardCount()
+                    # These text fields should be updated later if there is a translation for this group_tag.
+                    card.name = card.group_tag # For now, change the name to the group_tab
+                    card.description = "ERROR: Missing language entry for group_tab '%s'." % card.group_tag
+                    card.extra = ''
 
-                    # fix up the group card holders count & name, and weed out the subgroup cards
-            for card in cards:
-                if card.name in card_groups.keys():
-                    card.count += subcard_count[card.name]
-                    card.name = card_groups[card.name]["new_name"]
-                elif card.name in all_subcards:
-                    continue
-                new_cards.append(card)
-            cards = new_cards
+                    keep_cards.append(card)
+                else:
+                    # subsequent cards in the group
+                    group_count[card.group_tag] += card.count # increase the count, but don't keep the card
 
+        cards = keep_cards
+        # Now fix up card counts
+        for card in cards:
+            if card.card_tag in group_count:
+                card.count = group_count[card.card_tag]
+
+    # Fix up cardset text.  Waited as long as possible.
+    Card.sets = add_set_text(options, Card.sets, LANGUAGE_DEFAULT)
+    if options.language != LANGUAGE_DEFAULT:
+        Card.sets = add_set_text(options, Card.sets, options.language)
+
+    for card in cards:
+        if card.cardset_tag in Card.sets:
+            if 'set_name' in Card.sets[card.cardset_tag].keys():
+                card.cardset = Card.sets[card.cardset_tag]['set_name']
+
+    # If expansion names given, then remove any cards not in those expansions
+    # Expansion names can be the names from the language or the cardset_tag
     if options.expansions:
         options.expansions = [o.lower() for o in options.expansions]
-        reverseMapping = {v: k for k, v in Card.language_mapping.iteritems()}
+        reverseMapping = {set_tag: Card.sets[set_tag]['set_name'] for set_tag in Card.sets}
         options.expansions = [
             reverseMapping.get(e, e) for e in options.expansions
         ]
@@ -467,54 +608,12 @@ def filter_sort_cards(cards, options):
 
         cards = filteredCards
 
-    if options.exclude_events:
-        filteredCards = []
-        count = 0
-        holder = False
-        for c in cards:
-            if c.isType('Events'):  # Language Independant by using Type
-                holder = c
-                filteredCards.append(c)
-            elif c.isEvent():
-                count += c.getCardCount()
-            else:
-                filteredCards.append(c)
-        if holder and count > 0:
-            holder.setCardCount(count)
-        cards = filteredCards
+    # Now add text to the cards.  Waited as long as possible to catch all groupings
+    cards = add_card_text(options, cards, LANGUAGE_DEFAULT)
+    if options.language != LANGUAGE_DEFAULT:
+        cards = add_card_text(options, cards, options.language)
 
-    if options.exclude_landmarks:
-        filteredCards = []
-        count = 0
-        holder = False
-        for c in cards:
-            if c.isType('Landmarks'):  # Language Independant, use Type
-                holder = c
-                filteredCards.append(c)
-            elif c.isLandmark():
-                count += c.getCardCount()
-            else:
-                filteredCards.append(c)
-        if holder and count > 0:
-            holder.setCardCount(count)
-        cards = filteredCards
-
-    if options.exclude_prizes:
-        filteredCards = []
-        count = 0
-        holder = False
-        for c in cards:
-            if c.isType('Prizes'):  # Language Independant, use Type
-                holder = c
-                filteredCards.append(c)
-            elif c.isPrize():
-                count += c.getCardCount()
-            else:
-                filteredCards.append(c)
-        if holder and count > 0:
-            holder.setCardCount(count)
-        cards = filteredCards
-
+    # Get list of cards from a file
     if options.cardlist:
         cardlist = set()
         with open(options.cardlist) as cardfile:
@@ -523,21 +622,40 @@ def filter_sort_cards(cards, options):
         if cardlist:
             cards = [card for card in cards if card.name in cardlist]
 
+    # Set up the card sorter
+    cardSorter = CardSorter(
+        options.order,
+        [card.name for card in cards if card.cardset.lower() == 'base'])
+    if options.base_cards_with_expansion:
+        cards = [card for card in cards if card.cardset.lower() != 'base']
+    else:
+        cards = [card for card in cards
+                 if not cardSorter.isBaseExpansionCard(card)]
+
+    # Add expansion divider
     if options.expansion_dividers:
+
         cardnamesByExpansion = {}
         for c in cards:
             if cardSorter.isBaseExpansionCard(c):
                 continue
             cardnamesByExpansion.setdefault(c.cardset,
                                             []).append(c.name.strip())
-        for exp, names in cardnamesByExpansion.iteritems():
-            c = Card(exp,
-                     exp, ("Expansion", ),
-                     None,
-                     ' | '.join(sorted(names)),
-                     count=len(names))
-            cards.append(c)
+        #for exp, names in cardnamesByExpansion.iteritems():
+        for set_tag, set_values in Card.sets.iteritems():
+            exp = set_values["set_name"]
+            if exp in cardnamesByExpansion:
+                c = Card(name=exp,
+                        cardset=exp,
+                        cardset_tag=set_tag,
+                        types=("Expansion", ),
+                        cost=None,
+                        description=' | '.join(sorted(cardnamesByExpansion[exp])),
+                        count=len(cardnamesByExpansion[exp]),
+                        card_tag = set_tag)
+                cards.append(c)
 
+    # Now sort what is left
     cards.sort(key=cardSorter)
 
     return cards
