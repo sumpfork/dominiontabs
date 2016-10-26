@@ -280,6 +280,12 @@ def parse_opts(arglist):
         action="store_true",
         dest="upgrade_with_expansion",
         help="include any new edition upgrade cards with the upgraded expansion")
+    parser.add_argument(
+        "--expansion_dividers_long_name",
+        action="store_true",
+        dest="expansion_dividers_long_name",
+        help="use the long name with edition information on the expansion divider tab."
+        " without this, just the expansion name is used on the expansion divider tab.")
 
     options = parser.parse_args(arglist)
     if not options.cost:
@@ -367,7 +373,7 @@ def read_write_card_data(options):
         Card.sets = json.load(setfile)
     assert Card.sets, "Could not load any sets from database"
 
-    # Need to expand cards that are used in multiple sets
+    # Set cardset_tag and expand cards that are used in multiple sets
     new_cards = []
     for card in cards:
         sets = list(card.cardset_tags)
@@ -382,6 +388,10 @@ def read_write_card_data(options):
                     new_card.cardset_tag = set
                     new_cards.append(new_card)
     cards = new_cards
+
+    # Make sure each card has the right image file.
+    for card in cards:
+        card.image = card.setImage()
 
     if options.write_json:
         fpath = "cards.json"
@@ -435,9 +445,12 @@ class CardSorter(object):
         return self.sort_key(card)
 
 def add_card_text(options, cards, language='en_us'):
-
+    language = language.lower()
     # Read in the card text file
-    card_text_filepath = os.path.join(options.data_path, "card_db", language, "cards_text.json")
+    card_text_filepath = os.path.join(options.data_path,
+                                      "card_db",
+                                      language,
+                                      "cards_" + language.lower() + ".json")
     with codecs.open(card_text_filepath, 'r', 'utf-8') as card_text_file:
         card_text = json.load(card_text_file)
     assert language, "Could not load card text for %r" % language
@@ -454,9 +467,12 @@ def add_card_text(options, cards, language='en_us'):
     return cards
 
 def add_set_text(options, sets, language='en_us'):
-
+    language = language.lower()
     # Read in the set text and store for later
-    set_text_filepath = os.path.join(options.data_path, "card_db", language, "sets_text.json")
+    set_text_filepath = os.path.join(options.data_path,
+                                     "card_db",
+                                     language,
+                                     "sets_" + language + ".json")
     with codecs.open(set_text_filepath, 'r', 'utf-8') as set_text_file:
         set_text = json.load(set_text_file)
     assert set_text, "Could not load set text for %r" % language
@@ -479,7 +495,7 @@ def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None
                 count  = c.count
                 holder.card_tag = new_card_tag # assign the new card_tag
                 holder.group_tag = new_card_tag
-                holder.cost = "*"
+                holder.cost = ""
                 if new_cardset_tag is not None:
                     holder.cardset_tag = new_cardset_tag
                 if new_type is not None:
@@ -559,11 +575,14 @@ def filter_sort_cards(cards, options):
                     card.card_tag = card.group_tag
                     if card.isEvent() or card.isLandmark():
                         card.cost = ""
+                        card.debtcost = 0
+                        card.potcost = 0
 
                     # These text fields should be updated later if there is a translation for this group_tag.
                     card.name = card.group_tag # For now, change the name to the group_tab
-                    card.description = "ERROR: Missing language entry for group_tab '%s'." % card.group_tag
-                    card.extra = ''
+                    error_msg = "ERROR: Missing language entry for group_tab '%s'." % card.group_tag
+                    card.description = error_msg
+                    card.extra = error_msg
 
                     keep_cards.append(card)
                 else:
@@ -639,13 +658,17 @@ def filter_sort_cards(cards, options):
         for c in cards:
             if cardSorter.isBaseExpansionCard(c):
                 continue
-            cardnamesByExpansion.setdefault(c.cardset,
-                                            []).append(c.name.strip())
-        #for exp, names in cardnamesByExpansion.iteritems():
+            cardnamesByExpansion.setdefault(c.cardset, []).append(c.name.strip())
+
         for set_tag, set_values in Card.sets.iteritems():
             exp = set_values["set_name"]
             if exp in cardnamesByExpansion:
-                c = Card(name=exp,
+                exp_name = exp
+                if not options.expansion_dividers_long_name:
+                    if 'short_name' in set_values:
+                        exp_name = set_values['short_name']
+
+                c = Card(name=exp_name,
                         cardset=exp,
                         cardset_tag=set_tag,
                         types=("Expansion", ),
