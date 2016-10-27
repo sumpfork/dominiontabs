@@ -94,7 +94,7 @@ class Card(object):
                 if 'image' in Card.sets[self.cardset_tag]:
                     setImage = Card.sets[self.cardset_tag]['image']
 
-        if setImage is None and self.cardset != 'base':
+        if setImage is None and self.cardset_tag != 'base':
             print 'warning, no set image for set "{}", card "{}"'.format(self.cardset, self.name)
         return setImage
 
