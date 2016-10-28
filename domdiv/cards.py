@@ -48,7 +48,7 @@ class Card(object):
         if count < 0:
             self.count = getType(self.types).getTypeDefaultCardCount()
         else:
-            self.count = count
+            self.count = int(count)
 
     def getCardCount(self):
         return self.count
@@ -84,6 +84,29 @@ class Card(object):
 
     def isPrize(self):
         return self.isType('Prize')
+
+    def get_total_cost(self, c):
+        # Return a tuple that represents the total cost of card c
+        # Make any cost with a '*' larger than anything else
+        # convert cost (a string) into a number
+        if '*' in c.cost:
+            c_cost = 9999 # make it a really big number
+        else:
+            try:
+                c_cost = int(c.cost)
+            except ValueError:
+                c_cost = 9999 # can't, so make it a really big number
+
+        return c_cost, c.potcost, c.debtcost
+
+    def set_lowest_cost(self, other):
+        # set self cost fields to the lower of the two's total cost
+        self_cost  = self.get_total_cost(self)
+        other_cost = self.get_total_cost(other)
+        if other_cost < self_cost:
+            self.cost     = other.cost
+            self.potcost  = other.potcost
+            self.debtcost = other.debtcost
 
     def setImage(self):
         setImage = None
