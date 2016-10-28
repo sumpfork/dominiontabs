@@ -502,8 +502,8 @@ def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None
                     holder.types=(new_type, )
                 filteredCards.append(holder)
             else:
-                # already have holder, so just keep track of count and skip card
-                count += c.count
+                # already have holder
+                count += c.count  #keep track of count and skip card
         else:
             # Not the right type
             filteredCards.append(c)
@@ -561,39 +561,38 @@ def filter_sort_cards(cards, options):
     # Group all the special cards together
     if options.special_card_groups:
         keep_cards = []  # holds the cards that are to be kept
-        group_count = {} # holds the card count for each group of cards
+        group_cards = {} # holds the cards for each group
         for card in cards:
             if not card.group_tag:
                 keep_cards.append(card) # not part of a group, so just keep the card
             else:
                 # have a card in a group
-                if card.group_tag not in group_count:
+                if card.group_tag not in group_cards:
                     # First card of a group
-                    group_count[card.group_tag] = card.count # start the count for the group
-
+                    group_cards[card.group_tag] = card # save to update cost later
                     # this card becomes the card holder for the whole group.
                     card.card_tag = card.group_tag
-                    if card.isEvent() or card.isLandmark():
-                        card.cost = ""
-                        card.debtcost = 0
-                        card.potcost = 0
-
                     # These text fields should be updated later if there is a translation for this group_tag.
-                    card.name = card.group_tag # For now, change the name to the group_tab
                     error_msg = "ERROR: Missing language entry for group_tab '%s'." % card.group_tag
+                    card.name = card.group_tag # For now, change the name to the group_tab
                     card.description = error_msg
                     card.extra = error_msg
-
+                    # now save the card
                     keep_cards.append(card)
                 else:
-                    # subsequent cards in the group
-                    group_count[card.group_tag] += card.count # increase the count, but don't keep the card
+                    # subsequent cards in the group. Update group info, but don't keep the card.
+                    group_cards[card.group_tag].count += card.count   # increase the count
+                    group_cards[card.group_tag].set_lowest_cost(card) # set the holder to the lowest cost of the two cards
 
         cards = keep_cards
-        # Now fix up card counts
+        
+        #Now fix up card counts
         for card in cards:
-            if card.card_tag in group_count:
-                card.count = group_count[card.card_tag]
+            if card.card_tag in group_cards:
+                if group_cards[card.group_tag].isEvent() or group_cards[card.group_tag].isLandmark():
+                        group_cards[card.group_tag].cost = ""
+                        group_cards[card.group_tag].debtcost = 0
+                        group_cards[card.group_tag].potcost = 0
 
     # Fix up cardset text.  Waited as long as possible.
     Card.sets = add_set_text(options, Card.sets, LANGUAGE_DEFAULT)
