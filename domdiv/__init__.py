@@ -21,6 +21,7 @@ EDITION_CHOICES = ["1", "2", "latest", "all"]
 LANGUAGE_CHOICES = ["en_us", "de", "fr", "it"]
 LANGUAGE_DEFAULT = 'en_us'
 
+
 def add_opt(options, option, value):
     assert not hasattr(options, option)
     setattr(options, option, value)
@@ -179,9 +180,9 @@ def parse_opts(arglist):
         default=-1,
         help="stop generating after this many pages, -1 for all")
     parser.add_argument("--language",
-                        default=LANGUAGE_DEFAULT,
-                        help="language of card texts; valid values are: %s; defaults to '%s' " % (
-                        ", ".join("'%s'" % x for x in LANGUAGE_CHOICES), LANGUAGE_DEFAULT)
+                        default = LANGUAGE_DEFAULT,
+                        help = "language of card texts; valid values are: %s; defaults to '%s' " %
+                        (", ".join("'%s'" % x for x in LANGUAGE_CHOICES), LANGUAGE_DEFAULT)
                         )
     parser.add_argument("--include_blanks",
                         action="store_true",
@@ -361,6 +362,7 @@ def parse_cardsize(spec, sleeved):
             dominionCardWidth / cm, dominionCardHeight / cm)
     return dominionCardWidth, dominionCardHeight
 
+
 def read_write_card_data(options):
     # Read in the card database
     card_db_filepath = os.path.join(options.data_path, "card_db", "cards_db.json")
@@ -444,6 +446,7 @@ class CardSorter(object):
     def __call__(self, card):
         return self.sort_key(card)
 
+
 def add_card_text(options, cards, language='en_us'):
     language = language.lower()
     # Read in the card text file
@@ -466,6 +469,7 @@ def add_card_text(options, cards, language='en_us'):
                 card.extra = card_text[card.card_tag]['extra']
     return cards
 
+
 def add_set_text(options, sets, language='en_us'):
     language = language.lower()
     # Read in the set text and store for later
@@ -484,7 +488,8 @@ def add_set_text(options, sets, language='en_us'):
                 sets[set][key] = set_text[set][key]
     return sets
 
-def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None, new_type=None ):
+
+def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None, new_type=None):
     filteredCards = []
     holder = None
     for c in cards:
@@ -492,18 +497,18 @@ def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None
             if holder is None:
                 # Save the first one as a holder/container for it and all the rest
                 holder = c
-                count  = c.count
-                holder.card_tag = new_card_tag # assign the new card_tag
+                count = c.count
+                holder.card_tag = new_card_tag  # assign the new card_tag
                 holder.group_tag = new_card_tag
                 holder.cost = ""
                 if new_cardset_tag is not None:
                     holder.cardset_tag = new_cardset_tag
                 if new_type is not None:
-                    holder.types=(new_type, )
+                    holder.types = (new_type, )
                 filteredCards.append(holder)
             else:
                 # already have holder
-                count += c.count  #keep track of count and skip card
+                count += c.count  # keep track of count and skip card
         else:
             # Not the right type
             filteredCards.append(c)
@@ -513,6 +518,7 @@ def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None
         holder.setCardCount(count)
 
     return filteredCards
+
 
 def filter_sort_cards(cards, options):
 
@@ -539,29 +545,32 @@ def filter_sort_cards(cards, options):
             elif card.cardset_tag == 'intrigue2ndEditionUpgrade':
                 card.cardset_tag = 'intrigue1stEdition'
 
-
     # Combine all Events across all expansions
     if options.exclude_events:
-        cards = combine_cards(cards, old_card_type="Event",
-                                     new_type="Events",
-                                     new_card_tag='events',
-                                     new_cardset_tag='extras')
+        cards = combine_cards(cards,
+                              old_card_type = "Event",
+                              new_type = "Events",
+                              new_card_tag = 'events',
+                              new_cardset_tag = 'extras'
+                              )
 
     # Combine all Landmarks across all expansions
     if options.exclude_landmarks:
-        cards = combine_cards(cards, old_card_type="Landmark",
-                                     new_type="Landmarks",
-                                     new_card_tag='landmarks',
-                                     new_cardset_tag='extras')
+        cards = combine_cards(cards,
+                              old_card_type="Landmark",
+                              new_type="Landmarks",
+                              new_card_tag='landmarks',
+                              new_cardset_tag='extras'
+                              )
 
     # FIX THIS: Combine all Prizes across all expansions
-    #if options.exclude_prizes:
+    # if options.exclude_prizes:
     #    cards = combine_cards(cards, 'Prize', 'prizes')
 
     # Group all the special cards together
     if options.special_card_groups:
-        keep_cards = []  # holds the cards that are to be kept
-        group_cards = {} # holds the cards for each group
+        keep_cards = []   # holds the cards that are to be kept
+        group_cards = {}  # holds the cards for each group
         for card in cards:
             if not card.group_tag:
                 keep_cards.append(card) # not part of a group, so just keep the card
@@ -574,19 +583,19 @@ def filter_sort_cards(cards, options):
                     card.card_tag = card.group_tag
                     # These text fields should be updated later if there is a translation for this group_tag.
                     error_msg = "ERROR: Missing language entry for group_tab '%s'." % card.group_tag
-                    card.name = card.group_tag # For now, change the name to the group_tab
+                    card.name = card.group_tag  # For now, change the name to the group_tab
                     card.description = error_msg
                     card.extra = error_msg
                     # now save the card
                     keep_cards.append(card)
                 else:
                     # subsequent cards in the group. Update group info, but don't keep the card.
-                    group_cards[card.group_tag].count += card.count   # increase the count
-                    group_cards[card.group_tag].set_lowest_cost(card) # set the holder to the lowest cost of the two cards
+                    group_cards[card.group_tag].count += card.count    # increase the count
+                    group_cards[card.group_tag].set_lowest_cost(card)  # set the holder to the lowest cost of the two cards
 
         cards = keep_cards
-        
-        #Now fix up card counts
+
+        # Now fix up card counts
         for card in cards:
             if card.card_tag in group_cards:
                 if group_cards[card.group_tag].isEvent() or group_cards[card.group_tag].isLandmark():
@@ -667,14 +676,14 @@ def filter_sort_cards(cards, options):
                     if 'short_name' in set_values:
                         exp_name = set_values['short_name']
 
-                c = Card(name=exp_name,
-                        cardset=exp,
-                        cardset_tag=set_tag,
-                        types=("Expansion", ),
-                        cost=None,
-                        description=' | '.join(sorted(cardnamesByExpansion[exp])),
-                        count=len(cardnamesByExpansion[exp]),
-                        card_tag = set_tag)
+                c = Card(name = exp_name,
+                         cardset = exp,
+                         cardset_tag = set_tag,
+                         types = ("Expansion", ),
+                         cost = None,
+                         description=' | '.join(sorted(cardnamesByExpansion[exp])),
+                         count = len(cardnamesByExpansion[exp]),
+                         card_tag = set_tag)
                 cards.append(c)
 
     # Now sort what is left
@@ -793,7 +802,6 @@ def calculate_layout(options, cards=[]):
     else:
         add_opt(options, 'horizontalMargin', minmarginwidth)
         add_opt(options, 'verticalMargin', minmarginheight)
-
 
 def generate(options, data_path):
 
