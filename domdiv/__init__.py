@@ -180,8 +180,8 @@ def parse_opts(arglist):
         default=-1,
         help="stop generating after this many pages, -1 for all")
     parser.add_argument("--language",
-                        default = LANGUAGE_DEFAULT,
-                        help = "language of card texts; valid values are: %s; defaults to '%s' " %
+                        default=LANGUAGE_DEFAULT,
+                        help="language of card texts; valid values are: %s; defaults to '%s' " %
                         (", ".join("'%s'" % x for x in LANGUAGE_CHOICES), LANGUAGE_DEFAULT)
                         )
     parser.add_argument("--include_blanks",
@@ -548,10 +548,10 @@ def filter_sort_cards(cards, options):
     # Combine all Events across all expansions
     if options.exclude_events:
         cards = combine_cards(cards,
-                              old_card_type = "Event",
-                              new_type = "Events",
-                              new_card_tag = 'events',
-                              new_cardset_tag = 'extras'
+                              old_card_type="Event",
+                              new_type="Events",
+                              new_card_tag='events',
+                              new_cardset_tag='extras'
                               )
 
     # Combine all Landmarks across all expansions
@@ -573,12 +573,12 @@ def filter_sort_cards(cards, options):
         group_cards = {}  # holds the cards for each group
         for card in cards:
             if not card.group_tag:
-                keep_cards.append(card) # not part of a group, so just keep the card
+                keep_cards.append(card)  # not part of a group, so just keep the card
             else:
                 # have a card in a group
                 if card.group_tag not in group_cards:
                     # First card of a group
-                    group_cards[card.group_tag] = card # save to update cost later
+                    group_cards[card.group_tag] = card  # save to update cost later
                     # this card becomes the card holder for the whole group.
                     card.card_tag = card.group_tag
                     # These text fields should be updated later if there is a translation for this group_tag.
@@ -591,7 +591,7 @@ def filter_sort_cards(cards, options):
                 else:
                     # subsequent cards in the group. Update group info, but don't keep the card.
                     group_cards[card.group_tag].count += card.count    # increase the count
-                    group_cards[card.group_tag].set_lowest_cost(card)  # set the holder to the lowest cost of the two cards
+                    group_cards[card.group_tag].set_lowest_cost(card)  # set holder to the lowest cost of the two cards
 
         cards = keep_cards
 
@@ -676,14 +676,14 @@ def filter_sort_cards(cards, options):
                     if 'short_name' in set_values:
                         exp_name = set_values['short_name']
 
-                c = Card(name = exp_name,
-                         cardset = exp,
-                         cardset_tag = set_tag,
-                         types = ("Expansion", ),
-                         cost = None,
+                c = Card(name=exp_name,
+                         cardset=exp,
+                         cardset_tag=set_tag,
+                         types=("Expansion", ),
+                         cost=None,
                          description=' | '.join(sorted(cardnamesByExpansion[exp])),
-                         count = len(cardnamesByExpansion[exp]),
-                         card_tag = set_tag)
+                         count=len(cardnamesByExpansion[exp]),
+                         card_tag=set_tag)
                 cards.append(c)
 
     # Now sort what is left
@@ -802,6 +802,7 @@ def calculate_layout(options, cards=[]):
     else:
         add_opt(options, 'horizontalMargin', minmarginwidth)
         add_opt(options, 'verticalMargin', minmarginheight)
+
 
 def generate(options, data_path):
 
