@@ -2,8 +2,10 @@ import json
 import os
 from reportlab.lib.units import cm
 
+
 def getType(typespec):
     return cardTypes[tuple(typespec)]
+
 
 class Card(object):
 
@@ -27,9 +29,9 @@ class Card(object):
         if types is None:
             types = []  # make sure types is a list
         if cardset_tags is None:
-            cardset_tags = [] # make sure cardset_tags is a list
+            cardset_tags = []  # make sure cardset_tags is a list
         if name is None:
-            name = card_tag # make sure there is a meaningful default name
+            name = card_tag  # make sure there is a meaningful default name
 
         self.name = name.strip()
         self.cardset = cardset.strip()
@@ -90,22 +92,22 @@ class Card(object):
         # Make any cost with a '*' larger than anything else
         # convert cost (a string) into a number
         if '*' in c.cost:
-            c_cost = 9999 # make it a really big number
+            c_cost = 9999  # make it a really big number
         else:
             try:
                 c_cost = int(c.cost)
             except ValueError:
-                c_cost = 9999 # can't, so make it a really big number
+                c_cost = 9999  # can't, so make it a really big number
 
         return c_cost, c.potcost, c.debtcost
 
     def set_lowest_cost(self, other):
         # set self cost fields to the lower of the two's total cost
-        self_cost  = self.get_total_cost(self)
+        self_cost = self.get_total_cost(self)
         other_cost = self.get_total_cost(other)
         if other_cost < self_cost:
-            self.cost     = other.cost
-            self.potcost  = other.potcost
+            self.cost = other.cost
+            self.potcost = other.potcost
             self.debtcost = other.debtcost
 
     def setImage(self):
