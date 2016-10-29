@@ -12,23 +12,28 @@ class TestCardDB(unittest.TestCase):
         self.assertEquals(len(cards), 446)
         print set(c.cardset for c in cards)
         valid_cardsets = {
+            u'base',
+            u'dominion1stEdition',
+            u'dominion2ndEdition',
+            u'dominion2ndEditionUpgrade',
+            u'intrigue1stEdition',
+            u'intrigue2ndEdition',
+            u'intrigue2ndEditionUpgrade',
+            u'seaside',
+            u'alchemy',
             u'prosperity',
             u'cornucopia extras',
             u'cornucopia',
-            u'promo',
-            u'adventures extras',
-            u'seaside',
-            u'adventures',
-            u'dark ages',
             u'hinterlands',
+            u'dark ages',
             u'dark ages extras',
-            u'alchemy',
-            u'base',
-            u'dominion',
             u'guilds',
-            u'intrigue',
+            u'adventures',
+            u'adventures extras',
             u'empires',
             u'empires extras',
+            u'promo',
+            u'extras'
         }
         for c in cards:
             self.assertIsInstance(c, domdiv_cards.Card)
