@@ -10,7 +10,7 @@ class TestCardDB(unittest.TestCase):
         options.data_path = '.'
         cards = domdiv.read_write_card_data(options)
         self.assertEquals(len(cards), 446)
-        print set(c.cardset for c in cards)
+        print set(c.cardset_tag for c in cards)
         valid_cardsets = {
             u'base',
             u'dominion1stEdition',
@@ -37,7 +37,7 @@ class TestCardDB(unittest.TestCase):
         }
         for c in cards:
             self.assertIsInstance(c, domdiv_cards.Card)
-            self.assertIn(c.cardset, valid_cardsets)
+            self.assertIn(c.cardset_tag, valid_cardsets)
 
     def test_languages(self):
         # for now, just test that they load
@@ -45,10 +45,14 @@ class TestCardDB(unittest.TestCase):
         options.data_path = '.'
         cards = domdiv.read_write_card_data(options)
         self.assertTrue(cards, 'Italians cards did not read properly')
+        cards = domdiv.add_card_text(options, cards, 'en_us')
+        cards = domdiv.add_card_text(options, cards, 'it')
         self.assertIn("Maledizione", [card.name for card in cards])
 
         options = domdiv.parse_opts(['--language', 'de'])
         options.data_path = '.'
         cards = domdiv.read_write_card_data(options)
         self.assertTrue(cards, 'German cards did not read properly')
+        cards = domdiv.add_card_text(options, cards, 'en_us')
+        cards = domdiv.add_card_text(options, cards, 'de')
         self.assertIn("Fluch", [card.name for card in cards])
