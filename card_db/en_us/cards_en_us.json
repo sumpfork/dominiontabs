@@ -1856,32 +1856,32 @@
 	},
 	"Settlers - Bustling Village": {
 		"extra": "You can look through your discard pile even if you know there is no Copper in it. Bustling Village: You can look through your discard pile even if you know there are no Settlers in it.",
-		"name": "Settlers \/ Bustling Village",
+		"name": "Settlers / Bustling Village",
 		"description": "Settlers:\n+1 Card\n +1 Action\nLook through your discard pile. You may reveal a Copper from it and put it into your hand.\n\nBustling Village:\n+1 Card\n +3 Actions\nLook through your discard pile. You may reveal a Settlers from it and put it into your hand."
 	},
 	"Catapult - Rocks": {
 		"extra": "If the card you trash is a treasure, each other player discards down to 3 cards in hand; if the card you trash costs 3 Coins or more, each other player gains a Curse; if it is both (e.g. Silver), both things happen; if it is neither, neither thing happens. Rocks: If you have no cards in hand left to trash, neither thing happens. If it is another player's turn, then it is not your Buy phase, so the Silver goes to your hand.",
-		"name": "Catapult \/ Rocks",
+		"name": "Catapult / Rocks",
 		"description": "Catapult:\n+1 Coin\nTrash a card from your hand. If it costs 3 Coins or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.\nRocks:\n+1 Coin\n______________________\nWhen you gain or trash this, gain a Silver; if it is your Buy phase, put the Silver on your deck, otherwise put it into your hand."
 	},
 	"Encampment - Plunder": {
 		"extra": "Revealing a Plunder or Gold is optional. When you return Encampment to the Supply, it goes on top of its pile, potentially covering up a Plunder. Plunder: This gives you a <VP> token every time you play it.",
-		"name": "Encampment \/ Plunder",
+		"name": "Encampment / Plunder",
 		"description": "Encampment:\n+2 Cards\n +2 Actions\nYou may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up.\nPlunder:\n+2 Coin\n +1<VP>"
 	},
 	"Gladiator - Fortune": {
 		"extra": "If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator. Fortune: You only double your Coin the first time you play a Fortune in a turn; any further times only get you +1 Buy.",
-		"name": "Gladiator \/ Fortune",
+		"name": "Gladiator / Fortune",
 		"description": "Gladiator:\nIf there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator.\nFortune:\n+1 Buy\nWhen you play this, double your Coin if you haven't yet this turn.\n______________________\nWhen you gain this, gain a Gold per Gladiator you have in play."
 	},
 	"Patrician - Emporium": {
 		"extra": "Cards costing Debt do not cost 5 Coin or more unless they also have a Coin cost of 5 Coin or more. So Fortune does but City Quarter does not. Emporium: This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Dominion: Adventures) called into play this turn.",
-		"name": "Patrician \/ Emporium",
+		"name": "Patrician / Emporium",
 		"description": "Patrician:\n+1 Card\n +1 Action\nReveal the top card of your deck. If it costs 5 Coin or more, put it into your hand.\nEmporium:\n+1 Card\n +1 Action\n +1 Coin\n______________________\nWhen you gain this, if you have at least 5 Action cards in play, +2 Victory Tokens."
 	},
 	"Sauna - Avanto": {
-		"extra": "Sauna \/ Avanto is a split pile with five copies of Sauna placed on top of five copies of Avanto during setup. Sauna is a cantrip that allows you to trash a card when you play a Silver. Avanto is a terminal draw card that can potentially become non-terminal if you have a Sauna in your hand to play.",
-		"name": "Sauna \/ Avanto",
+		"extra": "Sauna / Avanto is a split pile with five copies of Sauna placed on top of five copies of Avanto during setup. Sauna is a cantrip that allows you to trash a card when you play a Silver. Avanto is a terminal draw card that can potentially become non-terminal if you have a Sauna in your hand to play.",
+		"name": "Sauna / Avanto",
 		"description": "Sauna:\n+1 Card\n+1 Action\nYou may play an Avanto from your hand.\nWhile this is in play, when you play a Silver, you may trash a card from your hand.\nAvanto:\n+3 Cards\nYou may play a Sauna from your hand."
 	},
 	"adventures events": {
