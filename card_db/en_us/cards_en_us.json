@@ -1,8 +1,8 @@
 {
     "Artisan": {
-        "extra": "The card you gain comes from the Supply and is put into your hand.\nYou cannot use empty Coin &nbsp;to increase how expensive of a card you gain; it always costs from 0 Coins to 5 Coins.\n After gaining the card, you put a card from your hand onto your deck; that can be the card you just gained, or a different card.",
+        "extra": "The card you gain comes from the Supply and is put into your hand.\nYou cannot use empty Coin &nbsp;to increase how expensive of a card you gain; it always costs from 0 Coins to 5 Coins.\nAfter gaining the card, you put a card from your hand onto your deck; that can be the card you just gained, or a different card.",
         "name": "Artisan",
-        "description": "Gain a card to your hand costing up to 5 Coins.  Put a card from your hand onto your deck."
+        "description": "Gain a card to your hand costing up to 5 Coins. Put a card from your hand onto your deck."
     },
     "Bustling Village": {
         "extra": "You can look through your discard pile even if you know there are no Settlers in it.",
@@ -27,7 +27,7 @@
     "Death Cart": {
         "extra": "When you play Death Cart, you get + 5 Coins, and either trash an Action card from your hand, or trash the Death Cart. If you have no Action card in your hand, you will have to trash the Death Cart, but you can trash the Death Cart whether or not you have an Action card in hand. A card with multiple types, one of which is Action, is an Action card. When you gain a Death Cart, either from buying it or from gaining it some other way, you also gain 2 Ruins. You just take the top 2, whatever they are. If there are not enough Ruins left, take as many as you can. The Ruins come from the Supply and are put into your discard pile. The other players get to see which ones you got. The player gaining Death Cart is the one who gains Ruins; if Possession (from Alchemy) is used to make another player buy Death Cart, the player actually gaining the Death Cart (the one who played Possession) gains the Ruins. If you use Trader (from Hinterlands) to take a Silver instead of a Death Cart, you do not gain any Ruins. It doesn't matter whose turn it is; if you use Ambassador (from Seaside) to give Death Carts to each other player, those players also gain Ruins. Passing cards with Masquerade (from Intrigue) does not count as gaining them.",
         "name": "Death Cart",
-        "description": "+5 Coins\nYou may trash an Action card from your hand. If you don\u2019t, trash this.\n______________________\nWhen you gain this, gain 2 Ruins."
+        "description": "+5 Coins\nYou may trash an Action card from your hand. If you don't, trash this.\n______________________\nWhen you gain this, gain 2 Ruins."
     },
     "Ghost Ship": {
         "extra": "The other players choose which cards they put on their decks and in what order. This has no effect on another player who already has only 3 cards in hand. A player with no cards left in their deck does not shuffle; the cards put back become the only cards in their deck.",
@@ -40,9 +40,9 @@
         "description": "Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards in your hand and discard the other revealed cards."
     },
     "Bandit": {
-        "extra": "First you gain a Gold from the Supply, putting it into your discard pile.\n  Then each other player, in turn order, reveals their top 2 cards, trashes one they choose that is a Treasure other than Copper (e.g. Silver or Gold), and discards the other revealed cards.\n  A player who did not reveal a Treasure card other than Copper simply discards both cards.",
+        "extra": "First you gain a Gold from the Supply, putting it into your discard pile.\nThen each other player, in turn order, reveals their top 2 cards, trashes one they choose that is a Treasure other than Copper (e.g. Silver or Gold), and discards the other revealed cards.\nA player who did not reveal a Treasure card other than Copper simply discards both cards.",
         "name": "Bandit",
-        "description": "Gain a Gold.  Each other player reveals the top 2 cards of their deck, trashes a revealed Treasure other than Copper, and discards the rest."
+        "description": "Gain a Gold. Each other player reveals the top 2 cards of their deck, trashes a revealed Treasure other than Copper, and discards the rest."
     },
     "Remake": {
         "extra": "Trash a card from your hand, and gain a card costing exactly 1 coin more than it; then trash another card from your hand, and gain a card costing exactly 1 coin more than that card. If you have no cards in hand, you do not trash anything or gain anything; if you have only one card in hand, trash it and gain a card costing 1 coin more than it. Gained cards come from the Supply and are put into your discard pile. If there is no card at the exact cost needed, you do not gain a card for that trashed card. For example you could use Remake to trash an Estate, gaining a Silver, then trash a Copper, gaining nothing.",
@@ -77,7 +77,7 @@
     "Hunting Party": {
         "extra": "First you draw a card and get +1 Action. Then you reveal your hand, and reveal cards from your deck until revealing one that is not a duplicate of one in your hand. A card is not a duplicate of one in your hand if it does not have the same name as any cards in your hand. If you run out of cards while revealing cards, shuffle your discard pile (but not the revealed cards) and keep revealing cards. If you still do not find one, just discard all of the cards revealed from your deck. If you do find a card not matching any cards in your hand, put it into your hand and discard the other cards revealed from your deck.",
         "name": "Hunting Party",
-        "description": "+1 Card\n+1 Action\nReveal your hand. Reveal cards from your deck until you reveal a card that isn\u2019t in a duplicate of one in your hand and discard the rest."
+        "description": "+1 Card\n+1 Action\nReveal your hand. Reveal cards from your deck until you reveal a card that isn't in a duplicate of one in your hand and discard the rest."
     },
     "Tax": {
         "extra": "Every Supply pile starts with 1 Debt, including Kingdom cards and basic cards like Silver.\nThe Event itself, when bought, adds 2 Debt to a single pile, whether or not that pile has any Debt on it already.\nThe Debt is taken by the next player to buy a card from that pile; gaining a card without buying it leaves the Debt on the pile.",
@@ -100,9 +100,9 @@
         "description": "+1 Buy\nIf there are 4 <VP> or more on the Farmers' Market Supply pile, take them and trash this. Otherwise, add 1 <VP> to the pile and then +1 Coin per 1 <VP> on the pile."
     },
     "Courtier": {
-        "extra": "First reveal a card from your hand, then count the types.<br></br>The types are the words on the bottom line \u2013 including Action, Attack, Curse, Reaction, Treasure, and Victory (with more in expansions).<br></br><br></br>Then choose one different thing per type the card had; if you revealed a card with two types, you pick two things.<br></br><br></br>For example you could reveal a Copper and choose \"gain a Gold,\" or reveal a Mill and choose \"+1 Action\" and \"+3 Coin\".<br></br><br></br>If you gain a Gold, put the Gold into your discard pile.",
+        "extra": "First reveal a card from your hand, then count the types.\nThe types are the words on the bottom line including Action, Attack, Curse, Reaction, Treasure, and Victory (with more in expansions).\nThen choose one different thing per type the card had; if you revealed a card with two types, you pick two things.\nFor example you could reveal a Copper and choose \"gain a Gold,\" or reveal a Mill and choose \"+1 Action\" and \"+3 Coin\".\nIf you gain a Gold, put the Gold into your discard pile.",
         "name": "Courtier",
-        "description": "Reveal a card from your hand. For each type it has (Action, Attack, etc.), choose one: +1 Action; or +1 Buy; or +3 Coin; or gain a Gold.  The choices must be different."
+        "description": "Reveal a card from your hand. For each type it has (Action, Attack, etc.), choose one: +1 Action; or +1 Buy; or +3 Coin; or gain a Gold. The choices must be different."
     },
     "Festival": {
         "extra": "If you are playing multiple Festivals, keep a careful count of your Actions. Say how many you have left out loud; this trick works every time (i.e. \"I'm playing the Festival and now have two Actions remaining. I play a Market and have two Actions remaining. I play another Festival and now have three actions remaining...).",
@@ -127,12 +127,12 @@
     "Plunder": {
         "extra": "This gives you a <VP> token every time you play it.",
         "name": "Plunder",
-        "description": "+2 Coin\n +1<VP>"
+        "description": "+2 Coin\n+1<VP>"
     },
     "Masterpiece": {
         "extra": "This is a Treasure worth 1 Coin, like Copper. When you buy it, you gain a Silver for each extra 1 Coin you pay over the cost. For example, if you buy a Masterpiece for 6 Coins, you gain three Silvers.",
         "name": "Masterpiece",
-        "description": "Worth 1 Coin.\n______________________\nWhen you buy this, you may overpay for it.  If you do, gain a Silver per 1 Coin you overpaid."
+        "description": "Worth 1 Coin.\n______________________\nWhen you buy this, you may overpay for it. If you do, gain a Silver per 1 Coin you overpaid."
     },
     "Transmogrify": {
         "extra": "When you play this, you get +1 Action and put it on your Tavern mat. It stays on your mat until you call it, at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Transmogrify, it moves from the mat into play, and you trash a card from your hand, then gain a card costing up to 1 Coin more than the trashed card. The gained card comes from the Supply and is put into your hand; if you had no cards to trash, you do not gain one. Transmogrify is discarded that turn with your other cards in play. You may trash a card to gain a card costing 1 Coin more, or the same amount, or less; you may trash a card to gain a copy of the same card.",
@@ -147,7 +147,7 @@
     "Horn of Plenty": {
         "extra": "This is a Treasure worth 0 coins. You play it in your Buy phase, like other Treasures. It does not produce any coins to spend. However, when you play it, you gain a card costing up to per differently named card you have in play. This includes itself, other played Treasures, played Actions, and any Duration cards (from Dominion: Seaside) played on your previous turn. It only counts cards currently in play, not ones that were in play but left; for example if you played a Feast (from Dominion) this turn, you will have trashed it, so it will not count for Horn of Plenty. The card you gain must come from the Supply, and is put into your discard pile. If it is a Victory card, trash Horn of Plenty. Cards with multiple types, one of which is Victory (such as Nobles from Dominion: Intrigue) are Victory cards. You do not have to play Horn of Plenty in your Buy phase, and you choose the order that you play Treasures. You do not trash Horn of Plenty if you gain a Victory card some other way while it's in play (such as by buying one).",
         "name": "Horn of Plenty",
-        "description": "Worth 0 Coins\nWhen you play this, gain a card costing up to 1 Coin per differently named card you have in play, counting this. If it\u2019s a Victory card, trash this."
+        "description": "Worth 0 Coins\nWhen you play this, gain a card costing up to 1 Coin per differently named card you have in play, counting this. If it's a Victory card, trash this."
     },
     "Borrow": {
         "extra": "You can only buy this once per turn. When you do, if your -1 Card token is not on your deck, you put it on your deck and get + 1 Coin. The -1 Card token will cause you to draw one less card the next time you draw cards; see the Tokens section.",
@@ -157,7 +157,7 @@
     "Herald": {
         "extra": "When you play this, first draw a card and get +1 Action, then reveal the top card of your deck. If it is an Action card, play it; this is not optional. Playing the Action card does not \"use up\" one of your Action plays for the turn. Cards with multiple types, one of which is Action (such as Great Hall from Dominion: Intrigue), are Action cards. If Herald plays a Duration card (from Dominion: Seaside), the Herald is still discarded normally at end of turn, as it is not needed to track anything. When you buy this, you put one card from your discard pile on top of your deck for each extra 1 Coin you pay over the cost. For example, if you buy Herald for 6 Coins, you will put two cards from your discard pile on top of your deck. This card lets you look through your discard pile; normally you cannot. You cannot look through your discard pile first to see how much you want to overpay, and once you overpay you must put the appropriate number of cards on top of your deck if possible. If you overpay enough to put more cards on your deck than there are cards in your discard pile, you just put all of your discard pile onto your deck. You may not look through your discard pile if you buy Herald without overpaying for it. When you put multiple cards on your deck due to overpaying for a Herald, put them on your deck in any order.",
         "name": "Herald",
-        "description": "+1 Card\n+1 Action\nReveal the top card of your deck.  If it is an Action, play it.\n______________________\nWhen you buy this, you may overpay for it.  For each 1 Coin you overpaid, look through your discard pile and put a card from it on top of your deck."
+        "description": "+1 Card\n+1 Action\nReveal the top card of your deck. If it is an Action, play it.\n______________________\nWhen you buy this, you may overpay for it. For each 1 Coin you overpaid, look through your discard pile and put a card from it on top of your deck."
     },
     "Swindler": {
         "extra": "A player with no cards left in his Deck shuffles first; a player who still has no cards does not trash a card or gain a card. If the order matters (such as when piles are running low), resolve Swindler in turn order starting with the player to your left. Gained cards go to discard piles. If a player trashed a 0-cost card such as Copper, you may choose to give him Curse (if there are any left). You can give a player another copy of the same card he trashed. The gained cards have to be ones from the Supply, and you have to pick a card that's left if you can (you cannot pick an empty pile). If there are no cards in the Supply with the same cost as a given player's trashed card, no card is gained by that player. A player who Moats this does not reveal a card from his deck, and so neither trashes a card nor gains a card.",
@@ -165,14 +165,14 @@
         "description": "+2 Coins, Each other player trashes the top card of his deck and gains a card with the same cost that you choose."
     },
     "Poacher": {
-        "extra": "You draw your one card before discarding.\n If there are no empty piles, you do not discard.\n If there is one empty pile, you discard one card; if there are two empty piles, you discard two cards, and so on.\n This includes all Supply piles, including Curses, Coppers, Poacher itself, etc.\n If you do not have enough cards to discard, just discard the rest of your hand.\n\n  Non-Supply piles, such as Spoils, do not matter to Poacher.",
+        "extra": "You draw your one card before discarding.\nIf there are no empty piles, you do not discard.\nIf there is one empty pile, you discard one card; if there are two empty piles, you discard two cards, and so on.\nThis includes all Supply piles, including Curses, Coppers, Poacher itself, etc.\nIf you do not have enough cards to discard, just discard the rest of your hand.\n\nNon-Supply piles, such as Spoils, do not matter to Poacher.",
         "name": "Poacher",
         "description": "+1 Card\n+1 Action\n+1 Coin\nDiscard a card per empty Supply pile."
     },
     "Settlers": {
         "extra": "You can look through your discard pile even if you know there is no Copper in it.",
         "name": "Settlers",
-        "description": "+1 Card\n +1 Action\nLook through your discard pile. You may reveal a Copper from it and put it into your hand."
+        "description": "+1 Card\n+1 Action\nLook through your discard pile. You may reveal a Copper from it and put it into your hand."
     },
     "Necropolis": {
         "extra": "This is a Shelter; see Preparation. It is never in the Supply. It is an Action card; when you play it, you get +2 Actions.",
@@ -195,19 +195,19 @@
         "description": "Choose one: +3 Cards and add 1<VP> to the Wild Hunt Supply pile; or gain an Estate, and if you do, take the <VP> from the pile."
     },
     "Replace": {
-        "extra": "Like Remodel, you first trash a card from your hand, then gain a card from the Supply costing up to 2 Coin more than the trashed card, putting the gained card into your discard pile.<br></br><br></br>Replace gives you an additional bonus based on the types of the gained card; if it is an Action or Treasure you move it to the top of your deck, and if it is a Victory card the other players each gain a Curse.<br></br><br></br>It is possible to get both bonuses; if you gain Harem, Mill, or Nobles with Replace, it both goes on your deck and causes the other players to each gain a Curse.",
+        "extra": "Like Remodel, you first trash a card from your hand, then gain a card from the Supply costing up to 2 Coin more than the trashed card, putting the gained card into your discard pile.\nReplace gives you an additional bonus based on the types of the gained card; if it is an Action or Treasure you move it to the top of your deck, and if it is a Victory card the other players each gain a Curse.\nIt is possible to get both bonuses; if you gain Harem, Mill, or Nobles with Replace, it both goes on your deck and causes the other players to each gain a Curse.",
         "name": "Replace",
         "description": "Trash a card from your hand. Gain a card costing up to 2 Coins more than it. If the gained card is an Action or Treasure, put it onto your deck; if it's a Victory card, each other player gains a Curse."
     },
     "Secret Passage": {
-        "extra": "First draw 2 cards and get +1 Action; then put a card from your hand anywhere in your deck.<br></br><br></br>The card can be one you just drew or any other card from your hand.<br></br><br></br>It can go on top of your deck, on the bottom, or anywhere in-between; you can count out a specific place to put it, e.g. four cards down.<br></br><br></br>If there are no cards left in your deck, the card put back becomes the only card in your deck.<br></br><br></br>Where you put the card is public knowledge.<br></br><br></br>You don't have to put the card into a specific spot, you can just shove it into your deck if you want.",
+        "extra": "First draw 2 cards and get +1 Action; then put a card from your hand anywhere in your deck.\nThe card can be one you just drew or any other card from your hand.\nIt can go on top of your deck, on the bottom, or anywhere in-between; you can count out a specific place to put it, e.g. four cards down.\nIf there are no cards left in your deck, the card put back becomes the only card in your deck.\nWhere you put the card is public knowledge.\nYou don't have to put the card into a specific spot, you can just shove it into your deck if you want.",
         "name": "Secret Passage",
         "description": "+2 Cards\n+1 Action\n\nTake a card from your hand and put it anywhere in your deck."
     },
     "Doctor": {
         "extra": "When you play this, you name a card, reveal the top three cards of your deck, trash each of those cards that has that name, and put the other cards back on your deck in any order. You do not have to name a card being used this game. If there are fewer than three cards left in your deck, reveal the remaining cards, and shuffle your discard pile (which does not include those cards) to get the remainder needed to reveal. If there are still not enough cards, just reveal as many as you can. When you buy this, for each extra 1 Coin you pay over the cost, you look at the top card of your deck, and either trash it, discard it, or put it back on top. If there are no cards left in your deck, shuffle your discard pile into your deck (including any cards already discarded to this overpay ability this turn), and if there still are no cards in it, you do not look at one. If you overpay more than 1 Coin, you may do different things for each card you look at, and you will look at the same card again if you put it back on top. For example if you bought Doctor for 7 Coins, you would look at the top card four times; you might end up first trashing a Copper, then discarding a Province, then putting a Silver back on top, then putting that Silver back on top again.",
         "name": "Doctor",
-        "description": "Name a card.  Reveal the top 3 cards of your deck.  Trash the matches.  Put the rest back on top in any order.\n______________________\nWhen you buy this, you may overpay for it.  For each 1 Coin you overpaid, look at the top card of your deck; trash it, discard it, or put it back."
+        "description": "Name a card. Reveal the top 3 cards of your deck. Trash the matches. Put the rest back on top in any order.\n______________________\nWhen you buy this, you may overpay for it. For each 1 Coin you overpaid, look at the top card of your deck; trash it, discard it, or put it back."
     },
     "Overgrown Estate": {
         "extra": "This is a Shelter; see Preparation. It is never in the Supply. It is a Victory card despite being worth 0 Victory. If this is trashed, you draw a card, right then, even in the middle of resolving another card. For example, if you use Altar to trash Overgrown Estate, you first draw a card, then gain a card costing up to 5 Coins. This card does not give you a way to trash itself, it merely does something if you manage to trash it.",
@@ -307,7 +307,7 @@
     "Emporium": {
         "extra": "This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Dominion: Adventures) called into play this turn.",
         "name": "Emporium",
-        "description": "+1 Card\n +1 Action\n +1 Coin\n______________________\nWhen you gain this, if you have at least 5 Action cards in play, +2 Victory Tokens."
+        "description": "+1 Card\n+1 Action\n+1 Coin\n______________________\nWhen you gain this, if you have at least 5 Action cards in play, +2 Victory Tokens."
     },
     "Duke": {
         "extra": "This does nothing until the end of the game, at which time it's worth 1 VP per Duchy you have. This counts all of your cards - your Discard pile and hand are part of your Deck at that point. During set-up, place 12 Dukes in the Supply for a 3- or 4- [or 5- or 6-] player game and 8 in the Supply for a 2-player game.",
@@ -327,7 +327,7 @@
     "Taxman": {
         "extra": "You may trash a Treasure card from your hand. This is optional. Cards with multiple types, one of which is Treasure (like Harem from Dominion: Intrigue), are Treasures. If you do trash a Treasure, each other player with at least five cards in hand discards a copy of it from her hand if she can, or reveals a hand with no copies of it, and you gain a Treasure costing up to 3 Coins more than the trashed Treasure, putting it on top of your deck. If there are no cards in your deck, it becomes the only card in your deck. You do not have to gain a more expensive Treasure; you may gain a Treasure with the same cost, or a cheaper Treasure. You have to gain a card if you trashed one though, if possible. The gained Treasure comes from the Supply.",
         "name": "Taxman",
-        "description": "You may trash a Treasure from your hand.  Each other player with 5 or more cards in hand discards a copy of it (or reveals a hand without it).  Gain a Treasure card costing up to 3 Coins more than the trashed card, putting it on top of your deck."
+        "description": "You may trash a Treasure from your hand. Each other player with 5 or more cards in hand discards a copy of it (or reveals a hand without it). Gain a Treasure card costing up to 3 Coins more than the trashed card, putting it on top of your deck."
     },
     "Crown": {
         "extra": "If you play this in your Action phase, you play an Action card from your hand, then play the same card again; this does not use up any extra Actions you have. If you play this in your Buy phase, you play a Treasure from your hand, then play it again; this does not use up any Actions at all. Crown can be used to play another Crown in either your Action or Buy phase, causing you to either play two more Actions twice each, or two more Treasures twice each. If you play Crown in your Action phase via something that lets you play Treasures (like Storyteller from Dominion: Adventures), Crown will still play an Action card twice.",
@@ -375,7 +375,7 @@
         "description": "+1 Card\n+1 Action\nAt the start of Clean-up this turn, you may choose an Action card you have in play. If you discard it from play this turn, put it on your deck."
     },
     "Merchant": {
-        "extra": "When you play Merchant, you draw a card and get +1 Action.\n If you end up playing a Silver later in the turn, it comes with 1 Coin.\n If you play more than one Merchant, each gives you 1 Coin when you play that first Silver; but if you play more than one Silver, you only get the 1 Coin for the first Silver.\n\n If you manage to play a Merchant after playing a Silver, the Merchant gives you no bonus (for the previous Silver or for any Silvers you might play later in the turn).\n Playing Throne Room on Merchant will give you 2 Coin when you play your first Silver.",
+        "extra": "When you play Merchant, you draw a card and get +1 Action.\nIf you end up playing a Silver later in the turn, it comes with 1 Coin.\nIf you play more than one Merchant, each gives you 1 Coin when you play that first Silver; but if you play more than one Silver, you only get the 1 Coin for the first Silver.\n\nIf you manage to play a Merchant after playing a Silver, the Merchant gives you no bonus (for the previous Silver or for any Silvers you might play later in the turn).\nPlaying Throne Room on Merchant will give you 2 Coin when you play your first Silver.",
         "name": "Merchant",
         "description": "+1 Card\n+1 Action\nThe first time you play a Silver this turn, +1 Coin."
     },
@@ -535,9 +535,9 @@
         "description": "+2 Coins\nYou may put your deck into your discard pile. Look through your discard pile and put one card from it on top of your deck."
     },
     "Mill": {
-        "extra": "You can choose to discard 2 cards even if you only have one card in hand, but you only get +2 Coin if you actually discarded 2 cards.<br></br>\u2013<br></br>Use 8 Mills for games with 2 players, 12 for games with 3 or more players.",
+        "extra": "You can choose to discard 2 cards even if you only have one card in hand, but you only get +2 Coin if you actually discarded 2 cards.\n______________________\nUse 8 Mills for games with 2 players, 12 for games with 3 or more players.",
         "name": "Mill",
-        "description": "+1 Card\n+1 Action\n\nYou may discard 2 cards, for +2 Coin.\n\n\u2013\n\nWorth 1 VP"
+        "description": "+1 Card\n+1 Action\n\nYou may discard 2 cards, for +2 Coin.\n______________________\nWorth 1 VP"
     },
     "Counterfeit": {
         "extra": "This is a Treasure worth 1 Coin. You play it in your Buy phase, like other Treasures. When you play it, you also get +1 Buy, and you may play an additional Treasure card from your hand twice. If you choose to do that, you trash that Treasure. You still get any coins that Treasure gave you from playing it, despite trashing it. If you use Counterfeit to play Spoils twice, you will get + 6 Coins, (in addition to the 1 Coin, from Counterfeit) and return Spoils to the Spoils pile; you will be unable to trash it. If you use Counterfeit to play a Treasure that does something special when you play it, you will do that thing twice. Cards with two types, one of which is Treasure (such as Harem from Intrigue) are Treasures and so can be played via Counterfeit.",
@@ -545,7 +545,7 @@
         "description": "Worth 1 Coin\n+1 Buy\nWhen you play this, you may play a Treasure from your hand twice. If you do, trash that Treasure"
     },
     "Platinum": {
-        "extra": "This is not a Kingdom card. You do not use it every game. It is a Treasure worth 5 coins.  If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]",
+        "extra": "This is not a Kingdom card. You do not use it every game. It is a Treasure worth 5 coins. If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]",
         "name": "Platinum",
         "description": "Worth 5 Coins."
     },
@@ -555,7 +555,7 @@
         "description": "+2 Coins, Each other player discards a Copper card (or reveals a hand with no Copper)."
     },
     "Curse": {
-        "extra": "Curses are an available pile in the Supply regardless of what other cards are in the Supply.  With 2 players, place 10 Curses in the Supply.  With 3 players, place 20 Curses in the Supply.  With 4 players, place 30 Curses in the Supply.  With 5 players, place 40 Curses in the Supply.  With 6 players, place 50 Curses in the Supply.",
+        "extra": "Curses are an available pile in the Supply regardless of what other cards are in the Supply. With 2 players, place 10 Curses in the Supply. With 3 players, place 20 Curses in the Supply. With 4 players, place 30 Curses in the Supply. With 5 players, place 40 Curses in the Supply. With 6 players, place 50 Curses in the Supply.",
         "name": "Curse",
         "description": "-1 <VP>"
     },
@@ -567,7 +567,7 @@
     "Butcher": {
         "extra": "First take two Coin tokens. Then you may trash a card from your hand and pay any number of Coin tokens (returning them to the pile). The number of Coin tokens you pay can be zero. Butcher itself is no longer in your hand and so cannot trash itself (though it can trash another copy of Butcher). If you trashed a card, you gain a card costing up to the cost of the trashed card plus the number of Coin tokens you paid. For example, you could trash an Estate and pay six Coin tokens to gain a Province, or you could trash another Butcher and pay zero Coin tokens to gain a Duchy. You can pay the Coin tokens you just got. Paying Coin tokens for this ability does not get you coins to spend, it just changes what cards you can gain with this ability.",
         "name": "Butcher",
-        "description": "Take two Coin tokens.  You may trash a card from your hand and then pay any number of Coin tokens.  If you did trash a card, gain a card with a cost of up to the cost of the trashed card plus the number of Coin tokens you paid."
+        "description": "Take two Coin tokens. You may trash a card from your hand and then pay any number of Coin tokens. If you did trash a card, gain a card with a cost of up to the cost of the trashed card plus the number of Coin tokens you paid."
     },
     "Treasury": {
         "extra": "If you buy multiple cards and at least one of them is a Victory card, then none of your Treasuries can be put on top of your deck. If you played multiple Treasuries and did not buy a Victory card this turn, then you can put any or all of the played Treasuries on top of your deck. If you forget and discard a Treasury to your discard pile, then essentially you have chosen not to use the optional ability. You may not dig through your discard pile to retrieve it later. Gaining a Victory card without buying it, such as with Smugglers, does not stop you from putting Treasury on top of your deck.",
@@ -622,7 +622,7 @@
     "Plaza": {
         "extra": "First you draw a card and get +2 Actions; then you may discard a Treasure. You can discard the card you drew if it is a Treasure. If you discarded a Treasure card, you take a Coin token. Cards with multiple types, one of which is Treasure (such as Harem from Dominion: Intrigue), are Treasures.",
         "name": "Plaza",
-        "description": "+1 Card\n+2 Actions\nYou may discard a Treasure card.  If you do, take a Coin token."
+        "description": "+1 Card\n+2 Actions\nYou may discard a Treasure card. If you do, take a Coin token."
     },
     "Windfall": {
         "extra": "If there are fewer than 3 Golds in the pile, just gain the remaining Golds.",
@@ -667,7 +667,7 @@
     "Jester": {
         "extra": "Each player with no cards in his deck shuffles his discard pile in order to get a card to discard. If he still has no cards, he does not discard one. For each player who discarded a card, if it is a Victory card, he gains a Curse, and otherwise, you choose: either that player gains a copy of the card, or you do. The gained copies and Curses come from the Supply and are put into the discard piles of the players who gain them. If a card is revealed for which there are no copies in the Supply, no one gains a copy of it. This Attack hits other players in turn order, which can matter when some piles are low. A card with multiple types, one of which is Victory (such as Nobles from Dominion: Intrigue) is a Victory card.",
         "name": "Jester",
-        "description": "+2 Coins\nEach other player discards the top card of his deck. If it\u2019s a Victory card he gains a Curse. Otherwise he gains a copy of the discarded card or you do, your choice."
+        "description": "+2 Coins\nEach other player discards the top card of his deck. If it's a Victory card he gains a Curse. Otherwise he gains a copy of the discarded card or you do, your choice."
     },
     "Hoard": {
         "extra": "This is a Treasure worth 2 coins, like Silver. When you buy a Victory card with this in play, you gain a Gold card from the Supply, putting it into your discard pile. If there are no Golds left, you do not get one. If you have multiple Hoards in play, you will gain multiple Golds from buying a single one. So for example if you had two Hoards in play and no other money, with +1 Buy, you could buy two Estates and gain four Golds. Victory cards include cards that are other types as well, such as Nobles and Harem in Intrigue. You gain a Gold even if you use Watchtower to immediately trash the Victory card you gained. Victory cards gained other than by buying them do not get you Gold.",
@@ -735,7 +735,7 @@
         "description": "Each player (including you) reveals the top 2 cards of his deck, and you choose one: either he discards them, or he puts them back on top in an order he chooses.\n+2 Cards"
     },
     "Patrol": {
-        "extra": "First draw 3 cards, then reveal the top 4 cards of your deck.<br></br><br></br>Put the revealed Victory cards and Curses into your hand; you have to take them all.<br></br><br></br>Put the rest of the cards back on your deck in any order you choose.",
+        "extra": "First draw 3 cards, then reveal the top 4 cards of your deck.\nPut the revealed Victory cards and Curses into your hand; you have to take them all.\nPut the rest of the cards back on your deck in any order you choose.",
         "name": "Patrol",
         "description": "+3 Cards\n\nReveal the top 4 cards of your deck. Put the Victory cards and Curses into your hand. Put the rest back in any order."
     },
@@ -817,7 +817,7 @@
     "Soothsayer": {
         "extra": "The Gold and Curses come from the Supply and go into discard piles. If there is no Gold left, you do not gain one. If there are not enough Curses left to go around, deal them out in turn order, starting with the player to your left. Each player who gained a Curse draws a card. This is not optional. A player who did not gain a Curse, whether due to the Curses running out or due to some other reason, does not draw a card. A player who uses Watchtower (from Dominion: Prosperity) to trash the Curse did gain a Curse and so draws a card; a player who uses Trader (from Dominion: Hinterlands) to gain a Silver instead did not gain a Curse and so does not draw a card.",
         "name": "Soothsayer",
-        "description": "Gain a Gold.  Each other player gains a Curse.  Each player who did draws a card."
+        "description": "Gain a Gold. Each other player gains a Curse. Each player who did draws a card."
     },
     "Trash": {
         "extra": "",
@@ -850,7 +850,7 @@
         "description": "+1 Action\nEach player (including you) reveals the top card of his deck and either discards it or puts it back, your choice. Then reveal cards from the top of your deck until revealing one that isn't an Action.\nPut all of your revealed cards into your hand."
     },
     "Governor": {
-        "extra": "You always get +1 Action. Then you either 1) draw three cards and each other player draws a card; 2) gain a Gold and each other player gains a Silver; 3) may trash a card from your hand and gain a card costing exactly 2 Coins more and each other player may trash a card from his hand and gain a card costing exactly 1 Coin more.  Go in turn order, starting with yourself; this may matter if piles are low. The gained cards come from the Supply and are put into discard piles; if there are none left, those cards are not gained. For example if you choose the second option and there is only one Silver in the Supply, the player to your left gets it and no-one else gets one. For the third option, you only gain a card if you trashed a card, and only if there is a card available in the Supply with the exact cost required. If you do trash a card, you must gain a card if you can. You cannot trash a Governor you played to itself, as it is no longer in your hand when you play it (though you can trash another copy of Governor from your hand).",
+        "extra": "You always get +1 Action. Then you either 1) draw three cards and each other player draws a card; 2) gain a Gold and each other player gains a Silver; 3) may trash a card from your hand and gain a card costing exactly 2 Coins more and each other player may trash a card from his hand and gain a card costing exactly 1 Coin more. Go in turn order, starting with yourself; this may matter if piles are low. The gained cards come from the Supply and are put into discard piles; if there are none left, those cards are not gained. For example if you choose the second option and there is only one Silver in the Supply, the player to your left gets it and no-one else gets one. For the third option, you only gain a card if you trashed a card, and only if there is a card available in the Supply with the exact cost required. If you do trash a card, you must gain a card if you can. You cannot trash a Governor you played to itself, as it is no longer in your hand when you play it (though you can trash another copy of Governor from your hand).",
         "name": "Governor",
         "description": "+1 Action\nChoose one; you get the version in parentheses: Each player gets +1 (+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly 1 Coin (2 Coins) more."
     },
@@ -892,7 +892,7 @@
     "Patrician": {
         "extra": "Cards costing Debt do not cost 5 Coin or more unless they also have a Coin cost of 5 Coin or more. So Fortune does but City Quarter does not.",
         "name": "Patrician",
-        "description": "+1 Card\n +1 Action\nReveal the top card of your deck. If it costs 5 Coin or more, put it into your hand."
+        "description": "+1 Card\n+1 Action\nReveal the top card of your deck. If it costs 5 Coin or more, put it into your hand."
     },
     "Bishop": {
         "extra": "[When a player takes VP tokens, he takes a player mat to put them on. VP tokens are not private and anyone can count them. VP tokens come in 1 VP and 5 VP denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their VP tokens to their score.] Trashing a card is optional for the other players but mandatory for you. You trash a card, then each other player may trash a card, in turn order. Only the player who played Bishop can get VP tokens from it. Potion in costs is ignored, for example if you trash Golem (from Alchemy) which costs 4 coins 1 potion, you get 3 VP tokens total (counting the 1 VP you always get from Bishop). If you have no cards left in your hand to trash, you still get the 1 coin and 1 VP token.",
@@ -915,7 +915,7 @@
         "description": "You may play an Action card from your hand twice. Gain a copy of it.\n______________________\nWhen you discard this from play, you may exchange it for a Teacher.\n(This is not in the Supply.)"
     },
     "Province": {
-        "extra": "Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or four players. Put 15 in the Supply in a game with five players.  Put 18 in the Supply in a game with six players.",
+        "extra": "Put 8 in the Supply in a game with two players. Put 12 in the Supply in a game with three or four players. Put 15 in the Supply in a game with five players. Put 18 in the Supply in a game with six players.",
         "name": "Province",
         "description": "6 <VP>"
     },
@@ -952,7 +952,7 @@
     "Stonemason": {
         "extra": "When you play this, trash a card from your hand, and gain two cards, each costing less than the card you trashed. Trashing a card is not optional. If you do not have any cards left in your hand to trash, you do not gain any cards. The two cards you gain can be different or the same. For example you could trash a Gold to gain a Duchy and a Silver. Gaining cards is not optional if you trashed a card. The gained cards come from the Supply and are put into your discard pile; if there are no cheaper cards in the Supply (for example if you trash a Copper), you do not gain any. If there is only one card in the Supply cheaper than the trashed card, you gain that one. The cards you gain are gained one at a time; this may matter with cards that do something when gained, such as Inn from Dominion: Hinterlands. When you buy this, you may choose to overpay for it. If you do, you gain two Action cards each costing exactly the amount you overpaid. The Action cards can be different or the same. For example, if you buy Stonemason for 6 Coins, you could gain two Heralds. The Action cards come from the Supply and are put into your discard pile. If there are no cards with the appropriate cost in the Supply, you do not gain one. Overpaying with a Potion (from Dominion: Alchemy) will let you gain cards with Potion in the cost. Cards with multiple types, one of which is Action (such as Great Hall from Dominion: Intrigue), are Action cards. If you choose not to overpay, you will not gain any cards from that ability; it is not possible to use it to gain Action cards costing 0 Coins.",
         "name": "Stonemason",
-        "description": "Trash a card from your hand.  Gain 2 cards each costing less than it.\n______________________\nWhen you buy this, you may overpay for it.  If you do, gain 2 Action cards each costing the amount you overpaid."
+        "description": "Trash a card from your hand. Gain 2 cards each costing less than it.\n______________________\nWhen you buy this, you may overpay for it. If you do, gain 2 Action cards each costing the amount you overpaid."
     },
     "Legionary": {
         "extra": "Players wishing to respond to the Attack (e.g. with Moat) must do so before you choose whether or not to reveal a Gold.",
@@ -977,7 +977,7 @@
     "Villa": {
         "extra": "If you gain this during your Action phase, such as with Engineer, you will put the Villa into your hand and get +1 Action (letting you, for example, play the Villa). If you gain this during your Buy phase (such as by buying it), you will put the Villa into your hand, get +1 Action, and return to your Action phase. This will let you play more Action cards (such as the Villa); when you are done with that you will return to your Buy phase, from the beginning - you can play more Treasures (and Arena will trigger again). If you buy Villa, that uses up your default Buy for the turn, however playing Villa will give you +1 Buy and so let you buy another card in your second Buy phase. If you gain this during another player's turn, you will put the Villa into your hand and get +1 Action, but will have no way to use that Action, since it is not your turn. It is possible to return to your Action phase multiple times in a turn via buying multiple Villas. Returning to your Action phase does not cause \"start of turn\" abilities to repeat; they only happen at the start of your turn.",
         "name": "Villa",
-        "description": "+2 Actions\n +1 Buy\n +1 Coin\n______________________\nWhen you gain this, put it into your hand, +1 Action, and if it's your Buy phase return to your Action phase."
+        "description": "+2 Actions\n+1 Buy\n+1 Coin\n______________________\nWhen you gain this, put it into your hand, +1 Action, and if it's your Buy phase return to your Action phase."
     },
     "Conquest": {
         "extra": "This counts the two Silvers it gives you (provided that there were Silvers left to gain).\nFor example, with 12 Coin and 2 Buys and having gained no Silvers earlier in the turn, you could buy Conquest twice, getting two Silvers, then +2<VP>, then two more Silvers, then +4<VP>.",
@@ -1032,12 +1032,12 @@
     "Vassal": {
         "extra": "If the card is an Action card, you can play it, but do not have to.\nIf you do play it, you move it into your play area and follow its instructions; this does not use up one of your Action plays for the turn.",
         "name": "Vassal",
-        "description": "+2 Coin\nDiscard the top card of your deck.  If it's an Action card, you may play it"
+        "description": "+2 Coin\nDiscard the top card of your deck. If it's an Action card, you may play it"
     },
     "Forum": {
         "extra": "For example, with 13 Coin and only one Buy, you could buy a Forum, getting +1 Buy, then buy a Province.",
         "name": "Forum",
-        "description": "+3 Cards\n +1 Action\nDiscard 2 cards.\n______________________\nWhen you buy this, +1 Buy."
+        "description": "+3 Cards\n+1 Action\nDiscard 2 cards.\n______________________\nWhen you buy this, +1 Buy."
     },
     "Tunnel": {
         "extra": "This is both a Victory card and a Reaction. At the end of the game, Tunnel is worth 2 victory points. Tunnel's Reaction ability functions when you discard it. You cannot simply choose to discard it; something has to let you or make you discard it. This ability functions whether you discard Tunnel on your own turn (such as due to Oasis) or on someone else's (such as due to Margrave). It functions if Tunnel is discarded from your hand (such as due to Oasis) or from your deck, or when set aside (such as due to Cartographer). If Tunnel would normally not necessarily be revealed (such as when discarding multiple cards to Cartographer), you have to reveal it to get the Gold. Revealing it is optional, even if Tunnel was already revealed for some other reason; you are not forced to gain a Gold. This ability does not function if cards are put into your discard pile without being discarded, such as when you buy a card, when you gain a card directly (such as with Border Village), when your deck is put into your discard pile, such as with Chancellor from Dominion, or with Possession from Dominion: Alchemy, when trashed cards are returned to you at end of turn. It also does not function during Clean-up, when you normally discard all of your played and unplayed cards. The key thing to look for is a card actually telling you to \"discard\" cards. The Gold you gain comes from the Supply and is put into your discard pile; if there is no Gold left in the Supply, you do not gain one.",
@@ -1087,7 +1087,7 @@
     "Mystic": {
         "extra": "You get +1 Action and +2 Coins. Then name a card (\"Copper,\" for example - not \"Treasure\") and reveal the top card of your deck; if you named the same card you revealed, put the revealed card into your hand. If you do not name the right card, put the revealed card back on top. You do not need to name a card being used this game. Names need to match exactly for you to get the card; for example Sir Destry and Sir Martin do not match. You do not need to name a card available in the Supply.",
         "name": "Mystic",
-        "description": "+1 Action\n+ 2 Coins\nName a card.\nReveal the top card of your deck.\nIf it\u2019s the named card, put it into your hand."
+        "description": "+1 Action\n+ 2 Coins\nName a card.\nReveal the top card of your deck.\nIf it's the named card, put it into your hand."
     },
     "Swamp Hag": {
         "extra": "you will get + 3 Coins at the start of your next turn; and until then, other players will gain a Curse whenever they buy a Card. Players who buy multiple cards will gain a Curse per card bought; players who do not buy any cards will not get any Curses. This is cumulative; if you play two Swamp Hags, and the player after you plays one, then the player after that will get three Curses with any card bought. This does not affect cards gained other ways, only bought cards. Buying Events is not buying cards and so does not trigger this. If you play Swamp Hag and then take an extra turn immediately, such as with Mission or Outpost (from Seaside), you will get + 3 Coins at the start of that turn and discard Swamp Hag that turn, and other players will never be affected by it. If you want to use a Reaction card like Moat against Swamp Hag, you have to use it right when Swamp Hag is played.",
@@ -1105,9 +1105,9 @@
         "description": "+2 Cards, +1 Action."
     },
     "Diplomat": {
-        "extra": "When playing this, you get +2 Cards, then count your cards in hand, and if you have 5 cards or fewer, you get +2 Actions.<br></br><br></br>So, for example if you play this from a hand of 5 cards, you will put it into play, going down to 4 cards, then draw 2 cards, going up to 6 cards, and that is more than 5 cards so you would not get the +2 Actions.<br></br><br></br>Diplomat can also be used when another player plays an Attack card, if you have at least 5 cards in hand.<br></br><br></br>Before the Attack card does anything, you can reveal a Diplomat from your hand; if you do, you draw 2 cards, then discard 3 cards (which can include the Diplomat).<br></br><br></br>If you still have at least 5 cards in hand after doing that (such as due to Council Rooms), you can reveal Diplomat again and do it again.<br></br><br></br>You reveal Reactions one at a time; you cannot reveal two Diplomats simultaneously.<br></br><br></br>You can reveal a Moat from your hand (to be unaffected by an Attack) either before or after revealing and resolving a Diplomat (even if the Moat was not in your hand until after resolving Diplomat).",
+        "extra": "When playing this, you get +2 Cards, then count your cards in hand, and if you have 5 cards or fewer, you get +2 Actions.\nSo, for example if you play this from a hand of 5 cards, you will put it into play, going down to 4 cards, then draw 2 cards, going up to 6 cards, and that is more than 5 cards so you would not get the +2 Actions.\nDiplomat can also be used when another player plays an Attack card, if you have at least 5 cards in hand.\nBefore the Attack card does anything, you can reveal a Diplomat from your hand; if you do, you draw 2 cards, then discard 3 cards (which can include the Diplomat).\nIf you still have at least 5 cards in hand after doing that (such as due to Council Rooms), you can reveal Diplomat again and do it again.\nYou reveal Reactions one at a time; you cannot reveal two Diplomats simultaneously.\nYou can reveal a Moat from your hand (to be unaffected by an Attack) either before or after revealing and resolving a Diplomat (even if the Moat was not in your hand until after resolving Diplomat).",
         "name": "Diplomat",
-        "description": "+ 2 Cards\n\nIf you have 5 or fewer cards in hand (after drawing), +2 Actions.\n\u2013\nWhen another player plays an Attack card, you may first reveal this from a hand of 5 or more cards, to draw 2 cards then discard 3."
+        "description": "+ 2 Cards\n\nIf you have 5 or fewer cards in hand (after drawing), +2 Actions.\n______________________\nWhen another player plays an Attack card, you may first reveal this from a hand of 5 or more cards, to draw 2 cards then discard 3."
     },
     "Rebuild": {
         "extra": "You can name any card, whether or not it is being used this game or is a Victory card. Then reveal cards from your deck until you reveal a Victory card that is not what you named. If you run out of cards, shuffle your discard pile and continue, without shuffling in the revealed cards. If you run out of cards with no cards left in your discard pile, stop there, discard everything, and nothing more happens. If you did find a Victory card that was not what you named, you discard the other revealed cards, trash the Victory card, and gain a Victory card costing up to 3 Coins more than the trashed card. The card you gain comes from the Supply and is put into your discard pile.",
@@ -1142,7 +1142,7 @@
     "Journeyman": {
         "extra": "This draws you three cards that are not a particular card. First name a card. It does not have to be a card being used this game. Then reveal cards from the top of your deck until you have revealed three cards that are not the named card. If you run out of cards without finding three, shuffle your discard pile into your deck and continue. If you still cannot find three, stop. Put the cards you found that were not the named card into your hand and discard the rest.",
         "name": "Journeyman",
-        "description": "Name a card.  Reveal cards from the top of your deck until you reveal 3 cards that are not the named card.  Put those cards into your hand and discard the rest."
+        "description": "Name a card. Reveal cards from the top of your deck until you reveal 3 cards that are not the named card. Put those cards into your hand and discard the rest."
     },
     "Rogue": {
         "extra": "If there is a card in the trash costing from 3 Coins to 6 Coins, you have to gain one of them; it is not optional. You can look through the trash at any time. The other players get to see what card you took. The gained card goes into your discard pile. Cards with Potion in the cost (from Alchemy) do not cost from 3 Coins to 6 Coins. If there was no card in the trash costing from 3 Coins to 6 Coins, you instead have each other player reveal the top 2 cards of his deck, trash one of them of his choice that costs from 3 Coins to 6 Coins (if possible), and discard the rest. Go in turn order, starting with the player to your left.",
@@ -1180,7 +1180,7 @@
         "description": "+1 Card, +1 Action, Look at the bottom card of your deck. You may put it on top."
     },
     "Knights": {
-        "extra": "The ability Knights have in common is that each other player reveals the top 2 cards of his deck, trashes one of them that he chooses that costs from 3 Coins to 6 Coins, and discards the rest; then, if a Knight was trashed, you trash the Knight you played that caused this trashing. Resolve this ability in turn order, starting with the player to your left. Cards with Potion in the cost (from Alchemy) do not cost from 3 Coins to 6 Coins. The player losing a card only gets a choice if both cards revealed cost from 3 Coins to 6 Coins; if they both do and one is a Knight but the player picks the other card, that will not cause the played Knight to be trashed.  When Sir Martin is the top card of the pile, it can be gained with an Armory and so on. If Sir Vander is trashed, you gain a Gold; this happens whether it is trashed on your turn or someone else's. The player who had Sir Vander is the one who gains the Gold, regardless of who played the card that trashed it. The Gold from Sir Vander, and the card gained for Dame Natalie, comes from the Supply and is put into your discard pile. When playing Dame Anna, you may choose to trash zero, one, or two cards from your hand. Dame Josephine is also a Victory card, worth 2 Victory at the end of the game. The Knight pile is not a Victory pile though, and does not get a counter for Trade Route (from Prosperity) even if Dame Josephine starts on top. If you choose to use the Knights with Black Market (a promotional card), put a Knight directly into the Black Market deck, rather than using the randomizer card. Sir Martin only costs 4 Coins, though the other Knights all cost 5 Coins.",
+        "extra": "The ability Knights have in common is that each other player reveals the top 2 cards of his deck, trashes one of them that he chooses that costs from 3 Coins to 6 Coins, and discards the rest; then, if a Knight was trashed, you trash the Knight you played that caused this trashing. Resolve this ability in turn order, starting with the player to your left. Cards with Potion in the cost (from Alchemy) do not cost from 3 Coins to 6 Coins. The player losing a card only gets a choice if both cards revealed cost from 3 Coins to 6 Coins; if they both do and one is a Knight but the player picks the other card, that will not cause the played Knight to be trashed. When Sir Martin is the top card of the pile, it can be gained with an Armory and so on. If Sir Vander is trashed, you gain a Gold; this happens whether it is trashed on your turn or someone else's. The player who had Sir Vander is the one who gains the Gold, regardless of who played the card that trashed it. The Gold from Sir Vander, and the card gained for Dame Natalie, comes from the Supply and is put into your discard pile. When playing Dame Anna, you may choose to trash zero, one, or two cards from your hand. Dame Josephine is also a Victory card, worth 2 Victory at the end of the game. The Knight pile is not a Victory pile though, and does not get a counter for Trade Route (from Prosperity) even if Dame Josephine starts on top. If you choose to use the Knights with Black Market (a promotional card), put a Knight directly into the Black Market deck, rather than using the randomizer card. Sir Martin only costs 4 Coins, though the other Knights all cost 5 Coins.",
         "name": "Knights",
         "description": "This is a pile in which each card is different. There is the same basic ability on each card, but also another ability unique to that card in the pile, and they all have different names. Shuffle the Knights pile before playing with it, keeping it face down except for the top one, which is the only card that can be gained from the pile. See Additional Rules for Dark Ages and Preparation. Follow the rules on Knights in order from top to bottom; Sir Michael causes players to discard before it trashes cards."
     },
@@ -1195,7 +1195,7 @@
         "description": "Sort the Castle pile by cost, putting the more expensive Castles on the bottom. For a 2-player game, use only one of each Castle. Only the top card of the pile can be gained or bought."
     },
     "Lurker": {
-        "extra": "The card trashed or gained has to be an Action card, but can have other types too. For example Lurker can trash Nobles from the Supply and can gain Nobles from the trash.<br></br><br></br>When gaining a card with Lurker, put the gained card into your discard pile.<br></br><br></br>When you trash a card from the supply that has a special effect when trashed, the on-trash effect activates. However, trashing from the supply does not allow you to react with Market Square.",
+        "extra": "The card trashed or gained has to be an Action card, but can have other types too. For example Lurker can trash Nobles from the Supply and can gain Nobles from the trash.\nWhen gaining a card with Lurker, put the gained card into your discard pile.\nWhen you trash a card from the supply that has a special effect when trashed, the on-trash effect activates. However, trashing from the supply does not allow you to react with Market Square.",
         "name": "Lurker",
         "description": "+1 Action\n\nChoose one: Trash an Action card from the Supply; or gain an Action card from the trash."
     },
@@ -1242,7 +1242,7 @@
     "Capital": {
         "extra": "When you discard this from play (normally, in the Clean-up phase of the turn you played it), you get 6 Debt, and then get an extra opportunity to pay off Debt with Coins, right then. You do not get the Debt if you did not discard it from play - for example, if you trash it due to Counterfeit (from Dominion: Dark Ages). You only get Debt per copy of Capital discarded; for example if you use Crown to play Capital twice, you still only get 6 Debt when you discard it from play.",
         "name": "Capital",
-        "description": "6 Coins\n +1 Buy\n______________________\nWhen you discard this from play, take 6 Debt, and then you may pay off Debt."
+        "description": "6 Coins\n+1 Buy\n______________________\nWhen you discard this from play, take 6 Debt, and then you may pay off Debt."
     },
     "Nobles": {
         "extra": "This is both an Action card and a Victory card. When you play it, you choose either to draw 3 cards or to get 2 more Actions to use; you cannot mix and match. At the end of the game, this is worth 2 VP. During set-up, place 12 Nobles in the Supply for a 3- or 4- [or 5- or 6-] player game and 8 in the Supply for a 2-player game.",
@@ -1382,7 +1382,7 @@
     "Encampment": {
         "extra": "Revealing a Plunder or Gold is optional. When you return Encampment to the Supply, it goes on top of its pile, potentially covering up a Plunder.",
         "name": "Encampment",
-        "description": "+2 Cards\n +2 Actions\nYou may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up."
+        "description": "+2 Cards\n+2 Actions\nYou may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up."
     },
     "Harem": {
         "extra": "This is both a Treasure card and a Victory card. You can play it for 2 coins, just like a Silver card. At the end of the game, it's worth 2 VP. During set-up, place 12 Harems in the Supply for a 3- or 4- [or 5- or 6-] player game and 8 in the Supply for a 2-player game.",
@@ -1390,7 +1390,7 @@
         "description": "Worth 2 Coins, 2 <VP>"
     },
     "Potion": {
-        "extra": "This is a basic Treasure card. It costs 4 Coins and produces Potion. It is not a Kingdom card.  After you choose 10 Kingdom cards for the Supply, if any of them have Potion in the cost, add the Potion pile to the Supply. Also add the Potion pile if you are using the promotional card Black Market, and the Black Market deck includes at least one card with Potion in the cost. If you don't have any cards with Potion in the cost in the Supply or the Black Market deck, do not use the Potion pile in this game. When you have a Potion pile, put all 16 Potions in it, no matter how many players there are. In games using this pile, if the pile becomes empty, that will count towards the game ending condition.",
+        "extra": "This is a basic Treasure card. It costs 4 Coins and produces Potion. It is not a Kingdom card. After you choose 10 Kingdom cards for the Supply, if any of them have Potion in the cost, add the Potion pile to the Supply. Also add the Potion pile if you are using the promotional card Black Market, and the Black Market deck includes at least one card with Potion in the cost. If you don't have any cards with Potion in the cost in the Supply or the Black Market deck, do not use the Potion pile in this game. When you have a Potion pile, put all 16 Potions in it, no matter how many players there are. In games using this pile, if the pile becomes empty, that will count towards the game ending condition.",
         "name": "Potion",
         "description": "Worth 1 Potion."
     },
@@ -1400,7 +1400,7 @@
         "description": "+2 Actions\nReveal cards from the top of your deck until you reveal an Action or Treasure card. Put that card into your hand and discard the other cards."
     },
     "Duchy": {
-        "extra": "Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.",
+        "extra": "Put 8 in the Supply in a game with two players. Put 12 in the Supply in a game with three or more players.",
         "name": "Duchy",
         "description": "3 <VP>"
     },
@@ -1432,7 +1432,7 @@
     "Groundskeeper": {
         "extra": "This can trigger multiple times in a turn, for cards gained different ways. For example you could play Groundskeeper, then play Engineer gaining an Estate and taking 1<VP>, then in your Buy phase buy a Duchy taking another +1<VP>. Multiple Groundskeepers are cumulative. If you Crown a Groundskeeper, there is still just one Groundskeeper in play, so you only get +1<VP> per Victory card gained.",
         "name": "Groundskeeper",
-        "description": "+1 Card\n +1 Action\n______________________\nWhile this is in play, when you gain a Victory card, +1<VP>"
+        "description": "+1 Card\n+1 Action\n______________________\nWhile this is in play, when you gain a Victory card, +1<VP>"
     },
     "Wandering Minstrel": {
         "extra": "First draw a card, then reveal the top 3 cards of your deck, shuffling your discard pile if there are not enough cards in your deck. If there still are not enough after shuffling, just reveal what you can. Put the revealed Action cards on top of your deck in any order, and discard the other cards. A card with multiple types, one of which is Action, is an Action card. If you didn't reveal any Action cards, no cards will be put on top.",
@@ -1447,15 +1447,15 @@
     "Harbinger": {
         "extra": "First draw a card and get +1 Action; then look through your discard pile, and you may put a card from it on top of your deck.\nPutting a card on top is optional.",
         "name": "Harbinger",
-        "description": "+1 Card\n+1 Action\nLook through your discard pile.  You may put a card from it onto your deck."
+        "description": "+1 Card\n+1 Action\nLook through your discard pile. You may put a card from it onto your deck."
     },
     "Young Witch": {
         "extra": "This card causes there to be an extra pile in the Supply, called the Bane pile; see Preparation. The extra pile is just like other Kingdom card piles - it can be bought, it can be gained via cards like Horn of Plenty, it counts for the end game condition. When you play Young Witch, after you draw 2 cards and discard 2 cards, each other player may reveal a Bane card from his hand; if he does not, he gains a Curse. This attack hits other players in turn order, which matters when the Curse pile is low. Players may still respond to a Young Witch with Reaction cards like Horse Traders or Moat (from Dominion); those happen before Bane cards are revealed. If Secret Chamber (from Dominion: Intrigue) is the Bane card, first you can reveal it for its Reaction ability, and then, if it's still in your hand, you can reveal it to avoid getting a Curse.",
         "name": "Young Witch",
-        "description": "+2 Cards\nDiscard 2 cards. Each other player may reveal a Bane card from his hand.\nIf he doesn\u2019t, he gains a Curse.\nSetup: Add an extra Kingdom card pile costing 2 or 3 to the Supply. Cards from that pile are Bane cards."
+        "description": "+2 Cards\nDiscard 2 cards. Each other player may reveal a Bane card from his hand.\nIf he doesn't, he gains a Curse.\nSetup: Add an extra Kingdom card pile costing 2 or 3 to the Supply. Cards from that pile are Bane cards."
     },
     "Caravan Guard": {
-        "extra": "This gives you +1 Card and +1 Action when you play it, and then + 1 Coin at the start of your next turn after that. This card has a Reaction ability that lets you play it when another player plays an Attack card. Playing this during another player's turn is similar to playing it during your own turn - you put Caravan Guard into play, get +1 Card and +1 Action, and will get + 1 Coin at the start of your next turn - the very next turn you take. However getting +1 Action during someone else's turn does not do anything for you; it does not let you play other Action cards during that player\u2019s turn. Similarly if a token gives you + 1 Coin or +1 Buy during another player's turn, that still does not let you buy cards during that player\u2019s turn (although + 1 Coin can cancel the - token given out by Bridge Troll). The +1 Action (or potential other +'s) does not carry over to your next turn either. After reacting with a Caravan Guard, you can use another one, even one you just drew, and also can use other Reactions, even ones you just drew; you keep going until you have no more Reactions you wish to respond to the Attack with.",
+        "extra": "This gives you +1 Card and +1 Action when you play it, and then + 1 Coin at the start of your next turn after that. This card has a Reaction ability that lets you play it when another player plays an Attack card. Playing this during another player's turn is similar to playing it during your own turn - you put Caravan Guard into play, get +1 Card and +1 Action, and will get + 1 Coin at the start of your next turn - the very next turn you take. However getting +1 Action during someone else's turn does not do anything for you; it does not let you play other Action cards during that player's turn. Similarly if a token gives you + 1 Coin or +1 Buy during another player's turn, that still does not let you buy cards during that player's turn (although + 1 Coin can cancel the - token given out by Bridge Troll). The +1 Action (or potential other +'s) does not carry over to your next turn either. After reacting with a Caravan Guard, you can use another one, even one you just drew, and also can use other Reactions, even ones you just drew; you keep going until you have no more Reactions you wish to respond to the Attack with.",
         "name": "Caravan Guard",
         "description": "+1 Card\n+1 Action\nAt the start of your next turn, +1 Coin\n______________________\nWhen another player plays an Attack card, you may play this from your hand. (+1 Action has no effect if it's not your turn.)"
     },
@@ -1475,7 +1475,7 @@
         "description": "+1 Card, +1 Action\nReveal the top card of your deck; you may discard it. Either way, if it is an\u2026\nAction card, +1 Action\nTreasure card, +1 Coin\nVictory card, +1 Card"
     },
     "Colony": {
-        "extra": "This is not a Kingdom card. You do not use it every game. It is a Victory card worth 10 VP.  If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]",
+        "extra": "This is not a Kingdom card. You do not use it every game. It is a Victory card worth 10 VP. If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]",
         "name": "Colony",
         "description": "10 <VP>"
     },
@@ -1620,7 +1620,7 @@
         "description": "+4 Coins\nReveal your hand. -1 Coin per Treasure card in your hand, to a minimum of 0 Coins."
     },
     "Ball": {
-        "extra": "When you buy this, you take your - 1 Coin token, which will cause you to get 1 Coin less the next time you get Coins.  Then you gain 2 cards, each costing up 4 Coins. They can be 2 copies of the same card or 2 different cards.",
+        "extra": "When you buy this, you take your - 1 Coin token, which will cause you to get 1 Coin less the next time you get Coins. Then you gain 2 cards, each costing up 4 Coins. They can be 2 copies of the same card or 2 different cards.",
         "name": "Ball",
         "description": "Take your - 1 Coin token. Gain 2 cards each costing up to 4 Coin."
     },
@@ -1670,7 +1670,7 @@
         "description": "+1 Card\n+1 Action\nPut this on your Tavern mat.\n______________________\nAt the start of your turn, you may call this, to discard your hand and draw 5 cards."
     },
     "Estate": {
-        "extra": "Put 8 in the Supply in a game with two players.  Put 12 in the Supply in a game with three or more players.",
+        "extra": "Put 8 in the Supply in a game with two players. Put 12 in the Supply in a game with three or more players.",
         "name": "Estate",
         "description": "1 <VP>"
     },
@@ -1762,7 +1762,7 @@
     "Advisor": {
         "extra": "If there are not three cards in your deck, reveal what you can, then shuffle your discard pile into your deck to get the other cards. If there still are not enough, just reveal what you can. No matter how many you revealed, the player to your left chooses one for you to discard, and the remaining cards go into your hand.",
         "name": "Advisor",
-        "description": "+1 Action\nReveal the top 3 cards of your deck.  The player to your left chooses one of them.  Discard that card.  Put the other cards into your hand."
+        "description": "+1 Action\nReveal the top 3 cards of your deck. The player to your left chooses one of them. Discard that card. Put the other cards into your hand."
     },
     "Delve": {
         "extra": "Each purchase of Delve gives you back the Buy you used on it.\nFor example, if you have 7 Coins, you can Delve, then Delve, then buy a card for 3 Coins.",
@@ -1790,9 +1790,9 @@
         "description": "Trash 2 cards from your hand. If you do, gain a silver card; put it into your hand."
     },
     "Sentry": {
-        "extra": "First you draw a card and get +1 Action.\n  Then you look at the top 2 cards of your deck.\n  You can trash both, or discard both, or put both back in either order; or you can trash one and discard one, or trash one and put one back, or discard one and put one back.",
+        "extra": "First you draw a card and get +1 Action.\nThen you look at the top 2 cards of your deck.\nYou can trash both, or discard both, or put both back in either order; or you can trash one and discard one, or trash one and put one back, or discard one and put one back.",
         "name": "Sentry",
-        "description": "+1 Card\n+1 Action\nLook at the top 2 cards of your deck.  Trash and/or discard any number of them.  Put the rest back on top in any order."
+        "description": "+1 Card\n+1 Action\nLook at the top 2 cards of your deck. Trash and/or discard any number of them. Put the rest back on top in any order."
     },
     "Envoy": {
         "extra": "If you do not have 5 cards in your deck, reveal as many as you can and shuffle your discard pile to reveal the rest. The player to your left then chooses one of the revealed cards for you to discard and then you draw the rest. If you do not have enough cards left to reveal 5 cards, even after shuffling, reveal as many as you can. The opponent to your left still discards one card before you draw the rest.",
@@ -1807,7 +1807,7 @@
     "Triumphal Arch": {
         "extra": "For example, if you had 7 copies of Villa and 4 copies of Wild Hunt, you would score 12<VP>.",
         "name": "Triumphal Arch",
-        "description": "When scoring, 3<VP> per copy you have of the 2nd most common Action card among your cards (if it\u2019s a tie, count either)."
+        "description": "When scoring, 3<VP> per copy you have of the 2nd most common Action card among your cards (if it's a tie, count either)."
     },
     "Monument": {
         "extra": "[When a player takes VP tokens, he takes a player mat to put them on. VP tokens are not private and anyone can count them. VP tokens come in 1 VP and 5 VP denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their VP tokens to their score.]",
@@ -1845,7 +1845,7 @@
 		"description": "Hermit: When you play this, look through your discard pile, and then you may choose to trash a card that is not a Treasure, from either your hand or your discard pile. You do not have to trash a card and cannot trash Treasures. A card with multiple types, one of which is Treasure (such as Harem from Intrigue), is a Treasure. After trashing or not, you gain a card costing up to 3 Coins. The card you gain comes from the Supply and is put into your discard pile. Gaining a card is mandatory if it is possible. Then, when you discard Hermit from play - normally, in Clean-up, after playing it in your Action phase - if you did not buy any cards this turn, you trash Hermit and gain a Madman. It does not matter whether or not you gained cards other ways, only whether or not you bought a card. If there are no Madman cards left, you do not gain one. If Hermit is not discarded from play during Clean-up - for example, if you put it on your deck with Scheme (from Hinterlands) - then the ability that trashes it will not trigger."
 	},
 	"Shelters": {
-		"extra": " See Preparation. A shelter is never in the supply.  Hovel: When you buy a Victory card, if Hovel is in your hand, you may trash the Hovel. A card with multiple types, one of which is Victory, is a Victory card. You do not get anything for trashing Hovel; you just get to get rid of it.  Overgrown Estate: It is a Victory card despite being worth 0 Victory. If this is trashed, you draw a card, right then, even in the middle of resolving another card. For example, if you use Altar to trash Overgrown Estate, you first draw a card, then gain a card costing up to 5 Coins. This card does not give you a way to trash itself, it merely does something if you manage to trash it.  Necropolis: This is an Action card; when you play it, you get +2 Actions. ",
+		"extra": " See Preparation. A shelter is never in the supply. Hovel: When you buy a Victory card, if Hovel is in your hand, you may trash the Hovel. A card with multiple types, one of which is Victory, is a Victory card. You do not get anything for trashing Hovel; you just get to get rid of it. Overgrown Estate: It is a Victory card despite being worth 0 Victory. If this is trashed, you draw a card, right then, even in the middle of resolving another card. For example, if you use Altar to trash Overgrown Estate, you first draw a card, then gain a card costing up to 5 Coins. This card does not give you a way to trash itself, it merely does something if you manage to trash it. Necropolis: This is an Action card; when you play it, you get +2 Actions. ",
 		"name": "Shelters",
 		"description": "Hovel: When you buy a Victory card, you may trash this from your hand.\nNecropolis: +2 Actions\nOvergrown Estate: 0 <VP>; when you trash this, +1 Card."
 	},
@@ -1857,7 +1857,7 @@
 	"Settlers - Bustling Village": {
 		"extra": "You can look through your discard pile even if you know there is no Copper in it. Bustling Village: You can look through your discard pile even if you know there are no Settlers in it.",
 		"name": "Settlers / Bustling Village",
-		"description": "Settlers:\n+1 Card\n +1 Action\nLook through your discard pile. You may reveal a Copper from it and put it into your hand.\n\nBustling Village:\n+1 Card\n +3 Actions\nLook through your discard pile. You may reveal a Settlers from it and put it into your hand."
+		"description": "Settlers:\n+1 Card\n+1 Action\nLook through your discard pile. You may reveal a Copper from it and put it into your hand.\n\nBustling Village:\n+1 Card\n+3 Actions\nLook through your discard pile. You may reveal a Settlers from it and put it into your hand."
 	},
 	"Catapult - Rocks": {
 		"extra": "If the card you trash is a treasure, each other player discards down to 3 cards in hand; if the card you trash costs 3 Coins or more, each other player gains a Curse; if it is both (e.g. Silver), both things happen; if it is neither, neither thing happens. Rocks: If you have no cards in hand left to trash, neither thing happens. If it is another player's turn, then it is not your Buy phase, so the Silver goes to your hand.",
@@ -1867,7 +1867,7 @@
 	"Encampment - Plunder": {
 		"extra": "Revealing a Plunder or Gold is optional. When you return Encampment to the Supply, it goes on top of its pile, potentially covering up a Plunder. Plunder: This gives you a <VP> token every time you play it.",
 		"name": "Encampment / Plunder",
-		"description": "Encampment:\n+2 Cards\n +2 Actions\nYou may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up.\nPlunder:\n+2 Coin\n +1<VP>"
+		"description": "Encampment:\n+2 Cards\n+2 Actions\nYou may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up.\nPlunder:\n+2 Coin\n+1<VP>"
 	},
 	"Gladiator - Fortune": {
 		"extra": "If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator. Fortune: You only double your Coin the first time you play a Fortune in a turn; any further times only get you +1 Buy.",
@@ -1877,7 +1877,7 @@
 	"Patrician - Emporium": {
 		"extra": "Cards costing Debt do not cost 5 Coin or more unless they also have a Coin cost of 5 Coin or more. So Fortune does but City Quarter does not. Emporium: This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Dominion: Adventures) called into play this turn.",
 		"name": "Patrician / Emporium",
-		"description": "Patrician:\n+1 Card\n +1 Action\nReveal the top card of your deck. If it costs 5 Coin or more, put it into your hand.\nEmporium:\n+1 Card\n +1 Action\n +1 Coin\n______________________\nWhen you gain this, if you have at least 5 Action cards in play, +2 Victory Tokens."
+		"description": "Patrician:\n+1 Card\n+1 Action\nReveal the top card of your deck. If it costs 5 Coin or more, put it into your hand.\nEmporium:\n+1 Card\n+1 Action\n+1 Coin\n______________________\nWhen you gain this, if you have at least 5 Action cards in play, +2 Victory Tokens."
 	},
 	"Sauna - Avanto": {
 		"extra": "Sauna / Avanto is a split pile with five copies of Sauna placed on top of five copies of Avanto during setup. Sauna is a cantrip that allows you to trash a card when you play a Silver. Avanto is a terminal draw card that can potentially become non-terminal if you have a Sauna in your hand to play.",
