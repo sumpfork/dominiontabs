@@ -25,21 +25,23 @@ class DividerDrawer(object):
         self.canvas = None
 
     def registerFonts(self):
-        try:
-            dirn = os.path.join(self.options.data_path, 'fonts')
+        dirn = os.path.join(self.options.data_path, 'fonts')
+        regularMpath = os.path.join(dirn, 'MinionPro-Regular.ttf')
+        boldMpath    = os.path.join(dirn, 'MinionPro-Bold.ttf')
+        obliqueMpath = os.path.join(dirn, 'MinionPro-Oblique.ttf')
+
+        if os.path.isfile(regularMpath) and os.path.isfile(boldMpath) and os.path.isfile(obliqueMpath):
             self.fontNameRegular = 'MinionPro-Regular'
-            pdfmetrics.registerFont(TTFont(self.fontNameRegular, os.path.join(
-                dirn, 'MinionPro-Regular.ttf')))
+            pdfmetrics.registerFont(TTFont(self.fontNameRegular, regularMpath))
             self.fontNameBold = 'MinionPro-Bold'
-            pdfmetrics.registerFont(TTFont(self.fontNameBold, os.path.join(
-                dirn, 'MinionPro-Bold.ttf')))
+            pdfmetrics.registerFont(TTFont(self.fontNameBold, boldMpath))
             self.fontNameOblique = 'MinionPro-Oblique'
-            pdfmetrics.registerFont(TTFont(self.fontNameOblique, os.path.join(
-                dirn, 'MinionPro-It.ttf')))
-        except:
-            print >> sys.stderr, "Warning, Minion Pro Font ttf file not found! Falling back on Times"
+            pdfmetrics.registerFont(TTFont(self.fontNameOblique, obliqueMpath))
+        else:
+            print >> sys.stderr, "Warning, Minion Pro Font ttf file not found! Falling back on Times, tried:"
+            print >> sys.stderr, regularMpath + ' ' + boldMpath + ' & ' + obliqueMpath
             self.fontNameRegular = 'Times-Roman'
-            self.fontNameBold = 'Times-Bold'
+            self.fontNameBold    = 'Times-Bold'
             self.fontNameOblique = 'Times-Oblique'
 
     def wantCentreTab(self, card):
