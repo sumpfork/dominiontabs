@@ -9,7 +9,7 @@ class TestCardDB(unittest.TestCase):
         options = domdiv.parse_opts([])
         options.data_path = '.'
         cards = domdiv.read_write_card_data(options)
-        self.assertEquals(len(cards), 446)
+        self.assertEquals(len(cards), 445)
         print set(c.cardset_tag for c in cards)
         valid_cardsets = {
             u'base',
