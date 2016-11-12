@@ -1,80 +1,96 @@
 {
     "adventures": {
-        "set_name": "Abenteuer",
+        "set_name": "Abenteuer", 
         "text_icon": "Ab"
     },
+    "adventures extras": {
+        "set_name": "Adventures Extras", 
+        "text_icon": "Ad"
+    },
     "alchemy": {
-        "set_name": "Die Alchemisten",
+        "set_name": "Die Alchemisten", 
         "text_icon": "Al"
     },
     "base": {
-        "set_name": "Base",
+        "set_name": "Base", 
         "text_icon": "B"
     },
     "cornucopia": {
-        "set_name": "Reiche Ernte",
+        "set_name": "Reiche Ernte", 
         "text_icon": "RE"
     },
+    "cornucopia extras": {
+        "set_name": "Cornucopia Extras", 
+        "text_icon": "C"
+    },
     "dark ages": {
-        "set_name": "Dark Ages",
+        "set_name": "Dark Ages", 
+        "text_icon": "DA"
+    },
+    "dark ages extras": {
+        "set_name": "Dark Ages Extras", 
         "text_icon": "DA"
     },
     "dominion1stEdition": {
-        "set_name": "Dominion 1. Ausgabe",
-        "short_name": "Dominion",
+        "set_name": "Dominion 1. Ausgabe", 
+        "short_name": "Dominion", 
         "text_icon": "D1"
     },
     "dominion2ndEdition": {
-        "set_name": "Dominion 2. Ausgabe",
-        "short_name": "Dominion",
+        "set_name": "Dominion 2. Ausgabe", 
+        "short_name": "Dominion", 
         "text_icon": "D2"
     },
     "dominion2ndEditionUpgrade": {
-        "set_name": "Dominion 2. Ausgabe Aktualisierung",
-        "short_name": "Dominion",
+        "set_name": "Dominion 2. Ausgabe Aktualisierung", 
+        "short_name": "Dominion", 
         "text_icon": "D2"
     },
     "empires": {
-        "set_name": "Empires",
+        "set_name": "Empires", 
         "text_icon": "E"
     },
+    "empires extras": {
+        "set_name": "Empires Extras", 
+        "text_icon": "E"
+    },
+    "extras": {
+        "set_name": "Extras", 
+        "text_icon": "Ex"
+    },
     "guilds": {
-        "set_name": "Die Gilden",
+        "set_name": "Die Gilden", 
         "text_icon": "G"
     },
     "hinterlands": {
-        "set_name": "Hinterland",
+        "set_name": "Hinterland", 
         "text_icon": "H"
     },
     "intrigue1stEdition": {
-        "set_name": "Intrige 2. Ausgabe",
-        "short_name": "Intrige",
+        "set_name": "Intrige 2. Ausgabe", 
+        "short_name": "Intrige", 
         "text_icon": "I1"
     },
     "intrigue2ndEdition": {
-        "set_name": "Intrige 2. Ausgabe",
-        "short_name": "Intrigue",
+        "set_name": "Intrige 2. Ausgabe", 
+        "short_name": "Intrigue", 
         "text_icon": "I2"
     },
     "intrigue2ndEditionUpgrade": {
-        "set_name": "Intrige 2. Ausgabe Aktualisierung",
-        "short_name": "Intrigue",
+        "set_name": "Intrige 2. Ausgabe Aktualisierung", 
+        "short_name": "Intrigue", 
         "text_icon": "I2"
     },
     "promo": {
-        "set_name": "Promo",
-        "text_icon": "P"
+        "set_name": "Promo", 
+        "text_icon": "Pm"
     },
     "prosperity": {
-        "set_name": "Bl\u00fctezeit",
+        "set_name": "Blütezeit", 
         "text_icon": "Bl"
     },
     "seaside": {
-        "set_name": "Seaside",
+        "set_name": "Seaside", 
         "text_icon": "S"
-    },
-    "extras": {
-        "set_name": "Extras",
-        "text_icon": "Ex"
     }
 }
