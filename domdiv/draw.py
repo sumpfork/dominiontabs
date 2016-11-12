@@ -27,7 +27,7 @@ class DividerDrawer(object):
     def registerFonts(self):
         dirn = os.path.join(self.options.data_path, 'fonts')
         regularMpath = os.path.join(dirn, 'MinionPro-Regular.ttf')
-        boldMpath    = os.path.join(dirn, 'MinionPro-Bold.ttf')
+        boldMpath = os.path.join(dirn, 'MinionPro-Bold.ttf')
         obliqueMpath = os.path.join(dirn, 'MinionPro-Oblique.ttf')
 
         if os.path.isfile(regularMpath) and os.path.isfile(boldMpath) and os.path.isfile(obliqueMpath):
@@ -41,7 +41,7 @@ class DividerDrawer(object):
             print >> sys.stderr, "Warning, Minion Pro Font ttf file not found! Falling back on Times, tried:"
             print >> sys.stderr, regularMpath + ' ' + boldMpath + ' & ' + obliqueMpath
             self.fontNameRegular = 'Times-Roman'
-            self.fontNameBold    = 'Times-Bold'
+            self.fontNameBold = 'Times-Bold'
             self.fontNameOblique = 'Times-Oblique'
 
     def wantCentreTab(self, card):

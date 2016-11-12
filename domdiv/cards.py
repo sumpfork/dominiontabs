@@ -180,6 +180,7 @@ class CardType(object):
     def getTabCostHeightOffset(self):
         return self.tabCostHeightOffset
 
+
 cardTypes = [
     CardType(('Action',), 'action.png'),
     CardType(('Action', 'Attack'), 'action.png'),

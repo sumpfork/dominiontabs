@@ -18,8 +18,25 @@ TAB_SIDE_CHOICES = ["left", "right", "left-alternate", "right-alternate",
 TEXT_CHOICES = ["card", "rules", "blank"]
 EDITION_CHOICES = ["1", "2", "latest", "all"]
 
-LANGUAGE_CHOICES = ["en_us", "de", "fr", "it"]
 LANGUAGE_DEFAULT = 'en_us'
+LANGUAGE_XX = 'xx' 
+
+
+def get_languages(path):
+    languages = []
+    for name in os.listdir(path):
+        dir_path = os.path.join(path, name)
+        if os.path.isdir(dir_path):
+            cards_file = os.path.join(dir_path, "cards_" + name + ".json")
+            sets_file = os.path.join(dir_path, "sets_" + name + ".json")
+            if os.path.isfile(cards_file) and os.path.isfile(sets_file):
+                languages.append(name)
+    if LANGUAGE_XX in languages:
+        languages.remove(LANGUAGE_XX)
+    return languages
+
+  
+LANGUAGE_CHOICES = get_languages("card_db")
 
 
 def add_opt(options, option, value):
