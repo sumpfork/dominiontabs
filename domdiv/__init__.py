@@ -35,7 +35,7 @@ def get_languages(path):
         languages.remove(LANGUAGE_XX)
     return languages
 
-  
+
 LANGUAGE_CHOICES = get_languages("card_db")
 
 
