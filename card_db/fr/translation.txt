@@ -1,0 +1,71 @@
+# Translation Instructions
+
+## File Format
+/card_db/
+        xx/
+           cards_xx.json
+           sets_xx.json
+           translation.txt
+           
+where xx is ISO 639-1 standard language code in lower case with under bar '_' replacing dash '-'
+Please rename the directory and the files to match the language you are providing.
+
+
+## Character encoding
+The files:
+    cards_xx.json
+    sets_xx.json
+must be encoded in ISO 8859-15, also known as  "Latin alphabet no. 9"
+This character set is used throughout the Americas, Western Europe, Oceania, and much of Africa. 
+It is also commonly used in most standard romanizations of East-Asian languages.
+
+If you have a language that is not supported by ISO 8859-15 please contact the developers. 
+
+
+## Anatomy of sets_xx.json
+Entries in this file represent Dominion sets/expansions.  A typical entry looks like:
+    "alchemy": {
+        "set_name": "Alchimia",
+        "text_icon": "Al"
+    },
+    
+The set key word (e.g., "alchemy" for the above entry) MUST NOT BE CHANGED.  This value is used to identify the translation entry.
+The key word "set_name" MUST NOT BE CHANGED, but the value after the : should be changed to the name of the set in the target language.
+The key word "text_icon" MUST NOT BE CHANGED, but the value after the : should be a one or two letter identifier to be used by the set if the set graphics are not displayed.  This is usually the first letter of the set name in the target language.
+Do not change any punctuation outside of the quotes '"'.  For example, brackets '{' or '}', colons ':', quotes '"' or commas ','.
+
+
+## Anatomy of cards_xx.json
+Entries in this file represent Dominion cards, and groups of cards.  A typical entry looks like:
+    "Gold": {
+        "description": "Worth 3 Coins.",
+        "extra": "30 cards per game.",
+        "name": "Gold",
+        "untranslated" : "description, extra, name"
+    },
+The card key word (e.g., "Gold" for the above entry) MUST NOT BE CHANGED.  This value is used to identify the translation entry.
+The key word "name" MUST NOT BE CHANGED, but the value after the : should be changed to the name of the card in the target language.
+The key word "description" MUST NOT BE CHANGED, but the value after the : should be changed to the card text in the target language.
+The key word "extra" MUST NOT BE CHANGED, but the value after the : should be changed to any extra rules or explanations for the card in the target language.  If you purposely want no extra text, enter "".
+The key word "untranslated" MUST NOT BE CHANGED, but the value after the : should be changed.  Removed any key word for which you have provided a translation.
+    For example:
+        - if you provided the "name" of the card, and only the "name", then change to "description, extra"
+        - if you provided the "name" of the card and it's "description", but have not translated the "extra", then change to "extra"
+        - if you provided all 3 entries, then change to ""
+    The "untranslated" entry is used during maintanance of the language files to update any remaining default language entries that might have changed.
+
+
+Special character sequences are recognized by the program to substitute graphics in the text.  These include:
+   '\n' for a new line
+   '<VP>' for a Victory Point graphic
+   'Potion' for a small Potion graphic
+   '# Coin'  where # is a number 0 - 13, a question mark '?', or the letters 'empty' for a small coin graphic with the # on top
+   '# Coins' where # is a number 0 - 13, a question mark '?', or the letters 'empty' for a small coin graphic with the # on top
+   '# coin'  where # is a number 0 - 13, a question mark '?', or the letters 'empty' for a small coin graphic with the # on top
+   '# coins' where # is a number 0 - 13, a question mark '?', or the letters 'empty' for a small coin graphic with the # on top
+   For example:
+      - the text '1 coin' would produce a graphic of a coin with the number 1 on top.
+      - the text 'empty coin' would produce a graphic of only a coin.
+
+   So if you want the graphic in your text, please do not translate '<VP>', 'Potion', or the 'coin' variations into the target language.
+
