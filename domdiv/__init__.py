@@ -18,8 +18,9 @@ TAB_SIDE_CHOICES = ["left", "right", "left-alternate", "right-alternate",
 TEXT_CHOICES = ["card", "rules", "blank"]
 EDITION_CHOICES = ["1", "2", "latest", "all"]
 
-LANGUAGE_DEFAULT = 'en_us'  #  default language, which takes priority
-LANGUAGE_XX = 'xx'          #  language for starting a translation (i.e., not a real language)
+LANGUAGE_DEFAULT = 'en_us'
+LANGUAGE_XX = 'xx' 
+
 
 def get_languages(path):
     languages = []
@@ -34,6 +35,7 @@ def get_languages(path):
         languages.remove(LANGUAGE_XX)
     return languages
 
+  
 LANGUAGE_CHOICES = get_languages("card_db")
 
 
