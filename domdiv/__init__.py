@@ -467,7 +467,7 @@ class CardSorter(object):
 
     def by_colour_sort_key(self, card):
         return card.getType().getTypeNames(), card.name
-        
+
     def by_cost_sort_key(self, card):
         return card.cardset, int(card.isExpansion()), card.get_total_cost(card), card.name
 
