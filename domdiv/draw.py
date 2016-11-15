@@ -337,7 +337,7 @@ class DividerDrawer(object):
         potSize = 11
 
         if (not card.debtcost or
-               (card.debtcost and card.cost != "" and int(card.cost) > 0)):
+             (card.debtcost and card.cost != "" and int(card.cost) > 0)):
 
             self.canvas.drawImage(
                 os.path.join(self.options.data_path, 'images', 'coin_small.png'),
