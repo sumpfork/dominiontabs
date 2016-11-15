@@ -391,7 +391,7 @@
     },
     "Possession": {
         "description": "The player to your left takes an extra turn after this one, in which you can see all cards he can and make all decisions for him. Any cards he would gain on that turn, you gain instead; any cards of his that are trashed are set aside and returned to his discard pile at end of turn.", 
-        "extra": "You are not taking a turn with the deck of the player to your left; that player is taking a turn, with you making the decisions and gaining the cards. This is a crucial difference to keep in mind when considering card interactions - the \"you\" in all cards still refers to the player being Possessed, not the player doing the Possessing. Possession has several pieces to it: -You can see the Possessed player's cards for the entire turn, which means you will see his next hand during Clean-up. You will also see any cards he is entitled to see due to card rules; for example, you can look at cards he has set aside with Native Village (from Seaside). You can count any cards he can count. -Any cards the Possessed player would have gained in any way, you gain instead; this includes cards bought, as well as cards gained due to Actions. The cards you gain this way go to your discard pile, even if they would have gone to that player's hand or the top of his deck or somewhere else. You only gain cards he would have; you do not gain tokens he would have (for example from the Seaside card Pirate Ship). [Continued on blank tab]", 
+        "extra": "You are not taking a turn with the deck of the player to your left; that player is taking a turn, with you making the decisions and gaining the cards. This is a crucial difference to keep in mind when considering card interactions - the \"you\" in all cards still refers to the player being Possessed, not the player doing the Possessing. Possession has several pieces to it: -You can see the Possessed player's cards for the entire turn, which means you will see his next hand during Clean-up. You will also see any cards he is entitled to see due to card rules; for example, you can look at cards he has set aside with Native Village (from Seaside). You can count any cards he can count. -Any cards the Possessed player would have gained in any way, you gain instead; this includes cards bought, as well as cards gained due to Actions. The cards you gain this way go to your discard pile, even if they would have gone to that player's hand or the top of his deck or somewhere else. [Possession also gives the Possessing player all tokens the Possessed player would get, including empty Coins, <VP>, and Debt tokens.]", 
         "name": "Possession", 
         "untranslated": "description, extra, name"
     },
@@ -942,7 +942,7 @@
         "untranslated": "description, extra, name"
     },
     "Mine": {
-        "description": "Trash a Treasure card from your hand. Gain a Treasure card costing up to 3 Coins more; put it into your hand.", 
+        "description": "[You may] Trash a Treasure card from your hand. Gain a Treasure card costing up to 3 Coins more; put it into your hand.", 
         "extra": "Generally, you can trash a Copper card and gain a Silver, or trash a Silver card and gain a Gold. However, you could also trash a Treasure to gain the same Treasure or a cheaper one. The gained card goes in your hand; thus, you can spend it the same turn. If you don't have a Treasure card in your hand to trash, you can't gain anything.", 
         "name": "Mine", 
         "untranslated": "description, extra, name"
@@ -954,7 +954,7 @@
         "untranslated": "description, extra, name"
     },
     "Moneylender": {
-        "description": "Trash a Copper from your hand. If you do, +3 Coins.", 
+        "description": "[You may] Trash a Copper from your hand. If you do, +3 Coins.", 
         "extra": "If you do not have a Copper in your hand to trash, you don't get the +3 Coins to spend in the Buy phase.", 
         "name": "Moneylender", 
         "untranslated": "description, extra, name"
@@ -972,7 +972,7 @@
         "untranslated": "description, extra, name"
     },
     "Throne Room": {
-        "description": "Choose an Action card in your hand. Play it twice.", 
+        "description": "[You may] Choose an Action card in your hand. Play it twice.", 
         "extra": "You pick another Action card in your hand, play it, and play it again. The second use of the Action card doesn't use up any extra Actions you have. You completely resolve playing the Action the first time before playing it the second time. If you Throne Room a Throne Room, you play an Action, doing it twice, and then play another Action and do it twice; you do not resolve an Action four times. If you Throne Room a card that gives you +1 Action, such as Market, you will end up with 2 Actions left afterwards, which is tricky, because if you'd just played Market twice you'd only have 1 Action left afterwards. Remember to count the number of Actions you have remaining out loud to keep from getting confused! You cannot play any other Actions in between playing the Throne Roomed Action twice.", 
         "name": "Throne Room", 
         "untranslated": "description, extra, name"
@@ -1728,7 +1728,7 @@
         "untranslated": "description, extra, name"
     },
     "Masquerade": {
-        "description": "+2 Card, Each player passes a card in their hand to the player on their left. You may trash a card from your hand.", 
+        "description": "+2 Card, Each player [with any cards in hand] passes a card in their hand to the player on their left. You may trash a card from your hand.", 
         "extra": "First you draw 2 cards. Next, each player (all at the same time) chooses a card from his hand and places it face down on the table between him and the player to his left. The player to the left then puts that card into his hand. Cards are passed simultaneously, so you may not look at the card you are receiving until you have chosen a card to pass. Finally, you may trash a card from your hand. Only the player who played Masquerade may trash a card. This is not an Attack and cannot be responded to with Moat or Secret Chamber.", 
         "name": "Masquerade", 
         "untranslated": "description, extra, name"
@@ -1818,7 +1818,7 @@
         "untranslated": "description, extra, name"
     },
     "Mill": {
-        "description": "+1 Card\n+1 Action\n\nYou may discard 2 cards, for +2 Coin.\n______________________\nWorth 1 VP", 
+        "description": "+1 Card\n+1 Action\n\nYou may discard 2 cards, for +2 Coin.\n______________________\nWorth 1 <VP>", 
         "extra": "You can choose to discard 2 cards even if you only have one card in hand, but you only get +2 Coin if you actually discarded 2 cards.\n______________________\nUse 8 Mills for games with 2 players, 12 for games with 3 or more players.", 
         "name": "Mill", 
         "untranslated": "description, extra, name"
