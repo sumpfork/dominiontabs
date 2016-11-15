@@ -91,7 +91,9 @@ class Card(object):
         # Return a tuple that represents the total cost of card c
         # Make any cost with a '*' larger than anything else
         # convert cost (a string) into a number
-        if '*' in c.cost:
+        if not c.cost:
+            c_cost = 9999     # None or empty
+        elif '*' in c.cost:
             c_cost = 9999  # make it a really big number
         else:
             try:
