@@ -11,6 +11,7 @@ from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
 
 
+
 def split(l, n):
     i = 0
     while i < len(l) - n:
@@ -328,13 +329,30 @@ class DividerDrawer(object):
         return width
 
     def drawCost(self, card, x, y, costOffset=-1):
-        # base width is 16 (for image) + 2 (1 pt border on each side)
-        width = 18
+        # width starts at 2 (1 pt border on each side)
+        width = 2
 
         costHeight = y + costOffset
         coinHeight = costHeight - 5
         potHeight = y - 3
         potSize = 11
+
+        if (not card.debtcost or 
+            (card.debtcost and card.cost != "" and int(card.cost) > 0) ):
+            
+            self.canvas.drawImage(
+                os.path.join(self.options.data_path, 'images', 'coin_small.png'),
+                x,
+                coinHeight,
+                16,
+                16,
+                preserveAspectRatio=True,
+                mask='auto')
+            self.canvas.setFont(self.fontNameBold, 12)
+            self.canvas.drawCentredString(x + 8, costHeight, str(card.cost))
+            self.canvas.setFillColorRGB(0, 0, 0)
+            x += 17
+            width += 16
 
         if card.debtcost:
             self.canvas.drawImage(
@@ -344,49 +362,25 @@ class DividerDrawer(object):
                 16,
                 16,
                 preserveAspectRatio=True,
-                mask=[255, 255, 255, 255, 255, 255])
-            cost = str(card.debtcost)
-            if card.cost != "" and int(card.cost) > 0:
-                self.canvas.drawImage(
-                    os.path.join(self.options.data_path, 'images',
-                                 'coin_small.png'),
-                    x + 17,
-                    coinHeight,
-                    16,
-                    16,
-                    preserveAspectRatio=True,
-                    mask=[255, 255, 255, 255, 255, 255])
-                self.canvas.setFont(self.fontNameBold, 12)
-                self.canvas.drawCentredString(x + 8 + 17, costHeight,
-                                              str(card.cost))
-                self.canvas.setFillColorRGB(0, 0, 0)
-                width += 16
+                mask=[170, 255, 170, 255, 170, 255])
             self.canvas.setFillColorRGB(1, 1, 1)
-        else:
-            self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images',
-                             'coin_small.png'),
-                x,
-                coinHeight,
-                16,
-                16,
-                preserveAspectRatio=True,
-                mask='auto')
-            cost = str(card.cost)
+            self.canvas.setFont(self.fontNameBold, 12)
+            self.canvas.drawCentredString(x + 8, costHeight, str(card.debtcost))
+            self.canvas.setFillColorRGB(0, 0, 0)
+            x += 17
+            width += 16
+
         if card.potcost:
             self.canvas.drawImage(
                 os.path.join(self.options.data_path, 'images', 'potion.png'),
-                x + 17,
+                x,
                 potHeight,
                 potSize,
                 potSize,
                 preserveAspectRatio=True,
-                mask=[255, 255, 255, 255, 255, 255])
+                mask='auto')
             width += potSize
 
-        self.canvas.setFont(self.fontNameBold, 12)
-        self.canvas.drawCentredString(x + 8, costHeight, cost)
-        self.canvas.setFillColorRGB(0, 0, 0)
         return width
 
     def drawSetIcon(self, setImage, x, y):
@@ -630,22 +624,25 @@ class DividerDrawer(object):
             if self.options.notch_width1 > 0:
                 usedHeight += self.options.notch_height
 
+        # Add 'body-top' items
         drewTopIcon = False
+        Image_x_left = 4
         if 'body-top' in self.options.cost and not card.isExpansion():
-            self.drawCost(card, cm / 4.0, totalHeight - usedHeight - 0.5 * cm)
+            Image_x_left += self.drawCost(card, Image_x_left, totalHeight - usedHeight - 0.5 * cm)
             drewTopIcon = True
 
-        Image_x = self.options.dividerWidth - 16
+        Image_x_right = self.options.dividerWidth - 4
         if 'body-top' in self.options.set_icon and not card.isExpansion():
             setImage = card.setImage()
             if setImage:
-                self.drawSetIcon(setImage, Image_x,
+                Image_x_right -= 16
+                self.drawSetIcon(setImage, Image_x_right,
                                  totalHeight - usedHeight - 0.5 * cm - 3)
-                Image_x -= 16
                 drewTopIcon = True
 
         if self.options.count:
-            self.drawCardCount(card, Image_x,
+            Image_x_right -= 16
+            self.drawCardCount(card, Image_x_right,
                                totalHeight - usedHeight - 0.5 * cm)
             drewTopIcon = True
 
@@ -659,7 +656,7 @@ class DividerDrawer(object):
         elif divider_text == "rules":
             # Add the extra rules text to the divider
             if card.extra:
-                descriptions = (card.extra, )
+                descriptions = re.split("\n", card.extra)
             else:
                 # Asked for rules and they don't exist, so don't print anything
                 return
