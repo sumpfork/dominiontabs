@@ -174,9 +174,15 @@ def parse_opts(arglist):
         help="draw only tabs to be printed on labels, no divider outlines")
     parser.add_argument(
         "--order",
-        choices=["expansion", "global", "colour"],
+        choices=["expansion", "global", "colour", "cost"],
+        default="expansion",
         dest="order",
-        help="sort order for the cards, whether by expansion or globally alphabetical")
+        help="sort order for the cards: "
+        " 'global' will sort by card name;"
+        " 'expansion' will sort by expansion, then card name;"
+        " 'colour' will sort by card type, then card name;"
+        " 'cost' will sort by expansion, then card cost, then name;"
+        " default:expansion")
     parser.add_argument("--expansion_dividers",
                         action="store_true",
                         dest="expansion_dividers",
@@ -428,9 +434,11 @@ class CardSorter(object):
     def __init__(self, order, baseCards):
         self.order = order
         if order == "global":
-            self.sort_key = self.global_sort_key
+            self.sort_key = self.by_global_sort_key
         elif order == "colour":
-            self.sort_key = self.colour_sort_key
+            self.sort_key = self.by_colour_sort_key
+        elif order == "cost":
+            self.sort_key = self.by_cost_sort_key
         else:
             self.sort_key = self.by_expansion_sort_key
 
@@ -450,15 +458,18 @@ class CardSorter(object):
     def isBaseExpansionCard(self, card):
         return card.cardset.lower() != 'base' and card.name in self.baseCards
 
-    def global_sort_key(self, card):
+    def by_global_sort_key(self, card):
         return int(card.isExpansion()), self.baseIndex(card.name), card.name
 
     def by_expansion_sort_key(self, card):
         return card.cardset, int(card.isExpansion()), self.baseIndex(
             card.name), card.name
 
-    def colour_sort_key(self, card):
+    def by_colour_sort_key(self, card):
         return card.getType().getTypeNames(), card.name
+
+    def by_cost_sort_key(self, card):
+        return card.cardset, int(card.isExpansion()), card.get_total_cost(card), card.name
 
     def __call__(self, card):
         return self.sort_key(card)

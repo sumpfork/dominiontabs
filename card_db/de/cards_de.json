@@ -380,7 +380,7 @@
     },
     "Possession": {
         "description": "Der Spieler links von dir führt einen Extra-Zug direkt nach diesem aus. Dabei siehst du alle Karten, die auch er sieht und du fällst alle Entscheidungen für ihn. Alle Karten, die er nimmt oder kauft, legst du auf einen Ablagestapel. Alle Karten, die er in diesem Zug entsorgt, werden zur Seite gelegt und am Ende des Zuges auf seinen Ablagestapel gelegt. ", 
-        "extra": "You are not taking a turn with the deck of the player to your left; that player is taking a turn, with you making the decisions and gaining the cards. This is a crucial difference to keep in mind when considering card interactions - the \"you\" in all cards still refers to the player being Possessed, not the player doing the Possessing. Possession has several pieces to it: -You can see the Possessed player's cards for the entire turn, which means you will see his next hand during Clean-up. You will also see any cards he is entitled to see due to card rules; for example, you can look at cards he has set aside with Native Village (from Seaside). You can count any cards he can count. -Any cards the Possessed player would have gained in any way, you gain instead; this includes cards bought, as well as cards gained due to Actions. The cards you gain this way go to your discard pile, even if they would have gone to that player's hand or the top of his deck or somewhere else. You only gain cards he would have; you do not gain tokens he would have (for example from the Seaside card Pirate Ship). [Continued on blank tab]", 
+        "extra": "You are not taking a turn with the deck of the player to your left; that player is taking a turn, with you making the decisions and gaining the cards. This is a crucial difference to keep in mind when considering card interactions - the \"you\" in all cards still refers to the player being Possessed, not the player doing the Possessing. Possession has several pieces to it: -You can see the Possessed player's cards for the entire turn, which means you will see his next hand during Clean-up. You will also see any cards he is entitled to see due to card rules; for example, you can look at cards he has set aside with Native Village (from Seaside). You can count any cards he can count. -Any cards the Possessed player would have gained in any way, you gain instead; this includes cards bought, as well as cards gained due to Actions. The cards you gain this way go to your discard pile, even if they would have gone to that player's hand or the top of his deck or somewhere else. [Possession also gives the Possessing player all tokens the Possessed player would get, including empty Coins, <VP>, and Debt tokens.]", 
         "name": "Besessenheit", 
         "untranslated": "extra"
     },
@@ -1768,7 +1768,7 @@
         "untranslated": "description, extra, name"
     },
     "Mill": {
-        "description": "+1 Card\n+1 Action\n\nYou may discard 2 cards, for +2 Coin.\n______________________\nWorth 1 VP", 
+        "description": "+1 Card\n+1 Action\n\nYou may discard 2 cards, for +2 Coin.\n______________________\nWorth 1 <VP>", 
         "extra": "You can choose to discard 2 cards even if you only have one card in hand, but you only get +2 Coin if you actually discarded 2 cards.\n______________________\nUse 8 Mills for games with 2 players, 12 for games with 3 or more players.", 
         "name": "Mill", 
         "untranslated": "description, extra, name"
