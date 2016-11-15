@@ -11,7 +11,6 @@ from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
 
 
-
 def split(l, n):
     i = 0
     while i < len(l) - n:
@@ -337,9 +336,9 @@ class DividerDrawer(object):
         potHeight = y - 3
         potSize = 11
 
-        if (not card.debtcost or 
-            (card.debtcost and card.cost != "" and int(card.cost) > 0) ):
-            
+        if (not card.debtcost or
+               (card.debtcost and card.cost != "" and int(card.cost) > 0)):
+
             self.canvas.drawImage(
                 os.path.join(self.options.data_path, 'images', 'coin_small.png'),
                 x,
