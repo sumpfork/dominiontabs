@@ -374,9 +374,9 @@ class DividerDrawer(object):
         potSize = 11
 
         if (not
-           (card.cost == "" or
-           (card.debtcost and int(card.cost) == 0) or
-           (card.potcost and int(card.cost) == 0))):
+            (card.cost == "" or
+            (card.debtcost and int(card.cost) == 0) or
+            (card.potcost and int(card.cost) == 0))):
 
             self.canvas.drawImage(
                 os.path.join(self.options.data_path, 'images', 'coin_small.png'),
@@ -686,7 +686,7 @@ class DividerDrawer(object):
                                totalHeight - usedHeight - 0.5 * cm)
             drewTopIcon = True
 
-        if (self.options.types and not card.isExpansion() ):
+        if (self.options.types and not card.isExpansion()):
 
             #  Calculate how much width have for printing
             #  Want centered, but number of other items can limit
@@ -698,7 +698,7 @@ class DividerDrawer(object):
             #  Calculate font size
             fontSize = 8
             width = stringWidth(card.types_name, self.fontNameRegular, fontSize)
-            while width > textWidth :
+            while width > textWidth:
                 fontSize -= .01
                 width = stringWidth(card.types_name, self.fontNameRegular, fontSize)
 
