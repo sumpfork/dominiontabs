@@ -219,7 +219,6 @@ class DividerDrawer(object):
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('empty\s(c|C)oin(s)?', replace, text)
 
-
         # VP
         replace = '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'120%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.5)
