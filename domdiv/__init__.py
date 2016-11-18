@@ -545,9 +545,9 @@ def add_type_text(options, types={}, language='en_us'):
     language = language.lower()
     # Read in the set text and store for later
     type_text_filepath = os.path.join(options.data_path,
-                                     "card_db",
-                                     language,
-                                     "types_" + language + ".json")
+                                      "card_db",
+                                      language,
+                                      "types_" + language + ".json")
     with codecs.open(type_text_filepath, 'r', 'utf-8') as type_text_file:
         type_text = json.load(type_text_file)
     assert type_text, "Could not load type text for %r" % language
@@ -680,7 +680,7 @@ def filter_sort_cards(cards, options):
                         group_cards[card.group_tag].image = card.image
 
                     group_cards[card.group_tag].count += card.count    # increase the count
-                    # group_cards[card.group_tag].set_lowest_cost(card)  # set holder to the lowest cost of the two cards
+                    # group_cards[card.group_tag].set_lowest_cost(card)  # set holder to lowest cost of the two cards
 
         cards = keep_cards
 
