@@ -9,6 +9,7 @@ from reportlab.platypus import Paragraph
 from reportlab.lib.enums import TA_JUSTIFY
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.pdfmetrics import stringWidth
 
 
 def split(l, n):
@@ -372,8 +373,10 @@ class DividerDrawer(object):
         potHeight = y - 3
         potSize = 11
 
-        if (not card.debtcost or
-           (card.debtcost and card.cost != "" and int(card.cost) > 0)):
+        if (not
+           (card.cost == "" or
+           (card.debtcost and int(card.cost) == 0) or
+           (card.potcost and int(card.cost) == 0))):
 
             self.canvas.drawImage(
                 os.path.join(self.options.data_path, 'images', 'coin_small.png'),
@@ -420,6 +423,7 @@ class DividerDrawer(object):
 
     def drawSetIcon(self, setImage, x, y):
         # set image
+        w = 2
         self.canvas.drawImage(
             os.path.join(self.options.data_path, 'images', setImage),
             x,
@@ -427,6 +431,7 @@ class DividerDrawer(object):
             14,
             12,
             mask='auto')
+        return w + 14
 
     def nameWidth(self, name, fontSize):
         w = 0
@@ -679,6 +684,30 @@ class DividerDrawer(object):
             Image_x_right -= 16
             self.drawCardCount(card, Image_x_right,
                                totalHeight - usedHeight - 0.5 * cm)
+            drewTopIcon = True
+
+        if (self.options.types and not card.isExpansion() ):
+
+            #  Calculate how much width have for printing
+            #  Want centered, but number of other items can limit
+            left_margin = Image_x_left
+            right_margin = self.options.dividerWidth - Image_x_right
+            worst_margin = max(left_margin, right_margin)
+            textWidth = self.options.dividerWidth - 2 * worst_margin
+
+            #  Calculate font size
+            fontSize = 8
+            width = stringWidth(card.types_name, self.fontNameRegular, fontSize)
+            while width > textWidth :
+                fontSize -= .01
+                width = stringWidth(card.types_name, self.fontNameRegular, fontSize)
+
+            #  Print out the text in the right spot
+            h = totalHeight - usedHeight - 0.5 * cm
+            w = self.options.dividerWidth / 2 - width / 2
+            self.canvas.setFont(self.fontNameRegular, fontSize)
+            if card.types_name != ' ':
+                self.canvas.drawString(w, h, card.types_name)
             drewTopIcon = True
 
         if drewTopIcon:

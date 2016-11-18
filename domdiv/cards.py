@@ -3,13 +3,11 @@ import os
 from reportlab.lib.units import cm
 
 
-def getType(typespec):
-    return cardTypes[tuple(typespec)]
-
-
 class Card(object):
 
     sets = None
+    types = None
+    type_names = None
 
     class CardJSONEncoder(json.JSONEncoder):
 
@@ -24,7 +22,8 @@ class Card(object):
 
     def __init__(self, name=None, cardset='', types=None, cost='', description='',
                  potcost=0, debtcost=0, extra='', count=-1, card_tag='missing card_tag',
-                 cardset_tags=None, group_tag='', image=None, text_icon=None, cardset_tag=''):
+                 cardset_tags=None, group_tag='', group_top=False, image=None,
+                 text_icon=None, cardset_tag=''):
 
         if types is None:
             types = []  # make sure types is a list
@@ -36,6 +35,7 @@ class Card(object):
         self.name = name.strip()
         self.cardset = cardset.strip()
         self.types = types
+        self.types_name = ""
         self.cost = cost
         self.description = description
         self.potcost = potcost
@@ -44,11 +44,12 @@ class Card(object):
         self.card_tag = card_tag
         self.cardset_tags = cardset_tags
         self.group_tag = group_tag
+        self.group_top = group_top
         self.image = image
         self.text_icon = text_icon
         self.cardset_tag = cardset_tag
         if count < 0:
-            self.count = getType(self.types).getTypeDefaultCardCount()
+            self.count = self.getType().getTypeDefaultCardCount()
         else:
             self.count = int(count)
 
@@ -63,7 +64,7 @@ class Card(object):
         return self.count * cm * (thickness / 60.0) + 2
 
     def getType(self):
-        return getType(self.types)
+        return Card.types[tuple(self.types)]
 
     def __repr__(self):
         return '"' + self.name + '"'
@@ -89,17 +90,22 @@ class Card(object):
 
     def get_total_cost(self, c):
         # Return a tuple that represents the total cost of card c
-        # Make any cost with a '*' larger than anything else
+        # Hightest cost cards are in order:
+        # - Landmarks to sort at the very end
+        # - cards with * since that can mean anything
+        # - cards with numeric errors
         # convert cost (a string) into a number
-        if not c.cost:
-            c_cost = 9999     # None or empty
+        if c.isLandmark():
+            c_cost = 999
+        elif not c.cost:
+            c_cost = 0     # if no cost, treat as 0
         elif '*' in c.cost:
-            c_cost = 9999  # make it a really big number
+            c_cost = 998  # make it a really big number
         else:
             try:
                 c_cost = int(c.cost)
             except ValueError:
-                c_cost = 9999  # can't, so make it a really big number
+                c_cost = 997  # can't, so make it a really big number
 
         return c_cost, c.potcost, c.debtcost
 
@@ -139,7 +145,7 @@ class Card(object):
         return setTextIcon
 
     def isBlank(self):
-        return False
+        return self.isType('Blank')
 
 
 class BlankCard(Card):
@@ -153,12 +159,16 @@ class BlankCard(Card):
 
 class CardType(object):
 
-    def __init__(self, typeNames, tabImageFile, defaultCardCount=10, tabTextHeightOffset=0, tabCostHeightOffset=-1):
-        self.typeNames = typeNames
-        self.tabImageFile = tabImageFile
+    @staticmethod
+    def decode_json(obj):
+        return CardType(**obj)
+
+    def __init__(self, card_type, card_type_image, defaultCardCount=10, tabTextHeightOffset=0, tabCostHeightOffset=-1):
+        self.typeNames = tuple(card_type)
+        self.tabImageFile = card_type_image
+        self.defaultCardCount = defaultCardCount
         self.tabTextHeightOffset = tabTextHeightOffset
         self.tabCostHeightOffset = tabCostHeightOffset
-        self.defaultCardCount = defaultCardCount
 
     def getTypeDefaultCardCount(self):
         return self.defaultCardCount
@@ -181,52 +191,3 @@ class CardType(object):
 
     def getTabCostHeightOffset(self):
         return self.tabCostHeightOffset
-
-
-cardTypes = [
-    CardType(('Action',), 'action.png'),
-    CardType(('Action', 'Attack'), 'action.png'),
-    CardType(('Action', 'Attack', 'Prize'), 'action.png', 1),
-    CardType(('Action', 'Reaction'), 'reaction.png'),
-    CardType(('Action', 'Victory'), 'action-victory.png', 12),
-    CardType(('Action', 'Duration'), 'duration.png', 10),
-    CardType(('Action', 'Duration', 'Reaction'), 'duration-reaction.png'),
-    CardType(('Action', 'Attack', 'Duration'), 'duration.png'),
-    CardType(('Action', 'Looter'), 'action.png'),
-    CardType(('Action', 'Prize'), 'action.png', 1),
-    CardType(('Action', 'Ruins'), 'ruins.png', 10, 0, 1),
-    CardType(('Action', 'Shelter'), 'action-shelter.png', 6),
-    CardType(('Action', 'Attack', 'Duration'), 'duration.png'),
-    CardType(('Action', 'Attack', 'Looter'), 'action.png'),
-    CardType(('Action', 'Attack', 'Traveller'), 'action.png', 5),
-    CardType(('Action', 'Reserve'), 'reserve.png', 10),
-    CardType(('Action', 'Reserve', 'Victory'), 'reserve-victory.png', 12),
-    CardType(('Action', 'Traveller'), 'action.png', 5),
-    CardType(('Action', 'Gathering'), 'action.png'),
-    CardType(('Action', 'Treasure'), 'action-treasure.png'),
-    CardType(('Prize',), 'action.png', 1),
-    CardType(('Event',), 'event.png', 1),
-    CardType(('Reaction',), 'reaction.png'),
-    CardType(('Reaction', 'Shelter'), 'reaction-shelter.png', 6),
-    CardType(('Treasure',), 'treasure.png', 10, 3, 0),
-    CardType(('Treasure', 'Attack'), 'treasure.png'),
-    CardType(('Treasure', 'Victory'), 'treasure-victory.png', 12),
-    CardType(('Treasure', 'Prize'), 'treasure.png', 1, 3, 0),
-    CardType(('Treasure', 'Reaction'), 'treasure-reaction.png', 10, 0, 1),
-    CardType(('Treasure', 'Reserve'), 'reserve-treasure.png'),
-    CardType(('Victory',), 'victory.png', 12),
-    CardType(('Victory', 'Reaction'), 'victory-reaction.png', 12, 0, 1),
-    CardType(('Victory', 'Shelter'), 'victory-shelter.png', 6),
-    CardType(('Victory', 'Castle'), 'victory.png', 12),
-    CardType(('Curse',), 'curse.png', 30, 3),
-    CardType(('Trash',), 'action.png', 1),
-    CardType(('Prizes',), 'action.png', 0),
-    CardType(('Events',), 'event.png', 0),
-    CardType(('Shelters',), 'shelter.png', 0),
-    CardType(('Expansion',), 'expansion.png', 0, 4),
-    CardType(('Blank',), ''),
-    CardType(('Landmark',), 'landmark.png', 1),
-    CardType(('Landmarks',), 'landmark.png', 0)
-]
-
-cardTypes = dict(((c.getTypeNames(), c) for c in cardTypes))

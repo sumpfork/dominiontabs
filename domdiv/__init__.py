@@ -9,6 +9,7 @@ import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
 
 from cards import Card
+from cards import CardType
 from draw import DividerDrawer
 
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
@@ -254,6 +255,10 @@ def parse_opts(arglist):
                         action="store_true",
                         dest="count",
                         help="Display card count on body of the divider.")
+    parser.add_argument("--types",
+                        action="store_true",
+                        dest="types",
+                        help="Display card type on the body of the divider.")
     parser.add_argument(
         "--wrapper",
         action="store_true",
@@ -387,6 +392,25 @@ def parse_cardsize(spec, sleeved):
 
 
 def read_write_card_data(options):
+
+    # Read in the card types
+    types_db_filepath = os.path.join(options.data_path, "card_db", "types_db.json")
+    with codecs.open(types_db_filepath, "r", "utf-8") as typefile:
+        Card.types = json.load(typefile, object_hook=CardType.decode_json)
+    assert Card.types, "Could not load any card types from database"
+
+    # extract unique types
+    type_list = []
+    for c in Card.types:
+        type_list = list(set(c.getTypeNames()) | set(type_list))
+    # set up the basic type translation.  The actual language will be added later.
+    Card.type_names = {}
+    for t in type_list:
+        Card.type_names[t] = t
+
+    # turn Card.types into a dictionary for later
+    Card.types = dict(((c.getTypeNames(), c) for c in Card.types))
+
     # Read in the card database
     card_db_filepath = os.path.join(options.data_path, "card_db", "cards_db.json")
     with codecs.open(card_db_filepath, "r", "utf-8") as cardfile:
@@ -406,11 +430,11 @@ def read_write_card_data(options):
             # Set and save the first one
             card.cardset_tag = sets.pop(0)
             new_cards.append(card)
-            for set in sets:
+            for s in sets:
                 # for the rest, create a copy of the first
-                if set:
+                if s:
                     new_card = copy.deepcopy(card)
-                    new_card.cardset_tag = set
+                    new_card.cardset_tag = s
                     new_cards.append(new_card)
     cards = new_cards
 
@@ -517,6 +541,32 @@ def add_set_text(options, sets, language='en_us'):
     return sets
 
 
+def add_type_text(options, types={}, language='en_us'):
+    language = language.lower()
+    # Read in the set text and store for later
+    type_text_filepath = os.path.join(options.data_path,
+                                     "card_db",
+                                     language,
+                                     "types_" + language + ".json")
+    with codecs.open(type_text_filepath, 'r', 'utf-8') as type_text_file:
+        type_text = json.load(type_text_file)
+    assert type_text, "Could not load type text for %r" % language
+
+    # Now apply to all the types
+    used = {}
+    lang_type = []
+    for type in types:
+        if type in type_text:
+            types[type] = type_text[type]
+            used[type] = True
+
+    for type in type_text:
+        if type not in used:
+            types[type] = type_text[type]
+
+    return types
+
+
 def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None, new_type=None):
     filteredCards = []
     holder = None
@@ -614,22 +664,45 @@ def filter_sort_cards(cards, options):
                     card.name = card.group_tag  # For now, change the name to the group_tab
                     card.description = error_msg
                     card.extra = error_msg
+                    if card.isEvent():
+                        card.cost = "*"
+                    if card.isLandmark():
+                        card.cost = ""
                     # now save the card
                     keep_cards.append(card)
                 else:
                     # subsequent cards in the group. Update group info, but don't keep the card.
+                    if card.group_top:
+                        # this is a designated card to represent the group, so update important data
+                        group_cards[card.group_tag].cost = card.cost
+                        group_cards[card.group_tag].potcost = card.potcost
+                        group_cards[card.group_tag].debtcost = card.debtcost
+                        group_cards[card.group_tag].types = card.types
+                        group_cards[card.group_tag].image = card.image
+
                     group_cards[card.group_tag].count += card.count    # increase the count
-                    group_cards[card.group_tag].set_lowest_cost(card)  # set holder to the lowest cost of the two cards
+                    # group_cards[card.group_tag].set_lowest_cost(card)  # set holder to the lowest cost of the two cards
 
         cards = keep_cards
 
-        # Now fix up card counts
+        # Now fix up card costs
         for card in cards:
             if card.card_tag in group_cards:
-                if group_cards[card.group_tag].isEvent() or group_cards[card.group_tag].isLandmark():
+                if group_cards[card.group_tag].isEvent():
+                        group_cards[card.group_tag].cost = "*"
+                        group_cards[card.group_tag].debtcost = 0
+                        group_cards[card.group_tag].potcost = 0
+                if group_cards[card.group_tag].isLandmark():
                         group_cards[card.group_tag].cost = ""
                         group_cards[card.group_tag].debtcost = 0
                         group_cards[card.group_tag].potcost = 0
+
+    # Get the final type names in the requested language
+    Card.type_names = add_type_text(options, Card.type_names, LANGUAGE_DEFAULT)
+    if options.language != LANGUAGE_DEFAULT:
+        Card.type_names = add_type_text(options, Card.type_names, options.language)
+    for card in cards:
+        card.types_name = ' - '.join([Card.type_names[t] for t in card.types]).upper()
 
     # Fix up cardset text.  Waited as long as possible.
     Card.sets = add_set_text(options, Card.sets, LANGUAGE_DEFAULT)
