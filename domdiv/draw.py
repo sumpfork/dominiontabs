@@ -207,6 +207,7 @@ class DividerDrawer(object):
         self.canvas.save()
 
     def add_inline_images(self, text, fontsize):
+        # Coins
         path = os.path.join(self.options.data_path, 'images')
         replace = '<img src=' "'%s/coin_small_\\1.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.2)
@@ -217,19 +218,55 @@ class DividerDrawer(object):
         replace = '<img src=' "'%s/coin_small_empty.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('empty\s(c|C)oin(s)?', replace, text)
+
+
+        # VP
         replace = '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'120%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.5)
-        text = re.sub('\<VP\>', replace, text)
+        text = re.sub('(?:\s+|\<)VP(?:\s+|\>|\.|$)', replace, text)
+
+        # Debt
         replace = '<img src=' "'%s/debt_\\1.png'" ' width=%d height=' "'105%%'" ' valign=' "'middle'" '/>&thinsp;'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('(\d+)\sDebt', replace, text)
         replace = '<img src=' "'%s/debt.png'" ' width=%d height=' "'105%%'" ' valign=' "'middle'" '/>&thinsp;'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('Debt', replace, text)
+
+        # Potion
         replace = '<img src=' "'%s/potion_small.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('Potion', replace, text)
-        return text
+
+        return text.strip()
+
+    def add_inline_text(self, text):
+        # <line>
+        replace = "<center>%s\n" % ("&ndash;" * 22)
+        text = re.sub("\<line\>", replace, text)
+
+        #  <tab> and \t
+        text = re.sub("\<tab\>", '\t', text)
+        text = re.sub("\<t\>", '\t', text)
+        text = re.sub("\t", "&nbsp;" * 4, text)
+
+        # various breaks
+        text = re.sub("\<br\>", "<br />", text)
+        text = re.sub("\<n\>", "\n", text)
+
+        # alignments
+        text = re.sub("\<c\>", "<center>", text)
+        text = re.sub("\<center\>", "\n<para alignment='center'>", text)
+
+        text = re.sub("\<l\>", "<left>", text)
+        text = re.sub("\<left\>", "\n<para alignment='left'>", text)
+
+        text = re.sub("\<r\>", "<right>", text)
+        text = re.sub("\<right\>", "\n<para alignment='right'>", text)
+
+        text = re.sub("\<j\>", "<justify>", text)
+        text = re.sub("\<justify\>", "\n<para alignment='justify'>", text)
+        return text.strip().strip('\n')
 
     def drawOutline(self,
                     card,
@@ -655,13 +692,13 @@ class DividerDrawer(object):
         elif divider_text == "rules":
             # Add the extra rules text to the divider
             if card.extra:
-                descriptions = re.split("\n", card.extra)
+                descriptions = card.extra
             else:
                 # Asked for rules and they don't exist, so don't print anything
                 return
         elif divider_text == "card":
             # Add the card text to the divider
-            descriptions = re.split("\n", card.description)
+            descriptions = card.description
         else:
             # Don't know what was asked, so don't print anything
             return
@@ -677,6 +714,8 @@ class DividerDrawer(object):
         spacerHeight = 0.2 * cm
         minSpacerHeight = 0.05 * cm
 
+        descriptions = self.add_inline_text(descriptions)
+        descriptions = re.split("\n", descriptions)
         while True:
             paragraphs = []
             # this accounts for the spacers we insert between paragraphs
