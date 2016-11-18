@@ -308,7 +308,9 @@
         "adventures"
     ], 
     "cost": "2", 
+    "count": "10", 
     "group_tag": "Page -> Champion", 
+    "group_top": true, 
     "types": [
         "Action", 
         "Traveller"
@@ -329,7 +331,9 @@
         "adventures"
     ], 
     "cost": "2", 
+    "count": "10", 
     "group_tag": "Peasant -> Teacher", 
+    "group_top": true, 
     "types": [
         "Action", 
         "Traveller"
@@ -359,8 +363,8 @@
     "cardset_tags": [
         "adventures"
     ], 
-    "cost": "4",
-    "count": "12",
+    "cost": "4", 
+    "count": "12", 
     "types": [
         "Action"
     ]
@@ -683,7 +687,7 @@
     "cardset_tags": [
         "alchemy"
     ], 
-    "cost": "0", 
+    "cost": "", 
     "potcost": "1", 
     "types": [
         "Action"
@@ -703,7 +707,7 @@
     "cardset_tags": [
         "alchemy"
     ], 
-    "cost": "0", 
+    "cost": "", 
     "potcost": "1", 
     "types": [
         "Victory"
@@ -994,6 +998,7 @@
     ], 
     "cost": "4", 
     "group_tag": "Tournament and Prizes", 
+    "group_top": true, 
     "types": [
         "Action"
     ]
@@ -1155,6 +1160,7 @@
     ], 
     "cost": "3", 
     "group_tag": "Hermit - Madman", 
+    "group_top": true, 
     "types": [
         "Action"
     ]
@@ -1165,6 +1171,7 @@
     ], 
     "cost": "1", 
     "group_tag": "Shelters", 
+    "group_top": true, 
     "types": [
         "Reaction", 
         "Shelter"
@@ -1397,6 +1404,7 @@
     ], 
     "cost": "3", 
     "group_tag": "Urchin - Mercenary", 
+    "group_top": true, 
     "types": [
         "Action", 
         "Attack"
@@ -1881,6 +1889,7 @@
     "cost": "3", 
     "count": "5", 
     "group_tag": "Catapult - Rocks", 
+    "group_top": true, 
     "types": [
         "Action", 
         "Attack"
@@ -2003,6 +2012,7 @@
     "cost": "2", 
     "count": "5", 
     "group_tag": "Encampment - Plunder", 
+    "group_top": true, 
     "types": [
         "Action"
     ]
@@ -2076,6 +2086,7 @@
     "cost": "3", 
     "count": "5", 
     "group_tag": "Gladiator - Fortune", 
+    "group_top": true, 
     "types": [
         "Action"
     ]
@@ -2186,6 +2197,7 @@
     "cost": "2", 
     "count": "5", 
     "group_tag": "Patrician - Emporium", 
+    "group_top": true, 
     "types": [
         "Action"
     ]
@@ -2258,6 +2270,7 @@
     "cost": "2", 
     "count": "5", 
     "group_tag": "Settlers - Bustling Village", 
+    "group_top": true, 
     "types": [
         "Action"
     ]
@@ -3125,6 +3138,7 @@
     "cost": "4", 
     "count": "5", 
     "group_tag": "Sauna - Avanto", 
+    "group_top": true, 
     "types": [
         "Action"
     ]
