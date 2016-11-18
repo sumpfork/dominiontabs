@@ -554,7 +554,6 @@ def add_type_text(options, types={}, language='en_us'):
 
     # Now apply to all the types
     used = {}
-    lang_type = []
     for type in types:
         if type in type_text:
             types[type] = type_text[type]
