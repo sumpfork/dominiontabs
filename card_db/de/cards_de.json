@@ -35,13 +35,13 @@
         "untranslated": "description, extra"
     },
     "Bridge Troll": {
-        "description": "Each other player takes his -1 Coin token. Now and at the start of your next turn:\n+1 Buy\n______________________\nWhile this is in play, cards cost 1 Coin less on your turn, but not less than 0 Coins.", 
+        "description": "Each other player takes his -1 Coin token. Now and at the start of your next turn:\n+1 Buy<line>While this is in play, cards cost 1 Coin less on your turn, but not less than 0 Coins.", 
         "extra": "Diese Karte ist eine Dauerkarte. Alle Mitspieler müssen ihren -Coins-Marker vor sich ablegen. Sie erhalten beim nächsten Mal, wenn sie in irgendeiner Art und Weise mindestens 1 Coins erhalten würden, 1 Coins weniger. Danach wird der Marker wieder neben den Vorrat gelegt. Du erhältst jetzt und zu Beginn deines nächsten Zuges + 1 Kauf. So lange diese Karte im Spiel ist, kosten alle Karten in deinem Zug 1 Coins weniger, allerdings nie weniger als 0 Coins. Dies betrifft nicht nur den Kauf, sondern alle Aktionen, bei denen die Kosten einer Karte eine Rolle spielen. Der BRÜCKENTROLL beeinflusst nicht die Kosten von Ereignissen. Die Wirkung des BRÜCKENTROLLS ist kumulativ, d. h. wenn du zwei oder mehr BRÜCKENTROLLE gleichzeitig im Spiel hast, kannst du die Kosten um 2 Coins oder mehr verringern.", 
         "name": "Brückentroll", 
         "untranslated": "description"
     },
     "Caravan Guard": {
-        "description": "+1 Card\n+1 Action\nAt the start of your next turn, +1 Coin\n______________________\nWhen another player plays an Attack card, you may play this from your hand. (+1 Action has no effect if it's not your turn.)", 
+        "description": "+1 Card\n+1 Action\nAt the start of your next turn, +1 Coin<line>When another player plays an Attack card, you may play this from your hand. (+1 Action has no effect if it's not your turn.)", 
         "extra": "Diese Karte ist eine kombinierte Dauer- und Reaktionskarte. Wenn du sie ausspielst, erhältst du + 1 Karte und + 1 Aktion. Zu Beginn deines nächsten Zuges erhältst du + 1 Coins. Lege die Karte am Ende dieses Zuges ab. Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du diese Karte aus deiner Hand ausspielen. Du erhältst + 1 Karte und + 1 Aktion. Die Anweisung + 1 Aktion kann in diesem Fall – da gerade ein anderer Spieler am Zug ist – nicht ausgeführt werden. Zu Beginn deines nächsten Zuges erhältst du + 1 Coins. Die Karte wird erst in der Aufräumphase deines nächsten Zuges abgelegt.", 
         "name": "Karawanenwächter", 
         "untranslated": "description"
@@ -52,7 +52,7 @@
         "name": "Champion"
     },
     "Coin of the Realm": {
-        "description": "1 Coin\nWhen you play this, put it on your Tavern mat.\n______________________\nDirectly after resolving an Action, you may call this for +2 Actions.", 
+        "description": "1 Coin\nWhen you play this, put it on your Tavern mat.<line>Directly after resolving an Action, you may call this for +2 Actions.", 
         "extra": "Diese Karte ist eine kombinierte Geld- und Reservekarte. Sie hat den Wert 1 Coins. Spiele sie in der Kaufphase aus und lege sie anschließend auf das Wirtshaustableau. Sobald du eine Aktionskarte ausspielst und die Anweisungen darauf ausgeführt hast, darfst du die KÖNIGLICHEN MÜNZEN von deinem Wirtshaustableau aufrufen. Lege die Karte in deinen Spielbereich und du erhältst + 2 Aktionen, nicht aber + 1 Coins, da diese Anweisung nur beim Ausspielen der Karte ausgeführt wird. Bis zum Ende der Aufräumphase befinden sich die KÖNIGLICHEN MÜNZEN im Spiel und werden dann abgelegt.", 
         "name": "Königliche Münzen", 
         "untranslated": "description"
@@ -63,7 +63,7 @@
         "name": "Schüler"
     },
     "Distant Lands": {
-        "description": "Put this on your Tavern mat.\n______________________\nWorth 4 VP if on your Tavern mat at the end of the Game (otherwise worth 0 VP).", 
+        "description": "Put this on your Tavern mat.<line>Worth 4 <VP> if on your Tavern mat at the end of the Game (otherwise worth 0 VP).", 
         "extra": "Diese Karte ist eine kombinierte Aktions-, Reserve- und Punktekarte. Wenn du sie ausspielst, lege sie auf dein Wirtshaustableau. Dort bleibt sie bis zum Spielende. Pro FERNE LANDE, die du bei Spielende auf deinem Tableau liegen hast, erhältst du 4 <VP>. Alle anderen FERNE LANDE zählen 0 <VP>.", 
         "name": "Ferne Lande", 
         "untranslated": "description"
@@ -75,7 +75,7 @@
         "untranslated": "description"
     },
     "Duplicate": {
-        "description": "Put this on your Tavern mat.\n______________________\nWhen you gain a card costing up to 6 Coins, you may call this, to gain a copy of that card.", 
+        "description": "Put this on your Tavern mat.<line>When you gain a card costing up to 6 Coins, you may call this, to gain a copy of that card.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, legst du sie auf dein Wirtshaustableau. Sobald du (auch außerhalb deines eigenen Zuges) eine Karte nimmst, die bis zu 6 Coins kostet, darfst du diese Karte aufrufen. Wenn du das tust, nimmst du dir eine Karte mit gleichem Namen vom Vorrat. Lege diese Karte ab. Wenn keine solche Karte mehr im Vorrat ist, erhältst du nichts. Wenn du eine Karte von einem Stapel nimmst, der nicht zum Vorrat gehört, darfst du dir keine weitere Karte mit gleichem Namen nehmen. Das DUPLIKAT wird in der Aufräumphase des Zuges, in dem es aufgerufen wird (auch außerhalb deines Zuges) abgelegt.", 
         "name": "Duplikat", 
         "untranslated": "description"
@@ -110,7 +110,7 @@
         "untranslated": "description"
     },
     "Guide": {
-        "description": "+1 Card\n+1 Action\nPut this on your Tavern mat.\n______________________\nAt the start of your turn, you may call this, to discard your hand and draw 5 cards.", 
+        "description": "+1 Card\n+1 Action\nPut this on your Tavern mat.<line>At the start of your turn, you may call this, to discard your hand and draw 5 cards.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst erhältst du + 1 Karte und + 1 Aktion. Dann legst du die Karte auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte aufrufen. Wenn du das tust, legst du alle Karten, die du auf der Hand hast, ab und ziehst 5 Karten nach. Lege die Karte am Ende der Aufräumphase ab.", 
         "name": "Kundschafter", 
         "untranslated": "description"
@@ -145,7 +145,7 @@
         "untranslated": "description, extra"
     },
     "Lost City": {
-        "description": "+2 Cards\n+2 Actions\n______________________\nWhen you gain this, each other player draws a card.", 
+        "description": "+2 Cards\n+2 Actions<line>When you gain this, each other player draws a card.", 
         "extra": "Wenn du diese Karte ausspielst, erhältst du + 2 Karten und + 2 Aktionen. Wenn du diese Karte nimmst, zieht jeder Mitspieler 1 Karte.", 
         "name": "Verlorene Stadt", 
         "untranslated": "description"
@@ -157,7 +157,7 @@
         "untranslated": "description"
     },
     "Messenger": {
-        "description": "+1 Buy\n+2 Coins\nYou may put your deck into your discard pile.\n______________________\nWhen this is your first buy in a turn, gain a card costing up to 4 Coins, and each other player gains a copy of it.", 
+        "description": "+1 Buy\n+2 Coins\nYou may put your deck into your discard pile.<line>When this is your first buy in a turn, gain a card costing up to 4 Coins, and each other player gains a copy of it.", 
         "extra": "Wenn du diese Karte ausspielst, erhältst du + 1 Kauf sowie + 2 Coins. Außerdem darfst du deinen Nachziehstapel sofort komplett auf deinen Ablagestapel legen. Karten, die auf diese Weise abgelegt werden, gelten nicht als „abgelegt“. Wenn du diese Karte kaufst und dies der erste Kauf (inklusive eventuell erworbener Ereignisse) in deinem Zug ist, nimmst du eine Karte vom Vorrat, die bis zu 4 Coins kostet. Jeder Mitspieler nimmt sich – beginnend bei deinem linken Mitspieler – eine Karte mit gleichem Namen vom Vorrat. Karten, die nicht zum Vorrat gehören, dürfen nicht genommen werden.", 
         "name": "Kurier", 
         "untranslated": "description"
@@ -203,7 +203,7 @@
         "untranslated": "description, extra"
     },
     "Port": {
-        "description": "+1 Card\n+2 Actions\n______________________\nWhen you buy this, gain another Port.", 
+        "description": "+1 Card\n+2 Actions<line>When you buy this, gain another Port.", 
         "extra": "Wenn du diese Karte ausspielst, erhältst du + 1 Karte und + 2 Aktionen. Wenn du diese Karte kaufst (nicht wenn du sie auf andere Art und Weise erhältst), nimm dir eine HAFENSTADT vom Vorrat.", 
         "name": "Hafenstadt", 
         "untranslated": "description"
@@ -227,7 +227,7 @@
         "untranslated": "description"
     },
     "Ratcatcher": {
-        "description": "+1 Card\n+1 Action\nPut this on your Tavern mat.\n______________________\nAt the start of your turn, you may call this, to trash a card from your hand.", 
+        "description": "+1 Card\n+1 Action\nPut this on your Tavern mat.<line>At the start of your turn, you may call this, to trash a card from your hand.", 
         "extra": "Du erhältst + 1 Karte und + 1 Aktion. Lege diese Karte auf dein Wirtshaustableau. Du darfst diese Karte zu Beginn deines Zuges vom Tableau aufrufen. Wenn du das tust, lege die Karte in deinen Spielbereich. Dann musst du eine beliebige Karte aus deiner Hand entsorgen. Lege den RATTENFÄNGER in der Aufräumphase ab.", 
         "name": "Rattenfänger", 
         "untranslated": "description"
@@ -245,7 +245,7 @@
         "untranslated": "description"
     },
     "Royal Carriage": {
-        "description": "+1 Action\nPut this on your Tavern mat.\n______________________\nDirectly after resolving an Action, if it's still in play, you may call this, to replay that Action.", 
+        "description": "+1 Action\nPut this on your Tavern mat.<line>Directly after resolving an Action, if it's still in play, you may call this, to replay that Action.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du + 1 Aktion und legst sie dann auf dein Wirtshaustableau. Sobald du eine Aktionskarte ausspielst und die Anweisungen darauf ausgeführt hast, darfst du die KÖNIGLICHE KUTSCHE sofort danach aufrufen, falls die Aktionskarte noch im Spiel ist. Wenn du das tust, führst du die Aktion sofort noch einmal aus. Du kannst die KÖNIGLICHE KUTSCHE nicht aufrufen, wenn die Aktion bereits entsorgt wurde oder auf Reservekarten, die bereits auf das Tableau gelegt wurden. Lege die KÖNIGLICHE KUTSCHE in der Aufräumphase ab. Wird die KÖNIGLICHE KUTSCHE auf eine Dauerkarte gespielt, bleibt sie solange im Spiel, bis die Dauerkarte abgelegt wird.", 
         "name": "Königliche Kutsche", 
         "untranslated": "description"
@@ -303,7 +303,7 @@
         "untranslated": "description, extra"
     },
     "Transmogrify": {
-        "description": "+1 Action\nPut this on your Tavern mat.\n______________________\nAt the start of your turn, you may call this, to trash a card from your hand, gain a card costing up to 1 Coin more than it, and put that card into your hand.", 
+        "description": "+1 Action\nPut this on your Tavern mat.<line>At the start of your turn, you may call this, to trash a card from your hand, gain a card costing up to 1 Coin more than it, and put that card into your hand.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du + 1 Aktion. Lege sie dann auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte aufrufen. Wenn du das tust, entsorgst du eine Handkarte und nimmst eine Karte vom Vorrat, die bis zu 1 Coins mehr kostet als die entsorgte Karte. Nimm die Karte auf die Hand. Du darfst nur Karten aus dem Vorrat nehmen. Lege die TRANSFORMATION in der Aufräumphase ab.", 
         "name": "Transformation", 
         "untranslated": "description"
@@ -331,7 +331,7 @@
         "name": "Krieger"
     },
     "Wine Merchant": {
-        "description": "+1 Buy\n+4 Coins\nPut this on your Tavern mat.\n______________________\nAt the end of your Buy phase, if you have at least 2 Coins unspent, you may discard this from your Tavern mat.", 
+        "description": "+1 Buy\n+4 Coins\nPut this on your Tavern mat.<line>At the end of your Buy phase, if you have at least 2 Coins unspent, you may discard this from your Tavern mat.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du + 1 Kauf sowie + 4 Coins und legst die Karte dann auf dein Wirtshaustableau. Wenn du am Ende deiner Kaufphase mindestens 2 Coins nicht ausgegeben hast, darfst du diese Karte von deinem Wirtshaustableau ablegen. Hast du mehrere WEINHÄNDLER auf deinem Tableau liegen, kannst du alle ablegen. Du brauchst nicht für jeden WEINHÄNDLER 2 Coins übrig zu haben.", 
         "name": "Weinhändler", 
         "untranslated": "description"
@@ -403,7 +403,7 @@
         "untranslated": "extra"
     },
     "Vineyard": {
-        "description": "Wert 1 Punkt für je 3 Aktionskarten im eigenen Kartensatz (abgerundet).", 
+        "description": "Wert 1 <VP> für je 3 Aktionskarten im eigenen Kartensatz (abgerundet).", 
         "extra": "This Kingdom card is a Victory card, not an Action card. It does nothing until the end of the game, when it is worth 1 victory point per 3 Action cards in your Deck (counting all of your cards - your Discard pile and hand are part of your Deck at that point). Round down; if you have 11 Action cards, Vineyard is worth 3 victory points. During set-up, put all 12 Vineyards in the Supply for a game with 3 or more players, but only 8 in the Supply for a 2-player game. Cards with multiple types, one of which is Action, are Actions and so are counted by Vineyard.", 
         "name": "Weinberg", 
         "untranslated": "extra"
@@ -421,19 +421,19 @@
         "untranslated": "extra"
     },
     "Curse": {
-        "description": "-1 Punkt", 
+        "description": "-1 <VP>", 
         "extra": "Curses are an available pile in the Supply regardless of what other cards are in the Supply. With 2 players, place 10 Curses in the Supply. With 3 players, place 20 Curses in the Supply. With 4 players, place 30 Curses in the Supply. With 5 players, place 40 Curses in the Supply. With 6 players, place 50 Curses in the Supply.", 
         "name": "Fluch", 
         "untranslated": "extra"
     },
     "Duchy": {
-        "description": "3 Punkte", 
+        "description": "3  <VP>", 
         "extra": "Put 8 in the Supply in a game with two players. Put 12 in the Supply in a game with three or more players.", 
         "name": "Herzogtum", 
         "untranslated": "extra"
     },
     "Estate": {
-        "description": "1 Punkt", 
+        "description": "1 <VP>", 
         "extra": "Put 8 in the Supply in a game with two players. Put 12 in the Supply in a game with three or more players.", 
         "name": "Anwesen", 
         "untranslated": "extra"
@@ -445,7 +445,7 @@
         "untranslated": "extra"
     },
     "Province": {
-        "description": "6 Punkte", 
+        "description": "6  <VP>", 
         "extra": "Put 8 in the Supply in a game with two players. Put 12 in the Supply in a game with three or four players. Put 15 in the Supply in a game with five players. Put 18 in the Supply in a game with six players.", 
         "name": "Provinz", 
         "untranslated": "extra"
@@ -487,8 +487,8 @@
         "untranslated": "description, extra"
     },
     "Fairgrounds": {
-        "description": "Wert 2 Punkte für je 5 Karten mit unterschiedlichem Namen im eigenen Kartensatz (abgerundet). ", 
-        "extra": "At the end of the game, this is worth 2 VP per 5 differently named cards in your deck, rounded down. So if you have 0-4 different cards, it is worth 0 VP; if you have 5-9, it is worth 2 VP; if you have 10-14, it is worth 4 VP; if you have 15-19, it is worth 6; and so on. By default there are only 17 differently named cards available in a game, but sometimes there may be more cards, such as via Young Witch's setup rule, or due to Tournament. Use 8 Fairgrounds in a game with 2 players, and 12 for a game with 3 or more players.", 
+        "description": "Wert 2  <VP> für je 5 Karten mit unterschiedlichem Namen im eigenen Kartensatz (abgerundet). ", 
+        "extra": "At the end of the game, this is worth 2 <VP> per 5 differently named cards in your deck, rounded down. So if you have 0-4 different cards, it is worth 0 VP; if you have 5-9, it is worth 2 VP; if you have 10-14, it is worth 4 VP; if you have 15-19, it is worth 6; and so on. By default there are only 17 differently named cards available in a game, but sometimes there may be more cards, such as via Young Witch's setup rule, or due to Tournament. Use 8 Fairgrounds in a game with 2 players, and 12 for a game with 3 or more players.", 
         "name": "Festplatz", 
         "untranslated": "extra"
     },
@@ -643,7 +643,7 @@
         "untranslated": "extra"
     },
     "Feodum": {
-        "description": "Wert 1 Punkt für je 3 Silber im eigenen Kartensatz (abgerundet).  Wenn du diese Karte entsorgst: Nimm dir 3 Silber. ", 
+        "description": "Wert 1 <VP> für je 3 Silber im eigenen Kartensatz (abgerundet).  Wenn du diese Karte entsorgst: Nimm dir 3 Silber. ", 
         "extra": "This is a Victory card. Play with 8 for games with 2 players, or 12 cards for games with 3 or more players. At the end of the game, each Feodum is worth 1 Victory for every 3 Silvers in your deck, rounded down. For example, if you have 11 Silvers, your Feodums are worth 3 Victory each. If a Feodum is trashed, you gain 3 Silvers. The Silvers come from the Supply and are put into your discard pile. If there are not enough Silvers left, gain as many as you can.", 
         "name": "Lehen", 
         "untranslated": "extra"
@@ -1014,7 +1014,7 @@
         "untranslated": "description, extra"
     },
     "Aqueduct": {
-        "description": "When you gain a Treasure, move 1<VP> from its pile to this. When you gain a Victory card, take the <VP> from this\n______________________\nSetup: Put 8<VP> on the Silver and Gold piles.", 
+        "description": "When you gain a Treasure, move 1<VP> from its pile to this. When you gain a Victory card, take the <VP> from this<line>Setup: Put 8<VP> on the Silver and Gold piles.", 
         "extra": "If you gain a card that is both a Treasure and a Victory card, such as Humble Castle, you can resolve the abilities in either order.", 
         "name": "Aquädukt", 
         "untranslated": "description, extra"
@@ -1026,7 +1026,7 @@
         "untranslated": "description, extra"
     },
     "Arena": {
-        "description": "At the start of your Buy phase, you may discard an Action card. If you do, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.", 
+        "description": "At the start of your Buy phase, you may discard an Action card. If you do, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "With Villa it is possible for your Buy phase to start twice or more in a turn; you can make use of Arena each time.", 
         "name": "Arena", 
         "untranslated": "description, extra"
@@ -1044,19 +1044,19 @@
         "untranslated": "description, extra"
     },
     "Basilica": {
-        "description": "When you buy a card, if you have 2 Coins or more left, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.", 
+        "description": "When you buy a card, if you have 2 Coins or more left, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "This happens each time you buy a card.\nFor example with 4 Coin and 3 Buys, you could buy Copper, then Copper, then Silver, taking 2<VP>, then 2<VP>, then none.", 
         "name": "Basilika", 
         "untranslated": "description, extra"
     },
     "Baths": {
-        "description": "When you end your turn without having gained a card, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.", 
+        "description": "When you end your turn without having gained a card, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "Any way you gain a card will stop you from getting <VP> from this that turn.", 
         "name": "Badehaus", 
         "untranslated": "description, extra"
     },
     "Battlefield": {
-        "description": "When you gain a Victory card, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.", 
+        "description": "When you gain a Victory card, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "You take the <VP> whether you bought the Victory card or gained it another way.", 
         "name": "Schlachtfeld", 
         "untranslated": "description, extra"
@@ -1068,7 +1068,7 @@
         "untranslated": "description, extra"
     },
     "Capital": {
-        "description": "6 Coins\n+1 Buy\n______________________\nWhen you discard this from play, take 6 Debt, and then you may pay off Debt.", 
+        "description": "6 Coins\n+1 Buy<line>When you discard this from play, take 6 Debt, and then you may pay off Debt.", 
         "extra": "When you discard this from play (normally, in the Clean-up phase of the turn you played it), you get 6 Debt, and then get an extra opportunity to pay off Debt with Coins, right then. You do not get the Debt if you did not discard it from play - for example, if you trash it due to Counterfeit (from Dominion: Dark Ages). You only get Debt per copy of Capital discarded; for example if you use Crown to play Capital twice, you still only get 6 Debt when you discard it from play.", 
         "name": "Vermögen", 
         "untranslated": "description, extra"
@@ -1104,7 +1104,7 @@
         "untranslated": "description, extra"
     },
     "Colonnade": {
-        "description": "When you buy an Action card, if you have a copy of it in play, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.", 
+        "description": "When you buy an Action card, if you have a copy of it in play, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "For example with Settlers in play, buying another Settlers gets you 2<VP> from here.\nCards from the same pile are not necessarily copies of each other; for example Bustling Village is not a copy of Settlers.", 
         "name": "Kolonnaden", 
         "untranslated": "description, extra"
@@ -1122,7 +1122,7 @@
         "untranslated": "description, extra"
     },
     "Defiled Shrine": {
-        "description": "When you gain an Action, move 1<VP> from its pile to this. When you buy a Curse, take the <VP> from this.\n______________________\nSetup: Put 2<VP> on each non-Gathering Action Supply pile.", 
+        "description": "When you gain an Action, move 1<VP> from its pile to this. When you buy a Curse, take the <VP> from this.<line>Setup: Put 2<VP> on each non-Gathering Action Supply pile.", 
         "extra": "Note that this triggers on gaining an Action, whether bought or otherwise gained, but only on buying Curse, not on gaining Curse other ways.\n<VP> tokens will go on Ruins (from Dominion: Dark Ages) when used, but not on Farmers' Market, Temple, or Wild Hunt (the three Action - Gathering cards).", 
         "name": "Entweihter Schrein", 
         "untranslated": "description, extra"
@@ -1146,7 +1146,7 @@
         "untranslated": "description, extra"
     },
     "Emporium": {
-        "description": "+1 Card\n+1 Action\n+1 Coin\n______________________\nWhen you gain this, if you have at least 5 Action cards in play, +2 Victory Tokens.", 
+        "description": "+1 Card\n+1 Action\n+1 Coin<line>When you gain this, if you have at least 5 Action cards in play, +2 Victory Tokens.", 
         "extra": "This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Dominion: Adventures) called into play this turn.", 
         "name": "Handelsplatz", 
         "untranslated": "description, extra"
@@ -1176,13 +1176,13 @@
         "untranslated": "description, extra"
     },
     "Fortune": {
-        "description": "+1 Buy\nWhen you play this, double your Coin if you haven't yet this turn.\n______________________\nWhen you gain this, gain a Gold per Gladiator you have in play.", 
+        "description": "+1 Buy\nWhen you play this, double your Coin if you haven't yet this turn.<line>When you gain this, gain a Gold per Gladiator you have in play.", 
         "extra": "You only double your Coin the first time you play a Fortune in a turn; any further times only get you +1 Buy.", 
         "name": "Reichtum", 
         "untranslated": "description, extra"
     },
     "Forum": {
-        "description": "+3 Cards\n+1 Action\nDiscard 2 cards.\n______________________\nWhen you buy this, +1 Buy.", 
+        "description": "+3 Cards\n+1 Action\nDiscard 2 cards.<line>When you buy this, +1 Buy.", 
         "extra": "For example, with 13 Coin and only one Buy, you could buy a Forum, getting +1 Buy, then buy a Province.", 
         "name": "Forum", 
         "untranslated": "description, extra"
@@ -1200,7 +1200,7 @@
         "untranslated": "description, extra"
     },
     "Groundskeeper": {
-        "description": "+1 Card\n+1 Action\n______________________\nWhile this is in play, when you gain a Victory card, +1<VP>", 
+        "description": "+1 Card\n+1 Action<line>While this is in play, when you gain a Victory card, +1<VP>", 
         "extra": "This can trigger multiple times in a turn, for cards gained different ways. For example you could play Groundskeeper, then play Engineer gaining an Estate and taking 1<VP>, then in your Buy phase buy a Duchy taking another +1<VP>. Multiple Groundskeepers are cumulative. If you Crown a Groundskeeper, there is still just one Groundskeeper in play, so you only get +1<VP> per Victory card gained.", 
         "name": "Gärtnerin", 
         "untranslated": "description, extra"
@@ -1212,7 +1212,7 @@
         "untranslated": "description, extra"
     },
     "Labyrinth": {
-        "description": "When you gain a 2nd card in one of your turns, take 2<VP> from here.\n______________________\nSetup: Put 6<VP> here per player.", 
+        "description": "When you gain a 2nd card in one of your turns, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "This can only happen once per turn per player.\nFor example if you gain 4 cards in the same turn, only the second one will come with 2<VP>.", 
         "name": "Labyrinth", 
         "untranslated": "description, extra"
@@ -1236,7 +1236,7 @@
         "untranslated": "description, extra"
     },
     "Obelisk": {
-        "description": "When scoring, 2<VP> per card you have from the chosen pile.\n______________________\nSetup: Choose a random Action Supply pile.", 
+        "description": "When scoring, 2<VP> per card you have from the chosen pile.<line>Setup: Choose a random Action Supply pile.", 
         "extra": "All cards from the chosen pile count, even if they have different names (such as when it is a split pile).\nRuins (from Dominion: Dark Ages), when used, can be the pile.", 
         "name": "Obelisk", 
         "untranslated": "description, extra"
@@ -1278,7 +1278,7 @@
         "untranslated": "description, extra"
     },
     "Rocks": {
-        "description": "+1 Coin\n______________________\nWhen you gain or trash this, gain a Silver; if it is your Buy phase, put the Silver on your deck, otherwise put it into your hand.", 
+        "description": "+1 Coin<line>When you gain or trash this, gain a Silver; if it is your Buy phase, put the Silver on your deck, otherwise put it into your hand.", 
         "extra": "If it is another player's turn, then it is not your Buy phase, so the Silver goes to your hand.", 
         "name": "Felsen", 
         "untranslated": "description, extra"
@@ -1308,13 +1308,13 @@
         "untranslated": "description, extra"
     },
     "Tax": {
-        "description": "Add 2 Debt to a Supply pile.\n______________________\nSetup: Add 1 Debt to each Supply pile. When a player buys a card, they take the Debt from its pile.", 
+        "description": "Add 2 Debt to a Supply pile.<line>Setup: Add 1 Debt to each Supply pile. When a player buys a card, they take the Debt from its pile.", 
         "extra": "Every Supply pile starts with 1 Debt, including Kingdom cards and basic cards like Silver.\nThe Event itself, when bought, adds 2 Debt to a single pile, whether or not that pile has any Debt on it already.\nThe Debt is taken by the next player to buy a card from that pile; gaining a card without buying it leaves the Debt on the pile.", 
         "name": "Steuer", 
         "untranslated": "description, extra"
     },
     "Temple": {
-        "description": "+1<VP>\nTrash from 1 to 3 differently named cards from your hand. Add 1<VP> to the Temple Supply pile.\n______________________\nWhen you gain this, take the <VP> from the Temple Supply pile.", 
+        "description": "+1<VP>\nTrash from 1 to 3 differently named cards from your hand. Add 1<VP> to the Temple Supply pile.<line>When you gain this, take the <VP> from the Temple Supply pile.", 
         "extra": "You get +1<VP>, trash 1, 2, or 3 cards with different names from your hand (for example a Copper and an Estate, but not two Coppers), then add 1<VP> (from the supply) to the Temple pile. Gaining a Temple (whether buying it or otherwise) gives you all the <VP> that has accumulated on the pile. The pile gets <VP> even if it is empty; this only matters if there is a way to return a Temple to the pile (like Ambassador from Dominion: Seaside) or a way to gain one from the trash (like Graverobber from Dominion: Dark Ages).", 
         "name": "Tempel", 
         "untranslated": "description, extra"
@@ -1344,7 +1344,7 @@
         "untranslated": "description, extra"
     },
     "Villa": {
-        "description": "+2 Actions\n+1 Buy\n+1 Coin\n______________________\nWhen you gain this, put it into your hand, +1 Action, and if it's your Buy phase return to your Action phase.", 
+        "description": "+2 Actions\n+1 Buy\n+1 Coin<line>When you gain this, put it into your hand, +1 Action, and if it's your Buy phase return to your Action phase.", 
         "extra": "If you gain this during your Action phase, such as with Engineer, you will put the Villa into your hand and get +1 Action (letting you, for example, play the Villa). If you gain this during your Buy phase (such as by buying it), you will put the Villa into your hand, get +1 Action, and return to your Action phase. This will let you play more Action cards (such as the Villa); when you are done with that you will return to your Buy phase, from the beginning - you can play more Treasures (and Arena will trigger again). If you buy Villa, that uses up your default Buy for the turn, however playing Villa will give you +1 Buy and so let you buy another card in your second Buy phase. If you gain this during another player's turn, you will put the Villa into your hand and get +1 Action, but will have no way to use that Action, since it is not your turn. It is possible to return to your Action phase multiple times in a turn via buying multiple Villas. Returning to your Action phase does not cause \"start of turn\" abilities to repeat; they only happen at the start of your turn.", 
         "name": "Villa", 
         "untranslated": "description, extra"
@@ -1571,7 +1571,7 @@
         "untranslated": "extra"
     },
     "Silk Road": {
-        "description": "Wert 1 Punkt für je 4 Punktekarten im eigenen Kartensatz (abgerundet). ", 
+        "description": "Wert 1 <VP> für je 4 Punktekarten im eigenen Kartensatz (abgerundet). ", 
         "extra": "This is a Victory card, not an Action card. It does nothing until the end of the game, when it is worth 1 victory point for every four Victory cards in your Deck (counting all of your cards - your Discard pile and hand are part of your Deck at that point). Silk Roads count themselves. Round down; if you have 11 Victory cards, Silk Road is worth 2 victory points. During set-up, put all 12 Silk Roads in the Supply for a game with 3 or more players, but only 8 in the Supply for a 2-player game. Cards with multiple types, one of which is Victory, are Victory cards and so are counted by Silk Road.", 
         "name": "Seidenstraße", 
         "untranslated": "extra"
@@ -1662,7 +1662,7 @@
     },
     "Duke": {
         "description": "Wert 1 Siegpunkt pro Herzogtum im eigenen Kartensatz.", 
-        "extra": "This does nothing until the end of the game, at which time it's worth 1 VP per Duchy you have. This counts all of your cards - your Discard pile and hand are part of your Deck at that point. During set-up, place 12 Dukes in the Supply for a 3- or 4- [or 5- or 6-] player game and 8 in the Supply for a 2-player game.", 
+        "extra": "This does nothing until the end of the game, at which time it's worth 1 <VP> per Duchy you have. This counts all of your cards - your Discard pile and hand are part of your Deck at that point. During set-up, place 12 Dukes in the Supply for a 3- or 4- [or 5- or 6-] player game and 8 in the Supply for a 2-player game.", 
         "name": "Herzog", 
         "untranslated": "extra"
     },
@@ -1756,7 +1756,7 @@
         "untranslated": "description, extra, name"
     },
     "Diplomat": {
-        "description": "+ 2 Cards\n\nIf you have 5 or fewer cards in hand (after drawing), +2 Actions.\n______________________\nWhen another player plays an Attack card, you may first reveal this from a hand of 5 or more cards, to draw 2 cards then discard 3.", 
+        "description": "+ 2 Cards\n\nIf you have 5 or fewer cards in hand (after drawing), +2 Actions.<line>When another player plays an Attack card, you may first reveal this from a hand of 5 or more cards, to draw 2 cards then discard 3.", 
         "extra": "When playing this, you get +2 Cards, then count your cards in hand, and if you have 5 cards or fewer, you get +2 Actions.\nSo, for example if you play this from a hand of 5 cards, you will put it into play, going down to 4 cards, then draw 2 cards, going up to 6 cards, and that is more than 5 cards so you would not get the +2 Actions.\nDiplomat can also be used when another player plays an Attack card, if you have at least 5 cards in hand.\nBefore the Attack card does anything, you can reveal a Diplomat from your hand; if you do, you draw 2 cards, then discard 3 cards (which can include the Diplomat).\nIf you still have at least 5 cards in hand after doing that (such as due to Council Rooms), you can reveal Diplomat again and do it again.\nYou reveal Reactions one at a time; you cannot reveal two Diplomats simultaneously.\nYou can reveal a Moat from your hand (to be unaffected by an Attack) either before or after revealing and resolving a Diplomat (even if the Moat was not in your hand until after resolving Diplomat).", 
         "name": "Diplomat", 
         "untranslated": "description, extra, name"
@@ -1768,8 +1768,8 @@
         "untranslated": "description, extra, name"
     },
     "Mill": {
-        "description": "+1 Card\n+1 Action\n\nYou may discard 2 cards, for +2 Coin.\n______________________\nWorth 1 <VP>", 
-        "extra": "You can choose to discard 2 cards even if you only have one card in hand, but you only get +2 Coin if you actually discarded 2 cards.\n______________________\nUse 8 Mills for games with 2 players, 12 for games with 3 or more players.", 
+        "description": "+1 Card\n+1 Action\n\nYou may discard 2 cards, for +2 Coin.<line>Worth 1 <VP>", 
+        "extra": "You can choose to discard 2 cards even if you only have one card in hand, but you only get +2 Coin if you actually discarded 2 cards.<line>Use 8 Mills for games with 2 players, 12 for games with 3 or more players.", 
         "name": "Mill", 
         "untranslated": "description, extra, name"
     },
@@ -1851,8 +1851,8 @@
         "untranslated": "extra"
     },
     "Bishop": {
-        "description": "+ 1 Coin,  + 1 Punkt. Entsorge eine Karte aus deiner Hand. Wenn du das machst: + Punkte entsprechend der Hälfte der Geld-Kosten der entsorgten Karte (abgerundet). Jeder Mitspieler darf sofort eine Karte seiner Hand entsorgen.", 
-        "extra": "[When a player takes VP tokens, he takes a player mat to put them on. VP tokens are not private and anyone can count them. VP tokens come in 1 VP and 5 VP denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their VP tokens to their score.] Trashing a card is optional for the other players but mandatory for you. You trash a card, then each other player may trash a card, in turn order. Only the player who played Bishop can get VP tokens from it. Potion in costs is ignored, for example if you trash Golem (from Alchemy) which costs 4 coins 1 potion, you get 3 VP tokens total (counting the 1 VP you always get from Bishop). If you have no cards left in your hand to trash, you still get the 1 coin and 1 VP token.", 
+        "description": "+ 1 Coin,  + 1 Punkt. Entsorge eine Karte aus deiner Hand. Wenn du das machst: +<VP> entsprechend der Hälfte der Geld-Kosten der entsorgten Karte (abgerundet). Jeder Mitspieler darf sofort eine Karte seiner Hand entsorgen.", 
+        "extra": "[When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1 <VP> and 5 <VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score.] Trashing a card is optional for the other players but mandatory for you. You trash a card, then each other player may trash a card, in turn order. Only the player who played Bishop can get <VP> tokens from it. Potion in costs is ignored, for example if you trash Golem (from Alchemy) which costs 4 coins 1 potion, you get 3 <VP> tokens total (counting the 1 <VP> you always get from Bishop). If you have no cards left in your hand to trash, you still get the 1 coin and 1 <VP> token.", 
         "name": "Bischof", 
         "untranslated": "extra"
     },
@@ -1888,7 +1888,7 @@
     },
     "Goons": {
         "description": "+1 Kauf, + 2 Coin. Jeder Mitspieler muss solange Karten ablegen, bis er nur noch 3 Karten auf der Hand hat. Wenn diese Karte im Spiel ist und du eine Karte kaufst: +1 Punkt. ", 
-        "extra": "[When a player takes VP tokens, he takes a player mat to put them on. VP tokens are not private and anyone can count them. VP tokens come in 1 VP and 5 VP denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their VP tokens to their score.] You get 1 VP token for each card you buy, but do not get a VP token for gaining a card some other way. Multiple copies of Goons are cumulative; if you have two Goons in play and buy a Silver, you get 2 VP tokens. However if you King's Court a Goons, despite having played the card 3 times, there is still only one copy of it in play, so buying Silver would only get you 1 VP token.", 
+        "extra": "[When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1 <VP> and 5 <VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score.] You get 1 <VP> token for each card you buy, but do not get a <VP> token for gaining a card some other way. Multiple copies of Goons are cumulative; if you have two Goons in play and buy a Silver, you get 2 <VP> tokens. However if you King's Court a Goons, despite having played the card 3 times, there is still only one copy of it in play, so buying Silver would only get you 1 <VP> token.", 
         "name": "Halsabschneider", 
         "untranslated": "extra"
     },
@@ -1923,8 +1923,8 @@
         "untranslated": "extra"
     },
     "Monument": {
-        "description": "+2 Coin, +1 Punkt", 
-        "extra": "[When a player takes VP tokens, he takes a player mat to put them on. VP tokens are not private and anyone can count them. VP tokens come in 1 VP and 5 VP denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their VP tokens to their score.]", 
+        "description": "+2 Coin, +1 <VP>", 
+        "extra": "[When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1 <VP> and 5 <VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score.]", 
         "name": "Denkmal", 
         "untranslated": "extra"
     },
@@ -2040,7 +2040,7 @@
         "name": "Hafen"
     },
     "Island": {
-        "description": "Lege diese Karte und eine andere Karte aus deiner Hand offen zur Seite auf dein Tableau Insel. Nimm die Karten am Ende des Spiels zurück in deinen Kartenstapel.  2 Punkte", 
+        "description": "Lege diese Karte und eine andere Karte aus deiner Hand offen zur Seite auf dein Tableau Insel. Nimm die Karten am Ende des Spiels zurück in deinen Kartenstapel.  2 <VP>", 
         "extra": "Die INSEL ist eine kombinierte Aktions- und Punktekarte. Sie kann in der Aktionsphase eingesetzt werden und bringt zusätzlich bei Spielende 2 Punkte. Wenn du deine erste INSEL nimmst oder kaufst, erhältst du ein Insel-Tableau und legst es vor dir ab. Immer wenn du eine INSEL ausspielst, legst du die ausgespielte INSEL und eine beliebige Handkarte offen auf dein Insel-Tableau. Dort verbleiben sie bis zum Spielende. Wenn du mindestens eine Karte auf der Hand hast, musst du eine Handkarte auf dein Insel- Tableau legen. Wenn du keine Karte auf der Hand hast, nachdem du die INSEL ausgespielt hast, legst du nur die INSEL auf das Tableau. Bei Spielende nimmst du alle Karten vom Insel-Tableau zu deinen Karten.", 
         "name": "Insel"
     },
@@ -2179,19 +2179,19 @@
         "untranslated": "description, extra"
     },
     "Settlers - Bustling Village": {
-        "description": "Settlers:\n+1 Card\n+1 Action\nLook through your discard pile. You may reveal a Copper from it and put it into your hand.\n\nBustling Village:\n+1 Card\n+3 Actions\nLook through your discard pile. You may reveal a Settlers from it and put it into your hand.", 
-        "extra": "You can look through your discard pile even if you know there is no Copper in it. Bustling Village: You can look through your discard pile even if you know there are no Settlers in it.", 
+        "description": "<u>Settlers</u>:<center><b>+1 Card<br>+1 Action<n>Look through your discard pile. You may reveal a Copper from it and put it into your hand.<n><u>Bustling Village</u>:<center><b>+1 Card<br>+3 Actions<n>Look through your discard pile. You may reveal a Settlers from it and put it into your hand.", 
+        "extra": "<u>Settlers</u>: You can look through your discard pile even if you know there is no Copper in it.<n><u>Bustling Village</u>: You can look through your discard pile even if you know there are no Settlers in it.", 
         "name": "Siedler / Emsiges Dorf", 
         "untranslated": "description, extra"
     },
     "Catapult - Rocks": {
-        "description": "Catapult:\n+1 Coin\nTrash a card from your hand. If it costs 3 Coins or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.\nRocks:\n+1 Coin\n______________________\nWhen you gain or trash this, gain a Silver; if it is your Buy phase, put the Silver on your deck, otherwise put it into your hand.", 
+        "description": "Catapult:\n+1 Coin\nTrash a card from your hand. If it costs 3 Coins or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.\nRocks:\n+1 Coin<line>When you gain or trash this, gain a Silver; if it is your Buy phase, put the Silver on your deck, otherwise put it into your hand.", 
         "extra": "If the card you trash is a treasure, each other player discards down to 3 cards in hand; if the card you trash costs 3 Coins or more, each other player gains a Curse; if it is both (e.g. Silver), both things happen; if it is neither, neither thing happens. Rocks: If you have no cards in hand left to trash, neither thing happens. If it is another player's turn, then it is not your Buy phase, so the Silver goes to your hand.", 
         "name": "Katapult / Felsen", 
         "untranslated": "description, extra"
     },
     "Patrician - Emporium": {
-        "description": "Patrician:\n+1 Card\n+1 Action\nReveal the top card of your deck. If it costs 5 Coin or more, put it into your hand.\nEmporium:\n+1 Card\n+1 Action\n+1 Coin\n______________________\nWhen you gain this, if you have at least 5 Action cards in play, +2 Victory Tokens.", 
+        "description": "Patrician:\n+1 Card\n+1 Action\nReveal the top card of your deck. If it costs 5 Coin or more, put it into your hand.\nEmporium:\n+1 Card\n+1 Action\n+1 Coin<line>When you gain this, if you have at least 5 Action cards in play, +2 Victory Tokens.", 
         "extra": "Cards costing Debt do not cost 5 Coin or more unless they also have a Coin cost of 5 Coin or more. So Fortune does but City Quarter does not. Emporium: This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Dominion: Adventures) called into play this turn.", 
         "name": "Patrizier / Handelsplatz", 
         "untranslated": "description, extra"
@@ -2203,7 +2203,7 @@
         "untranslated": "description, extra"
     },
     "Gladiator - Fortune": {
-        "description": "Gladiator:\nIf there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator.\nFortune:\n+1 Buy\nWhen you play this, double your Coin if you haven't yet this turn.\n______________________\nWhen you gain this, gain a Gold per Gladiator you have in play.", 
+        "description": "Gladiator:\nIf there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator.\nFortune:\n+1 Buy\nWhen you play this, double your Coin if you haven't yet this turn.<line>When you gain this, gain a Gold per Gladiator you have in play.", 
         "extra": "If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator. Fortune: You only double your Coin the first time you play a Fortune in a turn; any further times only get you +1 Buy.", 
         "name": "Gladiator / Reichtum", 
         "untranslated": "description, extra"

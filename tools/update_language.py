@@ -94,7 +94,82 @@ for lang in languages:
     if not os.path.exists(lang_dir):
         os.makedirs(lang_dir)
 
+        
+###########################################################################
+#  Get the types_db information
+#  Store in a list in the order found in types[]. Ordered by card_type
+#  1. card_tags, 2. group_tags, 3. super groups
+###########################################################################
+types = []
+type_parts = []
 
+# Get the card data
+type_data = get_json_data(os.path.join(card_db_dir, "types_db.json"))
+
+# Sort the cards by cardset_tags, then card_tag
+sorted_type_data = multikeysort(type_data, ['card_type'])
+
+with io.open(os.path.join(output_dir, "types_db.json"), 'w', encoding='utf-8') as lang_out:
+    lang_out.write(unicode("[")) #  Start of list
+    sep = ""
+    for type in sorted_type_data:
+        # Collect all the individual types
+        type_parts = list(set(type['card_type']) | set(type_parts))
+        lang_out.write(sep + json.dumps(type, indent=4, ensure_ascii=False, sort_keys=True))
+        sep = ","
+    lang_out.write(unicode("\n]\n")) #  End of List
+
+type_parts.sort()
+print "Unique Types:"
+print type_parts
+print
+
+
+###########################################################################
+# Fix up all the xx/types_xx.json files
+# Place entries in alphabetical order
+# If entries don't exist:
+#    If the default language, set from information in the "types_db.json" file,
+#    If not the default language, set based on information from the default language.
+# Lastly, keep any extra entries that are not currently used, just in case needed
+#    in the future or is a work in progress.
+###########################################################################
+for lang in languages:
+    lang_file = "types_" + lang + ".json"
+    fname = os.path.join(card_db_dir, lang, lang_file)
+    if os.path.isfile(fname):
+        lang_type_data = get_json_data(fname)
+    else:
+        lang_type_data = {}
+        
+    with io.open( os.path.join(output_dir, lang, lang_file), 'w',encoding='utf-8') as lang_out:
+        lang_out.write(unicode("{")) #  Start of types
+        sep = ""
+        used = []
+        
+        for type in sorted(type_parts):
+            if type not in lang_type_data:
+                if lang == LANGUAGE_DEFAULT:
+                    lang_type_data[type] = type
+                else:
+                    lang_type_data[type] = lang_type_default[type]
+
+            lang_out.write(json_dict_entry({type:lang_type_data[type]}, sep))
+            used.append(type)
+            sep = ","
+
+        # Now keep any unused values just in case needed in the future
+        for key in lang_type_data:
+            if key not in used:
+                lang_out.write(json_dict_entry({key:lang_type_data[key]}, sep))
+                sep = ","
+
+        lang_out.write(unicode("\n}\n")) #  End of Types
+
+        if lang == LANGUAGE_DEFAULT:
+            lang_type_default = lang_type_data  #  Keep for later languages
+
+            
 ###########################################################################
 #  Get the cards_db information
 #  Store in a list in the order found in cards[]. Ordered as follows:
