@@ -30,7 +30,8 @@ def get_languages(path):
         if os.path.isdir(dir_path):
             cards_file = os.path.join(dir_path, "cards_" + name + ".json")
             sets_file = os.path.join(dir_path, "sets_" + name + ".json")
-            if os.path.isfile(cards_file) and os.path.isfile(sets_file):
+            types_file = os.path.join(dir_path, "types_" + name + ".json")
+            if (os.path.isfile(cards_file) and os.path.isfile(sets_file) and os.path.isfile(types_file)):
                 languages.append(name)
     if LANGUAGE_XX in languages:
         languages.remove(LANGUAGE_XX)
