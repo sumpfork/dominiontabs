@@ -341,28 +341,44 @@ class DividerDrawer(object):
         self.canvas.restoreState()
 
     def drawCardCount(self, card, x, y, offset=-1):
-        if card.count < 1:
+        # Note that this is right justified.
+        # x represents the right most for the image (image grows to the left)
+        if card.getCardCount() < 1:
             return 0
 
-            # base width is 16 (for image) + 2 (1 pt border on each side)
-        width = 18
+        #  draw_list = [(card.getCardCount(), 1)]
+        draw_list = sorted([ (i,card.count.count(i)) for i in set(card.count) ])
 
         cardIconHeight = y + offset
         countHeight = cardIconHeight - 4
+        width = 0
 
-        self.canvas.drawImage(
-            os.path.join(self.options.data_path, 'images', 'card.png'),
-            x,
-            countHeight,
-            16,
-            16,
-            preserveAspectRatio=True,
-            mask='auto')
+        for value,count in draw_list:
+            # draw the image set with the number of cards inside it
+            width += 16
+            x -= 16
+            self.canvas.drawImage(
+                os.path.join(self.options.data_path, 'images', 'card.png'),
+                x,
+                countHeight,
+                16,
+                16,
+                preserveAspectRatio=True,
+                mask='auto')
+            self.canvas.setFont(self.fontNameBold, 10)
+            self.canvas.drawCentredString(x + 8, countHeight + 4, str(value))
 
-        self.canvas.setFont(self.fontNameBold, 10)
-        count = str(card.count)
-        self.canvas.drawCentredString(x + 8, countHeight + 4, count)
-        return width
+            # now draw the number of sets
+            if count > 1:
+                count_string = u"{}\u00d7".format(count)
+                width_string = stringWidth(count_string, self.fontNameRegular, 10)
+                width_string -= 1  #  adjust to make it closer to image
+                width += width_string
+                x -= width_string
+                self.canvas.setFont(self.fontNameRegular, 10)
+                self.canvas.drawString(x, countHeight + 4, count_string)
+
+        return width + 1
 
     def drawCost(self, card, x, y, costOffset=-1):
         # width starts at 2 (1 pt border on each side)
@@ -680,9 +696,8 @@ class DividerDrawer(object):
                 drewTopIcon = True
 
         if self.options.count:
-            Image_x_right -= 16
-            self.drawCardCount(card, Image_x_right,
-                               totalHeight - usedHeight - 0.5 * cm)
+            Image_x_right -= self.drawCardCount(card, Image_x_right,
+                                                totalHeight - usedHeight - 0.5 * cm)
             drewTopIcon = True
 
         if (self.options.types and not card.isExpansion()):
@@ -692,21 +707,32 @@ class DividerDrawer(object):
             left_margin = Image_x_left
             right_margin = self.options.dividerWidth - Image_x_right
             worst_margin = max(left_margin, right_margin)
+            w = self.options.dividerWidth / 2
             textWidth = self.options.dividerWidth - 2 * worst_margin
+            textWidth2 = self.options.dividerWidth - left_margin - right_margin
 
-            #  Calculate font size
+            #  Calculate font size that will fit in the area
+            #  Start with centering type.  But if the fontSize gets too small
+            #  use all the available space, even if it is not centered on the card
             fontSize = 8
+            failover = False
             width = stringWidth(card.types_name, self.fontNameRegular, fontSize)
             while width > textWidth:
                 fontSize -= .01
+                if fontSize < 6 and not failover:
+                    print card.card_tag
+                    # Start over using all available space left on line
+                    textWidth = textWidth2
+                    w = left_margin + (textWidth2 / 2)
+                    fontSize = 8
+                    failover = True
                 width = stringWidth(card.types_name, self.fontNameRegular, fontSize)
 
             #  Print out the text in the right spot
             h = totalHeight - usedHeight - 0.5 * cm
-            w = self.options.dividerWidth / 2 - width / 2
             self.canvas.setFont(self.fontNameRegular, fontSize)
             if card.types_name != ' ':
-                self.canvas.drawString(w, h, card.types_name)
+                self.canvas.drawCentredString(w, h, card.types_name)
             drewTopIcon = True
 
         if drewTopIcon:

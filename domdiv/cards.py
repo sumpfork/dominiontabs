@@ -49,19 +49,22 @@ class Card(object):
         self.text_icon = text_icon
         self.cardset_tag = cardset_tag
         if count < 0:
-            self.count = self.getType().getTypeDefaultCardCount()
+            self.count = [self.getType().getTypeDefaultCardCount()]
         else:
-            self.count = int(count)
+            self.count = [int(count)]
 
     def getCardCount(self):
-        return self.count
+        return sum(i for i in self.count)
 
     def setCardCount(self, value):
         self.count = value
 
+    def addCardCount(self, value):
+        self.count.extend(value)
+
     def getStackHeight(self, thickness):
         # return height of the stacked cards in cm.  Using hight in cm of a stack of 60 Copper cards as thickness.
-        return self.count * cm * (thickness / 60.0) + 2
+        return self.getCardCount() * cm * (thickness / 60.0) + 2
 
     def getType(self):
         return Card.types[tuple(self.types)]

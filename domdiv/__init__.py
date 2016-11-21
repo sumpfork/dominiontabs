@@ -575,7 +575,6 @@ def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None
             if holder is None:
                 # Save the first one as a holder/container for it and all the rest
                 holder = c
-                count = c.count
                 holder.card_tag = new_card_tag  # assign the new card_tag
                 holder.group_tag = new_card_tag
                 holder.cost = ""
@@ -586,14 +585,10 @@ def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None
                 filteredCards.append(holder)
             else:
                 # already have holder
-                count += c.count  # keep track of count and skip card
+                holder.addCardCount(c.count)  # keep track of count and skip card
         else:
             # Not the right type
             filteredCards.append(c)
-
-    if holder is not None:
-        # update holder to have the correct count
-        holder.setCardCount(count)
 
     return filteredCards
 
@@ -680,7 +675,7 @@ def filter_sort_cards(cards, options):
                         group_cards[card.group_tag].types = card.types
                         group_cards[card.group_tag].image = card.image
 
-                    group_cards[card.group_tag].count += card.count    # increase the count
+                    group_cards[card.group_tag].addCardCount(card.count)    # increase the count
                     # group_cards[card.group_tag].set_lowest_cost(card)  # set holder to lowest cost of the two cards
 
         cards = keep_cards
