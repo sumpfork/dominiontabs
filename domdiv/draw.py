@@ -347,13 +347,13 @@ class DividerDrawer(object):
             return 0
 
         #  draw_list = [(card.getCardCount(), 1)]
-        draw_list = sorted([ (i,card.count.count(i)) for i in set(card.count) ])
+        draw_list = sorted([(i, card.count.count(i)) for i in set(card.count)])
 
         cardIconHeight = y + offset
         countHeight = cardIconHeight - 4
         width = 0
 
-        for value,count in draw_list:
+        for value, count in draw_list:
             # draw the image set with the number of cards inside it
             width += 16
             x -= 16
@@ -372,7 +372,7 @@ class DividerDrawer(object):
             if count > 1:
                 count_string = u"{}\u00d7".format(count)
                 width_string = stringWidth(count_string, self.fontNameRegular, 10)
-                width_string -= 1  #  adjust to make it closer to image
+                width_string -= 1  # adjust to make it closer to image
                 width += width_string
                 x -= width_string
                 self.canvas.setFont(self.fontNameRegular, 10)
