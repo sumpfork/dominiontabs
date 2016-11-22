@@ -423,7 +423,7 @@ def read_write_card_data(options):
         Card.sets = json.load(setfile)
     assert Card.sets, "Could not load any sets from database"
     for s in Card.sets:
-        if not 'no_randomizer' in Card.sets[s]:
+        if 'no_randomizer' not in Card.sets[s]:
             Card.sets[s]['no_randomizer'] = False
 
     # Set cardset_tag and expand cards that are used in multiple sets
@@ -773,7 +773,7 @@ def filter_sort_cards(cards, options):
             exp = set_values["set_name"]
             if exp in cardnamesByExpansion:
                 exp_name = exp
-                
+
                 count = len(cardnamesByExpansion[exp])
                 if 'no_randomizer' in set_values:
                     if set_values['no_randomizer']:
