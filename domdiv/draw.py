@@ -219,6 +219,7 @@ class DividerDrawer(object):
         replace = '<img src=' "'%s/coin_small_empty.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('empty\s(c|C)oin(s)?', replace, text)
+        text = re.sub('\_\s(c|C)oin(s)?', replace, text)
 
         # VP
         replace = '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'120%%'" ' valign=' "'middle'" '/>'
@@ -720,7 +721,6 @@ class DividerDrawer(object):
             while width > textWidth:
                 fontSize -= .01
                 if fontSize < 6 and not failover:
-                    print card.card_tag
                     # Start over using all available space left on line
                     textWidth = textWidth2
                     w = left_margin + (textWidth2 / 2)
@@ -767,14 +767,18 @@ class DividerDrawer(object):
         spacerHeight = 0.2 * cm
         minSpacerHeight = 0.05 * cm
 
-        descriptions = self.add_inline_text(descriptions)
+        if not card.isExpansion():
+            descriptions = self.add_inline_text(descriptions)
         descriptions = re.split("\n", descriptions)
         while True:
             paragraphs = []
             # this accounts for the spacers we insert between paragraphs
             h = (len(descriptions) - 1) * spacerHeight
             for d in descriptions:
-                dmod = self.add_inline_images(d, s.fontSize)
+                if card.isExpansion():
+                    dmod = d
+                else:
+                    dmod = self.add_inline_images(d, s.fontSize)
                 p = Paragraph(dmod, s)
                 h += p.wrap(textBoxWidth, textBoxHeight)[1]
                 paragraphs.append(p)

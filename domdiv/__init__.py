@@ -422,6 +422,9 @@ def read_write_card_data(options):
     with codecs.open(set_db_filepath, "r", "utf-8") as setfile:
         Card.sets = json.load(setfile)
     assert Card.sets, "Could not load any sets from database"
+    for s in Card.sets:
+        if not 'no_randomizer' in Card.sets[s]:
+            Card.sets[s]['no_randomizer'] = False
 
     # Set cardset_tag and expand cards that are used in multiple sets
     new_cards = []
@@ -580,6 +583,8 @@ def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None
                 holder.cost = ""
                 if new_cardset_tag is not None:
                     holder.cardset_tag = new_cardset_tag
+                    holder.image = None
+                    holder.image = holder.setImage()
                 if new_type is not None:
                     holder.types = (new_type, )
                 filteredCards.append(holder)
@@ -768,6 +773,12 @@ def filter_sort_cards(cards, options):
             exp = set_values["set_name"]
             if exp in cardnamesByExpansion:
                 exp_name = exp
+                
+                count = len(cardnamesByExpansion[exp])
+                if 'no_randomizer' in set_values:
+                    if set_values['no_randomizer']:
+                        count = 0
+
                 if not options.expansion_dividers_long_name:
                     if 'short_name' in set_values:
                         exp_name = set_values['short_name']
@@ -778,7 +789,7 @@ def filter_sort_cards(cards, options):
                          types=("Expansion", ),
                          cost=None,
                          description=' | '.join(sorted(cardnamesByExpansion[exp])),
-                         count=len(cardnamesByExpansion[exp]),
+                         count=count,
                          card_tag=set_tag)
                 cards.append(c)
 
