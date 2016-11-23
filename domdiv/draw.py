@@ -228,7 +228,8 @@ class DividerDrawer(object):
         replace = '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'120%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.5)
         text = re.sub('(?:\s+|\<)VP(?:\s+|\>|\.|$)', replace, text)
-        replace = '<font size=%d>\\1</font> <img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'200%%'" ' valign=' "'middle'" '/>'
+        replace = '<font size=%d>\\1</font> '
+        replace += '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'200%%'" ' valign=' "'middle'" '/>'
         replace = replace % (fontsize * 1.5, path, fontsize * 2.5)
         text = re.sub('(\d+)\s*\<\*VP\*\>', replace, text)
 
@@ -241,7 +242,8 @@ class DividerDrawer(object):
         text = re.sub('Debt', replace, text)
 
         # Potion
-        replace = '<font size=%d>\\1</font><img src=' "'%s/potion_small.png'" ' width=%d height=' "'140%%'" ' valign=' "'middle'" '/>'
+        replace = '<font size=%d>\\1</font> '
+        replace += '<img src=' "'%s/potion_small.png'" ' width=%d height=' "'140%%'" ' valign=' "'middle'" '/>'
         replace = replace % (fontsize * 1.5, path, fontsize * 2.0)
         text = re.sub('(\d+)\s*\<\*POTION\*\>', replace, text)
         replace = '<img src=' "'%s/potion_small.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
