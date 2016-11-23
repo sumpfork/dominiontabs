@@ -6,7 +6,7 @@ from reportlab.lib.units import cm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph
-from reportlab.lib.enums import TA_JUSTIFY
+from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase.pdfmetrics import stringWidth
@@ -210,6 +210,9 @@ class DividerDrawer(object):
     def add_inline_images(self, text, fontsize):
         # Coins
         path = os.path.join(self.options.data_path, 'images')
+        replace = '<img src=' "'%s/coin_small_\\1.png'" ' width=%d height=' "'200%%'" ' valign=' "'middle'" '/>'
+        replace = replace % (path, fontsize * 2.4)
+        text = re.sub('(\d+)\s*\<\*COIN\*\>', replace, text)
         replace = '<img src=' "'%s/coin_small_\\1.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('(\d+)\s(c|C)oin(s)?', replace, text)
@@ -225,6 +228,9 @@ class DividerDrawer(object):
         replace = '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'120%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.5)
         text = re.sub('(?:\s+|\<)VP(?:\s+|\>|\.|$)', replace, text)
+        replace = '<font size=%d>\\1</font> <img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'200%%'" ' valign=' "'middle'" '/>'
+        replace = replace % (fontsize * 1.5, path, fontsize * 2.5)
+        text = re.sub('(\d+)\s*\<\*VP\*\>', replace, text)
 
         # Debt
         replace = '<img src=' "'%s/debt_\\1.png'" ' width=%d height=' "'105%%'" ' valign=' "'middle'" '/>&thinsp;'
@@ -235,6 +241,9 @@ class DividerDrawer(object):
         text = re.sub('Debt', replace, text)
 
         # Potion
+        replace = '<font size=%d>\\1</font><img src=' "'%s/potion_small.png'" ' width=%d height=' "'140%%'" ' valign=' "'middle'" '/>'
+        replace = replace % (fontsize * 1.5, path, fontsize * 2.0)
+        text = re.sub('(\d+)\s*\<\*POTION\*\>', replace, text)
         replace = '<img src=' "'%s/potion_small.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('Potion', replace, text)
@@ -242,6 +251,12 @@ class DividerDrawer(object):
         return text.strip()
 
     def add_inline_text(self, text):
+        # Bonuses
+        # text = re.sub('(\+\s*\d+\s*[c|C]oin(s)?(?!\s[t|T]oken))', '<b>\\1</b>', text)
+        # text = re.sub('(\+\s*\d+\s*[a|A]ction(s)?(?!\s[t|T]oken))', '<b>\\1</b>', text)
+        # text = re.sub('(\+\s*\d+\s*[b|B]uy(s)?(?!\s[t|T]oken))', '<b>\\1</b>', text)
+        # text = re.sub('(\+\s*\d+\s*[c|C]ard(s)?(?!\s[t|T]oken))', '<b>\\1</b>', text)
+
         # <line>
         replace = "<center>%s\n" % ("&ndash;" * 22)
         text = re.sub("\<line\>", replace, text)
@@ -758,7 +773,10 @@ class DividerDrawer(object):
 
         s = getSampleStyleSheet()['BodyText']
         s.fontName = "Times-Roman"
-        s.alignment = TA_JUSTIFY
+        if divider_text == "card" and not card.isExpansion():
+            s.alignment = TA_CENTER
+        else:
+            s.alignment = TA_JUSTIFY
 
         textHorizontalMargin = .5 * cm
         textVerticalMargin = .3 * cm
