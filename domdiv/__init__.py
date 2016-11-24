@@ -547,7 +547,7 @@ def add_set_text(options, sets, language='en_us'):
 
 def add_type_text(options, types={}, language='en_us'):
     language = language.lower()
-    # Read in the set text and store for later
+    # Read in the type text and store for later
     type_text_filepath = os.path.join(options.data_path,
                                       "card_db",
                                       language,
@@ -568,6 +568,23 @@ def add_type_text(options, types={}, language='en_us'):
             types[type] = type_text[type]
 
     return types
+
+
+def add_bonus_regex(options, language='en_us'):
+    language = language.lower()
+    # Read in the bonus regex terms
+    bonus_regex_filepath = os.path.join(options.data_path,
+                                        "card_db",
+                                        language,
+                                        "bonuses_" + language + ".json")
+    with codecs.open(bonus_regex_filepath, 'r', 'utf-8') as bonus_regex_file:
+        bonus_regex = json.load(bonus_regex_file)
+    assert bonus_regex, "Could not load bonus keywords for %r" % language
+
+    if not bonus_regex:
+        bonus_regex = {}
+
+    return bonus_regex
 
 
 def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None, new_type=None):
@@ -703,6 +720,13 @@ def filter_sort_cards(cards, options):
         Card.type_names = add_type_text(options, Card.type_names, options.language)
     for card in cards:
         card.types_name = ' - '.join([Card.type_names[t] for t in card.types]).upper()
+
+    # Get the card bonus keywords in the requested language
+    bonus = add_bonus_regex(options, LANGUAGE_DEFAULT)
+    Card.addBonusRegex(bonus)
+    if options.language != LANGUAGE_DEFAULT:
+        bonus = add_bonus_regex(options, options.language)
+        Card.addBonusRegex(bonus)
 
     # Fix up cardset text.  Waited as long as possible.
     Card.sets = add_set_text(options, Card.sets, LANGUAGE_DEFAULT)

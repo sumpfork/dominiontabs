@@ -1,0 +1,17 @@
+{
+    "exclude": [
+        "token",
+        "Tokens"
+    ],
+    "include": [
+        "Coins",
+        "Coin",
+        "Cards",
+        "Card",
+        "Buys",
+        "Buy",
+        "Actions",
+        "Action",
+        "<VP>"
+    ]
+}

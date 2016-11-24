@@ -252,12 +252,9 @@ class DividerDrawer(object):
 
         return text.strip()
 
-    def add_inline_text(self, text):
+    def add_inline_text(self, card, text):
         # Bonuses
-        # text = re.sub('(\+\s*\d+\s*[c|C]oin(s)?(?!\s[t|T]oken))', '<b>\\1</b>', text)
-        # text = re.sub('(\+\s*\d+\s*[a|A]ction(s)?(?!\s[t|T]oken))', '<b>\\1</b>', text)
-        # text = re.sub('(\+\s*\d+\s*[b|B]uy(s)?(?!\s[t|T]oken))', '<b>\\1</b>', text)
-        # text = re.sub('(\+\s*\d+\s*[c|C]ard(s)?(?!\s[t|T]oken))', '<b>\\1</b>', text)
+        text = card.getBonusBoldText(text)
 
         # <line>
         replace = "<center>%s\n" % ("&ndash;" * 22)
@@ -788,7 +785,7 @@ class DividerDrawer(object):
         minSpacerHeight = 0.05 * cm
 
         if not card.isExpansion():
-            descriptions = self.add_inline_text(descriptions)
+            descriptions = self.add_inline_text(card, descriptions)
         descriptions = re.split("\n", descriptions)
         while True:
             paragraphs = []

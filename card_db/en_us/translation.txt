@@ -37,6 +37,20 @@ The key word "text_icon" MUST NOT BE CHANGED, but the value after the : should b
 Do not change any punctuation outside of the quotes '"'.  For example, brackets '{' or '}', colons ':', quotes '"' or commas ','.
 
 
+## Anatomy of bonuses_xx.json
+Entries in this file represent Dominion bonuses. The items in the "include" list are items that will be marked bold (i.e., <b>..</b>)
+when found in the card text in the following format:
+ +# item_from_include_list
+ as long as this is not followed by a item from the "exclude" list.
+For example in English:
+ "+2 Buys" will be made bold, but
+ "+1 Action token" will not, since the key word token follows.
+
+Just replace the English terms with the terms used in the target language.  
+Generally you should include the singular as well as the plural version of the term.
+English versions do not need to be duplicated, since they are used automatically.
+The key words "exclude" and "include" MUST NOT BE CHANGED.
+
 ## Anatomy of types_xx.json
 Entries in this file represent Dominion card types.  A typical entry looks like:
     "Action": "Action in new language",
@@ -100,9 +114,9 @@ Special character sequences are recognized by the program to substitute graphics
    '# <*COIN*>' where # is a number 0 - 13, will produce a large coin graphic with the # on top
    '# <*VP*>' where # is a number, will produce a large Victory Point graphic with the # before it
    '# <*POTION*>' where # is a number, will produce a large Potion graphic with the # before it
-      
+
    To keep the special images, please do not translate '<VP>', 'Potion', or the 'coin' variations into the target language.
-   
+
 ## Style Guide
 
  - Bonuses within the text will automatically be bolded. It will not bold the text if it is followed by 'token' or 'Token'.
