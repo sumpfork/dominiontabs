@@ -569,6 +569,7 @@ def add_type_text(options, types={}, language='en_us'):
 
     return types
 
+
 def add_bonus_regex(options, language='en_us'):
     language = language.lower()
     # Read in the bonus regex terms
@@ -726,7 +727,6 @@ def filter_sort_cards(cards, options):
     if options.language != LANGUAGE_DEFAULT:
         bonus = add_bonus_regex(options, options.language)
         Card.addBonusRegex(bonus)
-
 
     # Fix up cardset text.  Waited as long as possible.
     Card.sets = add_set_text(options, Card.sets, LANGUAGE_DEFAULT)
