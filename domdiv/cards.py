@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from reportlab.lib.units import cm
 
 
@@ -8,6 +9,7 @@ class Card(object):
     sets = None
     types = None
     type_names = None
+    bonus_regex = None
 
     class CardJSONEncoder(json.JSONEncoder):
 
@@ -68,6 +70,44 @@ class Card(object):
 
     def getType(self):
         return Card.types[tuple(self.types)]
+
+    def getBonusBoldText(self, text):
+        for regex in Card.bonus_regex:
+            text = re.sub(regex, '<b>\\1</b>', text)
+        return text
+
+    @staticmethod
+    def addBonusRegex(bonus):
+        # Each bonus_regex matches the bonus keywords to be highlighted
+        # This only needs to be done once per language
+        if Card.bonus_regex is None:
+            # initialize the information holder
+            Card.bonus_regex = []
+
+        # Make sure have minimum to to anything
+        if not isinstance(bonus, dict):
+            return
+        if 'include' not in bonus:
+            return
+        if not bonus['include']:
+            return
+        if 'exclude' not in bonus:
+            bonus['exclude'] = []
+
+        # Start processing of lists into a single regex statement
+        # (?i) makes this case insensitive
+        # (?!\<b\>) and (?!\<\/b\>) prevents matching already bolded items
+        # (?!\w) prevents smaller word matches.  Prevents matching "Action" in "Actions"
+        if bonus['exclude']:
+            bonus['exclude'].sort(reverse=True)
+            exclude_regex = '(?!\w)(?!\s*(' + '|'.join(bonus['exclude']) + '))'
+        else:
+            exclude_regex = ''
+
+        bonus['include'].sort(reverse=True)
+        include_regex = "(\+\s*\d+\s*(" + '|'.join(bonus['include']) + "))"
+        regex = "((?i)(?!\<b\>)" + include_regex + exclude_regex + "(?!\<\/b\>))"
+        Card.bonus_regex.append(regex)
 
     def __repr__(self):
         return '"' + self.name + '"'
