@@ -648,6 +648,8 @@ def filter_sort_cards(cards, options):
                               new_card_tag='events',
                               new_cardset_tag='extras'
                               )
+        if options.expansions:
+            options.expansions.append("extras")
 
     # Combine all Landmarks across all expansions
     if options.exclude_landmarks:
@@ -657,6 +659,8 @@ def filter_sort_cards(cards, options):
                               new_card_tag='landmarks',
                               new_cardset_tag='extras'
                               )
+        if options.expansions:
+            options.expansions.append("extras")
 
     # FIX THIS: Combine all Prizes across all expansions
     # if options.exclude_prizes:
@@ -741,6 +745,7 @@ def filter_sort_cards(cards, options):
     # If expansion names given, then remove any cards not in those expansions
     # Expansion names can be the names from the language or the cardset_tag
     if options.expansions:
+        options.expansions = list(set(options.expansions))
         options.expansions = [o.lower() for o in options.expansions]
         reverseMapping = {set_tag: Card.sets[set_tag]['set_name'] for set_tag in Card.sets}
         options.expansions = [
