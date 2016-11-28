@@ -605,7 +605,7 @@ class DividerDrawer(object):
             if wrapper == "back" and not self.options.tab_name_align == "centre":
                 NotRightEdge = not NotRightEdge
             if NotRightEdge:
-                if self.wantCentreTab(card):
+                if self.options.tab_name_align == "centre" or self.wantCentreTab(card):
                     w = self.options.labelWidth / 2 - self.nameWidth(
                         line, fontSize) / 2
                 else:
