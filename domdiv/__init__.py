@@ -796,7 +796,7 @@ def filter_sort_cards(cards, options):
         for c in cards:
             if cardSorter.isBaseExpansionCard(c):
                 continue
-            cardnamesByExpansion.setdefault(c.cardset, []).append(c.name.strip())
+            cardnamesByExpansion.setdefault(c.cardset, []).append(c.name.strip().replace(' ','&nbsp;'))
 
         for set_tag, set_values in Card.sets.iteritems():
             exp = set_values["set_name"]
