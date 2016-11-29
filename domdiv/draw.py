@@ -29,7 +29,7 @@ class DividerDrawer(object):
         dirn = os.path.join(self.options.data_path, 'fonts')
         regularMpath = os.path.join(dirn, 'MinionPro-Regular.ttf')
         boldMpath = os.path.join(dirn, 'MinionPro-Bold.ttf')
-        obliqueMpath = os.path.join(dirn, 'MinionPro-Oblique.ttf')
+        obliqueMpath = os.path.join(dirn, 'MinionPro-It.ttf')
 
         if os.path.isfile(regularMpath) and os.path.isfile(boldMpath) and os.path.isfile(obliqueMpath):
             self.fontNameRegular = 'MinionPro-Regular'
@@ -39,7 +39,7 @@ class DividerDrawer(object):
             self.fontNameOblique = 'MinionPro-Oblique'
             pdfmetrics.registerFont(TTFont(self.fontNameOblique, obliqueMpath))
         else:
-            print >> sys.stderr, "Warning, Minion Pro Font ttf file not found! Falling back on Times, tried:"
+            print >> sys.stderr, "Warning, Minion Pro Font ttf file(s) not found! Falling back on Times. Tried:"
             print >> sys.stderr, regularMpath + ' ' + boldMpath + ' & ' + obliqueMpath
             self.fontNameRegular = 'Times-Roman'
             self.fontNameBold = 'Times-Bold'
