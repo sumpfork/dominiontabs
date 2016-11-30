@@ -575,7 +575,6 @@ class DividerDrawer(object):
         width = self.nameWidth(name, fontSize)
         while width > textWidth and fontSize > 8:
             fontSize -= .01
-            # print 'decreasing font size for tab of',name,'now',fontSize
             width = self.nameWidth(name, fontSize)
         tooLong = width > textWidth
         if tooLong:
@@ -624,11 +623,18 @@ class DividerDrawer(object):
                     w += drawWordPiece(word[0], fontSize)
                     w += drawWordPiece(word[1:], fontSize - 2)
             else:
-                # align text to the right if tab is on right side, to make
-                # tabs easier to read when grouped together extra 3pt is for
-                # space between text + set symbol
+                # align text to the right if tab is on right side
+                if self.options.tab_name_align == "centre" or self.wantCentreTab(card):
+                    w = self.options.labelWidth / 2 - self.nameWidth(
+                        line, fontSize) / 2
+                    w = self.options.labelWidth - w
+                else:
+                    w = self.options.labelWidth - textInsetRight
 
-                w = self.options.labelWidth - textInsetRight - 3
+                # to make tabs easier to read when grouped together extra 3pt is for
+                # space between text + set symbol
+                w -= 3
+
                 words.reverse()
 
                 def drawWordPiece(text, fontSize):

@@ -52,6 +52,8 @@ class Card(object):
         self.cardset_tag = cardset_tag
         if count < 0:
             self.count = [self.getType().getTypeDefaultCardCount()]
+        elif count == 0:
+            self.count = []
         else:
             self.count = [int(count)]
 
