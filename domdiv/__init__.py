@@ -206,6 +206,7 @@ def parse_opts(arglist):
         help="stop generating after this many pages, -1 for all")
     parser.add_argument("--language",
                         default=LANGUAGE_DEFAULT,
+                        choices=LANGUAGE_CHOICES,
                         help="language of card texts; valid values are: %s; defaults to '%s' " %
                         (", ".join("'%s'" % x for x in LANGUAGE_CHOICES), LANGUAGE_DEFAULT)
                         )
@@ -538,10 +539,10 @@ def add_set_text(options, sets, language='en_us'):
     assert set_text, "Could not load set text for %r" % language
 
     # Now apply to all the sets
-    for set in sets:
-        if set in set_text:
-            for key in set_text[set]:
-                sets[set][key] = set_text[set][key]
+    for s in sets:
+        if s in set_text:
+            for key in set_text[s]:
+                sets[s][key] = set_text[s][key]
     return sets
 
 
@@ -587,30 +588,25 @@ def add_bonus_regex(options, language='en_us'):
     return bonus_regex
 
 
-def combine_cards(cards, old_card_type='', new_card_tag='', new_cardset_tag=None, new_type=None):
+def combine_cards(cards, old_card_type, new_card_tag, new_cardset_tag, new_type):
+
+    holder = Card(name='*Replace Later*',
+                  card_tag=new_card_tag,
+                  group_tag=new_card_tag,
+                  cardset_tag=new_cardset_tag,
+                  types=(new_type, ),
+                  count=0)
+    holder.image = holder.setImage()
+
     filteredCards = []
-    holder = None
     for c in cards:
         if c.isType(old_card_type):
-            if holder is None:
-                # Save the first one as a holder/container for it and all the rest
-                holder = c
-                holder.card_tag = new_card_tag  # assign the new card_tag
-                holder.group_tag = new_card_tag
-                holder.cost = ""
-                if new_cardset_tag is not None:
-                    holder.cardset_tag = new_cardset_tag
-                    holder.image = None
-                    holder.image = holder.setImage()
-                if new_type is not None:
-                    holder.types = (new_type, )
-                filteredCards.append(holder)
-            else:
-                # already have holder
-                holder.addCardCount(c.count)  # keep track of count and skip card
+            holder.addCardCount(c.count)  # keep track of count and skip card
         else:
-            # Not the right type
-            filteredCards.append(c)
+            filteredCards.append(c)  # Not the right type, keep card
+
+    if holder.getCardCount() > 0:
+        filteredCards.append(holder)
 
     return filteredCards
 
