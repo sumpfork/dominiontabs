@@ -743,7 +743,7 @@ def filter_sort_cards(cards, options):
     if options.expansions:
         options.expansions = list(set(options.expansions))
         options.expansions = [o.lower() for o in options.expansions]
-        reverseMapping = {set_tag.lower(): Card.sets[set_tag]['set_name'].lower for set_tag in Card.sets}
+        reverseMapping = {set_tag.lower(): Card.sets[set_tag]['set_name'].lower() for set_tag in Card.sets}
         options.expansions = [
             reverseMapping.get(e, e) for e in options.expansions
         ]
