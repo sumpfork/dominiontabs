@@ -65,6 +65,7 @@ def parse_opts(arglist):
         'Basic choices for the dividers.')
     group_basic.add_argument(
         '--outfile', '-o',
+        dest="outfile",
         default="dominion_dividers.pdf",
         help="The output file name.")
     group_basic.add_argument(
@@ -76,6 +77,7 @@ def parse_opts(arglist):
         "are not found, then to 'LETTER'.")
     group_basic.add_argument(
         "--language", "-l",
+        dest="language",
         default=LANGUAGE_DEFAULT,
         choices=LANGUAGE_CHOICES,
         help="Language of divider text.")
