@@ -3,9 +3,9 @@
 ## File Format
 /card_db/
         xx/
+           bonuses_xx.json
            cards_xx.json
            sets_xx.json
-           translation.txt
            types_xx.json
 
 where xx is ISO 639-1 standard language code in lower case with under bar '_' replacing dash '-'
@@ -14,6 +14,7 @@ Please rename the directory and the files to match the language you are providin
 
 ## Character encoding
 The files:
+    bonuses_xx.json
     cards_xx.json
     sets_xx.json
     types_xx.json
@@ -50,6 +51,7 @@ Just replace the English terms with the terms used in the target language.
 Generally you should include the singular as well as the plural version of the term.
 English versions do not need to be duplicated, since they are used automatically.
 The key words "exclude" and "include" MUST NOT BE CHANGED.
+Do not change any punctuation outside of the quotes '"'.  For example, brackets '{' or '}', colons ':', quotes '"' or commas ','.
 
 ## Anatomy of types_xx.json
 Entries in this file represent Dominion card types.  A typical entry looks like:
@@ -119,16 +121,18 @@ Special character sequences are recognized by the program to substitute graphics
 
 ## Style Guide
 
- - Bonuses within the text will automatically be bolded. It will not bold the text if it is followed by 'token' or 'Token'.
+ - If bonuses_xx.json for the target language is configured correctly, bonuses within the text will automatically be bolded.
+   It will not bold the text if it is followed by 'token' or 'Token'.
    Example: "Choose one: +3 Cards; or +2 Actions." will bold '+3 Cards' and '+2 Actions'.
 
  - Bonuses should be listed in the following order:
          +Cards, +Actions, +Buys, +Coins, then +<VP>
 
  - When possible, bonuses should be listed vertically and centered.
-   Example: "+1 Card<br>+1 Action<br>+1 Buy<br>+1 Coin<br>+2 <VP><n>"
-   This will happen naturally in the "description" field if the proper <br>'s are included.
+   Examples: "+1 Card<br>+1 Action<br>+1 Buy<br>+1 Coin<br>+2 <VP><n>"
+             "+1 Card\n+1 Action\n+1 Buy\n+1 Coin\n+2 <VP>\n"
+   The "description" field by default is centered. '<br>', '<n>', and '\n' will all provide new lines.
 
  - If a Dividers/Tab has more than one card explanation, if space permits, try to mimic a stand alone Dividers/Tab in the overall format.
-   Example from "Settlers - Bustling Village": "<u>Settlers</u>:<center>+1 Card<br>+1 Action<n>Look through your discard pile. You may reveal a Copper from it and put it into your hand.<n><u>Bustling Village</u>:<center>+1 Card<br>+3 Actions<n>Look through your discard pile. You may reveal a Settlers from it and put it into your hand."
+   Example from "Settlers - Bustling Village": "<left><u>Settlers</u>:<n>+1 Card<br>+1 Action<n>Look through your discard pile. You may reveal a Copper from it and put it into your hand.<n><left><u>Bustling Village</u>:<n><center>+1 Card<br>+3 Actions<n>Look through your discard pile. You may reveal a Settlers from it and put it into your hand."
 
