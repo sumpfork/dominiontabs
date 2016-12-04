@@ -94,7 +94,7 @@ for lang in languages:
     if not os.path.exists(lang_dir):
         os.makedirs(lang_dir)
 
-        
+
 ###########################################################################
 #  Get the types_db information
 #  Store in a list in the order found in types[]. Ordered by card_type
@@ -141,12 +141,12 @@ for lang in languages:
         lang_type_data = get_json_data(fname)
     else:
         lang_type_data = {}
-        
+
     with io.open( os.path.join(output_dir, lang, lang_file), 'w',encoding='utf-8') as lang_out:
         lang_out.write(unicode("{")) #  Start of types
         sep = ""
         used = []
-        
+
         for type in sorted(type_parts):
             if type not in lang_type_data:
                 if lang == LANGUAGE_DEFAULT:
@@ -169,7 +169,7 @@ for lang in languages:
         if lang == LANGUAGE_DEFAULT:
             lang_type_default = lang_type_data  #  Keep for later languages
 
-            
+
 ###########################################################################
 #  Get the cards_db information
 #  Store in a list in the order found in cards[]. Ordered as follows:
@@ -224,11 +224,6 @@ print
 ###########################################################################
 for lang in languages:
 
-    #  copy the latest translation.txt file from the default directory
-    copyfile(os.path.join(card_db_dir, LANGUAGE_DEFAULT, "translation.txt" ),
-             os.path.join(output_dir, lang, "translation.txt" )
-            )
-
     #  contruct the cards json file name
     lang_file = "cards_" + lang + ".json"
     fname = os.path.join(card_db_dir, lang, lang_file)
@@ -242,7 +237,7 @@ for lang in languages:
         lang_out.write(unicode("{")) #  Start of set
         sep = ""
         fields = [u"description", u"extra", u"name"]
-        
+
         for card in cards:
             if card not in lang_data or lang == LANGUAGE_XX:
                 #  Card is missing, need to add it
@@ -339,7 +334,7 @@ for lang in languages:
         lang_set_data = get_json_data(fname)
     else:
         lang_set_data = {}
-        
+
     with io.open( os.path.join(output_dir, lang, lang_file), 'w',encoding='utf-8') as lang_out:
         lang_out.write(unicode("{")) #  Start of set
         sep = ""
@@ -372,3 +367,11 @@ for lang in languages:
 
         if lang == LANGUAGE_DEFAULT:
             lang_default = lang_set_data  #  Keep for later languages
+
+###########################################################################
+# translation.txt
+# Since xx is the starting point for new translations,
+# make sure xx has the latest copy of translation.txt
+###########################################################################
+copyfile(os.path.join(card_db_dir, "translation.txt" ),
+         os.path.join(output_dir, LANGUAGE_XX, "translation.txt" ))
