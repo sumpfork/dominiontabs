@@ -370,8 +370,11 @@ for lang in languages:
 
 ###########################################################################
 # translation.txt
+###########################################################################
+copyfile(os.path.join(card_db_dir, "translation.txt" ),
+         os.path.join(output_dir, "translation.txt" ))
+
 # Since xx is the starting point for new translations,
 # make sure xx has the latest copy of translation.txt
-###########################################################################
 copyfile(os.path.join(card_db_dir, "translation.txt" ),
          os.path.join(output_dir, LANGUAGE_XX, "translation.txt" ))
