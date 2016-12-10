@@ -1,9 +1,8 @@
 {
     "Alms": {
-        "description": "Once per turn: If you have no Treasures in play, gain a card costing up to 4 Coin.", 
-        "extra": "You can only buy this once per turn. When you do, if you have no Treasures in play, you gain a card costing up to 4 Coins. The gained card comes from the Supply and is put into your discard pile.", 
-        "name": "Almosen", 
-        "untranslated": "description, extra"
+        "description": "Einmal pro Zug: Wenn du keine Geldkarten im Spiel hast, nimm dir eine Karte, die bis zu 4 Coins kostet.", 
+        "extra": "Dieses Ereignis darf nur 1x pro Zug erworben werden. Falls du keine Geldkarte zu diesem Zeitpunkt im Spiel hast, nimm dir eine Karte vom Vorrat, die bist zu 4 Coins kostet. Eintausch-Karten oder Preiskarten (aus Reiche Ernte) mit * Coins gehören nicht zum Vorrat und dürfen nicht genommen werden.", 
+        "name": "Almosen"
     },
     "Amulet": {
         "description": "Jetzt und zu Beginn deines nächsten Zuges, wähle jeweils eins: +1 Coin oder entsorge 1 Handkarte oder nimm dir 1 Silber.", 
@@ -11,40 +10,34 @@
         "name": "Amulett"
     },
     "Artificer": {
-        "description": "+1 Card<br>+1 Action<br>+1 Coin<n>Discard any number of cards. You may gain a card costing exactly 1 Coin per card discarded, putting it on top of your deck.", 
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Coin<n>Lege beliebig viele Handkarten ab. Du darfst dir eine Karte nehmen, die genau 1 Coins pro abgelegter Karte kostet. Lege die Karte verdeckt auf deinen Nachziehstapel.", 
         "extra": "Du erhältst +1 Karte, +1 Aktion und +1 Coins. Lege beliebig viele Handkarten ab. Du darfst eine Karte vom Vorrat nehmen, die genau so viel kostet, wie du Karten abgelegt hast. Du kannst dich auch entscheiden, keine Karte abzulegen. Dann darfst du eine Karte nehmen, die genau 0 Coins kostet. Lege die genommene Karte verdeckt auf deinen Nachziehstapel.", 
-        "name": "Kunsthandwerker", 
-        "untranslated": "description"
+        "name": "Kunsthandwerker"
     },
     "Ball": {
-        "description": "Take your - 1 Coin token. Gain 2 cards each costing up to 4 Coin.", 
-        "extra": "When you buy this, you take your - 1 Coin token, which will cause you to get 1 Coin less the next time you get Coins. Then you gain 2 cards, each costing up 4 Coins. They can be 2 copies of the same card or 2 different cards.", 
-        "name": "Ball", 
-        "untranslated": "description, extra"
+        "description": "Nimm deinen - 1 Coin Marker. Nimm dir 2 Karten, die jede bis zu 4 Coins kostet.", 
+        "extra": "Nimm deinen -1 Coin-Marker und lege ihn vor dir ab. Das nächste Mal, wenn du mindestens 1 Coin erhälst, erhälst du stattdessen 1 Coin weniger. Daach legst du den Marker wieder neben den Vorrat. Nimm 2 Karten vom Vorrat, die jede bis zu 4 Coins kosten. Das können gleiche oder verschiedene Karten sein. Lege beide Karten ab. Eintausch-Karten oder Preiskarten (aus Reiche Ernte) gehören nicht zum Vorrat und dürfen nicht genommenen werden.", 
+        "name": "Ball"
     },
     "Bonfire": {
-        "description": "Trash up to 2 cards you have in play.", 
-        "extra": "This only trashes cards you have in play, not cards from your hand. You can trash zero, one, or two cards. If you trash Treasures with this, this does not remove the 1 Coin you got from playing those Treasures this turn. For example, with 5 Coppers in play and two Buys, you could pay 3 Coins for a Bonfire to trash two of the Coppers, then spend the other 2 Coins on a Peasant.", 
-        "name": "Freudenfeuer", 
-        "untranslated": "description, extra"
+        "description": "Entsorge bis zu 2 Karten, die du im Spiel hast.", 
+        "extra": "Entsorge bis zu 2 Karten, die du gerade im Spiel hast. Du darfst keine Handkarten entsorgen. Entsorgst du eine oder zwei Geldkarten, kannst du trotzdem den durch diese Karten produzierten Geldwert nutzen.", 
+        "name": "Freudenfeuer"
     },
     "Borrow": {
-        "description": "+1 Buy<n>Once per turn:<br>If your -1 Card token isn't on your deck, put it there and +1 Coin.", 
-        "extra": "You can only buy this once per turn. When you do, if your -1 Card token is not on your deck, you put it on your deck and get + 1 Coin. The -1 Card token will cause you to draw one less card the next time you draw cards; see the Tokens section.", 
-        "name": "Leihgabe", 
-        "untranslated": "description, extra"
+        "description": "+1 Kauf<n>Once per turn:<br>Wenn dein -1 Karte-Marker nicht auf deinem Nachziehstapel liegt, lege ihn dorthin und +1 Coin.", 
+        "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Du erhälst +1 Kauf. Wenn dein -1 card-Marker nicht auf deinem Nachziehstapel liegt, lege ihn dorthin und erhalte +1 coin. Das nächste Mal, wenn du Karten nachziehen musst, ziehst du 1 Karte weniger.", 
+        "name": "Leihgabe"
     },
     "Bridge Troll": {
-        "description": "Each other player takes his -1 Coin token. Now and at the start of your next turn:<n>+1 Buy<line>While this is in play, cards cost 1 Coin less on your turn, but not less than 0 Coins.", 
+        "description": "Alle Mitspieler nehmen ihren -1 Coin-Marker. <n>Jetzt und zu Beginn deines nächsten Zuges:<n>+1 Kauf <line> Solange diese Karte im Spiel ist, kostet jede Karte in deinem Zug 1 coin weniger, allerdings nie weniger als 0 coin.", 
         "extra": "Diese Karte ist eine Dauerkarte. Alle Mitspieler müssen ihren -Coins-Marker vor sich ablegen. Sie erhalten beim nächsten Mal, wenn sie in irgendeiner Art und Weise mindestens 1 Coins erhalten würden, 1 Coins weniger. Danach wird der Marker wieder neben den Vorrat gelegt. Du erhältst jetzt und zu Beginn deines nächsten Zuges +1 Kauf. So lange diese Karte im Spiel ist, kosten alle Karten in deinem Zug 1 Coins weniger, allerdings nie weniger als 0 Coins. Dies betrifft nicht nur den Kauf, sondern alle Aktionen, bei denen die Kosten einer Karte eine Rolle spielen. Der BRÜCKENTROLL beeinflusst nicht die Kosten von Ereignissen. Die Wirkung des BRÜCKENTROLLS ist kumulativ, d. h. wenn du zwei oder mehr BRÜCKENTROLLE gleichzeitig im Spiel hast, kannst du die Kosten um 2 Coins oder mehr verringern.", 
-        "name": "Brückentroll", 
-        "untranslated": "description"
+        "name": "Brückentroll"
     },
     "Caravan Guard": {
-        "description": "+1 Card<br>+1 Action<n>At the start of your next turn, +1 Coin<line>When another player plays an Attack card, you may play this from your hand. (<i>+1 Action has no effect if it's not your turn.</i>)", 
+        "description": "+1 Karte <br>+1 Aktion<line>Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du diese Karte aus deiner Hand ausspielen.<n>(<i>+1 Aktion hat dann keinen Effekt.</i>)", 
         "extra": "Diese Karte ist eine kombinierte Dauer- und Reaktionskarte. Wenn du sie ausspielst, erhältst du +1 Karte und +1 Aktion. Zu Beginn deines nächsten Zuges erhältst du +1 Coins. Lege die Karte am Ende dieses Zuges ab. Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du diese Karte aus deiner Hand ausspielen. Du erhältst +1 Karte und +1 Aktion. Die Anweisung +1 Aktion kann in diesem Fall – da gerade ein anderer Spieler am Zug ist – nicht ausgeführt werden. Zu Beginn deines nächsten Zuges erhältst du +1 Coins. Die Karte wird erst in der Aufräumphase deines nächsten Zuges abgelegt.", 
-        "name": "Karawanenwächter", 
-        "untranslated": "description"
+        "name": "Karawanenwächter"
     },
     "Champion": {
         "description": "+1 Aktion<br>Immer wenn ein Mitspieler eine Angriffskarte spielt, bist du davon nicht betroffen. Immer wenn du eine Aktionskarte spielst: +1 Aktion (Diese Karte bleibt bis zum Spielende im Spiel und gehört nicht zum Vorrat.)", 
@@ -52,10 +45,9 @@
         "name": "Champion"
     },
     "Coin of the Realm": {
-        "description": "1 <*COIN*><n>When you play this, put it on your Tavern mat.<line>Directly after resolving an Action, you may call this for +2 Actions.", 
+        "description": "1 <*COIN*><n>Wenn du diese Karte ausspielst, lege sie auf dein Wirtshaustableau<line>Sofort nachdem du eine Aktionskarte ausgeführt hast, darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust: +2 Aktionen.", 
         "extra": "Diese Karte ist eine kombinierte Geld- und Reservekarte. Sie hat den Wert 1 Coins. Spiele sie in der Kaufphase aus und lege sie anschließend auf das Wirtshaustableau. Sobald du eine Aktionskarte ausspielst und die Anweisungen darauf ausgeführt hast, darfst du die KÖNIGLICHEN MÜNZEN von deinem Wirtshaustableau aufrufen. Lege die Karte in deinen Spielbereich und du erhältst +2 Aktionen, nicht aber +1 Coins, da diese Anweisung nur beim Ausspielen der Karte ausgeführt wird. Bis zum Ende der Aufräumphase befinden sich die KÖNIGLICHEN MÜNZEN im Spiel und werden dann abgelegt.", 
-        "name": "Königliche Münzen", 
-        "untranslated": "description"
+        "name": "Königliche Münzen"
     },
     "Disciple": {
         "description": "Du darfst eine Aktionskarte zweimal ausspielen. Nimm dir eine Karte mit gleichem Namen. Ist diese Karte im Spiel, darfst du sie gegen einen Lehrer eintauschen anstatt sie abzulegen. (Diese Karte gehört nicht zum Vorrat.)", 
@@ -63,16 +55,14 @@
         "name": "Schüler"
     },
     "Distant Lands": {
-        "description": "Put this on your Tavern mat.<line>Worth 4 <VP> if on your Tavern mat at the end of the Game (otherwise worth 0 <VP>).", 
+        "description": "Lege diese Karte auf dein Wirtshaustableau.<line>Wert 4 <VP> falls diese Karte bei Spielende auf deinem Wirtshaustableau liegt.", 
         "extra": "Diese Karte ist eine kombinierte Aktions-, Reserve- und Punktekarte. Wenn du sie ausspielst, lege sie auf dein Wirtshaustableau. Dort bleibt sie bis zum Spielende. Pro FERNE LANDE, die du bei Spielende auf deinem Tableau liegen hast, erhältst du 4 <VP>. Alle anderen FERNE LANDE zählen 0 <VP>.", 
-        "name": "Ferne Lande", 
-        "untranslated": "description"
+        "name": "Ferne Lande"
     },
     "Dungeon": {
-        "description": "+1 Action<n>Now and at the start of your next turn: +2 Cards then discard 2 cards.", 
+        "description": "+2 Karten, +1 Aktion<n>Lege 2 Handkarten ab. <n> Zu Beginn deines nächsten Zuges: <n> +2 Karten <n> Lege 2 Handkarten ab.", 
         "extra": "Diese Karte ist eine Dauerkarte. Du erhältst +2 Karten, +1 Aktion und legst 2 Karten ab. Zu Beginn deines nächsten Zuges erhältst du +2 Karten und legst 2 Karten ab. Lege das VERLIES am Ende dieses Zuges ab.", 
-        "name": "Verlies", 
-        "untranslated": "description"
+        "name": "Verlies"
     },
     "Duplicate": {
         "description": "Put this on your Tavern mat.<line>When you gain a card costing up to 6 Coins, you may call this, to gain a copy of that card.", 
