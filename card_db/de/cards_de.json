@@ -460,7 +460,7 @@
     "Hamlet": {
         "description": "+1 Karte<br>+1 Aktion<br>Du darfst eine Karte aus deiner Hand ablegen. Wenn du das machst: +1 Aktion <n>  Du darfst eine Karte aus deiner Hand ablegen. Wenn du das machst: +1 Kauf", 
         "extra": "Zuerst ziehst du immer eine Karte nach und erhältst +1 Aktion. Nun darfst du eine Karte aus deiner Hand ablegen um entweder zusätzlich +1 Aktion oder +1 Kauf zu erhalten. Oder du legst 2 Karten aus deiner Hand ab und erhältst zusätzlich +1 Aktion und +1 Kauf. Du kannst jedoch nicht +2 Aktionen oder +2 Käufe zusätzlich erhalten. Du kannst auch darauf verzichten Karten abzulegen und erhältst dann nichts weiter.", 
-        "name": "Weiler",
+        "name": "Weiler"
     },
     "Harvest": {
         "description": "Decke die obersten 4 Karten von deinem Nachziehstapel auf. +1 Coin pro aufgedeckter Karte mit unterschiedlichem Namen. Lege die aufgedeckten Karten ab.", 
@@ -505,7 +505,7 @@
     "Tournament": {
         "description": "+1 Aktion<br>Du darfst eine Provinz aus deiner Hand ablegen. Wenn du das machst: Nimm dir einen Preis vom Preisstapel oder ein Herzogtum. Lege die neue Karte sofort auf deinen Nachziehstapel. Jeder  Mitspieler darf eine Provinz aus seiner Hand aufdecken. Wenn das keiner macht: +1 Karte, +1 Coin.", 
         "extra": "Zuerst erhältst du +1 Aktion. Dann darfst du eine Provinz aus deiner Hand auf deinen Ablagestapel legen. Wenn du das machst, musst du dich entscheiden, entweder eine Preiskarte oder ein Herzogtum zu nehmen. Entscheidest du dich für die Preiskarte, suchst du dir eine der Karten vom Preisstapel aus. Entscheidest du dich für das Herzogtum, nimmst du dir ein Herzogtum vom Vorrat. Du kannst dich auch für einen der beiden Stapel entscheiden, wenn dieser leer ist. Ist der Stapel für den du dich entscheidest leer, nimmst du dir keine Karte.<n>Nun dürfen alle deine Mitspieler eine Provinz aus ihrer Hand aufdecken. Deine Mitspieler zeigen die Provinz vor und nehmen sie dann zurück auf ihre Hand. Wenn keiner deiner Mitspieler eine Provinz aufdeckt, erhältst du +1 Karte und +1 coin. Es gibt also 4 mögliche Ergebnisse: 1. Du legst keine Provinz ab und keiner deiner Mitspieler deckt eine Provinz auf: Du erhältst +1 Karte, +1 Aktion und +1 coin. 2. Du legst keine Provinz ab und mindestens einer deiner Mitspieler deckt eine Provinz auf: Du erhältst +1 Aktion. 3. Du legst eine Provinz ab aber keiner deiner Mitspieler deckt eine Provinz auf: Du nimmst dir eine Preiskarte oder ein Herzogtum und erhältst +1 Karte, +1 Aktion und +1 coin. 4. Du legst eine Provinz ab und mindestens einer deiner Mitspieler deckt eine Provinz auf: Du nimmst dir eine Preiskarte oder ein Herzogtum und erhältst +1 Aktion.<n> Du darfst den Preisstapel jederzeit durchsehen.", 
-        "name": "Turnier", 
+        "name": "Turnier"
     },
     "Trusty Steed": {
         "description": "Wähle zwei verschiedene: <n> +2 Karten <n> +2 Aktionen <n> +2 coins <n> Nimm 4 Silber und lege sofort deinen Nachziehstapel ab.<n><i>(Diese Karte gehört nicht zum Vorrat.)</i>", 
