@@ -67,7 +67,7 @@
     "Duplicate": {
         "description": "Lege diese Karte auf dein Wirtshaustableau.<line>Wenn du eine Karte nimmst, die bis zu 6 coins kostet, darfst du diese Karte von deinem Tableau aufrufen.<n>Wenn du das tust, nimm dir eine Karte mit gleichem Namen.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, legst du sie auf dein Wirtshaustableau. Sobald du (auch außerhalb deines eigenen Zuges) eine Karte nimmst, die bis zu 6 Coins kostet, darfst du diese Karte aufrufen. Wenn du das tust, nimmst du dir eine Karte mit gleichem Namen vom Vorrat. Lege diese Karte ab. Wenn keine solche Karte mehr im Vorrat ist, erhältst du nichts. Wenn du eine Karte von einem Stapel nimmst, der nicht zum Vorrat gehört, darfst du dir keine weitere Karte mit gleichem Namen nehmen. Das DUPLIKAT wird in der Aufräumphase des Zuges, in dem es aufgerufen wird (auch außerhalb deines Zuges) abgelegt.", 
-        "name": "Duplikat", 
+        "name": "Duplikat"
     },
     "Expedition": {
         "description": "Ziehe in deiner Aufräumphase 2 zusätzliche Karten.", 
@@ -77,7 +77,7 @@
     "Ferry": {
         "description": "Lege deinen -2 Coins-Marker auf einen beliebigen Aktions-Vorratsstapel. (Karten von diesem Stapel kosten während deiner Züge 2 coins weniger, allerdings nie weniger als 0 coins.)", 
         "extra": "Lege deinen -2 Coins-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, kosten Karten, die von diesem Stapel stammen, für dich für alle Belange 2 coins weniger, niemals aber weniger als 0 coins.", 
-        "name": "Überfahrt", 
+        "name": "Überfahrt"
     },
     "Fugitive": {
         "description": "2 Karten, +1 Aktion. Lege eine Handkarte ab.   Ist diese Karte im Spiel, darfst du sie gegen einen Schüler eintauschen anstatt sie abzulegen. (Diese Karte gehört nicht zum Vorrat.)", 
@@ -92,12 +92,12 @@
     "Giant": {
         "description": "Drehe deinen Reise-Marker um.<n> Liegt die Rückseite oben: +1 coins.<n> Liegt die Vorderseite oben: +5 coins und jeder Mitspieler deckt die oberste Karte seines Nachziehstapels auf. Kostet diese 3 coins bis 6 coins, muss er sie entsorgen. Ansonsten legt er sie ab und nimmt sich einen Fluch.", 
         "extra": "Drehe deinen Reise-Marker um (zu Beginn des Spiels liegt der Marker mit der Vorderseite nach oben). Liegt jetzt die Rückseite oben, erhältst du +1 Coins. Liegt die Vorderseite oben, erhältst du + 5 Coins und alle Mitspieler – beginnend bei deinem linken Mitspieler – müssen die oberste Karte ihres Nachziehstapels aufdecken. Aufgedeckte Karten, die 3 Coins bis 6 Coins kosten, müssen entsorgt werden. Karten mit Trank-Kosten müssen nicht entsorgt werden, Karten mit + Coins (z. B. aus Die Gilden) oder * Coins müssen entsorgt werden. Ansonsten legt der Spieler die aufgedeckte Karte ab und nimmt sich einen FLUCH vom Vorrat. Die Mitspieler können auf das Ausspielen eines RIESEN mit einer Reaktionskarte reagieren, auch wenn die Rückseite des Reise-Markers oben liegt und der Angriff gar nicht ausgeführt wird.", 
-        "name": "Riese", 
+        "name": "Riese"
     },
     "Guide": {
         "description": "+1 Karte<br>+1 Aktion<n>Lege diese Karte auf dein Wirtshaustableau.<line>Zu beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen.<n> Wenn du das tust: Lege alle Handkarten ab und ziehe 5 Karten.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst erhältst du +1 Karte und +1 Aktion. Dann legst du die Karte auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte aufrufen. Wenn du das tust, legst du alle Karten, die du auf der Hand hast, ab und ziehst 5 Karten nach. Lege die Karte am Ende der Aufräumphase ab.", 
-        "name": "Kundschafter", 
+        "name": "Kundschafter"
     },
     "Haunted Woods": {
         "description": "Bis zu deinem nächsten Zug:<n>Jeder Mitspieler muss, sobad er eine Karte kauft, seine restlichen Handkarten in beliebiger Reihenfolge auf seinen Nachziehstapel legen.<n>Zu Beginn deines nächsten Zuges:<n>+3 Karten", 
@@ -112,32 +112,32 @@
     "Hireling": {
         "description": "Immer zu Beginn deines Zuges:<n>+1 Karte<n><i>(Diese Karte bleibt bis zum Spielende im Spiel.)</i>", 
         "extra": "Diese Karte ist eine Dauerkarte. Wenn du sie ausspielst, lege sie neben deinen Spielbereich. Sie bleibt bis zum Spielende im Spiel und wird nicht abgelegt. Für den Rest des Spiels erhältst du zu Beginn deines Zuges +1 Karte. Wenn du einen GEFOLGSMANN zweimal ausspielen darfst (z. B. durch den THRONSAAL aus der Basis), lege beide Karten zur Seite und du erhältst bis zum Spielende zu Beginn jedes Zuges +2 Karten.", 
-        "name": "Gefolgsmann", 
+        "name": "Gefolgsmann"
     },
     "Inheritance": {
         "description": "Einmal im Spiel: Lege eine beliebige Aktionskarte vom Vorrat, die keine Punktekarte ist und die bis zu 4 coins kostet, zur Seite. Lege deinen Anwesen-Marker darauf. (Deine Anwesen übernehmen ab sofort Anweisungen und Typ dieser Karte.)", 
         "extra": "Dieses Ereignis darf nur 1 x pro Spiel und Spieler erworben werden. Lege eine beliebige Nicht-Punktekarte vom Vorrat, die eine Aktionskarte ist und bis zu 4 coins kostet, zur Seite. Lege deinen Anwesen-Marker darauf. Ab jetzt fungieren alle deine Anwesen wie die marktierte Karte. Du kannst Dauer- oder Reservekarten, Geldkarten, Angriffskarten usw. markieren. Wenn du ein Anwesen auf der Hand hast, darfst du es in der Phase, in der die markierte Karte ausgespielt werden würde, auch ausspielen. Führe ale Anweisungen der markierten Karte aus.", 
-        "name": "Erbschaft", 
+        "name": "Erbschaft"
     },
     "Lost Arts": {
         "description": "Lege deinen +1 Aktion-Marker auf einen Aktions-Vorratsstapel. <n> (Wenn du eine Karte von diesem Stapel ausspielst, erhälst du zuerst + 1 Aktion.)", 
         "extra": "Lege deinen + 1 Aktion-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, erhälst du + 1 Aktion, sobald du eine Karte, die von diesem Stapel stammt, ausspielst.", 
-        "name": "Verlorene Kunst", 
+        "name": "Verlorene Kunst"
     },
     "Lost City": {
         "description": "+2 Karten<br>+2 Aktionen<line>Wenn du diese Karte nimmst, zieht jeder Mitspieler eine Karte.", 
         "extra": "Wenn du diese Karte ausspielst, erhältst du +2 Karten und +2 Aktionen. Wenn du diese Karte nimmst, zieht jeder Mitspieler 1 Karte.", 
-        "name": "Verlorene Stadt", 
+        "name": "Verlorene Stadt"
     },
     "Magpie": {
         "description": "+1 Karte<br>+1 Aktion<n>Decke die oberste Karte deines Nachziehstapels auf. Ist es eine Geldkarte: Nimm sie auf die Hand.<n>Ist es eine Aktions- oder Punktekarte: Nimm dir eine Elster.", 
         "extra": "Du erhältst +1 Karte und +1 Aktion. Decke die oberste Karte deines Nachziehstapels auf. Ist dies ein Geldkarte (auch eine kombinierte oder Königreichkarte), nimm sie auf die Hand. Ist es eine Aktions- oder Punktekarte, nimmst du eine ELSTER vom Vorrat. Wenn keine ELSTER mehr im Vorrat ist, erhältst du nichts. Lege die aufgedeckte Karte zurück auf den Nachziehstapel. Ist es eine kombinierte Punkte- und Geldkarte, nimmst du die Karte auf die Hand und nimmst eine ELSTER vom Vorrat.", 
-        "name": "Elster", 
+        "name": "Elster"
     },
     "Messenger": {
         "description": "+1 Kauf<br>+2 Coins<n>Du darfst deinen Nachziehstapel auf deinen Ablagestapel legen.<line>Wenn du diese Karte kaufst und dies der 1. Kauf deines Zuges ist: Nimm dir eine Karte, die bis zu 4 coins kostet. Jeder Mitspieler nimmt sich eine Karte mit gleichem Namen.", 
         "extra": "Wenn du diese Karte ausspielst, erhältst du +1 Kauf sowie +2 Coins. Außerdem darfst du deinen Nachziehstapel sofort komplett auf deinen Ablagestapel legen. Karten, die auf diese Weise abgelegt werden, gelten nicht als „abgelegt“. Wenn du diese Karte kaufst und dies der erste Kauf (inklusive eventuell erworbener Ereignisse) in deinem Zug ist, nimmst du eine Karte vom Vorrat, die bis zu 4 Coins kostet. Jeder Mitspieler nimmt sich – beginnend bei deinem linken Mitspieler – eine Karte mit gleichem Namen vom Vorrat. Karten, die nicht zum Vorrat gehören, dürfen nicht genommen werden.", 
-        "name": "Kurier", 
+        "name": "Kurier"
     },
     "Miser": {
         "description": "Wähle eins: <n> Lege ein Kupfer aus deiner Hand auf dein Wirtshaustableau <n> oder <n> +1 coin pro Kupfer auf deinem Wirtshaustableau.", 
@@ -167,7 +167,7 @@
     "Pilgrimage": {
         "description": "Einmal pro Zug: Drehe deinen Reise-Marker um. Liegt die Vorderseite oben: Wähle bis zu 3 Karten mit unterschiedlichem Namen, die du im Spiel hast und nimm dir jeweils eine davon.", 
         "extra": "Dieses Ereignis darf nur 1 x pro Zug erworbe werden. Drehe deinen Reise-Marker um (zu Spielbeginn liegt dieser mit der Vorderseite nach oben). Liegt dann die Rückseite oben, passiert nichts. Liegt die Vorderseite oben, wählst du bis zu 3 Karten mit unterschiedlichem Namen, die du gerade im Spiel hast, nimmst von jeder dieser Karten eine weitere Karte vom Vorrat und legst sie ab. Eintausch-Karten oder Preiskarten (aus Reiche Ernte) mit * coins gehöre nicht zum Vorrat und dürfen nicht genommen werden.", 
-        "name": "Pilgerfahrt", 
+        "name": "Pilgerfahrt"
     },
     "Plan": {
         "description": "Lege deinen Entsorgungs-Marker auf einen Aktions-Vorratsstapel. (Wenn du eine Karte von diesem Stapel kaufst, darfst du eine Karte aus deiner Hand entsorgen.)", 
@@ -177,22 +177,22 @@
     "Port": {
         "description": "+1 Karte<br>+2 Aktionen<line>Wenn du diese Karte kaufst, nimm dir eine weitere Hafenstadt.", 
         "extra": "Wenn du diese Karte ausspielst, erhältst du +1 Karte und +2 Aktionen. Wenn du diese Karte kaufst (nicht wenn du sie auf andere Art und Weise erhältst), nimm dir eine HAFENSTADT vom Vorrat.", 
-        "name": "Hafenstadt", 
+        "name": "Hafenstadt"
     },
     "Quest": {
         "description": "Du darfst eine Angriffskarte oder 2 Flüche oder 6 beliebige Karten ablegen. Wenn du das tust, nimm dir ein Gold.", 
         "extra": "Wähle eine der Optionen, um ein GOLD zu nehmen und abzulegen: Entweder legst du 1 Angriffskarte aus deiner Hand oder 2 FLÜCHE oder 6 beliebige Karten ab. Du kannst dich entscheiden, nur 1 FLUCH oder weniger als 6 Karten abzulegen, wenn du nicht genügend entsprechende Karten auf der Hand hast - dann erhälst du kein GOLD.", 
-        "name": "Quest", 
+        "name": "Quest"
     },
     "Raid": {
         "description": "Pro Silber, das du im Spiel hast, nimmst du dir ein Silber. Jeder Mitspieler legt seinen -1 Karte-Marker auf seinen Nachziehstapel.", 
         "extra": "Für jedes SILBER, das du gerade im Spiel hast, wenn du diese Karte erwirbst, nimm ein weiteres SILBER vom Vorrat und lege es ab. Außerdem legen alle Mitspieler ihren -1 Karte-Marker auf ihren Nachziehstapel. Das nächste Mal, wenn sie Karten nachziehen müssen, ziehen sie stattdessen 1 Karte weniger. Auch wenn diese Anweisungen wie ein Angriff fungiert, ist der ÜBERFALL keine Angriffskarte. Entsprechend können die Mitspieler nicht mit einer Reaktionskarte darauf reagieren.", 
-        "name": "Überfall", 
+        "name": "Überfall"
     },
     "Ranger": {
         "description": "+1 Kauf<n>Drehe deinen Reise-Marker um. <n> Liegt die Vorderseite oben: <n> + 5 Karten", 
         "extra": "Du erhältst +1 Kauf. Drehe deinen Reise-Marker um (zu Beginn des Spiels liegt der Marker mit der Vorderseite nach oben). Liegt jetzt die Vorderseite oben, ziehst du 5 Karten nach. Liegt die Rückseite oben, passiert nichts. Du darfst in einem Zug mehrere WILDHÜTER ausspielen und drehst bei jedem WILDHÜTER den Marker um.", 
-        "name": "Wildhüter", 
+        "name": "Wildhüter"
     },
     "Ratcatcher": {
         "description": "+1 Karte<br>+1 Aktion<n>Lege diese Karte auf dein Wirtshaustableau.<line>Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust, musst du eine Handkarte entsorgen.", 
@@ -206,8 +206,8 @@
     },
     "Relic": {
         "description": "2 <*COIN*><n>Wenn du diese Karte ausspielst, muss jeder Mitspieler seinen -Karte-Marker auf seinen Nachziehstapel legen.", 
-        "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Jeder Mitspieler muss seinen -Karte-Marker auf seinen Nachziehstapel legen. Sobald ein Mitspieler Karten nachziehen muss, zieht er 1 Karte weniger. Dann legt er den Marker neben den Vorrat zurück. Bei Anweisungen, durch die man seine Kartenhand auf X Karten auffüllen darf, wird zunächst der Marker zurückgelegt und dann die Kartenhand auf X Karten aufgefüllt. Das RELIKT ist eine Angriffskarte. Entsprechend kann darauf mit Reaktionskarten reagiert werden. Reagiert ein Spieler mit dem KARAWANENWÄCHTER, führt er zunächst die Anweisungen aus (inkl. +1 Karte) und legt dann den Marker auf seinen Nachziehstapel.", 
-        "name": "Relikt", 
+        "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Jeder Mitspieler muss seinen -Karte-Marker auf seinen Nachziehstapel legen. Sobald ein Mitspieler Karten nachziehen muss, zieht er 1 Karte weniger. Dann legt er den Marker neben den Vorrat zurück. Bei Anweisungen, durch die man seine Kartenhand auf X Karten auffüllen darf, wird zunächst der Marker zurückgelegt und dann die Kartenhand auf X Karten aufgefüllt. Das RELIKT ist eine Angriffskarte. Entsprechend kann darauf mit Reaktionskarten reagiert werden. Reagiert ein Spieler mit dem KARAWANENWÄCHTER, führt er zunächst die Anweisungen aus (inkl. +1 Karte) und legt dann den Marker auf seinen Nachziehstapel.",
+        "name": "Relikt"
     },
     "Royal Carriage": {
         "description": "+ 1 Aktion <br> Lege diese Karte auf dein Wirtshaustableau. <line> Sofort nachdem du eine Aktionskarte ausgeführt hast, die danach noch im Spiel ist, darfst du diese karte von deinem Tableau aufrufen. Wenn du das tust: Führe die Aktion noch einmal aus.", 
@@ -227,7 +227,7 @@
     "Seaway": {
         "description": "Nim dir eine Aktionskarte, die bis zu 4 coins kostet. Lege deinen + 1 Kauf-Marker auf diesen Vorratsstapel. (Wenn du eine Karte von diesem Stapel ausspielst, erhälst du zuerst +1 Kauf.)", 
         "extra": "Nimm dir eine Aktionskarte vom Vorrat, die bis zu 4 coins kostet, und lege diese ab. Lege deinen + 1 Kauf-Marker auf den Vorratsstapel, von dem du die Aktionskarte genommen hast (dieser kann auch leer sein). Du musst eine Karte vom Vorrat nehmen, um den Marker auf den entsprechenden Stapel legen zu dürfen. Solange dieser Marker auf dem Stapel liegt, erhält du + 1 Kauf, sobald du eine Karte, die von diesem Stapel stammt, ausspielst. Kostet die Aktionskarte, die du durch den SEEWEG nimmst, nur in diesem Zug bis zu 4 coins, z.B. wenn du vorher einen BRÜCKENTROLL gespielt hast und dadurch alle Karten in diesem Zug 1 coin weniger kosten, bleibt der Marker später liegen, auch wenn die entsprechende Karte nach deinem Zug wieder 5 coins kostet. Auf Stapel, die nicht zum Vorrat gehören, darf der Marker nicht gelegt werde. <n> Durch den Erwerb eines weiteren SEEWEGS oder das Aufrufen eines LEHRERS darfst du den Marker auf einen anderen Aktions-Vorratsstapel legen.", 
-        "name": "Seeweg", 
+        "name": "Seeweg"
     },
     "Soldier": {
         "description": "+2 Coin<br>+1 Coin pro anderer Angriffskarte, die du im Spiel hast. Jeder Mitspieler mit 4 oder mehr Handkarten legt eine Handkarte ab. Ist diese Karte im Spiel, darfst du sie gegen einen Flüchtling eintauschen anstatt sie abzulegen. (Diese Karte gehört nicht zum Vorrat.)", 
@@ -237,7 +237,7 @@
     "Storyteller": {
         "description": "+1 Aktion<br>+1 Coin<n>Spiele bis zu 3 Geldkarten aus deiner Hand aus. Zähle alls _ coins und du erhälst:<n> + 1 Kartepro gezahltem _ coins. <n> (Du hast jetzt 0 coins.)", 
         "extra": "Du erhältst +1 Aktion sowie +1 Coins. Spiele bis zu 3 Geldkarten aus deiner Hand aus und zahle alle empty Coin, die du bisher in diesem Zug ausgespielt hast. Das beinhaltet alle Geldwerte von ausgespielten Geldkarten sowie alle, z. B. durch ausgespielte Aktionskarten, erhaltene zusätzliche Geldwerte (+1 Coins) inkl. dem +1 Coins dieses GESCHICHTENERZÄHLERS. Du hast danach 0 Coins. Für jedes gezahlte 1 Coins erhältst du +1 Karte. Trank-Kosten aus Die Alchemisten sind davon nicht betroffen.", 
-        "name": "Geschichtenerzähler", 
+        "name": "Geschichtenerzähler"
     },
     "Swamp Hag": {
         "description": "Bis zu deinem nächsten Zug: <n> Jeder Mitspieler muss sich für jede Karte, die er kauft, einen Fluch nehmen.<n>Zu Beginn deines nächste Zuges: <n>+3 Coins", 
@@ -262,12 +262,12 @@
     "Transmogrify": {
         "description": "+1 Aktion <n> Lege diese Karte auf dein Wirtshaustableau. <line> Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tut: Entsorge eine Handkarte und nimm dir eine Karte, die bis zu 1 coin mehr kostet als die entsorgte Karte. Nimm diese Karte auf die Hand.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du +1 Aktion. Lege sie dann auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte aufrufen. Wenn du das tust, entsorgst du eine Handkarte und nimmst eine Karte vom Vorrat, die bis zu 1 Coins mehr kostet als die entsorgte Karte. Nimm die Karte auf die Hand. Du darfst nur Karten aus dem Vorrat nehmen. Lege die TRANSFORMATION in der Aufräumphase ab.", 
-        "name": "Transformation", 
+        "name": "Transformation"
     },
     "Travelling Fair": {
         "description": "+2 Käufe<n> Wenn du in diesem Zug eine Karte nimmst, darfst du sie auf deinen Nachziehstapel legen.", 
         "extra": "Du erhälst +2 Käufe. Wenn du in dem Zug, in dem du den WANDERZIRKUS erwirbst, eine Karte nimmst, darfst du diese oben auf deinen Nachziehstapel legen. Wenn du dies nicht möchtest, lege die genommene Karte ab. Der WANDERZIRKUS funktioniert nicht bei den Eintausch-Karten mit einem * Coins, da diese nicht genommen sondern eingetauscht werden.", 
-        "name": "Wanderzirkus", 
+        "name": "Wanderzirkus"
     },
     "Treasure Hunter": {
         "description": "+1 Aktion<br>+1 Coin<br>Nimm dir pro Karte, die dein rechter Mitspieler in seinem letzten Zug genommen hat, ein Silber. Ist diese Karte im Spiel, darfst du sie gegen einen Krieger eintauschen anstatt sie abzulegen. (Diese Karte gehört nicht zum Vorrat.)", 
@@ -287,7 +287,7 @@
     "Wine Merchant": {
         "description": "+1 Kauf<br>+4 Coins<n>Lege diese Karte auf dein Wirtshaustableau.<line>Wenn du am Ende deiner Kaufphase mindestens 2 Coins nicht ausgegeben hast, darfst d diese Karte von deinem Tableau ablegen.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du +1 Kauf sowie + 4 Coins und legst die Karte dann auf dein Wirtshaustableau. Wenn du am Ende deiner Kaufphase mindestens 2 Coins nicht ausgegeben hast, darfst du diese Karte von deinem Wirtshaustableau ablegen. Hast du mehrere WEINHÄNDLER auf deinem Tableau liegen, kannst du alle ablegen. Du brauchst nicht für jeden WEINHÄNDLER 2 Coins übrig zu haben.", 
-        "name": "Weinhändler", 
+        "name": "Weinhändler"
     },
     "Alchemist": {
         "description": "+2 Karten<br>+1 Aktion<br>Wenn diese Karte und ein Trank im Spiel sind und du den Alchemisten ablegst, darfst du diesen verdeckt oben auf deinen Nachziehstapel legen.", 
