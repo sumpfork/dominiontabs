@@ -235,7 +235,7 @@ def parse_opts(arglist):
         "If no limits are set, then all expansions are included. "
         "Expansion names can also be given in the language specified by "
         "the --language parameter. Any expansion with a space in the name must "
-        "be enclosed in quotes. This may be called multiplle times. "
+        "be enclosed in quotes. This may be called multiple times. "
         "Values are not case sensitive and can also match the starting characters "
         "of an expansion name.  For example, 'dominion' will match all expansions "
         "that start with that name; Choices available in all languages include: %s" %
