@@ -6,9 +6,10 @@ from reportlab.lib.units import cm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph
-from reportlab.lib.enums import TA_JUSTIFY
+from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.pdfmetrics import stringWidth
 
 
 def split(l, n):
@@ -25,19 +26,21 @@ class DividerDrawer(object):
         self.canvas = None
 
     def registerFonts(self):
-        try:
-            dirn = os.path.join(self.options.data_path, 'fonts')
+        dirn = os.path.join(self.options.data_path, 'fonts')
+        regularMpath = os.path.join(dirn, 'MinionPro-Regular.ttf')
+        boldMpath = os.path.join(dirn, 'MinionPro-Bold.ttf')
+        obliqueMpath = os.path.join(dirn, 'MinionPro-It.ttf')
+
+        if os.path.isfile(regularMpath) and os.path.isfile(boldMpath) and os.path.isfile(obliqueMpath):
             self.fontNameRegular = 'MinionPro-Regular'
-            pdfmetrics.registerFont(TTFont(self.fontNameRegular, os.path.join(
-                dirn, 'MinionPro-Regular.ttf')))
+            pdfmetrics.registerFont(TTFont(self.fontNameRegular, regularMpath))
             self.fontNameBold = 'MinionPro-Bold'
-            pdfmetrics.registerFont(TTFont(self.fontNameBold, os.path.join(
-                dirn, 'MinionPro-Bold.ttf')))
+            pdfmetrics.registerFont(TTFont(self.fontNameBold, boldMpath))
             self.fontNameOblique = 'MinionPro-Oblique'
-            pdfmetrics.registerFont(TTFont(self.fontNameOblique, os.path.join(
-                dirn, 'MinionPro-It.ttf')))
-        except:
-            print >> sys.stderr, "Warning, Minion Pro Font ttf file not found! Falling back on Times"
+            pdfmetrics.registerFont(TTFont(self.fontNameOblique, obliqueMpath))
+        else:
+            print >> sys.stderr, "Warning, Minion Pro Font ttf file(s) not found! Falling back on Times. Tried:"
+            print >> sys.stderr, regularMpath + ' ' + boldMpath + ' & ' + obliqueMpath
             self.fontNameRegular = 'Times-Roman'
             self.fontNameBold = 'Times-Bold'
             self.fontNameOblique = 'Times-Oblique'
@@ -205,7 +208,11 @@ class DividerDrawer(object):
         self.canvas.save()
 
     def add_inline_images(self, text, fontsize):
+        # Coins
         path = os.path.join(self.options.data_path, 'images')
+        replace = '<img src=' "'%s/coin_small_\\1.png'" ' width=%d height=' "'200%%'" ' valign=' "'middle'" '/>'
+        replace = replace % (path, fontsize * 2.4)
+        text = re.sub('(\d+)\s*\<\*COIN\*\>', replace, text)
         replace = '<img src=' "'%s/coin_small_\\1.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('(\d+)\s(c|C)oin(s)?', replace, text)
@@ -215,19 +222,66 @@ class DividerDrawer(object):
         replace = '<img src=' "'%s/coin_small_empty.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('empty\s(c|C)oin(s)?', replace, text)
+        text = re.sub('\_\s(c|C)oin(s)?', replace, text)
+
+        # VP
         replace = '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'120%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.5)
-        text = re.sub('\<VP\>', replace, text)
+        text = re.sub('(?:\s+|\<)VP(?:\s+|\>|\.|$)', replace, text)
+        replace = '<font size=%d>\\1</font> '
+        replace += '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'200%%'" ' valign=' "'middle'" '/>'
+        replace = replace % (fontsize * 1.5, path, fontsize * 2.5)
+        text = re.sub('(\d+)\s*\<\*VP\*\>', replace, text)
+
+        # Debt
         replace = '<img src=' "'%s/debt_\\1.png'" ' width=%d height=' "'105%%'" ' valign=' "'middle'" '/>&thinsp;'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('(\d+)\sDebt', replace, text)
         replace = '<img src=' "'%s/debt.png'" ' width=%d height=' "'105%%'" ' valign=' "'middle'" '/>&thinsp;'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('Debt', replace, text)
+
+        # Potion
+        replace = '<font size=%d>\\1</font> '
+        replace += '<img src=' "'%s/potion_small.png'" ' width=%d height=' "'140%%'" ' valign=' "'middle'" '/>'
+        replace = replace % (fontsize * 1.5, path, fontsize * 2.0)
+        text = re.sub('(\d+)\s*\<\*POTION\*\>', replace, text)
         replace = '<img src=' "'%s/potion_small.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
         replace = replace % (path, fontsize * 1.2)
         text = re.sub('Potion', replace, text)
-        return text
+
+        return text.strip()
+
+    def add_inline_text(self, card, text):
+        # Bonuses
+        text = card.getBonusBoldText(text)
+
+        # <line>
+        replace = "<center>%s\n" % ("&ndash;" * 22)
+        text = re.sub("\<line\>", replace, text)
+
+        #  <tab> and \t
+        text = re.sub("\<tab\>", '\t', text)
+        text = re.sub("\<t\>", '\t', text)
+        text = re.sub("\t", "&nbsp;" * 4, text)
+
+        # various breaks
+        text = re.sub("\<br\>", "<br />", text)
+        text = re.sub("\<n\>", "\n", text)
+
+        # alignments
+        text = re.sub("\<c\>", "<center>", text)
+        text = re.sub("\<center\>", "\n<para alignment='center'>", text)
+
+        text = re.sub("\<l\>", "<left>", text)
+        text = re.sub("\<left\>", "\n<para alignment='left'>", text)
+
+        text = re.sub("\<r\>", "<right>", text)
+        text = re.sub("\<right\>", "\n<para alignment='right'>", text)
+
+        text = re.sub("\<j\>", "<justify>", text)
+        text = re.sub("\<justify\>", "\n<para alignment='justify'>", text)
+        return text.strip().strip('\n')
 
     def drawOutline(self,
                     card,
@@ -302,37 +356,71 @@ class DividerDrawer(object):
         self.canvas.restoreState()
 
     def drawCardCount(self, card, x, y, offset=-1):
-        if card.count < 1:
+        # Note that this is right justified.
+        # x represents the right most for the image (image grows to the left)
+        if card.getCardCount() < 1:
             return 0
 
-            # base width is 16 (for image) + 2 (1 pt border on each side)
-        width = 18
+        #  draw_list = [(card.getCardCount(), 1)]
+        draw_list = sorted([(i, card.count.count(i)) for i in set(card.count)])
 
         cardIconHeight = y + offset
         countHeight = cardIconHeight - 4
+        width = 0
 
-        self.canvas.drawImage(
-            os.path.join(self.options.data_path, 'images', 'card.png'),
-            x,
-            countHeight,
-            16,
-            16,
-            preserveAspectRatio=True,
-            mask='auto')
+        for value, count in draw_list:
+            # draw the image set with the number of cards inside it
+            width += 16
+            x -= 16
+            self.canvas.drawImage(
+                os.path.join(self.options.data_path, 'images', 'card.png'),
+                x,
+                countHeight,
+                16,
+                16,
+                preserveAspectRatio=True,
+                mask='auto')
+            self.canvas.setFont(self.fontNameBold, 10)
+            self.canvas.drawCentredString(x + 8, countHeight + 4, str(value))
 
-        self.canvas.setFont(self.fontNameBold, 10)
-        count = str(card.count)
-        self.canvas.drawCentredString(x + 8, countHeight + 4, count)
-        return width
+            # now draw the number of sets
+            if count > 1:
+                count_string = u"{}\u00d7".format(count)
+                width_string = stringWidth(count_string, self.fontNameRegular, 10)
+                width_string -= 1  # adjust to make it closer to image
+                width += width_string
+                x -= width_string
+                self.canvas.setFont(self.fontNameRegular, 10)
+                self.canvas.drawString(x, countHeight + 4, count_string)
+
+        return width + 1
 
     def drawCost(self, card, x, y, costOffset=-1):
-        # base width is 16 (for image) + 2 (1 pt border on each side)
-        width = 18
+        # width starts at 2 (1 pt border on each side)
+        width = 2
 
         costHeight = y + costOffset
         coinHeight = costHeight - 5
         potHeight = y - 3
         potSize = 11
+
+        if (not(card.cost == "" or
+                (card.debtcost and int(card.cost) == 0) or
+                (card.potcost and int(card.cost) == 0))):
+
+            self.canvas.drawImage(
+                os.path.join(self.options.data_path, 'images', 'coin_small.png'),
+                x,
+                coinHeight,
+                16,
+                16,
+                preserveAspectRatio=True,
+                mask='auto')
+            self.canvas.setFont(self.fontNameBold, 12)
+            self.canvas.drawCentredString(x + 8, costHeight, str(card.cost))
+            self.canvas.setFillColorRGB(0, 0, 0)
+            x += 17
+            width += 16
 
         if card.debtcost:
             self.canvas.drawImage(
@@ -342,53 +430,30 @@ class DividerDrawer(object):
                 16,
                 16,
                 preserveAspectRatio=True,
-                mask=[255, 255, 255, 255, 255, 255])
-            cost = str(card.debtcost)
-            if card.cost != "" and int(card.cost) > 0:
-                self.canvas.drawImage(
-                    os.path.join(self.options.data_path, 'images',
-                                 'coin_small.png'),
-                    x + 17,
-                    coinHeight,
-                    16,
-                    16,
-                    preserveAspectRatio=True,
-                    mask=[255, 255, 255, 255, 255, 255])
-                self.canvas.setFont(self.fontNameBold, 12)
-                self.canvas.drawCentredString(x + 8 + 17, costHeight,
-                                              str(card.cost))
-                self.canvas.setFillColorRGB(0, 0, 0)
-                width += 16
+                mask=[170, 255, 170, 255, 170, 255])
             self.canvas.setFillColorRGB(1, 1, 1)
-        else:
-            self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images',
-                             'coin_small.png'),
-                x,
-                coinHeight,
-                16,
-                16,
-                preserveAspectRatio=True,
-                mask='auto')
-            cost = str(card.cost)
+            self.canvas.setFont(self.fontNameBold, 12)
+            self.canvas.drawCentredString(x + 8, costHeight, str(card.debtcost))
+            self.canvas.setFillColorRGB(0, 0, 0)
+            x += 17
+            width += 16
+
         if card.potcost:
             self.canvas.drawImage(
                 os.path.join(self.options.data_path, 'images', 'potion.png'),
-                x + 17,
+                x,
                 potHeight,
                 potSize,
                 potSize,
                 preserveAspectRatio=True,
-                mask=[255, 255, 255, 255, 255, 255])
+                mask='auto')
             width += potSize
 
-        self.canvas.setFont(self.fontNameBold, 12)
-        self.canvas.drawCentredString(x + 8, costHeight, cost)
-        self.canvas.setFillColorRGB(0, 0, 0)
         return width
 
     def drawSetIcon(self, setImage, x, y):
         # set image
+        w = 2
         self.canvas.drawImage(
             os.path.join(self.options.data_path, 'images', setImage),
             x,
@@ -396,6 +461,7 @@ class DividerDrawer(object):
             14,
             12,
             mask='auto')
+        return w + 14
 
     def nameWidth(self, name, fontSize):
         w = 0
@@ -509,7 +575,6 @@ class DividerDrawer(object):
         width = self.nameWidth(name, fontSize)
         while width > textWidth and fontSize > 8:
             fontSize -= .01
-            # print 'decreasing font size for tab of',name,'now',fontSize
             width = self.nameWidth(name, fontSize)
         tooLong = width > textWidth
         if tooLong:
@@ -539,7 +604,7 @@ class DividerDrawer(object):
             if wrapper == "back" and not self.options.tab_name_align == "centre":
                 NotRightEdge = not NotRightEdge
             if NotRightEdge:
-                if self.options.tab_name_align == "centre":
+                if self.options.tab_name_align == "centre" or self.wantCentreTab(card):
                     w = self.options.labelWidth / 2 - self.nameWidth(
                         line, fontSize) / 2
                 else:
@@ -558,11 +623,18 @@ class DividerDrawer(object):
                     w += drawWordPiece(word[0], fontSize)
                     w += drawWordPiece(word[1:], fontSize - 2)
             else:
-                # align text to the right if tab is on right side, to make
-                # tabs easier to read when grouped together extra 3pt is for
-                # space between text + set symbol
+                # align text to the right if tab is on right side
+                if self.options.tab_name_align == "centre" or self.wantCentreTab(card):
+                    w = self.options.labelWidth / 2 - self.nameWidth(
+                        line, fontSize) / 2
+                    w = self.options.labelWidth - w
+                else:
+                    w = self.options.labelWidth - textInsetRight
 
-                w = self.options.labelWidth - textInsetRight - 3
+                # to make tabs easier to read when grouped together extra 3pt is for
+                # space between text + set symbol
+                w -= 3
+
                 words.reverse()
 
                 def drawWordPiece(text, fontSize):
@@ -628,23 +700,59 @@ class DividerDrawer(object):
             if self.options.notch_width1 > 0:
                 usedHeight += self.options.notch_height
 
+        # Add 'body-top' items
         drewTopIcon = False
+        Image_x_left = 4
         if 'body-top' in self.options.cost and not card.isExpansion():
-            self.drawCost(card, cm / 4.0, totalHeight - usedHeight - 0.5 * cm)
+            Image_x_left += self.drawCost(card, Image_x_left, totalHeight - usedHeight - 0.5 * cm)
             drewTopIcon = True
 
-        Image_x = self.options.dividerWidth - 16
+        Image_x_right = self.options.dividerWidth - 4
         if 'body-top' in self.options.set_icon and not card.isExpansion():
             setImage = card.setImage()
             if setImage:
-                self.drawSetIcon(setImage, Image_x,
+                Image_x_right -= 16
+                self.drawSetIcon(setImage, Image_x_right,
                                  totalHeight - usedHeight - 0.5 * cm - 3)
-                Image_x -= 16
                 drewTopIcon = True
 
         if self.options.count:
-            self.drawCardCount(card, Image_x,
-                               totalHeight - usedHeight - 0.5 * cm)
+            Image_x_right -= self.drawCardCount(card, Image_x_right,
+                                                totalHeight - usedHeight - 0.5 * cm)
+            drewTopIcon = True
+
+        if (self.options.types and not card.isExpansion()):
+
+            #  Calculate how much width have for printing
+            #  Want centered, but number of other items can limit
+            left_margin = Image_x_left
+            right_margin = self.options.dividerWidth - Image_x_right
+            worst_margin = max(left_margin, right_margin)
+            w = self.options.dividerWidth / 2
+            textWidth = self.options.dividerWidth - 2 * worst_margin
+            textWidth2 = self.options.dividerWidth - left_margin - right_margin
+
+            #  Calculate font size that will fit in the area
+            #  Start with centering type.  But if the fontSize gets too small
+            #  use all the available space, even if it is not centered on the card
+            fontSize = 8
+            failover = False
+            width = stringWidth(card.types_name, self.fontNameRegular, fontSize)
+            while width > textWidth:
+                fontSize -= .01
+                if fontSize < 6 and not failover:
+                    # Start over using all available space left on line
+                    textWidth = textWidth2
+                    w = left_margin + (textWidth2 / 2)
+                    fontSize = 8
+                    failover = True
+                width = stringWidth(card.types_name, self.fontNameRegular, fontSize)
+
+            #  Print out the text in the right spot
+            h = totalHeight - usedHeight - 0.5 * cm
+            self.canvas.setFont(self.fontNameRegular, fontSize)
+            if card.types_name != ' ':
+                self.canvas.drawCentredString(w, h, card.types_name)
             drewTopIcon = True
 
         if drewTopIcon:
@@ -657,20 +765,23 @@ class DividerDrawer(object):
         elif divider_text == "rules":
             # Add the extra rules text to the divider
             if card.extra:
-                descriptions = (card.extra, )
+                descriptions = card.extra
             else:
                 # Asked for rules and they don't exist, so don't print anything
                 return
         elif divider_text == "card":
             # Add the card text to the divider
-            descriptions = re.split("\n", card.description)
+            descriptions = card.description
         else:
             # Don't know what was asked, so don't print anything
             return
 
         s = getSampleStyleSheet()['BodyText']
         s.fontName = "Times-Roman"
-        s.alignment = TA_JUSTIFY
+        if divider_text == "card" and not card.isExpansion():
+            s.alignment = TA_CENTER
+        else:
+            s.alignment = TA_JUSTIFY
 
         textHorizontalMargin = .5 * cm
         textVerticalMargin = .3 * cm
@@ -679,12 +790,18 @@ class DividerDrawer(object):
         spacerHeight = 0.2 * cm
         minSpacerHeight = 0.05 * cm
 
+        if not card.isExpansion():
+            descriptions = self.add_inline_text(card, descriptions)
+        descriptions = re.split("\n", descriptions)
         while True:
             paragraphs = []
             # this accounts for the spacers we insert between paragraphs
             h = (len(descriptions) - 1) * spacerHeight
             for d in descriptions:
-                dmod = self.add_inline_images(d, s.fontSize)
+                if card.isExpansion():
+                    dmod = d
+                else:
+                    dmod = self.add_inline_images(d, s.fontSize)
                 p = Paragraph(dmod, s)
                 h += p.wrap(textBoxWidth, textBoxHeight)[1]
                 paragraphs.append(p)
@@ -794,7 +911,7 @@ class DividerDrawer(object):
 
             sets = []
             for c in pageCards:
-                setTitle = c.cardset.title()
+                setTitle = c.cardset
                 if setTitle not in sets:
                     sets.append(setTitle)
 

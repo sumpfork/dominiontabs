@@ -1,74 +1,15 @@
 import json
 import os
+import re
 from reportlab.lib.units import cm
-
-
-def getType(typespec):
-    return cardTypes[tuple(typespec)]
-
-setImages = {
-    'dominion': 'base_set.png',
-    'intrigue': 'intrigue_set.png',
-    'seaside': 'seaside_set.png',
-    'prosperity': 'prosperity_set.png',
-    'alchemy': 'alchemy_set.png',
-    'cornucopia': 'cornucopia_set.png',
-    'cornucopia extras': 'cornucopia_set.png',
-    'hinterlands': 'hinterlands_set.png',
-    'dark ages': 'dark_ages_set.png',
-    'dark ages extras': 'dark_ages_set.png',
-    'guilds': 'guilds_set.png',
-    'adventures': 'adventures_set.png',
-    'adventures extras': 'adventures_set.png',
-    'empires': 'empires_set.png',
-    'empires extras': 'empires_set.png'
-}
-promoImages = {
-    'walled village': 'walled_village_set.png',
-    'stash': 'stash_set.png',
-    'governor': 'governor_set.png',
-    'black market': 'black_market_set.png',
-    'envoy': 'envoy_set.png',
-    'prince': 'prince_set.png',
-    'summon': 'promo_set.png',
-    'sauna': 'promo_set.png',
-    'avanto': 'promo_set.png',
-    'sauna \/ avanto': 'promo_set.png'
-}
-
-setTextIcons = {
-    'dominion': 'D',
-    'intrigue': 'I',
-    'seaside': 'S',
-    'prosperity': 'P',
-    'alchemy': 'A',
-    'cornucopia': 'C',
-    'cornucopia extras': 'C',
-    'hinterlands': 'H',
-    'dark ages': 'DA',
-    'dark ages extras': 'DA',
-    'guilds': 'G',
-    'adventures': 'Ad',
-    'adventures extras': 'Ad',
-    'empires': 'E',
-    'empires extras': 'E'
-}
-
-promoTextIcons = {
-    'walled village': '',
-    'stash': '',
-    'governor': '',
-    'black market': '',
-    'envoy': '',
-    'prince': ''
-}
-
-language_mapping = None
 
 
 class Card(object):
 
-    language_mapping = None
+    sets = None
+    types = None
+    type_names = None
+    bonus_regex = None
 
     class CardJSONEncoder(json.JSONEncoder):
 
@@ -81,56 +22,94 @@ class Card(object):
     def decode_json(obj):
         return Card(**obj)
 
-    @classmethod
-    def getSetImage(cls, setName, cardName):
-        if setName in setImages:
-            return setImages[setName]
-        if cardName.lower() in promoImages:
-            return promoImages[cardName.lower()]
-        if setName in cls.language_mapping:
-            trans = cls.language_mapping[setName]
-            if trans in setImages:
-                return setImages[trans]
-        if cardName in cls.language_mapping:
-            trans = cls.language_mapping[cardName]
-            if trans.lower() in promoImages:
-                return promoImages[trans.lower()]
-        return None
+    def __init__(self, name=None, cardset='', types=None, cost='', description='',
+                 potcost=0, debtcost=0, extra='', count=-1, card_tag='missing card_tag',
+                 cardset_tags=None, group_tag='', group_top=False, image=None,
+                 text_icon=None, cardset_tag=''):
 
-    @classmethod
-    def getSetText(cls, setName, cardName):
-        if setName in setTextIcons:
-            return setTextIcons[setName]
-        if cardName.lower() in promoTextIcons:
-            return promoTextIcons[cardName.lower()]
-        return None
+        if types is None:
+            types = []  # make sure types is a list
+        if cardset_tags is None:
+            cardset_tags = []  # make sure cardset_tags is a list
+        if name is None:
+            name = card_tag  # make sure there is a meaningful default name
 
-    def __init__(self, name, cardset, types, cost, description='', potcost=0, debtcost=0, extra='', count=-1):
         self.name = name.strip()
         self.cardset = cardset.strip()
         self.types = types
+        self.types_name = ""
         self.cost = cost
+        self.description = description
         self.potcost = potcost
         self.debtcost = debtcost
-        self.description = description
         self.extra = extra
+        self.card_tag = card_tag
+        self.cardset_tags = cardset_tags
+        self.group_tag = group_tag
+        self.group_top = group_top
+        self.image = image
+        self.text_icon = text_icon
+        self.cardset_tag = cardset_tag
         if count < 0:
-            self.count = getType(self.types).getTypeDefaultCardCount()
+            self.count = [self.getType().getTypeDefaultCardCount()]
+        elif count == 0:
+            self.count = []
         else:
-            self.count = count
+            self.count = [int(count)]
 
     def getCardCount(self):
-        return self.count
+        return sum(i for i in self.count)
 
     def setCardCount(self, value):
         self.count = value
 
+    def addCardCount(self, value):
+        self.count.extend(value)
+
     def getStackHeight(self, thickness):
         # return height of the stacked cards in cm.  Using hight in cm of a stack of 60 Copper cards as thickness.
-        return self.count * cm * (thickness / 60.0) + 2
+        return self.getCardCount() * cm * (thickness / 60.0) + 2
 
     def getType(self):
-        return getType(self.types)
+        return Card.types[tuple(self.types)]
+
+    def getBonusBoldText(self, text):
+        for regex in Card.bonus_regex:
+            text = re.sub(regex, '<b>\\1</b>', text)
+        return text
+
+    @staticmethod
+    def addBonusRegex(bonus):
+        # Each bonus_regex matches the bonus keywords to be highlighted
+        # This only needs to be done once per language
+        if Card.bonus_regex is None:
+            # initialize the information holder
+            Card.bonus_regex = []
+
+        # Make sure have minimum to to anything
+        if not isinstance(bonus, dict):
+            return
+        if 'include' not in bonus:
+            return
+        if not bonus['include']:
+            return
+        if 'exclude' not in bonus:
+            bonus['exclude'] = []
+
+        # Start processing of lists into a single regex statement
+        # (?i) makes this case insensitive
+        # (?!\<b\>) and (?!\<\/b\>) prevents matching already bolded items
+        # (?!\w) prevents smaller word matches.  Prevents matching "Action" in "Actions"
+        if bonus['exclude']:
+            bonus['exclude'].sort(reverse=True)
+            exclude_regex = '(?!\w)(?!\s*(' + '|'.join(bonus['exclude']) + '))'
+        else:
+            exclude_regex = ''
+
+        bonus['include'].sort(reverse=True)
+        include_regex = "(\+\s*\d+\s*(" + '|'.join(bonus['include']) + "))"
+        regex = "((?i)(?!\<b\>)" + include_regex + exclude_regex + "(?!\<\/b\>))"
+        Card.bonus_regex.append(regex)
 
     def __repr__(self):
         return '"' + self.name + '"'
@@ -139,35 +118,79 @@ class Card(object):
         return self.name + ' ' + self.cardset + ' ' + '-'.join(self.types)\
             + ' ' + self.cost + ' ' + self.description + ' ' + self.extra
 
-    def isExpansion(self):
-        return 'Expansion' in self.getType().getTypeNames()
-
-    def isEvent(self):
-        return 'Event' in self.getType().getTypeNames()
-
-    def isLandmark(self):
-        return 'Landmark' in self.getType().getTypeNames()
-
-    def isPrize(self):
-        return 'Prize' in self.getType().getTypeNames()
-
     def isType(self, what):
         return what in self.getType().getTypeNames()
 
+    def isExpansion(self):
+        return self.isType('Expansion')
+
+    def isEvent(self):
+        return self.isType('Event')
+
+    def isLandmark(self):
+        return self.isType('Landmark')
+
+    def isPrize(self):
+        return self.isType('Prize')
+
+    def get_total_cost(self, c):
+        # Return a tuple that represents the total cost of card c
+        # Hightest cost cards are in order:
+        # - Landmarks to sort at the very end
+        # - cards with * since that can mean anything
+        # - cards with numeric errors
+        # convert cost (a string) into a number
+        if c.isLandmark():
+            c_cost = 999
+        elif not c.cost:
+            c_cost = 0     # if no cost, treat as 0
+        elif '*' in c.cost:
+            c_cost = 998  # make it a really big number
+        else:
+            try:
+                c_cost = int(c.cost)
+            except ValueError:
+                c_cost = 997  # can't, so make it a really big number
+
+        return c_cost, c.potcost, c.debtcost
+
+    def set_lowest_cost(self, other):
+        # set self cost fields to the lower of the two's total cost
+        self_cost = self.get_total_cost(self)
+        other_cost = self.get_total_cost(other)
+        if other_cost < self_cost:
+            self.cost = other.cost
+            self.potcost = other.potcost
+            self.debtcost = other.debtcost
+
     def setImage(self):
-        setImage = Card.getSetImage(self.cardset, self.name)
-        if setImage is None and self.cardset != 'base':
-            print 'warning, no set image for set "{}" card "{}"'.format(self.cardset, self.name)
+        setImage = None
+        if self.image is not None:
+            setImage = self.image
+        else:
+            if self.cardset_tag in Card.sets:
+                if 'image' in Card.sets[self.cardset_tag]:
+                    setImage = Card.sets[self.cardset_tag]['image']
+
+        if setImage is None and self.cardset_tag != 'base':
+            print 'warning, no set image for set "{}", card "{}"'.format(self.cardset, self.name)
         return setImage
 
     def setTextIcon(self):
-        setTextIcon = Card.getSetText(self.cardset, self.name)
+        setTextIcon = None
+        if self.text_icon:
+            setTextIcon = self.text_icon
+        else:
+            if self.cardset_tag in Card.sets:
+                if 'text_icon' in Card.sets[self.cardset_tag]:
+                    setTextIcon = Card.sets[self.cardset_tag]['text_icon']
+
         if setTextIcon is None and self.cardset != 'base':
-            print 'warning, no set text for set "{}" card "{}"'.format(self.cardset, self.name)
+            print 'warning, no set text for set "{}", card "{}"'.format(self.cardset, self.name)
         return setTextIcon
 
     def isBlank(self):
-        return False
+        return self.isType('Blank')
 
 
 class BlankCard(Card):
@@ -181,12 +204,16 @@ class BlankCard(Card):
 
 class CardType(object):
 
-    def __init__(self, typeNames, tabImageFile, defaultCardCount=10, tabTextHeightOffset=0, tabCostHeightOffset=-1):
-        self.typeNames = typeNames
-        self.tabImageFile = tabImageFile
+    @staticmethod
+    def decode_json(obj):
+        return CardType(**obj)
+
+    def __init__(self, card_type, card_type_image, defaultCardCount=10, tabTextHeightOffset=0, tabCostHeightOffset=-1):
+        self.typeNames = tuple(card_type)
+        self.tabImageFile = card_type_image
+        self.defaultCardCount = defaultCardCount
         self.tabTextHeightOffset = tabTextHeightOffset
         self.tabCostHeightOffset = tabCostHeightOffset
-        self.defaultCardCount = defaultCardCount
 
     def getTypeDefaultCardCount(self):
         return self.defaultCardCount
@@ -209,51 +236,3 @@ class CardType(object):
 
     def getTabCostHeightOffset(self):
         return self.tabCostHeightOffset
-
-cardTypes = [
-    CardType(('Action',), 'action.png'),
-    CardType(('Action', 'Attack'), 'action.png'),
-    CardType(('Action', 'Attack', 'Prize'), 'action.png', 1),
-    CardType(('Action', 'Reaction'), 'reaction.png'),
-    CardType(('Action', 'Victory'), 'action-victory.png', 12),
-    CardType(('Action', 'Duration'), 'duration.png', 10),
-    CardType(('Action', 'Duration', 'Reaction'), 'duration-reaction.png'),
-    CardType(('Action', 'Attack', 'Duration'), 'duration.png'),
-    CardType(('Action', 'Looter'), 'action.png'),
-    CardType(('Action', 'Prize'), 'action.png', 1),
-    CardType(('Action', 'Ruins'), 'ruins.png', 10, 0, 1),
-    CardType(('Action', 'Shelter'), 'action-shelter.png', 6),
-    CardType(('Action', 'Attack', 'Duration'), 'duration.png'),
-    CardType(('Action', 'Attack', 'Looter'), 'action.png'),
-    CardType(('Action', 'Attack', 'Traveller'), 'action.png', 5),
-    CardType(('Action', 'Reserve'), 'reserve.png', 10),
-    CardType(('Action', 'Reserve', 'Victory'), 'reserve-victory.png', 12),
-    CardType(('Action', 'Traveller'), 'action.png', 5),
-    CardType(('Action', 'Gathering'), 'action.png'),
-    CardType(('Action', 'Treasure'), 'action-treasure.png'),
-    CardType(('Prize',), 'action.png', 1),
-    CardType(('Event',), 'event.png', 1),
-    CardType(('Reaction',), 'reaction.png'),
-    CardType(('Reaction', 'Shelter'), 'reaction-shelter.png', 6),
-    CardType(('Treasure',), 'treasure.png', 10, 3, 0),
-    CardType(('Treasure', 'Attack'), 'treasure.png'),
-    CardType(('Treasure', 'Victory'), 'treasure-victory.png', 12),
-    CardType(('Treasure', 'Prize'), 'treasure.png', 1, 3, 0),
-    CardType(('Treasure', 'Reaction'), 'treasure-reaction.png', 10, 0, 1),
-    CardType(('Treasure', 'Reserve'), 'reserve-treasure.png'),
-    CardType(('Victory',), 'victory.png', 12),
-    CardType(('Victory', 'Reaction'), 'victory-reaction.png', 12, 0, 1),
-    CardType(('Victory', 'Shelter'), 'victory-shelter.png', 6),
-    CardType(('Victory', 'Castle'), 'victory.png', 12),
-    CardType(('Curse',), 'curse.png', 30, 3),
-    CardType(('Trash',), 'action.png', 1),
-    CardType(('Prizes',), 'action.png', 0),
-    CardType(('Events',), 'event.png', 0),
-    CardType(('Shelters',), 'shelter.png', 0),
-    CardType(('Expansion',), 'expansion.png', 0, 4),
-    CardType(('Blank',), ''),
-    CardType(('Landmark',), 'landmark.png', 1),
-    CardType(('Landmarks',), 'landmark.png', 0)
-]
-
-cardTypes = dict(((c.getTypeNames(), c) for c in cardTypes))
