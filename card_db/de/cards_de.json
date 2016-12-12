@@ -15,8 +15,8 @@
         "name": "Kunsthandwerker"
     },
     "Ball": {
-        "description": "Nimm deinen - 1 Coin Marker. Nimm dir 2 Karten, die jede bis zu 4 Coins kostet.", 
-        "extra": "Nimm deinen -1 Coin-Marker und lege ihn vor dir ab. Das nächste Mal, wenn du mindestens 1 Coin erhälst, erhälst du stattdessen 1 Coin weniger. Daach legst du den Marker wieder neben den Vorrat. Nimm 2 Karten vom Vorrat, die jede bis zu 4 Coins kosten. Das können gleiche oder verschiedene Karten sein. Lege beide Karten ab. Eintausch-Karten oder Preiskarten (aus Reiche Ernte) gehören nicht zum Vorrat und dürfen nicht genommenen werden.", 
+        "description": "Nimm deinen -1 Coin Marker. Nimm dir 2 Karten, die jede bis zu 4 Coins kostet.", 
+        "extra": "Nimm deinen -1 Coin-Marker und lege ihn vor dir ab. Das nächste Mal, wenn du mindestens 1 Coin erhältst, erhältst du stattdessen 1 Coin weniger. Daach legst du den Marker wieder neben den Vorrat. Nimm 2 Karten vom Vorrat, die jede bis zu 4 Coins kosten. Das können gleiche oder verschiedene Karten sein. Lege beide Karten ab. Eintausch-Karten oder Preiskarten (aus Reiche Ernte) gehören nicht zum Vorrat und dürfen nicht genommenen werden.", 
         "name": "Ball"
     },
     "Bonfire": {
@@ -25,8 +25,8 @@
         "name": "Freudenfeuer"
     },
     "Borrow": {
-        "description": "+1 Kauf<n>Once per turn:<br>Wenn dein -1 Karte-Marker nicht auf deinem Nachziehstapel liegt, lege ihn dorthin und +1 Coin.", 
-        "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Du erhälst +1 Kauf. Wenn dein -1 card-Marker nicht auf deinem Nachziehstapel liegt, lege ihn dorthin und erhalte +1 coin. Das nächste Mal, wenn du Karten nachziehen musst, ziehst du 1 Karte weniger.", 
+        "description": "+1 Kauf<n>Einmal pro Zug:<br>Wenn dein -1 Karten-Marker nicht auf deinem Nachziehstapel liegt, lege ihn dorthin und +1 Coin.", 
+        "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Du erhältst +1 Kauf. Wenn dein -1 card-Marker nicht auf deinem Nachziehstapel liegt, lege ihn dorthin und erhalte +1 coin. Das nächste Mal, wenn du Karten nachziehen musst, ziehst du 1 Karte weniger.", 
         "name": "Leihgabe"
     },
    "Bridge Troll": {
@@ -100,7 +100,7 @@
         "name": "Kundschafter"
     },
     "Haunted Woods": {
-        "description": "Bis zu deinem nächsten Zug:<n>Jeder Mitspieler muss, sobad er eine Karte kauft, seine restlichen Handkarten in beliebiger Reihenfolge auf seinen Nachziehstapel legen.<n>Zu Beginn deines nächsten Zuges:<n>+3 Karten", 
+        "description": "Bis zu deinem nächsten Zug:<n>Jeder Mitspieler muss, sobald er eine Karte kauft, seine restlichen Handkarten in beliebiger Reihenfolge auf seinen Nachziehstapel legen.<n>Zu Beginn deines nächsten Zuges:<n>+3 Karten", 
         "extra": "Diese Karte ist eine Dauerkarte. Bis zu Beginn deines nächsten Zuges muss jeder Mitspieler, der eine Karte kauft, sofort alle restlichen Handkarten in beliebiger Reihenfolge auf den Nachziehstapel legen. Das Erwerben eines Ereignisses ist nicht mit dem Kauf einer Karte gleichzusetzen. Spieler, die mit einer Reaktionskarte reagieren wollen, müssen dies sofort beim Ausspielen des GEISTERWALDS tun. Ziehe zu Beginn deines nächsten Zuges 3 Karten nach. Lege die Karte in der Aufräumphase des nächsten Zuges ab.", 
         "name": "Geisterwald"
     },
@@ -120,8 +120,8 @@
         "name": "Erbschaft"
     },
     "Lost Arts": {
-        "description": "Lege deinen +1 Aktion-Marker auf einen Aktions-Vorratsstapel. <n> (Wenn du eine Karte von diesem Stapel ausspielst, erhälst du zuerst + 1 Aktion.)", 
-        "extra": "Lege deinen + 1 Aktion-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, erhälst du + 1 Aktion, sobald du eine Karte, die von diesem Stapel stammt, ausspielst.", 
+        "description": "Lege deinen +1 Aktion-Marker auf einen Aktions-Vorratsstapel. <n> (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst +1 Aktion.)", 
+        "extra": "Lege deinen +1 Aktion-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, erhältst du +1 Aktion, sobald du eine Karte, die von diesem Stapel stammt, ausspielst.", 
         "name": "Verlorene Kunst"
     },
     "Lost City": {
@@ -145,7 +145,7 @@
         "name": "Geizhals"
     },
     "Mission": {
-        "description": "Einmal pro Zug: wenn der vorangegangene Zug nicht deiner war, spielst du nach deiem Zug einen weiteren Zug, in welchem du keine Karten kaufen darfst.", 
+        "description": "Einmal pro Zug: wenn der vorangegangene Zug nicht deiner war, spielst du nach deinem Zug einen weiteren Zug, in welchem du keine Karten kaufen darfst.", 
         "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Du spielst nach diesem Zug einen weiteren Zug, falls der vorangegangene Zug von einem Mitspieler gespielt wurde und nicht von dir (z.B. durch den AUSSENPOSTEN aus Seaside). In diesem Zug darfst du keine Karten kaufen. Du darfst allerdings Ereignisse erwerben, Karten auf andere Weise nehmen oder Reisende eintauschen. Erwirbst du in deinem Extragzug eine weitere MISSION, darfst du keinen weiteren Zug ausführen, da der vorherige Zug dein eigener war. ", 
         "name": "Mission"
     },
@@ -155,8 +155,8 @@
         "name": "Page"
     },
     "Pathfinding": {
-        "description": "Lege deinen +1 Karte-Marker auf einen Aktions-Vorratsstapel. (Wenn du eine Karte von diesem Stapel ausspielst, erhälst du zuerst + 1 Karte.)", 
-        "extra": "Lege deinen + 1 Karte-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, erhälst du + 1 Karte, sobald du eine Karte, die von diesem Stapel stammt, ausspielst.", 
+        "description": "Lege deinen +1 Karte-Marker auf einen Aktions-Vorratsstapel. (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst +1 Karte.)", 
+        "extra": "Lege deinen +1 Karte-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, erhältst du +1 Karte, sobald du eine Karte, die von diesem Stapel stammt, ausspielst.", 
         "name": "Wegsuche"
     },
     "Peasant": {
@@ -166,7 +166,7 @@
     },
     "Pilgrimage": {
         "description": "Einmal pro Zug: Drehe deinen Reise-Marker um. Liegt die Vorderseite oben: Wähle bis zu 3 Karten mit unterschiedlichem Namen, die du im Spiel hast und nimm dir jeweils eine davon.", 
-        "extra": "Dieses Ereignis darf nur 1 x pro Zug erworbe werden. Drehe deinen Reise-Marker um (zu Spielbeginn liegt dieser mit der Vorderseite nach oben). Liegt dann die Rückseite oben, passiert nichts. Liegt die Vorderseite oben, wählst du bis zu 3 Karten mit unterschiedlichem Namen, die du gerade im Spiel hast, nimmst von jeder dieser Karten eine weitere Karte vom Vorrat und legst sie ab. Eintausch-Karten oder Preiskarten (aus Reiche Ernte) mit * coins gehöre nicht zum Vorrat und dürfen nicht genommen werden.", 
+        "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Drehe deinen Reise-Marker um (zu Spielbeginn liegt dieser mit der Vorderseite nach oben). Liegt dann die Rückseite oben, passiert nichts. Liegt die Vorderseite oben, wählst du bis zu 3 Karten mit unterschiedlichem Namen, die du gerade im Spiel hast, nimmst von jeder dieser Karten eine weitere Karte vom Vorrat und legst sie ab. Eintausch-Karten oder Preiskarten (aus Reiche Ernte) mit * coins gehöre nicht zum Vorrat und dürfen nicht genommen werden.", 
         "name": "Pilgerfahrt"
     },
     "Plan": {
@@ -181,7 +181,7 @@
     },
     "Quest": {
         "description": "Du darfst eine Angriffskarte oder 2 Flüche oder 6 beliebige Karten ablegen. Wenn du das tust, nimm dir ein Gold.", 
-        "extra": "Wähle eine der Optionen, um ein GOLD zu nehmen und abzulegen: Entweder legst du 1 Angriffskarte aus deiner Hand oder 2 FLÜCHE oder 6 beliebige Karten ab. Du kannst dich entscheiden, nur 1 FLUCH oder weniger als 6 Karten abzulegen, wenn du nicht genügend entsprechende Karten auf der Hand hast - dann erhälst du kein GOLD.", 
+        "extra": "Wähle eine der Optionen, um ein GOLD zu nehmen und abzulegen: Entweder legst du 1 Angriffskarte aus deiner Hand oder 2 FLÜCHE oder 6 beliebige Karten ab. Du kannst dich entscheiden, nur 1 FLUCH oder weniger als 6 Karten abzulegen, wenn du nicht genügend entsprechende Karten auf der Hand hast - dann erhältst du kein GOLD.", 
         "name": "Quest"
     },
     "Raid": {
@@ -200,7 +200,7 @@
         "name": "Rattenfänger"
     },
     "Raze": {
-        "description": "+1 Aktion<n>Entsorge diese Karte oder eine Handkarte.<n> Schau die so viee Karten oben von deinem Nachziehstapel an, wie die entsorgte Karte X coins gekostet hat. Nimm eine davon auf die Hand und lege den Rest ab.", 
+        "description": "+1 Aktion<n>Entsorge diese Karte oder eine Handkarte.<n> Schau die so viele Karten oben von deinem Nachziehstapel an, wie die entsorgte Karte X coins gekostet hat. Nimm eine davon auf die Hand und lege den Rest ab.", 
         "extra": "Du erhältst +1 Aktion. Dann musst du entweder diese ZERSTÖRUNG oder eine Handkarte entsorgen. Je nach Höhe der Kosten der entsorgten Karte siehst du dir die entsprechende Anzahl Karten oben von deinem Nachziehstapel an. Nimm eine davon auf die Hand und lege den Rest ab. Liegt der -Karte-Marker auf dem Nachziehstapel, wird dieser kurz zur Seite gelegt und nach dem Ziehen der Karten wieder oben auf den Stapel zurückgelegt.", 
         "name": "Zerstörung"
     },
@@ -210,23 +210,23 @@
         "name": "Relikt"
     },
     "Royal Carriage": {
-        "description": "+ 1 Aktion <br> Lege diese Karte auf dein Wirtshaustableau. <line> Sofort nachdem du eine Aktionskarte ausgeführt hast, die danach noch im Spiel ist, darfst du diese karte von deinem Tableau aufrufen. Wenn du das tust: Führe die Aktion noch einmal aus.", 
+        "description": "+1 Aktion <br> Lege diese Karte auf dein Wirtshaustableau. <line> Sofort nachdem du eine Aktionskarte ausgeführt hast, die danach noch im Spiel ist, darfst du diese karte von deinem Tableau aufrufen. Wenn du das tust: Führe die Aktion noch einmal aus.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du +1 Aktion und legst sie dann auf dein Wirtshaustableau. Sobald du eine Aktionskarte ausspielst und die Anweisungen darauf ausgeführt hast, darfst du die KÖNIGLICHE KUTSCHE sofort danach aufrufen, falls die Aktionskarte noch im Spiel ist. Wenn du das tust, führst du die Aktion sofort noch einmal aus. Du kannst die KÖNIGLICHE KUTSCHE nicht aufrufen, wenn die Aktion bereits entsorgt wurde oder auf Reservekarten, die bereits auf das Tableau gelegt wurden. Lege die KÖNIGLICHE KUTSCHE in der Aufräumphase ab. Wird die KÖNIGLICHE KUTSCHE auf eine Dauerkarte gespielt, bleibt sie solange im Spiel, bis die Dauerkarte abgelegt wird.", 
         "name": "Königliche Kutsche"
     },
     "Save": {
         "description": "+1 Kauf<n>Einmal pro Zug: Lege eine Handkarte zur Seite und nimm sie am Ende deines Zuges wieder auf die Hand (nach dem Ziehen).", 
-        "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Du erhälst +1 Kauf und legst eine beliebige handkarte verdeckt zur Seite. Nachdem du in der Aufräumphase Karten nachgezogen hast, nimmst du die zur Seite gelegte Karte wieder auf die Hand.", 
+        "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Du erhältst +1 Kauf und legst eine beliebige Handkarte verdeckt zur Seite. Nachdem du in der Aufräumphase Karten nachgezogen hast, nimmst du die zur Seite gelegte Karte wieder auf die Hand.", 
         "name": "Zuflucht"
     },
     "Scouting Party": {
         "description": "+1 Kauf<n>Sieh dir die obersten 5 Karten deines Nachziehstapels an. Lege 3 davon ab und den Rest in beliebiger Reihenfolge zurück auf den Nachziehstapel.", 
-        "extra": "Du erhälst + 1 Kauf. Schau dir die obersten 5 Karten deines Nachziehstapels an. Lege 3 davon ab und de Rest in beliebiger Reihenfolge zurück auf den Nachziehstapel. Hast du nach dem Mischen des Ablagestapels weniger als 5 Karten zur Verfügung, legst du zuerst - wenn möglich - 3 Karten ab. Nur den rest (0,1 oder 2 Karten) legst du zurück auf den Nachziehstapel.", 
+        "extra": "Du erhältst +1 Kauf. Schau dir die obersten 5 Karten deines Nachziehstapels an. Lege 3 davon ab und de Rest in beliebiger Reihenfolge zurück auf den Nachziehstapel. Hast du nach dem Mischen des Ablagestapels weniger als 5 Karten zur Verfügung, legst du zuerst - wenn möglich - 3 Karten ab. Nur den Rest (0,1 oder 2 Karten) legst du zurück auf den Nachziehstapel.", 
         "name": "Spähtrupp"
     },
     "Seaway": {
-        "description": "Nim dir eine Aktionskarte, die bis zu 4 coins kostet. Lege deinen + 1 Kauf-Marker auf diesen Vorratsstapel. (Wenn du eine Karte von diesem Stapel ausspielst, erhälst du zuerst +1 Kauf.)", 
-        "extra": "Nimm dir eine Aktionskarte vom Vorrat, die bis zu 4 coins kostet, und lege diese ab. Lege deinen + 1 Kauf-Marker auf den Vorratsstapel, von dem du die Aktionskarte genommen hast (dieser kann auch leer sein). Du musst eine Karte vom Vorrat nehmen, um den Marker auf den entsprechenden Stapel legen zu dürfen. Solange dieser Marker auf dem Stapel liegt, erhält du + 1 Kauf, sobald du eine Karte, die von diesem Stapel stammt, ausspielst. Kostet die Aktionskarte, die du durch den SEEWEG nimmst, nur in diesem Zug bis zu 4 coins, z.B. wenn du vorher einen BRÜCKENTROLL gespielt hast und dadurch alle Karten in diesem Zug 1 coin weniger kosten, bleibt der Marker später liegen, auch wenn die entsprechende Karte nach deinem Zug wieder 5 coins kostet. Auf Stapel, die nicht zum Vorrat gehören, darf der Marker nicht gelegt werde. <n> Durch den Erwerb eines weiteren SEEWEGS oder das Aufrufen eines LEHRERS darfst du den Marker auf einen anderen Aktions-Vorratsstapel legen.", 
+        "description": "Nimm dir eine Aktionskarte, die bis zu 4 coins kostet. Lege deinen +1 Kauf-Marker auf diesen Vorratsstapel. (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst +1 Kauf.)", 
+        "extra": "Nimm dir eine Aktionskarte vom Vorrat, die bis zu 4 coins kostet, und lege diese ab. Lege deinen +1 Kauf-Marker auf den Vorratsstapel, von dem du die Aktionskarte genommen hast (dieser kann auch leer sein). Du musst eine Karte vom Vorrat nehmen, um den Marker auf den entsprechenden Stapel legen zu dürfen. Solange dieser Marker auf dem Stapel liegt, erhält du +1 Kauf, sobald du eine Karte, die von diesem Stapel stammt, ausspielst. Kostet die Aktionskarte, die du durch den SEEWEG nimmst, nur in diesem Zug bis zu 4 coins, z.B. wenn du vorher einen BRÜCKENTROLL gespielt hast und dadurch alle Karten in diesem Zug 1 coin weniger kosten, bleibt der Marker später liegen, auch wenn die entsprechende Karte nach deinem Zug wieder 5 coins kostet. Auf Stapel, die nicht zum Vorrat gehören, darf der Marker nicht gelegt werde. <n> Durch den Erwerb eines weiteren SEEWEGS oder das Aufrufen eines LEHRERS darfst du den Marker auf einen anderen Aktions-Vorratsstapel legen.", 
         "name": "Seeweg"
     },
     "Soldier": {
@@ -235,8 +235,8 @@
         "name": "Soldat"
     },
     "Storyteller": {
-        "description": "+1 Aktion<br>+1 Coin<n>Spiele bis zu 3 Geldkarten aus deiner Hand aus. Zähle alls _ coins und du erhälst:<n> + 1 Kartepro gezahltem _ coins. <n> (Du hast jetzt 0 coins.)", 
-        "extra": "Du erhältst +1 Aktion sowie +1 Coins. Spiele bis zu 3 Geldkarten aus deiner Hand aus und zahle alle empty Coin, die du bisher in diesem Zug ausgespielt hast. Das beinhaltet alle Geldwerte von ausgespielten Geldkarten sowie alle, z. B. durch ausgespielte Aktionskarten, erhaltene zusätzliche Geldwerte (+1 Coins) inkl. dem +1 Coins dieses GESCHICHTENERZÄHLERS. Du hast danach 0 Coins. Für jedes gezahlte 1 Coins erhältst du +1 Karte. Trank-Kosten aus Die Alchemisten sind davon nicht betroffen.", 
+        "description": "+1 Aktion<br>+1 Coin<n>Spiele bis zu 3 Geldkarten aus deiner Hand aus. Zähle alle _ coins und du erhältst:<n> +1 Karte pro gezahltem _ coins. <n> (Du hast jetzt 0 coins.)", 
+        "extra": "Du erhältst +1 Aktion sowie +1 Coins. Spiele bis zu 3 Geldkarten aus deiner Hand aus und zahle alle _ Coin, die du bisher in diesem Zug ausgespielt hast. Das beinhaltet alle Geldwerte von ausgespielten Geldkarten sowie alle, z. B. durch ausgespielte Aktionskarten, erhaltene zusätzliche Geldwerte (+1 Coins) inkl. dem +1 Coins dieses GESCHICHTENERZÄHLERS. Du hast danach 0 Coins. Für jedes gezahlte 1 Coins erhältst du +1 Karte. Trank-Kosten aus Die Alchemisten sind davon nicht betroffen.", 
         "name": "Geschichtenerzähler"
     },
     "Swamp Hag": {
@@ -255,18 +255,18 @@
         "name": "Handel"
     },
     "Training": {
-        "description": "Lege deinen +1 Coin-Marker auf einen Aktions-Vorratsstapel.<n> (Wenn du eine Karte von diesem Stapel ausspielst, erhälst du zuerst +1 coin.)", 
+        "description": "Lege deinen +1 Coin-Marker auf einen Aktions-Vorratsstapel.<n> (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst +1 coin.)", 
         "extra": "Lege deinen +1 Coin-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, erhält du +1 coin, sobald du eine Karte, die von diesem Stapel stammt, ausspielst. <n> Durch den Erwerb eines weiteren TRAININGS oder das Aufrufen eines LEHRERS darfst du den Marker auf einen anderen Aktions-Vorratsstapel legen.", 
         "name": "Training"
     },
     "Transmogrify": {
-        "description": "+1 Aktion <n> Lege diese Karte auf dein Wirtshaustableau. <line> Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tut: Entsorge eine Handkarte und nimm dir eine Karte, die bis zu 1 coin mehr kostet als die entsorgte Karte. Nimm diese Karte auf die Hand.", 
+        "description": "+1 Aktion <n> Lege diese Karte auf dein Wirtshaustableau. <line> Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust: Entsorge eine Handkarte und nimm dir eine Karte, die bis zu 1 coin mehr kostet als die entsorgte Karte. Nimm diese Karte auf die Hand.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du +1 Aktion. Lege sie dann auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte aufrufen. Wenn du das tust, entsorgst du eine Handkarte und nimmst eine Karte vom Vorrat, die bis zu 1 Coins mehr kostet als die entsorgte Karte. Nimm die Karte auf die Hand. Du darfst nur Karten aus dem Vorrat nehmen. Lege die TRANSFORMATION in der Aufräumphase ab.", 
         "name": "Transformation"
     },
     "Travelling Fair": {
         "description": "+2 Käufe<n> Wenn du in diesem Zug eine Karte nimmst, darfst du sie auf deinen Nachziehstapel legen.", 
-        "extra": "Du erhälst +2 Käufe. Wenn du in dem Zug, in dem du den WANDERZIRKUS erwirbst, eine Karte nimmst, darfst du diese oben auf deinen Nachziehstapel legen. Wenn du dies nicht möchtest, lege die genommene Karte ab. Der WANDERZIRKUS funktioniert nicht bei den Eintausch-Karten mit einem * Coins, da diese nicht genommen sondern eingetauscht werden.", 
+        "extra": "Du erhältst +2 Käufe. Wenn du in dem Zug, in dem du den WANDERZIRKUS erwirbst, eine Karte nimmst, darfst du diese oben auf deinen Nachziehstapel legen. Wenn du dies nicht möchtest, lege die genommene Karte ab. Der WANDERZIRKUS funktioniert nicht bei den Eintausch-Karten mit einem * Coins, da diese nicht genommen sondern eingetauscht werden.", 
         "name": "Wanderzirkus"
     },
     "Treasure Hunter": {
@@ -765,7 +765,7 @@
         "untranslated": "extra"
     },
     "Adventurer": {
-        "description": "Decke Karten vom Nachziehstapel auf, bis zwei Schatzkarten offenliegen. Nimm die Schatzkarten auf die Hand, lege die übrigen aufgedeckten Karten ab.", 
+        "description": "Decke Karten vom Nachziehstapel auf, bis zwei Schatzkarten offen liegen. Nimm die Schatzkarten auf die Hand, lege die übrigen aufgedeckten Karten ab.", 
         "extra": "Sollte dein Nachziehstapel während des Aufdeckens aufgebraucht werden, mische deinen Ablagestapel. Die bereits aufgedeckten Karten werden nicht mit gemischt, sondern bleiben zunächst offen liegen. Solltest du auch mit Hilfe des neuen Nachziehstapels nicht genügend Geldkarten aufdecken, bekommst du nur diejenigen Geldkarten, die du aufgedeckt hast.", 
         "name": "Abenteurer"
     },
@@ -1365,7 +1365,7 @@
         "name": "Wahrsager"
     },
     "Stonemason": {
-        "description": "Entsorge eine Karte aus deiner Hand. Nimm 2 Karten, die jeweils weniger als die entsorgte Karte kosten.     Wenn du diese Karte kaufst, darfst du mehr dafür zahlen. Falls du das tust, nimmst du 2 Aktionskarten,  die jeweils so viel kosten, wie du zusätzlich bezahlt hast.", 
+        "description": "Entsorge eine Karte aus deiner Hand. Nimm 2 Karten, die jeweils weniger als die entsorgte Karte kosten. <line> Wenn du diese Karte kaufst, darfst du mehr dafür zahlen. Falls du das tust, nimmst du 2 Aktionskarten,  die jeweils so viel kosten, wie du zusätzlich bezahlt hast.", 
         "extra": " Wenn du die Karte STEINMETZ  kaufst, darfst du mehr dafür bezahlen.  Wenn du das tust, nimmst du dir zwei Aktionskarten, die beide jeweils genau so viel  kosten, wie du überzahlt hast. Du kannst dir zweimal  die gleiche oder zwei verschiedene  Karten nehmen. Wenn du zum Beispiel den  STEINMETZ für 6 Coin kaufst, könntest du dir zwei HEROLDE nehmen. Die Aktionskarten stammen aus dem Vorrat und werden auf deinen Ablagestapel gelegt. Sollten keine Karten mit den entsprechenden Kosten im Vorrat sein, bekommst du keine. Wenn du mit einem TRANK (Die Alchemisten) überzahlst, bekommst du Karten im Wert des TRANKS. Karten, die mehreren Kartentypen angehören, von denen einer AKTION ist (wie die GROSSE HALLE aus Die Intrige), sind Aktionskarten. Wenn du beschließt, nicht mehr als die normalen Kosten zu zahlen, bekommst du keine Karten. Es ist nicht möglich, dann Aktionskarten zu nehmen, die 0 Coin kosten. Wenn du diese Karte spielst, entsorgst du eine Karte aus deiner Hand und nimmst dir zwei Karten, die jeweils weniger kosten als die Karte, die du entsorgt hast. Wenn du keine Karte zum Entsorgen mehr auf der Hand hast, bekommst du keine Karten. Du kannst dir zweimal die gleiche oder zwei verschiedene Karten aus dem Vorrat nehmen. Diese werden auf deinen Ablagestapel gelegt. Falls es keine preiswerteren Karten im Vorrat gibt (weil du beispielsweise ein Kupfer entsorgst), bekommst du keine Karten. Wenn es im Vorrat nur noch eine einzige Karte gibt, die preiswerter ist als die entsorgte Karte, nimmst du dir diese. Du nimmst dir die Karten einzeln nacheinander; das kann bei Karten eine Rolle spielen, die beim nehmen eine Auswirkung haben (wie das GASTHAUS aus Hinterland).", 
         "name": "Steinmetz"
     },
@@ -1375,7 +1375,7 @@
         "name": "Steuereintreiber"
     },
     "Border Village": {
-        "description": "+1 Karte<br>+2 Aktionen<br>Wenn du das Grenzdorf nimmst, nimm dir eine Karte, die weniger kostet als das Grenzdorf.", 
+        "description": "+1 Karte<br>+2 Aktionen<line>Wenn du das Grenzdorf nimmst, nimm dir eine Karte, die weniger kostet als das Grenzdorf.", 
         "extra": "When you play this, you draw a card and can play two more Actions this turn. When you gain this, you also gain a card from the Supply that costs less than Border Village. Normally that will be a card costing up to 5 coins, but if Border Village costs less than normal, such as due to Highway, then the card you gain will have a lower maximum cost. You only gain a card when you gain Border Village, not when you play it. You gain a card whether you gained Border Village due to buying it, or gained it some other way.", 
         "name": "Grenzdorf", 
         "untranslated": "extra"
@@ -2036,7 +2036,7 @@
     },
     "Treasure Map": {
         "description": "Entsorge diese und eine weitere Schatzkarte aus deiner Hand. Wenn du das machst: Nimm dir 4 Gold und lege diese verdeckt auf deinen Nachziehstapel.", 
-        "extra": "Nur wenn du zusätzlich zu der ausgespielten SCHATZKARTE noch eine  weitere auf der Hand hast und beide entsorgst, erhältst du 4 Gold. Sollten weniger als  4 Gold im Vorrat sein, nimmst du dir soviele Goldkarten wie vorhanden sind. Lege alle  auf diese Weise erhaltenen Goldkarten verdeckt auf den Nachziehstapel. Solltest du nur  eine SCHATZKARTE auf der Hand haben und diese ausspielen, musst du diese Karte  entsorgen, erhältst aber nichts dafür.", 
+        "extra": "Nur wenn du zusätzlich zu der ausgespielten SCHATZKARTE noch eine  weitere auf der Hand hast und beide entsorgst, erhältst du 4 Gold. Sollten weniger als  4 Gold im Vorrat sein, nimmst du dir so viele Goldkarten wie vorhanden sind. Lege alle  auf diese Weise erhaltenen Goldkarten verdeckt auf den Nachziehstapel. Solltest du nur  eine SCHATZKARTE auf der Hand haben und diese ausspielen, musst du diese Karte  entsorgen, erhältst aber nichts dafür.", 
         "name": "Schatzkarte"
     },
     "Treasury": {
@@ -2055,12 +2055,12 @@
         "name": "Werft"
     },
     "adventures events": {
-        "description": "<justify>Ereignisse sind keine Königreichkarten. In der Kaufphase eines Spielers kann der Spieler, wenn er auch eine Karte kaufen könnte, stattdessen ein Ereignis erwerben. Ein Ereigniss zu erwerben bedeutet, die Kosten, die auf dem Ereignis angegeben sind, zu bezahlen und dann den Effekt des Ereignis' auszuführen. Das Ereignis bleibt dabei einfach auf dem Tisch, der Spieler nimmt es sich nicht; es ist in keinster Weise möglich, dass ein Spieler ein Ereignis nimmt oder eines in seinem Deck hat. Ein Ereignis zu erwerben benötigt einen Kauf, normalerweise kann sich ein Spieler entweder eine Karte kaufen oder ein Event erwerben. Hat ein Spieler zwei Käufe, weil er beispielsweise einen WILDHÜTER gespielt hat, so kann er sich zwei Karten kaufen, oder er erwirbt zwei Ereignisse, oder er kauft sich eine Karte und erwirbt ein Ereignis (in beliebiger Reihenfolge). Das selbe Ereignis kann in derselben Runde mehrfach erworben werden, falls der Spieler genügend Käufe verfügbar hat. Manche Ereignisse geben +Käufe und erlauben somit dem Spieler, später weitere Karten oder Ereignisse zu kaufen. Spieler können in einem Zug keine weiteren Schatzkarten spielen nachdem sie ein Ereignis erworben haben. Der Erwerb eines Ereignisses gilt nicht als Kaufen einer Karte. So findet z.B. die SUMPFHEXE keine Anwendung beim Erwerb eines Ereignisses. Die Kosten eines Ereignisses werden auch nicht von Karten wie dem BRÜCKENTROLL, die die Kosten von Karten betreffen, beeinflusst.", 
-        "extra": "Ereignisse sind spezielle \"Wenn du diese Karte kaufst\"-Effekte, die nicht auf einer Karte stehen. Spieler können Ereignisse während ihrer Kaufphase erwerben um den jeweiligen Effekt des Ereignis' auszulösen. Ereignisse sind keine Königreichkarten; sie zählen nicht zu den 10 Königreichstäpeln die den Vorrat ausmachen. Tatsächlich sind Ereignisse in keinster Weise \"Karten\". Jeder Text, der sich auf eine \"Karte\" bezieht (wie z.B. \"Nenne eine Karte\" oder Karten, die die Kosten aller Karten senken) wird nicht auf Ereignisse angewandt. Der Effekt und die Kosten eines Ereignis' sind im Querformat auf Karten mit silberner Umrandung gedruckt. <n> Im Prinzip können beliebig viele Ereignisse in einem Spiel verwendet werden. Es ist aber empfohlen, nicht mehr als zwei Ereignisse und Wahrzeichen gemeinsam zu verwenden. Beim Erstellen eines zufälligen Königreiches können die Ereignisse mit in die Auswahlkarten gemischt werden, jedes Ereignis, dass vor den 10 Königreichkarten gezogen wird, wird im Spiel verwendet.", 
+        "description": "<justify>Ereignisse sind keine Königreichkarten. In der Kaufphase eines Spielers kann der Spieler, wenn er auch eine Karte kaufen könnte, stattdessen ein Ereignis erwerben. Ein Ereignis zu erwerben bedeutet, die Kosten, die auf dem Ereignis angegeben sind, zu bezahlen und dann den Effekt des Ereignis' auszuführen. Das Ereignis bleibt dabei einfach auf dem Tisch, der Spieler nimmt es sich nicht; es ist in keinster Weise möglich, dass ein Spieler ein Ereignis nimmt oder eines in seinem Deck hat. Ein Ereignis zu erwerben benötigt einen Kauf, normalerweise kann sich ein Spieler entweder eine Karte kaufen oder ein Event erwerben. Hat ein Spieler zwei Käufe, weil er beispielsweise einen WILDHÜTER gespielt hat, so kann er sich zwei Karten kaufen, oder er erwirbt zwei Ereignisse, oder er kauft sich eine Karte und erwirbt ein Ereignis (in beliebiger Reihenfolge). Das selbe Ereignis kann in derselben Runde mehrfach erworben werden, falls der Spieler genügend Käufe verfügbar hat. Manche Ereignisse geben +Käufe und erlauben somit dem Spieler, später weitere Karten oder Ereignisse zu kaufen. Spieler können in einem Zug keine weiteren Schatzkarten spielen nachdem sie ein Ereignis erworben haben. Der Erwerb eines Ereignisses gilt nicht als Kaufen einer Karte. So findet z.B. die SUMPFHEXE keine Anwendung beim Erwerb eines Ereignisses. Die Kosten eines Ereignisses werden auch nicht von Karten wie dem BRÜCKENTROLL, die die Kosten von Karten betreffen, beeinflusst.", 
+        "extra": "Ereignisse sind spezielle \"Wenn du diese Karte kaufst\"-Effekte, die nicht auf einer Karte stehen. Spieler können Ereignisse während ihrer Kaufphase erwerben um den jeweiligen Effekt des Ereignis' auszulösen. Ereignisse sind keine Königreichkarten; sie zählen nicht zu den 10 Königreichstäpeln die den Vorrat ausmachen. Tatsächlich sind Ereignisse in keinster Weise \"Karten\". Jeder Text, der sich auf eine \"Karte\" bezieht (wie z.B. \"Nenne eine Karte\" oder Karten, die die Kosten aller Karten senken) wird nicht auf Ereignisse angewandt. Der Effekt und die Kosten eines Ereignis' sind im Querformat auf Karten mit silberner Umrandung gedruckt. <n> Im Prinzip können beliebig viele Ereignisse in einem Spiel verwendet werden. Es ist aber empfohlen, nicht mehr als zwei Ereignisse und Wahrzeichen gemeinsam zu verwenden. Beim Erstellen eines zufälligen Königreiches können die Ereignisse mit in die Platzhalterkarten gemischt werden, jedes Ereignis, dass vor den 10 Königreichkarten gezogen wird, wird im Spiel verwendet.", 
         "name": "Ereignisse Abenteuer"
     },
     "Page -> Champion": {
-        "description": "<justify>Page wird in einen Schatzsucher eingetauscht, welcher in einen Krieger eingetauscht wird, welcher in einen Helden eingetauscht wird, welcher in einen Champion eingetauscht wird.<n><left><u>Page</u>: +1 Karte; +1 Aktion<br><u>Schatzsucher</u>: +1 Aktion; +1 Coin; Nimm dir pro Karte, die dein rechter Mitspieler in seinem letzten Zug genommen hat, ein Silber.<br><u>Krieger</u>: +2 Karten;Fürjeden Reisenden (inkl. diesem), den du im Spiel hast, müssen alle Mitspieler die oberste Karte ihres Nachziehstapels ablegen und sie entsorgen, wenn sie 3 coins oder 4 coins kostet.<br><u>Held</u>: +2 Coins; Nimm dir eine Geldkarte.<br><u>Champion</u>: +1 Aktion; Immer wenn ein Mitspieler eine Angriffskarte spielt, bist du davon nicht betroffen. Immer wenn du eine Aktionskarte spielst: <br> +1 Aktion <br><i>(Diese Karte bleibt bis zum Spielende im Spiel.)</i>)", 
+        "description": "<justify>Page wird in einen Schatzsucher eingetauscht, welcher in einen Krieger eingetauscht wird, welcher in einen Helden eingetauscht wird, welcher in einen Champion eingetauscht wird.<n><left><u>Page</u>: +1 Karte; +1 Aktion<br><u>Schatzsucher</u>: +1 Aktion; +1 Coin; Nimm dir pro Karte, die dein rechter Mitspieler in seinem letzten Zug genommen hat, ein Silber.<br><u>Krieger</u>: +2 Karten;Für jeden Reisenden (inkl. diesem), den du im Spiel hast, müssen alle Mitspieler die oberste Karte ihres Nachziehstapels ablegen und sie entsorgen, wenn sie 3 coins oder 4 coins kostet.<br><u>Held</u>: +2 Coins; Nimm dir eine Geldkarte.<br><u>Champion</u>: +1 Aktion; Immer wenn ein Mitspieler eine Angriffskarte spielt, bist du davon nicht betroffen. Immer wenn du eine Aktionskarte spielst: <br> +1 Aktion <br><i>(Diese Karte bleibt bis zum Spielende im Spiel.)</i>)", 
         "extra": "Page ist ein Reisender. Diese Karten sind durch einen hellgrauen Pfeil im Hintergrund des Anweisungstextes gekennzeichnet. Die Besonderheit dieser Karten ist, dass sie in höherwertige Karten eingetauscht werden können. Die ausgetauschte Karte wird zurück auf ihren Stapel gelegt. PAGE gehört zum Vorrat und kann wie jede andere Königreichkarte gekauft und genommen werden. Wird PAGE im Spiel verwendet, werden die zum Eintauschen nötigen Karten auf separate Stapel neben dem Vorrat bereit gelegt. Diese Eintausch-Karten sind mit einem kleinen Sternchen gekennzeichnet, jeweils 5x im Spiel enthalten und gehören nicht zum Vorrat. Außerdem können sie nur durch das Eintauschen von entsprechenden Reisenden erworben, nicht aber gekauft oder anderweitig genommen werden. Wird ein Stapel Eintausch-Karten im Spielverlauf leer, gilt dieser nicht als einer der drei leeren Vorratsstapel, die das Spielende herbeiführen.<n> Um eine Karte einzutauschen, muss sie sich im Spiel befinden. Der Spieler darf in seiner Aufräumphase die Karte zurück auf ihren Stapel legen, bekommt die nächst höherwertige Karte vom Stapel und legt diese ab. Ist der entsprechende Stapel leer, kann die Karte nicht eingetauscht werden. Die Karte CHAMPION kann nicht eingetauscht werden. Eine Karte, die eingetauscht und damit auf ihren Stapel zurückgelegt wird, gilt nicht als entsorgt. Auch die durch das Eintauschen genommene Karte gilt nicht als genommen. Das ist wichtig für Anweisungen auf anderen Karten, die sich auf \"Nehmen\" und \"Entsorgen\" beziehen.", 
         "name": "Page → Champion"
     },
