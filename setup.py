@@ -6,7 +6,7 @@ setup(
     version=__version__,
     entry_points={
         'console_scripts': [
-            "dominion_dividers = domdiv:main"
+            "dominion_dividers = domdiv.main:main"
         ],
     },
     packages=find_packages(exclude=['tests']),
