@@ -12,9 +12,16 @@ Again, to generate tabs go to the ***[Online Generator](http://domtabs.sandflea.
 You need the python packages for reportlab (http://www.reportlab.com/software/opensource/rl-toolkit/download/) and PIL (http://www.pythonware.com/products/pil/) installed. You can install them manually or use the included setup.py via 'python setup.py install' (perhaps run via 'sudo' if not in a virtual env) which should install everything for you.
 
 #### Fonts
-I believe I cannot distribute one font (Minion Pro) domdiv uses as they are commercially sold by Adobe. However, the font files are included with every install of the free Adobe Reader. For example, on Windows 7 they are in C:\Program Files (x86)\Adobe\Reader 9.0\Resource\Font called `MinionPro-Regular.otf`, `MinionPro-Bold.otf` and `MinionPro-It.otf`.
+I believe I cannot distribute one font (Minion Pro) domdiv uses as they are owned by Adobe with a License that I understand to disallow redistribution.
 
-Sadly, these fonts use features of the otf format that are not support by the reportlab package. Thus, they need to first be converted to ttf (TrueType) format. I used the open source package fontforge to do the conversion. Included as 'convert.ff' is a script for fontforge to do the conversion, on Mac OS X with fontforge installed through macports you can just run `./convert.ff MinionPro-Regular.otf`, `./convert.ff MinionPro-Bold.otf` and `./convert.ff MinionPro-It.otf`. With other fontforge installations, you'll need to change the first line of convert.ff to point to your fontforge executable. I have not done this step under Windows - I imagine it may be possible with a cygwin install of fontforge or some such method. Copy these converted files to the `fonts` in the `domdiv` package/directory.
+However, it appears you can download them here:
+- http://fontsgeek.com/fonts/Minion-Pro-Regular
+- http://fontsgeek.com/fonts/Minion-Pro-Italic
+- http://fontsgeek.com/fonts/Minion-Pro-Bold
+
+Alternatively, the font files are included with every install of the free Adobe Reader. For example, on Windows 7 they are in C:\Program Files (x86)\Adobe\Reader 9.0\Resource\Font called `MinionPro-Regular.otf`, `MinionPro-Bold.otf` and `MinionPro-It.otf`. Sadly, these fonts use features of the otf format that are not support by the reportlab package. Thus, they need to first be converted to ttf (TrueType) format. I used the open source package fontforge to do the conversion. Included as 'convert.ff' is a script for fontforge to do the conversion, on Mac OS X with fontforge installed through macports you can just run `./convert.ff MinionPro-Regular.otf`, `./convert.ff MinionPro-Bold.otf` and `./convert.ff MinionPro-It.otf`. With other fontforge installations, you'll need to change the first line of convert.ff to point to your fontforge executable. I have not done this step under Windows - I imagine it may be possible with a cygwin install of fontforge or some such method. 
+
+Copy the downloaded/converted `.ttf` files to the `fonts` directory in the `domdiv` package/directory, then perform the package install below.
 
 ## Install/Running
 Run `python setup.py install`. This should install the needed prerequisites and make a script called `dominion_dividers` available in your python script directory. Run `dominion_dividers <outfile>` to get a pdf of all dividers with the default options, or run `dominion_dividers --help` to see the (extensive) list of options.
