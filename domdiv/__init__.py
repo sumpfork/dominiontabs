@@ -5,12 +5,16 @@ import sys
 import argparse
 import copy
 
+import pkg_resources
+
 import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
 
 from cards import Card
 from cards import CardType
 from draw import DividerDrawer
+
+__version__ = '2.2'
 
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
@@ -31,7 +35,7 @@ LANGUAGE_XX = 'xx'          # a dummy language for starting translations
 
 def get_languages(path):
     languages = []
-    for name in os.listdir(path):
+    for name in pkg_resources.resource_listdir('domdiv', path):
         dir_path = os.path.join(path, name)
         if os.path.isdir(dir_path):
             cards_file = os.path.join(dir_path, "cards_" + name + ".json")
@@ -52,7 +56,7 @@ def add_opt(options, option, value):
     setattr(options, option, value)
 
 
-def parse_opts(arglist):
+def parse_opts():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
         description="Generate Dominion Dividers",
@@ -392,7 +396,7 @@ def parse_opts(arglist):
         dest="write_json",
         help="Write json version of card definitions and extras.")
 
-    options = parser.parse_args(arglist)
+    options = parser.parse_args()
 
     if options.sleeved_thick:
         options.thickness = 3.2
@@ -467,11 +471,15 @@ def parse_cardsize(spec, sleeved):
     return dominionCardWidth, dominionCardHeight
 
 
-def read_write_card_data(options):
+def get_resource_stream(path):
+    return codecs.EncodedFile(pkg_resources.resource_stream('domdiv', path), "utf-8")
+
+
+def read_card_data(options):
 
     # Read in the card types
-    types_db_filepath = os.path.join(options.data_path, "card_db", "types_db.json")
-    with codecs.open(types_db_filepath, "r", "utf-8") as typefile:
+    types_db_filepath = os.path.join("card_db", "types_db.json")
+    with get_resource_stream(types_db_filepath) as typefile:
         Card.types = json.load(typefile, object_hook=CardType.decode_json)
     assert Card.types, "Could not load any card types from database"
 
@@ -488,13 +496,13 @@ def read_write_card_data(options):
     Card.types = dict(((c.getTypeNames(), c) for c in Card.types))
 
     # Read in the card database
-    card_db_filepath = os.path.join(options.data_path, "card_db", "cards_db.json")
-    with codecs.open(card_db_filepath, "r", "utf-8") as cardfile:
+    card_db_filepath = os.path.join("card_db", "cards_db.json")
+    with get_resource_stream(card_db_filepath) as cardfile:
         cards = json.load(cardfile, object_hook=Card.decode_json)
     assert cards, "Could not load any cards from database"
 
-    set_db_filepath = os.path.join(options.data_path, "card_db", "sets_db.json")
-    with codecs.open(set_db_filepath, "r", "utf-8") as setfile:
+    set_db_filepath = os.path.join("card_db", "sets_db.json")
+    with get_resource_stream(set_db_filepath) as setfile:
         Card.sets = json.load(setfile)
     assert Card.sets, "Could not load any sets from database"
     for s in Card.sets:
@@ -521,15 +529,6 @@ def read_write_card_data(options):
     for card in cards:
         card.image = card.setImage()
 
-    if options.write_json:
-        fpath = "cards.json"
-        with codecs.open(fpath, 'w', encoding='utf-8') as ofile:
-            json.dump(cards,
-                      ofile,
-                      cls=Card.CardJSONEncoder,
-                      ensure_ascii=False,
-                      indent=True,
-                      sort_keys=True)
     return cards
 
 
@@ -581,11 +580,10 @@ class CardSorter(object):
 def add_card_text(options, cards, language='en_us'):
     language = language.lower()
     # Read in the card text file
-    card_text_filepath = os.path.join(options.data_path,
-                                      "card_db",
+    card_text_filepath = os.path.join("card_db",
                                       language,
                                       "cards_" + language.lower() + ".json")
-    with codecs.open(card_text_filepath, 'r', 'utf-8') as card_text_file:
+    with get_resource_stream(card_text_filepath) as card_text_file:
         card_text = json.load(card_text_file)
     assert language, "Could not load card text for %r" % language
 
@@ -604,11 +602,10 @@ def add_card_text(options, cards, language='en_us'):
 def add_set_text(options, sets, language='en_us'):
     language = language.lower()
     # Read in the set text and store for later
-    set_text_filepath = os.path.join(options.data_path,
-                                     "card_db",
+    set_text_filepath = os.path.join("card_db",
                                      language,
-                                     "sets_" + language + ".json")
-    with codecs.open(set_text_filepath, 'r', 'utf-8') as set_text_file:
+                                     "sets_{}.json".format(language))
+    with get_resource_stream(set_text_filepath) as set_text_file:
         set_text = json.load(set_text_file)
     assert set_text, "Could not load set text for %r" % language
 
@@ -623,11 +620,10 @@ def add_set_text(options, sets, language='en_us'):
 def add_type_text(options, types={}, language='en_us'):
     language = language.lower()
     # Read in the type text and store for later
-    type_text_filepath = os.path.join(options.data_path,
-                                      "card_db",
+    type_text_filepath = os.path.join("card_db",
                                       language,
-                                      "types_" + language + ".json")
-    with codecs.open(type_text_filepath, 'r', 'utf-8') as type_text_file:
+                                      "types_{}.json".format(language))
+    with get_resource_stream(type_text_filepath) as type_text_file:
         type_text = json.load(type_text_file)
     assert type_text, "Could not load type text for %r" % language
 
@@ -648,11 +644,10 @@ def add_type_text(options, types={}, language='en_us'):
 def add_bonus_regex(options, language='en_us'):
     language = language.lower()
     # Read in the bonus regex terms
-    bonus_regex_filepath = os.path.join(options.data_path,
-                                        "card_db",
+    bonus_regex_filepath = os.path.join("card_db",
                                         language,
-                                        "bonuses_" + language + ".json")
-    with codecs.open(bonus_regex_filepath, 'r', 'utf-8') as bonus_regex_file:
+                                        "bonuses_{}.json".format(language))
+    with get_resource_stream(bonus_regex_filepath) as bonus_regex_file:
         bonus_regex = json.load(bonus_regex_file)
     assert bonus_regex, "Could not load bonus keywords for %r" % language
 
@@ -1014,11 +1009,9 @@ def calculate_layout(options, cards=[]):
         add_opt(options, 'verticalMargin', minmarginheight)
 
 
-def generate(options, data_path):
+def generate(options):
 
-    add_opt(options, 'data_path', data_path)
-
-    cards = read_write_card_data(options)
+    cards = read_card_data(options)
     assert cards, "No cards after reading"
     cards = filter_sort_cards(cards, options)
     assert cards, "No cards after filtering/sorting"
@@ -1038,6 +1031,6 @@ def generate(options, data_path):
     dd.draw(cards, options)
 
 
-def main(arglist, data_path):
-    options = parse_opts(arglist)
-    return generate(options, data_path)
+def main():
+    options = parse_opts()
+    return generate(options)

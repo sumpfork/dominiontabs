@@ -2,6 +2,8 @@ import os
 import re
 import sys
 
+import pkg_resources
+
 from reportlab.lib.units import cm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.styles import getSampleStyleSheet
@@ -25,19 +27,28 @@ class DividerDrawer(object):
         self.odd = True
         self.canvas = None
 
+    @staticmethod
+    def get_image_filepath(fname):
+        return pkg_resources.resource_filename('domdiv', os.path.join('images', fname))
+
     def registerFonts(self):
-        dirn = os.path.join(self.options.data_path, 'fonts')
+        dirn = os.path.join('fonts')
         regularMpath = os.path.join(dirn, 'MinionPro-Regular.ttf')
         boldMpath = os.path.join(dirn, 'MinionPro-Bold.ttf')
         obliqueMpath = os.path.join(dirn, 'MinionPro-It.ttf')
 
-        if os.path.isfile(regularMpath) and os.path.isfile(boldMpath) and os.path.isfile(obliqueMpath):
+        if (pkg_resources.resource_exists('domdiv', regularMpath) and
+                pkg_resources.resource_exists('domdiv', boldMpath) and
+                pkg_resources.resource_exists('domdiv', obliqueMpath)):
             self.fontNameRegular = 'MinionPro-Regular'
-            pdfmetrics.registerFont(TTFont(self.fontNameRegular, regularMpath))
+            pdfmetrics.registerFont(TTFont(self.fontNameRegular,
+                                           pkg_resources.resource_filename('domdiv', regularMpath)))
             self.fontNameBold = 'MinionPro-Bold'
-            pdfmetrics.registerFont(TTFont(self.fontNameBold, boldMpath))
+            pdfmetrics.registerFont(TTFont(self.fontNameBold,
+                                           pkg_resources.resource_filename('domdiv', boldMpath)))
             self.fontNameOblique = 'MinionPro-Oblique'
-            pdfmetrics.registerFont(TTFont(self.fontNameOblique, obliqueMpath))
+            pdfmetrics.registerFont(TTFont(self.fontNameOblique,
+                                           pkg_resources.resource_filename('domdiv', obliqueMpath)))
         else:
             print >> sys.stderr, "Warning, Minion Pro Font ttf file(s) not found! Falling back on Times. Tried:"
             print >> sys.stderr, regularMpath + ' ' + boldMpath + ' & ' + obliqueMpath
@@ -209,45 +220,44 @@ class DividerDrawer(object):
 
     def add_inline_images(self, text, fontsize):
         # Coins
-        path = os.path.join(self.options.data_path, 'images')
-        replace = '<img src=' "'%s/coin_small_\\1.png'" ' width=%d height=' "'200%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 2.4)
+        replace = '<img src=' "'{}'" ' width={} height=' "'200%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_1.png'), fontsize * 2.4)
         text = re.sub('(\d+)\s*\<\*COIN\*\>', replace, text)
-        replace = '<img src=' "'%s/coin_small_\\1.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_1.png'), fontsize * 1.2)
         text = re.sub('(\d+)\s(c|C)oin(s)?', replace, text)
-        replace = '<img src=' "'%s/coin_small_question.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_question.png'), fontsize * 1.2)
         text = re.sub('\?\s(c|C)oin(s)?', replace, text)
-        replace = '<img src=' "'%s/coin_small_empty.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_empty.png'), fontsize * 1.2)
         text = re.sub('empty\s(c|C)oin(s)?', replace, text)
         text = re.sub('\_\s(c|C)oin(s)?', replace, text)
 
         # VP
-        replace = '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'120%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 1.5)
+        replace = '<img src=' "'{}'" ' width={} height=' "'120%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('victory_emblem.png'), fontsize * 1.5)
         text = re.sub('(?:\s+|\<)VP(?:\s+|\>|\.|$)', replace, text)
-        replace = '<font size=%d>\\1</font> '
-        replace += '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'200%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (fontsize * 1.5, path, fontsize * 2.5)
+        replace = '<font size={}>\\1</font> '
+        replace += '<img src=' "'{}'" ' width={} height=' "'200%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(fontsize * 1.5, DividerDrawer.get_image_filepath('victory_emblem.png'), fontsize * 2.5)
         text = re.sub('(\d+)\s*\<\*VP\*\>', replace, text)
 
         # Debt
-        replace = '<img src=' "'%s/debt_\\1.png'" ' width=%d height=' "'105%%'" ' valign=' "'middle'" '/>&thinsp;'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "'{}'" ' width={} height=' "'105%'" ' valign=' "'middle'" '/>&thinsp;'
+        replace = replace.format(DividerDrawer.get_image_filepath('debt_1.png'), fontsize * 1.2)
         text = re.sub('(\d+)\sDebt', replace, text)
-        replace = '<img src=' "'%s/debt.png'" ' width=%d height=' "'105%%'" ' valign=' "'middle'" '/>&thinsp;'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "{}" ' width={} height=' "'105%'" ' valign=' "'middle'" '/>&thinsp;'
+        replace = replace.format(DividerDrawer.get_image_filepath('debt.png'), fontsize * 1.2)
         text = re.sub('Debt', replace, text)
 
         # Potion
-        replace = '<font size=%d>\\1</font> '
-        replace += '<img src=' "'%s/potion_small.png'" ' width=%d height=' "'140%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (fontsize * 1.5, path, fontsize * 2.0)
+        replace = '<font size={}>\\1</font> '
+        replace += '<img src=' "'{}'" ' width={} height=' "'140%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(fontsize * 1.5, DividerDrawer.get_image_filepath('potion_small.png'), fontsize * 2.0)
         text = re.sub('(\d+)\s*\<\*POTION\*\>', replace, text)
-        replace = '<img src=' "'%s/potion_small.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('potion_small.png'), fontsize * 1.2)
         text = re.sub('Potion', replace, text)
 
         return text.strip()
@@ -373,7 +383,7 @@ class DividerDrawer(object):
             width += 16
             x -= 16
             self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images', 'card.png'),
+                DividerDrawer.get_image_filepath('card.png'),
                 x,
                 countHeight,
                 16,
@@ -409,7 +419,7 @@ class DividerDrawer(object):
                 (card.potcost and int(card.cost) == 0))):
 
             self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images', 'coin_small.png'),
+                DividerDrawer.get_image_filepath('coin_small.png'),
                 x,
                 coinHeight,
                 16,
@@ -424,7 +434,7 @@ class DividerDrawer(object):
 
         if card.debtcost:
             self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images', 'debt.png'),
+                DividerDrawer.get_image_filepath('debt.png'),
                 x,
                 coinHeight,
                 16,
@@ -440,7 +450,7 @@ class DividerDrawer(object):
 
         if card.potcost:
             self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images', 'potion.png'),
+                DividerDrawer.get_image_filepath('potion.png'),
                 x,
                 potHeight,
                 potSize,
@@ -455,7 +465,7 @@ class DividerDrawer(object):
         # set image
         w = 2
         self.canvas.drawImage(
-            os.path.join(self.options.data_path, 'images', setImage),
+            DividerDrawer.get_image_filepath(setImage),
             x,
             y,
             14,
@@ -519,7 +529,7 @@ class DividerDrawer(object):
         img = card.getType().getNoCoinTabImageFile()
         if not self.options.no_tab_artwork and img:
             self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images', img),
+                DividerDrawer.get_image_filepath(img),
                 1,
                 0,
                 self.options.labelWidth - 2,
