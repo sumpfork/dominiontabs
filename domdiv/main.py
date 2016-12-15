@@ -35,11 +35,13 @@ def get_languages(path):
     languages = []
     for name in pkg_resources.resource_listdir('domdiv', path):
         dir_path = os.path.join(path, name)
-        if os.path.isdir(dir_path):
-            cards_file = os.path.join(dir_path, "cards_" + name + ".json")
-            sets_file = os.path.join(dir_path, "sets_" + name + ".json")
-            types_file = os.path.join(dir_path, "types_" + name + ".json")
-            if (os.path.isfile(cards_file) and os.path.isfile(sets_file) and os.path.isfile(types_file)):
+        if pkg_resources.resource_isdir('domdiv', dir_path):
+            cards_file = os.path.join(dir_path, "cards_{}.json".format(name))
+            sets_file = os.path.join(dir_path, "sets_{}.json".format(name))
+            types_file = os.path.join(dir_path, "types_{}.json".format(name))
+            if (pkg_resources.resource_exists('domdiv', cards_file) and
+                    pkg_resources.resource_exists('domdiv', sets_file) and
+                    pkg_resources.resource_exists('domdiv', types_file)):
                 languages.append(name)
     if LANGUAGE_XX in languages:
         languages.remove(LANGUAGE_XX)
@@ -54,7 +56,7 @@ def add_opt(options, option, value):
     setattr(options, option, value)
 
 
-def parse_opts():
+def parse_opts(cmdline_args=None):
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
         description="Generate Dominion Dividers",
@@ -394,7 +396,7 @@ def parse_opts():
         dest="write_json",
         help="Write json version of card definitions and extras.")
 
-    options = parser.parse_args()
+    options = parser.parse_args(args=cmdline_args)
 
     if options.sleeved_thick:
         options.thickness = 3.2
