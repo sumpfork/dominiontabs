@@ -1,8 +1,9 @@
-fonts
+domdiv/fonts/*.otf
+domdiv/fonts/*.ttf
 *.pdf
 *.pyc
 generated
-dominiontabs.egg-info
+*.egg-info
 build
 dist
 *~

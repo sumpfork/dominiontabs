@@ -1,8 +1,8 @@
-from __init__ import __version__
+from domdiv import __version__
 from setuptools import setup, find_packages
 
 setup(
-    name="dominiontabs",
+    name="domdiv",
     version=__version__,
     entry_points={
         'console_scripts': [
@@ -12,9 +12,7 @@ setup(
     packages=find_packages(exclude=['tests']),
     install_requires=["reportlab>=2.5",
                       "Pillow>=2.1.0"],
-    package_data={
-        'domdiv': ['images/*.png', 'card_db/*/*.json']
-    },
+    include_package_data=True,
     author="Sumpfork",
     author_email="sumpfork@mailmight.net",
     description="Divider Generation for the Dominion Card Game"

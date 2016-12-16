@@ -2,6 +2,8 @@ import os
 import re
 import sys
 
+import pkg_resources
+
 from reportlab.lib.units import cm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.styles import getSampleStyleSheet
@@ -25,25 +27,40 @@ class DividerDrawer(object):
         self.odd = True
         self.canvas = None
 
-    def registerFonts(self):
-        dirn = os.path.join(self.options.data_path, 'fonts')
-        regularMpath = os.path.join(dirn, 'MinionPro-Regular.ttf')
-        boldMpath = os.path.join(dirn, 'MinionPro-Bold.ttf')
-        obliqueMpath = os.path.join(dirn, 'MinionPro-It.ttf')
+    @staticmethod
+    def get_image_filepath(fname):
+        return pkg_resources.resource_filename('domdiv', os.path.join('images', fname))
 
-        if os.path.isfile(regularMpath) and os.path.isfile(boldMpath) and os.path.isfile(obliqueMpath):
-            self.fontNameRegular = 'MinionPro-Regular'
-            pdfmetrics.registerFont(TTFont(self.fontNameRegular, regularMpath))
-            self.fontNameBold = 'MinionPro-Bold'
-            pdfmetrics.registerFont(TTFont(self.fontNameBold, boldMpath))
-            self.fontNameOblique = 'MinionPro-Oblique'
-            pdfmetrics.registerFont(TTFont(self.fontNameOblique, obliqueMpath))
-        else:
-            print >> sys.stderr, "Warning, Minion Pro Font ttf file(s) not found! Falling back on Times. Tried:"
-            print >> sys.stderr, regularMpath + ' ' + boldMpath + ' & ' + obliqueMpath
-            self.fontNameRegular = 'Times-Roman'
-            self.fontNameBold = 'Times-Bold'
-            self.fontNameOblique = 'Times-Oblique'
+    def registerFonts(self):
+        # the following are filenames from both an Adobe Reader install and a download from fontsgeek
+        fontfilenames = ['MinionPro-Regular.ttf',
+                         'MinionPro-Bold.ttf',
+                         'MinionPro-It.ttf',
+                         'Minion Pro Regular.ttf',
+                         'Minion Pro Bold.ttf',
+                         'Minion Pro Italic.ttf']
+        # first figure out which, if any, are present
+        fontpaths = [os.path.join('fonts', fname) for fname in fontfilenames]
+        fontpaths = [fpath for fpath in fontpaths if pkg_resources.resource_exists('domdiv', fpath)]
+        self.font_mapping = {'Regular': [fpath for fpath in fontpaths if 'Regular' in fpath],
+                             'Bold': [fpath for fpath in fontpaths if 'Bold' in fpath],
+                             'Italic': [fpath for fpath in fontpaths if 'It' in fpath]}
+        # then make sure that we have at least one for each type
+        for fonttype in self.font_mapping:
+            if not len(self.font_mapping[fonttype]):
+                print >> sys.stderr, ("Warning, Minion Pro ttf file for {} missing from domdiv/fonts!",
+                                      " Falling back on Times font for everything.").format(fonttype)
+                self.font_mapping = {'Regular': 'Times-Roman',
+                                     'Bold': 'Times-Bold',
+                                     'Italic': 'Times-Oblique'}
+                break
+            else:
+                # and finally register and tag one for each type
+                ftag = 'MinionPro-{}'.format(fonttype)
+                pdfmetrics.registerFont(TTFont(ftag,
+                                               pkg_resources.resource_filename('domdiv',
+                                                                               self.font_mapping[fonttype][0])))
+                self.font_mapping[fonttype] = ftag
 
     def wantCentreTab(self, card):
         return (card.isExpansion() and self.options.centre_expansion_dividers) or self.options.tab_side == "centre"
@@ -209,45 +226,44 @@ class DividerDrawer(object):
 
     def add_inline_images(self, text, fontsize):
         # Coins
-        path = os.path.join(self.options.data_path, 'images')
-        replace = '<img src=' "'%s/coin_small_\\1.png'" ' width=%d height=' "'200%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 2.4)
+        replace = '<img src=' "'{}'" ' width={} height=' "'200%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_1.png'), fontsize * 2.4)
         text = re.sub('(\d+)\s*\<\*COIN\*\>', replace, text)
-        replace = '<img src=' "'%s/coin_small_\\1.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_1.png'), fontsize * 1.2)
         text = re.sub('(\d+)\s(c|C)oin(s)?', replace, text)
-        replace = '<img src=' "'%s/coin_small_question.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_question.png'), fontsize * 1.2)
         text = re.sub('\?\s(c|C)oin(s)?', replace, text)
-        replace = '<img src=' "'%s/coin_small_empty.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_empty.png'), fontsize * 1.2)
         text = re.sub('empty\s(c|C)oin(s)?', replace, text)
         text = re.sub('\_\s(c|C)oin(s)?', replace, text)
 
         # VP
-        replace = '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'120%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 1.5)
+        replace = '<img src=' "'{}'" ' width={} height=' "'120%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('victory_emblem.png'), fontsize * 1.5)
         text = re.sub('(?:\s+|\<)VP(?:\s+|\>|\.|$)', replace, text)
-        replace = '<font size=%d>\\1</font> '
-        replace += '<img src=' "'%s/victory_emblem.png'" ' width=%d height=' "'200%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (fontsize * 1.5, path, fontsize * 2.5)
+        replace = '<font size={}>\\1</font> '
+        replace += '<img src=' "'{}'" ' width={} height=' "'200%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(fontsize * 1.5, DividerDrawer.get_image_filepath('victory_emblem.png'), fontsize * 2.5)
         text = re.sub('(\d+)\s*\<\*VP\*\>', replace, text)
 
         # Debt
-        replace = '<img src=' "'%s/debt_\\1.png'" ' width=%d height=' "'105%%'" ' valign=' "'middle'" '/>&thinsp;'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "'{}'" ' width={} height=' "'105%'" ' valign=' "'middle'" '/>&thinsp;'
+        replace = replace.format(DividerDrawer.get_image_filepath('debt_1.png'), fontsize * 1.2)
         text = re.sub('(\d+)\sDebt', replace, text)
-        replace = '<img src=' "'%s/debt.png'" ' width=%d height=' "'105%%'" ' valign=' "'middle'" '/>&thinsp;'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "{}" ' width={} height=' "'105%'" ' valign=' "'middle'" '/>&thinsp;'
+        replace = replace.format(DividerDrawer.get_image_filepath('debt.png'), fontsize * 1.2)
         text = re.sub('Debt', replace, text)
 
         # Potion
-        replace = '<font size=%d>\\1</font> '
-        replace += '<img src=' "'%s/potion_small.png'" ' width=%d height=' "'140%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (fontsize * 1.5, path, fontsize * 2.0)
+        replace = '<font size={}>\\1</font> '
+        replace += '<img src=' "'{}'" ' width={} height=' "'140%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(fontsize * 1.5, DividerDrawer.get_image_filepath('potion_small.png'), fontsize * 2.0)
         text = re.sub('(\d+)\s*\<\*POTION\*\>', replace, text)
-        replace = '<img src=' "'%s/potion_small.png'" ' width=%d height=' "'100%%'" ' valign=' "'middle'" '/>'
-        replace = replace % (path, fontsize * 1.2)
+        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
+        replace = replace.format(DividerDrawer.get_image_filepath('potion_small.png'), fontsize * 1.2)
         text = re.sub('Potion', replace, text)
 
         return text.strip()
@@ -373,24 +389,24 @@ class DividerDrawer(object):
             width += 16
             x -= 16
             self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images', 'card.png'),
+                DividerDrawer.get_image_filepath('card.png'),
                 x,
                 countHeight,
                 16,
                 16,
                 preserveAspectRatio=True,
                 mask='auto')
-            self.canvas.setFont(self.fontNameBold, 10)
+            self.canvas.setFont(self.font_mapping['Bold'], 10)
             self.canvas.drawCentredString(x + 8, countHeight + 4, str(value))
 
             # now draw the number of sets
             if count > 1:
                 count_string = u"{}\u00d7".format(count)
-                width_string = stringWidth(count_string, self.fontNameRegular, 10)
+                width_string = stringWidth(count_string, self.font_mapping['Regular'], 10)
                 width_string -= 1  # adjust to make it closer to image
                 width += width_string
                 x -= width_string
-                self.canvas.setFont(self.fontNameRegular, 10)
+                self.canvas.setFont(self.font_mapping['Regular'], 10)
                 self.canvas.drawString(x, countHeight + 4, count_string)
 
         return width + 1
@@ -409,14 +425,14 @@ class DividerDrawer(object):
                 (card.potcost and int(card.cost) == 0))):
 
             self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images', 'coin_small.png'),
+                DividerDrawer.get_image_filepath('coin_small.png'),
                 x,
                 coinHeight,
                 16,
                 16,
                 preserveAspectRatio=True,
                 mask='auto')
-            self.canvas.setFont(self.fontNameBold, 12)
+            self.canvas.setFont(self.font_mapping['Bold'], 12)
             self.canvas.drawCentredString(x + 8, costHeight, str(card.cost))
             self.canvas.setFillColorRGB(0, 0, 0)
             x += 17
@@ -424,7 +440,7 @@ class DividerDrawer(object):
 
         if card.debtcost:
             self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images', 'debt.png'),
+                DividerDrawer.get_image_filepath('debt.png'),
                 x,
                 coinHeight,
                 16,
@@ -432,7 +448,7 @@ class DividerDrawer(object):
                 preserveAspectRatio=True,
                 mask=[170, 255, 170, 255, 170, 255])
             self.canvas.setFillColorRGB(1, 1, 1)
-            self.canvas.setFont(self.fontNameBold, 12)
+            self.canvas.setFont(self.font_mapping['Bold'], 12)
             self.canvas.drawCentredString(x + 8, costHeight, str(card.debtcost))
             self.canvas.setFillColorRGB(0, 0, 0)
             x += 17
@@ -440,7 +456,7 @@ class DividerDrawer(object):
 
         if card.potcost:
             self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images', 'potion.png'),
+                DividerDrawer.get_image_filepath('potion.png'),
                 x,
                 potHeight,
                 potSize,
@@ -455,7 +471,7 @@ class DividerDrawer(object):
         # set image
         w = 2
         self.canvas.drawImage(
-            os.path.join(self.options.data_path, 'images', setImage),
+            DividerDrawer.get_image_filepath(setImage),
             x,
             y,
             14,
@@ -468,11 +484,11 @@ class DividerDrawer(object):
         name_parts = name.split()
         for i, part in enumerate(name_parts):
             if i != 0:
-                w += pdfmetrics.stringWidth(' ', self.fontNameRegular,
+                w += pdfmetrics.stringWidth(' ', self.font_mapping['Regular'],
                                             fontSize)
-            w += pdfmetrics.stringWidth(part[0], self.fontNameRegular,
+            w += pdfmetrics.stringWidth(part[0], self.font_mapping['Regular'],
                                         fontSize)
-            w += pdfmetrics.stringWidth(part[1:], self.fontNameRegular,
+            w += pdfmetrics.stringWidth(part[1:], self.font_mapping['Regular'],
                                         fontSize - 2)
         return w
 
@@ -519,7 +535,7 @@ class DividerDrawer(object):
         img = card.getType().getNoCoinTabImageFile()
         if not self.options.no_tab_artwork and img:
             self.canvas.drawImage(
-                os.path.join(self.options.data_path, 'images', img),
+                DividerDrawer.get_image_filepath(img),
                 1,
                 0,
                 self.options.labelWidth - 2,
@@ -548,7 +564,7 @@ class DividerDrawer(object):
         if self.options.use_text_set_icon:
             setImageHeight = card.getType().getTabTextHeightOffset()
             setText = card.setTextIcon()
-            self.canvas.setFont(self.fontNameOblique, 8)
+            self.canvas.setFont(self.font_mapping['Italic'], 8)
             if setText is None:
                 setText = ""
 
@@ -611,10 +627,10 @@ class DividerDrawer(object):
                     w = textInset
 
                 def drawWordPiece(text, fontSize):
-                    self.canvas.setFont(self.fontNameRegular, fontSize)
+                    self.canvas.setFont(self.font_mapping['Regular'], fontSize)
                     if text != ' ':
                         self.canvas.drawString(w, h, text)
-                    return pdfmetrics.stringWidth(text, self.fontNameRegular,
+                    return pdfmetrics.stringWidth(text, self.font_mapping['Regular'],
                                                   fontSize)
 
                 for i, word in enumerate(words):
@@ -638,10 +654,10 @@ class DividerDrawer(object):
                 words.reverse()
 
                 def drawWordPiece(text, fontSize):
-                    self.canvas.setFont(self.fontNameRegular, fontSize)
+                    self.canvas.setFont(self.font_mapping['Regular'], fontSize)
                     if text != ' ':
                         self.canvas.drawRightString(w, h, text)
-                    return -pdfmetrics.stringWidth(text, self.fontNameRegular,
+                    return -pdfmetrics.stringWidth(text, self.font_mapping['Regular'],
                                                    fontSize)
 
                 for i, word in enumerate(words):
@@ -655,7 +671,7 @@ class DividerDrawer(object):
             self.canvas.translate(0, -card.getStackHeight(
                 self.options.thickness))  # move into area used by the wrapper
             fontSize = 8  # use the smallest font
-            self.canvas.setFont(self.fontNameRegular, fontSize)
+            self.canvas.setFont(self.font_mapping['Regular'], fontSize)
 
             textHeight = fontSize - 2
             textHeight = card.getStackHeight(
@@ -666,10 +682,10 @@ class DividerDrawer(object):
                                                              fontSize) / 2
 
             def drawWordPiece(text, fontSize):
-                self.canvas.setFont(self.fontNameRegular, fontSize)
+                self.canvas.setFont(self.font_mapping['Regular'], fontSize)
                 if text != ' ':
                     self.canvas.drawString(w, h, text)
-                return pdfmetrics.stringWidth(text, self.fontNameRegular,
+                return pdfmetrics.stringWidth(text, self.font_mapping['Regular'],
                                               fontSize)
 
             for i, word in enumerate(words):
@@ -737,7 +753,7 @@ class DividerDrawer(object):
             #  use all the available space, even if it is not centered on the card
             fontSize = 8
             failover = False
-            width = stringWidth(card.types_name, self.fontNameRegular, fontSize)
+            width = stringWidth(card.types_name, self.font_mapping['Regular'], fontSize)
             while width > textWidth:
                 fontSize -= .01
                 if fontSize < 6 and not failover:
@@ -746,11 +762,11 @@ class DividerDrawer(object):
                     w = left_margin + (textWidth2 / 2)
                     fontSize = 8
                     failover = True
-                width = stringWidth(card.types_name, self.fontNameRegular, fontSize)
+                width = stringWidth(card.types_name, self.font_mapping['Regular'], fontSize)
 
             #  Print out the text in the right spot
             h = totalHeight - usedHeight - 0.5 * cm
-            self.canvas.setFont(self.fontNameRegular, fontSize)
+            self.canvas.setFont(self.font_mapping['Regular'], fontSize)
             if card.types_name != ' ':
                 self.canvas.drawCentredString(w, h, card.types_name)
             drewTopIcon = True
@@ -873,7 +889,7 @@ class DividerDrawer(object):
             # calculate the text height, font size, and orientation
             maxFontsize = 12
             minFontsize = 6
-            fontname = self.fontNameRegular
+            fontname = self.font_mapping['Regular']
             font = pdfmetrics.getFont(fontname)
             fontHeightRelative = (
                 font.face.ascent + abs(font.face.descent)) / 1000.0
