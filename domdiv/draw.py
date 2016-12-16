@@ -225,46 +225,52 @@ class DividerDrawer(object):
         self.canvas.save()
 
     def add_inline_images(self, text, fontsize):
+        def replace_image_tag(text,
+                              fontsize,
+                              tag_pattern,
+                              fname_replace,
+                              fontsize_multiplier,
+                              height_percent,
+                              text_fontsize_multiplier=None):
+            replace = '<img src="{fpath}" width={width} height="{height_percent}%" valign="middle" />&thinsp;'
+            offset = 0
+            for match in re.finditer(tag_pattern, text):
+                tag = match.group(0)
+                fname = re.sub(tag_pattern, fname_replace, tag)
+                if text_fontsize_multiplier is not None:
+                    font_replace = re.sub(tag_pattern,
+                                          '<font size={}>\\1</font>'.format(fontsize * text_fontsize_multiplier),
+                                          tag)
+                    replace = font_replace + replace
+                replace = replace.format(fpath=DividerDrawer.get_image_filepath(fname),
+                                         width=fontsize * fontsize_multiplier,
+                                         height_percent=height_percent)
+                text = text[:match.start() + offset] + replace + text[match.end() + offset:]
+                offset += len(replace) - len(match.group(0))
+            return text
         # Coins
-        replace = '<img src=' "'{}'" ' width={} height=' "'200%'" ' valign=' "'middle'" '/>'
-        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_1.png'), fontsize * 2.4)
-        text = re.sub('(\d+)\s*\<\*COIN\*\>', replace, text)
-        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
-        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_1.png'), fontsize * 1.2)
-        text = re.sub('(\d+)\s(c|C)oin(s)?', replace, text)
-        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
-        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_question.png'), fontsize * 1.2)
-        text = re.sub('\?\s(c|C)oin(s)?', replace, text)
-        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
-        replace = replace.format(DividerDrawer.get_image_filepath('coin_small_empty.png'), fontsize * 1.2)
-        text = re.sub('empty\s(c|C)oin(s)?', replace, text)
-        text = re.sub('\_\s(c|C)oin(s)?', replace, text)
+        replace_specs = [
+            # Coins
+            (r'(\d+)\s\<\*COIN\*\>', 'coin_small_\\1.png', 2.4, 200),
+            (r'(\d+)\s(c|C)oin(s)?', 'coin_small_\\1.png', 1.2, 100),
+            (r'\?\s(c|C)oin(s)?', 'coin_small_question.png', 1.2, 100),
+            (r'(empty|\_)\s(c|C)oin(s)?', 'coin_small_empty.png', 1.2, 100),
 
-        # VP
-        replace = '<img src=' "'{}'" ' width={} height=' "'120%'" ' valign=' "'middle'" '/>'
-        replace = replace.format(DividerDrawer.get_image_filepath('victory_emblem.png'), fontsize * 1.5)
-        text = re.sub('(?:\s+|\<)VP(?:\s+|\>|\.|$)', replace, text)
-        replace = '<font size={}>\\1</font> '
-        replace += '<img src=' "'{}'" ' width={} height=' "'200%'" ' valign=' "'middle'" '/>'
-        replace = replace.format(fontsize * 1.5, DividerDrawer.get_image_filepath('victory_emblem.png'), fontsize * 2.5)
-        text = re.sub('(\d+)\s*\<\*VP\*\>', replace, text)
+            # VP
+            (r'(?:\s+|\<)VP(?:\s+|\>|\.|$)', 'victory_emblem.png', 1.5, 120),
+            (r'(\d+)\s*\<\*VP\*\>', 'victory_emblem.png', 3, 200, 1.5),
 
-        # Debt
-        replace = '<img src=' "'{}'" ' width={} height=' "'105%'" ' valign=' "'middle'" '/>&thinsp;'
-        replace = replace.format(DividerDrawer.get_image_filepath('debt_1.png'), fontsize * 1.2)
-        text = re.sub('(\d+)\sDebt', replace, text)
-        replace = '<img src=' "{}" ' width={} height=' "'105%'" ' valign=' "'middle'" '/>&thinsp;'
-        replace = replace.format(DividerDrawer.get_image_filepath('debt.png'), fontsize * 1.2)
-        text = re.sub('Debt', replace, text)
+            # Debt
+            (r'(\d+)\sDebt', 'debt_\\1.png', 1.2, 105),
+            (r'Debt', 'debt.png', 1.2, 105),
 
-        # Potion
-        replace = '<font size={}>\\1</font> '
-        replace += '<img src=' "'{}'" ' width={} height=' "'140%'" ' valign=' "'middle'" '/>'
-        replace = replace.format(fontsize * 1.5, DividerDrawer.get_image_filepath('potion_small.png'), fontsize * 2.0)
-        text = re.sub('(\d+)\s*\<\*POTION\*\>', replace, text)
-        replace = '<img src=' "'{}'" ' width={} height=' "'100%'" ' valign=' "'middle'" '/>'
-        replace = replace.format(DividerDrawer.get_image_filepath('potion_small.png'), fontsize * 1.2)
-        text = re.sub('Potion', replace, text)
+            # Potion
+            (r'(\d+)\s*\<\*POTION\*\>', 'potion_small.png', 2, 140, 1.5),
+            (r'Potion', 'potion_small.png', 1.2, 100)
+
+        ]
+        for args in replace_specs:
+            text = replace_image_tag(text, fontsize, *args)
 
         return text.strip()
 
