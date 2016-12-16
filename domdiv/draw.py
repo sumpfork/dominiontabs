@@ -257,8 +257,8 @@ class DividerDrawer(object):
             (r'(empty|\_)\s(c|C)oin(s)?', 'coin_small_empty.png', 1.2, 100),
 
             # VP
-            (r'(?:\s+|\<)VP(?:\s+|\>|\.|$)', 'victory_emblem.png', 1.5, 120),
-            (r'(\d+)\s*\<\*VP\*\>', 'victory_emblem.png', 3, 200, 1.5),
+            (r'(?:\s+|\<)VP(?:\s+|\>|\.|$)', 'victory_emblem.png', 1.25, 100),
+            (r'(\d+)\s*\<\*VP\*\>', 'victory_emblem.png', 2, 160, 1.3),
 
             # Debt
             (r'(\d+)\sDebt', 'debt_\\1.png', 1.2, 105),
