@@ -1,9 +1,8 @@
 {
     "Alms": {
-        "description": "Once per turn: If you have no Treasures in play, gain a card costing up to 4 Coin.", 
-        "extra": "You can only buy this once per turn. When you do, if you have no Treasures in play, you gain a card costing up to 4 Coins. The gained card comes from the Supply and is put into your discard pile.", 
-        "name": "Almosen", 
-        "untranslated": "description, extra"
+        "description": "Einmal pro Zug: Wenn du keine Geldkarten im Spiel hast, nimm dir eine Karte, die bis zu 4 Coins kostet.", 
+        "extra": "Dieses Ereignis darf nur 1x pro Zug erworben werden. Falls du keine Geldkarte zu diesem Zeitpunkt im Spiel hast, nimm dir eine Karte vom Vorrat, die bist zu 4 Coins kostet. Eintausch-Karten oder Preiskarten (aus Reiche Ernte) mit * Coins gehören nicht zum Vorrat und dürfen nicht genommen werden.", 
+        "name": "Almosen"
     },
     "Amulet": {
         "description": "Jetzt und zu Beginn deines nächsten Zuges, wähle jeweils eins: +1 Coin oder entsorge 1 Handkarte oder nimm dir 1 Silber.", 
@@ -11,40 +10,34 @@
         "name": "Amulett"
     },
     "Artificer": {
-        "description": "+1 Card<br>+1 Action<br>+1 Coin<n>Discard any number of cards. You may gain a card costing exactly 1 Coin per card discarded, putting it on top of your deck.", 
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Coin<n>Lege beliebig viele Handkarten ab. Du darfst dir eine Karte nehmen, die genau 1 Coins pro abgelegter Karte kostet. Lege die Karte verdeckt auf deinen Nachziehstapel.", 
         "extra": "Du erhältst +1 Karte, +1 Aktion und +1 Coins. Lege beliebig viele Handkarten ab. Du darfst eine Karte vom Vorrat nehmen, die genau so viel kostet, wie du Karten abgelegt hast. Du kannst dich auch entscheiden, keine Karte abzulegen. Dann darfst du eine Karte nehmen, die genau 0 Coins kostet. Lege die genommene Karte verdeckt auf deinen Nachziehstapel.", 
-        "name": "Kunsthandwerker", 
-        "untranslated": "description"
+        "name": "Kunsthandwerker"
     },
     "Ball": {
-        "description": "Take your - 1 Coin token. Gain 2 cards each costing up to 4 Coin.", 
-        "extra": "When you buy this, you take your - 1 Coin token, which will cause you to get 1 Coin less the next time you get Coins. Then you gain 2 cards, each costing up 4 Coins. They can be 2 copies of the same card or 2 different cards.", 
-        "name": "Ball", 
-        "untranslated": "description, extra"
+        "description": "Nimm deinen -1 Coin Marker. Nimm dir 2 Karten, die jede bis zu 4 Coins kostet.", 
+        "extra": "Nimm deinen -1 Coin-Marker und lege ihn vor dir ab. Das nächste Mal, wenn du mindestens 1 Coin erhältst, erhältst du stattdessen 1 Coin weniger. Daach legst du den Marker wieder neben den Vorrat. Nimm 2 Karten vom Vorrat, die jede bis zu 4 Coins kosten. Das können gleiche oder verschiedene Karten sein. Lege beide Karten ab. Eintausch-Karten oder Preiskarten (aus Reiche Ernte) gehören nicht zum Vorrat und dürfen nicht genommenen werden.", 
+        "name": "Ball"
     },
     "Bonfire": {
-        "description": "Trash up to 2 cards you have in play.", 
-        "extra": "This only trashes cards you have in play, not cards from your hand. You can trash zero, one, or two cards. If you trash Treasures with this, this does not remove the 1 Coin you got from playing those Treasures this turn. For example, with 5 Coppers in play and two Buys, you could pay 3 Coins for a Bonfire to trash two of the Coppers, then spend the other 2 Coins on a Peasant.", 
-        "name": "Freudenfeuer", 
-        "untranslated": "description, extra"
+        "description": "Entsorge bis zu 2 Karten, die du im Spiel hast.", 
+        "extra": "Entsorge bis zu 2 Karten, die du gerade im Spiel hast. Du darfst keine Handkarten entsorgen. Entsorgst du eine oder zwei Geldkarten, kannst du trotzdem den durch diese Karten produzierten Geldwert nutzen.", 
+        "name": "Freudenfeuer"
     },
     "Borrow": {
-        "description": "+1 Buy<n>Once per turn:<br>If your -1 Card token isn't on your deck, put it there and +1 Coin.", 
-        "extra": "You can only buy this once per turn. When you do, if your -1 Card token is not on your deck, you put it on your deck and get + 1 Coin. The -1 Card token will cause you to draw one less card the next time you draw cards; see the Tokens section.", 
-        "name": "Leihgabe", 
-        "untranslated": "description, extra"
+        "description": "+1 Kauf<n>Einmal pro Zug:<br>Wenn dein -1 Karten-Marker nicht auf deinem Nachziehstapel liegt, lege ihn dorthin und +1 Coin.", 
+        "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Du erhältst +1 Kauf. Wenn dein -1 card-Marker nicht auf deinem Nachziehstapel liegt, lege ihn dorthin und erhalte +1 coin. Das nächste Mal, wenn du Karten nachziehen musst, ziehst du 1 Karte weniger.", 
+        "name": "Leihgabe"
     },
-    "Bridge Troll": {
-        "description": "Each other player takes his -1 Coin token. Now and at the start of your next turn:<n>+1 Buy<line>While this is in play, cards cost 1 Coin less on your turn, but not less than 0 Coins.", 
+   "Bridge Troll": {
+        "description": "Alle Mitspieler nehmen ihren -1 Coin-Marker. <n>Jetzt und zu Beginn deines nächsten Zuges:<n>+1 Kauf <line> Solange diese Karte im Spiel ist, kostet jede Karte in deinem Zug 1 coin weniger, allerdings nie weniger als 0 coin.", 
         "extra": "Diese Karte ist eine Dauerkarte. Alle Mitspieler müssen ihren -Coins-Marker vor sich ablegen. Sie erhalten beim nächsten Mal, wenn sie in irgendeiner Art und Weise mindestens 1 Coins erhalten würden, 1 Coins weniger. Danach wird der Marker wieder neben den Vorrat gelegt. Du erhältst jetzt und zu Beginn deines nächsten Zuges +1 Kauf. So lange diese Karte im Spiel ist, kosten alle Karten in deinem Zug 1 Coins weniger, allerdings nie weniger als 0 Coins. Dies betrifft nicht nur den Kauf, sondern alle Aktionen, bei denen die Kosten einer Karte eine Rolle spielen. Der BRÜCKENTROLL beeinflusst nicht die Kosten von Ereignissen. Die Wirkung des BRÜCKENTROLLS ist kumulativ, d. h. wenn du zwei oder mehr BRÜCKENTROLLE gleichzeitig im Spiel hast, kannst du die Kosten um 2 Coins oder mehr verringern.", 
-        "name": "Brückentroll", 
-        "untranslated": "description"
+        "name": "Brückentroll"
     },
     "Caravan Guard": {
-        "description": "+1 Card<br>+1 Action<n>At the start of your next turn, +1 Coin<line>When another player plays an Attack card, you may play this from your hand. (<i>+1 Action has no effect if it's not your turn.</i>)", 
+        "description": "+1 Karte <br>+1 Aktion<line>Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du diese Karte aus deiner Hand ausspielen.<n>(<i>+1 Aktion hat dann keinen Effekt.</i>)", 
         "extra": "Diese Karte ist eine kombinierte Dauer- und Reaktionskarte. Wenn du sie ausspielst, erhältst du +1 Karte und +1 Aktion. Zu Beginn deines nächsten Zuges erhältst du +1 Coins. Lege die Karte am Ende dieses Zuges ab. Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du diese Karte aus deiner Hand ausspielen. Du erhältst +1 Karte und +1 Aktion. Die Anweisung +1 Aktion kann in diesem Fall – da gerade ein anderer Spieler am Zug ist – nicht ausgeführt werden. Zu Beginn deines nächsten Zuges erhältst du +1 Coins. Die Karte wird erst in der Aufräumphase deines nächsten Zuges abgelegt.", 
-        "name": "Karawanenwächter", 
-        "untranslated": "description"
+        "name": "Karawanenwächter"
     },
     "Champion": {
         "description": "+1 Aktion<br>Immer wenn ein Mitspieler eine Angriffskarte spielt, bist du davon nicht betroffen. Immer wenn du eine Aktionskarte spielst: +1 Aktion (Diese Karte bleibt bis zum Spielende im Spiel und gehört nicht zum Vorrat.)", 
@@ -52,45 +45,39 @@
         "name": "Champion"
     },
     "Coin of the Realm": {
-        "description": "1 <*COIN*><n>When you play this, put it on your Tavern mat.<line>Directly after resolving an Action, you may call this for +2 Actions.", 
+        "description": "1 <*COIN*><n>Wenn du diese Karte ausspielst, lege sie auf dein Wirtshaustableau<line>Sofort nachdem du eine Aktionskarte ausgeführt hast, darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust: +2 Aktionen.", 
         "extra": "Diese Karte ist eine kombinierte Geld- und Reservekarte. Sie hat den Wert 1 Coins. Spiele sie in der Kaufphase aus und lege sie anschließend auf das Wirtshaustableau. Sobald du eine Aktionskarte ausspielst und die Anweisungen darauf ausgeführt hast, darfst du die KÖNIGLICHEN MÜNZEN von deinem Wirtshaustableau aufrufen. Lege die Karte in deinen Spielbereich und du erhältst +2 Aktionen, nicht aber +1 Coins, da diese Anweisung nur beim Ausspielen der Karte ausgeführt wird. Bis zum Ende der Aufräumphase befinden sich die KÖNIGLICHEN MÜNZEN im Spiel und werden dann abgelegt.", 
-        "name": "Königliche Münzen", 
-        "untranslated": "description"
+        "name": "Königliche Münzen"
     },
     "Disciple": {
-        "description": "Du darfst eine Aktionskarte zweimal ausspielen. Nimm dir eine Karte mit gleichem Namen. Ist diese Karte im Spiel, darfst du sie gegen einen Lehrer eintauschen anstatt sie abzulegen. (Diese Karte gehört nicht zum Vorrat.)", 
+        "description": "Du darfst eine Aktionskarte zweimal ausspielen. Nimm dir eine Karte mit gleichem Namen.<line>Ist diese Karte im Spiel, darfst du sie gegen einen Lehrer eintauschen anstatt sie abzulegen. (Diese Karte gehört nicht zum Vorrat.)", 
         "extra": "Einen SCHÜLER erhältst du nur, wenn du einen FLÜCHTLING eintauschst. Der SCHÜLER ist ein Reisender, der im Spielverlauf in einen LEHRER eingetauscht werden kann. Wenn du den SCHÜLER ausspielst, darfst du eine beliebige Aktionskarte aus deiner Hand zweimal direkt hintereinander ausspielen. Ist die ausgespielte Aktionskarte eine Karte vom Vorrat, nimm dir eine Karte mit gleichem Namen vom Vorrat und lege sie ab. Gehört der Stapel der ausgespielten Karte nicht zum Vorrat (z. B. Eintausch-Karten oder Preiskarten aus Reiche Ernte), darfst du dir keine weitere Karte nehmen. In der Aufräumphase darfst du entscheiden, ob du den SCHÜLER ablegst oder zurück auf den entsprechenden Stapel legst. Wenn du das tust, erhältst du einen LEHRER und legst ihn ab. Die angegebenen Kosten werden nicht bezahlt.", 
         "name": "Schüler"
     },
     "Distant Lands": {
-        "description": "Put this on your Tavern mat.<line>Worth 4 <VP> if on your Tavern mat at the end of the Game (otherwise worth 0 <VP>).", 
+        "description": "Lege diese Karte auf dein Wirtshaustableau.<line>Wert 4 <VP> falls diese Karte bei Spielende auf deinem Wirtshaustableau liegt.", 
         "extra": "Diese Karte ist eine kombinierte Aktions-, Reserve- und Punktekarte. Wenn du sie ausspielst, lege sie auf dein Wirtshaustableau. Dort bleibt sie bis zum Spielende. Pro FERNE LANDE, die du bei Spielende auf deinem Tableau liegen hast, erhältst du 4 <VP>. Alle anderen FERNE LANDE zählen 0 <VP>.", 
-        "name": "Ferne Lande", 
-        "untranslated": "description"
+        "name": "Ferne Lande"
     },
     "Dungeon": {
-        "description": "+1 Action<n>Now and at the start of your next turn: +2 Cards then discard 2 cards.", 
+        "description": "+2 Karten, +1 Aktion<n>Lege 2 Handkarten ab. <n> Zu Beginn deines nächsten Zuges: <n> +2 Karten <n> Lege 2 Handkarten ab.", 
         "extra": "Diese Karte ist eine Dauerkarte. Du erhältst +2 Karten, +1 Aktion und legst 2 Karten ab. Zu Beginn deines nächsten Zuges erhältst du +2 Karten und legst 2 Karten ab. Lege das VERLIES am Ende dieses Zuges ab.", 
-        "name": "Verlies", 
-        "untranslated": "description"
+        "name": "Verlies"
     },
     "Duplicate": {
-        "description": "Put this on your Tavern mat.<line>When you gain a card costing up to 6 Coins, you may call this, to gain a copy of that card.", 
+        "description": "Lege diese Karte auf dein Wirtshaustableau.<line>Wenn du eine Karte nimmst, die bis zu 6 coins kostet, darfst du diese Karte von deinem Tableau aufrufen.<n>Wenn du das tust, nimm dir eine Karte mit gleichem Namen.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, legst du sie auf dein Wirtshaustableau. Sobald du (auch außerhalb deines eigenen Zuges) eine Karte nimmst, die bis zu 6 Coins kostet, darfst du diese Karte aufrufen. Wenn du das tust, nimmst du dir eine Karte mit gleichem Namen vom Vorrat. Lege diese Karte ab. Wenn keine solche Karte mehr im Vorrat ist, erhältst du nichts. Wenn du eine Karte von einem Stapel nimmst, der nicht zum Vorrat gehört, darfst du dir keine weitere Karte mit gleichem Namen nehmen. Das DUPLIKAT wird in der Aufräumphase des Zuges, in dem es aufgerufen wird (auch außerhalb deines Zuges) abgelegt.", 
-        "name": "Duplikat", 
-        "untranslated": "description"
+        "name": "Duplikat"
     },
     "Expedition": {
-        "description": "Draw 2 extra cards for your next hand.", 
-        "extra": "This increases the number of cards you draw in Clean- up of the same turn. It is cumulative. Normally you draw 5 cards; after an Expedition you would draw 7, after two Expeditions you would draw 9, and so on. It only applies for the turn you buy it. If you play Outpost (from Seaside), getting an extra turn with only 3 cards, and also buy Expedition, you add the 2 extra cards onto the base of 3 cards, for 5 cards total.", 
-        "name": "Expedition", 
-        "untranslated": "description, extra"
+        "description": "Ziehe in deiner Aufräumphase 2 zusätzliche Karten.", 
+        "extra": "In der Aufräumphase des Zuges, in dem du diese Karte erwirbst, ziehst du 2 Karten zusätzlich. Normalerweise ziehst du 5 Karten nach, mit einer EXPEDITION 7 Karten, mit zwei EXPEDITIONEN 9 Karten usw.", 
+        "name": "Expedition"
     },
     "Ferry": {
-        "description": "Move your - 2 Coin cost token to an Action Supply pile (cards from that pile cost 2 Coin less on your turns, but not less than 0 Coin).", 
-        "extra": "When you buy this, you move your - 2 Coin cost token to any Action Supply pile. This token makes cards from that pile cost 2 Coins less, but not less than 0 Coins, on your turns; see the Tokens section.", 
-        "name": "Überfahrt", 
-        "untranslated": "description, extra"
+        "description": "Lege deinen -2 Coins-Marker auf einen beliebigen Aktions-Vorratsstapel. (Karten von diesem Stapel kosten während deiner Züge 2 coins weniger, allerdings nie weniger als 0 coins.)", 
+        "extra": "Lege deinen -2 Coins-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, kosten Karten, die von diesem Stapel stammen, für dich für alle Belange 2 coins weniger, niemals aber weniger als 0 coins.", 
+        "name": "Überfahrt"
     },
     "Fugitive": {
         "description": "2 Karten, +1 Aktion. Lege eine Handkarte ab.   Ist diese Karte im Spiel, darfst du sie gegen einen Schüler eintauschen anstatt sie abzulegen. (Diese Karte gehört nicht zum Vorrat.)", 
@@ -98,28 +85,24 @@
         "name": "Flüchtling"
     },
     "Gear": {
-        "description": "+2 Cards<n>Set aside up to 2 cards from your hand face down. At the start of your next turn, put them into your hand.", 
+        "description": "+2 Karten<n> Lege bis zu 2 Handkarten verdeckt zur Seite.<n>Zu Beginn deines nächsten Zuges:<n>Nimm die zur Seite gelegten Karten auf die Hand.", 
         "extra": "Diese Karte ist eine Dauerkarte. Du erhältst +2 Karten und legst dann bis zu 2 Karten (inkl. eventuell gerade gezogener Karten) verdeckt zur Seite. Entscheidest du dich dafür, keine Karten zur Seite zu legen, legst du die AUSRÜSTUNG am Ende des Zuges ab. Legst du 1 oder 2 Karten zur Seite, nimmst du zu Beginn deines nächsten Zuges die zur Seite gelegten Karten auf die Hand. Lege die AUSRÜSTUNG am Ende dieses Zuges ab.", 
-        "name": "Ausrüstung", 
-        "untranslated": "description"
+        "name": "Ausrüstung"
     },
     "Giant": {
-        "description": "Turn your Journey token over (it starts face up). If it's face down, +1 Coin. If it's face up, +5 Coins, and each other player reveals the top card of his deck, trashes it if it costs 3 Coins to 6 Coins, and otherwise discards it and gains a Curse.", 
+        "description": "Drehe deinen Reise-Marker um.<n> Liegt die Rückseite oben: +1 coins.<n> Liegt die Vorderseite oben: +5 coins und jeder Mitspieler deckt die oberste Karte seines Nachziehstapels auf. Kostet diese 3 coins bis 6 coins, muss er sie entsorgen. Ansonsten legt er sie ab und nimmt sich einen Fluch.", 
         "extra": "Drehe deinen Reise-Marker um (zu Beginn des Spiels liegt der Marker mit der Vorderseite nach oben). Liegt jetzt die Rückseite oben, erhältst du +1 Coins. Liegt die Vorderseite oben, erhältst du + 5 Coins und alle Mitspieler – beginnend bei deinem linken Mitspieler – müssen die oberste Karte ihres Nachziehstapels aufdecken. Aufgedeckte Karten, die 3 Coins bis 6 Coins kosten, müssen entsorgt werden. Karten mit Trank-Kosten müssen nicht entsorgt werden, Karten mit + Coins (z. B. aus Die Gilden) oder * Coins müssen entsorgt werden. Ansonsten legt der Spieler die aufgedeckte Karte ab und nimmt sich einen FLUCH vom Vorrat. Die Mitspieler können auf das Ausspielen eines RIESEN mit einer Reaktionskarte reagieren, auch wenn die Rückseite des Reise-Markers oben liegt und der Angriff gar nicht ausgeführt wird.", 
-        "name": "Riese", 
-        "untranslated": "description"
+        "name": "Riese"
     },
     "Guide": {
-        "description": "+1 Card<br>+1 Action<n>Put this on your Tavern mat.<line>At the start of your turn, you may call this, to discard your hand and draw 5 cards.", 
+        "description": "+1 Karte<br>+1 Aktion<n>Lege diese Karte auf dein Wirtshaustableau.<line>Zu beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen.<n> Wenn du das tust: Lege alle Handkarten ab und ziehe 5 Karten.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst erhältst du +1 Karte und +1 Aktion. Dann legst du die Karte auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte aufrufen. Wenn du das tust, legst du alle Karten, die du auf der Hand hast, ab und ziehst 5 Karten nach. Lege die Karte am Ende der Aufräumphase ab.", 
-        "name": "Kundschafter", 
-        "untranslated": "description"
+        "name": "Kundschafter"
     },
     "Haunted Woods": {
-        "description": "Until your next turn, when any other player buys a card, he puts his hand on top of his deck in any order.<n>At the start of your next turn:<n>+3 Cards", 
+        "description": "Bis zu deinem nächsten Zug:<n>Jeder Mitspieler muss, sobald er eine Karte kauft, seine restlichen Handkarten in beliebiger Reihenfolge auf seinen Nachziehstapel legen.<n>Zu Beginn deines nächsten Zuges:<n>+3 Karten", 
         "extra": "Diese Karte ist eine Dauerkarte. Bis zu Beginn deines nächsten Zuges muss jeder Mitspieler, der eine Karte kauft, sofort alle restlichen Handkarten in beliebiger Reihenfolge auf den Nachziehstapel legen. Das Erwerben eines Ereignisses ist nicht mit dem Kauf einer Karte gleichzusetzen. Spieler, die mit einer Reaktionskarte reagieren wollen, müssen dies sofort beim Ausspielen des GEISTERWALDS tun. Ziehe zu Beginn deines nächsten Zuges 3 Karten nach. Lege die Karte in der Aufräumphase des nächsten Zuges ab.", 
-        "name": "Geisterwald", 
-        "untranslated": "description"
+        "name": "Geisterwald"
     },
     "Hero": {
         "description": "+2 Coin<br>Nimm dir eine Geldkarte.<br>Ist diese Karte im Spiel, darfst du sie gegen einen Champion eintauschen anstatt sie abzulegen. <i>(Diese Karte gehört nicht zum Vorrat.)</i>", 
@@ -127,52 +110,44 @@
         "name": "Held"
     },
     "Hireling": {
-        "description": "At the start of each of your turns for the rest of the game:<n>+1 Card<n><i>(This stays in play.)</i>", 
+        "description": "Immer zu Beginn deines Zuges:<n>+1 Karte<n><i>(Diese Karte bleibt bis zum Spielende im Spiel.)</i>", 
         "extra": "Diese Karte ist eine Dauerkarte. Wenn du sie ausspielst, lege sie neben deinen Spielbereich. Sie bleibt bis zum Spielende im Spiel und wird nicht abgelegt. Für den Rest des Spiels erhältst du zu Beginn deines Zuges +1 Karte. Wenn du einen GEFOLGSMANN zweimal ausspielen darfst (z. B. durch den THRONSAAL aus der Basis), lege beide Karten zur Seite und du erhältst bis zum Spielende zu Beginn jedes Zuges +2 Karten.", 
-        "name": "Gefolgsmann", 
-        "untranslated": "description"
+        "name": "Gefolgsmann"
     },
     "Inheritance": {
-        "description": "Once per game: Set aside a non-Victory Action card from the Supply costing up to 4 Coin. Move your Estate token to it (your Estates gain the abilities and types of that card).", 
-        "extra": "You can only buy this once per game. When you do, set aside a non-Victory Action card from the Supply that costs up to 4 Coins, and put your Estate token on it (the one depicting a house). This is not gaining a card, and does not count for things that care about gaining, such as Treasure Hunter; however at the end of the game, include the card in your deck when scoring. For the rest of the game, all of your Estates have the abilities and types of the set aside card. For example if you set aside a Port, then your Estates are Action - Victory cards, that can be played for +1 Card +2 Actions. This also changes Estates you buy or otherwise gain during the game; if you used Inheritance on a Port and then later bought an Estate, that Estate would come with a Port, just as buying a Port gains you a Port. This only affects your own Estates, not Estates of other players. An Estate is yours if either it started in your deck, or you gained it or bought it, or you were passed it with Masquerade (from Intrigue). An Estate stops being yours if you trash it, return it to the Supply, pass it with Masquerade, or are stopped from gaining it due to Possession (from Alchemy) or Trader (from Hinterlands). There are no limits on the set aside card other than being a non-Victory Action from the Supply costing up to 4 Coins; it may be a Duration card, a Reaction card, and so on. It does not have to continue costing up to 4 Coins, it only has to cost up to 4 Coins when set aside. Your Estates are still worth 1 Victory Point when scoring at the end of the game. Your Estates only copy abilities and types; they do not copy cost, name, or what pile they are from (thus they don't trigger tokens like +1 Action on the copied pile, and are not the Bane for Young Witch from Cornucopia even if the copied pile is the Bane). Starting Estates come from the Estates pile.", 
-        "name": "Erbschaft", 
-        "untranslated": "description, extra"
+        "description": "Einmal im Spiel: Lege eine beliebige Aktionskarte vom Vorrat, die keine Punktekarte ist und die bis zu 4 coins kostet, zur Seite. Lege deinen Anwesen-Marker darauf. (Deine Anwesen übernehmen ab sofort Anweisungen und Typ dieser Karte.)", 
+        "extra": "Dieses Ereignis darf nur 1 x pro Spiel und Spieler erworben werden. Lege eine beliebige Nicht-Punktekarte vom Vorrat, die eine Aktionskarte ist und bis zu 4 coins kostet, zur Seite. Lege deinen Anwesen-Marker darauf. Ab jetzt fungieren alle deine Anwesen wie die marktierte Karte. Du kannst Dauer- oder Reservekarten, Geldkarten, Angriffskarten usw. markieren. Wenn du ein Anwesen auf der Hand hast, darfst du es in der Phase, in der die markierte Karte ausgespielt werden würde, auch ausspielen. Führe ale Anweisungen der markierten Karte aus.", 
+        "name": "Erbschaft"
     },
     "Lost Arts": {
-        "description": "Move your +1 Action token to an Action Supply pile (when you play a card from that pile, you first get +1 Action).", 
-        "extra": "When you buy this, you move your +1 Action token to any Action Supply pile. This token gives you +1 Action whenever you play a card from that pile; see the Tokens section.", 
-        "name": "Verlorene Kunst", 
-        "untranslated": "description, extra"
+        "description": "Lege deinen +1 Aktion-Marker auf einen Aktions-Vorratsstapel. <n> (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst +1 Aktion.)", 
+        "extra": "Lege deinen +1 Aktion-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, erhältst du +1 Aktion, sobald du eine Karte, die von diesem Stapel stammt, ausspielst.", 
+        "name": "Verlorene Kunst"
     },
     "Lost City": {
-        "description": "+2 Cards<br>+2 Actions<line>When you gain this, each other player draws a card.", 
+        "description": "+2 Karten<br>+2 Aktionen<line>Wenn du diese Karte nimmst, zieht jeder Mitspieler eine Karte.", 
         "extra": "Wenn du diese Karte ausspielst, erhältst du +2 Karten und +2 Aktionen. Wenn du diese Karte nimmst, zieht jeder Mitspieler 1 Karte.", 
-        "name": "Verlorene Stadt", 
-        "untranslated": "description"
+        "name": "Verlorene Stadt"
     },
     "Magpie": {
-        "description": "+1 Card<br>+1 Action<n>Reveal the top card of your deck. If it's a Treasure, put it into your hand. If it's an Action or Victory card, gain a Magpie.", 
+        "description": "+1 Karte<br>+1 Aktion<n>Decke die oberste Karte deines Nachziehstapels auf. Ist es eine Geldkarte: Nimm sie auf die Hand.<n>Ist es eine Aktions- oder Punktekarte: Nimm dir eine Elster.", 
         "extra": "Du erhältst +1 Karte und +1 Aktion. Decke die oberste Karte deines Nachziehstapels auf. Ist dies ein Geldkarte (auch eine kombinierte oder Königreichkarte), nimm sie auf die Hand. Ist es eine Aktions- oder Punktekarte, nimmst du eine ELSTER vom Vorrat. Wenn keine ELSTER mehr im Vorrat ist, erhältst du nichts. Lege die aufgedeckte Karte zurück auf den Nachziehstapel. Ist es eine kombinierte Punkte- und Geldkarte, nimmst du die Karte auf die Hand und nimmst eine ELSTER vom Vorrat.", 
-        "name": "Elster", 
-        "untranslated": "description"
+        "name": "Elster"
     },
     "Messenger": {
-        "description": "+1 Buy<br>+2 Coins<n>You may put your deck into your discard pile.<line>When this is your first buy in a turn, gain a card costing up to 4 Coins, and each other player gains a copy of it.", 
+        "description": "+1 Kauf<br>+2 Coins<n>Du darfst deinen Nachziehstapel auf deinen Ablagestapel legen.<line>Wenn du diese Karte kaufst und dies der 1. Kauf deines Zuges ist: Nimm dir eine Karte, die bis zu 4 coins kostet. Jeder Mitspieler nimmt sich eine Karte mit gleichem Namen.", 
         "extra": "Wenn du diese Karte ausspielst, erhältst du +1 Kauf sowie +2 Coins. Außerdem darfst du deinen Nachziehstapel sofort komplett auf deinen Ablagestapel legen. Karten, die auf diese Weise abgelegt werden, gelten nicht als „abgelegt“. Wenn du diese Karte kaufst und dies der erste Kauf (inklusive eventuell erworbener Ereignisse) in deinem Zug ist, nimmst du eine Karte vom Vorrat, die bis zu 4 Coins kostet. Jeder Mitspieler nimmt sich – beginnend bei deinem linken Mitspieler – eine Karte mit gleichem Namen vom Vorrat. Karten, die nicht zum Vorrat gehören, dürfen nicht genommen werden.", 
-        "name": "Kurier", 
-        "untranslated": "description"
+        "name": "Kurier"
     },
     "Miser": {
-        "description": "Choose one: Put a Copper from your hand onto your Tavern mat; or +1 Coin per Copper on your Tavern mat.", 
+        "description": "Wähle eins: <n> Lege ein Kupfer aus deiner Hand auf dein Wirtshaustableau <n> oder <n> +1 coin pro Kupfer auf deinem Wirtshaustableau.", 
         "extra": "Du darfst entweder ein KUPFER aus deiner Hand auf dein Wirtshaustableau legen oder du erhältst pro KUPFER auf deinem Tableau +1 Coins. KUPFER auf deinem Wirtshaustableau befinden sich nicht im Spiel, zählen aber bei Spielende zu deinen Karten.", 
-        "name": "Geizhals", 
-        "untranslated": "description"
+        "name": "Geizhals"
     },
     "Mission": {
-        "description": "Once per turn: If the previous turn wasn't yours, take another turn after this one, in which you can't buy cards.", 
-        "extra": "You can only buy this once per turn. When you do, if the previous turn was not yours - if it was another player's turn before this turn - you take another turn after this turn ends. The extra turn is completely normal except that you cannot buy cards during it. You can still buy Events, and play cards, and gain cards in ways other than buying them (such as gaining a Silver from Amulet), and exchange Travelers. Buying Mission during a turn granted by Mission will not give you another turn, because the previous turn was yours.", 
-        "name": "Mission", 
-        "untranslated": "description, extra"
+        "description": "Einmal pro Zug: wenn der vorangegangene Zug nicht deiner war, spielst du nach deinem Zug einen weiteren Zug, in welchem du keine Karten kaufen darfst.", 
+        "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Du spielst nach diesem Zug einen weiteren Zug, falls der vorangegangene Zug von einem Mitspieler gespielt wurde und nicht von dir (z.B. durch den AUSSENPOSTEN aus Seaside). In diesem Zug darfst du keine Karten kaufen. Du darfst allerdings Ereignisse erwerben, Karten auf andere Weise nehmen oder Reisende eintauschen. Erwirbst du in deinem Extragzug eine weitere MISSION, darfst du keinen weiteren Zug ausführen, da der vorherige Zug dein eigener war. ", 
+        "name": "Mission"
     },
     "Page": {
         "description": "+1 Karte<br>+1 Aktion<br>Ist diese Karte im Spiel, darfst du sie gegen einen Schatzsucher eintauschen anstatt sie abzulegen.", 
@@ -180,10 +155,9 @@
         "name": "Page"
     },
     "Pathfinding": {
-        "description": "Move your +1 Card token to an Action Supply pile (when you play a card from that pile, you first get +1 Card).", 
-        "extra": "When you buy this, you move your +1 Card token to any Action Supply pile. This token gives you +1 Card whenever you play a card from that pile; see the Tokens section.", 
-        "name": "Wegsuche", 
-        "untranslated": "description, extra"
+        "description": "Lege deinen +1 Karte-Marker auf einen Aktions-Vorratsstapel. (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst +1 Karte.)", 
+        "extra": "Lege deinen +1 Karte-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, erhältst du +1 Karte, sobald du eine Karte, die von diesem Stapel stammt, ausspielst.", 
+        "name": "Wegsuche"
     },
     "Peasant": {
         "description": "+1 Kauf<br>+1 Coin<br>Ist diese Karte im Spiel, darfst du sie gegen einen Soldaten eintauschen anstatt sie abzulegen.", 
@@ -191,82 +165,69 @@
         "name": "Kleinbauer"
     },
     "Pilgrimage": {
-        "description": "Once per turn: Turn your Journey token over (it starts face up); then if it's face up, choose up to 3 differently named cards you have in play and gain a copy of each.", 
-        "extra": "At the start of the game, place your Journey token (the one with the boot) face up. You can only buy this once per turn. When you do, turn your Journey token over. Then if it is face down, nothing more happens. If it is face up, choose up to 3 cards you have in play with different names and gain a copy of each. The copies you gain come from the Supply and are put into your discard pile. So, every other time you buy this, you will gain up to 3 cards. It does not matter what turned over the Journey token; you could turn it face down with Ranger, then face up with Pilgrimage.", 
-        "name": "Pilgerfahrt", 
-        "untranslated": "description, extra"
+        "description": "Einmal pro Zug: Drehe deinen Reise-Marker um. Liegt die Vorderseite oben: Wähle bis zu 3 Karten mit unterschiedlichem Namen, die du im Spiel hast und nimm dir jeweils eine davon.", 
+        "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Drehe deinen Reise-Marker um (zu Spielbeginn liegt dieser mit der Vorderseite nach oben). Liegt dann die Rückseite oben, passiert nichts. Liegt die Vorderseite oben, wählst du bis zu 3 Karten mit unterschiedlichem Namen, die du gerade im Spiel hast, nimmst von jeder dieser Karten eine weitere Karte vom Vorrat und legst sie ab. Eintausch-Karten oder Preiskarten (aus Reiche Ernte) mit * coins gehöre nicht zum Vorrat und dürfen nicht genommen werden.", 
+        "name": "Pilgerfahrt"
     },
     "Plan": {
-        "description": "Move your Trashing token to an Action Supply pile (when you buy a card from that pile, you may trash a card from your hand.)", 
-        "extra": "When you buy this, you move your Trashing token (the one depicting a tombstone) to any Action Supply pile. This token will let you trash a card from your hand when buying a card from that pile; see the Tokens section.", 
-        "name": "Planung", 
-        "untranslated": "description, extra"
+        "description": "Lege deinen Entsorgungs-Marker auf einen Aktions-Vorratsstapel. (Wenn du eine Karte von diesem Stapel kaufst, darfst du eine Karte aus deiner Hand entsorgen.)", 
+        "extra": "Lege deinen Entsorgungs-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, darfst du, immer wenn du eine Karte von diesem Stapel kaufst, eine beliebige Handkarte entsogen. <n> Wenn du eine weitere PLANUNG erwirbst, legst du den Marker auf einen anderen Aktions-Vorratsstapel.", 
+        "name": "Planung"
     },
     "Port": {
-        "description": "+1 Card<br>+2 Actions<line>When you buy this, gain another Port.", 
+        "description": "+1 Karte<br>+2 Aktionen<line>Wenn du diese Karte kaufst, nimm dir eine weitere Hafenstadt.", 
         "extra": "Wenn du diese Karte ausspielst, erhältst du +1 Karte und +2 Aktionen. Wenn du diese Karte kaufst (nicht wenn du sie auf andere Art und Weise erhältst), nimm dir eine HAFENSTADT vom Vorrat.", 
-        "name": "Hafenstadt", 
-        "untranslated": "description"
+        "name": "Hafenstadt"
     },
     "Quest": {
-        "description": "You may discard an Attack, two Curses, or six cards. If you do, gain a Gold.", 
-        "extra": "You may either discard an Attack to gain a Gold, or discard two Curses to gain a Gold, or discard any 6 cards to gain a Gold. The gained Gold is put into your discard pile. You may choose to discard 6 cards despite not having enough cards in hand; you will discard everything and not gain a Gold. You may choose to discard two Curses despite only having one; you will discard that Curse and not gain a Gold.", 
-        "name": "Quest", 
-        "untranslated": "description, extra"
+        "description": "Du darfst eine Angriffskarte oder 2 Flüche oder 6 beliebige Karten ablegen. Wenn du das tust, nimm dir ein Gold.", 
+        "extra": "Wähle eine der Optionen, um ein GOLD zu nehmen und abzulegen: Entweder legst du 1 Angriffskarte aus deiner Hand oder 2 FLÜCHE oder 6 beliebige Karten ab. Du kannst dich entscheiden, nur 1 FLUCH oder weniger als 6 Karten abzulegen, wenn du nicht genügend entsprechende Karten auf der Hand hast - dann erhältst du kein GOLD.", 
+        "name": "Quest"
     },
     "Raid": {
-        "description": "Gain a Silver per Silver you have in play. Each other player puts his -1 Card token on his deck.", 
-        "extra": "This Event is like an Attack, but buying it is not playing an Attack, and so cannot be responded to with cards like Moat and Caravan Guard. When you buy this, you gain a Silver for each Silver you have in play; for example, with four Silvers in play, you would gain four Silvers. The Silvers go to your discard pile; if there aren't enough left, just take what is left. Then each other player puts his -1 Card token on top of his deck, which will cause those players to draw one less card the next time they draw cards; see the Tokens section.", 
-        "name": "Überfall", 
-        "untranslated": "description, extra"
+        "description": "Pro Silber, das du im Spiel hast, nimmst du dir ein Silber. Jeder Mitspieler legt seinen -1 Karte-Marker auf seinen Nachziehstapel.", 
+        "extra": "Für jedes SILBER, das du gerade im Spiel hast, wenn du diese Karte erwirbst, nimm ein weiteres SILBER vom Vorrat und lege es ab. Außerdem legen alle Mitspieler ihren -1 Karte-Marker auf ihren Nachziehstapel. Das nächste Mal, wenn sie Karten nachziehen müssen, ziehen sie stattdessen 1 Karte weniger. Auch wenn diese Anweisungen wie ein Angriff fungiert, ist der ÜBERFALL keine Angriffskarte. Entsprechend können die Mitspieler nicht mit einer Reaktionskarte darauf reagieren.", 
+        "name": "Überfall"
     },
     "Ranger": {
-        "description": "+1 Buy<n>Turn your Journey token over (it starts face up). If it's face up, +5 Cards.", 
+        "description": "+1 Kauf<n>Drehe deinen Reise-Marker um. <n> Liegt die Vorderseite oben: <n> + 5 Karten", 
         "extra": "Du erhältst +1 Kauf. Drehe deinen Reise-Marker um (zu Beginn des Spiels liegt der Marker mit der Vorderseite nach oben). Liegt jetzt die Vorderseite oben, ziehst du 5 Karten nach. Liegt die Rückseite oben, passiert nichts. Du darfst in einem Zug mehrere WILDHÜTER ausspielen und drehst bei jedem WILDHÜTER den Marker um.", 
-        "name": "Wildhüter", 
-        "untranslated": "description"
+        "name": "Wildhüter"
     },
     "Ratcatcher": {
-        "description": "+1 Card<br>+1 Action<n>Put this on your Tavern mat.<line>At the start of your turn, you may call this, to trash a card from your hand.", 
+        "description": "+1 Karte<br>+1 Aktion<n>Lege diese Karte auf dein Wirtshaustableau.<line>Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust, musst du eine Handkarte entsorgen.", 
         "extra": "Du erhältst +1 Karte und +1 Aktion. Lege diese Karte auf dein Wirtshaustableau. Du darfst diese Karte zu Beginn deines Zuges vom Tableau aufrufen. Wenn du das tust, lege die Karte in deinen Spielbereich. Dann musst du eine beliebige Karte aus deiner Hand entsorgen. Lege den RATTENFÄNGER in der Aufräumphase ab.", 
-        "name": "Rattenfänger", 
-        "untranslated": "description"
+        "name": "Rattenfänger"
     },
     "Raze": {
-        "description": "+1 Action<n>Trash this or a card from your hand. Look at the number of cards from the top of your deck equal to the cost in _ Coins of the trashed card. Put one into your hand and discard the rest.", 
+        "description": "+1 Aktion<n>Entsorge diese Karte oder eine Handkarte.<n> Schau die so viele Karten oben von deinem Nachziehstapel an, wie die entsorgte Karte X coins gekostet hat. Nimm eine davon auf die Hand und lege den Rest ab.", 
         "extra": "Du erhältst +1 Aktion. Dann musst du entweder diese ZERSTÖRUNG oder eine Handkarte entsorgen. Je nach Höhe der Kosten der entsorgten Karte siehst du dir die entsprechende Anzahl Karten oben von deinem Nachziehstapel an. Nimm eine davon auf die Hand und lege den Rest ab. Liegt der -Karte-Marker auf dem Nachziehstapel, wird dieser kurz zur Seite gelegt und nach dem Ziehen der Karten wieder oben auf den Stapel zurückgelegt.", 
-        "name": "Zerstörung", 
-        "untranslated": "description"
+        "name": "Zerstörung"
     },
     "Relic": {
-        "description": "2 <*COIN*><n>When you play this, each other player puts his -1 Card token on his deck.", 
-        "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Jeder Mitspieler muss seinen -Karte-Marker auf seinen Nachziehstapel legen. Sobald ein Mitspieler Karten nachziehen muss, zieht er 1 Karte weniger. Dann legt er den Marker neben den Vorrat zurück. Bei Anweisungen, durch die man seine Kartenhand auf X Karten auffüllen darf, wird zunächst der Marker zurückgelegt und dann die Kartenhand auf X Karten aufgefüllt. Das RELIKT ist eine Angriffskarte. Entsprechend kann darauf mit Reaktionskarten reagiert werden. Reagiert ein Spieler mit dem KARAWANENWÄCHTER, führt er zunächst die Anweisungen aus (inkl. +1 Karte) und legt dann den Marker auf seinen Nachziehstapel.", 
-        "name": "Relikt", 
-        "untranslated": "description"
+        "description": "2 <*COIN*><n>Wenn du diese Karte ausspielst, muss jeder Mitspieler seinen -Karte-Marker auf seinen Nachziehstapel legen.", 
+        "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Jeder Mitspieler muss seinen -Karte-Marker auf seinen Nachziehstapel legen. Sobald ein Mitspieler Karten nachziehen muss, zieht er 1 Karte weniger. Dann legt er den Marker neben den Vorrat zurück. Bei Anweisungen, durch die man seine Kartenhand auf X Karten auffüllen darf, wird zunächst der Marker zurückgelegt und dann die Kartenhand auf X Karten aufgefüllt. Das RELIKT ist eine Angriffskarte. Entsprechend kann darauf mit Reaktionskarten reagiert werden. Reagiert ein Spieler mit dem KARAWANENWÄCHTER, führt er zunächst die Anweisungen aus (inkl. +1 Karte) und legt dann den Marker auf seinen Nachziehstapel.",
+        "name": "Relikt"
     },
     "Royal Carriage": {
-        "description": "+1 Action<n>Put this on your Tavern mat.<line>Directly after resolving an Action, if it's still in play, you may call this, to replay that Action.", 
+        "description": "+1 Aktion <br> Lege diese Karte auf dein Wirtshaustableau. <line> Sofort nachdem du eine Aktionskarte ausgeführt hast, die danach noch im Spiel ist, darfst du diese karte von deinem Tableau aufrufen. Wenn du das tust: Führe die Aktion noch einmal aus.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du +1 Aktion und legst sie dann auf dein Wirtshaustableau. Sobald du eine Aktionskarte ausspielst und die Anweisungen darauf ausgeführt hast, darfst du die KÖNIGLICHE KUTSCHE sofort danach aufrufen, falls die Aktionskarte noch im Spiel ist. Wenn du das tust, führst du die Aktion sofort noch einmal aus. Du kannst die KÖNIGLICHE KUTSCHE nicht aufrufen, wenn die Aktion bereits entsorgt wurde oder auf Reservekarten, die bereits auf das Tableau gelegt wurden. Lege die KÖNIGLICHE KUTSCHE in der Aufräumphase ab. Wird die KÖNIGLICHE KUTSCHE auf eine Dauerkarte gespielt, bleibt sie solange im Spiel, bis die Dauerkarte abgelegt wird.", 
-        "name": "Königliche Kutsche", 
-        "untranslated": "description"
+        "name": "Königliche Kutsche"
     },
     "Save": {
-        "description": "+1 Buy<n>Once per turn: Set aside a card from your hand, and put it into your hand at end of turn (after drawing).", 
-        "extra": "You can only buy this once per turn. When you do, you get +1 Buy (letting you buy another Event or a card afterwards), set aside a card from your hand face down (the other players do not get to see it), and put it into your hand at the end of the turn, after drawing your hand for the next turn. For example you might set aside an unplayed Copper, and then after drawing your 5 cards for next turn, add the Copper to your hand.", 
-        "name": "Zuflucht", 
-        "untranslated": "description, extra"
+        "description": "+1 Kauf<n>Einmal pro Zug: Lege eine Handkarte zur Seite und nimm sie am Ende deines Zuges wieder auf die Hand (nach dem Ziehen).", 
+        "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Du erhältst +1 Kauf und legst eine beliebige Handkarte verdeckt zur Seite. Nachdem du in der Aufräumphase Karten nachgezogen hast, nimmst du die zur Seite gelegte Karte wieder auf die Hand.", 
+        "name": "Zuflucht"
     },
     "Scouting Party": {
-        "description": "+1 Buy<n>Look at the top 5 cards of your deck. Discard 3 of them and put the rest back on top of your deck in any order.", 
-        "extra": "When you buy this you get +1 Buy (letting you buy another Event or a card afterwards). Then look at the top 5 cards of your deck, discarding 3 and putting the rest on top of your deck in any order. If there are fewer than 5 cards even after shuffling, you still discard 3 of them; if there are only 3 cards left between your deck and discard pile, all 3 will be discarded. Scouting Party is unaffected by the -1 Card token; if it is on top of your deck, replace it after resolving Scouting Party.", 
-        "name": "Spähtrupp", 
-        "untranslated": "description, extra"
+        "description": "+1 Kauf<n>Sieh dir die obersten 5 Karten deines Nachziehstapels an. Lege 3 davon ab und den Rest in beliebiger Reihenfolge zurück auf den Nachziehstapel.", 
+        "extra": "Du erhältst +1 Kauf. Schau dir die obersten 5 Karten deines Nachziehstapels an. Lege 3 davon ab und de Rest in beliebiger Reihenfolge zurück auf den Nachziehstapel. Hast du nach dem Mischen des Ablagestapels weniger als 5 Karten zur Verfügung, legst du zuerst - wenn möglich - 3 Karten ab. Nur den Rest (0,1 oder 2 Karten) legst du zurück auf den Nachziehstapel.", 
+        "name": "Spähtrupp"
     },
     "Seaway": {
-        "description": "Gain an Action card costing up to 4 Coin. Move your +1 Buy token to its pile (when you play a card from that pile, you first get +1 Buy).", 
-        "extra": "When you buy this, first you gain an Action card costing up to 4 Coins. The Action card comes from the Supply and is put into your discard pile. Then move your +1 Buy token to the pile the Action card came from. The token gives you +1 Buy when playing a card from that pile; see the Tokens section. It only matters how much the card costs that you gain; the cost is not checked later. For example you can play Bridge Troll, then use Seaway to gain a Bridge Troll (currently costing 4 Coins due to its own effect), and the token will stay there even when Bridge Troll costs 5 Coins later. You can use Seaway to gain Sir Martin (from Dark Ages) when he's on top of the Knights pile; then your +1 Buy token will be on the Knights pile, even though any remaining Knights will cost 5 Coins. You cannot use Seaway on an empty pile just to move the +1 Buy token; you have to pick a card you can gain.", 
-        "name": "Seeweg", 
-        "untranslated": "description, extra"
+        "description": "Nimm dir eine Aktionskarte, die bis zu 4 coins kostet. Lege deinen +1 Kauf-Marker auf diesen Vorratsstapel. (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst +1 Kauf.)", 
+        "extra": "Nimm dir eine Aktionskarte vom Vorrat, die bis zu 4 coins kostet, und lege diese ab. Lege deinen +1 Kauf-Marker auf den Vorratsstapel, von dem du die Aktionskarte genommen hast (dieser kann auch leer sein). Du musst eine Karte vom Vorrat nehmen, um den Marker auf den entsprechenden Stapel legen zu dürfen. Solange dieser Marker auf dem Stapel liegt, erhält du +1 Kauf, sobald du eine Karte, die von diesem Stapel stammt, ausspielst. Kostet die Aktionskarte, die du durch den SEEWEG nimmst, nur in diesem Zug bis zu 4 coins, z.B. wenn du vorher einen BRÜCKENTROLL gespielt hast und dadurch alle Karten in diesem Zug 1 coin weniger kosten, bleibt der Marker später liegen, auch wenn die entsprechende Karte nach deinem Zug wieder 5 coins kostet. Auf Stapel, die nicht zum Vorrat gehören, darf der Marker nicht gelegt werde. <n> Durch den Erwerb eines weiteren SEEWEGS oder das Aufrufen eines LEHRERS darfst du den Marker auf einen anderen Aktions-Vorratsstapel legen.", 
+        "name": "Seeweg"
     },
     "Soldier": {
         "description": "+2 Coin<br>+1 Coin pro anderer Angriffskarte, die du im Spiel hast. Jeder Mitspieler mit 4 oder mehr Handkarten legt eine Handkarte ab. Ist diese Karte im Spiel, darfst du sie gegen einen Flüchtling eintauschen anstatt sie abzulegen. (Diese Karte gehört nicht zum Vorrat.)", 
@@ -274,45 +235,39 @@
         "name": "Soldat"
     },
     "Storyteller": {
-        "description": "+1 Action<br>+1 Coin<n>Play up to 3 Treasures from your hand. Pay all of your _ Coins. +1 Card per Coin paid.", 
-        "extra": "Du erhältst +1 Aktion sowie +1 Coins. Spiele bis zu 3 Geldkarten aus deiner Hand aus und zahle alle empty Coin, die du bisher in diesem Zug ausgespielt hast. Das beinhaltet alle Geldwerte von ausgespielten Geldkarten sowie alle, z. B. durch ausgespielte Aktionskarten, erhaltene zusätzliche Geldwerte (+1 Coins) inkl. dem +1 Coins dieses GESCHICHTENERZÄHLERS. Du hast danach 0 Coins. Für jedes gezahlte 1 Coins erhältst du +1 Karte. Trank-Kosten aus Die Alchemisten sind davon nicht betroffen.", 
-        "name": "Geschichtenerzähler", 
-        "untranslated": "description"
+        "description": "+1 Aktion<br>+1 Coin<n>Spiele bis zu 3 Geldkarten aus deiner Hand aus. Zähle alle _ coins und du erhältst:<n> +1 Karte pro gezahltem _ coins. <n> (Du hast jetzt 0 coins.)", 
+        "extra": "Du erhältst +1 Aktion sowie +1 Coins. Spiele bis zu 3 Geldkarten aus deiner Hand aus und zahle alle _ Coin, die du bisher in diesem Zug ausgespielt hast. Das beinhaltet alle Geldwerte von ausgespielten Geldkarten sowie alle, z. B. durch ausgespielte Aktionskarten, erhaltene zusätzliche Geldwerte (+1 Coins) inkl. dem +1 Coins dieses GESCHICHTENERZÄHLERS. Du hast danach 0 Coins. Für jedes gezahlte 1 Coins erhältst du +1 Karte. Trank-Kosten aus Die Alchemisten sind davon nicht betroffen.", 
+        "name": "Geschichtenerzähler"
     },
     "Swamp Hag": {
-        "description": "Until your next turn, when any other player buys a card, he gains a Curse.<n>At the start of your next turn:<n>+3 Coins", 
+        "description": "Bis zu deinem nächsten Zug: <n> Jeder Mitspieler muss sich für jede Karte, die er kauft, einen Fluch nehmen.<n>Zu Beginn deines nächste Zuges: <n>+3 Coins", 
         "extra": "Diese Karte ist eine Dauerkarte. Bis zu Beginn deines nächsten Zuges muss jeder Mitspieler für jede Karte, die er kauft, jeweils einen FLUCH vom Vorrat nehmen. Das Erwerben eines Ereignisses ist nicht mit dem Kauf einer Karte gleichzusetzen. Spieler, die mit einer Reaktionskarte reagieren wollen, müssen dies sofort beim Ausspielen der SUMPFHEXE tun. Zu Beginn deines nächsten Zuges erhältst du +3 Coins. Lege die Karte in der Aufräumphase des nächsten Zuges ab.", 
-        "name": "Sumpfhexe", 
-        "untranslated": "description"
+        "name": "Sumpfhexe"
     },
     "Teacher": {
-        "description": "Lege diese Karte auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust, darfst du deinen +1 Karte-, +1 Aktion-, +1 Kauf- oder +1 Coin- -Marker auf einen Aktions-Vorratsstapel legen, auf dem keiner deiner Marker liegt. (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst den Bonus des Markers.)   (Diese Karte gehört nicht zum Vorrat.)", 
+        "description": "Lege diese Karte auf dein Wirtshaustableau.<line> Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust, darfst du deinen +1 Karte-, +1 Aktion-, +1 Kauf- oder +1 Coin- -Marker auf einen Aktions-Vorratsstapel legen, auf dem keiner deiner Marker liegt. (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst den Bonus des Markers.)   (Diese Karte gehört nicht zum Vorrat.)", 
         "extra": "Einen LEHRER erhältst du nur, wenn du einen SCHÜLER eintauschst. Er kann in keine andere Karte eingetauscht werden. Wenn du den LEHRER ausspielst, lege ihn auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du den LEHRER von deinem Tableau aufrufen und in den Spielbereich legen. Wenn du das tust, legst du entweder den +1 Karte-, +1 Aktion-, +1 Kauf- oder +1 Coins -Marker auf einen beliebigen Aktions-Vorratsstapel, auf dem du zu diesem Zeitpunkt keine weiteren eigenen Marker liegen hast. Immer wenn du eine Karte, die von diesem Stapel stammt, spielst, erhältst du zuerst (bevor die Anweisungen der Karte ausgeführt werden) den entsprechenden Bonus des Markers. Lege den LEHRER in der Aufräumphase ab.", 
         "name": "Lehrer"
     },
     "Trade": {
-        "description": "Trash up to 2 cards from your hand.<n>Gain a Silver per card you trashed.", 
-        "extra": "You may trash zero, one, or two cards from your hand. For each card you actually trashed, you gain a Silver, putting it into your discard pile.", 
-        "name": "Handel", 
-        "untranslated": "description, extra"
+        "description": "Entsorge bis zu 2 Handkarten. Nimm dir für jede entsorgte Karte ein Silber.", 
+        "extra": "Entsorge bis zu 2 Handkarten. Du darfst auch 1 oder gar keine Karte entsorgen. Für jede so entsorgte Karte nimmst du ein SILBER vom Vorrat und legst es ab.", 
+        "name": "Handel"
     },
     "Training": {
-        "description": "Move your +1 Coin token to an Action Supply pile (when you play a card from that pile, you first get + 1 Coin).", 
-        "extra": "When you buy this, you move your + 1 Coin token to any Action Supply pile. This token gives you + 1 Coin whenever you play a card from that pile; see the Tokens section.", 
-        "name": "Training", 
-        "untranslated": "description, extra"
+        "description": "Lege deinen +1 Coin-Marker auf einen Aktions-Vorratsstapel.<n> (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst +1 coin.)", 
+        "extra": "Lege deinen +1 Coin-Marker auf einen beliebigen Aktions-Vorratsstapel. Solange dieser Marker auf dem Stapel liegt, erhält du +1 coin, sobald du eine Karte, die von diesem Stapel stammt, ausspielst. <n> Durch den Erwerb eines weiteren TRAININGS oder das Aufrufen eines LEHRERS darfst du den Marker auf einen anderen Aktions-Vorratsstapel legen.", 
+        "name": "Training"
     },
     "Transmogrify": {
-        "description": "+1 Action<n>Put this on your Tavern mat.<line>At the start of your turn, you may call this, to trash a card from your hand, gain a card costing up to 1 Coin more than it, and put that card into your hand.", 
+        "description": "+1 Aktion <n> Lege diese Karte auf dein Wirtshaustableau. <line> Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust: Entsorge eine Handkarte und nimm dir eine Karte, die bis zu 1 coin mehr kostet als die entsorgte Karte. Nimm diese Karte auf die Hand.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du +1 Aktion. Lege sie dann auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte aufrufen. Wenn du das tust, entsorgst du eine Handkarte und nimmst eine Karte vom Vorrat, die bis zu 1 Coins mehr kostet als die entsorgte Karte. Nimm die Karte auf die Hand. Du darfst nur Karten aus dem Vorrat nehmen. Lege die TRANSFORMATION in der Aufräumphase ab.", 
-        "name": "Transformation", 
-        "untranslated": "description"
+        "name": "Transformation"
     },
     "Travelling Fair": {
-        "description": "+2 Buys<n>When you gain a card this turn, you may put it on top of your deck.", 
-        "extra": "When you buy this, you get +2 Buys (letting you buy more Events or cards afterwards). Then for the rest of the turn, whenever you gain a card, you may put it on your deck. This works on cards you buy, as well as cards gained other ways, such as gaining cards with Ball. It does not work on Travelers exchanged for other cards; exchanging is not gaining. Putting the card on your deck is optional each time you gain a card that turn; you could put some on top and let the others go to your discard pile.", 
-        "name": "Wanderzirkus", 
-        "untranslated": "description, extra"
+        "description": "+2 Käufe<n> Wenn du in diesem Zug eine Karte nimmst, darfst du sie auf deinen Nachziehstapel legen.", 
+        "extra": "Du erhältst +2 Käufe. Wenn du in dem Zug, in dem du den WANDERZIRKUS erwirbst, eine Karte nimmst, darfst du diese oben auf deinen Nachziehstapel legen. Wenn du dies nicht möchtest, lege die genommene Karte ab. Der WANDERZIRKUS funktioniert nicht bei den Eintausch-Karten mit einem * Coins, da diese nicht genommen sondern eingetauscht werden.", 
+        "name": "Wanderzirkus"
     },
     "Treasure Hunter": {
         "description": "+1 Aktion<br>+1 Coin<br>Nimm dir pro Karte, die dein rechter Mitspieler in seinem letzten Zug genommen hat, ein Silber. Ist diese Karte im Spiel, darfst du sie gegen einen Krieger eintauschen anstatt sie abzulegen. (Diese Karte gehört nicht zum Vorrat.)", 
@@ -320,10 +275,9 @@
         "name": "Schatzsucher"
     },
     "Treasure Trove": {
-        "description": "2 <*COIN*><n>When you play this, gain a Gold and a Copper.", 
+        "description": "2 <*COIN*><n>WWenn du diese Karte ausspielst, nimm dir ein Gold und ein Kupfer.", 
         "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Nimm ein GOLD und ein KUPFER (in beliebiger Reihenfolge) vom Vorrat und lege sie ab. Ist ein Stapel leer, erhältst du nur die andere Karte.", 
-        "name": "Schatz", 
-        "untranslated": "description"
+        "name": "Schatz"
     },
     "Warrior": {
         "description": "+2 Karten<br>Für jeden Reisenden (inkl. diesem), den du im Spiel hast, müssen alle Mitspieler die oberste Karte ihres Nachziehstapels ablegen und sie entsorgen, wenn sie 3 oder 4 kostet. Ist diese Karte im Spiel, darfst du sie gegen einen Helden eintauschen anstatt sie abzulegen. (Diese Karte gehört nicht zum Vorrat.)", 
@@ -331,10 +285,9 @@
         "name": "Krieger"
     },
     "Wine Merchant": {
-        "description": "+1 Buy<br>+4 Coins<n>Put this on your Tavern mat.<line>At the end of your Buy phase, if you have at least 2 Coins unspent, you may discard this from your Tavern mat.", 
+        "description": "+1 Kauf<br>+4 Coins<n>Lege diese Karte auf dein Wirtshaustableau.<line>Wenn du am Ende deiner Kaufphase mindestens 2 Coins nicht ausgegeben hast, darfst d diese Karte von deinem Tableau ablegen.", 
         "extra": "Diese Karte ist eine Reservekarte. Wenn du sie ausspielst, erhältst du +1 Kauf sowie + 4 Coins und legst die Karte dann auf dein Wirtshaustableau. Wenn du am Ende deiner Kaufphase mindestens 2 Coins nicht ausgegeben hast, darfst du diese Karte von deinem Wirtshaustableau ablegen. Hast du mehrere WEINHÄNDLER auf deinem Tableau liegen, kannst du alle ablegen. Du brauchst nicht für jeden WEINHÄNDLER 2 Coins übrig zu haben.", 
-        "name": "Weinhändler", 
-        "untranslated": "description"
+        "name": "Weinhändler"
     },
     "Alchemist": {
         "description": "+2 Karten<br>+1 Aktion<br>Wenn diese Karte und ein Trank im Spiel sind und du den Alchemisten ablegst, darfst du diesen verdeckt oben auf deinen Nachziehstapel legen.", 
@@ -466,121 +419,103 @@
         "description": "10 <*VP*>", 
         "extra": "This is not a Kingdom card. You do not use it every game. It is a Victory card worth 10 VP. If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]", 
         "name": "Kolonie", 
-        "untranslated": "description, extra"
+        "untranslated": "extra"
     },
     "Platinum": {
         "description": "5 <*COIN*>", 
         "extra": "This is not a Kingdom card. You do not use it every game. It is a Treasure worth 5 coins. If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]", 
         "name": "Platin", 
-        "untranslated": "description, extra"
+        "untranslated": "extra"
     },
     "Bag of Gold": {
-        "description": "+1 Action<n>Gain a Gold, putting it on top of your deck.<n><i>(This is not in the Supply.)</i>", 
-        "extra": "The Gold you gain comes from the Supply and is put on top of your deck. If your deck has no cards in it, it becomes the only card in your deck. If there are no Golds left in the Supply, you do not gain one. This is a Prize; see the Additional Rules.", 
-        "name": "Ein Sack voll Gold", 
-        "untranslated": "description, extra"
+        "description": "+1 Aktion<n>Nimm ein Gold und lege es oben auf den Nachziehstapel.<n><i>(Diese Karte gehört nicht zum Vorrat.)</i>", 
+        "extra": " Zuerst erhältst du +1 Aktion. Dann nimmst du dir ein Gold aus dem Vorrat und legst es sofort auf deinen Nachziehstapel. Falls der Nachziehstapel leer ist, legst du dieses Gold an die Stelle deines Nachziehstapels. Ist kein Gold mehr im Vorrat, nimmst du keines. Diese Karte ist eine Preiskarte (siehe Spielaufbau).", 
+        "name": "Ein Sack voll Gold"
     },
     "Diadem": {
-        "description": "2 <*COIN*><n>When you play this, +1 Coins per unused Action you have (Action, not Action card).<n><i>(This is not in the Supply.)</i>", 
-        "extra": "This is a Treasure worth 2 coins, like Silver. You play it in your Buy phase, like other Treasures. When you play it, you get an extra +1 coin per unused Action you have. This means Actions, not Action cards. So for example if you play Farming Village (which gives you +2 Actions), then Diadem, Diadem will give you an extra + 2 coins, for 4 coins total. If you play no Action cards at all on your turn, you will have one unused Action, so you will get total from Diadem. This is a Prize; see the Additional Rules.", 
-        "name": "Diadem", 
-        "untranslated": "description, extra"
+        "description": "2 <*COIN*><n> Beim Spielen dieser Karte: +1 coin für jede nicht genutzte Aktion in deinem Zug (Aktion, nicht Aktionskarte).<n><i>(Diese Karte gehört nicht zum Vorrat)</i>", 
+        "extra": " Diese Geldkarte hat den Wert 2 coins, wie ein Silber. Wenn du sie in deiner Kaufphase auslegst, erhältst du zusätzlich +1 coin virtuelles Geld für jede unverbrauchte Aktion. Hast du z.B. in deiner Aktionsphase keine Aktionskarte ausgespielt, so erhältst du für deine freie Aktion +1 coin. Hast du in deiner Aktionsphase das Bauerndorf ausgespielt, so ist dadurch deine freie Aktion verbraucht. Das Bauerndorf gibt dir jedoch +2 Aktionen. Spielst du keine weitere Aktionskarte mehr aus, bringt dir das Diadem in der Kaufphase +2 coins. Diese Karte ist eine Preiskarte (siehe Spielaufbau).", 
+        "name": "Diadem"
     },
     "Fairgrounds": {
         "description": "Wert 2  <VP> für je 5 Karten mit unterschiedlichem Namen im eigenen Kartensatz (abgerundet).", 
-        "extra": "At the end of the game, this is worth 2 <VP> per 5 differently named cards in your deck, rounded down. So if you have 0-4 different cards, it is worth 0 VP; if you have 5-9, it is worth 2 VP; if you have 10-14, it is worth 4 VP; if you have 15-19, it is worth 6; and so on. By default there are only 17 differently named cards available in a game, but sometimes there may be more cards, such as via Young Witch's setup rule, or due to Tournament. Use 8 Fairgrounds in a game with 2 players, and 12 for a game with 3 or more players.", 
-        "name": "Festplatz", 
-        "untranslated": "extra"
+        "extra": " Diese Königreichkarte ist eine Punktekarte, keine Aktionskarte. Sie hat bis zum Ende des Spiels keine Funktion. Bei der Wertung zählt sie 2 <VP> für je volle 5 Karten mit unterschiedlichem Namen im gesamten Kartensatz (Nachziehstapel, Ablagestapel und Handkarten) des Spielers. Bei Spielende suchst du aus deinem gesamten Kartensatz je eine Karte jedes Namens heraus. Diese Karten zählst du und teilst die Anzahl durch 5. Das Ergebnis (abgerundet) multipliziert mit 2 ergibt die Punkte. Hast du 0-4 Karten mit unterschiedlichem Namen erhältst du keine Punkte, für 5-9 Karten 2<VP>, für 10-14 Karten 4<VP> usw. Im Spiel zu 3. und 4. werden 12 Karten Festplatz verwendet, im Spiel zu 2. werden 8 Karten Festplatz verwendet.", 
+        "name": "Festplatz"
     },
     "Farming Village": {
         "description": "+2 Aktionen<br>Decke solange Karten vom Nachziehstapel auf, bis entweder eine Aktionskarte oder eine Geldkarte offen liegt. Nimm diese Karte auf die Hand, lege die übrigen aufgedeckten Karten ab.", 
-        "extra": "Reveal cards from the top of your deck until you reveal a Treasure or Action card. If you run out of cards before finding one, shuffle your discard pile (but not the revealed cards), and keep revealing cards. If you still cannot find one, just discard all of the revealed cards. If you do find a Treasure or Action card, put it into your hand, and discard the rest of the revealed cards. A card with multiple types, one of which is Treasure or Action (for example Diadem, a Treasure - Prize), is a Treasure or Action and so will be drawn by this. You do not choose Treasure or Action - you stop on the first card matching either type.", 
-        "name": "Bauerndorf", 
-        "untranslated": "extra"
+        "extra": " Du erhältst zunächst +2 Aktionen. Dann deckst du solange Karten von deinem Nachziehstapel auf, bis entweder eine Geldkarte oder eine Aktionskarte offen liegt. Nimm diese Geld- oder Aktionskarte auf die Hand. Lege die übrigen aufgedeckten Karten auf deinen Ablagestapel. Du darfst nicht wählen, ob du eine Geldkarte oder eine Aktionskarte auf die Hand nehmen möchtest. Du musst die erste aufgedeckte Geld- oder Aktionskarte auf die Hand nehmen. Kombinierte Kartentypen sind gleichzeitig alle angegebenen Kartentypen. Du darfst die aufgenommene Karte auch in diesem Zug (nach den üblichen Regeln) ausspielen. Wenn du auch nach dem Mischen deines Ablagestapels keine Geld- oder Aktionskarte aufdecken kannst, nimmst du keine Karte auf die Hand.", 
+        "name": "Bauerndorf"
     },
     "Followers": {
-        "description": "+2 Cards<n>Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand.<n><i>(This is not in the Supply.)</i>", 
-        "extra": "Do the things in the order listed. You draw 2 cards; then you gain an Estate from the Supply, putting it into your discard pile; then each other player gains a Curse from the Supply, putting it into his discard pile; then each other player discards down to 3 cards in hand. A player with 3 or fewer cards in hand does not discard any cards. If there are no Estates left, you do not gain one. If there are not enough Curses left, deal out the remaining Curses in turn order. This is a Prize; see the Additional Rules.", 
-        "name": "Gefolge", 
-        "untranslated": "description, extra"
+        "description": "+2 Karten<n>Nimm dir ein Anwesen. Jeder Mitspieler nimmt sich einen Fluch und legt solange Karten ab, bis er nur noch 3 auf der Hand hat.<n><i>(Diese Karte gehört nicht zum Vorrat.)</i>", 
+        "extra": " Du ziehst zunächst 2 Karten von deinem Nachziehstapel. Dann nimmst du ein Anwesen vom Vorrat und legst es auf deinen Ablagestapel. Ist kein Anwesen mehr im Vorrat, nimmst du dir keines. Nun muss sich, beginnend mit dem Spieler links von dir, reihum jeder Mitspieler einen Fluch vom Vorrat nehmen und auf seinen Ablagestapel legen und danach zusätzlich solange Karten aus seiner Hand ablegen, bis er nur noch 3 Karten auf der Hand hält. Hat ein Mitspieler 3 oder weniger Karten auf der Hand, muss er keine Karten ablegen (er muss sich jedoch trotzdem einen Fluch nehmen). Ist kein Fluch mehr im Vorrat, nimmt der Spieler sich keinen. Diese Karte ist eine Preiskarte (siehe Spielaufbau).", 
+        "name": "Gefolge"
     },
     "Fortune Teller": {
         "description": "+2 Coin<br>Jeder Mitspieler muss solange Karten von seinem Nachziehstapel aufdecken, bis entweder eine Punktekarte oder eine Fluchkarte offen liegt. Diese aufgedeckte Karte muss er auf seinen Nachziehstapel legen. Die übrigen aufgedeckten Karten legt er ab.", 
-        "extra": "Each other player reveals cards from the top of his deck until he reveals a Victory or Curse card. If he runs out of cards before finding one, he shuffles his discard pile (but not the revealed cards), and keeps revealing cards. If he still cannot find one, he just discards all of the revealed cards. If he does find one, he puts the Victory or Curse card on top of his deck, and discards the other revealed cards. If his deck has no other cards in it, it becomes the only card in his deck. A card with multiple types, one of which is Victory (such as Nobles from Intrigue), is a Victory card. You do not choose Victory or Curse - they stop on the first card that matches either type.", 
-        "name": "Wahrsagerin", 
-        "untranslated": "extra"
+        "extra": " Du erhältst zunächst +2 coins virtuelles Geld. Dann muss, beginnend mit dem Spieler links von dir, reihum jeder Mitspieler solange Karten von seinem Nachziehstapel aufdecken, bis entweder eine Punktekarte oder ein Fluch offen liegt. Er legt diese Punkte- oder Fluchkarte verdeckt auf seinen Nachziehstapel. Der Spieler darf nicht wählen, ob er eine Punktekarte oder einen Fluch auf den Nachziehstapel legt, er muss die erste aufgedeckte Punkte- oder Fluchkarte zurücklegen. Die übrigen aufgedeckten Karten legt er auf seinen Ablagestapel. Wenn der Spieler auch nach dem Mischen seines Ablagestapels keine Punkte- oder Fluchkarte aufdecken kann, legt er alle aufgedeckten Karten ab. Karten mit kombinierten Kartentypen sind gleichzeitig alle angegebenen Kartentypen.", 
+        "name": "Wahrsagerin"
     },
     "Hamlet": {
-        "description": "+1 Karte<br>+1 Aktion<br>Du darfst eine Karte aus deiner Hand ablegen. Wenn du das machst: +1 Aktion   Du darfst eine Karte aus deiner Hand ablegen. Wenn du das machst: +1 Kauf", 
-        "extra": "First draw a card, and get +1 Action. Then you may either discard one card to get another +1 Action; or you may discard one card to get +1 Buy; or you may discard two cards and get both +1 Action and +1 Buy; or you may discard no cards at all. You only get the extra +1 Action or +1 Buy if you actually discarded a card for it. You cannot discard multiple cards to get multiple +Actions or multiple +Buys.", 
-        "name": "Weiler", 
-        "untranslated": "extra"
+        "description": "+1 Karte<br>+1 Aktion<br>Du darfst eine Karte aus deiner Hand ablegen. Wenn du das machst: +1 Aktion <n>  Du darfst eine Karte aus deiner Hand ablegen. Wenn du das machst: +1 Kauf", 
+        "extra": "Zuerst ziehst du immer eine Karte nach und erhältst +1 Aktion. Nun darfst du eine Karte aus deiner Hand ablegen um entweder zusätzlich +1 Aktion oder +1 Kauf zu erhalten. Oder du legst 2 Karten aus deiner Hand ab und erhältst zusätzlich +1 Aktion und +1 Kauf. Du kannst jedoch nicht +2 Aktionen oder +2 Käufe zusätzlich erhalten. Du kannst auch darauf verzichten Karten abzulegen und erhältst dann nichts weiter.", 
+        "name": "Weiler"
     },
     "Harvest": {
         "description": "Decke die obersten 4 Karten von deinem Nachziehstapel auf. +1 Coin pro aufgedeckter Karte mit unterschiedlichem Namen. Lege die aufgedeckten Karten ab.", 
-        "extra": "Reveal the top 4 cards of your deck. If there are not enough cards, reveal what you can, shuffle your discard pile, and reveal the rest. If there still are not 4 cards total to reveal, just reveal what you can. You discard the revealed cards, and get +1 coin per differently named card revealed. For example if you revealed Copper, Silver, Copper, Estate, that would be +3 coins .", 
-        "name": "Ernte", 
-        "untranslated": "extra"
+        "extra": " Decke die obersten 4 Karten von deinem Nachziehstapel auf. Du erhältst +1 coin für jede aufgedeckte Karte mit unterschiedlichem Namen. Deckst du z.B. 2 Kupfer, 1 Silber und 1 Anwesen auf, erhältst du +3 coins. Kannst du (auch nach dem Mischen des Ablagestapels) nur weniger als 4 Karten aufdecken, deckst du nur so viele auf, wie möglich.", 
+        "name": "Ernte"
     },
     "Horn of Plenty": {
         "description": "0 <*COIN*><n>Nimm dir eine Karte, die bis zu 1 Coin pro Karte mit unterschiedlichem Namen im Spiel kostet (diese eingeschlossen). Wenn du dir eine Punktekarte nimmst: Entsorge das Füllhorn.", 
-        "extra": "This is a Treasure worth 0 coins. You play it in your Buy phase, like other Treasures. It does not produce any coins to spend. However, when you play it, you gain a card costing up to per differently named card you have in play. This includes itself, other played Treasures, played Actions, and any Duration cards (from Seaside) played on your previous turn. It only counts cards currently in play, not ones that were in play but left; for example if you played a Feast (from Dominion) this turn, you will have trashed it, so it will not count for Horn of Plenty. The card you gain must come from the Supply, and is put into your discard pile. If it is a Victory card, trash Horn of Plenty. Cards with multiple types, one of which is Victory (such as Nobles from Intrigue) are Victory cards. You do not have to play Horn of Plenty in your Buy phase, and you choose the order that you play Treasures. You do not trash Horn of Plenty if you gain a Victory card some other way while it's in play (such as by buying one).", 
-        "name": "Füllhorn", 
-        "untranslated": "extra"
+        "extra": " Du spielst diese Karte, wie jede andere Geldkarte, in der Kaufphase aus. Das Füllhorn hat den Wert 0 coins. Es bringt also kein Geld für den Kauf. Du darfst dir jedoch sofort, wenn du die Karte ausspielst, eine Karte aus dem Vorrat nehmen. Diese Karte darf bis zu 1 coin pro Karte mit unterschiedlichem Namen, die du im Spiel hast, kosten. Karten, die du im Spiel hast sind: in diesem Zug ausgespielte Aktions- und Geldkarten (das Füllhorn selbst eingeschlossen) und bei dir ausliegende Dauerkarten (Dominion – Seaside). Nicht im Spiel sind Karten, die du nach dem ausspielen entsorgt hast (z.B. Festmahl – Dominion Basisspiel). Nimmst du dir mit dem Füllhorn eine Punktekarte (auch eine kombinierte), entsorgst du das Füllhorn. Du entsorgst das Füllhorn nicht, wenn du dir eine Punktekarte auf eine andere Art nimmst oder kaufst.", 
+        "name": "Füllhorn"
     },
     "Horse Traders": {
         "description": "+1 Kauf<br>+3 Coin<br>Lege 2 Karten aus deiner Hand ab. Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du diese Karte aus deiner Hand zur Seite legen. Wenn du das machst: Bei Beginn deines nächsten  Zuges +1 Karte und nimm diese Karte wieder auf die Hand.", 
-        "extra": "When you play this, you get +1 Buy and +3 coins, and discard 2 cards from your hand. If you do not have enough cards to discard, just discard what you can; you still get the +1 Buy and +3 coins. When another player plays an Attack card, before that card does anything, you may reveal this from your hand. If you do, you set it aside, and at the start of your next turn, you return it to your hand and draw a card. While it is set aside, it is not in play or in your hand, and cannot be further revealed to Attacks. Therefore it will only work on one Attack per round of turns. You can reveal it for an Attack and still play it on your next turn. You can reveal multiple Horse Traders to a single Attack. For example, if another player plays Followers, you could reveal and set aside two Horse Traders from your hand, then gain a Curse but discard no cards, as you would only have three cards in hand at that point. Then on your next turn you would pick up the two Horse Traders and also draw two cards.", 
-        "name": "Pferdehändler", 
-        "untranslated": "extra"
+        "extra": " Wenn du diese Karte in deinem Zug ausspielst, erhältst du zuerst +1 Kauf und +3 coins. Dann musst du 2 Karten aus deiner Hand ablegen. Hast du weniger als 2 Karten auf der Hand, legst du nur so viele wie möglich ab. Spielt ein Mitspieler eine Angriffskarte, darfst du diese Karte aus deiner Hand vorzeigen und dann zur Seite legen. Dann wird der Angriff normal ausgeführt. Du kannst jeden Pferdehändler nur gegen einen Angriff verwenden, da du ihn danach nicht mehr auf der Hand hast. Du darfst mehrere Pferdehändler gegen den selben Angriff zur Seite legen. Zu Beginn deines nächsten Zuges nimmst du alle zur Seite gelegten Pferdehändler wieder auf die Hand und ziehst zusätzlich für jeden dieser Pferdehändler 1 Karte nach.", 
+        "name": "Pferdehändler"
     },
     "Hunting Party": {
         "description": "+1 Karte<br>+1 Aktion<br>Decke deine Handkarten auf. Decke solange Karten von deinem Nachziehstapel auf, bis eine Karte mit anderem Namen als deine Handkarten offen liegt. Nimm diese aufgedeckte Karte und deine Handkarten zurück auf die Hand. Lege die übrigen aufgedeckten Karten ab.", 
-        "extra": "First you draw a card and get +1 Action. Then you reveal your hand, and reveal cards from your deck until revealing one that is not a duplicate of one in your hand. A card is not a duplicate of one in your hand if it does not have the same name as any cards in your hand. If you run out of cards while revealing cards, shuffle your discard pile (but not the revealed cards) and keep revealing cards. If you still do not find one, just discard all of the cards revealed from your deck. If you do find a card not matching any cards in your hand, put it into your hand and discard the other cards revealed from your deck.", 
-        "name": "Treibjagd", 
-        "untranslated": "extra"
+        "extra": "Zuerst ziehst du eine Karte nach und erhältst +1 Aktion. Dann deckst du deine gesamten Handkarten auf und legst diese offen aus. Danach deckst du solange Karten von deinem Nachziehstapel auf, bis du eine Karte aufdeckst, die du nicht auf der (momentan offen ausliegenden) Hand hast. Nimm diese gerade aufgedeckte Karte und deine offen ausliegenden Handkarten zurück auf die Hand. Lege die übrigen aufgedeckten Karten auf deinen Ablagestapel. Kannst du (auch nach dem Mischen deines Ablagestapels) keine Karte aufdecken, von der du nicht bereits eine auf der Hand hast, legst du die aufgedeckten Karten ab und nimmst nur deine Handkarten zurück auf die Hand.", 
+        "name": "Treibjagd"
     },
     "Jester": {
         "description": "+2 Coin<br>Jeder Mitspieler muss die oberste Karte seines Nachziehstapels ablegen. Ist es eine Punktekarte, muss er sich einen Fluch nehmen. Ansonsten muss sich entweder er oder du eine Karte mit gleichem Namen nehmen (Du entscheidest).", 
-        "extra": "Each player with no cards in his deck shuffles his discard pile in order to get a card to discard. If he still has no cards, he does not discard one. For each player who discarded a card, if it is a Victory card, he gains a Curse, and otherwise, you choose: either that player gains a copy of the card, or you do. The gained copies and Curses come from the Supply and are put into the discard piles of the players who gain them. If a card is revealed for which there are no copies in the Supply, no one gains a copy of it. This Attack hits other players in turn order, which can matter when some piles are low. A card with multiple types, one of which is Victory (such as Nobles from Intrigue) is a Victory card.", 
-        "name": "Harlekin", 
-        "untranslated": "extra"
+        "extra": " Du erhältst zunächst +2  coins virtuelles Geld. Dann muss, beginnend mit dem Spieler links von dir, reihum jeder Mitspieler die oberste Karte von seinem Nachziehstapel ablegen. Ist es eine Punktekarte (auch eine kombinierte), so muss er sich einen Fluch nehmen. Ist kein Fluch mehr im Vorrat, nimmt der Spieler keinen. Ist es keine Punktekarte, kannst du wählen: Entweder der Spieler muss sich eine Karte mit gleichem Namen aus dem Vorrat nehmen und auf seinen Ablagestapel legen oder du nimmst dir eine Karte mit gleichem Namen und legst sie auf deinen Ablagestapel. Ist keine Karte mit diesem Namen mehr im Vorrat nimmt keiner von beiden eine solche Karte.", 
+        "name": "Harlekin"
     },
     "Menagerie": {
-        "description": "+1 Aktion<br>Decke deine Handkarten auf. Hast du keine Karte mit gleichem Namen auf der Hand: +3 Karten Ansonsten: +1 Karte", 
-        "extra": "If there are any two or more cards in your hand with the same name, you only draw one card; if there are no matches, you draw three cards. Only the card names matter for this; Copper and Silver are different cards for example, despite both being Treasures. If you have no cards in hand at all after playing Menagerie, then you have no matching cards, and so get +3 Cards.", 
-        "name": "Menagerie", 
-        "untranslated": "extra"
+        "description": "+1 Aktion<br>Decke deine Handkarten auf. Hast du keine Karte mit gleichem Namen auf der Hand: +3 Karten <n> Ansonsten: +1 Karte", 
+        "extra": " Zuerst erhältst du +1 Aktion. Dann deckst du deine Handkarten auf. Hast du nur Karten mit unterschiedlichem Namen auf der Hand, ziehst du 3 Karten nach.  Hast du wenigstens eine Karte mit gleichem Namen auf der Hand (eine Karte doppelt), ziehst du 1 Karte nach. Hast du z.B. nur ein Kupfer und ein Silber auf der Hand, hast du nur Karten mit unterschiedlichem Namen (obwohl beide Geldkarten sind). Du darfst also 3 Karten nachziehen.", 
+        "name": "Menagerie"
     },
     "Princess": {
-        "description": "+1 Buy<line>While this is in play, cards cost 2 Coins less, but not less than 0 Coins.<n><i>(This is not in the Supply.)</i>", 
-        "extra": "This makes all cards cheaper (to a minimum of 0 coins) as long as it is in play. When it leaves play, it stops making cards cheaper. This applies to cards everywhere - cards in the Supply, cards in hand, cards in decks. For example if you played Princess, then Remake, trashing a Copper, you could gain a Silver, as Silver would cost 1 coin while Copper would still cost 0 coins. Using Throne Room (from Dominion) on Princess will not make cards cost less, as there is still only one copy of Princess in play. This is a Prize; see the Additional Rules.", 
-        "name": "Prinzessin", 
-        "untranslated": "description, extra"
+        "description": "+1 Kauf<line>Solange diese Karte im Spiel ist, kosten alle Karten 2 coins weniger, allerdings niemals weniger als 0 coins.<n><i>(Diese Karte gehört nicht zum Vorrat.)</i>", 
+        "extra": " Zuerst erhältst du +1 Kauf. Wenn diese Karte im Spiel ist, kosten alle Karten um 2 coins weniger, niemals jedoch weniger als 0 coins.Dies betrifft alle Karten im Vorrat, in den Nachzieh- und den Ablagestapeln aller Spieler und auch die Handkarten der Spieler. Wenn du mit dem Nachbau ein Kupfer (kostet weiterhin 0 coins) aus deiner Hand entsorgst, kannst du dir dafür z.B. ein Silber nehmen, das nur noch 1 coin kostet. Spielst du die Prinzessin auf einen Thronsaal, sind die Karten trotzdem nur um  2 coins billiger, da die Prinzessin nur einmal im Spiel ist. Diese Karte ist eine Preiskarte (siehe Spielaufbau).", 
+        "name": "Prinzessin"
     },
     "Remake": {
         "description": "Mache dies zweimal: Entsorge eine Karte aus deiner Hand. Dann nimm dir eine Karte, die genau 1 mehr kostet, als die entsorgte Karte.", 
-        "extra": "Trash a card from your hand, and gain a card costing exactly 1 coin more than it; then trash another card from your hand, and gain a card costing exactly 1 coin more than that card. If you have no cards in hand, you do not trash anything or gain anything; if you have only one card in hand, trash it and gain a card costing 1 coin more than it. Gained cards come from the Supply and are put into your discard pile. If there is no card at the exact cost needed, you do not gain a card for that trashed card. For example you could use Remake to trash an Estate, gaining a Silver, then trash a Copper, gaining nothing.", 
-        "name": "Nachbau", 
-        "untranslated": "extra"
+        "extra": " Zuerst entsorgst du eine Karte aus deiner Hand und nimmst dir dafür eine Karte, die genau 1 coin mehr kostet. Dann entsorgst du eine andere Karte aus deiner Hand und nimmst dir wieder eine Karte, die genau 1 coin mehr kostet. Du nimmst die Karten vom Vorrat und legst sie auf deinen Ablagestapel. Ist im Vorrat keine Karte, die genau 1 coin mehr kostet als die entsorgte, nimmst du dir keine Karte.", 
+        "name": "Nachbau"
     },
     "Tournament": {
         "description": "+1 Aktion<br>Du darfst eine Provinz aus deiner Hand ablegen. Wenn du das machst: Nimm dir einen Preis vom Preisstapel oder ein Herzogtum. Lege die neue Karte sofort auf deinen Nachziehstapel. Jeder  Mitspieler darf eine Provinz aus seiner Hand aufdecken. Wenn das keiner macht: +1 Karte, +1 Coin.", 
-        "extra": "First you get +1 Action. Then each player, including you, may reveal a Province card from his hand. Then, if you revealed a Province, discard that card, and you gain a Prize of your choice, or a Duchy, putting whatever card you took on top of your deck. If there were no cards in your deck, it becomes the only card in your deck. There are five Prizes, set out at the start of the game; see Preparation. You can only take a Prize from the Prize pile. You can take any Prize from the Prize pile; you do not have to take the top one. You can take a Duchy instead, whether or not the Prizes have run out. You can opt to take a Duchy even if the Duchy pile is empty, or a Prize even if no Prizes are left; in these cases you gain nothing. After gaining your card or not, if no other player revealed a Province, you draw a card and get +1 coin.", 
-        "name": "Turnier", 
-        "untranslated": "extra"
+        "extra": "Zuerst erhältst du +1 Aktion. Dann darfst du eine Provinz aus deiner Hand auf deinen Ablagestapel legen. Wenn du das machst, musst du dich entscheiden, entweder eine Preiskarte oder ein Herzogtum zu nehmen. Entscheidest du dich für die Preiskarte, suchst du dir eine der Karten vom Preisstapel aus. Entscheidest du dich für das Herzogtum, nimmst du dir ein Herzogtum vom Vorrat. Du kannst dich auch für einen der beiden Stapel entscheiden, wenn dieser leer ist. Ist der Stapel für den du dich entscheidest leer, nimmst du dir keine Karte.<n>Nun dürfen alle deine Mitspieler eine Provinz aus ihrer Hand aufdecken. Deine Mitspieler zeigen die Provinz vor und nehmen sie dann zurück auf ihre Hand. Wenn keiner deiner Mitspieler eine Provinz aufdeckt, erhältst du +1 Karte und +1 coin. Es gibt also 4 mögliche Ergebnisse: 1. Du legst keine Provinz ab und keiner deiner Mitspieler deckt eine Provinz auf: Du erhältst +1 Karte, +1 Aktion und +1 coin. 2. Du legst keine Provinz ab und mindestens einer deiner Mitspieler deckt eine Provinz auf: Du erhältst +1 Aktion. 3. Du legst eine Provinz ab aber keiner deiner Mitspieler deckt eine Provinz auf: Du nimmst dir eine Preiskarte oder ein Herzogtum und erhältst +1 Karte, +1 Aktion und +1 coin. 4. Du legst eine Provinz ab und mindestens einer deiner Mitspieler deckt eine Provinz auf: Du nimmst dir eine Preiskarte oder ein Herzogtum und erhältst +1 Aktion.<n> Du darfst den Preisstapel jederzeit durchsehen.", 
+        "name": "Turnier"
     },
     "Trusty Steed": {
-        "description": "Choose two: +2 Cards; or +2 Actions; or +2 Coins; or gain 4 Silvers and put your deck into your discard pile.<n>(The choices must be different.)<n><i>(This is not in the Supply.)</i>", 
-        "extra": "First choose any two of the four options; then do those options in the order listed. So if you choose both +2 Cards, and the last option, you will draw cards before you gain the Silvers and put your deck into your discard pile. The last option both gains you Silvers and puts your deck into your discard pile. The Silvers come from the Supply; if there are fewer than four left, just gain as many as you can. You do not get to look through your deck as you put it into your discard pile. This is a Prize; see the Additional Rules.", 
-        "name": "Streitross", 
-        "untranslated": "description, extra"
+        "description": "Wähle zwei verschiedene: <n> +2 Karten <n> +2 Aktionen <n> +2 coins <n> Nimm 4 Silber und lege sofort deinen Nachziehstapel ab.<n><i>(Diese Karte gehört nicht zum Vorrat.)</i>", 
+        "extra": " Zuerst wählst du 2 unterschiedliche der 4 Anweisungen auf der Karte. Dann führst du die beiden gewählten Anweisungen in der Reihenfolge auf der Karte aus. Wenn du z.B. +2 Karten und die 4 Silber wählst, ziehst du die 2 Karten nach, bevor du die 4 Silber nimmst und deinen Nachziehstapel ablegst. Sind im Vorrat weniger als 4 Silber nimmst du dir nur die übrigen Silber im Vorrat. Du darfst deinen Nachziehstapel nicht durchsehen, bevor du ihn ablegst. Diese Karte ist eine Preiskarte (siehe Spielaufbau).", 
+        "name": "Streitross"
     },
     "Young Witch": {
-        "description": "+2 Karten<br>Lege 2 Karten aus deiner Hand ab. Jeder Mitspieler darf eine Bannkarte aus seiner Hand aufdecken. Wenn er das nicht macht, muss er sich einen Fluch nehmen.", 
-        "extra": "This card causes there to be an extra pile in the Supply, called the Bane pile; see Preparation. The extra pile is just like other Kingdom card piles - it can be bought, it can be gained via cards like Horn of Plenty, it counts for the end game condition. When you play Young Witch, after you draw 2 cards and discard 2 cards, each other player may reveal a Bane card from his hand; if he does not, he gains a Curse. This attack hits other players in turn order, which matters when the Curse pile is low. Players may still respond to a Young Witch with Reaction cards like Horse Traders or Moat (from Dominion); those happen before Bane cards are revealed. If Secret Chamber (from Intrigue) is the Bane card, first you can reveal it for its Reaction ability, and then, if it's still in your hand, you can reveal it to avoid getting a Curse.", 
-        "name": "Junge Hexe", 
-        "untranslated": "extra"
+        "description": "+2 Karten<br>Lege 2 Karten aus deiner Hand ab. Jeder Mitspieler darf eine Bannkarte aus seiner Hand aufdecken. Wenn er das nicht macht, muss er sich einen Fluch nehmen.",
+        "extra": " Wenn diese Karte für das Spiel ausgewählt wurde, wird ein Bannstapel als 11. Königreichstapel in den Vorrat gelegt (siehe Spielaufbau). Dieser Bannstapel wird behandelt wie die anderen Königreichstapel. Er ist Teil des Vorrats, die Karten können wie üblich gekauft oder genommen werden und der Stapel wird für die Spielendebedingung berücksichtigt. Wenn du die junge Hexe ausspielst, ziehst du zuerst 2 Karten nach, dann musst du 2 Karten aus deiner Hand ablegen. Beginnend mit dem Spieler links von dir darf nun reihum jeder Mitspieler eine Bannkarte aus seiner Hand aufdecken. Wenn er das nicht macht, muss er sich einen Fluch vom Vorrat nehmen. Ist kein Fluch mehr im Vorrat, muss der Spieler keinen nehmen. Die Spieler dürfen wie üblich auch Reaktionskarten (z.B. Pferdehändler) aus ihrer Hand aufdecken. Dies tun die Spieler, bevor sie eine Bannkarte aufdecken. Die Anweisungen auf der Reaktionskarte werden also ausgeführt, bevor der Angriff durch die Bannkarte abgewehrt wird. Ist die Bannkarte eine Reaktionskarte, kann sie zuerst aufgedeckt werden um die übliche Reaktion auszuführen und dann (wenn der Spieler sie dann noch auf der Hand hat) nochmals in ihrer Funktion als Bannkarte.", 
+        "name": "Junge Hexe"
     },
     "Altar": {
         "description": "Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die bis zu 5 Coin kostet.", 
@@ -668,15 +603,13 @@
     },
     "Hermit": {
         "description": "Sieh deinen Ablagestapel durch. Du darfst eine Karte, die keine Geldkarte ist, aus deinem Ablagestapel oder aus deiner Hand entsorgen. Nimm dir eine Karte, die bis zu 3 Coin kostet.<br>Wenn du diese Karte aus dem Spiel ablegst ablegst und in diesem Zug keine Karte gekauft hast, entsorge diese Karte und nimm dir einen Verrückten.", 
-        "extra": "When you play this, look through your discard pile, and then you may choose to trash a card that is not a Treasure, from either your hand or your discard pile. You do not have to trash a card and cannot trash Treasures. A card with multiple types, one of which is Treasure (such as Harem from Intrigue), is a Treasure. After trashing or not, you gain a card costing up to 3 Coins. The card you gain comes from the Supply and is put into your discard pile. Gaining a card is mandatory if it is possible. Then, when you discard Hermit from play - normally, in Clean-up, after playing it in your Action phase - if you did not buy any cards this turn, you trash Hermit and gain a Madman. The Madman comes from the Madman pile, which is not in the Supply, and is put into your discard pile. It does not matter whether or not you gained cards other ways, only whether or not you bought a card. If there are no Madman cards left, you do not gain one. If Hermit is not discarded from play during Clean-up - for example, if you put it on your deck with Scheme (from Hinterlands) - then the ability that trashes it will not trigger.", 
-        "name": "Eremit", 
-        "untranslated": "extra"
+        "extra": "Wenn du den Eremiten ausspielst, siehst du dir zunächst deinen Ablagestapel durch. Dann darfst du eine Karte, die keine Geldkarte ist, aus dem Ablagestapel oder aus deiner Hand entsorgen. Du musst keine Karte entsorgen und du darfst keine Geldkarte entsorgen. Kombinierte Geldkarten, wie z.B. der Harem (Dominion – Die Intrige) sind Geldkarten. Egal ob du eine Karte entsorgt hast oder nicht, musst du dir eine Karte nehmen, die bis zu 3 kostet. Du nimmst diese Karte aus dem Vorrat und legst sie auf deinen Ablagestapel. Du musst eine Karte nehmen, wenn möglich. Du darfst nicht darauf verzichten. Wenn du den Eremiten aus dem Spiel ablegst (normalerweise in der Aufräumphase am Ende der Runde, in der du die Karte ausgespielt hast) und du in diesem Zug keine Karte gekauft hast, entsorge den Eremiten und nimm dir einen Verrückten. Du nimmst den Verrückten vom Stapel neben dem Vorrat und legst ihn auf deinen Ablagestapel. Karten, die du auf andere Weise genommen hast, als sie zu kaufen, haben keinen Einfluss darauf, ob du den Eremiten entsorgst. Ist der Verrückten-Stapel leer, so nimmst du dir keinen. Wird der Eremit in der Aufräumphase nicht regulär abgelegt, sondern z.B. durch das Komplott (Dominion - Hinterland) zurück auf den Nachziehstapel gelegt, entsorgst du den Eremiten nicht und nimmst dir auch keinen Verrückten.", 
+        "name": "Eremit"
     },
     "Hovel": {
         "description": "Wenn du eine Punktekarte kaufst, darfst du diese Hütte entsogen.", 
-        "extra": "This is a Shelter; see Preparation. It is never in the Supply. When you buy a Victory card, if Hovel is in your hand, you may trash the Hovel. A card with multiple types, one of which is Victory, is a Victory card. You do not get anything for trashing Hovel; you just get to get rid of it.", 
-        "name": "Hütte", 
-        "untranslated": "extra"
+        "extra": "Die Hütte ist ein Unterschlupf und eine Reaktionskarte. Die Hütte ist niemals im Vorrat. Wenn du eine Punktekarte kaufst und die Hütte auf der Hand hast, darfst du die Hütte entsorgen. Dies gilt auch, wenn du eine kombinierte Punktekarte kaufst. Du erhältst keine weiteren Vorteile durch das Entsorgen der Hütte. Du wirst nur eine Karte los.",
+        "name": "Hütte"
     },
     "Hunting Grounds": {
         "description": "+4 Karten<br>Wenn du diese Karte entsorgst: Nimm dir ein Herzogtum oder 3 Anwesen.", 
@@ -704,9 +637,8 @@
     },
     "Madman": {
         "description": "+2 Aktionen<br>Lege diese Karte zurück auf den Verrückten-Stapel. Wenn du das machst: +1 Karte pro Karte, die du auf der Hand hast. (Der Verrückten-Stapel ist nicht Teil des Vorrats.)", 
-        "extra": "This card is not in the Supply; it can only be obtained via Hermit. When you play it, you get +2 Actions, return it to the Madman pile if you can (this is not optional), and if you did return it, you draw a card per card in your hand. For example if you had three cards in hand after playing Madman, you would draw three cards. Normally, nothing will prevent you from returning Madman to the Madman pile, but you may fail to due to playing Madman twice via Procession, Throne Room (from Dominion), or King's Court (from Prosperity). So, for example, if you Procession a Madman, you will get +2 Actions, return Madman to the Madman pile, draw a card per card in your hand, get another +2 Actions, fail to return Madman and so not draw cards the second time, fail to trash Madman, and then gain an Action card costing exactly 1 Coin if you can.", 
-        "name": "Verrückter", 
-        "untranslated": "extra"
+        "extra": "Der Verrückte ist nicht Teil des Vorrats. Er kann nur durch die Anweisung auf dem Eremiten genommen werden. Auf eine andere Art kann der Verrückte nicht genommen oder gekauft werden. Wenn du den Verrückten ausspielst, erhältst du +2 Aktionen. Dann legst du den Verrückten normalerweise auf den Verrückten-Stapel zurück und ziehst pro Karte, die du noch auf der Hand hast, eine Karte nach (du verdoppelst also die Anzahl deiner Handkarten). Es kann jedoch vorkommen, dass du den Verrückten nicht zurück legen kannst, weil du den „Anschluss verloren“ hast, z.B. weil du den Verrückten auf eine Prozession oder einen Thronsaal (Dominion - Basisspiel) ausgespielt hast.", 
+        "name": "Verrückter"
     },
     "Marauder": {
         "description": "Nimm dir eine Karte vom Beute-Stapel. Jeder Mitspieler muss sich eine Ruinen-Karte nehmen.", 
@@ -734,15 +666,13 @@
     },
     "Necropolis": {
         "description": "+2 Aktionen", 
-        "extra": "This is a Shelter; see Preparation. It is never in the Supply. It is an Action card; when you play it, you get +2 Actions.", 
-        "name": "Totenstadt", 
-        "untranslated": "extra"
+        "extra": "Diese Karte ist ein Unterschlupf und eine Aktionskarte. Die Totenstadt ist niemals im Vorrat. Wenn du diese Karte ausspielst, erhältst du +2 Aktionen.", 
+        "name": "Totenstadt"
     },
     "Overgrown Estate": {
         "description": "0<*VP*><line>Wenn du diese Karte entsorgst: +1 Karte.", 
-        "extra": "This is a Shelter; see Preparation. It is never in the Supply. It is a Victory card despite being worth 0 Victory. If this is trashed, you draw a card, right then, even in the middle of resolving another card. For example, if you use Altar to trash Overgrown Estate, you first draw a card, then gain a card costing up to 5 Coins. This card does not give you a way to trash itself, it merely does something if you manage to trash it.", 
-        "name": "Verfallenes Anwesen", 
-        "untranslated": "extra"
+        "extra": "Die Totenstadt ist ein Unterschlupf und eine Aktionskarte. Sie ist niemals im Vorrat. Wenn du diese Karte ausspielst, erhältst du +2 Aktionen. Das Verfallene Anwesen ist eine Punktekarte mit dem Wert 0 <*VP*>. Das Verfallene Anwesen ist niemals im Vorrat. Wenn du diese Karte entsorgst, ziehst du sofort eine Karte nach, auch wenn du gerade eine andere Aktionskarte ausführst. Wenn du das Verfallene Anwesen z.B. durch den Altar entsorgst, ziehst du zuerst eine Karte nach und nimmst dir danach eine Karte vom Vorrat. Du darfst das Verfallene Anwesen nicht „freiwillig“ entsorgen, sondern benötigst wie üblich eine andere Karte mit der Anweisung, die dir erlaubt, eine Karte zu entsorgen.", 
+        "name": "Verfallenes Anwesen"
     },
     "Pillage": {
         "description": "Entsorge diese Karte. Jeder Mitspieler, der 5 oder mehr Karten auf der Hand hat, muss seine Handkarten aufdecken. Du wählst von jedem Mitspieler eine Karte aus, die er ablegen muss. Nimm dir 2 Karten vom Beute-Stapel.", 
@@ -835,7 +765,7 @@
         "untranslated": "extra"
     },
     "Adventurer": {
-        "description": "Decke Karten vom Nachziehstapel auf, bis zwei Schatzkarten offenliegen. Nimm die Schatzkarten auf die Hand, lege die übrigen aufgedeckten Karten ab.", 
+        "description": "Decke Karten vom Nachziehstapel auf, bis zwei Schatzkarten offen liegen. Nimm die Schatzkarten auf die Hand, lege die übrigen aufgedeckten Karten ab.", 
         "extra": "Sollte dein Nachziehstapel während des Aufdeckens aufgebraucht werden, mische deinen Ablagestapel. Die bereits aufgedeckten Karten werden nicht mit gemischt, sondern bleiben zunächst offen liegen. Solltest du auch mit Hilfe des neuen Nachziehstapels nicht genügend Geldkarten aufdecken, bekommst du nur diejenigen Geldkarten, die du aufgedeckt hast.", 
         "name": "Abenteurer"
     },
@@ -1435,7 +1365,7 @@
         "name": "Wahrsager"
     },
     "Stonemason": {
-        "description": "Entsorge eine Karte aus deiner Hand. Nimm 2 Karten, die jeweils weniger als die entsorgte Karte kosten.     Wenn du diese Karte kaufst, darfst du mehr dafür zahlen. Falls du das tust, nimmst du 2 Aktionskarten,  die jeweils so viel kosten, wie du zusätzlich bezahlt hast.", 
+        "description": "Entsorge eine Karte aus deiner Hand. Nimm 2 Karten, die jeweils weniger als die entsorgte Karte kosten. <line> Wenn du diese Karte kaufst, darfst du mehr dafür zahlen. Falls du das tust, nimmst du 2 Aktionskarten,  die jeweils so viel kosten, wie du zusätzlich bezahlt hast.", 
         "extra": " Wenn du die Karte STEINMETZ  kaufst, darfst du mehr dafür bezahlen.  Wenn du das tust, nimmst du dir zwei Aktionskarten, die beide jeweils genau so viel  kosten, wie du überzahlt hast. Du kannst dir zweimal  die gleiche oder zwei verschiedene  Karten nehmen. Wenn du zum Beispiel den  STEINMETZ für 6 Coin kaufst, könntest du dir zwei HEROLDE nehmen. Die Aktionskarten stammen aus dem Vorrat und werden auf deinen Ablagestapel gelegt. Sollten keine Karten mit den entsprechenden Kosten im Vorrat sein, bekommst du keine. Wenn du mit einem TRANK (Die Alchemisten) überzahlst, bekommst du Karten im Wert des TRANKS. Karten, die mehreren Kartentypen angehören, von denen einer AKTION ist (wie die GROSSE HALLE aus Die Intrige), sind Aktionskarten. Wenn du beschließt, nicht mehr als die normalen Kosten zu zahlen, bekommst du keine Karten. Es ist nicht möglich, dann Aktionskarten zu nehmen, die 0 Coin kosten. Wenn du diese Karte spielst, entsorgst du eine Karte aus deiner Hand und nimmst dir zwei Karten, die jeweils weniger kosten als die Karte, die du entsorgt hast. Wenn du keine Karte zum Entsorgen mehr auf der Hand hast, bekommst du keine Karten. Du kannst dir zweimal die gleiche oder zwei verschiedene Karten aus dem Vorrat nehmen. Diese werden auf deinen Ablagestapel gelegt. Falls es keine preiswerteren Karten im Vorrat gibt (weil du beispielsweise ein Kupfer entsorgst), bekommst du keine Karten. Wenn es im Vorrat nur noch eine einzige Karte gibt, die preiswerter ist als die entsorgte Karte, nimmst du dir diese. Du nimmst dir die Karten einzeln nacheinander; das kann bei Karten eine Rolle spielen, die beim nehmen eine Auswirkung haben (wie das GASTHAUS aus Hinterland).", 
         "name": "Steinmetz"
     },
@@ -1445,7 +1375,7 @@
         "name": "Steuereintreiber"
     },
     "Border Village": {
-        "description": "+1 Karte<br>+2 Aktionen<br>Wenn du das Grenzdorf nimmst, nimm dir eine Karte, die weniger kostet als das Grenzdorf.", 
+        "description": "+1 Karte<br>+2 Aktionen<line>Wenn du das Grenzdorf nimmst, nimm dir eine Karte, die weniger kostet als das Grenzdorf.", 
         "extra": "When you play this, you draw a card and can play two more Actions this turn. When you gain this, you also gain a card from the Supply that costs less than Border Village. Normally that will be a card costing up to 5 coins, but if Border Village costs less than normal, such as due to Highway, then the card you gain will have a lower maximum cost. You only gain a card when you gain Border Village, not when you play it. You gain a card whether you gained Border Village due to buying it, or gained it some other way.", 
         "name": "Grenzdorf", 
         "untranslated": "extra"
@@ -2106,7 +2036,7 @@
     },
     "Treasure Map": {
         "description": "Entsorge diese und eine weitere Schatzkarte aus deiner Hand. Wenn du das machst: Nimm dir 4 Gold und lege diese verdeckt auf deinen Nachziehstapel.", 
-        "extra": "Nur wenn du zusätzlich zu der ausgespielten SCHATZKARTE noch eine  weitere auf der Hand hast und beide entsorgst, erhältst du 4 Gold. Sollten weniger als  4 Gold im Vorrat sein, nimmst du dir soviele Goldkarten wie vorhanden sind. Lege alle  auf diese Weise erhaltenen Goldkarten verdeckt auf den Nachziehstapel. Solltest du nur  eine SCHATZKARTE auf der Hand haben und diese ausspielen, musst du diese Karte  entsorgen, erhältst aber nichts dafür.", 
+        "extra": "Nur wenn du zusätzlich zu der ausgespielten SCHATZKARTE noch eine  weitere auf der Hand hast und beide entsorgst, erhältst du 4 Gold. Sollten weniger als  4 Gold im Vorrat sein, nimmst du dir so viele Goldkarten wie vorhanden sind. Lege alle  auf diese Weise erhaltenen Goldkarten verdeckt auf den Nachziehstapel. Solltest du nur  eine SCHATZKARTE auf der Hand haben und diese ausspielen, musst du diese Karte  entsorgen, erhältst aber nichts dafür.", 
         "name": "Schatzkarte"
     },
     "Treasury": {
@@ -2125,40 +2055,34 @@
         "name": "Werft"
     },
     "adventures events": {
-        "description": "<justify>Events are not Kingdom cards. In a player's Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.", 
-        "extra": "Events are special on-buy effects not attached to cards. Players can buy Events during their Buy phase to trigger whatever the effect of the Event is, as an alternative to (or in addition to) buying cards from the supply.<n>Events are not Kingdom cards; including one or more Events in a game does not count toward the 10 Kingdom card piles the supply includes. In fact, Events are not considered \"cards\" at all. Any text referring to a \"card\" (such as instructions to \"name a card\", or cost reducers changing the cost of cards) does not apply to Events. However, for reference, the Event effects and costs are printed on cards in a landscape orientation with silver frames.<n>Any number of Events may be used in a game, but the recommendation is to not use more than two total Events and Landmarks. When choosing a random Kingdom, the Events may be shuffled into the randomizer deck; any Events that are dealt once 10 Kingdom cards have also been dealt will be included in the game.", 
-        "name": "Ereignisse Abenteuer", 
-        "untranslated": "description, extra"
+        "description": "<justify>Ereignisse sind keine Königreichkarten. In der Kaufphase eines Spielers kann der Spieler, wenn er auch eine Karte kaufen könnte, stattdessen ein Ereignis erwerben. Ein Ereignis zu erwerben bedeutet, die Kosten, die auf dem Ereignis angegeben sind, zu bezahlen und dann den Effekt des Ereignis' auszuführen. Das Ereignis bleibt dabei einfach auf dem Tisch, der Spieler nimmt es sich nicht; es ist in keinster Weise möglich, dass ein Spieler ein Ereignis nimmt oder eines in seinem Deck hat. Ein Ereignis zu erwerben benötigt einen Kauf, normalerweise kann sich ein Spieler entweder eine Karte kaufen oder ein Event erwerben. Hat ein Spieler zwei Käufe, weil er beispielsweise einen WILDHÜTER gespielt hat, so kann er sich zwei Karten kaufen, oder er erwirbt zwei Ereignisse, oder er kauft sich eine Karte und erwirbt ein Ereignis (in beliebiger Reihenfolge). Das selbe Ereignis kann in derselben Runde mehrfach erworben werden, falls der Spieler genügend Käufe verfügbar hat. Manche Ereignisse geben +Käufe und erlauben somit dem Spieler, später weitere Karten oder Ereignisse zu kaufen. Spieler können in einem Zug keine weiteren Schatzkarten spielen nachdem sie ein Ereignis erworben haben. Der Erwerb eines Ereignisses gilt nicht als Kaufen einer Karte. So findet z.B. die SUMPFHEXE keine Anwendung beim Erwerb eines Ereignisses. Die Kosten eines Ereignisses werden auch nicht von Karten wie dem BRÜCKENTROLL, die die Kosten von Karten betreffen, beeinflusst.", 
+        "extra": "Ereignisse sind spezielle \"Wenn du diese Karte kaufst\"-Effekte, die nicht auf einer Karte stehen. Spieler können Ereignisse während ihrer Kaufphase erwerben um den jeweiligen Effekt des Ereignis' auszulösen. Ereignisse sind keine Königreichkarten; sie zählen nicht zu den 10 Königreichstäpeln die den Vorrat ausmachen. Tatsächlich sind Ereignisse in keinster Weise \"Karten\". Jeder Text, der sich auf eine \"Karte\" bezieht (wie z.B. \"Nenne eine Karte\" oder Karten, die die Kosten aller Karten senken) wird nicht auf Ereignisse angewandt. Der Effekt und die Kosten eines Ereignis' sind im Querformat auf Karten mit silberner Umrandung gedruckt. <n> Im Prinzip können beliebig viele Ereignisse in einem Spiel verwendet werden. Es ist aber empfohlen, nicht mehr als zwei Ereignisse und Wahrzeichen gemeinsam zu verwenden. Beim Erstellen eines zufälligen Königreiches können die Ereignisse mit in die Platzhalterkarten gemischt werden, jedes Ereignis, dass vor den 10 Königreichkarten gezogen wird, wird im Spiel verwendet.", 
+        "name": "Ereignisse Abenteuer"
     },
     "Page -> Champion": {
-        "description": "<justify>Page is exchanged for Treasure Hunter, which is exchanged for Warrior, which is exchanged for Hero, which is exchanged for Champion.<n><left><u>Page</u>: +1 Card; +1 Action<br><u>Treasure Hunter</u>: +1 Action; +1 Coin; Gain a Silver per card the player to your right gained in his last turn.<br><u>Warrior</u>: +2 Cards; For each Traveller you have in play (including this), each other player discards the top card of his deck and trashes it if it costs 3 Coins or 4 Coins.<br><u>Hero</u>: +2 Coins; Gain a Treasure.<br><u>Champion</u>: +1 Action; For the rest of the game, when another player plays an Attack, it doesn't affect you, and when you play an Action, +1 Action. (This stays in play. <i>This is not in the Supply.</i>)", 
-        "extra": "Page is a Kingdom card that is a Traveller. These cards have an arrow over the text box to remind players of their ability to upgrade into another card. Page is exchanged for Treasure Hunter, which is exchanged for Warrior, which is exchanged for Hero, which is exchanged for Champion. Champion is not a Traveller; it cannot be exchanged for anything. Page can be bought or otherwise gained when being used in a game, but the other cards cannot, they are not in the Supply. When a non-Supply pile is empty, that does not count as an empty pile for the game ending condition or for City (from Prosperity).<n><n>When a player discards a Traveller from play, they may exchange it for the card indicated; they return the card being exchanged to its pile, takes the card they are exchanging it for, and puts that card into their discard pile. Exchanging is not trashing or gaining, and so does not trigger abilities like Travelling Fair's. It is optional. It only happens when the card is discarded from play; discarding it from hand, such as due to not playing it, will not trigger it. It only happens if the card being exchanged for has any copies available. If multiple cards do something when discarded from play, the player picks the order.", 
-        "name": "Page → Champion", 
-        "untranslated": "description, extra"
+        "description": "<justify>Page wird in einen Schatzsucher eingetauscht, welcher in einen Krieger eingetauscht wird, welcher in einen Helden eingetauscht wird, welcher in einen Champion eingetauscht wird.<n><left><u>Page</u>: +1 Karte; +1 Aktion<br><u>Schatzsucher</u>: +1 Aktion; +1 Coin; Nimm dir pro Karte, die dein rechter Mitspieler in seinem letzten Zug genommen hat, ein Silber.<br><u>Krieger</u>: +2 Karten;Für jeden Reisenden (inkl. diesem), den du im Spiel hast, müssen alle Mitspieler die oberste Karte ihres Nachziehstapels ablegen und sie entsorgen, wenn sie 3 coins oder 4 coins kostet.<br><u>Held</u>: +2 Coins; Nimm dir eine Geldkarte.<br><u>Champion</u>: +1 Aktion; Immer wenn ein Mitspieler eine Angriffskarte spielt, bist du davon nicht betroffen. Immer wenn du eine Aktionskarte spielst: <br> +1 Aktion <br><i>(Diese Karte bleibt bis zum Spielende im Spiel.)</i>)", 
+        "extra": "Page ist ein Reisender. Diese Karten sind durch einen hellgrauen Pfeil im Hintergrund des Anweisungstextes gekennzeichnet. Die Besonderheit dieser Karten ist, dass sie in höherwertige Karten eingetauscht werden können. Die ausgetauschte Karte wird zurück auf ihren Stapel gelegt. PAGE gehört zum Vorrat und kann wie jede andere Königreichkarte gekauft und genommen werden. Wird PAGE im Spiel verwendet, werden die zum Eintauschen nötigen Karten auf separate Stapel neben dem Vorrat bereit gelegt. Diese Eintausch-Karten sind mit einem kleinen Sternchen gekennzeichnet, jeweils 5x im Spiel enthalten und gehören nicht zum Vorrat. Außerdem können sie nur durch das Eintauschen von entsprechenden Reisenden erworben, nicht aber gekauft oder anderweitig genommen werden. Wird ein Stapel Eintausch-Karten im Spielverlauf leer, gilt dieser nicht als einer der drei leeren Vorratsstapel, die das Spielende herbeiführen.<n> Um eine Karte einzutauschen, muss sie sich im Spiel befinden. Der Spieler darf in seiner Aufräumphase die Karte zurück auf ihren Stapel legen, bekommt die nächst höherwertige Karte vom Stapel und legt diese ab. Ist der entsprechende Stapel leer, kann die Karte nicht eingetauscht werden. Die Karte CHAMPION kann nicht eingetauscht werden. Eine Karte, die eingetauscht und damit auf ihren Stapel zurückgelegt wird, gilt nicht als entsorgt. Auch die durch das Eintauschen genommene Karte gilt nicht als genommen. Das ist wichtig für Anweisungen auf anderen Karten, die sich auf \"Nehmen\" und \"Entsorgen\" beziehen.", 
+        "name": "Page → Champion"
     },
     "Peasant -> Teacher": {
-        "description": "<justify>Peasant is exchanged for Soldier, which is exchanged for Fugitive, which is exchanged for Disciple, which is exchanged for Teacher.<n><left><u>Peasant</u>: +1 Buy; +1 Coin<br><u>Soldier</u>: +2 Coins; +1 Coin per other Attack you have in play. Each other player with 4 or more cards in hand discards a card.<br><u>Fugitive</u>: +2 Cards; +1 Action; Discard a card.<br><u>Disciple</u>: You may play an Action card from your hand twice. Gain a copy of it.<br><u>Teacher</u>: Put this on your Tavern mat. At the start of your turn, you may call this, to move your +1 Card, +1 Action, +1 Buy, or +1 Coin token to an Action Supply pile you have no tokens on (when you play a card from that pile, you first get that bonus). <i>(This is not in the Supply.)</i>", 
-        "extra": "Peasant is a Kingdom card that is a Traveller. These cards have an arrow over the text box to remind players of their ability to upgrade into another card. Peasant is exchanged for Soldier, which is exchanged for Fugitive, which is exchanged for Disciple, which is exchanged for Teacher. Teacher is not a Traveller; it cannot be exchanged for anything. Peasant can be bought or otherwise gained when being used in a game, but the other cards cannot, they are not in the Supply. When a non-Supply pile is empty, that does not count as an empty pile for the game ending condition or for City (from Prosperity).<n><n>When a player discards a Traveller from play, they may exchange it for the card indicated; they return the card being exchanged to its pile, takes the card they are exchanging it for, and puts that card into their discard pile. Exchanging is not trashing or gaining, and so does not trigger abilities like Travelling Fair's. It is optional. It only happens when the card is discarded from play; discarding it from hand, such as due to not playing it, will not trigger it. It only happens if the card being exchanged for has any copies available. If multiple cards do something when discarded from play, the player picks the order.", 
-        "name": "Kleinbauer → Lehrer", 
-        "untranslated": "description, extra"
+        "description": "<justify>Kleinbauer wird in einen Soldaten eingetauscht, welcher in einen Flüchtling eingetauscht wird, welcher in einen Schüler eingetauscht wird, welcher in einen Lehrer eingetauscht wird.<n><left><u>Kleinbauer</u>: +1 Kauf; +1 Coin<br><u>Soldat</u>: +2 Coins; +1 Coin pro anderer Angriffskarte, die du im Spiel hast. Jeder Mitspieler mit 4 oder mehr Handkarten legt eine Handkarte ab.<br><u>Flüchtling</u>: +2 Karten; +1 Aktion; Lege eine Handkarte ab.<br><u>Schüler</u>: Du darfst eine Aktionskarte zweimal ausspielen. Nimm dir eine Karte mit gleichem Namen.<br><u>Lehrer</u>: Lege diese Karte auf dein Wirtshaustableau. Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust, darfst du deinen +1 Karte-, +1 Aktion-, +1 Kauf- oder +1 Coin- -Marker auf einen Aktions-Vorratsstapel legen, auf dem keiner deiner Marker liegt. (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst den Bonus des Markers.)", 
+        "extra": "Kleinbauer ist ein Reisender. Diese Karten sind durch einen hellgrauen Pfeil im Hintergrund des Anweisungstextes gekennzeichnet. Die Besonderheit dieser Karten ist, dass sie in höherwertige Karten eingetauscht werden können. Die ausgetauschte Karte wird zurück auf ihren Stapel gelegt. KLEINBAUER gehört zum Vorrat und kann wie jede andere Königreichkarte gekauft und genommen werden. Wird KLEINBAUER im Spiel verwendet, werden die zum Eintauschen nötigen Karten auf separate Stapel neben dem Vorrat bereit gelegt. Diese Eintausch-Karten sind mit einem kleinen Sternchen gekennzeichnet, jeweils 5x im Spiel enthalten und gehören nicht zum Vorrat. Außerdem können sie nur durch das Eintauschen von entsprechenden Reisenden erworben, nicht aber gekauft oder anderweitig genommen werden. Wird ein Stapel Eintausch-Karten im Spielverlauf leer, gilt dieser nicht als einer der drei leeren Vorratsstapel, die das Spielende herbeiführen.<n> Um eine Karte einzutauschen, muss sie sich im Spiel befinden. Der Spieler darf in seiner Aufräumphase die Karte zurück auf ihren Stapel legen, bekommt die nächst höherwertige Karte vom Stapel und legt diese ab. Ist der entsprechende Stapel leer, kann die Karte nicht eingetauscht werden. Die Karte LEHRER kann nicht eingetauscht werden. Eine Karte, die eingetauscht und damit auf ihren Stapel zurückgelegt wird, gilt nicht als entsorgt. Auch die durch das Eintauschen genommene Karte gilt nicht als genommen. Das ist wichtig für Anweisungen auf anderen Karten, die sich auf \"Nehmen\" und \"Entsorgen\" beziehen.", 
+        "name": "Kleinbauer → Lehrer"
     },
-    "Tournament and Prizes": {
-        "description": "+1 Action<n>Each player may reveal a Province from his hand. If you do, discard it and gain a Prize (from the Prize pile) or a Duchy, putting it on top of your deck. If no-one else does, +1 Card +1 Coin.<n><justify>Prizes: <u>Bag of Gold</u>, <u>Diadem</u>, <u>Followers</u>, <u>Princess</u>, <u>Trusty Steed</u>", 
-        "extra": " First you get +1 Action. Then each player, including you, may reveal a Province card from his hand. Then, if you revealed a Province, discard that card, and you gain a Prize of your choice, or a Duchy, putting whatever card you took on top of your deck. If there were no cards in your deck, it becomes the only card in your deck. There are five Prizes, set out at the start of the game; see Preparation. You can only take a Prize from the Prize pile. You can take any Prize from the Prize pile; you do not have to take the top one. You can take a Duchy instead, whether or not the Prizes have run out. You can opt to take a Duchy even if the Duchy pile is empty, or a Prize even if no Prizes are left; in these cases you gain nothing. After gaining your card or not, if no other player revealed a Province, you draw a card and get +1 coin. ", 
-        "name": "Turnier und Preise", 
-        "untranslated": "description, extra"
+    "Turnier und Preise": {
+        "description": "+1 Aktion<br>Du darfst eine Provinz aus deiner Hand ablegen. Wenn du das machst: Nimm dir einen Preis vom Preisstapel oder ein Herzogtum. Lege die neue Karte sofort auf deinen Nachziehstapel. Jeder  Mitspieler darf eine Provinz aus seiner Hand aufdecken. Wenn das keiner macht: +1 Karte, +1 Coin.<n><justify>Preise: <u>Ein Sack voll Gold</u>, <u>Diadem</u>, <u>Gefolge</u>, <u>Prinzessin</u>, <u>Streitross</u>", 
+        "extra": "Beim Ausspielen eines Turniers erhältst du +1 Aktion. Dann darfst du eine Provinz aus deiner Hand auf deinen Ablagestapel legen. Wenn du das machst, musst du dich entscheiden, entweder eine Preiskarte oder ein Herzogtum zu nehmen. Entscheidest du dich für die Preiskarte, suchst du dir eine der Karten vom Preisstapel aus. Entscheidest du dich für das Herzogtum, nimmst du dir ein Herzogtum vom Vorrat. Du kannst dich auch für einen der beiden Stapel entscheiden, wenn dieser leer ist. Ist der Stapel für den du dich entscheidest leer, nimmst du dir keine Karte.<n>Nun dürfen alle deine Mitspieler eine Provinz aus ihrer Hand aufdecken. Deine Mitspieler zeigen die Provinz vor und nehmen sie dann zurück auf ihre Hand. Wenn keiner deiner Mitspieler eine Provinz aufdeckt, erhältst du +1 Karte und +1 coin. Es gibt also 4 mögliche Ergebnisse: 1. Du legst keine Provinz ab und keiner deiner Mitspieler deckt eine Provinz auf: Du erhältst +1 Karte, +1 Aktion und +1 coin. 2. Du legst keine Provinz ab und mindestens einer deiner Mitspieler deckt eine Provinz auf: Du erhältst +1 Aktion. 3. Du legst eine Provinz ab aber keiner deiner Mitspieler deckt eine Provinz auf: Du nimmst dir eine Preiskarte oder ein Herzogtum und erhältst +1 Karte, +1 Aktion und +1 coin. 4. Du legst eine Provinz ab und mindestens einer deiner Mitspieler deckt eine Provinz auf: Du nimmst dir eine Preiskarte oder ein Herzogtum und erhältst +1 Aktion.<n> Du darfst den Preisstapel jederzeit durchsehen.", 
+        "name": "Turnier und Preise"
     },
-    "Hermit - Madman": {
-        "description": "<justify><u>Hermit</u>: When you play this, look through your discard pile, and then you may choose to trash a card that is not a Treasure, from either your hand or your discard pile. You do not have to trash a card and cannot trash Treasures. A card with multiple types, one of which is Treasure (such as Harem from Intrigue), is a Treasure. After trashing or not, you gain a card costing up to 3 Coins. The card you gain comes from the Supply and is put into your discard pile. Gaining a card is mandatory if it is possible. Then, when you discard Hermit from play - normally, in Clean-up, after playing it in your Action phase - if you did not buy any cards this turn, you trash Hermit and gain a Madman. It does not matter whether or not you gained cards other ways, only whether or not you bought a card. If there are no Madman cards left, you do not gain one. If Hermit is not discarded from play during Clean-up - for example, if you put it on your deck with Scheme (from Hinterlands) - then the ability that trashes it will not trigger.", 
-        "extra": " <u>Madman</u>: This card is not in the Supply; it can only be obtained via Hermit. When you play it, you get +2 Actions, return it to the Madman pile if you can (this is not optional), and if you did return it, you draw a card per card in your hand. For example if you had three cards in hand after playing Madman, you would draw three cards. Normally, nothing will prevent you from returning Madman to the Madman pile, but you may fail to due to playing Madman twice via Procession, Throne Room (from Dominion), or King's Court (from Prosperity). So, for example, if you Procession a Madman, you will get +2 Actions, return Madman to the Madman pile, draw a card per card in your hand, get another +2 Actions, fail to return Madman and so not draw cards the second time, fail to trash Madman, and then gain an Action card costing exactly 1 Coin if you can. ", 
-        "name": "Eremit / Verrückter", 
-        "untranslated": "description, extra"
+    "Eremit - Verrückter": {
+        "description": "<justify>Wird der Eremit im Spiel verwendet, so wird auch der Verrückten-Stapel benötigt. Der Verrückten-Stapel wird neben dem Vorrat bereit gelegt. Die Karten vom Verrückten-Stapel können nur durch die Anweisung auf dem Eremiten genommen werden. Auf andere Weise können keine Karten vom Verrückten-Stapel gekauft oder genommen werden. Der Botschafter (Dominion - Seaside) darf keine Karten auf den Verrückten-Stapel zurück legen. Der Verrückten-Stapel wird für die Spielende-Bedingung nicht beachtet.<u>Eremit</u>: Sieh deinen Ablagestapel durch. Du darfst eine Karte, die keine Geldkarte ist, aus deinem Ablagestapel oder aus deiner Hand entsorgen. Nimm dir eine Karte, die bis zu 3 Coin kostet.<br>Wenn du diese Karte aus dem Spiel ablegst ablegst und in diesem Zug keine Karte gekauft hast, entsorge diese Karte und nimm dir einen Verrückten. <u>Verrückter</u>:+2 Aktionen<br>Lege diese Karte zurück auf den Verrückten-Stapel. Wenn du das machst: +1 Karte pro Karte, die du auf der Hand hast. (Der Verrückten-Stapel ist nicht Teil des Vorrats.)",
+        "extra": "Wenn du den Eremiten ausspielst, siehst du dir zunächst deinen Ablagestapel durch. Dann darfst du eine Karte, die keine Geldkarte ist, aus dem Ablagestapel oder aus deiner Hand entsorgen. Du musst keine Karte entsorgen und du darfst keine Geldkarte entsorgen. Kombinierte Geldkarten, wie z.B. der Harem (Dominion – Die Intrige) sind Geldkarten. Egal ob du eine Karte entsorgt hast oder nicht, musst du dir eine Karte nehmen, die bis zu 3 kostet. Du nimmst diese Karte aus dem Vorrat und legst sie auf deinen Ablagestapel. Du musst eine Karte nehmen, wenn möglich. Du darfst nicht darauf verzichten. Wenn du den Eremiten aus dem Spiel ablegst (normalerweise in der Aufräumphase am Ende der Runde, in der du die Karte ausgespielt hast) und du in diesem Zug keine Karte gekauft hast, entsorge den Eremiten und nimm dir einen Verrückten. Du nimmst den Verrückten vom Stapel neben dem Vorrat und legst ihn auf deinen Ablagestapel. Karten, die du auf andere Weise genommen hast, als sie zu kaufen, haben keinen Einfluss darauf, ob du den Eremiten entsorgst. Ist der Verrückten-Stapel leer, so nimmst du dir keinen. Wird der Eremit in der Aufräumphase nicht regulär abgelegt, sondern z.B. durch das Komplott (Dominion - Hinterland) zurück auf den Nachziehstapel gelegt, entsorgst du den Eremiten nicht und nimmst dir auch keinen Verrückten. Der Verrückte ist nicht Teil des Vorrats. Er kann nur durch die Anweisung auf dem Eremiten genommen werden. Auf eine andere Art kann der Verrückte nicht genommen oder gekauft werden. Wenn du den Verrückten ausspielst, erhältst du +2 Aktionen. Dann legst du den Verrückten normalerweise auf den Verrückten-Stapel zurück und ziehst pro Karte, die du noch auf der Hand hast, eine Karte nach (du verdoppelst also die Anzahl deiner Handkarten). Es kann jedoch vorkommen, dass du den Verrückten nicht zurück legen kannst, weil du den „Anschluss verloren“ hast, z.B. weil du den Verrückten auf eine Prozession oder einen Thronsaal (Dominion - Basisspiel) ausgespielt hast.", 
+        "name": "Eremit / Verrückter"
     },
     "Shelters": {
-        "description": "<left><u>Hovel</u>: When you buy a Victory card, you may trash this from your hand.<br><u>Necropolis</u>: +2 Actions<br><u>Overgrown Estate</u>: 0 <VP>; when you trash this, +1 Card.", 
-        "extra": " See Preparation. A shelter is never in the supply. <u>Hovel</u>: When you buy a Victory card, if Hovel is in your hand, you may trash the Hovel. A card with multiple types, one of which is Victory, is a Victory card. You do not get anything for trashing Hovel; you just get to get rid of it. <u>Overgrown Estate</u>: It is a Victory card despite being worth 0<VP>. If this is trashed, you draw a card, right then, even in the middle of resolving another card. For example, if you use Altar to trash Overgrown Estate, you first draw a card, then gain a card costing up to 5 Coins. This card does not give you a way to trash itself, it merely does something if you manage to trash it. <u>Necropolis</u>: This is an Action card; when you play it, you get +2 Actions. ", 
-        "name": "Unterschlupfe", 
-        "untranslated": "description, extra"
+        "description": "<justify> Wird ausschließlich mit Königreichkarten aus Dark Ages gespielt, so erhalten die Spieler zu Beginn anstatt der üblichen 3 Anwesen 1 Hütte, 1 Totenstadt und 1 Verfallenes Anwesen. Der Kartensatz besteht also zu Spielbeginn aus 7 Kupfer und je einer der 3 unterschiedlichen Unterschlupf-Karten. Im Vorrat liegen dann alle 12 Anwesen (bzw. 8 Anwesen bei 2 Spielern). Wird mit einer Mischung von Dark Ages und anderen Königreichkarten gespielt, einigen sich die Spieler darauf, ob sie die Unterschlupf-Karten verwenden wollen oder wie bisher mit Anwesen starten. Um zufällig zu bestimmen, ob die Unterschlupf-Karten verwendet werden, mischt ein Spieler die für dieses Spiel verwendeten 10 Platzhalterkarten und deckt die oberste auf. Ist die aufgedeckte eine Karte aus Dark Ages, so werden die Unterschlupfkarten verwendet. Ansonsten wird der Startkartenstapel aus 7 Kupfer und 3 Anwesen zusammengestellt, wie in der Grundregel beschrieben. Unterschlupfkarten haben keinen Stapel (weder im Vorrat noch außerhalb des Vorrats), sie können niemals gekauft werden. Der Botschafter (Dominion - Seaside) darf keine Unterschlupf-Karten zurücklegen. <left><u>Hütte</u>: Wenn du eine Punktekarte kaufst, darfst du diese Hütte entsogen.<br><u>Totenstadt</u>: +2 Aktionen<br><u>Verfallenes Anwesen</u>:0<*VP*>Wenn du diese Karte entsorgst: +1 Karte.", 
+        "extra": "Die Hütte ist eine Reaktionskarte. Die Hütte ist niemals im Vorrat. Wenn du eine Punktekarte kaufst und die Hütte auf der Hand hast, darfst du die Hütte entsorgen. Dies gilt auch, wenn du eine kombinierte Punktekarte kaufst. Du erhältst keine weiteren Vorteile durch das Entsorgen der Hütte. Du wirst nur eine Karte los. Die Totenstadt ist eine Aktionskarte. Sie ist niemals im Vorrat. Wenn du diese Karte ausspielst, erhältst du +2 Aktionen. Das Verfallene Anwesen ist eine Punktekarte mit dem Wert 0 <*VP*>. Das Verfallene Anwesen ist niemals im Vorrat. Wenn du diese Karte entsorgst, ziehst du sofort eine Karte nach, auch wenn du gerade eine andere Aktionskarte ausführst. Wenn du das Verfallene Anwesen z.B. durch den Altar entsorgst, ziehst du zuerst eine Karte nach und nimmst dir danach eine Karte vom Vorrat. Du darfst das Verfallene Anwesen nicht „freiwillig“ entsorgen, sondern benötigst wie üblich eine andere Karte mit der Anweisung, die dir erlaubt, eine Karte zu entsorgen.", 
+        "name": "Unterschlüpfe"
     },
     "Urchin - Mercenary": {
         "description": "<justify><u>Urchin</u>: When you play this, you draw a card and get +1 Action, then each other player discards down to 4 cards in hand. Players who already have 4 or fewer cards in hand do not do anything. While Urchin is in play, when you play another Attack card, before resolving it, you may trash the Urchin. If you do, you gain a Mercenary. If there are no Mercenaries left you do not gain one. If you play the same Urchin twice in one turn, such as via Procession, that does not let you trash it for a Mercenary. If you play two different Urchins however, playing the second one will let you trash the first one.", 
