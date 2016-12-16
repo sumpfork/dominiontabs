@@ -232,9 +232,10 @@ class DividerDrawer(object):
                               fontsize_multiplier,
                               height_percent,
                               text_fontsize_multiplier=None):
-            replace = '<img src="{fpath}" width={width} height="{height_percent}%" valign="middle" />&thinsp;'
+            replace_template = '<img src="{fpath}" width={width} height="{height_percent}%" valign="middle" />&thinsp;'
             offset = 0
             for match in re.finditer(tag_pattern, text):
+                replace = replace_template
                 tag = match.group(0)
                 fname = re.sub(tag_pattern, fname_replace, tag)
                 if text_fontsize_multiplier is not None:
