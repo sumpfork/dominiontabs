@@ -543,7 +543,7 @@ class CardSorter(object):
             self.sort_key = self.by_cost_sort_key
         else:
             self.sort_key = self.by_expansion_sort_key
-        
+
         baseOrder = ['Copper', 'Silver', 'Gold', 'Platinum', 'Potion',
                      'Curse', 'Estate', 'Duchy', 'Province', 'Colony',
                      'Trash']
@@ -555,10 +555,10 @@ class CardSorter(object):
         # now pick up those that have not been specified
         for tag in baseCards:
             self.baseCards.append(baseCards[tag])
-                
+
     # When sorting cards, want to always put "base" cards after all
-    # kingdom cards, and order the base cards in a particular order 
-    # (ie, all normal treasures by worth, then potion, then all 
+    # kingdom cards, and order the base cards in a particular order
+    # (ie, all normal treasures by worth, then potion, then all
     # normal VP cards by worth, then Trash)
     def baseIndex(self, name):
         try:
@@ -860,7 +860,7 @@ def filter_sort_cards(cards, options):
     # Set up the card sorter
     cardSorter = CardSorter(
         options.order,
-        {card.card_tag:card.name for card in cards if card.cardset_tag.lower() == 'base'})
+        {card.card_tag: card.name for card in cards if card.cardset_tag.lower() == 'base'})
     if options.base_cards_with_expansion:
         cards = [card for card in cards if card.cardset_tag.lower() != 'base']
     else:
