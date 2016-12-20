@@ -48,7 +48,7 @@ class DividerDrawer(object):
         # then make sure that we have at least one for each type
         for fonttype in self.font_mapping:
             if not len(self.font_mapping[fonttype]):
-                print >> sys.stderr, ("Warning, Minion Pro ttf file for {} missing from domdiv/fonts!",
+                print >> sys.stderr, ("Warning, Minion Pro ttf file for {} missing from domdiv/fonts!"
                                       " Falling back on Times font for everything.").format(fonttype)
                 self.font_mapping = {'Regular': 'Times-Roman',
                                      'Bold': 'Times-Bold',
