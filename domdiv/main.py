@@ -544,13 +544,22 @@ class CardSorter(object):
         else:
             self.sort_key = self.by_expansion_sort_key
 
-        self.baseCards = baseCards
+        baseOrder = ['Copper', 'Silver', 'Gold', 'Platinum', 'Potion',
+                     'Curse', 'Estate', 'Duchy', 'Province', 'Colony',
+                     'Trash']
+        self.baseCards = []
+        for tag in baseOrder:
+            if tag in baseCards:
+                self.baseCards.append(baseCards[tag])
+                del baseCards[tag]
+        # now pick up those that have not been specified
+        for tag in baseCards:
+            self.baseCards.append(baseCards[tag])
 
     # When sorting cards, want to always put "base" cards after all
-    # kingdom cards, and order the base cards in a set order - the
-    # order they are listed in the database (ie, all normal treasures
-    # by worth, then potion, then all normal VP cards by worth, then
-    # trash)
+    # kingdom cards, and order the base cards in a particular order
+    # (ie, all normal treasures by worth, then potion, then all
+    # normal VP cards by worth, then Trash)
     def baseIndex(self, name):
         try:
             return self.baseCards.index(name)
@@ -558,7 +567,7 @@ class CardSorter(object):
             return -1
 
     def isBaseExpansionCard(self, card):
-        return card.cardset.lower() != 'base' and card.name in self.baseCards
+        return card.cardset_tag.lower() != 'base' and card.name in self.baseCards
 
     def by_global_sort_key(self, card):
         return int(card.isExpansion()), self.baseIndex(card.name), card.name
@@ -851,9 +860,9 @@ def filter_sort_cards(cards, options):
     # Set up the card sorter
     cardSorter = CardSorter(
         options.order,
-        [card.name for card in cards if card.cardset.lower() == 'base'])
+        {card.card_tag: card.name for card in cards if card.cardset_tag.lower() == 'base'})
     if options.base_cards_with_expansion:
-        cards = [card for card in cards if card.cardset.lower() != 'base']
+        cards = [card for card in cards if card.cardset_tag.lower() != 'base']
     else:
         cards = [card for card in cards
                  if not cardSorter.isBaseExpansionCard(card)]
