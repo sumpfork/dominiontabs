@@ -21,7 +21,7 @@ TAB_SIDE_CHOICES = ["left", "right", "left-alternate", "right-alternate",
 TEXT_CHOICES = ["card", "rules", "blank"]
 EDITION_CHOICES = ["1", "2", "latest", "all"]
 
-EXPANSION_CHOICES = ["adventures", "alchemy", "cornucopia", "dark ages",
+EXPANSION_CHOICES = ["adventures", "alchemy", "base", "cornucopia", "dark ages",
                      "dominion1stEdition", "dominion2ndEdition", "dominion2ndEditionUpgrade",
                      "empires", "guilds", "hinterlands",
                      "intrigue1stEdition", "intrigue2ndEdition", "intrigue2ndEditionUpgrade",
