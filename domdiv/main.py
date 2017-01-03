@@ -26,6 +26,7 @@ EXPANSION_CHOICES = ["adventures", "alchemy", "base", "cornucopia", "dark ages",
                      "empires", "guilds", "hinterlands",
                      "intrigue1stEdition", "intrigue2ndEdition", "intrigue2ndEditionUpgrade",
                      "promo", "prosperity", "seaside"]
+ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
 
 LANGUAGE_DEFAULT = 'en_us'  # the primary language used if a language's parts are missing
 LANGUAGE_XX = 'xx'          # a dummy language for starting translations
@@ -104,7 +105,7 @@ def parse_opts(cmdline_args=None):
         help="Same as --size=sleeved.")
     group_basic.add_argument(
         "--order",
-        choices=["expansion", "global", "colour", "cost"],
+        choices=ORDER_CHOICES,
         default="expansion",
         dest="order",
         help="Sort order for the dividers: "
