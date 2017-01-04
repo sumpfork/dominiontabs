@@ -1,9 +1,8 @@
-from domdiv import __version__
 from setuptools import setup, find_packages
 
 setup(
     name="domdiv",
-    version=__version__,
+    version='2.2',
     entry_points={
         'console_scripts': [
             "dominion_dividers = domdiv.main:main"
