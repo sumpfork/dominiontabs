@@ -10,7 +10,7 @@ Again, to generate tabs go to the ***[Online Generator](http://domtabs.sandflea.
 
 ## Translations
 
-If you would like to help with translations to new (or updating existing) languages, please see [instructions here] (https://github.com/sumpfork/dominiontabs/blob/language_trans_md/domdiv/card_db/translation.md).
+If you would like to help with translations to new (or updating existing) languages, please see [instructions here] (https://github.com/sumpfork/dominiontabs/blob/master/domdiv/card_db/translation.md).
 
 ## Prerequisites
 
