@@ -18,7 +18,7 @@ from shutil import copyfile
 
 LANGUAGE_DEFAULT = 'en_us'  # default language, which takes priority
 LANGUAGE_XX = 'xx'  # language for starting a translation
-card_db_dir = os.path.join("..", "card_db")  # directory of card data
+card_db_dir = os.path.join("..", "domdiv", "card_db")  # directory of card data
 output_dir = os.path.join(".", "card_db")  # directory for output data
 
 
@@ -397,6 +397,19 @@ for lang in languages:
             lang_default = lang_set_data  # Keep for later languages
 
 ###########################################################################
+# bonuses_xx files
+###########################################################################
+for lang in languages:
+    # Special case for xx.  Reseed from default language
+    fromLanguage = lang
+    if lang == LANGUAGE_XX:
+        fromLanguage = LANGUAGE_DEFAULT
+
+    copyfile(
+        os.path.join(card_db_dir, fromLanguage, "bonuses_" + fromLanguage + ".json"),
+        os.path.join(output_dir, lang, "bonuses_" + lang + ".json"))
+
+###########################################################################
 # translation.txt
 ###########################################################################
 copyfile(
@@ -404,7 +417,7 @@ copyfile(
     os.path.join(output_dir, "translation.md"))
 
 # Since xx is the starting point for new translations,
-# make sure xx has the latest copy of translation.txt
+# make sure xx has the latest copy of translation.md
 copyfile(
     os.path.join(card_db_dir, "translation.md"),
     os.path.join(output_dir, LANGUAGE_XX, "translation.md"))
