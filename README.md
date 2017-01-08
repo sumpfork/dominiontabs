@@ -8,6 +8,10 @@ This is a script and library to generate card dividers for storing cards for the
 
 Again, to generate tabs go to the ***[Online Generator](http://domtabs.sandflea.org)***.
 
+## Translations
+
+If you would like to help with translations to new (or updating existing) languages, please see [instructions here] (https://github.com/sumpfork/dominiontabs/blob/language_trans_md/domdiv/card_db/translation.md).
+
 ## Prerequisites
 
 #### Python Packages
