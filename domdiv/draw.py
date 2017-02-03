@@ -782,21 +782,17 @@ class DividerDrawer(object):
             usedHeight += 15
 
         # Figure out what text is to be printed on this divider
-        if divider_text == "blank":
-            # blank divider, no need to go on
-            return
-        elif divider_text == "rules":
-            # Add the extra rules text to the divider
-            if card.extra:
-                descriptions = card.extra
-            else:
-                # Asked for rules and they don't exist, so don't print anything
-                return
-        elif divider_text == "card":
+        descriptions = None
+        if divider_text == "card" and card.description:
             # Add the card text to the divider
             descriptions = card.description
-        else:
-            # Don't know what was asked, so don't print anything
+        elif divider_text == "rules" and card.extra:
+            # Add the extra rules text to the divider
+            descriptions = card.extra
+
+        if descriptions is None:
+            # No text to print, so exit early and cleanly
+            self.canvas.restoreState()
             return
 
         s = getSampleStyleSheet()['BodyText']
