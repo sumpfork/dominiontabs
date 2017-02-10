@@ -2158,5 +2158,20 @@
         "extra": "", 
         "name": "Verlassene Mine", 
         "untranslated": "Note: This card is currently not used."
+    },
+    "Grey Mustang": {
+        "description": "+1 Karte (Punktekarten werden überquert)<br>+2 Aktionen<br> -1 <*COIN*> 1 <*VP*><br>Das Geld dient bei Ausspielen dem Unterhalt des kostbaren Vollblüters. Den Siegpunkt gibt es einmalig bei Spielende.",
+        "extra": "",
+        "name": "Edler Schimmel"
+    },
+    "Rabbits": {
+        "description": "+1 Karte, +1 Aktion<br>Alle Mitspiele legen eine Punktekartenaus der Hand (sofern vorhanden) auf den Ablagestapel.<br>Beim <b>2. Karnickel</b> im selben Zug muss auch der Ablagestapel nach Punktekarte duchsucht werden, falls keine auf der Hand ist.<br>Beim <b>3. Karnickel</b> (Karnickelplage):<br> Alle Mitspiele müssen alle Punktekarten aus Hand und Ablagestapel auf den Nachziehstapel legen.<br><b>Karnickel können nur durch den Hofhund abgewehrt werden.</b>",
+        "extra": "",
+        "name": "Karnickel"
+    },
+    "Yard Dog": {
+        "description": "+1 Karte, +1 Aktion<br>Wehrt Angriffe gegen den Bereich (Hand, Nachzieh- oder Ablagestapel) ab, in dem er sich befindet, sofern er sichtbar ist/wird oder vorgezeigt werden kann.", 
+        "extra": "",
+        "name": "Hofhund"
     }
 }

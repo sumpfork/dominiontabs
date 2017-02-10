@@ -1959,5 +1959,20 @@
         "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.", 
         "name": "Abandoned Mine", 
         "untranslated": "Note: This card is currently not used."
+    },
+    "Grey Mustang": {
+        "description": "+1 Card (Victory cards may be discarded, then draw another)<br>+2 Actions<br> -1 <*COIN*> 1 <*VP*>", 
+        "extra": "", 
+        "name": "Grey Mustang"
+    },
+    "Rabbits": {
+        "description": "+1 Card, +1 Action<br>All other players put a victory card from their hand on their deck.<br>If it's the <b>2nd Rabbits card</b> played (in this turn), players must also search through their discard pile for Victory cards if they have none in hand.<br>If it's the <b>3rd Rabbits card</b> (rabbit plague), all other players must put <b>all</b> Victory cards from their hand and discard pile on their deck.<br><b>Rabbits can only be defended against by Yard Dog.</b>", 
+        "extra": "", 
+        "name": "Rabbits"
+    },
+    "Yard Dog": {
+        "description": "+1 Card, +1 Action<br>Defends the section in which he dwells (hand, discard pile or deck) against any attack which aims at this section (only if he is or becomes visible or can be shown)", 
+        "extra": "", 
+        "name": "Yard Dog"
     }
 }
