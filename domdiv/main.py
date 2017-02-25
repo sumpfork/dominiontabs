@@ -161,11 +161,11 @@ def parse_opts(cmdline_args=None):
         default="right-alternate",
         help="Alignment of tab; "
         "'left'/'right'/'centre' sets the starting side of the tabs; "
-        "'full' will force all label tabs to be full width of the divider; sets --tabs 1 "
-        "'left-alternate' will start on the left and then toggle between left and right for the tabs, sets --tabs 2; "
-        "'right-alternate' will start on the right and then toggle between right and left for the tabs, sets --tabs 2; "
-        "'left-flip' like left-alternate, but the right will be flipped front/back with tab on left, sets --tabs 2; "
-        "'right-flip' like right-alternate, but the left will be flipped front/back with tab on right, sets --tabs 2; ")
+        "'full' will force all label tabs to be full width of the divider; sets --tab_number 1 "
+        "'left-alternate' will start on the left and then toggle between left and right for the tabs, sets --tab_number 2; "
+        "'right-alternate' will start on the right and then toggle between right and left for the tabs, sets --tab_number 2; "
+        "'left-flip' like left-alternate, but the right will be flipped front/back with tab on left, sets --tab_number 2; "
+        "'right-flip' like right-alternate, but the left will be flipped front/back with tab on right, sets --tab_number 2; ")
     group_tab.add_argument(
         "--tab_number",
         type=int,
