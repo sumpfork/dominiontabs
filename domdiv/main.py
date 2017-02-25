@@ -17,8 +17,10 @@ from draw import DividerDrawer
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
 TAB_SIDE_CHOICES = ["left", "right", "left-alternate", "right-alternate",
-                    "centre", "full"]
+                    "left-flip", "right-flip", "centre", "full"]
 TEXT_CHOICES = ["card", "rules", "blank"]
+LINE_CHOICES = ["line", "dot", "cropmarks", "dot-cropmarks"]
+
 EDITION_CHOICES = ["1", "2", "latest", "all"]
 
 EXPANSION_CHOICES = ["adventures", "alchemy", "base", "cornucopia", "dark ages",
@@ -158,11 +160,29 @@ def parse_opts(cmdline_args=None):
         dest="tab_side",
         default="right-alternate",
         help="Alignment of tab; "
-        "'left'/'right' forces all tabs to left/right side; "
-        "'left-alternate' will start on the left and then toggle between left and right for the tabs; "
-        "'right-alternate' will start on the right and then toggle between right and left for the tabs; "
-        "'centre' will force all label tabs to the centre; "
-        "'full' will force all label tabs to be full width of the divider.")
+        "'left'/'right'/'centre' sets the starting side of the tabs; "
+        "'full' will force all label tabs to be full width of the divider; sets --tabs 1 "
+        "'left-alternate' will start on the left and then toggle between left and right for the tabs, sets --tabs 2; "
+        "'right-alternate' will start on the right and then toggle between right and left for the tabs, sets --tabs 2; "
+        "'left-flip' like left-alternate, but the right will be flipped front/back with tab on left, sets --tabs 2; "
+        "'right-flip' like right-alternate, but the left will be flipped front/back with tab on right, sets --tabs 2; ")
+    group_tab.add_argument(
+        "--tab_number",
+        type=int,
+        default=1,
+        help="The number of tabs. When set to 1, all tabs are on the same side (specified by --tab_side). "
+             "When set to 2, tabs will alternate between left and right. (starting side specified by --tab_side). "
+             "When set > 2, the first tab will be on left/right side specified by --tab_side, then the rest "
+             "of the tabs will be evenly spaced until ending on the opposite side. Then the cycle repeats. "
+             "May be overriden by some options of --tab_side.")
+    group_tab.add_argument(
+        "--tab_serpentine",
+        action="store_true",
+        help="Effects the order of tabs.  When not selected, tabs will progress from the starting side (left/right) "
+             "to the opposite side (right/left), and then repeat (e.g., left to right, left to right, etc.). "
+             "When selected, the order is changed to smoothly alternate between the two sides "
+             "(e.g., left to right, to left, to right, etc.) "
+             "Only valid if --tab_number > 2.")
     group_tab.add_argument(
         "--tab_name_align",
         choices=NAME_ALIGN_CHOICES + ["center"],
@@ -220,6 +240,12 @@ def parse_opts(cmdline_args=None):
         action="store_true",
         dest="centre_expansion_dividers",
         help='Centre the tabs on expansion dividers.')
+    group_expansion.add_argument(
+        "--expansion_reset_tabs",
+        action="store_true",
+        dest="expansion_reset_tabs",
+        help="When set, the tabs are restarted (left/right) at the beginning of each expansion. "
+        "If not set, the tab pattern will continue from one expansion to the next. ")
     group_expansion.add_argument(
         "--expansion_dividers_long_name",
         action="store_true",
@@ -284,6 +310,10 @@ def parse_opts(cmdline_args=None):
         "--exclude_landmarks",
         action="store_true",
         help="Group all 'Landmark' cards across all expansions into one divider.")
+    group_select.add_argument(
+        "--cardlist",
+        dest="cardlist",
+        help="Path to file that enumerates each card to be printed on its own line.")
 
     # Divider Sleeves/Wrappers
     group_wrapper = parser.add_argument_group(
@@ -382,22 +412,74 @@ def parse_opts(cmdline_args=None):
         dest="tabs_only",
         help="Draw only the divider tabs and no divider outlines. "
         "Used to print the divider tabs on labels.")
-
-    # Special processing
-    group_special = parser.add_argument_group(
-        'Miscellaneous',
-        'These options are generally not used.')
-    group_special.add_argument(
-        "--cardlist",
-        dest="cardlist",
-        help="Path to file that enumerates each card to be printed on its own line.")
-    group_special.add_argument(
-        "--write_json",
+    group_printing.add_argument(
+        "--linetype",
+        choices=LINE_CHOICES,
+        dest="linetype",
+        default="line",
+        help="The divider outline type. "
+        "'line' will print a solid line outlining the divider; "
+        "'dot' will print a dot at each corner of the divider; "
+        "'cropmarks' will print cropmarks for the divider; "
+        "'dot-cropmarks' will combine 'dot' and 'cropmarks'")
+    group_printing.add_argument(
+        "--cropmarkLength",
+        type=float,
+        default=0.2,
+        help="Length of actual drawn cropmark in centimeters.")
+    group_printing.add_argument(
+        "--cropmarkSpacing",
+        type=float,
+        default=0.1,
+        help="Spacing between card and the start of the cropmark in centimeters.")
+    group_printing.add_argument(
+        "--info",
         action="store_true",
-        dest="write_json",
-        help="Write json version of card definitions and extras.")
+        dest="info",
+        help="Add a page that has all the options used for the file.")
+    group_printing.add_argument(
+        "--info_all",
+        action="store_true",
+        dest="info_all",
+        help="Same as --info, but includes pages with all the possible options that can be used.")
 
     options = parser.parse_args(args=cmdline_args)
+
+    options.dominionCardWidth, options.dominionCardHeight = parse_cardsize(options.size, options.sleeved)
+    options.paperwidth, options.paperheight = parse_papersize(options.papersize)
+    options.minmarginwidth, options.minmarginheight = parseDimensions(options.minmargin)
+
+    if "center" in options.tab_side:
+        options.tab_side = str(options.tab_side).replace("center", "centre")
+
+    if "center" in options.tab_name_align:
+        options.tab_name_align = str(options.tab_name_align).replace("center", "centre")
+
+    if options.tab_side == "full" and options.tab_name_align == "edge":
+        # This case does not make sense since there are two tab edges in this case.  So picking left edge.
+        print >> sys.stderr, "** Warning: Aligning card name as 'left' for 'full' tabs **"
+        options.tab_name_align = "left"
+
+    if options.tab_number < 1:
+        print >> sys.stderr, "** Warning: --tab_number must be 1 or greater.  Setting to 1. **"
+        options.tab_number = 1
+
+    if options.tab_side == "full" and options.tab_number != 1:
+        options.tab_number = 1  # Full is 1 big tab
+
+    if "-alternate" in options.tab_side:
+        options.tab_number = 2  # alternating left and right, so override tab_number
+
+    if "-flip" in options.tab_side and not options.wrapper:
+        # for left and right tabs
+        options.tab_number = 2  # alternating left and right with a flip, so override tab_number
+        options.flip = True
+    else:
+        options.flip = False
+
+    if options.tab_number < 3 and options.tab_serpentine:
+        print >> sys.stderr, "** Warning: --tab_serpentine only valid if --tab_number > 2. **"
+        options.tab_serpentine = False
 
     if options.sleeved_thick:
         options.thickness = 3.2
@@ -410,9 +492,25 @@ def parse_opts(cmdline_args=None):
     if options.notch:
         options.notch_length = 1.5
 
+    if options.notch_length > 0:
+        options.notch_height = 0.25  # thumb notch height
+
+    if options.cropmarks and options.linetype == 'line':
+        options.linetype = 'cropmarks'
+
+    if options.linetype == 'dot-cropmarks':
+        options.linetype = 'dot'
+        options.cropmarks = True
+
+    options.cropmarkSpacing *= cm
+    options.cropmarkLength *= cm
+
     if options.expansions:
         # options.expansions is a list of lists.  Reduce to single list
         options.expansions = [item for sublist in options.expansions for item in sublist]
+
+    options.argv = sys.argv if options.info or options.info_all else None
+    options.help = parser.format_help() if options.info_all else None
 
     return options
 
@@ -737,10 +835,6 @@ def filter_sort_cards(cards, options):
         if options.expansions:
             options.expansions.append("extras")
 
-    # FIX THIS: Combine all Prizes across all expansions
-    # if options.exclude_prizes:
-    #    cards = combine_cards(cards, 'Prize', 'prizes')
-
     # Group all the special cards together
     if options.special_card_groups:
         keep_cards = []   # holds the cards that are to be kept
@@ -883,6 +977,7 @@ def filter_sort_cards(cards, options):
                 exp_name = exp
 
                 count = len(cardnamesByExpansion[exp])
+                Card.sets[set_tag]['count'] = count
                 if 'no_randomizer' in set_values:
                     if set_values['no_randomizer']:
                         count = 0
@@ -908,115 +1003,10 @@ def filter_sort_cards(cards, options):
 
 
 def calculate_layout(options, cards=[]):
-
-    dominionCardWidth, dominionCardHeight = parse_cardsize(options.size,
-                                                           options.sleeved)
-    paperwidth, paperheight = parse_papersize(options.papersize)
-
-    if options.orientation == "vertical":
-        dividerWidth, dividerBaseHeight = dominionCardHeight, dominionCardWidth
-    else:
-        dividerWidth, dividerBaseHeight = dominionCardWidth, dominionCardHeight
-
-    if options.tab_name_align == "center":
-        options.tab_name_align = "centre"
-
-    if options.tab_side == "full" and options.tab_name_align == "edge":
-        # This case does not make sense since there are two tab edges in this case.  So picking left edge.
-        print >> sys.stderr, "** Warning: Aligning card name as 'left' for 'full' tabs **"
-        options.tab_name_align = "left"
-
-    fixedMargins = False
-    if options.tabs_only:
-        # fixed for Avery 8867 for now
-        minmarginwidth = 0.86 * cm  # was 0.76
-        minmarginheight = 1.37 * cm  # was 1.27
-        labelHeight = 1.07 * cm  # was 1.27
-        labelWidth = 4.24 * cm  # was 4.44
-        horizontalBorderSpace = 0.96 * cm  # was 0.76
-        verticalBorderSpace = 0.20 * cm  # was 0.01
-        dividerBaseHeight = 0
-        dividerWidth = labelWidth
-        fixedMargins = True
-    else:
-        minmarginwidth, minmarginheight = parseDimensions(options.minmargin)
-        if options.tab_side == "full":
-            labelWidth = dividerWidth
-        else:
-            labelWidth = options.tabwidth * cm
-        labelHeight = .9 * cm
-        horizontalBorderSpace = options.horizontal_gap * cm
-        verticalBorderSpace = options.vertical_gap * cm
-
-    dividerHeight = dividerBaseHeight + labelHeight
-
-    dividerWidthReserved = dividerWidth + horizontalBorderSpace
-    dividerHeightReserved = dividerHeight + verticalBorderSpace
-    if options.wrapper:
-        max_card_stack_height = max(c.getStackHeight(options.thickness)
-                                    for c in cards)
-        dividerHeightReserved = (dividerHeightReserved * 2) + (
-            max_card_stack_height * 2)
-        print "Max Card Stack Height: {:.2f}cm ".format(max_card_stack_height)
-
-    # Notch measurements
-    notch_height = 0.25 * cm  # thumb notch height
-    notch_width1 = options.notch_length * cm  # thumb notch width: top away from tab
-    notch_width2 = 0.00 * cm  # thumb notch width: bottom on side of tab
-
-    add_opt(options, 'dividerWidth', dividerWidth)
-    add_opt(options, 'dividerHeight', dividerHeight)
-    add_opt(options, 'dividerBaseHeight', dividerBaseHeight)
-    add_opt(options, 'dividerWidthReserved', dividerWidthReserved)
-    add_opt(options, 'dividerHeightReserved', dividerHeightReserved)
-    add_opt(options, 'labelWidth', labelWidth)
-    add_opt(options, 'labelHeight', labelHeight)
-    add_opt(options, 'notch_height', notch_height)
-    add_opt(options, 'notch_width1', notch_width1)
-    add_opt(options, 'notch_width2', notch_width2)
-
-    # as we don't draw anything in the final border, it shouldn't count towards how many tabs we can fit
-    # so it gets added back in to the page size here
-    numDividersVerticalP = int(
-        (paperheight - 2 * minmarginheight + verticalBorderSpace) /
-        options.dividerHeightReserved)
-    numDividersHorizontalP = int(
-        (paperwidth - 2 * minmarginwidth + horizontalBorderSpace) /
-        options.dividerWidthReserved)
-    numDividersVerticalL = int(
-        (paperwidth - 2 * minmarginwidth + verticalBorderSpace) /
-        options.dividerHeightReserved)
-    numDividersHorizontalL = int(
-        (paperheight - 2 * minmarginheight + horizontalBorderSpace) /
-        options.dividerWidthReserved)
-
-    if ((numDividersVerticalL * numDividersHorizontalL > numDividersVerticalP *
-         numDividersHorizontalP) and not fixedMargins):
-        add_opt(options, 'numDividersVertical', numDividersVerticalL)
-        add_opt(options, 'numDividersHorizontal', numDividersHorizontalL)
-        add_opt(options, 'paperheight', paperwidth)
-        add_opt(options, 'paperwidth', paperheight)
-        add_opt(options, 'minHorizontalMargin', minmarginheight)
-        add_opt(options, 'minVerticalMargin', minmarginwidth)
-    else:
-        add_opt(options, 'numDividersVertical', numDividersVerticalP)
-        add_opt(options, 'numDividersHorizontal', numDividersHorizontalP)
-        add_opt(options, 'paperheight', paperheight)
-        add_opt(options, 'paperwidth', paperwidth)
-        add_opt(options, 'minHorizontalMargin', minmarginheight)
-        add_opt(options, 'minVerticalMargin', minmarginwidth)
-
-    if not fixedMargins:
-        # dynamically max margins
-        add_opt(options, 'horizontalMargin',
-                (options.paperwidth - options.numDividersHorizontal *
-                 options.dividerWidthReserved + horizontalBorderSpace) / 2)
-        add_opt(options, 'verticalMargin',
-                (options.paperheight - options.numDividersVertical *
-                 options.dividerHeightReserved + verticalBorderSpace) / 2)
-    else:
-        add_opt(options, 'horizontalMargin', minmarginwidth)
-        add_opt(options, 'verticalMargin', minmarginheight)
+    # This is in place to allow for test cases to it call directly to get
+    dd = DividerDrawer(options)
+    dd.calculatePages(cards)
+    return dd
 
 
 def generate(options):
@@ -1026,7 +1016,7 @@ def generate(options):
     cards = filter_sort_cards(cards, options)
     assert cards, "No cards after filtering/sorting"
 
-    calculate_layout(options, cards)
+    dd = calculate_layout(options, cards)
 
     print "Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
         options.paperwidth / cm, options.paperheight / cm)
@@ -1037,8 +1027,7 @@ def generate(options):
     print "Margins: {:.2f}cm h, {:.2f}cm v\n".format(
         options.horizontalMargin / cm, options.verticalMargin / cm)
 
-    dd = DividerDrawer()
-    dd.draw(cards, options)
+    dd.draw(cards)
 
 
 def main():
