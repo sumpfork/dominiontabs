@@ -241,9 +241,11 @@ def parse_opts(cmdline_args=None):
         "Expansion names can also be given in the language specified by "
         "the --language parameter. Any expansion with a space in the name must "
         "be enclosed in quotes. This may be called multiple times. "
-        "Values are not case sensitive and the '*' symbol can be used to match any number of characters "
-        "of an expansion name.  For example, 'dominion*' will match all expansions "
-        "that start with that name; Choices available in all languages include: %s" %
+        "Values are not case sensitive. Wildcards may be used: "
+        "'*' matches any number of characters, '?' matches any single character, "
+        "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
+        "For example, 'dominion*' will match all expansions that start with 'dominion'. "
+        "Choices available in all languages include: %s" %
         ", ".join("%s" % x for x in EXPANSION_CHOICES))
     group_select.add_argument(
         "--edition",
