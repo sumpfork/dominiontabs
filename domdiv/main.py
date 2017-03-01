@@ -826,7 +826,7 @@ def filter_sort_cards(cards, options):
         def expand_expanions(wildcard):
             # Wildcard matching for multiple expansions. Assume options.expansions and wildcard is already lower case.
             if wildcard in options.expansions:
-                if any(x in wildcard for x in ['*','?','[']):
+                if any(x in wildcard for x in ['*', '?', '[']):
                     expanded = fnmatch.filter(EXPANSION_CHOICES, wildcard)
                 else:
                     expanded = [e.lower() for e in EXPANSION_CHOICES if e.startswith(wildcard)]
@@ -835,7 +835,7 @@ def filter_sort_cards(cards, options):
                     options.expansions.remove(wildcard)
                     options.expansions.extend(expanded)
 
-        expand_list = [e.lower() for e in options.expansions if any(x in e for x in ['*','?','['])]
+        expand_list = [e.lower() for e in options.expansions if any(x in e for x in ['*', '?', '['])]
         expand_list.extend(['dominion', 'intrigue'])
         for e in expand_list:
             expand_expanions(e)
