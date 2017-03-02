@@ -240,7 +240,7 @@ def parse_opts(cmdline_args=None):
         "If no limits are set, then all expansions are included. "
         "Expansion names can also be given in the language specified by "
         "the --language parameter. Any expansion with a space in the name must "
-        "be enclosed in quotes. This may be called multiple times. "
+        "be enclosed in double quotes. This may be called multiple times. "
         "Values are not case sensitive. Wildcards may be used: "
         "'*' matches any number of characters, '?' matches any single character, "
         "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
@@ -823,25 +823,22 @@ def filter_sort_cards(cards, options):
     # Expansion names can be the names from the language or the cardset_tag
     if options.expansions:
         # Expand out any wildcards
-        def expand_expanions(wildcard):
-            # Wildcard matching for multiple expansions. Assume options.expansions and wildcard is already lower case.
-            if wildcard in options.expansions:
-                if any(x in wildcard for x in ['*', '?', '[']):
-                    expanded = fnmatch.filter(EXPANSION_CHOICES, wildcard)
+        # Check against the Card.Sets and their set_name used in the selected language
+        possible_expansions = [s.lower() for s in Card.sets] + [
+                               y.lower() for y in [Card.sets[s].get('set_name', None) for s in Card.sets] if y]
+        expanded_expansions = []
+        for e in options.expansions:
+            if any(wild in e for wild in ['*', '?', '[']):
+                matches = fnmatch.filter(possible_expansions, e)
+                if matches:
+                    expanded_expansions.extend(matches)
                 else:
-                    expanded = [e.lower() for e in EXPANSION_CHOICES if e.startswith(wildcard)]
-                if expanded:
-                    # Only remove wildcard and add replacements if something actually found
-                    options.expansions.remove(wildcard)
-                    options.expansions.extend(expanded)
-
-        expand_list = [e.lower() for e in options.expansions if any(x in e for x in ['*', '?', '['])]
-        expand_list.extend(['dominion', 'intrigue'])
-        for e in expand_list:
-            expand_expanions(e)
+                    expanded_expansions.append(e)
+            else:
+                expanded_expansions.append(e)
 
         # Make sure we have only one of each expansion requested
-        options.expansions = set([e.lower() for e in options.expansions])
+        options.expansions = set([e.lower() for e in expanded_expansions])
         wantedExpansions = set()
         knownExpansions = set()
         # Match sets that either start with the expansion set key (used by cardset_tag)
