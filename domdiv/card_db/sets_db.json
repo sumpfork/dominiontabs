@@ -27,6 +27,16 @@
         "set_name": "*alchemy*", 
         "text_icon": "*"
     },
+    "animals": {
+        "edition": [
+            "1", 
+            "latest"
+        ], 
+        "fan": true, 
+        "image": "animals.png", 
+        "set_name": "*animals*", 
+        "text_icon": "*"
+    },
     "base": {
         "edition": [
             "1", 
@@ -201,16 +211,6 @@
         ], 
         "image": "seaside_set.png", 
         "set_name": "*seaside*", 
-        "text_icon": "*"
-    },
-	  "animals": {
-        "edition": [
-            "1",
-            "latest"
-        ],
-	"fan": true,
-        "image": "",
-        "set_name": "*animals*",
         "text_icon": "*"
     }
 }
