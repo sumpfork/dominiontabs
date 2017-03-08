@@ -29,7 +29,7 @@
         "extra": "Dieses Ereignis darf nur 1 x pro Zug erworben werden. Du erhältst +1 Kauf. Wenn dein -1 card-Marker nicht auf deinem Nachziehstapel liegt, lege ihn dorthin und erhalte +1 coin. Das nächste Mal, wenn du Karten nachziehen musst, ziehst du 1 Karte weniger.", 
         "name": "Leihgabe"
     },
-       "Bridge Troll": {
+    "Bridge Troll": {
         "description": "Alle Mitspieler nehmen ihren -1 Coin-Marker. <n>Jetzt und zu Beginn deines nächsten Zuges:<n>+1 Kauf <line> Solange diese Karte im Spiel ist, kostet jede Karte in deinem Zug 1 coin weniger, allerdings nie weniger als 0 coin.", 
         "extra": "Diese Karte ist eine Dauerkarte. Alle Mitspieler müssen ihren -Coins-Marker vor sich ablegen. Sie erhalten beim nächsten Mal, wenn sie in irgendeiner Art und Weise mindestens 1 Coins erhalten würden, 1 Coins weniger. Danach wird der Marker wieder neben den Vorrat gelegt. Du erhältst jetzt und zu Beginn deines nächsten Zuges +1 Kauf. So lange diese Karte im Spiel ist, kosten alle Karten in deinem Zug 1 Coins weniger, allerdings nie weniger als 0 Coins. Dies betrifft nicht nur den Kauf, sondern alle Aktionen, bei denen die Kosten einer Karte eine Rolle spielen. Der BRÜCKENTROLL beeinflusst nicht die Kosten von Ereignissen. Die Wirkung des BRÜCKENTROLLS ist kumulativ, d. h. wenn du zwei oder mehr BRÜCKENTROLLE gleichzeitig im Spiel hast, kannst du die Kosten um 2 Coins oder mehr verringern.", 
         "name": "Brückentroll"
@@ -206,7 +206,7 @@
     },
     "Relic": {
         "description": "2 <*COIN*><n>Wenn du diese Karte ausspielst, muss jeder Mitspieler seinen -Karte-Marker auf seinen Nachziehstapel legen.", 
-        "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Jeder Mitspieler muss seinen -Karte-Marker auf seinen Nachziehstapel legen. Sobald ein Mitspieler Karten nachziehen muss, zieht er 1 Karte weniger. Dann legt er den Marker neben den Vorrat zurück. Bei Anweisungen, durch die man seine Kartenhand auf X Karten auffüllen darf, wird zunächst der Marker zurückgelegt und dann die Kartenhand auf X Karten aufgefüllt. Das RELIKT ist eine Angriffskarte. Entsprechend kann darauf mit Reaktionskarten reagiert werden. Reagiert ein Spieler mit dem KARAWANENWÄCHTER, führt er zunächst die Anweisungen aus (inkl. +1 Karte) und legt dann den Marker auf seinen Nachziehstapel.",
+        "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Jeder Mitspieler muss seinen -Karte-Marker auf seinen Nachziehstapel legen. Sobald ein Mitspieler Karten nachziehen muss, zieht er 1 Karte weniger. Dann legt er den Marker neben den Vorrat zurück. Bei Anweisungen, durch die man seine Kartenhand auf X Karten auffüllen darf, wird zunächst der Marker zurückgelegt und dann die Kartenhand auf X Karten aufgefüllt. Das RELIKT ist eine Angriffskarte. Entsprechend kann darauf mit Reaktionskarten reagiert werden. Reagiert ein Spieler mit dem KARAWANENWÄCHTER, führt er zunächst die Anweisungen aus (inkl. +1 Karte) und legt dann den Marker auf seinen Nachziehstapel.", 
         "name": "Relikt"
     },
     "Royal Carriage": {
@@ -361,6 +361,21 @@
         "name": "Weinberg", 
         "untranslated": "extra"
     },
+    "Grey Mustang": {
+        "description": "+1 Karte<n>(Punktekarten werden überquert)<n>+2 Aktionen<n>-1 Coin<br>Das Geld dient bei Ausspielen dem Unterhalt des kostbaren Vollblüters.<line>1 <*VP*><br>Den Siegpunkt gibt es einmalig bei Spielende.", 
+        "extra": "", 
+        "name": "Edler Schimmel"
+    },
+    "Rabbits": {
+        "description": "+1 Karte<n>+1 Aktion<br>Alle Mitspiele legen eine Punktekartenaus der Hand (sofern vorhanden) auf den Ablagestapel.<br>Beim <b>2. Karnickel</b> im selben Zug muss auch der Ablagestapel nach Punktekarte duchsucht werden, falls keine auf der Hand ist.<br>Beim <b>3. Karnickel</b> (Karnickelplage):<br> Alle Mitspiele müssen alle Punktekarten aus Hand und Ablagestapel auf den Nachziehstapel legen.<br><b>Karnickel können nur durch den Hofhund abgewehrt werden.</b>", 
+        "extra": "", 
+        "name": "Karnickel"
+    },
+    "Yard Dog": {
+        "description": "+1 Karte<n>+1 Aktion<br>Wehrt Angriffe gegen den Bereich (Hand, Nachzieh- oder Ablagestapel) ab, in dem er sich befindet, sofern er sichtbar ist/wird oder vorgezeigt werden kann.", 
+        "extra": "", 
+        "name": "Hofhund"
+    },
     "Potion": {
         "description": "1 <*POTION*>", 
         "extra": "This is a basic Treasure card. It costs 4 Coins and produces Potion. It is not a Kingdom card. After you choose 10 Kingdom cards for the Supply, if any of them have Potion in the cost, add the Potion pile to the Supply. Also add the Potion pile if you are using the promotional card Black Market, and the Black Market deck includes at least one card with Potion in the cost. If you don't have any cards with Potion in the cost in the Supply or the Black Market deck, do not use the Potion pile in this game. When you have a Potion pile, put all 16 Potions in it, no matter how many players there are. In games using this pile, if the pile becomes empty, that will count towards the game ending condition.", 
@@ -513,7 +528,7 @@
         "name": "Streitross"
     },
     "Young Witch": {
-        "description": "+2 Karten<br>Lege 2 Karten aus deiner Hand ab. Jeder Mitspieler darf eine Bannkarte aus seiner Hand aufdecken. Wenn er das nicht macht, muss er sich einen Fluch nehmen.",
+        "description": "+2 Karten<br>Lege 2 Karten aus deiner Hand ab. Jeder Mitspieler darf eine Bannkarte aus seiner Hand aufdecken. Wenn er das nicht macht, muss er sich einen Fluch nehmen.", 
         "extra": " Wenn diese Karte für das Spiel ausgewählt wurde, wird ein Bannstapel als 11. Königreichstapel in den Vorrat gelegt (siehe Spielaufbau). Dieser Bannstapel wird behandelt wie die anderen Königreichstapel. Er ist Teil des Vorrats, die Karten können wie üblich gekauft oder genommen werden und der Stapel wird für die Spielendebedingung berücksichtigt. Wenn du die JUNGE HEXE ausspielst, ziehst du zuerst 2 Karten nach, dann musst du 2 Karten aus deiner Hand ablegen. Beginnend mit dem Spieler links von dir darf nun reihum jeder Mitspieler eine Bannkarte aus seiner Hand aufdecken. Wenn er das nicht macht, muss er sich einen FLUCH vom Vorrat nehmen. Ist kein FLUCH mehr im Vorrat, muss der Spieler keinen nehmen. Die Spieler dürfen wie üblich auch Reaktionskarten (z.B. PFERDEHÄNDLER) aus ihrer Hand aufdecken. Dies tun die Spieler, bevor sie eine Bannkarte aufdecken. Die Anweisungen auf der Reaktionskarte werden also ausgeführt, bevor der Angriff durch die Bannkarte abgewehrt wird. Ist die Bannkarte eine Reaktionskarte, kann sie zuerst aufgedeckt werden um die übliche Reaktion auszuführen und dann (wenn der Spieler sie dann noch auf der Hand hat) nochmals in ihrer Funktion als Bannkarte.", 
         "name": "Junge Hexe"
     },
@@ -608,7 +623,7 @@
     },
     "Hovel": {
         "description": "Wenn du eine Punktekarte kaufst, darfst du diese Hütte entsorgen.", 
-        "extra": "Die HÜTTE ist ein Unterschlupf und eine Reaktionskarte. Die HÜTTE ist niemals im Vorrat. Wenn du eine Punktekarte kaufst und die HÜTTE auf der Hand hast, darfst du die HÜTTE entsorgen. Dies gilt auch, wenn du eine kombinierte Punktekarte kaufst. Du erhältst keine weiteren Vorteile durch das Entsorgen der HÜTTE. Du wirst nur eine Karte los.",
+        "extra": "Die HÜTTE ist ein Unterschlupf und eine Reaktionskarte. Die HÜTTE ist niemals im Vorrat. Wenn du eine Punktekarte kaufst und die HÜTTE auf der Hand hast, darfst du die HÜTTE entsorgen. Dies gilt auch, wenn du eine kombinierte Punktekarte kaufst. Du erhältst keine weiteren Vorteile durch das Entsorgen der HÜTTE. Du wirst nur eine Karte los.", 
         "name": "Hütte"
     },
     "Hunting Grounds": {
@@ -1381,7 +1396,7 @@
     },
     "Cache": {
         "description": "3 <*COIN*><line>Wenn du die Schatztruhe nimmst, nimm dir 2 Kupfer.", 
-        "extra": "Diese Geldkarte ist 3 coins wert, wie ein GOLD. Wenn du die Schatztruhe nimmst oder kaufst, musst du dir zusätzlich 2 KUPFER nehmen. Sind nur weniger als 2 KUPFER im Vorrat, so nimmst du dir nur so viele wie möglich. Du nimmst dir die 2 KUPFER nur, wenn du die Schatztruhe nimmst oder kaufst, nicht jedes mal, wenn du sie ausspielst.",
+        "extra": "Diese Geldkarte ist 3 coins wert, wie ein GOLD. Wenn du die Schatztruhe nimmst oder kaufst, musst du dir zusätzlich 2 KUPFER nehmen. Sind nur weniger als 2 KUPFER im Vorrat, so nimmst du dir nur so viele wie möglich. Du nimmst dir die 2 KUPFER nur, wenn du die Schatztruhe nimmst oder kaufst, nicht jedes mal, wenn du sie ausspielst.", 
         "name": "Schatztruhe"
     },
     "Cartographer": {
@@ -1407,7 +1422,7 @@
     "Embassy": {
         "description": "+5 Karten<br>Lege 3 Karten auf deiner Hand ab. Wenn du die Botschaft nimmst, muss sich jeder Mitspieler ein Silber nehmen.", 
         "extra": "Wenn du die BOTSCHAFT ausspielst, ziehst du zunächst 5 Karten auf deine Hand nach. Wenn du, auch nach dem Mischen deines Ablagestapels, nur weniger als 5 Karten nachziehen kannst, ziehst du nur so viele Karten nach wie möglich. Dann legst du 3 Karten aus deiner Hand ab. Du kannst also auch Karten ablegen, die du gerade nachgezogen hast. Wenn du die BOTSCHAFT nimmst oder kaufst, muss sich, beginnend mit dem Spieler links von dir, reihum jeder Spieler ein SILBER nehmen. Ist kein SILBER mehr im Vorrat, nimmt der Spieler kein SILBER.", 
-        "name": "Botschaft" 
+        "name": "Botschaft"
     },
     "Farmland": {
         "description": "2 <*VP*><line>Wenn du das Fruchtbare Land kaufst, entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die genau 2 mehr kostet als die entsorgte Karte.", 
@@ -1456,7 +1471,7 @@
     },
     "Noble Brigand": {
         "description": "+1 Coin<br>Wenn du diese Karte kaufst oder ausspielst, muss jeder Mitspieler die obersten 2 Karten von seinem Nachziehstapel aufdecken. Hat er ein Gold oder ein Silber aufgedeckt, muss er dieses entsorgen. Hat der Spieler beides aufgedeckt, entscheidest du, welche er entsorgen muss. Hat der Spieler keine Geldkarte aufgedeckt, muss er sich ein Kupfer nehmen. Die übrigen aufgedeckten Karten muss der Spieler ablegen. Du musst alle entsorgten Karten nehmen.", 
-        "extra": "Wenn du diese Karte ausspielst, erhältst du + 1 coin. Wenn du diese Karte ausspielst und auch, wenn du diese Karte kaufst, muss beginnend bei dem Spieler links von dir, reihum jeder Mitspieler die obersten beiden Karten von seinem Nachziehstapel aufdecken. Hat der Spieler 1 SILBER oder 1 GOLD aufgedeckt, so muss er dieses entsorgen. Hat der Spieler ein SILBER und ein GOLD (oder auch 2 SILBER bzw. 2 GOLD) aufgedeckt, entscheidest du welches davon er entsorgen muss. Die andere aufgedeckte Karte legt er jeweils auf seinen Ablagestapel. Hat der Spieler weder SILBER noch GOLD aufgedeckt, so legt er beide Karten ab. Hat der Spieler überhaupt keine Geldkarte aufgedeckt, so legt er beide Karten ab und nimmt sich ein KUPFER. Du musst alle entsorgten SILBER und GOLD nehmen. Wenn du den EDLEN RÄUBER ausspielst, können deine Mitspieler mit Reaktionskarten, wie z.B. BURGGRABEN (Dominion - Basisspiel), auf den Angriff reagieren. Wenn du den EDLEN RÄUBER jedoch kaufst, dürfen deine Mitspieler keine Reaktionskarten aufdecken, da du den EDLEN RÄUBER nicht ausgespielt hast.",
+        "extra": "Wenn du diese Karte ausspielst, erhältst du + 1 coin. Wenn du diese Karte ausspielst und auch, wenn du diese Karte kaufst, muss beginnend bei dem Spieler links von dir, reihum jeder Mitspieler die obersten beiden Karten von seinem Nachziehstapel aufdecken. Hat der Spieler 1 SILBER oder 1 GOLD aufgedeckt, so muss er dieses entsorgen. Hat der Spieler ein SILBER und ein GOLD (oder auch 2 SILBER bzw. 2 GOLD) aufgedeckt, entscheidest du welches davon er entsorgen muss. Die andere aufgedeckte Karte legt er jeweils auf seinen Ablagestapel. Hat der Spieler weder SILBER noch GOLD aufgedeckt, so legt er beide Karten ab. Hat der Spieler überhaupt keine Geldkarte aufgedeckt, so legt er beide Karten ab und nimmt sich ein KUPFER. Du musst alle entsorgten SILBER und GOLD nehmen. Wenn du den EDLEN RÄUBER ausspielst, können deine Mitspieler mit Reaktionskarten, wie z.B. BURGGRABEN (Dominion - Basisspiel), auf den Angriff reagieren. Wenn du den EDLEN RÄUBER jedoch kaufst, dürfen deine Mitspieler keine Reaktionskarten aufdecken, da du den EDLEN RÄUBER nicht ausgespielt hast.", 
         "name": "Edler Räuber"
     },
     "Nomad Camp": {
@@ -1486,7 +1501,9 @@
     },
     "Spice Merchant": {
         "description": " Du darfst eine Karte aus deiner Hand entsorgen. Wenn du das machst, wählst du eine der beiden angegebenen Kombinationen. Entweder ziehst du 2 Karten nach und erhältst +1 Aktion oder du erhältst + 2 coins und +1 Kauf. Wenn du keine Karte aus deiner Hand entsorgen kannst oder willst, darfst du auch keine der angegebenen Anweisungen ausführen.", 
-        "name": "Gewürzhändler"
+        "extra": "You may trash a Treasure card from your hand. This is optional. If you did trash a Treasure card, you choose either to get +2 Cards and +1 Action, or +2 coins and +1 Buy.", 
+        "name": "Gewürzhändler", 
+        "untranslated": "extra"
     },
     "Stables": {
         "description": "Du darfst eine Geldkarte aus deiner Hand ablegen. Wenn du das machst: +3 Karten, +1 Aktion.", 
@@ -1642,7 +1659,7 @@
     },
     "Upgrade": {
         "description": "+1 Aktion<br>+1 Karte<br>Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die genau 1 mehr kostet als die entsorgte Karte.", 
-        "extra": "Du ziehst zuerst eine Karte. Danach musst du eine Karte aus deiner Hand entsorgen und dann eine Karte nehmen, die genau 1 coin mehr kostet als die entsorgte Karte. Ist keine solche Karte im Vorrat, erhältst du keine Karte, musst jedoch trotzdem eine entsorgen. Wenn du keine Karte zum Entsorgen hast, entsorgst du keine und nimmst dir keine Karte.", 
+        "extra": "Draw a card first. Then, you must trash a card from your hand and gain a card costing exactly 1 coin more than the trashed card. The gained card has to be a card in the Supply, and it goes into your discard pile. If there are no cards available for that cost, you do not get one (you still trashed a card though). If you do not have a card in your hand to trash, you neither trash nor gain a card. Card costs are affected by Bridge. Since Bridge affects the costs of the card you trash and then card you gain, in most cases the Bridge will have no net effect. But since cards cannot go below zero in cost, a Bridge played before an Upgrade would allow you to trash a Copper and gain an Estate.", 
         "name": "Anbau", 
         "untranslated": "extra"
     },
@@ -2042,15 +2059,17 @@
         "extra": "KLEINBAUER ist ein Reisender. Diese Karten sind durch einen hellgrauen Pfeil im Hintergrund des Anweisungstextes gekennzeichnet. Die Besonderheit dieser Karten ist, dass sie in höherwertige Karten eingetauscht werden können. Die ausgetauschte Karte wird zurück auf ihren Stapel gelegt. KLEINBAUER gehört zum Vorrat und kann wie jede andere Königreichkarte gekauft und genommen werden. Wird KLEINBAUER im Spiel verwendet, werden die zum Eintauschen nötigen Karten auf separate Stapel neben dem Vorrat bereit gelegt. Diese Eintausch-Karten sind mit einem kleinen Sternchen gekennzeichnet, jeweils 5x im Spiel enthalten und gehören nicht zum Vorrat. Außerdem können sie nur durch das Eintauschen von entsprechenden Reisenden erworben, nicht aber gekauft oder anderweitig genommen werden. Wird ein Stapel Eintausch-Karten im Spielverlauf leer, gilt dieser nicht als einer der drei leeren Vorratsstapel, die das Spielende herbeiführen.<n> Um eine Karte einzutauschen, muss sie sich im Spiel befinden. Der Spieler darf in seiner Aufräumphase die Karte zurück auf ihren Stapel legen, bekommt die nächst höherwertige Karte vom Stapel und legt diese ab. Ist der entsprechende Stapel leer, kann die Karte nicht eingetauscht werden. Die Karte LEHRER kann nicht eingetauscht werden. Eine Karte, die eingetauscht und damit auf ihren Stapel zurückgelegt wird, gilt nicht als entsorgt. Auch die durch das Eintauschen genommene Karte gilt nicht als genommen. Das ist wichtig für Anweisungen auf anderen Karten, die sich auf \"Nehmen\" und \"Entsorgen\" beziehen.", 
         "name": "Kleinbauer → Lehrer"
     },
-    "Turnier und Preise": {
-        "description": "+1 Aktion<br>Du darfst eine Provinz aus deiner Hand ablegen. Wenn du das machst: Nimm dir einen Preis vom Preisstapel oder ein Herzogtum. Lege die neue Karte sofort auf deinen Nachziehstapel. Jeder Mitspieler darf eine Provinz aus seiner Hand aufdecken. Wenn das keiner macht: +1 Karte, +1 Coin.<n><justify>Preise: <u>Ein Sack voll Gold</u>, <u>Diadem</u>, <u>Gefolge</u>, <u>Prinzessin</u>, <u>Streitross</u>", 
-        "extra": "Beim Ausspielen eines TURNIERS erhältst du +1 Aktion. Dann darfst du eine PROVINZ aus deiner Hand auf deinen Ablagestapel legen. Wenn du das machst, musst du dich entscheiden, entweder eine Preiskarte oder ein HERZOGTUM zu nehmen. Entscheidest du dich für die Preiskarte, suchst du dir eine der Karten vom Preisstapel aus. Entscheidest du dich für das HERZOGTUM, nimmst du dir ein HERZOGTUM vom Vorrat. Du kannst dich auch für einen der beiden Stapel entscheiden, wenn dieser leer ist. Ist der Stapel für den du dich entscheidest leer, nimmst du dir keine Karte.<n>Nun dürfen alle deine Mitspieler eine PROVINZ aus ihrer Hand aufdecken. Deine Mitspieler zeigen die PROVINZ vor und nehmen sie dann zurück auf ihre Hand. Wenn keiner deiner Mitspieler eine PROVINZ aufdeckt, erhältst du +1 Karte und +1 coin. Es gibt also 4 mögliche Ergebnisse: 1. Du legst keine PROVINZ ab und keiner deiner Mitspieler deckt eine PROVINZ auf: Du erhältst +1 Karte, +1 Aktion und +1 coin. 2. Du legst keine PROVINZ ab und mindestens einer deiner Mitspieler deckt eine PROVINZ auf: Du erhältst +1 Aktion. 3. Du legst eine PROVINZ ab aber keiner deiner Mitspieler deckt eine PROVINZ auf: Du nimmst dir eine Preiskarte oder ein HERZOGTUM und erhältst +1 Karte, +1 Aktion und +1 coin. 4. Du legst eine PROVINZ ab und mindestens einer deiner Mitspieler deckt eine PROVINZ auf: Du nimmst dir eine Preiskarte oder ein HERZOGTUM und erhältst +1 Aktion.<n> Du darfst den Preisstapel jederzeit durchsehen.", 
-        "name": "Turnier und Preise"
+    "Tournament and Prizes": {
+        "description": "+1 Action<n>Each player may reveal a Province from his hand. If you do, discard it and gain a Prize (from the Prize pile) or a Duchy, putting it on top of your deck. If no-one else does, +1 Card +1 Coin.<n><justify>Prizes: <u>Bag of Gold</u>, <u>Diadem</u>, <u>Followers</u>, <u>Princess</u>, <u>Trusty Steed</u>", 
+        "extra": " First you get +1 Action. Then each player, including you, may reveal a Province card from his hand. Then, if you revealed a Province, discard that card, and you gain a Prize of your choice, or a Duchy, putting whatever card you took on top of your deck. If there were no cards in your deck, it becomes the only card in your deck. There are five Prizes, set out at the start of the game; see Preparation. You can only take a Prize from the Prize pile. You can take any Prize from the Prize pile; you do not have to take the top one. You can take a Duchy instead, whether or not the Prizes have run out. You can opt to take a Duchy even if the Duchy pile is empty, or a Prize even if no Prizes are left; in these cases you gain nothing. After gaining your card or not, if no other player revealed a Province, you draw a card and get +1 coin. ", 
+        "name": "Tournament and Prizes", 
+        "untranslated": "description, extra, name"
     },
-    "Eremit - Verrückter": {
-        "description": "<justify>Wird der EREMITEN im Spiel verwendet, so wird auch der Verrückten-Stapel benötigt. Der Verrückten-Stapel wird neben dem Vorrat bereit gelegt. Die Karten vom Verrückten-Stapel können nur durch die Anweisung auf dem EREMITEN genommen werden. Auf andere Weise können keine Karten vom Verrückten-Stapel gekauft oder genommen werden. Der BOTSCHAFTER (Dominion - Seaside) darf keine Karten auf den Verrückten-Stapel zurück legen. Der Verrückten-Stapel wird für die Spielende-Bedingung nicht beachtet.<u>Eremit</u>: Sieh deinen Ablagestapel durch. Du darfst eine Karte, die keine Geldkarte ist, aus deinem Ablagestapel oder aus deiner Hand entsorgen. Nimm dir eine Karte, die bis zu 3 Coin kostet.<br>Wenn du diese Karte aus dem Spiel ablegst ablegst und in diesem Zug keine Karte gekauft hast, entsorge diese Karte und nimm dir einen Verrückten. <u>Verrückter</u>:+2 Aktionen<br>Lege diese Karte zurück auf den Verrückten-Stapel. Wenn du das machst: +1 Karte pro Karte, die du auf der Hand hast. (Der Verrückten-Stapel ist nicht Teil des Vorrats.)",
-        "extra": "Wenn du den EREMITEN ausspielst, siehst du dir zunächst deinen Ablagestapel durch. Dann darfst du eine Karte, die keine Geldkarte ist, aus dem Ablagestapel oder aus deiner Hand entsorgen. Du musst keine Karte entsorgen und du darfst keine Geldkarte entsorgen. Kombinierte Geldkarten, wie z.B. der HAREM (Dominion – Die Intrige) sind Geldkarten. Egal ob du eine Karte entsorgt hast oder nicht, musst du dir eine Karte nehmen, die bis zu 3 kostet. Du nimmst diese Karte aus dem Vorrat und legst sie auf deinen Ablagestapel. Du musst eine Karte nehmen, wenn möglich. Du darfst nicht darauf verzichten. Wenn du den EREMITEN aus dem Spiel ablegst (normalerweise in der Aufräumphase am Ende der Runde, in der du die Karte ausgespielt hast) und du in diesem Zug keine Karte gekauft hast, entsorge den EREMITEN und nimm dir einen VERRÜCKTEN. Du nimmst den VERRÜCKTEN vom Stapel neben dem Vorrat und legst ihn auf deinen Ablagestapel. Karten, die du auf andere Weise genommen hast, als sie zu kaufen, haben keinen Einfluss darauf, ob du den EREMITEN entsorgst. Ist der Verrückten-Stapel leer, so nimmst du dir keinen. Wird der EREMIT in der Aufräumphase nicht regulär abgelegt, sondern z.B. durch das KOMPLOTT (Dominion - Hinterland) zurück auf den Nachziehstapel gelegt, entsorgst du den EREMITEN nicht und nimmst dir auch keinen VERRÜCKTEN. Der VERRÜCKTEN ist nicht Teil des Vorrats. Er kann nur durch die Anweisung auf dem EREMITEN genommen werden. Auf eine andere Art kann der VERRÜCKTE nicht genommen oder gekauft werden. Wenn du den VERRÜCKTEN ausspielst, erhältst du +2 Aktionen. Dann legst du den VERRÜCKTEN normalerweise auf den Verrückten-Stapel zurück und ziehst pro Karte, die du noch auf der Hand hast, eine Karte nach (du verdoppelst also die Anzahl deiner Handkarten). Es kann jedoch vorkommen, dass du den VERRÜCKTEN nicht zurück legen kannst, weil du den „Anschluss verloren“ hast, z.B. weil du den VERRÜCKTEN auf eine PROZESSION oder einen THRONSAAL (Dominion - Basisspiel) ausgespielt hast.", 
-        "name": "Eremit / Verrückter"
+    "Hermit - Madman": {
+        "description": "<justify><u>Hermit</u>: When you play this, look through your discard pile, and then you may choose to trash a card that is not a Treasure, from either your hand or your discard pile. You do not have to trash a card and cannot trash Treasures. A card with multiple types, one of which is Treasure (such as Harem from Intrigue), is a Treasure. After trashing or not, you gain a card costing up to 3 Coins. The card you gain comes from the Supply and is put into your discard pile. Gaining a card is mandatory if it is possible. Then, when you discard Hermit from play - normally, in Clean-up, after playing it in your Action phase - if you did not buy any cards this turn, you trash Hermit and gain a Madman. It does not matter whether or not you gained cards other ways, only whether or not you bought a card. If there are no Madman cards left, you do not gain one. If Hermit is not discarded from play during Clean-up - for example, if you put it on your deck with Scheme (from Hinterlands) - then the ability that trashes it will not trigger.", 
+        "extra": " <u>Madman</u>: This card is not in the Supply; it can only be obtained via Hermit. When you play it, you get +2 Actions, return it to the Madman pile if you can (this is not optional), and if you did return it, you draw a card per card in your hand. For example if you had three cards in hand after playing Madman, you would draw three cards. Normally, nothing will prevent you from returning Madman to the Madman pile, but you may fail to due to playing Madman twice via Procession, Throne Room (from Dominion), or King's Court (from Prosperity). So, for example, if you Procession a Madman, you will get +2 Actions, return Madman to the Madman pile, draw a card per card in your hand, get another +2 Actions, fail to return Madman and so not draw cards the second time, fail to trash Madman, and then gain an Action card costing exactly 1 Coin if you can. ", 
+        "name": "Hermit / Madman", 
+        "untranslated": "description, extra, name"
     },
     "Shelters": {
         "description": "<justify> Wird ausschließlich mit Königreichkarten aus Dark Ages gespielt, so erhalten die Spieler zu Beginn anstatt der üblichen 3 ANWESEN 1 HÜTTE, 1 TOTENSTADT und 1 VERFALLENES ANWESEN. Der Kartensatz besteht also zu Spielbeginn aus 7 KUPFER und je einer der 3 unterschiedlichen Unterschlupf-Karten. Im Vorrat liegen dann alle 12 ANWESEN (bzw. 8 ANWESEN bei 2 Spielern). Wird mit einer Mischung von Dark Ages und anderen Königreichkarten gespielt, einigen sich die Spieler darauf, ob sie die Unterschlupf-Karten verwenden wollen oder wie bisher mit ANWESEN starten. Um zufällig zu bestimmen, ob die Unterschlupf-Karten verwendet werden, mischt ein Spieler die für dieses Spiel verwendeten 10 Platzhalterkarten und deckt die oberste auf. Ist die aufgedeckte eine Karte aus Dark Ages, so werden die Unterschlupfkarten verwendet. Ansonsten wird der Startkartenstapel aus 7 KUPFER und 3 ANWESEN zusammengestellt, wie in der Grundregel beschrieben. Unterschlupfkarten haben keinen Stapel (weder im Vorrat noch außerhalb des Vorrats), sie können niemals gekauft werden. Der BOTSCHAFTER (Dominion - Seaside) darf keine Unterschlupf-Karten zurücklegen. <left><u>Hütte</u>: Wenn du eine Punktekarte kaufst, darfst du diese Hütte entsorgen.<br><u>Totenstadt</u>: +2 Aktionen<br><u>Verfallenes Anwesen</u>:0<*VP*>Wenn du diese Karte entsorgst: +1 Karte.", 
@@ -2129,6 +2148,12 @@
         "name": "Wahrzeichen", 
         "untranslated": "description, extra"
     },
+    "Turnier und Preise": {
+        "description": "+1 Aktion<br>Du darfst eine Provinz aus deiner Hand ablegen. Wenn du das machst: Nimm dir einen Preis vom Preisstapel oder ein Herzogtum. Lege die neue Karte sofort auf deinen Nachziehstapel. Jeder Mitspieler darf eine Provinz aus seiner Hand aufdecken. Wenn das keiner macht: +1 Karte, +1 Coin.<n><justify>Preise: <u>Ein Sack voll Gold</u>, <u>Diadem</u>, <u>Gefolge</u>, <u>Prinzessin</u>, <u>Streitross</u>", 
+        "extra": "Beim Ausspielen eines TURNIERS erhältst du +1 Aktion. Dann darfst du eine PROVINZ aus deiner Hand auf deinen Ablagestapel legen. Wenn du das machst, musst du dich entscheiden, entweder eine Preiskarte oder ein HERZOGTUM zu nehmen. Entscheidest du dich für die Preiskarte, suchst du dir eine der Karten vom Preisstapel aus. Entscheidest du dich für das HERZOGTUM, nimmst du dir ein HERZOGTUM vom Vorrat. Du kannst dich auch für einen der beiden Stapel entscheiden, wenn dieser leer ist. Ist der Stapel für den du dich entscheidest leer, nimmst du dir keine Karte.<n>Nun dürfen alle deine Mitspieler eine PROVINZ aus ihrer Hand aufdecken. Deine Mitspieler zeigen die PROVINZ vor und nehmen sie dann zurück auf ihre Hand. Wenn keiner deiner Mitspieler eine PROVINZ aufdeckt, erhältst du +1 Karte und +1 coin. Es gibt also 4 mögliche Ergebnisse: 1. Du legst keine PROVINZ ab und keiner deiner Mitspieler deckt eine PROVINZ auf: Du erhältst +1 Karte, +1 Aktion und +1 coin. 2. Du legst keine PROVINZ ab und mindestens einer deiner Mitspieler deckt eine PROVINZ auf: Du erhältst +1 Aktion. 3. Du legst eine PROVINZ ab aber keiner deiner Mitspieler deckt eine PROVINZ auf: Du nimmst dir eine Preiskarte oder ein HERZOGTUM und erhältst +1 Karte, +1 Aktion und +1 coin. 4. Du legst eine PROVINZ ab und mindestens einer deiner Mitspieler deckt eine PROVINZ auf: Du nimmst dir eine Preiskarte oder ein HERZOGTUM und erhältst +1 Aktion.<n> Du darfst den Preisstapel jederzeit durchsehen.", 
+        "name": "Turnier und Preise", 
+        "untranslated": "Note: This card is currently not used."
+    },
     "Ruined Market": {
         "description": "+1 Kauf", 
         "extra": "", 
@@ -2139,6 +2164,12 @@
         "description": "+1 Aktion", 
         "extra": "", 
         "name": "Zerstörtes Dorf", 
+        "untranslated": "Note: This card is currently not used."
+    },
+    "Eremit - Verrückter": {
+        "description": "<justify>Wird der EREMITEN im Spiel verwendet, so wird auch der Verrückten-Stapel benötigt. Der Verrückten-Stapel wird neben dem Vorrat bereit gelegt. Die Karten vom Verrückten-Stapel können nur durch die Anweisung auf dem EREMITEN genommen werden. Auf andere Weise können keine Karten vom Verrückten-Stapel gekauft oder genommen werden. Der BOTSCHAFTER (Dominion - Seaside) darf keine Karten auf den Verrückten-Stapel zurück legen. Der Verrückten-Stapel wird für die Spielende-Bedingung nicht beachtet.<u>Eremit</u>: Sieh deinen Ablagestapel durch. Du darfst eine Karte, die keine Geldkarte ist, aus deinem Ablagestapel oder aus deiner Hand entsorgen. Nimm dir eine Karte, die bis zu 3 Coin kostet.<br>Wenn du diese Karte aus dem Spiel ablegst ablegst und in diesem Zug keine Karte gekauft hast, entsorge diese Karte und nimm dir einen Verrückten. <u>Verrückter</u>:+2 Aktionen<br>Lege diese Karte zurück auf den Verrückten-Stapel. Wenn du das machst: +1 Karte pro Karte, die du auf der Hand hast. (Der Verrückten-Stapel ist nicht Teil des Vorrats.)", 
+        "extra": "Wenn du den EREMITEN ausspielst, siehst du dir zunächst deinen Ablagestapel durch. Dann darfst du eine Karte, die keine Geldkarte ist, aus dem Ablagestapel oder aus deiner Hand entsorgen. Du musst keine Karte entsorgen und du darfst keine Geldkarte entsorgen. Kombinierte Geldkarten, wie z.B. der HAREM (Dominion – Die Intrige) sind Geldkarten. Egal ob du eine Karte entsorgt hast oder nicht, musst du dir eine Karte nehmen, die bis zu 3 kostet. Du nimmst diese Karte aus dem Vorrat und legst sie auf deinen Ablagestapel. Du musst eine Karte nehmen, wenn möglich. Du darfst nicht darauf verzichten. Wenn du den EREMITEN aus dem Spiel ablegst (normalerweise in der Aufräumphase am Ende der Runde, in der du die Karte ausgespielt hast) und du in diesem Zug keine Karte gekauft hast, entsorge den EREMITEN und nimm dir einen VERRÜCKTEN. Du nimmst den VERRÜCKTEN vom Stapel neben dem Vorrat und legst ihn auf deinen Ablagestapel. Karten, die du auf andere Weise genommen hast, als sie zu kaufen, haben keinen Einfluss darauf, ob du den EREMITEN entsorgst. Ist der Verrückten-Stapel leer, so nimmst du dir keinen. Wird der EREMIT in der Aufräumphase nicht regulär abgelegt, sondern z.B. durch das KOMPLOTT (Dominion - Hinterland) zurück auf den Nachziehstapel gelegt, entsorgst du den EREMITEN nicht und nimmst dir auch keinen VERRÜCKTEN. Der VERRÜCKTEN ist nicht Teil des Vorrats. Er kann nur durch die Anweisung auf dem EREMITEN genommen werden. Auf eine andere Art kann der VERRÜCKTE nicht genommen oder gekauft werden. Wenn du den VERRÜCKTEN ausspielst, erhältst du +2 Aktionen. Dann legst du den VERRÜCKTEN normalerweise auf den Verrückten-Stapel zurück und ziehst pro Karte, die du noch auf der Hand hast, eine Karte nach (du verdoppelst also die Anzahl deiner Handkarten). Es kann jedoch vorkommen, dass du den VERRÜCKTEN nicht zurück legen kannst, weil du den „Anschluss verloren“ hast, z.B. weil du den VERRÜCKTEN auf eine PROZESSION oder einen THRONSAAL (Dominion - Basisspiel) ausgespielt hast.", 
+        "name": "Eremit / Verrückter", 
         "untranslated": "Note: This card is currently not used."
     },
     "Ruined Library": {
@@ -2158,20 +2189,5 @@
         "extra": "", 
         "name": "Verlassene Mine", 
         "untranslated": "Note: This card is currently not used."
-    },
-    "Grey Mustang": {
-        "description": "+1 Karte (Punktekarten werden überquert)<br>+2 Aktionen<br> -1 <*COIN*> 1 <*VP*><br>Das Geld dient bei Ausspielen dem Unterhalt des kostbaren Vollblüters. Den Siegpunkt gibt es einmalig bei Spielende.",
-        "extra": "",
-        "name": "Edler Schimmel"
-    },
-    "Rabbits": {
-        "description": "+1 Karte, +1 Aktion<br>Alle Mitspiele legen eine Punktekartenaus der Hand (sofern vorhanden) auf den Ablagestapel.<br>Beim <b>2. Karnickel</b> im selben Zug muss auch der Ablagestapel nach Punktekarte duchsucht werden, falls keine auf der Hand ist.<br>Beim <b>3. Karnickel</b> (Karnickelplage):<br> Alle Mitspiele müssen alle Punktekarten aus Hand und Ablagestapel auf den Nachziehstapel legen.<br><b>Karnickel können nur durch den Hofhund abgewehrt werden.</b>",
-        "extra": "",
-        "name": "Karnickel"
-    },
-    "Yard Dog": {
-        "description": "+1 Karte, +1 Aktion<br>Wehrt Angriffe gegen den Bereich (Hand, Nachzieh- oder Ablagestapel) ab, in dem er sich befindet, sofern er sichtbar ist/wird oder vorgezeigt werden kann.", 
-        "extra": "",
-        "name": "Hofhund"
     }
 }
