@@ -885,6 +885,7 @@ def filter_sort_cards(cards, options):
         unknownExpansions = options.expansions - knownExpansions
         if unknownExpansions:
             print "Error - unknown expansion(s): %s" % ", ".join(unknownExpansions)
+            print "Possible options are:\n{}".format('\n'.join(Official_sets))
 
         # Now keep only the cards that are in the expansions requested
         cards = []
@@ -927,6 +928,7 @@ def filter_sort_cards(cards, options):
         unknownExpansions = options.fan - knownExpansions
         if unknownExpansions:
             print "Error - unknown fan expansion(s): %s" % ", ".join(unknownExpansions)
+            print "Possible options are:\n{}".format('\n'.join(Fan_sets))
 
         # Now add cards that are in the fan expansions requested
         for c in Fan_cards:
