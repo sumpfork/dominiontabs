@@ -431,7 +431,7 @@ def parse_opts(cmdline_args=None):
     if options.expansions is None:
         # No instance given, so default to all Official expansions
         options.expansions = ['*']
-    elif options.expansions:
+    else:
         # options.expansions is a list of lists.  Reduce to single lowercase list
         options.expansions = [item.lower() for sublist in options.expansions for item in sublist]
     if 'none' in options.expansions:
@@ -441,7 +441,7 @@ def parse_opts(cmdline_args=None):
     if options.fan is None:
         # No instance given, so default to no Fan expansions
         options.fan = []
-    elif options.fan:
+    else:
         # options.fan is a list of lists.  Reduce to single lowercase list
         options.fan = [item.lower() for sublist in options.fan for item in sublist]
     if 'none' in options.fan:
