@@ -428,13 +428,25 @@ def parse_opts(cmdline_args=None):
     if options.notch:
         options.notch_length = 1.5
 
-    if options.expansions:
+    if options.expansions is None:
+        # No instance given, so default to all Official expansions
+        options.expansions = ['*']
+    elif options.expansions:
         # options.expansions is a list of lists.  Reduce to single lowercase list
         options.expansions = [item.lower() for sublist in options.expansions for item in sublist]
+    if 'none' in options.expansions:
+        # keyword to indicate no options.  Same as --expansions without any expansions given.
+        options.expansions = []
 
-    if options.fan:
+    if options.fan is None:
+        # No instance given, so default to no Fan expansions
+        options.fan = []
+    elif options.fan:
         # options.fan is a list of lists.  Reduce to single lowercase list
         options.fan = [item.lower() for sublist in options.fan for item in sublist]
+    if 'none' in options.fan:
+        # keyword to indicate no options.  Same as --fan without any expansions given
+        options.fan = []
 
     return options
 
@@ -835,33 +847,25 @@ def filter_sort_cards(cards, options):
     if options.language != LANGUAGE_DEFAULT:
         Card.sets = add_set_text(options, Card.sets, options.language)
 
-    # Build Official and Fan card lists
-    Official_cards = []  # Will hold official cards
-    Fan_cards = []  # Will hold fan cards
-    for card in cards:
-        if card.cardset_tag not in Card.sets:
-            print "ERROR: card '", card.card_tag, "' has invalid cardset_tag ('", card.cardset_tag, "')."
+    # Split out Official and Fan set information
+    Official_sets = set()  # Will hold official sets
+    Official_search = []  # Will hold official sets for searching, both set key and set_name
+    Fan_sets = set()  # Will hold fan sets
+    Fan_search = []  # Will hold fan sets for searching, both set key and set_name
+    wantedSets = set()  # Will hold all the sets requested for printing
+    for s in Card.sets:
+        if Card.sets[s].get("fan", False):
+            # Fan Expansion
+            Fan_sets.add(s)
+            Fan_search.extend([s.lower(), Card.sets[s].get('set_name', None).lower()])
         else:
-            # add cardset
-            card.cardset = Card.sets[card.cardset_tag].get('set_name', card.cardset_tag)
-            # Seperate out Official from Fan cards
-            if Card.sets[card.cardset_tag].get('fan', False):
-                Fan_cards.append(card)
-            else:
-                Official_cards.append(card)
-    cards = Official_cards  # By default, work with all official cards
+            # Official Expansion
+            Official_sets.add(s)
+            Official_search.extend([s.lower(), Card.sets[s].get('set_name', None).lower()])
 
-    # If expansion names given, then remove any cards not in those expansions
+    # If expansion names given, then find out which expansions are requested
     # Expansion names can be the names from the language or the cardset_tag
     if options.expansions:
-        # First get the Official set infomation
-        Official_sets = set()  # Will hold official sets
-        Official_search = []  # Will hold official sets for searching, both set key and set_name
-        for s in Card.sets:
-            if not Card.sets[s].get("fan", False):
-                Official_sets.add(s)
-                Official_search.extend([s.lower(), Card.sets[s].get('set_name', None).lower()])
-
         # Expand out any wildcards, matching set key or set name in the given language
         expanded_expansions = []
         for e in options.expansions:
@@ -873,38 +877,21 @@ def filter_sort_cards(cards, options):
 
         # Now get the actual sets that are matched above
         options.expansions = set([e for e in expanded_expansions])  # Remove duplicates
-        wantedSets = set()
         knownExpansions = set()
         for e in options.expansions:
             for s in Official_sets:
                 if (s.lower() == e or Card.sets[s].get('set_name', "").lower() == e):
                     wantedSets.add(s)
                     knownExpansions.add(e)
-
         # Give indication if an imput did not match anything
         unknownExpansions = options.expansions - knownExpansions
         if unknownExpansions:
             print "Error - unknown expansion(s): %s" % ", ".join(unknownExpansions)
-            print "Possible options are:\n{}".format('\n'.join(Official_sets))
-
-        # Now keep only the cards that are in the expansions requested
-        cards = []
-        for c in Official_cards:
-            if c.cardset_tag in wantedSets:
-                cards.append(c)
 
     # Take care of fan expansions.  Fan expansions must be explicitly named to be added.
     # If no --fan is given, then no fan cards are added.
     # Fan expansion names can be the names from the language or the cardset_tag
     if options.fan:
-        # First get the Fan set infomation
-        Fan_sets = set()  # Will hold fan sets
-        Fan_search = []  # Will hold fan sets for searching, both set key and set_name
-        for s in Card.sets:
-            if Card.sets[s].get("fan", False):
-                Fan_sets.add(s)
-                Fan_search.extend([s.lower(), Card.sets[s].get('set_name', None).lower()])
-
         # Expand out any wildcards, matching set key or set name in the given language
         expanded_expansions = []
         for e in options.fan:
@@ -916,24 +903,25 @@ def filter_sort_cards(cards, options):
 
         # Now get the actual sets that are matched above
         options.fan = set([e for e in expanded_expansions])  # Remove duplicates
-        wantedSets = set()
         knownExpansions = set()
         for e in options.fan:
             for s in Fan_sets:
                 if (s.lower() == e or Card.sets[s].get('set_name', "").lower() == e):
                     wantedSets.add(s)
                     knownExpansions.add(e)
-
         # Give indication if an imput did not match anything
         unknownExpansions = options.fan - knownExpansions
         if unknownExpansions:
             print "Error - unknown fan expansion(s): %s" % ", ".join(unknownExpansions)
-            print "Possible options are:\n{}".format('\n'.join(Fan_sets))
 
-        # Now add cards that are in the fan expansions requested
-        for c in Fan_cards:
-            if c.cardset_tag in wantedSets:
-                cards.append(c)
+    # Now keep only the cards that are in the sets that have been requested
+    keep_cards = []
+    for c in cards:
+        if c.cardset_tag in wantedSets:
+            # Add the cardset informaiton to the card and add it to the list of cards to use
+            c.cardset = Card.sets[c.cardset_tag].get('set_name', c.cardset_tag)
+            keep_cards.append(c)
+    cards = keep_cards
 
     # Now add text to the cards.  Waited as long as possible to catch all groupings
     cards = add_card_text(options, cards, LANGUAGE_DEFAULT)
