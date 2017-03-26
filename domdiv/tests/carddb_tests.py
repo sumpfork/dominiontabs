@@ -9,7 +9,7 @@ class TestCardDB(unittest.TestCase):
         options = main.parse_opts([])
         options.data_path = '.'
         cards = main.read_card_data(options)
-        self.assertEquals(len(cards), 445)
+        self.assertEquals(len(cards), 448)
         valid_cardsets = {
             u'base',
             u'dominion1stEdition',
@@ -32,7 +32,8 @@ class TestCardDB(unittest.TestCase):
             u'empires',
             u'empires extras',
             u'promo',
-            u'extras'
+            u'extras',
+            u'animals'
         }
         for c in cards:
             self.assertIsInstance(c, domdiv_cards.Card)

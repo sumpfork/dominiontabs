@@ -407,6 +407,24 @@
         "extra": " Questa carta Regno è una carta Vittoria, non una carta Azione. Non fa nulla fino alla fine della partita, quando varrà 1 punto vittoria per ogni 3 carte Azione nel tuo mazzo (contando tutte le tue carte, la tua pila degli scarti e la mano fan parte del tuo mazzo a quel punto). Arrotonda per difetto; se hai 11 carte Azione, Vigna vale 3 punti vittoria. Durante la preparazione, metti 12 Vigne nella Riserva per una partita con 3, 4, 5 o 6 giocatori, 8 nella Riserva per una partita a 2 giocatori.", 
         "name": "Vigna"
     },
+    "Grey Mustang": {
+        "description": "+1 Card<n>(Victory cards may be discarded, then draw another)<n>+2 Actions<n>-1 Coin<br>(The coin is used for the entertainment of the precious thoroughbred.)<line>1 <*VP*><br>The victory point is counted at the end of the game.", 
+        "extra": "", 
+        "name": "Grey Mustang", 
+        "untranslated": "description, extra, name"
+    },
+    "Rabbits": {
+        "description": "+1 Card<n>+1 Action<br>All other players put a victory card from their hand on their deck.<br>If it's the <b>2nd Rabbits card</b> played (in this turn), players must also search through their discard pile for Victory cards if they have none in hand.<br>If it's the <b>3rd Rabbits card</b> (rabbit plague), all other players must put <b>all</b> Victory cards from their hand and discard pile on their deck.<br><b>Rabbits can only be defended against by Yard Dog.</b>", 
+        "extra": "", 
+        "name": "Rabbits", 
+        "untranslated": "description, extra, name"
+    },
+    "Yard Dog": {
+        "description": "+1 Card<n>+1 Action<br>Defends the section in which he dwells (hand, discard pile or deck) against any attack which aims at this section (only if he is or becomes visible or can be shown)", 
+        "extra": "", 
+        "name": "Yard Dog", 
+        "untranslated": "description, extra, name"
+    },
     "Potion": {
         "description": "1 <*POTION*>", 
         "extra": " Questa è una carta Tesoro base. Costa 4 Coins e produce una Pozione. Non è una carta Regno. Dopo che hai scelto 10 carte Regno per la Riserva, se qualsiasi di loro ha Pozioni nel costo aggiungi il mazzetto Pozione alla Riserva. Aggiungi il mazzetto Pozione se stai usando la carta promo Mercato Nero ed il suo mazzetto include almeno una carta con la Pozione nel costo. Se non hai carte con la Pozione nel costo nella Riserva o nel mazzetto del Mercato Nero, non usare il mazzetto Pozione in questa partita. Se hai un mazzetto Pozione, mettici tutte e 16 le Pozioni a prescindere dal numero di giocatori. In partite con questo mazzetto, se il mazzetto si svuota conta come uno dei tre che determinano il fine partita.", 

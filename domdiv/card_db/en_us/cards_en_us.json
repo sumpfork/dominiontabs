@@ -349,6 +349,21 @@
         "extra": "This Kingdom card is a Victory card, not an Action card. It does nothing until the end of the game, when it is worth 1 victory point per 3 Action cards in your Deck (counting all of your cards - your Discard pile and hand are part of your Deck at that point). Round down; if you have 11 Action cards, Vineyard is worth 3 victory points. During set-up, put all 12 Vineyards in the Supply for a game with 3 or more players, but only 8 in the Supply for a 2-player game. Cards with multiple types, one of which is Action, are Actions and so are counted by Vineyard.", 
         "name": "Vineyard"
     },
+    "Grey Mustang": {
+        "description": "+1 Card<n>(Victory cards may be discarded, then draw another)<n>+2 Actions<n>-1 Coin<br>(The coin is used for the entertainment of the precious thoroughbred.)<line>1 <*VP*><br>The victory point is counted at the end of the game.", 
+        "extra": "", 
+        "name": "Grey Mustang"
+    },
+    "Rabbits": {
+        "description": "+1 Card<n>+1 Action<br>All other players put a victory card from their hand on their deck.<br>If it's the <b>2nd Rabbits card</b> played (in this turn), players must also search through their discard pile for Victory cards if they have none in hand.<br>If it's the <b>3rd Rabbits card</b> (rabbit plague), all other players must put <b>all</b> Victory cards from their hand and discard pile on their deck.<br><b>Rabbits can only be defended against by Yard Dog.</b>", 
+        "extra": "", 
+        "name": "Rabbits"
+    },
+    "Yard Dog": {
+        "description": "+1 Card<n>+1 Action<br>Defends the section in which he dwells (hand, discard pile or deck) against any attack which aims at this section (only if he is or becomes visible or can be shown)", 
+        "extra": "", 
+        "name": "Yard Dog"
+    },
     "Potion": {
         "description": "1 <*POTION*>", 
         "extra": "This is a basic Treasure card. It costs 4 Coins and produces Potion. It is not a Kingdom card. After you choose 10 Kingdom cards for the Supply, if any of them have Potion in the cost, add the Potion pile to the Supply. Also add the Potion pile if you are using the promotional card Black Market, and the Black Market deck includes at least one card with Potion in the cost. If you don't have any cards with Potion in the cost in the Supply or the Black Market deck, do not use the Potion pile in this game. When you have a Potion pile, put all 16 Potions in it, no matter how many players there are. In games using this pile, if the pile becomes empty, that will count towards the game ending condition.", 

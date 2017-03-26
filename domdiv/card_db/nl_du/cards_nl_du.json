@@ -351,6 +351,24 @@
         "extra": " Deze koningkrijkkaart is een overwinningskaart, geen actiekaart. De Wijnberg bevindt zich uitsluitend in het spel als deze aan het begin van het spel bij de 10 uitgekozen of getrokken koningkrijkkaart behoort. De kaart doet tijdens het spel niets. Aan het einde van het spel is de Wijnber 1 <VP> waard per 3 actiekaarten in je deck (al je kaarten tellen mee, dus bijvoorbeeld ook je handkaarten). Rond naar beneden af. Voorbeeld: als je 11 actiekaarten in je deck hebt is de Wijnberg 3 <VP> waard. Een kaart die bij meerdere soorten kaarten hoort, waaronder actiekaarten, geldt als een actiekaart en wordt bij het bepalen van de overwinningspunten voor de wijnberg meegeteld. Gebruik 8 Wijnberg-kaarten in een spel met 2 spelers en 12 in een spel met 3 of meer spelers.", 
         "name": "Wijnberg"
     },
+    "Grey Mustang": {
+        "description": "+1 Card<n>(Victory cards may be discarded, then draw another)<n>+2 Actions<n>-1 Coin<br>(The coin is used for the entertainment of the precious thoroughbred.)<line>1 <*VP*><br>The victory point is counted at the end of the game.", 
+        "extra": "", 
+        "name": "Grey Mustang", 
+        "untranslated": "description, extra, name"
+    },
+    "Rabbits": {
+        "description": "+1 Card<n>+1 Action<br>All other players put a victory card from their hand on their deck.<br>If it's the <b>2nd Rabbits card</b> played (in this turn), players must also search through their discard pile for Victory cards if they have none in hand.<br>If it's the <b>3rd Rabbits card</b> (rabbit plague), all other players must put <b>all</b> Victory cards from their hand and discard pile on their deck.<br><b>Rabbits can only be defended against by Yard Dog.</b>", 
+        "extra": "", 
+        "name": "Rabbits", 
+        "untranslated": "description, extra, name"
+    },
+    "Yard Dog": {
+        "description": "+1 Card<n>+1 Action<br>Defends the section in which he dwells (hand, discard pile or deck) against any attack which aims at this section (only if he is or becomes visible or can be shown)", 
+        "extra": "", 
+        "name": "Yard Dog", 
+        "untranslated": "description, extra, name"
+    },
     "Potion": {
         "description": "1 <*POTION*>", 
         "extra": " Dit is een standaard geldkaart. Deze kost 4 Coins en levert Potion op. Het is geen koninkrijkkaart. Als één of meer van de 10 te gebruiken stapels koninkrijkkaarten een Potion in de kosten heeft, leg dan de stapel toverdranken in de voorraad. Gebruik altijd alle 16 toverdranken, ongeacht het aantal spelers. Als de toverdranken op zijn, telt dit als lege stapel bij het bepalen van het einde van het spel.", 
