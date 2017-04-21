@@ -415,8 +415,10 @@ def parse_opts(cmdline_args=None):
         dest="write_json",
         help="Write json version of card definitions and extras.")
 
-    options = parser.parse_args(args=cmdline_args)
+    return parser.parse_args(args=cmdline_args)
 
+
+def clean_opts(options):
     if options.sleeved_thick:
         options.thickness = 3.2
         options.sleeved = True
@@ -1122,4 +1124,5 @@ def generate(options):
 
 def main():
     options = parse_opts()
+    options = clean_opts(options)
     return generate(options)
