@@ -463,10 +463,12 @@ def generate_sample(options):
     from wand.image import Image
     buf = cStringIO.StringIO()
     options.num_pages = 1
-    generate(options, '.', buf)
+    generate(options)
+    sample_out = cStringIO.cStringIO()
     with Image(blob=buf.getvalue()) as sample:
         sample.format = 'png'
-        sample.save(filename='sample.png')
+        sample.save(fp=sample_out)
+        return sample_out
 
 
 def parse_papersize(spec):
