@@ -400,6 +400,10 @@ def parse_opts(cmdline_args=None):
         dest="tabs_only",
         help="Draw only the divider tabs and no divider outlines. "
         "Used to print the divider tabs on labels.")
+    group_printing.add_argument(
+        "--preview",
+        action='store_true'
+    )
 
     # Special processing
     group_special = parser.add_argument_group(
@@ -463,11 +467,12 @@ def generate_sample(options):
     from wand.image import Image
     buf = cStringIO.StringIO()
     options.num_pages = 1
+    options.outfile = buf
     generate(options)
-    sample_out = cStringIO.cStringIO()
+    sample_out = cStringIO.StringIO()
     with Image(blob=buf.getvalue()) as sample:
         sample.format = 'png'
-        sample.save(fp=sample_out)
+        sample.save(sample_out)
         return sample_out
 
 
@@ -1127,4 +1132,7 @@ def generate(options):
 def main():
     options = parse_opts()
     options = clean_opts(options)
+    if options.preview:
+        open('preview.png', 'wb').write(generate_sample(options).getvalue())
+        return
     return generate(options)
