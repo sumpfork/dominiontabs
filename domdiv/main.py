@@ -4,7 +4,7 @@ import json
 import sys
 import argparse
 import copy
-
+import fnmatch
 import pkg_resources
 
 import reportlab.lib.pagesizes as pagesizes
@@ -28,6 +28,7 @@ EXPANSION_CHOICES = ["adventures", "alchemy", "base", "cornucopia", "dark ages",
                      "empires", "guilds", "hinterlands",
                      "intrigue1stEdition", "intrigue2ndEdition", "intrigue2ndEditionUpgrade",
                      "promo", "prosperity", "seaside"]
+FAN_CHOICES = ["animals"]
 ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
 
 LANGUAGE_DEFAULT = 'en_us'  # the primary language used if a language's parts are missing
@@ -270,11 +271,28 @@ def parse_opts(cmdline_args=None):
         "If no limits are set, then all expansions are included. "
         "Expansion names can also be given in the language specified by "
         "the --language parameter. Any expansion with a space in the name must "
-        "be enclosed in quotes. This may be called multiple times. "
-        "Values are not case sensitive and can also match the starting characters "
-        "of an expansion name.  For example, 'dominion' will match all expansions "
-        "that start with that name; Choices available in all languages include: %s" %
+        "be enclosed in double quotes. This may be called multiple times. "
+        "Values are not case sensitive. Wildcards may be used: "
+        "'*' any number of characters, '?' matches any single character, "
+        "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
+        "For example, 'dominion*' will match all expansions that start with 'dominion'. "
+        "Choices available in all languages include: %s" %
         ", ".join("%s" % x for x in EXPANSION_CHOICES))
+    group_select.add_argument(
+        "--fan",
+        nargs="*",
+        action="append",
+        dest="fan",
+        help="Add dividers from the specified fan made expansions. "
+        "If this option is not used, no fan expansions will be included. "
+        "Fan made expansion names can also be given in the language specified by "
+        "the --language parameter. Any fan expansion with a space in the name must "
+        "be enclosed in double quotes. This may be called multiple times. "
+        "Values are not case sensitive. Wildcards may be used: "
+        "'*' any number of characters, '?' matches any single character, "
+        "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
+        "Choices available in all languages include: %s" %
+        ", ".join("%s" % x for x in FAN_CHOICES))
     group_select.add_argument(
         "--edition",
         choices=EDITION_CHOICES,
@@ -314,10 +332,6 @@ def parse_opts(cmdline_args=None):
         "--exclude_landmarks",
         action="store_true",
         help="Group all 'Landmark' cards across all expansions into one divider.")
-    group_select.add_argument(
-        "--cardlist",
-        dest="cardlist",
-        help="Path to file that enumerates each card to be printed on its own line.")
 
     # Divider Sleeves/Wrappers
     group_wrapper = parser.add_argument_group(
@@ -447,11 +461,28 @@ def parse_opts(cmdline_args=None):
         dest="info_all",
         help="Same as --info, but includes pages with all the possible options that can be used.")
 
-    options = parser.parse_args(args=cmdline_args)
+    # Special processing
+    group_special = parser.add_argument_group(
+        'Miscellaneous',
+        'These options are generally not used.')
+    group_special.add_argument(
+        "--cardlist",
+        dest="cardlist",
+        help="Path to file that enumerates each card to be printed on its own line.")
+    group_special.add_argument(
+        "--write_json",
+        action="store_true",
+        dest="write_json",
+        help="Write json version of card definitions and extras.")
 
-    options.dominionCardWidth, options.dominionCardHeight = parse_cardsize(options.size, options.sleeved)
-    options.paperwidth, options.paperheight = parse_papersize(options.papersize)
-    options.minmarginwidth, options.minmarginheight = parseDimensions(options.minmargin)
+    options = parser.parse_args(args=cmdline_args)
+    # Need to do these while we have access to the parser
+    options.argv = sys.argv if options.info or options.info_all else None
+    options.help = parser.format_help() if options.info_all else None
+    return options
+
+
+def clean_opts(options):
 
     if "center" in options.tab_side:
         options.tab_side = str(options.tab_side).replace("center", "centre")
@@ -509,12 +540,25 @@ def parse_opts(cmdline_args=None):
     options.cropmarkSpacing *= cm
     options.cropmarkLength *= cm
 
-    if options.expansions:
-        # options.expansions is a list of lists.  Reduce to single list
-        options.expansions = [item for sublist in options.expansions for item in sublist]
+    if options.expansions is None:
+        # No instance given, so default to all Official expansions
+        options.expansions = ['*']
+    else:
+        # options.expansions is a list of lists.  Reduce to single lowercase list
+        options.expansions = [item.lower() for sublist in options.expansions for item in sublist]
+    if 'none' in options.expansions:
+        # keyword to indicate no options.  Same as --expansions without any expansions given.
+        options.expansions = []
 
-    options.argv = sys.argv if options.info or options.info_all else None
-    options.help = parser.format_help() if options.info_all else None
+    if options.fan is None:
+        # No instance given, so default to no Fan expansions
+        options.fan = []
+    else:
+        # options.fan is a list of lists.  Reduce to single lowercase list
+        options.fan = [item.lower() for sublist in options.fan for item in sublist]
+    if 'none' in options.fan:
+        # keyword to indicate no options.  Same as --fan without any expansions given
+        options.fan = []
 
     return options
 
@@ -609,8 +653,9 @@ def read_card_data(options):
         Card.sets = json.load(setfile)
     assert Card.sets, "Could not load any sets from database"
     for s in Card.sets:
-        if 'no_randomizer' not in Card.sets[s]:
-            Card.sets[s]['no_randomizer'] = False
+        # Make sure these are set either True or False
+        Card.sets[s]['no_randomizer'] = Card.sets[s].get('no_randomizer', False)
+        Card.sets[s]['fan'] = Card.sets[s].get('fan', False)
 
     # Set cardset_tag and expand cards that are used in multiple sets
     new_cards = []
@@ -910,24 +955,41 @@ def filter_sort_cards(cards, options):
     if options.language != LANGUAGE_DEFAULT:
         Card.sets = add_set_text(options, Card.sets, options.language)
 
-    for card in cards:
-        if card.cardset_tag in Card.sets:
-            if 'set_name' in Card.sets[card.cardset_tag].keys():
-                card.cardset = Card.sets[card.cardset_tag]['set_name']
+    # Split out Official and Fan set information
+    Official_sets = set()  # Will hold official sets
+    Official_search = []  # Will hold official sets for searching, both set key and set_name
+    Fan_sets = set()  # Will hold fan sets
+    Fan_search = []  # Will hold fan sets for searching, both set key and set_name
+    wantedSets = set()  # Will hold all the sets requested for printing
+    for s in Card.sets:
+        if Card.sets[s].get("fan", False):
+            # Fan Expansion
+            Fan_sets.add(s)
+            Fan_search.extend([s.lower(), Card.sets[s].get('set_name', None).lower()])
+        else:
+            # Official Expansion
+            Official_sets.add(s)
+            Official_search.extend([s.lower(), Card.sets[s].get('set_name', None).lower()])
 
-    # If expansion names given, then remove any cards not in those expansions
+    # If expansion names given, then find out which expansions are requested
     # Expansion names can be the names from the language or the cardset_tag
     if options.expansions:
-        options.expansions = set([e.lower() for e in options.expansions])
-        wantedExpansions = set()
-        knownExpansions = set()
-        # Match sets that either start with the expansion set key (used by cardset_tag)
-        # or the actual name of the set/expansion in the specified language.
+        # Expand out any wildcards, matching set key or set name in the given language
+        expanded_expansions = []
         for e in options.expansions:
-            for s in Card.sets:
-                if (s.lower().startswith(e) or
-                        Card.sets[s].get('set_name', "").lower().startswith(e)):
-                    wantedExpansions.add(s)
+            matches = fnmatch.filter(Official_search, e)
+            if matches:
+                expanded_expansions.extend(matches)
+            else:
+                expanded_expansions.append(e)
+
+        # Now get the actual sets that are matched above
+        options.expansions = set([e for e in expanded_expansions])  # Remove duplicates
+        knownExpansions = set()
+        for e in options.expansions:
+            for s in Official_sets:
+                if (s.lower() == e or Card.sets[s].get('set_name', "").lower() == e):
+                    wantedSets.add(s)
                     knownExpansions.add(e)
 
         # Give indication if an imput did not match anything
@@ -935,12 +997,40 @@ def filter_sort_cards(cards, options):
         if unknownExpansions:
             print "Error - unknown expansion(s): %s" % ", ".join(unknownExpansions)
 
-        # Now keep only the cards that were in the expansions requested
-        filteredCards = []
-        for c in cards:
-            if c.cardset_tag in wantedExpansions:
-                filteredCards.append(c)
-        cards = filteredCards
+    # Take care of fan expansions.  Fan expansions must be explicitly named to be added.
+    # If no --fan is given, then no fan cards are added.
+    # Fan expansion names can be the names from the language or the cardset_tag
+    if options.fan:
+        # Expand out any wildcards, matching set key or set name in the given language
+        expanded_expansions = []
+        for e in options.fan:
+            matches = fnmatch.filter(Fan_search, e)
+            if matches:
+                expanded_expansions.extend(matches)
+            else:
+                expanded_expansions.append(e)
+
+        # Now get the actual sets that are matched above
+        options.fan = set([e for e in expanded_expansions])  # Remove duplicates
+        knownExpansions = set()
+        for e in options.fan:
+            for s in Fan_sets:
+                if (s.lower() == e or Card.sets[s].get('set_name', "").lower() == e):
+                    wantedSets.add(s)
+                    knownExpansions.add(e)
+        # Give indication if an imput did not match anything
+        unknownExpansions = options.fan - knownExpansions
+        if unknownExpansions:
+            print "Error - unknown fan expansion(s): %s" % ", ".join(unknownExpansions)
+
+    # Now keep only the cards that are in the sets that have been requested
+    keep_cards = []
+    for c in cards:
+        if c.cardset_tag in wantedSets:
+            # Add the cardset informaiton to the card and add it to the list of cards to use
+            c.cardset = Card.sets[c.cardset_tag].get('set_name', c.cardset_tag)
+            keep_cards.append(c)
+    cards = keep_cards
 
     # Now add text to the cards.  Waited as long as possible to catch all groupings
     cards = add_card_text(options, cards, LANGUAGE_DEFAULT)
@@ -1008,6 +1098,11 @@ def filter_sort_cards(cards, options):
 
 def calculate_layout(options, cards=[]):
     # This is in place to allow for test cases to it call directly to get
+    options = clean_opts(options)
+    options.dominionCardWidth, options.dominionCardHeight = parse_cardsize(options.size, options.sleeved)
+    options.paperwidth, options.paperheight = parse_papersize(options.papersize)
+    options.minmarginwidth, options.minmarginheight = parseDimensions(options.minmargin)
+
     dd = DividerDrawer(options)
     dd.calculatePages(cards)
     return dd
