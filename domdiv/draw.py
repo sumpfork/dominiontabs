@@ -288,8 +288,8 @@ class Plotter(object):
             cropmarkLength = 0.2
         if cropmarkSpacing < 0:
             cropmarkSpacing = 0.1
-        self.CropMarkLength = cropmarkLength  # The length of a cropmark
-        self.CropMarkSpacing = cropmarkSpacing  # The spacing between the cut point and the start of the cropmark
+        self.CropMarkLength = cropmarkLength * cm  # The length of a cropmark
+        self.CropMarkSpacing = cropmarkSpacing * cm  # The spacing between the cut point and the start of the cropmark
         self.DotSize = 0.2  # Size of dot marks
 
     def setXY(self, x, y):

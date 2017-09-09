@@ -537,9 +537,6 @@ def clean_opts(options):
         options.linetype = 'dot'
         options.cropmarks = True
 
-    options.cropmarkSpacing *= cm
-    options.cropmarkLength *= cm
-
     if options.expansions is None:
         # No instance given, so default to all Official expansions
         options.expansions = ['*']
