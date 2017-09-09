@@ -479,6 +479,8 @@ class DividerDrawer(object):
         # draw outline or cropmarks
         if isBack and not self.options.cropmarks:
             return
+        if self.options.linewidth <= 0.0:
+            return
         self.canvas.saveState()
         self.canvas.setLineWidth(self.options.linewidth)
 
