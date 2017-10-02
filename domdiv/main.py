@@ -470,7 +470,7 @@ def generate_sample(options):
     options.outfile = buf
     generate(options)
     sample_out = cStringIO.StringIO()
-    with Image(blob=buf.getvalue()) as sample:
+    with Image(blob=buf.getvalue(), resolution=300) as sample:
         sample.format = 'png'
         sample.save(sample_out)
         return sample_out
