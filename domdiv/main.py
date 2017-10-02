@@ -404,7 +404,11 @@ def parse_opts(cmdline_args=None):
         "--preview",
         action='store_true'
     )
-
+    group_printing.add_argument(
+        "--preview_resolution",
+        type=int,
+        default=150,
+        help="resolution in DPI to render preview at, for --preview option")
     # Special processing
     group_special = parser.add_argument_group(
         'Miscellaneous',
@@ -470,7 +474,7 @@ def generate_sample(options):
     options.outfile = buf
     generate(options)
     sample_out = cStringIO.StringIO()
-    with Image(blob=buf.getvalue(), resolution=300) as sample:
+    with Image(blob=buf.getvalue(), resolution=options.preview_resolution) as sample:
         sample.format = 'png'
         sample.save(sample_out)
         return sample_out
