@@ -402,7 +402,8 @@ def parse_opts(cmdline_args=None):
         "Used to print the divider tabs on labels.")
     group_printing.add_argument(
         "--preview",
-        action='store_true'
+        action='store_true',
+        help="Only generate a preview png image of the first page"
     )
     group_printing.add_argument(
         "--preview_resolution",
