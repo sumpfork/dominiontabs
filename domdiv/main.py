@@ -1138,6 +1138,7 @@ def main():
     options = parse_opts()
     options = clean_opts(options)
     if options.preview:
-        open('preview.png', 'wb').write(generate_sample(options).getvalue())
-        return
-    return generate(options)
+        fname = '{}.{}'.format(os.path.splitext(options.outfile)[0], 'png')
+        open(fname, 'wb').write(generate_sample(options).getvalue())
+    else:
+        generate(options)
