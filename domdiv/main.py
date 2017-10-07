@@ -400,7 +400,16 @@ def parse_opts(cmdline_args=None):
         dest="tabs_only",
         help="Draw only the divider tabs and no divider outlines. "
         "Used to print the divider tabs on labels.")
-
+    group_printing.add_argument(
+        "--preview",
+        action='store_true',
+        help="Only generate a preview png image of the first page"
+    )
+    group_printing.add_argument(
+        "--preview_resolution",
+        type=int,
+        default=150,
+        help="resolution in DPI to render preview at, for --preview option")
     # Special processing
     group_special = parser.add_argument_group(
         'Miscellaneous',
@@ -463,10 +472,13 @@ def generate_sample(options):
     from wand.image import Image
     buf = cStringIO.StringIO()
     options.num_pages = 1
-    generate(options, '.', buf)
-    with Image(blob=buf.getvalue()) as sample:
+    options.outfile = buf
+    generate(options)
+    sample_out = cStringIO.StringIO()
+    with Image(blob=buf.getvalue(), resolution=options.preview_resolution) as sample:
         sample.format = 'png'
-        sample.save(filename='sample.png')
+        sample.save(sample_out)
+        return sample_out
 
 
 def parse_papersize(spec):
@@ -1125,4 +1137,8 @@ def generate(options):
 def main():
     options = parse_opts()
     options = clean_opts(options)
-    return generate(options)
+    if options.preview:
+        fname = '{}.{}'.format(os.path.splitext(options.outfile)[0], 'png')
+        open(fname, 'wb').write(generate_sample(options).getvalue())
+    else:
+        generate(options)
