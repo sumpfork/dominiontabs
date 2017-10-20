@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 import os
 import re
@@ -34,7 +35,7 @@ class Card(object):
         if name is None:
             name = card_tag  # make sure there is a meaningful default name
 
-        self.name = name.strip()
+        self.name = u'' + name.strip()
         self.cardset = cardset.strip()
         self.types = types
         self.types_name = ""
@@ -43,7 +44,7 @@ class Card(object):
         self.potcost = potcost
         self.debtcost = debtcost
         self.extra = extra
-        self.card_tag = card_tag
+        self.card_tag = u'' + card_tag
         self.cardset_tags = cardset_tags
         self.group_tag = group_tag
         self.group_top = group_top
@@ -115,7 +116,7 @@ class Card(object):
         return '"' + self.name + '"'
 
     def toString(self):
-        return self.name + ' ' + self.cardset + ' ' + '-'.join(self.types)\
+        return u'' + self.name + ' ' + self.cardset + ' ' + '-'.join(self.types)\
             + ' ' + self.cost + ' ' + self.description + ' ' + self.extra
 
     def isType(self, what):
