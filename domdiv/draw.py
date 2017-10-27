@@ -755,7 +755,7 @@ class DividerDrawer(object):
                               fontsize_multiplier,
                               height_percent,
                               text_fontsize_multiplier=None):
-            replace_template = '<img src="{fpath}" width={width} height="{height_percent}%" valign="middle" />&thinsp;'
+            replace_template = '<img src="{fpath}" width={width} height="{height_percent}%" valign="middle" />'
             offset = 0
             for match in re.finditer(tag_pattern, text):
                 replace = replace_template

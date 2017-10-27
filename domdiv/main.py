@@ -460,6 +460,15 @@ def parse_opts(cmdline_args=None):
         action="store_true",
         dest="info_all",
         help="Same as --info, but includes pages with all the possible options that can be used.")
+    group_printing.add_argument(
+        "--preview",
+        action='store_true',
+        help="Only generate a preview png image of the first page")
+    group_printing.add_argument(
+        "--preview_resolution",
+        type=int,
+        default=150,
+        help="resolution in DPI to render preview at, for --preview option")
 
     # Special processing
     group_special = parser.add_argument_group(
@@ -570,10 +579,13 @@ def generate_sample(options):
     from wand.image import Image
     buf = cStringIO.StringIO()
     options.num_pages = 1
-    generate(options, '.', buf)
-    with Image(blob=buf.getvalue()) as sample:
+    options.outfile = buf
+    generate(options)
+    sample_out = cStringIO.StringIO()
+    with Image(blob=buf.getvalue(), resolution=options.preview_resolution) as sample:
         sample.format = 'png'
-        sample.save(filename='sample.png')
+        sample.save(sample_out)
+        return sample_out
 
 
 def parse_papersize(spec):
@@ -988,7 +1000,6 @@ def filter_sort_cards(cards, options):
                 if (s.lower() == e or Card.sets[s].get('set_name', "").lower() == e):
                     wantedSets.add(s)
                     knownExpansions.add(e)
-
         # Give indication if an imput did not match anything
         unknownExpansions = options.expansions - knownExpansions
         if unknownExpansions:
@@ -1128,4 +1139,9 @@ def generate(options):
 
 def main():
     options = parse_opts()
-    return generate(options)
+    options = clean_opts(options)
+    if options.preview:
+        fname = '{}.{}'.format(os.path.splitext(options.outfile)[0], 'png')
+        open(fname, 'wb').write(generate_sample(options).getvalue())
+    else:
+        generate(options)
