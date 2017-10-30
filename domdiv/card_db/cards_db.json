@@ -3131,6 +3131,16 @@
         "Action"
     ]
 },{
+    "card_tag": "Dismantle", 
+    "cardset_tags": [
+        "promo"
+    ], 
+    "cost": "4", 
+    "image": "promo_set.png",
+    "types": [
+        "Action"
+    ]
+},{
     "card_tag": "Envoy", 
     "cardset_tags": [
         "promo"
@@ -3677,6 +3687,607 @@
     "types": [
         "Action", 
         "Duration"
+    ]
+},{
+    "card_tag": "Necromancer", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "4",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Pooka", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "5",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Shepherd", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "4",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Wish", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "0*",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Skulk", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "4",
+    "types": [
+        "Action",
+        "Attack",
+        "Doom"
+    ]
+},{
+    "card_tag": "Werewolf", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "5",
+    "types": [
+        "Action",
+        "Attack",
+        "Night",
+        "Doom"
+    ]
+},{
+    "card_tag": "Cursed Village", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "5",
+    "types": [
+        "Action",
+        "Doom"
+    ]
+},{
+    "card_tag": "Leprechaun", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "3",
+    "types": [
+        "Action",
+        "Doom"
+    ]
+},{
+    "card_tag": "Blessed Village", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "4",
+    "types": [
+        "Action",
+        "Fate"
+    ]
+},{
+    "card_tag": "Druid", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "2",
+    "types": [
+        "Action",
+        "Fate"
+    ]
+},{
+    "card_tag": "Fool", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "3",
+    "types": [
+        "Action",
+        "Fate"
+    ]
+},{
+    "card_tag": "Pixie", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "2",
+    "types": [
+        "Action",
+        "Fate"
+    ]
+},{
+    "card_tag": "Faithful Hound", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "2",
+    "types": [
+        "Action",
+        "Reaction"
+    ]
+},{
+    "card_tag": "Imp", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "2*",
+    "types": [
+        "Action",
+        "Spirit"
+    ]
+},{
+    "card_tag": "Imp", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "2*",
+    "types": [
+        "Action",
+        "Spirit"
+    ]
+},{
+    "card_tag": "Will-O’-Wisp", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "0*",
+    "types": [
+        "Action",
+        "Spirit"
+    ]
+},{
+    "card_tag": "Zombie Apprentice", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "3",
+    "types": [
+        "Action",
+        "Zombie"
+    ]
+},{
+    "card_tag": "Zombie Mason", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "3",
+    "types": [
+        "Action",
+        "Zombie"
+    ]
+},{
+    "card_tag": "Zombie Spy", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "3",
+    "types": [
+        "Action",
+        "Zombie"
+    ]
+},{
+    "card_tag": "The Earth’s Gift", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "The Field’s Gift", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "The Flame’s Gift", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "The Forest’s Gift", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "The Moon’s Gift", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "The Mountain’s Gift", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "The River’s Gift.", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "The Sea’s Gift", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "The Sky’s Gift", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "The Sun’s Gift", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "The Swamp’s Gift", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "The Wind’s Gift", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Boon"
+    ]
+},{
+    "card_tag": "Bad Omens", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "Delusion", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "Envy", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "Famine", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "Fear", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "Greed", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "Haunting", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "Locusts", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "Misery", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "Plague", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "Poverty", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "War", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "Hex"
+    ]
+},{
+    "card_tag": "Bat", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "2*",
+    "types": [
+        "Night"
+    ]
+},{
+    "card_tag": "Devil’s Workshop", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "4",
+    "types": [
+        "Night"
+    ]
+},{
+    "card_tag": "Exorcist", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "4",
+    "types": [
+        "Night"
+    ]
+},{
+    "card_tag": "Vampire", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "5",
+    "types": [
+        "Night",
+        "Attack",
+        "Doom"
+    ]
+},{
+    "card_tag": "Raider", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "6",
+    "types": [
+        "Night",
+        "Attack",
+        "Duration"
+    ]
+},{
+    "card_tag": "Crypt", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "5",
+    "types": [
+        "Night",
+        "Duration"
+    ]
+},{
+    "card_tag": "Ghost Town", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "3",
+    "types": [
+        "Night",
+        "Duration"
+    ]
+},{
+    "card_tag": "Ghost", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": " 4*",
+    "types": [
+        "Night",
+        "Duration",
+        "Spirit"
+    ]
+},{
+    "card_tag": "Deluded", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "State"
+    ]
+},{
+    "card_tag": "Envious", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "State"
+    ]
+},{
+    "card_tag": "Lost in the Woods", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "State"
+    ]
+},{
+    "card_tag": "Miserable", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "State"
+    ]
+},{
+    "card_tag": "Twice Miserable", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "",
+    "types": [
+        "State"
+    ]
+},{
+    "card_tag": "Idol", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "5",
+    "types": [
+        "Treasure",
+        "Attack",
+        "Fate"
+    ]
+},{
+    "card_tag": "Cursed Gold", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "4",
+    "types": [
+        "Treasure",
+        "Heirloom"
+    ]
+},{
+    "card_tag": "Goat", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "2",
+    "types": [
+        "Treasure",
+        "Heirloom"
+    ]
+},{
+    "card_tag": "Haunted Mirror", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "0",
+    "types": [
+        "Treasure",
+        "Heirloom"
+    ]
+},{
+    "card_tag": "Lucky Coin", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "3",
+    "types": [
+        "Treasure",
+        "Heirloom"
+    ]
+},{
+    "card_tag": "Pasture", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "2",
+    "types": [
+        "Treasure",
+        "Victory",
+        "Heirloom"
+    ]
+},{
+    "card_tag": "Cemetery", 
+    "cardset_tags": [
+        "nocturne"
+    ],
+    "cost": "4",
+    "types": [
+        "Victory"
     ]
 }
 ]
