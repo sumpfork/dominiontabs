@@ -1985,20 +1985,55 @@
         "extra": "Necromancer lets you play Action cards from the trash.<br>Each Action card in the trash can only be used once per turn, though if there are multiple copies of a card in the trash, you’ll be able to play each copy within the same turn. When you play a card in the trash, you flip it over to indicate that. So if you play three Necromancers in a turn, one could play Zombie Spy, the next could play Zombie Apprentice to trash a Skulk, and the last could play the Skulk you just trashed. If you use Throne Room to play Necromancer twice, each play of Necromancer will have to play a different card from the trash. Necromancer can’t play Duration cards, and cards that try to move themselves (like Reserve cards from Adventures) fail to do so; they’re stuck in the trash.",
         "name": "Necromancer"
     },
+    "Zombie Apprentice": {
+        "description": "You may trash an Action card from your hand for +3 Cards and +1 Action.",
+        "extra": "",
+        "name": "Zombie Apprentice"
+    },
+    "Zombie Mason": {
+        "description": "Trash the top card of your deck. You may gain a card costing up to 1 Coin more than it.",
+        "extra": "The Zombie Mason trashes the top card of your deck and optionally gains you a card costing up to 1 Coin more. Usually if it is not something you want to trash, you can gain a copy of it back from the Supply.",
+        "name": "Zombie Mason"
+    },
+    "Zombie Spy": {
+        "description": "+1 Card<br>+1 Action<br>Look at the top card of your deck. Discard it or put it back.",
+        "extra": "The Zombie Spy is like a regular Spy except it can only discard the top card of your own deck.",
+        "name": "Zombie Spy"
+    },
+    "Necromancer - Zombies": {
+        "description": "<left><u>Necromancer</u>:<center>Play  a face-up non-Duration Action card from the trash, leaving it there and turning it face down for the turn.<line>Setup: Put the 3 Zombies into the trash.<left><u>Zombie Apprentice</u>:<center>You may trash an Action card from your hand for +3 Cards and +1 Action.<left><u>Zombie Mason</u>:<center>Trash the top card of your deck. You may gain a card costing up to 1 Coin more than it.<left><u>Zombie Spy</u>:<center>+1 Card<br>+1 Action<br>Look at the top card of your deck. Discard it or put it back.",
+        "extra": "Necromancer lets you play Action cards from the trash.<br>Each Action card in the trash can only be used once per turn, though if there are multiple copies of a card in the trash, you’ll be able to play each copy within the same turn. When you play a card in the trash, you flip it over to indicate that. So if you play three Necromancers in a turn, one could play Zombie Spy, the next could play Zombie Apprentice to trash a Skulk, and the last could play the Skulk you just trashed. If you use Throne Room to play Necromancer twice, each play of Necromancer will have to play a different card from the trash. Necromancer can’t play Duration cards, and cards that try to move themselves (like Reserve cards from Adventures) fail to do so; they’re stuck in the trash.<br>The Zombie Mason trashes the top card of your deck and optionally gains you a card costing up to 1 Coin more. Usually if it is not something you want to trash, you can gain a copy of it back from the Supply.<br>The Zombie Spy is like a regular Spy except it can only discard the top card of your own deck.",
+        "name": "Necromancer / Zombies"
+    },
     "Pooka": {
         "description": "You may trash a Treasure other than Cursed Gold from your hand for +4 Cards.<br><br><i>Heirloom: Cursed Gold</i>",
         "extra": "When this is in the supply each player replaces one starting copper with Heirloom: Cursed Gold.",
         "name": "Pooka"
+    },
+    "Cursed Gold": {
+        "description": "3 <*COIN*><br><br>When you play this, gain a Curse.",
+        "extra": "",
+        "name": "Cursed Gold"
+    },
+    "Pooka - Cursed Gold": {
+        "description": "<left><u>Pooka</u>:<center>You may trash a Treasure other than Cursed Gold from your hand for +4 Cards.<br><i>Heirloom: Cursed Gold</i><left><u>Cursed Gold</u>:<center>3 <*COIN*><br><br>When you play this, gain a Curse.",
+        "extra": "When Pooka is in the supply each player replaces one starting copper with a Cursed Gold.",
+        "name": "Pooka / Cursed Gold"
     },
     "Shepherd": {
         "description": "+1 Action<br>Discard any number of Victory cards, revealing them.<br>+2 Cards per card discarded.<br><br><i>Heirloom: Pasture</i>",
         "extra": "When this is in the supply each player replaces one starting copper with Heirloom: Pasture.",
         "name": "Shepherd"
     },
-    "Wish": {
-        "description": "+1 Action<br>Return this to its pile. If you did, gain a card to your hand costing up to 6 coin.<br><br><i>(This is not in the Supply.)</i>",
+    "Pasture": {
+        "description": "1 <*COIN*><br><line><br>Worth 1<VP> per Estate you have.",
         "extra": "",
-        "name": "Wish"
+        "name": "Pasture"
+    },
+    "Shepherd - Pasture": {
+        "description": "<left><u>Shepherd</u>:<center>+1 Action<br>Discard any number of Victory cards, revealing them.<br>+2 Cards per card discarded.<br><i>Heirloom: Pasture</i><left><u>Pasture</u>:<center>1 <*COIN*><br><line><br>Worth 1<VP> per Estate you have.",
+        "extra": "When Shepherd is in the supply each player replaces one starting copper with a Pasture.",
+        "name": "Shepherd / Pasture"
     },
     "Skulk": {
         "description": "+1 Buy<br>Each other player receives the next Hex.<line>When you gain this, gain a Gold.",
@@ -2020,6 +2055,16 @@
         "extra": "The 7 cards will normally include the Leprechaun itself. It also includes any Duration cards that are still in play from previous turns. Shuffle the Hexes before receiving a Hex.",
         "name": "Leprechaun"
     },
+    "Wish": {
+        "description": "+1 Action<br>Return this to its pile. If you did, gain a card to your hand costing up to 6 coin.<br><br><i>(This is not in the Supply.)</i>",
+        "extra": "",
+        "name": "Wish"
+    },
+    "Leprechaun - Wish": {
+        "description": "<left><u>Leprechaun</u>:<center>Gain a Gold. If you have exactly 7 cards in play, gain a Wish from its pile. Otherwise, receive a Hex.<left><u>Wish</u>:<center>+1 Action<br>Return this to its pile. If you did, gain a card to your hand costing up to 6 coin.<br><i>(This is not in the Supply.)</i>",
+        "extra": "The 7 cards will normally include the Leprechaun itself. It also includes any Duration cards that are still in play from previous turns. Shuffle the Hexes before receiving a Hex.",
+        "name": "Leprechaun / Wish"
+    },
     "Blessed Village": {
         "description": "+1 Card<br>+1 Action<line>When you gain this, take a Boon. Receive it now or at the start of your next turn.",
         "extra": "Shuffle the Boons before receiving a Boon.",
@@ -2035,10 +2080,30 @@
         "extra": "When this is in the supply each player replaces one starting copper with Heirloom: Lucky Coin.",
         "name": "Fool"
     },
+    "Lucky Coin": {
+        "description": "1 <*COIN*><br><br>When you play this, gain a Silver.",
+        "extra": "",
+        "name": "Lucky Coin"
+    },
+    "Fool - Lucky Coin": {
+        "description": "<left><u>Fool</u>:<center>If you aren’t the player with Lost in the Woods, take it, take 3 Boons, and receive the Boons in any order.<br><i>Heirloom: Lucky Coin</i><left><u>Lucky Coin</u>:<center>1 <*COIN*><br><br>When you play this, gain a Silver.",
+        "extra": "When Fool is in the supply each player replaces one starting copper with a Lucky Coin.",
+        "name": "Fool / Lucky Coin"
+    },
     "Pixie": {
         "description": "+1 Card<br>+1 Action<br>Discard the top Boon. You may trash this to receive that Boon twice.<br><br><i>Heirloom: Goat</i>",
         "extra": "When this is in the supply each player replaces one starting copper with Heirloom: Goat.",
         "name": "Pixie"
+    },
+    "Goat": {
+        "description": "1 <*COIN*><br><br>When you play this, you may trash a card from your hand.",
+        "extra": "",
+        "name": "Goat"
+    },
+    "Pixie - Goat": {
+        "description": "<left><u>Pixie</u>:<center>+1 Card<br>+1 Action<br>Discard the top Boon. You may trash this to receive that Boon twice.<br><i>Heirloom: Goat</i><left><u>Goat</u>:<center>1 <*COIN*><br><br>When you play this, you may trash a card from your hand.",
+        "extra": "When Pixie is in the supply each player replaces one starting copper with a Goat.",
+        "name": "Pixie / Goat"
     },
     "Faithful Hound": {
         "description": "+2 Cards<line>When you discard this other than during Clean-up, you may set it aside, and put it into your hand at end of turn.",
@@ -2050,30 +2115,10 @@
         "extra": "",
         "name": "Imp"
     },
-    "Imp": {
-        "description": "+2 Cards<br>You may play an Action card from your hand that you don’t have a copy of in play.<br><br><i>(This is not in the supply).</i>",
-        "extra": "",
-        "name": "Imp"
-    },
     "Will-O'-Wisp": {
         "description": "+1 Card<br>+1 Action<br>Reveal the top card of your deck. If it costs 2 Coin or less, put it into your hand.<br><br><i>(This is not in the Supply.)</i>",
         "extra": "",
         "name": "Will-O'-Wisp"
-    },
-    "Zombie Apprentice": {
-        "description": "You may trash an Action card from your hand for +3 Cards and +1 Action.",
-        "extra": "",
-        "name": "Zombie Apprentice"
-    },
-    "Zombie Mason": {
-        "description": "Trash the top card of your deck. You may gain a card costing up to 1 Coin more than it.",
-        "extra": "The Zombie Mason trashes the top card of your deck and optionally gains you a card costing up to 1 Coin more. Usually if it is not something you want to trash, you can gain a copy of it back from the Supply.",
-        "name": "Zombie Mason"
-    },
-    "Zombie Spy": {
-        "description": "+1 Card<br>+1 Action<br>Look at the top card of your deck. Discard it or put it back.",
-        "extra": "The Zombie Spy is like a regular Spy except it can only discard the top card of your own deck.",
-        "name": "Zombie Spy"
     },
     "The Earth's Gift": {
         "description": "You may discard a Treasure card to gain a card costing up to 4 Coin.",
@@ -2195,15 +2240,10 @@
         "extra": "",
         "name": "War"
     },
-    "Bat": {
-        "description": "Trash up to 2 cards from your hand. If you trashed at least one, exchange this for a Vampire.<br><br><i>(This is not in the Supply.)</i>",
-        "extra": "",
-        "name": "Bat"
-    },
-    "Devil’s Workshop": {
+    "Devil's Workshop": {
         "description": "If the number of cards you gained this turn is:<br>2+, gain an Imp from its pile;<br>1, gain a card costing up to 4 Coin;<br>0 gain a Gold.",
         "extra": "",
-        "name": "Devil’s Workshop"
+        "name": "Devil's Workshop"
     },
     "Exorcist": {
         "description": "Trash a card from your hand. Gain a cheaper Spirit from one of the Spirit Piles.",
@@ -2214,6 +2254,16 @@
         "description": "Each other player receives the next Hex.<br>Gain a card costing up to 5 Coin other than a Vampire.<br>Exchange this for a Bat.",
         "extra": "Shuffle the Hexes before giving out the Hexes.",
         "name": "Vampire"
+    },
+    "Bat": {
+        "description": "Trash up to 2 cards from your hand. If you trashed at least one, exchange this for a Vampire.<br><br><i>(This is not in the Supply.)</i>",
+        "extra": "",
+        "name": "Bat"
+    },
+    "Vampire - Bat": {
+        "description": "<left><u>Vampire</u>:<center>Each other player receives the next Hex.<br>Gain a card costing up to 5 Coin other than a Vampire.<br>Exchange this for a Bat.<left><u>Bat</u>:<center>Trash up to 2 cards from your hand. If you trashed at least one, exchange this for a Vampire.<br><i>(This is not in the Supply.)</i>",
+        "extra": "",
+        "name": "Vampire / Bat"
     },
     "Raider": {
         "description": "Each other player with 5 or more cards in hand discards a copy of a card you have in play (or reveals they can’t).<br>At the start of your next turn, +3 Coin.",
@@ -2235,65 +2285,40 @@
         "extra": "",
         "name": "Ghost"
     },
-    "Deluded": {
-        "description": "At the start of your Buy phase, return this, and you can’t buy Actions this turn.",
+    "Envious - Deluded": {
+        "description": "This is a double-sided card.<left><u>Envious</u>:<center>At the start of your Buy phase, return this, and Silver and Gold make 1 Coin this turn.<left><u>Deluded</u>:<center>At the start of your Buy phase, return this, and you can’t buy Actions this turn.",
         "extra": "",
-        "name": "Deluded"
-    },
-    "Envious": {
-        "description": "At the start of your Buy phase, return this, and Silver and Gold make 1 Coin this turn.",
-        "extra": "",
-        "name": "Envious"
+        "name": "Envious / Deluded"
     },
     "Lost in the Woods": {
         "description": "At the start of your turn, you may discard a card to receive a Boon.",
         "extra": "",
         "name": "Lost in the Woods"
     },
-    "Miserable": {
-        "description": "-2<*VP*>",
+    "Miserable - Twice Miserable": {
+        "description": "This is a double-sided card.<left><u>Miserable</u>:<center>-2<*VP*><left><u>Twice Miserable</u>:<center>-4<*VP*>",
         "extra": "",
-        "name": "Miserable"
-    },
-    "Twice Miserable": {
-        "description": "-4<*VP*>",
-        "extra": "",
-        "name": "Twice Miserable"
+        "name": "Miserable / Twice Miserable"
     },
     "Idol": {
         "description": "2 <*COIN*><br>When you play this, if you then have an odd number of Idols in play, receive a Boon; if an even number, each other player gains a Curse.",
         "extra": "",
         "name": "Idol"
     },
-    "Cursed Gold": {
-        "description": "3 <*COIN*><br><br>When you play this, gain a Curse.",
-        "extra": "",
-        "name": "Cursed Gold"
-    },
-    "Goat": {
-        "description": "1 <*COIN*><br><br>When you play this, you may trash a card from your hand.",
-        "extra": "",
-        "name": "Goat"
+    "Cemetery": {
+        "description": "2 <*VP*><line>When you gain this, trash up to 4 cards from your hand.<br><br><i>Heirloom: Haunted Mirror</i>",
+        "extra": "When this is in the supply each player replaces one starting copper with Heirloom: Haunted Mirror.",
+        "name": "Cemetery"
     },
     "Haunted Mirror": {
         "description": "1 <*COIN*><line>When you trash this, you may discard an Action card, to gain a Ghost from its pile.",
         "extra": "",
         "name": "Haunted Mirror"
     },
-    "Lucky Coin": {
-        "description": "1 <*COIN*><br><br>When you play this, gain a Silver.",
-        "extra": "",
-        "name": "Lucky Coin"
-    },
-    "Pasture": {
-        "description": "1 <*COIN*><br><line><br>Worth 1<VP> per Estate you have.",
-        "extra": "",
-        "name": "Pasture"
-    },
-    "Cemetery": {
-        "description": "2 <*VP*><line>When you gain this, trash up to 4 cards from your hand.<br><br><i>Heirloom: Haunted Mirror</i>",
-        "extra": "When this is in the supply each player replaces one starting copper with Heirloom: Haunted Mirror.",
-        "name": "Cemetery"
+    "Cemetery - Haunted Mirror": {
+        "description": "<left><u>Cemetery</u>:<center>2 <*VP*><line>When you gain this, trash up to 4 cards from your hand.<br><i>Heirloom: Haunted Mirror</i><left><u>Haunted Mirror</u>:<center>1 <*COIN*><line>When you trash this, you may discard an Action card, to gain a Ghost from its pile.",
+        "extra": "When Cemetery is in the supply, each player replaces one starting copper with a Haunted Mirror.",
+        "name": "Cemetery / Haunted Mirror"
     },
     "nocturne hexes": {
         "description": "Hexes are another deck of landscape-style instructions. Generally these have effects that are not good for a player.",
