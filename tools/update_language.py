@@ -372,6 +372,9 @@ for lang in languages:
                     if 'short_name' in set_data[set]:
                         lang_set_data[set]["short_name"] = set_data[set][
                             "short_name"]
+                    if 'set_text' in set_data[set]:
+                        lang_set_data[set]["set_text"] = set_data[set][
+                            "set_text"]
                 else:
                     lang_set_data[set]["set_name"] = lang_default[set][
                         "set_name"]
@@ -380,6 +383,9 @@ for lang in languages:
                     if 'short_name' in lang_default[set]:
                         lang_set_data[set]["short_name"] = lang_default[set][
                             "short_name"]
+                    if 'set_text' in lang_default[set]:
+                        lang_set_data[set]["set_text"] = lang_default[set][
+                            "set_text"]
 
             lang_out.write(json_dict_entry({set: lang_set_data[set]}, sep))
             lang_set_data[set]['used'] = True
