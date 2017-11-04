@@ -3694,6 +3694,8 @@
         "nocturne"
     ],
     "cost": "4",
+    "group_tag": "Necromancer - Zombies",
+    "group_top": true,
     "types": [
         "Action"
     ]
@@ -3703,6 +3705,8 @@
         "nocturne"
     ],
     "cost": "5",
+    "group_tag": "Pooka - Cursed Gold",
+    "group_top": true,
     "types": [
         "Action"
     ]
@@ -3712,6 +3716,8 @@
         "nocturne"
     ],
     "cost": "4",
+    "group_tag": "Shepherd - Pasture",
+    "group_top": true,
     "types": [
         "Action"
     ]
@@ -3721,6 +3727,8 @@
         "nocturne"
     ],
     "cost": "0*",
+    "group_tag": "Leprechaun - Wish",
+    "count": "12",
     "types": [
         "Action"
     ]
@@ -3763,6 +3771,8 @@
         "nocturne"
     ],
     "cost": "3",
+    "group_tag": "Leprechaun - Wish",
+    "group_top": true,
     "types": [
         "Action",
         "Doom"
@@ -3793,6 +3803,8 @@
         "nocturne"
     ],
     "cost": "3",
+    "group_tag": "Fool - Lucky Coin",
+    "group_top": true,
     "types": [
         "Action",
         "Fate"
@@ -3803,6 +3815,8 @@
         "nocturne"
     ],
     "cost": "2",
+    "group_tag": "Pixie - Goat",
+    "group_top": true,
     "types": [
         "Action",
         "Fate"
@@ -3823,6 +3837,7 @@
         "nocturne"
     ],
     "cost": "2*",
+    "count": "13",
     "types": [
         "Action",
         "Spirit"
@@ -3833,6 +3848,7 @@
         "nocturne"
     ],
     "cost": "0*",
+    "count": "12",
     "types": [
         "Action",
         "Spirit"
@@ -3843,12 +3859,17 @@
         "nocturne"
     ],
     "cost": "3",
+    "group_tag": "Necromancer - Zombies",
+    "count": "1",
     "types": [
         "Action",
         "Zombie"
     ]
 },{
     "card_tag": "Zombie Mason",
+    "cost": "3",
+    "group_tag": "Necromancer - Zombies",
+    "count": "1",
     "cardset_tags": [
         "nocturne"
     ],
@@ -3863,6 +3884,8 @@
         "nocturne"
     ],
     "cost": "3",
+    "group_tag": "Necromancer - Zombies",
+    "count": "1",
     "types": [
         "Action",
         "Zombie"
@@ -4113,6 +4136,7 @@
         "nocturne"
     ],
     "cost": "2*",
+    "group_tag": "Vampire - Bat",
     "types": [
         "Night"
     ]
@@ -4122,6 +4146,7 @@
         "nocturne"
     ],
     "cost": "4",
+    "group_top": true,
     "types": [
         "Night"
     ]
@@ -4140,6 +4165,8 @@
         "nocturne"
     ],
     "cost": "5",
+    "group_tag": "Vampire - Bat",
+    "group_top": true,
     "types": [
         "Night",
         "Attack",
@@ -4182,27 +4209,19 @@
         "nocturne"
     ],
     "cost": "4*",
+    "count": "6",
     "types": [
         "Night",
         "Duration",
         "Spirit"
     ]
 },{
-    "card_tag": "Deluded",
+    "card_tag": "Envious - Deluded",
     "cardset_tags": [
         "nocturne"
     ],
     "cost": "",
-    "group_tag": "nocturne states",
-    "types": [
-        "State"
-    ]
-},{
-    "card_tag": "Envious",
-    "cardset_tags": [
-        "nocturne"
-    ],
-    "cost": "",
+    "count": "6",
     "group_tag": "nocturne states",
     "types": [
         "State"
@@ -4213,26 +4232,18 @@
         "nocturne"
     ],
     "cost": "",
+    "count": "1",
     "group_tag": "nocturne states",
     "types": [
         "State"
     ]
 },{
-    "card_tag": "Miserable",
+    "card_tag": "Miserable - Twice Miserable",
     "cardset_tags": [
         "nocturne"
     ],
     "cost": "",
-    "group_tag": "nocturne states",
-    "types": [
-        "State"
-    ]
-},{
-    "card_tag": "Twice Miserable",
-    "cardset_tags": [
-        "nocturne"
-    ],
-    "cost": "",
+    "count": "6",
     "group_tag": "nocturne states",
     "types": [
         "State"
@@ -4254,6 +4265,7 @@
         "nocturne"
     ],
     "cost": "4",
+    "group_tag": "Pooka - Cursed Gold",
     "types": [
         "Treasure",
         "Heirloom"
@@ -4264,6 +4276,7 @@
         "nocturne"
     ],
     "cost": "2",
+    "group_tag": "Pixie - Goat",
     "types": [
         "Treasure",
         "Heirloom"
@@ -4274,6 +4287,7 @@
         "nocturne"
     ],
     "cost": "0",
+    "group_tag": "Cemetery - Haunted Mirror",
     "types": [
         "Treasure",
         "Heirloom"
@@ -4284,6 +4298,7 @@
         "nocturne"
     ],
     "cost": "3",
+    "group_tag": "Fool - Lucky Coin",
     "types": [
         "Treasure",
         "Heirloom"
@@ -4294,6 +4309,7 @@
         "nocturne"
     ],
     "cost": "2",
+    "group_tag": "Shepherd - Pasture",
     "types": [
         "Treasure",
         "Victory",
@@ -4305,6 +4321,8 @@
         "nocturne"
     ],
     "cost": "4",
+    "group_tag": "Cemetery - Haunted Mirror",
+    "group_top": true,
     "types": [
         "Victory"
     ]
