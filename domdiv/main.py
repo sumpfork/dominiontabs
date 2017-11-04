@@ -990,7 +990,7 @@ def filter_sort_cards(cards, options):
                          types=("Expansion", ),
                          cost=None,
                          description=' | '.join(sorted(cardnamesByExpansion[exp])),
-                         extra=set_values.get("set_text",""),
+                         extra=set_values.get("set_text", ""),
                          count=count,
                          card_tag=set_tag)
                 cards.append(c)
