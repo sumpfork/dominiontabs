@@ -154,7 +154,7 @@ def parse_opts(cmdline_args=None):
         'Divider Tab',
         'Changes what is displayed on on the Divider Tab.')
     group_tab.add_argument(
-        "--tab_side",
+        "--tab-side",
         choices=TAB_SIDE_CHOICES,
         dest="tab_side",
         default="right-alternate",
@@ -165,7 +165,7 @@ def parse_opts(cmdline_args=None):
         "'centre' will force all label tabs to the centre; "
         "'full' will force all label tabs to be full width of the divider.")
     group_tab.add_argument(
-        "--tab_name_align",
+        "--tab-name-align",
         choices=NAME_ALIGN_CHOICES + ["center"],
         dest="tab_name_align",
         default="left",
@@ -188,7 +188,7 @@ def parse_opts(cmdline_args=None):
         "'hide' to indicate it should not be displayed, or "
         "given multiple times to show it in multiple places.")
     group_tab.add_argument(
-        "--set_icon",
+        "--set-icon",
         action="append",
         choices=LOCATION_CHOICES,
         default=['tab'],
@@ -211,18 +211,18 @@ def parse_opts(cmdline_args=None):
         'Expansion Dividers',
         'Adding separator dividers for each expansion.')
     group_expansion.add_argument(
-        "--expansion_dividers",
+        "--expansion-dividers",
         action="store_true",
         dest="expansion_dividers",
         help="Add dividers describing each expansion set. "
         "A list of cards in the expansion will be shown on the front of the divider.")
     group_expansion.add_argument(
-        "--centre_expansion_dividers",
+        "--centre-expansion-dividers",
         action="store_true",
         dest="centre_expansion_dividers",
         help='Centre the tabs on expansion dividers.')
     group_expansion.add_argument(
-        "--expansion_dividers_long_name",
+        "--expansion-dividers-long-name",
         action="store_true",
         dest="expansion_dividers_long_name",
         help="Use the long name with edition information on the expansion divider tab. "
@@ -275,31 +275,31 @@ def parse_opts(cmdline_args=None):
         "'all' is for all editions of expansions; "
         " This can be combined with other options to refine the expansions to include in the output.")
     group_select.add_argument(
-        "--upgrade_with_expansion",
+        "--upgrade-with-expansion",
         action="store_true",
         dest="upgrade_with_expansion",
         help="Include any new edition upgrade cards with the expansion being upgraded.")
     group_select.add_argument(
-        "--base_cards_with_expansion",
+        "--base-cards-with-expansion",
         action="store_true",
         help="Print the base cards as part of the expansion (i.e., a divider for 'Silver' "
         "will be printed as both a 'Dominion' card and as an 'Intrigue 1st Edition' card). "
         "If this option is not given, all base cards are placed in their own 'Base' expansion.")
     group_select.add_argument(
-        "--special_card_groups",
+        "--special-card-groups",
         action="store_true",
         help="Group cards that generally are used together "
         "(e.g., Shelters, Tournament and Prizes, Urchin/Mercenary, etc.).")
     group_select.add_argument(
-        "--include_blanks",
+        "--include-blanks",
         action="store_true",
         help="Include a few dividers with extra text.")
     group_select.add_argument(
-        "--exclude_events",
+        "--exclude-events",
         action="store_true",
         help="Group all 'Event' cards across all expansions into one divider.")
     group_select.add_argument(
-        "--exclude_landmarks",
+        "--exclude-landmarks",
         action="store_true",
         help="Group all 'Landmark' cards across all expansions into one divider.")
 
@@ -320,17 +320,17 @@ def parse_opts(cmdline_args=None):
         "Typically unsleeved cards are 2.0, thin sleeved cards are 2.4, and thick sleeved cards are 3.2. "
         "This is only valid with the --wrapper option.")
     group_wrapper.add_argument(
-        "--sleeved_thick",
+        "--sleeved-thick",
         action="store_true",
         dest="sleeved_thick",
         help="Same as --size=sleeved --thickness 3.2.")
     group_wrapper.add_argument(
-        "--sleeved_thin",
+        "--sleeved-thin",
         action="store_true",
         dest="sleeved_thin",
         help="Same as --size=sleeved --thickness 2.4.")
     group_wrapper.add_argument(
-        "--notch_length",
+        "--notch-length",
         type=float,
         default=0.0,
         help="Length of thumb notch on wrapper in centimeters "
@@ -363,24 +363,24 @@ def parse_opts(cmdline_args=None):
         default=0.1,
         help="Width of lines for card outlines and crop marks.")
     group_printing.add_argument(
-        "--back_offset",
+        "--back-offset",
         type=float,
         dest="back_offset",
         default=0,
         help="Back page horizontal offset points to shift to the right. Only needed for some printers.")
     group_printing.add_argument(
-        "--back_offset_height",
+        "--back-offset-height",
         type=float,
         dest="back_offset_height",
         default=0,
         help="Back page vertical offset points to shift upward. Only needed for some printers.")
     group_printing.add_argument(
-        "--vertical_gap",
+        "--vertical-gap",
         type=float,
         default=0.0,
         help="Vertical gap between dividers in centimeters.")
     group_printing.add_argument(
-        "--horizontal_gap",
+        "--horizontal-gap",
         type=float,
         default=0.0,
         help="Horizontal gap between dividers in centimeters.")
@@ -390,7 +390,7 @@ def parse_opts(cmdline_args=None):
         dest="no_page_footer",
         help="Do not print the expansion name at the bottom of the page.")
     group_printing.add_argument(
-        "--num_pages",
+        "--num-pages",
         type=int,
         default=-1,
         help="Stop generating dividers after this many pages, -1 for all.")
@@ -406,7 +406,7 @@ def parse_opts(cmdline_args=None):
         help="Only generate a preview png image of the first page"
     )
     group_printing.add_argument(
-        "--preview_resolution",
+        "--preview-resolution",
         type=int,
         default=150,
         help="resolution in DPI to render preview at, for --preview option")
@@ -419,7 +419,7 @@ def parse_opts(cmdline_args=None):
         dest="cardlist",
         help="Path to file that enumerates each card to be printed on its own line.")
     group_special.add_argument(
-        "--write_json",
+        "--write-json",
         action="store_true",
         dest="write_json",
         help="Write json version of card definitions and extras.")
