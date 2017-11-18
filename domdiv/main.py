@@ -6,6 +6,7 @@ import argparse
 import copy
 import fnmatch
 import pkg_resources
+import unicodedata
 
 import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
@@ -620,17 +621,22 @@ class CardSorter(object):
         return card.cardset_tag.lower() != 'base' and card.name in self.baseCards
 
     def by_global_sort_key(self, card):
-        return int(card.isExpansion()), self.baseIndex(card.name), card.name
+        return int(card.isExpansion()), self.baseIndex(card.name), self.strip_accents(card.name)
 
     def by_expansion_sort_key(self, card):
         return card.cardset, int(card.isExpansion()), self.baseIndex(
-            card.name), card.name
+            card.name), self.strip_accents(card.name)
 
     def by_colour_sort_key(self, card):
-        return card.getType().getTypeNames(), card.name
+        return card.getType().getTypeNames(), self.strip_accents(card.name)
 
     def by_cost_sort_key(self, card):
-        return card.cardset, int(card.isExpansion()), card.get_total_cost(card), card.name
+        return card.cardset, int(card.isExpansion()), card.get_total_cost(card), self.strip_accents(card.name)
+
+    @staticmethod
+    def strip_accents(s):
+        return ''.join(c for c in unicodedata.normalize('NFD', s)
+                       if unicodedata.category(c) != 'Mn')
 
     def __call__(self, card):
         return self.sort_key(card)
