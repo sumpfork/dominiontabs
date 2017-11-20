@@ -864,10 +864,10 @@
         "untranslated": "description, extra"
     },
     "Adventurer": {
-        "description": "Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards in your hand and discard the other revealed cards.", 
-        "extra": "If you have to shuffle in the middle, shuffle. Don't shuffle in the revealed cards as these cards do not go to the Discard pile until you have finished revealing cards. If you run out of cards after shuffling and still only have one Treasure, you get just that one Treasure.", 
+        "description": "Dévoilez des cartes de votre deck jusqu'à ce que 2 cartes Trésor soient dévoilées. Ajoutez ces cartes Trésor à votre main et défaussez les autres cartes dévoilées.", 
+        "extra": " Si vous devez mélanger durant cette action, faites-le. Par contre, ne mélangez pas les cartes dévoilées puisqu'elles ne vont à la défausse qu'après que vous ayez terminé de dévoiler des cartes. Si vous êtes à court de cartes après avoir mélangé et qu'il n'y a qu'une carte Trésor, vous ne prenez que cette carte Trésor.", 
         "name": "Aventurier", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Chancellor": {
         "description": "+2 Coins<n>You may immediately put your deck into your discard pile.", 
@@ -894,16 +894,16 @@
         "untranslated": "description, extra"
     },
     "Woodcutter": {
-        "description": "+1 Buy<br>+2 Coins", 
-        "extra": "During your Buy phase, you may add 2 Coins to the total value of the Treasure cards played, and you may buy an additional card from the Supply.", 
+        "description": "+1 Achat<br>+2 Coins", 
+        "extra": "Lors de votre phase Achat, vous ajoutez 2 Coins à votre total de cartes Trésor et Action qui donnent des pièces. Vous pouvez aussi acheter une carte supplémentaire de la réserve.", 
         "name": "Bûcheron", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Bureaucrat": {
-        "description": "Gain a silver card; put it on top of your deck. Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards).", 
-        "extra": "If you have no cards left in your Deck when you play this card, the Silver you gain will become the only card in your Deck. Similarly, if another players has no cards in his Deck, the Victory card he puts on top will become the only card in his Deck.", 
+        "description": "Recevez 1 carte <i>Argent</i>; placez-la sur votre deck. Tous vos adversaires dévoilent 1 carte <i>Victoire</i> et la placent sur leur deck (sinon ils dévoilent leur main afin que vous puissiez voir qu'ils n'ont pas de carte <i>Victoire</i>).", 
+        "extra": "Si vous n'avez plus de cartes dans votre deck lorsque vous jouez cette carte, la carte <i>Argent</i> que vous recevez et placez sur votre deck sera la seule carte dans votre deck. Conformément, si un autre joueur n'a plus de carte dans son deck la carte <i>Victoire</i> dévoilée et placée sur le deck sera la seule carte dans leur deck.", 
         "name": "Bureaucrate", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Cellar": {
         "description": "+1 Action<n>Discard any number of cards. +1 Card per card discarded.", 
@@ -942,10 +942,10 @@
         "untranslated": "description, extra"
     },
     "Library": {
-        "description": "Draw until you have 7 cards in hand. You may set aside any Action cards drawn this way, as you draw them; discard the set aside cards after you finish drawing.", 
-        "extra": "If you have to shuffle in the middle, the set-aside cards are not shuffled into the new Deck. They will be discarded when you have finished drawing cards. If you run out of cards even after shuffling, you just get however many there were. You are not obligated to set aside Actions - you just have the option to do so. If you have 7 or more cards in hand after you play the Library, you don't draw any cards.", 
+        "description": "Piochez jusqu'à ce que vous ayez 7 cartes en main. Chaque carte Action piochée peut être mise de côté. Défaussez les cartes mises de côté lorsque vous avez terminé de piocher.", 
+        "extra": " Si vous devez mélanger durant cette action, les cartes mises de côté ne sont pas mélangées dans le nouveau deck. Elles sont défaussées lorsque vous avez terminé de piocher des cartes. Si vous êtes à court de cartes après avoir mélangé, vous obtenez le nombre de cartes qu'il y avait. Vous ne devez pas forcément mettre les cartes Action de côté, vous avez tout simplement la possibilité de le faire. Si vous avez 7 cartes ou plus dans votre main après avoir joué la Bibliothèque, vous ne piochez pas.", 
         "name": "Bibliothèque", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Market": {
         "description": "+1 Card<br>+1 Action<br>+1 Buy<br>+1 Coin<n>", 
@@ -1008,10 +1008,10 @@
         "untranslated": "description, extra"
     },
     "Workshop": {
-        "description": "Gain a card costing up to 4 Coins.", 
-        "extra": "The card you gain is put into your Discard pile. It has to be a card from the Supply. You cannot use coins from Treasures or previous Actions (like the Market) to increase the cost of the card you may gain. [You cannot gain cards with Potion in the cost with Workshop.]", 
+        "description": "Recevez une carte coûtant jusqu'à 4 Coins.", 
+        "extra": " La carte que vous recevez est placée dans votre défausse et doit être une carte de la réserve. Vous ne pouvez pas utiliser de pièces provenant de cartes Trésor ou Action (telle Marché) pour augmenter le coût de la carte que vous recevez. Vous ne pouvez pas gagner une carte contenant une Potion dans son coût avec Atelier.", 
         "name": "Atelier", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Artisan": {
         "description": "Gain a card to your hand costing up to 5 Coins.<n>Put a card from your hand onto your deck.", 
