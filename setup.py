@@ -1,8 +1,10 @@
 from setuptools import setup, find_packages
 
+version = '3.3.2'
+
 setup(
     name="domdiv",
-    version='3.3.1',
+    version=version,
     entry_points={
         'console_scripts': [
             "dominion_dividers = domdiv.main:main"
@@ -12,7 +14,10 @@ setup(
     install_requires=["reportlab>=3.4.0",
                       "Pillow>=4.1.0"],
     include_package_data=True,
-    author="Sumpfork",
+    author="Peter Gorniak",
     author_email="sumpfork@mailmight.net",
-    description="Divider Generation for the Dominion Card Game"
+    description="Divider Generation for the Dominion Card Game",
+    url="http://domtabs.sandflea.org",
+    download_url='https://github.com/sumpfork/dominiontabs/archive/v{}.tar.gz'.format(version),
+    keywords=['boardgame', 'cardgame', 'dividers']
 )
