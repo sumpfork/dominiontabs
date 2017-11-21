@@ -13,11 +13,12 @@ setup(
     packages=find_packages(exclude=['tests']),
     install_requires=["reportlab>=3.4.0",
                       "Pillow>=4.1.0"],
+    url='http://domtabs.sandflea.org',
     include_package_data=True,
     author="Peter Gorniak",
     author_email="sumpfork@mailmight.net",
     description="Divider Generation for the Dominion Card Game",
-    url="http://domtabs.sandflea.org",
-    download_url='https://github.com/sumpfork/dominiontabs/archive/v{}.tar.gz'.format(version),
-    keywords=['boardgame', 'cardgame', 'dividers']
+    keywords=['boardgame', 'cardgame', 'dividers'],
+    long_description="This script and library generate dividers for the Dominion Card Game by Rio Grande Games.\
+     See it in action at http://domtabs.sandflea.org."
 )
