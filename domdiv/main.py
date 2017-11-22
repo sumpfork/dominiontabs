@@ -25,7 +25,7 @@ EXPANSION_CHOICES = ["adventures", "alchemy", "base", "cornucopia", "dark ages",
                      "dominion1stEdition", "dominion2ndEdition", "dominion2ndEditionUpgrade",
                      "empires", "guilds", "hinterlands",
                      "intrigue1stEdition", "intrigue2ndEdition", "intrigue2ndEditionUpgrade",
-                     "promo", "prosperity", "seaside"]
+                     "promo", "prosperity", "seaside", "nocturne"]
 FAN_CHOICES = ["animals"]
 ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
 
