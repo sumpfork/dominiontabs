@@ -1512,34 +1512,34 @@
         "untranslated": "description, extra"
     },
     "Border Village": {
-        "description": "+1 Card<br>+2 Actions<line>When you gain this, gain a card costing less than this.", 
-        "extra": "When you play this, you draw a card and can play two more Actions this turn. When you gain this, you also gain a card from the Supply that costs less than Border Village. Normally that will be a card costing up to 5 coins, but if Border Village costs less than normal, such as due to Highway, then the card you gain will have a lower maximum cost. You only gain a card when you gain Border Village, not when you play it. You gain a card whether you gained Border Village due to buying it, or gained it some other way.", 
+        "description": "+1 Carte<br>+2 Actions<line>Lorsque vous recevez cette carte, recevez aussi une carte moins coûteuse.", 
+        "extra": "Quand vous jouez ceci, vous piochez une carte et vous pouvez jouer deux autres Actions pendant ce tour. Lorsque vous gagnez cette carte, vous gagnez également une carte de la Réserve qui coûte moins cher que Village Frontalier. Normalement, ce sera une carte qui coûte jusqu'à 5 Coins, mais si Village Frontalier coûte moins que la normale, comme à cause de Route, alors la carte que vous gagnez aura un coût maximal plus bas. Vous gagnez seulement une carte quand vous gagnez Village Frontalier, pas quand vous la jouez. Vous gagnez une carte que vous ayez gagné Village Frontalier en l'achetant, ou d'une autre manière.", 
         "name": "Village frontalier", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Cache": {
-        "description": "3 <*COIN*><line>When you gain this, gain two Coppers.", 
-        "extra": "This is a treasure worth 3 coins, like Gold. When you gain it, you also gain two Coppers from the Supply. if there are not two Coppers left, just gain as many as you can. You only gain Coppers when you gain Cache, not when you play it. You gain Coppers whether you gained Cache due to buying it, or gained it some other way.", 
+        "description": "3 <*COIN*><line>Lorsque vous recevez cette carte, recevez 2 cartes <i>Cuivre</i>.", 
+        "extra": "C'est un trésor qui vaut 3 Coins, comme Or. Quand vous le gagnez, vous gagnez également deux Cuivres de la Réserve. S'il ne reste plus deux Cuivres, gagnez-en le plus possible. Vous gagnez seulement des Cuivres quand vous gagnez la Cache, pas quand vous la jouez. Vous gagnez des Cuivres que vous ayez gagné la Cache en l'achetant, ou que vous l'avez gagné d'une autre manière.", 
         "name": "Cache", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Cartographer": {
-        "description": "+1 Card<br>+1 Action<n>Look at the top 4 cards of your deck. Discard any number of them. Put the rest back on top in any order.", 
-        "extra": "You draw a card first, then look at the top 4 cards of your deck. If there are fewer than 4 cards left in your deck, look at the remaining cards, and shuffle your discard pile (which does not include those cards) to get the remainder needed to look at. If there are still not enough cards, just look at as many as you can. Discard any number of the cards you looked at - none, all four, or something in-between - and put the rest back on top of your deck in any order. if there were no cards left in your deck, these become the only cards in your deck. You do not reveal the cards you put back.", 
+        "description": "+1 Carte<br>+1 Action<n>Consultez les 4 premières cartes de votre deck. Défaussez celles de votre choix. Replacez les autres sur votre deck dans l'ordre de votre choix.", 
+        "extra": "Vous piochez une carte en premier, puis vous consultez les 4 premières cartes de votre deck. S'il reste moins de 4 cartes dans votre deck, consultez les cartes restantes et mélangez votre pile de défausse (qui n'inclut pas ces cartes) pour piocher les cartes restantes à consulter. S'il n'y a toujours pas assez de cartes, consultez-en autant que vous le pouvez. Défaussez autant de cartes que vous voulez parmi celles consultées - aucune, toutes les 4, ou entre les deux - et placez les cartes restantes sur votre deck dans n'importe quel ordre. S'il n'y avait plus de cartes dans votre deck, celles-ci deviennent les seules cartes de votre deck. Vous ne révélez pas les cartes que vous remettez sur votre deck.", 
         "name": "Cartographe", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Crossroads": {
-        "description": "Reveal your hand.<n>+1 Card per Victory card revealed. If this is the first time you played a Crossroads this turn, +3 Actions.", 
-        "extra": "First reveal your hand, and draw a card for each Victory card you revealed, if any. The revealed cards all stay in your hand. Cards with two types, one of which is Victory, are Victory cards. Then, if this is the first time you played a Crossroads this turn, you get +3 Actions. Subsequent Crossroads this turn will give you cards but not Actions. Using a card that lets you play a card several times (like Throne Room from Dominion) on Crossroads, you will play Crossroads multiple times, getting +3 Actions the first time but not the others.", 
+        "description": "Dévoilez votre main.<n>+1 Carte par carte <i>Victoire</i> dévoilée. Si c'est la première fois que vous jouez une carte <i>Carrefour</i> ce tour-ci, +3 Actions.", 
+        "extra": "D'abord, révélez votre main et piochez une carte pour chaque carte Victoire que vous avez révélée, le cas échéant. Les cartes révélées restent toutes dans votre main. Les cartes avec deux types, dont l'un est Victoire, sont des cartes Victoire. Ensuite, si c'est la première fois que vous jouez un Carrefour ce tour-ci, vous obtenez +3 Actions. Les Carrefours suivants joués ce tour-ci vous donneront des cartes mais pas des actions. En utilisant une carte qui vous permet de jouer une carte à plusieurs reprises (comme Salle du Trône de Dominion) sur Carrefour, vous jouerez Carrefour plusieurs fois, en obtenant +3 Actions la première fois mais pas les suivantes.", 
         "name": "Carrefour", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Develop": {
-        "description": "Trash a card from your hand. Gain a card costing exactly 1 coin more than it and a card costing exactly 1 less than it, in either order, putting them on top of your deck.", 
-        "extra": "First trash a card from your hand, if you have any cards in hand. Develop itself is no longer in your hand and so cannot trash itself (though it can trash other copies of Develop). If you trashed a card, gain two cards, one costing exactly 1 coin more than the trashed card, and one costing exactly 1 coin less than the trashed card. The gained cards come from the Supply; gain them in either order. If there is no card in the Supply at one of the costs, you still gain the other card if you can. Put the gained cards on top of your deck rather than into your discard pile. If you trash a Copper with Develop, which costs 0 coins, you will try and fail to gain a card costing -1 coins (and also try to gain a card costing 1 coin).", 
+        "description": "Écartez une carte de votre main. Recevez une carte coûtant exactement 1 Coin de plus que la carte écartée et une carte coûtant exactement 1 Coin de moins. Placez les cartes reçues sur votre deck dans l'ordre de votre choix.", 
+        "extra": "Écartez d'abord une carte de votre main, si vous avez au moins une carte en main. Développement n'est plus dans votre main et ne peut donc pas s'écarter elle-même (bien qu'elle puisse écarter d'autres copies de Développement). Si vous avez écarté une carte, gagnez deux cartes, l'une coûtant exactement 1 Coin de plus que la carte écartée, et une qui coûte exactement 1 Coin de moins que la carte écartée. Les cartes gagnées proviennent de la Réserve; gagnez-les dans n'importe quel ordre. S'il n'y a pas de carte correspondant à l'un des coûts dans la Réserve, gagnez l'autre carte si vous le pouvez. Placez les cartes gagnées sur votre deck au lieu de votre pile de défausse. Si vous écartez un Cuivre, qui coûte 0 Coin, avec Développement vous essaierez mais ne pourrez pas gagner une carte coûtant -1 pièces (et essayerez ensuite de gagner une carte coûtant 1 Coin).", 
         "name": "Développement", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Duchess": {
         "description": "+2 Coins<n>Each player (including you) looks at the top card of his deck, and discards it or puts it back.<line>In games using this, when you gain a Duchy, you may gain a Duchess.", 
