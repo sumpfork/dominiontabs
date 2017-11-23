@@ -1557,7 +1557,7 @@
         "description": "2<*VP*><line>Lorsque vous achetez cette carte, écartez une carte de votre main. Recevez une carte coûtant exactement 2 Coins de plus que la carte écartée.", 
         "extra": "Ceci est une carte Victoire, pas une carte Action. Elle vaut 2 points de victoire à la fin de la partie. Quand vous l'achetez, vous écartez une carte de votre main si possible, et si vous le faites, vous recevez une carte de la Réserve coûtant exactement 2 Coins de plus que la carte écartée (si possible). S'il n'y a plus de cartes dans votre main à écarter, vous n'écartez pas de carte et vous n'en recevez aucune, et si vous écartez une carte mais qu'il n'y a pas de cartes coûtant exactement 2 Coins de plus que la carte écartée, vous ne recevez pas de carte. Cette capacité ne fonctionne que lorsque vous achetez Terre Agricole, pas lorsque vous la recevez d'une autre manière. Lors de la mise en place, placez les 12 Terres Agricoles dans la Réserve pour une partie à 3 joueurs ou plus, mais seulement 8 pour une partie à 2 joueurs.", 
         "name": "Terre agricole", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Fool's Gold": {
         "description": "Si c'est la première carte <i>Or des fous</i> que vous jouez ce tour-ci, elle vaut 1 Coin, sinon elle vaut 4 Coins.<line>Lorsqu'un autre joueur reçoit une carte <i>Province</i>, vous pouvez écarter cette carte de votre main. Dans ce cas, recevez une carte <i>Or</i> que vous placez sur votre deck.", 
@@ -1575,7 +1575,7 @@
         "description": "+1 Carte<br>+1 Action<line>Lorsque cette carte est en jeu, les cartes coûtent 1 Coin de moins, au minimum 0 Coin.", 
         "extra": "Cette carte rend toutes les cartes moins chères (jusqu'à un minimum de 0 Coins) tant qu'elle est en jeu. Quand elle n'est plus en jeu, elle cesse de rendre les cartes moins chères. Ceci s'applique aux cartes partout - cartes dans la Réserve, cartes en main, cartes dans les decks. Par exemple, si vous avez joué Route, puis Développement (en écartant un Cuivre), vous pourriez recevoir un Domaine, car il coûterait 1 Coin tandis que le Cuivre coûterait toujours 0 Coins. L'utilisation d'une carte qui vous permet de jouer plusieurs fois une autre carte (comme Salle du Trône de Dominion) sur Route ne réduira pas plusieurs fois le coût des cartes, car il n'y a toujours qu'une seule copie de Route en jeu. Le bonus est cumulatif; si vous avez trois Routes en jeu, toutes les cartes coûtent 3 Coins de moins (jusqu'à un minimum de 0 Coins).", 
         "name": "Route", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Ill-Gotten Gains": {
         "description": "1 <*COIN*><n>Lorsque vous jouez cette carte, vous pouvez recevoir une carte <i>Cuivre</i> que vous ajoutez à votre main.<line>Lorsque vous recevez cette carte, tous vos adversaires reçoivent une <i>Malédiction</i>.", 
