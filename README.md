@@ -1,12 +1,16 @@
 # Dominion Divider Generation
 
-[![Join the chat at https://gitter.im/dominiontabs/Lobby](https://badges.gitter.im/dominiontabs/Lobby.svg)](https://gitter.im/dominiontabs/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/sumpfork/dominiontabs.svg?branch=master)](https://travis-ci.org/sumpfork/dominiontabs)
 
 ## Introduction
 
 This is a script and library to generate card dividers for storing cards for the game [Dominion](https://boardgamegeek.com/boardgame/36218/dominion). If you are just looking go generate some dominion dividers, there is no need to install this script as I host a [live version of this generator code](http://domtabs.sandflea.org). However, if you want to use arguments that I don't expose on that page, or change the code, or contribute to the project the full generation code (not the web interface or the fonts) is included here, and contributions are more than welcome.
 
 Again, to generate tabs go to the ***[Online Generator](http://domtabs.sandflea.org)***.
+
+## Installation
+
+If you do need to install the package locally (the script provides a lot more options than the web-based generator), a simple `pip install domdiv` should suffice, providing a command by the name of `dominion_dividers`. However, see the note under Prerequisites->Fonts below as the default install will fall back on a font that doesn't match the cards (though most people don't notice).
 
 ## Translations
 
