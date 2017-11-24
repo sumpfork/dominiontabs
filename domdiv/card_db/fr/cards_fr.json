@@ -488,8 +488,8 @@
     "Trash": {
         "description": "Pile of trash.", 
         "extra": "", 
-        "name": "Trash", 
-        "untranslated": "description, extra, name"
+        "name": "Rebut", 
+        "untranslated": "description, extra"
     },
     "Colony": {
         "description": "10 <*VP*>", 
@@ -864,154 +864,129 @@
         "untranslated": "description, extra"
     },
     "Adventurer": {
-        "description": "Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards in your hand and discard the other revealed cards.", 
-        "extra": "If you have to shuffle in the middle, shuffle. Don't shuffle in the revealed cards as these cards do not go to the Discard pile until you have finished revealing cards. If you run out of cards after shuffling and still only have one Treasure, you get just that one Treasure.", 
-        "name": "Aventurier", 
-        "untranslated": "description, extra"
+        "description": "Dévoilez des cartes de votre deck jusqu'à ce que 2 cartes Trésor soient dévoilées. Ajoutez ces cartes Trésor à votre main et défaussez les autres cartes dévoilées.", 
+        "extra": " Si vous devez mélanger durant cette action, faites-le. Par contre, ne mélangez pas les cartes dévoilées puisqu'elles ne vont à la défausse qu'après que vous ayez terminé de dévoiler des cartes. Si vous êtes à court de cartes après avoir mélangé et qu'il n'y a qu'une carte Trésor, vous ne prenez que cette carte Trésor.", 
+        "name": "Aventurier"
     },
     "Chancellor": {
-        "description": "+2 Coins<n>You may immediately put your deck into your discard pile.", 
-        "extra": "You must resolve the Chancellor (decide whether or not to discard your Deck by flipping it into your Discard pile) before doing other things on your turn, like deciding what to buy or playing another Action card. You may not look through your Deck as you discard it.", 
-        "name": "Chancelier", 
-        "untranslated": "description, extra"
+        "description": "+2 Coins<n>Vous pouvez immédiatement défausser votre deck.", 
+        "extra": "Vous devez résoudre la carte Chancelier (choisir de mettre ou non votre deck dans votre défausse) avant de décider de faire autre chose durant votre tour, comme décider d'acheter une carte ou de faire une autre action. Vous ne pouvez pas regarder dans votre deck lorsque vous le défaussez.", 
+        "name": "Chancelier"
     },
     "Feast": {
-        "description": "Trash this card. Gain a card costing up to 5 Coins.", 
-        "extra": "The gained card goes into your Discard pile. It has to be a card from the Supply. You cannot use coins from Treasures or previous Actions (like the Market) to increase the cost of the card that you gain. If you use Throne Room on Feast, you will gain two cards, even though you can only trash Feast once. Gaining the card isn't contingent on trashing Feast; they're just two things that the card tries to make you do.", 
-        "name": "Festin", 
-        "untranslated": "description, extra"
+        "description": "Écartez cette carte.<n>Recevez une carte coûtant jusqu'à 5 Coins.", 
+        "extra": "La carte reçue va dans votre défausse. Ce doit être une carte de la réserve. Vous ne pouvez pas utiliser de pièces provenant de cartes Trésor ou Action (comme le Marché) pour augmenter le coût de la carte que vous recevez. Si vous employez la carte Salle du Trône pour jouer la carte Festin, vous recevez 2 cartes bien que vous n'écartez la carte Festin qu'une fois. Recevoir une carte n'est pas le résultat d'écarter la carte Festin. Il s'agit de deux actions différentes que la carte demande de faire.", 
+        "name": "Festin"
     },
     "Spy": {
-        "description": "+1 Card<br>+1 Action<n>Each player (including you) reveals the top card of his deck and either discards it or puts it back, your choice.", 
-        "extra": "Spy causes all players, including the one who played it, to reveal the top card of their Deck. Note that you draw your card for playing Spy before any cards are revealed. Anyone who does not have any cards left in their Deck shuffles in order to have something to reveal. Anyone who still has no cards to reveal doesn't reveal one. If players care about the order in which things happen for this, you do yourself first, then each other player in turn order. Revealed cards that aren't discarded are returned to the top of their players' Decks.", 
-        "name": "Espion", 
-        "untranslated": "description, extra"
+        "description": "+1 Carte<br>+1 Action<n>Tous les joueurs (vous aussi) dévoilent la première carte de leur deck. Vous décidez ensuite si chaque carte dévoilée est défaussée ou replacée sur son deck.", 
+        "extra": "La carte Espion oblige tous les joueurs, y compris celui qui joue la carte, à dévoiler la première carte de leur deck. Notez que vous piochez la carte donnée par l'Espion avant que toute carte ne soit dévoilée. Quiconque n'a pas de carte à dévoiler dans son deck doit mélanger afin d'avoir une carte à dévoiler. Tous les joueurs qui n'ont alors pas de carte à dévoiler n'en dévoilent tout simplement pas. Si les joueurs accordent de l'importance à l'ordre dans lequel les cartes sont dévoilées, commencez par vous et procédez ensuite en sens horaire. Les cartes dévoilées qui ne sont pas défaussées retournent sur le dessus du deck de leur propriétaire.", 
+        "name": "Espion"
     },
     "Thief": {
-        "description": "Each other player reveals the top 2 cards of his deck. If they revealed any Treasure cards, they trash one of them that you choose. You may gain any or all of these trashed cards. They discard the other revealed cards.", 
-        "extra": "A player with just one card left revealed that last card and then shuffles to get the other card to reveal (without including the revealed card); a player with no cards left shuffles to get both of them. A player who still doesn't have two cards to reveal after shuffling just reveals what he can. Each player trashes one Treasure card at most, of the attacker's choice from the two revealed cards, and then you gain any of the trashed cards that you want. You can only take Treasures just trashed - not ones trashed on previous turns. You can take none of them, all of them, or anything in between. Put the Treasures you decided to gain into your Discard pile. The ones you choose not to gain stay in the Trash pile.", 
-        "name": "Voleur", 
-        "untranslated": "description, extra"
+        "description": "Tous vos adversaires dévoilent les 2 premières cartes de leur deck. S'ils dévoilent des cartes <i>Trésor</i>, ils en écartent 1 de votre choix. Parmi ces cartes <i>Trésor</i> écartées, recevez celles de votre choix. Les autres cartes dévoilées sont défaussées.", 
+        "extra": "Un joueur qui n'a qu'une seule carte dévoile cette dernière carte et mélange ensuite sa défausse afin de pouvoir dévoiler l'autre carte; un joueur qui n'a plus de carte dans son deck mélange afin d'obtenir les deux cartes. Un joueur qui n'a pas deux cartes à dévoiler après avoir mélangé sa pioche dévoile ce qu'il peut. Chaque joueur écarte au maximum une carte Trésor, au choix du propriétaire du Voleur, parmi les deux cartes dévoilées. Le joueur du Voleur peut prendre les cartes qu'il désire parmi les cartes ainsi écartées. Vous ne pouvez prendre que les cartes Trésor qui viennent d'être écartées et non celles écartées lors de tours précédents. Vous pouvez prendre une, des, toutes ou aucune des cartes écartées. Placez les cartes Trésor ainsi obtenues dans votre défausse. Les cartes que vous ne gardez pas demeurent au Rebut.", 
+        "name": "Voleur"
     },
     "Woodcutter": {
-        "description": "+1 Buy<br>+2 Coins", 
-        "extra": "During your Buy phase, you may add 2 Coins to the total value of the Treasure cards played, and you may buy an additional card from the Supply.", 
-        "name": "Bûcheron", 
-        "untranslated": "description, extra"
+        "description": "+1 Achat<br>+2 Coins", 
+        "extra": "Lors de votre phase Achat, vous ajoutez 2 Coins à votre total de cartes Trésor et Action qui donnent des pièces. Vous pouvez aussi acheter une carte supplémentaire de la réserve.", 
+        "name": "Bûcheron"
     },
     "Bureaucrat": {
-        "description": "Gain a silver card; put it on top of your deck. Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards).", 
-        "extra": "If you have no cards left in your Deck when you play this card, the Silver you gain will become the only card in your Deck. Similarly, if another players has no cards in his Deck, the Victory card he puts on top will become the only card in his Deck.", 
-        "name": "Bureaucrate", 
-        "untranslated": "description, extra"
+        "description": "Recevez 1 carte <i>Argent</i>; placez-la sur votre deck. Tous vos adversaires dévoilent 1 carte <i>Victoire</i> et la placent sur leur deck (sinon ils dévoilent leur main afin que vous puissiez voir qu'ils n'ont pas de carte <i>Victoire</i>).", 
+        "extra": "Si vous n'avez plus de cartes dans votre deck lorsque vous jouez cette carte, la carte <i>Argent</i> que vous recevez et placez sur votre deck sera la seule carte dans votre deck. Conformément, si un autre joueur n'a plus de carte dans son deck, la carte <i>Victoire</i> dévoilée et placée sur le deck sera la seule carte dans leur deck.", 
+        "name": "Bureaucrate"
     },
     "Cellar": {
-        "description": "+1 Action<n>Discard any number of cards. +1 Card per card discarded.", 
-        "extra": "You can't discard Cellar to itself, since it isn't in your hand any longer when you resolve it. You choose what cards to discard and discard them all at once. You only draw cards after you have discarded. If you have to shuffle to do the drawing, the discarded cards will end up shuffled into your new Deck.", 
-        "name": "Cave", 
-        "untranslated": "description, extra"
+        "description": "+1 Action<n>Défaussez autant de cartes que vous voulez. +1 Carte par carte défaussée.", 
+        "extra": "Vous ne pouvez pas défausser la Cave elle-même, puisqu'au moment où elle est jouée, elle n'est plus dans votre main. Vous choisissez les cartes à défausser et vous les défaussez toutes en même temps. Vous piochez des cartes uniquement après avoir défaussé. Si vous devez mélanger pour piocher le bon nombre de cartes, les cartes défaussées seront mélangées dans votre nouveau deck.", 
+        "name": "Cave"
     },
     "Chapel": {
-        "description": "Trash up to 4 cards from your hand.", 
-        "extra": "You can't trash the Chapel itself since it isn't in your hand when you resolve it. You could trash a different Chapel card if that card were in your hand.", 
-        "name": "Chapelle", 
-        "untranslated": "description, extra"
+        "description": "Écartez jusqu'à 4 cartes de votre main.", 
+        "extra": "Vous ne pouvez pas écarter la Chapelle elle-même puisqu'elle n'est pas dans votre main lorsque vous exécutez son effet. Vous pouvez écarter une autre carte Chapelle si vous en avez une autre dans votre main.", 
+        "name": "Chapelle"
     },
     "Council Room": {
-        "description": "+4 Cards<br>+1 Buy<n>Each other player draws a card.", 
-        "extra": "The other players must draw a card whether they want to or not. All players should shuffle as necessary.", 
-        "name": "Chambre du conseil", 
-        "untranslated": "description, extra"
+        "description": "+4 Cartes<br>+1 Achat<n>Tous vos adversaires piochent 1 carte.", 
+        "extra": "Les autres joueurs doivent piocher, qu'ils le veuillent ou non. Tous les joueurs doivent mélanger leur deck au besoin.", 
+        "name": "Chambre du conseil"
     },
     "Festival": {
-        "description": "+2 Actions<br>+1 Buy<br>+2 Coins", 
-        "extra": "If you are playing multiple Festivals, keep a careful count of your Actions. Say how many you have left out loud; this trick works every time (i.e. \"I'm playing the Festival and now have two Actions remaining. I play a Market and have two Actions remaining. I play another Festival and now have three actions remaining...).", 
-        "name": "Festival", 
-        "untranslated": "description, extra"
+        "description": "+2 Actions<br>+1 Achat<br>+2 Coins", 
+        "extra": "Si vous jouez plus d'une carte Festival, faites attention à votre nombre d'actions. Comptez votre nombre d'actions à voix haute (par exemple: \"Je joue la carte Festival et il me reste deux actions. Je joue la carte Marché et il me reste toujours deux actions. Je joue une autre carte Festival et il me reste maintenant trois actions...\").", 
+        "name": "Festival"
     },
     "Gardens": {
-        "description": "Worth 1<VP> for every 10 cards in your deck (rounded down).", 
-        "extra": "This Kingdom card is a Victory card, not an Action card. It does nothing until the end of the game, when it is worth 1 victory point per 10 cards in your Deck (counting all of your cards - your Discard pile and hand are part of your Deck at that point). Round down; if you have 39 cards, Gardens is worth 3 victory points. During set-up, place 12 Gardens in the Supply for a 3+ player game and 8 in the Supply for a 2 player game.", 
-        "name": "Jardins", 
-        "untranslated": "description, extra"
+        "description": "Vaut 1<VP> pour chaque 10 cartes dans votre deck (arrondi à l'unité inférieure).", 
+        "extra": "Cette carte Royaume est une carte Victoire et non Action. Elle prend effet à la fin de la partie où elle vaut 1 point de victoire pour chaque lot de 10 cartes dans votre deck (incluant toutes vos cartes, y compris les cartes Jardins - votre défausse et votre main font partie de votre deck à ce moment de la partie). Arrondissez à l'unité inférieure; si vous possédez 39 cartes, la carte Jardins vaut 3 points de victoire. Lors de la mise en place, placez 12 Jardins dans la réserve lors d'une partie à 3 ou 4 joueurs et 8 cartes Jardins dans une partie à 2 joueurs.", 
+        "name": "Jardins"
     },
     "Laboratory": {
-        "description": "+2 Cards<br>+1 Action.", 
-        "extra": "Draw two cards. You may play another Action card during your Action phase.", 
-        "name": "Laboratoire", 
-        "untranslated": "description, extra"
+        "description": "+2 Cartes<br>+1 Action", 
+        "extra": "Piochez 2 cartes. Vous pouvez jouer une autre action pendant votre phase Action.", 
+        "name": "Laboratoire"
     },
     "Library": {
-        "description": "Draw until you have 7 cards in hand. You may set aside any Action cards drawn this way, as you draw them; discard the set aside cards after you finish drawing.", 
-        "extra": "If you have to shuffle in the middle, the set-aside cards are not shuffled into the new Deck. They will be discarded when you have finished drawing cards. If you run out of cards even after shuffling, you just get however many there were. You are not obligated to set aside Actions - you just have the option to do so. If you have 7 or more cards in hand after you play the Library, you don't draw any cards.", 
-        "name": "Bibliothèque", 
-        "untranslated": "description, extra"
+        "description": "Piochez jusqu'à ce que vous ayez 7 cartes en main. Chaque carte Action piochée peut être mise de côté. Défaussez les cartes mises de côté lorsque vous avez terminé de piocher.", 
+        "extra": " Si vous devez mélanger durant cette action, les cartes mises de côté ne sont pas mélangées dans le nouveau deck. Elles sont défaussées lorsque vous avez terminé de piocher des cartes. Si vous êtes à court de cartes après avoir mélangé, vous obtenez le nombre de cartes qu'il y avait. Vous ne devez pas forcément mettre les cartes Action de côté, vous avez tout simplement la possibilité de le faire. Si vous avez 7 cartes ou plus dans votre main après avoir joué la Bibliothèque, vous ne piochez pas.", 
+        "name": "Bibliothèque"
     },
     "Market": {
-        "description": "+1 Card<br>+1 Action<br>+1 Buy<br>+1 Coin<n>", 
-        "extra": "Draw a card. You may play another Action card during your Actions phase. During your Buy phase, you may buy an additional card from the supply, and add one coin to the total value of the Treasure cards played.", 
-        "name": "Marché", 
-        "untranslated": "description, extra"
+        "description": "+1 Carte<br>+1 Action<br>+1 Achat<br>+1 Coin<n>", 
+        "extra": "Piochez une carte. Vous pouvez jouer une autre carte Action pendant votre phase Action. Lors de la phase Achat vous ajoutez 1 Coin à votre total de cartes Trésor jouées et vous pouvez acheter une carte supplémentaire de la réserve.", 
+        "name": "Marché"
     },
     "Militia": {
-        "description": "+2 Coins<n>Each other player discards down to 3 cards in his hand.", 
-        "extra": "The attacked players discard cards until they have only 3 cards in hand. Players who had 3 or fewer cards in hand when Militia was played do not discard any cards.", 
-        "name": "Milice", 
-        "untranslated": "description, extra"
+        "description": "+2 Coins<n>Tous vos adversaires défaussent leurs cartes de façon à n'avoir que 3 cartes en main.", 
+        "extra": "Les joueurs attaqués défaussent de façon à n'avoir que 3 cartes en main. Les joueurs qui avaient déjà 3 cartes ou moins en main lorsqu'une carte Milice est jouée n'ont pas à défausser de cartes.", 
+        "name": "Milice"
     },
     "Mine": {
-        "description": "You may trash a Treasure from your hand. Gain a Treasure to your hand costing up to 3 Coins more than it.<n>[Trash a Treasure card from your hand. Gain a Treasure card costing up to 3 Coins more; put it into your hand.]", 
-        "extra": "Generally, you can trash a Copper card and gain a Silver, or trash a Silver card and gain a Gold. However, you could also trash a Treasure to gain the same Treasure or a cheaper one. The gained card goes in your hand; thus, you can spend it the same turn. If you don't have a Treasure card in your hand to trash, you can't gain anything.", 
-        "name": "Mine", 
-        "untranslated": "description, extra"
+        "description": "Écartez une carte <i>Trésor</i> de votre main. Recevez une carte <i>Trésor</i> coûtant jusqu'à 3 Coins de plus; ajoutez cette carte à votre main.", 
+        "extra": "Généralement, vous écartez une carte Cuivre au Rebut afin d'obtenir une carte Argent ou bien une carte Argent pour obtenir une carte Or. Cependant il est aussi possible d'écarter une carte Trésor afin d'obtenir la même carte Trésor ou une de valeur moindre. La carte reçue va immédiatement dans votre main, elle peut donc être utilisée le tour où elle est acquise. Si vous n'avez pas de carte Trésor à écarter dans votre main, vous ne recevez rien.", 
+        "name": "Mine"
     },
     "Moat": {
-        "description": "+2 Cards<line>When another player plays an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack.", 
-        "extra": "An attack card is one that says \"Attack\" on the bottom line (usually, \"Action - Attack\"). When someone else plays an Attack card, you may reveal the Moat by showing it from your hand to the other players and then returning it to your hand (before the Attack card resolves). You are then unaffected by that Attack card. You won't gain a Curse because of a Witch or reveal a card to a Spy, and so on. Moat doesn't stop anything an Attack does to other players or to the player of the Attack; for example, if everyone else Moats a Witch, the person who played it still gets to draw 2 cards. Moat can also be played on your turn as an Action to draw 2 cards.", 
-        "name": "Douves", 
-        "untranslated": "description, extra"
+        "description": "+2 Cartes<line>Lorsqu'un adversaire joue une carte <i>Attaque</i>, vous pouvez dévoiler cette carte de votre main. Dans ce cas, l'attaque n'a pas d'effet sur vous.", 
+        "extra": "Une carte Attaque est une carte où l'on peut lire <i>Attaque</i> sur la ligne du bas (normalement <i>Action - Attaque</i>). Lorsqu'un adversaire joue une carte Attaque, vous pouvez dévoiler la carte Douves (en la montrant à vos adversaires) et la remettre dans votre main avant que l'attaque ne soit résolue. L'attaque n'a pas d'effet sur vous : vous ne gagnerez pas de carte Malédiction à cause d'une Sorcière, vous ne dévoilerez pas de carte à cause d'un Espion et ainsi de suite. Pour la résolution des effets de cette attaque, vous n'êtes pas considéré comme étant en jeu. La carte Douves n'empêche pas la carte Attaque d'avoir effet sur les autres joueurs ou le joueur qui utilise la carte <i>Attaque</i>. Par exemple, si tous les joueurs jouent une carte Douves lorsqu'un joueur utilise une Sorcière, la personne ayant joué la Sorcière pioche tout de même deux cartes. Une carte Douves peut aussi être jouée à son tour comme une action régulière afin de piocher 2 cartes.", 
+        "name": "Douves"
     },
     "Moneylender": {
-        "description": "You may trash a Copper from your hand for +3 Coins.<n>[Trash a Copper from your hand. If you do, +3 Coins.]", 
-        "extra": "If you do not have a Copper in your hand to trash, you don't get the +3 Coins to spend in the Buy phase.", 
-        "name": "Prêteur sur gages", 
-        "untranslated": "description, extra"
+        "description": "Écartez une carte <i>Cuivre</i> de votre main. Dans ce cas, +3 Coins.", 
+        "extra": "Si vous n'avez pas de carte Cuivre à mettre au Rebut dans votre main, vous n'obtenez pas les +3 Coins à utiliser dans la phase Achat.", 
+        "name": "Prêteur sur gages"
     },
     "Remodel": {
-        "description": "Trash a card from your hand. Gain a card costing up to 2 Coins more than the trashed card.", 
-        "extra": "You cannot trash the Remodel as it isn't in your hand when you resolve it (you can trash a different Remodel card from your hand). If you do not have a card to trash, you cannot gain a card from the Remodel. The gained card goes in your Discard pile. You can only gain cards from the Supply. The gained card need not cost exactly 2 Coins more than the trashed card; it can cost that much or any amount less. You cannot use coins from Treasures or previous Actions (like the Market) to increase the cost of the card you gain. You can trash a card to gain a copy of the same card.", 
-        "name": "Rénovation", 
-        "untranslated": "description, extra"
+        "description": "Écartez une carte de votre main. Recevez une carte coûtant jusqu'à 2 Coins de plus que la carte écartée.", 
+        "extra": "Vous ne pouvez pas mettre la carte Rénovation au Rebut puisqu'elle ne fait plus partie de votre main lorsque vous exécutez son effet (il est toutefois possible de mettre au Rebut une autre carte Rénovation qui est dans votre main). Si vous n'avez pas de carte à écarter, vous ne pouvez pas recevoir de carte grâce à l'action Rénovation. La carte obtenue est placée dans votre défausse. Vous pouvez seulement recevoir des cartes de la réserve. La carte reçue n'a pas à coûter précisément 2 Coins de plus que la carte écartée, elle peut coûter ce prix ou moins. Vous ne pouvez pas utiliser de pièces provenant de carte Trésor ou Action (comme le Marché) pour augmenter le coût de la carte désirée. Vous pouvez écarter une carte pour obtenir la même carte.", 
+        "name": "Rénovation"
     },
     "Smithy": {
-        "description": "+3 Cards", 
-        "extra": "Draw three cards.", 
-        "name": "Forgeron", 
-        "untranslated": "description, extra"
+        "description": "+3 Cartes", 
+        "extra": "Piochez 3 cartes.", 
+        "name": "Forgeron"
     },
     "Throne Room": {
-        "description": "You may play an Action card from your hand twice.<n>[Choose an Action card in your hand. Play it twice.]", 
-        "extra": "You pick another Action card in your hand, play it, and play it again. The second use of the Action card doesn't use up any extra Actions you have. You completely resolve playing the Action the first time before playing it the second time. If you Throne Room a Throne Room, you play an Action, doing it twice, and then play another Action and do it twice; you do not resolve an Action four times. If you Throne Room a card that gives you +1 Action, such as Market, you will end up with 2 Actions left afterwards, which is tricky, because if you'd just played Market twice you'd only have 1 Action left afterwards. Remember to count the number of Actions you have remaining out loud to keep from getting confused! You cannot play any other Actions in between playing the Throne Roomed Action twice.", 
-        "name": "Salle du Trône", 
-        "untranslated": "description, extra"
+        "description": "Choisissez 1 carte <i>Action</i> de votre main. Jouez-la deux fois.", 
+        "extra": "Vous prenez une carte Action de votre main, vous la jouez et la rejouez immédiatement après. L'utilisation de cette deuxième carte Action ne coûte pas d'action supplémentaire. Si vous utilisez la Salle du Trône pour jouer une Salle du Trône, vous jouez une action, que vous faites deux fois et vous jouez ensuite une autre action, que vous jouez aussi deux fois; vous ne jouez pas une action quatre fois. Si vous jouez une Salle du Trône sur une carte qui vous donne +1 Action, tel un Marché, vous aurez deux actions supplémentaires à effectuer par la suite. Afin d'éviter toute confusion, rappelez-vous de compter le nombre d'actions qu'il vous reste à voix haute. Aucune action ne peut être jouée entre les deux actions de la Salle du Trône.", 
+        "name": "Salle du Trône"
     },
     "Village": {
-        "description": "+1 Card<br>+2 Actions", 
-        "extra": "If you're playing multiple Villages, keep a careful count of your Actions. Say how many you have left out loud; this trick works every time.", 
-        "name": "Village", 
-        "untranslated": "description, extra"
+        "description": "+1 Carte<br>+2 Actions", 
+        "extra": "Si vous jouez plus d'un Village, portez une attention particulière à votre nombre d'actions. Comptez-les à voix haute afin de ne pas vous tromper.", 
+        "name": "Village"
     },
     "Witch": {
-        "description": "+2 Cards<n>Each other player gains a Curse card.", 
-        "extra": "If there aren't enough Curses left to go around when you play the Witch, you deal them out in turn order - starting with the player after you. If you play Witch with no Curses remaining, you will still draw 2 cards. A player gaining a Curse puts it face-up into his Discard pile.", 
-        "name": "Sorcière", 
-        "untranslated": "description, extra"
+        "description": "+2 Cartes<n>Tous vos adversaires reçoivent une carte <i>Malédiction</i>.", 
+        "extra": "S'il n'y a pas suffisamment de carte Malédiction lorsque vous jouez la Sorcière, distribuez les cartes Malédiction en sens horaire, en débutant par le joueur à votre gauche. Si vous jouez une carte Sorcière et qu'il n'y a plus de cartes Malédiction, vous piochez tout de même 2 cartes. Un joueur qui obtient une carte Malédiction la place face visible dans sa défausse.", 
+        "name": "Sorcière"
     },
     "Workshop": {
-        "description": "Gain a card costing up to 4 Coins.", 
-        "extra": "The card you gain is put into your Discard pile. It has to be a card from the Supply. You cannot use coins from Treasures or previous Actions (like the Market) to increase the cost of the card you may gain. [You cannot gain cards with Potion in the cost with Workshop.]", 
-        "name": "Atelier", 
-        "untranslated": "description, extra"
+        "description": "Recevez une carte coûtant jusqu'à 4 Coins.", 
+        "extra": " La carte que vous recevez est placée dans votre défausse et doit être une carte de la réserve. Vous ne pouvez pas utiliser de pièces provenant de cartes Trésor ou Action (telle Marché) pour augmenter le coût de la carte que vous recevez. Vous ne pouvez pas gagner une carte contenant une Potion dans son coût avec Atelier.", 
+        "name": "Atelier"
     },
     "Artisan": {
         "description": "Gain a card to your hand costing up to 5 Coins.<n>Put a card from your hand onto your deck.", 
