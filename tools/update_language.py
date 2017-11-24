@@ -389,7 +389,7 @@ for lang in languages:
             else:
                 if lang != LANGUAGE_DEFAULT:
                     for x in lang_default[set]:
-                        if not x in lang_set_data[set]:
+                        if not x in lang_set_data[set] and x is not 'used':
                             lang_set_data[set][x] = lang_default[set][x]
                             
             lang_out.write(json_dict_entry({set: lang_set_data[set]}, sep))
@@ -428,7 +428,7 @@ copyfile(
     os.path.join(output_dir, "translation.md"))
 
 # Since xx is the starting point for new translations,
-# make sure xx has the latest copy of translation.md
+# make sure xx has the latest copy of translation.txt
 copyfile(
-    os.path.join(card_db_dir, "translation.md"),
-    os.path.join(output_dir, LANGUAGE_XX, "translation.md"))
+    os.path.join(card_db_dir, LANGUAGE_XX, "translation.txt"),
+    os.path.join(output_dir,  LANGUAGE_XX, "translation.txt"))
