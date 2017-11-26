@@ -6,10 +6,10 @@
         "untranslated": "description, extra"
     },
     "Amulet": {
-        "description": "Now and at the start of your next turn, choose one: +1 Coin; or trash a card from your hand; or gain a Silver.", 
-        "extra": "You choose something when you play it, and again at the start of your next turn; the choices may be the same or different.", 
+        "description": "Maintenant et au début de votre prochain tour, choisissez : +1 Coin <b>OU</b> écartez une carte de votre main <b>OU</b> recevez une carte Argent.", 
+        "extra": "Vous optez pour l'un des choix quand vous jouez cette carte, et à nouveau au début de votre prochain tour; les choix peuvent être identiques ou différents.", 
         "name": "Amulette", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Artificer": {
         "description": "+1 Card<br>+1 Action<br>+1 Coin<n>Discard any number of cards. You may gain a card costing exactly 1 Coin per card discarded, putting it on top of your deck.", 
@@ -78,10 +78,10 @@
         "untranslated": "description, extra"
     },
     "Duplicate": {
-        "description": "Put this on your Tavern mat.<line>When you gain a card costing up to 6 Coins, you may call this, to gain a copy of that card.", 
-        "extra": "When you play this, you put it on your Tavern mat. It stays on your mat until you call it. You can call it when gaining a card costing up to 6 Coins , and gain another copy of that card. The gained card comes from the Supply and is put into your discard pile; Duplicate cannot gain non-supply cards such as Teacher. Duplicate can be called during other players' turns when you gain cards; for example, another player might buy Messenger and choose to have each player gain an Estate, and you could Duplicate that Estate. You can call multiple Duplicates to gain multiple copies of the same card. Duplicate is discarded during the Clean-up of the turn you call it, whether or not it is your turn.", 
+        "description": "Placez cette carte dans votre <i>Taverne</i>.<line>Lorsque vous recevez une carte coûtant jusqu'à 6 Coins, vous pouvez recourir à cette <i>Copie</i> pour recevoir un autre exemplaire de la carte reçue.", 
+        "extra": "Lorsque vous jouez cette carte, vous la placez sur votre plateau Taverne. Elle y reste jusqu'à ce que vous y recouriez. Vous pouvez y recourir lorsque vous recevez une carte coûtant jusqu'à 6 Coins, et recevoir une autre copie de cette carte. La carte reçue provient de la Réserve et est mise dans votre défausse; Copie ne peut pas obtenir des cartes qui ne se trouvent pas dans la Réserve, telles que Maître. Vous pouvez recourir à Copie pendant les tours des autres joueurs quand vous recevez des cartes; par exemple, un autre joueur pourrait acheter Courrier et choisir de faire en sorte que chaque joueur reçoive un Domaine, et vous pourriez copier ce Domaine. Vous pouvez recourir à plusieurs Copies pour obtenir plusieurs copies de la même carte. Copie est défaussée pendant la phase Ajustement du tour auquel vous y avez recouru, que ce soit votre tour ou non.", 
         "name": "Copie", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Expedition": {
         "description": "Draw 2 extra cards for your next hand.", 
@@ -120,10 +120,10 @@
         "untranslated": "description, extra"
     },
     "Haunted Woods": {
-        "description": "Until your next turn, when any other player buys a card, he puts his hand on top of his deck in any order.<n>At the start of your next turn:<n>+3 Cards", 
-        "extra": "you will draw 3 cards at the start of your next turn; and until then, other players will put the rest of their hand on their deck whenever they buy a card. A player may not have any cards left in hand when buying a card; typically cards left in hand will include Victory cards, Curses, and unplayed Actions. A player may intentionally avoid playing Treasures and Actions in order to take advantage of having to put his hand on his deck. Players who do not buy any cards can discard their hand normally. Buying Events is not buying cards and so does not trigger this. If you play Haunted Woods and then take an extra turn immediately, such as with Mission or Outpost (from Seaside), you will draw the 3 cards at the start of that turn and discard Haunted Woods that turn, and other players will never be affected by it. If you want to use a Reaction card like Moat against Haunted Woods, you have to use it right when Haunted Woods is played.", 
+        "description": "Jusqu'à votre prochain tour, quand un adversaire achète une carte, il place sa main restante sur le dessus de son deck dans l'ordre de son choix.<n>Au début de votre prochain tour :<n>+3 Cartes", 
+        "extra": "Vous piocherez 3 cartes au début de votre prochain tour; et jusque-là, les autres joueurs mettront le reste de leur main sur leur deck à chaque fois qu'ils achèteront une carte. Un joueur peut n'avoir aucune carte en main lors de l'achat d'une carte; typiquement les cartes laissées en main incluront les cartes Victoire, les Malédictions et les actions non jouées. Un joueur peut intentionnellement éviter de jouer des Trésors et Actions afin de profiter de devoir à mettre sa main sur son deck. Les joueurs qui n'achètent pas de cartes peuvent défausser leur main normalement. Acheter un Événement ne constitue pas un achat de carte et ne déclenche donc pas cet effet. Si vous jouez Bois Hantés et que vous effectuez immédiatement un tour supplémentaire, comme avec Mission ou Avant-poste (de Rivages), vous piochez les 3 cartes au début de ce tour et défausserez Bois Hantés ce tour, et les autres joueurs ne seront jamais affectés. Si vous voulez utiliser une carte Réaction comme Douves contre Bois Hantés, vous devez l'utiliser dès que Bois Hantés est jouée.", 
         "name": "Bois hantés", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Hero": {
         "description": "+2 Coins<n>Gain a Treasure.<line>When you discard this from play, you may exchange it for a Champion.<n><i>(This is not in the Supply.)</i>", 
@@ -150,10 +150,10 @@
         "untranslated": "description, extra"
     },
     "Lost City": {
-        "description": "+2 Cards<br>+2 Actions<line>When you gain this, each other player draws a card.", 
-        "extra": "When you gain this, each other player draws a card. This applies whether you bought it or gained it some other way.", 
+        "description": "+2 Cartes<br>+2 Actions<line>Quand vous recevez cette carte, chaque adversaire pioche une carte.", 
+        "extra": "Quand vous recevez ceci, chaque autre joueur pioche une carte. Cela s'applique que vous l'ayez achetée ou reçue d'une autre manière.", 
         "name": "Cité perdue", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Magpie": {
         "description": "+1 Card<br>+1 Action<n>Reveal the top card of your deck. If it's a Treasure, put it into your hand. If it's an Action or Victory card, gain a Magpie.", 
@@ -162,10 +162,10 @@
         "untranslated": "description, extra"
     },
     "Messenger": {
-        "description": "+1 Buy<br>+2 Coins<n>You may put your deck into your discard pile.<line>When this is your first buy in a turn, gain a card costing up to 4 Coins, and each other player gains a copy of it.", 
-        "extra": "When you play this, you get +1 Buy, + 2 Coin , and may optionally put your deck into your discard pile. This is not discarding cards and does not trigger Tunnel (from Hinterlands). When you buy Messenger, if it is the first thing you bought that turn (card or Event), you gain a card costing up to 4 Coins from the Supply, putting it into your discard pile, and then each other player in turn order also gains a copy of that card. If the Supply runs out of copies of the card, further players do not get anything.", 
+        "description": "+1 Achat<br>+2 Coins<n>Vous pouvez placer votre deck dans votre défausse.<line>Si cette carte est votre premier achat du tour, recevez une carte coûtant jusqu'à 4 Coins, chaque adversaire en reçoit également un exemplaire.", 
+        "extra": "Lorsque vous jouez cette carte, vous obtenez +1 Achat, + 2 Coins, et vous pouvez éventuellement mettre votre deck dans votre défausse. Cela ne revient pas à défausser les cartes, et ne déclenche pas la réaction de Tunnel (de l'Arrière-Pays). Quand vous achetez Courrier, si c'est la première chose que vous avez ayez achetée ce tour (carte ou événement), vous recevez une carte coûtant jusqu'à 4 Coins de la Réserve, en la mettant dans votre défausse, puis chaque autre joueur à tour de rôle reçoit une copie de cette carte. Si la Réserve ne contient plus de copie de la carte, les autres joueurs ne reçoivent rien.", 
         "name": "Courrier", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Miser": {
         "description": "Choose one: Put a Copper from your hand onto your Tavern mat; or +1 Coin per Copper on your Tavern mat.", 
@@ -234,10 +234,10 @@
         "untranslated": "description, extra"
     },
     "Ratcatcher": {
-        "description": "+1 Card<br>+1 Action<n>Put this on your Tavern mat.<line>At the start of your turn, you may call this, to trash a card from your hand.", 
-        "extra": "When you play this, you get +1 Card and +1 Action, and put it on your Tavern mat. It stays on your mat until you call it at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Ratcatcher, you move it from the mat into play, and you trash a card from your hand. Ratcatcher is discarded that turn with your other cards in play.", 
+        "description": "+1 Carte<br>+1 Action<n>Placez cette carte dans votre <i>Taverne</i>.<line>Au début de votre tour, vous pouvez recourir à ce <i>Chasseur de Rats</i> pour écarter une carte de votre main.", 
+        "extra": "Quand vous jouez cette carte, vous obtenez +1 Carte et +1 Action, et la placez sur votre plateau Taverne. Elle y reste jusqu'à ce que vous ayez recours à elle au début d'un de vos tours. Si plusieurs choses peuvent arriver au début de votre tour, vous pouvez les faire dans n'importe quel ordre. Lorsque vous avez recours au Chasseur de Rats, vous le déplacez du plateau Taverne vers votre zone de jeu, et vous écartez une carte de votre main. Chasseur de Rats est défaussé pendant la phase d'ajustement de ce tour, avec vos autres cartes en jeu.", 
         "name": "Chasseur de rats", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Raze": {
         "description": "+1 Action<n>Trash this or a card from your hand. Look at the number of cards from the top of your deck equal to the cost in _ Coins of the trashed card. Put one into your hand and discard the rest.", 
@@ -252,10 +252,10 @@
         "untranslated": "description, extra"
     },
     "Royal Carriage": {
-        "description": "+1 Action<n>Put this on your Tavern mat.<line>Directly after resolving an Action, if it's still in play, you may call this, to replay that Action.", 
-        "extra": "When you play this, you get +1 Action and put it on your Tavern mat. It stays on your mat until you call it, directly after resolving a played Action card that is still in play. Royal Carriage cannot respond to Actions that are no longer in play, such as a Reserve card that was put on the Tavern mat, or a card that trashed itself (like a Raze used to trash itself). When called, Royal Carriage causes you to replay the card you just played. You can call multiple Royal Carriages to replay the same Action multiple times (provided the Action is still in play). You completely resolve the Action before deciding whether or not to use Royal Carriage on it. If you use Royal Carriage to replay a Duration card, Royal Carriage will stay in play until the Duration card is discarded from play, to track the fact that the Duration card has been played twice.", 
+        "description": "+1 Action<n>Placez cette carte dans votre <i>Taverne</i>.<line>Après avoir résolu une carte <i>Action</i>, si elle est encore présente dans votre zone de jeu, vous pouvez recourir à ce <i>Cortège Royal</i> pour rejouer la carte <i>Action</i>.", 
+        "extra": "Lorsque vous jouez cette carte, vous obtenez +1 Action et vous la placez sur votre plateau Taverne. Elle reste sur votre plateau jusqu'à ce que vous y recouriez, directement après la résolution d'une carte Action jouée. Cortège Royal ne peut pas répondre aux actions qui ne sont plus en jeu, comme une carte Taverne qui a été placée sur le plateau Taverne, ou une carte qui s'est écartée (comme une Démolition qui s'est écartée elle-même). Lorsque vous y recourez, Cortège Royal vous permet de rejouer la carte que vous venez de jouer. Vous pouvez recourir à plusieurs Cortèges Royaux pour rejouer plusieurs fois la même action (à condition que l'Action soit toujours en jeu). Vous résolvez complètement l'action avant de décider d'utiliser ou non Cortège Royal. Si vous utilisez Cortège Royal pour rejouer une carte Durée, Cortège Royal restera en jeu jusqu'à ce que la carte Durée soit défaussée du jeu, pour préciser le fait que la carte Durée ait été jouée deux fois.", 
         "name": "Cortège royal", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Save": {
         "description": "+1 Buy<n>Once per turn: Set aside a card from your hand, and put it into your hand at end of turn (after drawing).", 
@@ -282,10 +282,10 @@
         "untranslated": "description, extra"
     },
     "Storyteller": {
-        "description": "+1 Action<br>+1 Coin<n>Play up to 3 Treasures from your hand. Pay all of your _ Coins. +1 Card per Coin paid.", 
-        "extra": "This lets you play Treasures in your Action phase. They go into play and produce Coins, just like Treasures played in the Buy phase. Then Storyteller turns all of your Coins into +Cards; for each Coin you have you lose the Coin and get +1 Card. For example if you had 4 Coins, you lose the 4 Coins and draw 4 cards. This makes you lose all Coins you have so far that turn, including the Coins you get from playing the Treasures, the + 1 Coin Storyteller gives you directly, and any you made earlier in the turn. You can track that the Treasures have been \"spent\" by putting them under the Storyteller. Potions, produced by Potions from Alchemy, is not Coin and so is not lost and does not get you any cards.", 
+        "description": "+1 Action<br>+1 Coin<n>Jouez jusqu'à 3 cartes <i>Trésor</i> de votre main. Dépensez toutes les _ Coins alors présentes devant vous pour obtenir +1 Carte par 1 Coin payée.", 
+        "extra": "Cette carte vous permet de jouer des Trésors pendant votre phase d'action. Ils entrent en jeu et produisent des _ Coins, tout comme les Trésors joués pendant la phase Achat. Ensuite, Conteuse transforme toutes vos _ Coins  en + Cartes; pour chaque _ Coin  que vous avez, vous perdez la _ Coin  et obtenez +1 Carte. Par exemple, si vous avez 4 Coins, vous perdez les 4 Coins et piochez 4 cartes. Cela vous fait perdre toutes les _ Coins que vous avez jouées jusqu'ici pendant ce tour, y compris les pièces que vous avez obtenues en jouant les Trésors, le + 1 Coin qui vous a été donné directement par Conteuse, et tout ce que vous avez fait précédemment pendant ce tour. Vous pouvez noter que les Trésors ont été \"dépensés\" en les mettant sous la Conteuse. Les Potion, produites par la carte Potion d'Alchimie, ne sont pas des _ Coins et ne sont donc pas perdues et ne vous procurent aucune carte.", 
         "name": "Conteuse", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Swamp Hag": {
         "description": "Until your next turn, when any other player buys a card, he gains a Curse.<n>At the start of your next turn:<n>+3 Coins", 
