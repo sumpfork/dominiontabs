@@ -12,10 +12,10 @@
         "untranslated": ""
     },
     "Artificer": {
-        "description": "+1 Card<br>+1 Action<br>+1 Coin<n>Discard any number of cards. You may gain a card costing exactly 1 Coin per card discarded, putting it on top of your deck.", 
-        "extra": "First you get +1 Card, +1 Action, and +1 Coin. Then you discard any number of cards. You may choose not to discard any cards. Then you may gain a card costing exactly 1 per card discarded. For example if you discarded two cards; you may gain a card costing 2 ; if you discard no cards, you may gain a card costing 0. The gained card comes from the Supply and is put on top of your deck. You may choose not to gain a card, even if you discard cards.", 
+        "description": "+1 Carte<br>+1 Action<br>+1 Coin<n>Défaussez autant de cartes que vous voulez. Vous pouvez recevoir une carte coûtant exactement 1 Coin par carte défaussée et la placer sur le dessus de votre deck.", 
+        "extra": "D'abord vous obtenez +1 Carte, +1 Action et +1 Coin. Ensuite, vous défaussez n'importe quel nombre de cartes. Vous pouvez choisir de ne pas défausser de cartes. Ensuite, vous pouvez recevoir une carte coûtant exactement 1 Coin par carte défaussée. Par exemple si vous avez défaussé deux cartes; vous pouvez recevoir une carte coûtant 2 Coins; si vous ne défaussez aucune carte, vous pouvez recevoir une carte qui coûte 0 Coin. La carte reçue provient de la Réserve et est placée au dessus de votre deck. Vous pouvez choisir de ne pas recevoir de carte, même si vous défaussez des cartes.", 
         "name": "Maître-artisan", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Ball": {
         "description": "Take your - 1 Coin token. Gain 2 cards each costing up to 4 Coin.", 
@@ -342,10 +342,10 @@
         "untranslated": "description, extra"
     },
     "Wine Merchant": {
-        "description": "+1 Buy<br>+4 Coins<n>Put this on your Tavern mat.<line>At the end of your Buy phase, if you have at least 2 Coins unspent, you may discard this from your Tavern mat.", 
-        "extra": "When you play this, you get +1 Buy and + 4 Coins, and put it on your Tavern mat. It stays on your mat until the end of one of your Buy phases in which you have 2 Coins or more that you didn't spend. At that point you can discard Wine Merchant from your mat. If you have multiple Wine Merchants on your mat, you don't need 2 Coins per Wine Merchant, just 2 Coins total.", 
+        "description": "+1 Achat<br>+4 Coins<n>Placez cette carte dans votre <i>Taverne</i>.<line>À la fin de votre phase d'achat, si vous avez encore au moins 2 Coins non dépensées, vous pouvez défausser ce <i>Marchand de vin</i> de la <i>Taverne</i>.", 
+        "extra": "Lorsque vous jouez cette carte, vous obtenez +1 Achat et + 4 Coins et vous la placez sur votre plateau Taverne. Elle reste sur votre plateau jusqu'à la fin de l'une de vos phases d'achat dans laquelle vous avez 2 Coins ou plus que vous n'avez pas dépensées. À ce stade, vous pouvez défausser Marchand de Vin de votre plateau. Si vous avez plusieurs Marchands de Vin sur votre plateau, vous n'avez pas besoin de 2 Coins par Marchand de Vin, seulement 2 Coins au total.", 
         "name": "Marchand de vin", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Alchemist": {
         "description": "+2 Cards<br>+1 Action<line>When you discard this from play, you may put this on top of your deck if you have a Potion in play.", 
