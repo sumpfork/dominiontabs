@@ -42,10 +42,10 @@
         "untranslated": "description, extra"
     },
     "Caravan Guard": {
-        "description": "+1 Card<br>+1 Action<n>At the start of your next turn, +1 Coin<line>When another player plays an Attack card, you may play this from your hand. (<i>+1 Action has no effect if it's not your turn.</i>)", 
-        "extra": "This gives you +1 Card and +1 Action when you play it, and then + 1 Coin at the start of your next turn after that. This card has a Reaction ability that lets you play it when another player plays an Attack card. Playing this during another player's turn is similar to playing it during your own turn - you put Caravan Guard into play, get +1 Card and +1 Action, and will get + 1 Coin at the start of your next turn - the very next turn you take. However getting +1 Action during someone else's turn does not do anything for you; it does not let you play other Action cards during that player's turn. Similarly if a token gives you + 1 Coin or +1 Buy during another player's turn, that still does not let you buy cards during that player's turn (although + 1 Coin can cancel the - token given out by Bridge Troll). The +1 Action (or potential other +'s) does not carry over to your next turn either. After reacting with a Caravan Guard, you can use another one, even one you just drew, and also can use other Reactions, even ones you just drew; you keep going until you have no more Reactions you wish to respond to the Attack with.", 
+        "description": "+1 Carte<br>+1 Action<n>À votre prochain tour, +1 Coin<line>Lorsqu'un adversaire joue un carte <i>Attaque</i>, vous pouvez jouer cette carte de votre main. (<i>+1 Action n'a pas d'effet en dehors de votre tour.</i>)", 
+        "extra": "Cette carte vous donne +1 Carte et +1 Action quand vous la jouez, puis + 1 Coin au début de votre prochain tour. Cette carte a une capacité de réaction qui vous permet de la jouer quand un autre joueur joue une carte Attaque. Jouer cette carte pendant le tour d'un autre joueur est similaire à la jouer pendant votre propre tour - vous mettez Escorte en jeu, obtenez +1 Carte et +1 Action et vous recevrez + 1 Coin au début de votre prochain tour - le tour suivant que vous jouez. Cependant, obtenir +1 Action pendant le tour de quelqu'un d'autre ne vous affecte pas; cela ne vous permet pas de jouer d'autres cartes Action pendant le tour de ce joueur. De même, si un jeton vous donne + 1 Coin ou +1 Achat pendant le tour d'un autre joueur, cela ne vous permet toujours pas d'acheter des cartes pendant le tour de ce joueur (bien que +1 Coin peut annuler le jeton fourni par Pont aux Trolls). Le +1 Action (ou les autres + potentiels) ne se poursuivent pas non plus jusqu'à votre prochain tour. Après avoir réagi avec une Escorte, vous pouvez en utiliser une autre, même celle que vous venez de piocher, et vous pouvez également utiliser d'autres Réactions, même celles que vous venez de piocher; vous continuez jusqu'à ce que vous n'ayez plus de Réactions avec lesquelles vous souhaitez répondre à l'Attaque.", 
         "name": "Escorte", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Champion": {
         "description": "+1 Action<n>For the rest of the game, when another player plays an Attack, it doesn't affect you, and when you play an Action, +1 Action.<n><i>(This stays in play. This is not in the Supply.)</i>", 
@@ -72,10 +72,10 @@
         "untranslated": "description, extra"
     },
     "Dungeon": {
-        "description": "+1 Action<n>Now and at the start of your next turn: +2 Cards then discard 2 cards.", 
-        "extra": "When you play this, you get +1 Action, draw 2 cards, and discard 2 cards; then at the start of your next turn, you again draw 2 cards and discard 2 cards.", 
+        "description": "+1 Action<n>Maintenant et au début de votre prochain tour : +2 Cartes, puis défaussez 2 cartes.", 
+        "extra": "Lorsque vous jouez cette carte, vous obtenez +1 Action, piochez 2 cartes et défaussez 2 cartes; puis, au début de votre prochain tour, vous piochez 2 cartes et défaussez 2 cartes.", 
         "name": "Donjon", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Duplicate": {
         "description": "Placez cette carte dans votre <i>Taverne</i>.<line>Lorsque vous recevez une carte coûtant jusqu'à 6 Coins, vous pouvez recourir à cette <i>Copie</i> pour recevoir un autre exemplaire de la carte reçue.", 
@@ -102,22 +102,22 @@
         "untranslated": "description, extra"
     },
     "Gear": {
-        "description": "+2 Cards<n>Set aside up to 2 cards from your hand face down. At the start of your next turn, put them into your hand.", 
-        "extra": "You may set aside zero, one, or two cards from your hand. Put them face down under the Gear; you may look at them. They do not have to be cards you drew with Gear. If you set aside zero cards, Gear will be discarded the same turn you played it; if you set aside one or two cards, you put them into your hand at the start of your next turn, and Gear is discarded at the end of that turn.", 
+        "description": "+2 Cartes<n>Mettez de côté jusqu'à 2 cartes de votre main face cachée. Au début de votre prochain tour, prenez-les en main.", 
+        "extra": "Vous pouvez mettre de côté zéro, une ou deux cartes de votre main. Mettez-les face cachée sous Équipement; vous pouvez les consulter. Ce ne sont pas forcément les cartes que vous avez piochées avec Équipement. Si vous mettez de côté zéro cartes, Équipement sera défaussée au tour où vous l'avez jouée; si vous mettez de côté une ou deux cartes, vous les mettez dans votre main au début de votre prochain tour, et Équipement est défaussée à la fin de ce tour.", 
         "name": "Équipement", 
         "untranslated": "description, extra"
     },
     "Giant": {
-        "description": "Turn your Journey token over (it starts face up). If it's face down, +1 Coin. If it's face up, +5 Coins, and each other player reveals the top card of his deck, trashes it if it costs 3 Coins to 6 Coins, and otherwise discards it and gains a Curse.", 
-        "extra": "At the start of the game, place your Journey token (the one with the boot) face up. When you play this, you turn the Journey token over. Then, if it is face down, you get + 1 Coin and nothing more happens. If it is face up, you get + 5 Coins and the attack part happens. The attack resolves in turn order, starting with the player to your left. The player reveals the top card of his deck, and either trashes it if it costs from 3 to 6 Coins, or discards it and gains a Curse otherwise. Cards with in the cost (from Alchemy) do not cost from 3 to 6 Coins. Cards with an asterisk or + by the cost that cost from 3 to 6 Coins (such as Teacher, or Masterpiece from Guilds) do get trashed. Players can respond to Giant being played with Reactions that respond to Attacks (such as Caravan Guard), even if Giant will only be producing + 1 Coin this time.", 
+        "description": "Retournez votre jeton \"Voyage\" (face visible en début de partie). S'il se retrouve face cachée, +1 Coin. S'il se retrouve face visible, +5 Coins, et tous vos adversaires dévoilent la première carte de leur deck, l'écartent si elle coûte de 3 Coins à 6 Coins, sinon la défaussent et reçoivent une carte <i>Malédiction</i>.", 
+        "extra": "Au début de la partie, placez votre jeton Voyage (celui avec la botte) face visible. Lorsque vous jouez cette carte, vous retournez le jeton Voyage. Ensuite, si il se retrouve face cachée, vous obtenez +1 Coin et rien d'autre ne se passe. S'il se retrouve face visible, vous obtenez +5 Coins et la partie Attaque se déclenche. L'Attaque se résout dans l'ordre du tour, en commençant par le joueur à votre gauche. Le joueur dévoile la carte du dessus de son deck, et l'écarte si elle coûte de 3 Coins à 6 Coins, ou autrement la défausse et gagne une Malédiction. Les cartes avec Potion dans le coût (d'Alchimie) ne coûtent pas de 3 Coins à 6 Coins. Les cartes avec un astérisque ou + dans le coût qui coûtent de 3 Coins à 6 Coins (comme Maître, ou Chef-d'œuvre de Guildes) sont écartées. Les joueurs peuvent répondre à Géant avec des Réactions qui répondent aux Attaques (comme Escorte), même si Géant ne produit que +1 Coin.", 
         "name": "Géant", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Guide": {
-        "description": "+1 Card<br>+1 Action<n>Put this on your Tavern mat.<line>At the start of your turn, you may call this, to discard your hand and draw 5 cards.", 
-        "extra": "When you play this, you get +1 Card and +1 Action, and put it on your Tavern mat. It stays on your mat until you call it at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Guide, it moves from the mat into play, and you discard your hand, then draw 5 cards. You discard it that turn with your other cards in play.", 
+        "description": "+1 Carte<br>+1 Action<n>Placez cette carte dans votre <i>Taverne</i>.<line>Au début de votre tour, vous pouvez recourir à ce <i>Guide</i> pour défausser votre main et piocher 5 nouvelles cartes.", 
+        "extra": "Lorsque vous jouez cette carte, vous obtenez +1 Carte et +1 Action, et la placez sur votre plateau Taverne. Elle reste sur votre plateau jusqu'à ce que vous y recouriez au début d'un de vos tours. Si plusieurs choses peuvent arriver au début de votre tour, vous pouvez les résoudre dans n'importe quel ordre. Lorsque vous recourez à Guide, elle passe du plateau à votre zone de jeu, et vous vous défaussez de votre main, puis piochez 5 cartes. Vous la défaussez ce tour là, avec vos autres cartes en jeu.", 
         "name": "Guide", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Haunted Woods": {
         "description": "Jusqu'à votre prochain tour, quand un adversaire achète une carte, il place sa main restante sur le dessus de son deck dans l'ordre de son choix.<n>Au début de votre prochain tour :<n>+3 Cartes", 
@@ -228,10 +228,10 @@
         "untranslated": "description, extra"
     },
     "Ranger": {
-        "description": "+1 Buy<n>Turn your Journey token over (it starts face up). If it's face up, +5 Cards.", 
-        "extra": "At the start of the game, place your Journey token (the one with the boot) face up. When you play this, you get +1 Buy, and turn the token over. Then if it is face down, nothing more happens. If it is face up, you draw 5 cards. So, every other time you play a Ranger, you will draw 5 cards. It does not matter what turned over the Journey token; you could turn it face down with Giant, then face up with Ranger.", 
+        "description": "+1 Achat<n>Retournez votre jeton \"Voyage\" (face visible en début de partie). S'il se retrouve face visible, +5 Cartes.", 
+        "extra": "Au début de la partie, placez votre jeton Voyage (celui avec la botte) face visible. Lorsque vous jouez cette carte, vous obtenez +1 Achat, et retournez le jeton. Ensuite, si il se retrouve face cachée, rien ne se passe. Si il se retrouve face visible, vous piochez 5 cartes. Donc, toutes les deux fois où vous jouez un Forestier, vous piochez 5 cartes. Peu importe ce qui a retourné le jeton Voyage; vous pouvez le retourner face cachée avec Géant, puis face visible avec Forestier.", 
         "name": "Forestier", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Ratcatcher": {
         "description": "+1 Carte<br>+1 Action<n>Placez cette carte dans votre <i>Taverne</i>.<line>Au début de votre tour, vous pouvez recourir à ce <i>Chasseur de Rats</i> pour écarter une carte de votre main.", 
@@ -240,10 +240,10 @@
         "untranslated": ""
     },
     "Raze": {
-        "description": "+1 Action<n>Trash this or a card from your hand. Look at the number of cards from the top of your deck equal to the cost in _ Coins of the trashed card. Put one into your hand and discard the rest.", 
-        "extra": "If you trash a card costing 0 Coins with this, you do not get any cards. If you trash a card costing 1 Coin or more, you look at a number of cards from the top of your deck equal to the cost in Coins of the trashed card, take one into your hand, and discard the rest. For example if you trash an Estate, you look at the top two cards of your deck, put one into your hand, and discard the other one. You can trash the Raze itself; normally it costs 2 Coins, so you would look at two cards. Costs may be affected by cards like Bridge Troll. Raze is unaffected by the -1 Card token; if it is on top of your deck, replace it after resolving Raze.", 
+        "description": "+1 Action<n>Écartez soit cette carte, soit une autre carte de votre main. Consultez un nombre de cartes du dessus de votre deck égal au coût en _ Coins de la carte écartée. Conservez-en une en main et défaussez les autres.", 
+        "extra": "Si vous écartez une carte coûtant 0 Coins avec Démolition, vous n'obtenez aucune carte. Si vous écartez une carte coûtant 1 Coin ou plus, vous consultez un nombre de cartes du dessus de votre deck égal au coût en _ Coins de la carte écartée, en prenez une dans votre main, et défaussez le reste. Par exemple, si vous écartez un Domaine, vous consultez les deux premières cartes de votre deck, en mettez une dans votre main, et en défaussez une autre. Vous pouvez écarter la carte Démolition elle-même; normalement elle coûte 2 Coins, vous regardez donc deux cartes. Les coûts peuvent néanmoins être affectés par des cartes comme Pont aux Trolls. Démolition n'est pas affectée par le jeton -1 Carte; si il se trouve sur votre deck, replacez-le après avoir résolu Démolition.", 
         "name": "Démolition", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Relic": {
         "description": "2 <*COIN*><n>When you play this, each other player puts his -1 Card token on his deck.", 
@@ -2220,10 +2220,10 @@
         "untranslated": "description, extra"
     },
     "adventures events": {
-        "description": "<justify>Events are not Kingdom cards. In a player's Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.", 
-        "extra": "Events are special on-buy effects not attached to cards. Players can buy Events during their Buy phase to trigger whatever the effect of the Event is, as an alternative to (or in addition to) buying cards from the supply.<n>Events are not Kingdom cards; including one or more Events in a game does not count toward the 10 Kingdom card piles the supply includes. In fact, Events are not considered \"cards\" at all. Any text referring to a \"card\" (such as instructions to \"name a card\", or cost reducers changing the cost of cards) does not apply to Events. However, for reference, the Event effects and costs are printed on cards in a landscape orientation with silver frames.<n>Any number of Events may be used in a game, but the recommendation is to not use more than two total Events and Landmarks. When choosing a random Kingdom, the Events may be shuffled into the randomizer deck; any Events that are dealt once 10 Kingdom cards have also been dealt will be included in the game.", 
-        "name": "Events - Adventures", 
-        "untranslated": "description, extra, name"
+        "description": "<justify>Les Événements ne sont pas des cartes Royaume. Pendant la phase Achat d'un joueur, lorsqu'il peut acheter une carte, il peut acheter un événement à la place. Acheter un Événement signifie payer le coût indiqué sur l'Événement, et ensuite appliquer l'effet de l'Événement. L'Événement reste sur la table, le joueur ne le prend pas; il n'y a aucun moyen pour un joueur d'en recevoir un ou d'en avoir un dans son deck. Acheter un Événement consomme un achat; normalement, un joueur peut soit acheter une carte, soit acheter un Événement. Un joueur avec deux achats, comme après avoir joué Forestier, pourrait acheter deux cartes ou acheter deux événements, ou acheter une carte et un événement (dans n'importe quel ordre). Le même Événement peut être acheté plusieurs fois par tour si le joueur a les Achats et les _ Coins disponibles pour le faire. Certains événements donnent des +Achats et permettent au joueur d'acheter d'autres cartes / événements par la suite. Les joueurs ne peuvent pas jouer d'autres Trésors ce tour après l'achat d'un Événement. Achter un Événement n'est pas un achat de carte et ne déclenche donc pas l'effet de cartes comme Sorcière des Marais ou Fiers-à-Bras (de Prosperité). Les coûts des Événement ne sont pas affectés par des cartes comme Pont aux Trolls.", 
+        "extra": "Les événements sont des effets spéciaux qui se déclenchent lors d'un achat, non liés aux cartes. Les joueurs peuvent acheter des Evènements durant leur phase d'Achat pour déclencher l'effet de l'Evènement, comme alternative à (ou en plus d') acheter des cartes de la Réserve.<n> Les Evènements ne sont pas des cartes Royaume; inclure un ou plusieurs Evénements dans une partie ne compte pas dans les 10 piles de cartes Royaume comprises dans la Réserve. En fait, les événements ne sont pas du tout considérés comme des \"cartes\". Tout texte faisant référence à une \"carte\" (comme des instructions pour \"nommer une carte\", ou des réducteurs de coûts modifiant le coût des cartes) ne s'applique pas aux Evènements. Cependant, pour référence, les effets et coûts de l'événement sont imprimés sur des cartes dans une orientation paysage avec des cadres argentés.<n>N'importe quel nombre d'événements peut être utilisé dans une partie, mais il est recommandé de ne pas utiliser plus de deux événements. Lors du choix d'un Royaume aléatoire, les événements peuvent être mélangés dans le paquet de cartes Préparation; les événements qui ont été tirés une fois que les 10 cartes Royaume ont été tirées seront inclus dans le jeu.", 
+        "name": "Événements", 
+        "untranslated": ""
     },
     "Page -> Champion": {
         "description": "<justify>Page is exchanged for Treasure Hunter, which is exchanged for Warrior, which is exchanged for Hero, which is exchanged for Champion.<n><left><u>Page</u>: +1 Card; +1 Action<br><u>Treasure Hunter</u>: +1 Action; +1 Coin; Gain a Silver per card the player to your right gained in his last turn.<br><u>Warrior</u>: +2 Cards; For each Traveller you have in play (including this), each other player discards the top card of his deck and trashes it if it costs 3 Coins or 4 Coins.<br><u>Hero</u>: +2 Coins; Gain a Treasure.<br><u>Champion</u>: +1 Action; For the rest of the game, when another player plays an Attack, it doesn't affect you, and when you play an Action, +1 Action. (This stays in play. <i>This is not in the Supply.</i>)", 
