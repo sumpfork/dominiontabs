@@ -36,6 +36,7 @@ def get_lang_dirs(path):
 
 
 def get_json_data(json_file_path):
+    print('reading {}'.format(json_file_path))
     # Read in the json from the specified file
     with codecs.open(json_file_path, 'r', 'utf-8') as json_file:
         data = json.load(json_file)
