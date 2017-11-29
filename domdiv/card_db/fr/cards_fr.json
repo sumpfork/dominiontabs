@@ -978,7 +978,7 @@
     "Workshop": {
         "description": "Recevez une carte coûtant jusqu'à 4 Coins.", 
         "extra": " La carte que vous recevez est placée dans votre défausse et doit être une carte de la réserve. Vous ne pouvez pas utiliser de pièces provenant de cartes Trésor ou Action (telle Marché) pour augmenter le coût de la carte que vous recevez. Vous ne pouvez pas recevoir une carte contenant une Potion dans son coût avec Atelier.", 
-        "name": "Atelier", 
+        "name": "Atelier"
     },
     "Artisan": {
         "description": "Gain a card to your hand costing up to 5 Coins.<n>Put a card from your hand onto your deck.", 
@@ -1481,158 +1481,132 @@
     "Border Village": {
         "description": "+1 Carte<br>+2 Actions<line>Lorsque vous recevez cette carte, recevez aussi une carte moins coûteuse.", 
         "extra": "Quand vous jouez ceci, vous piochez une carte et vous pouvez jouer deux autres Actions pendant ce tour. Lorsque vous recevez cette carte, vous recevez également une carte de la Réserve qui coûte moins cher que Village Frontalier. Normalement, ce sera une carte qui coûte jusqu'à 5 Coins, mais si Village Frontalier coûte moins que la normale, comme à cause de Route, alors la carte que vous recevez aura un coût maximal plus bas. Vous recevez seulement une carte quand vous recevez Village Frontalier, pas quand vous la jouez. Vous recevez une carte que vous ayez reçu Village Frontalier en l'achetant, ou d'une autre manière.", 
-        "name": "Village frontalier", 
-        "untranslated": ""
+        "name": "Village frontalier"
     },
     "Cache": {
         "description": "3 <*COIN*><line>Lorsque vous recevez cette carte, recevez 2 cartes <i>Cuivre</i>.", 
         "extra": "C'est un trésor qui vaut 3 Coins, comme Or. Quand vous le recevez, vous recevez également deux Cuivres de la Réserve. S'il ne reste plus deux Cuivres, recevez-en le plus possible. Vous recevez seulement des Cuivres quand vous recevez la Cache, pas quand vous la jouez. Vous recevez des Cuivres que vous ayez reçu la Cache en l'achetant, ou que vous l'ayez reçue d'une autre manière.", 
-        "name": "Cache", 
-        "untranslated": ""
+        "name": "Cache"
     },
     "Cartographer": {
         "description": "+1 Carte<br>+1 Action<n>Consultez les 4 premières cartes de votre deck. Défaussez celles de votre choix. Replacez les autres sur votre deck dans l'ordre de votre choix.", 
         "extra": "Vous piochez une carte en premier, puis vous consultez les 4 premières cartes de votre deck. S'il reste moins de 4 cartes dans votre deck, consultez les cartes restantes et mélangez votre défausse (qui n'inclut pas ces cartes) pour piocher les cartes restantes à consulter. S'il n'y a toujours pas assez de cartes, consultez-en autant que vous le pouvez. Défaussez autant de cartes que vous voulez parmi celles consultées - aucune, toutes les 4, ou entre les deux - et placez les cartes restantes sur votre deck dans n'importe quel ordre. S'il n'y avait plus de cartes dans votre deck, celles-ci deviennent les seules cartes de votre deck. Vous ne dévoilez pas les cartes que vous remettez sur votre deck.", 
-        "name": "Cartographe", 
-        "untranslated": ""
+        "name": "Cartographe"
     },
     "Crossroads": {
         "description": "Dévoilez votre main.<n>+1 Carte par carte <i>Victoire</i> dévoilée. Si c'est la première fois que vous jouez une carte <i>Carrefour</i> ce tour-ci, +3 Actions.", 
         "extra": "D'abord, dévoilez votre main et piochez une carte pour chaque carte Victoire que vous avez révélée, le cas échéant. Les cartes révélées restent toutes dans votre main. Les cartes avec deux types, dont l'un est Victoire, sont des cartes Victoire. Ensuite, si c'est la première fois que vous jouez un Carrefour ce tour-ci, vous obtenez +3 Actions. Les Carrefours suivants joués ce tour-ci vous donneront des cartes mais pas des actions. En utilisant une carte qui vous permet de jouer une carte à plusieurs reprises (comme Salle du Trône de Dominion) sur Carrefour, vous jouerez Carrefour plusieurs fois, en obtenant +3 Actions la première fois mais pas les suivantes.", 
-        "name": "Carrefour", 
-        "untranslated": ""
+        "name": "Carrefour"
     },
     "Develop": {
         "description": "Écartez une carte de votre main. Recevez une carte coûtant exactement 1 Coin de plus que la carte écartée et une carte coûtant exactement 1 Coin de moins. Placez les cartes reçues sur votre deck dans l'ordre de votre choix.", 
         "extra": "Écartez d'abord une carte de votre main, si vous avez au moins une carte en main. Développement n'est plus dans votre main et ne peut donc pas s'écarter elle-même (bien qu'elle puisse écarter d'autres copies de Développement). Si vous avez écarté une carte, recevez deux cartes, l'une coûtant exactement 1 Coin de plus que la carte écartée, et une qui coûte exactement 1 Coin de moins que la carte écartée. Les cartes reçues proviennent de la Réserve; recevez-les dans n'importe quel ordre. S'il n'y a pas de carte correspondant à l'un des coûts dans la Réserve, recevez l'autre carte si vous le pouvez. Placez les cartes reçues sur votre deck au lieu de votre défausse. Si vous écartez un Cuivre, qui coûte 0 Coin, avec Développement vous essaierez mais ne pourrez pas recevoir une carte coûtant -1 pièces (et essayerez ensuite de recevoir une carte coûtant 1 Coin).", 
-        "name": "Développement", 
-        "untranslated": ""
+        "name": "Développement"
     },
     "Duchess": {
         "description": "+2 Coins<n>Tous les joueurs (vous aussi) consultent la première carte de leur deck et la défaussent ou la replacent.<line>Dans une partie avec cette carte, vous pouvez recevoir une <i>Duchesse</i> lorsque vous recevez un <i>Duché</i>.", 
         "extra": "Quand vous jouez ceci, vous obtenez +2 Coins et chaque joueur, y compris vous, consulte la carte du dessus de son deck et choisit de la défausser ou de la remettre au dessus. N'importe quel joueur sans cartes dans son deck mélange d'abord sa défausse; tout joueur qui n'a toujours aucune carte à regarder n'en regarde aucune. Quand un joueur reçoit un Duché dans une partie avec Duchesse dans la Réserve, ce joueur peut également recevoir une Duchesse de la Réserve. Cela fonctionne si le joueur a reçu un Duché en l'achetant, ou en le recevant d'une autre manière. Duchesse n'interagit pas de manière particulière avec la carte promotionnelle Marché Noir.", 
-        "name": "Duchesse", 
-        "untranslated": ""
+        "name": "Duchesse"
     },
     "Embassy": {
         "description": "+5 Cartes<br>Défaussez 3 cartes.<line>Lorsque vous recevez cette carte, tous vos adversaires reçoivent une carte <i>Argent</i>.", 
         "extra": "Lorsque vous jouez ceci, vous piochez cinq cartes, puis en défaussez trois. Les cartes que vous défaussez peuvent être celles qui étaient dans votre main et/ou celles que vous venez de piocher. Vous défaussez trois cartes si vous le pouvez, même si vous n'avez pas réussi à piocher toutes les cinq cartes (parce que vous n'aviez plus assez de cartes dans votre deck et dans votre défausse). Si vous n'avez pas trois cartes à défausser, vous en défaussez autant que vous le pouvez. Lorsque vous recevez ceci, tous les autres joueurs reçoivent un Argent. Les joueurs reçoivent seulement des Argents quand vous recevez l'Ambassade, pas quand vous la jouez. Ils reçoivent des Argents que vous avez reçu l'Ambassade en l'achetant, ou d'une autre manière. Recevoir des Argents est obligatoire pour vos adversaires. Les Argents proviennent de la Réserve. S'il n'y a pas assez d'Argents à distribuer, distribuez-les dans l'ordre du tour, en commençant par le joueur à la gauche de celui qui a reçu l'Ambassade.", 
-        "name": "Ambassade", 
-        "untranslated": ""
+        "name": "Ambassade"
     },
     "Farmland": {
         "description": "2<*VP*><line>Lorsque vous achetez cette carte, écartez une carte de votre main. Recevez une carte coûtant exactement 2 Coins de plus que la carte écartée.", 
         "extra": "Ceci est une carte Victoire, pas une carte Action. Elle vaut 2 points de victoire à la fin de la partie. Quand vous l'achetez, vous écartez une carte de votre main si possible, et si vous le faites, vous recevez une carte de la Réserve coûtant exactement 2 Coins de plus que la carte écartée (si possible). S'il n'y a plus de cartes dans votre main à écarter, vous n'écartez pas de carte et vous n'en recevez aucune, et si vous écartez une carte mais qu'il n'y a pas de cartes coûtant exactement 2 Coins de plus que la carte écartée, vous ne recevez pas de carte. Cette capacité ne fonctionne que lorsque vous achetez Terre Agricole, pas lorsque vous la recevez d'une autre manière. Lors de la mise en place, placez les 12 Terres Agricoles dans la Réserve pour une partie à 3 joueurs ou plus, mais seulement 8 pour une partie à 2 joueurs.", 
-        "name": "Terre agricole", 
-        "untranslated": ""
+        "name": "Terre agricole"
     },
     "Fool's Gold": {
         "description": "Si c'est la première carte <i>Or des fous</i> que vous jouez ce tour-ci, elle vaut 1 Coin, sinon elle vaut 4 Coins.<line>Lorsqu'un autre joueur reçoit une carte <i>Province</i>, vous pouvez écarter cette carte de votre main. Dans ce cas, recevez une carte <i>Or</i> que vous placez sur votre deck.", 
         "extra": "Cette carte est à la fois un Trésor et une Réaction. Elle peut être jouée lors de votre phase Achat comme les autres Trésors. Quand vous la jouez, elle vaut 1 Coin si c'est la première fois que vous jouez un Or des Fous ce tour-ci, sinon elle vaut 4 Coins. Donc, si vous jouez trois Or des Fous pendant le même tour, le premier vaut 1 Coin, le second vaut 4 Coins et le troisième vaut 4 Coins. L'Or des Fous est également une Réaction. Quand un autre joueur reçoit une Province, vous pouvez écarter l'Or des Fous de votre main; si vous le faites, vous recevez un Or de la Réserve, en le plaçant sur votre Deck plutôt que dans votre défausse. S'il n'y a pas de carte dans votre deck, l'Or reçu devient la seule carte de votre deck. S'il n'y a plus de cartes Or dans la Réserve, vous n'en recevez pas, mais vous pouvez toujours écarter l'Or des Fous. Cette Réaction n'est utilisable que lorsqu'un autre joueur reçoit une Province, pas vous. Elle est utilisable qu'une Province ait été achetée ou reçue d'une autre manière.", 
-        "name": "Or des fous", 
-        "untranslated": ""
+        "name": "Or des fous"
     },
     "Haggler": {
         "description": "+2 Coins<line>Lorsque cette carte est en jeu et que vous achetez une carte, vous recevez une carte coûtant moins que la carte achetée. La carte reçue ne peut pas être une carte <i>Victoire</i>.", 
         "extra": "Lorsque vous jouez cette carte, vous obtenez +2 Coins. Tant que cette carte est en jeu, lorsque vous achetez une carte, vous en recevez une autre moins chère qui n'est pas une carte Victoire. Par exemple, vous pourriez acheter une Province et recevoir un Or via le Marchandeur. Recevoir une carte n'est pas facultatif. La carte reçue provient de la Réserve et est mise dans votre défausse. Marchandeur ne vous donne une carte supplémentaire que lorsque vous achetez une carte, pas quand vous en recevez une d'une autre manière (par exemple avec Marchandeur lui-même). S'il n'y a pas de carte moins chère disponible dans la Réserve (par exemple si vous achetez un Cuivre), vous ne recevez pas de carte. Utiliser une carte qui vous permet de jouer une carte plusieurs fois (comme Salle du Trône de Dominion) sur Marchandeur ne vous rapporte pas deux cartes ou plus par carte achetée, car il n'y a toujours qu'une seule copie de Marchandeur en jeu. Le bonus est cumulatif : si vous avez trois Marchandeurs en jeu, vous recevrez trois cartes de plus pour chaque carte que vous achetez. Les cartes avec deux types, dont Victoire, sont des cartes Victoire et ne peuvent donc pas être reçues avec Marchandeur.", 
-        "name": "Marchandeur", 
-        "untranslated": ""
+        "name": "Marchandeur"
     },
     "Highway": {
         "description": "+1 Carte<br>+1 Action<line>Lorsque cette carte est en jeu, les cartes coûtent 1 Coin de moins, au minimum 0 Coin.", 
         "extra": "Cette carte rend toutes les cartes moins chères (jusqu'à un minimum de 0 Coins) tant qu'elle est en jeu. Quand elle n'est plus en jeu, elle cesse de rendre les cartes moins chères. Ceci s'applique aux cartes partout - cartes dans la Réserve, cartes en main, cartes dans les decks. Par exemple, si vous avez joué Route, puis Développement (en écartant un Cuivre), vous pourriez recevoir un Domaine, car il coûterait 1 Coin tandis que le Cuivre coûterait toujours 0 Coins. L'utilisation d'une carte qui vous permet de jouer plusieurs fois une autre carte (comme Salle du Trône de Dominion) sur Route ne réduira pas plusieurs fois le coût des cartes, car il n'y a toujours qu'une seule copie de Route en jeu. Le bonus est cumulatif; si vous avez trois Routes en jeu, toutes les cartes coûtent 3 Coins de moins (jusqu'à un minimum de 0 Coins).", 
-        "name": "Route", 
-        "untranslated": ""
+        "name": "Route"
     },
     "Ill-Gotten Gains": {
         "description": "1 <*COIN*><n>Lorsque vous jouez cette carte, vous pouvez recevoir une carte <i>Cuivre</i> que vous ajoutez à votre main.<line>Lorsque vous recevez cette carte, tous vos adversaires reçoivent une <i>Malédiction</i>.", 
         "extra": "Cette carte est un Trésor valant 1 Coin, comme Cuivre. Lorsque vous la jouez, vous pouvez recevoir un Cuivre. Le Cuivre reçu provient de la Réserve et est placé dans votre main; vous pouvez immédiatement le jouer. S'il n'y a plus de Cuivre dans la réserve, vous n'en recevez pas. Lorsque vous recevez Argent Noir, chaque autre joueur reçoit une Malédiction. Cela se produit que vous ayez reçu Argent Noir en l'achetant, ou de toute autre manière. Les Malédictions viennent de la Réserve et vont dans les piles de défausse. S'il n'y a pas assez de Malédictions à distribuer, distribuez-les dans l'ordre du tour, en commençant par le joueur à gauche de celui qui a reçu Argent Noir. Argent Noir n'est pas une Attaque, et la recevoir n'est pas une Attaque; les cartes comme Douves de Dominion ne fonctionnent donc pas contre elle.", 
-        "name": "Argent noir", 
-        "untranslated": ""
+        "name": "Argent noir"
     },
     "Inn": {
         "description": "+2 Cartes<br>+2 Actions<br>Défaussez 2 cartes.<line>Lorsque vous recevez cette carte, consultez votre défausse (incluant cette carte), dévoilez autant de cartes <i>Action</i> que vous voulez de votre défausse et mélangez-les dans votre deck.", 
         "extra": "Lorsque vous jouez cette carte, vous piochez 2 cartes, obtenez +2 Actions, puis défaussez 2 cartes. Les cartes que vous défaussez peuvent être celles qui étaient dans votre main et/ou celles que vous venez de piocher. Vous défaussez des cartes si possible, même si vous n'avez pas pu piocher 2 cartes. Quand vous recevez cette carte, vous regardez dans votre défausse (ce qui est normalement interdit) et vous mélangez n'importe quel nombre de cartes Action dans votre deck (en laissant le reste de votre défausse dans votre défausse). Vous n'avez pas à mélanger au moins une carte Action dans votre deck. Vous pouvez mélanger l'Auberge que vous venez de recevoir dans votre deck; c'est une carte Action dans votre défausse. Les cartes avec deux types, dont Action, sont des cartes Action. Vous devez révéler les cartes Action que vous choisissez de mélanger dans votre deck. L'ordre dans lequel vous laissez votre défausse n'est pas important. Cette capacité fonctionne que vous ayez reçu Auberge en l'achetant, ou de toute autre manière.", 
-        "name": "Auberge", 
-        "untranslated": ""
+        "name": "Auberge"
     },
     "Jack of all Trades": {
         "description": "Recevez une carte <i>Argent</i>.<n>Consultez la première carte de votre deck; défaussez-là ou replacez-là.<n>Piochez pour avoir 5 cartes en main.<n>Vous pouvez écarter une carte de votre main qui n'est pas une carte <i>Trésor</i>.", 
         "extra": "Cette carte fait quatre choses distinctes, dans l'ordre indiqué; vous les faites toutes (seule la dernière est facultative). D'abord, recevez un Argent de la Réserve, en le plaçant dans votre défausse. S'il n'y a plus d'Argent dans la Réserve, vous n'en recevez pas. Deuxièmement, consultez la carte du dessus de votre deck et défaussez-la ou remettez-la en place. S'il n'y a plus de cartes dans votre deck, mélangez votre défausse pour obtenir une carte à consulter (cela va mélanger l'Argent que vous venez de recevoir). S'il n'y a toujours pas de cartes, vous n'en consultez aucune. Troisièmement, piochez des cartes jusqu'à ce que vous ayez au moins cinq cartes en main. Si vous avez déjà cinq cartes ou plus en main, vous ne piochez aucune carte. S'il n'y a plus assez de cartes à piocher entre votre deck et votre défausse, piochez ce que vous pouvez. Quatrièmement, vous pouvez écarter une carte de votre main qui n'est pas une carte Trésor. Les cartes avec deux types, dont Trésor, sont des Trésors.", 
-        "name": "Touche-à-tout", 
-        "untranslated": ""
+        "name": "Touche-à-tout"
     },
     "Mandarin": {
         "description": "+3 Coins<br>Placez une carte de votre main sur le dessus de votre deck.<line>Lorsque vous recevez cette carte, placez toutes vos cartes <i>Trésor</i> en jeu sur le dessus de votre deck, dans l'ordre de votre choix.", 
         "extra": "Lorsque vous jouez cette carte, vous obtenez +3 Coins et mettez une carte de votre main sur votre deck. Si vous n'avez plus de cartes en main, vous ne placez pas de carte sur votre deck. S'il n'y a plus de cartes dans votre deck, la carte que vous placez au dessus devient la seule carte de votre deck. Lorsque vous recevez cette carte, vous placez tous vos Trésors actuellement en jeu sur le dessus de votre deck, dans n'importe quel ordre. Vous n'avez pas besoin de montrer cet ordre aux autres joueurs. Vous devez mettre tous vos trésors sur votre deck; vous ne pouvez pas en laisser certains. Vous ne placez que des Trésors en jeu sur votre deck, pas des Trésors non joués de votre main. Cela ne vous empêche pas d'avoir les pièces que vous avez obtenues en jouant ces Trésors; par exemple, si vous avez +1 Achat, jouez quatre Ors et achetez un Mandarin, vous placez les Ors sur votre deck, et vous avez encore 7 Coins à dépenser. Le Mandarin met vos Trésors joués sur votre deck, que vous l'ayez reçu en l'achetant ou reçu d'une autre manière, bien que normalement vous n'aurez des Trésors en jeu que pendant votre phase Achat.", 
-        "name": "Mandarin", 
-        "untranslated": ""
+        "name": "Mandarin"
     },
     "Margrave": {
         "description": "+3 Cartes<br>+1 Achat<br>Tous vos adversaires piochent une carte. Ensuite, ils défaussent pour n'avoir que 3 cartes en main.", 
         "extra": "Vous piochez 3 cartes et obtenez +1 Achat. Chaque autre joueur pioche une carte, puis défausse jusqu'à n'avoir que 3 cartes en main. Les autres joueurs sont obligés de piocher une carte. Un joueur qui n'a que 3 cartes (ou moins) en main après avoir pioché ne défausse pas de carte.", 
-        "name": "Margrave", 
-        "untranslated": ""
+        "name": "Margrave"
     },
     "Noble Brigand": {
         "description": "+1 Coin<n>Lorsque vous achetez ou jouez cette carte, tous vos adversaires dévoilent les 2 premières cartes de leur deck. Si une carte <i>Or</i> ou <i>Argent</i> est dévoilée, ils en écartent une, de votre choix, et défaussent l'autre. Ceux qui n'ont pas dévoilé de Trésor reçoivent un <i>Cuivre</i>. Vous recevez les cartes écartées.", 
         "extra": "Lorsque vous jouez cette carte, vous obtenez +1 Coin. Lorsque vous jouez cette carte et lorsque vous l'achetez, chaque autre joueur révèle les deux cartes au sommet de son deck, écarte un Argent ou un Or qu'il a révélé (selon votre choix), et défausse le reste. Chaque joueur qui n'a pas révélé de Trésor reçoit un Cuivre de la Réserve, le mettant dans sa défausse. Enfin, vous recevez tous les Argents et les Ors ayant été écartés de cette façon. Cette action ne peut écarter aucun trésor autre qu'Argent ou Or. Recevoir un Noble Brigand sans l'acheter ne déclenche pas cette capacité. Noble Brigand est une carte Attaque, et quand vous la jouez, les autres joueurs peuvent utiliser des cartes comme Douves de Dominion ou Chambre Secrète d'Intrigue en réaction. Cependant, l'achat d'un Noble Brigand n'est pas \"jouer une carte Attaque\", et donc des cartes comme Douves ne peuvent pas y réagir.", 
-        "name": "Noble brigand", 
-        "untranslated": ""
+        "name": "Noble brigand"
     },
     "Nomad Camp": {
         "description": "+1 Achat<br>+2 Coins<line>Lorsque vous recevez cette carte, placez-là sur votre deck.", 
         "extra": "Lorsque vous recevez cette carte, elle se place sur votre deck plutôt que sur votre défausse, que vous l'ayez reçue en l'achetant ou reçue d'une autre manière. Si il n'y avait aucune carte dans votre deck, elle devient la seule carte de votre deck.", 
-        "name": "Campement nomade", 
-        "untranslated": ""
+        "name": "Campement nomade"
     },
     "Oasis": {
         "description": "+1 Carte<br>+1 Action<br>+1 Coin<br>Défaussez une carte.", 
         "extra": "Vous piochez avant de défausser. Vous pouvez défausser la carte que vous avez piochée. Si vous êtes incapable de piocher une carte (parce que vous n'avez plus de carte dans votre deck, et aucune dans votre défausse pour mélanger), vous pouvez toujours défausser une carte si possible.", 
-        "name": "Oasis", 
-        "untranslated": ""
+        "name": "Oasis"
     },
     "Oracle": {
         "description": "Tous les joueurs (vous aussi) dévoilent les 2 premières cartes de leur deck et vous choisissez pour chacun : soit il les défausse, soit il les remet sur le dessus de son deck dans l'ordre de son choix.<n>+2 Cartes", 
         "extra": "Tout d'abord, chaque joueur, y compris vous, dévoile les deux premières cartes de son deck, et soit les défausse toutes les deux, soit les remet toutes les deux (selon votre choix). Un joueur remettant les cartes les remet dans l'ordre qu'il choisit, sans avoir besoin de révéler cet ordre. Ensuite, vous piochez deux cartes. Donc, si vous remettez les cartes que vous avez dévoilées sur votre deck, vous les piocherez.", 
-        "name": "Oracle", 
-        "untranslated": ""
+        "name": "Oracle"
     },
     "Scheme": {
         "description": "+1 Carte<br>+1 Action<n>Au début de la phase <b>Ajustement</b> de ce tour, vous pouvez choisir une carte <i>Action</i> que vous avez en jeu. Si vous la défaussez de votre zone de jeu ce tour-ci, placez-la sur votre deck.", 
         "extra": "Lorsque vous jouez cette carte, vous obtenez +1 Carte et +1 Action, et un effet se produira plus tard dans le tour, au début de la phase Ajustement. À ce moment-là, vous pouvez éventuellement choisir une carte Action que vous avez en jeu. Si vous la défaussez ce tour-ci, comme vous le faites normalement, vous la replacez sur votre deck. Cela se produit avant que vous ne tiriez des cartes pour le prochain tour. La carte Action que vous choisissez peut être Complot elle-même, ou toute autre carte Action que vous avez en jeu, qui aurait pu être jouée avant ou après avoir joué Complot. Si la carte Action n'est pas défaussée pendant l'Ajustement, par exemple parce qu'il s'agit d'une carte Durée de Rivages qui a été jouée ce tour-ci, elle ne sera pas mise au-dessus de votre deck.", 
-        "name": "Complot", 
-        "untranslated": ""
+        "name": "Complot"
     },
     "Silk Road": {
         "description": "Vaut 1 <VP> pour chaque tranche de 4 cartes <i>Victoire</i> dans votre deck (arrondie à l'unité inférieure).", 
         "extra": "Ceci est une carte Victoire, pas une carte Action. Elle ne fait rien jusqu'à la fin de la partie, où elle vaut 1 point de victoire par tranche de 4 cartes Victoire dans votre deck (en comptant toutes vos cartes : votre défausse et votre main font partie de votre deck à ce moment-là). Les Routes de la Soie se comptent elles-mêmes. Vous devez arrondir vers le bas; si vous avez 11 cartes Victoire, une Route de la Soie vaut 2 points de victoire. Pendant la mise en place, mettez les 12 Routes de la Soie dans la Réserve pour une partie avec 3 joueurs ou plus, mais seulement 8 pour une partie à 2 joueurs. Les cartes avec plusieurs types, dont Victoire, sont des cartes Victoires et sont donc comptées par Route de la Soie.", 
-        "name": "Route de la soie", 
-        "untranslated": ""
+        "name": "Route de la soie"
     },
     "Spice Merchant": {
         "description": "Vous pouvez écarter une carte Trésor de votre main. Dans ce cas, choisissez :<n>+2 Cartes et +1 Action;<br>ou +2 Coins and +1 Achat.", 
         "extra": "Vous pouvez écarter une carte Trésor de votre main. Ce n'est pas obligatoire. Si vous avez écarté une carte Trésor, vous choisissez soit d'obtenir +2 Cartes et +1 Action, soit +2 Coins et +1 Achat.", 
-        "name": "Marchand d'épices", 
-        "untranslated": ""
+        "name": "Marchand d'épices"
     },
     "Stables": {
         "description": "Vous pouvez défausser une carte Trésor.<br>Dans ce cas, +3 Cartes et +1 Action.", 
         "extra": "Vous pouvez défausser une carte Trésor de votre main. Ce n'est pas obligatoire. Si vous en avez défaussée une, vous obtenez +3 Cartes et +1 Action. Vous piochez après avoir défaussé, donc si vous devez mélanger pour obtenir les 3 cartes, vous mélangerez aussi la carte que vous avez défaussée.", 
-        "name": "Écuries", 
-        "untranslated": ""
+        "name": "Écuries"
     },
     "Trader": {
         "description": "Écartez une carte de votre main. Recevez un nombre de cartes <i>Argent</i> équivalant au nombre de pièces que coûte cette carte.<line>Lorsque vous recevez une carte, vous pouvez dévoiler cette carte de votre main. Dans ce cas, recevez une carte <i>Argent</i> à la place de l'autre carte.", 
         "extra": "Lorsque vous jouez cette carte, écartez une carte de votre main, et dans ce cas, recevez un nombre d'Argents égal au coût de cette carte en _ Coins. Les Argents viennent de la Réserve et sont mis dans votre défausse. S'il n'y a plus assez d'Argents, recevez autant d'Argents que vous le pouvez. Vous recevez seulement des Argents si vous avez écarté une carte. Si vous écartez une carte coûtant 0 Coins, comme Cuivre, vous ne recevez aucun Argent. Vous pouvez écarter un Argent si vous le voulez; vous recevrez alors 3 Argents. Si les coûts sont différents, par exemple après avoir joué Route, alors Troqueuse vous donnera un nombre différent d'Argents, en fonction des coûts actuels. Par exemple, si vous jouez Route et ensuite Troqueuse, en écartant un Domaine, vous ne recevrez qu'un seul Argent. Si vous écartez une carte avec Potion (d'Alchimie) dans son coût, vous ne recevez rien pour la Potion, seulement pour les _ Coins que la carte coûte. Troqueuse est aussi une réaction. Lorsque vous recevez une carte, que ce soit en l'ayant achetée ou d'une autre façon, vous pouvez dévoiler Troqueuse de votre main pour recevoir un Argent de la Réserve. Si vous faites cela, vous recevez un Argent, mais pas la carte que vous auriez reçue; si quelque chose était sensé se produire au moment de recevoir l'autre carte, cela ne se produira pas, parce que vous ne l'avez pas reçue. Par exemple, si vous achetez Argent Noir mais utilisez Troqueuse pour recevoir un Argent à la place, personne ne recevra une Malédiction. Cependant, si quelque chose est sensé se produire lorsque vous achetez une carte, cela se produira même si, au lieu de recevoir la carte, vous décidez de recevoir un Argent. Par exemple, vous pouvez acheter Terre Agricole, écarter une carte de votre main et en recevoir une coûtant 2 Coins de plus, puis utiliser Troqueuse pour recevoir un Argent plutôt que Terre Agricole. Si la carte que vous alliez recevoir n'allait pas dans votre défausse, l'Argent ira quand même dans votre défausse; si la carte que vous alliez recevoir ne provenait pas de la Réserve, l'Argent provient quand même de la Réserve. S'il n'y a plus d'Argent dans la Réserve, vous pouvez toujours dévoiler Troqueuse lorsque vous recevez une carte; vous ne recevez alors rien à la place de la carte que vous auriez dû recevoir.", 
-        "name": "Troqueuse", 
-        "untranslated": ""
+        "name": "Troqueuse"
     },
     "Tunnel": {
         "description": "2 <*VP*><line>Lorsque vous défaussez cette carte à un autre moment que votre phase <b>Ajustement</b>, vous pouvez la dévoiler. Dans ce cas, recevez un <i>Or</i>.", 
         "extra": "Ceci est à la fois une carte Victoire et une Réaction. À la fin de la partie, Tunnel vaut 2 <VP>. La capacité de réaction de Tunnel fonctionne lorsque vous la défaussez. Vous ne pouvez pas simplement choisir de la défausser; quelque chose doit vous permettre de la défausser, ou vous y obliger. Cette capacité fonctionne si vous défaussez un Tunnel pendant votre tour (comme avec Oasis) ou celui de quelqu'un d'autre (comme avec Margrave). Elle fonctionne si le Tunnel est défaussé de votre main (par exemple avec Oasis) ou de votre deck, ou s'il est mis de côté (par exemple avec Cartographe). Si le Tunnel ne doit pas obligatoirement être dévoilé (par exemple en défaussant plusieurs cartes avec Cartographe), vous devez le dévoiler pour recevoir l'Or. Le dévoiler est facultatif, même si Tunnel a déjà été dévoilé pour une autre raison; vous n'êtes pas obligé de recevoir un Or. Cette capacité ne fonctionne pas si des cartes sont mises dans votre défausse sans être explicitement défaussées, comme lorsque vous achetez une carte, quand vous recevez une carte directement (comme avec Village Frontalier), quand votre deck est mis dans votre défausse (comme avec Chancelier de Dominion), ou quand les cartes écartées vous sont retournées à la fin du tour (avec Possession d'Alchimie). Elle ne fonctionne pas non plus pendant la phase Ajustement, lorsque vous défaussez normalement toutes vos cartes jouées et non jouées. Le mot clé à rechercher est une carte qui vous dit de \"défausser\" des cartes. L'Or que vous recevez provient de la Réserve et est mis dans votre défausse; s'il n'y a plus d'Or dans la Réserve, vous n'en recevez pas.", 
-        "name": "Tunnel", 
-        "untranslated": ""
+        "name": "Tunnel"
     },
     "Coppersmith": {
         "description": "Copper produces an extra 1 Coin this turn.", 
