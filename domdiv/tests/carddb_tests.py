@@ -9,7 +9,7 @@ class TestCardDB(unittest.TestCase):
         options = main.parse_opts([])
         options.data_path = '.'
         cards = main.read_card_data(options)
-        self.assertEquals(len(cards), 448)
+        self.assertEquals(len(cards), 524)
         valid_cardsets = {
             u'base',
             u'dominion1stEdition',
@@ -31,6 +31,8 @@ class TestCardDB(unittest.TestCase):
             u'adventures extras',
             u'empires',
             u'empires extras',
+            u'nocturne',
+            u'nocturne extras',
             u'promo',
             u'extras',
             u'animals'
