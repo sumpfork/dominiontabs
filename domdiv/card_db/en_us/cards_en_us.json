@@ -1311,7 +1311,7 @@
     },
     "Highway": {
         "description": "+1 Card<br>+1 Action<line>While this is in play, cards cost 1 Coin less, but not less than 0 Coins.", 
-        "extra": "This makes all cards cheaper (to a minimum of 0 coins) as long as it is in play. When it leaves play, it stops making cards cheaper This applies to cards everywhere - cards in the Supply, cards in hand, cards in Decks. For example if you played Highway, then Develop, trashing a Copper, you could gain an Estate, as Estate would cost 1 coin while Copper would still cost 0 coins. Using a card that lets you play a card several times (like Throne Room from Dominion) on Highway will not make cards cost less, as there is still only one copy of Highway in play. The bonus is cumulative; if you have three Highways in play, all cards cost 3 coins less (to a minimum of 0 coins).", 
+        "extra": "This makes all cards cheaper (to a minimum of 0 coins) as long as it is in play. When it leaves play, it stops making cards cheaper. This applies to cards everywhere - cards in the Supply, cards in hand, cards in Decks. For example if you played Highway, then Develop, trashing a Copper, you could gain an Estate, as Estate would cost 1 coin while Copper would still cost 0 coins. Using a card that lets you play a card several times (like Throne Room from Dominion) on Highway will not make cards cost less, as there is still only one copy of Highway in play. The bonus is cumulative; if you have three Highways in play, all cards cost 3 coins less (to a minimum of 0 coins).", 
         "name": "Highway"
     },
     "Ill-Gotten Gains": {
