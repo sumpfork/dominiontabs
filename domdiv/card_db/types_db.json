@@ -19,6 +19,16 @@
     "card_type": [
         "Action", 
         "Attack", 
+        "Doom"
+    ], 
+    "card_type_image": "action.png", 
+    "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Action", 
+        "Attack", 
         "Duration"
     ], 
     "card_type_image": "duration.png", 
@@ -30,6 +40,17 @@
         "Action", 
         "Attack", 
         "Looter"
+    ], 
+    "card_type_image": "action.png", 
+    "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Action", 
+        "Attack", 
+        "Night", 
+        "Doom"
     ], 
     "card_type_image": "action.png", 
     "defaultCardCount": 10, 
@@ -58,6 +79,15 @@
 },{
     "card_type": [
         "Action", 
+        "Doom"
+    ], 
+    "card_type_image": "action.png", 
+    "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Action", 
         "Duration"
     ], 
     "card_type_image": "duration.png", 
@@ -71,6 +101,15 @@
         "Reaction"
     ], 
     "card_type_image": "duration-reaction.png", 
+    "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Action", 
+        "Fate"
+    ], 
+    "card_type_image": "action.png", 
     "defaultCardCount": 10, 
     "tabCostHeightOffset": -1, 
     "tabTextHeightOffset": 0
@@ -150,6 +189,15 @@
 },{
     "card_type": [
         "Action", 
+        "Spirit"
+    ], 
+    "card_type_image": "action.png", 
+    "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Action", 
         "Traveller"
     ], 
     "card_type_image": "action.png", 
@@ -176,10 +224,27 @@
     "tabTextHeightOffset": 0
 },{
     "card_type": [
+        "Action", 
+        "Zombie"
+    ], 
+    "card_type_image": "action.png", 
+    "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
         "Blank"
     ], 
     "card_type_image": "", 
     "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Boon"
+    ], 
+    "card_type_image": "boon.png", 
+    "defaultCardCount": 1, 
     "tabCostHeightOffset": -1, 
     "tabTextHeightOffset": 0
 },{
@@ -216,6 +281,14 @@
     "tabTextHeightOffset": 4
 },{
     "card_type": [
+        "Hex"
+    ], 
+    "card_type_image": "hex.png", 
+    "defaultCardCount": 1, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
         "Landmark"
     ], 
     "card_type_image": "landmark.png", 
@@ -228,6 +301,53 @@
     ], 
     "card_type_image": "landmark.png", 
     "defaultCardCount": 0, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Night"
+    ], 
+    "card_type_image": "night.png", 
+    "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Night", 
+        "Attack", 
+        "Doom"
+    ], 
+    "card_type_image": "night.png", 
+    "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Night", 
+        "Duration"
+    ], 
+    "card_type_image": "duration.png", 
+    "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Night", 
+        "Duration", 
+        "Attack"
+    ], 
+    "card_type_image": "duration.png", 
+    "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Night", 
+        "Duration", 
+        "Spirit"
+    ], 
+    "card_type_image": "duration.png", 
+    "defaultCardCount": 10, 
     "tabCostHeightOffset": -1, 
     "tabTextHeightOffset": 0
 },{
@@ -273,6 +393,14 @@
     "tabTextHeightOffset": 0
 },{
     "card_type": [
+        "State"
+    ], 
+    "card_type_image": "state.png", 
+    "defaultCardCount": 1, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
         "Trash"
     ], 
     "card_type_image": "action.png", 
@@ -294,6 +422,25 @@
     ], 
     "card_type_image": "treasure.png", 
     "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Treasure", 
+        "Attack", 
+        "Fate"
+    ], 
+    "card_type_image": "treasure.png", 
+    "defaultCardCount": 10, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Treasure", 
+        "Heirloom"
+    ], 
+    "card_type_image": "treasure.png", 
+    "defaultCardCount": 6, 
     "tabCostHeightOffset": -1, 
     "tabTextHeightOffset": 0
 },{
@@ -330,6 +477,16 @@
     ], 
     "card_type_image": "treasure-victory.png", 
     "defaultCardCount": 12, 
+    "tabCostHeightOffset": -1, 
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Treasure", 
+        "Victory", 
+        "Heirloom"
+    ], 
+    "card_type_image": "treasure-victory.png", 
+    "defaultCardCount": 6, 
     "tabCostHeightOffset": -1, 
     "tabTextHeightOffset": 0
 },{
