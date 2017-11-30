@@ -34,10 +34,9 @@
         "untranslated": "description, extra"
     },
     "Bridge Troll": {
-        "description": "Each other player takes his -1 Coin token. Now and at the start of your next turn:<n>+1 Buy<line>While this is in play, cards cost 1 Coin less on your turn, but not less than 0 Coins.", 
-        "extra": "This gives each other player his - 1 Coin token, which will cause those players to get 1 Coin less the next time they get treasure; see the Tokens section. It also gives you +1 Buy both on the turn you play it and on your next turn. While Bridge Troll is in play, on your turns only, cards cost 1 Coin less, but not less than 0 Coins. This applies to all cards everywhere, including cards in the Supply, cards in hand, and cards in Decks. For example if you have Bridge Troll in play and play Raze, trashing Estate, Estate will only cost 1 Coin, so you'll only look at one card rather than two. This is cumulative; if you have two Bridge Trolls in play from last turn and play another Bridge Troll this turn, all cards will cost 3 Coins less this turn (to a minimum of 0 Coins).", 
-        "name": "Pont aux Trolls", 
-        "untranslated": "description, extra"
+        "description": "Vos adversaires placent leur jeton \"-1 Coin\" sur leur deck. Maintenant et au début de votre prochain tour : +1 Achat<line>Tant que cette carte est en jeu, les cartes coûtent 1 Coin de moins pendant vos tours, mais jamais moins que 0 Coin.", 
+        "extra": "Cette carte force chaque autre joueur à prendre son jeton -1 Coin, qui fera qu'ils auront 1 Coin de moins la prochaine fois qu'ils gagneront des _ Coins; voir la section Jetons. Elle vous donne également +1 Achat à la fois pendant le tour où vous la jouez et pendant votre prochain tour. Tant que le Pont aux Trolls est en jeu, pendant vos tours uniquement, les cartes coûtent 1 Coin de moins, mais jamais moins de 0 Coin. Cela s'applique à toutes les cartes, partout, y compris les cartes dans la Réserve, les cartes en main, et les cartes dans les decks. Par exemple, si vous avez Pont aux Trolls en jeu et que vous jouez Démolition, écartant un Domaine, ce Domaine ne coûtera que 1 Coin, donc vous ne consulterez qu'une seule carte au lieu de deux. Ceci est cumulatif. Si vous avez deux Ponts aux Trolls en jeu depuis le dernier tour et que vous jouez un autre Pont aux Trolls ce tour-ci, toutes les cartes coûteront 3 Coins de moins pendant ce tour (jusqu'à un minimum de 0 Coins).", 
+        "name": "Pont aux Trolls"
     },
     "Caravan Guard": {
         "description": "+1 Carte<br>+1 Action<n>À votre prochain tour, +1 Coin<line>Lorsqu'un adversaire joue un carte <i>Attaque</i>, vous pouvez jouer cette carte de votre main. (<i>+1 Action n'a pas d'effet en dehors de votre tour.</i>)", 
@@ -62,10 +61,9 @@
         "untranslated": "description, extra"
     },
     "Distant Lands": {
-        "description": "Put this on your Tavern mat.<line>Worth 4 <VP> if on your Tavern mat at the end of the Game (otherwise worth 0 <VP>).", 
-        "extra": "This is a Victory card. Use 8 for games with 2 players, or 12 for games with 3 or more players. This is also an Action card; when you play it, you put it on your Tavern mat. It will stay there the rest of the game; there is no way to call it. At the end of the game, Distant Lands is worth 4 <VP> if it is on your mat, or 0 <VP> if it is not. It counts as part of your deck either way (for example it can contribute to how many <VP> a Gardens is worth).", 
-        "name": "Terres lointaines", 
-        "untranslated": "description, extra"
+        "description": "Placez cette carte dans votre <i>Taverne</i>.<line>Vaut 4 <VP> si cette carte est dans votre <i>Taverne</i> à la fin de la partie (sinon, vaut 0 <VP>).", 
+        "extra": "Ceci est une carte victoire. Utilisez-en 8 pour les parties avec 2 joueurs, ou 12 pour les parties avec 3 joueurs ou plus. Cette carte est également une carte Action; quand vous la jouez, vous la mettez sur votre plateau Taverne. Elle y restera le restant de la partie; il n'y a aucun moyen d'y recourir. A la fin de la partie, Terres Lointaines vaut 4 <VP> si elle est sur votre plateau, ou 0 <VP> si elle ne l'est pas. Dans les deux cas, elle compte comme faisant partie de votre deck (par exemple, elle contribue au nombre de <VP> remportés par Jardin).", 
+        "name": "Terres lointaines"
     },
     "Dungeon": {
         "description": "+1 Action<n>Maintenant et au début de votre prochain tour : +2 Cartes, puis défaussez 2 cartes.", 
@@ -122,10 +120,9 @@
         "untranslated": "description, extra"
     },
     "Hireling": {
-        "description": "At the start of each of your turns for the rest of the game:<n>+1 Card<n><i>(This stays in play.)</i>", 
-        "extra": "After playing this, you draw an extra card at the start of each of your turns for the rest of the game. Hireling stays in play for the rest of the game to track this. If you use Disciple (or a similar card, like Throne Room) to play Hireling twice, you will draw two extra cards each turn, and Disciple will also stay in play for the rest of the game.", 
-        "name": "Recrue", 
-        "untranslated": "description, extra"
+        "description": "Au début de chachun de vos tours (et pour le reste de la partie) :<n>+1 Carte<n><i>(Une fois jouée, cette carte reste définitivement en jeu.)</i>", 
+        "extra": "Après avoir joué cette carte, vous piochez une carte supplémentaire au début de chacun de vos tours pour le restant de la partie. Recrue reste en jeu pour le restant de la partie afin de suivre cela. Si vous utilisez un Disciple (ou une carte similaire, comme la Salle du Trône) pour jouer Recrue deux fois, vous piochez deux cartes supplémentaires à chaque tour, et Disciple restera également en jeu pour le restant de la partie.", 
+        "name": "Recrue"
     },
     "Inheritance": {
         "description": "Once per game: Set aside a non-Victory Action card from the Supply costing up to 4 Coin. Move your Estate token to it (your Estates gain the abilities and types of that card).", 
@@ -196,10 +193,9 @@
         "untranslated": "description, extra"
     },
     "Port": {
-        "description": "+1 Card<br>+2 Actions<line>When you buy this, gain another Port.", 
-        "extra": "When you buy a Port, you gain another Port. If you gain a Port some other way, you do not get an extra Port. There are 12 Ports in the pile; use all 12.", 
-        "name": "Ville portuaire", 
-        "untranslated": "description, extra"
+        "description": "+1 Carte<br>+2 Actions<line>Lorsque vous achetez cette carte, recevez une autre carte <i>Ville portuaire</i>.", 
+        "extra": "Lorsque vous achetez une Ville Portuaire, vous recevez une autre Ville Portuaire. Si vous recevez une Ville Portuaire d'une autre manière, vous n'obtenez pas de Ville Portuaire supplémentaire. Il y a 12 Villes Portuaires dans la pile; utilisez les toutes les 12.", 
+        "name": "Ville portuaire"
     },
     "Quest": {
         "description": "You may discard an Attack, two Curses, or six cards. If you do, gain a Gold.", 
@@ -229,10 +225,9 @@
         "name": "Démolition"
     },
     "Relic": {
-        "description": "2 <*COIN*><n>When you play this, each other player puts his -1 Card token on his deck.", 
-        "extra": "This is a Treasure worth 2 Coins. You play it in your Buy phase, like other Treasures. When you play it, you also make each other player put his -1 Card token on his deck, which will cause those players to draw one less card the next time they draw cards; see the Tokens section. Relic is an Attack despite not being an Action; it can be blocked with Moat and responded to with Caravan Guard and so on. A player responding to Relic with Caravan Guard first plays Caravan Guard, including drawing a card, and then puts his -1 Card token on his deck.", 
-        "name": "Relique", 
-        "untranslated": "description, extra"
+        "description": "2 <*COIN*><n>Lorque vous jouez cette carte, chaque adversaire place son jeton \"-1 Carte\" sur son deck.", 
+        "extra": "Cette carte est un Trésor valant 2 Coins. Vous la jouez pendant votre phase Achat, comme les autres Trésors. Quand vous la jouez, chaque autre joueur doit également placer son jeton \"-1 Carte\" sur son deck, ce qui obligera ces joueurs à tirer une carte de moins la prochaine fois qu'ils piocheront des cartes; voir la section Jetons. Relique est une attaque, bien qu'il ne s'agisse pas d'une Action; elle peut être bloquée avec Douves, on peut y répondre avec Escorte et ainsi de suite. Un joueur qui répond à Relique avec Escorte joue d'abord Escorte, y compris en tirant une carte, puis met son jeton \"-1 Carte\" sur son deck.", 
+        "name": "Relique"
     },
     "Royal Carriage": {
         "description": "+1 Action<n>Placez cette carte dans votre <i>Taverne</i>.<line>Après avoir résolu une carte <i>Action</i>, si elle est encore présente dans votre zone de jeu, vous pouvez recourir à ce <i>Cortège Royal</i> pour rejouer la carte <i>Action</i>.", 
@@ -269,10 +264,9 @@
         "name": "Conteuse"
     },
     "Swamp Hag": {
-        "description": "Until your next turn, when any other player buys a card, he gains a Curse.<n>At the start of your next turn:<n>+3 Coins", 
-        "extra": "you will get + 3 Coins at the start of your next turn; and until then, other players will gain a Curse whenever they buy a Card. Players who buy multiple cards will gain a Curse per card bought; players who do not buy any cards will not get any Curses. This is cumulative; if you play two Swamp Hags, and the player after you plays one, then the player after that will get three Curses with any card bought. This does not affect cards gained other ways, only bought cards. Buying Events is not buying cards and so does not trigger this. If you play Swamp Hag and then take an extra turn immediately, such as with Mission or Outpost (from Seaside), you will get + 3 Coins at the start of that turn and discard Swamp Hag that turn, and other players will never be affected by it. If you want to use a Reaction card like Moat against Swamp Hag, you have to use it right when Swamp Hag is played.", 
-        "name": "Sorcière des marais", 
-        "untranslated": "description, extra"
+        "description": "Jusqu'à votre prochain tour, lorsqu'un adversaire achète une carte, il gagne une <i>Malédiction</i>.<n>Au début de votre prochain tour :<n>+3 Coins", 
+        "extra": "Vous gagnerez +3 Coins au début de votre prochain tour; et jusque-là, les autres joueurs gagneront une Malédiction à chaque fois qu'ils achèteront une carte. Les joueurs qui achètent plusieurs cartes gagneront une Malédiction par carte achetée; les joueurs qui n'achètent pas de cartes n'obtiendront pas de malédictions. Ceci est cumulatif. Si vous jouez deux Sorcières des Marais, et que le joueur après vous en joue une, alors le joueur suivant recevra trois Malédictions avec n'importe quelle carte achetée. Cela n'affecte pas les cartes gagnées d'une autre manière, seulement les cartes achetées. Acheter un événement n'est pas un achat de carte, et ne déclenche donc pas cet effet. Si vous jouez Sorcière des Marais et que vous effectuez immédiatement un tour supplémentaire, comme avec Mission ou Avant-poste (de Rivages), vous recevez +3 Coins au début de ce tour et défaussez Sorcière des Marais à la fin de ce tour, les autres joueurs ne seront donc pas affectés. Si vous voulez utiliser une carte de réaction comme Douves contre Sorcière des Marais, vous devez l'utiliser juste quand Sorcière des Marais est jouée.", 
+        "name": "Sorcière des marais"
     },
     "Teacher": {
         "description": "Put this on your Tavern mat.<line>At the start of your turn, you may call this, to move your +1 Card token, +1 Action token, +1 Buy token, or +1 Coin token to an Action Supply pile you have no tokens on (when you play a card from that pile, you first get that bonus).<n><i>(This is not in the Supply.)</i>", 
@@ -293,10 +287,9 @@
         "untranslated": "description, extra"
     },
     "Transmogrify": {
-        "description": "+1 Action<n>Put this on your Tavern mat.<line>At the start of your turn, you may call this, to trash a card from your hand, gain a card costing up to 1 Coin more than it, and put that card into your hand.", 
-        "extra": "When you play this, you get +1 Action and put it on your Tavern mat. It stays on your mat until you call it, at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Transmogrify, it moves from the mat into play, and you trash a card from your hand, then gain a card costing up to 1 Coin more than the trashed card. The gained card comes from the Supply and is put into your hand; if you had no cards to trash, you do not gain one. Transmogrify is discarded that turn with your other cards in play. You may trash a card to gain a card costing 1 Coin more, or the same amount, or less; you may trash a card to gain a copy of the same card.", 
-        "name": "Transfiguration", 
-        "untranslated": "description, extra"
+        "description": "+1 Action<n>Placez cette carte dans votre <i>Taverne</i>.<line>Au début de votre tour, vous pouvez recourir à cette <i>Transfiguration</i> pour écarter une carte de votre main. Dans ce cas, recevez une carte coûtant jusqu'à 1 Coin de plus que la carte écartée; ajoutez cette carte à votre main.", 
+        "extra": "Lorsque vous jouez cette carte, vous obtenez +1 Action et la placez sur votre plateau Taverne. Elle y reste jusqu'à ce que vous y recouriez, au début d'un de vos tours. Si plusieurs choses peuvent arriver au début de votre tour, vous pouvez les faire dans n'importe quel ordre. Quand vous appelez Transfiguration, elle passe du tapis à votre zone de jeu, et vous écartez une carte de votre main, puis recevez une carte coûtant jusqu'à 1 Coin de plus que la carte écartée. La carte reçue vient de la Réserve et est mise dans votre main; si vous n'aviez pas de cartes à écarter, vous n'en recevez pas. Transfiguration est défaussée ce tour-là, avec vos autres cartes en jeu. Vous pouvez écarter une carte pour recevoir une carte coûtant 1 Coin de plus, ou le même montant, ou moins; vous pouvez écarter une carte pour recevoir une copie de la même carte.", 
+        "name": "Transfiguration"
     },
     "Travelling Fair": {
         "description": "+2 Buys<n>When you gain a card this turn, you may put it on top of your deck.", 
