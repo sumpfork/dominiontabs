@@ -8,6 +8,7 @@ import argparse
 import copy
 import fnmatch
 import pkg_resources
+import unicodedata
 
 import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
@@ -27,7 +28,7 @@ EXPANSION_CHOICES = ["adventures", "alchemy", "base", "cornucopia", "dark ages",
                      "dominion1stEdition", "dominion2ndEdition", "dominion2ndEditionUpgrade",
                      "empires", "guilds", "hinterlands",
                      "intrigue1stEdition", "intrigue2ndEdition", "intrigue2ndEditionUpgrade",
-                     "promo", "prosperity", "seaside"]
+                     "promo", "prosperity", "seaside", "nocturne"]
 FAN_CHOICES = ["animals"]
 ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
 
@@ -622,17 +623,22 @@ class CardSorter(object):
         return card.cardset_tag.lower() != 'base' and card.name in self.baseCards
 
     def by_global_sort_key(self, card):
-        return int(card.isExpansion()), self.baseIndex(card.name), card.name
+        return int(card.isExpansion()), self.baseIndex(card.name), self.strip_accents(card.name)
 
     def by_expansion_sort_key(self, card):
         return card.cardset, int(card.isExpansion()), self.baseIndex(
-            card.name), card.name
+            card.name), self.strip_accents(card.name)
 
     def by_colour_sort_key(self, card):
-        return card.getType().getTypeNames(), card.name
+        return card.getType().getTypeNames(), self.strip_accents(card.name)
 
     def by_cost_sort_key(self, card):
-        return card.cardset, int(card.isExpansion()), card.get_total_cost(card), card.name
+        return card.cardset, int(card.isExpansion()), card.get_total_cost(card), self.strip_accents(card.name)
+
+    @staticmethod
+    def strip_accents(s):
+        return ''.join(c for c in unicodedata.normalize('NFD', s)
+                       if unicodedata.category(c) != 'Mn')
 
     def __call__(self, card):
         return self.sort_key(card)
@@ -992,6 +998,7 @@ def filter_sort_cards(cards, options):
                          types=("Expansion", ),
                          cost=None,
                          description=' | '.join(sorted(cardnamesByExpansion[exp])),
+                         extra=set_values.get("set_text", ""),
                          count=count,
                          card_tag=set_tag)
                 cards.append(c)

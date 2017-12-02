@@ -315,6 +315,11 @@ class DividerDrawer(object):
                     rightSide,
                     isBack=False):
         # draw outline or cropmarks
+
+        # Don't draw anything if zero (or less) line width
+        if self.options.linewidth <= 0.0:
+            return
+
         self.canvas.saveState()
         self.canvas.setLineWidth(self.options.linewidth)
         cropmarksright = (x == self.options.numDividersHorizontal - 1)
