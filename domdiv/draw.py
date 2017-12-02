@@ -828,7 +828,7 @@ class DividerDrawer(object):
                     dmod = d
                 else:
                     dmod = self.add_inline_images(d, s.fontSize)
-                p = Paragraph( (u'' + dmod), s)
+                p = Paragraph(dmod, s)
                 h += p.wrap(textBoxWidth, textBoxHeight)[1]
                 paragraphs.append(p)
 

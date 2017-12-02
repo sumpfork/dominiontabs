@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import domdiv
 import domdiv.main
 from zipfile import ZipFile, ZIP_DEFLATED
