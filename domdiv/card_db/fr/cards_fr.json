@@ -160,10 +160,9 @@
         "untranslated": "description, extra"
     },
     "Pathfinding": {
-        "description": "Move your +1 Card token to an Action Supply pile (when you play a card from that pile, you first get +1 Card).", 
-        "extra": "When you buy this, you move your +1 Card token to any Action Supply pile. This token gives you +1 Card whenever you play a card from that pile; see the Tokens section.", 
-        "name": "Reconnaissance", 
-        "untranslated": "description, extra"
+        "description": "Placez votre jeton \"+1 Carte\" sur une pile de cartes <i>Action</i> de la Réserve (désormais, dès que vous jouez une carte de cette pile : +1 Carte).", 
+        "extra": "Lorsque vous achetez cet événement, vous déplacez votre jeton +1 Carte vers une pile de cartes Action de la Réserve. Ce jeton vous donne +1 Carte chaque fois que vous jouez une carte de cette pile; voir la section Jetons.", 
+        "name": "Reconnaissance"
     },
     "Peasant": {
         "description": "+1 Buy<br>+1 Coin<line>When you discard this from play, you may exchange it for a Soldier.", 
@@ -172,16 +171,14 @@
         "untranslated": "description, extra"
     },
     "Pilgrimage": {
-        "description": "Once per turn: Turn your Journey token over (it starts face up); then if it's face up, choose up to 3 differently named cards you have in play and gain a copy of each.", 
-        "extra": "At the start of the game, place your Journey token (the one with the boot) face up. You can only buy this once per turn. When you do, turn your Journey token over. Then if it is face down, nothing more happens. If it is face up, choose up to 3 cards you have in play with different names and gain a copy of each. The copies you gain come from the Supply and are put into your discard pile. So, every other time you buy this, you will gain up to 3 cards. It does not matter what turned over the Journey token; you could turn it face down with Ranger, then face up with Pilgrimage.", 
-        "name": "Pèlerinage", 
-        "untranslated": "description, extra"
+        "description": "<b>Une fois par tour : </b>retournez votre jeton \"Voyage\" (face visible en début de partie); si ce jeton se retrouve face visible, choisissez jusqu'à 3 cartes de votre zone de jeu avec des noms différents et recevez un exemplaire de chacune.", 
+        "extra": "Au début de la partie, placez votre jeton Voyage (celui avec la botte) face visible. Vous ne pouvez acheter cet événement qu'une fois par tour. Quand vous le faites, retournez votre jeton Voyage. Si il se retrouve face cachée, rien ne se passe. Si il se retrouve face visible, choisissez jusqu'à 3 cartes avec des noms différents que vous avez en jeu et recevez une copie de chacune d'entre elles. Les copies que vous recevez proviennent de la Réserve et sont mises dans votre défausse. Donc, à chaque fois que vous achetez Pèlerinage, vous recevrez jusqu'à 3 cartes. Peu importe ce qui a retourné le jeton Voyage; vous pouvez le retourner face cachée avec Forestier, puis face visible avec Pèlerinage.", 
+        "name": "Pèlerinage"
     },
     "Plan": {
-        "description": "Move your Trashing token to an Action Supply pile (when you buy a card from that pile, you may trash a card from your hand.)", 
-        "extra": "When you buy this, you move your Trashing token (the one depicting a tombstone) to any Action Supply pile. This token will let you trash a card from your hand when buying a card from that pile; see the Tokens section.", 
-        "name": "Plan de Bataille", 
-        "untranslated": "description, extra"
+        "description": "Placez votre jeton \"Écart\" sur une pile de cartes <i>Action</i> de la réserve (désormais, dès que vous achetez une carte de cette pile, vous pouvez écarter une carte de votre main).", 
+        "extra": "Lorsque vous achetez cet événement, vous placez votre jeton Écart (celui représentant une pierre tombale) dans n'importe quelle pile de cartes Action de la Réserve. Ce jeton vous permettra d'écarter une carte de votre main lors de l'achat d'une carte de cette pile; voir la section Jetons.", 
+        "name": "Plan de Bataille"
     },
     "Port": {
         "description": "+1 Carte<br>+2 Actions<line>Lorsque vous achetez cette carte, recevez une autre carte <i>Ville portuaire</i>.", 
@@ -189,16 +186,14 @@
         "name": "Ville portuaire"
     },
     "Quest": {
-        "description": "You may discard an Attack, two Curses, or six cards. If you do, gain a Gold.", 
-        "extra": "You may either discard an Attack to gain a Gold, or discard two Curses to gain a Gold, or discard any 6 cards to gain a Gold. The gained Gold is put into your discard pile. You may choose to discard 6 cards despite not having enough cards in hand; you will discard everything and not gain a Gold. You may choose to discard two Curses despite only having one; you will discard that Curse and not gain a Gold.", 
-        "name": "Quête", 
-        "untranslated": "description, extra"
+        "description": "Vous pouvez défausser une carte <i>Attaque</i>, deux cartes <i>Malédictions</i> ou six cartes quelconques. Dans ce cas, recevez une carte <i>Or</i>.", 
+        "extra": "Vous pouvez soit défausser une carte Attaque pour recevoir un Or, soit défausser deux Malédictions pour recevoir un Or, soit défausser 6 cartes pour recevoir un Or. L'Or gagné est mis dans votre défausse. Vous pouvez choisir de défausser 6 cartes même si vous n'avez pas assez de cartes en main; vous défausserez tout et ne recevrez pas d'Or. Vous pouvez choisir de défausser deux Malédictions même si vous n'en avez qu'une; vous défausserez cette Malédiction et ne recevrez pas d'Or.", 
+        "name": "Quête"
     },
     "Raid": {
-        "description": "Gain a Silver per Silver you have in play. Each other player puts his -1 Card token on his deck.", 
-        "extra": "This Event is like an Attack, but buying it is not playing an Attack, and so cannot be responded to with cards like Moat and Caravan Guard. When you buy this, you gain a Silver for each Silver you have in play; for example, with four Silvers in play, you would gain four Silvers. The Silvers go to your discard pile; if there aren't enough left, just take what is left. Then each other player puts his -1 Card token on top of his deck, which will cause those players to draw one less card the next time they draw cards; see the Tokens section.", 
-        "name": "Raid", 
-        "untranslated": "description, extra"
+        "description": "Recevez une carte <i>Argent</i> par <i>Argent</i> dans votre zone de jeu. Tous vos adversaires placent leur jeton \"-1 Carte\" sur leur deck.", 
+        "extra": "Cet événement ressemble à une Attaque, mais l'acheter n'est pas une Attaque, et on ne peut donc pas y répondre avec des cartes comme Douves ou Escorte. Lorsque vous achetez cet évènement, vous gagnez un Argent pour chaque Argent que vous avez en jeu; par exemple, avec quatre Argents en jeu, vous gagnerez quatre Argents. Les Argents vont dans votre défausse; s'il n'y en a pas assez, prenez ce qui reste. Ensuite, chaque autre joueur met son jeton \"-1 Carte\" sur son deck, ce qui obligera ces joueurs à tirer une carte de moins la prochaine fois qu'ils piocheront des cartes; voir la section Jetons.", 
+        "name": "Raid"
     },
     "Ranger": {
         "description": "+1 Achat<n>Retournez votre jeton \"Voyage\" (face visible en début de partie). S'il se retrouve face visible, +5 Cartes.", 
@@ -226,22 +221,19 @@
         "name": "Cortège royal"
     },
     "Save": {
-        "description": "+1 Buy<n>Once per turn: Set aside a card from your hand, and put it into your hand at end of turn (after drawing).", 
-        "extra": "You can only buy this once per turn. When you do, you get +1 Buy (letting you buy another Event or a card afterwards), set aside a card from your hand face down (the other players do not get to see it), and put it into your hand at the end of the turn, after drawing your hand for the next turn. For example you might set aside an unplayed Copper, and then after drawing your 5 cards for next turn, add the Copper to your hand.", 
-        "name": "Resserre", 
-        "untranslated": "description, extra"
+        "description": "<b>Une fois par tour : +1 Achat</b>; mettez de côté une carte de votre main et récupérez-la en fin de tour (après avoir pioché).", 
+        "extra": "Vous ne pouvez acheter cet événement qu'une fois par tour. Lorsque vous le faites, vous obtenez +1 Achat (vous permettant d'acheter un autre événement ou une carte par la suite), mettez de côté une carte de votre main face cachée (les autres joueurs ne peuvent pas la voir), et la mettez dans votre main en fin du tour, après avoir pioché votre main pour le prochain tour. Par exemple, vous pouvez mettre de côté un Cuivre non joué, puis après avoir pioché vos 5 cartes pour le prochain tour, ajouter le Cuivre à votre main.", 
+        "name": "Resserre"
     },
     "Scouting Party": {
-        "description": "+1 Buy<n>Look at the top 5 cards of your deck. Discard 3 of them and put the rest back on top of your deck in any order.", 
-        "extra": "When you buy this you get +1 Buy (letting you buy another Event or a card afterwards). Then look at the top 5 cards of your deck, discarding 3 and putting the rest on top of your deck in any order. If there are fewer than 5 cards even after shuffling, you still discard 3 of them; if there are only 3 cards left between your deck and discard pile, all 3 will be discarded. Scouting Party is unaffected by the -1 Card token; if it is on top of your deck, replace it after resolving Scouting Party.", 
-        "name": "Pistage", 
-        "untranslated": "description, extra"
+        "description": "+1 Achat<n>Consultez les 5 premières cartes de votre deck. Défaussez-en 3 et placez les autres cartes sur le dessus de votre deck dans l'ordre de votre choix.", 
+        "extra": "Lorsque vous achetez cet événement, vous obtenez +1 Achat (vous permettant d'acheter un autre événement ou une carte par la suite). Ensuite, consultez les 5 premières cartes de votre deck, défaussez-en 3 et mettez le reste sur votre deck dans n'importe quel ordre. S'il y a moins de 5 cartes, même après avoir mélangé, vous en défaussez quand même 3; s'il n'y a plus que 3 cartes entre votre deck et votre pile de défausse, les 3 cartes seront défaussées. Pistage n'est pas affecté par le jeton -1 Carte; si il se trouve sur votre deck, replacez-le après avoir résolu Pistage.", 
+        "name": "Pistage"
     },
     "Seaway": {
-        "description": "Gain an Action card costing up to 4 Coin. Move your +1 Buy token to its pile (when you play a card from that pile, you first get +1 Buy).", 
-        "extra": "When you buy this, first you gain an Action card costing up to 4 Coins. The Action card comes from the Supply and is put into your discard pile. Then move your +1 Buy token to the pile the Action card came from. The token gives you +1 Buy when playing a card from that pile; see the Tokens section. It only matters how much the card costs that you gain; the cost is not checked later. For example you can play Bridge Troll, then use Seaway to gain a Bridge Troll (currently costing 4 Coins due to its own effect), and the token will stay there even when Bridge Troll costs 5 Coins later. You can use Seaway to gain Sir Martin (from Dark Ages) when he's on top of the Knights pile; then your +1 Buy token will be on the Knights pile, even though any remaining Knights will cost 5 Coins. You cannot use Seaway on an empty pile just to move the +1 Buy token; you have to pick a card you can gain.", 
-        "name": "Route Maritime", 
-        "untranslated": "description, extra"
+        "description": "Recevez une carte <i>Action</i> coûtant jusqu'à 4 Coins. Placez le jeton \"+1 Achat\" sur la pile de cette carte <i>Action</i> (désormais, dès que vous jouez une carte de cette pile : +1 Achat).", 
+        "extra": "Lorsque vous achetez cet événement, vous recevez d'abord une carte Action coûtant jusqu'à 4 Coins. La carte Action provient de la Réserve et est placée dans votre défausse. Ensuite, déplacez votre jeton +1 Achat sur la pile d'où provient la carte Action. Le jeton vous donne +1 Achat quand vous jouez une carte de cette pile; voir la section Jetons. Seul compte le coût de la carte au moment où vous l'achetez; peu importe si ce coût change par après. Par exemple, vous pouvez jouer un Pont aux Trolls, puis utiliser Route Maritime pour recevoir un autre Pont aux Trolls (coûtant alors 4 Coins en raison de son propre effet), et le jeton restera sur la pile même si Pont aux Trolls coûte 5 Coins plus tard. Vous pouvez utiliser Route Maritime pour recevoir Sir Martin (de l'Âge des Ténèbres) quand il est au sommet de la pile Chevaliers; votre jeton +1 Achat sera alors sur la pile Chevaliers, même si les Chevaliers restants coûteront 5 Coins. Vous ne pouvez pas utiliser Route Maritime sur une pile vide juste pour déplacer le jeton +1 Achat; vous devez choisir une carte que vous pouvez recevoir.", 
+        "name": "Route Maritime"
     },
     "Soldier": {
         "description": "+2 Coins<br>+1 Coin per other Attack you have in play. Each other player with 4 or more cards in hand discards a card.<line>When you discard this from play, you may exchange it for a Fugitive.<n><i>(This is not in the Supply.)</i>", 
