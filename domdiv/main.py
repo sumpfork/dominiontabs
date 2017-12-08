@@ -575,10 +575,10 @@ def read_card_data(options):
                     new_card.cardset_tag = s
                     new_cards.append(new_card)
     cards = new_cards
-    
+
     # Get a list of Base cards
     Card.base_cards = {card.card_tag: card.name for card in cards if card.cardset_tag.lower() == 'base'}
-    
+
     # Make sure each card has the right image file.
     for card in cards:
         card.image = card.setImage()
