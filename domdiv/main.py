@@ -576,6 +576,9 @@ def read_card_data(options):
                     new_cards.append(new_card)
     cards = new_cards
 
+    # Get a list of Base cards
+    Card.base_cards = {card.card_tag: card.name for card in cards if card.cardset_tag.lower() == 'base'}
+
     # Make sure each card has the right image file.
     for card in cards:
         card.image = card.setImage()
@@ -958,9 +961,7 @@ def filter_sort_cards(cards, options):
             cards = [card for card in cards if card.name in cardlist]
 
     # Set up the card sorter
-    cardSorter = CardSorter(
-        options.order,
-        {card.card_tag: card.name for card in cards if card.cardset_tag.lower() == 'base'})
+    cardSorter = CardSorter(options.order, Card.base_cards)
     if options.base_cards_with_expansion:
         cards = [card for card in cards if card.cardset_tag.lower() != 'base']
     else:

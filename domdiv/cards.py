@@ -10,6 +10,7 @@ class Card(object):
     types = None
     type_names = None
     bonus_regex = None
+    base_cards = None
 
     class CardJSONEncoder(json.JSONEncoder):
 
