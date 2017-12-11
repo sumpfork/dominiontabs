@@ -960,10 +960,10 @@ def filter_sort_cards(cards, options):
     # Set up the card sorter
     cardSorter = CardSorter(
         options.order,
-        {card.card_tag: card.name for card in cards if card.cardset_tag.lower() == 'base'})
-    if options.base_cards_with_expansion:
-        cards = [card for card in cards if card.cardset_tag.lower() != 'base']
-    else:
+        {card.card_tag: card.name for card in cards if 'base' in [set_name.lower() for set_name in card.cardset_tags]})
+
+    # Optionally remove base cards from expansions that have them
+    if not options.base_cards_with_expansion:
         cards = [card for card in cards
                  if not cardSorter.isBaseExpansionCard(card)]
 
