@@ -98,7 +98,7 @@ class TestTextTabs(unittest.TestCase):
     # --tab_name_align left
     def test_tab_left_left(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'left', '--tab_side', 'left'])
+            ['--tab-name-align', 'left', '--tab-side', 'left'])
         self.assertEquals(options.tab_name_align, 'left')
         self.assertEquals(options.tab_side, 'left')
         main.calculate_layout(options)
@@ -107,7 +107,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_left_right(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'left', '--tab_side', 'right'])
+            ['--tab-name-align', 'left', '--tab-side', 'right'])
         self.assertEquals(options.tab_name_align, 'left')
         self.assertEquals(options.tab_side, 'right')
         main.calculate_layout(options)
@@ -116,7 +116,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_left_leftalt(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'left', '--tab_side',
+            ['--tab-name-align', 'left', '--tab-side',
              'left-alternate'])
         self.assertEquals(options.tab_name_align, 'left')
         self.assertEquals(options.tab_side, 'left-alternate')
@@ -126,7 +126,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_left_rightalt(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'left', '--tab_side',
+            ['--tab-name-align', 'left', '--tab-side',
              'right-alternate'])
         self.assertEquals(options.tab_name_align, 'left')
         self.assertEquals(options.tab_side, 'right-alternate')
@@ -136,7 +136,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_left_full(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'left', '--tab_side', 'full'])
+            ['--tab-name-align', 'left', '--tab-side', 'full'])
         self.assertEquals(options.tab_name_align, 'left')
         self.assertEquals(options.tab_side, 'full')
         main.calculate_layout(options)
@@ -146,7 +146,7 @@ class TestTextTabs(unittest.TestCase):
         # --tab_name_align right
     def test_tab_right_left(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'right', '--tab_side', 'left'])
+            ['--tab-name-align', 'right', '--tab-side', 'left'])
         self.assertEquals(options.tab_name_align, 'right')
         self.assertEquals(options.tab_side, 'left')
         main.calculate_layout(options)
@@ -154,8 +154,8 @@ class TestTextTabs(unittest.TestCase):
         self.assertEquals(options.tab_side, 'left')
 
     def test_tab_right_right(self):
-        options = main.parse_opts(['--tab_name_align',
-                                   'right', '--tab_side', 'right'])
+        options = main.parse_opts(['--tab-name-align',
+                                   'right', '--tab-side', 'right'])
         self.assertEquals(options.tab_name_align, 'right')
         self.assertEquals(options.tab_side, 'right')
         main.calculate_layout(options)
@@ -164,7 +164,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_right_leftalt(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'right', '--tab_side',
+            ['--tab-name-align', 'right', '--tab-side',
              'left-alternate'])
         self.assertEquals(options.tab_name_align, 'right')
         self.assertEquals(options.tab_side, 'left-alternate')
@@ -174,7 +174,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_right_rightalt(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'right', '--tab_side',
+            ['--tab-name-align', 'right', '--tab-side',
              'right-alternate'])
         self.assertEquals(options.tab_name_align, 'right')
         self.assertEquals(options.tab_side, 'right-alternate')
@@ -184,7 +184,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_right_full(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'right', '--tab_side', 'full'])
+            ['--tab-name-align', 'right', '--tab-side', 'full'])
         self.assertEquals(options.tab_name_align, 'right')
         self.assertEquals(options.tab_side, 'full')
         main.calculate_layout(options)
@@ -194,7 +194,7 @@ class TestTextTabs(unittest.TestCase):
     # --tab_name_align edge
     def test_tab_edge_left(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'edge', '--tab_side', 'left'])
+            ['--tab-name-align', 'edge', '--tab-side', 'left'])
         self.assertEquals(options.tab_name_align, 'edge')
         self.assertEquals(options.tab_side, 'left')
         main.calculate_layout(options)
@@ -203,7 +203,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_edge_right(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'edge', '--tab_side', 'right'])
+            ['--tab-name-align', 'edge', '--tab-side', 'right'])
         self.assertEquals(options.tab_name_align, 'edge')
         self.assertEquals(options.tab_side, 'right')
         main.calculate_layout(options)
@@ -212,7 +212,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_edge_leftalt(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'edge', '--tab_side',
+            ['--tab-name-align', 'edge', '--tab-side',
              'left-alternate'])
         self.assertEquals(options.tab_name_align, 'edge')
         self.assertEquals(options.tab_side, 'left-alternate')
@@ -222,7 +222,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_edge_rightalt(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'edge', '--tab_side',
+            ['--tab-name-align', 'edge', '--tab-side',
              'right-alternate'])
         self.assertEquals(options.tab_name_align, 'edge')
         self.assertEquals(options.tab_side, 'right-alternate')
@@ -232,7 +232,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_edge_full(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'edge', '--tab_side', 'full'])
+            ['--tab-name-align', 'edge', '--tab-side', 'full'])
         self.assertEquals(options.tab_name_align, 'edge')
         self.assertEquals(options.tab_side, 'full')
         main.calculate_layout(options)
@@ -242,8 +242,8 @@ class TestTextTabs(unittest.TestCase):
 
         # --tab_name_align centre
     def test_tab_centre_left(self):
-        options = main.parse_opts(['--tab_name_align',
-                                   'centre', '--tab_side', 'left'])
+        options = main.parse_opts(['--tab-name-align',
+                                   'centre', '--tab-side', 'left'])
         self.assertEquals(options.tab_name_align, 'centre')
         self.assertEquals(options.tab_side, 'left')
         main.calculate_layout(options)
@@ -251,8 +251,8 @@ class TestTextTabs(unittest.TestCase):
         self.assertEquals(options.tab_side, 'left')
 
     def test_tab_centre_right(self):
-        options = main.parse_opts(['--tab_name_align',
-                                   'centre', '--tab_side', 'right'])
+        options = main.parse_opts(['--tab-name-align',
+                                   'centre', '--tab-side', 'right'])
         self.assertEquals(options.tab_name_align, 'centre')
         self.assertEquals(options.tab_side, 'right')
         main.calculate_layout(options)
@@ -261,7 +261,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_centre_leftalt(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'centre', '--tab_side',
+            ['--tab-name-align', 'centre', '--tab-side',
              'left-alternate'])
         self.assertEquals(options.tab_name_align, 'centre')
         self.assertEquals(options.tab_side, 'left-alternate')
@@ -271,7 +271,7 @@ class TestTextTabs(unittest.TestCase):
 
     def test_tab_centre_rightalt(self):
         options = main.parse_opts(
-            ['--tab_name_align', 'centre', '--tab_side',
+            ['--tab-name-align', 'centre', '--tab-side',
              'right-alternate'])
         self.assertEquals(options.tab_name_align, 'centre')
         self.assertEquals(options.tab_side, 'right-alternate')
@@ -280,8 +280,8 @@ class TestTextTabs(unittest.TestCase):
         self.assertEquals(options.tab_side, 'right-alternate')
 
     def test_tab_centre_full(self):
-        options = main.parse_opts(['--tab_name_align',
-                                   'centre', '--tab_side', 'full'])
+        options = main.parse_opts(['--tab-name-align',
+                                   'centre', '--tab-side', 'full'])
         self.assertEquals(options.tab_name_align, 'centre')
         self.assertEquals(options.tab_side, 'full')
         main.calculate_layout(options)
@@ -290,8 +290,8 @@ class TestTextTabs(unittest.TestCase):
 
     # --tab_name_align center.  Just do one since this is an alias to centre
     def test_tab_center_left(self):
-        options = main.parse_opts(['--tab_name_align',
-                                   'center', '--tab_side', 'left'])
+        options = main.parse_opts(['--tab-name-align',
+                                   'center', '--tab-side', 'left'])
         self.assertEquals(options.tab_name_align, 'center')
         self.assertEquals(options.tab_side, 'left')
         main.calculate_layout(options)
