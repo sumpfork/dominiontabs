@@ -382,17 +382,17 @@
     },
     "Curse": {
         "description": "-1 <*VP*>", 
-        "extra": " Vloekkaarten zijn als stapel beschikbaar in de voorraad, ongeacht de andere kaarten in de voorraad. Bij 2 speler; plaats 10 vloekkaarten in de voorraad. Bij 3 spelers; plaats 20 vloekkaarten in de voorraad. Bij 4 spelers; plaats 30 vloekkaarten in de voorraad. Bij 5 spelers; plaats 40 vloekkaarten in de voorraad. Bij 6 spelers; plaats 50 vloekkaarten in de voorraad.", 
+        "extra": " Vloekkaarten zijn als stapel beschikbaar in de voorraad, ongeacht de andere kaarten in de voorraad. Bij 2 spelers; plaats 10 vloekkaarten in de voorraad. Bij 3 spelers; plaats 20 vloekkaarten in de voorraad. Bij 4 spelers; plaats 30 vloekkaarten in de voorraad. Bij 5 spelers; plaats 40 vloekkaarten in de voorraad. Bij 6 spelers; plaats 50 vloekkaarten in de voorraad.", 
         "name": "Vloek"
     },
     "Duchy": {
         "description": "3 <*VP*>", 
-        "extra": " Plaats bij 2 spelers 8 langdoedkaarten in de voorraad. Plaats bij 3 of meer spelers 12 landgoedkaarten in de voorraad.", 
+        "extra": " Plaats bij 2 spelers 8 Hertogdomkaarten in de voorraad. Plaats bij 3 of meer spelers 12 Hertogdomkaarten in de voorraad.", 
         "name": "Hertogdom"
     },
     "Estate": {
         "description": "1 <*VP*>", 
-        "extra": " Plaats bij 2 spelers 8 langdoedkaarten in de voorraad. Plaats bij 3 of meer spelers 12 landgoedkaarten in de voorraad.", 
+        "extra": " Plaats bij 2 spelers 8 Landgoedkaarten in de voorraad. Plaats bij 3 of meer spelers 12 Landgoedkaarten in de voorraad.", 
         "name": "Landgoed"
     },
     "Gold": {
@@ -848,7 +848,7 @@
     },
     "Workshop": {
         "description": "Pak een kaart die maximaal 4 Coins kost.", 
-        "extra": " Kies de kaart uit de voorraad. Leg de gekozen kaart op je aflegstapel. Je kunt geen geld van geldkaaten of gespeelde acties gebruiken om de waarde van de gekozen kaart te verhogen.]", 
+        "extra": " Kies de kaart uit de voorraad. Leg de gekozen kaart op je aflegstapel. Je kunt geen geld van geldkaaten of gespeelde acties gebruiken om de waarde van de gekozen kaart te verhogen.", 
         "name": "Werkplaats"
     },
     "Artisan": {
@@ -894,28 +894,27 @@
         "untranslated": "description, extra, name"
     },
     "Advance": {
-        "description": "You may trash an Action card from your hand. If you do, gain an Action card costing up to 6 Coins.", 
-        "extra": "If you do not trash an Action, nothing else happens.", 
-        "name": "Advance", 
-        "untranslated": "description, extra, name"
+        "description": "Je mag een actiekaart uit je hand vernietigen. Doe je dat, pak dat een actiekaart die ten hoogste 6 Coins waard is.", 
+        "extra": "Vernietig je geen actiekaart, dan gebeurt er niets.", 
+        "name": "Promotie"
     },
     "Annex": {
         "description": "Look through your discard pile. Shuffle all but up to 5 cards from it into your deck. Gain a Duchy.", 
-        "extra": "You can do this even if the Duchy pile is empty.<n>The chosen cards stay in your discard pile when the other cards are shuffled into your deck.", 
-        "name": "Annex", 
-        "untranslated": "description, extra, name"
+        "extra": "Je kunt dit ook doen als de stapel hertogdomkaarten leeg is.<n>De gekozen kaarten blijven in je aflegstapel als de andere kaarten door de trekstapel worden geschud.", 
+        "name": "Overname", 
+        "untranslated": "description"
     },
     "Aqueduct": {
         "description": "When you gain a Treasure, move 1<VP> from its pile to this. When you gain a Victory card, take the <VP> from this.<line>Setup: Put 8<VP> on the Silver and Gold piles.", 
-        "extra": "If you gain a card that is both a Treasure and a Victory card, such as Humble Castle, you can resolve the abilities in either order.", 
-        "name": "Aqueduct", 
-        "untranslated": "description, extra, name"
+        "extra": "Pak je een kaart die zowel een geld- als een overwinningskaart is (zoals een Bescheiden kasteel), dan kies je zelf de volgorde waarin je de eigenschappen uitvoert.", 
+        "name": "Aquaduct", 
+        "untranslated": "description"
     },
     "Archive": {
-        "description": "+1 Action<n>Set aside the top 3 cards of your deck face down (you may look at them). Now and at the start of your next two turns, put one into your hand.", 
+        "description": "+1 Actie<n>Leg de bovenste 3 kaarten van je trekstapel gedekt opzij (je mag ze zelf bekijken). Neem er nu en aan het begin van je 2 volgende beurten één naar keuze van in je hand.", 
         "extra": "You look at three cards, and get one now, one next turn, and one the turn after that. Put the set-aside cards under Archive. If you play two Archives, they get separate sets of cards. If you Throne Room an Archive, keep the sets of cards separate; you get one from each each turn. If there are fewer than three cards, just set aside what you can, and Archive will run out of cards faster and still be discarded the turn it has no cards left.", 
-        "name": "Archive", 
-        "untranslated": "description, extra, name"
+        "name": "Archief", 
+        "untranslated": "extra"
     },
     "Arena": {
         "description": "At the start of your Buy phase, you may discard an Action card. If you do, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
@@ -960,40 +959,40 @@
         "untranslated": "description, extra, name"
     },
     "Capital": {
-        "description": "6 Coins<br>+1 Buy<line>When you discard this from play, take 6 Debt, and then you may pay off Debt.", 
+        "description": "6 Coins<br>+1 Aanschaf<line>Als je deze kaart vanuit het spel aflegt, neem 6 Debt, en daarna mag je Debt afbetalen.", 
         "extra": "When you discard this from play (normally, in the Clean-up phase of the turn you played it), you get 6 Debt, and then get an extra opportunity to pay off Debt with Coins, right then. You do not get the Debt if you did not discard it from play - for example, if you trash it due to Counterfeit (from Dark Ages). You only get Debt per copy of Capital discarded; for example if you use Crown to play Capital twice, you still only get 6 Debt when you discard it from play.", 
-        "name": "Capital", 
-        "untranslated": "description, extra, name"
+        "name": "Kapitaal", 
+        "untranslated": "extra"
     },
     "Castles": {
-        "description": "Sort the Castle pile by cost, putting the more expensive Castles on the bottom. For a 2-player game, use only one of each Castle. Only the top card of the pile can be gained or bought.", 
+        "description": "Sorteel de Kastelen op waarde, waarbij de duurste onderaan de stapel en de goedkoopste bovenop ligt. Gebruik in een spel met 2 spelers 1 exemplaar per Kasteel. Alleen de bovenste kaart van de stapel kan worden gepakt of gekocht.", 
         "extra": "Humble Castle and King's Castle count themselves. Small Castle gains you the top Castle, whichever one that is. Haunted Castle works whether you buy it or gain it some other way, provided that it is your turn. You can pick either option on Sprawling Castle regardless of how many Duchies and Estates are left in the piles. Grand Castle counts both Victory cards in play - such as an Opulent Castle - and Victory cards in your hand.", 
-        "name": "Castles", 
-        "untranslated": "description, extra, name"
+        "name": "Kastelen", 
+        "untranslated": "extra"
     },
     "Catapult": {
         "description": "+1 Coin<n>Trash a card from your hand. If it costs 3 Coins or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.", 
         "extra": "If the card you trash is a treasure, each other player discards down to 3 cards in hand; if the card you trash costs 3 Coins or more, each other player gains a Curse; if it is both (e.g. Silver), both things happen; if it is neither, neither thing happens. If you have no cards in hand left to trash, neither thing happens.", 
-        "name": "Catapult", 
-        "untranslated": "description, extra, name"
+        "name": "Katapult", 
+        "untranslated": "description, extra"
     },
     "Chariot Race": {
-        "description": "+1 Action<n>Reveal the top card of your deck and put it into your hand. The player to your left reveals the top card of their deck. If your card costs more, +1 Coin and +1<VP>.", 
+        "description": "+1 Actue<n>Toon de bovenste kaart van je trekstapel en neem deze in je hand. Je linkerbuurman toont nu de bovenste kaart van zijn trekstapel. Als jouw kaart meer waard is, +1 Coin en +1<VP>.", 
         "extra": "You and the player to your left reveal your top cards; yours goes into your hand, theirs goes back on their deck. If your card cost more you get +1 Coin and +1<VP>; you can put the token on the Chariot Race to remind you that it made +1 Coin this turn. If it is a tie, your card did not cost more. With Debt, your card costs more only if both Coin and Debt amounts are larger, or one is larger and the other the same. For example Fortune (8 Coins 8 Debt) costs more than Overlord (5 Debt), but Overlord does not cost more than Silver, and Silver does not cost more than Overlord. If either player has no card to reveal, your card does not cost more.", 
-        "name": "Chariot Race", 
-        "untranslated": "description, extra, name"
+        "name": "Strijdwagenrace", 
+        "untranslated": "extra"
     },
     "Charm": {
-        "description": "When you play this, choose one: +1 Buy and +2 Coin; or the next time you buy a card this turn, you may also gain a differently named card with the same cost.", 
+        "description": "Kies bij het spelen van deze kaart één van deze 2: +1 Aanschaf en +2 Coin; of de volgende keer dat je deze beurt een kaart koopt, mag je daarnaast een kaart met een andere naam van dezelfde waarde pakken.", 
         "extra": "These are cumulative, and each Charm does not have to gain a different card, just a different card from the one bought. For example if you play two Charms and buy a Forum, you could gain two Duchies. The card gained from Charm is gained before gaining the card you bought, which may matter when cards do things when gained. For example if you buy Villa and gain Rocks via Charm, you will first gain a Silver to your deck due to Rocks, then get +1 Action and return to your Action phase due to Villa. The costs have to be identical; for example if you play Charm and buy Overlord, you can gain City Quarter, which also costs 8 Debt, but not Fortune, which costs 8 Coin 8 Debt.", 
-        "name": "Charm", 
-        "untranslated": "description, extra, name"
+        "name": "Geluksbrenger", 
+        "untranslated": "extra"
     },
     "City Quarter": {
-        "description": "+2 Actions<n>Reveal your hand. +1 Card per Action card revealed.", 
+        "description": "+2 Acties<n>Toon je hand. +1 Kaart voor elke getoonde actiekaart.", 
         "extra": "Cards with multiple types that include Action, such as Crown, are Actions.", 
-        "name": "City Quarter", 
-        "untranslated": "description, extra, name"
+        "name": "Stadswijk", 
+        "untranslated": "extra"
     },
     "Colonnade": {
         "description": "When you buy an Action card, if you have a copy of it in play, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
@@ -1008,10 +1007,10 @@
         "untranslated": "description, extra, name"
     },
     "Crown": {
-        "description": "If it's your Action phase, you may play an Action from your hand twice. If it's your Buy phase, you may play a Treasure from your hand twice.", 
+        "description": "Als het jouw actiefase is, mag je een actiekaart uit je hand teemaal spelen. Als het jouw aanschaffase is, mag je een geldkaart uit je hand tweemaal spelen.", 
         "extra": "If you play this in your Action phase, you play an Action card from your hand, then play the same card again; this does not use up any extra Actions you have. If you play this in your Buy phase, you play a Treasure from your hand, then play it again; this does not use up any Actions at all. Crown can be used to play another Crown in either your Action or Buy phase, causing you to either play two more Actions twice each, or two more Treasures twice each. If you play Crown in your Action phase via something that lets you play Treasures (like Storyteller from Adventures), Crown will still play an Action card twice.", 
-        "name": "Crown", 
-        "untranslated": "description, extra, name"
+        "name": "Kroon", 
+        "untranslated": "extra"
     },
     "Defiled Shrine": {
         "description": "When you gain an Action, move 1<VP> from its pile to this. When you buy a Curse, take the <VP> from this.<line>Setup: Put 2<VP> on each non-Gathering Action Supply pile.", 
@@ -1038,10 +1037,10 @@
         "untranslated": "description, extra, name"
     },
     "Emporium": {
-        "description": "+1 Card<br>+1 Action<br>+1 Coin<line>When you gain this, if you have at least 5 Action cards in play, +2 <VP>.", 
+        "description": "+1 Kaart<br>+1 Actie<br>+1 Coin<line>When you gain this, if you have at least 5 Action cards in play, +2 <VP>.", 
         "extra": "This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Adventures) called into play this turn.", 
         "name": "Emporium", 
-        "untranslated": "description, extra, name"
+        "untranslated": "description, extra"
     },
     "Encampment": {
         "description": "+2 Cards<br>+2 Actions<n>You may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up.", 
@@ -1050,34 +1049,32 @@
         "untranslated": "description, extra, name"
     },
     "Enchantress": {
-        "description": "Until your next turn, the first time each other play plays an Action card on their turn, they get +1 Card and +1 Action instead of following its instructions.<n><n>At the start of your next turn,<n>+2 Cards", 
+        "description": "Tot jouw volgende beurt krijgt iedere andere speler voor de eerste actiekaart die hij in zijn beurt speelt +1 Kaart en +1 Actie in plaats van de op de kaart beschreven aanwijzigingen.<n><n>Aan het begin van je volgende beurt:<n>+2 Kaarten", 
         "extra": "Players revealing a card like Moat when this is played have to do it right then, not later, even though the attack will not hurt them until their turn. The first Action each other player plays, just on their next turn, will give them +1 Card +1 Action instead of what it would have normally done. This does not affect abilities below a dividing line; they still function. For example a player playing Sacrifice would get +1 Card +1 Action and not do anything Sacrifice normally does; a player playing Groundskeeper would get +1 Card +1 Action and would still get <VP> for gaining Victory cards. It can be helpful to turn the affected card sideways, to remember that it did not do what it normally did. Enchantress does not affect card abilities from cards played on previous turns; for example if an opponent plays Enchantress and you have an Archive out from a previous turn, on your turn you will first get a card from your Archive as normal, and then the first Action card actually played on that turn will be affected by Enchantress. If Enchantress affects a Crown played in a Buy phase, its player gets +1 Card +1 Action, but has no way to use the +1 Action, since it is their Buy phase (but it might matter e.g. if the player buys Villa).", 
-        "name": "Enchantress", 
-        "untranslated": "description, extra, name"
+        "name": "Tovenares", 
+        "untranslated": "extra"
     },
     "Engineer": {
-        "description": "Gain a card costing up to 4 Coins. You may trash this. If you do, gain a card costing up to 4 Coins.", 
+        "description": "Pak een kaart die ten hoogste 4 Coins waard is. Je mag deze Ingenieur dan vernietigen. Doe je dat, dan pak je een kaart die ten hoogste 4 Coins waard is.", 
         "extra": "Engineer cannot gain copies of itself, or any other card with Debt in the cost. When you play it, you gain a card, then may trash Engineer to gain a second card (which can be the same as the first or different).", 
-        "name": "Engineer", 
-        "untranslated": "description, extra, name"
+        "name": "Ingenieur", 
+        "untranslated": "extra"
     },
     "Farmers' Market": {
-        "description": "+1 Buy<n>If there are 4 <VP> or more on the Farmers' Market Supply pile, take them and trash this. Otherwise, add 1 <VP> to the pile and then +1 Coin per 1 <VP> on the pile.", 
+        "description": "+1 Aanschaf<n>Als er 4 of meer <VP> op de Boerenmarktvoorraadstapel liggen, neem je ze allemaal en vernietig deze Boerenmarkt.Zo niet, voeg dan 1 <VP> aan de stapel toe en daarna +1 Coin per 1 <VP> op de stapel.", 
         "extra": "The first time this is played, it produces +1 Coin (and +1 Buy), the next time +2 Coin, then +3 Coin, then +4 Coin, then the next time the player takes the 4 <VP> (and gets no + _ Coin), then the next time it is back to +1 Coin. This still functions if the Farmers' Market pile is empty.", 
-        "name": "Farmers' Market", 
-        "untranslated": "description, extra, name"
+        "name": "Boerenmarkt", 
+        "untranslated": "extra"
     },
     "Fortune": {
-        "description": "+1 Buy<n>When you play this, double your Coin if you haven't yet this turn.<line>When you gain this, gain a Gold per Gladiator you have in play.", 
-        "extra": "You only double your Coin the first time you play a Fortune in a turn; any further times only get you +1 Buy.", 
-        "name": "Fortune", 
-        "untranslated": "description, extra, name"
+        "description": "+1 Aanschaf<n>Verdubbel bij het spelen van deze kaart je Coin als je dat deze beurt nog niet hebt gedaan.<line>Als je deze kaart pakt, pak dan een Goud per Gladiator die je in het spel hebt.", 
+        "extra": "Je verdubbelt je Coin alleen bij de eerste keer dat je Fortuin in je beurt speelt, bij elk volgende krijg je uitsluitend +1 Aanschaf", 
+        "name": "Fortuin"
     },
     "Forum": {
-        "description": "+3 Cards<br>+1 Action<n>Discard 2 cards.<line>When you buy this, +1 Buy.", 
-        "extra": "For example, with 13 Coin and only one Buy, you could buy a Forum, getting +1 Buy, then buy a Province.", 
-        "name": "Forum", 
-        "untranslated": "description, extra, name"
+        "description": "+3 Kaarten<br>+1 Actie<n>Leg 2 kaarten af.<line>Bij het kopen van deze kaart, +1 Aanschaf.", 
+        "extra": "Voorbeeld: Je hebt 13 Coin en +1 Aanschaf. Je zou een Forum kunnen kopen, dat je direct een +1 Aanschaf oplevert, waarna je een Provincie kunt kopen.", 
+        "name": "Forum"
     },
     "Fountain": {
         "description": "When scoring, 15<VP> if you have at least 10 Coppers.", 
@@ -1086,16 +1083,16 @@
         "untranslated": "description, extra, name"
     },
     "Gladiator": {
-        "description": "+2 Coin<n>Reveal a card from your hand. The player to your left may reveal a copy from their hand. If they do not, +1 Coin and trash a Gladiator from the Supply.", 
+        "description": "+2 Coin<n>Toon een kaart uit je hand. Je linkerbuurman mag een zelfde examplaar uit zijn hand tonen. Doet hij dit niet, dan +2 Coins en vernietig een gladiator uit de voorraad.", 
         "extra": "If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator.", 
         "name": "Gladiator", 
-        "untranslated": "description, extra, name"
+        "untranslated": "extra"
     },
     "Groundskeeper": {
-        "description": "+1 Card<br>+1 Action<line>While this is in play, when you gain a Victory card, +1<VP>", 
+        "description": "+1 Kaart<br>+1 Actie<line>Zolang deze kaart in het spel is: als je een overwinningskaart pakt, +1<VP>", 
         "extra": "This can trigger multiple times in a turn, for cards gained different ways. For example you could play Groundskeeper, then play Engineer gaining an Estate and taking 1<VP>, then in your Buy phase buy a Duchy taking another +1<VP>. Multiple Groundskeepers are cumulative. If you Crown a Groundskeeper, there is still just one Groundskeeper in play, so you only get +1<VP> per Victory card gained.", 
-        "name": "Groundskeeper", 
-        "untranslated": "description, extra, name"
+        "name": "Kasteelhovenier", 
+        "untranslated": "extra"
     },
     "Keep": {
         "description": "When scoring, 5<VP> per differently named Treasure you have, that you have more copies of than each other player, or tied for most.", 
@@ -1110,10 +1107,10 @@
         "untranslated": "description, extra, name"
     },
     "Legionary": {
-        "description": "+3 Coin<n>You may reveal a Gold from your hand. If you do, each other player discards down to 2 cards in hand, then draws a card.", 
+        "description": "+3 Coins<n>Je mag een Goud uit je hand tonen. Doe je dat, dan legt iedere andere speler zoveel kaarten af dat hij er 2 in zijn hand heeft, waarna hij 1 kaart trekt.", 
         "extra": "Players wishing to respond to the Attack (e.g. with Moat) must do so before you choose whether or not to reveal a Gold.", 
-        "name": "Legionary", 
-        "untranslated": "description, extra, name"
+        "name": "Legioensoldaat", 
+        "untranslated": "extra"
     },
     "Mountain Pass": {
         "description": "When you are the first player to gain a Province, after that turn, each player bids once, up to 40 Debt, ending with you. High bidder gets +8<VP> and takes the Debt they bid.", 
@@ -1140,10 +1137,10 @@
         "untranslated": "description, extra, name"
     },
     "Overlord": {
-        "description": "Play this as if it were an Action card in the Supply costing up to 5 Coin. This is that card until it leaves play.", 
+        "description": "Speel deze kaart alsof het een actiekaart uit de voorraad zou zijn die ten hoogste 5 Coins waard is. De Despoot blijft de gekozen kaart zolang hij in het spel is.", 
         "extra": "When you play this, you pick an Action card from the Supply that costs up to 5 Coin, and treat this card as if it were the card you chose. Normally this will just mean that you follow the instructions on the card you picked. For example, with Village in the Supply, you could play Overlord as Village and get +1 Card +2 Actions. Overlord also gets the chosen card's cost, name, and types, until it leaves play. If you play Overlord as a card that moves itself somewhere, such as to the trash or the Supply, Overlord will do that; for example Overlord played as Encampment will be set aside and return to the Overlord pile at the start of Clean-up. If you play Overlord as a Duration card, or as a Throne Room on a Duration card, Overlord will stay in play the same way the Duration card or Throne Room would. If you play an Overlord multiple times such as via a Throne Room, you will only pick what to play it as the first time; the other times it will be the same thing. Once in play, Overlord is the thing it copied, rather than an Overlord; for example Colonnade will produce <VP> if you buy a copy of that card, but not if you buy an Overlord. Overlord can only be played as a visible card in the Supply, and the top card of a pile; it cannot be played as a card from an empty pile, or as a card that has not been uncovered from a split pile, or as a card from a split pile that has been bought out, or as a non-Supply card (like Mercenary from Dark Ages). Overlord cannot be played as Crown during a Buy phase, since Overlord itself is not a Treasure and so cannot be played in Buy phases.", 
-        "name": "Overlord", 
-        "untranslated": "description, extra, name"
+        "name": "Despoot", 
+        "untranslated": "extra"
     },
     "Palace": {
         "description": "When scoring, 3<VP> per set you have of Copper - Silver - Gold.", 
@@ -1176,16 +1173,16 @@
         "untranslated": "description, extra, name"
     },
     "Royal Blacksmith": {
-        "description": "+5 Cards<n>Reveal your hand; discard the Coppers.", 
+        "description": "+5 Kaarten<n>Toon je hand; leg alle getoonde koperkaarten af.", 
         "extra": "You discard both Coppers that were in your hand already, and Coppers drawn in the +5 Cards.", 
-        "name": "Royal Blacksmith", 
-        "untranslated": "description, extra, name"
+        "name": "Koninklijke smid", 
+        "untranslated": "extra"
     },
     "Sacrifice": {
-        "description": "Trash a card from your hand.<n>If it's an...<n>Action card, +2 Cards, +2 Actions<n>Treasure card, +2 Coin<n>Victory card, +2<VP>", 
+        "description": "Vernietig een kaart uit je hand.<n>Is het een ...<n>Actiekaart, +2 Kaarten, +2 Acties<n>Geldkaart, +2 Coin<n>Overwinningskaart, +2<VP>", 
         "extra": "If you trash a card with multiple types, you get all relevant bonuses; for example if you trash Crown, you get +2 Cards, +2 Actions, and +2 Coin. If you trash a card with no relevant types (such as Curse), you get nothing.", 
-        "name": "Sacrifice", 
-        "untranslated": "description, extra, name"
+        "name": "Offer", 
+        "untranslated": "extra"
     },
     "Salt the Earth": {
         "description": "+1<VP><n>Trash a Victory card from the Supply.", 
@@ -1206,10 +1203,10 @@
         "untranslated": "description, extra, name"
     },
     "Temple": {
-        "description": "+1<VP><n>Trash from 1 to 3 differently named cards from your hand. Add 1<VP> to the Temple Supply pile.<line>When you gain this, take the <VP> from the Temple Supply pile.", 
+        "description": "+1<VP><n>Vernietig 1, 2 of 3 handkaarten met een verschillende naam. Voeg 1<VP> aan de Tempelvoorraadstapel toe.<line>Als je deze kaart pakt, neem je alle <VP> van de Tempelvoorraadstapel.", 
         "extra": "You get +1<VP>, trash 1, 2, or 3 cards with different names from your hand (for example a Copper and an Estate, but not two Coppers), then add 1<VP> (from the supply) to the Temple pile. Gaining a Temple (whether buying it or otherwise) gives you all the <VP> that has accumulated on the pile. The pile gets <VP> even if it is empty; this only matters if there is a way to return a Temple to the pile (like Ambassador from Seaside) or a way to gain one from the trash (like Graverobber from Dark Ages).", 
-        "name": "Temple", 
-        "untranslated": "description, extra, name"
+        "name": "Tempel", 
+        "untranslated": "extra"
     },
     "Tomb": {
         "description": "When you trash a card, +1<VP>.", 
@@ -1236,34 +1233,34 @@
         "untranslated": "description, extra, name"
     },
     "Villa": {
-        "description": "+2 Actions<br>+1 Buy<br>+1 Coin<line>When you gain this, put it into your hand, +1 Action, and if it's your Buy phase return to your Action phase.", 
+        "description": "+2 Acties<br>+1 Aanschaf<br>+1 Coin<line>Als je deze kaart pakt,neem je die in je hand, +1 Action, en als het je aanschaffase is, ga terug naar je actiefase.", 
         "extra": "If you gain this during your Action phase, such as with Engineer, you will put the Villa into your hand and get +1 Action (letting you, for example, play the Villa). If you gain this during your Buy phase (such as by buying it), you will put the Villa into your hand, get +1 Action, and return to your Action phase. This will let you play more Action cards (such as the Villa); when you are done with that you will return to your Buy phase, from the beginning - you can play more Treasures (and Arena will trigger again). If you buy Villa, that uses up your default Buy for the turn, however playing Villa will give you +1 Buy and so let you buy another card in your second Buy phase. If you gain this during another player's turn, you will put the Villa into your hand and get +1 Action, but will have no way to use that Action, since it is not your turn. It is possible to return to your Action phase multiple times in a turn via buying multiple Villas. Returning to your Action phase does not cause \"start of turn\" abilities to repeat; they only happen at the start of your turn.", 
         "name": "Villa", 
-        "untranslated": "description, extra, name"
+        "untranslated": "extra"
     },
     "Wall": {
-        "description": "When scoring, -1<VP> per card you have after the first 15.", 
+        "description": "Bij de puntentelling, -1<VP> per kaart die je hebt na de eerste 15.", 
         "extra": "For example, if you had 27 cards in your deck, you would score -12<VP> for Wall.<n>Scores can go negative.", 
-        "name": "Wall", 
-        "untranslated": "description, extra, name"
+        "name": "Muur", 
+        "untranslated": "description, extra"
     },
     "Wedding": {
-        "description": "+1<VP><br>Gain a Gold.", 
+        "description": "+1<VP><br>Pak een Goud.", 
         "extra": "You get the <VP> even if there are no Golds left.", 
-        "name": "Wedding", 
-        "untranslated": "description, extra, name"
+        "name": "Bruiloft", 
+        "untranslated": "extra"
     },
     "Wild Hunt": {
-        "description": "Choose one: +3 Cards and add 1<VP> to the Wild Hunt Supply pile; or gain an Estate, and if you do, take the <VP> from the pile.", 
+        "description": "Kies één van de 2: +3 Kaarten en voeg 1<VP> aan de \"Wilde Jacht\"-voorraadstapel toe; of pak een Landgoed, en doe je dat, neem dan alle <VP> van de \"Wilde Jacht\"-voorraadstapel.", 
         "extra": "If the Estate pile is empty, you can choose that option but will not get the <VP> tokens. Wild Hunt still functions normally if the Wild Hunt pile is empty.", 
-        "name": "Wild Hunt", 
-        "untranslated": "description, extra, name"
+        "name": "Wilde Jacht", 
+        "untranslated": "extra"
     },
     "Windfall": {
-        "description": "If your deck and discard pile are empty, gain 3 Golds.", 
+        "description": "Is zowel je trek- als aflegstapel leeg, pak dan 3 Goud.", 
         "extra": "If there are fewer than 3 Golds in the pile, just gain the remaining Golds.", 
-        "name": "Windfall", 
-        "untranslated": "description, extra, name"
+        "name": "Meevaller", 
+        "untranslated": "extra"
     },
     "Wolf Den": {
         "description": "When scoring, -3<VP> per card you have exactly one copy of.", 
@@ -2354,7 +2351,7 @@
         "name": "Parelduiker"
     },
     "Pirate Ship": {
-        "description": "Kies één van de volgende 2 mogelijkheden: Iedere speler toont de 2 bovenste kaarten van zijn trekstapell. Tonen de andere spelers één of meer geldkaarten, dan moet ieder van hen één geldkaart (naar jouw keuze) vernietigen. als je op deze manier ten minste één geldkaart hebt vernietigd, leg je 1 geldfiche op je piratenschiptableau. De spelers leggen alle overige getoonde kaarten af; of: + 1 Coin voor elk geldfiche op je piratenschiptableau.", 
+        "description": "Kies één van de volgende 2 mogelijkheden: Iedere speler toont de 2 bovenste kaarten van zijn trekstapel. Tonen de andere spelers één of meer geldkaarten, dan moet ieder van hen één geldkaart (naar jouw keuze) vernietigen. als je op deze manier ten minste één geldkaart hebt vernietigd, leg je 1 geldfiche op je piratenschiptableau. De spelers leggen alle overige getoonde kaarten af; of: + 1 Coin voor elk geldfiche op je piratenschiptableau.", 
         "extra": " Zodra je je eerste piratenschip koopt of pakt, neem dan direct een piratenschiptableau en leg deze voor je neer. Als je een piratenschip speelt, kies je voor één van de volgende 2 opties: of je kiest voor het verietigen van geldkaarten van de andere spelers of je kiest voor extra munten voor je aanschaffase. Kies je voor de eerste mogelijkheid, dan mag je per andere speler ten hoogste één geldkaart vernietigen. Toont een andere speler 2 geldkaarten, dan kies jij welke van de 2 wordt vernietigd. Heb je in je beurt ten minste één geldkaart vernietigd, dan krijg je 1 geldfiche, dat je op je piratenschiptableau legt. Je kunt per gespeeld Piratenschip niet meer dan 1 geldfiche verdienen, ook al vernietig je meer geldkaarten. Als je de tweede mogelijkheid kiest, krijg je +1 Coin voor elk geldfiche op je piratenschiptableau. Geldfiches blijven tot het einde van het spel op je piratenschiptableau liggen. Bijvoorbeeld: je hebt je Piratenschip 3 keer succesvol gespeeld om geldkaarten te vernietigen. Daardoor liggen er 3 geldfiches op je piratenschiptableau. De volgende keer dat je een Piratenschip speelt, kun je ervoor kiezen om + 3 Coins voor je aanschaffase te krijgen. Het spelen van een piratenschip geldt als een aanval. De andere spelers kunnen er met reactiekaarten op reageren, ook als je de extra munten kiest.]", 
         "name": "Piratenschip"
     },
@@ -2428,8 +2425,8 @@
     "Shelters": {
         "description": "<left><u>Hovel</u>: When you buy a Victory card, you may trash this from your hand.<br><u>Necropolis</u>: +2 Actions<br><u>Overgrown Estate</u>: 0 <VP>; when you trash this, +1 Card.", 
         "extra": " See Preparation. A shelter is never in the supply. <u>Hovel</u>: When you buy a Victory card, if Hovel is in your hand, you may trash the Hovel. A card with multiple types, one of which is Victory, is a Victory card. You do not get anything for trashing Hovel; you just get to get rid of it. <u>Overgrown Estate</u>: It is a Victory card despite being worth 0<VP>. If this is trashed, you draw a card, right then, even in the middle of resolving another card. For example, if you use Altar to trash Overgrown Estate, you first draw a card, then gain a card costing up to 5 Coins. This card does not give you a way to trash itself, it merely does something if you manage to trash it. <u>Necropolis</u>: This is an Action card; when you play it, you get +2 Actions. ", 
-        "name": "Shelters", 
-        "untranslated": "description, extra, name"
+        "name": "Onderdakkaarten", 
+        "untranslated": "description, extra"
     },
     "Urchin - Mercenary": {
         "description": "<justify><u>Straatjongen</u>: Bij het spelen van deze kaart trek je een kaart en krijg je +1 Actie. Daarna legt iedere andere speler kaarten uit zijn hand af totdat hij er 4 overheeft. Een speler die al 4 of minder kaarten in zijn hand heeft, doet niets. Speel je een aanvalskaart terwijl de Straatjongen in het spel is, dan mag je voordat je de gevolgen van de aanvalskaart afhandelt de Straatjongen vernietigen. Doe je dat, dan pak je een Huurling van de huurlingenstapel (die geen onderdeel van de voorraad is) en leg je deze op je aflegstapel. Zijn er geen Huurlingen in voorraad, dan pak je er geen. Speel je dezelfde Straatjongen tweemaal in één beurt (zoals bij de Optocht), dan mag je daardoor de Straatjongen niet vernietigen in ruil voor een Huurling. Speel je twee verschillende Straatjongens, dan zorgt de tweede ervoor dat je de eerste mag vernietigen.", 
@@ -2439,44 +2436,44 @@
     "empires events": {
         "description": "<justify>Events are not Kingdom cards. In a player's Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.", 
         "extra": "Events are special on-buy effects not attached to cards. Players can buy Events during their Buy phase to trigger whatever the effect of the Event is, as an alternative to (or in addition to) buying cards from the supply.<n>Events are not Kingdom cards; including one or more Events in a game does not count toward the 10 Kingdom card piles the supply includes. In fact, Events are not considered \"cards\" at all. Any text referring to a \"card\" (such as instructions to \"name a card\", or cost reducers changing the cost of cards) does not apply to Events. However, for reference, the Event effects and costs are printed on cards in a landscape orientation with silver frames.<n>Any number of Events may be used in a game, but the recommendation is to not use more than two total Events and Landmarks. When choosing a random Kingdom, the Events may be shuffled into the randomizer deck; any Events that are dealt once 10 Kingdom cards have also been dealt will be included in the game.", 
-        "name": "Events - Empires", 
-        "untranslated": "description, extra, name"
+        "name": "Gebeurtenissen - Keizerrijken                                                          ", 
+        "untranslated": "description, extra"
     },
     "empires landmarks": {
         "description": "<justify>Landmarks are not Kingdom cards. Landmarks provide new ways for players to score. Players may choose how to determine what Landmarks to play with. Landmarks in use are visible to all from the start of the game. Many Landmarks only apply when scoring at the end of the game.", 
         "extra": "Landmarks are not Kingdom cards. It is recommended that no more than two Landmarks be used per game. Players may choose how to determine what Landmarks to play with. They may shuffle them with Events and deal out 2 cards from that pile every game; they may shuffle them into the Randomizer deck and use 0-2 depending on how many come up before finding 10 Kingdom cards; or they may use any method they like.", 
-        "name": "Landmarks - Empires", 
-        "untranslated": "description, extra, name"
+        "name": "Bezienswaardigheden - Keizerrijken", 
+        "untranslated": "description, extra"
     },
     "Settlers - Bustling Village": {
         "description": "<left><u>Settlers</u>:<n>+1 Card<br>+1 Action<n>Look through your discard pile. You may reveal a Copper from it and put it into your hand.<br><left><u>Bustling Village</u>:<n>+1 Card<br>+3 Actions<n>Look through your discard pile. You may reveal a Settlers from it and put it into your hand.", 
         "extra": "<u>Settlers</u>: You can look through your discard pile even if you know there is no Copper in it.<n><u>Bustling Village</u>: You can look through your discard pile even if you know there are no Settlers in it.", 
-        "name": "Settlers / Bustling Village", 
-        "untranslated": "description, extra, name"
+        "name": "Kolonisten / Levendig Dorp", 
+        "untranslated": "description, extra"
     },
     "Catapult - Rocks": {
         "description": "<left><u>Catapult</u>:<n>+1 Coin<n>Trash a card from your hand. If it costs 3 Coins or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.<n><left><u>Rocks</u>:<n>+1 Coin<line>When you gain or trash this, gain a Silver; if it is your Buy phase, put the Silver on your deck, otherwise put it into your hand.", 
         "extra": "If the card you trash is a treasure, each other player discards down to 3 cards in hand; if the card you trash costs 3 Coins or more, each other player gains a Curse; if it is both (e.g. Silver), both things happen; if it is neither, neither thing happens. Rocks: If you have no cards in hand left to trash, neither thing happens. If it is another player's turn, then it is not your Buy phase, so the Silver goes to your hand.", 
-        "name": "Catapult / Rocks", 
-        "untranslated": "description, extra, name"
+        "name": "Katapult / Rotsblokken", 
+        "untranslated": "description, extra"
     },
     "Patrician - Emporium": {
         "description": "<left><u>Patrician</u>:<n>+1 Card<br>+1 Action<n>Reveal the top card of your deck. If it costs 5 Coin or more, put it into your hand.<n><left><u>Emporium</u>:<n>+1 Card<br>+1 Action<br>+1 Coin<line>When you gain this, if you have at least 5 Action cards in play, +2 <VP>.", 
         "extra": "Cards costing Debt do not cost 5 Coin or more unless they also have a Coin cost of 5 Coin or more. So Fortune does but City Quarter does not. Emporium: This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Adventures) called into play this turn.", 
-        "name": "Patrician / Emporium", 
-        "untranslated": "description, extra, name"
+        "name": "Patriciaër / Emporium", 
+        "untranslated": "description, extra"
     },
     "Encampment - Plunder": {
         "description": "<left><u>Encampment</u>:<n>+2 Cards<br>+2 Actions<n>You may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up.<n><left><u>Plunder</u>:<n>+2 Coin<br>+1<VP>", 
         "extra": "Revealing a Plunder or Gold is optional. When you return Encampment to the Supply, it goes on top of its pile, potentially covering up a Plunder. Plunder: This gives you a <VP> token every time you play it.", 
-        "name": "Encampment / Plunder", 
-        "untranslated": "description, extra, name"
+        "name": "Kampement / Plunderen", 
+        "untranslated": "description, extra"
     },
     "Gladiator - Fortune": {
         "description": "<left><u>Gladiator</u>:<n>If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator.<n><left><u>Fortune</u>:<n>+1 Buy<n>When you play this, double your Coin if you haven't yet this turn.<line>When you gain this, gain a Gold per Gladiator you have in play.", 
         "extra": "If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator. Fortune: You only double your Coin the first time you play a Fortune in a turn; any further times only get you +1 Buy.", 
-        "name": "Gladiator / Fortune", 
-        "untranslated": "description, extra, name"
+        "name": "Gladiator / Fortuin", 
+        "untranslated": "description, extra"
     },
     "nocturne hexes": {
         "description": "Hexes are a face-down deck of landscape-style instruction cards that are revealed as needed. Generally these have effects that are not good for a player.<br>Setup: If any Kingdom cards being used have the Doom type, shuffle the Hexes and put them near the Supply, and put Deluded/Envious (States) and Miserable/Twice Miserable (States) near the Supply also.<br>Doom cards can somehow give players Hexes; all the Doom type means is that the Hexes are shuffled at the start of the game.", 
@@ -2571,14 +2568,14 @@
     "events": {
         "description": "<justify>Events are not Kingdom cards. In a player's Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.", 
         "extra": "Events are special on-buy effects not attached to cards. Players can buy Events during their Buy phase to trigger whatever the effect of the Event is, as an alternative to (or in addition to) buying cards from the supply.<n>Events are not Kingdom cards; including one or more Events in a game does not count toward the 10 Kingdom card piles the supply includes. In fact, Events are not considered \"cards\" at all. Any text referring to a \"card\" (such as instructions to \"name a card\", or cost reducers changing the cost of cards) does not apply to Events. However, for reference, the Event effects and costs are printed on cards in a landscape orientation with silver frames.<n>Any number of Events may be used in a game, but the recommendation is to not use more than two total Events and Landmarks. When choosing a random Kingdom, the Events may be shuffled into the randomizer deck; any Events that are dealt once 10 Kingdom cards have also been dealt will be included in the game.", 
-        "name": "Events - All", 
-        "untranslated": "description, extra, name"
+        "name": "Gebeurtenissen - Alle", 
+        "untranslated": "description, extra"
     },
     "landmarks": {
         "description": "<justify>Landmarks are not Kingdom cards. Landmarks provide new ways for players to score. Players may choose how to determine what Landmarks to play with. Landmarks in use are visible to all from the start of the game. Many Landmarks only apply when scoring at the end of the game.", 
         "extra": "Landmarks are not Kingdom cards. It is recommended that no more than two Landmarks be used per game. Players may choose how to determine what Landmarks to play with. They may shuffle them with Events and deal out 2 cards from that pile every game; they may shuffle them into the Randomizer deck and use 0-2 depending on how many come up before finding 10 Kingdom cards; or they may use any method they like.", 
-        "name": "Landmarks - All", 
-        "untranslated": "description, extra, name"
+        "name": "Bezienswaardigheden - Alle", 
+        "untranslated": "description, extra"
     },
     "Possession 2/2": {
         "description": "- Als er een kaart van de \"bezeten\" speler wordt vernietigd, leg deze dan tijdelijk opzij. Aan het einde van de opschoonfase van de extra beurt, legt de \"bezeten\" speler de opzij gelegde kaarten op zijn aflegstaple. Deze kaarten gelden tijdens de extra beurt als vernietigd. Voorbeeld: je kunt een Mijndorp (iot Imtrige) vernietigen en het geld daarvan gebruiken voor aankopen. Als het Mijndorp aan het einde van de opschoonfase weer op de aflegstapel wordt gelegd, geldt deze dus nite als gepakt (je krijgt de kaart dus niet). Kaarten van andere spelers die tijdens deze extra beurt worden vernietigd, gaan niet terug naar de aflegstapel. \n- Kaarten die als gevolg van een Maskerade (uit Intrige) worden doorgegeven, gelden niet als vernietigd of gepakt. Daarvoor gelden dus de gebruikelijke spelregels. Kaarten die als gevolg van de Ambassadeur (uit Hijs de Zeilen!) terug in de voorraad worden gelegd, gelden ook niet als vernietigd en gaan dus zoals gebruikelijk naar de voorraad.\n- Als de \"bezeten\" speler een aanval speelt, word ook jij op de gebruikelijke manier getroffen. Als je op de aanval wilt reageren (met bijvoorbeeld een Geheimee Kamer uit Dominion Intruge), moet je deze uit je eigen hand tonen, niet uit de hand van de \"bezeten\" speler.", 
