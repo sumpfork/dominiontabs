@@ -943,20 +943,20 @@
     "Baths": {
         "description": "When you end your turn without having gained a card, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "Any way you gain a card will stop you from getting <VP> from this that turn.", 
-        "name": "Baths", 
-        "untranslated": "description, extra, name"
+        "name": "Baden", 
+        "untranslated": "description, extra"
     },
     "Battlefield": {
         "description": "When you gain a Victory card, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "You take the <VP> whether you bought the Victory card or gained it another way.", 
-        "name": "Battlefield", 
-        "untranslated": "description, extra, name"
+        "name": "Slagveld", 
+        "untranslated": "description, extra"
     },
     "Bustling Village": {
         "description": "+1 Card<br>+3 Actions<n>Look through your discard pile. You may reveal a Settlers from it and put it into your hand.", 
         "extra": "You can look through your discard pile even if you know there are no Settlers in it.", 
-        "name": "Bustling Village", 
-        "untranslated": "description, extra, name"
+        "name": "Levendig dorp", 
+        "untranslated": "description, extra"
     },
     "Capital": {
         "description": "6 Coins<br>+1 Aanschaf<line>Als je deze kaart vanuit het spel aflegt, neem 6 Debt, en daarna mag je Debt afbetalen.", 
@@ -997,14 +997,14 @@
     "Colonnade": {
         "description": "When you buy an Action card, if you have a copy of it in play, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "For example with Settlers in play, buying another Settlers gets you 2<VP> from here.<n>Cards from the same pile are not necessarily copies of each other; for example Bustling Village is not a copy of Settlers.", 
-        "name": "Colonnade", 
-        "untranslated": "description, extra, name"
+        "name": "Zuilengalerij", 
+        "untranslated": "description, extra"
     },
     "Conquest": {
         "description": "Gain 2 Silvers. +1<VP> per Silver you've gained this turn.", 
         "extra": "This counts the two Silvers it gives you (provided that there were Silvers left to gain).<n>For example, with 12 Coin and 2 Buys and having gained no Silvers earlier in the turn, you could buy Conquest twice, getting two Silvers, then +2<VP>, then two more Silvers, then +4<VP>.", 
-        "name": "Conquest", 
-        "untranslated": "description, extra, name"
+        "name": "Verovering", 
+        "untranslated": "description, extra"
     },
     "Crown": {
         "description": "Als het jouw actiefase is, mag je een actiekaart uit je hand teemaal spelen. Als het jouw aanschaffase is, mag je een geldkaart uit je hand tweemaal spelen.", 
@@ -1015,26 +1015,26 @@
     "Defiled Shrine": {
         "description": "When you gain an Action, move 1<VP> from its pile to this. When you buy a Curse, take the <VP> from this.<line>Setup: Put 2<VP> on each non-Gathering Action Supply pile.", 
         "extra": "Note that this triggers on gaining an Action, whether bought or otherwise gained, but only on buying Curse, not on gaining Curse other ways.<n><VP> tokens will go on Ruins (from Dark Ages) when used, but not on Farmers' Market, Temple, or Wild Hunt (the three Action - Gathering cards).", 
-        "name": "Defiled Shrine", 
-        "untranslated": "description, extra, name"
+        "name": "Geschonden altaar", 
+        "untranslated": "description, extra"
     },
     "Delve": {
         "description": "+1 Buy<br>Gain a Silver.", 
         "extra": "Each purchase of Delve gives you back the Buy you used on it.<n>For example, if you have 7 Coins, you can Delve, then Delve, then buy a card for 3 Coins.", 
-        "name": "Delve", 
-        "untranslated": "description, extra, name"
+        "name": "Delven", 
+        "untranslated": "description, extra"
     },
     "Dominate": {
         "description": "Gain a Province. If you do, +9<VP>.", 
         "extra": "This does nothing once the Province pile is empty.", 
-        "name": "Dominate", 
-        "untranslated": "description, extra, name"
+        "name": "Overheersing", 
+        "untranslated": "description, extra"
     },
     "Donate": {
         "description": "After this turn, put all cards from your deck and discard pile into your hand, trash any number, shuffle your hand into your deck, then draw 5 cards.", 
         "extra": "Effects that happen due to trashing cards (such as Rocks) will happen before you shuffle.<n>This happens between turns, and so Possession (from Alchemy) will no longer be doing anything.", 
-        "name": "Donate", 
-        "untranslated": "description, extra, name"
+        "name": "Donatie", 
+        "untranslated": "description, extra"
     },
     "Emporium": {
         "description": "+1 Kaart<br>+1 Actie<br>+1 Coin<line>When you gain this, if you have at least 5 Action cards in play, +2 <VP>.", 
@@ -1045,8 +1045,8 @@
     "Encampment": {
         "description": "+2 Cards<br>+2 Actions<n>You may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up.", 
         "extra": "Revealing a Plunder or Gold is optional. When you return Encampment to the Supply, it goes on top of its pile, potentially covering up a Plunder.", 
-        "name": "Encampment", 
-        "untranslated": "description, extra, name"
+        "name": "Kampement", 
+        "untranslated": "description, extra"
     },
     "Enchantress": {
         "description": "Tot jouw volgende beurt krijgt iedere andere speler voor de eerste actiekaart die hij in zijn beurt speelt +1 Kaart en +1 Actie in plaats van de op de kaart beschreven aanwijzigingen.<n><n>Aan het begin van je volgende beurt:<n>+2 Kaarten", 
@@ -1079,8 +1079,8 @@
     "Fountain": {
         "description": "When scoring, 15<VP> if you have at least 10 Coppers.", 
         "extra": "You either get 15<VP> or 0<VP>; there is no extra bonus for having 20 Coppers.", 
-        "name": "Fountain", 
-        "untranslated": "description, extra, name"
+        "name": "Fontein", 
+        "untranslated": "description, extra"
     },
     "Gladiator": {
         "description": "+2 Coin<n>Toon een kaart uit je hand. Je linkerbuurman mag een zelfde examplaar uit zijn hand tonen. Doet hij dit niet, dan +2 Coins en vernietig een gladiator uit de voorraad.", 
@@ -1097,14 +1097,14 @@
     "Keep": {
         "description": "When scoring, 5<VP> per differently named Treasure you have, that you have more copies of than each other player, or tied for most.", 
         "extra": "This applies to each different Treasure being used in the game.<n>If all players have the same number of copies of a Treasure, they all get the 5<VP> for that Treasure.", 
-        "name": "Keep", 
-        "untranslated": "description, extra, name"
+        "name": "Hoofdtoren", 
+        "untranslated": "description, extra"
     },
     "Labyrinth": {
         "description": "When you gain a 2nd card in one of your turns, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "This can only happen once per turn per player.<n>For example if you gain 4 cards in the same turn, only the second one will come with 2<VP>.", 
         "name": "Labyrinth", 
-        "untranslated": "description, extra, name"
+        "untranslated": "description, extra"
     },
     "Legionary": {
         "description": "+3 Coins<n>Je mag een Goud uit je hand tonen. Doe je dat, dan legt iedere andere speler zoveel kaarten af dat hij er 2 in zijn hand heeft, waarna hij 1 kaart trekt.", 
@@ -1115,26 +1115,26 @@
     "Mountain Pass": {
         "description": "When you are the first player to gain a Province, after that turn, each player bids once, up to 40 Debt, ending with you. High bidder gets +8<VP> and takes the Debt they bid.", 
         "extra": "This only happens the first time a player gains a Province; it does not matter if the Province was bought or not, or if Provinces have left the pile earlier due to Salt the Earth.<n>This happens between turns; Possession (from Alchemy) will not be in effect.<n>The player to the left of the player who got the Province bids first, then the player to their left and so on, ending with the player who got the Province.<n>Each bid can be a pass, or a higher bid than the previous bid.<n>Bids are in amounts of Debt, from 1 Debt to 40 Debt; a bid of 40 Debt cannot be beaten.<n>The player who bid the highest (if any) gets +8<VP> and takes the amount of Debt of their bid.", 
-        "name": "Mountain Pass", 
-        "untranslated": "description, extra, name"
+        "name": "Bergpas", 
+        "untranslated": "description, extra"
     },
     "Museum": {
         "description": "When scoring, 2<VP> per differently named card you have.", 
         "extra": "Multiple cards from the same pile can score for this as long as they have different names.", 
         "name": "Museum", 
-        "untranslated": "description, extra, name"
+        "untranslated": "description, extra"
     },
     "Obelisk": {
         "description": "When scoring, 2<VP> per card you have from the chosen pile.<line>Setup: Choose a random Action Supply pile.", 
         "extra": "All cards from the chosen pile count, even if they have different names (such as when it is a split pile).<n>Ruins (from Dark Ages), when used, can be the pile.", 
         "name": "Obelisk", 
-        "untranslated": "description, extra, name"
+        "untranslated": "description, extra"
     },
     "Orchard": {
         "description": "When scoring, 4<VP> per differently named Action card you have 3 or more copies of.", 
         "extra": "Having 6 or more copies of a card confers no additional bonus.", 
-        "name": "Orchard", 
-        "untranslated": "description, extra, name"
+        "name": "Boomgaard", 
+        "untranslated": "description, extra"
     },
     "Overlord": {
         "description": "Speel deze kaart alsof het een actiekaart uit de voorraad zou zijn die ten hoogste 5 Coins waard is. De Despoot blijft de gekozen kaart zolang hij in het spel is.", 
@@ -1145,32 +1145,32 @@
     "Palace": {
         "description": "When scoring, 3<VP> per set you have of Copper - Silver - Gold.", 
         "extra": "For example, if you had 7 Coppers, 5 Silvers, and 2 Golds, that would be two sets of Copper - Silver - Gold, for 6<VP> total.", 
-        "name": "Palace", 
-        "untranslated": "description, extra, name"
+        "name": "Paleis", 
+        "untranslated": "description, extra"
     },
     "Patrician": {
         "description": "+1 Card<br>+1 Action<n>Reveal the top card of your deck. If it costs 5 Coin or more, put it into your hand.", 
         "extra": "Cards costing Debt do not cost 5 Coin or more unless they also have a Coin cost of 5 Coin or more. So Fortune does but City Quarter does not.", 
-        "name": "Patrician", 
-        "untranslated": "description, extra, name"
+        "name": "Patriciër", 
+        "untranslated": "description, extra"
     },
     "Plunder": {
         "description": "+2 Coin<br>+1<VP>", 
         "extra": "This gives you a <VP> token every time you play it.", 
-        "name": "Plunder", 
-        "untranslated": "description, extra, name"
+        "name": "Plunderen", 
+        "untranslated": "description, extra"
     },
     "Ritual": {
         "description": "Gain a Curse. If you do, trash a card from your hand. +1<VP> per 1 Coin it cost.", 
         "extra": "This does nothing once the Curse pile is empty.<n>This only gives you +1<VP> per 1 Coin the trashed card cost; it does not give anything for Debt or Potion in costs.", 
-        "name": "Ritual", 
-        "untranslated": "description, extra, name"
+        "name": "Ritueel", 
+        "untranslated": "description, extra"
     },
     "Rocks": {
         "description": "+1 Coin<line>When you gain or trash this, gain a Silver; if it is your Buy phase, put the Silver on your deck, otherwise put it into your hand.", 
         "extra": "If it is another player's turn, then it is not your Buy phase, so the Silver goes to your hand.", 
-        "name": "Rocks", 
-        "untranslated": "description, extra, name"
+        "name": "Rotsblokken", 
+        "untranslated": "description, extra"
     },
     "Royal Blacksmith": {
         "description": "+5 Kaarten<n>Toon je hand; leg alle getoonde koperkaarten af.", 
@@ -1187,20 +1187,20 @@
     "Salt the Earth": {
         "description": "+1<VP><n>Trash a Victory card from the Supply.", 
         "extra": "If the trashed card does something when trashed (such as Crumbling Castle), you do that thing.", 
-        "name": "Salt the Earth", 
-        "untranslated": "description, extra, name"
+        "name": "Zout der aarde", 
+        "untranslated": "description, extra"
     },
     "Settlers": {
         "description": "+1 Card<br>+1 Action<n>Look through your discard pile. You may reveal a Copper from it and put it into your hand.", 
         "extra": "You can look through your discard pile even if you know there is no Copper in it.", 
-        "name": "Settlers", 
-        "untranslated": "description, extra, name"
+        "name": "Kolonisten", 
+        "untranslated": "description, extra"
     },
     "Tax": {
         "description": "Add 2 Debt to a Supply pile.<line>Setup: Add 1 Debt to each Supply pile. When a player buys a card, they take the Debt from its pile.", 
         "extra": "Every Supply pile starts with 1 Debt, including Kingdom cards and basic cards like Silver.<n>The Event itself, when bought, adds 2 Debt to a single pile, whether or not that pile has any Debt on it already.<n>The Debt is taken by the next player to buy a card from that pile; gaining a card without buying it leaves the Debt on the pile.", 
-        "name": "Tax", 
-        "untranslated": "description, extra, name"
+        "name": "Belasting", 
+        "untranslated": "description, extra"
     },
     "Temple": {
         "description": "+1<VP><n>Vernietig 1, 2 of 3 handkaarten met een verschillende naam. Voeg 1<VP> aan de Tempelvoorraadstapel toe.<line>Als je deze kaart pakt, neem je alle <VP> van de Tempelvoorraadstapel.", 
@@ -1211,26 +1211,26 @@
     "Tomb": {
         "description": "When you trash a card, +1<VP>.", 
         "extra": "This works even when it is not your turn, such as when you trash a card to Swindler (from Intrigue), and works when told to trash a card that is not yours, such as with Salt the Earth.", 
-        "name": "Tomb", 
-        "untranslated": "description, extra, name"
+        "name": "Tombe", 
+        "untranslated": "description, extra"
     },
     "Tower": {
         "description": "When scoring, 1<VP> per non-Victory card you have from an empty Supply pile.", 
         "extra": "A Supply pile is only empty if it has no cards in it; a split pile with half of the cards gone is not empty.<n>Victory cards do not count, but Curses do.", 
-        "name": "Tower", 
-        "untranslated": "description, extra, name"
+        "name": "Toren", 
+        "untranslated": "description, extra"
     },
     "Triumph": {
         "description": "Gain an Estate.<n>If you did, +1<VP> per card you've gained this turn.", 
         "extra": "You get +1<VP> per card you have gained, including the Estate, and any other cards bought or gained other ways; you do not get <VP> for Events bought.<n>Once the Estate pile is empty, this does nothing.", 
-        "name": "Triumph", 
-        "untranslated": "description, extra, name"
+        "name": "Triomf", 
+        "untranslated": "description, extra"
     },
     "Triumphal Arch": {
         "description": "When scoring, 3<VP> per copy you have of the 2nd most common Action card among your cards (if it's a tie, count either).", 
         "extra": "For example, if you had 7 copies of Villa and 4 copies of Wild Hunt, you would score 12<VP>.", 
-        "name": "Triumphal Arch", 
-        "untranslated": "description, extra, name"
+        "name": "Triomfboog", 
+        "untranslated": "description, extra"
     },
     "Villa": {
         "description": "+2 Acties<br>+1 Aanschaf<br>+1 Coin<line>Als je deze kaart pakt,neem je die in je hand, +1 Action, en als het je aanschaffase is, ga terug naar je actiefase.", 
@@ -1242,7 +1242,7 @@
         "description": "Bij de puntentelling, -1<VP> per kaart die je hebt na de eerste 15.", 
         "extra": "For example, if you had 27 cards in your deck, you would score -12<VP> for Wall.<n>Scores can go negative.", 
         "name": "Muur", 
-        "untranslated": "description, extra"
+        "untranslated": "extra"
     },
     "Wedding": {
         "description": "+1<VP><br>Pak een Goud.", 
@@ -1265,8 +1265,8 @@
     "Wolf Den": {
         "description": "When scoring, -3<VP> per card you have exactly one copy of.", 
         "extra": "Having no copies of a card, or two or more copies of a card, confers no penalty.<n>Scores can go negative.", 
-        "name": "Wolf Den", 
-        "untranslated": "description, extra, name"
+        "name": "Wolvenhol", 
+        "untranslated": "description, extra"
     },
     "Advisor": {
         "description": "+1 Actie\nToon de bovenste 3 kaarten van je trekstapel. Je linkerbuurman kiest er één van. Leg die kaart af. Neem de andere kaarten in je hand.", 
