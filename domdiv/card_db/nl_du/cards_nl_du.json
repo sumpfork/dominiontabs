@@ -912,33 +912,32 @@
     },
     "Archive": {
         "description": "+1 Actie<n>Leg de bovenste 3 kaarten van je trekstapel gedekt opzij (je mag ze zelf bekijken). Neem er nu en aan het begin van je 2 volgende beurten één naar keuze van in je hand.", 
-        "extra": "You look at three cards, and get one now, one next turn, and one the turn after that. Put the set-aside cards under Archive. If you play two Archives, they get separate sets of cards. If you Throne Room an Archive, keep the sets of cards separate; you get one from each each turn. If there are fewer than three cards, just set aside what you can, and Archive will run out of cards faster and still be discarded the turn it has no cards left.", 
+        "extra": "Bekijk de 3 kaarten en krijg er daarvan 1 nu, 1 in je volgende beurt en 1 in de beurt erna. Schuif de opzijgelegde kaarten onder het Archief. Speel je 2 Archieven, dan krijgen deze verschillende sets kaarten. Speel je een Troonzaal op een Archief, bewaar de sets dan gescheiden: je krijgt per beurt 1 kaart per set. Zijn er minder dan 3 kaarten, dan leg je opzij wat je kunt. Het Archief is sneller leeg en wordt afgelegd zodra het geen kaarten meer bevat.", 
         "name": "Archief", 
-        "untranslated": "extra"
     },
     "Arena": {
         "description": "At the start of your Buy phase, you may discard an Action card. If you do, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "With Villa it is possible for your Buy phase to start twice or more in a turn; you can make use of Arena each time.", 
         "name": "Arena", 
-        "untranslated": "description, extra, name"
+        "untranslated": "description, extra"
     },
     "Bandit Fort": {
         "description": "When scoring, -2<VP> for each Silver and each Gold you have.", 
         "extra": "For example with 3 Silvers and 1 Gold, you would get -8<VP>.<n>Scores can go negative.", 
-        "name": "Bandit Fort", 
-        "untranslated": "description, extra, name"
+        "name": "Bandietenfort", 
+        "untranslated": "description, extra"
     },
     "Banquet": {
         "description": "Gain 2 Coppers and a non-Victory card costing up to 5 Coins.", 
         "extra": "You can do this even if the Copper pile is empty.", 
-        "name": "Banquet", 
-        "untranslated": "description, extra, name"
+        "name": "Banket", 
+        "untranslated": "description, extra"
     },
     "Basilica": {
         "description": "When you buy a card, if you have 2 Coins or more left, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
         "extra": "This happens each time you buy a card.<n>For example with 4 Coin and 3 Buys, you could buy Copper, then Copper, then Silver, taking 2<VP>, then 2<VP>, then none.", 
-        "name": "Basilica", 
-        "untranslated": "description, extra, name"
+        "name": "Basiliek", 
+        "untranslated": "description, extra"
     },
     "Baths": {
         "description": "When you end your turn without having gained a card, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
@@ -959,16 +958,14 @@
         "untranslated": "description, extra"
     },
     "Capital": {
-        "description": "6 Coins<br>+1 Aanschaf<line>Als je deze kaart vanuit het spel aflegt, neem 6 Debt, en daarna mag je Debt afbetalen.", 
+        "description": "Leg je deze kaart af (normaal gesproken tijdens de opschoonfase van je beurt), dan krijg je 6 Debt en een extra mogelijkheid om Debt met _ Coins af te kopen, op dat moment. Je krijgt de 6 Debt niet als je de kaart niet uit het spel aflegt (bijvoorbeeld als je de kaart met Vals Geld ( uit Dominion: De Donkere Middeleeuwen) vernietigd). Je krijgt 6 Debt per vernietigd exemplaar van Kapitaal, dus gebruik je bijvoorbeeld de Kroon om Kapitaal tweemaal te spelen, dan krijg je maar 6 Debt voor het afleggen van het ene exemplaar.", 
         "extra": "When you discard this from play (normally, in the Clean-up phase of the turn you played it), you get 6 Debt, and then get an extra opportunity to pay off Debt with Coins, right then. You do not get the Debt if you did not discard it from play - for example, if you trash it due to Counterfeit (from Dark Ages). You only get Debt per copy of Capital discarded; for example if you use Crown to play Capital twice, you still only get 6 Debt when you discard it from play.", 
-        "name": "Kapitaal", 
-        "untranslated": "extra"
+        "name": "Kapitaal"
     },
     "Castles": {
         "description": "Sorteel de Kastelen op waarde, waarbij de duurste onderaan de stapel en de goedkoopste bovenop ligt. Gebruik in een spel met 2 spelers 1 exemplaar per Kasteel. Alleen de bovenste kaart van de stapel kan worden gepakt of gekocht.", 
-        "extra": "Humble Castle and King's Castle count themselves. Small Castle gains you the top Castle, whichever one that is. Haunted Castle works whether you buy it or gain it some other way, provided that it is your turn. You can pick either option on Sprawling Castle regardless of how many Duchies and Estates are left in the piles. Grand Castle counts both Victory cards in play - such as an Opulent Castle - and Victory cards in your hand.", 
-        "name": "Kastelen", 
-        "untranslated": "extra"
+        "extra": "Bescheiden kasteel en Koningskasteel tellen zichzelf mee. Klein kasteel levert het bovenste kasteel op, ongeacht welke dat is. Spookkasteel werkt als je het koopt of op een andere manier pakt, mits het jouw beurt is. Je mag vrij kiezen uit de opties op Florerend kasteel, ongeacht het aantal Landgoederen en Hertogdommen in de voorraad. Groot kasteel telt zowel overwinningskaarten in het spel (zoals Weelderig kasteel) als die in je hand.", 
+        "name": "Kastelen",
     },
     "Catapult": {
         "description": "+1 Coin<n>Trash a card from your hand. If it costs 3 Coins or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.", 
@@ -977,16 +974,15 @@
         "untranslated": "description, extra"
     },
     "Chariot Race": {
-        "description": "+1 Actue<n>Toon de bovenste kaart van je trekstapel en neem deze in je hand. Je linkerbuurman toont nu de bovenste kaart van zijn trekstapel. Als jouw kaart meer waard is, +1 Coin en +1<VP>.", 
+        "description": "+1 Actie<n>Toon de bovenste kaart van je trekstapel en neem deze in je hand. Je linkerbuurman toont nu de bovenste kaart van zijn trekstapel. Als jouw kaart meer waard is, +1 Coin en +1<VP>.", 
         "extra": "You and the player to your left reveal your top cards; yours goes into your hand, theirs goes back on their deck. If your card cost more you get +1 Coin and +1<VP>; you can put the token on the Chariot Race to remind you that it made +1 Coin this turn. If it is a tie, your card did not cost more. With Debt, your card costs more only if both Coin and Debt amounts are larger, or one is larger and the other the same. For example Fortune (8 Coins 8 Debt) costs more than Overlord (5 Debt), but Overlord does not cost more than Silver, and Silver does not cost more than Overlord. If either player has no card to reveal, your card does not cost more.", 
         "name": "Strijdwagenrace", 
         "untranslated": "extra"
     },
     "Charm": {
         "description": "Kies bij het spelen van deze kaart één van deze 2: +1 Aanschaf en +2 Coin; of de volgende keer dat je deze beurt een kaart koopt, mag je daarnaast een kaart met een andere naam van dezelfde waarde pakken.", 
-        "extra": "These are cumulative, and each Charm does not have to gain a different card, just a different card from the one bought. For example if you play two Charms and buy a Forum, you could gain two Duchies. The card gained from Charm is gained before gaining the card you bought, which may matter when cards do things when gained. For example if you buy Villa and gain Rocks via Charm, you will first gain a Silver to your deck due to Rocks, then get +1 Action and return to your Action phase due to Villa. The costs have to be identical; for example if you play Charm and buy Overlord, you can gain City Quarter, which also costs 8 Debt, but not Fortune, which costs 8 Coin 8 Debt.", 
-        "name": "Geluksbrenger", 
-        "untranslated": "extra"
+        "extra": "Deze zijn cumulatief en verschillende Geluksbrengers hoeven niet verschillende kaarten te pakken, maar wel anders dan de gekochte kaart. Speel je bijvoorbeeld 2 Geluksbrengers en koop je een Forum, dan mag je 2 Hertogdommen kopen. Een kaart die je met de Geluksbrenger pakt, pak je voordat je de gekochte kaart pakt (dat kan van belang zijn als kaarten iets doen als ze worden gepakt).\n<i><b>Voorbeeld:</b> je koopt een Villa en pakt Rotsblokken met de Geluksbrenger. Je pakt eerst het Zilver met Rotsblokken en legt het op je trekstapel. Dan krijgt je +1 Actie en ga je terug naar je actiefase vanwege Villa. De waarden van de kaarten moeten identiek zijn.</i>\n<i><b>Voorbeeld:</b> je speelt een Geluksbrenger en je koopt de Despoot. Je kunt nu de Stadswijk pakken die ook 8 Debt kost, maar niet het Fortuin, dat 8 Coins 8 Debt kost.</i>", 
+        "name": "Geluksbrenger"
     },
     "City Quarter": {
         "description": "+2 Acties<n>Toon je hand. +1 Kaart voor elke getoonde actiekaart.", 
@@ -1056,15 +1052,13 @@
     },
     "Engineer": {
         "description": "Pak een kaart die ten hoogste 4 Coins waard is. Je mag deze Ingenieur dan vernietigen. Doe je dat, dan pak je een kaart die ten hoogste 4 Coins waard is.", 
-        "extra": "Engineer cannot gain copies of itself, or any other card with Debt in the cost. When you play it, you gain a card, then may trash Engineer to gain a second card (which can be the same as the first or different).", 
-        "name": "Ingenieur", 
-        "untranslated": "extra"
+        "extra": "Met een Ingenieur mag je geen exemplaren van Ingenieur zelf of van andere kaarten met _ Debt inde kosten pakken. Bij het spelen ervan pak je een kaart. Daarna mag je de Ingenieur vernietigen om een tweede kaart te pakken (die identiek aan de eerste mag zijn)", 
+        "name": "Ingenieur"
     },
     "Farmers' Market": {
         "description": "+1 Aanschaf<n>Als er 4 of meer <VP> op de Boerenmarktvoorraadstapel liggen, neem je ze allemaal en vernietig deze Boerenmarkt.Zo niet, voeg dan 1 <VP> aan de stapel toe en daarna +1 Coin per 1 <VP> op de stapel.", 
-        "extra": "The first time this is played, it produces +1 Coin (and +1 Buy), the next time +2 Coin, then +3 Coin, then +4 Coin, then the next time the player takes the 4 <VP> (and gets no + _ Coin), then the next time it is back to +1 Coin. This still functions if the Farmers' Market pile is empty.", 
-        "name": "Boerenmarkt", 
-        "untranslated": "extra"
+        "extra": "De eerste keer dat de kaart gespeeld wordt, geeft deze +1 Coin (and +1 Aanschaf), de tweede keer +2 Coin, dan +3 Coin, dan +4 Coin, en bij de vijfde keer neemt de speler de 4 <VP> (en krijgt geen  + _ Coin). Bij de volgende keer krijgt de speler weer +1 Coin, enzovoort. Dit functioneert ook zo als de Boerenmarktstapel leeg is.", 
+        "name": "Boerenmarkt"
     },
     "Fortune": {
         "description": "+1 Aanschaf<n>Verdubbel bij het spelen van deze kaart je Coin als je dat deze beurt nog niet hebt gedaan.<line>Als je deze kaart pakt, pak dan een Goud per Gladiator die je in het spel hebt.", 
@@ -1084,15 +1078,13 @@
     },
     "Gladiator": {
         "description": "+2 Coin<n>Toon een kaart uit je hand. Je linkerbuurman mag een zelfde examplaar uit zijn hand tonen. Doet hij dit niet, dan +2 Coins en vernietig een gladiator uit de voorraad.", 
-        "extra": "If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator.", 
-        "name": "Gladiator", 
-        "untranslated": "extra"
+        "extra": "Zijn er geen Gladiators in voorraad, dan kun je geen Gladiators meer vernietigen, maar je krijgt nog wel de +1 Coin. Heb je geen kaarten in je hand, dan kan je linkerbuurman geen exemplaar tonen van de kaart die jij toonde, dus je krijgt de +1 Coins en vernietigt een Gladiator.", 
+        "name": "Gladiator"
     },
     "Groundskeeper": {
         "description": "+1 Kaart<br>+1 Actie<line>Zolang deze kaart in het spel is: als je een overwinningskaart pakt, +1<VP>", 
-        "extra": "This can trigger multiple times in a turn, for cards gained different ways. For example you could play Groundskeeper, then play Engineer gaining an Estate and taking 1<VP>, then in your Buy phase buy a Duchy taking another +1<VP>. Multiple Groundskeepers are cumulative. If you Crown a Groundskeeper, there is still just one Groundskeeper in play, so you only get +1<VP> per Victory card gained.", 
-        "name": "Kasteelhovenier", 
-        "untranslated": "extra"
+        "extra": "Deze kaart kan meermaals in een beurt geactiveerd worden door kaarten die op verschillende manieren zijn gepakt.\n <i><b>Voorbeeld:</b> je speelt een Kasteelhovenier. Daarna speel je een Ingenieur, waarmee je een Landgoed pakt en 1 <VP> neemt. In je aanschaffase koop je een Hertogdom en neem je nog 1 <VP>.</i>\n Meerdere Kasteelhoveniers zijn cumulatief. Speel je de Kroon op een Kasteelhovenier, dan is er nog altijd maar 1 Kasteelhovenier in het spel en krijg je maar 1 <vp> per gepakte overwinningskaart.", 
+        "name": "Kasteelhovenier"
     },
     "Keep": {
         "description": "When scoring, 5<VP> per differently named Treasure you have, that you have more copies of than each other player, or tied for most.", 
@@ -1138,9 +1130,8 @@
     },
     "Overlord": {
         "description": "Speel deze kaart alsof het een actiekaart uit de voorraad zou zijn die ten hoogste 5 Coins waard is. De Despoot blijft de gekozen kaart zolang hij in het spel is.", 
-        "extra": "When you play this, you pick an Action card from the Supply that costs up to 5 Coin, and treat this card as if it were the card you chose. Normally this will just mean that you follow the instructions on the card you picked. For example, with Village in the Supply, you could play Overlord as Village and get +1 Card +2 Actions. Overlord also gets the chosen card's cost, name, and types, until it leaves play. If you play Overlord as a card that moves itself somewhere, such as to the trash or the Supply, Overlord will do that; for example Overlord played as Encampment will be set aside and return to the Overlord pile at the start of Clean-up. If you play Overlord as a Duration card, or as a Throne Room on a Duration card, Overlord will stay in play the same way the Duration card or Throne Room would. If you play an Overlord multiple times such as via a Throne Room, you will only pick what to play it as the first time; the other times it will be the same thing. Once in play, Overlord is the thing it copied, rather than an Overlord; for example Colonnade will produce <VP> if you buy a copy of that card, but not if you buy an Overlord. Overlord can only be played as a visible card in the Supply, and the top card of a pile; it cannot be played as a card from an empty pile, or as a card that has not been uncovered from a split pile, or as a card from a split pile that has been bought out, or as a non-Supply card (like Mercenary from Dark Ages). Overlord cannot be played as Crown during a Buy phase, since Overlord itself is not a Treasure and so cannot be played in Buy phases.", 
+        "extra": "Bij het spelen van deze kaart wijs je een actiekaart uit de voorraad aan die ten hoogste 5 Coins waard is en beschouw je de Despoot als de aangewezen kaart. Dat betekend normaal gesproken dat je de aanwijzingen op de aangewezen kaart opvolgt. <i><b>Voorbeeld:</b> met een Dorp in de voorraad zou je de Despoot als Dorp kunnen spelen en daarme +1 Kaart en +2 Acties kunnen ontvangen.</i> \n De Despoot neemt ook de kosten, de naam en de soorten van de gekozen kaart over totdat deze het spel verlaat. Speel je de Despoot als een kaart die zichzelf ergens naartoe verplaatst (zoals bijvoorbeeld de stapel \"Vernietigde Kaarten\" of de voorraad), dan doet de Despoot dat ook. \n <i><b>Voorbeeld:</b> speel je de Despoot als een Kampement, dan leg je de Despoot opzij en tijdens je opschoonfase op de voorraadstapel \"Despoot\" terug.</i>\n Speel je de Despoot als een duurzame kaart of als Troonzaal op een duurzame kaart, dan blijft de Despoot op dezelfde manier in het spel als de Troonzaal of de duurzame kaart zou doen. Speel je de Despoot meermaals (bijvoorbeeld met een Troonzaal), dan wijs je maar 1 kaart aan. De andere keren geldt de Despoot als dezelfde kaart. Zodra de Despoot in het spel is geldt deze als de aangewezen kaart en niet als een Despoot zelf. \n<i><b>Voorbeeld:</b> de Zuilengalerij levert <VP> als je een exemplaar koopt van een actiekaart die je in het spel hebt. Bij het kopen van een Despoot krijg je geen <VP>, omdat de Despoot een andere kaart voorstelt.</i>\n De Despoot kan uitsluitend worden gespeeld als een zichtbare kaart in de voorraad of als de bovenste kaart van een stapel. De Despoot kan niet worden gespeeld als kaart van een lege stapel. De Despoot kan niet worden gespeeld als kaart van een lege stapel of een niet beschikbare kaart van een gecombineerde stapel die niet meer beschikbaar is (omdat ze allemaal al zijn gepakt) of als de niet-voorraadkaart ( zoals de Huurling uit Dominion: De Donkere Middeleeuwen). De Despoot kan niet als Kroon in de aanschaffase worden gespeeld, omdat de Despoot geen geldkaart is en daardoor niet in de aanschaffase mag worden gespeeld.", 
         "name": "Despoot", 
-        "untranslated": "extra"
     },
     "Palace": {
         "description": "When scoring, 3<VP> per set you have of Copper - Silver - Gold.", 
@@ -1515,7 +1506,7 @@
     },
     "Duke": {
         "description": "Is 1 <VP> waard voor elke Hertogdomkaart die je hebt.", 
-        "extra": " Deze kaart doet tijdens het spel niets. Aan het einde van het spel is de kaar 1 <VP> waard voor elk Hertogdom in je bezit. Dit geldt voor zowel de kaarten in je aflegstapel, in je trekstapel als in je hand. In een spel met 2 spelers gebruik je 8 Hertogkaarten, in eenspel met 3 of 4 spelers gebruik je 12 Hertogkaarten.", 
+        "extra": " Deze kaart doet tijdens het spel niets. Aan het einde van het spel is de kaart 1 <VP> waard voor elk Hertogdom in je bezit. Dit geldt voor zowel de kaarten in je aflegstapel, in je trekstapel als in je hand. In een spel met 2 spelers gebruik je 8 Hertogkaarten, in eenspel met 3 of 4 spelers gebruik je 12 Hertogkaarten.", 
         "name": "Hertog"
     },
     "Harem": {
