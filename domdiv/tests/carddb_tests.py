@@ -42,19 +42,17 @@ class TestCardDB(unittest.TestCase):
             self.assertIn(c.cardset_tag, valid_cardsets)
 
     def test_languages(self):
-        # for now, just test that they load
-        options = main.parse_opts(['--language', 'it'])
-        options.data_path = '.'
-        cards = main.read_card_data(options)
-        self.assertTrue(cards, 'Italians cards did not read properly')
-        cards = main.add_card_text(options, cards, 'en_us')
-        cards = main.add_card_text(options, cards, 'it')
-        self.assertIn("Maledizione", [card.name for card in cards])
-
-        options = main.parse_opts(['--language', 'de'])
-        options.data_path = '.'
-        cards = main.read_card_data(options)
-        self.assertTrue(cards, 'German cards did not read properly')
-        cards = main.add_card_text(options, cards, 'en_us')
-        cards = main.add_card_text(options, cards, 'de')
-        self.assertIn("Fluch", [card.name for card in cards])
+        languages = main.get_languages('card_db')
+        for lang in languages:
+            print('checking ' + lang)
+            # for now, just test that they load
+            options = main.parse_opts(['--language', lang])
+            options.data_path = '.'
+            cards = main.read_card_data(options)
+            self.assertTrue(cards, '"{}" cards did not read properly'.format(lang))
+            cards = main.add_card_text(options, cards, 'en_us')
+            cards = main.add_card_text(options, cards, lang)
+            if lang == 'it':
+                self.assertIn("Maledizione", [card.name for card in cards])
+            elif lang == 'de':
+                self.assertIn("Fluch", [card.name for card in cards])
