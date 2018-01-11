@@ -913,7 +913,7 @@
     "Archive": {
         "description": "+1 Actie<n>Leg de bovenste 3 kaarten van je trekstapel gedekt opzij (je mag ze zelf bekijken). Neem er nu en aan het begin van je 2 volgende beurten één naar keuze van in je hand.", 
         "extra": "Bekijk de 3 kaarten en krijg er daarvan 1 nu, 1 in je volgende beurt en 1 in de beurt erna. Schuif de opzijgelegde kaarten onder het Archief. Speel je 2 Archieven, dan krijgen deze verschillende sets kaarten. Speel je een Troonzaal op een Archief, bewaar de sets dan gescheiden: je krijgt per beurt 1 kaart per set. Zijn er minder dan 3 kaarten, dan leg je opzij wat je kunt. Het Archief is sneller leeg en wordt afgelegd zodra het geen kaarten meer bevat.", 
-        "name": "Archief", 
+        "name": "Archief"
     },
     "Arena": {
         "description": "At the start of your Buy phase, you may discard an Action card. If you do, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
@@ -963,7 +963,7 @@
     "Castles": {
         "description": "Sorteer de Kastelen op waarde, waarbij de duurste onderaan de stapel en de goedkoopste bovenop ligt. Gebruik in een spel met 2 spelers 1 exemplaar per Kasteel. Alleen de bovenste kaart van de stapel kan worden gepakt of gekocht.", 
         "extra": "Bescheiden kasteel en Koningskasteel tellen zichzelf mee. Klein kasteel levert het bovenste kasteel op, ongeacht welke dat is. Spookkasteel werkt als je het koopt of op een andere manier pakt, mits het jouw beurt is. Je mag vrij kiezen uit de opties op Florerend kasteel, ongeacht het aantal Landgoederen en Hertogdommen in de voorraad. Groot kasteel telt zowel overwinningskaarten in het spel (zoals Weelderig kasteel) als die in je hand.", 
-        "name": "Kastelen",
+        "name": "Kastelen"
     },
     "Catapult": {
         "description": "+1 Coin<n>Trash a card from your hand. If it costs 3 Coins or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.", 
@@ -1125,7 +1125,7 @@
     "Overlord": {
         "description": "Speel deze kaart alsof het een actiekaart uit de voorraad zou zijn die ten hoogste 5 Coins waard is. De Despoot blijft de gekozen kaart zolang hij in het spel is.", 
         "extra": "Bij het spelen van deze kaart wijs je een actiekaart uit de voorraad aan die ten hoogste 5 Coins waard is en beschouw je de Despoot als de aangewezen kaart. Dat betekend normaal gesproken dat je de aanwijzingen op de aangewezen kaart opvolgt. <i><b>Voorbeeld:</b> met een Dorp in de voorraad zou je de Despoot als Dorp kunnen spelen en daarme +1 Kaart en +2 Acties kunnen ontvangen.</i> \n De Despoot neemt ook de kosten, de naam en de soorten van de gekozen kaart over totdat deze het spel verlaat. Speel je de Despoot als een kaart die zichzelf ergens naartoe verplaatst (zoals bijvoorbeeld de stapel \"Vernietigde Kaarten\" of de voorraad), dan doet de Despoot dat ook. \n <i><b>Voorbeeld:</b> speel je de Despoot als een Kampement, dan leg je de Despoot opzij en tijdens je opschoonfase op de voorraadstapel \"Despoot\" terug.</i>\n Speel je de Despoot als een duurzame kaart of als Troonzaal op een duurzame kaart, dan blijft de Despoot op dezelfde manier in het spel als de Troonzaal of de duurzame kaart zou doen. Speel je de Despoot meermaals (bijvoorbeeld met een Troonzaal), dan wijs je maar 1 kaart aan. De andere keren geldt de Despoot als dezelfde kaart. Zodra de Despoot in het spel is geldt deze als de aangewezen kaart en niet als een Despoot zelf. \n<i><b>Voorbeeld:</b> de Zuilengalerij levert <VP> als je een exemplaar koopt van een actiekaart die je in het spel hebt. Bij het kopen van een Despoot krijg je geen <VP>, omdat de Despoot een andere kaart voorstelt.</i>\n De Despoot kan uitsluitend worden gespeeld als een zichtbare kaart in de voorraad of als de bovenste kaart van een stapel. De Despoot kan niet worden gespeeld als kaart van een lege stapel. De Despoot kan niet worden gespeeld als kaart van een lege stapel of een niet beschikbare kaart van een gecombineerde stapel die niet meer beschikbaar is (omdat ze allemaal al zijn gepakt) of als de niet-voorraadkaart ( zoals de Huurling uit Dominion: De Donkere Middeleeuwen). De Despoot kan niet als Kroon in de aanschaffase worden gespeeld, omdat de Despoot geen geldkaart is en daardoor niet in de aanschaffase mag worden gespeeld.", 
-        "name": "Despoot", 
+        "name": "Despoot"
     },
     "Palace": {
         "description": "When scoring, 3<VP> per set you have of Copper - Silver - Gold.", 
@@ -2559,25 +2559,25 @@
     "Ruined Village": {
         "name": "Vernield Dorp", 
 		"description": "+1 Actie",
-		"extra": "Bij het spelen van deze kaart krijg je +1 Actie. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding."
+		"extra": "Bij het spelen van deze kaart krijg je +1 Actie. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
         "untranslated": "Note: This card is currently not used."
     },
     "Ruined Library": {
         "name": "Ingestorte Bibliotheek", 
 		"description": "+1 Kaart",
-		"extra": "Bij het spelen van deze kaart trek je een kaart. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding."
+		"extra": "Bij het spelen van deze kaart trek je een kaart. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
         "untranslated": "Note: This card is currently not used."
     },
     "Survivors": {
         "name": "Overlevenden", 
 		"description": "Bekijk de 2 bovenste kaarten van je trekstapel. Leg deze af of leg ze terug in een volgorde naar keuze.",
-		"extra": "Leg beide kaarten uit je hand af als je wilt en trek er daarna evenveel van je trekstapel. Leg vervolgens zoveel kaarten af als je wilt (dat mogen ook zojuist getrokken kaarten zijn) en ontvang +1 Coin per (bij de tweede keer) afgelegde kaart."
+		"extra": "Leg beide kaarten uit je hand af als je wilt en trek er daarna evenveel van je trekstapel. Leg vervolgens zoveel kaarten af als je wilt (dat mogen ook zojuist getrokken kaarten zijn) en ontvang +1 Coin per (bij de tweede keer) afgelegde kaart.",
         "untranslated": "Note: This card is currently not used."
     },
     "Abandoned Mine": {
         "name": "Verlaten Mijn", 
 		"description": "+1 Coin",
-		"extra": "Bij het spelen van deze kaart krijg je alleen +1 Coin. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding."
+		"extra": "Bij het spelen van deze kaart krijg je alleen +1 Coin. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
         "untranslated": "Note: This card is currently not used."
     }
 }
