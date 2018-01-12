@@ -1163,7 +1163,7 @@
     },
     "Sacrifice": {
         "description": "Vernietig een kaart uit je hand.<n>Is het een ...<n>Actiekaart, +2 Kaarten, +2 Acties<n>Geldkaart, +2 Coin<n>Overwinningskaart, +2<VP>", 
-        "extra": "Venietig je een kaart met meerdere soorten, dan krijg je alle desbetreffende bonussen.<i><b>Voorbeeld:</b> als je een Kroon vernietigt, krijg je +2 Kaarten, +2 Acties, en +2 Coin. Vernietig je een kaart zonder relevante soort (zoals een Vloek), dan krijg je niets.", 
+        "extra": "Venietig je een kaart met meerdere soorten, dan krijg je alle desbetreffende bonussen.<i><b>Voorbeeld:</b> als je een Kroon vernietigt, krijg je +2 Kaarten, +2 Acties, en +2 Coin. Vernietig je een kaart zonder relevante soort (zoals een Vloek), dan krijg je niets.</i>",
         "name": "Offer"
     },
     "Salt the Earth": {
@@ -2068,14 +2068,13 @@
     "Black Market": {
         "description": "+2 Coins<n>Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought cards on the bottom of the Black Market deck in any order.<n><i>(Before the game, make a Black Market deck out of one copy of each Kingdom card not in the supply.)</i>", 
         "extra": "Black Market allows you to Buy a card during the Action phase. You can use coins provided by other Action cards played earlier in the Action phase and you can also play Treasure cards from your hand to pay the cost of the bought card. The Treasure cards are played to the table in your play area, just as you would during the Buy phase. You may play more Treasure cards than are required for the purchase; the extra coins from Action cards and Treasure cards are available to use during your Buy phase. You may even play Treasure cards without Buying a card. You may not reuse coins already spent during a turn. A card bought during the Action phase does not count as a card bought in your Buy phase, so you do not need an action card giving you +1 Buy to still buy a card during your normal Buy phase. The Black Market deck, created before game start, is made up of Kingdom cards that are not in the Supply of the current game. The players should agree before the game which cards will be used to create the Black Market deck (for example, you could agree to use one of every Kingdom card you own that is not a part of the Supply). It is recommended that the Black Market deck contain at least 15 Kingdom cards, with no duplicates. All players can see which cards are placed in the Black Market deck before the game begins, at which point the deck is shuffled. This deck is not a Supply pile and if it is emptied, it does not count towards the end game conditions. If you play Black Market and the Black Market deck is empty, you cannot buy a card but you still get +2 Coins. If you play Black Market and choose not to buy one of the three cards from the Black Market deck, you still get +2 Coins.", 
-        "name": "Black Market", 
-        "untranslated": "description, extra, name"
+        "name": "Zwarte Markt",
+        "untranslated": "description, extra"
     },
     "Dismantle": {
-        "description": "Trash a card from your hand. If it costs 1 coin or more, gain a cheaper card and a Gold.", 
+        "description": "Vernietig 1 kaart uit je hand. Kost deze 1 coin of meer, pak dan een goedkopere kaart en een Goud.",
         "extra": "", 
-        "name": "Dismantle", 
-        "untranslated": "description, extra, name"
+        "name": "Ontmantelen"
     },
     "Envoy": {
         "description": "Reveal the top 5 cards of your deck. The player to your left chooses one for you to discard. Draw the rest.", 
@@ -2086,8 +2085,8 @@
     "Governor": {
         "description": "+1 Action<n>Choose one; you get the version in parentheses: Each player gets +1(+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly 1 Coin (2 Coins) more.", 
         "extra": "You always get +1 Action. Then you either 1) draw three cards and each other player draws a card; 2) gain a Gold and each other player gains a Silver; 3) may trash a card from your hand and gain a card costing exactly 2 Coins more and each other player may trash a card from his hand and gain a card costing exactly 1 Coin more. Go in turn order, starting with yourself; this may matter if piles are low. The gained cards come from the Supply and are put into discard piles; if there are none left, those cards are not gained. For example if you choose the second option and there is only one Silver in the Supply, the player to your left gets it and no-one else gets one. For the third option, you only gain a card if you trashed a card, and only if there is a card available in the Supply with the exact cost required. If you do trash a card, you must gain a card if you can. You cannot trash a Governor you played to itself, as it is no longer in your hand when you play it (though you can trash another copy of Governor from your hand).", 
-        "name": "Governor", 
-        "untranslated": "description, extra, name"
+        "name": "Gouverneur",
+        "untranslated": "description, extra"
     },
     "Prince": {
         "description": "Leg de Prins apart en leg daar uit je hand een actiekaart op die maximaal 4 Coins kost. Aan het begin van iedere volgende beurt moet je deze actie spelen (dit kost geen actie). In plaats van afleggen op de aflegstapel, gaat deze actiekaart aan het einde van je beurt terug naar de Prins, tenzij de actiekaart uit het spel is verwijderd tijdens je beurt.", 
@@ -2101,10 +2100,10 @@
         "untranslated": "description, extra, name"
     },
     "Stash": {
-        "description": "2 <*COIN*><line>When you shuffle, you may put this anywhere in your deck.", 
+        "description": "2 <*COIN*><line>Als je je aflegstapel schudt om er een nieuwe trekstapel van te maken, mag je direct daarna de Geldbuidel naar een positie naar keuze in je trekstapel verplaatsen.",
         "extra": "Stash is a Treasure that produces 2 coins when played, like Silver. Whenever you shuffle your deck, you can choose where in your deck each copy of Stash that you have goes. You can't look at the fronts of the other cards in your deck to see where to put it; Stash itself has a different card back, so that's how you'll know where it is. If you have multiple copies of Stash, you can clump them together or spread them out or whatever you want. Since Stash has a different card back, you will also know if it's in a player's hand, or set aside for someone's Haven (from Seaside), and so on.", 
         "name": "Geldbuidel", 
-        "untranslated": "description, extra"
+        "untranslated": "extra"
     },
     "Summon": {
         "description": "Gain an Action card costing up to 4 coins. Set it aside. If you do, then at the start of your next turn, play it.", 
