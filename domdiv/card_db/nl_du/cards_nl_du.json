@@ -1041,12 +1041,12 @@
     },
     "Enchantress": {
         "description": "Tot jouw volgende beurt krijgt iedere andere speler voor de eerste actiekaart die hij in zijn beurt speelt +1 Kaart en +1 Actie in plaats van de op de kaart beschreven aanwijzigingen.<n><n>Aan het begin van je volgende beurt:<n>+2 Kaarten", 
-        "extra": "Spelers die een kaart zoals Slotgracht willen tonen, moeten dat direct doen, niet later, ook al hebben ze pas in hun beurt last van de gevolgen. De eerste actie die iedere andere speler in zijn volgende beurt speelt, geeft hem +1 Kaart en +1 Actie in plaats van wat de kaart normaal zou hebben gedaan. Dit heeft geen invloed op aanwijzingen onder een scheidslijn (die blijven geldig).\n<i><b>Voorbeeld:</b> een speler die het Offer speelt, krijgt +1 Kaart en +1 Actie en doet niet wat het Offer anders zou hebben gedaan, Een speler die de Kasteelhovenier speelt, krijgt +1 Kaart en +1 Actie, en kan nog altijd <VP>-fiches krijgen voor het pakken van overwinningskaarten.</i>\nHet kan handig zijn om een getroggen kaart een halve slag te draaien om je eraan te herinneren dat de kaart niet deed wat deze normaal doet. De Tovenares heeft geen invloed op in voorgaande beurten gespeelde kaarten.<i><b>Voorbeeld:</b> een andere speler speelt de Tovenares en jij hebt een Archief uit een vorige beurt. Je krijgt in je beurt eerst de kaart van het Archief en de eerste actiekaart die je daarna speelt, wordt door de Tovenares getroffen.</i> Treft de Tovenares een Kroon in de aanschaffase, dan moet de eigenaar van de Kroon weliswaar +1 Kaart en +1 Actie, maar heeft hij geen mogelijkheid om de +1 Actie uit te voeren (hij zit immers in zijn aanschaffase), tenzij hij een Villa koopt.", 
+        "extra": "Spelers die een kaart zoals Slotgracht willen tonen, moeten dat direct doen, niet later, ook al hebben ze pas in hun beurt last van de gevolgen. De eerste actie die iedere andere speler in zijn volgende beurt speelt, geeft hem +1 Kaart en +1 Actie in plaats van wat de kaart normaal zou hebben gedaan. Dit heeft geen invloed op aanwijzingen onder een scheidslijn (die blijven geldig).\n<i><b>Voorbeeld:</b> een speler die het Offer speelt, krijgt +1 Kaart en +1 Actie en doet niet wat het Offer anders zou hebben gedaan, Een speler die de Kasteelhovenier speelt, krijgt +1 Kaart en +1 Actie, en kan nog altijd <VP>-fiches krijgen voor het pakken van overwinningskaarten.</i>\nHet kan handig zijn om een getroggen kaart een halve slag te draaien om je eraan te herinneren dat de kaart niet deed wat deze normaal doet. De Tovenares heeft geen invloed op in voorgaande beurten gespeelde kaarten.<n><i><b>Voorbeeld:</b> een andere speler speelt de Tovenares en jij hebt een Archief uit een vorige beurt. Je krijgt in je beurt eerst de kaart van het Archief en de eerste actiekaart die je daarna speelt, wordt door de Tovenares getroffen.</i><n> Treft de Tovenares een Kroon in de aanschaffase, dan moet de eigenaar van de Kroon weliswaar +1 Kaart en +1 Actie, maar heeft hij geen mogelijkheid om de +1 Actie uit te voeren (hij zit immers in zijn aanschaffase), tenzij hij een Villa koopt.",
         "name": "Tovenares"
     },
     "Engineer": {
         "description": "Pak een kaart die ten hoogste 4 Coins waard is. Je mag deze Ingenieur dan vernietigen. Doe je dat, dan pak je een kaart die ten hoogste 4 Coins waard is.", 
-        "extra": "Met een Ingenieur mag je geen exemplaren van Ingenieur zelf of van andere kaarten met _ Debt inde kosten pakken. Bij het spelen ervan pak je een kaart. Daarna mag je de Ingenieur vernietigen om een tweede kaart te pakken (die identiek aan de eerste mag zijn)", 
+        "extra": "Met een Ingenieur mag je geen exemplaren van Ingenieur zelf of van andere kaarten met Debt inde kosten pakken. Bij het spelen ervan pak je een kaart. Daarna mag je de Ingenieur vernietigen om een tweede kaart te pakken (die identiek aan de eerste mag zijn)",
         "name": "Ingenieur"
     },
     "Farmers' Market": {
@@ -1061,7 +1061,7 @@
     },
     "Forum": {
         "description": "+3 Kaarten<br>+1 Actie<n>Leg 2 kaarten af.<line>Bij het kopen van deze kaart, +1 Aanschaf.", 
-        "extra": "Voorbeeld: Je hebt 13 Coin en +1 Aanschaf. Je zou een Forum kunnen kopen, dat je direct een +1 Aanschaf oplevert, waarna je een Provincie kunt kopen.", 
+        "extra": "<i><b>Voorbeeld:</b> Je hebt 13 Coin en +1 Aanschaf. Je zou een Forum kunnen kopen, dat je direct een +1 Aanschaf oplevert, waarna je een Provincie kunt kopen.</i>",
         "name": "Forum"
     },
     "Fountain": {
@@ -1163,7 +1163,7 @@
     },
     "Sacrifice": {
         "description": "Vernietig een kaart uit je hand.<n>Is het een ...<n>Actiekaart, +2 Kaarten, +2 Acties<n>Geldkaart, +2 Coin<n>Overwinningskaart, +2<VP>", 
-        "extra": "Venietig je een kaart met meerdere soorten, dan krijg je alle desbetreffende bonussen.<i><b>Voorbeeld:</b> als je een Kroon vernietigt, krijg je +2 Kaarten, +2 Acties, en +2 Coin. Vernietig je een kaart zonder relevante soort (zoals een Vloek), dan krijg je niets.</i>",
+        "extra": "Venietig je een kaart met meerdere soorten, dan krijg je alle desbetreffende bonussen.\n<i><b>Voorbeeld:</b> als je een Kroon vernietigt, krijg je +2 Kaarten, +2 Acties, en +2 Coin. Vernietig je een kaart zonder relevante soort (zoals een Vloek), dan krijg je niets.</i>",
         "name": "Offer"
     },
     "Salt the Earth": {
@@ -1214,7 +1214,7 @@
         "untranslated": "description, extra"
     },
     "Villa": {
-        "description": "+2 Acties<br>+1 Aanschaf<br>+1 Coin<line>Als je deze kaart pakt,neem je die in je hand, +1 Action, en als het je aanschaffase is, ga terug naar je actiefase.", 
+        "description": "+2 Acties<br>+1 Aanschaf<br>+1 Coin<line>Als je deze kaart pakt,neem je die in je hand, +1 Actie, en als het je aanschaffase is, ga terug naar je actiefase.",
         "extra": "Pak je deze kaart tijdens je actiefase, zoals met een Ingenieur, dan neem je de Villa in je hand en krijg je +1 Actie (waarmee je bijvoorbeeld de Villa zou kunnen spelen). Pak je de Villa in je aanschaffase (bijvoorbeeld door deze te kopen), dan neem je de Villa in je hand, krijg je +1 Actie en ga je terug naar je actiefase. Dit staat je toe om meer actiekaarten te spelen (zoals de Villa zelf). Ben je daarmee klaar, dan ga je weer naar de start van je aanschaffase, waarin je opnieuw geldkaarten mag spelen (en de Arena ook weer actief wordt). Het kopen van de Villa verbruikt de standaard aanschaf van je beurt, maar het spelen van de Villa levert je +1 Aanschaf op, waardoor je nog een kaart zou kunnen kopen. Pak je een Villa tijden de beurt van een andere speler, dan krijg je +1 Actie, maar heb je niet de mogelijkheid om deze te gebruiken, omdat je niet aan de beurt bent. Het is mogelijk om meermaals naar je actiefase terug te gaan als je in je beurt meerdere Villas koopt. Het teruggaan naar je actiefase activeert geen eigenschappen die \"aan het begin van je beurt\" plaatsvinden.", 
         "name": "Villa"
     },
@@ -2422,13 +2422,13 @@
         "name": "Bezienswaardigheden - Keizerrijken"
     },
     "Settlers - Bustling Village": {
-        "description": "<left><u>Kolonisten:</u><n>+1 Kaart<br>+1 Aztie<n>Kijk door je aflegstapel. Je mag een Koper uit deze stapel tonen en in je hand nemen.<br><left><u>Levendig dorp:</u><n>+1 Kaart<br>+3 Acties<n>Kijk door je aflegstapel. Je mag een Kolonisten uit deze stapel tonen en in je hand nemen.", 
+        "description": "<left><u>Kolonisten:</u><n>+1 Kaart<br>+1 Actie<n>Kijk door je aflegstapel. Je mag een Koper uit deze stapel tonen en in je hand nemen.<br><left><u>Levendig dorp:</u><n>+1 Kaart<br>+3 Acties<n>Kijk door je aflegstapel. Je mag een Kolonisten uit deze stapel tonen en in je hand nemen.",
         "extra": "<left><u>Kolonisten:</u></left> Je mag door je aflegstapel kijken, ook al weet je dat er geen Koper in zit.<n><u>Levendig dorp:</u> Je mag ook door je aflegstapel kijken als je weet dat er geen kaart \"Kolonisten\" in zit.", 
         "name": "Kolonisten / Levendig dorp"
     },
     "Catapult - Rocks": {
-        "description": "<left><u>Katapult</u>:<n>+1 Coin<n>Vernietig een kaart uit je hand is deze 3 Coins of meer waard, dan pakt iedere andere speler een Vloek, Is het een geldkaart, dan legt iedere speler zoveel kaarten af dat hij 3 handkaarten overhoudt.<n><left><u>Rotsblokken</u>:<n>+1 Coin<line>Als je deze kaart pakt of vernietigt, pak een Zilver. Is het je aanschaffase, leg het Zilver dan op je trekstapel. Zo niet, neem het Zilver dan in je hand.", 
-        "extra": "<left><u>Kaptapult:</u><n>Als de kaart die je vernietigd een geldkaart is, legt iedere andere speler handkaarten af totdat hij er nog 3 heeft. Is de kaart die vernietigt 3 Coins of meer waard, dan krijgt iedere andere speler een Vloek. Heeft de vernietigde kaart beide eigenschappen (bijvoorbeeld Zilver), dan gebeuren beide zaken. Heeft de kaart geen van beide eigenschappen, dan gebeurt er niets. Heb je geen kaarten in je hand om te vernietigen, dan gebeurt er niets.\n<u>Rotsblokken</u> Is het de beurt van een andere speler, dan is het niet jouw aanschaffase, dus gaat het Zilver naar je hand.", 
+        "description": "<left><u>Katapult</u>:<n>+1 Coin<n>Vernietig een kaart uit je hand is deze 3 Coins of meer waard, dan pakt iedere andere speler een Vloek, Is het een geldkaart, dan legt iedere speler zoveel kaarten af dat hij 3 handkaarten overhoudt.<n><left><u>Rotsblokken:</u><n>+1 Coin<line>Als je deze kaart pakt of vernietigt, pak een Zilver. Is het je aanschaffase, leg het Zilver dan op je trekstapel. Zo niet, neem het Zilver dan in je hand.",
+        "extra": "<left><u>Kaptapult:</u><n>Als de kaart die je vernietigd een geldkaart is, legt iedere andere speler handkaarten af totdat hij er nog 3 heeft. Is de kaart die vernietigt 3 Coins of meer waard, dan krijgt iedere andere speler een Vloek. Heeft de vernietigde kaart beide eigenschappen (bijvoorbeeld Zilver), dan gebeuren beide zaken. Heeft de kaart geen van beide eigenschappen, dan gebeurt er niets. Heb je geen kaarten in je hand om te vernietigen, dan gebeurt er niets.\n<u>Rotsblokken:</u><n> Is het de beurt van een andere speler, dan is het niet jouw aanschaffase, dus gaat het Zilver naar je hand.",
         "name": "Katapult / Rotsblokken"
     },
     "Patrician - Emporium": {
@@ -2442,8 +2442,8 @@
         "name": "Kampement / Plunderen"
     },
     "Gladiator - Fortune": {
-        "description": "<left><u>Gladiator:</u><n>If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator.<n><left><u>Fortune:</u><n>+1 Buy<n>When you play this, double your Coin if you haven't yet this turn.<line>When you gain this, gain a Gold per Gladiator you have in play.", 
-        "extra": "<left><u>Gladiator:</u><n>Zijn er geen Gladiators in voorraad, dan kun je geen Gladiators meer vernietigen, maar je krijgt nog wel de +1 Coin. Heb je geen kaarten in je hand, dan kan je de linkerbuurman geen exemplaar tonen van de kaart die jij toonde, dus je krijgt de +1 Coin en vernietigt een Gladiator.<left><u>Fortune:</u></left><n> Je verdubbelt je _ Coin alleen bij de eerste keer dat je Fortuin in je beurt speelt, bij elk volgende krijg je uitsluitend +1 Aanschaf.", 
+        "description": "<left><u>Gladiator:</u><n>+2 Coins\n Toon een kaart uit je hand. Je linkerbuurman mag een zelfde exemplaar uit zijn hand tonen. Doet hij dat niet dan +2 Coins en vernietig een Gladiator uit de voorraad.<n><left><u>Fortuin:</u><n>+1 Aanschaf<n>Verdubbel bij het spelen van deze kaart je _ Coins als je dat deze beurt nog niet hebt gedaan.<line>Als je deze kaart pakt, pak een Goud per Gladiator die je in het spel hebt.",
+        "extra": "<left><u>Gladiator:</u><n>Zijn er geen Gladiators in voorraad, dan kun je geen Gladiators meer vernietigen, maar je krijgt nog wel de +1 Coin. Heb je geen kaarten in je hand, dan kan je de linkerbuurman geen exemplaar tonen van de kaart die jij toonde, dus je krijgt de +1 Coin en vernietigt een Gladiator.<left><u>Fortuin:</u></left><n> Je verdubbelt je _ Coin alleen bij de eerste keer dat je Fortuin in je beurt speelt, bij elk volgende krijg je uitsluitend +1 Aanschaf.",
         "name": "Gladiator / Fortuin"
     },
     "nocturne hexes": {
