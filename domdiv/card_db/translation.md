@@ -139,6 +139,7 @@ Special character sequences are recognized by the program to substitute graphics
 - `# Coins` where # is a number 0 - 13, a question mark `?`, `_`, or the letters `empty` for a small coin graphic with the # on top
 - `# coin`  where # is a number 0 - 13, a question mark `?`, `_`, or the letters `empty` for a small coin graphic with the # on top
 - `# coins` where # is a number 0 - 13, a question mark `?`, `_`, or the letters `empty` for a small coin graphic with the # on top
+- `# Debt` where # is a number 0 - 13, for a small debt graphic with the # on top
 - `# <*COIN*>` where # is a number 0 - 13, will produce a large coin graphic with the # on top
 - `# <*VP*>` where # is a number, will produce a large Victory Point graphic with the # before it
 - `# <*POTION*>` where # is a number, will produce a large Potion graphic with the # before it
