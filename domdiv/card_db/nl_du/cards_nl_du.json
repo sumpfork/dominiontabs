@@ -1030,8 +1030,7 @@
     "Emporium": {
         "description": "+1 Kaart<br>+1 Actie<br>+1 Coin<line>When you gain this, if you have at least 5 Action cards in play, +2 <VP>.", 
         "extra": "This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Adventures) called into play this turn.", 
-        "name": "Emporium", 
-        "untranslated": "description, extra"
+        "name": "Emporium"
     },
     "Encampment": {
         "description": "+2 Cards<br>+2 Actions<n>You may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up.", 
@@ -1041,12 +1040,12 @@
     },
     "Enchantress": {
         "description": "Tot jouw volgende beurt krijgt iedere andere speler voor de eerste actiekaart die hij in zijn beurt speelt +1 Kaart en +1 Actie in plaats van de op de kaart beschreven aanwijzigingen.<n><n>Aan het begin van je volgende beurt:<n>+2 Kaarten", 
-        "extra": "Spelers die een kaart zoals Slotgracht willen tonen, moeten dat direct doen, niet later, ook al hebben ze pas in hun beurt last van de gevolgen. De eerste actie die iedere andere speler in zijn volgende beurt speelt, geeft hem +1 Kaart en +1 Actie in plaats van wat de kaart normaal zou hebben gedaan. Dit heeft geen invloed op aanwijzingen onder een scheidslijn (die blijven geldig).\n<i><b>Voorbeeld:</b> een speler die het Offer speelt, krijgt +1 Kaart en +1 Actie en doet niet wat het Offer anders zou hebben gedaan, Een speler die de Kasteelhovenier speelt, krijgt +1 Kaart en +1 Actie, en kan nog altijd <VP>-fiches krijgen voor het pakken van overwinningskaarten.</i>\nHet kan handig zijn om een getroggen kaart een halve slag te draaien om je eraan te herinneren dat de kaart niet deed wat deze normaal doet. De Tovenares heeft geen invloed op in voorgaande beurten gespeelde kaarten.<n><i><b>Voorbeeld:</b> een andere speler speelt de Tovenares en jij hebt een Archief uit een vorige beurt. Je krijgt in je beurt eerst de kaart van het Archief en de eerste actiekaart die je daarna speelt, wordt door de Tovenares getroffen.</i><n> Treft de Tovenares een Kroon in de aanschaffase, dan moet de eigenaar van de Kroon weliswaar +1 Kaart en +1 Actie, maar heeft hij geen mogelijkheid om de +1 Actie uit te voeren (hij zit immers in zijn aanschaffase), tenzij hij een Villa koopt.",
+        "extra": "Spelers die een kaart zoals Slotgracht willen tonen, moeten dat direct doen, niet later, ook al hebben ze pas in hun beurt last van de gevolgen. De eerste actie die iedere andere speler in zijn volgende beurt speelt, geeft hem +1 Kaart en +1 Actie in plaats van wat de kaart normaal zou hebben gedaan. Dit heeft geen invloed op aanwijzingen onder een scheidslijn (die blijven geldig).\n<i><b>Voorbeeld:</b> een speler die het Offer speelt, krijgt +1 Kaart en +1 Actie en doet niet wat het Offer anders zou hebben gedaan, Een speler die de Kasteelhovenier speelt, krijgt +1 Kaart en +1 Actie, en kan nog altijd <VP>-fiches krijgen voor het pakken van overwinningskaarten.</i>\nHet kan handig zijn om een getroggen kaart een halve slag te draaien om je eraan te herinneren dat de kaart niet deed wat deze normaal doet. De Tovenares heeft geen invloed op in voorgaande beurten gespeelde kaarten.<n><i><b>Voorbeeld:</b> een andere speler speelt de Tovenares en jij hebt een Archief uit een vorige beurt. Je krijgt in je beurt eerst de kaart van het Archief en de eerste actiekaart die je daarna speelt, wordt door de Tovenares getroffen.</i><n> Treft de Tovenares een Kroon in de aanschaffase, dan moet de eigenaar van de Kroon weliswaar +1 Kaart en +1 Actie, maar heeft hij geen mogelijkheid om de +1 Actie uit te voeren (hij zit immers in zijn aanschaffase), tenzij hij een Villa koopt.", 
         "name": "Tovenares"
     },
     "Engineer": {
         "description": "Pak een kaart die ten hoogste 4 Coins waard is. Je mag deze Ingenieur dan vernietigen. Doe je dat, dan pak je een kaart die ten hoogste 4 Coins waard is.", 
-        "extra": "Met een Ingenieur mag je geen exemplaren van Ingenieur zelf of van andere kaarten met Debt inde kosten pakken. Bij het spelen ervan pak je een kaart. Daarna mag je de Ingenieur vernietigen om een tweede kaart te pakken (die identiek aan de eerste mag zijn)",
+        "extra": "Met een Ingenieur mag je geen exemplaren van Ingenieur zelf of van andere kaarten met Debt inde kosten pakken. Bij het spelen ervan pak je een kaart. Daarna mag je de Ingenieur vernietigen om een tweede kaart te pakken (die identiek aan de eerste mag zijn)", 
         "name": "Ingenieur"
     },
     "Farmers' Market": {
@@ -1061,7 +1060,7 @@
     },
     "Forum": {
         "description": "+3 Kaarten<br>+1 Actie<n>Leg 2 kaarten af.<line>Bij het kopen van deze kaart, +1 Aanschaf.", 
-        "extra": "<i><b>Voorbeeld:</b> Je hebt 13 Coin en +1 Aanschaf. Je zou een Forum kunnen kopen, dat je direct een +1 Aanschaf oplevert, waarna je een Provincie kunt kopen.</i>",
+        "extra": "<i><b>Voorbeeld:</b> Je hebt 13 Coin en +1 Aanschaf. Je zou een Forum kunnen kopen, dat je direct een +1 Aanschaf oplevert, waarna je een Provincie kunt kopen.</i>", 
         "name": "Forum"
     },
     "Fountain": {
@@ -1157,12 +1156,12 @@
     },
     "Royal Blacksmith": {
         "description": "+5 Kaarten<n>Toon je hand; leg alle getoonde koperkaarten af.", 
-        "extra": "Je legt zowel de koperkaarten in je hand als die in de +5 Kaarten af.",
+        "extra": "Je legt zowel de koperkaarten in je hand als die in de +5 Kaarten af.", 
         "name": "Koninklijke smid"
     },
     "Sacrifice": {
         "description": "Vernietig een kaart uit je hand.<n>Is het een ...<n>Actiekaart, +2 Kaarten, +2 Acties<n>Geldkaart, +2 Coin<n>Overwinningskaart, +2<VP>", 
-        "extra": "Venietig je een kaart met meerdere soorten, dan krijg je alle desbetreffende bonussen.\n<i><b>Voorbeeld:</b> als je een Kroon vernietigt, krijg je +2 Kaarten, +2 Acties, en +2 Coin. Vernietig je een kaart zonder relevante soort (zoals een Vloek), dan krijg je niets.</i>",
+        "extra": "Venietig je een kaart met meerdere soorten, dan krijg je alle desbetreffende bonussen.\n<i><b>Voorbeeld:</b> als je een Kroon vernietigt, krijg je +2 Kaarten, +2 Acties, en +2 Coin. Vernietig je een kaart zonder relevante soort (zoals een Vloek), dan krijg je niets.</i>", 
         "name": "Offer"
     },
     "Salt the Earth": {
@@ -1213,7 +1212,7 @@
         "untranslated": "description, extra"
     },
     "Villa": {
-        "description": "+2 Acties<br>+1 Aanschaf<br>+1 Coin<line>Als je deze kaart pakt,neem je die in je hand, +1 Actie, en als het je aanschaffase is, ga terug naar je actiefase.",
+        "description": "+2 Acties<br>+1 Aanschaf<br>+1 Coin<line>Als je deze kaart pakt,neem je die in je hand, +1 Actie, en als het je aanschaffase is, ga terug naar je actiefase.", 
         "extra": "Pak je deze kaart tijdens je actiefase, zoals met een Ingenieur, dan neem je de Villa in je hand en krijg je +1 Actie (waarmee je bijvoorbeeld de Villa zou kunnen spelen). Pak je de Villa in je aanschaffase (bijvoorbeeld door deze te kopen), dan neem je de Villa in je hand, krijg je +1 Actie en ga je terug naar je actiefase. Dit staat je toe om meer actiekaarten te spelen (zoals de Villa zelf). Ben je daarmee klaar, dan ga je weer naar de start van je aanschaffase, waarin je opnieuw geldkaarten mag spelen (en de Arena ook weer actief wordt). Het kopen van de Villa verbruikt de standaard aanschaf van je beurt, maar het spelen van de Villa levert je +1 Aanschaf op, waardoor je nog een kaart zou kunnen kopen. Pak je een Villa tijden de beurt van een andere speler, dan krijg je +1 Actie, maar heb je niet de mogelijkheid om deze te gebruiken, omdat je niet aan de beurt bent. Het is mogelijk om meermaals naar je actiefase terug te gaan als je in je beurt meerdere Villas koopt. Het teruggaan naar je actiefase activeert geen eigenschappen die \"aan het begin van je beurt\" plaatsvinden.", 
         "name": "Villa"
     },
@@ -2067,11 +2066,11 @@
     "Black Market": {
         "description": "+2 Coins<n>Reveal the top 3 cards of the Black Market deck. You may buy one of them immediately. Put the unbought cards on the bottom of the Black Market deck in any order.<n><i>(Before the game, make a Black Market deck out of one copy of each Kingdom card not in the supply.)</i>", 
         "extra": "Black Market allows you to Buy a card during the Action phase. You can use coins provided by other Action cards played earlier in the Action phase and you can also play Treasure cards from your hand to pay the cost of the bought card. The Treasure cards are played to the table in your play area, just as you would during the Buy phase. You may play more Treasure cards than are required for the purchase; the extra coins from Action cards and Treasure cards are available to use during your Buy phase. You may even play Treasure cards without Buying a card. You may not reuse coins already spent during a turn. A card bought during the Action phase does not count as a card bought in your Buy phase, so you do not need an action card giving you +1 Buy to still buy a card during your normal Buy phase. The Black Market deck, created before game start, is made up of Kingdom cards that are not in the Supply of the current game. The players should agree before the game which cards will be used to create the Black Market deck (for example, you could agree to use one of every Kingdom card you own that is not a part of the Supply). It is recommended that the Black Market deck contain at least 15 Kingdom cards, with no duplicates. All players can see which cards are placed in the Black Market deck before the game begins, at which point the deck is shuffled. This deck is not a Supply pile and if it is emptied, it does not count towards the end game conditions. If you play Black Market and the Black Market deck is empty, you cannot buy a card but you still get +2 Coins. If you play Black Market and choose not to buy one of the three cards from the Black Market deck, you still get +2 Coins.", 
-        "name": "Zwarte Markt",
+        "name": "Zwarte Markt", 
         "untranslated": "description, extra"
     },
     "Dismantle": {
-        "description": "Vernietig 1 kaart uit je hand. Kost deze 1 coin of meer, pak dan een goedkopere kaart en een Goud.",
+        "description": "Vernietig 1 kaart uit je hand. Kost deze 1 coin of meer, pak dan een goedkopere kaart en een Goud.", 
         "extra": "", 
         "name": "Ontmantelen"
     },
@@ -2084,7 +2083,7 @@
     "Governor": {
         "description": "+1 Action<n>Choose one; you get the version in parentheses: Each player gets +1(+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly 1 Coin (2 Coins) more.", 
         "extra": "You always get +1 Action. Then you either 1) draw three cards and each other player draws a card; 2) gain a Gold and each other player gains a Silver; 3) may trash a card from your hand and gain a card costing exactly 2 Coins more and each other player may trash a card from his hand and gain a card costing exactly 1 Coin more. Go in turn order, starting with yourself; this may matter if piles are low. The gained cards come from the Supply and are put into discard piles; if there are none left, those cards are not gained. For example if you choose the second option and there is only one Silver in the Supply, the player to your left gets it and no-one else gets one. For the third option, you only gain a card if you trashed a card, and only if there is a card available in the Supply with the exact cost required. If you do trash a card, you must gain a card if you can. You cannot trash a Governor you played to itself, as it is no longer in your hand when you play it (though you can trash another copy of Governor from your hand).", 
-        "name": "Gouverneur",
+        "name": "Gouverneur", 
         "untranslated": "description, extra"
     },
     "Prince": {
@@ -2099,7 +2098,7 @@
         "untranslated": "description, extra, name"
     },
     "Stash": {
-        "description": "2 <*COIN*><line>Als je je aflegstapel schudt om er een nieuwe trekstapel van te maken, mag je direct daarna de Geldbuidel naar een positie naar keuze in je trekstapel verplaatsen.",
+        "description": "2 <*COIN*><line>Als je je aflegstapel schudt om er een nieuwe trekstapel van te maken, mag je direct daarna de Geldbuidel naar een positie naar keuze in je trekstapel verplaatsen.", 
         "extra": "Stash is a Treasure that produces 2 coins when played, like Silver. Whenever you shuffle your deck, you can choose where in your deck each copy of Stash that you have goes. You can't look at the fronts of the other cards in your deck to see where to put it; Stash itself has a different card back, so that's how you'll know where it is. If you have multiple copies of Stash, you can clump them together or spread them out or whatever you want. Since Stash has a different card back, you will also know if it's in a player's hand, or set aside for someone's Haven (from Seaside), and so on.", 
         "name": "Geldbuidel", 
         "untranslated": "extra"
@@ -2402,8 +2401,7 @@
     "Shelters": {
         "description": "<left><u>Hutje</u>: Als je een overwinningskaart koopt, mag je het Hutje uit je hand vernietigen.<br><u>Necropolis</u>: +2 Acties<br><u>Verwilderd Landgoed</u>: 0 <VP>; Als je deze kaart vernietigd, +1 Kaart.", 
         "extra": " Zie voobereiding. De onderdakkaarten zijn nooit in de voorraad. <u>Hutje</u>: Koop je een overwinningskaart als je een Hutje in je hand hebt, dan mag je het Hutje vernietigen. Een kaart van meerdere soorten waaronder Overwinning geldt als een overwinningskaart. Je krijgt niets voor het vernietigen van een Hutje, je bent er alleen vanaf. <u>Verwilderd Landgoed</u>: Dit is een overwinningskaart, ook al is deze 0 <VP> waard, wordt deze kaart vernietigd, dan trek je direct een kaart, ook al ben je nog met de acties van een andere kaart bezig. <b>Voorbeeld:</b> gebruik je het Altaal om een Verwilderd Landgoed te vernietigen, dan trek je eerst een kaart en daarna pak je een kaart met een waarde van ten hoogste 5 Coins. Deze kaart kan zelf geen kaarten vernietigen, maar doet alleen iets als het  je lukt om hem te vernietigen. <u>Necropolis</u>: Dit is een actiekaart. Bij het spelen ervan krijg je +2 Acties.", 
-        "name": "Onderdakkaarten", 
-        "untranslated": "description, extra"
+        "name": "Onderdakkaarten"
     },
     "Urchin - Mercenary": {
         "description": "<justify><u>Straatjongen</u>: Bij het spelen van deze kaart trek je een kaart en krijg je +1 Actie. Daarna legt iedere andere speler kaarten uit zijn hand af totdat hij er 4 overheeft. Een speler die al 4 of minder kaarten in zijn hand heeft, doet niets. Speel je een aanvalskaart terwijl de Straatjongen in het spel is, dan mag je voordat je de gevolgen van de aanvalskaart afhandelt de Straatjongen vernietigen. Doe je dat, dan pak je een Huurling van de huurlingenstapel (die geen onderdeel van de voorraad is) en leg je deze op je aflegstapel. Zijn er geen Huurlingen in voorraad, dan pak je er geen. Speel je dezelfde Straatjongen tweemaal in één beurt (zoals bij de Optocht), dan mag je daardoor de Straatjongen niet vernietigen in ruil voor een Huurling. Speel je twee verschillende Straatjongens, dan zorgt de tweede ervoor dat je de eerste mag vernietigen.", 
@@ -2411,8 +2409,8 @@
         "name": "Straatjongen / Huurling"
     },
     "empires events": {
-        "description": "<justify>Gebeurteniskaarten zijn geen koninkrijkkaarten. Een speler mag in zijn aanschaffase in plaats van een kaart een gebeurtenis kopen. Hij betaalt dan de op de gebeurteniskaart aangegeven kosten en voert de bijbehorende functie uit. De gebeurtenis blijft op tafel liggen (deze kan zich nooit in een stapel, op een tableau of in de hand van een speler bevinden). Met het kopen van een gebeurtenis verbruikt de speler 1 aanschaf. Heeft een speler meer aancshaffen in zijn beurt, dan mag hij deze naar believen (en in een volgorde naar keuze) verdelen over het kopen van kaarten en gebeurtenissen.",
-        "extra": "Het is toegestaan om dezelfde gebeurtenis meermaals per beurt te kopen (mits de speler voldoende aanschaffen en Coins heeft). Sommige gebeurtenissen geven extra aanschaffen, waardoor de speler daarna meer kaarten/gebeurtenissen zou kunnen kopen. Een speler mag na het kopen van een gebeurtenis deze beurt geen geldkaarten meer spelen. Het kopen van een gebeurtenis geldt niet als het kopen van een kaart en activeert daarom niet kaarten zoals Heks uit het moeras en Domkoppen (uit Dominion Welvaart). De kosten van het kopen van een gebeurtenis worden niet beïnvloed door kaarten zoals Brugtrol.",
+        "description": "<justify>Gebeurteniskaarten zijn geen koninkrijkkaarten. Een speler mag in zijn aanschaffase in plaats van een kaart een gebeurtenis kopen. Hij betaalt dan de op de gebeurteniskaart aangegeven kosten en voert de bijbehorende functie uit. De gebeurtenis blijft op tafel liggen (deze kan zich nooit in een stapel, op een tableau of in de hand van een speler bevinden). Met het kopen van een gebeurtenis verbruikt de speler 1 aanschaf. Heeft een speler meer aancshaffen in zijn beurt, dan mag hij deze naar believen (en in een volgorde naar keuze) verdelen over het kopen van kaarten en gebeurtenissen.", 
+        "extra": "Het is toegestaan om dezelfde gebeurtenis meermaals per beurt te kopen (mits de speler voldoende aanschaffen en Coins heeft). Sommige gebeurtenissen geven extra aanschaffen, waardoor de speler daarna meer kaarten/gebeurtenissen zou kunnen kopen. Een speler mag na het kopen van een gebeurtenis deze beurt geen geldkaarten meer spelen. Het kopen van een gebeurtenis geldt niet als het kopen van een kaart en activeert daarom niet kaarten zoals Heks uit het moeras en Domkoppen (uit Dominion Welvaart). De kosten van het kopen van een gebeurtenis worden niet beïnvloed door kaarten zoals Brugtrol.", 
         "name": "Gebeurtenissen - Keizerrijken"
     },
     "empires landmarks": {
@@ -2421,13 +2419,13 @@
         "name": "Bezienswaardigheden - Keizerrijken"
     },
     "Settlers - Bustling Village": {
-        "description": "<left><u>Kolonisten:</u><n>+1 Kaart<br>+1 Actie<n>Kijk door je aflegstapel. Je mag een Koper uit deze stapel tonen en in je hand nemen.<br><left><u>Levendig dorp:</u><n>+1 Kaart<br>+3 Acties<n>Kijk door je aflegstapel. Je mag een Kolonisten uit deze stapel tonen en in je hand nemen.",
+        "description": "<left><u>Kolonisten:</u><n>+1 Kaart<br>+1 Actie<n>Kijk door je aflegstapel. Je mag een Koper uit deze stapel tonen en in je hand nemen.<br><left><u>Levendig dorp:</u><n>+1 Kaart<br>+3 Acties<n>Kijk door je aflegstapel. Je mag een Kolonisten uit deze stapel tonen en in je hand nemen.", 
         "extra": "<left><u>Kolonisten:</u></left> Je mag door je aflegstapel kijken, ook al weet je dat er geen Koper in zit.<n><u>Levendig dorp:</u> Je mag ook door je aflegstapel kijken als je weet dat er geen kaart \"Kolonisten\" in zit.", 
         "name": "Kolonisten / Levendig dorp"
     },
     "Catapult - Rocks": {
-        "description": "<left><u>Katapult</u>:<n>+1 Coin<n>Vernietig een kaart uit je hand is deze 3 Coins of meer waard, dan pakt iedere andere speler een Vloek, Is het een geldkaart, dan legt iedere speler zoveel kaarten af dat hij 3 handkaarten overhoudt.<n><left><u>Rotsblokken:</u><n>+1 Coin<line>Als je deze kaart pakt of vernietigt, pak een Zilver. Is het je aanschaffase, leg het Zilver dan op je trekstapel. Zo niet, neem het Zilver dan in je hand.",
-        "extra": "<left><u>Kaptapult:</u><n>Als de kaart die je vernietigd een geldkaart is, legt iedere andere speler handkaarten af totdat hij er nog 3 heeft. Is de kaart die vernietigt 3 Coins of meer waard, dan krijgt iedere andere speler een Vloek. Heeft de vernietigde kaart beide eigenschappen (bijvoorbeeld Zilver), dan gebeuren beide zaken. Heeft de kaart geen van beide eigenschappen, dan gebeurt er niets. Heb je geen kaarten in je hand om te vernietigen, dan gebeurt er niets.\n<u>Rotsblokken:</u><n> Is het de beurt van een andere speler, dan is het niet jouw aanschaffase, dus gaat het Zilver naar je hand.",
+        "description": "<left><u>Katapult</u>:<n>+1 Coin<n>Vernietig een kaart uit je hand is deze 3 Coins of meer waard, dan pakt iedere andere speler een Vloek, Is het een geldkaart, dan legt iedere speler zoveel kaarten af dat hij 3 handkaarten overhoudt.<n><left><u>Rotsblokken:</u><n>+1 Coin<line>Als je deze kaart pakt of vernietigt, pak een Zilver. Is het je aanschaffase, leg het Zilver dan op je trekstapel. Zo niet, neem het Zilver dan in je hand.", 
+        "extra": "<left><u>Kaptapult:</u><n>Als de kaart die je vernietigd een geldkaart is, legt iedere andere speler handkaarten af totdat hij er nog 3 heeft. Is de kaart die vernietigt 3 Coins of meer waard, dan krijgt iedere andere speler een Vloek. Heeft de vernietigde kaart beide eigenschappen (bijvoorbeeld Zilver), dan gebeuren beide zaken. Heeft de kaart geen van beide eigenschappen, dan gebeurt er niets. Heb je geen kaarten in je hand om te vernietigen, dan gebeurt er niets.\n<u>Rotsblokken:</u><n> Is het de beurt van een andere speler, dan is het niet jouw aanschaffase, dus gaat het Zilver naar je hand.", 
         "name": "Katapult / Rotsblokken"
     },
     "Patrician - Emporium": {
@@ -2441,8 +2439,8 @@
         "name": "Kampement / Plunderen"
     },
     "Gladiator - Fortune": {
-        "description": "<left><u>Gladiator:</u><n>+2 Coins\n Toon een kaart uit je hand. Je linkerbuurman mag een zelfde exemplaar uit zijn hand tonen. Doet hij dat niet dan +2 Coins en vernietig een Gladiator uit de voorraad.<n><left><u>Fortuin:</u><n>+1 Aanschaf<n>Verdubbel bij het spelen van deze kaart je _ Coins als je dat deze beurt nog niet hebt gedaan.<line>Als je deze kaart pakt, pak een Goud per Gladiator die je in het spel hebt.",
-        "extra": "<left><u>Gladiator:</u><n>Zijn er geen Gladiators in voorraad, dan kun je geen Gladiators meer vernietigen, maar je krijgt nog wel de +1 Coin. Heb je geen kaarten in je hand, dan kan je de linkerbuurman geen exemplaar tonen van de kaart die jij toonde, dus je krijgt de +1 Coin en vernietigt een Gladiator.<left><u>Fortuin:</u></left><n> Je verdubbelt je _ Coin alleen bij de eerste keer dat je Fortuin in je beurt speelt, bij elk volgende krijg je uitsluitend +1 Aanschaf.",
+        "description": "<left><u>Gladiator:</u><n>+2 Coins\n Toon een kaart uit je hand. Je linkerbuurman mag een zelfde exemplaar uit zijn hand tonen. Doet hij dat niet dan +2 Coins en vernietig een Gladiator uit de voorraad.<n><left><u>Fortuin:</u><n>+1 Aanschaf<n>Verdubbel bij het spelen van deze kaart je _ Coins als je dat deze beurt nog niet hebt gedaan.<line>Als je deze kaart pakt, pak een Goud per Gladiator die je in het spel hebt.", 
+        "extra": "<left><u>Gladiator:</u><n>Zijn er geen Gladiators in voorraad, dan kun je geen Gladiators meer vernietigen, maar je krijgt nog wel de +1 Coin. Heb je geen kaarten in je hand, dan kan je de linkerbuurman geen exemplaar tonen van de kaart die jij toonde, dus je krijgt de +1 Coin en vernietigt een Gladiator.<left><u>Fortuin:</u></left><n> Je verdubbelt je _ Coin alleen bij de eerste keer dat je Fortuin in je beurt speelt, bij elk volgende krijg je uitsluitend +1 Aanschaf.", 
         "name": "Gladiator / Fortuin"
     },
     "nocturne hexes": {
@@ -2530,13 +2528,13 @@
         "untranslated": "description, extra, name"
     },
     "events": {
-        "description": "<justify>Gebeurteniskaarten zijn geen koninkrijkkaarten. Een speler mag in zijn aanschaffase in plaats van een kaart een gebeurtenis kopen. Hij betaalt dan de op de gebeurteniskaart aangegeven kosten en voert de bijbehorende functie uit. De gebeurtenis blijft op tafel liggen (deze kan zich nooit in een stapel, op een tableau of in de hand van een speler bevinden). Met het kopen van een gebeurtenis verbruikt de speler 1 aanschaf. Heeft een speler meer aancshaffen in zijn beurt, dan mag hij deze naar believen (en in een volgorde naar keuze) verdelen over het kopen van kaarten en gebeurtenissen.",
-        "extra": "Het is toegestaan om dezelfde gebeurtenis meermaals per beurt te kopen (mits de speler voldoende aanschaffen en Coins heeft). Sommige gebeurtenissen geven extra aanschaffen, waardoor de speler daarna meer kaarten/gebeurtenissen zou kunnen kopen. Een speler mag na het kopen van een gebeurtenis deze beurt geen geldkaarten meer spelen. Het kopen van een gebeurtenis geldt niet als het kopen van een kaart en activeert daarom niet kaarten zoals Heks uit het moeras en Domkoppen (uit Dominion Welvaart). De kosten van het kopen van een gebeurtenis worden niet beïnvloed door kaarten zoals Brugtrol.",
+        "description": "<justify>Gebeurteniskaarten zijn geen koninkrijkkaarten. Een speler mag in zijn aanschaffase in plaats van een kaart een gebeurtenis kopen. Hij betaalt dan de op de gebeurteniskaart aangegeven kosten en voert de bijbehorende functie uit. De gebeurtenis blijft op tafel liggen (deze kan zich nooit in een stapel, op een tableau of in de hand van een speler bevinden). Met het kopen van een gebeurtenis verbruikt de speler 1 aanschaf. Heeft een speler meer aancshaffen in zijn beurt, dan mag hij deze naar believen (en in een volgorde naar keuze) verdelen over het kopen van kaarten en gebeurtenissen.", 
+        "extra": "Het is toegestaan om dezelfde gebeurtenis meermaals per beurt te kopen (mits de speler voldoende aanschaffen en Coins heeft). Sommige gebeurtenissen geven extra aanschaffen, waardoor de speler daarna meer kaarten/gebeurtenissen zou kunnen kopen. Een speler mag na het kopen van een gebeurtenis deze beurt geen geldkaarten meer spelen. Het kopen van een gebeurtenis geldt niet als het kopen van een kaart en activeert daarom niet kaarten zoals Heks uit het moeras en Domkoppen (uit Dominion Welvaart). De kosten van het kopen van een gebeurtenis worden niet beïnvloed door kaarten zoals Brugtrol.", 
         "name": "Gebeurtenissen"
     },
     "landmarks": {
-        "description": "<justify>Bezienswaardigheden zijn geen Koningkrijkskaarten. Bezienswaardigheden bieden nieuwe manieren om punten te scoren. De spelers kiezen zelf hoe ze bepalen met welke bezienswaardigheden ze spelen. Ze kunnen de bezienswaardigheden door de gebeurtenissen schudden en er vóór een spel 2 trekken. Ze kunnen er ook voor kiezen om de bezienswaardigheden (en gebeurtenissen) door de locatiekaarten te schudden en er dan 0-2 te gebruiken, afhankelijk van het aantal dat verschijnt voordat er 10 koninkrijkkaarten zijn getrokken. Of ze gberuiken een andere methode. De te gebruiken bezienswaardigheden zijn vanaf de start van het spel voor alle spelers zichtbaar. We raden aan om er niet meer dan 2 per spel te gebruiken.<n><n>Veel bezienswaardigheden hebben uitsluitend bij de puntentelling aan het einde van het spel een functie. Op basis van de aanwijzingen op de bezienswaardigheid krijgen de spelers dan bonus- of minpunten.<n><n>Sommige bezienswardigheden starten met 6 <VP>-fiches per speler. Dus, 12 <VP>-fiches in het spel met 2 spelers tot 36 <VP>-fiches bij 6 spelers. Deze bezienswaardigheden bieden een manier om aan <VP>-fiches te komen. Liggen er geen <VP>-fiches meer op een bezienswaardigheid, dan kunnen de spelers deze daar niet meer verdienen.",
-        "extra": "Bezienswaardigheden zijn geen Koningkrijkskaarten. Bezienswaardigheden bieden nieuwe manieren om punten te scoren. De spelers kiezen zelf hoe ze bepalen met welke bezienswaardigheden ze spelen. Ze kunnen de bezienswaardigheden door de gebeurtenissen schudden en er vóór een spel 2 trekken. Ze kunnen er ook voor kiezen om de bezienswaardigheden (en gebeurtenissen) door de locatiekaarten te schudden en er dan 0-2 te gebruiken, afhankelijk van het aantal dat verschijnt voordat er 10 koninkrijkkaarten zijn getrokken. Of ze gberuiken een andere methode. De te gebruiken bezienswaardigheden zijn vanaf de start van het spel voor alle spelers zichtbaar. We raden aan om er niet meer dan 2 per spel te gebruiken.<n><n>Veel bezienswaardigheden hebben uitsluitend bij de puntentelling aan het einde van het spel een functie. Op basis van de aanwijzingen op de bezienswaardigheid krijgen de spelers dan bonus- of minpunten.<n><n>Sommige bezienswardigheden starten met 6 <VP>-fiches per speler. Dus, 12 <VP>-fiches in het spel met 2 spelers tot 36 <VP>-fiches bij 6 spelers. Deze bezienswaardigheden bieden een manier om aan <VP>-fiches te komen. Liggen er geen <VP>-fiches meer op een bezienswaardigheid, dan kunnen de spelers deze daar niet meer verdienen.",
+        "description": "<justify>Bezienswaardigheden zijn geen Koningkrijkskaarten. Bezienswaardigheden bieden nieuwe manieren om punten te scoren. De spelers kiezen zelf hoe ze bepalen met welke bezienswaardigheden ze spelen. Ze kunnen de bezienswaardigheden door de gebeurtenissen schudden en er vóór een spel 2 trekken. Ze kunnen er ook voor kiezen om de bezienswaardigheden (en gebeurtenissen) door de locatiekaarten te schudden en er dan 0-2 te gebruiken, afhankelijk van het aantal dat verschijnt voordat er 10 koninkrijkkaarten zijn getrokken. Of ze gberuiken een andere methode. De te gebruiken bezienswaardigheden zijn vanaf de start van het spel voor alle spelers zichtbaar. We raden aan om er niet meer dan 2 per spel te gebruiken.<n><n>Veel bezienswaardigheden hebben uitsluitend bij de puntentelling aan het einde van het spel een functie. Op basis van de aanwijzingen op de bezienswaardigheid krijgen de spelers dan bonus- of minpunten.<n><n>Sommige bezienswardigheden starten met 6 <VP>-fiches per speler. Dus, 12 <VP>-fiches in het spel met 2 spelers tot 36 <VP>-fiches bij 6 spelers. Deze bezienswaardigheden bieden een manier om aan <VP>-fiches te komen. Liggen er geen <VP>-fiches meer op een bezienswaardigheid, dan kunnen de spelers deze daar niet meer verdienen.", 
+        "extra": "Bezienswaardigheden zijn geen Koningkrijkskaarten. Bezienswaardigheden bieden nieuwe manieren om punten te scoren. De spelers kiezen zelf hoe ze bepalen met welke bezienswaardigheden ze spelen. Ze kunnen de bezienswaardigheden door de gebeurtenissen schudden en er vóór een spel 2 trekken. Ze kunnen er ook voor kiezen om de bezienswaardigheden (en gebeurtenissen) door de locatiekaarten te schudden en er dan 0-2 te gebruiken, afhankelijk van het aantal dat verschijnt voordat er 10 koninkrijkkaarten zijn getrokken. Of ze gberuiken een andere methode. De te gebruiken bezienswaardigheden zijn vanaf de start van het spel voor alle spelers zichtbaar. We raden aan om er niet meer dan 2 per spel te gebruiken.<n><n>Veel bezienswaardigheden hebben uitsluitend bij de puntentelling aan het einde van het spel een functie. Op basis van de aanwijzingen op de bezienswaardigheid krijgen de spelers dan bonus- of minpunten.<n><n>Sommige bezienswardigheden starten met 6 <VP>-fiches per speler. Dus, 12 <VP>-fiches in het spel met 2 spelers tot 36 <VP>-fiches bij 6 spelers. Deze bezienswaardigheden bieden een manier om aan <VP>-fiches te komen. Liggen er geen <VP>-fiches meer op een bezienswaardigheid, dan kunnen de spelers deze daar niet meer verdienen.", 
         "name": "Bezienswaardigheden"
     },
     "Possession 2/2": {
@@ -2546,33 +2544,33 @@
         "untranslated": "Note: This card is currently not used."
     },
     "Ruined Market": {
+        "description": "+1 Aanschaf", 
+        "extra": "Bij het spelen van deze kaart krijg je +1 Aanschaf. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.", 
         "name": "Verwoeste Markt", 
-		"description": "+1 Aanschaf",
-		"extra": "Bij het spelen van deze kaart krijg je +1 Aanschaf. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
         "untranslated": "Note: This card is currently not used."
     },
     "Ruined Village": {
+        "description": "+1 Actie", 
+        "extra": "Bij het spelen van deze kaart krijg je +1 Actie. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.", 
         "name": "Vernield Dorp", 
-		"description": "+1 Actie",
-		"extra": "Bij het spelen van deze kaart krijg je +1 Actie. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
         "untranslated": "Note: This card is currently not used."
     },
     "Ruined Library": {
+        "description": "+1 Kaart", 
+        "extra": "Bij het spelen van deze kaart trek je een kaart. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.", 
         "name": "Ingestorte Bibliotheek", 
-		"description": "+1 Kaart",
-		"extra": "Bij het spelen van deze kaart trek je een kaart. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
         "untranslated": "Note: This card is currently not used."
     },
     "Survivors": {
+        "description": "Bekijk de 2 bovenste kaarten van je trekstapel. Leg deze af of leg ze terug in een volgorde naar keuze.", 
+        "extra": "Leg beide kaarten uit je hand af als je wilt en trek er daarna evenveel van je trekstapel. Leg vervolgens zoveel kaarten af als je wilt (dat mogen ook zojuist getrokken kaarten zijn) en ontvang +1 Coin per (bij de tweede keer) afgelegde kaart.", 
         "name": "Overlevenden", 
-		"description": "Bekijk de 2 bovenste kaarten van je trekstapel. Leg deze af of leg ze terug in een volgorde naar keuze.",
-		"extra": "Leg beide kaarten uit je hand af als je wilt en trek er daarna evenveel van je trekstapel. Leg vervolgens zoveel kaarten af als je wilt (dat mogen ook zojuist getrokken kaarten zijn) en ontvang +1 Coin per (bij de tweede keer) afgelegde kaart.",
         "untranslated": "Note: This card is currently not used."
     },
     "Abandoned Mine": {
+        "description": "+1 Coin", 
+        "extra": "Bij het spelen van deze kaart krijg je alleen +1 Coin. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.", 
         "name": "Verlaten Mijn", 
-		"description": "+1 Coin",
-		"extra": "Bij het spelen van deze kaart krijg je alleen +1 Coin. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
         "untranslated": "Note: This card is currently not used."
     }
 }
