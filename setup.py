@@ -13,6 +13,7 @@ setup(
     packages=find_packages(exclude=['tests']),
     install_requires=["reportlab>=3.4.0",
                       "Pillow>=4.1.0"],
+    tests_require=["pytest", "pycodestyle"],
     url='http://domtabs.sandflea.org',
     include_package_data=True,
     author="Peter Gorniak",

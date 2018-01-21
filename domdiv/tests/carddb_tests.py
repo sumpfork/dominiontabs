@@ -2,6 +2,7 @@ from __future__ import print_function
 import subprocess
 import shutil
 import os
+import contextlib
 
 import pytest
 
@@ -74,12 +75,22 @@ def test_languages():
             assert "Fluch" in [card.name for card in cards]
 
 
+@contextlib.contextmanager
+def change_cwd(d):
+    curdir = os.getcwd()
+    try:
+        os.chdir(d)
+        yield
+    finally:
+        os.chdir(curdir)
+
+
 def test_languagetool_run(pytestconfig):
-    cmd = 'cd {} ; python tools/update_language.py'.format(pytestconfig.rootdir)
-    print(cmd)
-    assert subprocess.check_call(cmd.split()) == 0
-    cmd = 'cd {} ; diff -r domdiv/card_db tols/card_db'.format(pytestconfig.rootdir)
-    print(subprocess.check_output(['ls', os.path.join(str(pytestconfig.rootdir), 'tools/card_db')]))
-    out = subprocess.check_output(cmd.split(), stderr=subprocess.STDOUT)
-    print(out)
-    assert out == ''
+    with change_cwd(str(pytestconfig.rootdir)):
+        cmd = 'python tools/update_language.py'
+        print(cmd)
+        assert subprocess.check_call(cmd.split()) == 0
+        cmd = 'diff -rw domdiv/card_db tools/card_db'
+        out = subprocess.check_output(cmd.split(), stderr=subprocess.STDOUT)
+        print(out)
+        assert out == ''
