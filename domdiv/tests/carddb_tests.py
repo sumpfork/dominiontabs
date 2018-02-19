@@ -90,7 +90,9 @@ def test_languagetool_run(pytestconfig):
         cmd = 'python tools/update_language.py'
         print(cmd)
         assert subprocess.check_call(cmd.split()) == 0
-        cmd = 'diff -rw domdiv/card_db tools/card_db'
-        out = subprocess.check_output(cmd.split(), stderr=subprocess.STDOUT)
-        print(out)
+        cmd = 'diff -rwB domdiv/card_db tools/card_db'
+        try:
+            out = subprocess.check_output(cmd.split(), stderr=subprocess.STDOUT)
+        except subprocess.CalledProcessError as e:
+            assert e.output == ''
         assert out == ''
