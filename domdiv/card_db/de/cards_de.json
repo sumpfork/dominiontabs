@@ -908,43 +908,43 @@
         "description": "Nimm eine Karte vom Vorrat auf die Hand, die bis zu 5 kostet.<n>Lege eine Handkarte auf deinen Nachziehstapel.", 
         "extra": "Nimm eine Karte vom Vorrat, die zu diesem Zeitpunkt maximal 5 kostet.<n>Du darfst kein zusätzliches _ Coin&nbsp; einsetzen, um dir eine teurere Karte zu nehmen.<n>Außer _ Coin&nbsp; darf die Karte keine zusätzlichen Kosten enthalten.<n>Du darfst dir zum Beispiel keine Karte mit Trank (aus Alchemie) oder Schulden (aus Empires) in den Kosten nehmen.<n>Die genommene Karte nimmst du direkt auf die Hand.<n>Anschließend legst du eine beliebige Handkarte (das kann die gerade genommene oder eine andere sein) oben auf deinen Nachziehstapel.", 
         "name": "Töpferei", 
-        "untranslated": "description, extra, name"
+        
     },
     "Bandit": {
         "description": "Nimm ein Gold vom Vorrat.<n>Jeder Mitspieler deckt die obersten 2 Karten seines Nachziehstapels auf, entsorgt eine aufgedeckte Geldkarte nach seiner Wahl – außer Kupfer – und legt den Rest ab.", 
         "extra": "Zuerst nimmst du ein Gold vom Vorrat und legst es auf deinen Ablagestapel.<n>Dann deckt jeder Mitspieler – beginnend bei deinem linken Mitspieler – die obersten zwei Karten seines Nachziehstapels auf.<n>Deckt ein Spieler zwei Geldkarten (auch ggf. kombinierte) außer Kupfer auf, muss er eine davon entsorgen.<n>Dabei darf er selbst entscheiden, welche Geldkarte er entsorgt.<n>Die andere Geldkarte wird – genauso wie alle anderen Karten – abgelegt.<n>Deckt ein Spieler eine Geldkarte außer Kupfer sowie eine andere Karte (z.B. ein Kupfer oder eine beliebige Aktionskarte) auf, wird diese Geldkarte entsorgt.<n>Die andere aufgedeckte Karte wird abgelegt.", 
         "name": "Banditin", 
-        "untranslated": "description, extra, name"
+        
     },
     "Harbinger": {
         "description": "+1 Karte<br>+1 Aktion<n>Sieh deinen Ablagestapel durch.<n>Du darfst eine Karte daraus auf deinen Nachziehstapel legen.", 
         "extra": "Du ziehst 1 Karte und erhälst +1 Aktion.<n> Schau dir deinen Ablagestapel an.<n>Du darfst eine Karte daraus auswählen und oben auf deinen Nachziehstapel legen. Die restlichen Karten (oder alle) legst du in beliebiger Reihenfolge zurück auf den Ablagestapel.<n>Ist dein Ablagestapel leer, passiert nichts.", 
         "name": "Vorbotin", 
-        "untranslated": "description, extra, name"
+        
     },
     "Merchant": {
         "description": "+1 Karte<br>+1 Aktion<n>Spielst du in diesem Zug das erste Mal ein Silber aus: +1 Geld", 
         "extra": "Du ziehst 1 Karte und erhälst +1 Aktion.<n>Wenn du in diesem Zug vor dem Ausspielen dieser Händlerin noch kein Silber ausgespielt hast, erhälst du für das erste danach ausgespielte Silber +1 Geld.<n>Für jedes weitere ausgespielte Silber erhälst du keinen zusätzlichen Bonus.<n>Hast du mehrere Händlerinnen ausgespielt, erhälst du pro Händlerin +1 Geld.", 
         "name": "Händlerin", 
-        "untranslated": "description, extra, name"
+        
     },
     "Poacher": {
         "description": "+1 Karte<br>+1 Aktion<br>+1 Geld<n>Lege pro leerem Vorratsstapel eine Handkarte ab.", 
         "extra": "Du ziehst 1 Karte, erhältst + 1 Aktion und + 1 Geld.<n>Dann schaust du, wie viele Vorratsstapel (Fluch-, Geld-, Punkte- und Aktionskarten, ggf. Ruinenkarten etc.) bereits leer sind.<n>Ist kein Stapel leer, musst du keine Handkarten ablegen.<n>Ist ein Stapel leer, legst du 1 Handkarte ab usw.<n>Wenn du nicht so viele Karten auf der Hand hast, wie Vorratsstapel leer sind, legst du so viele Karten ab, wie du kannst.", 
         "name": "Wilddiebin", 
-        "untranslated": "description, extra, name"
+        
     },
     "Sentry": {
         "description": "+1 Karte<br>+1 Aktion<n>Sieh dir die obersten 2 Karten deines Nachziehstapels an.<n>Entsorge und/oder lege beliebig viele davon ab.<n>Lege die übrigen Karten in beliebiger Reihenfolge auf deinen Nachziehstapel zurück.", 
         "extra": "Du ziehst 1 Karte und erhältst +1 Aktion.<n>Dann siehst du dir die obersten 2 Karten deines Nachziehstapels an.<n>Du kannst beide Karten entsorgen, beide Karten ablegen oder sie in beliebiger Reihenfolge zurück auf den Nachziehstapel legen.<n>Du kannst aber auch eine entsorgen und eine ablegen, oder eine entsorgen und die andere zurück auf den Nachziehstapel legen, oder eine ablegen und die andere zurücklegen.", 
         "name": "Torwächterin", 
-        "untranslated": "description, extra, name"
+        
     },
     "Vassal": {
         "description": "+2 Geld<n>Lege die oberste Karte deines Nachziehstapels ab.<n>Ist es eine Aktionskarte, darfst du sie ausspielen.", 
         "extra": "Ist die aufgedeckte Karte eine Aktionskarte (auch ggf. kombinierte), darfst du sie sofort ausspielen.<n>Wenn du sie ausspielst, legst du sie in deinen Spielbereich und führst sofort die Anweisungen darauf aus.<n>Dafür benötigst du keine zusätzliche Aktion.<n>Das Ausspielen der Aktionskarte verbraucht auch keine freie oder zusätzliche Aktion, die du durch das Ausspielen anderer Karten bereits gesammelt hast.", 
         "name": "Vasall", 
-        "untranslated": "description, extra, name"
+        
     },
     "Advance": {
         "description": "You may trash an Action card from your hand. If you do, gain an Action card costing up to 6 Coins.", 
@@ -1672,43 +1672,43 @@
         "description": "Decke eine Handkarte auf.<n>Für jeden Kartentyp (Aktion, Angriff ...), den sie hat, wähle eine andere Option:<br>+1 Aktion<br>+1 Kauf<br>+3 Geld oder<br>nimm ein Gold vom Vorrat.", 
         "extra": "Decke eine Karte aus deiner Hand auf.<n>Zähle dann die Typen, denen diese Karte angehört – also AKTION, GELD, REAKTION, ANGRIFF, PUNKTE, FLUCH etc.<n>Pro Typ, dem die Karte angehört, entscheidest du dich für eine der vier angegebenen Optionen. Dabei darfst du keine der Optionen doppelt auswählen.<n>Wenn du zum Beispiel eine PATROUILLE (AKTION) aufdeckst, darfst du eine Option auswählen, deckst du einen KARAWANENWÄCHTER aus Abenteuer (AKTION – DAUER – REAKTION) auf, darfst du 3 unterschiedliche Optionen wählen.<n>Entscheidest du dich für das Gold, legst du dieses auf den Ablagestapel.<n>Kannst du keine Handkarte aufdecken, erhältst du nichts.", 
         "name": "Höflinge", 
-        "untranslated": "description, extra, name"
+        
     },
     "Diplomat": {
         "description": "+2 Karten<br>Hast du nach dem Ziehen 5 oder weniger Handkarten: +2 Aktionen.<line>Wenn ein Mitspieler eine Angriffskarte ausspielt und du mindestens 5 Handkarten hast, darfst du diese Karte aus deiner Hand aufdecken.<n>Wenn du das tust: Ziehe 2 Karten und lege dann 3 Karten ab.", 
         "extra": " Diese Karte ist eine Aktions- und Reaktionskarte.<n>Wird sie als Aktion in der Aktionsphase ausgespielt, nimmst du 2 Karten.<n>Hast du dann 5 oder weniger Karten auf der Hand, erhältst du außerdem + 2 Aktionen.<n>Spielt ein Mitspieler eine Angriffskarte aus und du hast zu diesem Zeitpunkt 5 oder mehr Karten auf der Hand, darfst du diese Karte – bevor der ausgespielte Angriff ausgeführt wird – aus der Hand aufdecken.<n>Wenn du das tust, nimmst du diese DIPLOMATIN wieder auf die Hand, ziehst 2 Karten und legst dann 3 Karten (auch möglich inklusive dieser DIPLOMATIN) ab.<n>Hast du dann immer noch 5 oder mehr Karten sowie eine DIPLOMATIN auf der Hand, darfst du die DIPLOMATIN noch einmal aufdecken – und dies so oft wiederholen wie du möchtest und die Bedingung der 5 oder mehr Karten auf der Hand erfüllt ist.<n>Erst dann wird der Angriff ausgeführt.<n>Hast du mehrere Reaktionskarten auf der Hand, mit denen du auf das Ausspielen einer Angriffskarte reagieren kannst, darfst du diese nacheinander in beliebiger Reihenfolge aufdecken.", 
         "name": "Diplomatin", 
-        "untranslated": "description, extra, name"
+        
     },
     "Lurker": {
         "description": "+1 Aktion<br>Wähle eins:<n>Entsorge eine Aktionskarte vom Vorrat<n>oder<n>nimm eine Aktionskarte vom Müll.", 
         "extra": "Die Karte, die du entsorgst oder vom Müllstapel nimmst, muss den Typ AKTION beinhalten, d.h. sie kann auch eine kombinierte Aktionskarte (z.B. Mühle) sein.<n>Genommene Karten werden auf den Ablagestapel gelegt - es sei denn, auf der Karte steht etwas anderes.<n>Wird eine Karte entsorgt, die einen speziellen Effekt beim Entsorgen hat, tritt dieser ein.", 
         "name": "Herumtreiberin", 
-        "untranslated": "description, extra, name"
+        
     },
     "Mill": {
         "description": "+1 Karte<br>+1 Aktion<br>Du darfst 2 Handkarten ablegen.<n>Wenn du das tust: +2 Geld.<line>1 <*VP*>", 
         "extra": " Diese Karte ist eine kombinierte Aktions- und Punktekarte.<n>Als Punktekarte bringt sie beim Zählen der Punkte 1 .<n>Spielst du die MÜHLE als Aktionskarte aus, ziehst du 1 Karte und erhältst + 1 Aktion.<n>Du darfst 2 Karten aus deiner Hand ablegen. Wenn du das tust, erhältst du + 2 Geld. Tust du das nicht (weil du zum Beispiel nicht genügend Karten auf der Hand hast), erhältst du nichts.<n>Nur, wenn du nicht mehr als eine Karte auf der Hand hast, darfst du genau eine Karte ablegen, erhältst dafür aber kein Geld.", 
         "name": "Mühle", 
-        "untranslated": "description, extra, name"
+        
     },
     "Patrol": {
         "description": "+3 Karten<n>Decke die obersten 4 Karten deines Nachziehstapels auf.<n>Nimm alle aufgedeckten Punkte- und Fluchkarten auf die Hand.<n>Lege die übrigen Karten in beliebiger Reihenfolge auf deinen Nachziehstapel zurück.", 
         "extra": "Ziehe zuerst 3 Karten.<n>Decke dann die obersten 4 Karten deines Nachziehstapels auf.<n>So aufgedeckte Punktekarten (auch ggf. kombinierte) und Flüche nimmst du alle auf die Hand.<n>Die restlichen Karten legst du in beliebiger Reihenfolge zurück auf den Nachziehstapel.", 
         "name": "Patrouille", 
-        "untranslated": "description, extra, name"
+        
     },
     "Replace": {
         "description": "Entsorge eine Handkarte.<n>Nimm eine Karte vom Vorrat, die bis zu 2 Geld mehr kostet als die entsorgte Karte.<n>Ist die genommene Karte eine Aktions- oder Geldkarte, lege sie auf deinen Nachziehstapel.<n>Ist es eine Punktekarte, nimmt jeder Mitspieler einen Fluch vom Vorrat.", 
         "extra": "Entsorge zuerst eine Karte aus deiner Hand.<n>Dann nimmst du dir eine Karte vom Vorrat, die maximal 2 Geld mehr kostet als die entsorgte Karte.<n>Eine Karte kostet nur dann maximal 2 Geld mehr, wenn die restlichen Kosten (z.B. Schulden aus Empires oder Trank aus Alchemie) gleich oder niedriger sind.<n>Wenn die genommene Karte eine Aktions- und/oder Geldkarte ist, legst du die Karte oben auf deinen Nachziehstapel.<n>Ansonsten legst du die Karte auf den Ablagestapel.<n>Ist die genommene Karte eine Punktekarte, nimmt sich jeder Mitspieler – beginnend bei deinem linken Mitspieler – einen Fluch.<n>Ist die genommene Karte eine Punktekarte sowie eine Aktions- oder Geldkarte (z.B. MÜHLE), legst du die Karte oben auf deinen Nachziehstapel und jeder Mitspieler muss sich einen Fluch nehmen.", 
         "name": "Austausch", 
-        "untranslated": "description, extra, name"
+        
     },
     "Secret Passage": {
         "description": "+2 Karten<br>+1 Aktion<n>Lege eine Handkarte an eine beliebige Stelle in deinen Nachziehstapel.", 
         "extra": "Du ziehst 2 Karten und erhältst +1 Aktion.<n>Dann nimmst du eine beliebige Karte aus deiner Hand (auch ggf. eine, die du gerade gezogen hast) und legst sie an eine beliebige Stelle in deinen Nachziehstapel.<n>Du darfst sie oben drauf, unten drunter oder irgendwo in die Mitte legen.<n>Du darfst dabei die Karten deines Nachziehstapels zählen, aber nicht ansehen.<n>Befinden sich keine Karten in deinem Nachziehstapel, wird die zurückgelegte Karte zur einzigen Karte in deinem Nachziehstapel.", 
         "name": "Geheimgang", 
-        "untranslated": "description, extra, name"
+        
     },
     "Bad Omens": {
         "description": "Put your deck into your discard pile. Look through it and put 2 Coppers from it onto your deck (or reveal you can't.)", 
