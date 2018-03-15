@@ -980,7 +980,8 @@ def filter_sort_cards(cards, options):
                 randomizersByExpansion[c.cardset] = randomizersByExpansion.setdefault(c.cardset, 0) + 1
             else:
                 randomizersByExpansion[c.cardset] = randomizersByExpansion.setdefault(c.cardset, 0)
-            cardnamesByExpansion.setdefault(c.cardset, []).append({'name':c.name.strip().replace(' ', '&nbsp;'), 'randomizer':c.randomizer})
+            cardnamesByExpansion.setdefault(c.cardset, []).append({'name': c.name.strip().replace(' ', '&nbsp;'), 
+                                                                   'randomizer': c.randomizer})
 
         for set_tag, set_values in Card.sets.iteritems():
             exp = set_values["set_name"]
@@ -1001,7 +1002,7 @@ def filter_sort_cards(cards, options):
                     if not n['randomizer']:
                         n['name'] = '<i>' + n['name'] + '</i>'
                     card_names.append(n['name'])
-                    
+
                 c = Card(name=exp_name,
                          cardset=exp,
                          cardset_tag=set_tag,
