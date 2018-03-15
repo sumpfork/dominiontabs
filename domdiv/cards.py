@@ -60,7 +60,8 @@ class Card(object):
         if self.randomizer:
             # Remove classes of cards that never have Randomizers
             # Card types
-            if any(self.isType(t) for t in ["Event", "Landmark", "Shelter", "Ruins", "Prize",
+            if any(self.isType(t) for t in [
+                    "Event", "Landmark", "Shelter", "Ruins", "Prize",
                     "Spirit", "Zombie", "Heirloom", "Hex", "Boon", "State"]):
                 self.randomizer = False
             # Base cards
