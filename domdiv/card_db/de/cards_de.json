@@ -905,46 +905,46 @@
         "name": "Werkstatt"
     },
     "Artisan": {
-        "description": "Gain a card to your hand costing up to 5 Coins.<n>Put a card from your hand onto your deck.", 
-        "extra": "The card you gain comes from the Supply and is put into your hand.<n>You cannot use _ Coin&nbsp;to increase how expensive of a card you gain; it always costs from 0 Coins to 5 Coins.<n>After gaining the card, you put a card from your hand onto your deck; that can be the card you just gained, or a different card.", 
-        "name": "Artisan", 
-        "untranslated": "description, extra, name"
+        "description": "Nimm eine Karte vom Vorrat auf die Hand, die bis zu 5 kostet.<n>Lege eine Handkarte auf deinen Nachziehstapel.", 
+        "extra": "Nimm eine Karte vom Vorrat, die zu diesem Zeitpunkt maximal 5 kostet.<n>Du darfst kein zusätzliches _ Coin&nbsp; einsetzen, um dir eine teurere Karte zu nehmen.<n>Außer _ Coin&nbsp; darf die Karte keine zusätzlichen Kosten enthalten.<n>Du darfst dir zum Beispiel keine Karte mit Trank (aus Alchemie) oder Schulden (aus Empires) in den Kosten nehmen.<n>Die genommene Karte nimmst du direkt auf die Hand.<n>Anschließend legst du eine beliebige Handkarte (das kann die gerade genommene oder eine andere sein) oben auf deinen Nachziehstapel.", 
+        "name": "Töpferei" 
+        
     },
     "Bandit": {
-        "description": "Gain a Gold. Each other player reveals the top 2 cards of their deck, trashes a revealed Treasure other than Copper, and discards the rest.", 
-        "extra": "First you gain a Gold from the Supply, putting it into your discard pile.<n>Then each other player, in turn order, reveals their top 2 cards, trashes one they choose that is a Treasure other than Copper (e.g. Silver or Gold), and discards the other revealed cards.<n>A player who did not reveal a Treasure card other than Copper simply discards both cards.", 
-        "name": "Bandit", 
-        "untranslated": "description, extra, name"
+        "description": "Nimm ein Gold vom Vorrat.<n>Jeder Mitspieler deckt die obersten 2 Karten seines Nachziehstapels auf, entsorgt eine aufgedeckte Geldkarte nach seiner Wahl – außer Kupfer – und legt den Rest ab.", 
+        "extra": "Zuerst nimmst du ein Gold vom Vorrat und legst es auf deinen Ablagestapel.<n>Dann deckt jeder Mitspieler – beginnend bei deinem linken Mitspieler – die obersten zwei Karten seines Nachziehstapels auf.<n>Deckt ein Spieler zwei Geldkarten (auch ggf. kombinierte) außer Kupfer auf, muss er eine davon entsorgen.<n>Dabei darf er selbst entscheiden, welche Geldkarte er entsorgt.<n>Die andere Geldkarte wird – genauso wie alle anderen Karten – abgelegt.<n>Deckt ein Spieler eine Geldkarte außer Kupfer sowie eine andere Karte (z.B. ein Kupfer oder eine beliebige Aktionskarte) auf, wird diese Geldkarte entsorgt.<n>Die andere aufgedeckte Karte wird abgelegt.", 
+        "name": "Banditin" 
+        
     },
     "Harbinger": {
-        "description": "+1 Card<br>+1 Action<n>Look through your discard pile. You may put a card from it onto your deck.", 
-        "extra": "First draw a card and get +1 Action; then look through your discard pile, and you may put a card from it on top of your deck.<n>Putting a card on top is optional.", 
-        "name": "Harbinger", 
-        "untranslated": "description, extra, name"
+        "description": "+1 Karte<br>+1 Aktion<n>Sieh deinen Ablagestapel durch.<n>Du darfst eine Karte daraus auf deinen Nachziehstapel legen.", 
+        "extra": "Du ziehst 1 Karte und erhälst +1 Aktion.<n> Schau dir deinen Ablagestapel an.<n>Du darfst eine Karte daraus auswählen und oben auf deinen Nachziehstapel legen. Die restlichen Karten (oder alle) legst du in beliebiger Reihenfolge zurück auf den Ablagestapel.<n>Ist dein Ablagestapel leer, passiert nichts.", 
+        "name": "Vorbotin" 
+        
     },
     "Merchant": {
-        "description": "+1 Card<br>+1 Action<n>The first time you play a Silver this turn, +1 Coin.", 
-        "extra": "When you play Merchant, you draw a card and get +1 Action.<n>If you end up playing a Silver later in the turn, it comes with 1 Coin.<n>If you play more than one Merchant, each gives you 1 Coin when you play that first Silver; but if you play more than one Silver, you only get the 1 Coin for the first Silver.<n><n>If you manage to play a Merchant after playing a Silver, the Merchant gives you no bonus (for the previous Silver or for any Silvers you might play later in the turn).<n>Playing Throne Room on Merchant will give you 2 Coin when you play your first Silver.", 
-        "name": "Merchant", 
-        "untranslated": "description, extra, name"
+        "description": "+1 Karte<br>+1 Aktion<n>Spielst du in diesem Zug das erste Mal ein Silber aus: +1 Geld", 
+        "extra": "Du ziehst 1 Karte und erhälst +1 Aktion.<n>Wenn du in diesem Zug vor dem Ausspielen dieser Händlerin noch kein Silber ausgespielt hast, erhälst du für das erste danach ausgespielte Silber +1 Geld.<n>Für jedes weitere ausgespielte Silber erhälst du keinen zusätzlichen Bonus.<n>Hast du mehrere Händlerinnen ausgespielt, erhälst du pro Händlerin +1 Geld.", 
+        "name": "Händlerin" 
+        
     },
     "Poacher": {
-        "description": "+1 Card<br>+1 Action<br>+1 Coin<n>Discard a card per empty Supply pile.", 
-        "extra": "You draw your one card before discarding.<n>If there are no empty piles, you do not discard.<n>If there is one empty pile, you discard one card; if there are two empty piles, you discard two cards, and so on.<n>This includes all Supply piles, including Curses, Coppers, Poacher itself, etc.<n>If you do not have enough cards to discard, just discard the rest of your hand.<n><n>Non-Supply piles, such as Spoils, do not matter to Poacher.", 
-        "name": "Poacher", 
-        "untranslated": "description, extra, name"
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Geld<n>Lege pro leerem Vorratsstapel eine Handkarte ab.", 
+        "extra": "Du ziehst 1 Karte, erhältst + 1 Aktion und + 1 Geld.<n>Dann schaust du, wie viele Vorratsstapel (Fluch-, Geld-, Punkte- und Aktionskarten, ggf. Ruinenkarten etc.) bereits leer sind.<n>Ist kein Stapel leer, musst du keine Handkarten ablegen.<n>Ist ein Stapel leer, legst du 1 Handkarte ab usw.<n>Wenn du nicht so viele Karten auf der Hand hast, wie Vorratsstapel leer sind, legst du so viele Karten ab, wie du kannst.", 
+        "name": "Wilddiebin" 
+        
     },
     "Sentry": {
-        "description": "+1 Card<br>+1 Action<n>Look at the top 2 cards of your deck. Trash and/or discard any number of them.<n>Put the rest back on top in any order.", 
-        "extra": "First you draw a card and get +1 Action.<n>Then you look at the top 2 cards of your deck.<n>You can trash both, or discard both, or put both back in either order; or you can trash one and discard one, or trash one and put one back, or discard one and put one back.", 
-        "name": "Sentry", 
-        "untranslated": "description, extra, name"
+        "description": "+1 Karte<br>+1 Aktion<n>Sieh dir die obersten 2 Karten deines Nachziehstapels an.<n>Entsorge und/oder lege beliebig viele davon ab.<n>Lege die übrigen Karten in beliebiger Reihenfolge auf deinen Nachziehstapel zurück.", 
+        "extra": "Du ziehst 1 Karte und erhältst +1 Aktion.<n>Dann siehst du dir die obersten 2 Karten deines Nachziehstapels an.<n>Du kannst beide Karten entsorgen, beide Karten ablegen oder sie in beliebiger Reihenfolge zurück auf den Nachziehstapel legen.<n>Du kannst aber auch eine entsorgen und eine ablegen, oder eine entsorgen und die andere zurück auf den Nachziehstapel legen, oder eine ablegen und die andere zurücklegen.", 
+        "name": "Torwächterin" 
+        
     },
     "Vassal": {
-        "description": "+2 Coin<n>Discard the top card of your deck. If it's an Action card, you may play it", 
-        "extra": "If the card is an Action card, you can play it, but do not have to.<n>If you do play it, you move it into your play area and follow its instructions; this does not use up one of your Action plays for the turn.", 
-        "name": "Vassal", 
-        "untranslated": "description, extra, name"
+        "description": "+2 Geld<n>Lege die oberste Karte deines Nachziehstapels ab.<n>Ist es eine Aktionskarte, darfst du sie ausspielen.", 
+        "extra": "Ist die aufgedeckte Karte eine Aktionskarte (auch ggf. kombinierte), darfst du sie sofort ausspielen.<n>Wenn du sie ausspielst, legst du sie in deinen Spielbereich und führst sofort die Anweisungen darauf aus.<n>Dafür benötigst du keine zusätzliche Aktion.<n>Das Ausspielen der Aktionskarte verbraucht auch keine freie oder zusätzliche Aktion, die du durch das Ausspielen anderer Karten bereits gesammelt hast.", 
+        "name": "Vasall" 
+        
     },
     "Advance": {
         "description": "You may trash an Action card from your hand. If you do, gain an Action card costing up to 6 Coins.", 
@@ -1669,46 +1669,46 @@
         "untranslated": "extra"
     },
     "Courtier": {
-        "description": "Reveal a card from your hand. For each type it has (Action, Attack, etc.), choose one: +1 Action; or +1 Buy; or +3 Coin; or gain a Gold. The choices must be different.", 
-        "extra": "First reveal a card from your hand, then count the types.<n>The types are the words on the bottom line including Action, Attack, Curse, Reaction, Treasure, and Victory (with more in expansions).<n>Then choose one different thing per type the card had; if you revealed a card with two types, you pick two things.<n>For example you could reveal a Copper and choose \"gain a Gold,\" or reveal a Mill and choose \"+1 Action\" and \"+3 Coin\".<n>If you gain a Gold, put the Gold into your discard pile.", 
-        "name": "Courtier", 
-        "untranslated": "description, extra, name"
+        "description": "Decke eine Handkarte auf.<n>Für jeden Kartentyp (Aktion, Angriff ...), den sie hat, wähle eine andere Option:<br>+1 Aktion<br>+1 Kauf<br>+3 Geld oder<br>nimm ein Gold vom Vorrat.", 
+        "extra": "Decke eine Karte aus deiner Hand auf.<n>Zähle dann die Typen, denen diese Karte angehört – also AKTION, GELD, REAKTION, ANGRIFF, PUNKTE, FLUCH etc.<n>Pro Typ, dem die Karte angehört, entscheidest du dich für eine der vier angegebenen Optionen. Dabei darfst du keine der Optionen doppelt auswählen.<n>Wenn du zum Beispiel eine PATROUILLE (AKTION) aufdeckst, darfst du eine Option auswählen, deckst du einen KARAWANENWÄCHTER aus Abenteuer (AKTION – DAUER – REAKTION) auf, darfst du 3 unterschiedliche Optionen wählen.<n>Entscheidest du dich für das Gold, legst du dieses auf den Ablagestapel.<n>Kannst du keine Handkarte aufdecken, erhältst du nichts.", 
+        "name": "Höflinge" 
+        
     },
     "Diplomat": {
-        "description": "+ 2 Cards<br>If you have 5 or fewer cards in hand (after drawing), +2 Actions.<line>When another player plays an Attack card, you may first reveal this from a hand of 5 or more cards, to draw 2 cards then discard 3.", 
-        "extra": "When playing this, you get +2 Cards, then count your cards in hand, and if you have 5 cards or fewer, you get +2 Actions.<n>So, for example if you play this from a hand of 5 cards, you will put it into play, going down to 4 cards, then draw 2 cards, going up to 6 cards, and that is more than 5 cards so you would not get the +2 Actions.<n>Diplomat can also be used when another player plays an Attack card, if you have at least 5 cards in hand.<n>Before the Attack card does anything, you can reveal a Diplomat from your hand; if you do, you draw 2 cards, then discard 3 cards (which can include the Diplomat).<n>If you still have at least 5 cards in hand after doing that (such as due to Council Rooms), you can reveal Diplomat again and do it again.<n>You reveal Reactions one at a time; you cannot reveal two Diplomats simultaneously.<n>You can reveal a Moat from your hand (to be unaffected by an Attack) either before or after revealing and resolving a Diplomat (even if the Moat was not in your hand until after resolving Diplomat).", 
-        "name": "Diplomat", 
-        "untranslated": "description, extra, name"
+        "description": "+2 Karten<br>Hast du nach dem Ziehen 5 oder weniger Handkarten: +2 Aktionen.<line>Wenn ein Mitspieler eine Angriffskarte ausspielt und du mindestens 5 Handkarten hast, darfst du diese Karte aus deiner Hand aufdecken.<n>Wenn du das tust: Ziehe 2 Karten und lege dann 3 Karten ab.", 
+        "extra": " Diese Karte ist eine Aktions- und Reaktionskarte.<n>Wird sie als Aktion in der Aktionsphase ausgespielt, nimmst du 2 Karten.<n>Hast du dann 5 oder weniger Karten auf der Hand, erhältst du außerdem + 2 Aktionen.<n>Spielt ein Mitspieler eine Angriffskarte aus und du hast zu diesem Zeitpunkt 5 oder mehr Karten auf der Hand, darfst du diese Karte – bevor der ausgespielte Angriff ausgeführt wird – aus der Hand aufdecken.<n>Wenn du das tust, nimmst du diese DIPLOMATIN wieder auf die Hand, ziehst 2 Karten und legst dann 3 Karten (auch möglich inklusive dieser DIPLOMATIN) ab.<n>Hast du dann immer noch 5 oder mehr Karten sowie eine DIPLOMATIN auf der Hand, darfst du die DIPLOMATIN noch einmal aufdecken – und dies so oft wiederholen wie du möchtest und die Bedingung der 5 oder mehr Karten auf der Hand erfüllt ist.<n>Erst dann wird der Angriff ausgeführt.<n>Hast du mehrere Reaktionskarten auf der Hand, mit denen du auf das Ausspielen einer Angriffskarte reagieren kannst, darfst du diese nacheinander in beliebiger Reihenfolge aufdecken.", 
+        "name": "Diplomatin"
+        
     },
     "Lurker": {
-        "description": "+1 Action<n>Choose one: Trash an Action card from the Supply; or gain an Action card from the trash.", 
-        "extra": "The card trashed or gained has to be an Action card, but can have other types too. For example Lurker can trash Nobles from the Supply and can gain Nobles from the trash.<n>When gaining a card with Lurker, put the gained card into your discard pile.<n>When you trash a card from the supply that has a special effect when trashed, the on-trash effect activates. However, trashing from the supply does not allow you to react with Market Square.", 
-        "name": "Lurker", 
-        "untranslated": "description, extra, name"
+        "description": "+1 Aktion<br>Wähle eins:<n>Entsorge eine Aktionskarte vom Vorrat<n>oder<n>nimm eine Aktionskarte vom Müll.", 
+        "extra": "Die Karte, die du entsorgst oder vom Müllstapel nimmst, muss den Typ AKTION beinhalten, d.h. sie kann auch eine kombinierte Aktionskarte (z.B. Mühle) sein.<n>Genommene Karten werden auf den Ablagestapel gelegt - es sei denn, auf der Karte steht etwas anderes.<n>Wird eine Karte entsorgt, die einen speziellen Effekt beim Entsorgen hat, tritt dieser ein.", 
+        "name": "Herumtreiberin" 
+        
     },
     "Mill": {
-        "description": "+1 Card<br>+1 Action<br>You may discard 2 cards, for +2 Coin.<line>1 <*VP*>", 
-        "extra": "You can choose to discard 2 cards even if you only have one card in hand, but you only get +2 Coin if you actually discarded 2 cards.<line>Use 8 Mills for games with 2 players, 12 for games with 3 or more players.", 
-        "name": "Mill", 
-        "untranslated": "description, extra, name"
+        "description": "+1 Karte<br>+1 Aktion<br>Du darfst 2 Handkarten ablegen.<n>Wenn du das tust: +2 Geld.<line>1 <*VP*>", 
+        "extra": " Diese Karte ist eine kombinierte Aktions- und Punktekarte.<n>Als Punktekarte bringt sie beim Zählen der Punkte 1 .<n>Spielst du die MÜHLE als Aktionskarte aus, ziehst du 1 Karte und erhältst + 1 Aktion.<n>Du darfst 2 Karten aus deiner Hand ablegen. Wenn du das tust, erhältst du + 2 Geld. Tust du das nicht (weil du zum Beispiel nicht genügend Karten auf der Hand hast), erhältst du nichts.<n>Nur, wenn du nicht mehr als eine Karte auf der Hand hast, darfst du genau eine Karte ablegen, erhältst dafür aber kein Geld.", 
+        "name": "Mühle"
+       
     },
     "Patrol": {
-        "description": "+3 Cards<n>Reveal the top 4 cards of your deck. Put the Victory cards and Curses into your hand. Put the rest back in any order.", 
-        "extra": "First draw 3 cards, then reveal the top 4 cards of your deck.<n>Put the revealed Victory cards and Curses into your hand; you have to take them all.<n>Put the rest of the cards back on your deck in any order you choose.", 
-        "name": "Patrol", 
-        "untranslated": "description, extra, name"
+        "description": "+3 Karten<n>Decke die obersten 4 Karten deines Nachziehstapels auf.<n>Nimm alle aufgedeckten Punkte- und Fluchkarten auf die Hand.<n>Lege die übrigen Karten in beliebiger Reihenfolge auf deinen Nachziehstapel zurück.", 
+        "extra": "Ziehe zuerst 3 Karten.<n>Decke dann die obersten 4 Karten deines Nachziehstapels auf.<n>So aufgedeckte Punktekarten (auch ggf. kombinierte) und Flüche nimmst du alle auf die Hand.<n>Die restlichen Karten legst du in beliebiger Reihenfolge zurück auf den Nachziehstapel.", 
+        "name": "Patrouille" 
+        
     },
     "Replace": {
-        "description": "Trash a card from your hand. Gain a card costing up to 2 Coins more than it. If the gained card is an Action or Treasure, put it onto your deck; if it's a Victory card, each other player gains a Curse.", 
-        "extra": "Like Remodel, you first trash a card from your hand, then gain a card from the Supply costing up to 2 Coin more than the trashed card, putting the gained card into your discard pile.<n>Replace gives you an additional bonus based on the types of the gained card; if it is an Action or Treasure you move it to the top of your deck, and if it is a Victory card the other players each gain a Curse.<n>It is possible to get both bonuses; if you gain Harem, Mill, or Nobles with Replace, it both goes on your deck and causes the other players to each gain a Curse.", 
-        "name": "Replace", 
-        "untranslated": "description, extra, name"
+        "description": "Entsorge eine Handkarte.<n>Nimm eine Karte vom Vorrat, die bis zu 2 Geld mehr kostet als die entsorgte Karte.<n>Ist die genommene Karte eine Aktions- oder Geldkarte, lege sie auf deinen Nachziehstapel.<n>Ist es eine Punktekarte, nimmt jeder Mitspieler einen Fluch vom Vorrat.", 
+        "extra": "Entsorge zuerst eine Karte aus deiner Hand.<n>Dann nimmst du dir eine Karte vom Vorrat, die maximal 2 Geld mehr kostet als die entsorgte Karte.<n>Eine Karte kostet nur dann maximal 2 Geld mehr, wenn die restlichen Kosten (z.B. Schulden aus Empires oder Trank aus Alchemie) gleich oder niedriger sind.<n>Wenn die genommene Karte eine Aktions- und/oder Geldkarte ist, legst du die Karte oben auf deinen Nachziehstapel.<n>Ansonsten legst du die Karte auf den Ablagestapel.<n>Ist die genommene Karte eine Punktekarte, nimmt sich jeder Mitspieler – beginnend bei deinem linken Mitspieler – einen Fluch.<n>Ist die genommene Karte eine Punktekarte sowie eine Aktions- oder Geldkarte (z.B. MÜHLE), legst du die Karte oben auf deinen Nachziehstapel und jeder Mitspieler muss sich einen Fluch nehmen.", 
+        "name": "Austausch" 
+        
     },
     "Secret Passage": {
-        "description": "+2 Cards<br>+1 Action<n>Take a card from your hand and put it anywhere in your deck.", 
-        "extra": "First draw 2 cards and get +1 Action; then put a card from your hand anywhere in your deck.<n>The card can be one you just drew or any other card from your hand.<n>It can go on top of your deck, on the bottom, or anywhere in-between; you can count out a specific place to put it, e.g. four cards down.<n>If there are no cards left in your deck, the card put back becomes the only card in your deck.<n>Where you put the card is public knowledge.<n>You don't have to put the card into a specific spot, you can just shove it into your deck if you want.", 
-        "name": "Secret Passage", 
-        "untranslated": "description, extra, name"
+        "description": "+2 Karten<br>+1 Aktion<n>Lege eine Handkarte an eine beliebige Stelle in deinen Nachziehstapel.", 
+        "extra": "Du ziehst 2 Karten und erhältst +1 Aktion.<n>Dann nimmst du eine beliebige Karte aus deiner Hand (auch ggf. eine, die du gerade gezogen hast) und legst sie an eine beliebige Stelle in deinen Nachziehstapel.<n>Du darfst sie oben drauf, unten drunter oder irgendwo in die Mitte legen.<n>Du darfst dabei die Karten deines Nachziehstapels zählen, aber nicht ansehen.<n>Befinden sich keine Karten in deinem Nachziehstapel, wird die zurückgelegte Karte zur einzigen Karte in deinem Nachziehstapel.", 
+        "name": "Geheimgang" 
+        
     },
     "Bad Omens": {
         "description": "Put your deck into your discard pile. Look through it and put 2 Coppers from it onto your deck (or reveal you can't.)", 
