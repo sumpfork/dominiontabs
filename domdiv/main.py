@@ -829,6 +829,7 @@ def filter_sort_cards(cards, options):
                         group_cards[card.group_tag].potcost = card.potcost
                         group_cards[card.group_tag].debtcost = card.debtcost
                         group_cards[card.group_tag].types = card.types
+                        group_cards[card.group_tag].randomizer = card.randomizer
                         group_cards[card.group_tag].image = card.image
 
                     group_cards[card.group_tag].addCardCount(card.count)    # increase the count
@@ -971,17 +972,23 @@ def filter_sort_cards(cards, options):
     if options.expansion_dividers:
 
         cardnamesByExpansion = {}
+        randomizersByExpansion = {}
         for c in cards:
             if cardSorter.isBaseExpansionCard(c):
                 continue
-            cardnamesByExpansion.setdefault(c.cardset, []).append(c.name.strip().replace(' ', '&nbsp;'))
+            if c.randomizer:
+                randomizersByExpansion[c.cardset] = randomizersByExpansion.setdefault(c.cardset, 0) + 1
+            else:
+                randomizersByExpansion[c.cardset] = randomizersByExpansion.setdefault(c.cardset, 0)
+            cardnamesByExpansion.setdefault(c.cardset, []).append({'name': c.name.strip().replace(' ', '&nbsp;'),
+                                                                   'randomizer': c.randomizer})
 
         for set_tag, set_values in Card.sets.iteritems():
             exp = set_values["set_name"]
             if exp in cardnamesByExpansion:
                 exp_name = exp
 
-                count = len(cardnamesByExpansion[exp])
+                count = randomizersByExpansion[exp]
                 if 'no_randomizer' in set_values:
                     if set_values['no_randomizer']:
                         count = 0
@@ -990,12 +997,18 @@ def filter_sort_cards(cards, options):
                     if 'short_name' in set_values:
                         exp_name = set_values['short_name']
 
+                card_names = []
+                for n in sorted(cardnamesByExpansion[exp], key=lambda x: x['name']):
+                    if not n['randomizer']:
+                        n['name'] = '<i>' + n['name'] + '</i>'
+                    card_names.append(n['name'])
+
                 c = Card(name=exp_name,
                          cardset=exp,
                          cardset_tag=set_tag,
                          types=("Expansion", ),
                          cost=None,
-                         description=' | '.join(sorted(cardnamesByExpansion[exp])),
+                         description=' | '.join(card_names),
                          extra=set_values.get("set_text", ""),
                          count=count,
                          card_tag=set_tag)
