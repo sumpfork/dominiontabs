@@ -87,6 +87,7 @@
     "cost": "6*", 
     "count": "5", 
     "group_tag": "Page -> Champion", 
+    "randomizer": false, 
     "types": [
         "Action", 
         "Duration"
@@ -108,6 +109,7 @@
     ], 
     "cost": "5*", 
     "group_tag": "Peasant -> Teacher", 
+    "randomizer": false, 
     "types": [
         "Action", 
         "Traveller"
@@ -170,6 +172,7 @@
     ], 
     "cost": "4*", 
     "group_tag": "Peasant -> Teacher", 
+    "randomizer": false, 
     "types": [
         "Action", 
         "Traveller"
@@ -222,6 +225,7 @@
     ], 
     "cost": "5*", 
     "group_tag": "Page -> Champion", 
+    "randomizer": false, 
     "types": [
         "Action", 
         "Traveller"
@@ -473,6 +477,7 @@
     ], 
     "cost": "3*", 
     "group_tag": "Peasant -> Teacher", 
+    "randomizer": false, 
     "types": [
         "Action", 
         "Attack", 
@@ -506,6 +511,7 @@
     "cost": "6*", 
     "count": "5", 
     "group_tag": "Peasant -> Teacher", 
+    "randomizer": false, 
     "types": [
         "Action", 
         "Reserve"
@@ -557,6 +563,7 @@
     ], 
     "cost": "3*", 
     "group_tag": "Page -> Champion", 
+    "randomizer": false, 
     "types": [
         "Action", 
         "Traveller"
@@ -577,6 +584,7 @@
     ], 
     "cost": "4*", 
     "group_tag": "Page -> Champion", 
+    "randomizer": false, 
     "types": [
         "Action", 
         "Attack", 
@@ -1250,6 +1258,7 @@
     ], 
     "cost": "0*", 
     "group_tag": "Hermit - Madman", 
+    "randomizer": false, 
     "types": [
         "Action"
     ]
@@ -1279,6 +1288,7 @@
     ], 
     "cost": "0*", 
     "group_tag": "Urchin - Mercenary", 
+    "randomizer": false, 
     "types": [
         "Action", 
         "Attack"
@@ -1407,6 +1417,7 @@
     ], 
     "cost": "0*", 
     "count": "15", 
+    "randomizer": false, 
     "types": [
         "Treasure"
     ]
@@ -1889,6 +1900,7 @@
     "cost": "5", 
     "count": "5", 
     "group_tag": "Settlers - Bustling Village", 
+    "randomizer": false, 
     "types": [
         "Action"
     ]
@@ -2032,6 +2044,7 @@
     "cost": "5", 
     "count": "5", 
     "group_tag": "Patrician - Emporium", 
+    "randomizer": false, 
     "types": [
         "Action"
     ]
@@ -2087,6 +2100,7 @@
     "count": "5", 
     "debtcost": "8", 
     "group_tag": "Gladiator - Fortune", 
+    "randomizer": false, 
     "types": [
         "Treasure"
     ]
@@ -2240,6 +2254,7 @@
     "cost": "5", 
     "count": "5", 
     "group_tag": "Encampment - Plunder", 
+    "randomizer": false, 
     "types": [
         "Treasure"
     ]
@@ -2261,6 +2276,7 @@
     "cost": "4", 
     "count": "5", 
     "group_tag": "Catapult - Rocks", 
+    "randomizer": false, 
     "types": [
         "Treasure"
     ]
@@ -3137,6 +3153,7 @@
     ], 
     "cost": "2*", 
     "group_tag": "Vampire - Bat", 
+    "randomizer": false, 
     "types": [
         "Night"
     ]
@@ -3206,6 +3223,7 @@
     ], 
     "cost": "4", 
     "group_tag": "Pooka - Cursed Gold", 
+    "randomizer": false, 
     "types": [
         "Treasure", 
         "Heirloom"
@@ -3361,6 +3379,7 @@
     ], 
     "cost": "2", 
     "group_tag": "Pixie - Goat", 
+    "randomizer": false, 
     "types": [
         "Treasure", 
         "Heirloom"
@@ -3392,6 +3411,7 @@
     ], 
     "cost": "0", 
     "group_tag": "Cemetery - Haunted Mirror", 
+    "randomizer": false, 
     "types": [
         "Treasure", 
         "Heirloom"
@@ -3466,6 +3486,7 @@
     ], 
     "cost": "4", 
     "group_tag": "Fool - Lucky Coin", 
+    "randomizer": false, 
     "types": [
         "Treasure", 
         "Heirloom"
@@ -3477,6 +3498,7 @@
     ], 
     "cost": "0", 
     "group_tag": "Secret Cave - Magic Lamp", 
+    "randomizer": false, 
     "types": [
         "Treasure", 
         "Heirloom"
@@ -3538,6 +3560,7 @@
     ], 
     "cost": "2", 
     "group_tag": "Shepherd - Pasture", 
+    "randomizer": false, 
     "types": [
         "Treasure", 
         "Victory", 
@@ -3583,6 +3606,7 @@
     ], 
     "cost": "2", 
     "group_tag": "Tracker - Pouch", 
+    "randomizer": false, 
     "types": [
         "Treasure", 
         "Heirloom"
@@ -3857,6 +3881,7 @@
     ], 
     "cost": "0*", 
     "count": "12", 
+    "randomizer": false, 
     "types": [
         "Action"
     ]
@@ -3904,6 +3929,7 @@
     "cost": "5", 
     "count": "5", 
     "group_tag": "Sauna - Avanto", 
+    "randomizer": false, 
     "types": [
         "Action"
     ]
