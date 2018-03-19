@@ -595,11 +595,11 @@ class CardSorter(object):
         else:
             self.sort_key = self.by_expansion_sort_key
 
-        baseOrder = ['Copper', 'Silver', 'Gold', 'Platinum', 'Potion',
-                     'Curse', 'Estate', 'Duchy', 'Province', 'Colony',
-                     'Trash']
+        self.baseOrder = ['Copper', 'Silver', 'Gold', 'Platinum', 'Potion',
+                          'Curse', 'Estate', 'Duchy', 'Province', 'Colony',
+                          'Trash']
         self.baseCards = []
-        for tag in baseOrder:
+        for tag in self.baseOrder:
             if tag in baseCards:
                 self.baseCards.append(baseCards[tag])
                 del baseCards[tag]
@@ -980,8 +980,21 @@ def filter_sort_cards(cards, options):
                 randomizersByExpansion[c.cardset] = randomizersByExpansion.setdefault(c.cardset, 0) + 1
             else:
                 randomizersByExpansion[c.cardset] = randomizersByExpansion.setdefault(c.cardset, 0)
-            cardnamesByExpansion.setdefault(c.cardset, []).append({'name': c.name.strip().replace(' ', '&nbsp;'),
-                                                                   'randomizer': c.randomizer})
+
+            if c.cardset not in cardnamesByExpansion:
+                cardnamesByExpansion[c.cardset] = {}
+            if c.card_tag not in cardnamesByExpansion[c.cardset]:
+                # Save off information about the card to be used on the expansion divider
+                order = 0
+                if c.card_tag in cardSorter.baseOrder:
+                    # Use the base card ordering
+                    order = 100 + cardSorter.baseOrder.index(c.card_tag)
+                cardnamesByExpansion[c.cardset][c.card_tag] = {'name': c.name.strip().replace(' ', '&nbsp;'),
+                                                               'randomizer': c.randomizer,
+                                                               'count': 1,
+                                                               'sort': "%03d%s" % (order, c.name.strip(),)}
+            else:
+                cardnamesByExpansion[c.cardset][c.card_tag]['count'] += 1 
 
         for set_tag, set_values in Card.sets.iteritems():
             exp = set_values["set_name"]
@@ -998,9 +1011,13 @@ def filter_sort_cards(cards, options):
                         exp_name = set_values['short_name']
 
                 card_names = []
-                for n in sorted(cardnamesByExpansion[exp], key=lambda x: x['name']):
+                for key, n in sorted(cardnamesByExpansion[exp].items(), key=lambda (k, (x)): x['sort']):
                     if not n['randomizer']:
+                        # Highlight cards without Randomizers
                         n['name'] = '<i>' + n['name'] + '</i>'
+                    if n['count'] > 1:
+                        # Add number of copies
+                        n['name'] = u"{}&nbsp;\u00d7&nbsp;".format(n['count']) + n['name']
                     card_names.append(n['name'])
 
                 c = Card(name=exp_name,
