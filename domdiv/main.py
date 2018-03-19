@@ -994,7 +994,7 @@ def filter_sort_cards(cards, options):
                                                                'count': 1,
                                                                'sort': "%03d%s" % (order, c.name.strip(),)}
             else:
-                cardnamesByExpansion[c.cardset][c.card_tag]['count'] += 1 
+                cardnamesByExpansion[c.cardset][c.card_tag]['count'] += 1
 
         for set_tag, set_values in Card.sets.iteritems():
             exp = set_values["set_name"]
