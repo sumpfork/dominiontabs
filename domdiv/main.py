@@ -402,6 +402,16 @@ def parse_opts(cmdline_args=None):
         help="Draw only the divider tabs and no divider outlines. "
         "Used to print the divider tabs on labels.")
     group_printing.add_argument(
+        "--info",
+        action="store_true",
+        dest="info",
+        help="Add a page that has all the options used for the file.")
+    group_printing.add_argument(
+        "--info-all",
+        action="store_true",
+        dest="info_all",
+        help="Same as --info, but includes pages with all the possible options that can be used.")
+    group_printing.add_argument(
         "--preview",
         action='store_true',
         help="Only generate a preview png image of the first page"
@@ -425,7 +435,11 @@ def parse_opts(cmdline_args=None):
         dest="write_json",
         help="Write json version of card definitions and extras.")
 
-    return parser.parse_args(args=cmdline_args)
+    options = parser.parse_args(args=cmdline_args)
+    # Need to do these while we have access to the parser
+    options.argv = sys.argv if options.info or options.info_all else None
+    options.help = parser.format_help() if options.info_all else None
+    return options
 
 
 def clean_opts(options):
