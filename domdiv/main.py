@@ -292,6 +292,21 @@ def parse_opts(cmdline_args=None):
         help="Group cards that generally are used together "
         "(e.g., Shelters, Tournament and Prizes, Urchin/Mercenary, etc.).")
     group_select.add_argument(
+        "--no-trash",
+        action="store_true",
+        dest="no_trash",
+        help="Exclude Trash from cards.")
+    group_select.add_argument(
+        "--curse10",
+        action="store_true",
+        dest="curse10",
+        help="Package Curse cards into groups of ten cards.")
+    group_select.add_argument(
+        "--start-decks",
+        action="store_true",
+        dest="start_decks",
+        help="Include four start decks with the Base cards.")
+    group_select.add_argument(
         "--include-blanks",
         action="store_true",
         help="Include a few dividers with extra text.")
@@ -525,6 +540,14 @@ def get_resource_stream(path):
     return codecs.EncodedFile(pkg_resources.resource_stream('domdiv', path), "utf-8")
 
 
+def find_index_in_list(lst, key, value):
+    # Returns the index of the first dictonary in lst that has key with value.  Otherwise returns None
+    for i, d in enumerate(lst):
+        if getattr(d, key, None) == value:
+            return i
+    return None
+
+
 def read_card_data(options):
 
     # Read in the card types
@@ -559,6 +582,57 @@ def read_card_data(options):
         # Make sure these are set either True or False
         Card.sets[s]['no_randomizer'] = Card.sets[s].get('no_randomizer', False)
         Card.sets[s]['fan'] = Card.sets[s].get('fan', False)
+
+    # Remove the Trash card. Do early before propagating to various sets.
+    if options.no_trash:
+        i = find_index_in_list(cards, 'card_tag', 'Trash')
+        if i is not None:
+            del cards[i]
+
+    # Repackage Curse cards into 10 per divider. Do early before propagating to various sets.
+    if options.curse10:
+        i = find_index_in_list(cards, 'card_tag', 'Curse')
+        if i is not None:
+            new_cards = []
+            cards_remaining = cards[i].getCardCount()
+            while cards_remaining > 10:
+                # make a new copy of the card and set count to 10
+                new_card = copy.deepcopy(cards[i])
+                new_card.setCardCount(10)
+                new_cards.append(new_card)
+                cards_remaining -= 10
+
+            # Adjust original Curse card to the remaining cards (should be 10)
+            cards[i].setCardCount(cards_remaining)
+            # Add the new dividers
+            cards.extend(new_cards)
+
+    # Create Start Deck dividers. 4 sets. Adjust totals for other cards, too.
+    # The card database contains one prototype divider that needs to be either duplicated or deleted.
+    # Do early before propagating to various sets.
+    i = find_index_in_list(cards, 'card_tag', 'Start Deck')
+    if i is not None:
+        new_cards = []
+        if options.start_decks:
+            # Get the index for Copper and Estate cards so their totals can be adjusted
+            c_i = find_index_in_list(cards, 'card_tag', 'Copper')
+            e_i = find_index_in_list(cards, 'card_tag', 'Estate')
+            if c_i is not None and e_i is not None:
+                # Take card counts out of Copper and Estate for 4 Start Decks
+                cards[c_i].setCardCount(cards[c_i].getCardCount() - (4 * 7))
+                cards[e_i].setCardCount(cards[e_i].getCardCount() - (4 * 3))
+                # Add cards to Start Deck prototype
+                cards[i].setCardCount(7)
+                cards[i].addCardCount([int(3)])
+                for x in range(0, 3):
+                    # Make 3 additional copies
+                    new_card = copy.deepcopy(cards[i])
+                    new_cards.append(new_card)
+                # add new copies to the list of cards
+                cards.extend(new_cards)
+        if not new_cards:
+            # Start Decks not wanted, or something went wrong.  So delete the prototype Start Deck divider.
+            del cards[i]
 
     # Set cardset_tag and expand cards that are used in multiple sets
     new_cards = []
@@ -597,7 +671,7 @@ class CardSorter(object):
 
         self.baseOrder = ['Copper', 'Silver', 'Gold', 'Platinum', 'Potion',
                           'Curse', 'Estate', 'Duchy', 'Province', 'Colony',
-                          'Trash']
+                          'Trash', 'Start Deck']
         self.baseCards = []
         for tag in self.baseOrder:
             if tag in baseCards:
