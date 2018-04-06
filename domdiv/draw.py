@@ -7,7 +7,7 @@ import pkg_resources
 from reportlab.lib.units import cm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.platypus import Paragraph
+from reportlab.platypus import Paragraph, XPreformatted
 from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER, TA_LEFT
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
@@ -84,7 +84,7 @@ class DividerDrawer(object):
                 # this accounts for the spacers we insert between paragraphs
                 h = (len(text) - 1) * spacerHeight
                 for line in text:
-                    p = Paragraph(line, s)
+                    p = XPreformatted(line, s)
                     h += p.wrap(textBoxWidth, textBoxHeight)[1]
                     paragraphs.append(p)
 
@@ -103,24 +103,32 @@ class DividerDrawer(object):
             self.canvas.showPage()
 
     def drawInfo(self, printIt=True):
+        # Keep track of the number of pages
         pageCount = 0
+        # A unique separator that will not be found in any normal text.  Was '@@@***!!!***@@@' at one time.
+        sep = chr(30) + chr(31)
+        # Generic space.  Other options are ' ', '&nbsp;', '&#xa0;'
+        space = '&nbsp;'
+        tab_spaces = 4
+        blank_line = (space + '\n') * 2
+
         if self.options.info or self.options.info_all:
             text = "<para alignment='center'><font size=18><b>Sumpfork's Dominion Tabbed Divider Generator</b></font>\n"
-            text += "&nbsp;\n" * 2
+            text += blank_line
             text += "Online generator at: "
             text += "<a href='http://domtabs.sandflea.org/' color='blue'>http://domtabs.sandflea.org</a>\n\n"
             text += "Source code on GitHub at: "
             text += "<a href='https://github.com/sumpfork/dominiontabs' color='blue'>"
             text += "https://github.com/sumpfork/dominiontabs</a>\n\n"
-            text += "Options for this file:  "
+            text += "Options for this file:\n"
 
-            sep = '@@@***!!!***@@@'
             cmd = " ".join(self.options.argv)
             cmd = cmd.replace(' --', sep + '--')
             cmd = cmd.replace(' -', sep + '-')
-            cmd = cmd.replace(sep, '\n' + '&nbsp;' * 25)
+            cmd = cmd.replace(sep, '\n' + space * tab_spaces)
+
             text += cmd
-            text += '&nbsp;\n' * 2
+            text += blank_line
 
             if printIt:
                 self.drawTextPages([text], margin=1.0, fontsize=10, leading=10, spacer=0.05)
@@ -128,7 +136,7 @@ class DividerDrawer(object):
 
         if self.options.info_all:
             linesPerPage = 80
-            lines = self.options.help.replace('\n\n', '\n \n').replace(' ', '&nbsp;').split('\n')
+            lines = self.options.help.replace('\n\n', blank_line).replace(' ', space).split('\n')
             pages = []
             lineCount = 0
             text = ""
