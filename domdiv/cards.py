@@ -57,16 +57,6 @@ class Card(object):
         else:
             self.count = [int(count)]
         self.randomizer = randomizer
-        if self.randomizer:
-            # Remove classes of cards that never have Randomizers
-            # Card types
-            if any(self.isType(t) for t in [
-                    "Event", "Landmark", "Shelter", "Ruins", "Prize",
-                    "Spirit", "Zombie", "Heirloom", "Hex", "Boon", "State"]):
-                self.randomizer = False
-            # Base cards
-            if "base" in cardset_tags:
-                self.randomizer = False
 
     def getCardCount(self):
         return sum(i for i in self.count)
