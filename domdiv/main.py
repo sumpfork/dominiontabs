@@ -611,7 +611,7 @@ def read_card_data(options):
 
     # Repackage Curse cards into 10 per divider. Do early before propagating to various sets.
     if options.curse10:
-        i = find_index_of_object(cards, {'card_tag': 'Curse', 'cardset_tags': 'base'})
+        i = find_index_of_object(cards, {'card_tag': 'Curse'})
         if i is not None:
             new_cards = []
             cards_remaining = cards[i].getCardCount()
@@ -632,9 +632,9 @@ def read_card_data(options):
     # The card database contains one prototype divider that needs to be either duplicated or deleted.
     if options.start_decks:
         # Find the index to the individual cards that need changed in the cards list
-        StartDeck_index = find_index_of_object(cards, {'card_tag': 'Start Deck', 'cardset_tags': 'base'})
-        Copper_index = find_index_of_object(cards, {'card_tag': 'Copper', 'cardset_tags': 'base'})
-        Estate_index = find_index_of_object(cards, {'card_tag': 'Estate', 'cardset_tags': 'base'})
+        StartDeck_index = find_index_of_object(cards, {'card_tag': 'Start Deck'})
+        Copper_index = find_index_of_object(cards, {'card_tag': 'Copper'})
+        Estate_index = find_index_of_object(cards, {'card_tag': 'Estate'})
         if Copper_index is None or Estate_index is None or StartDeck_index is None:
             # Something is wrong, can't find one or more of the cards that need to change
             print "Error - cannot create Start Decks"
@@ -665,7 +665,7 @@ def read_card_data(options):
                 cards[Estate_index].setCardCount(cards[Estate_index].getCardCount() - STARTDECK_ESTATES)
     else:
         # Remove Start Deck prototype.  It is not needed.
-        StartDeck_index = find_index_of_object(cards, {'card_tag': 'Start Deck', 'cardset_tags': 'base'})
+        StartDeck_index = find_index_of_object(cards, {'card_tag': 'Start Deck'})
         if StartDeck_index is not None:
             del cards[StartDeck_index]
 
