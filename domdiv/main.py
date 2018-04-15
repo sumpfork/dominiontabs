@@ -7,6 +7,7 @@ import copy
 import fnmatch
 import pkg_resources
 import unicodedata
+from collections import Counter, defaultdict
 
 import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
@@ -143,7 +144,8 @@ def parse_opts(cmdline_args=None):
         "--count",
         action="store_true",
         dest="count",
-        help="Display card count on body of the divider.")
+        help="Display the card count on the body of card dividers "
+        "and the randomizer count on the body of expansion dividers.")
     group_body.add_argument(
         "--types",
         action="store_true",
@@ -540,11 +542,29 @@ def get_resource_stream(path):
     return codecs.EncodedFile(pkg_resources.resource_stream('domdiv', path), "utf-8")
 
 
-def find_index_in_list(lst, key, value):
-    # Returns the index of the first dictonary in lst that has key with value.  Otherwise returns None
+def find_index_of_object(lst=[], attributes={}):
+    # Returns the index of the first object in lst that matches the given attributes.  Otherwise returns None.
+    # attributes is a dict of key: value pairs.   Object attributes that are lists are checked to have value in them.
     for i, d in enumerate(lst):
-        if getattr(d, key, None) == value:
+        # Set match to false just in case there are no attributes.
+        match = False
+        for key, value in attributes.iteritems():
+            # if anything does not match, then break out and start the next one.
+            match = hasattr(d, key)
+            if match:
+                test = getattr(d, key, None)
+                if type(test) is list:
+                    match = value in test
+                else:
+                    match = value == test
+            if not match:
+                break
+
+        if match:
+            # If all the attributes are found, then we have a match
             return i
+
+    # nothing matched
     return None
 
 
@@ -585,13 +605,13 @@ def read_card_data(options):
 
     # Remove the Trash card. Do early before propagating to various sets.
     if options.no_trash:
-        i = find_index_in_list(cards, 'card_tag', 'Trash')
+        i = find_index_of_object(cards, {'card_tag': 'Trash'})
         if i is not None:
             del cards[i]
 
     # Repackage Curse cards into 10 per divider. Do early before propagating to various sets.
     if options.curse10:
-        i = find_index_in_list(cards, 'card_tag', 'Curse')
+        i = find_index_of_object(cards, {'card_tag': 'Curse', 'cardset_tags': 'base'})
         if i is not None:
             new_cards = []
             cards_remaining = cards[i].getCardCount()
@@ -608,31 +628,46 @@ def read_card_data(options):
             cards.extend(new_cards)
 
     # Create Start Deck dividers. 4 sets. Adjust totals for other cards, too.
-    # The card database contains one prototype divider that needs to be either duplicated or deleted.
     # Do early before propagating to various sets.
-    i = find_index_in_list(cards, 'card_tag', 'Start Deck')
-    if i is not None:
-        new_cards = []
-        if options.start_decks:
-            # Get the index for Copper and Estate cards so their totals can be adjusted
-            c_i = find_index_in_list(cards, 'card_tag', 'Copper')
-            e_i = find_index_in_list(cards, 'card_tag', 'Estate')
-            if c_i is not None and e_i is not None:
-                # Take card counts out of Copper and Estate for 4 Start Decks
-                cards[c_i].setCardCount(cards[c_i].getCardCount() - (4 * 7))
-                cards[e_i].setCardCount(cards[e_i].getCardCount() - (4 * 3))
-                # Add cards to Start Deck prototype
-                cards[i].setCardCount(7)
-                cards[i].addCardCount([int(3)])
-                for x in range(0, 3):
-                    # Make 3 additional copies
-                    new_card = copy.deepcopy(cards[i])
-                    new_cards.append(new_card)
-                # add new copies to the list of cards
-                cards.extend(new_cards)
-        if not new_cards:
-            # Start Decks not wanted, or something went wrong.  So delete the prototype Start Deck divider.
-            del cards[i]
+    # The card database contains one prototype divider that needs to be either duplicated or deleted.
+    if options.start_decks:
+        # Find the index to the individual cards that need changed in the cards list
+        StartDeck_index = find_index_of_object(cards, {'card_tag': 'Start Deck', 'cardset_tags': 'base'})
+        Copper_index = find_index_of_object(cards, {'card_tag': 'Copper', 'cardset_tags': 'base'})
+        Estate_index = find_index_of_object(cards, {'card_tag': 'Estate', 'cardset_tags': 'base'})
+        if Copper_index is None or Estate_index is None or StartDeck_index is None:
+            # Something is wrong, can't find one or more of the cards that need to change
+            print "Error - cannot create Start Decks"
+
+            # Remove the Start Deck prototype if we can
+            if StartDeck_index is not None:
+                del cards[StartDeck_index]
+        else:
+            # Start Deck Constants
+            STARTDECK_COPPERS = 7
+            STARTDECK_ESTATES = 3
+            STARTDECK_NUMBER = 4
+
+            # Add correct card counts to Start Deck prototype.  This will be used to make copies.
+            cards[StartDeck_index].setCardCount(STARTDECK_COPPERS)
+            cards[StartDeck_index].addCardCount([int(STARTDECK_ESTATES)])
+
+            # Make new Start Deck Dividers and adjust the corresponding card counts
+            for x in range(0, STARTDECK_NUMBER):
+                # Add extra copies of the Start Deck prototype.
+                # But don't need to add the first one again, since the prototype is already there.
+                if x > 0:
+                    cards.append(copy.deepcopy(cards[StartDeck_index]))
+                    # Note: By appending, it should not change any of the index values being used
+
+                # Remove Copper and Estate card counts from their dividers
+                cards[Copper_index].setCardCount(cards[Copper_index].getCardCount() - STARTDECK_COPPERS)
+                cards[Estate_index].setCardCount(cards[Estate_index].getCardCount() - STARTDECK_ESTATES)
+    else:
+        # Remove Start Deck prototype.  It is not needed.
+        StartDeck_index = find_index_of_object(cards, {'card_tag': 'Start Deck', 'cardset_tags': 'base'})
+        if StartDeck_index is not None:
+            del cards[StartDeck_index]
 
     # Set cardset_tag and expand cards that are used in multiple sets
     new_cards = []
@@ -1045,20 +1080,19 @@ def filter_sort_cards(cards, options):
     # Add expansion divider
     if options.expansion_dividers:
 
-        cardnamesByExpansion = {}
-        randomizersByExpansion = {}
+        cardnamesByExpansion = defaultdict(dict)
+        randomizerCountByExpansion = Counter()
         for c in cards:
             if cardSorter.isBaseExpansionCard(c):
                 continue
             if c.randomizer:
-                randomizersByExpansion[c.cardset] = randomizersByExpansion.setdefault(c.cardset, 0) + 1
-            else:
-                randomizersByExpansion[c.cardset] = randomizersByExpansion.setdefault(c.cardset, 0)
+                randomizerCountByExpansion[c.cardset] += 1
 
-            if c.cardset not in cardnamesByExpansion:
-                cardnamesByExpansion[c.cardset] = {}
-            if c.card_tag not in cardnamesByExpansion[c.cardset]:
-                # Save off information about the card to be used on the expansion divider
+            if c.card_tag in cardnamesByExpansion[c.cardset]:
+                # Already have one, so just update the count (for extra Curses, Start Decks, etc)
+                cardnamesByExpansion[c.cardset][c.card_tag]['count'] += 1
+            else:
+                # New, so save off information about the card to be used on the expansion divider
                 order = 0
                 if c.card_tag in cardSorter.baseOrder:
                     # Use the base card ordering
@@ -1067,15 +1101,13 @@ def filter_sort_cards(cards, options):
                                                                'randomizer': c.randomizer,
                                                                'count': 1,
                                                                'sort': "%03d%s" % (order, c.name.strip(),)}
-            else:
-                cardnamesByExpansion[c.cardset][c.card_tag]['count'] += 1
 
         for set_tag, set_values in Card.sets.iteritems():
             exp = set_values["set_name"]
             if exp in cardnamesByExpansion:
                 exp_name = exp
 
-                count = randomizersByExpansion[exp]
+                count = randomizerCountByExpansion[exp]
                 if 'no_randomizer' in set_values:
                     if set_values['no_randomizer']:
                         count = 0
@@ -1085,7 +1117,7 @@ def filter_sort_cards(cards, options):
                         exp_name = set_values['short_name']
 
                 card_names = []
-                for key, n in sorted(cardnamesByExpansion[exp].items(), key=lambda (k, (x)): x['sort']):
+                for key, n in sorted(cardnamesByExpansion[exp].items(), key=lambda (k, x): x['sort']):
                     if not n['randomizer']:
                         # Highlight cards without Randomizers
                         n['name'] = '<i>' + n['name'] + '</i>'
