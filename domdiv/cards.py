@@ -102,13 +102,13 @@ class Card(object):
         # (?!\w) prevents smaller word matches.  Prevents matching "Action" in "Actions"
         if bonus['exclude']:
             bonus['exclude'].sort(reverse=True)
-            exclude_regex = '(?!\w)(?!\s*(' + '|'.join(bonus['exclude']) + '))'
+            exclude_regex = r'(?!\w)(?!\s*(' + '|'.join(bonus['exclude']) + '))'
         else:
             exclude_regex = ''
 
         bonus['include'].sort(reverse=True)
-        include_regex = "(\+\s*\d+\s*(" + '|'.join(bonus['include']) + "))"
-        regex = "((?i)(?!\<b\>)" + include_regex + exclude_regex + "(?!\<\/b\>))"
+        include_regex = r"(\+\s*\d+\s*(" + '|'.join(bonus['include']) + "))"
+        regex = r"((?i)(?!\<b\>)" + include_regex + exclude_regex + r"(?!\<\/b\>))"
         Card.bonus_regex.append(regex)
 
     def __repr__(self):
