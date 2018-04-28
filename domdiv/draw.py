@@ -281,29 +281,29 @@ class DividerDrawer(object):
 
         # <line>
         replace = "<center>%s\n" % ("&ndash;" * 22)
-        text = re.sub("\<line\>", replace, text)
+        text = re.sub(r"\<line\>", replace, text)
 
         #  <tab> and \t
-        text = re.sub("\<tab\>", '\t', text)
-        text = re.sub("\<t\>", '\t', text)
-        text = re.sub("\t", "&nbsp;" * 4, text)
+        text = re.sub(r"\<tab\>", '\t', text)
+        text = re.sub(r"\<t\>", '\t', text)
+        text = re.sub(r"\t", "&nbsp;" * 4, text)
 
         # various breaks
-        text = re.sub("\<br\>", "<br />", text)
-        text = re.sub("\<n\>", "\n", text)
+        text = re.sub(r"\<br\>", "<br />", text)
+        text = re.sub(r"\<n\>", "\n", text)
 
         # alignments
-        text = re.sub("\<c\>", "<center>", text)
-        text = re.sub("\<center\>", "\n<para alignment='center'>", text)
+        text = re.sub(r"\<c\>", "<center>", text)
+        text = re.sub(r"\<center\>", "\n<para alignment='center'>", text)
 
-        text = re.sub("\<l\>", "<left>", text)
-        text = re.sub("\<left\>", "\n<para alignment='left'>", text)
+        text = re.sub(r"\<l\>", "<left>", text)
+        text = re.sub(r"\<left\>", "\n<para alignment='left'>", text)
 
-        text = re.sub("\<r\>", "<right>", text)
-        text = re.sub("\<right\>", "\n<para alignment='right'>", text)
+        text = re.sub(r"\<r\>", "<right>", text)
+        text = re.sub(r"\<right\>", "\n<para alignment='right'>", text)
 
-        text = re.sub("\<j\>", "<justify>", text)
-        text = re.sub("\<justify\>", "\n<para alignment='justify'>", text)
+        text = re.sub(r"\<j\>", "<justify>", text)
+        text = re.sub(r"\<justify\>", "\n<para alignment='justify'>", text)
         return text.strip().strip('\n')
 
     def drawOutline(self,
