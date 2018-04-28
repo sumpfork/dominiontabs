@@ -22,10 +22,12 @@ def rmtestcardb(request):
 
 
 def test_cardread():
+    cardsExpected = 524
+
     options = main.parse_opts([])
     options.data_path = '.'
     cards = main.read_card_data(options)
-    assert len(cards) == 524
+    assert len(cards) == cardsExpected
     valid_cardsets = {
         u'base',
         u'dominion1stEdition',
@@ -56,6 +58,13 @@ def test_cardread():
     for c in cards:
         assert isinstance(c, domdiv_cards.Card)
         assert c.cardset_tag in valid_cardsets
+
+    # Option modified card count
+    options = main.parse_opts(['--no-trash', '--curse10', '--start-decks'])
+    options.data_path = '.'
+    cards = main.read_card_data(options)
+    # Total delta cards is +21 from Trash: -1 * 3 sets = -3; Curse: +2 * 4 sets =+8; Start Decks: +4 * 4 sets = +16
+    assert len(cards) == cardsExpected + 21
 
 
 def test_languages():
