@@ -7,6 +7,7 @@ import copy
 import fnmatch
 import pkg_resources
 import unicodedata
+from collections import Counter, defaultdict
 
 import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
@@ -143,7 +144,8 @@ def parse_opts(cmdline_args=None):
         "--count",
         action="store_true",
         dest="count",
-        help="Display card count on body of the divider.")
+        help="Display the card count on the body of card dividers "
+        "and the randomizer count on the body of expansion dividers.")
     group_body.add_argument(
         "--types",
         action="store_true",
@@ -609,11 +611,11 @@ class CardSorter(object):
         else:
             self.sort_key = self.by_expansion_sort_key
 
-        baseOrder = ['Copper', 'Silver', 'Gold', 'Platinum', 'Potion',
-                     'Curse', 'Estate', 'Duchy', 'Province', 'Colony',
-                     'Trash']
+        self.baseOrder = ['Copper', 'Silver', 'Gold', 'Platinum', 'Potion',
+                          'Curse', 'Estate', 'Duchy', 'Province', 'Colony',
+                          'Trash']
         self.baseCards = []
-        for tag in baseOrder:
+        for tag in self.baseOrder:
             if tag in baseCards:
                 self.baseCards.append(baseCards[tag])
                 del baseCards[tag]
@@ -843,6 +845,7 @@ def filter_sort_cards(cards, options):
                         group_cards[card.group_tag].potcost = card.potcost
                         group_cards[card.group_tag].debtcost = card.debtcost
                         group_cards[card.group_tag].types = card.types
+                        group_cards[card.group_tag].randomizer = card.randomizer
                         group_cards[card.group_tag].image = card.image
 
                     group_cards[card.group_tag].addCardCount(card.count)    # increase the count
@@ -984,18 +987,34 @@ def filter_sort_cards(cards, options):
     # Add expansion divider
     if options.expansion_dividers:
 
-        cardnamesByExpansion = {}
+        cardnamesByExpansion = defaultdict(dict)
+        randomizerCountByExpansion = Counter()
         for c in cards:
             if cardSorter.isBaseExpansionCard(c):
                 continue
-            cardnamesByExpansion.setdefault(c.cardset, []).append(c.name.strip().replace(' ', '&nbsp;'))
+            if c.randomizer:
+                randomizerCountByExpansion[c.cardset] += 1
+
+            if c.card_tag in cardnamesByExpansion[c.cardset]:
+                # Already have one, so just update the count (for extra Curses, Start Decks, etc)
+                cardnamesByExpansion[c.cardset][c.card_tag]['count'] += 1
+            else:
+                # New, so save off information about the card to be used on the expansion divider
+                order = 0
+                if c.card_tag in cardSorter.baseOrder:
+                    # Use the base card ordering
+                    order = 100 + cardSorter.baseOrder.index(c.card_tag)
+                cardnamesByExpansion[c.cardset][c.card_tag] = {'name': c.name.strip().replace(' ', '&nbsp;'),
+                                                               'randomizer': c.randomizer,
+                                                               'count': 1,
+                                                               'sort': "%03d%s" % (order, c.name.strip(),)}
 
         for set_tag, set_values in Card.sets.iteritems():
             exp = set_values["set_name"]
             if exp in cardnamesByExpansion:
                 exp_name = exp
 
-                count = len(cardnamesByExpansion[exp])
+                count = randomizerCountByExpansion[exp]
                 if 'no_randomizer' in set_values:
                     if set_values['no_randomizer']:
                         count = 0
@@ -1004,12 +1023,22 @@ def filter_sort_cards(cards, options):
                     if 'short_name' in set_values:
                         exp_name = set_values['short_name']
 
+                card_names = []
+                for key, n in sorted(cardnamesByExpansion[exp].items(), key=lambda (k, x): x['sort']):
+                    if not n['randomizer']:
+                        # Highlight cards without Randomizers
+                        n['name'] = '<i>' + n['name'] + '</i>'
+                    if n['count'] > 1:
+                        # Add number of copies
+                        n['name'] = u"{}&nbsp;\u00d7&nbsp;".format(n['count']) + n['name']
+                    card_names.append(n['name'])
+
                 c = Card(name=exp_name,
                          cardset=exp,
                          cardset_tag=set_tag,
                          types=("Expansion", ),
                          cost=None,
-                         description=' | '.join(sorted(cardnamesByExpansion[exp])),
+                         description=' | '.join(card_names),
                          extra=set_values.get("set_text", ""),
                          count=count,
                          card_tag=set_tag)

@@ -25,7 +25,7 @@ class Card(object):
     def __init__(self, name=None, cardset='', types=None, cost='', description='',
                  potcost=0, debtcost=0, extra='', count=-1, card_tag='missing card_tag',
                  cardset_tags=None, group_tag='', group_top=False, image=None,
-                 text_icon=None, cardset_tag=''):
+                 text_icon=None, randomizer=True, cardset_tag=''):
 
         if types is None:
             types = []  # make sure types is a list
@@ -56,6 +56,7 @@ class Card(object):
             self.count = []
         else:
             self.count = [int(count)]
+        self.randomizer = randomizer
 
     def getCardCount(self):
         return sum(i for i in self.count)
