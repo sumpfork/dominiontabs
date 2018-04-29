@@ -294,6 +294,21 @@ def parse_opts(cmdline_args=None):
         help="Group cards that generally are used together "
         "(e.g., Shelters, Tournament and Prizes, Urchin/Mercenary, etc.).")
     group_select.add_argument(
+        "--no-trash",
+        action="store_true",
+        dest="no_trash",
+        help="Exclude Trash from cards.")
+    group_select.add_argument(
+        "--curse10",
+        action="store_true",
+        dest="curse10",
+        help="Package Curse cards into groups of ten cards.")
+    group_select.add_argument(
+        "--start-decks",
+        action="store_true",
+        dest="start_decks",
+        help="Include four start decks with the Base cards.")
+    group_select.add_argument(
         "--include-blanks",
         action="store_true",
         help="Include a few dividers with extra text.")
@@ -541,6 +556,32 @@ def get_resource_stream(path):
     return codecs.EncodedFile(pkg_resources.resource_stream('domdiv', path), "utf-8")
 
 
+def find_index_of_object(lst=[], attributes={}):
+    # Returns the index of the first object in lst that matches the given attributes.  Otherwise returns None.
+    # attributes is a dict of key: value pairs.   Object attributes that are lists are checked to have value in them.
+    for i, d in enumerate(lst):
+        # Set match to false just in case there are no attributes.
+        match = False
+        for key, value in attributes.iteritems():
+            # if anything does not match, then break out and start the next one.
+            match = hasattr(d, key)
+            if match:
+                test = getattr(d, key, None)
+                if type(test) is list:
+                    match = value in test
+                else:
+                    match = value == test
+            if not match:
+                break
+
+        if match:
+            # If all the attributes are found, then we have a match
+            return i
+
+    # nothing matched
+    return None
+
+
 def read_card_data(options):
 
     # Read in the card types
@@ -575,6 +616,72 @@ def read_card_data(options):
         # Make sure these are set either True or False
         Card.sets[s]['no_randomizer'] = Card.sets[s].get('no_randomizer', False)
         Card.sets[s]['fan'] = Card.sets[s].get('fan', False)
+
+    # Remove the Trash card. Do early before propagating to various sets.
+    if options.no_trash:
+        i = find_index_of_object(cards, {'card_tag': 'Trash'})
+        if i is not None:
+            del cards[i]
+
+    # Repackage Curse cards into 10 per divider. Do early before propagating to various sets.
+    if options.curse10:
+        i = find_index_of_object(cards, {'card_tag': 'Curse'})
+        if i is not None:
+            new_cards = []
+            cards_remaining = cards[i].getCardCount()
+            while cards_remaining > 10:
+                # make a new copy of the card and set count to 10
+                new_card = copy.deepcopy(cards[i])
+                new_card.setCardCount(10)
+                new_cards.append(new_card)
+                cards_remaining -= 10
+
+            # Adjust original Curse card to the remaining cards (should be 10)
+            cards[i].setCardCount(cards_remaining)
+            # Add the new dividers
+            cards.extend(new_cards)
+
+    # Create Start Deck dividers. 4 sets. Adjust totals for other cards, too.
+    # Do early before propagating to various sets.
+    # The card database contains one prototype divider that needs to be either duplicated or deleted.
+    if options.start_decks:
+        # Find the index to the individual cards that need changed in the cards list
+        StartDeck_index = find_index_of_object(cards, {'card_tag': 'Start Deck'})
+        Copper_index = find_index_of_object(cards, {'card_tag': 'Copper'})
+        Estate_index = find_index_of_object(cards, {'card_tag': 'Estate'})
+        if Copper_index is None or Estate_index is None or StartDeck_index is None:
+            # Something is wrong, can't find one or more of the cards that need to change
+            print "Error - cannot create Start Decks"
+
+            # Remove the Start Deck prototype if we can
+            if StartDeck_index is not None:
+                del cards[StartDeck_index]
+        else:
+            # Start Deck Constants
+            STARTDECK_COPPERS = 7
+            STARTDECK_ESTATES = 3
+            STARTDECK_NUMBER = 4
+
+            # Add correct card counts to Start Deck prototype.  This will be used to make copies.
+            cards[StartDeck_index].setCardCount(STARTDECK_COPPERS)
+            cards[StartDeck_index].addCardCount([int(STARTDECK_ESTATES)])
+
+            # Make new Start Deck Dividers and adjust the corresponding card counts
+            for x in range(0, STARTDECK_NUMBER):
+                # Add extra copies of the Start Deck prototype.
+                # But don't need to add the first one again, since the prototype is already there.
+                if x > 0:
+                    cards.append(copy.deepcopy(cards[StartDeck_index]))
+                    # Note: By appending, it should not change any of the index values being used
+
+                # Remove Copper and Estate card counts from their dividers
+                cards[Copper_index].setCardCount(cards[Copper_index].getCardCount() - STARTDECK_COPPERS)
+                cards[Estate_index].setCardCount(cards[Estate_index].getCardCount() - STARTDECK_ESTATES)
+    else:
+        # Remove Start Deck prototype.  It is not needed.
+        StartDeck_index = find_index_of_object(cards, {'card_tag': 'Start Deck'})
+        if StartDeck_index is not None:
+            del cards[StartDeck_index]
 
     # Set cardset_tag and expand cards that are used in multiple sets
     new_cards = []
@@ -613,7 +720,7 @@ class CardSorter(object):
 
         self.baseOrder = ['Copper', 'Silver', 'Gold', 'Platinum', 'Potion',
                           'Curse', 'Estate', 'Duchy', 'Province', 'Colony',
-                          'Trash']
+                          'Trash', 'Start Deck']
         self.baseCards = []
         for tag in self.baseOrder:
             if tag in baseCards:
