@@ -420,6 +420,12 @@
         "extra": "40 cartes par partie.", 
         "name": "Argent"
     },
+    "Start Deck": {
+        "description": "Player's starting deck of cards:<n>7 Copper cards<n>3 Estate cards", 
+        "extra": "", 
+        "name": "Player Start Deck", 
+        "untranslated": "description, extra, name"
+    },
     "Trash": {
         "description": "Pile du rebut.", 
         "extra": "", 
@@ -2736,4 +2742,3 @@
         "untranslated": "description, extra, name"
     }
 }
-

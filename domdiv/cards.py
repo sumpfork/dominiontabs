@@ -50,19 +50,19 @@ class Card(object):
         self.image = image
         self.text_icon = text_icon
         self.cardset_tag = cardset_tag
-        if count < 0:
-            self.count = [self.getType().getTypeDefaultCardCount()]
-        elif count == 0:
-            self.count = []
-        else:
-            self.count = [int(count)]
+        self.setCardCount(count)
         self.randomizer = randomizer
 
     def getCardCount(self):
         return sum(i for i in self.count)
 
     def setCardCount(self, value):
-        self.count = value
+        if value < 0:
+            self.count = [self.getType().getTypeDefaultCardCount()]
+        elif value == 0:
+            self.count = []
+        else:
+            self.count = [int(value)]
 
     def addCardCount(self, value):
         self.count.extend(value)
