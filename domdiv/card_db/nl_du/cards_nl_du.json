@@ -1477,13 +1477,13 @@
         "name": "Tolheffing"
     },
     "Baron": {
-        "description": "+1 Aanschaf\nJe mag een landgoedkaart afleggen.\nAls he dat doet: +4 Coins.\nZo niet, pak een landgoedkaart.", 
+        "description": "+1 Aanschaf\nJe mag een landgoedkaart afleggen.\nAls je dat doet: +4 Coins.\nZo niet, pak een landgoedkaart.", 
         "extra": " Je bent nooit verplicht om een landgoed kaart af te leggen, ook al heb je er een in je hand. Maar, als je er voor kiest om geen landgoedkaart af te leggen, moet je er één pakken (indien voorradig); je kunt er niet voor kiezen om alleen de extra aanschaf te nemen.", 
         "name": "Baron"
     },
     "Bridge": {
         "description": "+1 Aanschaf\n+1 Coin\nAlle kaarten (ook die in je hand) kosten deze beurt 1 Coin minder, maar nooit minder dan 0 Coins.", 
-        "extra": " je betaalad voor elke afzonderlijke situatie 1 Coins minder. Bijvoorbeeld: je speelt achtereenvolgens Dorp, Brug en Wekplaats. Je kunt nu met je Werkplaats een Hertogdom pakken (omdat deze door de brug nog maar 4 Coins kost). Stel dat je daarnaast ook 3 Coins speelt, kun je een Zilver (voor 2 Coins) en een landgoed (voor 1 Coins) kopen. De Brug heeft ook invloed op de kaarten in de trekstapel van een speler. De gevolgen zijn cumulatief. Als je de troonzaal voor een brug gebruikt, kost alles je 2 Coins minder deze beurt. Kosten kunnen nooit onder de 0 Coins komen. Voorbeeld: je speelt een Brug en daarna de Opwaardering. Nu kun je een Koper vernietigen (deze is ondanks het spelen van de brug 0 waard) en een Pion pakken (die 1 waard is na het spelen van de Brug).", 
+        "extra": " Je betaald voor elke afzonderlijke situatie 1 Coins minder. Bijvoorbeeld: je speelt achtereenvolgens Dorp, Brug en Wekplaats. Je kunt nu met je Werkplaats een Hertogdom pakken (omdat deze door de brug nog maar 4 Coins kost). Stel dat je daarnaast ook 3 Coins speelt, kun je een Zilver (voor 2 Coins) en een landgoed (voor 1 Coins) kopen. De Brug heeft ook invloed op de kaarten in de trekstapel van een speler. De gevolgen zijn cumulatief. Als je de troonzaal voor een brug gebruikt, kost alles je 2 Coins minder deze beurt. Kosten kunnen nooit onder de 0 Coins komen. Voorbeeld: je speelt een Brug en daarna de Opwaardering. Nu kun je een Koper vernietigen (deze is ondanks het spelen van de brug 0 waard) en een Pion pakken (die 1 waard is na het spelen van de Brug).", 
         "name": "Brug"
     },
     "Conspirator": {
@@ -1522,7 +1522,7 @@
         "name": "Mijndorp"
     },
     "Minion": {
-        "description": "+1 Actie\nKies één van de volgende opties: +2 Coins; of leg alle kaarten uit je hand af, +4 kaarten en iedere andere speler met ten minste 5 kaarten in zijn hand moet al zijn handkaarten afleggen en 4 nieuwe kaarten trekken.", 
+        "description": "+1 Actie\nKies één van de volgende opties: +2 Coins; of leg alle kaarten uit je hand af, +4 Kaarten en iedere andere speler met ten minste 5 kaarten in zijn hand moet al zijn handkaarten afleggen en 4 nieuwe kaarten trekken.", 
         "extra": " Je krijgt hoe dan ook 1 extra actie. Daarnaast kun je uit twee opties kiezen. Je kunt kiezen voor +2 coins. Of je legt je volledige hand af, trekt 4 kaarten en verplicht de andere spelers om hetzelfde te doen. Een speler die de slotgracht toont hoeft niets af te leggen, maar mag ook geen kaarten trekken. Een andere speler die niet getroffen wordt, mag er alsnog voor kiezen om een geheime kamer in te zetten.", 
         "name": "Dienaar"
     },
@@ -1572,46 +1572,39 @@
         "name": "Wensput"
     },
     "Courtier": {
-        "description": "Reveal a card from your hand. For each type it has (Action, Attack, etc.), choose one: +1 Action; or +1 Buy; or +3 Coin; or gain a Gold. The choices must be different.", 
-        "extra": "First reveal a card from your hand, then count the types.<n>The types are the words on the bottom line including Action, Attack, Curse, Reaction, Treasure, and Victory (with more in expansions).<n>Then choose one different thing per type the card had; if you revealed a card with two types, you pick two things.<n>For example you could reveal a Copper and choose \"gain a Gold,\" or reveal a Mill and choose \"+1 Action\" and \"+3 Coin\".<n>If you gain a Gold, put the Gold into your discard pile.", 
-        "name": "Courtier", 
-        "untranslated": "description, extra, name"
+        "description": "Toon een kaart uit je hand. Voor elke soort die de kaart heeft (Actie, Aanval, enz.), kies één van de volgende: +1 Actie; of +1 Aanschaf; of +3 Coin; of pak een Goud. De keuzes moeten verschillend zijn.", 
+        "extra": "Toon eerst een kaart uit je hand en tel dan het aantal soorten.<n> Als soorten gelden de woorden op de onderste regel, zoals Actie, Aanval, Vloek, Reactie, Geld en Overwinning (uitbreidingen kunnen andere soorten bevatten).<n> Kies dan per soort die op de kaart staat 1 verschillend ding.<n>Voorbeelden: je toont een Koper (1 soort) en kiest \"pak een Goed\". Je toont een Molen (2 soorten) en kiest \"+1 Actie\" en \"+3 Coin\". Pak je een Goud, leg dat dan op je aflegstapel.", 
+        "name": "Makelaar"
     },
     "Diplomat": {
-        "description": "+ 2 Cards<br>If you have 5 or fewer cards in hand (after drawing), +2 Actions.<line>When another player plays an Attack card, you may first reveal this from a hand of 5 or more cards, to draw 2 cards then discard 3.", 
-        "extra": "When playing this, you get +2 Cards, then count your cards in hand, and if you have 5 cards or fewer, you get +2 Actions.<n>So, for example if you play this from a hand of 5 cards, you will put it into play, going down to 4 cards, then draw 2 cards, going up to 6 cards, and that is more than 5 cards so you would not get the +2 Actions.<n>Diplomat can also be used when another player plays an Attack card, if you have at least 5 cards in hand.<n>Before the Attack card does anything, you can reveal a Diplomat from your hand; if you do, you draw 2 cards, then discard 3 cards (which can include the Diplomat).<n>If you still have at least 5 cards in hand after doing that (such as due to Council Rooms), you can reveal Diplomat again and do it again.<n>You reveal Reactions one at a time; you cannot reveal two Diplomats simultaneously.<n>You can reveal a Moat from your hand (to be unaffected by an Attack) either before or after revealing and resolving a Diplomat (even if the Moat was not in your hand until after resolving Diplomat).", 
-        "name": "Diplomat", 
-        "untranslated": "description, extra, name"
+        "description": "+2 Kaarten<br>Heb je 5 of minder handkaarten (na het trekken), +2 Acties.<line>Speelt een andere speler een aanvalskaart, dan mag je deze kaart tonen uit een hand van 5 of meer kaarten om 2 kaarten te trekken en er dan 3 af te leggen.", 
+        "extra": "Bij het spelen van deze kaart krijg je +2 Kaarten. Daarna tel je het aantal kaarten in je hand. Heb je er 5 of minder, dan krijg je +2 Acties.<n>Voorbeeld: je hebt 5 kaarten in je hand. Je speelt de Diplomaat, waardoor je 4 handkaarten hebt. Je trekt 2 kaarten en hebt er nu 6 in je hand. Dat is meer dan 5, dus krijg je de +2 Acties niet.<n>Een Diplomaat kan ook gebruikt worden als een andere speler een aanvalskaart speelt en je ten minste 5 kaarten in je hand hebt. Voordat de aanvalskaart iets doet, kun je de Diplomaat uit je hand tonen. Doe je dat, dan trek je 2 kaarten en legt er 3 af (de Diplomaat mag daar één van zijn). Heb je dan nog steeds 5 kaarten in je hand (mogelijk als gevolg van een Raadszaal), dan mag je de Diplomaat opnieuw tonen en hetzelfde doen.<n>Je toont Reacties altijd één voor één, je kunt dus niet 2 Diplomaten tegelijkertijd tonen.<n>Je mag een Slotgracht uit je hand voor of na het tonen en uitvoeren van een Diplomaat tonen (om de gevolgen van de aanvalskaart teniet te doen), zelfs als je de Slotgracht pas in je hand kreeg na het uitvoeren van de Diplomaat.", 
+        "name": "Diplomaat"
     },
     "Lurker": {
-        "description": "+1 Action<n>Choose one: Trash an Action card from the Supply; or gain an Action card from the trash.", 
-        "extra": "The card trashed or gained has to be an Action card, but can have other types too. For example Lurker can trash Nobles from the Supply and can gain Nobles from the trash.<n>When gaining a card with Lurker, put the gained card into your discard pile.<n>When you trash a card from the supply that has a special effect when trashed, the on-trash effect activates. However, trashing from the supply does not allow you to react with Market Square.", 
-        "name": "Lurker", 
-        "untranslated": "description, extra, name"
+        "description": "+1 Actie<n>Kies één van de volgende: vernietig een actiekaart uit de voorraad; of pak een actiekaart uit de stapel \"Vernietigde kaarten\".", 
+        "extra": "De vernietigde of gepakte kaart moet een actiekaart zijn, maar deze mag daarnaast ook bij een andere soort horen.<n>Voorbeeld: de Voyeur kan Adel uit de voorraad vernietigen en Adel uit de stapel \"Vernietigde kaarten\" pakken.<n>Pak je een kaart met de Voyeur, leg de gepakte kaart dan op je aflegstapel.", 
+        "name": "Voyeur"
     },
     "Mill": {
-        "description": "+1 Card<br>+1 Action<br>You may discard 2 cards, for +2 Coin.<line>1 <*VP*>", 
-        "extra": "You can choose to discard 2 cards even if you only have one card in hand, but you only get +2 Coin if you actually discarded 2 cards.<line>Use 8 Mills for games with 2 players, 12 for games with 3 or more players.", 
-        "name": "Mill", 
-        "untranslated": "description, extra, name"
+        "description": "+1 Kaart<br>+1 Actie<br>Je mag 2 kaarten afleggen om +2 Coin te krijgen<line>1 <*VP*>", 
+        "extra": "Je mag ervoor kiezen om 2 kaarten af te leggen, ook al heb je er maar 1 in je hand. Je krijgt de +2 Coin echter alleen als je daadwerkelijk 2 kaarten aflegt. Gebruik 8 Molens in een spel met 2 spelers en 12 Molens in een spel met 3 of meer spelers.", 
+        "name": "Molen"
     },
     "Patrol": {
-        "description": "+3 Cards<n>Reveal the top 4 cards of your deck. Put the Victory cards and Curses into your hand. Put the rest back in any order.", 
-        "extra": "First draw 3 cards, then reveal the top 4 cards of your deck.<n>Put the revealed Victory cards and Curses into your hand; you have to take them all.<n>Put the rest of the cards back on your deck in any order you choose.", 
-        "name": "Patrol", 
-        "untranslated": "description, extra, name"
+        "description": "+3 Kaarten<n>Toon de bovenste 4 kaarten van je trekstapel. Neem de overwinnings- en vloekkaarten in je hand. Leg de rest in een volgorde naar keuze terug.", 
+        "extra": "Trek eerst 3 kaarten. Toon dan de bovenste 4 kaarten van je trekstapel.<n>Doe alle getoonde overwinnings- en vloekkaarten in je hand. Leg de resterende getoonde kaarten in een volgorde naar keuze op je trekstapel terug.", 
+        "name": "Patrouille"
     },
     "Replace": {
-        "description": "Trash a card from your hand. Gain a card costing up to 2 Coins more than it. If the gained card is an Action or Treasure, put it onto your deck; if it's a Victory card, each other player gains a Curse.", 
-        "extra": "Like Remodel, you first trash a card from your hand, then gain a card from the Supply costing up to 2 Coin more than the trashed card, putting the gained card into your discard pile.<n>Replace gives you an additional bonus based on the types of the gained card; if it is an Action or Treasure you move it to the top of your deck, and if it is a Victory card the other players each gain a Curse.<n>It is possible to get both bonuses; if you gain Harem, Mill, or Nobles with Replace, it both goes on your deck and causes the other players to each gain a Curse.", 
-        "name": "Replace", 
-        "untranslated": "description, extra, name"
+        "description": "Vernietig een kaart uit je hand. Pak een kaart die ten hoogste 2 Coins meer kost dan de vernietigde kaart. Is de gepakte kaart een actie- of geldkaart, leg deze dan op je trekstapel. Is het een overwinningskaart, dan pakt iedere andere speler een Vloek.", 
+        "extra": "Net als bij Verbouwing vernietig je eerst een kaart. Daarna pak je een kaart uit de voorraad die ten hoogste 2 Coin meer kost dan de vernietigde kaart. Leg de gepakte kaart op je aflegstapel.<n>Vervanging geeft je een extra bonus, afhankelijk van de soorten op de gepakte kaart. Gaat het om een actie- of geldkaart, leg de kaart dan op je trekstapel. Gaat het om een overwinningskaart, dan pakt iedere andere speler een Vloek.<n>Het is mogelijk om beide bonussen te ontvangen. Pak je bijvoorbeeld Harem, Molen of Adel met Vervanging, dan gaat de kaart naar je trekstapel en pakt iedere andere speler een Vloek.", 
+        "name": "Vervanging"
     },
     "Secret Passage": {
-        "description": "+2 Cards<br>+1 Action<n>Take a card from your hand and put it anywhere in your deck.", 
-        "extra": "First draw 2 cards and get +1 Action; then put a card from your hand anywhere in your deck.<n>The card can be one you just drew or any other card from your hand.<n>It can go on top of your deck, on the bottom, or anywhere in-between; you can count out a specific place to put it, e.g. four cards down.<n>If there are no cards left in your deck, the card put back becomes the only card in your deck.<n>Where you put the card is public knowledge.<n>You don't have to put the card into a specific spot, you can just shove it into your deck if you want.", 
-        "name": "Secret Passage", 
-        "untranslated": "description, extra, name"
+        "description": "+2 Kaarten<br>+1 Actie<n>Kies een kaart uit je hand en doe deze op een plek naar keuze in je trekstapel.", 
+        "extra": "Je trekt eerst 2 kaarten en krijgt +1 Actie. Doe daarna een kaart uit je hand ergens in je trekstapel. Dit mag ook een net getrokken kaart zijn. Je mag de kaart bovenop of onderaan je trekstapel doen, maar ook ergens daar tussenin. Je mag een specifieke locatie uittellen (bijvoorbeeld 4 kaarten van onder). Is je trekstapel leeg, dan wordt deze kaart de enige in je trekstapel.", 
+        "name": "Geheime Doorgang"
     },
     "Bad Omens": {
         "description": "Put your deck into your discard pile. Look through it and put 2 Coppers from it onto your deck (or reveal you can't.)", 
