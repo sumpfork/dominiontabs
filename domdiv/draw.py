@@ -650,7 +650,7 @@ class DividerDrawer(object):
                 self.options.labelHeight - 1,
                 preserveAspectRatio=False,
                 anchor='n',
-                mask='auto')
+                mask=[255, 255, 255, 255, 255, 255])
 
         # draw cost
         if not card.isExpansion() and not card.isBlank(
@@ -1064,10 +1064,16 @@ class DividerDrawer(object):
             # remember whether we start with odd or even divider for tab
             # location
             pageStartOdd = self.odd
+            self.canvas.setFillColorRGB(0, 0, 0)
+            from reportlab.lib.pagesizes import letter
+            self.canvas.rect(0, 0, letter[0], letter[1], fill=True)
+            self.canvas.setFillColorRGB(1, 1, 1)
+
             if not self.options.no_page_footer and (
                     not self.options.tabs_only and
                     self.options.order != "global"):
                 self.drawSetNames(pageCards)
+
             for i, card in enumerate(pageCards):
                 # print card
                 x = i % self.options.numDividersHorizontal
