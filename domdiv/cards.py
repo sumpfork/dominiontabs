@@ -227,11 +227,6 @@ class CardType(object):
             return None
         return self.tabImageFile
 
-    def getNoCoinTabImageFile(self):
-        if not self.tabImageFile:
-            return None
-        return ''.join(os.path.splitext(self.tabImageFile)[0] + '_nc' + os.path.splitext(self.tabImageFile)[1])
-
     def getTabTextHeightOffset(self):
         return self.tabTextHeightOffset
 

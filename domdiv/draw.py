@@ -640,7 +640,7 @@ class DividerDrawer(object):
             card.getType().getTabTextHeightOffset()
 
         # draw banner
-        img = card.getType().getNoCoinTabImageFile()
+        img = card.getType().getTabImageFile()
         if not self.options.no_tab_artwork and img:
             self.canvas.drawImage(
                 DividerDrawer.get_image_filepath(img),
