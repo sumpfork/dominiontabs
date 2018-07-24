@@ -104,4 +104,4 @@ def test_languagetool_run(pytestconfig):
             out = subprocess.check_output(cmd.split(), stderr=subprocess.STDOUT)
         except subprocess.CalledProcessError as e:
             assert e.output == ''
-        assert out == ''
+        assert out.decode('utf-8') == ''

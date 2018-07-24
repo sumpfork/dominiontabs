@@ -1,8 +1,8 @@
 # coding=utf-8
+from __future__ import print_function
 import csv
 import sys
 import json
-import chardet
 
 converted = []
 
@@ -26,7 +26,7 @@ with open(sys.argv[1], 'U') as csvfile:
         if not row['Typ']:
             continue
         # row = {k: v.decode('ISO-8859-2').encode('utf-8') if type(v) == str else v for k, v in row.iteritems()}
-        #print chardet.detect(row['Kartentext'])
+        # print chardet.detect(row['Kartentext'])
         if 'Ritter' in row['Typ'] and row['Kartenname'] != 'Ritter':
             continue
         converted_row = {'name': row['Kartenname'],
