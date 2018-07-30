@@ -10,8 +10,8 @@ def doit(args, main):
     args = args + ' --outfile ' + prefix + main + postfix
     args = args.split()
     fname = args[-1]
-    print args
-    print ':::Generating ' + fname
+    print(args)
+    print(':::Generating ' + fname)
     options = domdiv.main.parse_opts(args)
     options = domdiv.main.clean_opts(options)
     domdiv.main.generate(options)
@@ -29,7 +29,7 @@ additional = ['--expansion_dividers']
 
 fnames = [doit(args[0] + ' ' + ' '.join(additional), args[1])
           for args in argsets]
-print fnames
+print(fnames)
 
 zip = ZipFile('generated/sumpfork_dominion_tabs_v' + domdiv.__version__ + '.zip', 'w',
               ZIP_DEFLATED)

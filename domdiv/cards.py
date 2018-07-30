@@ -1,5 +1,5 @@
+from __future__ import print_function
 import json
-import os
 import re
 from reportlab.lib.units import cm
 
@@ -57,12 +57,13 @@ class Card(object):
         return sum(i for i in self.count)
 
     def setCardCount(self, value):
+        value = int(value)
         if value < 0:
             self.count = [self.getType().getTypeDefaultCardCount()]
         elif value == 0:
             self.count = []
         else:
-            self.count = [int(value)]
+            self.count = [value]
 
     def addCardCount(self, value):
         self.count.extend(value)
@@ -174,7 +175,7 @@ class Card(object):
                     setImage = Card.sets[self.cardset_tag]['image']
 
         if setImage is None and self.cardset_tag != 'base':
-            print 'warning, no set image for set "{}", card "{}"'.format(self.cardset, self.name)
+            print('warning, no set image for set "{}", card "{}"'.format(self.cardset, self.name))
         return setImage
 
     def setTextIcon(self):
@@ -187,7 +188,7 @@ class Card(object):
                     setTextIcon = Card.sets[self.cardset_tag]['text_icon']
 
         if setTextIcon is None and self.cardset != 'base':
-            print 'warning, no set text for set "{}", card "{}"'.format(self.cardset, self.name)
+            print('warning, no set text for set "{}", card "{}"'.format(self.cardset, self.name))
         return setTextIcon
 
     def isBlank(self):

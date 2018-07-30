@@ -1,3 +1,5 @@
+from __future__ import print_function, absolute_import
+
 import os
 import codecs
 import json
@@ -12,9 +14,9 @@ from collections import Counter, defaultdict
 import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
 
-from cards import Card
-from cards import CardType
-from draw import DividerDrawer
+from .cards import Card
+from .cards import CardType
+from .draw import DividerDrawer
 
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
@@ -528,8 +530,8 @@ def parse_papersize(spec):
     except AttributeError:
         try:
             paperwidth, paperheight = parseDimensions(papersize)
-            print 'Using custom paper size, %.2fcm x %.2fcm' % (
-                paperwidth / cm, paperheight / cm)
+            print(('Using custom paper size, %.2fcm x %.2fcm'.format(
+                paperwidth / cm, paperheight / cm)))
         except ValueError:
             paperwidth, paperheight = pagesizes.LETTER
     return paperwidth, paperheight
@@ -539,16 +541,16 @@ def parse_cardsize(spec, sleeved):
     spec = spec.upper()
     if spec == 'SLEEVED' or sleeved:
         dominionCardWidth, dominionCardHeight = (9.4 * cm, 6.15 * cm)
-        print 'Using sleeved card size, %.2fcm x %.2fcm' % (
-            dominionCardWidth / cm, dominionCardHeight / cm)
+        print(('Using sleeved card size, {:.2f}cm x {:.2f}cm'.format(
+            dominionCardWidth / cm, dominionCardHeight / cm)))
     elif spec in ['NORMAL', 'UNSLEEVED']:
         dominionCardWidth, dominionCardHeight = (9.1 * cm, 5.9 * cm)
-        print 'Using normal card size, %.2fcm x%.2fcm' % (
-            dominionCardWidth / cm, dominionCardHeight / cm)
+        print(('Using normal card size, {:.2f}cm x{:.2f}cm'.format(
+            dominionCardWidth / cm, dominionCardHeight / cm)))
     else:
         dominionCardWidth, dominionCardHeight = parseDimensions(spec)
-        print 'Using custom card size, %.2fcm x %.2fcm' % (
-            dominionCardWidth / cm, dominionCardHeight / cm)
+        print(('Using custom card size, {.2f}cm x {.2f}cm'.format(
+            dominionCardWidth / cm, dominionCardHeight / cm)))
     return dominionCardWidth, dominionCardHeight
 
 
@@ -562,7 +564,7 @@ def find_index_of_object(lst=[], attributes={}):
     for i, d in enumerate(lst):
         # Set match to false just in case there are no attributes.
         match = False
-        for key, value in attributes.iteritems():
+        for key, value in attributes.items():
             # if anything does not match, then break out and start the next one.
             match = hasattr(d, key)
             if match:
@@ -651,7 +653,7 @@ def read_card_data(options):
         Estate_index = find_index_of_object(cards, {'card_tag': 'Estate'})
         if Copper_index is None or Estate_index is None or StartDeck_index is None:
             # Something is wrong, can't find one or more of the cards that need to change
-            print "Error - cannot create Start Decks"
+            print("Error - cannot create Start Decks")
 
             # Remove the Start Deck prototype if we can
             if StartDeck_index is not None:
@@ -1030,7 +1032,7 @@ def filter_sort_cards(cards, options):
         # Give indication if an imput did not match anything
         unknownExpansions = options.expansions - knownExpansions
         if unknownExpansions:
-            print "Error - unknown expansion(s): %s" % ", ".join(unknownExpansions)
+            print(("Error - unknown expansion(s): {}".format(", ".join(unknownExpansions))))
 
     # Take care of fan expansions.  Fan expansions must be explicitly named to be added.
     # If no --fan is given, then no fan cards are added.
@@ -1056,7 +1058,7 @@ def filter_sort_cards(cards, options):
         # Give indication if an imput did not match anything
         unknownExpansions = options.fan - knownExpansions
         if unknownExpansions:
-            print "Error - unknown fan expansion(s): %s" % ", ".join(unknownExpansions)
+            print("Error - unknown fan expansion(s): %s" % ", ".join(unknownExpansions))
 
     # Now keep only the cards that are in the sets that have been requested
     keep_cards = []
@@ -1131,7 +1133,7 @@ def filter_sort_cards(cards, options):
                         exp_name = set_values['short_name']
 
                 card_names = []
-                for key, n in sorted(cardnamesByExpansion[exp].items(), key=lambda (k, x): x['sort']):
+                for key, n in sorted(cardnamesByExpansion[exp].items(), key=lambda k, x: x['sort']):
                     if not n['randomizer']:
                         # Highlight cards without Randomizers
                         n['name'] = '<i>' + n['name'] + '</i>'
@@ -1173,7 +1175,7 @@ def calculate_layout(options, cards=[]):
 
     if options.tab_side == "full" and options.tab_name_align == "edge":
         # This case does not make sense since there are two tab edges in this case.  So picking left edge.
-        print >> sys.stderr, "** Warning: Aligning card name as 'left' for 'full' tabs **"
+        print("** Warning: Aligning card name as 'left' for 'full' tabs **", file=sys.stderr)
         options.tab_name_align = "left"
 
     fixedMargins = False
@@ -1207,7 +1209,7 @@ def calculate_layout(options, cards=[]):
                                     for c in cards)
         dividerHeightReserved = (dividerHeightReserved * 2) + (
             max_card_stack_height * 2)
-        print "Max Card Stack Height: {:.2f}cm ".format(max_card_stack_height)
+        print("Max Card Stack Height: {:.2f}cm ".format(max_card_stack_height))
 
     # Notch measurements
     notch_height = 0.25 * cm  # thumb notch height
@@ -1278,14 +1280,14 @@ def generate(options):
 
     calculate_layout(options, cards)
 
-    print "Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
-        options.paperwidth / cm, options.paperheight / cm)
-    print "Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
-        options.dividerWidthReserved / cm, options.dividerHeightReserved / cm)
-    print '{} dividers horizontally, {} vertically'.format(
-        options.numDividersHorizontal, options.numDividersVertical)
-    print "Margins: {:.2f}cm h, {:.2f}cm v\n".format(
-        options.horizontalMargin / cm, options.verticalMargin / cm)
+    print("Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
+        options.paperwidth / cm, options.paperheight / cm))
+    print("Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
+        options.dividerWidthReserved / cm, options.dividerHeightReserved / cm))
+    print('{} dividers horizontally, {} vertically'.format(
+        options.numDividersHorizontal, options.numDividersVertical))
+    print("Margins: {:.2f}cm h, {:.2f}cm v\n".format(
+        options.horizontalMargin / cm, options.verticalMargin / cm))
 
     dd = DividerDrawer()
     dd.draw(cards, options)

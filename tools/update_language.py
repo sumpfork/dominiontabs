@@ -10,6 +10,7 @@
 #
 # All output is in the designated output directory.  Original files are not overwritten.
 ###########################################################################
+from __future__ import print_function
 import os
 import os.path
 import io
@@ -17,6 +18,8 @@ import codecs
 import json
 from shutil import copyfile
 import argparse
+
+import six
 
 LANGUAGE_DEFAULT = 'en_us'  # default language, which takes priority
 LANGUAGE_XX = 'xx'  # language for starting a translation
@@ -36,7 +39,7 @@ def get_lang_dirs(path):
 
 
 def get_json_data(json_file_path):
-    print('reading {}'.format(json_file_path))
+    print(('reading {}'.format(json_file_path)))
     # Read in the json from the specified file
     with codecs.open(json_file_path, 'r', 'utf-8') as json_file:
         data = json.load(json_file)
@@ -57,19 +60,9 @@ def json_dict_entry(entry, separator=''):
 # see: http://stackoverflow.com/questions/1143671/python-sorting-list-of-dictionaries-by-multiple-keys
 def multikeysort(items, columns):
     from operator import itemgetter
-    comparers = [((itemgetter(col[1:].strip()), -1)
-                  if col.startswith('-') else (itemgetter(col.strip()), 1))
-                 for col in columns]
-
-    def comparer(left, right):
-        for fn, mult in comparers:
-            result = cmp(fn(left), fn(right))
-            if result:
-                return mult * result
-        else:
-            return 0
-
-    return sorted(items, cmp=comparer)
+    for c in columns[::-1]:
+        items = sorted(items, key=itemgetter(c))
+    return items
 
 
 def main(args):
@@ -81,9 +74,9 @@ def main(args):
     languages.insert(0, LANGUAGE_DEFAULT)
     if LANGUAGE_XX not in languages:
         languages.append(LANGUAGE_XX)
-    print "Languages:"
-    print languages
-    print
+    print("Languages:")
+    print(languages)
+    print()
 
     ###########################################################################
     #  Make sure the directories exist to hold the output
@@ -116,7 +109,7 @@ def main(args):
     with io.open(
             os.path.join(args.output_dir, "types_db.json"), 'w',
             encoding='utf-8') as lang_out:
-        lang_out.write(unicode("["))  # Start of list
+        lang_out.write(six.u("["))  # Start of list
         sep = ""
         for type in sorted_type_data:
             # Collect all the individual types
@@ -124,12 +117,12 @@ def main(args):
             lang_out.write(sep + json.dumps(
                 type, indent=4, ensure_ascii=False, sort_keys=True))
             sep = ","
-        lang_out.write(unicode("\n]\n"))  # End of List
+        lang_out.write(six.u("\n]\n"))  # End of List
 
     type_parts.sort()
-    print "Unique Types:"
-    print type_parts
-    print
+    print("Unique Types:")
+    print(type_parts)
+    print()
 
     ###########################################################################
     # Fix up all the xx/types_xx.json files
@@ -151,7 +144,7 @@ def main(args):
         with io.open(
                 os.path.join(args.output_dir, lang, lang_file), 'w',
                 encoding='utf-8') as lang_out:
-            lang_out.write(unicode("{"))  # Start of types
+            lang_out.write(six.u("{"))  # Start of types
             sep = ""
             used = []
 
@@ -176,7 +169,7 @@ def main(args):
                         }, sep))
                     sep = ","
 
-            lang_out.write(unicode("\n}\n"))  # End of Types
+            lang_out.write(six.u("\n}\n"))  # End of Types
 
             if lang == LANGUAGE_DEFAULT:
                 lang_type_default = lang_type_data  # Keep for later languages
@@ -207,7 +200,7 @@ def main(args):
     with io.open(
             os.path.join(args.output_dir, "cards_db.json"), 'w',
             encoding='utf-8') as lang_out:
-        lang_out.write(unicode("["))  # Start of list
+        lang_out.write(six.u("["))  # Start of list
         sep = ""
         for card in sorted_card_data:
             if card['card_tag'] not in cards:
@@ -218,14 +211,14 @@ def main(args):
             lang_out.write(sep + json.dumps(
                 card, indent=4, ensure_ascii=False, sort_keys=True))
             sep = ","
-        lang_out.write(unicode("\n]\n"))  # End of List
+        lang_out.write(six.u("\n]\n"))  # End of List
 
     cards.extend(groups)
     cards.extend(super_groups)
 
-    print "Cards:"
-    print cards
-    print
+    print("Cards:")
+    print(cards)
+    print()
 
     ###########################################################################
     # Fix up all the cards_xx.json files
@@ -250,7 +243,7 @@ def main(args):
         with io.open(
                 os.path.join(args.output_dir, lang, lang_file), 'w',
                 encoding='utf-8') as lang_out:
-            lang_out.write(unicode("{"))  # Start of set
+            lang_out.write(six.u("{"))  # Start of set
             sep = ""
             fields = [u"description", u"extra", u"name"]
 
@@ -310,7 +303,7 @@ def main(args):
                         "untranslated"] = "Note: This card is currently not used."
                     lang_out.write(json_dict_entry({key: lang_data[key]}, sep))
                     sep = ","
-            lang_out.write(unicode("\n}\n"))  # End of Set
+            lang_out.write(six.u("\n}\n"))  # End of Set
 
             if lang == LANGUAGE_DEFAULT:
                 lang_default = lang_data  # Keep for later languages
@@ -325,7 +318,7 @@ def main(args):
     with io.open(
             os.path.join(args.output_dir, lang_file), 'w',
             encoding='utf-8') as lang_out:
-        lang_out.write(unicode("{"))  # Start of set
+        lang_out.write(six.u("{"))  # Start of set
         sep = ""
         sets = []
         for s in sorted(set_data):
@@ -334,11 +327,11 @@ def main(args):
             if s not in sets:
                 sets.append(s)
 
-        lang_out.write(unicode("\n}\n"))  # End of Set
+        lang_out.write(six.u("\n}\n"))  # End of Set
 
-    print "Sets:"
-    print sets
-    print
+    print("Sets:")
+    print(sets)
+    print()
 
     ###########################################################################
     # Fix up all the xx/sets_xx.json files
@@ -359,7 +352,7 @@ def main(args):
         with io.open(
                 os.path.join(args.output_dir, lang, lang_file), 'w',
                 encoding='utf-8') as lang_out:
-            lang_out.write(unicode("{"))  # Start of set
+            lang_out.write(six.u("{"))  # Start of set
             sep = ""
 
             for s in sorted(set_data):
@@ -402,7 +395,7 @@ def main(args):
                     lang_out.write(json_dict_entry({key: lang_set_data[key]}, sep))
                     sep = ","
 
-            lang_out.write(unicode("\n}\n"))  # End of Set
+            lang_out.write(six.u("\n}\n"))  # End of Set
 
             if lang == LANGUAGE_DEFAULT:
                 lang_default = lang_set_data  # Keep for later languages
@@ -437,11 +430,10 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--card_db_dir', default=os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                                              "..", "domdiv", "card_db"), 
+                                                              "..", "domdiv", "card_db"),
                         help='directory of card data')
-    parser.add_argument('--output_dir', 
+    parser.add_argument('--output_dir',
                         default=os.path.join(os.path.dirname(os.path.abspath(__file__)), ".", "card_db"),
                         help='directory for output data')
     args = parser.parse_args()
     main(args)
-
