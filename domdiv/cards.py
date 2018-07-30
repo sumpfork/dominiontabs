@@ -50,13 +50,14 @@ class Card(object):
         self.image = image
         self.text_icon = text_icon
         self.cardset_tag = cardset_tag
-        self.setCardCount(int(count))
+        self.setCardCount(count)
         self.randomizer = randomizer
 
     def getCardCount(self):
         return sum(i for i in self.count)
 
     def setCardCount(self, value):
+        value = int(value)
         if value < 0:
             self.count = [self.getType().getTypeDefaultCardCount()]
         elif value == 0:
