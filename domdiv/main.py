@@ -589,7 +589,7 @@ def read_card_data(options):
     # Read in the card types
     types_db_filepath = os.path.join("card_db", "types_db.json")
     with get_resource_stream(types_db_filepath) as typefile:
-        Card.types = json.load(typefile, object_hook=CardType.decode_json)
+        Card.types = json.loads(typefile.read().decode('utf-8'), object_hook=CardType.decode_json)
     assert Card.types, "Could not load any card types from database"
 
     # extract unique types
@@ -607,12 +607,12 @@ def read_card_data(options):
     # Read in the card database
     card_db_filepath = os.path.join("card_db", "cards_db.json")
     with get_resource_stream(card_db_filepath) as cardfile:
-        cards = json.load(cardfile, object_hook=Card.decode_json)
+        cards = json.loads(cardfile.read().decode('utf-8'), object_hook=Card.decode_json)
     assert cards, "Could not load any cards from database"
 
     set_db_filepath = os.path.join("card_db", "sets_db.json")
     with get_resource_stream(set_db_filepath) as setfile:
-        Card.sets = json.load(setfile)
+        Card.sets = json.loads(setfile.read().decode('utf-8'))
     assert Card.sets, "Could not load any sets from database"
     for s in Card.sets:
         # Make sure these are set either True or False
@@ -774,7 +774,7 @@ def add_card_text(options, cards, language='en_us'):
                                       language,
                                       "cards_" + language.lower() + ".json")
     with get_resource_stream(card_text_filepath) as card_text_file:
-        card_text = json.load(card_text_file)
+        card_text = json.loads(card_text_file.read().decode('utf-8'))
     assert language, "Could not load card text for %r" % language
 
     # Now apply to all the cards
@@ -796,7 +796,7 @@ def add_set_text(options, sets, language='en_us'):
                                      language,
                                      "sets_{}.json".format(language))
     with get_resource_stream(set_text_filepath) as set_text_file:
-        set_text = json.load(set_text_file)
+        set_text = json.loads(set_text_file.read().decode('utf-8'))
     assert set_text, "Could not load set text for %r" % language
 
     # Now apply to all the sets
@@ -814,7 +814,7 @@ def add_type_text(options, types={}, language='en_us'):
                                       language,
                                       "types_{}.json".format(language))
     with get_resource_stream(type_text_filepath) as type_text_file:
-        type_text = json.load(type_text_file)
+        type_text = json.loads(type_text_file.read().decode('utf-8'))
     assert type_text, "Could not load type text for %r" % language
 
     # Now apply to all the types
@@ -838,7 +838,7 @@ def add_bonus_regex(options, language='en_us'):
                                         language,
                                         "bonuses_{}.json".format(language))
     with get_resource_stream(bonus_regex_filepath) as bonus_regex_file:
-        bonus_regex = json.load(bonus_regex_file)
+        bonus_regex = json.loads(bonus_regex_file.read().decode('utf-8'))
     assert bonus_regex, "Could not load bonus keywords for %r" % language
 
     if not bonus_regex:
