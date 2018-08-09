@@ -502,13 +502,13 @@ def parseDimensions(dimensionsStr):
 
 
 def generate_sample(options):
-    import cStringIO
+    from io import BytesIO
     from wand.image import Image
-    buf = cStringIO.StringIO()
+    buf = BytesIO()
     options.num_pages = 1
     options.outfile = buf
     generate(options)
-    sample_out = cStringIO.StringIO()
+    sample_out = BytesIO()
     with Image(blob=buf.getvalue(), resolution=options.preview_resolution) as sample:
         sample.format = 'png'
         sample.save(sample_out)
@@ -530,7 +530,7 @@ def parse_papersize(spec):
     except AttributeError:
         try:
             paperwidth, paperheight = parseDimensions(papersize)
-            print(('Using custom paper size, %.2fcm x %.2fcm'.format(
+            print(('Using custom paper size, {:.2f}cm x {:.2f}cm'.format(
                 paperwidth / cm, paperheight / cm)))
         except ValueError:
             paperwidth, paperheight = pagesizes.LETTER
@@ -549,7 +549,7 @@ def parse_cardsize(spec, sleeved):
             dominionCardWidth / cm, dominionCardHeight / cm)))
     else:
         dominionCardWidth, dominionCardHeight = parseDimensions(spec)
-        print(('Using custom card size, {.2f}cm x {.2f}cm'.format(
+        print(('Using custom card size, {:.2f}cm x {:.2f}cm'.format(
             dominionCardWidth / cm, dominionCardHeight / cm)))
     return dominionCardWidth, dominionCardHeight
 
@@ -767,7 +767,7 @@ class CardSorter(object):
         return self.sort_key(card)
 
 
-def add_card_text(options, cards, language='en_us'):
+def add_card_text(cards, language='en_us'):
     language = language.lower()
     # Read in the card text file
     card_text_filepath = os.path.join("card_db",
@@ -807,7 +807,7 @@ def add_set_text(options, sets, language='en_us'):
     return sets
 
 
-def add_type_text(options, types={}, language='en_us'):
+def add_type_text(types={}, language='en_us'):
     language = language.lower()
     # Read in the type text and store for later
     type_text_filepath = os.path.join("card_db",
@@ -966,18 +966,18 @@ def filter_sort_cards(cards, options):
         for card in cards:
             if card.card_tag in group_cards:
                 if group_cards[card.group_tag].isEvent():
-                        group_cards[card.group_tag].cost = "*"
-                        group_cards[card.group_tag].debtcost = 0
-                        group_cards[card.group_tag].potcost = 0
+                    group_cards[card.group_tag].cost = "*"
+                    group_cards[card.group_tag].debtcost = 0
+                    group_cards[card.group_tag].potcost = 0
                 if group_cards[card.group_tag].isLandmark():
-                        group_cards[card.group_tag].cost = ""
-                        group_cards[card.group_tag].debtcost = 0
-                        group_cards[card.group_tag].potcost = 0
+                    group_cards[card.group_tag].cost = ""
+                    group_cards[card.group_tag].debtcost = 0
+                    group_cards[card.group_tag].potcost = 0
 
     # Get the final type names in the requested language
-    Card.type_names = add_type_text(options, Card.type_names, LANGUAGE_DEFAULT)
+    Card.type_names = add_type_text(Card.type_names, LANGUAGE_DEFAULT)
     if options.language != LANGUAGE_DEFAULT:
-        Card.type_names = add_type_text(options, Card.type_names, options.language)
+        Card.type_names = add_type_text(Card.type_names, options.language)
     for card in cards:
         card.types_name = ' - '.join([Card.type_names[t] for t in card.types]).upper()
 
@@ -1070,9 +1070,9 @@ def filter_sort_cards(cards, options):
     cards = keep_cards
 
     # Now add text to the cards.  Waited as long as possible to catch all groupings
-    cards = add_card_text(options, cards, LANGUAGE_DEFAULT)
+    cards = add_card_text(cards, LANGUAGE_DEFAULT)
     if options.language != LANGUAGE_DEFAULT:
-        cards = add_card_text(options, cards, options.language)
+        cards = add_card_text(cards, options.language)
 
     # Get list of cards from a file
     if options.cardlist:
