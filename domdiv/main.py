@@ -512,7 +512,7 @@ def generate_sample(options):
     with Image(blob=buf.getvalue(), resolution=options.preview_resolution) as sample:
         sample.format = 'png'
         sample.save(sample_out)
-        return sample_out
+        return sample_out.getvalue()
 
 
 def parse_papersize(spec):

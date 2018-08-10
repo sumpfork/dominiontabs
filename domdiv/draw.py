@@ -28,6 +28,7 @@ class DividerDrawer(object):
     def __init__(self):
         self.odd = True
         self.canvas = None
+        self.options = None
 
     @staticmethod
     def get_image_filepath(fname):
