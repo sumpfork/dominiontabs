@@ -76,8 +76,8 @@ def test_languages():
         options.data_path = '.'
         cards = main.read_card_data(options)
         assert cards, '"{}" cards did not read properly'.format(lang)
-        cards = main.add_card_text(options, cards, 'en_us')
-        cards = main.add_card_text(options, cards, lang)
+        cards = main.add_card_text(cards, 'en_us')
+        cards = main.add_card_text(cards, lang)
         if lang == 'it':
             assert "Maledizione" in [card.name for card in cards]
         elif lang == 'de':
