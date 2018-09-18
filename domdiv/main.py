@@ -1118,7 +1118,7 @@ def filter_sort_cards(cards, options):
                                                                'count': 1,
                                                                'sort': "%03d%s" % (order, c.name.strip(),)}
 
-        for set_tag, set_values in Card.sets.iteritems():
+        for set_tag, set_values in Card.sets.items():
             exp = set_values["set_name"]
             if exp in cardnamesByExpansion:
                 exp_name = exp
@@ -1133,7 +1133,7 @@ def filter_sort_cards(cards, options):
                         exp_name = set_values['short_name']
 
                 card_names = []
-                for key, n in sorted(cardnamesByExpansion[exp].items(), key=lambda k, x: x['sort']):
+                for n in sorted(cardnamesByExpansion[exp].values(), key=lambda x: x['sort']):
                     if not n['randomizer']:
                         # Highlight cards without Randomizers
                         n['name'] = '<i>' + n['name'] + '</i>'
