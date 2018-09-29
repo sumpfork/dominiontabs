@@ -289,6 +289,22 @@
     "tabTextHeightOffset": 0
 },{
     "card_type": [
+        "Artifact"
+    ],
+    "card_type_image": "artifact.png",
+    "defaultCardCount": 1,
+    "tabCostHeightOffset": -1,
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Project"
+    ],
+    "card_type_image": "project.png",
+    "defaultCardCount": 1,
+    "tabCostHeightOffset": -1,
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
         "Landmark"
     ],
     "card_type_image": "landmark.png",
