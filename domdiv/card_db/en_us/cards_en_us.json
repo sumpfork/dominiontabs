@@ -1340,8 +1340,8 @@
         "name": "Advisor"
     },
     "Baker": {
-        "description": "+1 Card<br>+1 Action<br>Take a Coin token.<line>Setup: Each player takes a Coin token.",
-        "extra": "When you play this, you draw a card, get +1 Action, and take a Coin token. In games using this card, each player starts the game with a Coin token. This includes games using the promo card Black Market in which Baker is in the Black Market deck.",
+        "description": "+1 Card<br>+1 Action<br>+1 Coffers (take a Coin token).<line>Setup: Each player takes a Coin token.",
+        "extra": "When you play this, you draw a card, get +1 Action, and +1 Coffers (take a Coin token). In games using this card, each player starts the game with a Coin token. This includes games using the promo card Black Market in which Baker is in the Black Market deck.",
         "name": "Baker"
     },
     "Butcher": {
@@ -1350,8 +1350,8 @@
         "name": "Butcher"
     },
     "Candlestick Maker": {
-        "description": "+1 Action<br>+1 Buy<br>Take a Coin token.",
-        "extra": "You get +1 Action and +1 Buy, and take a Coin token.",
+        "description": "+1 Action<br>+1 Buy<br>+1 Coffers (take a Coin token).",
+        "extra": "You get +1 Action and +1 Buy, and +1 Coffers (take a Coin token).",
         "name": "Candlestick Maker"
     },
     "Doctor": {
@@ -1375,13 +1375,13 @@
         "name": "Masterpiece"
     },
     "Merchant Guild": {
-        "description": "+1 Coin<line>While this is in play, when you buy a card, take a Coin token.",
-        "extra": "When you play this, you get +1 Buy and +1 Coin. While this is in play, any time you buy a card you also take a Coin token. Remember that you may only spend Coin tokens prior to buying cards, so you will not be able to immediately spend that Coin token. This ability is cumulative; if you have two Merchant Guilds in play, each card you buy will get you two Coin tokens. However if you play a Merchant Guild multiple times but only have one in play, such as with Throne Room (from Dominion) or King's Court (from Prosperity), you will only get one Coin token when you buy a card.",
+        "description": "+1 Coin<line>While this is in play, when you buy a card, +1 Coffers (take a Coin token).",
+        "extra": "When you play this, you get +1 Buy and +1 Coin. While this is in play, any time you buy a card you also +1 Coffers (take a Coin token). Remember that you may only spend Coin tokens prior to buying cards, so you will not be able to immediately spend that Coin token. This ability is cumulative; if you have two Merchant Guilds in play, each card you buy will get you two Coin tokens. However if you play a Merchant Guild multiple times but only have one in play, such as with Throne Room (from Dominion) or King's Court (from Prosperity), you will only get one Coin token when you buy a card.",
         "name": "Merchant Guild"
     },
     "Plaza": {
-        "description": "+1 Card<br>+2 Actions<n>You may discard a Treasure card. If you do, take a Coin token.",
-        "extra": "First you get +1 card and +2 Actions; then you may discard a Treasure. You can discard the card you drew if it is a Treasure. If you discarded a Treasure card, you take a Coin token. Cards with multiple types, one of which is Treasure (such as Harem from Intrigue), are Treasures.",
+        "description": "+1 Card<br>+2 Actions<n>You may discard a Treasure card. If you do, +1 Coffers (take a Coin token).",
+        "extra": "First you get +1 card and +2 Actions; then you may discard a Treasure. You can discard the card you drew if it is a Treasure. If you discarded a Treasure card, you +1 Coffers (take a Coin token). Cards with multiple types, one of which is Treasure (such as Harem from Intrigue), are Treasures.",
         "name": "Plaza"
     },
     "Soothsayer": {
@@ -2325,7 +2325,7 @@
         "name": "Pearl Diver"
     },
     "Pirate Ship": {
-        "description": "Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you take a Coin token; or, +1 Coin per Coin token you've taken with Pirate Ships this game.",
+        "description": "Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you +1 Coffers (take a Coin token); or, +1 Coin per Coin token you've taken with Pirate Ships this game.",
         "extra": "When you first take this card, take a Pirate Ship player mat. If you use the Pirate Ship to trash treasures, a player with just one card left reveals that last card and then shuffles to get the other card to reveal (without including the revealed card); a player with no cards left shuffles to get both of them. A player who still doesn't have two cards to reveal after shuffling just reveals what he can. Each player trashes one Treasure card at most, of the attacker's choice from the two revealed cards. As long as you trashed at least one Treasure card in this way, place a Coin token on your Pirate Ship player mat. You can't get more than one Coin token each time you play Pirate Ship, no matter how many treasures it trashes. If you choose not to try to trash treasures from the other players, the Pirate Ship is worth one coin for each Coin token on your Pirate Ship player mat. The Coin tokens are cumulative, so after you have used your Pirate Ships to trash coins 3 times (and you trash at least one Treasure card each time), any Pirate Ship you play could be worth 3 coins. Pirate Ship is an Action- Attack and players can reveal Secret Chamber even if you choose to use Pirate Ship for the coin value. [You make your choice on how to use Pirate Ship after other players are done revealing Reactions.]",
         "name": "Pirate Ship"
     },
