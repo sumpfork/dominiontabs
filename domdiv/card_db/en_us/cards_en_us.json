@@ -1,136 +1,136 @@
 {
     "Ducat": {
-        "description": "",
+        "description": "+1 Coffers<br>+1 Buy<line>When you gain this, you may trash a Copper from your hand.",
         "extra": "",
         "name": "Ducat"
     },
     "Acting Troupe": {
-        "description": "",
+        "description": "+4 Villagers<n>Trash this.",
         "extra": "",
         "name": "Acting Troupe"
     },
     "Experiment": {
-        "description": "",
+        "description": "+2 Cards<br>+1 Action<n>Return this to the Supply.<line>When you gain this, gain another Experiment (that doesn't come with another).",
         "extra": "",
         "name": "Flag Bearer"
     },
     "Flag Bearer": {
-        "description": "",
+        "description": "+2 Coin<n><line>When you gain or trash this, take the Flag",
         "extra": "",
         "name": "Flag Bearer"
     },
     "Flag Bearer - Flag": {
-        "description": "",
+        "description": "<left><u>Flag Bearer</u>:</left><n>+2 Coin<n><line>When you gain or trash this, take the Flag<n><left><u>Flag</u>:</left><n>When drawing your hand, +1 Card.",
         "extra": "",
-        "name": "Flag Bearer - Flag"
+        "name": "Flag Bearer / Flag"
     },
-    "Mountain Villiage": {
-        "description": "",
+    "Mountain Village": {
+        "description": "+2 Actions<br><n>Look through your discard pile and pput a card from it into your hand; if you can't, +1 Card.",
         "extra": "",
         "name": "Mountain Village"
     },
     "Priest": {
-        "description": "",
+        "description": "+2 Coin<br><n>Trash a card from your hand. For the rest of this turn, when you trash a card, +2 Coin.",
         "extra": "",
         "name": "Priest"
     },
     "Silk Merchant": {
-        "description": "",
+        "description": "+2 Cards<br>+1 Buy<n><line>When you gain or trash this, +1 Coffers and +1 Villager.",
         "extra": "",
         "name": "Silk Merchant"
     },
     "Recruiter": {
-        "description": "",
+        "description": "+2 Cards<br><n>Trash a card from your hand. +1 Villager per 1 Coin it costs.",
         "extra": "",
         "name": "Recruiter"
     },
     "Scholar": {
-        "description": "",
+        "description": "Discard your hand.<n>+7 Cards.",
         "extra": "",
         "name": "Scholar"
     },
     "Sculptor": {
-        "description": "",
+        "description": "Gain a card to your hand costing up to 4 Coin. If it's a Treasure, +1 Villager.",
         "extra": "",
         "name": "Sculptor"
     },
     "Seer": {
-        "description": "",
+        "description": "+1 Card<br>+1 Action<n>Reveal the top 3 cards of your deck. Put the ones costing from 2 Coin to 4 Coin into your hand. Put the rest back in any order.",
         "extra": "",
         "name": "Seer"
     },
     "Swashbuckler": {
-        "description": "",
+        "description": "+3 Cards<n>If your discard pile has any cards in it:<n>+1 Coffer, then if you have at least 4 Coffers tokens, take the Treasure Chest",
         "extra": "",
         "name": "Swashbuckler"
     },
     "Swashbuckler - Treasure Chest": {
-        "description": "",
+        "description": "<left><u>Swashbuckler</u>:</left><n>+3 Cards<n>If your discard pile has any cards in it:<n>+1 Coffer, then if you have at least 4 Coffers tokens, take the Treasure Chest<n><left><u>Treasure Chest</u>:</left><n>At the start of your Buy phase, gain a Gold.",
         "extra": "",
-        "name": "Swashbuckler - Treasure Chest"
+        "name": "Swashbuckler / Treasure Chest"
     },
     "Treasurer": {
-        "description": "",
+        "description": "+3 Coin<br><n>Choose one: Trash a Treasure from your hand; or gain a Treasure from the trash to your hand; or take the Key.",
         "extra": "",
         "name": "Treasurer"
     },
     "Treasurer - Key": {
-        "description": "",
+        "description": "<left><u>Treasurer</u>:</left><n>+3 Coin<br><n>Choose one: Trash a Treasure from your hand; or gain a Treasure from the trash to your hand; or take the Key.<n><left><u>Key</u>:</left><n>At the start of your turn, +1 Coin.",
         "extra": "",
-        "name": "Treasurer - Key"
+        "name": "Treasurer / Key"
     },
     "Villain": {
-        "description": "",
+        "description": "+2 Coffers<br><n>Each other player with 5 or more cards in hand discards one costing 2 Coin or more (or reveals they can't).",
         "extra": "",
         "name": "Villain"
     },
     "Sewers": {
-        "description": "",
-        "extra": "",
+        "description": "When you trash a card other than with this, you may trash a card from your hand.",
+        "extra": "Projects, introduced in Renaissance, are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects. However, for reference, the Project effects and costs are printed on cards in a landscape orientation with pink frames.\n\nThere are 20 Projects, any number of which may be used in a game of Dominion, though the rulebook recommends not using more than two total Events, Landmarks, and Projects. When choosing a random Kingdom, the Projects may be shuffled into the randomizer deck or a separate sideways card deck.",
         "name": "Sewers"
     },
     "Star Chart": {
-        "description": "",
-        "extra": "",
+        "description": "When you shuffle, you may pick one of the cards to go on top.",
+        "extra": "Projects, introduced in Renaissance, are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects. However, for reference, the Project effects and costs are printed on cards in a landscape orientation with pink frames.\n\nThere are 20 Projects, any number of which may be used in a game of Dominion, though the rulebook recommends not using more than two total Events, Landmarks, and Projects. When choosing a random Kingdom, the Projects may be shuffled into the randomizer deck or a separate sideways card deck.",
         "name": "Star Chart"
     },
     "Fair": {
-        "description": "",
-        "extra": "",
+        "description": "At the start of your turn, +1 Buy.",
+        "extra": "Projects, introduced in Renaissance, are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects. However, for reference, the Project effects and costs are printed on cards in a landscape orientation with pink frames.\n\nThere are 20 Projects, any number of which may be used in a game of Dominion, though the rulebook recommends not using more than two total Events, Landmarks, and Projects. When choosing a random Kingdom, the Projects may be shuffled into the randomizer deck or a separate sideways card deck.",
         "name": "Fair"
     },
     "Silos": {
-        "description": "",
-        "extra": "",
+        "description": "At the start of your turn, discard any number of Coppers, revealed, and draw that many cards.",
+        "extra": "Projects, introduced in Renaissance, are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects. However, for reference, the Project effects and costs are printed on cards in a landscape orientation with pink frames.\n\nThere are 20 Projects, any number of which may be used in a game of Dominion, though the rulebook recommends not using more than two total Events, Landmarks, and Projects. When choosing a random Kingdom, the Projects may be shuffled into the randomizer deck or a separate sideways card deck.",
         "name": "Silos"
     },
     "Innovation": {
-        "description": "",
-        "extra": "",
+        "description": "The first time you gain an Action card in each of your turns, you may set it aside.<n>If you do, play it.",
+        "extra": "Projects, introduced in Renaissance, are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects. However, for reference, the Project effects and costs are printed on cards in a landscape orientation with pink frames.\n\nThere are 20 Projects, any number of which may be used in a game of Dominion, though the rulebook recommends not using more than two total Events, Landmarks, and Projects. When choosing a random Kingdom, the Projects may be shuffled into the randomizer deck or a separate sideways card deck.",
         "name": "Innovation"
     },
     "Citadel": {
-        "description": "",
-        "extra": "",
+        "description": "The first time you play an Action card during each of your turns, play it again afterwards.",
+        "extra": "Projects, introduced in Renaissance, are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects. However, for reference, the Project effects and costs are printed on cards in a landscape orientation with pink frames.\n\nThere are 20 Projects, any number of which may be used in a game of Dominion, though the rulebook recommends not using more than two total Events, Landmarks, and Projects. When choosing a random Kingdom, the Projects may be shuffled into the randomizer deck or a separate sideways card deck.",
         "name": "Citadel"
     },
     "renaissance projects": {
-        "description": "",
+        "description": "Projects, introduced in Renaissance, are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects. However, for reference, the Project effects and costs are printed on cards in a landscape orientation with pink frames.\n\nThere are 20 Projects, any number of which may be used in a game of Dominion, though the rulebook recommends not using more than two total Events, Landmarks, and Projects. When choosing a random Kingdom, the Projects may be shuffled into the randomizer deck or a separate sideways card deck.",
         "extra": "",
-        "name": "renaissance projects"
+        "name": "Projects"
     },
     "Flag": {
-        "description": "",
+        "description": "When drawing your hand, +1 Card.",
         "extra": "",
         "name": "Flag"
     },
     "Key": {
-        "description": "",
+        "description": "At the start of your turn, +1 Coin.",
         "extra": "",
         "name": "Key"
     },
     "Treasure Chest": {
-        "description": "",
+        "description": "At the start of your Buy phase, gain a Gold.",
         "extra": "",
         "name": "Treasure Chest"
     },
