@@ -940,9 +940,9 @@ def filter_sort_cards(cards, options):
                     card.name = card.group_tag  # For now, change the name to the group_tab
                     card.description = error_msg
                     card.extra = error_msg
-                    if card.isEvent():
+                    if card.isType('Event') or card.isType('Project'):
                         card.cost = "*"
-                    if card.isLandmark():
+                    if card.isType('Landmark'):
                         card.cost = ""
                     # now save the card
                     keep_cards.append(card)
@@ -965,11 +965,11 @@ def filter_sort_cards(cards, options):
         # Now fix up card costs
         for card in cards:
             if card.card_tag in group_cards:
-                if group_cards[card.group_tag].isEvent():
+                if group_cards[card.group_tag].isType('Event') or group_cards[card.group_tag].isType('Project'):
                     group_cards[card.group_tag].cost = "*"
                     group_cards[card.group_tag].debtcost = 0
                     group_cards[card.group_tag].potcost = 0
-                if group_cards[card.group_tag].isLandmark():
+                if group_cards[card.group_tag].isType('Landmark'):
                     group_cards[card.group_tag].cost = ""
                     group_cards[card.group_tag].debtcost = 0
                     group_cards[card.group_tag].potcost = 0
