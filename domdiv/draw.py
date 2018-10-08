@@ -641,6 +641,12 @@ class DividerDrawer(object):
 
         if wrapper == "back":
             self.canvas.rotate(180)
+    
+        if self.options.black_tabs:
+            self.canvas.saveState()
+            self.canvas.setFillColorRGB(0, 0, 0)
+            self.canvas.rect(0, 0, self.options.labelWidth, self.options.labelHeight, fill=True)
+            self.canvas.restoreState()
 
         # allow for 3 pt border on each side
         textWidth = self.options.labelWidth - 6
@@ -1073,11 +1079,6 @@ class DividerDrawer(object):
             # remember whether we start with odd or even divider for tab
             # location
             pageStartOdd = self.odd
-            if self.options.tabs_only and self.options.black_tabs:
-                self.canvas.saveState()
-                self.canvas.setFillColorRGB(0, 0, 0)
-                self.canvas.rect(0, 0, self.options.paperwidth, self.options.paperheight, fill=True)
-                self.canvas.restoreState()
 
             if not self.options.no_page_footer and (
                     not self.options.tabs_only and
