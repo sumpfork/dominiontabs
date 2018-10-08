@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import os
 import re
 import sys
@@ -26,6 +28,7 @@ class DividerDrawer(object):
     def __init__(self):
         self.odd = True
         self.canvas = None
+        self.options = None
 
     @staticmethod
     def get_image_filepath(fname):
@@ -48,8 +51,8 @@ class DividerDrawer(object):
         # then make sure that we have at least one for each type
         for fonttype in self.font_mapping:
             if not len(self.font_mapping[fonttype]):
-                print >> sys.stderr, ("Warning, Minion Pro ttf file for {} missing from domdiv/fonts!"
-                                      " Falling back on Times font for everything.").format(fonttype)
+                print(("Warning, Minion Pro ttf file for {} missing from domdiv/fonts!"
+                       " Falling back on Times font for everything.").format(fonttype), file=sys.stderr)
                 self.font_mapping = {'Regular': 'Times-Roman',
                                      'Bold': 'Times-Bold',
                                      'Italic': 'Times-Oblique'}
@@ -376,9 +379,8 @@ class DividerDrawer(object):
         text = card.getBonusBoldText(text)
 
         # <line>
-        replace = "<center>%s\n" % ("&ndash;" * 22)
+        replace = "<center>{}</center>\n".format("&ndash;" * 22)
         text = re.sub(r"\<line\>", replace, text)
-
         #  <tab> and \t
         text = re.sub(r"\<tab\>", '\t', text)
         text = re.sub(r"\<t\>", '\t', text)
@@ -391,15 +393,24 @@ class DividerDrawer(object):
         # alignments
         text = re.sub(r"\<c\>", "<center>", text)
         text = re.sub(r"\<center\>", "\n<para alignment='center'>", text)
+        text = re.sub(r"\</c\>", "</center>", text)
+        text = re.sub(r"\</center\>", "</para>", text)
 
         text = re.sub(r"\<l\>", "<left>", text)
         text = re.sub(r"\<left\>", "\n<para alignment='left'>", text)
+        text = re.sub(r"\</l\>", "</left>", text)
+        text = re.sub(r"\</left\>", "</para>", text)
 
         text = re.sub(r"\<r\>", "<right>", text)
         text = re.sub(r"\<right\>", "\n<para alignment='right'>", text)
+        text = re.sub(r"\</r\>", "</right>", text)
+        text = re.sub(r"\</right\>", "</para>", text)
 
         text = re.sub(r"\<j\>", "<justify>", text)
         text = re.sub(r"\<justify\>", "\n<para alignment='justify'>", text)
+        text = re.sub(r"\</j\>", "</justify>", text)
+        text = re.sub(r"\</justify\>", "</para>", text)
+
         return text.strip().strip('\n')
 
     def drawOutline(self,
@@ -509,7 +520,7 @@ class DividerDrawer(object):
 
             # now draw the number of sets
             if count > 1:
-                count_string = u"{}\u00d7".format(count)
+                count_string = "{}\u00d7".format(count)
                 width_string = stringWidth(count_string, self.font_mapping['Regular'], 10)
                 width_string -= 1  # adjust to make it closer to image
                 width += width_string
@@ -640,7 +651,7 @@ class DividerDrawer(object):
             card.getType().getTabTextHeightOffset()
 
         # draw banner
-        img = card.getType().getNoCoinTabImageFile()
+        img = card.getType().getTabImageFile()
         if not self.options.no_tab_artwork and img:
             self.canvas.drawImage(
                 DividerDrawer.get_image_filepath(img),
@@ -709,8 +720,6 @@ class DividerDrawer(object):
                 name_lines = name.split(None, 1)
         else:
             name_lines = [name]
-        # if tooLong:
-        #    print name
 
         for linenum, line in enumerate(name_lines):
             h = textHeight
@@ -1077,7 +1086,7 @@ class DividerDrawer(object):
             for i, card in enumerate(pageCards):
                 # print card
                 x = i % self.options.numDividersHorizontal
-                y = i / self.options.numDividersHorizontal
+                y = i // self.options.numDividersHorizontal
                 self.canvas.saveState()
                 self.drawDivider(card,
                                  x,
@@ -1101,7 +1110,7 @@ class DividerDrawer(object):
                 # print card
                 x = (self.options.numDividersHorizontal - 1 - i
                      ) % self.options.numDividersHorizontal
-                y = i / self.options.numDividersHorizontal
+                y = i // self.options.numDividersHorizontal
                 self.canvas.saveState()
                 self.drawDivider(card,
                                  x,

@@ -1,3 +1,5 @@
+from __future__ import print_function, absolute_import
+
 import os
 import codecs
 import json
@@ -12,9 +14,9 @@ from collections import Counter, defaultdict
 import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
 
-from cards import Card
-from cards import CardType
-from draw import DividerDrawer
+from .cards import Card
+from .cards import CardType
+from .draw import DividerDrawer
 
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
@@ -505,17 +507,17 @@ def parseDimensions(dimensionsStr):
 
 
 def generate_sample(options):
-    import cStringIO
+    from io import BytesIO
     from wand.image import Image
-    buf = cStringIO.StringIO()
+    buf = BytesIO()
     options.num_pages = 1
     options.outfile = buf
     generate(options)
-    sample_out = cStringIO.StringIO()
+    sample_out = BytesIO()
     with Image(blob=buf.getvalue(), resolution=options.preview_resolution) as sample:
         sample.format = 'png'
         sample.save(sample_out)
-        return sample_out
+        return sample_out.getvalue()
 
 
 def parse_papersize(spec):
@@ -533,8 +535,8 @@ def parse_papersize(spec):
     except AttributeError:
         try:
             paperwidth, paperheight = parseDimensions(papersize)
-            print 'Using custom paper size, %.2fcm x %.2fcm' % (
-                paperwidth / cm, paperheight / cm)
+            print(('Using custom paper size, {:.2f}cm x {:.2f}cm'.format(
+                paperwidth / cm, paperheight / cm)))
         except ValueError:
             paperwidth, paperheight = pagesizes.LETTER
     return paperwidth, paperheight
@@ -544,16 +546,16 @@ def parse_cardsize(spec, sleeved):
     spec = spec.upper()
     if spec == 'SLEEVED' or sleeved:
         dominionCardWidth, dominionCardHeight = (9.4 * cm, 6.15 * cm)
-        print 'Using sleeved card size, %.2fcm x %.2fcm' % (
-            dominionCardWidth / cm, dominionCardHeight / cm)
+        print(('Using sleeved card size, {:.2f}cm x {:.2f}cm'.format(
+            dominionCardWidth / cm, dominionCardHeight / cm)))
     elif spec in ['NORMAL', 'UNSLEEVED']:
         dominionCardWidth, dominionCardHeight = (9.1 * cm, 5.9 * cm)
-        print 'Using normal card size, %.2fcm x%.2fcm' % (
-            dominionCardWidth / cm, dominionCardHeight / cm)
+        print(('Using normal card size, {:.2f}cm x{:.2f}cm'.format(
+            dominionCardWidth / cm, dominionCardHeight / cm)))
     else:
         dominionCardWidth, dominionCardHeight = parseDimensions(spec)
-        print 'Using custom card size, %.2fcm x %.2fcm' % (
-            dominionCardWidth / cm, dominionCardHeight / cm)
+        print(('Using custom card size, {:.2f}cm x {:.2f}cm'.format(
+            dominionCardWidth / cm, dominionCardHeight / cm)))
     return dominionCardWidth, dominionCardHeight
 
 
@@ -567,7 +569,7 @@ def find_index_of_object(lst=[], attributes={}):
     for i, d in enumerate(lst):
         # Set match to false just in case there are no attributes.
         match = False
-        for key, value in attributes.iteritems():
+        for key, value in attributes.items():
             # if anything does not match, then break out and start the next one.
             match = hasattr(d, key)
             if match:
@@ -592,7 +594,7 @@ def read_card_data(options):
     # Read in the card types
     types_db_filepath = os.path.join("card_db", "types_db.json")
     with get_resource_stream(types_db_filepath) as typefile:
-        Card.types = json.load(typefile, object_hook=CardType.decode_json)
+        Card.types = json.loads(typefile.read().decode('utf-8'), object_hook=CardType.decode_json)
     assert Card.types, "Could not load any card types from database"
 
     # extract unique types
@@ -610,12 +612,12 @@ def read_card_data(options):
     # Read in the card database
     card_db_filepath = os.path.join("card_db", "cards_db.json")
     with get_resource_stream(card_db_filepath) as cardfile:
-        cards = json.load(cardfile, object_hook=Card.decode_json)
+        cards = json.loads(cardfile.read().decode('utf-8'), object_hook=Card.decode_json)
     assert cards, "Could not load any cards from database"
 
     set_db_filepath = os.path.join("card_db", "sets_db.json")
     with get_resource_stream(set_db_filepath) as setfile:
-        Card.sets = json.load(setfile)
+        Card.sets = json.loads(setfile.read().decode('utf-8'))
     assert Card.sets, "Could not load any sets from database"
     for s in Card.sets:
         # Make sure these are set either True or False
@@ -656,7 +658,7 @@ def read_card_data(options):
         Estate_index = find_index_of_object(cards, {'card_tag': 'Estate'})
         if Copper_index is None or Estate_index is None or StartDeck_index is None:
             # Something is wrong, can't find one or more of the cards that need to change
-            print "Error - cannot create Start Decks"
+            print("Error - cannot create Start Decks")
 
             # Remove the Start Deck prototype if we can
             if StartDeck_index is not None:
@@ -770,14 +772,14 @@ class CardSorter(object):
         return self.sort_key(card)
 
 
-def add_card_text(options, cards, language='en_us'):
+def add_card_text(cards, language='en_us'):
     language = language.lower()
     # Read in the card text file
     card_text_filepath = os.path.join("card_db",
                                       language,
                                       "cards_" + language.lower() + ".json")
     with get_resource_stream(card_text_filepath) as card_text_file:
-        card_text = json.load(card_text_file)
+        card_text = json.loads(card_text_file.read().decode('utf-8'))
     assert language, "Could not load card text for %r" % language
 
     # Now apply to all the cards
@@ -799,7 +801,7 @@ def add_set_text(options, sets, language='en_us'):
                                      language,
                                      "sets_{}.json".format(language))
     with get_resource_stream(set_text_filepath) as set_text_file:
-        set_text = json.load(set_text_file)
+        set_text = json.loads(set_text_file.read().decode('utf-8'))
     assert set_text, "Could not load set text for %r" % language
 
     # Now apply to all the sets
@@ -810,14 +812,14 @@ def add_set_text(options, sets, language='en_us'):
     return sets
 
 
-def add_type_text(options, types={}, language='en_us'):
+def add_type_text(types={}, language='en_us'):
     language = language.lower()
     # Read in the type text and store for later
     type_text_filepath = os.path.join("card_db",
                                       language,
                                       "types_{}.json".format(language))
     with get_resource_stream(type_text_filepath) as type_text_file:
-        type_text = json.load(type_text_file)
+        type_text = json.loads(type_text_file.read().decode('utf-8'))
     assert type_text, "Could not load type text for %r" % language
 
     # Now apply to all the types
@@ -841,7 +843,7 @@ def add_bonus_regex(options, language='en_us'):
                                         language,
                                         "bonuses_{}.json".format(language))
     with get_resource_stream(bonus_regex_filepath) as bonus_regex_file:
-        bonus_regex = json.load(bonus_regex_file)
+        bonus_regex = json.loads(bonus_regex_file.read().decode('utf-8'))
     assert bonus_regex, "Could not load bonus keywords for %r" % language
 
     if not bonus_regex:
@@ -969,18 +971,18 @@ def filter_sort_cards(cards, options):
         for card in cards:
             if card.card_tag in group_cards:
                 if group_cards[card.group_tag].isEvent():
-                        group_cards[card.group_tag].cost = "*"
-                        group_cards[card.group_tag].debtcost = 0
-                        group_cards[card.group_tag].potcost = 0
+                    group_cards[card.group_tag].cost = "*"
+                    group_cards[card.group_tag].debtcost = 0
+                    group_cards[card.group_tag].potcost = 0
                 if group_cards[card.group_tag].isLandmark():
-                        group_cards[card.group_tag].cost = ""
-                        group_cards[card.group_tag].debtcost = 0
-                        group_cards[card.group_tag].potcost = 0
+                    group_cards[card.group_tag].cost = ""
+                    group_cards[card.group_tag].debtcost = 0
+                    group_cards[card.group_tag].potcost = 0
 
     # Get the final type names in the requested language
-    Card.type_names = add_type_text(options, Card.type_names, LANGUAGE_DEFAULT)
+    Card.type_names = add_type_text(Card.type_names, LANGUAGE_DEFAULT)
     if options.language != LANGUAGE_DEFAULT:
-        Card.type_names = add_type_text(options, Card.type_names, options.language)
+        Card.type_names = add_type_text(Card.type_names, options.language)
     for card in cards:
         card.types_name = ' - '.join([Card.type_names[t] for t in card.types]).upper()
 
@@ -1035,7 +1037,7 @@ def filter_sort_cards(cards, options):
         # Give indication if an imput did not match anything
         unknownExpansions = options.expansions - knownExpansions
         if unknownExpansions:
-            print "Error - unknown expansion(s): %s" % ", ".join(unknownExpansions)
+            print(("Error - unknown expansion(s): {}".format(", ".join(unknownExpansions))))
 
     # Take care of fan expansions.  Fan expansions must be explicitly named to be added.
     # If no --fan is given, then no fan cards are added.
@@ -1061,7 +1063,7 @@ def filter_sort_cards(cards, options):
         # Give indication if an imput did not match anything
         unknownExpansions = options.fan - knownExpansions
         if unknownExpansions:
-            print "Error - unknown fan expansion(s): %s" % ", ".join(unknownExpansions)
+            print("Error - unknown fan expansion(s): %s" % ", ".join(unknownExpansions))
 
     # Now keep only the cards that are in the sets that have been requested
     keep_cards = []
@@ -1073,9 +1075,9 @@ def filter_sort_cards(cards, options):
     cards = keep_cards
 
     # Now add text to the cards.  Waited as long as possible to catch all groupings
-    cards = add_card_text(options, cards, LANGUAGE_DEFAULT)
+    cards = add_card_text(cards, LANGUAGE_DEFAULT)
     if options.language != LANGUAGE_DEFAULT:
-        cards = add_card_text(options, cards, options.language)
+        cards = add_card_text(cards, options.language)
 
     # Get list of cards from a file
     if options.cardlist:
@@ -1121,7 +1123,7 @@ def filter_sort_cards(cards, options):
                                                                'count': 1,
                                                                'sort': "%03d%s" % (order, c.name.strip(),)}
 
-        for set_tag, set_values in Card.sets.iteritems():
+        for set_tag, set_values in Card.sets.items():
             exp = set_values["set_name"]
             if exp in cardnamesByExpansion:
                 exp_name = exp
@@ -1136,7 +1138,7 @@ def filter_sort_cards(cards, options):
                         exp_name = set_values['short_name']
 
                 card_names = []
-                for key, n in sorted(cardnamesByExpansion[exp].items(), key=lambda (k, x): x['sort']):
+                for n in sorted(cardnamesByExpansion[exp].values(), key=lambda x: x['sort']):
                     if not n['randomizer']:
                         # Highlight cards without Randomizers
                         n['name'] = '<i>' + n['name'] + '</i>'
@@ -1178,7 +1180,7 @@ def calculate_layout(options, cards=[]):
 
     if options.tab_side == "full" and options.tab_name_align == "edge":
         # This case does not make sense since there are two tab edges in this case.  So picking left edge.
-        print >> sys.stderr, "** Warning: Aligning card name as 'left' for 'full' tabs **"
+        print("** Warning: Aligning card name as 'left' for 'full' tabs **", file=sys.stderr)
         options.tab_name_align = "left"
 
     fixedMargins = False
@@ -1212,7 +1214,7 @@ def calculate_layout(options, cards=[]):
                                     for c in cards)
         dividerHeightReserved = (dividerHeightReserved * 2) + (
             max_card_stack_height * 2)
-        print "Max Card Stack Height: {:.2f}cm ".format(max_card_stack_height)
+        print("Max Card Stack Height: {:.2f}cm ".format(max_card_stack_height))
 
     # Notch measurements
     notch_height = 0.25 * cm  # thumb notch height
@@ -1283,14 +1285,14 @@ def generate(options):
 
     calculate_layout(options, cards)
 
-    print "Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
-        options.paperwidth / cm, options.paperheight / cm)
-    print "Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
-        options.dividerWidthReserved / cm, options.dividerHeightReserved / cm)
-    print '{} dividers horizontally, {} vertically'.format(
-        options.numDividersHorizontal, options.numDividersVertical)
-    print "Margins: {:.2f}cm h, {:.2f}cm v\n".format(
-        options.horizontalMargin / cm, options.verticalMargin / cm)
+    print("Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
+        options.paperwidth / cm, options.paperheight / cm))
+    print("Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
+        options.dividerWidthReserved / cm, options.dividerHeightReserved / cm))
+    print('{} dividers horizontally, {} vertically'.format(
+        options.numDividersHorizontal, options.numDividersVertical))
+    print("Margins: {:.2f}cm h, {:.2f}cm v\n".format(
+        options.horizontalMargin / cm, options.verticalMargin / cm))
 
     dd = DividerDrawer()
     dd.draw(cards, options)
