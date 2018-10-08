@@ -1074,9 +1074,10 @@ class DividerDrawer(object):
             # location
             pageStartOdd = self.odd
             if self.options.tabs_only and self.options.black_tabs:
+                self.canvas.saveState()
                 self.canvas.setFillColorRGB(0, 0, 0)
                 self.canvas.rect(0, 0, self.options.paperwidth, self.options.paperheight, fill=True)
-                self.canvas.setFillColorRGB(1, 1, 1)
+                self.canvas.restoreState()
 
             if not self.options.no_page_footer and (
                     not self.options.tabs_only and
