@@ -641,7 +641,7 @@ class DividerDrawer(object):
 
         if wrapper == "back":
             self.canvas.rotate(180)
-    
+
         if self.options.black_tabs:
             self.canvas.saveState()
             self.canvas.setFillColorRGB(0, 0, 0)
