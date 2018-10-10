@@ -419,8 +419,7 @@
     "Colony": {
         "description": "10 <*VP*>",
         "extra": "Diese Karte ist eine Basiskarte und keine Königreichkarte. Spielt ihr ausschließlich mit Königreichkarten aus Blütezeit, wird diese Karte zusätzlich zu den Basis-Punktekarten ANWESEN, HERZOGTUM und PROVINZ in der Spielvorbereitung in den Vorrat gelegt. Bei Spielen mit Königreichkarten aus verschiedenen Editionen oder Erweiterungen entscheidet vor Spielbeginn, ob ihr die KOLONIE in den Vorrat legen wollt oder nicht. Achtet darauf, dass in diesem Fall das Spiel auch endet, wenn der Vorratsstapel KOLONIE leer ist. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]",
-        "name": "Kolonie",
-        "untranslated": "extra"
+        "name": "Kolonie"
     },
     "Platinum": {
         "description": "5 <*COIN*>",
@@ -1849,7 +1848,7 @@
     },
     "Pixie": {
         "description": "+1 Karte<br>+1 Aktion<br>Lege die oberste Gabe ab. Du darfst diese Karte entsorgen, um die abgelegte Gabe zweimal zu empfangen.<br><br><i>Erbstück: Ziege</i>",
-        "extra": "In der Spielvorbereitung erhält jeder Spieler ein ERBSTÜCK ZIEGE und dafür ein KUPFER weniger. Wenn du die FEE nicht entsorgst, erhältst du die Gabe gar nicht. Wenn du die abgelegte Gabe laut Anweisung bis zu deiner Aufräumphase behalten sollst, lege sie vor dir ab, merke dir, dass du sie zweimal empfängst und lege sie in deiner Aufräumphase ab.", 
+        "extra": "In der Spielvorbereitung erhält jeder Spieler ein ERBSTÜCK ZIEGE und dafür ein KUPFER weniger. Wenn du die FEE nicht entsorgst, erhältst du die Gabe gar nicht. Wenn du die abgelegte Gabe laut Anweisung bis zu deiner Aufräumphase behalten sollst, lege sie vor dir ab, merke dir, dass du sie zweimal empfängst und lege sie in deiner Aufräumphase ab.",
         "name": "Fee"
     },
     "Plague": {
