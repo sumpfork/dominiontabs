@@ -110,7 +110,7 @@ class Card(object):
 
         bonus['include'].sort(reverse=True)
         include_regex = r"(\+\s*\d+\s*(" + '|'.join(bonus['include']) + "))"
-        regex = r"((?i)(?!\<b\>)" + include_regex + exclude_regex + r"(?!\<\/b\>))"
+        regex = r"(?i)((?!\<b\>)" + include_regex + exclude_regex + r"(?!\<\/b\>))"
         Card.bonus_regex.append(regex)
 
     def __repr__(self):

@@ -931,7 +931,10 @@ class DividerDrawer(object):
                     dmod = d
                 else:
                     dmod = self.add_inline_images(d, s.fontSize)
-                p = Paragraph(dmod, s)
+                try:
+                    p = Paragraph(dmod, s)
+                except ValueError as e:
+                    raise ValueError(u'Error rendering text from "{}": {} ("{}")'.format(card.name, e, dmod))
                 h += p.wrap(textBoxWidth, textBoxHeight)[1]
                 paragraphs.append(p)
 
