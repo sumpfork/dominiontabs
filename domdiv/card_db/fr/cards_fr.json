@@ -2894,8 +2894,8 @@
     "Shelters": {
         "description": "<left><u>Hovel</u>: When you buy a Victory card, you may trash this from your hand.</left><left><br><u>Necropolis</u>: +2 Actions</left><left><u>Overgrown Estate</u>: 0 <VP>; when you trash this, +1 Card.</left>", 
         "extra": " See Preparation. A shelter is never in the supply. <u>Hovel</u>: When you buy a Victory card, if Hovel is in your hand, you may trash the Hovel. A card with multiple types, one of which is Victory, is a Victory card. You do not get anything for trashing Hovel; you just get to get rid of it. <u>Overgrown Estate</u>: It is a Victory card despite being worth 0<VP>. If this is trashed, you draw a card, right then, even in the middle of resolving another card. For example, if you use Altar to trash Overgrown Estate, you first draw a card, then gain a card costing up to 5 Coins. This card does not give you a way to trash itself, it merely does something if you manage to trash it. <u>Necropolis</u>: This is an Action card; when you play it, you get +2 Actions. ", 
-        "name": "Shelters", 
-        "untranslated": "description, extra, name"
+        "name": "Refuges", 
+        "untranslated": "description, extra"
     },
     "Urchin - Mercenary": {
         "description": "<justify><u>Urchin</u>: When you play this, you draw a card and get +1 Action, then each other player discards down to 4 cards in hand. Players who already have 4 or fewer cards in hand do not do anything. While Urchin is in play, when you play another Attack card, before resolving it, you may trash the Urchin. If you do, you gain a Mercenary. If there are no Mercenaries left you do not gain one. If you play the same Urchin twice in one turn, such as via Procession, that does not let you trash it for a Mercenary. If you play two different Urchins however, playing the second one will let you trash the first one.</justify>", 
