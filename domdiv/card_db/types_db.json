@@ -233,6 +233,14 @@
     "tabTextHeightOffset": 0
 },{
     "card_type": [
+        "Artifact"
+    ],
+    "card_type_image": "artifact.png",
+    "defaultCardCount": 1,
+    "tabCostHeightOffset": -1,
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
         "Blank"
     ],
     "card_type_image": "",
@@ -284,22 +292,6 @@
         "Hex"
     ],
     "card_type_image": "hex.png",
-    "defaultCardCount": 1,
-    "tabCostHeightOffset": -1,
-    "tabTextHeightOffset": 0
-},{
-    "card_type": [
-        "Artifact"
-    ],
-    "card_type_image": "artifact.png",
-    "defaultCardCount": 1,
-    "tabCostHeightOffset": -1,
-    "tabTextHeightOffset": 0
-},{
-    "card_type": [
-        "Project"
-    ],
-    "card_type_image": "project.png",
     "defaultCardCount": 1,
     "tabCostHeightOffset": -1,
     "tabTextHeightOffset": 0
@@ -380,6 +372,14 @@
     ],
     "card_type_image": "action.png",
     "defaultCardCount": 0,
+    "tabCostHeightOffset": -1,
+    "tabTextHeightOffset": 0
+},{
+    "card_type": [
+        "Project"
+    ],
+    "card_type_image": "project.png",
+    "defaultCardCount": 1,
     "tabCostHeightOffset": -1,
     "tabTextHeightOffset": 0
 },{

@@ -1,236 +1,4 @@
 [{
-    "card_tag": "Ducat",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "2",
-    "types": [
-        "Treasure"
-    ]
-},{
-    "card_tag": "Acting Troupe",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "3",
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Experiment",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "3",
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Flag Bearer",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "4",
-    "group_tag": "Flag Bearer - Flag",
-    "group_top": true,
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Mountain Village",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "4",
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Priest",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "4",
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Silk Merchant",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "4",
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Recruiter",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "5",
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Scholar",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "5",
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Sculptor",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "5",
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Seer",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "5",
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Swashbuckler",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "5",
-    "group_tag": "Swashbuckler - Treasure Chest",
-    "group_top": true,
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Treasurer",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "5",
-    "group_tag": "Treasurer - Key",
-    "group_top": true,
-    "types": [
-        "Action"
-    ]
-},{
-    "card_tag": "Villain",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "5",
-    "types": [
-        "Action",
-        "Attack"
-    ]
-},{
-    "card_tag": "Sewers",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "",
-    "group_tag": "renaissance projects",
-    "randomizer": false,
-    "types": [
-        "Project"
-    ]
-},{
-    "card_tag": "Star Chart",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "",
-    "group_tag": "renaissance projects",
-    "randomizer": false,
-    "types": [
-        "Project"
-    ]
-},{
-    "card_tag": "Fair",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "",
-    "group_tag": "renaissance projects",
-    "randomizer": false,
-    "types": [
-        "Project"
-    ]
-},{
-    "card_tag": "Silos",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "",
-    "group_tag": "renaissance projects",
-    "randomizer": false,
-    "types": [
-        "Project"
-    ]
-},{
-    "card_tag": "Innovation",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "",
-    "group_tag": "renaissance projects",
-    "randomizer": false,
-    "types": [
-        "Project"
-    ]
-},{
-    "card_tag": "Citadel",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "",
-    "group_tag": "renaissance projects",
-    "randomizer": false,
-    "types": [
-        "Project"
-    ]
-},{
-    "card_tag": "Flag",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "",
-    "group_tag": "Flag Bearer - Flag",
-    "randomizer": false,
-    "types": [
-        "Artifact"
-    ]
-},{
-    "card_tag": "Key",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "",
-    "group_tag": "Treasurer - Key",
-    "randomizer": false,
-    "types": [
-        "Artifact"
-    ]
-},{
-    "card_tag": "Treasure Chest",
-    "cardset_tags": [
-        "renaissance"
-    ],
-    "cost": "",
-    "group_tag": "Swashbuckler - Treasure Chest",
-    "randomizer": false,
-    "types": [
-        "Artifact"
-    ]
-},{
     "card_tag": "Alms",
     "cardset_tags": [
         "adventures"
@@ -4606,6 +4374,518 @@
     "cost": "4",
     "types": [
         "Action"
+    ]
+},{
+    "card_tag": "Academy",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Acting Troupe",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "3",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Barracks",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "6",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Border Guard",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "2",
+    "group_tag": "Border Guard - LanternHorn",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Canal",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "7",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Capitalism",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Cargo Ship",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "3",
+    "types": [
+        "Action",
+        "Duration"
+    ]
+},{
+    "card_tag": "Cathedral",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "3",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Citadel",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "8",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "City Gate",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "3",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Crop Rotation",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "6",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Ducat",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "2",
+    "types": [
+        "Treasure"
+    ]
+},{
+    "card_tag": "Experiment",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "3",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Exploration",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Fair",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Flag",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "",
+    "group_tag": "Flag Bearer - Flag",
+    "randomizer": false,
+    "types": [
+        "Artifact"
+    ]
+},{
+    "card_tag": "Flag Bearer",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "group_tag": "Flag Bearer - Flag",
+    "group_top": true,
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Fleet",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Guildhall",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Hideout",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Horn",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "",
+    "group_tag": "Border Guard - LanternHorn",
+    "randomizer": false,
+    "types": [
+        "Artifact"
+    ]
+},{
+    "card_tag": "Improve",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "3",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Innovation",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "6",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Inventor",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Key",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "",
+    "group_tag": "Treasurer - Key",
+    "randomizer": false,
+    "types": [
+        "Artifact"
+    ]
+},{
+    "card_tag": "Lackeys",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "2",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Lantern",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "",
+    "group_tag": "Border Guard - LanternHorn",
+    "randomizer": false,
+    "types": [
+        "Artifact"
+    ]
+},{
+    "card_tag": "Mountain Village",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Old Witch",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "types": [
+        "Action",
+        "Attack"
+    ]
+},{
+    "card_tag": "Pageant",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "3",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Patron",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "types": [
+        "Action",
+        "Reaction"
+    ]
+},{
+    "card_tag": "Piazza",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Priest",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Recruiter",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Research",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "types": [
+        "Action",
+        "Duration"
+    ]
+},{
+    "card_tag": "Road Network",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Scepter",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "types": [
+        "Treasure"
+    ]
+},{
+    "card_tag": "Scholar",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Sculptor",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Seer",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Sewers",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "3",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Silk Merchant",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Silos",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Sinister Plot",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "4",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Spices",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "types": [
+        "Treasure"
+    ]
+},{
+    "card_tag": "Star Chart",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "3",
+    "group_tag": "renaissance projects",
+    "randomizer": false,
+    "types": [
+        "Project"
+    ]
+},{
+    "card_tag": "Swashbuckler",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "group_tag": "Swashbuckler - Treasure Chest",
+    "group_top": true,
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Treasure Chest",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "",
+    "group_tag": "Swashbuckler - Treasure Chest",
+    "randomizer": false,
+    "types": [
+        "Artifact"
+    ]
+},{
+    "card_tag": "Treasurer",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "group_tag": "Treasurer - Key",
+    "group_top": true,
+    "types": [
+        "Action"
+    ]
+},{
+    "card_tag": "Villain",
+    "cardset_tags": [
+        "renaissance"
+    ],
+    "cost": "5",
+    "types": [
+        "Action",
+        "Attack"
     ]
 },{
     "card_tag": "Ambassador",
