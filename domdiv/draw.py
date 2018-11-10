@@ -642,6 +642,12 @@ class DividerDrawer(object):
         if wrapper == "back":
             self.canvas.rotate(180)
 
+        if self.options.black_tabs:
+            self.canvas.saveState()
+            self.canvas.setFillColorRGB(0, 0, 0)
+            self.canvas.rect(0, 0, self.options.labelWidth, self.options.labelHeight, fill=True)
+            self.canvas.restoreState()
+
         # allow for 3 pt border on each side
         textWidth = self.options.labelWidth - 6
         textHeight = 7
@@ -931,7 +937,10 @@ class DividerDrawer(object):
                     dmod = d
                 else:
                     dmod = self.add_inline_images(d, s.fontSize)
-                p = Paragraph(dmod, s)
+                try:
+                    p = Paragraph(dmod, s)
+                except ValueError as e:
+                    raise ValueError(u'Error rendering text from "{}": {} ("{}")'.format(card.name, e, dmod))
                 h += p.wrap(textBoxWidth, textBoxHeight)[1]
                 paragraphs.append(p)
 
@@ -1073,10 +1082,12 @@ class DividerDrawer(object):
             # remember whether we start with odd or even divider for tab
             # location
             pageStartOdd = self.odd
+
             if not self.options.no_page_footer and (
                     not self.options.tabs_only and
                     self.options.order != "global"):
                 self.drawSetNames(pageCards)
+
             for i, card in enumerate(pageCards):
                 # print card
                 x = i % self.options.numDividersHorizontal

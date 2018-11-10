@@ -421,6 +421,11 @@ def parse_opts(cmdline_args=None):
         help="Draw only the divider tabs and no divider outlines. "
         "Used to print the divider tabs on labels.")
     group_printing.add_argument(
+        "--black-tabs",
+        action="store_true",
+        help="In tabs-only mode, draw tabs on black background"
+    )
+    group_printing.add_argument(
         "--info",
         action="store_true",
         dest="info",
