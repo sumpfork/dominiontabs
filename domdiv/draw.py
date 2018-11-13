@@ -116,7 +116,9 @@ class DividerDrawer(object):
         blank_line = (space + '\n') * 2
 
         if self.options.info or self.options.info_all:
-            text = "<para alignment='center'><font size=18><b>Sumpfork's Dominion Tabbed Divider Generator</b></font>\n"
+            text = "<para alignment='center'><font size=18><b>"
+            text += "Sumpfork's Dominion Tabbed Divider Generator"
+            text += "</b></font></para>\n"
             text += blank_line
             text += "Online generator at: "
             text += "<a href='http://domtabs.sandflea.org/' color='blue'>http://domtabs.sandflea.org</a>\n\n"
@@ -520,7 +522,7 @@ class DividerDrawer(object):
 
             # now draw the number of sets
             if count > 1:
-                count_string = "{}\u00d7".format(count)
+                count_string = u"{}\u00d7".format(count)
                 width_string = stringWidth(count_string, self.font_mapping['Regular'], 10)
                 width_string -= 1  # adjust to make it closer to image
                 width += width_string
