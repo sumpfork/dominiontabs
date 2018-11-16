@@ -24,6 +24,7 @@ TAB_SIDE_CHOICES = ["left", "right", "left-alternate", "right-alternate",
                     "centre", "full"]
 TEXT_CHOICES = ["card", "rules", "blank"]
 EDITION_CHOICES = ["1", "2", "latest", "all"]
+LABEL_CHOICES = ["8867", "L4732", "L4736"]
 
 EXPANSION_CHOICES = ["adventures", "alchemy", "base", "cornucopia", "dark ages",
                      "dominion1stEdition", "dominion2ndEdition", "dominion2ndEditionUpgrade",
@@ -1037,7 +1038,7 @@ def filter_sort_cards(cards, options):
                     group_cards[card.group_tag].cost = ""
                     group_cards[card.group_tag].debtcost = 0
                     group_cards[card.group_tag].potcost = 0
-       
+
     # Get the final type names in the requested language
     Card.type_names = add_type_text(Card.type_names, LANGUAGE_DEFAULT)
     if options.language != LANGUAGE_DEFAULT:
