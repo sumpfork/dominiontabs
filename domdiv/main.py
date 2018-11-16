@@ -510,7 +510,7 @@ def clean_opts(options):
 
     options.label = None
     if options.label_name is not None:
-        #Load the Labels, and look for match
+        # Load the Labels, and look for match
         labels_db_filepath = os.path.join("card_db", "labels_db.json")
         with get_resource_stream(labels_db_filepath) as labelfile:
             label_info = json.loads(labelfile.read().decode('utf-8'))
@@ -523,26 +523,28 @@ def clean_opts(options):
         if options.label is None:
             print("Error: Label not defined")
         else:
-            # Default / missing values
-            options.label['paper'] = options.label['paper'] if 'paper' in options.label else "LETTER"
-            options.label['tab-only'] = options.label['tab-only'] if 'tab-only' in options.label else True
-            options.label['body-height'] = options.label['body-height'] if 'body-height' in options.label else 0
-            options.label['gap-vertical'] = options.label['gap-vertical'] if 'gap-vertical' in options.label else 0.0
-            options.label['gap-horizontal'] = options.label['gap-horizontal'] if 'gap-horizontal' in options.label else 0.0
-            options.label['pad-vertical'] = options.label['pad-vertical'] if 'pad-vertical' in options.label else 0.1
-            options.label['pad-horizontal'] = options.label['pad-horizontal'] if 'pad-horizontal' in options.label else 0.1
+            # Defaults for missing values
+            label = options.label
+            label['paper'] = label['paper'] if 'paper' in label else "LETTER"
+            label['tab-only'] = label['tab-only'] if 'tab-only' in label else True
+            label['body-height'] = label['body-height'] if 'body-height' in label else 0
+            label['gap-vertical'] = label['gap-vertical'] if 'gap-vertical' in label else 0.0
+            label['gap-horizontal'] = label['gap-horizontal'] if 'gap-horizontal' in label else 0.0
+            label['pad-vertical'] = label['pad-vertical'] if 'pad-vertical' in label else 0.1
+            label['pad-horizontal'] = label['pad-horizontal'] if 'pad-horizontal' in label else 0.1
 
-            # Option Overrides using labels
+            # Option Overrides when using labels
             options.linewidth = 0.0
-            options.papersize = options.label['paper']
-            if options.label['tab-only']:
+            options.papersize = label['paper']
+            if label['tab-only']:
                 options.tabs_only = True
-            if options.label['body-height'] < 4.0:
+            if label['body-height'] < 4.0:
                 options.text_front = "blank"
                 options.text_back = "blank"
-            if options.label['body-height'] < 1.0:
+            if label['body-height'] < 1.0:
                 options.count = False
                 options.types = False
+            options.label = label
 
     return options
 
@@ -1232,14 +1234,14 @@ def calculate_layout(options, cards=[]):
     fixedMargins = False
     if options.label is not None:
         # Set Margins
-        minmarginheight = (options.label['margin-top'] + options.label['pad-vertical'] ) * cm
-        minmarginwidth = (options.label['margin-left'] + options.label['pad-horizontal'] ) * cm
+        minmarginheight = (options.label['margin-top'] + options.label['pad-vertical']) * cm
+        minmarginwidth = (options.label['margin-left'] + options.label['pad-horizontal']) * cm
         # Set Label size
-        labelHeight = (options.label['height'] - 2 * options.label['pad-vertical'] ) * cm
-        labelWidth = (options.label['width'] - 2 * options.label['pad-horizontal'] ) * cm
+        labelHeight = (options.label['height'] - 2 * options.label['pad-vertical']) * cm
+        labelWidth = (options.label['width'] - 2 * options.label['pad-horizontal']) * cm
         # Set spacing between labels
-        verticalBorderSpace = (options.label['gap-vertical'] + 2 * options.label['pad-vertical'] ) * cm
-        horizontalBorderSpace = (options.label['gap-horizontal'] + 2 * options.label['pad-horizontal'] ) * cm
+        verticalBorderSpace = (options.label['gap-vertical'] + 2 * options.label['pad-vertical']) * cm
+        horizontalBorderSpace = (options.label['gap-horizontal'] + 2 * options.label['pad-horizontal']) * cm
         # Fix up other settings
         dividerBaseHeight = options.label['body-height'] * cm
         dividerWidth = labelWidth
