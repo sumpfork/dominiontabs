@@ -1232,6 +1232,7 @@ def calculate_layout(options, cards=[]):
         options.tab_name_align = "left"
 
     fixedMargins = False
+    options.label = options.label if 'label' in options else None
     if options.label is not None:
         # Set Margins
         minmarginheight = (options.label['margin-top'] + options.label['pad-vertical']) * cm
