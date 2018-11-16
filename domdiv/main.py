@@ -312,8 +312,9 @@ def parse_opts(cmdline_args=None):
         help="Include four start decks with the Base cards.")
     group_select.add_argument(
         "--include-blanks",
-        action="store_true",
-        help="Include a few dividers with extra text.")
+        type=int,
+        default=0,
+        help="Number of blank dividers to include.")
     group_select.add_argument(
         "--exclude-events",
         action="store_true",
@@ -940,6 +941,16 @@ def filter_sort_cards(cards, options):
 
         cards = keep_cards
 
+    # Add any blank cards
+    if options.include_blanks > 0:
+        for x in range(0, options.include_blanks):
+            c = Card(cardset='extras',
+                     cardset_tag='extras',
+                     randomizer=False,
+                     types=("Blank", ))
+            cards.append(c)
+        options.expansions.append("extras")
+
     # Combine upgrade cards with their expansion
     if options.upgrade_with_expansion:
         for card in cards:
@@ -1026,7 +1037,7 @@ def filter_sort_cards(cards, options):
                     group_cards[card.group_tag].cost = ""
                     group_cards[card.group_tag].debtcost = 0
                     group_cards[card.group_tag].potcost = 0
-
+       
     # Get the final type names in the requested language
     Card.type_names = add_type_text(Card.type_names, LANGUAGE_DEFAULT)
     if options.language != LANGUAGE_DEFAULT:
@@ -1152,7 +1163,7 @@ def filter_sort_cards(cards, options):
         cardnamesByExpansion = defaultdict(dict)
         randomizerCountByExpansion = Counter()
         for c in cards:
-            if cardSorter.isBaseExpansionCard(c):
+            if cardSorter.isBaseExpansionCard(c) or c.isBlank():
                 continue
             if c.randomizer:
                 randomizerCountByExpansion[c.cardset] += 1

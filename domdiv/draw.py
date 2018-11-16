@@ -614,6 +614,10 @@ class DividerDrawer(object):
         return w
 
     def drawTab(self, card, rightSide, wrapper="no"):
+        # Skip blank cards
+        if card.isBlank():
+            return
+
         # draw tab flap
         self.canvas.saveState()
         if self.wantCentreTab(card):
@@ -822,6 +826,9 @@ class DividerDrawer(object):
         self.canvas.restoreState()
 
     def drawText(self, card, divider_text="card", wrapper="no"):
+        # Skip blank cards
+        if card.isBlank():
+            return
 
         self.canvas.saveState()
         usedHeight = 0
