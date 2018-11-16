@@ -426,6 +426,12 @@ def parse_opts(cmdline_args=None):
         help="In tabs-only mode, draw tabs on black background"
     )
     group_printing.add_argument(
+        "--label",
+        dest="label_name",
+        default=None,
+        help="Use preset label dimentions. Specify a label name. "
+        "This will override settings that conflict with the preset label settings.")
+    group_printing.add_argument(
         "--info",
         action="store_true",
         dest="info",
@@ -497,6 +503,46 @@ def clean_opts(options):
     if 'none' in options.fan:
         # keyword to indicate no options.  Same as --fan without any expansions given
         options.fan = []
+
+    if options.tabs_only and options.label_name is None:
+        # default is Avery 8867
+        options.label_name = "8867"
+
+    options.label = None
+    if options.label_name is not None:
+        #Load the Labels, and look for match
+        labels_db_filepath = os.path.join("card_db", "labels_db.json")
+        with get_resource_stream(labels_db_filepath) as labelfile:
+            label_info = json.loads(labelfile.read().decode('utf-8'))
+        assert label_info, "Could not load label information from database"
+        for label in label_info:
+            if options.label_name.upper() in [n.upper() for n in label['names']]:
+                options.label = label
+                break
+
+        if options.label is None:
+            print("Error: Label not defined")
+        else:
+            # Default / missing values
+            options.label['paper'] = options.label['paper'] if 'paper' in options.label else "LETTER"
+            options.label['tab-only'] = options.label['tab-only'] if 'tab-only' in options.label else True
+            options.label['body-height'] = options.label['body-height'] if 'body-height' in options.label else 0
+            options.label['gap-vertical'] = options.label['gap-vertical'] if 'gap-vertical' in options.label else 0.0
+            options.label['gap-horizontal'] = options.label['gap-horizontal'] if 'gap-horizontal' in options.label else 0.0
+            options.label['pad-vertical'] = options.label['pad-vertical'] if 'pad-vertical' in options.label else 0.1
+            options.label['pad-horizontal'] = options.label['pad-horizontal'] if 'pad-horizontal' in options.label else 0.1
+
+            # Option Overrides using labels
+            options.linewidth = 0.0
+            options.papersize = options.label['paper']
+            if options.label['tab-only']:
+                options.tabs_only = True
+            if options.label['body-height'] < 4.0:
+                options.text_front = "blank"
+                options.text_back = "blank"
+            if options.label['body-height'] < 1.0:
+                options.count = False
+                options.types = False
 
     return options
 
@@ -1184,15 +1230,18 @@ def calculate_layout(options, cards=[]):
         options.tab_name_align = "left"
 
     fixedMargins = False
-    if options.tabs_only:
-        # fixed for Avery 8867 for now
-        minmarginwidth = 0.86 * cm  # was 0.76
-        minmarginheight = 1.37 * cm  # was 1.27
-        labelHeight = 1.07 * cm  # was 1.27
-        labelWidth = 4.24 * cm  # was 4.44
-        horizontalBorderSpace = 0.96 * cm  # was 0.76
-        verticalBorderSpace = 0.20 * cm  # was 0.01
-        dividerBaseHeight = 0
+    if options.label is not None:
+        # Set Margins
+        minmarginheight = (options.label['margin-top'] + options.label['pad-vertical'] ) * cm
+        minmarginwidth = (options.label['margin-left'] + options.label['pad-horizontal'] ) * cm
+        # Set Label size
+        labelHeight = (options.label['height'] - 2 * options.label['pad-vertical'] ) * cm
+        labelWidth = (options.label['width'] - 2 * options.label['pad-horizontal'] ) * cm
+        # Set spacing between labels
+        verticalBorderSpace = (options.label['gap-vertical'] + 2 * options.label['pad-vertical'] ) * cm
+        horizontalBorderSpace = (options.label['gap-horizontal'] + 2 * options.label['pad-horizontal'] ) * cm
+        # Fix up other settings
+        dividerBaseHeight = options.label['body-height'] * cm
         dividerWidth = labelWidth
         fixedMargins = True
     else:
