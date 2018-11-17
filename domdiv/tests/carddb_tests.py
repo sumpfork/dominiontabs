@@ -22,7 +22,7 @@ def rmtestcardb(request):
 
 
 def test_cardread():
-    cardsExpected = 524
+    cardsExpected = 574
 
     options = main.parse_opts([])
     options.data_path = '.'
@@ -52,6 +52,7 @@ def test_cardread():
         u'nocturne',
         u'nocturne extras',
         u'promo',
+        u'renaissance',
         u'extras',
         u'animals'
     }
