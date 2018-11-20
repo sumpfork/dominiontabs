@@ -1,3 +1,5 @@
+from __future__ import print_function, absolute_import
+
 import os
 import codecs
 import json
@@ -6,13 +8,15 @@ import argparse
 import copy
 import fnmatch
 import pkg_resources
+import unicodedata
+from collections import Counter, defaultdict
 
 import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
 
-from cards import Card
-from cards import CardType
-from draw import DividerDrawer
+from .cards import Card
+from .cards import CardType
+from .draw import DividerDrawer
 
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
@@ -27,7 +31,7 @@ EXPANSION_CHOICES = ["adventures", "alchemy", "base", "cornucopia", "dark ages",
                      "dominion1stEdition", "dominion2ndEdition", "dominion2ndEditionUpgrade",
                      "empires", "guilds", "hinterlands",
                      "intrigue1stEdition", "intrigue2ndEdition", "intrigue2ndEditionUpgrade",
-                     "promo", "prosperity", "seaside"]
+                     "promo", "prosperity", "renaissance", "seaside", "nocturne"]
 FAN_CHOICES = ["animals"]
 ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
 
@@ -144,7 +148,8 @@ def parse_opts(cmdline_args=None):
         "--count",
         action="store_true",
         dest="count",
-        help="Display card count on body of the divider.")
+        help="Display the card count on the body of card dividers "
+        "and the randomizer count on the body of expansion dividers.")
     group_body.add_argument(
         "--types",
         action="store_true",
@@ -156,7 +161,7 @@ def parse_opts(cmdline_args=None):
         'Divider Tab',
         'Changes what is displayed on on the Divider Tab.')
     group_tab.add_argument(
-        "--tab_side",
+        "--tab-side",
         choices=TAB_SIDE_CHOICES,
         dest="tab_side",
         default="right-alternate",
@@ -189,7 +194,7 @@ def parse_opts(cmdline_args=None):
              "(e.g., left to right, to left, to right, etc.) "
              "Only valid if --tab_number > 2.")
     group_tab.add_argument(
-        "--tab_name_align",
+        "--tab-name-align",
         choices=NAME_ALIGN_CHOICES + ["center"],
         dest="tab_name_align",
         default="left",
@@ -212,7 +217,7 @@ def parse_opts(cmdline_args=None):
         "'hide' to indicate it should not be displayed, or "
         "given multiple times to show it in multiple places.")
     group_tab.add_argument(
-        "--set_icon",
+        "--set-icon",
         action="append",
         choices=LOCATION_CHOICES,
         default=['tab'],
@@ -235,24 +240,18 @@ def parse_opts(cmdline_args=None):
         'Expansion Dividers',
         'Adding separator dividers for each expansion.')
     group_expansion.add_argument(
-        "--expansion_dividers",
+        "--expansion-dividers",
         action="store_true",
         dest="expansion_dividers",
         help="Add dividers describing each expansion set. "
         "A list of cards in the expansion will be shown on the front of the divider.")
     group_expansion.add_argument(
-        "--centre_expansion_dividers",
+        "--centre-expansion-dividers",
         action="store_true",
         dest="centre_expansion_dividers",
         help='Centre the tabs on expansion dividers.')
     group_expansion.add_argument(
-        "--expansion_reset_tabs",
-        action="store_true",
-        dest="expansion_reset_tabs",
-        help="When set, the tabs are restarted (left/right) at the beginning of each expansion. "
-        "If not set, the tab pattern will continue from one expansion to the next. ")
-    group_expansion.add_argument(
-        "--expansion_dividers_long_name",
+        "--expansion-dividers-long-name",
         action="store_true",
         dest="expansion_dividers_long_name",
         help="Use the long name with edition information on the expansion divider tab. "
@@ -305,31 +304,46 @@ def parse_opts(cmdline_args=None):
         "'all' is for all editions of expansions; "
         " This can be combined with other options to refine the expansions to include in the output.")
     group_select.add_argument(
-        "--upgrade_with_expansion",
+        "--upgrade-with-expansion",
         action="store_true",
         dest="upgrade_with_expansion",
         help="Include any new edition upgrade cards with the expansion being upgraded.")
     group_select.add_argument(
-        "--base_cards_with_expansion",
+        "--base-cards-with-expansion",
         action="store_true",
         help="Print the base cards as part of the expansion (i.e., a divider for 'Silver' "
         "will be printed as both a 'Dominion' card and as an 'Intrigue 1st Edition' card). "
         "If this option is not given, all base cards are placed in their own 'Base' expansion.")
     group_select.add_argument(
-        "--special_card_groups",
+        "--special-card-groups",
         action="store_true",
         help="Group cards that generally are used together "
         "(e.g., Shelters, Tournament and Prizes, Urchin/Mercenary, etc.).")
     group_select.add_argument(
-        "--include_blanks",
+        "--no-trash",
+        action="store_true",
+        dest="no_trash",
+        help="Exclude Trash from cards.")
+    group_select.add_argument(
+        "--curse10",
+        action="store_true",
+        dest="curse10",
+        help="Package Curse cards into groups of ten cards.")
+    group_select.add_argument(
+        "--start-decks",
+        action="store_true",
+        dest="start_decks",
+        help="Include four start decks with the Base cards.")
+    group_select.add_argument(
+        "--include-blanks",
         action="store_true",
         help="Include a few dividers with extra text.")
     group_select.add_argument(
-        "--exclude_events",
+        "--exclude-events",
         action="store_true",
         help="Group all 'Event' cards across all expansions into one divider.")
     group_select.add_argument(
-        "--exclude_landmarks",
+        "--exclude-landmarks",
         action="store_true",
         help="Group all 'Landmark' cards across all expansions into one divider.")
 
@@ -350,17 +364,17 @@ def parse_opts(cmdline_args=None):
         "Typically unsleeved cards are 2.0, thin sleeved cards are 2.4, and thick sleeved cards are 3.2. "
         "This is only valid with the --wrapper option.")
     group_wrapper.add_argument(
-        "--sleeved_thick",
+        "--sleeved-thick",
         action="store_true",
         dest="sleeved_thick",
         help="Same as --size=sleeved --thickness 3.2.")
     group_wrapper.add_argument(
-        "--sleeved_thin",
+        "--sleeved-thin",
         action="store_true",
         dest="sleeved_thin",
         help="Same as --size=sleeved --thickness 2.4.")
     group_wrapper.add_argument(
-        "--notch_length",
+        "--notch-length",
         type=float,
         default=0.0,
         help="Length of thumb notch on wrapper in centimeters "
@@ -393,24 +407,24 @@ def parse_opts(cmdline_args=None):
         default=0.1,
         help="Width of lines for card outlines and crop marks.")
     group_printing.add_argument(
-        "--back_offset",
+        "--back-offset",
         type=float,
         dest="back_offset",
         default=0,
         help="Back page horizontal offset points to shift to the right. Only needed for some printers.")
     group_printing.add_argument(
-        "--back_offset_height",
+        "--back-offset-height",
         type=float,
         dest="back_offset_height",
         default=0,
         help="Back page vertical offset points to shift upward. Only needed for some printers.")
     group_printing.add_argument(
-        "--vertical_gap",
+        "--vertical-gap",
         type=float,
         default=0.0,
         help="Vertical gap between dividers in centimeters.")
     group_printing.add_argument(
-        "--horizontal_gap",
+        "--horizontal-gap",
         type=float,
         default=0.0,
         help="Horizontal gap between dividers in centimeters.")
@@ -420,7 +434,7 @@ def parse_opts(cmdline_args=None):
         dest="no_page_footer",
         help="Do not print the expansion name at the bottom of the page.")
     group_printing.add_argument(
-        "--num_pages",
+        "--num-pages",
         type=int,
         default=-1,
         help="Stop generating dividers after this many pages, -1 for all.")
@@ -431,32 +445,17 @@ def parse_opts(cmdline_args=None):
         help="Draw only the divider tabs and no divider outlines. "
         "Used to print the divider tabs on labels.")
     group_printing.add_argument(
-        "--linetype",
-        choices=LINE_CHOICES,
-        dest="linetype",
-        default="line",
-        help="The divider outline type. "
-        "'line' will print a solid line outlining the divider; "
-        "'dot' will print a dot at each corner of the divider; "
-        "'cropmarks' will print cropmarks for the divider; "
-        "'dot-cropmarks' will combine 'dot' and 'cropmarks'")
-    group_printing.add_argument(
-        "--cropmarkLength",
-        type=float,
-        default=0.2,
-        help="Length of actual drawn cropmark in centimeters.")
-    group_printing.add_argument(
-        "--cropmarkSpacing",
-        type=float,
-        default=0.1,
-        help="Spacing between card and the start of the cropmark in centimeters.")
+        "--black-tabs",
+        action="store_true",
+        help="In tabs-only mode, draw tabs on black background"
+    )
     group_printing.add_argument(
         "--info",
         action="store_true",
         dest="info",
         help="Add a page that has all the options used for the file.")
     group_printing.add_argument(
-        "--info_all",
+        "--info-all",
         action="store_true",
         dest="info_all",
         help="Same as --info, but includes pages with all the possible options that can be used.")
@@ -465,7 +464,7 @@ def parse_opts(cmdline_args=None):
         action='store_true',
         help="Only generate a preview png image of the first page")
     group_printing.add_argument(
-        "--preview_resolution",
+        "--preview-resolution",
         type=int,
         default=150,
         help="resolution in DPI to render preview at, for --preview option")
@@ -479,7 +478,7 @@ def parse_opts(cmdline_args=None):
         dest="cardlist",
         help="Path to file that enumerates each card to be printed on its own line.")
     group_special.add_argument(
-        "--write_json",
+        "--write-json",
         action="store_true",
         dest="write_json",
         help="Write json version of card definitions and extras.")
@@ -575,17 +574,17 @@ def parseDimensions(dimensionsStr):
 
 
 def generate_sample(options):
-    import cStringIO
+    from io import BytesIO
     from wand.image import Image
-    buf = cStringIO.StringIO()
+    buf = BytesIO()
     options.num_pages = 1
     options.outfile = buf
     generate(options)
-    sample_out = cStringIO.StringIO()
+    sample_out = BytesIO()
     with Image(blob=buf.getvalue(), resolution=options.preview_resolution) as sample:
         sample.format = 'png'
         sample.save(sample_out)
-        return sample_out
+        return sample_out.getvalue()
 
 
 def parse_papersize(spec):
@@ -603,8 +602,8 @@ def parse_papersize(spec):
     except AttributeError:
         try:
             paperwidth, paperheight = parseDimensions(papersize)
-            print 'Using custom paper size, %.2fcm x %.2fcm' % (
-                paperwidth / cm, paperheight / cm)
+            print(('Using custom paper size, {:.2f}cm x {:.2f}cm'.format(
+                paperwidth / cm, paperheight / cm)))
         except ValueError:
             paperwidth, paperheight = pagesizes.LETTER
     return paperwidth, paperheight
@@ -614,16 +613,16 @@ def parse_cardsize(spec, sleeved):
     spec = spec.upper()
     if spec == 'SLEEVED' or sleeved:
         dominionCardWidth, dominionCardHeight = (9.4 * cm, 6.15 * cm)
-        print 'Using sleeved card size, %.2fcm x %.2fcm' % (
-            dominionCardWidth / cm, dominionCardHeight / cm)
+        print(('Using sleeved card size, {:.2f}cm x {:.2f}cm'.format(
+            dominionCardWidth / cm, dominionCardHeight / cm)))
     elif spec in ['NORMAL', 'UNSLEEVED']:
         dominionCardWidth, dominionCardHeight = (9.1 * cm, 5.9 * cm)
-        print 'Using normal card size, %.2fcm x%.2fcm' % (
-            dominionCardWidth / cm, dominionCardHeight / cm)
+        print(('Using normal card size, {:.2f}cm x{:.2f}cm'.format(
+            dominionCardWidth / cm, dominionCardHeight / cm)))
     else:
         dominionCardWidth, dominionCardHeight = parseDimensions(spec)
-        print 'Using custom card size, %.2fcm x %.2fcm' % (
-            dominionCardWidth / cm, dominionCardHeight / cm)
+        print(('Using custom card size, {:.2f}cm x {:.2f}cm'.format(
+            dominionCardWidth / cm, dominionCardHeight / cm)))
     return dominionCardWidth, dominionCardHeight
 
 
@@ -631,12 +630,38 @@ def get_resource_stream(path):
     return codecs.EncodedFile(pkg_resources.resource_stream('domdiv', path), "utf-8")
 
 
+def find_index_of_object(lst=[], attributes={}):
+    # Returns the index of the first object in lst that matches the given attributes.  Otherwise returns None.
+    # attributes is a dict of key: value pairs.   Object attributes that are lists are checked to have value in them.
+    for i, d in enumerate(lst):
+        # Set match to false just in case there are no attributes.
+        match = False
+        for key, value in attributes.items():
+            # if anything does not match, then break out and start the next one.
+            match = hasattr(d, key)
+            if match:
+                test = getattr(d, key, None)
+                if type(test) is list:
+                    match = value in test
+                else:
+                    match = value == test
+            if not match:
+                break
+
+        if match:
+            # If all the attributes are found, then we have a match
+            return i
+
+    # nothing matched
+    return None
+
+
 def read_card_data(options):
 
     # Read in the card types
     types_db_filepath = os.path.join("card_db", "types_db.json")
     with get_resource_stream(types_db_filepath) as typefile:
-        Card.types = json.load(typefile, object_hook=CardType.decode_json)
+        Card.types = json.loads(typefile.read().decode('utf-8'), object_hook=CardType.decode_json)
     assert Card.types, "Could not load any card types from database"
 
     # extract unique types
@@ -654,17 +679,83 @@ def read_card_data(options):
     # Read in the card database
     card_db_filepath = os.path.join("card_db", "cards_db.json")
     with get_resource_stream(card_db_filepath) as cardfile:
-        cards = json.load(cardfile, object_hook=Card.decode_json)
+        cards = json.loads(cardfile.read().decode('utf-8'), object_hook=Card.decode_json)
     assert cards, "Could not load any cards from database"
 
     set_db_filepath = os.path.join("card_db", "sets_db.json")
     with get_resource_stream(set_db_filepath) as setfile:
-        Card.sets = json.load(setfile)
+        Card.sets = json.loads(setfile.read().decode('utf-8'))
     assert Card.sets, "Could not load any sets from database"
     for s in Card.sets:
         # Make sure these are set either True or False
         Card.sets[s]['no_randomizer'] = Card.sets[s].get('no_randomizer', False)
         Card.sets[s]['fan'] = Card.sets[s].get('fan', False)
+
+    # Remove the Trash card. Do early before propagating to various sets.
+    if options.no_trash:
+        i = find_index_of_object(cards, {'card_tag': 'Trash'})
+        if i is not None:
+            del cards[i]
+
+    # Repackage Curse cards into 10 per divider. Do early before propagating to various sets.
+    if options.curse10:
+        i = find_index_of_object(cards, {'card_tag': 'Curse'})
+        if i is not None:
+            new_cards = []
+            cards_remaining = cards[i].getCardCount()
+            while cards_remaining > 10:
+                # make a new copy of the card and set count to 10
+                new_card = copy.deepcopy(cards[i])
+                new_card.setCardCount(10)
+                new_cards.append(new_card)
+                cards_remaining -= 10
+
+            # Adjust original Curse card to the remaining cards (should be 10)
+            cards[i].setCardCount(cards_remaining)
+            # Add the new dividers
+            cards.extend(new_cards)
+
+    # Create Start Deck dividers. 4 sets. Adjust totals for other cards, too.
+    # Do early before propagating to various sets.
+    # The card database contains one prototype divider that needs to be either duplicated or deleted.
+    if options.start_decks:
+        # Find the index to the individual cards that need changed in the cards list
+        StartDeck_index = find_index_of_object(cards, {'card_tag': 'Start Deck'})
+        Copper_index = find_index_of_object(cards, {'card_tag': 'Copper'})
+        Estate_index = find_index_of_object(cards, {'card_tag': 'Estate'})
+        if Copper_index is None or Estate_index is None or StartDeck_index is None:
+            # Something is wrong, can't find one or more of the cards that need to change
+            print("Error - cannot create Start Decks")
+
+            # Remove the Start Deck prototype if we can
+            if StartDeck_index is not None:
+                del cards[StartDeck_index]
+        else:
+            # Start Deck Constants
+            STARTDECK_COPPERS = 7
+            STARTDECK_ESTATES = 3
+            STARTDECK_NUMBER = 4
+
+            # Add correct card counts to Start Deck prototype.  This will be used to make copies.
+            cards[StartDeck_index].setCardCount(STARTDECK_COPPERS)
+            cards[StartDeck_index].addCardCount([int(STARTDECK_ESTATES)])
+
+            # Make new Start Deck Dividers and adjust the corresponding card counts
+            for x in range(0, STARTDECK_NUMBER):
+                # Add extra copies of the Start Deck prototype.
+                # But don't need to add the first one again, since the prototype is already there.
+                if x > 0:
+                    cards.append(copy.deepcopy(cards[StartDeck_index]))
+                    # Note: By appending, it should not change any of the index values being used
+
+                # Remove Copper and Estate card counts from their dividers
+                cards[Copper_index].setCardCount(cards[Copper_index].getCardCount() - STARTDECK_COPPERS)
+                cards[Estate_index].setCardCount(cards[Estate_index].getCardCount() - STARTDECK_ESTATES)
+    else:
+        # Remove Start Deck prototype.  It is not needed.
+        StartDeck_index = find_index_of_object(cards, {'card_tag': 'Start Deck'})
+        if StartDeck_index is not None:
+            del cards[StartDeck_index]
 
     # Set cardset_tag and expand cards that are used in multiple sets
     new_cards = []
@@ -701,11 +792,11 @@ class CardSorter(object):
         else:
             self.sort_key = self.by_expansion_sort_key
 
-        baseOrder = ['Copper', 'Silver', 'Gold', 'Platinum', 'Potion',
-                     'Curse', 'Estate', 'Duchy', 'Province', 'Colony',
-                     'Trash']
+        self.baseOrder = ['Copper', 'Silver', 'Gold', 'Platinum', 'Potion',
+                          'Curse', 'Estate', 'Duchy', 'Province', 'Colony',
+                          'Trash', 'Start Deck']
         self.baseCards = []
-        for tag in baseOrder:
+        for tag in self.baseOrder:
             if tag in baseCards:
                 self.baseCards.append(baseCards[tag])
                 del baseCards[tag]
@@ -727,30 +818,35 @@ class CardSorter(object):
         return card.cardset_tag.lower() != 'base' and card.name in self.baseCards
 
     def by_global_sort_key(self, card):
-        return int(card.isExpansion()), self.baseIndex(card.name), card.name
+        return int(card.isExpansion()), self.baseIndex(card.name), self.strip_accents(card.name)
 
     def by_expansion_sort_key(self, card):
         return card.cardset, int(card.isExpansion()), self.baseIndex(
-            card.name), card.name
+            card.name), self.strip_accents(card.name)
 
     def by_colour_sort_key(self, card):
-        return card.getType().getTypeNames(), card.name
+        return card.getType().getTypeNames(), self.strip_accents(card.name)
 
     def by_cost_sort_key(self, card):
-        return card.cardset, int(card.isExpansion()), card.get_total_cost(card), card.name
+        return card.cardset, int(card.isExpansion()), card.get_total_cost(card), self.strip_accents(card.name)
+
+    @staticmethod
+    def strip_accents(s):
+        return ''.join(c for c in unicodedata.normalize('NFD', s)
+                       if unicodedata.category(c) != 'Mn')
 
     def __call__(self, card):
         return self.sort_key(card)
 
 
-def add_card_text(options, cards, language='en_us'):
+def add_card_text(cards, language='en_us'):
     language = language.lower()
     # Read in the card text file
     card_text_filepath = os.path.join("card_db",
                                       language,
                                       "cards_" + language.lower() + ".json")
     with get_resource_stream(card_text_filepath) as card_text_file:
-        card_text = json.load(card_text_file)
+        card_text = json.loads(card_text_file.read().decode('utf-8'))
     assert language, "Could not load card text for %r" % language
 
     # Now apply to all the cards
@@ -772,7 +868,7 @@ def add_set_text(options, sets, language='en_us'):
                                      language,
                                      "sets_{}.json".format(language))
     with get_resource_stream(set_text_filepath) as set_text_file:
-        set_text = json.load(set_text_file)
+        set_text = json.loads(set_text_file.read().decode('utf-8'))
     assert set_text, "Could not load set text for %r" % language
 
     # Now apply to all the sets
@@ -783,14 +879,14 @@ def add_set_text(options, sets, language='en_us'):
     return sets
 
 
-def add_type_text(options, types={}, language='en_us'):
+def add_type_text(types={}, language='en_us'):
     language = language.lower()
     # Read in the type text and store for later
     type_text_filepath = os.path.join("card_db",
                                       language,
                                       "types_{}.json".format(language))
     with get_resource_stream(type_text_filepath) as type_text_file:
-        type_text = json.load(type_text_file)
+        type_text = json.loads(type_text_file.read().decode('utf-8'))
     assert type_text, "Could not load type text for %r" % language
 
     # Now apply to all the types
@@ -814,7 +910,7 @@ def add_bonus_regex(options, language='en_us'):
                                         language,
                                         "bonuses_{}.json".format(language))
     with get_resource_stream(bonus_regex_filepath) as bonus_regex_file:
-        bonus_regex = json.load(bonus_regex_file)
+        bonus_regex = json.loads(bonus_regex_file.read().decode('utf-8'))
     assert bonus_regex, "Could not load bonus keywords for %r" % language
 
     if not bonus_regex:
@@ -912,9 +1008,9 @@ def filter_sort_cards(cards, options):
                     card.name = card.group_tag  # For now, change the name to the group_tab
                     card.description = error_msg
                     card.extra = error_msg
-                    if card.isEvent():
+                    if card.isType('Event') or card.isType('Project'):
                         card.cost = "*"
-                    if card.isLandmark():
+                    if card.isType('Landmark'):
                         card.cost = ""
                     # now save the card
                     keep_cards.append(card)
@@ -926,6 +1022,7 @@ def filter_sort_cards(cards, options):
                         group_cards[card.group_tag].potcost = card.potcost
                         group_cards[card.group_tag].debtcost = card.debtcost
                         group_cards[card.group_tag].types = card.types
+                        group_cards[card.group_tag].randomizer = card.randomizer
                         group_cards[card.group_tag].image = card.image
 
                     group_cards[card.group_tag].addCardCount(card.count)    # increase the count
@@ -936,19 +1033,19 @@ def filter_sort_cards(cards, options):
         # Now fix up card costs
         for card in cards:
             if card.card_tag in group_cards:
-                if group_cards[card.group_tag].isEvent():
-                        group_cards[card.group_tag].cost = "*"
-                        group_cards[card.group_tag].debtcost = 0
-                        group_cards[card.group_tag].potcost = 0
-                if group_cards[card.group_tag].isLandmark():
-                        group_cards[card.group_tag].cost = ""
-                        group_cards[card.group_tag].debtcost = 0
-                        group_cards[card.group_tag].potcost = 0
+                if group_cards[card.group_tag].isType('Event') or group_cards[card.group_tag].isType('Project'):
+                    group_cards[card.group_tag].cost = "*"
+                    group_cards[card.group_tag].debtcost = 0
+                    group_cards[card.group_tag].potcost = 0
+                if group_cards[card.group_tag].isType('Landmark'):
+                    group_cards[card.group_tag].cost = ""
+                    group_cards[card.group_tag].debtcost = 0
+                    group_cards[card.group_tag].potcost = 0
 
     # Get the final type names in the requested language
-    Card.type_names = add_type_text(options, Card.type_names, LANGUAGE_DEFAULT)
+    Card.type_names = add_type_text(Card.type_names, LANGUAGE_DEFAULT)
     if options.language != LANGUAGE_DEFAULT:
-        Card.type_names = add_type_text(options, Card.type_names, options.language)
+        Card.type_names = add_type_text(Card.type_names, options.language)
     for card in cards:
         card.types_name = ' - '.join([Card.type_names[t] for t in card.types]).upper()
 
@@ -1003,7 +1100,7 @@ def filter_sort_cards(cards, options):
         # Give indication if an imput did not match anything
         unknownExpansions = options.expansions - knownExpansions
         if unknownExpansions:
-            print "Error - unknown expansion(s): %s" % ", ".join(unknownExpansions)
+            print(("Error - unknown expansion(s): {}".format(", ".join(unknownExpansions))))
 
     # Take care of fan expansions.  Fan expansions must be explicitly named to be added.
     # If no --fan is given, then no fan cards are added.
@@ -1029,7 +1126,7 @@ def filter_sort_cards(cards, options):
         # Give indication if an imput did not match anything
         unknownExpansions = options.fan - knownExpansions
         if unknownExpansions:
-            print "Error - unknown fan expansion(s): %s" % ", ".join(unknownExpansions)
+            print("Error - unknown fan expansion(s): %s" % ", ".join(unknownExpansions))
 
     # Now keep only the cards that are in the sets that have been requested
     keep_cards = []
@@ -1041,9 +1138,9 @@ def filter_sort_cards(cards, options):
     cards = keep_cards
 
     # Now add text to the cards.  Waited as long as possible to catch all groupings
-    cards = add_card_text(options, cards, LANGUAGE_DEFAULT)
+    cards = add_card_text(cards, LANGUAGE_DEFAULT)
     if options.language != LANGUAGE_DEFAULT:
-        cards = add_card_text(options, cards, options.language)
+        cards = add_card_text(cards, options.language)
 
     # Get list of cards from a file
     if options.cardlist:
@@ -1057,29 +1154,44 @@ def filter_sort_cards(cards, options):
     # Set up the card sorter
     cardSorter = CardSorter(
         options.order,
-        {card.card_tag: card.name for card in cards if card.cardset_tag.lower() == 'base'})
-    if options.base_cards_with_expansion:
-        cards = [card for card in cards if card.cardset_tag.lower() != 'base']
-    else:
+        {card.card_tag: card.name for card in cards if 'base' in [set_name.lower() for set_name in card.cardset_tags]})
+
+    # Optionally remove base cards from expansions that have them
+    if not options.base_cards_with_expansion:
         cards = [card for card in cards
                  if not cardSorter.isBaseExpansionCard(card)]
 
     # Add expansion divider
     if options.expansion_dividers:
 
-        cardnamesByExpansion = {}
+        cardnamesByExpansion = defaultdict(dict)
+        randomizerCountByExpansion = Counter()
         for c in cards:
             if cardSorter.isBaseExpansionCard(c):
                 continue
-            cardnamesByExpansion.setdefault(c.cardset, []).append(c.name.strip().replace(' ', '&nbsp;'))
+            if c.randomizer:
+                randomizerCountByExpansion[c.cardset] += 1
 
-        for set_tag, set_values in Card.sets.iteritems():
+            if c.card_tag in cardnamesByExpansion[c.cardset]:
+                # Already have one, so just update the count (for extra Curses, Start Decks, etc)
+                cardnamesByExpansion[c.cardset][c.card_tag]['count'] += 1
+            else:
+                # New, so save off information about the card to be used on the expansion divider
+                order = 0
+                if c.card_tag in cardSorter.baseOrder:
+                    # Use the base card ordering
+                    order = 100 + cardSorter.baseOrder.index(c.card_tag)
+                cardnamesByExpansion[c.cardset][c.card_tag] = {'name': c.name.strip().replace(' ', '&nbsp;'),
+                                                               'randomizer': c.randomizer,
+                                                               'count': 1,
+                                                               'sort': "%03d%s" % (order, c.name.strip(),)}
+
+        for set_tag, set_values in Card.sets.items():
             exp = set_values["set_name"]
             if exp in cardnamesByExpansion:
                 exp_name = exp
 
-                count = len(cardnamesByExpansion[exp])
-                Card.sets[set_tag]['count'] = count
+                count = randomizerCountByExpansion[exp]
                 if 'no_randomizer' in set_values:
                     if set_values['no_randomizer']:
                         count = 0
@@ -1088,12 +1200,23 @@ def filter_sort_cards(cards, options):
                     if 'short_name' in set_values:
                         exp_name = set_values['short_name']
 
+                card_names = []
+                for n in sorted(cardnamesByExpansion[exp].values(), key=lambda x: x['sort']):
+                    if not n['randomizer']:
+                        # Highlight cards without Randomizers
+                        n['name'] = '<i>' + n['name'] + '</i>'
+                    if n['count'] > 1:
+                        # Add number of copies
+                        n['name'] = u"{}&nbsp;\u00d7&nbsp;".format(n['count']) + n['name']
+                    card_names.append(n['name'])
+
                 c = Card(name=exp_name,
                          cardset=exp,
                          cardset_tag=set_tag,
                          types=("Expansion", ),
                          cost=None,
-                         description=' | '.join(sorted(cardnamesByExpansion[exp])),
+                         description=' | '.join(card_names),
+                         extra=set_values.get("set_text", ""),
                          count=count,
                          card_tag=set_tag)
                 cards.append(c)
@@ -1111,9 +1234,114 @@ def calculate_layout(options, cards=[]):
     options.paperwidth, options.paperheight = parse_papersize(options.papersize)
     options.minmarginwidth, options.minmarginheight = parseDimensions(options.minmargin)
 
-    dd = DividerDrawer(options)
-    dd.calculatePages(cards)
-    return dd
+    dominionCardWidth, dominionCardHeight = parse_cardsize(options.size,
+                                                           options.sleeved)
+    paperwidth, paperheight = parse_papersize(options.papersize)
+
+    if options.orientation == "vertical":
+        dividerWidth, dividerBaseHeight = dominionCardHeight, dominionCardWidth
+    else:
+        dividerWidth, dividerBaseHeight = dominionCardWidth, dominionCardHeight
+
+    if options.tab_name_align == "center":
+        options.tab_name_align = "centre"
+
+    if options.tab_side == "full" and options.tab_name_align == "edge":
+        # This case does not make sense since there are two tab edges in this case.  So picking left edge.
+        print("** Warning: Aligning card name as 'left' for 'full' tabs **", file=sys.stderr)
+        options.tab_name_align = "left"
+
+    fixedMargins = False
+    if options.tabs_only:
+        # fixed for Avery 8867 for now
+        minmarginwidth = 0.86 * cm  # was 0.76
+        minmarginheight = 1.37 * cm  # was 1.27
+        labelHeight = 1.07 * cm  # was 1.27
+        labelWidth = 4.24 * cm  # was 4.44
+        horizontalBorderSpace = 0.96 * cm  # was 0.76
+        verticalBorderSpace = 0.20 * cm  # was 0.01
+        dividerBaseHeight = 0
+        dividerWidth = labelWidth
+        fixedMargins = True
+    else:
+        minmarginwidth, minmarginheight = parseDimensions(options.minmargin)
+        if options.tab_side == "full":
+            labelWidth = dividerWidth
+        else:
+            labelWidth = options.tabwidth * cm
+        labelHeight = .9 * cm
+        horizontalBorderSpace = options.horizontal_gap * cm
+        verticalBorderSpace = options.vertical_gap * cm
+
+    dividerHeight = dividerBaseHeight + labelHeight
+
+    dividerWidthReserved = dividerWidth + horizontalBorderSpace
+    dividerHeightReserved = dividerHeight + verticalBorderSpace
+    if options.wrapper:
+        max_card_stack_height = max(c.getStackHeight(options.thickness)
+                                    for c in cards)
+        dividerHeightReserved = (dividerHeightReserved * 2) + (
+            max_card_stack_height * 2)
+        print("Max Card Stack Height: {:.2f}cm ".format(max_card_stack_height))
+
+    # Notch measurements
+    notch_height = 0.25 * cm  # thumb notch height
+    notch_width1 = options.notch_length * cm  # thumb notch width: top away from tab
+    notch_width2 = 0.00 * cm  # thumb notch width: bottom on side of tab
+
+    add_opt(options, 'dividerWidth', dividerWidth)
+    add_opt(options, 'dividerHeight', dividerHeight)
+    add_opt(options, 'dividerBaseHeight', dividerBaseHeight)
+    add_opt(options, 'dividerWidthReserved', dividerWidthReserved)
+    add_opt(options, 'dividerHeightReserved', dividerHeightReserved)
+    add_opt(options, 'labelWidth', labelWidth)
+    add_opt(options, 'labelHeight', labelHeight)
+    add_opt(options, 'notch_height', notch_height)
+    add_opt(options, 'notch_width1', notch_width1)
+    add_opt(options, 'notch_width2', notch_width2)
+
+    # as we don't draw anything in the final border, it shouldn't count towards how many tabs we can fit
+    # so it gets added back in to the page size here
+    numDividersVerticalP = int(
+        (paperheight - 2 * minmarginheight + verticalBorderSpace) /
+        options.dividerHeightReserved)
+    numDividersHorizontalP = int(
+        (paperwidth - 2 * minmarginwidth + horizontalBorderSpace) /
+        options.dividerWidthReserved)
+    numDividersVerticalL = int(
+        (paperwidth - 2 * minmarginwidth + verticalBorderSpace) /
+        options.dividerHeightReserved)
+    numDividersHorizontalL = int(
+        (paperheight - 2 * minmarginheight + horizontalBorderSpace) /
+        options.dividerWidthReserved)
+
+    if ((numDividersVerticalL * numDividersHorizontalL > numDividersVerticalP *
+         numDividersHorizontalP) and not fixedMargins):
+        add_opt(options, 'numDividersVertical', numDividersVerticalL)
+        add_opt(options, 'numDividersHorizontal', numDividersHorizontalL)
+        add_opt(options, 'paperheight', paperwidth)
+        add_opt(options, 'paperwidth', paperheight)
+        add_opt(options, 'minHorizontalMargin', minmarginheight)
+        add_opt(options, 'minVerticalMargin', minmarginwidth)
+    else:
+        add_opt(options, 'numDividersVertical', numDividersVerticalP)
+        add_opt(options, 'numDividersHorizontal', numDividersHorizontalP)
+        add_opt(options, 'paperheight', paperheight)
+        add_opt(options, 'paperwidth', paperwidth)
+        add_opt(options, 'minHorizontalMargin', minmarginheight)
+        add_opt(options, 'minVerticalMargin', minmarginwidth)
+
+    if not fixedMargins:
+        # dynamically max margins
+        add_opt(options, 'horizontalMargin',
+                (options.paperwidth - options.numDividersHorizontal *
+                 options.dividerWidthReserved + horizontalBorderSpace) / 2)
+        add_opt(options, 'verticalMargin',
+                (options.paperheight - options.numDividersVertical *
+                 options.dividerHeightReserved + verticalBorderSpace) / 2)
+    else:
+        add_opt(options, 'horizontalMargin', minmarginwidth)
+        add_opt(options, 'verticalMargin', minmarginheight)
 
 
 def generate(options):
@@ -1125,14 +1353,14 @@ def generate(options):
 
     dd = calculate_layout(options, cards)
 
-    print "Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
-        options.paperwidth / cm, options.paperheight / cm)
-    print "Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
-        options.dividerWidthReserved / cm, options.dividerHeightReserved / cm)
-    print '{} dividers horizontally, {} vertically'.format(
-        options.numDividersHorizontal, options.numDividersVertical)
-    print "Margins: {:.2f}cm h, {:.2f}cm v\n".format(
-        options.horizontalMargin / cm, options.verticalMargin / cm)
+    print("Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
+        options.paperwidth / cm, options.paperheight / cm))
+    print("Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
+        options.dividerWidthReserved / cm, options.dividerHeightReserved / cm))
+    print('{} dividers horizontally, {} vertically'.format(
+        options.numDividersHorizontal, options.numDividersVertical))
+    print("Margins: {:.2f}cm h, {:.2f}cm v\n".format(
+        options.horizontalMargin / cm, options.verticalMargin / cm))
 
     dd.draw(cards)
 

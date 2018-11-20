@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os
 import codecs
 import json
@@ -16,16 +17,16 @@ crossReference = "./CrossReference"
 if len(sys.argv) > 1:
     LANGUAGE_NEW = sys.argv[1].strip().lower()
 else:
-    print "Usage: ", sys.argv[0], " xx"
-    print "where xx is the two letter language abreviation."
+    print("Usage: ", sys.argv[0], " xx")
+    print("where xx is the two letter language abreviation.")
     sys.exit()
+
 
 def unicode_csv_reader(utf8_data, dialect=csv.excel, **kwargs):
     csv_reader = csv.reader(utf8_data, dialect=dialect, **kwargs)
     for row in csv_reader:
-        yield [unicode(cell, 'iso-8859-15') for cell in row]
-        #yield [unicode(cell, 'iso-8859-1') for cell in row]
-        #yield [cell.decode('iso-8859-1').encode('utf8') for cell in row]
+        yield [cell.decode('iso-8859-15') for cell in row]
+
 
 def get_json_data(json_file_path):
     # Read in the json from the specified file
@@ -43,11 +44,13 @@ def json_dict_entry(entry, separator=''):
         '{}').rstrip()  # Remove outer{} and then trailing whitespace
     return separator + json_data
 
+
 def find_index(items, find):
     if find in items:
         return items.index(find)
     else:
         return None
+
 
 reader = unicode_csv_reader(open(crossReference + '.csv'))
 cards = list(reader)
@@ -70,8 +73,8 @@ lang_index = find_index(headers, LANGUAGE_NEW)
 card_index = find_index(headers, 'card_tag')
 
 if lang_index is None or card_index is None:
-    print "Cound not find new language '",LANGUAGE_NEW, "' in the CrossReference file"
-    print "Files copied, but no name changes were made."
+    print("Cound not find new language '", LANGUAGE_NEW, "' in the CrossReference file")
+    print("Files copied, but no name changes were made.")
     sys.exit()
 
 # Get the new names for those in the CrossReference
@@ -85,7 +88,7 @@ fname = os.path.join(card_db_dir, LANGUAGE_XX, "cards_" + LANGUAGE_XX + ".json")
 if os.path.isfile(fname):
     lang_data = get_json_data(fname)
 else:
-    print "ERROR: Failed to open :", fname
+    print("ERROR: Failed to open :", fname)
     sys.exit()
 
 if cardlist:
@@ -93,9 +96,8 @@ if cardlist:
             os.path.join(output_dir, LANGUAGE_NEW, "cards_" + LANGUAGE_NEW + ".json"), 'w',
             encoding='utf-8') as lang_out:
 
-        lang_out.write(unicode("{"))  # Start of set
+        lang_out.write("{")  # Start of set
         sep = ""
-
 
         for card in lang_data:
             # print card, lang_data[card]
@@ -107,4 +109,4 @@ if cardlist:
                 data['untranslated'] = ', '.join(fields)
             lang_out.write(json_dict_entry({card: data}, sep))
             sep = ","
-        lang_out.write(unicode("\n}\n"))  # End of Set
+        lang_out.write("\n}\n")  # End of Set

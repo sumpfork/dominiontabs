@@ -1,5 +1,5 @@
+from __future__ import print_function
 import json
-import os
 import re
 from reportlab.lib.units import cm
 
@@ -25,7 +25,7 @@ class Card(object):
     def __init__(self, name=None, cardset='', types=None, cost='', description='',
                  potcost=0, debtcost=0, extra='', count=-1, card_tag='missing card_tag',
                  cardset_tags=None, group_tag='', group_top=False, image=None,
-                 text_icon=None, cardset_tag=''):
+                 text_icon=None, randomizer=True, cardset_tag=''):
 
         if types is None:
             types = []  # make sure types is a list
@@ -50,18 +50,20 @@ class Card(object):
         self.image = image
         self.text_icon = text_icon
         self.cardset_tag = cardset_tag
-        if count < 0:
-            self.count = [self.getType().getTypeDefaultCardCount()]
-        elif count == 0:
-            self.count = []
-        else:
-            self.count = [int(count)]
+        self.setCardCount(count)
+        self.randomizer = randomizer
 
     def getCardCount(self):
         return sum(i for i in self.count)
 
     def setCardCount(self, value):
-        self.count = value
+        value = int(value)
+        if value < 0:
+            self.count = [self.getType().getTypeDefaultCardCount()]
+        elif value == 0:
+            self.count = []
+        else:
+            self.count = [value]
 
     def addCardCount(self, value):
         self.count.extend(value)
@@ -102,13 +104,13 @@ class Card(object):
         # (?!\w) prevents smaller word matches.  Prevents matching "Action" in "Actions"
         if bonus['exclude']:
             bonus['exclude'].sort(reverse=True)
-            exclude_regex = '(?!\w)(?!\s*(' + '|'.join(bonus['exclude']) + '))'
+            exclude_regex = r'(?!\w)(?!\s*(' + '|'.join(bonus['exclude']) + '))'
         else:
             exclude_regex = ''
 
         bonus['include'].sort(reverse=True)
-        include_regex = "(\+\s*\d+\s*(" + '|'.join(bonus['include']) + "))"
-        regex = "((?i)(?!\<b\>)" + include_regex + exclude_regex + "(?!\<\/b\>))"
+        include_regex = r"(\+\s*\d+\s*(" + '|'.join(bonus['include']) + "))"
+        regex = r"(?i)((?!\<b\>)" + include_regex + exclude_regex + r"(?!\<\/b\>))"
         Card.bonus_regex.append(regex)
 
     def __repr__(self):
@@ -173,7 +175,7 @@ class Card(object):
                     setImage = Card.sets[self.cardset_tag]['image']
 
         if setImage is None and self.cardset_tag != 'base':
-            print 'warning, no set image for set "{}", card "{}"'.format(self.cardset, self.name)
+            print('warning, no set image for set "{}", card "{}"'.format(self.cardset, self.name))
         return setImage
 
     def setTextIcon(self):
@@ -186,7 +188,7 @@ class Card(object):
                     setTextIcon = Card.sets[self.cardset_tag]['text_icon']
 
         if setTextIcon is None and self.cardset != 'base':
-            print 'warning, no set text for set "{}", card "{}"'.format(self.cardset, self.name)
+            print('warning, no set text for set "{}", card "{}"'.format(self.cardset, self.name))
         return setTextIcon
 
     def isBlank(self):
@@ -225,11 +227,6 @@ class CardType(object):
         if not self.tabImageFile:
             return None
         return self.tabImageFile
-
-    def getNoCoinTabImageFile(self):
-        if not self.tabImageFile:
-            return None
-        return ''.join(os.path.splitext(self.tabImageFile)[0] + '_nc' + os.path.splitext(self.tabImageFile)[1])
 
     def getTabTextHeightOffset(self):
         return self.tabTextHeightOffset

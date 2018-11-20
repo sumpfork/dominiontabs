@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import os
 import re
 import sys
@@ -7,7 +9,7 @@ import pkg_resources
 from reportlab.lib.units import cm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.platypus import Paragraph
+from reportlab.platypus import Paragraph, XPreformatted
 from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER, TA_LEFT
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
@@ -334,8 +336,7 @@ class Plotter(object):
 class DividerDrawer(object):
     def __init__(self, options=None):
         self.canvas = None
-        self.pages = None
-        self.options = options
+        self.options = None
 
     @staticmethod
     def get_image_filepath(fname):
@@ -371,8 +372,8 @@ class DividerDrawer(object):
         # then make sure that we have at least one for each type
         for fonttype in self.font_mapping:
             if not len(self.font_mapping[fonttype]):
-                print >> sys.stderr, ("Warning, Minion Pro ttf file for {} missing from domdiv/fonts!"
-                                      " Falling back on Times font for everything.").format(fonttype)
+                print(("Warning, Minion Pro ttf file for {} missing from domdiv/fonts!"
+                       " Falling back on Times font for everything.").format(fonttype), file=sys.stderr)
                 self.font_mapping = {'Regular': 'Times-Roman',
                                      'Bold': 'Times-Bold',
                                      'Italic': 'Times-Oblique'}
@@ -384,6 +385,102 @@ class DividerDrawer(object):
                                                pkg_resources.resource_filename('domdiv',
                                                                                self.font_mapping[fonttype][0])))
                 self.font_mapping[fonttype] = ftag
+        self.font_mapping['Monospaced'] = 'Courier'
+
+    def drawTextPages(self, pages, margin=1.0, fontsize=10, leading=10, spacer=0.05):
+        s = getSampleStyleSheet()['BodyText']
+        s.fontName = self.font_mapping['Monospaced']
+        s.alignment = TA_LEFT
+
+        textHorizontalMargin = margin * cm
+        textVerticalMargin = margin * cm
+        textBoxWidth = self.options.paperwidth - 2 * textHorizontalMargin
+        textBoxHeight = self.options.paperheight - 2 * textVerticalMargin
+        minSpacerHeight = 0.05 * cm
+
+        for page in pages:
+            s.fontsize = fontsize
+            s.leading = leading
+            spacerHeight = spacer * cm
+            text = re.split("\n", page)
+            while True:
+                paragraphs = []
+                # this accounts for the spacers we insert between paragraphs
+                h = (len(text) - 1) * spacerHeight
+                for line in text:
+                    p = XPreformatted(line, s)
+                    h += p.wrap(textBoxWidth, textBoxHeight)[1]
+                    paragraphs.append(p)
+
+                if h <= textBoxHeight or s.fontSize <= 1 or s.leading <= 1:
+                    break
+                else:
+                    s.fontSize -= 0.2
+                    s.leading -= 0.2
+                    spacerHeight = max(spacerHeight - 1, minSpacerHeight)
+
+            h = self.options.paperheight - textVerticalMargin
+            for p in paragraphs:
+                h -= p.height
+                p.drawOn(self.canvas, textHorizontalMargin, h)
+                h -= spacerHeight
+            self.canvas.showPage()
+
+    def drawInfo(self, printIt=True):
+        # Keep track of the number of pages
+        pageCount = 0
+        # A unique separator that will not be found in any normal text.  Was '@@@***!!!***@@@' at one time.
+        sep = chr(30) + chr(31)
+        # Generic space.  Other options are ' ', '&nbsp;', '&#xa0;'
+        space = '&nbsp;'
+        tab_spaces = 4
+        blank_line = (space + '\n') * 2
+
+        if self.options.info or self.options.info_all:
+            text = "<para alignment='center'><font size=18><b>"
+            text += "Sumpfork's Dominion Tabbed Divider Generator"
+            text += "</b></font></para>\n"
+            text += blank_line
+            text += "Online generator at: "
+            text += "<a href='http://domtabs.sandflea.org/' color='blue'>http://domtabs.sandflea.org</a>\n\n"
+            text += "Source code on GitHub at: "
+            text += "<a href='https://github.com/sumpfork/dominiontabs' color='blue'>"
+            text += "https://github.com/sumpfork/dominiontabs</a>\n\n"
+            text += "Options for this file:\n"
+
+            cmd = " ".join(self.options.argv)
+            cmd = cmd.replace(' --', sep + '--')
+            cmd = cmd.replace(' -', sep + '-')
+            cmd = cmd.replace(sep, '\n' + space * tab_spaces)
+
+            text += cmd
+            text += blank_line
+
+            if printIt:
+                self.drawTextPages([text], margin=1.0, fontsize=10, leading=10, spacer=0.05)
+            pageCount += 1
+
+        if self.options.info_all:
+            linesPerPage = 80
+            lines = self.options.help.replace('\n\n', blank_line).replace(' ', space).split('\n')
+            pages = []
+            lineCount = 0
+            text = ""
+            for line in lines:
+                lineCount += 1
+                text += line + '\n'
+                if lineCount >= linesPerPage:
+                    pages.append(text)
+                    pageCount += 1
+                    lineCount = 0
+                    text = ""
+            if text:
+                pages.append(text)
+                pageCount += 1
+            if printIt:
+                self.drawTextPages(pages, margin=0.75, fontsize=6, leading=7, spacer=0.1)
+
+        return pageCount
 
         self.font_mapping['Monospaced'] = 'Courier'
 
@@ -745,7 +842,14 @@ class DividerDrawer(object):
             plotter.move(0, stackHeight)                 # L to M
             plotter.move(-dividerWidth + notch2 + notch3, 0, plotter.LINE)  # M to CC
 
-        self.canvas.restoreState()
+        self.registerFonts()
+        self.canvas = canvas.Canvas(
+            options.outfile,
+            pagesize=(options.paperwidth, options.paperheight))
+        self.drawDividers(cards)
+        if options.info or options.info_all:
+            self.drawInfo()
+        self.canvas.save()
 
     def add_inline_images(self, text, fontsize):
         def replace_image_tag(text,
@@ -803,31 +907,116 @@ class DividerDrawer(object):
         text = card.getBonusBoldText(text)
 
         # <line>
-        replace = "<center>%s\n" % ("&ndash;" * 22)
-        text = re.sub("\<line\>", replace, text)
-
+        replace = "<center>{}</center>\n".format("&ndash;" * 22)
+        text = re.sub(r"\<line\>", replace, text)
         #  <tab> and \t
-        text = re.sub("\<tab\>", '\t', text)
-        text = re.sub("\<t\>", '\t', text)
-        text = re.sub("\t", "&nbsp;" * 4, text)
+        text = re.sub(r"\<tab\>", '\t', text)
+        text = re.sub(r"\<t\>", '\t', text)
+        text = re.sub(r"\t", "&nbsp;" * 4, text)
 
         # various breaks
-        text = re.sub("\<br\>", "<br />", text)
-        text = re.sub("\<n\>", "\n", text)
+        text = re.sub(r"\<br\>", "<br />", text)
+        text = re.sub(r"\<n\>", "\n", text)
 
         # alignments
-        text = re.sub("\<c\>", "<center>", text)
-        text = re.sub("\<center\>", "\n<para alignment='center'>", text)
+        text = re.sub(r"\<c\>", "<center>", text)
+        text = re.sub(r"\<center\>", "\n<para alignment='center'>", text)
+        text = re.sub(r"\</c\>", "</center>", text)
+        text = re.sub(r"\</center\>", "</para>", text)
 
-        text = re.sub("\<l\>", "<left>", text)
-        text = re.sub("\<left\>", "\n<para alignment='left'>", text)
+        text = re.sub(r"\<l\>", "<left>", text)
+        text = re.sub(r"\<left\>", "\n<para alignment='left'>", text)
+        text = re.sub(r"\</l\>", "</left>", text)
+        text = re.sub(r"\</left\>", "</para>", text)
 
-        text = re.sub("\<r\>", "<right>", text)
-        text = re.sub("\<right\>", "\n<para alignment='right'>", text)
+        text = re.sub(r"\<r\>", "<right>", text)
+        text = re.sub(r"\<right\>", "\n<para alignment='right'>", text)
+        text = re.sub(r"\</r\>", "</right>", text)
+        text = re.sub(r"\</right\>", "</para>", text)
 
-        text = re.sub("\<j\>", "<justify>", text)
-        text = re.sub("\<justify\>", "\n<para alignment='justify'>", text)
+        text = re.sub(r"\<j\>", "<justify>", text)
+        text = re.sub(r"\<justify\>", "\n<para alignment='justify'>", text)
+        text = re.sub(r"\</j\>", "</justify>", text)
+        text = re.sub(r"\</justify\>", "</para>", text)
+
         return text.strip().strip('\n')
+
+    def drawOutline(self,
+                    card,
+                    x,
+                    y,
+                    rightSide,
+                    isBack=False):
+        # draw outline or cropmarks
+
+        # Don't draw anything if zero (or less) line width
+        if self.options.linewidth <= 0.0:
+            return
+
+        self.canvas.saveState()
+        self.canvas.setLineWidth(self.options.linewidth)
+        cropmarksright = (x == self.options.numDividersHorizontal - 1)
+        cropmarksleft = (x == 0)
+        if rightSide:
+            self.canvas.translate(self.options.dividerWidth, 0)
+            self.canvas.scale(-1, 1)
+        if not self.options.cropmarks and not isBack:
+            # don't draw outline on back, in case lines don't line up with
+            # front
+            self.getOutline(card)
+
+        elif self.options.cropmarks and not self.options.wrapper:
+            cmw = 0.5 * cm
+
+            # Horizontal-line cropmarks
+            mirror = cropmarksright and not rightSide or cropmarksleft and rightSide
+            if mirror:
+                self.canvas.saveState()
+                self.canvas.translate(self.options.dividerWidth, 0)
+                self.canvas.scale(-1, 1)
+            if cropmarksleft or cropmarksright:
+                self.canvas.line(-2 * cmw, 0, -cmw, 0)
+                self.canvas.line(-2 * cmw, self.options.dividerBaseHeight,
+                                 -cmw, self.options.dividerBaseHeight)
+                if y > 0:
+                    self.canvas.line(-2 * cmw, self.options.dividerHeight,
+                                     -cmw, self.options.dividerHeight)
+            if mirror:
+                self.canvas.restoreState()
+
+            # Vertical-line cropmarks
+
+            # want to always draw the right-edge and middle-label-edge lines..
+            # ...and draw the left-edge if this is the first card on the left
+
+            # ...but we need to take mirroring into account, to know "where"
+            # to draw the left / right lines...
+            if rightSide:
+                leftLine = self.options.dividerWidth
+                rightLine = 0
+            else:
+                leftLine = 0
+                rightLine = self.options.dividerWidth
+            middleLine = self.options.dividerWidth - self.options.labelWidth
+
+            if y == 0:
+                self.canvas.line(rightLine, -2 * cmw, rightLine, -cmw)
+                self.canvas.line(middleLine, -2 * cmw, middleLine, -cmw)
+                if cropmarksleft:
+                    self.canvas.line(leftLine, -2 * cmw, leftLine, -cmw)
+            if y == self.options.numDividersVertical - 1:
+                self.canvas.line(rightLine, self.options.dividerHeight + cmw,
+                                 rightLine,
+                                 self.options.dividerHeight + 2 * cmw)
+                self.canvas.line(middleLine, self.options.dividerHeight + cmw,
+                                 middleLine,
+                                 self.options.dividerHeight + 2 * cmw)
+                if cropmarksleft:
+                    self.canvas.line(
+                        leftLine, self.options.dividerHeight + cmw, leftLine,
+                        self.options.dividerHeight + 2 * cmw)
+
+        self.canvas.restoreState()
 
     def drawCardCount(self, card, x, y, offset=-1):
         # Note that this is right justified.
@@ -977,6 +1166,12 @@ class DividerDrawer(object):
         if wrapper == "back":
             self.canvas.rotate(180)
 
+        if self.options.black_tabs:
+            self.canvas.saveState()
+            self.canvas.setFillColorRGB(0, 0, 0)
+            self.canvas.rect(0, 0, self.options.labelWidth, self.options.labelHeight, fill=True)
+            self.canvas.restoreState()
+
         # allow for 3 pt border on each side
         textWidth = self.options.labelWidth - 6
         textHeight = 7
@@ -986,7 +1181,7 @@ class DividerDrawer(object):
             card.getType().getTabTextHeightOffset()
 
         # draw banner
-        img = card.getType().getNoCoinTabImageFile()
+        img = card.getType().getTabImageFile()
         if not self.options.no_tab_artwork and img:
             self.canvas.drawImage(
                 DividerDrawer.get_image_filepath(img),
@@ -1055,8 +1250,6 @@ class DividerDrawer(object):
                 name_lines = name.split(None, 1)
         else:
             name_lines = [name]
-        # if tooLong:
-        #    print name
 
         for linenum, line in enumerate(name_lines):
             h = textHeight
@@ -1270,7 +1463,10 @@ class DividerDrawer(object):
                     dmod = d
                 else:
                     dmod = self.add_inline_images(d, s.fontSize)
-                p = Paragraph(dmod, s)
+                try:
+                    p = Paragraph(dmod, s)
+                except ValueError as e:
+                    raise ValueError(u'Error rendering text from "{}": {} ("{}")'.format(card.name, e, dmod))
                 h += p.wrap(textBoxWidth, textBoxHeight)[1]
                 paragraphs.append(p)
 
@@ -1539,81 +1735,29 @@ class DividerDrawer(object):
                         CardPlot.tabSetup(tabNumber=options.tab_number)
             lastCardSet = card.cardset_tag
 
-            if self.wantCentreTab(card):
-                # If we want centred expansion cards, then force this divider to centre
-                thisTabIndex = 0
-            else:
-                thisTabIndex = nextTabIndex
+        for pageNum, pageCards in enumerate(cards):
+            # remember whether we start with odd or even divider for tab
+            # location
+            pageStartOdd = self.odd
 
-            item = CardPlot(card,
-                            height=height,
-                            width=options.dividerWidthReserved,
-                            lineType=lineType,
-                            tabIndex=thisTabIndex,
-                            textTypeFront=options.text_front,
-                            textTypeBack=options.text_back,
-                            stackHeight=card.getStackHeight(options.thickness)
-                            )
-            if options.flip and (options.tab_number == 2) and (thisTabIndex != CardPlot.tabStart):
-                item.flipFront2Back()  # Instead of flipping the tab, flip the whole divider front to back
-
-            # Before moving on, setup the tab for the next item if this tab slot was used
-            if thisTabIndex == nextTabIndex:
-                nextTabIndex = item.nextTab(nextTabIndex)  # already used, so move on to the next tab
-
-            items.append(item)
-
-        return items
-
-    def convert2pages(self, options, items=[]):
-        # Take the layout and all the items and separate the items into pages.
-        # Each item will have all its plotting information filled in.
-        rows = options.numDividersVertical
-        columns = options.numDividersHorizontal
-        numPerPage = rows * columns
-
-        items = split(items, numPerPage)
-        pages = []
-        for pageNum, pageItems in enumerate(items):
-            page = []
-            for i in range(numPerPage):
-                if pageItems and i < len(pageItems):
-                    # Given a CardPlot object called item, its number on the page, and the page number
-                    # Return/set the items x,y,rotation, crop mark settings, and page number
-                    # For x,y assume the canvas has already been adjusted for the margins
-                    x = i % columns
-                    y = (rows - 1) - (i // columns)
-                    pageItems[i].x = x * options.dividerWidthReserved
-                    pageItems[i].y = y * options.dividerHeightReserved
-                    pageItems[i].cropOnTop = (y == rows - 1)
-                    pageItems[i].cropOnBottom = (y == 0)
-                    pageItems[i].cropOnLeft = (x == 0)
-                    pageItems[i].cropOnRight = (x == columns - 1)
-                    pageItems[i].rotation = 0
-                    pageItems[i].page = pageNum + 1
-                    page.append(pageItems[i])
-
-            pages.append((options.horizontalMargin, options.verticalMargin, page))
-        return pages
-
-    def drawDividers(self, cards=[]):
-        if not self.pages:
-            self.calculatePages(cards)
-
-        # Now go page by page and print the dividers
-        for pageNum, pageInfo in enumerate(self.pages):
-            hMargin, vMargin, page = pageInfo
-
-            # Front page footer
             if not self.options.no_page_footer and (
                     not self.options.tabs_only and
                     self.options.order != "global"):
-                self.drawSetNames(page)
+                self.drawSetNames(pageCards)
 
-            # Front page
-            for item in page:
-                # print the dividor
-                self.drawDivider(item, isBack=False, horizontalMargin=hMargin, verticalMargin=vMargin)
+            for i, card in enumerate(pageCards):
+                # print card
+                x = i % self.options.numDividersHorizontal
+                y = i // self.options.numDividersHorizontal
+                self.canvas.saveState()
+                self.drawDivider(card,
+                                 x,
+                                 self.options.numDividersVertical - 1 - y,
+                                 isBack=False,
+                                 divider_text=self.options.text_front,
+                                 divider_text2=self.options.text_back)
+                self.canvas.restoreState()
+                self.odd = not self.odd
             self.canvas.showPage()
             if pageNum + 1 == self.options.num_pages:
                 break
@@ -1622,12 +1766,22 @@ class DividerDrawer(object):
 
             # back page footer
             if not self.options.no_page_footer and self.options.order != "global":
-                self.drawSetNames(page)
-
-            # Back page
-            for item in page:
-                # print the dividor
-                self.drawDivider(item, isBack=True, horizontalMargin=hMargin, verticalMargin=vMargin)
+                self.drawSetNames(pageCards)
+            # start at same oddness
+            self.odd = pageStartOdd
+            for i, card in enumerate(pageCards):
+                # print card
+                x = (self.options.numDividersHorizontal - 1 - i
+                     ) % self.options.numDividersHorizontal
+                y = i // self.options.numDividersHorizontal
+                self.canvas.saveState()
+                self.drawDivider(card,
+                                 x,
+                                 self.options.numDividersVertical - 1 - y,
+                                 isBack=True,
+                                 divider_text=self.options.text_back)
+                self.canvas.restoreState()
+                self.odd = not self.odd
             self.canvas.showPage()
             if pageNum + 1 == self.options.num_pages:
                 break
