@@ -256,6 +256,7 @@ def test_tab_edge_full():
         ['--tab-name-align', 'edge', '--tab-side', 'full'])
     assert options.tab_name_align == 'edge'
     assert options.tab_side == 'full'
+    options = main.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == 'left'  # special check for odd condition
     assert options.tab_side == 'full'
@@ -316,6 +317,7 @@ def test_tab_center_left():
     options = main.parse_opts(['--tab-name-align', 'center', '--tab-side', 'left'])
     assert options.tab_name_align == 'center'
     assert options.tab_side == 'left'
+    options = main.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == 'centre'  # check for change in value
     assert options.tab_side == 'left'
