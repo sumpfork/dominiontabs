@@ -618,11 +618,14 @@ class DividerDrawer(object):
 
             # Even if wanted, there may not be room, and limit to one pair of notches
             if (right2tab - minNotch < notch1) or not notch1used:
-                notch1 = notch3 = 0
-                notch1used = notch3used = False
+                notch1 = 0
+                notch1used = False
             if (left2tab - minNotch < notch4) or not notch4used or notch1used:
                 notch4 = notch2 = 0
-                notch4used = notch2used = False
+                notch4used = notch4used = False
+            else:
+                notch3 = 0
+                notch3used = False
 
             # Setup the rest of the lineStyle's
             lineStyle[1] = lineType if notch1used else lineTypeNoDot
