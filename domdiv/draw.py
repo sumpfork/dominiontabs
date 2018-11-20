@@ -62,7 +62,7 @@ class CardPlot(object):
             CardPlot.tabIncrementStart = -1
         elif CardPlot.tabStartSide == CardPlot.CENTRE:
             # Get as close to centre as possible
-            CardPlot.tabStart = (CardPlot.tabNumber + 1) / 2
+            CardPlot.tabStart = (CardPlot.tabNumber + 1) // 2
             CardPlot.tabIncrementStart = 1
         else:
             # LEFT and anything else
