@@ -622,7 +622,7 @@ class DividerDrawer(object):
                 notch1used = False
             if (left2tab - minNotch < notch4) or not notch4used or notch1used:
                 notch4 = notch2 = 0
-                notch4used = notch4used = False
+                notch4used = notch2used = False
             else:
                 notch3 = 0
                 notch3used = False
