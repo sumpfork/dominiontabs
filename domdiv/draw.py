@@ -1583,8 +1583,8 @@ class DividerDrawer(object):
         columns = options.numDividersHorizontal
         numPerPage = rows * columns
         # Calculate if there is always enough room for horizontal and vertical crop marks
-        RoomForHorizontalCrop = options.horizontalBorderSpace > 2*(options.cropmarkLength + options.cropmarkSpacing)
-        RoomForVerticalCrap = options.verticalBorderSpace > 2*(options.cropmarkLength + options.cropmarkSpacing)
+        RoomForCropH = options.horizontalBorderSpace > 2*(options.cropmarkLength + options.cropmarkSpacing) * cm
+        RoomForCropV = options.verticalBorderSpace > 2*(options.cropmarkLength + options.cropmarkSpacing) * cm
 
         items = split(items, numPerPage)
         pages = []
@@ -1599,10 +1599,10 @@ class DividerDrawer(object):
                     y = (rows - 1) - (i // columns)
                     pageItems[i].x = x * options.dividerWidthReserved
                     pageItems[i].y = y * options.dividerHeightReserved
-                    pageItems[i].cropOnTop = (y == rows - 1) or RoomForVerticalCrap
-                    pageItems[i].cropOnBottom = (y == 0) or RoomForVerticalCrap
-                    pageItems[i].cropOnLeft = (x == 0) or RoomForHorizontalCrop
-                    pageItems[i].cropOnRight = (x == columns - 1) or RoomForHorizontalCrop
+                    pageItems[i].cropOnTop = (y == rows - 1) or RoomForCropV
+                    pageItems[i].cropOnBottom = (y == 0) or RoomForCropV
+                    pageItems[i].cropOnLeft = (x == 0) or RoomForCropH
+                    pageItems[i].cropOnRight = (x == columns - 1) or RoomForCropH
                     pageItems[i].rotation = 0
                     pageItems[i].page = pageNum + 1
                     page.append(pageItems[i])
