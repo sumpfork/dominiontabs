@@ -522,31 +522,30 @@ def clean_opts(options):
                 options.label = label
                 break
 
-        if options.label is None:
-            print("Error: Label not defined")
-        else:
-            # Defaults for missing values
-            label = options.label
-            label['paper'] = label['paper'] if 'paper' in label else "LETTER"
-            label['tab-only'] = label['tab-only'] if 'tab-only' in label else True
-            label['body-height'] = label['body-height'] if 'body-height' in label else 0
-            label['gap-vertical'] = label['gap-vertical'] if 'gap-vertical' in label else 0.0
-            label['gap-horizontal'] = label['gap-horizontal'] if 'gap-horizontal' in label else 0.0
-            label['pad-vertical'] = label['pad-vertical'] if 'pad-vertical' in label else 0.1
-            label['pad-horizontal'] = label['pad-horizontal'] if 'pad-horizontal' in label else 0.1
+        assert options.label is not None, "Label '{}' not defined".format(options.label_name)
 
-            # Option Overrides when using labels
-            options.linewidth = 0.0
-            options.papersize = label['paper']
-            if label['tab-only']:
-                options.tabs_only = True
-            if label['body-height'] < 4.0:
-                options.text_front = "blank"
-                options.text_back = "blank"
-            if label['body-height'] < 1.0:
-                options.count = False
-                options.types = False
-            options.label = label
+        # Defaults for missing values
+        label = options.label
+        label['paper'] = label['paper'] if 'paper' in label else "LETTER"
+        label['tab-only'] = label['tab-only'] if 'tab-only' in label else True
+        label['body-height'] = label['body-height'] if 'body-height' in label else 0
+        label['gap-vertical'] = label['gap-vertical'] if 'gap-vertical' in label else 0.0
+        label['gap-horizontal'] = label['gap-horizontal'] if 'gap-horizontal' in label else 0.0
+        label['pad-vertical'] = label['pad-vertical'] if 'pad-vertical' in label else 0.1
+        label['pad-horizontal'] = label['pad-horizontal'] if 'pad-horizontal' in label else 0.1
+
+        # Option Overrides when using labels
+        options.linewidth = 0.0
+        options.papersize = label['paper']
+        if label['tab-only']:
+            options.tabs_only = True
+        if label['body-height'] < 4.0:
+            options.text_front = "blank"
+            options.text_back = "blank"
+        if label['body-height'] < 1.0:
+            options.count = False
+            options.types = False
+        options.label = label
 
     return options
 
@@ -697,6 +696,17 @@ def read_card_data(options):
             cards[i].setCardCount(cards_remaining)
             # Add the new dividers
             cards.extend(new_cards)
+
+    # Add any blank cards
+    if options.include_blanks > 0:
+        for x in range(0, options.include_blanks):
+            c = Card(card_tag=u'Blank',
+                     cardset='extras',
+                     cardset_tag='extras',
+                     cardset_tags=['extras'],
+                     randomizer=False,
+                     types=("Blank", ))
+            cards.append(c)
 
     # Create Start Deck dividers. 4 sets. Adjust totals for other cards, too.
     # Do early before propagating to various sets.
@@ -942,16 +952,6 @@ def filter_sort_cards(cards, options):
 
         cards = keep_cards
 
-    # Add any blank cards
-    if options.include_blanks > 0:
-        for x in range(0, options.include_blanks):
-            c = Card(cardset='extras',
-                     cardset_tag='extras',
-                     randomizer=False,
-                     types=("Blank", ))
-            cards.append(c)
-        options.expansions.append("extras")
-
     # Combine upgrade cards with their expansion
     if options.upgrade_with_expansion:
         for card in cards:
@@ -979,6 +979,11 @@ def filter_sort_cards(cards, options):
                               new_card_tag='landmarks',
                               new_cardset_tag='extras'
                               )
+        if options.expansions:
+            options.expansions.append("extras")
+
+    # Take care of any blank cards
+    if options.include_blanks > 0:
         if options.expansions:
             options.expansions.append("extras")
 
