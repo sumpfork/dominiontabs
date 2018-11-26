@@ -125,6 +125,32 @@ def main(args):
     print()
 
     ###########################################################################
+    #  Get the labels_db information
+    #  Store in a list in the order found.
+    ###########################################################################
+    all_labels = []
+
+    # Get the card data
+    label_data = get_json_data(os.path.join(args.card_db_dir, "labels_db.json"))
+
+    with io.open(
+            os.path.join(args.output_dir, "labels_db.json"), 'w',
+            encoding='utf-8') as lang_out:
+        lang_out.write(six.u("["))  # Start of list
+        sep = ""
+        for label in label_data:
+            # Collect all the individual types
+            all_labels = list(set(label['names']) | set(all_labels))
+            lang_out.write(sep + json.dumps(
+                label, indent=4, ensure_ascii=False, sort_keys=True))
+            sep = ","
+        lang_out.write(six.u("\n]\n"))  # End of List
+
+    all_labels.sort()
+    print("Labels: ")
+    print(all_labels)
+    print()
+    ###########################################################################
     # Fix up all the xx/types_xx.json files
     # Place entries in alphabetical order
     # If entries don't exist:
