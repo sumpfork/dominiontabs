@@ -1906,7 +1906,7 @@
     },
     "Will-O'-Wisp": {
         "description": "+1 Card<br>+1 Action<br>Reveal the top card of your deck. If it costs 2 Coin or less, put it into your hand.<br><br><i>(This is not in the Supply.)</i>", 
-        "extra": " If the revealed card does not cost 2 Coins or less, leave it on your deck. Cards with Potion or Debt  in the cost (from Alchemy and Empires) do not cost 2 Coins or less.", 
+        "extra": "If the revealed card does not cost 2 Coins or less, leave it on your deck. Cards with Potion or Debt in the cost (from Alchemy and Empires) do not cost 2 Coins or less.",
         "name": "Will-O'-Wisp"
     },
     "Wish": {
@@ -1941,7 +1941,7 @@
     },
     "Dismantle": {
         "description": "Trash a card from your hand. If it costs 1 coin or more, gain a cheaper card and a Gold.", 
-        "extra": "", 
+        "extra": "Trashing is not optional. If you trash a card costing 0 Coin, or if you have no cards left in hand to trash, nothing else happens. If you trash a card costing 1 Coin or more, you gain a cheaper card and a Gold. Both come from the Supply, and are put into your discard pile. The cheaper card goes into your discard pile first. For example, if you trash a Silver (costing 3 Coin), you could gain an Estate (costing 2 Coin). There will almost always be a cheaper card in the Supply, since Copper and Curse cost 0 Coin, but if there aren't any, you still gain a Gold. If there aren't any Gold left in the Supply, you still gain the cheaper card. Cards that cost only Potion (like Transmute from Alchemy) or only Debt (like Engineer from Empires) do not cost 1 Coin or more.", 
         "name": "Dismantle"
     },
     "Envoy": {
