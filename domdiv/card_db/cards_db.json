@@ -1320,7 +1320,9 @@
     ], 
     "cost": "4", 
     "types": [
-        "Action"
+        "Action", 
+        "Attack", 
+        "Looter"
     ]
 },{
     "card_tag": "Market Square", 
@@ -4364,6 +4366,7 @@
     ], 
     "cost": "3", 
     "types": [
+        "Action", 
         "Reaction"
     ]
 },{
