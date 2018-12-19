@@ -38,19 +38,28 @@ class CardPlot(object):
     tabStart = 1  # The starting tab location.
     tabStartSide = LEFT  # The starting side for the tabs
     tabSerpentine = False  # What to do at the end of a line of tabs.  False = start over.  True = reverses direction.
-    dividerWidth = 0  # Width of just the divider, with no extra padding/spacing. NEEDS TO BE SET.
+    lineType = 'line'  # Type of outline to use: line, dot, none
+    cardWidth = 0  # Width of just the divider, with no extra padding/spacing. NEEDS TO BE SET.
+    cardHeight = 0  # Height of just the divider, with no extra padding/spacing or tab. NEEDS TO BE SET.
     tabWidth = 0  # Width of the tab.  NEEDS TO BE SET.
+    tabHeight = 0  # Height of the tab. NEEDS TO BE SET.
+    wrapper = False  # If the divider is a sleeve/wrapper.
 
     @staticmethod
-    def tabSetup(tabNumber=None, dividerWidth=None, tabWidth=None, start=None, serpentine=None):
+    def tabSetup(tabNumber=None, cardWidth=None, cardHeight=None, tabWidth=None, tabHeight=None,
+                 lineType=None, start=None, serpentine=None, wrapper=None):
         # Set up the basic tab information used in calculations when a new CardPlot object is created.
         # This needs to be called at least once before the first CardPlot object is created and then it
         # needs to be called any time one of the above parameters needs to change.
         CardPlot.tabNumber = tabNumber if tabNumber is not None else CardPlot.tabNumber
+        CardPlot.cardWidth = cardWidth if cardWidth is not None else CardPlot.cardWidth
+        CardPlot.cardHeight = cardHeight if cardHeight is not None else CardPlot.cardHeight
+        CardPlot.tabWidth = tabWidth if tabWidth is not None else CardPlot.tabWidth
+        CardPlot.tabHeight = tabHeight if tabHeight is not None else CardPlot.tabHeight
+        CardPlot.lineType = lineType if lineType is not None else CardPlot.lineType
         CardPlot.tabStartSide = start if start is not None else CardPlot.tabStartSide
         CardPlot.tabSerpentine = serpentine if serpentine is not None else CardPlot.tabSerpentine
-        CardPlot.dividerWidth = dividerWidth if dividerWidth is not None else CardPlot.dividerWidth
-        CardPlot.tabWidth = tabWidth if tabWidth is not None else CardPlot.tabWidth
+        CardPlot.wrapper = wrapper if wrapper is not None else CardPlot.wrapper
         # LEFT        tabs        RIGHT
         # +---+ +---+ +---+ +---+ +---+
         # | 1 | | 2 | | 3 | |...| | N |   Note: tabNumber = N, N >=1, 0 is for centred tabs
@@ -80,25 +89,23 @@ class CardPlot(object):
         CardPlot.tabIncrement = CardPlot.tabIncrementStart
         return CardPlot.tabStart
 
-    def __init__(self, card, x=0, y=0, rotation=0, height=0, width=0, stackHeight=0, tabIndex=None, page=0,
-                 lineType='line', textTypeFront="card", textTypeBack="rules",
+    def __init__(self, card, x=0, y=0, rotation=0, stackHeight=0, tabIndex=None, page=0,
+                 textTypeFront="card", textTypeBack="rules",
                  cropOnTop=False, cropOnBottom=False, cropOnLeft=False, cropOnRight=False):
         self.card = card
         self.x = x  # x location of the lower left corner of the card on the page
         self.y = y  # y location of the lower left corner of the card on the page
         self.rotation = rotation  # of the card. 0, 90, 180, 270
-        self.lineType = lineType  # Type of outline to use: line, dot, none
-        self.width = width  # Width of the divider including any divider to divider spacing
-        self.height = height  # Height of the divider including any divider to divider spacing
         self.stackHeight = stackHeight  # The height of a stack of these cards. Used for interleaving.
+        self.tabIndex = tabIndex  # Tab location index.  Starts at 1 and goes up to CardPlot.tabNumber
+        self.page = page  # holds page number of this printed card
         self.textTypeFront = textTypeFront  # What card text to put on the front of the divider
         self.textTypeBack = textTypeBack  # What card text to put on the back of the divider
         self.cropOnTop = cropOnTop  # When true, cropmarks needed along TOP *printed* edge of the card
         self.cropOnBottom = cropOnBottom  # When true, cropmarks needed along BOTTOM *printed* edge of the card
         self.cropOnLeft = cropOnLeft  # When true, cropmarks needed along LEFT *printed* edge of the card
         self.cropOnRight = cropOnRight  # When true, cropmarks needed along RIGHT *printed* edge of the card
-        self.page = page  # holds page number of this printed card
-        self.tabIndex = tabIndex  # Tab location index.  Starts at 1 and goes up to CardPlot.tabNumber
+
         # And figure out the backside index
         if self.tabIndex == 0:
             self.tabIndexBack = 0  # Exact Centre special case, so swapping is still exact centre
@@ -113,26 +120,26 @@ class CardPlot(object):
         # Now set the offsets and the closest edge to the tab
         if self.tabIndex == 0:
             # Special case for centred tabs
-            self.tabOffset = self.tabOffsetBack = (CardPlot.dividerWidth - CardPlot.tabWidth) / 2
+            self.tabOffset = self.tabOffsetBack = (CardPlot.cardWidth - CardPlot.tabWidth) / 2
             self.closestSide = CardPlot.CENTRE
         elif CardPlot.tabNumber <= 1:
             # If just one tab, then can be right, centre, or left
             self.closestSide = CardPlot.tabStartSide
             if CardPlot.tabStartSide == CardPlot.RIGHT:
-                self.tabOffset = CardPlot.dividerWidth - CardPlot.tabWidth
+                self.tabOffset = CardPlot.cardWidth - CardPlot.tabWidth
                 self.tabOffsetBack = 0
             elif CardPlot.tabStartSide == CardPlot.CENTRE:
-                self.tabOffset = (CardPlot.dividerWidth - CardPlot.tabWidth) / 2
-                self.tabOffsetBack = (CardPlot.dividerWidth - CardPlot.tabWidth) / 2
+                self.tabOffset = (CardPlot.cardWidth - CardPlot.tabWidth) / 2
+                self.tabOffsetBack = (CardPlot.cardWidth - CardPlot.tabWidth) / 2
             else:
                 # LEFT and anything else
                 self.tabOffset = 0
-                self.tabOffsetBack = CardPlot.dividerWidth - CardPlot.tabWidth
+                self.tabOffsetBack = CardPlot.cardWidth - CardPlot.tabWidth
         else:
             # More than 1 tabs
             self.tabOffset = (self.tabIndex - 1) * (
-                             (CardPlot.dividerWidth - CardPlot.tabWidth) / (CardPlot.tabNumber - 1))
-            self.tabOffsetBack = CardPlot.dividerWidth - CardPlot.tabWidth - self.tabOffset
+                             (CardPlot.cardWidth - CardPlot.tabWidth) / (CardPlot.tabNumber - 1))
+            self.tabOffsetBack = CardPlot.cardWidth - CardPlot.tabWidth - self.tabOffset
 
             # Set  which edge is closest to the tab
             if self.tabIndex <= CardPlot.tabNumber / 2:
@@ -195,12 +202,16 @@ class CardPlot(object):
     def flipFront2Back(self):
         # Flip a card from front to back.  i.e., print the front of the divider on the page's back
         # and print the back of the divider on the page's front.  So what does that mean...
-        # The tab moves from right(left) to left(right).  If centre, it stays the same.
+        # If it is a wrapper / slipcover, then it is rotated 180 degrees.
+        # Otherwise, the tab moves from right(left) to left(right).  If centre, it stays the same.
         # And then the divider's text is moved to the other side of the page.
-        self.tabIndex, self.tabIndexBack = self.tabIndexBack, self.tabIndex
-        self.tabOffset, self.tabOffsetBack = self.tabOffsetBack, self.tabOffset
-        self.textTypeFront, self.textTypeBack = self.textTypeBack, self.textTypeFront
-        self.closestSide = self.getClosestSide(backside=True)
+        if self.wrapper:
+            self.rotate(180)
+        else:
+            self.tabIndex, self.tabIndexBack = self.tabIndexBack, self.tabIndex
+            self.tabOffset, self.tabOffsetBack = self.tabOffsetBack, self.tabOffset
+            self.textTypeFront, self.textTypeBack = self.textTypeBack, self.textTypeFront
+            self.closestSide = self.getClosestSide(backside=True)
 
     def translate(self, canvas, page_width, backside=False):
         # Translate the page x,y of the lower left of item, taking into account the rotation,
@@ -211,25 +222,31 @@ class CardPlot(object):
         y = self.y
         rotation = self.rotation
 
+        # set width and height for this card
+        width = self.cardWidth
+        height = self.cardHeight + self.tabHeight
+        if self.wrapper:
+            height = 2 * (height + self.stackHeight)
+
         if backside:
-            x = page_width - x - self.width
+            x = page_width - x - width
 
         if self.rotation == 180:
-            x += self.width
-            y += self.height
+            x += width
+            y += height
         elif self.rotation == 90:
             if backside:
-                x += self.width
+                x += width
                 rotation = 270
             else:
-                y += self.width
+                y += width
         elif self.rotation == 270:
             if backside:
-                x += self.width - self.height
-                y += self.width
+                x += width - height
+                y += width
                 rotation = 90
             else:
-                x += self.height
+                x += height
 
         rotation = 360 - rotation % 360  # ReportLab rotates counter clockwise, not clockwise.
         canvas.translate(x, y)
@@ -522,20 +539,20 @@ class DividerDrawer(object):
 
         # The back is flipped
         if isBack:
-            self.canvas.translate(self.options.dividerWidth, 0)
+            self.canvas.translate(item.cardWidth, 0)
             self.canvas.scale(-1, 1)
 
         plotter = Plotter(self.canvas,
                           cropmarkLength=self.options.cropmarkLength,
                           cropmarkSpacing=self.options.cropmarkSpacing)
 
-        dividerWidth = self.options.dividerWidth
-        dividerHeight = self.options.dividerHeight
-        dividerBaseHeight = self.options.dividerBaseHeight
-        tabLabelWidth = self.options.labelWidth
+        dividerWidth = item.cardWidth
+        dividerHeight = item.cardHeight + item.tabHeight
+        dividerBaseHeight = item.cardHeight
+        tabLabelWidth = item.tabWidth
+        theTabWidth = item.tabWidth
+        theTabHeight = item.tabHeight
 
-        theTabHeight = dividerHeight - dividerBaseHeight
-        theTabWidth = self.options.labelWidth
         left2tab = item.getTabOffset(backside=isBack)
         right2tab = dividerWidth - tabLabelWidth - left2tab
         nearZero = 0.01
@@ -570,7 +587,7 @@ class DividerDrawer(object):
         plotter.setCropEnable(TOP, self.options.cropmarks and item.translateCropmarkEnable(item.TOP))
         plotter.setCropEnable(BOTTOM, self.options.cropmarks and item.translateCropmarkEnable(item.BOTTOM))
 
-        if not self.options.wrapper:
+        if not item.wrapper:
             # Normal Card Outline
             #     <-left2tab-> <--tabLabelWidth--> <-right2tab->
             #    |            |                   |             |
@@ -635,7 +652,7 @@ class DividerDrawer(object):
             lineStyle[5] = lineType if notch1used and right2tab > 0 else lineTypeNoDot
             lineStyle[6] = lineType if notch4used and left2tab > 0 else lineTypeNoDot
 
-            stackHeight = item.card.getStackHeight(self.options.thickness)
+            stackHeight = item.stackHeight
             body_minus_notches = dividerBaseHeight - (2.0 * notch_height)
             tab2notch1 = right2tab - notch1
             tab2notch4 = left2tab - notch4
@@ -960,22 +977,21 @@ class DividerDrawer(object):
         # draw tab flap
         self.canvas.saveState()
 
-        translate_y = self.options.dividerHeight - self.options.labelHeight
+        translate_y = item.cardHeight
         if self.wantCentreTab(card):
-            translate_x = self.options.dividerWidth / 2 - self.options.labelWidth / 2
+            translate_x = item.cardWidth / 2 - item.tabWidth / 2
         else:
             translate_x = item.getTabOffset(backside=backside)
 
         if wrapper == "back":
-            translate_y = self.options.labelHeight
+            translate_y = item.tabHeight
             if self.wantCentreTab(card):
-                translate_x = self.options.dividerWidth / 2 + self.options.labelWidth / 2
+                translate_x = item.cardWidth / 2 + item.tabWidth / 2
             else:
-                translate_x = item.getTabOffset(backside=False) + self.options.labelWidth
+                translate_x = item.getTabOffset(backside=False) + item.tabWidth
 
         if wrapper == "front":
-            translate_y = translate_y + self.options.dividerHeight + 2.0 * card.getStackHeight(
-                self.options.thickness)
+            translate_y = translate_y + item.cardHeight + item.tabHeight + 2.0 * item.stackHeight
 
         self.canvas.translate(translate_x, translate_y)
 
@@ -985,15 +1001,15 @@ class DividerDrawer(object):
         if self.options.black_tabs:
             self.canvas.saveState()
             self.canvas.setFillColorRGB(0, 0, 0)
-            self.canvas.rect(0, 0, self.options.labelWidth, self.options.labelHeight, fill=True)
+            self.canvas.rect(0, 0, item.tabWidth, item.tabHeight, fill=True)
             self.canvas.restoreState()
 
         # allow for 3 pt border on each side
-        textWidth = self.options.labelWidth - 6
+        textWidth = item.tabWidth - 6
         textHeight = 7
         if self.options.no_tab_artwork:
             textHeight = 4
-        textHeight = self.options.labelHeight / 2 - textHeight + \
+        textHeight = item.tabHeight / 2 - textHeight + \
             card.getType().getTabTextHeightOffset()
 
         # draw banner
@@ -1003,8 +1019,8 @@ class DividerDrawer(object):
                 DividerDrawer.get_image_filepath(img),
                 1,
                 0,
-                self.options.labelWidth - 2,
-                self.options.labelHeight - 1,
+                item.tabWidth - 2,
+                item.tabHeight - 1,
                 preserveAspectRatio=False,
                 anchor='n',
                 mask='auto')
@@ -1033,7 +1049,7 @@ class DividerDrawer(object):
             if setText is None:
                 setText = ""
 
-            self.canvas.drawCentredString(self.options.labelWidth - 10,
+            self.canvas.drawCentredString(item.tabWidth - 10,
                                           textHeight + 2, setText)
             textInsetRight = 15
         else:
@@ -1041,7 +1057,7 @@ class DividerDrawer(object):
             if setImage and 'tab' in self.options.set_icon:
                 setImageHeight = 3 + card.getType().getTabTextHeightOffset()
 
-                self.drawSetIcon(setImage, self.options.labelWidth - 20,
+                self.drawSetIcon(setImage, item.tabWidth - 20,
                                  setImageHeight)
 
                 textInsetRight = 20
@@ -1086,8 +1102,7 @@ class DividerDrawer(object):
             if NotRightEdge:
                 if (self.options.tab_name_align == "centre" or self.wantCentreTab(card)
                         or (item.getClosestSide(backside=backside) == CardPlot.CENTRE)):
-                    w = self.options.labelWidth / 2 - self.nameWidth(
-                        line, fontSize) / 2
+                    w = item.tabWidth / 2 - self.nameWidth(line, fontSize) / 2
                 else:
                     w = textInset
 
@@ -1106,11 +1121,10 @@ class DividerDrawer(object):
             else:
                 # align text to the right if tab is on right side
                 if self.options.tab_name_align == "centre" or self.wantCentreTab(card):
-                    w = self.options.labelWidth / 2 - self.nameWidth(
-                        line, fontSize) / 2
-                    w = self.options.labelWidth - w
+                    w = item.tabWidth / 2 - self.nameWidth(line, fontSize) / 2
+                    w = item.tabWidth - w
                 else:
-                    w = self.options.labelWidth - textInsetRight
+                    w = item.tabWidth - textInsetRight
 
                 # to make tabs easier to read when grouped together extra 3pt is for
                 # space between text + set symbol
@@ -1133,18 +1147,15 @@ class DividerDrawer(object):
 
         if wrapper == "front" and card.getCardCount() >= 5:
             # Print smaller version of name on the top wrapper edge
-            self.canvas.translate(0, -card.getStackHeight(
-                self.options.thickness))  # move into area used by the wrapper
+            self.canvas.translate(0, -item.stackHeight)  # move into area used by the wrapper
             fontSize = 8  # use the smallest font
             self.canvas.setFont(self.font_mapping['Regular'], fontSize)
 
             textHeight = fontSize - 2
-            textHeight = card.getStackHeight(
-                self.options.thickness) / 2 - textHeight / 2
+            textHeight = item.stackHeight / 2 - textHeight / 2
             h = textHeight
             words = name.split()
-            w = self.options.labelWidth / 2 - self.nameWidth(name,
-                                                             fontSize) / 2
+            w = item.tabWidth / 2 - self.nameWidth(name, fontSize) / 2
 
             def drawWordPiece(text, fontSize):
                 self.canvas.setFont(self.font_mapping['Regular'], fontSize)
@@ -1161,21 +1172,19 @@ class DividerDrawer(object):
 
         self.canvas.restoreState()
 
-    def drawText(self, card, divider_text="card", wrapper="no"):
-
+    def drawText(self, item, divider_text="card", wrapper="no"):
+        card = item.card
         self.canvas.saveState()
         usedHeight = 0
-        totalHeight = self.options.dividerHeight - self.options.labelHeight
+        totalHeight = item.cardHeight
 
         # Figure out if any translation needs to be done
         if wrapper == "back":
-            self.canvas.translate(self.options.dividerWidth,
-                                  self.options.dividerHeight)
+            self.canvas.translate(item.cardWidth, item.cardHeight + item.tabHeight)
             self.canvas.rotate(180)
 
         if wrapper == "front":
-            self.canvas.translate(0, self.options.dividerHeight +
-                                  card.getStackHeight(self.options.thickness))
+            self.canvas.translate(0, item.cardHeight + item.tabHeight + item.stackHeight)
 
         if wrapper == "front" or wrapper == "back":
             if self.options.notch_length > 0:
@@ -1188,7 +1197,7 @@ class DividerDrawer(object):
             Image_x_left += self.drawCost(card, Image_x_left, totalHeight - usedHeight - 0.5 * cm)
             drewTopIcon = True
 
-        Image_x_right = self.options.dividerWidth - 4
+        Image_x_right = item.cardWidth - 4
         if 'body-top' in self.options.set_icon and not card.isExpansion():
             setImage = card.setImage()
             if setImage:
@@ -1207,11 +1216,11 @@ class DividerDrawer(object):
             #  Calculate how much width have for printing
             #  Want centered, but number of other items can limit
             left_margin = Image_x_left
-            right_margin = self.options.dividerWidth - Image_x_right
+            right_margin = item.cardWidth - Image_x_right
             worst_margin = max(left_margin, right_margin)
-            w = self.options.dividerWidth / 2
-            textWidth = self.options.dividerWidth - 2 * worst_margin
-            textWidth2 = self.options.dividerWidth - left_margin - right_margin
+            w = item.cardWidth / 2
+            textWidth = item.cardWidth - 2 * worst_margin
+            textWidth2 = item.cardWidth - left_margin - right_margin
 
             #  Calculate font size that will fit in the area
             #  Start with centering type.  But if the fontSize gets too small
@@ -1262,7 +1271,7 @@ class DividerDrawer(object):
 
         textHorizontalMargin = .5 * cm
         textVerticalMargin = .3 * cm
-        textBoxWidth = self.options.dividerWidth - 2 * textHorizontalMargin
+        textBoxWidth = item.cardWidth - 2 * textHorizontalMargin
         textBoxHeight = totalHeight - usedHeight - 2 * textVerticalMargin
         spacerHeight = 0.2 * cm
         minSpacerHeight = 0.05 * cm
@@ -1338,10 +1347,10 @@ class DividerDrawer(object):
 
         self.drawTab(item, wrapper=wrap, backside=isBack)
         if not self.options.tabs_only:
-            self.drawText(item.card, cardText, wrapper=wrap)
-            if self.options.wrapper:
+            self.drawText(item, cardText, wrapper=wrap)
+            if item.wrapper:
                 self.drawTab(item, wrapper="back", backside=True)
-                self.drawText(item.card, item.textTypeBack, wrapper="back")
+                self.drawText(item, item.textTypeBack, wrapper="back")
 
         # retore the canvas state to the way we found it
         self.canvas.restoreState()
@@ -1412,12 +1421,14 @@ class DividerDrawer(object):
     def calculatePages(self, cards):
         options = self.options
 
+        # Adjust for Vertical vs Horizontal
         if options.orientation == "vertical":
             options.dividerWidth, options.dividerBaseHeight = options.dominionCardHeight, options.dominionCardWidth
         else:
             options.dividerWidth, options.dividerBaseHeight = options.dominionCardWidth, options.dominionCardHeight
 
         options.fixedMargins = False
+
         if options.tabs_only:
             # fixed for Avery 8867 for now
             options.minmarginwidth = 0.86 * cm  # was 0.76
@@ -1438,16 +1449,28 @@ class DividerDrawer(object):
             options.horizontalBorderSpace = options.horizontal_gap * cm
             options.verticalBorderSpace = options.vertical_gap * cm
 
+        # Set Height
         options.dividerHeight = options.dividerBaseHeight + options.labelHeight
 
-        options.dividerWidthReserved = options.dividerWidth + options.horizontalBorderSpace
-        options.dividerHeightReserved = options.dividerHeight + options.verticalBorderSpace
+        # Start building up the space reserved for each divider
+        options.dividerWidthReserved = options.dividerWidth
+        options.dividerHeightReserved = options.dividerHeight
+
         if options.wrapper:
-            max_card_stack_height = max(c.getStackHeight(options.thickness)
-                                        for c in cards)
-            options.dividerHeightReserved = (options.dividerHeightReserved * 2) + (
-                max_card_stack_height * 2)
-            print("Max Card Stack Height: {:.2f}cm ".format(max_card_stack_height))
+            # Adjust height for wrapper.  Use the maximum thickness of any divider so we know anything will fit.
+            maxStackHeight = max(c.getStackHeight(options.thickness) for c in cards)
+            options.dividerHeightReserved = 2 * (options.dividerHeightReserved + maxStackHeight)
+            print("Max Card Stack Height: {:.2f}cm ".format(maxStackHeight/10.0))
+
+        # Adjust for rotation
+        if options.rotate == 90 or options.rotate == 270:
+            # for page calculations, this just means switching horizontal and vertical for these rotations.
+            options.dividerWidth, options.dividerHeight = options.dividerHeight, options.dividerWidth
+            options.dividerWidthReserved, options.dividerHeightReserved = (options.dividerHeightReserved,
+                                                                           options.dividerWidthReserved)
+
+        options.dividerWidthReserved += options.horizontalBorderSpace
+        options.dividerHeightReserved += options.verticalBorderSpace
 
         # as we don't draw anything in the final border, it shouldn't count towards how many tabs we can fit
         # so it gets added back in to the page size here
@@ -1465,7 +1488,7 @@ class DividerDrawer(object):
             options.dividerWidthReserved)
 
         if ((numDividersVerticalL * numDividersHorizontalL > numDividersVerticalP *
-             numDividersHorizontalP) and not options.fixedMargins):
+             numDividersHorizontalP) and not options.fixedMargins) and options.rotate == 0:
             options.numDividersVertical = numDividersVerticalL
             options.numDividersHorizontal = numDividersHorizontalL
             options.minHorizontalMargin = options.minmarginheight
@@ -1476,6 +1499,9 @@ class DividerDrawer(object):
             options.numDividersHorizontal = numDividersHorizontalP
             options.minHorizontalMargin = options.minmarginheight
             options.minVerticalMargin = options.minmarginwidth
+
+        assert options.numDividersVertical > 0, "Could not vertically fit the divider on the page"
+        assert options.numDividersHorizontal > 0, "Could not horizontally fit the divider on the page"
 
         if not options.fixedMargins:
             # dynamically max margins
@@ -1518,12 +1544,23 @@ class DividerDrawer(object):
         else:
             tabSideStart = CardPlot.LEFT  # catch anything else
 
+        cardWidth = options.dominionCardWidth
+        cardHeight = options.dominionCardHeight
+
+        # Adjust for Vertical
+        if options.orientation == "vertical":
+            cardWidth, cardHeight = cardHeight, cardWidth
+
         # Initialized CardPlot tabs
         CardPlot.tabSetup(tabNumber=options.tab_number,
-                          dividerWidth=options.dividerWidth,
+                          cardWidth=cardWidth,
+                          cardHeight=cardHeight,
+                          lineType=lineType,
                           tabWidth=options.labelWidth,
+                          tabHeight=options.labelHeight,
                           start=tabSideStart,
-                          serpentine=options.tab_serpentine)
+                          serpentine=options.tab_serpentine,
+                          wrapper=options.wrapper)
 
         # Now go through all the cards and create their plotter information record...
         items = []
@@ -1532,12 +1569,7 @@ class DividerDrawer(object):
         reset_expansion_tabs = options.expansion_dividers and options.expansion_reset_tabs
 
         for card in cards:
-            if options.wrapper:
-                height = ((2 * (options.dividerHeight + card.getStackHeight(options.thickness)))
-                          + options.verticalBorderSpace)
-            else:
-                height = options.dividerHeightReserved
-
+            # Check if tab needs to be reset to the start
             if reset_expansion_tabs and not card.isExpansion():
                 if lastCardSet != card.cardset_tag:
                     # In a new expansion, so reset the tabs to start over
@@ -1557,9 +1589,7 @@ class DividerDrawer(object):
                 thisTabIndex = nextTabIndex
 
             item = CardPlot(card,
-                            height=height,
-                            width=options.dividerWidthReserved,
-                            lineType=lineType,
+                            rotation=options.rotate,
                             tabIndex=thisTabIndex,
                             textTypeFront=options.text_front,
                             textTypeBack=options.text_back,
@@ -1573,7 +1603,6 @@ class DividerDrawer(object):
                 nextTabIndex = item.nextTab(nextTabIndex)  # already used, so move on to the next tab
 
             items.append(item)
-
         return items
 
     def convert2pages(self, options, items=[]):
@@ -1603,7 +1632,7 @@ class DividerDrawer(object):
                     pageItems[i].cropOnBottom = (y == 0) or RoomForCropV
                     pageItems[i].cropOnLeft = (x == 0) or RoomForCropH
                     pageItems[i].cropOnRight = (x == columns - 1) or RoomForCropH
-                    pageItems[i].rotation = 0
+                    # pageItems[i].rotation = 0
                     pageItems[i].page = pageNum + 1
                     page.append(pageItems[i])
 

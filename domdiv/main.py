@@ -476,6 +476,13 @@ def parse_opts(cmdline_args=None):
         default=0.1,
         help="Spacing between card and the start of the cropmark in centimeters.")
     group_printing.add_argument(
+        "--rotate",
+        type=int,
+        choices=[0, 90, 180, 270],
+        default=0,
+        help="Divider degrees of rotation relative to the page edge. "
+        "No optimization will be done on the number of dividers per page.")
+    group_printing.add_argument(
         "--info",
         action="store_true",
         dest="info",
@@ -537,11 +544,11 @@ def clean_opts(options):
         options.tab_number = 1  # Full is 1 big tab
 
     if "-alternate" in options.tab_side:
-        options.tab_number = 2  # alternating left and right, so override tab_number
         if options.tab_number != 2:
             print("** Warning: --tab-side with 'alternate' implies 2 tabs. Setting --tab-number to 2 **")
+        options.tab_number = 2  # alternating left and right, so override tab_number
 
-    if "-flip" in options.tab_side and not options.wrapper:
+    if "-flip" in options.tab_side:
         # for left and right tabs
         if options.tab_number != 2:
             print("** Warning: --tab-side with 'flip' implies 2 tabs. Setting --tab-number to 2 **")
@@ -570,6 +577,9 @@ def clean_opts(options):
 
     if options.cropmarks and options.linetype == 'line':
         options.linetype = 'cropmarks'
+
+    if options.linetype == 'cropmarks':
+        options.cropmarks = True
 
     if options.linetype == 'dot-cropmarks':
         options.linetype = 'dot'
