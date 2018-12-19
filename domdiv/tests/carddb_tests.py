@@ -61,11 +61,16 @@ def test_cardread():
         assert c.cardset_tag in valid_cardsets
 
     # Option modified card count
-    options = main.parse_opts(['--no-trash', '--curse10', '--start-decks'])
+    options = main.parse_opts(['--no-trash', '--curse10', '--start-decks', '--include-blanks', '7'])
+    options = main.clean_opts(options)
     options.data_path = '.'
     cards = main.read_card_data(options)
-    # Total delta cards is +21 from Trash: -1 * 3 sets = -3; Curse: +2 * 4 sets =+8; Start Decks: +4 * 4 sets = +16
-    assert len(cards) == cardsExpected + 21
+    # Total delta cards is +28 from
+    #      Trash:       -1 * 3 sets = -3
+    #      Curse:       +2 * 4 sets = +8
+    #      Start Decks: +4 * 4 sets = +16
+    #      Blanks:      +7          = +7
+    assert len(cards) == cardsExpected + 28
 
 
 def test_languages():

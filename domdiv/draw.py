@@ -974,6 +974,10 @@ class DividerDrawer(object):
 
     def drawTab(self, item, wrapper="no", backside=False):
         card = item.card
+        # Skip blank cards
+        if card.isBlank():
+            return
+
         # draw tab flap
         self.canvas.saveState()
 
@@ -1174,6 +1178,10 @@ class DividerDrawer(object):
 
     def drawText(self, item, divider_text="card", wrapper="no"):
         card = item.card
+        # Skip blank cards
+        if card.isBlank():
+            return
+
         self.canvas.saveState()
         usedHeight = 0
         totalHeight = item.cardHeight
