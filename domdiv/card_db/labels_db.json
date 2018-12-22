@@ -4,14 +4,15 @@
     "height": 1.27, 
     "margin-left": 0.75, 
     "margin-top": 1.27, 
+    "name": "Avery 8867 Letter", 
     "names": [
+        "8867", 
         "5167", 
         "5267", 
         "5667", 
         "5967", 
         "8167", 
         "8667", 
-        "8867", 
         "8927", 
         "15267", 
         "15667", 
@@ -29,11 +30,13 @@
     "tab-only": true, 
     "width": 4.45
 },{
+    "body-height": 0.6, 
     "gap-horizontal": 0.116, 
     "gap-vertical": 0.0, 
-    "height": 1.69, 
+    "height": 1.09, 
     "margin-left": 1.02, 
     "margin-top": 1.08, 
+    "name": "Avery L4732 A4", 
     "names": [
         "L4732", 
         "L7632"
@@ -50,6 +53,7 @@
     "height": 1.06, 
     "margin-left": 0.95, 
     "margin-top": 2.15, 
+    "name": "Avery L4736 A4", 
     "names": [
         "L4736", 
         "L6113"
@@ -59,5 +63,21 @@
     "paper": "A4", 
     "tab-only": false, 
     "width": 4.53
+},{
+    "body-height": 5.03, 
+    "gap-horizontal": 0.96, 
+    "gap-vertical": 0.42, 
+    "height": 0.9, 
+    "margin-left": 1.74, 
+    "margin-top": 1.47, 
+    "name": "Avery Presta 94211 Letter", 
+    "names": [
+        "94211"
+    ], 
+    "pad-horizontal": 0.1, 
+    "pad-vertical": 0.1, 
+    "paper": "LETTER", 
+    "tab-only": false, 
+    "width": 8.57
 }
 ]
