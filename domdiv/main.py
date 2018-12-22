@@ -26,7 +26,6 @@ TEXT_CHOICES = ["card", "rules", "blank"]
 LINE_CHOICES = ["line", "dot", "cropmarks", "dot-cropmarks"]
 
 EDITION_CHOICES = ["1", "2", "latest", "all"]
-LABEL_CHOICES = ["8867", "L4732", "L4736"]
 
 EXPANSION_CHOICES = ["adventures", "alchemy", "base", "cornucopia", "dark ages",
                      "dominion1stEdition", "dominion2ndEdition", "dominion2ndEditionUpgrade",
@@ -58,6 +57,26 @@ def get_languages(path):
 
 
 LANGUAGE_CHOICES = get_languages("card_db")
+
+
+def get_resource_stream(path):
+    return codecs.EncodedFile(pkg_resources.resource_stream('domdiv', path), "utf-8")
+
+
+# Load Label information
+LABEL_INFO = None
+LABEL_CHOICES = []
+LABEL_KEYS = []
+LABEL_SELECTIONS = []
+labels_db_filepath = os.path.join("card_db", "labels_db.json")
+with get_resource_stream(labels_db_filepath) as labelfile:
+    LABEL_INFO = json.loads(labelfile.read().decode('utf-8'))
+assert LABEL_INFO, "Could not load label information from database"
+for label in LABEL_INFO:
+    if len(label['names']) > 0:
+        LABEL_KEYS.append(label['names'][0])
+        LABEL_SELECTIONS.append(label['name'] if 'name' in label else label['names'][0])
+        LABEL_CHOICES.extend(label['names'])
 
 
 def add_opt(options, option, value):
@@ -487,6 +506,7 @@ def parse_opts(cmdline_args=None):
     group_printing.add_argument(
         "--label",
         dest="label_name",
+        choices=LABEL_CHOICES,
         default=None,
         help="Use preset label dimentions. Specify a label name. "
         "This will override settings that conflict with the preset label settings.")
@@ -619,12 +639,7 @@ def clean_opts(options):
 
     options.label = None
     if options.label_name is not None:
-        # Load the Labels, and look for match
-        labels_db_filepath = os.path.join("card_db", "labels_db.json")
-        with get_resource_stream(labels_db_filepath) as labelfile:
-            label_info = json.loads(labelfile.read().decode('utf-8'))
-        assert label_info, "Could not load label information from database"
-        for label in label_info:
+        for label in LABEL_INFO:
             if options.label_name.upper() in [n.upper() for n in label['names']]:
                 options.label = label
                 break
@@ -713,10 +728,6 @@ def parse_cardsize(spec, sleeved):
         print(('Using custom card size, {:.2f}cm x {:.2f}cm'.format(
             dominionCardWidth / cm, dominionCardHeight / cm)))
     return dominionCardWidth, dominionCardHeight
-
-
-def get_resource_stream(path):
-    return codecs.EncodedFile(pkg_resources.resource_stream('domdiv', path), "utf-8")
 
 
 def find_index_of_object(lst=[], attributes={}):

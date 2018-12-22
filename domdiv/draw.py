@@ -1436,26 +1436,53 @@ class DividerDrawer(object):
             options.dividerWidth, options.dividerBaseHeight = options.dominionCardWidth, options.dominionCardHeight
 
         options.fixedMargins = False
-
-        if options.tabs_only:
-            # fixed for Avery 8867 for now
-            options.minmarginwidth = 0.86 * cm  # was 0.76
-            options.minmarginheight = 1.37 * cm  # was 1.27
-            options.labelHeight = 1.07 * cm  # was 1.27
-            options.labelWidth = 4.24 * cm  # was 4.44
-            options.horizontalBorderSpace = 0.96 * cm  # was 0.76
-            options.verticalBorderSpace = 0.20 * cm  # was 0.01
-            options.dividerBaseHeight = 0
-            options.dividerWidth = options.labelWidth
+        options.spin = 0
+        options.label = options.label if 'label' in options else None
+        if options.label is not None:
+            # Set Margins
+            options.minmarginheight = (options.label['margin-top'] + options.label['pad-vertical']) * cm
+            options.minmarginwidth = (options.label['margin-left'] + options.label['pad-horizontal']) * cm
+            # Set Label size
+            options.labelHeight = (options.label['height'] - 2 * options.label['pad-vertical']) * cm
+            options.labelWidth = (options.label['width'] - 2 * options.label['pad-horizontal']) * cm
+            # Set spacing between labels
+            options.verticalBorderSpace = (options.label['gap-vertical'] + 2 * options.label['pad-vertical']) * cm
+            options.horizontalBorderSpace = (options.label['gap-horizontal'] + 2 * options.label['pad-horizontal']) * cm
+            # Fix up other settings
             options.fixedMargins = True
-        else:
-            if options.tab_side == "full":
-                options.labelWidth = options.dividerWidth
-            else:
+            options.dividerBaseHeight = options.label['body-height'] * cm
+            options.dividerWidth = options.labelWidth
+            options.rotate = 0
+            options.dominionCardWidth = options.dividerWidth
+            options.dominionCardHeight = options.dividerBaseHeight
+            if options.orientation == "vertical" and options.label['body-height'] > 4.0:
+                # Spin the card.  This is similar to a rotate, but given a label has a fixed location on the page
+                # the divider must change shape and rotation.  Rotate can't be used directly,
+                # since that is used in the calculation of where to place the dividers on the page.
+                # This 'spins' the divider only, but keeps all the other calcuations the same.
+                options.spin = 270
+                # Now fix up the card dimentions.
+                options.dominionCardWidth = options.labelHeight + options.label['body-height'] * cm
+                options.dominionCardHeight = options.labelWidth - options.label['height'] * cm
+                options.labelWidth = options.dominionCardWidth
+                # Need to swap now because they will be swapped again later because "vertical"
+                options.dominionCardWidth, options.dominionCardHeight = (options.dominionCardHeight,
+                                                                         options.dominionCardWidth)
+
+            # Fix up the label dimentions
+            if options.labelWidth > 5.0 * cm and options.tab_side != "full":
                 options.labelWidth = options.tabwidth * cm
+
+        else:
+            # Margins already set
+            # Set Label size
             options.labelHeight = .9 * cm
-            options.horizontalBorderSpace = options.horizontal_gap * cm
+            options.labelWidth = options.tabwidth * cm
+            if options.tab_side == "full" or options.labelWidth > options.dividerWidth:
+                options.labelWidth = options.dividerWidth
+            # Set spacing between labels
             options.verticalBorderSpace = options.vertical_gap * cm
+            options.horizontalBorderSpace = options.horizontal_gap * cm
 
         # Set Height
         options.dividerHeight = options.dividerBaseHeight + options.labelHeight
@@ -1597,7 +1624,7 @@ class DividerDrawer(object):
                 thisTabIndex = nextTabIndex
 
             item = CardPlot(card,
-                            rotation=options.rotate,
+                            rotation=options.spin if options.spin != 0 else options.rotate,
                             tabIndex=thisTabIndex,
                             textTypeFront=options.text_front,
                             textTypeBack=options.text_back,
