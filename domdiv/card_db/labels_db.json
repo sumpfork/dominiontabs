@@ -4,7 +4,7 @@
     "height": 1.27, 
     "margin-left": 0.75, 
     "margin-top": 1.27, 
-    "name": "Avery 8867 Letter", 
+    "name": "Label Avery 8867 Letter", 
     "names": [
         "8867", 
         "5167", 
@@ -30,13 +30,12 @@
     "tab-only": true, 
     "width": 4.45
 },{
-    "body-height": 0.6, 
     "gap-horizontal": 0.116, 
     "gap-vertical": 0.0, 
-    "height": 1.09, 
+    "height": 1.69, 
     "margin-left": 1.02, 
     "margin-top": 1.08, 
-    "name": "Avery L4732 A4", 
+    "name": "Label Avery L4732 A4", 
     "names": [
         "L4732", 
         "L7632"
@@ -44,16 +43,16 @@
     "pad-horizontal": 0.1, 
     "pad-vertical": 0.1, 
     "paper": "A4", 
+    "tab-height": 1.2, 
     "tab-only": true, 
     "width": 3.56
 },{
-    "body-height": 1.055, 
     "gap-horizontal": 0.295, 
     "gap-vertical": 0.0, 
-    "height": 1.06, 
+    "height": 2.115, 
     "margin-left": 0.95, 
     "margin-top": 2.15, 
-    "name": "Avery L4736 A4", 
+    "name": "Label Avery L4736 A4", 
     "names": [
         "L4736", 
         "L6113"
@@ -61,22 +60,23 @@
     "pad-horizontal": 0.1, 
     "pad-vertical": 0.1, 
     "paper": "A4", 
+    "tab-height": 1.0, 
     "tab-only": false, 
     "width": 4.53
 },{
-    "body-height": 5.03, 
     "gap-horizontal": 0.96, 
     "gap-vertical": 0.42, 
-    "height": 0.9, 
+    "height": 5.93, 
     "margin-left": 1.74, 
     "margin-top": 1.47, 
-    "name": "Avery Presta 94211 Letter", 
+    "name": "Label Avery Presta 94211 Letter", 
     "names": [
         "94211"
     ], 
     "pad-horizontal": 0.1, 
     "pad-vertical": 0.1, 
     "paper": "LETTER", 
+    "tab-height": 0.9, 
     "tab-only": false, 
     "width": 8.57
 }
