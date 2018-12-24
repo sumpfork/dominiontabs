@@ -1443,7 +1443,7 @@ class DividerDrawer(object):
             options.minmarginheight = (options.label['margin-top'] + options.label['pad-vertical']) * cm
             options.minmarginwidth = (options.label['margin-left'] + options.label['pad-horizontal']) * cm
             # Set Label size
-            options.labelHeight = (options.label['height'] - 2 * options.label['pad-vertical']) * cm
+            options.labelHeight = (options.label['tab-height'] - 2 * options.label['pad-vertical']) * cm
             options.labelWidth = (options.label['width'] - 2 * options.label['pad-horizontal']) * cm
             # Set spacing between labels
             options.verticalBorderSpace = (options.label['gap-vertical'] + 2 * options.label['pad-vertical']) * cm
@@ -1455,7 +1455,7 @@ class DividerDrawer(object):
             options.rotate = 0
             options.dominionCardWidth = options.dividerWidth
             options.dominionCardHeight = options.dividerBaseHeight
-            if options.orientation == "vertical" and options.label['body-height'] > 4.0:
+            if options.orientation == "vertical":
                 # Spin the card.  This is similar to a rotate, but given a label has a fixed location on the page
                 # the divider must change shape and rotation.  Rotate can't be used directly,
                 # since that is used in the calculation of where to place the dividers on the page.
@@ -1463,14 +1463,14 @@ class DividerDrawer(object):
                 options.spin = 270
                 # Now fix up the card dimentions.
                 options.dominionCardWidth = options.labelHeight + options.label['body-height'] * cm
-                options.dominionCardHeight = options.labelWidth - options.label['height'] * cm
+                options.dominionCardHeight = options.labelWidth - options.label['tab-height'] * cm
                 options.labelWidth = options.dominionCardWidth
                 # Need to swap now because they will be swapped again later because "vertical"
                 options.dominionCardWidth, options.dominionCardHeight = (options.dominionCardHeight,
                                                                          options.dominionCardWidth)
 
             # Fix up the label dimentions
-            if options.labelWidth > 5.0 * cm and options.tab_side != "full":
+            if options.tab_side != "full":
                 options.labelWidth = options.tabwidth * cm
 
         else:

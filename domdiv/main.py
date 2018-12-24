@@ -650,23 +650,38 @@ def clean_opts(options):
         label = options.label
         label['paper'] = label['paper'] if 'paper' in label else "LETTER"
         label['tab-only'] = label['tab-only'] if 'tab-only' in label else True
-        label['body-height'] = label['body-height'] if 'body-height' in label else 0
+        label['tab-height'] = label['tab-height'] if 'tab-height' in label else label['height']
+        label['body-height'] = label['body-height'] if 'body-height' in label else label['height'] - label['tab-height']
         label['gap-vertical'] = label['gap-vertical'] if 'gap-vertical' in label else 0.0
         label['gap-horizontal'] = label['gap-horizontal'] if 'gap-horizontal' in label else 0.0
         label['pad-vertical'] = label['pad-vertical'] if 'pad-vertical' in label else 0.1
         label['pad-horizontal'] = label['pad-horizontal'] if 'pad-horizontal' in label else 0.1
 
         # Option Overrides when using labels
+        MIN_BODY_CM_FOR_COUNT = 0.6
+        MIN_BODY_CM_FOR_TEXT = 4.0
+        MIN_HEIGHT_CM_FOR_VERTICAL = 5.0
+        MIN_WIDTH_CM_FOR_FULL = 5.0
+
         options.linewidth = 0.0
+        options.cropmarks = False
+        options.wrapper = False
         options.papersize = label['paper']
         if label['tab-only']:
             options.tabs_only = True
-        if label['body-height'] < 4.0:
+        if label['body-height'] < MIN_BODY_CM_FOR_TEXT:
+            # Not enough room for any text
             options.text_front = "blank"
             options.text_back = "blank"
-        if label['body-height'] < 1.0:
+        if label['body-height'] < MIN_BODY_CM_FOR_COUNT:
+            # Not enough room for count and type
             options.count = False
             options.types = False
+        if label['height'] < MIN_HEIGHT_CM_FOR_VERTICAL:
+            # Not enough room to make vertical
+            options.orientation = "horizontal"
+        if (options.label['width'] - 2 * options.label['pad-horizontal']) < MIN_WIDTH_CM_FOR_FULL:
+            options.tab_side = "full"
         options.label = label
 
     return options
