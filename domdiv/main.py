@@ -1090,8 +1090,10 @@ def filter_sort_cards(cards, options):
         for card in cards:
             if card.cardset_tag == 'dominion2ndEditionUpgrade':
                 card.cardset_tag = 'dominion1stEdition'
+                options.expansions.append(card.cardset_tag.lower())
             elif card.cardset_tag == 'intrigue2ndEditionUpgrade':
                 card.cardset_tag = 'intrigue1stEdition'
+                options.expansions.append(card.cardset_tag.lower())
 
     # Combine all Events across all expansions
     if options.exclude_events:
