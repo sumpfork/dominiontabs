@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '3.6.1'
+version = '3.7'
 
 setup(
     name="domdiv",
