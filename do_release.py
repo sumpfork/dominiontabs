@@ -25,7 +25,7 @@ argsets = [
     ('--size=sleeved', 'sleeved_'),
     ('--size=sleeved --orientation=vertical', 'vertical_sleeved_')
 ]
-additional = ['--expansion_dividers']
+additional = ['--expansion-dividers']
 
 fnames = [doit(args[0] + ' ' + ' '.join(additional), args[1])
           for args in argsets]
