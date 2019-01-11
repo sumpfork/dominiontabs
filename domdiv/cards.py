@@ -12,7 +12,6 @@ class Card(object):
     bonus_regex = None
 
     class CardJSONEncoder(json.JSONEncoder):
-
         def default(self, obj):
             if isinstance(obj, Card):
                 return obj.__dict__
@@ -22,10 +21,26 @@ class Card(object):
     def decode_json(obj):
         return Card(**obj)
 
-    def __init__(self, name=None, cardset='', types=None, cost='', description='',
-                 potcost=0, debtcost=0, extra='', count=-1, card_tag='missing card_tag',
-                 cardset_tags=None, group_tag='', group_top=False, image=None,
-                 text_icon=None, randomizer=True, cardset_tag=''):
+    def __init__(
+        self,
+        name=None,
+        cardset="",
+        types=None,
+        cost="",
+        description="",
+        potcost=0,
+        debtcost=0,
+        extra="",
+        count=-1,
+        card_tag="missing card_tag",
+        cardset_tags=None,
+        group_tag="",
+        group_top=False,
+        image=None,
+        text_icon=None,
+        randomizer=True,
+        cardset_tag="",
+    ):
 
         if types is None:
             types = []  # make sure types is a list
@@ -77,7 +92,7 @@ class Card(object):
 
     def getBonusBoldText(self, text):
         for regex in Card.bonus_regex:
-            text = re.sub(regex, '<b>\\1</b>', text)
+            text = re.sub(regex, "<b>\\1</b>", text)
         return text
 
     @staticmethod
@@ -91,25 +106,25 @@ class Card(object):
         # Make sure have minimum to to anything
         if not isinstance(bonus, dict):
             return
-        if 'include' not in bonus:
+        if "include" not in bonus:
             return
-        if not bonus['include']:
+        if not bonus["include"]:
             return
-        if 'exclude' not in bonus:
-            bonus['exclude'] = []
+        if "exclude" not in bonus:
+            bonus["exclude"] = []
 
         # Start processing of lists into a single regex statement
         # (?i) makes this case insensitive
         # (?!\<b\>) and (?!\<\/b\>) prevents matching already bolded items
         # (?!\w) prevents smaller word matches.  Prevents matching "Action" in "Actions"
-        if bonus['exclude']:
-            bonus['exclude'].sort(reverse=True)
-            exclude_regex = r'(?!\w)(?!\s*(' + '|'.join(bonus['exclude']) + '))'
+        if bonus["exclude"]:
+            bonus["exclude"].sort(reverse=True)
+            exclude_regex = r"(?!\w)(?!\s*(" + "|".join(bonus["exclude"]) + "))"
         else:
-            exclude_regex = ''
+            exclude_regex = ""
 
-        bonus['include'].sort(reverse=True)
-        include_regex = r"(\+\s*\d+\s*(" + '|'.join(bonus['include']) + "))"
+        bonus["include"].sort(reverse=True)
+        include_regex = r"(\+\s*\d+\s*(" + "|".join(bonus["include"]) + "))"
         regex = r"(?i)((?!\<b\>)" + include_regex + exclude_regex + r"(?!\<\/b\>))"
         Card.bonus_regex.append(regex)
 
@@ -117,23 +132,34 @@ class Card(object):
         return '"' + self.name + '"'
 
     def toString(self):
-        return self.name + ' ' + self.cardset + ' ' + '-'.join(self.types)\
-            + ' ' + self.cost + ' ' + self.description + ' ' + self.extra
+        return (
+            self.name
+            + " "
+            + self.cardset
+            + " "
+            + "-".join(self.types)
+            + " "
+            + self.cost
+            + " "
+            + self.description
+            + " "
+            + self.extra
+        )
 
     def isType(self, what):
         return what in self.getType().getTypeNames()
 
     def isExpansion(self):
-        return self.isType('Expansion')
+        return self.isType("Expansion")
 
     def isEvent(self):
-        return self.isType('Event')
+        return self.isType("Event")
 
     def isLandmark(self):
-        return self.isType('Landmark')
+        return self.isType("Landmark")
 
     def isPrize(self):
-        return self.isType('Prize')
+        return self.isType("Prize")
 
     def get_total_cost(self, c):
         # Return a tuple that represents the total cost of card c
@@ -145,8 +171,8 @@ class Card(object):
         if c.isLandmark():
             c_cost = 999
         elif not c.cost:
-            c_cost = 0     # if no cost, treat as 0
-        elif '*' in c.cost:
+            c_cost = 0  # if no cost, treat as 0
+        elif "*" in c.cost:
             c_cost = 998  # make it a really big number
         else:
             try:
@@ -171,11 +197,15 @@ class Card(object):
             setImage = self.image
         else:
             if self.cardset_tag in Card.sets:
-                if 'image' in Card.sets[self.cardset_tag]:
-                    setImage = Card.sets[self.cardset_tag]['image']
+                if "image" in Card.sets[self.cardset_tag]:
+                    setImage = Card.sets[self.cardset_tag]["image"]
 
-        if setImage is None and self.cardset_tag != 'base':
-            print('warning, no set image for set "{}", card "{}"'.format(self.cardset, self.name))
+        if setImage is None and self.cardset_tag != "base":
+            print(
+                'warning, no set image for set "{}", card "{}"'.format(
+                    self.cardset, self.name
+                )
+            )
         return setImage
 
     def setTextIcon(self):
@@ -184,33 +214,42 @@ class Card(object):
             setTextIcon = self.text_icon
         else:
             if self.cardset_tag in Card.sets:
-                if 'text_icon' in Card.sets[self.cardset_tag]:
-                    setTextIcon = Card.sets[self.cardset_tag]['text_icon']
+                if "text_icon" in Card.sets[self.cardset_tag]:
+                    setTextIcon = Card.sets[self.cardset_tag]["text_icon"]
 
-        if setTextIcon is None and self.cardset != 'base':
-            print('warning, no set text for set "{}", card "{}"'.format(self.cardset, self.name))
+        if setTextIcon is None and self.cardset != "base":
+            print(
+                'warning, no set text for set "{}", card "{}"'.format(
+                    self.cardset, self.name
+                )
+            )
         return setTextIcon
 
     def isBlank(self):
-        return self.isType('Blank')
+        return self.isType("Blank")
 
 
 class BlankCard(Card):
-
     def __init__(self, num):
-        Card.__init__(self, str(num), 'extra', ('Blank',), 0)
+        Card.__init__(self, str(num), "extra", ("Blank",), 0)
 
     def isBlank(self):
         return True
 
 
 class CardType(object):
-
     @staticmethod
     def decode_json(obj):
         return CardType(**obj)
 
-    def __init__(self, card_type, card_type_image, defaultCardCount=10, tabTextHeightOffset=0, tabCostHeightOffset=-1):
+    def __init__(
+        self,
+        card_type,
+        card_type_image,
+        defaultCardCount=10,
+        tabTextHeightOffset=0,
+        tabCostHeightOffset=-1,
+    ):
         self.typeNames = tuple(card_type)
         self.tabImageFile = card_type_image
         self.defaultCardCount = defaultCardCount
