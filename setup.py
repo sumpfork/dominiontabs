@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 version = "3.7"
 
@@ -6,7 +6,8 @@ setup(
     name="domdiv",
     version=version,
     entry_points={"console_scripts": ["dominion_dividers = domdiv.main:main"]},
-    packages=find_packages(exclude=["tests"]),
+    package_dir={"": "src"},
+    packages=["domdiv"],
     install_requires=["reportlab>=3.4.0", "Pillow>=4.1.0"],
     setup_requires=["pytest-runner"],
     tests_require=["pytest", "pytest-flake8", "six"],

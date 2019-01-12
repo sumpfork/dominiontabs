@@ -463,7 +463,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--card_db_dir",
         default=os.path.join(
-            os.path.dirname(os.path.abspath(__file__)), "..", "domdiv", "card_db"
+            os.path.dirname(os.path.abspath(__file__)), "..", "src", "domdiv", "card_db"
         ),
         help="directory of card data",
     )
