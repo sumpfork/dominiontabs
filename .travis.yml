@@ -7,4 +7,6 @@ install:
   - pip install -U setuptools
   - pip install .
 # command to run tests
-script: python setup.py test
+script:
+  - python setup.py test
+  - pre-commit run --all-files
