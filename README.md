@@ -18,7 +18,7 @@ The script has an extensive set of options that are relatively well documented v
 
 ## Translations
 
-If you would like to help with translations to new (or updating existing) languages, please see [instructions here] (https://github.com/sumpfork/dominiontabs/blob/master/domdiv/card_db/translation.md).
+If you would like to help with translations to new (or updating existing) languages, please see [instructions here](https://github.com/sumpfork/dominiontabs/blob/master/domdiv/card_db/translation.md).
 
 ## Prerequisites
 
