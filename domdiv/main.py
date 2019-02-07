@@ -27,12 +27,6 @@ LINE_CHOICES = ["line", "dot", "cropmarks", "dot-cropmarks"]
 
 EDITION_CHOICES = ["1", "2", "latest", "all"]
 
-EXPANSION_CHOICES = ["adventures", "alchemy", "base", "cornucopia", "dark ages",
-                     "dominion1stEdition", "dominion2ndEdition", "dominion2ndEditionUpgrade",
-                     "empires", "guilds", "hinterlands",
-                     "intrigue1stEdition", "intrigue2ndEdition", "intrigue2ndEditionUpgrade",
-                     "promo", "prosperity", "renaissance", "seaside", "nocturne"]
-FAN_CHOICES = ["animals"]
 ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
 
 LANGUAGE_DEFAULT = 'en_us'  # the primary language used if a language's parts are missing
@@ -61,6 +55,46 @@ LANGUAGE_CHOICES = get_languages("card_db")
 
 def get_resource_stream(path):
     return codecs.EncodedFile(pkg_resources.resource_stream('domdiv', path), "utf-8")
+
+
+def get_expansions():
+    set_db_filepath = os.path.join("card_db", "sets_db.json")
+    with get_resource_stream(set_db_filepath) as setfile:
+        set_file = json.loads(setfile.read().decode('utf-8'))
+    assert set_file, "Could not load any sets from database"
+
+    fan = []
+    official = []
+    for s in set_file:
+        if 'extras' not in s:
+            # Make sure this are set either True or False
+            set_file[s]['fan'] = set_file[s].get('fan', False)
+            if set_file[s]['fan']:
+                fan.append(s)
+            else:
+                official.append(s)
+    fan.sort()
+    official.sort()
+    return official, fan
+
+
+EXPANSION_CHOICES, FAN_CHOICES = get_expansions()
+
+
+def get_types(language='en_us'):
+    # get a list of valid types
+    language = language.lower()
+    type_text_filepath = os.path.join("card_db", language, "types_{}.json".format(language))
+    with get_resource_stream(type_text_filepath) as type_text_file:
+        type_text = json.loads(type_text_file.read().decode('utf-8'))
+    assert type_text, "Could not load type file for %r" % language
+
+    types = [x.lower() for x in type_text]
+    types.sort()
+    return types
+
+
+TYPE_CHOICES = get_types(LANGUAGE_DEFAULT)
 
 
 # Load Label information
@@ -373,6 +407,29 @@ def parse_opts(cmdline_args=None):
         "--exclude-landmarks",
         action="store_true",
         help="Group all 'Landmark' cards across all expansions into one divider.")
+    group_select.add_argument(
+        "--only-type-any", "--only-type", "--type-any",
+        nargs="*",
+        action="append",
+        dest="only_type_any",
+        help="Limit dividers to only those with the specified types. "
+        "A divider is kept if ANY of the provided types are associated with the divider."
+        "Default is all types are included. "
+        "Any type with a space in the name must be enclosed in double quotes. "
+        "Values are not case sensitive. "
+        "Choices available in all languages include: %s" %
+        ", ".join("%s" % x for x in TYPE_CHOICES))
+    group_select.add_argument(
+        "--only-type-all", "--type-all",
+        nargs="*",
+        action="append",
+        dest="only_type_all",
+        help="Limit dividers to only those with the specified types. "
+        "A divider is kept if ALL of the provided types are associated with the divider."
+        "Any type with a space in the name must be enclosed in double quotes. "
+        "Values are not case sensitive. "
+        "Choices available in all languages include: %s" %
+        ", ".join("%s" % x for x in TYPE_CHOICES))
 
     # Divider Sleeves/Wrappers
     group_wrapper = parser.add_argument_group(
@@ -632,6 +689,20 @@ def clean_opts(options):
     if 'none' in options.fan:
         # keyword to indicate no options.  Same as --fan without any expansions given
         options.fan = []
+
+    if options.only_type_any is None:
+        # No instance given, so default to empty list
+        options.only_type_any = []
+    else:
+        # options.only_type_any is a list of lists.  Reduce to single lowercase list
+        options.only_type_any = list(set([item.lower() for sublist in options.only_type_any for item in sublist]))
+
+    if options.only_type_all is None:
+        # No instance given, so default to empty list
+        options.only_type_all = []
+    else:
+        # options.only_type_any is a list of lists.  Reduce to single lowercase list
+        options.only_type_all = list(set([item.lower() for sublist in options.only_type_all for item in sublist]))
 
     if options.tabs_only and options.label_name is None:
         # default is Avery 8867
@@ -1358,6 +1429,54 @@ def filter_sort_cards(cards, options):
                          count=count,
                          card_tag=set_tag)
                 cards.append(c)
+
+    # Take care of any --only-type-xxx requirements
+    if options.only_type_any or options.only_type_all:
+        # First make a dictionary for easier lookup of Type name used by the program
+        # The index in each case is lower case for easier matching
+        # The value in each case is the type index as used in types_en_us.json
+        types_lookup = defaultdict(dict)
+        for x in Card.type_names:
+            types_lookup[x.lower()] = x
+            types_lookup[Card.type_names[x].lower()] = x
+
+        # Start the valid lists
+        type_unknown = []
+        type_known_any = []
+        type_known_all = []
+
+        # Assemble a list of valid "any" types.  Options are already lowercase.
+        for x in options.only_type_any:
+            if x in types_lookup:
+                type_known_any.append(types_lookup[x])
+            else:
+                type_unknown.append(x)
+
+        # Assemble a list of valid "all" types. Options are already lowercase.
+        for x in options.only_type_all:
+            if x in types_lookup:
+                type_known_all.append(types_lookup[x])
+            else:
+                type_unknown.append(x)
+
+        # Indicate if unknown types are given
+        if type_unknown:
+            print(("Error - unknown type(s): {}".format(", ".join(type_unknown))))
+
+        # If there are any valid Types left, go through the cards and keep cards that match
+        if type_known_any or type_known_all:
+            keep_cards = []
+            for c in cards:
+                if type_known_any and any(x in c.types for x in type_known_any):
+                    keep_it = True
+                elif type_known_all and all(x in c.types for x in type_known_all):
+                    keep_it = True
+                else:
+                    keep_it = False
+
+                if keep_it:
+                    keep_cards.append(c)
+            cards = keep_cards
 
     # Now sort what is left
     cards.sort(key=cardSorter)
