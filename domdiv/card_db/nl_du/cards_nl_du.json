@@ -678,7 +678,7 @@
         "name": "Ratten"
     },
     "Rebuild": {
-        "description": "+ 1 Actie\nNoem de titel van een kaart. Toon kaarten van je trekstapel totdat je een overwinningskaart toont die niet de genoemde kaart is. Leg de andere getoonde kaarten af. Vernietig de betreffende overwinningskaart en pak een overwiningskaart die ten hoogste 3 Coins meer waard is dan de vernietigde kaart.", 
+        "description": "+ 1 Actie\nNoem de titel van een kaart. Toon kaarten van je trekstapel totdat je een overwinningskaart toont die niet de genoemde kaart is. Leg de andere getoonde kaarten af. Vernietig de betreffende overwinningskaart en pak een overwinningskaart die ten hoogste 3 Coins meer waard is dan de vernietigde kaart.", 
         "extra": " Je mag elke kaart noemen, ook al wordt deze in dit spel niet gebruikt of is het geen overwinningskaart. Toon kaarten van je trekstapel totdat je een overwinningskaart toont die je niet noemde. Raakt je trekstapel leeg, schud dan je aflegstapel (zonder de tot dan toe getoonde kaarten) en gebruik deze als nieuwe trekstapel. Is ook je aflegstapel leeg, leg dan alle getoonde kaarten af. Er gebeurt verder niets. Toon je een overwinningskaart die je noemde, leg dan alle getoonde kaarten af, vernietig de betreffende overwinningskaart en pak een overwinningskaart die ten hoogste 3 Coins meer waard is dan de vernietigde kaart. Pak deze uit de voorraad en leg hem op je aflegstapel.", 
         "name": "Wederopbouw"
     },
@@ -905,10 +905,10 @@
         "name": "Promotie"
     },
     "Annex": {
-        "description": "Look through your discard pile. Shuffle all but up to 5 cards from it into your deck. Gain a Duchy.", 
+        "description": "Kijk door je aflegstapel. Laat er ten hoogste 5 kaarten in liggen en schud de rest door je trekstapel. Pak een Hertogdom.", 
         "extra": "Je kunt dit ook doen als de stapel Hertogdomkaarten leeg is.<n>De gekozen kaarten blijven in je aflegstapel als de andere kaarten door de trekstapel worden geschud.", 
         "name": "Overname", 
-        "untranslated": "description"
+        "untranslated": ""
     },
     "Aqueduct": {
         "description": "When you gain a Treasure, move 1<VP> from its pile to this. When you gain a Victory card, take the <VP> from this.<line>Setup: Put 8<VP> on the Silver and Gold piles.", 
@@ -999,10 +999,10 @@
         "untranslated": "description, extra"
     },
     "Conquest": {
-        "description": "Gain 2 Silvers. +1<VP> per Silver you've gained this turn.", 
-        "extra": "This counts the two Silvers it gives you (provided that there were Silvers left to gain).<n>For example, with 12 Coin and 2 Buys and having gained no Silvers earlier in the turn, you could buy Conquest twice, getting two Silvers, then +2<VP>, then two more Silvers, then +4<VP>.", 
+        "description": "Pak twee zilver. +1<VP> per Zilver dat je deze beurt hebt gepakt.", 
+        "extra": "De 2 zilverkaarten die deze kaart geeft, tellen mee (mits deze in voorraad waren). <n><i><b>Voorbeeld:</b> met 12 Coin, 2 Aanschaffen en geen eerder gepakt Zilver in deze beurt zou je de Verovering tweemaal kunnen kopen. Daarmee pak je 2 Zilver, dan +2<VP>, dan nog 2 Zilver en ten slotte +4<VP>.</i>", 
         "name": "Verovering", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Crown": {
         "description": "Als het jouw actiefase is, mag je een actiekaart uit je hand teemaal spelen. Als het jouw aanschaffase is, mag je een geldkaart uit je hand tweemaal spelen.", 
@@ -1016,22 +1016,22 @@
         "untranslated": "description, extra"
     },
     "Delve": {
-        "description": "+1 Buy<br>Gain a Silver.", 
-        "extra": "Each purchase of Delve gives you back the Buy you used on it.<n>For example, if you have 7 Coins, you can Delve, then Delve, then buy a card for 3 Coins.", 
+        "description": "+1 Aanschaf<br>Pak een zilver.", 
+        "extra": "Elke aanschaf van Delven geeft je de aanschaf terug die je ervoor hebt verbtuikt. \n <i><b>Voorbeeld:</b> je hebt 7 Coin. Je kunt Delven, dan nogmaals Delven en dan een kaart voor 3 Coin kopen.</i>", 
         "name": "Delven", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Dominate": {
-        "description": "Gain a Province. If you do, +9<VP>.", 
-        "extra": "This does nothing once the Province pile is empty.", 
+        "description": "Pak een provincie. Doe je dat, +9<VP>.", 
+        "extra": "Deze kaart doet niets zodra de stapel provinciekaarten leeg is.", 
         "name": "Overheersing", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Donate": {
-        "description": "After this turn, put all cards from your deck and discard pile into your hand, trash any number, shuffle your hand into your deck, then draw 5 cards.", 
-        "extra": "Effects that happen due to trashing cards (such as Rocks) will happen before you shuffle.<n>This happens between turns, and so Possession (from Alchemy) will no longer be doing anything.", 
+        "description": "Neem na deze beurt alle kaarten van je trek- en aflegstapel in je hand, vernietig zoveel kaarten als je wilt, en schud dan de hand om er een trekstapel mee te vormen. Trek daarna 5 kaarten.", 
+        "extra": "Eigenschappen die plaatsvinden als gevolg van het vernietigen van kaarten (zoals die van Rotsblokken), gebeuren vóór het schudden. Dit gebeurt tusssen beurten in, dus Bezeten (uit Dominion: De Alchemisten) is dan niet meer actief.", 
         "name": "Donatie", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Emporium": {
         "description": "+1 Kaart<br>+1 Actie<br>+1 Coin<line>When you gain this, if you have at least 5 Action cards in play, +2 <VP>.", 
@@ -1150,10 +1150,10 @@
         "untranslated": ""
     },
     "Ritual": {
-        "description": "Gain a Curse. If you do, trash a card from your hand. +1<VP> per 1 Coin it cost.", 
-        "extra": "This does nothing once the Curse pile is empty.<n>This only gives you +1<VP> per 1 Coin the trashed card cost; it does not give anything for Debt or Potion in costs.", 
+        "description": "Pak een vloek. Doe je dat, vernietig dan een kaart uit je hand. +1<VP> per 1 Coin dat de vernietigde kaart waard is.", 
+        "extra": "Deze kaart doet niets meer zodra de stapel vloekkaarten leeg is. Het Ritueel geeft uitsluitend +1 <VP> per 1 Coin dat de vernietigde kaart kost. Het geeft niets voor Debt of Potion kosten.", 
         "name": "Ritueel", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Rocks": {
         "description": "+1 Coin<line>Als je deze kaart pakt of vernietigt, pak een Zilver. Is het je aanschaf-fase, leg het Zilver dan op je trekstapel. Zo niet, neem het Zilver dan in je hand.", 
@@ -1171,10 +1171,10 @@
         "name": "Offer"
     },
     "Salt the Earth": {
-        "description": "+1<VP><n>Trash a Victory card from the Supply.", 
-        "extra": "If the trashed card does something when trashed (such as Crumbling Castle), you do that thing.", 
+        "description": "+1<VP><n>Vernietig een overwinnigskaart uit de voorraad.", 
+        "extra": "Doet de vernietigde kaart iets als deze wordt vernietigd (zoals het Vervallen kasteel), dan voer je dat uit.", 
         "name": "Zout der aarde", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Settlers": {
         "description": "+1 Kaart<br>+1 Actie<n>Kijk door je aflegstapel. Je mag een Koper uit deze stapel tonen en in je hand nemen.", 
@@ -1206,10 +1206,10 @@
         "untranslated": "description, extra"
     },
     "Triumph": {
-        "description": "Gain an Estate.<n>If you did, +1<VP> per card you've gained this turn.", 
-        "extra": "You get +1<VP> per card you have gained, including the Estate, and any other cards bought or gained other ways; you do not get <VP> for Events bought.<n>Once the Estate pile is empty, this does nothing.", 
+        "description": "Pak een landgoed. Deed je dit, dan +1<VP> per kaart die je deze beurt hebt gepakt.", 
+        "extra": "Je krijgt +1<VP> voor elke kaart die je hebt gepakt, met inbegrip van het Landgoed en alle kaarten die je hebt gekocht of op een andere manier hebt gepakt. Je krijgt geen <VP> voor gekochte gebeurtenissen. Deze kaart doet niets meer zodra de stapel landgoedkaarten leeg is.", 
         "name": "Triomf", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Triumphal Arch": {
         "description": "When scoring, 3<VP> per copy you have of the 2nd most common Action card among your cards (if it's a tie, count either).", 
@@ -1241,9 +1241,9 @@
     },
     "Windfall": {
         "description": "Is zowel je trek- als aflegstapel leeg, pak dan 3 Goud.", 
-        "extra": "If there are fewer than 3 Golds in the pile, just gain the remaining Golds.", 
+        "extra": "Bevat de stapel goudkaarten minder dan 3 Goud, dan pak je er zoveel er zijn.", 
         "name": "Meevaller", 
-        "untranslated": "extra"
+        "untranslated": ""
     },
     "Wolf Den": {
         "description": "When scoring, -3<VP> per card you have exactly one copy of.", 
