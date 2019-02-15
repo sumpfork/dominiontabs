@@ -1183,10 +1183,10 @@
         "untranslated": ""
     },
     "Tax": {
-        "description": "Add 2 Debt to a Supply pile.<line>Setup: Add 1 Debt to each Supply pile. When a player buys a card, they take the Debt from its pile.", 
-        "extra": "Every Supply pile starts with 1 Debt, including Kingdom cards and basic cards like Silver.<n>The Event itself, when bought, adds 2 Debt to a single pile, whether or not that pile has any Debt on it already.<n>The Debt is taken by the next player to buy a card from that pile; gaining a card without buying it leaves the Debt on the pile.", 
+        "description": "Voeg 2 Debt aan een voorraadstapel toe.<line>Voorbereiding: voeg 1 Debt aan elke voorraadstapel toe. Koopt een speler een kaart, dan neemt hij de Debt van de betreffende stapel.", 
+        "extra": "Elke voorraadstapel start met 1 Debt, met inbegrip van koninkrijk-kaarten en basiskaarten zoals Zilver. De gebeurtenis zelf voegt bij aankoop 2 Debt aan 1 stapel toe, ongeacht of er al Debt op die stapel liggen. De eerstvolgende speler die een kaart van de betreffende stapel koopt, moet de Debt erop nemen. Pakt de speler een kaart op een andere manier van die stapel, dan laat hij de Debt liggen.", 
         "name": "Belasting", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Temple": {
         "description": "+1<VP><n>Vernietig 1, 2 of 3 handkaarten met een verschillende naam. Voeg 1<VP> aan de Tempelvoorraadstapel toe.<line>Als je deze kaart pakt, neem je alle <VP> van de Tempelvoorraadstapel.", 
@@ -1230,9 +1230,9 @@
     },
     "Wedding": {
         "description": "+1<VP><br>Pak een Goud.", 
-        "extra": "You get the <VP> even if there are no Golds left.", 
+        "extra": "Je krijgt de Debt ook als er geen goud meer in voorraad is.", 
         "name": "Bruiloft", 
-        "untranslated": "extra"
+        "untranslated": ""
     },
     "Wild Hunt": {
         "description": "Kies één van de 2: +3 Kaarten en voeg 1<VP> aan de \"Wilde Jacht\"-voorraadstapel toe; of pak een Landgoed, en doe je dat, neem dan alle <VP> van de \"Wilde Jacht\"-voorraadstapel.", 
