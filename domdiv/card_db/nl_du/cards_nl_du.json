@@ -599,7 +599,7 @@
     },
     "Hovel": {
         "description": "Als je een overwinningskaart koopt, mag je het Hutje uit je hand vernietigen.", 
-        "extra": " Dit is een onderdakkaart; zie Voorbereiding. Deze bevindt zich nooit in de voorraad. Koop je een overwinnigskaart als je een Hutje in je hand hebt, dan mag je het hutje vernietigen. Een kaart van meerdere soorten waaronder Overwinning geldt als een overwinningskaart. Je krijgt niets voor het vernietigen van een Hutje, je bent er alleen vanaf.", 
+        "extra": " Dit is een onderdakkaart; zie Voorbereiding. Deze bevindt zich nooit in de voorraad. Koop je een overwinningskaart als je een Hutje in je hand hebt, dan mag je het hutje vernietigen. Een kaart van meerdere soorten waaronder Overwinning geldt als een overwinningskaart. Je krijgt niets voor het vernietigen van een Hutje, je bent er alleen vanaf.", 
         "name": "Hutje"
     },
     "Hunting Grounds": {
@@ -911,10 +911,10 @@
         "untranslated": ""
     },
     "Aqueduct": {
-        "description": "When you gain a Treasure, move 1<VP> from its pile to this. When you gain a Victory card, take the <VP> from this.<line>Setup: Put 8<VP> on the Silver and Gold piles.", 
+        "description": "Als je een geldkaart pakt, verplaats 1<VP> van diens stapel naar deze kaart. Pak je een overwinningskaart, van dan alle <VP> van deze kaart. <n> Voorbereiding: leg 8<VP> op zowel de Zilver- als de Goudstapel.", 
         "extra": "Pak je een kaart die zowel een geld- als een overwinningskaart is (zoals een Bescheiden kasteel), dan kies je zelf de volgorde waarin je de eigenschappen uitvoert.", 
         "name": "Aquaduct", 
-        "untranslated": "description"
+        "untranslated": ""
     },
     "Archive": {
         "description": "+1 Actie<n>Leg de bovenste 3 kaarten van je trekstapel gedekt opzij (je mag ze zelf bekijken). Neem er nu en aan het begin van je 2 volgende beurten één naar keuze van in je hand.", 
@@ -922,16 +922,16 @@
         "name": "Archief"
     },
     "Arena": {
-        "description": "At the start of your Buy phase, you may discard an Action card. If you do, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
-        "extra": "With Villa it is possible for your Buy phase to start twice or more in a turn; you can make use of Arena each time.", 
+        "description": "Aan het begin van je aanschaffase mag je een actiekaart afleggen. Doe je dat, neem dan 2<VP> van deze kaart. <n>Voorbereiding: legper speler 6<VP> op deze kaart.", 
+        "extra": "Met een Villa kan het voorkomen dat je meermaals je aanschaffase start. Je mag dan elke keer van de Arena gebruik maken.", 
         "name": "Arena", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Bandit Fort": {
-        "description": "When scoring, -2<VP> for each Silver and each Gold you have.", 
-        "extra": "For example with 3 Silvers and 1 Gold, you would get -8<VP>.<n>Scores can go negative.", 
+        "description": "Bij de puntentelling: -2<VP> voor elk Zilver en elk Goud dat je hebt.", 
+        "extra": "<i><b>Voorbeeld:</b> met 3 Zilver en 1 Goud zou je -8<VP> incasseren.</i> Scores kunnen onder 0 gaan.", 
         "name": "Bandietenfort", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Banquet": {
         "description": "Pak 2 Koper en een niet-overwinningskaart die ten hoogste 5 Coins waard is.", 
@@ -945,10 +945,10 @@
         "untranslated": "description, extra"
     },
     "Baths": {
-        "description": "When you end your turn without having gained a card, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
-        "extra": "Any way you gain a card will stop you from getting <VP> from this that turn.", 
+        "description": "Als je je beurt eindigt zonder een kaart te hebben gepakt, neem je 2<VP> van deze kaart. <n> Voorbereiding: leg per speler 6<VP> op deze kaart.", 
+        "extra": "Elke manier waarop je een kaart pakt, weerhoudt je van het ontvangen van <VP> deze beurt.", 
         "name": "Baden", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Battlefield": {
         "description": "When you gain a Victory card, take 2<VP> from here.<line>Setup: Put 6<VP> here per player.", 
@@ -1171,7 +1171,7 @@
         "name": "Offer"
     },
     "Salt the Earth": {
-        "description": "+1<VP><n>Vernietig een overwinnigskaart uit de voorraad.", 
+        "description": "+1<VP><n>Vernietig een overwinningskaart uit de voorraad.", 
         "extra": "Doet de vernietigde kaart iets als deze wordt vernietigd (zoals het Vervallen kasteel), dan voer je dat uit.", 
         "name": "Zout der aarde", 
         "untranslated": ""
