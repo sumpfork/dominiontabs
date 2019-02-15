@@ -972,10 +972,10 @@
         "name": "Kastelen"
     },
     "Catapult": {
-        "description": "+1 Coin<n>Trash a card from your hand. If it costs 3 Coins or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.", 
-        "extra": "If the card you trash is a treasure, each other player discards down to 3 cards in hand; if the card you trash costs 3 Coins or more, each other player gains a Curse; if it is both (e.g. Silver), both things happen; if it is neither, neither thing happens. If you have no cards in hand left to trash, neither thing happens.", 
+        "description": "+1 Coin<n>Vernietig een kaart uit je hand. Is deze 3 Coin of meer waard, dan pakt iedere andere speler een Vloek. Is het een geldkaart, dan legt iedere andere speler zoveel kaarten af dat hij 3 handkaarten over heeft.", 
+        "extra": "Als de kaart die je vernietigd een geldkaart is, legt iedere andere speler handkaarten af totdat hij er nog 3 heeft. Is de kaart die vernietigt 3 Coins of meer waard, dan krijgt iedere andere speler een Vloek. Heeft de vernietigde kaart beide eigenschappen (bijvoorbeeld Zilver), dan gebeuren beide zaken. Heeft de kaart geen van beide eigenschappen, dan gebeurt er niets. Heb je geen kaarten in je hand om te vernietigen, dan gebeurt er niets.", 
         "name": "Katapult", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Chariot Race": {
         "description": "+1 Actie<n>Toon de bovenste kaart van je trekstapel en neem deze in je hand. Je linkerbuurman toont nu de bovenste kaart van zijn trekstapel. Als jouw kaart meer waard is, +1 Coin en +1<VP>.", 
@@ -1039,14 +1039,14 @@
         "name": "Emporium"
     },
     "Encampment": {
-        "description": "+2 Cards<br>+2 Actions<n>You may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up.", 
-        "extra": "Revealing a Plunder or Gold is optional. When you return Encampment to the Supply, it goes on top of its pile, potentially covering up a Plunder.", 
+        "description": "+2 Kaarten<br>+2 Acties<n>Je mag een goud of een plunderenkaart uit je hand tonen. Doe je dat niet, leg deze kaart dan opzij en leg hem aan het begin van je opschoonfase terug in de voorraad.", 
+        "extra": "Het tonen van een kaart \"Plunderen\" of \"Goud\" is optioneel. Leg je een Kampement terug op de voorraadstapel, dan gaat het altijd bovenop de stapel, ook als er een kaart \"Plunderen\" bovenop ligt.", 
         "name": "Kampement", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Enchantress": {
         "description": "Tot jouw volgende beurt krijgt iedere andere speler voor de eerste actiekaart die hij in zijn beurt speelt +1 Kaart en +1 Actie in plaats van de op de kaart beschreven aanwijzigingen.<n><n>Aan het begin van je volgende beurt:<n>+2 Kaarten", 
-        "extra": "Spelers die een kaart zoals Slotgracht willen tonen, moeten dat direct doen, niet later, ook al hebben ze pas in hun beurt last van de gevolgen. De eerste actie die iedere andere speler in zijn volgende beurt speelt, geeft hem +1 Kaart en +1 Actie in plaats van wat de kaart normaal zou hebben gedaan. Dit heeft geen invloed op aanwijzingen onder een scheidslijn (die blijven geldig).\n<i><b>Voorbeeld:</b> een speler die het Offer speelt, krijgt +1 Kaart en +1 Actie en doet niet wat het Offer anders zou hebben gedaan, Een speler die de Kasteelhovenier speelt, krijgt +1 Kaart en +1 Actie, en kan nog altijd <VP>-fiches krijgen voor het pakken van overwinningskaarten.</i>\nHet kan handig zijn om een getroggen kaart een halve slag te draaien om je eraan te herinneren dat de kaart niet deed wat deze normaal doet. De Tovenares heeft geen invloed op in voorgaande beurten gespeelde kaarten.<n><i><b>Voorbeeld:</b> een andere speler speelt de Tovenares en jij hebt een Archief uit een vorige beurt. Je krijgt in je beurt eerst de kaart van het Archief en de eerste actiekaart die je daarna speelt, wordt door de Tovenares getroffen.</i><n> Treft de Tovenares een Kroon in de aanschaffase, dan moet de eigenaar van de Kroon weliswaar +1 Kaart en +1 Actie, maar heeft hij geen mogelijkheid om de +1 Actie uit te voeren (hij zit immers in zijn aanschaffase), tenzij hij een Villa koopt.", 
+        "extra": "Spelers die een kaart zoals Slotgracht willen tonen, moeten dat direct doen, niet later, ook al hebben ze pas in hun beurt last van de gevolgen. De eerste actie die iedere andere speler in zijn volgende beurt speelt, geeft hem +1 Kaart en +1 Actie in plaats van wat de kaart normaal zou hebben gedaan. Dit heeft geen invloed op aanwijzingen onder een scheidslijn (die blijven geldig).\n<i><b>Voorbeeld:</b> een speler die het Offer speelt, krijgt +1 Kaart en +1 Actie en doet niet wat het Offer anders zou hebben gedaan. Een speler die de Kasteelhovenier speelt, krijgt +1 Kaart en +1 Actie, en kan nog altijd <VP>-fiches krijgen voor het pakken van overwinningskaarten.</i>\nHet kan handig zijn om een getroggen kaart een halve slag te draaien om je eraan te herinneren dat de kaart niet deed wat deze normaal doet. De Tovenares heeft geen invloed op in voorgaande beurten gespeelde kaarten.<n><i><b>Voorbeeld:</b> een andere speler speelt de Tovenares en jij hebt een Archief uit een vorige beurt. Je krijgt in je beurt eerst de kaart van het Archief en de eerste actiekaart die je daarna speelt, wordt door de Tovenares getroffen.</i><n> Treft de Tovenares een Kroon in de aanschaffase, dan moet de eigenaar van de Kroon weliswaar +1 Kaart en +1 Actie, maar heeft hij geen mogelijkheid om de +1 Actie uit te voeren (hij zit immers in zijn aanschaffase), tenzij hij een Villa koopt.", 
         "name": "Tovenares"
     },
     "Engineer": {
@@ -1138,16 +1138,16 @@
         "untranslated": "description, extra"
     },
     "Patrician": {
-        "description": "+1 Card<br>+1 Action<n>Reveal the top card of your deck. If it costs 5 Coin or more, put it into your hand.", 
-        "extra": "Cards costing Debt do not cost 5 Coin or more unless they also have a Coin cost of 5 Coin or more. So Fortune does but City Quarter does not.", 
+        "description": "+1 Kaart<br>+1 Actie<n>Toon de bovenste kaart van je trekstapel. Is deze 5 Coins of meer waard, neem hem dan in je hand.", 
+        "extra": "Kaarten die Debt kosten, zijn niet 5 Coins of meer waard, tenzij ze ook _ Coin-kosten van 5 Coins of meer hebben. Fortuin dus bijvoorbeeld wel, maar Stadswijk niet.", 
         "name": "Patriciër", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Plunder": {
         "description": "+2 Coin<br>+1<VP>", 
-        "extra": "This gives you a <VP> token every time you play it.", 
+        "extra": "Deze kaart geeft je elke keer dat je hem speelt een <VP>-fiche.", 
         "name": "Plunderen", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Ritual": {
         "description": "Gain a Curse. If you do, trash a card from your hand. +1<VP> per 1 Coin it cost.", 
@@ -1156,7 +1156,7 @@
         "untranslated": "description, extra"
     },
     "Rocks": {
-        "description": "+1 Coin<line>When you gain or trash this, gain a Silver; if it is your Buy phase, put the Silver on your deck, otherwise put it into your hand.", 
+        "description": "+1 Coin<line>Als je deze kaart pakt of vernietigt, pak een Zilver. Is het je aanschaf-fase, leg het Zilver dan op je trekstapel. Zo niet, neem het Zilver dan in je hand.", 
         "extra": "Is het de beurt van een andere speler, dan is het niet jouw aanschaffase, dus gaat het Zilver naar je hand.", 
         "name": "Rotsblokken"
     },
@@ -1177,10 +1177,10 @@
         "untranslated": "description, extra"
     },
     "Settlers": {
-        "description": "+1 Card<br>+1 Action<n>Look through your discard pile. You may reveal a Copper from it and put it into your hand.", 
-        "extra": "You can look through your discard pile even if you know there is no Copper in it.", 
+        "description": "+1 Kaart<br>+1 Actie<n>Kijk door je aflegstapel. Je mag een Koper uit deze stapel tonen en in je hand nemen.", 
+        "extra": "Je mag door je aflegstapel kijken, ook al weet je dat er geen Koper in zit.", 
         "name": "Kolonisten", 
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Tax": {
         "description": "Add 2 Debt to a Supply pile.<line>Setup: Add 1 Debt to each Supply pile. When a player buys a card, they take the Debt from its pile.", 
