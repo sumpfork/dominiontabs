@@ -408,7 +408,7 @@ def main(args):
                 else:
                     if lang != LANGUAGE_DEFAULT:
                         for x in lang_default[s]:
-                            if x not in lang_set_data[s] and x is not 'used':
+                            if x not in lang_set_data[s] and x != 'used':
                                 lang_set_data[s][x] = lang_default[s][x]
 
                 lang_out.write(json_dict_entry({s: lang_set_data[s]}, sep))
