@@ -1278,9 +1278,14 @@ class DividerDrawer(object):
             if wrapper == "back" and not self.options.tab_name_align == "centre":
                 NotRightEdge = not NotRightEdge
             if NotRightEdge:
-                if (self.options.tab_name_align == "centre" or self.wantCentreTab(card)
-                        or (item.getClosestSide(backside=backside) == CardPlot.CENTRE
-                            and self.options.tab_name_align == "edge")):
+                if (
+                    self.options.tab_name_align == "centre"
+                    or self.wantCentreTab(card)
+                    or (
+                        item.getClosestSide(backside=backside) == CardPlot.CENTRE
+                        and self.options.tab_name_align == "edge"
+                    )
+                ):
                     w = item.tabWidth / 2 - self.nameWidth(line, fontSize) / 2
                 else:
                     w = textInset
