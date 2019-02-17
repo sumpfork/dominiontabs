@@ -335,8 +335,7 @@ def parse_opts(cmdline_args=None):
         "'*' any number of characters, '?' matches any single character, "
         "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
         "For example, 'dominion*' will match all expansions that start with 'dominion'. "
-        "Choices available in all languages include: %s" %
-        ", ".join("%s" % x for x in EXPANSION_CHOICES))
+        "Choices available in all languages include: {}".format(", ".join("%s" % x for x in EXPANSION_CHOICES)))
     group_select.add_argument(
         "--fan",
         nargs="*",
@@ -350,8 +349,7 @@ def parse_opts(cmdline_args=None):
         "Values are not case sensitive. Wildcards may be used: "
         "'*' any number of characters, '?' matches any single character, "
         "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
-        "Choices available in all languages include: %s" %
-        ", ".join("%s" % x for x in FAN_CHOICES))
+        "Choices available in all languages include: {}".format(", ".join("%s" % x for x in FAN_CHOICES)))
     group_select.add_argument(
         "--edition",
         choices=EDITION_CHOICES,
@@ -413,23 +411,21 @@ def parse_opts(cmdline_args=None):
         action="append",
         dest="only_type_any",
         help="Limit dividers to only those with the specified types. "
-        "A divider is kept if ANY of the provided types are associated with the divider."
+        "A divider is kept if ANY of the provided types are associated with the divider. "
         "Default is all types are included. "
         "Any type with a space in the name must be enclosed in double quotes. "
         "Values are not case sensitive. "
-        "Choices available in all languages include: %s" %
-        ", ".join("%s" % x for x in TYPE_CHOICES))
+        "Choices available in all languages include: {}".format(", ".join("%s" % x for x in TYPE_CHOICES)))
     group_select.add_argument(
         "--only-type-all", "--type-all",
         nargs="*",
         action="append",
         dest="only_type_all",
         help="Limit dividers to only those with the specified types. "
-        "A divider is kept if ALL of the provided types are associated with the divider."
+        "A divider is kept if ALL of the provided types are associated with the divider. "
         "Any type with a space in the name must be enclosed in double quotes. "
         "Values are not case sensitive. "
-        "Choices available in all languages include: %s" %
-        ", ".join("%s" % x for x in TYPE_CHOICES))
+        "Choices available in all languages include: {}".format(", ".join("%s" % x for x in TYPE_CHOICES)))
 
     # Divider Sleeves/Wrappers
     group_wrapper = parser.add_argument_group(
@@ -1460,8 +1456,7 @@ def filter_sort_cards(cards, options):
                 type_unknown.append(x)
 
         # Indicate if unknown types are given
-        if type_unknown:
-            print(("Error - unknown type(s): {}".format(", ".join(type_unknown))))
+        assert not type_unknown, "Error - unknown type(s): {}".format(", ".join(type_unknown))
 
         # If there are any valid Types left, go through the cards and keep cards that match
         if type_known_any or type_known_all:
