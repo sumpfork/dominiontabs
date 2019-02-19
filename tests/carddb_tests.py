@@ -113,3 +113,30 @@ def test_languagetool_run(pytestconfig):
         except subprocess.CalledProcessError as e:
             assert e.output == ""
         assert out.decode("utf-8") == ""
+
+
+def test_only_type():
+    options = main.parse_opts(
+        [
+            "--expansions",
+            "base",
+            "alchemy",
+            "--include-blanks",
+            "5",
+            "--only-type-any",
+            "blank",
+            "curse",
+            "--only-type-all",
+            "attack",
+            "action",
+        ]
+    )
+    options = main.clean_opts(options)
+    options.data_path = "."
+    cards = main.read_card_data(options)
+    cards = main.filter_sort_cards(cards, options)
+    # Total 8 from
+    #      Blank:         +5 added in options
+    #      Curse:         +1 from base
+    #      Action Attack: +2 from Alchemy
+    assert len(cards) == 8
