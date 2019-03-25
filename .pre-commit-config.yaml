@@ -17,4 +17,4 @@ repos:
         args: [--max-line-length=120, '--ignore=E203,W503']
     -   id: check-json
 #    -   id: pretty-format-json
-#        args: [--autofix]
+#        args: [--autofix, --no-sort-keys]
