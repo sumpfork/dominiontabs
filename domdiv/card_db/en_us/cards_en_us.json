@@ -146,12 +146,12 @@
     },
     "Mission": {
         "description": "Once per turn: If the previous turn wasn't yours, take another turn after this one, in which you can't buy cards.",
-        "extra": "You can only buy this once per turn. When you do, if the previous turn was not yours - if it was another player's turn before this turn - you take another turn after this turn ends. The extra turn is completely normal except that you cannot buy cards during it. You can still buy Events, and play cards, and gain cards in ways other than buying them (such as gaining a Silver from Amulet), and exchange Travelers. Buying Mission during a turn granted by Mission will not give you another turn, because the previous turn was yours.",
+        "extra": "You can only buy this once per turn. When you do, if the previous turn was not yours - if it was another player's turn before this turn - you take another turn after this turn ends. The extra turn is completely normal except that you cannot buy cards during it. You can still buy Events, and play cards, and gain cards in ways other than buying them (such as gaining a Silver from Amulet), and exchange Travellers. Buying Mission during a turn granted by Mission will not give you another turn, because the previous turn was yours.",
         "name": "Mission"
     },
     "Page": {
         "description": "+1 Card<br>+1 Action<line>When you discard this from play, you may exchange it for a Treasure Hunter.",
-        "extra": "See the section on Travelers. When you play Page, you get +1 Card and +1 Action. When you discard it from play, you may return it to its pile and take a Treasure Hunter, putting it into your discard pile.",
+        "extra": "See the section on Travellers. When you play Page, you get +1 Card and +1 Action. When you discard it from play, you may return it to its pile and take a Treasure Hunter, putting it into your discard pile.",
         "name": "Page"
     },
     "Pathfinding": {
@@ -161,7 +161,7 @@
     },
     "Peasant": {
         "description": "+1 Buy<br>+1 Coin<line>When you discard this from play, you may exchange it for a Soldier.",
-        "extra": "See the section on Travelers. When you play Peasant, you get +1 Buy and + 1 Coin. When you discard it from play, you may return it to its pile and take a Soldier, putting it into your discard pile.",
+        "extra": "See the section on Travellers. When you play Peasant, you get +1 Buy and + 1 Coin. When you discard it from play, you may return it to its pile and take a Soldier, putting it into your discard pile.",
         "name": "Peasant"
     },
     "Pilgrimage": {
@@ -266,7 +266,7 @@
     },
     "Travelling Fair": {
         "description": "+2 Buys<n>When you gain a card this turn, you may put it on top of your deck.",
-        "extra": "When you buy this, you get +2 Buys (letting you buy more Events or cards afterwards). Then for the rest of the turn, whenever you gain a card, you may put it on your deck. This works on cards you buy, as well as cards gained other ways, such as gaining cards with Ball. It does not work on Travelers exchanged for other cards; exchanging is not gaining. Putting the card on your deck is optional each time you gain a card that turn; you could put some on top and let the others go to your discard pile.",
+        "extra": "When you buy this, you get +2 Buys (letting you buy more Events or cards afterwards). Then for the rest of the turn, whenever you gain a card, you may put it on your deck. This works on cards you buy, as well as cards gained other ways, such as gaining cards with Ball. It does not work on Travellers exchanged for other cards; exchanging is not gaining. Putting the card on your deck is optional each time you gain a card that turn; you could put some on top and let the others go to your discard pile.",
         "name": "Travelling Fair"
     },
     "Treasure Hunter": {
@@ -281,7 +281,7 @@
     },
     "Warrior": {
         "description": "+2 Cards<n>For each Traveller you have in play (including this), each other player discards the top card of his deck and trashes it if it costs 3 Coins or 4 Coins.<line>When you discard this from play, you may exchange it for a Hero.<n><i>(This is not in the Supply.)</i>",
-        "extra": "Each player, in turn order, discards the appropriate number of cards from the top of his deck, trashing the ones costing 3 or 4 Coins. If Warrior is your only Traveller in play, each other player will only discard and potentially trash one card. If you, for example, have a Peasant, a Fugitive, and the Warrior in play, each other player would discard and potentially trash three cards. Cards are only trashed if they cost exactly 3 Coins or exactly 4 Coins. Cards with Potion in the cost (from Alchemy) do not cost exactly 3 Coins or 4 Coins. Cards with an asterisk in the cost (such as Warrior) or + in the cost (such as Masterpiece from Guilds) may be trashed by Warrior (if costing 3 Coin or 4 Coin). Champion and Teacher are not Travelers.",
+        "extra": "Each player, in turn order, discards the appropriate number of cards from the top of his deck, trashing the ones costing 3 or 4 Coins. If Warrior is your only Traveller in play, each other player will only discard and potentially trash one card. If you, for example, have a Peasant, a Fugitive, and the Warrior in play, each other player would discard and potentially trash three cards. Cards are only trashed if they cost exactly 3 Coins or exactly 4 Coins. Cards with Potion in the cost (from Alchemy) do not cost exactly 3 Coins or 4 Coins. Cards with an asterisk in the cost (such as Warrior) or + in the cost (such as Masterpiece from Guilds) may be trashed by Warrior (if costing 3 Coin or 4 Coin). Champion and Teacher are not Travellers.",
         "name": "Warrior"
     },
     "Wine Merchant": {
