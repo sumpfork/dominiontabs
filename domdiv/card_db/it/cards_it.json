@@ -175,13 +175,13 @@
     },
     "Mission": {
         "description": "Once per turn: If the previous turn wasn't yours, take another turn after this one, in which you can't buy cards.",
-        "extra": "You can only buy this once per turn. When you do, if the previous turn was not yours - if it was another player's turn before this turn - you take another turn after this turn ends. The extra turn is completely normal except that you cannot buy cards during it. You can still buy Events, and play cards, and gain cards in ways other than buying them (such as gaining a Silver from Amulet), and exchange Travelers. Buying Mission during a turn granted by Mission will not give you another turn, because the previous turn was yours.",
+        "extra": "You can only buy this once per turn. When you do, if the previous turn was not yours - if it was another player's turn before this turn - you take another turn after this turn ends. The extra turn is completely normal except that you cannot buy cards during it. You can still buy Events, and play cards, and gain cards in ways other than buying them (such as gaining a Silver from Amulet), and exchange Travellers. Buying Mission during a turn granted by Mission will not give you another turn, because the previous turn was yours.",
         "name": "Mission",
         "untranslated": "description, extra, name"
     },
     "Page": {
         "description": "+1 Card<br>+1 Action<line>When you discard this from play, you may exchange it for a Treasure Hunter.",
-        "extra": "See the section on Travelers. When you play Page, you get +1 Card and +1 Action. When you discard it from play, you may return it to its pile and take a Treasure Hunter, putting it into your discard pile.",
+        "extra": "See the section on Travellers. When you play Page, you get +1 Card and +1 Action. When you discard it from play, you may return it to its pile and take a Treasure Hunter, putting it into your discard pile.",
         "name": "Page",
         "untranslated": "description, extra, name"
     },
@@ -193,7 +193,7 @@
     },
     "Peasant": {
         "description": "+1 Buy<br>+1 Coin<line>When you discard this from play, you may exchange it for a Soldier.",
-        "extra": "See the section on Travelers. When you play Peasant, you get +1 Buy and + 1 Coin. When you discard it from play, you may return it to its pile and take a Soldier, putting it into your discard pile.",
+        "extra": "See the section on Travellers. When you play Peasant, you get +1 Buy and + 1 Coin. When you discard it from play, you may return it to its pile and take a Soldier, putting it into your discard pile.",
         "name": "Peasant",
         "untranslated": "description, extra, name"
     },
@@ -319,7 +319,7 @@
     },
     "Travelling Fair": {
         "description": "+2 Buys<n>When you gain a card this turn, you may put it on top of your deck.",
-        "extra": "When you buy this, you get +2 Buys (letting you buy more Events or cards afterwards). Then for the rest of the turn, whenever you gain a card, you may put it on your deck. This works on cards you buy, as well as cards gained other ways, such as gaining cards with Ball. It does not work on Travelers exchanged for other cards; exchanging is not gaining. Putting the card on your deck is optional each time you gain a card that turn; you could put some on top and let the others go to your discard pile.",
+        "extra": "When you buy this, you get +2 Buys (letting you buy more Events or cards afterwards). Then for the rest of the turn, whenever you gain a card, you may put it on your deck. This works on cards you buy, as well as cards gained other ways, such as gaining cards with Ball. It does not work on Travellers exchanged for other cards; exchanging is not gaining. Putting the card on your deck is optional each time you gain a card that turn; you could put some on top and let the others go to your discard pile.",
         "name": "Travelling Fair",
         "untranslated": "description, extra, name"
     },
@@ -337,7 +337,7 @@
     },
     "Warrior": {
         "description": "+2 Cards<n>For each Traveller you have in play (including this), each other player discards the top card of his deck and trashes it if it costs 3 Coins or 4 Coins.<line>When you discard this from play, you may exchange it for a Hero.<n><i>(This is not in the Supply.)</i>",
-        "extra": "Each player, in turn order, discards the appropriate number of cards from the top of his deck, trashing the ones costing 3 or 4 Coins. If Warrior is your only Traveler in play, each other player will only discard and potentially trash one card. If you, for example, have a Peasant, a Fugitive, and the Warrior in play, each other player would discard and potentially trash three cards. Cards are only trashed if they cost exactly 3 Coins or exactly 4 Coins. Cards with Potion in the cost (from Alchemy) do not cost exactly 3 Coins or 4 Coins. Cards with an asterisk in the cost (such as Warrior) or + in the cost (such as Masterpiece from Guilds) may be trashed by Warrior (if costing 3 Coin or 4 Coin). Champion and Teacher are not Travelers.",
+        "extra": "Each player, in turn order, discards the appropriate number of cards from the top of his deck, trashing the ones costing 3 or 4 Coins. If Warrior is your only Traveller in play, each other player will only discard and potentially trash one card. If you, for example, have a Peasant, a Fugitive, and the Warrior in play, each other player would discard and potentially trash three cards. Cards are only trashed if they cost exactly 3 Coins or exactly 4 Coins. Cards with Potion in the cost (from Alchemy) do not cost exactly 3 Coins or 4 Coins. Cards with an asterisk in the cost (such as Warrior) or + in the cost (such as Masterpiece from Guilds) may be trashed by Warrior (if costing 3 Coin or 4 Coin). Champion and Teacher are not Travellers.",
         "name": "Warrior",
         "untranslated": "description, extra, name"
     },
@@ -645,7 +645,7 @@
     },
     "Forager": {
         "description": "+1 Action<br>+1 Buy<n>Trash a card from your hand.<n>+1 Coin per differently named Treasure in the trash.",
-        "extra": "Trash a card from your hand if you can. Whether or not you can, you still get +1 Coin er differently named Treasure in the trash, plus +1 Action and +1 Buy. Multiple copies of the same Treasure card do not increase how much you get. For example, if the trash has four Coppers, a Counterfeit, and six Estates, you get +2 Coins. Cards with multiple types, one of which is Treasure (such as Harem from Intrigue), are Treasures.",
+        "extra": "Trash a card from your hand if you can. Whether or not you can, you still get +1 Coin per differently named Treasure in the trash, plus +1 Action and +1 Buy. Multiple copies of the same Treasure card do not increase how much you get. For example, if the trash has four Coppers, a Counterfeit, and six Estates, you get +2 Coins. Cards with multiple types, one of which is Treasure (such as Harem from Intrigue), are Treasures.",
         "name": "Forager",
         "untranslated": "description, extra, name"
     },
@@ -1016,7 +1016,7 @@
     },
     "Archive": {
         "description": "+1 Action<n>Set aside the top 3 cards of your deck face down (you may look at them). Now and at the start of your next two turns, put one into your hand.",
-        "extra": "You look at three cards, and get one now, one next turn, and one the turn after that. Put the set-aside cards under Archive. If you play two Archives, they get separate sets of cards. If you Throne Room an Archive, keep the sets of cards separate; you get one from each each turn. If there are fewer than three cards, just set aside what you can, and Archive will run out of cards faster and still be discarded the turn it has no cards left.",
+        "extra": "You look at three cards, and get one now, one next turn, and one the turn after that. Put the set-aside cards under Archive. If you play two Archives, they get separate sets of cards. If you Throne Room an Archive, keep the sets of cards separate; you get one from each turn. If there are fewer than three cards, just set aside what you can, and Archive will run out of cards faster and still be discarded the turn it has no cards left.",
         "name": "Archive",
         "untranslated": "description, extra, name"
     },
@@ -1756,7 +1756,7 @@
         "untranslated": "description, extra, name"
     },
     "Bard": {
-        "description": "+2 Coins<br>Recieve a Boon.",
+        "description": "+2 Coins<br>Receive a Boon.",
         "extra": "You get +2 Coins and receive a Boon.",
         "name": "Bard",
         "untranslated": "description, extra, name"
@@ -2409,13 +2409,13 @@
         "untranslated": "description, extra, name"
     },
     "Canal": {
-        "description": "Durning your turns, cards cost 1 Coin less, but not less than 0 Coin.",
+        "description": "During your turns, cards cost 1 Coin less, but not less than 0 Coin.",
         "extra": "During your turns, all cards, including cards in the Supply, in hands, and in Decks, cost 1 Coin less, but not less than 0 Coin. For example if you have Canal and play Villain, other players discard a card costing at least 2 Coin, which could not be Estate, as Estate only costs 1 Coin on your turns.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
         "name": "Canal",
         "untranslated": "description, extra, name"
     },
     "Capitalism": {
-        "description": "Durning your turns, Actions with +_ Coin amounts in their text are also Treasures.",
+        "description": "During your turns, Actions with +_ Coin amounts in their text are also Treasures.",
         "extra": "To be affected, a card must have a +_ Coin amount in its text, not just a _ Coin amount - for example, Capitalism turns Improve into a Treasure, but does not affect Inventor. Having Capitalism means you can play any number of Action cards with +_ Coin amounts in your Buy phase (without using up Action plays). It also means that things that interact with Treasure cards also interact with those cards; for example, if you have Capitalism, you can use Treasurer to gain an Improve from the trash, since Improve is a Treasure on your turns. Any time you play an Action - Treasure card, it is both an Action and a Treasure, regardless of which phase it is. Getting +1 Action in your Buy phase does not let you play other Action cards then. Capitalism work on your turn, but affects cards everywhere; for example if you have Capitalism and play Bandit, you could trash another player's Improve, and it is not relevant if that player has Capitalism or not.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
         "name": "Capitalism",
         "untranslated": "description, extra, name"
@@ -2680,7 +2680,7 @@
     },
     "Villain": {
         "description": "+2 Coffers<br><n>Each other player with 5 or more cards in hand discards one costing 2 Coin or more (or reveals they can't).",
-        "extra": "For example a player could discard an Esate, which costs 2 Coin.",
+        "extra": "For example a player could discard an Estate, which costs 2 Coin.",
         "name": "Villain",
         "untranslated": "description, extra, name"
     },
@@ -2948,7 +2948,7 @@
     },
     "Necromancer - Zombies": {
         "description": "<left><u>Necromancer</u>:</left><center>Play a face-up, non-Duration Action card from the trash, leaving it there and turning it face down for the turn.</center><line>Setup: Put the 3 Zombies into the trash.<left><u>Zombie Apprentice</u>:</left><center>You may trash an Action card from your hand for +3 Cards and +1 Action.</center><left><u>Zombie Mason</u>:</left><center>Trash the top card of your deck. You may gain a card costing up to 1 Coin more than it.</center><left><u>Zombie Spy</u>:</left><center>+1 Card</center><center>+1 Action</center><center>Look at the top card of your deck. Discard it or put it back.</center>",
-        "extra": "Setup:  Put the three Zombies into the trash.\nNacromancer plays a non-Duration Action card from the trash. Normally it can at least play one of the three Zombies, since they start the game in the trash. It can play other Action cards that make their way into the trash too. The played cards are turned over, to track that each can only be used once per turn this way; at end of turn, turn them back face up. Necromancer can play another Necromancer, though normally that will not be useful. The Action card stays in the trash; if an effect tries to move it, such as Encampment (from Empires) returning to the Supply, it will fail to move it. Necromancer can be used on a card that trashes itself when played; if the card checks to see if it was trashed (such as Pixie), it was not, but if the card does not check (such as Tragic Hero), it will function normally. Since the played card is not in play, 'while this is in play' abilities (such as Tracker's) will not do anything.\n<u>Zombie Apprentice</u>: If you trash an Action card from your hand, you draw three cards and get +1 Action.\n<u>The Zombie Mason</u>: Gaining a card is optional. You can gain a card costing more than the trashed card, or any amount less; for example you can gain a copy of the trashed card. Usually if it is not something you want to trash, you can gain a copy of it back from the Supply.\n<u>Zombie Spy</u>: You draw a card before looking at the top card. The Zombie Spy is like a regular Spy except it can only discard the top card of your own deck.",
+        "extra": "Setup:  Put the three Zombies into the trash.\nNecromancer plays a non-Duration Action card from the trash. Normally it can at least play one of the three Zombies, since they start the game in the trash. It can play other Action cards that make their way into the trash too. The played cards are turned over, to track that each can only be used once per turn this way; at end of turn, turn them back face up. Necromancer can play another Necromancer, though normally that will not be useful. The Action card stays in the trash; if an effect tries to move it, such as Encampment (from Empires) returning to the Supply, it will fail to move it. Necromancer can be used on a card that trashes itself when played; if the card checks to see if it was trashed (such as Pixie), it was not, but if the card does not check (such as Tragic Hero), it will function normally. Since the played card is not in play, 'while this is in play' abilities (such as Tracker's) will not do anything.\n<u>Zombie Apprentice</u>: If you trash an Action card from your hand, you draw three cards and get +1 Action.\n<u>The Zombie Mason</u>: Gaining a card is optional. You can gain a card costing more than the trashed card, or any amount less; for example you can gain a copy of the trashed card. Usually if it is not something you want to trash, you can gain a copy of it back from the Supply.\n<u>Zombie Spy</u>: You draw a card before looking at the top card. The Zombie Spy is like a regular Spy except it can only discard the top card of your own deck.",
         "name": "Necromancer / Zombies",
         "untranslated": "description, extra, name"
     },
@@ -2959,7 +2959,7 @@
         "untranslated": "description, extra, name"
     },
     "Tracker - Pouch": {
-        "description": "<left><u>Tracker</u>:</left><center>+1 Coin</center><center>Recieve a Boon.</center><line><center>While this is in play, when you gain a card, you may put that card onto your deck.</center><left><i>Heirloom: Pouch</i></left><left><u>Pouch</u>:</left><center>1 <*COIN*></center><n><n>+1 Buy",
+        "description": "<left><u>Tracker</u>:</left><center>+1 Coin</center><center>Receive a Boon.</center><line><center>While this is in play, when you gain a card, you may put that card onto your deck.</center><left><i>Heirloom: Pouch</i></left><left><u>Pouch</u>:</left><center>1 <*COIN*></center><n><n>+1 Buy",
         "extra": "<u>Tracker</u>: If you gain multiple cards with this in play, this applies to each of them - you could put any or all of them on top of your deck. This applies both to cards gained due to being bought, and to cards gained other ways with Tracker in play. Tracker is in play when you resolve its Boon, so if the Boon causes you to gain a card, for example a Silver from The Mountain's Gift, you can put that card onto your deck.\nIn games using Tracker, replace one of your starting Coppers with a Pouch.\n<u>Pouch</u>: This simply gives you 1 Coin and +1 Buy when you play it.",
         "name": "Tracker / Pouch",
         "untranslated": "description, extra, name"
@@ -2990,7 +2990,7 @@
     },
     "Border Guard - LanternHorn": {
         "description": "<left><u>Border Guard</u>:</left><n>+1 Action<br>Reveal the top 2 cards of your deck.  Put one into your hand and discard the other.  If both were Actions, take the Lantern or Horn.<n><left><u>Horn</u>:</left><n>Once per turn, when you discard a Border Guard from play, you may put it onto your deck.<n><left><u>Lantern</u>:</left><n>Your Border Guards reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",
-        "extra": "When you play a Border Guard and do not have the Lantern, you reveal the top 2 cards of your deck, choose one and put it into your hand, and discard the other; then if they were both Action cards, you take the Lantern or the Horn.  When you play a Border Guard and have the Lantern, you reveal the top 3 cards of your deck, choose one and put it into your hand, and discard the rest; then if all three were Action cards, you may take the Horn.  If you reveal fewer than 2 cards, or fewer than 3 cards when you have the Lantern, you don't take an Artifact.  Both the Horn and the Lantern function the turn you get them.<n><n>Horn and Latern are Artifacts. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
+        "extra": "When you play a Border Guard and do not have the Lantern, you reveal the top 2 cards of your deck, choose one and put it into your hand, and discard the other; then if they were both Action cards, you take the Lantern or the Horn.  When you play a Border Guard and have the Lantern, you reveal the top 3 cards of your deck, choose one and put it into your hand, and discard the rest; then if all three were Action cards, you may take the Horn.  If you reveal fewer than 2 cards, or fewer than 3 cards when you have the Lantern, you don't take an Artifact.  Both the Horn and the Lantern function the turn you get them.<n><n>Horn and Lantern are Artifacts. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
         "name": "Border Guard / Horn / Lantern",
         "untranslated": "description, extra, name"
     },
