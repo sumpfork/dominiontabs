@@ -1,14 +1,13 @@
 from setuptools import setup
 
-version = "3.7"
+version = "3.7.1"
 
 setup(
     name="domdiv",
     version=version,
     entry_points={"console_scripts": ["dominion_dividers = domdiv.main:main"]},
-    package_dir={"": "src"},
-    packages=["domdiv"],
-    install_requires=["reportlab==3.5.12", "pillow==5.4.1"],
+    packages=find_packages(exclude=["tests"]),
+    install_requires=["reportlab==3.5.17", "Pillow==5.4.1"],
     setup_requires=["pytest-runner"],
     tests_require=["pytest", "six", "pytest-flake8", "pre-commit"],
     url="http://domtabs.sandflea.org",
