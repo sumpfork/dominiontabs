@@ -421,10 +421,10 @@
         "name": "Argent"
     },
     "Start Deck": {
-        "description": "Player's starting deck of cards:<n>7 Copper cards<n>3 Estate cards",
+        "description": "Deck de départ des joueurs:<n>7 Cartes Cuivre <n>3 Cartes Domaine",
         "extra": "",
-        "name": "Player Start Deck",
-        "untranslated": "description, extra, name"
+        "name": "Decks de départ",
+        "untranslated": "extra"
     },
     "Trash": {
         "description": "Pile du rebut.",
@@ -433,15 +433,15 @@
     },
     "Colony": {
         "description": "10 <*VP*>",
-        "extra": "This is not a Kingdom card. You do not use it every game. It is a Victory card worth 10 VP. If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]",
+        "extra": "Colonie est une carte de Base et non une carte Royaume. C'est une carte Victoire qui vaut 10 <VP>. Nous ne l'utilisont pas à toutes les parties. Si il y a seulement des cartes Royaume de Prospérité dans une partie, ajouter les cartes Platine et Colonie aux cartes de Base. Si vous employez un mélange de cartes Royaume provenant de différents titres,déterminez la présence des cartes Platine et Colonie aléatoirement, selon le nombre de cartes de l'extension Prospérité. Par exemple la première carte Préparation peut déterminer le tout: si c'est une carte de Prospérité, les cartes Platine et Colonie seront présentes, sinon, elles ne le seront pas. Pour une partie a 2 joueurs, utiliser 8 cartes Colonie et pour 3 joueur et plus, 12 cartes Colonie. Les cartes Platine et Colonie sont toujours présentes ensemble, jamais l'une sans l'autre.",
         "name": "Colonie",
-        "untranslated": "description, extra"
+        "untranslated": "description"
     },
     "Platinum": {
         "description": "5 <*COIN*>",
-        "extra": "This is not a Kingdom card. You do not use it every game. It is a Treasure worth 5 coins. If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]",
+        "extra": "Platine est une carte de Base et non une carte Royaume. C'est une carte Trésors qui vaut 5 coins. Nous ne l'utilisont pas à toutes les parties. Si il y a seulement des cartes Royaume de Prospérité dans une partie, ajouter les cartes Platine et Colonie aux cartes de Base. Si vous employez un mélange de cartes Royaume provenant de différents titres,déterminez la présence des cartes Platine et Colonie aléatoirement, selon le nombre de cartes de l'extension Prospérité. Par exemple la première carte Préparation peut déterminer le tout: si c'est une carte de Prospérité, les cartes Platine et Colonie seront présentes, sinon, elles ne le seront pas. Utilisez toujours les 12 Cartes Platine peu importe le nombre de joueur. Les cartes Platine et Colonie sont toujours présentes ensemble, jamais l'une sans l'autre.]",
         "name": "Platine",
-        "untranslated": "description, extra"
+        "untranslated": "description"
     },
     "Bag of Gold": {
         "description": "+1 Action<n>Gain a Gold, putting it on top of your deck.<n><i>(This is not in the Supply.)</i>",
@@ -456,16 +456,16 @@
         "untranslated": "description, extra"
     },
     "Fairgrounds": {
-        "description": "Worth 2<VP> for every 5 differently named cards in your deck (rounded down).",
-        "extra": "At the end of the game, this is worth 2 <VP> per 5 differently named cards in your deck, rounded down. So if you have 0-4 different cards, it is worth 0 VP; if you have 5-9, it is worth 2 VP; if you have 10-14, it is worth 4 VP; if you have 15-19, it is worth 6; and so on. By default there are only 17 differently named cards available in a game, but sometimes there may be more cards, such as via Young Witch's setup rule, or due to Tournament. Use 8 Fairgrounds in a game with 2 players, and 12 for a game with 3 or more players.",
+        "description": "Vaut 2<VP> pour chaque tranche de 5 cartes ayant un nom différent dans votre deck.(Arrondie à l'unité inférieur).",
+        "extra": "À la fin de la partie,cette carte vaut 2 PV pour chaque tranche de 5 cartes ayant un nom différent dans votre deck, éventuellement arrondie à l'unité inférieur. Ainsi, si vous avez de 0 à 4 cartes différentes, elle vaut 0 PV; si vous avez de 5 à 9 cartes, elles vaut 2 PV; de 10 à 14 cartes = 4 PV; de 15 à 19 = 6 PV; et ainsi de suite. Lors d'une partie à 2 joueurs, il y a 8 Champ de foire dans la réserve et 12 Champ de foire à 3 joueurs et plus.",
         "name": "Champ de foire",
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Farming Village": {
-        "description": "+2 Actions<n>Reveal cards from the top of your deck until you reveal an Action or Treasure card. Put that card into your hand and discard the other cards.",
-        "extra": "Reveal cards from the top of your deck until you reveal a Treasure or Action card. If you run out of cards before finding one, shuffle your discard pile (but not the revealed cards), and keep revealing cards. If you still cannot find one, just discard all of the revealed cards. If you do find a Treasure or Action card, put it into your hand, and discard the rest of the revealed cards. A card with multiple types, one of which is Treasure or Action (for example Diadem, a Treasure - Prize), is a Treasure or Action and so will be drawn by this. You do not choose Treasure or Action - you stop on the first card matching either type.",
+        "description": "+2 Actions<n>Dévoilez des cartes de votre deck jusqu'a ce que vous dévoiliez une carte Action ou Trésors. Ajoutez cette carte à votre main et défaussez les autres.",
+        "extra": "Dévoilez des cartes de votre deck jusqu'a ce que vous dévoiliez une carte Action ou Trésors. Si vous n'avez plus de carte dans votre deck avant d'en dévoiler une, mélangez votre défausse (en prenant soin de ne pas mélanger les cartes dévoilées) et continuez de dévoiler des cartes. Si vous n'en trouvez toujours pas, défaussez tout simplement toutes les cartes dévoilées. Si vous trouvez une carte Trésor ou Action, ajoutez la à votre main et défaussez les autres cartes dévoilées. Une carte de plusieurs types dont l'un d'eux est Trésor ou Action (Diadème par exemple, qui est une carte Trésor - Prix) est ajoutée a votre main avec Village agricole. Vous ne choisissez pas entre une carte Trésor ou Action, vous arrêtez tot simplement à la première carte correspondant à l'un de ces types.",
         "name": "Village agricole",
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Followers": {
         "description": "+2 Cards<n>Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand.<n><i>(This is not in the Supply.)</i>",
