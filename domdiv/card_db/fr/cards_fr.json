@@ -444,16 +444,16 @@
         "untranslated": "description"
     },
     "Bag of Gold": {
-        "description": "+1 Action<n>Gain a Gold, putting it on top of your deck.<n><i>(This is not in the Supply.)</i>",
-        "extra": "The Gold you gain comes from the Supply and is put on top of your deck. If your deck has no cards in it, it becomes the only card in your deck. If there are no Golds left in the Supply, you do not gain one. This is a Prize; see the Additional Rules.",
+        "description": "+1 Action<n>Recevez une carte Or que vous placez sur le dessus de votre deck.<n><i>(Ne pas mettre dans la réserve.)</i>",
+        "extra": "La carte Or reçue provient de la réserve et est placée sur le dessus de votre deck. s'il n'y a pas de carte dans votre deck, ce sera alors la seule carte dans votre deck. Si la réserve de carte Or est épuisée, vous n'en recevez pas. Ceci est une carte Prix, consultez les règles additionnelles à leur sujet.",
         "name": "Sac d'or",
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Diadem": {
-        "description": "2 <*COIN*><n>When you play this, +1 Coins per unused Action you have (Action, not Action card).<n><i>(This is not in the Supply.)</i>",
-        "extra": "This is a Treasure worth 2 coins, like Silver. You play it in your Buy phase, like other Treasures. When you play it, you get an extra +1 coin per unused Action you have. This means Actions, not Action cards. So for example if you play Farming Village (which gives you +2 Actions), then Diadem, Diadem will give you an extra + 2 coins, for 4 coins total. If you play no Action cards at all on your turn, you will have one unused Action, so you will get total from Diadem. This is a Prize; see the Additional Rules.",
+        "description": "2 <*COIN*><n>Lorsque vous jouez cette carte, +1 Coins par Action inutilisée que vous avez (Action, et non carte Action).<n><i>(Ne pas mettre dans la réserve.)</i>",
+        "extra": "Ceci est une carte trésor valant 2 coins, comme la carte Argent. Vous pouvez la jouer lors de votre phase Achat comme les autre cartes Trésor. Lorsque vous la jouez, vous recevez +1 coin par Action inutilisée. Il sagit ici d'action et non de carte action. Par exemple, si vous jouez la carte Village agricole (donne +2 Actions) et ensuite la carte Diadème, Diadème donneras alors 2 <*COIN*> de plus, pour un total de 4 <*COIN*>. Si vous ne jouez pas de carte Action à votre tour, vous aurez une action inutilisée; le Diadàme vaudra alors 3 <*COIN*> au total. Ceci est une carte Prix, consultez les ràgles additionnelles à leur sujet.",
         "name": "Diadème",
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Fairgrounds": {
         "description": "Vaut 2<VP> pour chaque tranche de 5 cartes ayant un nom différent dans votre deck.(Arrondie à l'unité inférieur).",
@@ -468,10 +468,10 @@
         "untranslated": ""
     },
     "Followers": {
-        "description": "+2 Cards<n>Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand.<n><i>(This is not in the Supply.)</i>",
-        "extra": "Do the things in the order listed. You draw 2 cards; then you gain an Estate from the Supply, putting it into your discard pile; then each other player gains a Curse from the Supply, putting it into his discard pile; then each other player discards down to 3 cards in hand. A player with 3 or fewer cards in hand does not discard any cards. If there are no Estates left, you do not gain one. If there are not enough Curses left, deal out the remaining Curses in turn order. This is a Prize; see the Additional Rules.",
+        "description": "+2 Cartes<n>Recevez une carte Domaine. Tous vos adversaires reçoivent une carte Malédiction et doivent défausser afin de n'avoir que 3 cartes en main.<n><i>(Ne pas mettre dans la réserve.)</i>",
+        "extra": "Effectuez les effets dans l'ordre: piochez 2 cartes et recevez une carte Domaine de la réserve que vous placez sans votre défausse. Ensuite, tous les autres joueurs reçoivent une carte Malédiction de la réserve, qu'ils placent dans leur défausse et finalement, ils défaussent pour n'avoir que 3 cartes en main. Un joueur qui a déjà 3 cartes ou moins en main n'a pas à défausser de carte. S'il n'y a plus de Domaine, vous n'en recevez pas. S'il n'y a plus suffisament de cartes Malédiction, distribuez-les en suivant l'ordre de jeu. Ceci est une carte Prix, consultez les règles additionnelles à leur sujet.",
         "name": "Partisans",
-        "untranslated": "description, extra"
+        "untranslated": ""
     },
     "Fortune Teller": {
         "description": "+2 Coin<n>Each other player reveals cards from the top of his deck until he reveals a Victory of Curse card. He puts it on top and discards the other revealed cards.",
