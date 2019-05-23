@@ -19,7 +19,7 @@ The files:
     cards_xx.json
     sets_xx.json
     types_xx.json
-    
+
 must be encoded in ISO 8859-15, also known as  "Latin alphabet no. 9"
 This character set is used throughout the Americas, Western Europe, Oceania, and much of Africa.
 It is also commonly used in most standard romanizations of East-Asian languages.
@@ -64,13 +64,13 @@ The items in the `include` list are items that will be marked **bold** (i.e., `<
 when found in the card text in the following format:
 
  `+# item_from_include_list`
- 
+
 as long as this is not followed by a item from the `exclude` list.
 For example in English:
  `+2 Buys` will be made bold, but
  `+1 Action token` will not, since the key word token follows.
 
-- Just replace the English terms with the terms used in the target language.  
+- Just replace the English terms with the terms used in the target language.
 - Generally you should include the singular as well as the plural version of the term.
 - English versions do not need to be duplicated, since they are used automatically.
 - The key words `exclude` and `include` MUST NOT BE CHANGED.
@@ -80,7 +80,7 @@ For example in English:
 Entries in this file represent Dominion card types.  A typical entry looks like:
 
     "Action": "Action in new language",
-    
+
 - The type key word (i.e., the `Action` for the above entry) MUST NOT BE CHANGED. This value is used to identify the translation entry.
 - Do not change any punctuation outside of the quotes `"`.  For example, brackets `{` or `}`, colons `:`, quotes `"` or commas `,`.
 
@@ -104,7 +104,7 @@ For example:
 - if you provided the `name` of the card, and only the `name`, then change to `description, extra`
 - if you provided the `name` of the card and it's `description`, but have not translated the `extra`, then change to `extra`
 - if you provided all 3 entries, then change to `""`
-    
+
 The "untranslated" entry is used during maintanance of the language files to update any remaining default language entries that might have changed.
 
 
@@ -154,28 +154,27 @@ IMPORTANT: To keep the special images, please do not translate any of the above 
 
 - If bonuses_xx.json for the target language is configured correctly, bonuses within the text will automatically be bolded.
   In English, it will not bold the text if it is followed by `token` or `Token`.  Example:
-  
+
   `Choose one: +3 Cards; or +2 Actions.` will bold `+3 Cards` and `+2 Actions`.
 
 - Bonuses should be listed in the following order:
 
   * `+ Cards`,
-  * `+ Actions`, 
-  * `+ Buys`, 
-  * `+ Coins`, 
+  * `+ Actions`,
+  * `+ Buys`,
+  * `+ Coins`,
   * `+ <VP>`
 
 - When possible, bonuses should be listed vertically and centered.  Examples:
 
   * `+1 Card<br>+1 Action<br>+1 Buy<br>+1 Coin<br>+2 <VP><n>`
   * `+1 Card\n+1 Action\n+1 Buy\n+1 Coin\n+2 <VP>\n`
-    
+
   The `description` field by default is centered. `<br>`, `<n>`, and `\n` will all provide new lines.
 
 - If a Dividers/Tab has more than one card explanation, if space permits, try to mimic a stand alone Dividers/Tab in the overall format. Example from "Settlers - Bustling Village":
 
-    `<left><u>Settlers</u>:<n>+1 Card<br>+1 Action<n>Look through your discard pile. 
+    `<left><u>Settlers</u>:<n>+1 Card<br>+1 Action<n>Look through your discard pile.
     You may reveal a Copper from it and put it into your hand.<n>
     <left><u>Bustling Village</u>:<n><center>+1 Card<br>+3 Actions<n>
     Look through your discard pile. You may reveal a Settlers from it and put it into your hand.`
-

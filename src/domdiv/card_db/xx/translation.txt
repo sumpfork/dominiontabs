@@ -47,7 +47,7 @@ For example in English:
  "+2 Buys" will be made bold, but
  "+1 Action token" will not, since the key word token follows.
 
-Just replace the English terms with the terms used in the target language.  
+Just replace the English terms with the terms used in the target language.
 Generally you should include the singular as well as the plural version of the term.
 English versions do not need to be duplicated, since they are used automatically.
 The key words "exclude" and "include" MUST NOT BE CHANGED.
@@ -135,4 +135,3 @@ Special character sequences are recognized by the program to substitute graphics
 
  - If a Dividers/Tab has more than one card explanation, if space permits, try to mimic a stand alone Dividers/Tab in the overall format.
    Example from "Settlers - Bustling Village": "<left><u>Settlers</u>:<n>+1 Card<br>+1 Action<n>Look through your discard pile. You may reveal a Copper from it and put it into your hand.<n><left><u>Bustling Village</u>:<n><center>+1 Card<br>+3 Actions<n>Look through your discard pile. You may reveal a Settlers from it and put it into your hand."
-
