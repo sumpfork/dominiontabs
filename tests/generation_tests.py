@@ -2,7 +2,7 @@ from __future__ import print_function
 
 import pytest
 
-from .. import main
+from domdiv import main
 
 
 def get_clean_opts(opts):
@@ -17,8 +17,8 @@ def test_standard_opts():
     main.generate(options)
 
 
-@pytest.mark.parametrize("lang", main.get_languages('card_db'))
+@pytest.mark.parametrize("lang", main.get_languages("card_db"))
 def test_grouped(lang):
-    print('checking ' + lang)
-    options = get_clean_opts(['--special-card-groups', '--language={}'.format(lang)])
+    print("checking " + lang)
+    options = get_clean_opts(["--special-card-groups", "--language={}".format(lang)])
     main.generate(options)

@@ -20,13 +20,7 @@ The script has an extensive set of options that are relatively well documented v
 
 If you would like to help with translations to new (or updating existing) languages, please see [instructions here](https://github.com/sumpfork/dominiontabs/blob/master/domdiv/card_db/translation.md).
 
-## Prerequisites
-
-### Python Packages
-
-You need the python packages for [reportlab](http://www.reportlab.com/software/opensource/rl-toolkit/download/) and [Pillow](https://pypi.org/project/Pillow/) installed. You can install them manually or use the included setup.py via 'python setup.py install' (perhaps run via 'sudo' if not in a virtual env) which should install everything for you.
-
-### Fonts
+## Fonts
 
 I believe I cannot distribute one font (Minion Pro) domdiv uses as they are owned by Adobe with a License that I understand to disallow redistribution.
 
@@ -48,8 +42,8 @@ The library will be installed as `domdiv` with the main entry point being `domdi
 
 ## Developing
 
-You can use `python setup.py develop` to install the `dominion_dividers` script so that it calls your checked out code, enabling you to run edited code without having to perform an install every time.
+Install requirements via `pip install -r requirements.txt`. Then, run `pre-commit install`. You can use `python setup.py develop` to install the `dominion_dividers` script so that it calls your checked out code, enabling you to run edited code without having to perform an install every time.
 
 Feel free to comment on boardgamegeek at <https://boardgamegeek.com/thread/926575/web-page-generate-tabbed-dividers> or file issues on github (<https://github.com/sumpfork/dominiontabs/issues>).
 
-Tests can be run (and their dependencies installed) via `python setup.py test`.
+Tests can be run (and their dependencies installed) via `python setup.py test`, which will also happen if/when you push a branch or make a PR.

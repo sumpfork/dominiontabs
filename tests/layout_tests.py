@@ -1,12 +1,12 @@
 from reportlab.lib.units import cm
 
-from .. import main
+from domdiv import main
 
 
 def test_horizontal():
     # should be the default
     options = main.parse_opts([])
-    assert options.orientation == 'horizontal'
+    assert options.orientation == "horizontal"
     main.calculate_layout(options)
     assert options.numDividersHorizontal == 2
     assert options.numDividersVertical == 3
@@ -16,8 +16,8 @@ def test_horizontal():
 
 
 def test_vertical():
-    options = main.parse_opts(['--orientation', 'vertical'])
-    assert options.orientation == 'vertical'
+    options = main.parse_opts(["--orientation", "vertical"])
+    assert options.orientation == "vertical"
     main.calculate_layout(options)
     assert options.numDividersHorizontal == 3
     assert options.numDividersVertical == 2
@@ -27,7 +27,7 @@ def test_vertical():
 
 
 def test_sleeved():
-    options = main.parse_opts(['--size', 'sleeved'])
+    options = main.parse_opts(["--size", "sleeved"])
     main.calculate_layout(options)
     assert options.dividerWidth == 9.4 * cm
     assert options.labelHeight == 0.9 * cm

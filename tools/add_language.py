@@ -7,8 +7,8 @@ import io
 import csv
 from shutil import copyfile
 
-LANGUAGE_DEFAULT = 'en_us'  # default language, which takes priority
-LANGUAGE_XX = 'xx'  # language for starting a translation
+LANGUAGE_DEFAULT = "en_us"  # default language, which takes priority
+LANGUAGE_XX = "xx"  # language for starting a translation
 
 card_db_dir = os.path.join("..", "domdiv", "card_db")  # directory of card data
 output_dir = os.path.join(".", "card_db")  # directory for output data
@@ -25,23 +25,24 @@ else:
 def unicode_csv_reader(utf8_data, dialect=csv.excel, **kwargs):
     csv_reader = csv.reader(utf8_data, dialect=dialect, **kwargs)
     for row in csv_reader:
-        yield [cell.decode('iso-8859-15') for cell in row]
+        yield [cell.decode("iso-8859-15") for cell in row]
 
 
 def get_json_data(json_file_path):
     # Read in the json from the specified file
-    with codecs.open(json_file_path, 'r', 'utf-8') as json_file:
+    with codecs.open(json_file_path, "r", "utf-8") as json_file:
         data = json.load(json_file)
     assert data, "Could not load json at: '%r' " % json_file_path
     return data
 
 
-def json_dict_entry(entry, separator=''):
+def json_dict_entry(entry, separator=""):
     #  Return a nicely formated json dict entry.
     #  It does not include the enclosing {} and removes trailing white space
     json_data = json.dumps(entry, indent=4, ensure_ascii=False, sort_keys=True)
     json_data = json_data.strip(
-        '{}').rstrip()  # Remove outer{} and then trailing whitespace
+        "{}"
+    ).rstrip()  # Remove outer{} and then trailing whitespace
     return separator + json_data
 
 
@@ -52,7 +53,7 @@ def find_index(items, find):
         return None
 
 
-reader = unicode_csv_reader(open(crossReference + '.csv'))
+reader = unicode_csv_reader(open(crossReference + ".csv"))
 cards = list(reader)
 headers = cards[0]
 
@@ -63,14 +64,15 @@ lang_dir = os.path.join(output_dir, LANGUAGE_NEW)
 if not os.path.exists(lang_dir):
     os.makedirs(lang_dir)
 
-for f in ['bonuses_', 'cards_', 'sets_', 'types_']:
+for f in ["bonuses_", "cards_", "sets_", "types_"]:
     copyfile(
-        os.path.join(card_db_dir, LANGUAGE_XX, f + LANGUAGE_XX + '.json'),
-        os.path.join(output_dir, LANGUAGE_NEW, f + LANGUAGE_NEW + '.json'))
+        os.path.join(card_db_dir, LANGUAGE_XX, f + LANGUAGE_XX + ".json"),
+        os.path.join(output_dir, LANGUAGE_NEW, f + LANGUAGE_NEW + ".json"),
+    )
 
 
 lang_index = find_index(headers, LANGUAGE_NEW)
-card_index = find_index(headers, 'card_tag')
+card_index = find_index(headers, "card_tag")
 
 if lang_index is None or card_index is None:
     print("Cound not find new language '", LANGUAGE_NEW, "' in the CrossReference file")
@@ -93,8 +95,10 @@ else:
 
 if cardlist:
     with io.open(
-            os.path.join(output_dir, LANGUAGE_NEW, "cards_" + LANGUAGE_NEW + ".json"), 'w',
-            encoding='utf-8') as lang_out:
+        os.path.join(output_dir, LANGUAGE_NEW, "cards_" + LANGUAGE_NEW + ".json"),
+        "w",
+        encoding="utf-8",
+    ) as lang_out:
 
         lang_out.write("{")  # Start of set
         sep = ""
@@ -104,9 +108,9 @@ if cardlist:
             data = lang_data[card]
             if card in cardlist:
                 # Have a new name, so update name
-                data['name'] = cardlist[card]
+                data["name"] = cardlist[card]
                 fields = [u"description", u"extra"]  # but no u"name"
-                data['untranslated'] = ', '.join(fields)
+                data["untranslated"] = ", ".join(fields)
             lang_out.write(json_dict_entry({card: data}, sep))
             sep = ","
         lang_out.write("\n}\n")  # End of Set
