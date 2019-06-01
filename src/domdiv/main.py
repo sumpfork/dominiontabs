@@ -296,19 +296,19 @@ def parse_opts(cmdline_args=None):
         "--cost",
         action="append",
         choices=LOCATION_CHOICES,
-        default=["tab"],
         help="Where to display the card cost; may be set to "
         "'hide' to indicate it should not be displayed, or "
-        "given multiple times to show it in multiple places.",
+        "given multiple times to show it in multiple places. "
+        "(If not given, will default to 'tab'.)",
     )
     group_tab.add_argument(
         "--set-icon",
         action="append",
         choices=LOCATION_CHOICES,
-        default=["tab"],
         help="Where to display the set icon; may be set to "
         "'hide' to indicate it should not be displayed, or "
-        "given multiple times to show it in multiple places.",
+        "given multiple times to show it in multiple places. "
+        "(If not given, will default to 'tab'.)",
     )
     group_tab.add_argument(
         "--no-tab-artwork",
@@ -737,6 +737,12 @@ def clean_opts(options):
     if options.tab_number < 3 and options.tab_serpentine:
         print("** Warning: --tab-serpentine only valid if --tab-number > 2. **")
         options.tab_serpentine = False
+
+    if options.cost is None:
+        options.cost = ["tab"]
+
+    if options.set_icon is None:
+        options.set_icon = ["tab"]
 
     if options.sleeved_thick:
         options.thickness = 3.2

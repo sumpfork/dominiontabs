@@ -32,3 +32,47 @@ def test_sleeved():
     assert options.dividerWidth == 9.4 * cm
     assert options.labelHeight == 0.9 * cm
     assert options.dividerHeight == 6.15 * cm + options.labelHeight
+
+
+def test_cost():
+    options = main.parse_opts([])
+    options = main.clean_opts(options)
+    assert options.cost == ["tab"]
+
+    options = main.parse_opts(["--cost=tab"])
+    options = main.clean_opts(options)
+    assert options.cost == ["tab"]
+
+    options = main.parse_opts(["--cost=body-top"])
+    options = main.clean_opts(options)
+    assert options.cost == ["body-top"]
+
+    options = main.parse_opts(["--cost=hide"])
+    options = main.clean_opts(options)
+    assert options.cost == ["hide"]
+
+    options = main.parse_opts(["--cost=tab", "--cost=body-top"])
+    options = main.clean_opts(options)
+    assert set(options.cost) == {"tab", "body-top"}
+
+
+def test_set_icon():
+    options = main.parse_opts([])
+    options = main.clean_opts(options)
+    assert options.set_icon == ["tab"]
+
+    options = main.parse_opts(["--set-icon=tab"])
+    options = main.clean_opts(options)
+    assert options.set_icon == ["tab"]
+
+    options = main.parse_opts(["--set-icon=body-top"])
+    options = main.clean_opts(options)
+    assert options.set_icon == ["body-top"]
+
+    options = main.parse_opts(["--set-icon=hide"])
+    options = main.clean_opts(options)
+    assert options.set_icon == ["hide"]
+
+    options = main.parse_opts(["--set-icon=tab", "--set-icon=body-top"])
+    options = main.clean_opts(options)
+    assert set(options.set_icon) == {"tab", "body-top"}
