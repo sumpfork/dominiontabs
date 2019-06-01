@@ -140,3 +140,63 @@ def test_only_type():
     #      Curse:         +1 from base
     #      Action Attack: +2 from Alchemy
     assert len(cards) == 8
+
+
+def test_expansion():
+    # test that we can use --expansion or
+    # --expansions, that we can have multiple
+    # items with a single flag, that * syntax
+    # works, that we can use either the
+    # cardset tag or name, and that capitalziation
+    # doesn't matter
+    options = main.parse_opts(
+        [
+            "--expansion",
+            "advEntUres",
+            "dominion 2nd*",
+            "--expansions=intrigue1stEdition",
+        ]
+    )
+    options = main.clean_opts(options)
+    options.data_path = "."
+    cards = main.read_card_data(options)
+    cards = main.filter_sort_cards(cards, options)
+    card_sets = set(x.cardset.lower() for x in cards)
+    assert card_sets == {
+        "adventures",
+        "dominion 2nd edition",
+        "dominion 2nd edition upgrade",
+        "intrigue 1st edition",
+    }
+
+
+def test_exclude_expansion():
+    # test that we can use --exclude-expansion or
+    # --exclude-expansions, that we can have multiple
+    # items with a single flag, that * syntax
+    # works, that we can use either the
+    # cardset tag or name, and that capitalziation
+    # doesn't matter
+    options = main.parse_opts(
+        [
+            "--expansions",
+            "adventures",
+            "dominion*",
+            "intrigue*",
+            "--exclude-expansions",
+            "dominiOn1stEditIon",
+            "intrigue 2nd*",
+            "--exclude-expansion",
+            "dominion 2nd edition",
+        ]
+    )
+    options = main.clean_opts(options)
+    options.data_path = "."
+    cards = main.read_card_data(options)
+    cards = main.filter_sort_cards(cards, options)
+    card_sets = set(x.cardset.lower() for x in cards)
+    assert card_sets == {
+        "adventures",
+        "dominion 2nd edition upgrade",
+        "intrigue 1st edition",
+    }
