@@ -396,6 +396,25 @@ def parse_opts(cmdline_args=None):
         ),
     )
     group_select.add_argument(
+        "--exclude-expansions",
+        "--exclude-expansion",
+        nargs="*",
+        action="append",
+        metavar="EXCLUDED",
+        dest="exclude_expansions",
+        help="Limit dividers to not include the specified expansions. "
+        "Useful if you want all the expansions, except for one or two. "
+        "If an expansion is explicitly specified with both '--expansion' and "
+        "'--exclude-expansion', then '--exclude-expansion' wins, and the "
+        "expansion is NOT included. Expansion names can also be given in the "
+        "language specified by the --language parameter. Any expansion with a "
+        "space in the name must be enclosed in double quotes. This may be "
+        "called multiple times.  Values are not case sensitive. Wildcards may "
+        "be used. See the help for '--expansion' for details on wildcards. May "
+        "be the name of an official expansion or fan expansion - see the help "
+        "for --expansion and --fan for a list of possible names.",
+    )
+    group_select.add_argument(
         "--edition",
         choices=EDITION_CHOICES,
         dest="edition",
@@ -779,6 +798,12 @@ def clean_opts(options):
     if "none" in options.expansions:
         # keyword to indicate no options.  Same as --expansions without any expansions given.
         options.expansions = []
+
+    if options.exclude_expansions:
+        # options.exclude_expansions is a list of lists.  Reduce to single lowercase list
+        options.exclude_expansions = [
+            item.lower() for sublist in options.exclude_expansions for item in sublist
+        ]
 
     if options.fan is None:
         # No instance given, so default to no Fan expansions
@@ -1470,17 +1495,19 @@ def filter_sort_cards(cards, options):
     Fan_sets = set()  # Will hold fan sets
     Fan_search = []  # Will hold fan sets for searching, both set key and set_name
     wantedSets = set()  # Will hold all the sets requested for printing
+
+    All_search = []  # Will hold all sets for searching, both set key and set_name
     for s in Card.sets:
+        search_items = [s.lower(), Card.sets[s].get("set_name", None).lower()]
+        All_search.extend(search_items)
         if Card.sets[s].get("fan", False):
             # Fan Expansion
             Fan_sets.add(s)
-            Fan_search.extend([s.lower(), Card.sets[s].get("set_name", None).lower()])
+            Fan_search.extend(search_items)
         else:
             # Official Expansion
             Official_sets.add(s)
-            Official_search.extend(
-                [s.lower(), Card.sets[s].get("set_name", None).lower()]
-            )
+            Official_search.extend(search_items)
 
     # If expansion names given, then find out which expansions are requested
     # Expansion names can be the names from the language or the cardset_tag
@@ -1538,6 +1565,34 @@ def filter_sort_cards(cards, options):
         unknownExpansions = options.fan - knownExpansions
         if unknownExpansions:
             print("Error - unknown fan expansion(s): %s" % ", ".join(unknownExpansions))
+
+    if options.exclude_expansions:
+        # Expand out any wildcards, matching set key or set name in the given language
+        expanded_expansions = []
+        for e in options.exclude_expansions:
+            matches = fnmatch.filter(All_search, e)
+            if matches:
+                expanded_expansions.extend(matches)
+            else:
+                expanded_expansions.append(e)
+
+        # Now get the actual sets that are matched above
+        options.exclude_expansions = set(
+            [e for e in expanded_expansions]
+        )  # Remove duplicates
+        knownExpansions = set()
+        for e in options.exclude_expansions:
+            for s in Card.sets:
+                if s.lower() == e or Card.sets[s].get("set_name", "").lower() == e:
+                    wantedSets.discard(s)
+                    knownExpansions.add(e)
+        # Give indication if an imput did not match anything
+        unknownExpansions = options.exclude_expansions - knownExpansions
+        if unknownExpansions:
+            print(
+                "Error - unknown exclude expansion(s): %s"
+                % ", ".join(unknownExpansions)
+            )
 
     # Now keep only the cards that are in the sets that have been requested
     keep_cards = []
