@@ -317,6 +317,14 @@ def parse_opts(cmdline_args=None):
         help="Don't show background artwork on tabs.",
     )
     group_tab.add_argument(
+        "--tab-artwork-opacity",
+        type=float,
+        default=1.0,
+        help="Multiply opacity of tab background art by this value; "
+        "can be used to make text show up clearer on dark backrounds, "
+        "particularly on printers that output darker than average",
+    )
+    group_tab.add_argument(
         "--use-text-set-icon",
         action="store_true",
         dest="use_text_set_icon",

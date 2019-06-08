@@ -6,11 +6,14 @@ import sys
 
 import pkg_resources
 
+from PIL import Image, ImageEnhance
+
 from reportlab.lib.units import cm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph, XPreformatted
 from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER, TA_LEFT
+from reportlab.lib.utils import ImageReader
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase.pdfmetrics import stringWidth
@@ -1141,6 +1144,8 @@ class DividerDrawer(object):
         return w
 
     def drawTab(self, item, wrapper="no", backside=False):
+        from io import BytesIO
+
         card = item.card
         # Skip blank cards
         if card.isBlank():
@@ -1190,8 +1195,22 @@ class DividerDrawer(object):
         # draw banner
         img = card.getType().getTabImageFile()
         if not self.options.no_tab_artwork and img:
+            imgToDraw = DividerDrawer.get_image_filepath(img)
+            if self.options.tab_artwork_opacity != 1.0:
+                imgObj = Image.open(imgToDraw)
+                if imgObj.mode != "RGBA":
+                    imgObj = imgObj.convert("RGBA")
+                alpha = imgObj.split()[3]
+                alpha = ImageEnhance.Brightness(alpha).enhance(
+                    self.options.tab_artwork_opacity
+                )
+                imgObj.putalpha(alpha)
+                imageBytes = BytesIO()
+                imgObj.save(imageBytes, "PNG")
+                imageBytes.seek(0)
+                imgToDraw = ImageReader(imageBytes)
             self.canvas.drawImage(
-                DividerDrawer.get_image_filepath(img),
+                imgToDraw,
                 1,
                 0,
                 item.tabWidth - 2,
