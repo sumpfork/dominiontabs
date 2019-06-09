@@ -1975,39 +1975,35 @@ class DividerDrawer(object):
         for pageNum, pageInfo in enumerate(self.pages):
             hMargin, vMargin, page = pageInfo
 
-            # Front page footer
-            if not self.options.no_page_footer and (
+            drawFooter = not self.options.no_page_footer and (
                 not self.options.tabs_only and self.options.order != "global"
-            ):
-                self.drawSetNames(page)
+            )
 
-            # Front page
-            for item in page:
-                # print the dividor
-                self.drawDivider(
-                    item, isBack=False, horizontalMargin=hMargin, verticalMargin=vMargin
-                )
-            self.canvas.showPage()
-            if pageNum + 1 == self.options.num_pages:
-                break
             if (
                 self.options.tabs_only
                 or self.options.text_back == "none"
                 or self.options.wrapper
             ):
                 # Don't print the sheets with the back of the dividers
-                continue
+                backSides = [False]
+            else:
+                backSides = [False, True]
 
-            # back page footer
-            if not self.options.no_page_footer and self.options.order != "global":
-                self.drawSetNames(page)
+            for isBack in backSides:
+                # Page footer
+                if drawFooter:
+                    self.drawSetNames(page)
 
-            # Back page
-            for item in page:
-                # print the dividor
-                self.drawDivider(
-                    item, isBack=True, horizontalMargin=hMargin, verticalMargin=vMargin
-                )
-            self.canvas.showPage()
+                # Page
+                for item in page:
+                    # print the dividor
+                    self.drawDivider(
+                        item,
+                        isBack=isBack,
+                        horizontalMargin=hMargin,
+                        verticalMargin=vMargin,
+                    )
+                self.canvas.showPage()
+
             if pageNum + 1 == self.options.num_pages:
                 break
