@@ -1561,7 +1561,7 @@ class DividerDrawer(object):
         # retore the canvas state to the way we found it
         self.canvas.restoreState()
 
-    def drawSetNames(self, pageItems):
+    def drawSetNames(self, pageItems, backside=False):
         # print sets for this page
         self.canvas.saveState()
 
@@ -1579,13 +1579,15 @@ class DividerDrawer(object):
                 {
                     "rotation": 0,
                     "minMarginHeight": self.options.minVerticalMargin,
-                    "totalMarginHeight": self.options.verticalMargin,
+                    "totalMarginHeight": self.options.verticalMargin
+                    + (self.options.back_offset_height if backside else 0),
                     "width": self.options.paperwidth,
                 },
                 {
                     "rotation": 90,
                     "minMarginHeight": self.options.minHorizontalMargin,
-                    "totalMarginHeight": self.options.horizontalMargin,
+                    "totalMarginHeight": self.options.horizontalMargin
+                    + (-self.options.back_offset if backside else 0),
                     "width": self.options.paperheight,
                 },
             ]
@@ -1988,7 +1990,7 @@ class DividerDrawer(object):
             for isBack in backSides:
                 # Page footer
                 if drawFooter:
-                    self.drawSetNames(page)
+                    self.drawSetNames(page, isBack)
 
                 # Page
                 for item in page:
