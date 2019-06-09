@@ -1608,24 +1608,20 @@ class DividerDrawer(object):
 
             self.canvas.setFont(fontname, fontsize)
 
+            # Centered on page
             xPos = layout["width"] / 2
             # Place at the very edge of the margin
             yPos = layout["minMarginHeight"]
+
+            if layout["rotation"]:
+                self.canvas.rotate(layout["rotation"])
+                yPos = -yPos
 
             sets = []
             for item in pageItems:
                 setTitle = item.card.cardset.title()
                 if setTitle not in sets:
                     sets.append(setTitle)
-
-                # Centered on page
-                xPos = layout["width"] / 2
-                # Place at the very edge of the margin
-                yPos = layout["minMarginHeight"]
-
-                if layout["rotation"]:
-                    self.canvas.rotate(layout["rotation"])
-                    yPos = -yPos
 
             self.canvas.drawCentredString(xPos, yPos, "/".join(sets))
         finally:
