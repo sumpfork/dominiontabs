@@ -1573,8 +1573,6 @@ class DividerDrawer(object):
             font = pdfmetrics.getFont(fontname)
             fontHeightRelative = (font.face.ascent + abs(font.face.descent)) / 1000.0
 
-            canFit = False
-
             layouts = [
                 {
                     "rotation": 0,
@@ -1592,21 +1590,29 @@ class DividerDrawer(object):
                 },
             ]
 
-            for layout in layouts:
+            # Pick whether to print setnames horizontally along bottom
+            # (i=0) or vertically along left (i=1).  We pick whichever has more
+            # space.
+            fontsize = 0
+            maxAvailableMargin = 0
+            layoutIndex = -1
+            for i, layout in enumerate(layouts):
                 availableMargin = (
                     layout["totalMarginHeight"] - layout["minMarginHeight"]
                 )
-                fontsize = availableMargin / fontHeightRelative
-                fontsize = min(maxFontsize, fontsize)
-                if fontsize >= minFontsize:
-                    canFit = True
-                    break
+                if availableMargin > maxAvailableMargin:
+                    maxAvailableMargin = availableMargin
+                    fontsize = availableMargin / fontHeightRelative
+                    fontsize = min(maxFontsize, fontsize)
+                    layoutIndex = i
 
-            if not canFit:
+            if fontsize < minFontsize:
                 import warnings
 
                 warnings.warn("Not enough space to display set names")
                 return
+
+            layout = layouts[layoutIndex]
 
             self.canvas.setFont(fontname, fontsize)
 
