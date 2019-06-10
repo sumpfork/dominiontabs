@@ -17,9 +17,11 @@ pluggy==0.8.1             # via pytest
 pre-commit==1.14.2
 py==1.7.0                 # via pytest
 pytest==4.1.1
-pyyaml==3.13              # via aspy.yaml, pre-commit
+pyyaml==5.1               # via aspy.yaml, pre-commit
 reportlab==3.5.12
 six==1.12.0
 toml==0.10.0              # via pre-commit
 virtualenv==16.2.0        # via pre-commit
 zipp==0.3.3               # via importlib-metadata
+
+#
