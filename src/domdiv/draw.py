@@ -1561,7 +1561,7 @@ class DividerDrawer(object):
         # retore the canvas state to the way we found it
         self.canvas.restoreState()
 
-    def drawSetNames(self, pageItems):
+    def drawSetNames(self, pageItems, backside=False):
         # print sets for this page
         self.canvas.saveState()
 
@@ -1573,59 +1573,63 @@ class DividerDrawer(object):
             font = pdfmetrics.getFont(fontname)
             fontHeightRelative = (font.face.ascent + abs(font.face.descent)) / 1000.0
 
-            canFit = False
-
             layouts = [
                 {
                     "rotation": 0,
                     "minMarginHeight": self.options.minVerticalMargin,
-                    "totalMarginHeight": self.options.verticalMargin,
+                    "totalMarginHeight": self.options.verticalMargin
+                    + (self.options.back_offset_height if backside else 0),
                     "width": self.options.paperwidth,
                 },
                 {
                     "rotation": 90,
                     "minMarginHeight": self.options.minHorizontalMargin,
-                    "totalMarginHeight": self.options.horizontalMargin,
+                    "totalMarginHeight": self.options.horizontalMargin
+                    + (-self.options.back_offset if backside else 0),
                     "width": self.options.paperheight,
                 },
             ]
 
-            for layout in layouts:
+            # Pick whether to print setnames horizontally along bottom
+            # (i=0) or vertically along left (i=1).  We pick whichever has more
+            # space.
+            fontsize = 0
+            maxAvailableMargin = 0
+            layoutIndex = -1
+            for i, layout in enumerate(layouts):
                 availableMargin = (
                     layout["totalMarginHeight"] - layout["minMarginHeight"]
                 )
-                fontsize = availableMargin / fontHeightRelative
-                fontsize = min(maxFontsize, fontsize)
-                if fontsize >= minFontsize:
-                    canFit = True
-                    break
+                if availableMargin > maxAvailableMargin:
+                    maxAvailableMargin = availableMargin
+                    fontsize = availableMargin / fontHeightRelative
+                    fontsize = min(maxFontsize, fontsize)
+                    layoutIndex = i
 
-            if not canFit:
+            if fontsize < minFontsize:
                 import warnings
 
                 warnings.warn("Not enough space to display set names")
                 return
 
+            layout = layouts[layoutIndex]
+
             self.canvas.setFont(fontname, fontsize)
 
+            # Centered on page
             xPos = layout["width"] / 2
             # Place at the very edge of the margin
             yPos = layout["minMarginHeight"]
+
+            if layout["rotation"]:
+                self.canvas.rotate(layout["rotation"])
+                yPos = -yPos
 
             sets = []
             for item in pageItems:
                 setTitle = item.card.cardset.title()
                 if setTitle not in sets:
                     sets.append(setTitle)
-
-                # Centered on page
-                xPos = layout["width"] / 2
-                # Place at the very edge of the margin
-                yPos = layout["minMarginHeight"]
-
-                if layout["rotation"]:
-                    self.canvas.rotate(layout["rotation"])
-                    yPos = -yPos
 
             self.canvas.drawCentredString(xPos, yPos, "/".join(sets))
         finally:
@@ -1975,39 +1979,35 @@ class DividerDrawer(object):
         for pageNum, pageInfo in enumerate(self.pages):
             hMargin, vMargin, page = pageInfo
 
-            # Front page footer
-            if not self.options.no_page_footer and (
+            drawFooter = not self.options.no_page_footer and (
                 not self.options.tabs_only and self.options.order != "global"
-            ):
-                self.drawSetNames(page)
+            )
 
-            # Front page
-            for item in page:
-                # print the dividor
-                self.drawDivider(
-                    item, isBack=False, horizontalMargin=hMargin, verticalMargin=vMargin
-                )
-            self.canvas.showPage()
-            if pageNum + 1 == self.options.num_pages:
-                break
             if (
                 self.options.tabs_only
                 or self.options.text_back == "none"
                 or self.options.wrapper
             ):
                 # Don't print the sheets with the back of the dividers
-                continue
+                backSides = [False]
+            else:
+                backSides = [False, True]
 
-            # back page footer
-            if not self.options.no_page_footer and self.options.order != "global":
-                self.drawSetNames(page)
+            for isBack in backSides:
+                # Page footer
+                if drawFooter:
+                    self.drawSetNames(page, isBack)
 
-            # Back page
-            for item in page:
-                # print the dividor
-                self.drawDivider(
-                    item, isBack=True, horizontalMargin=hMargin, verticalMargin=vMargin
-                )
-            self.canvas.showPage()
+                # Page
+                for item in page:
+                    # print the dividor
+                    self.drawDivider(
+                        item,
+                        isBack=isBack,
+                        horizontalMargin=hMargin,
+                        verticalMargin=vMargin,
+                    )
+                self.canvas.showPage()
+
             if pageNum + 1 == self.options.num_pages:
                 break
