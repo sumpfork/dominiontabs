@@ -1655,7 +1655,8 @@ def filter_sort_cards(cards, options):
                     "name": c.name.strip().replace(" ", "&nbsp;"),
                     "randomizer": c.randomizer,
                     "count": 1,
-                    "sort": "%03d%s" % (order, c.name.strip()),
+                    "sort": "%03d%s"
+                    % (order, CardSorter.strip_accents(c.name.strip())),
                 }
 
         for set_tag, set_values in Card.sets.items():

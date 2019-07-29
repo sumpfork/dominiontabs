@@ -3,6 +3,7 @@ import subprocess
 import shutil
 import os
 import contextlib
+import unicodedata
 
 import pytest
 
@@ -147,7 +148,7 @@ def test_expansion():
     # --expansions, that we can have multiple
     # items with a single flag, that * syntax
     # works, that we can use either the
-    # cardset tag or name, and that capitalziation
+    # cardset tag or name, and that capitalization
     # doesn't matter
     options = main.parse_opts(
         [
@@ -175,7 +176,7 @@ def test_exclude_expansion():
     # --exclude-expansions, that we can have multiple
     # items with a single flag, that * syntax
     # works, that we can use either the
-    # cardset tag or name, and that capitalziation
+    # cardset tag or name, and that capitalization
     # doesn't matter
     options = main.parse_opts(
         [
@@ -200,3 +201,35 @@ def test_exclude_expansion():
         "dominion 2nd edition upgrade",
         "intrigue 1st edition",
     }
+
+
+def test_expansion_description_card_order():
+    # test that the expansions cards lists cards
+    # in alphabetical order, like they are printed,
+    # and that accents don't matter
+    options = main.parse_opts(
+        [
+            "--expansions",
+            "Hinterlands",
+            "--expansion-dividers",
+            "--language",
+            "fr",
+            "--only-type-any",
+            "Expansion",
+        ]
+    )
+    options = main.clean_opts(options)
+    options.data_path = "."
+    cards = main.read_card_data(options)
+    cards = main.filter_sort_cards(cards, options)
+    card_names = [c.strip() for c in cards[0].description.split("|")]
+    # The 26 french card names of the Hinterlands expansion should be sorted as if no accent
+    assert len(card_names) == 26
+    assert card_names == sorted(
+        card_names,
+        key=lambda s: "".join(
+            c
+            for c in unicodedata.normalize("NFD", s)
+            if unicodedata.category(c) != "Mn"
+        ),
+    )
