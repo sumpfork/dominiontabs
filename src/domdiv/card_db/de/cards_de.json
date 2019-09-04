@@ -1580,7 +1580,7 @@
         "name": "Friedhof"
     },
     "Changeling": {
-        "description": "Trash this. Gain a copy of a card you have in play.<line>In Spielen mit dieser Karte: Wenn du eine Karte nimmst, die 3 Coins oder mehr kostet, darfst du sie in einen Wechselbalg eintauschen.",
+        "description": "Entsorge diese Karte. Nimm eine Karte, die Du im Spiel hast.<line>In Spielen mit dieser Karte: Wenn du eine Karte nimmst, die 3 Coins oder mehr kostet, darfst du sie in einen Wechselbalg eintauschen.",
         "extra": "Immer wenn ihr mit der Königreichkarte WECHSELBALG spielt und sich noch WECHSELBALG-Karten im Vorrat befinden, darfst du, wenn du eine Karte nimmst, die in diesem Moment mindestens 3 Coins kostet, die genommene Karte in einen WECHSELBALG eintauschen. Lege die genommene Karte zurück auf den entsprechenden Stapel (Anweisungen, die beim Nehmen der Karte eintreten, treten noch ein), nimm einen WECHSELBALG und lege ihn auf den Ablagestapel. Karten, die gar kein empty Coin oder weniger als 3 Coin sowie z.B. Potion (aus Alchemisten) oder empty Debt (aus Empires) kosten, dürfen nicht getauscht werden, da sie niemals mehr als 3 Coins kosten, egal wie hoch die zusätzlichen Kosten in Form von Potion oder empty Debt sind. So darf z.B. eine VERWANDLUNG (aus Alchemisten) nicht getauscht werden, da sie nur Potion aber kein empty Coin kostet. Der ALCHEMIST (aus Alchemisten) hingegen darf eingetauscht werden, da dieser 3 Coins Potion kostet. Diese Karte ist eine Nachtkarte und kann nur in der Nachtphase ausgespielt werden. Wenn du das tust, entsorge diesen WECHSELBALG und nimm dir für eine Karte, die du im Spiel hast (das können Aktions-, Geld- und/oder Nachtkarten sein), eine gleiche Karte vom entsprechenden Stapel.",
         "name": "Wechselbalg"
     },
@@ -1978,21 +1978,18 @@
     },
     "Stash": {
         "description": "2 <*COIN*><line>Nachdem du deinen Ablagestapel gemischt hast, darfst du diese Karte an eine beliebige Stelle in deinem Nachziehstapel einsortieren.",
-        "extra": "Stash is a Treasure that produces 2 coins when played, like Silver. Whenever you shuffle your deck, you can choose where in your deck each copy of Stash that you have goes. You can't look at the fronts of the other cards in your deck to see where to put it; Stash itself has a different card back, so that's how you'll know where it is. If you have multiple copies of Stash, you can clump them together or spread them out or whatever you want. Since Stash has a different card back, you will also know if it's in a player's hand, or set aside for someone's Haven (from Seaside), and so on.",
-        "name": "Geldversteck",
-        "untranslated": "extra"
+        "extra": "Das Geldversteck ist eine Geldkarte, die 2 Coins erzeugt, wenn sie gespielt wird, genau wie Silber. Immer wenn Du Deinen Ablagestapel mischen musst kannst Du wählen, wo im Nachziehstapel jede Geldversteck-Karte einsortiert werden soll. Du darfst dabei nicht die Vorderseiten der anderen Karten des Nachziehstapels ansehen, um zu sehen welche Position günstig wäre. Das Geldversteck hat eine andere Rückseite, damit es leicht unter den anderen Karten hervorsticht. Wenn Du mehrere Geldversteck-Karten hast kannst Du sie nacheinander reihen oder über den Stapel nach Belieben verteilen. Wegen der unterschiedlichen Rückseite kann das Geldversteck auch in der Hand der Mitspieler oder wenn es beiseite gelegt wird gut erkannt werden.",
+        "name": "Geldversteck"
     },
     "Summon": {
         "description": "Nimm eine Aktionskarte, die bis zu 4 Coins kostet und lege sie zur Seite. Spiele sie zu Beginn deines nächsten Zuges.",
-        "extra": "When you buy this, you gain an Action card costing up to 4 coins from the Supply and set it aside face up.<n>If you did set it aside, then at the start of your next turn, play that Action card. This doesn't use up your default Action for the turn.<n>In order to remember to play the card on your next turn, you may want to turn it sideways or diagonally, turning it right side up when you play it.<n>If you move the Action card after you gain it but before you set it aside (e.g. by putting it on top of your deck with Watchtower, from Prosperity), then Summon will ''lose track'' of it and be unable to set it aside; in that case you will not play it at the start of your next turn.<n>If you use Summon to gain a Nomad Camp (from Hinterlands), Summon will know to find the Nomad Camp on your deck, so you will set it aside in that case (unless you have moved it elsewhere via another ability).",
-        "name": "Einladung",
-        "untranslated": "extra"
+        "extra": "Wenn Du dieses Ereignis kaufst erhälst Du eine Aktionskarte, die bis zu 4 Coins kostet aus dem Vorrat und legst Sie beiseite mit der Vorderseite nach oben.<n>Spiele die zur Seite gelegte Aktionskarte zu Beginn Deines nächsten Zuges. Dieses Ausspielen verbaucht nicht Deine Standard-Aktion für diesen Zug.<n>Als Erinnerung an das Ausspielen zu Beginn Deines nächsten Zuges kannst Du die Karte quer oder diagonal legen und beim Ausspielen gerade rücken.<n>Wenn Du die Aktionskarte bewegst, nachdem Du sie rhalten hast (z.B. indem Du sie auf Deinen nachziehstapel legst mit dem Wachturm aus Blütezeit), dann wird ie Einladung die Bindung zu der Aktionskarte verlieren und nicht in der Lage sein, sie beiseite zu legen; in diesem Fall kannst Du die Aktionskarte nicht zum Beginn Deines nächsten Zugs spielen.<n>Wenn Du die Einladung benutzt, um das Nomadencamp (aus der Erweiterung Hinterland) zu erhalten wird die Einladung in Deinem Nachziehstapel finden, so dass Du sie in diesem Fall zur Seite legst (es sei denn, dass Du sie mit einer anderen Fähigkeit an eine andere Stelle verschoben hast).",
+        "name": "Einladung"
     },
     "Walled Village": {
         "description": "+1 Karte<br>+2 Aktionen<br>Wenn du zu Beginn deiner Aufräumphase außer dieser Karte nur noch eine weitere Aktionskarte im Spiel hast, darfst du die Karte Carcassonne auf deinen Nachziehstapel legen.",
-        "extra": "When you play this, you draw a card and can play two more Actions this turn. At the start of your Clean-up phase, before discarding anything and before drawing for next turn, if you have a Walled Village in play and no more than two Action cards in play (counting the Walled Village), you may put the Walled Village on top of your deck. If the only cards you have in play are two Walled Villages, you may put either or both of them on top of your deck. Walled Village has to be in play to be put on top of your deck. Walled Village only checks how many Action cards are in play when its ability resolves; Action cards you played earlier this turn but which are no longer in play (such as Feast from Dominion) are not counted, while Action cards still in play from previous turns (duration cards from Seaside) are counted, as are Action cards that are in play now but may leave play after resolving Walled Village (such as Treasury from Seaside).",
-        "name": "Carcassonne",
-        "untranslated": "extra"
+        "extra": "Wenn Du diese Karte spielst, ziehst Du eine Karte und kannst dann in diesm Zug zwei weitere Aktionen ausführen. Zu Beginn der Aufräumphase, bevor Du eine Karte ablegst und bevor Du für die nächste Runde ziehst kannst Du Carcasonne oben auf Deinen Nachziehstapel legen, wenn Du Carcasonne im Spiel und nicht mehr als zwei Aktionskarten (inklusive Carcasonne) im Spiel hast. Wenn die einzigen beiden Aktionskarten, die Du im Spiel hast beides Carcasonne-Karten sind darfst Du eine oder beide auf Deinen Nachziehstapel legen. Carcasonne muss im Spiel sein, um während er Aufräumphase oben auf den Nachziehstapel gelegt zu werden. Carcasonne wird zum Zeitpunkt des Ausspielens überprüft auf die Anzahl der im Spiel befindlichen Aktionskarten; Aktionskarten, die früher im Zug ausgepielt wurden aber nicht mehr im Spiel sind (wie z.B. Festmahl) werden nicht mitgezählt, währenddessen Aktionskarten, die aus früheren Spielzügen immer noch im Spiel sind (z.B. Dauerkarten aus Seaside) mitgezählt werden, genauso wie Aktionskarten, die gerade im Spiel sind aber nach dem Ausspielen von Carcasonne aus dem Spiel genommen werden (wie z.B. die Schatzkammer).",
+        "name": "Carcassonne"
     },
     "Bank": {
         "description": "Wert 1 Coin für jede Geldkarte, die im Spiel ist (diese eingeschlossen).",
@@ -2120,304 +2117,254 @@
         "name": "Arbeiterdorf"
     },
     "Academy": {
-        "description": "When you gain an Action card, +1 Villager.",
-        "extra": "This happens whether you gain an Action card due to buying it, or some other way.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Akademie",
-        "untranslated": "description, extra"
+        "description": "Wenn du eine Aktionskarte nimmst: + 1 Dorfbewohner.",
+        "extra": "Es ist egal, auf welche Art und Weise du die Aktionskarte nimmst (also ob du sie kaufst, aufgrund einer Kartenanweisung nehmen kannst o. ä.).",
+        "name": "Akademie"
     },
     "Acting Troupe": {
-        "description": "+4 Villagers<n>Trash this.",
-        "extra": "If you do not manage to trash this (for example if you play it twice via Throne Room), you still get the +4 Villagers.",
-        "name": "Schauspieltruppe",
-        "untranslated": "description, extra"
+        "description": "+4 Dorfbewohner<n>Entsorge diese Karte.",
+        "extra": "Wenn du es nicht schaffst, diese Karte zu entsorgen (zum Beispiel, weil du sie durch einen THRONSAAL aus dem Basisspiel zweimal ausspielst), bekommst du trotzdem + 4 Dorfbewohner, d. h. du legst 4 Marker auf die Dorfbewohner-Seite deines Tableaus.",
+        "name": "Schauspieltruppe"
     },
     "Barracks": {
-        "description": "At the start of your turn, +1 Action.",
-        "extra": "You simply have +1 Action on each of your turns.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Kaserne",
-        "untranslated": "description, extra"
+        "description": "Zu Beginn deines Zuges: + 1 Aktion.",
+        "extra": "Du hast + 1 Aktion in jedem deiner Züge.",
+        "name": "Kaserne"
     },
     "Border Guard": {
-        "description": "+1 Action<br><br>Reveal the top 2 cards of your deck.  Put one into your hand and discard the other.  If both were Actions, take the Lantern or Horn.",
-        "extra": "When you play a Border Guard and do not have the Lantern, you reveal the top 2 cards of your deck, choose one and put it into your hand, and discard the other; then if they were both Action cards, you take the Lantern or the Horn.  When you play a Border Guard and have the Lantern, you reveal the top 3 cards of your deck, choose one and put it into your hand, and discard the rest; then if all three were Action cards, you may take the Horn.  If you reveal fewer than 2 cards, or fewer than 3 cards when you have the Lantern, you don't take an Artifact.  Both the Horn and the Lantern function the turn you get them.",
-        "name": "Grenzwache",
-        "untranslated": "description, extra"
+        "description": "+1 Aktion<br><br>Decke die obersten 2 Karten deines Nachziehstapels auf. Nimm eine davon auf deine Hand und lege die andere ab. Sind beide Aktionskarten, erhalte die Laterne oder das Horn.",
+        "extra": "Wenn du einen GRENZPOSTEN ausspielst und nicht die LATERNE hast, deckst du die obersten 2 Karten deines Nachziehstapels auf, wählst eine davon und nimmst sie zu deinen Handkarten; die andere legst du ab. Wenn beide Karten Aktionskarten sind, erhältst du danach die LATERNE oder das HORN. Wenn du nicht 2 Karten aufdecken kannst bzw. nicht 3 Karten, wenn du die LATERNE hast, erhältst du kein Artefakt.",
+        "name": "Grenzposten"
     },
     "Canal": {
-        "description": "During your turns, cards cost 1 Coin less, but not less than 0 Coin.",
-        "extra": "During your turns, all cards, including cards in the Supply, in hands, and in Decks, cost 1 Coin less, but not less than 0 Coin. For example if you have Canal and play Villain, other players discard a card costing at least 2 Coin, which could not be Estate, as Estate only costs 1 Coin on your turns.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Kanal",
-        "untranslated": "description, extra"
+        "description": "Während deiner Züge kosten Karten 1 Coin weniger (aber nicht weniger als 0 Coin).",
+        "extra": "Während der Züge aller Spieler, die dieses Projekt gekauft haben, kosten alle Karten 1 Coin weniger, aber nicht weniger als 0 Coins. Dies betrifft alle Karten, einschließlich zur Seite gelegter Karten, aller Karten im Vorrat, in den Händen sowie den Nachzieh- und Ablagestapeln aller Spieler. Es betrifft auch Karten auf allen Sonderstapeln (nicht im Vorrat), z. B. die Erscheinungen (aus Nocturne) und die Reisenden (aus Abenteuer), sowie das Schwarzmarktdeck.\nWenn du den KANAL hast und z.B. einen SCHWARZEN MEISTER ausspielst, legen die übrigen Spieler jeweils eine Karte ab, die mindestens 2 Coins kostet. Dies darf aber kein ANWESEN sein, denn ein ANWESEN kostet während deiner Züge nur 1 Coin. Kosten von Projekten und Ereignissen (aus Abenteuer und Empires) werden durch den KANAL nicht reduziert, weil es sich nicht um Karten im regeltechnischen Sinne handelt.",
+        "name": "Kanal"
     },
     "Capitalism": {
-        "description": "During your turns, Actions with +_ Coin amounts in their text are also Treasures.",
-        "extra": "To be affected, a card must have a +_ Coin amount in its text, not just a _ Coin amount - for example, Capitalism turns Improve into a Treasure, but does not affect Inventor. Having Capitalism means you can play any number of Action cards with +_ Coin amounts in your Buy phase (without using up Action plays). It also means that things that interact with Treasure cards also interact with those cards; for example, if you have Capitalism, you can use Treasurer to gain an Improve from the trash, since Improve is a Treasure on your turns. Any time you play an Action - Treasure card, it is both an Action and a Treasure, regardless of which phase it is. Getting +1 Action in your Buy phase does not let you play other Action cards then. Capitalism work on your turn, but affects cards everywhere; for example if you have Capitalism and play Bandit, you could trash another player's Improve, and it is not relevant if that player has Capitalism or not.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Kapitalismus",
-        "untranslated": "description, extra"
+        "description": "Während deiner Züge sind Aktionskarten mit +_ Coin-Beträgen in ihrem Text auch Geldkarten.",
+        "extra": "Nur Aktionskarten mit einer + _ Coin-Anweisung in ihrem Kartentext sind von diesem Projekt betroffen (z. B. verwandelt der KAPITALISMUS einen FORTSCHRITT in eine Geldkarte, hat aber keinen Einfluss auf einen ERFINDER). Diese gelten ab sofort während deiner Züge in allen Belangen als kombinierte Geld-/Aktionskarten und können entweder wie gewohnt als Aktionskarte oder auch als Geldkarte ausgespielt werden. In der Kaufphase kannst du beliebig viele Aktionskarten ausspielen, die durch KAPITALISMUS zu Geldkarten werden. Auch wenn du sie als Geldkarte ausspielst, müssen trotzdem alle Anweisungen dieser Aktionskarte ausgeführt werden. Dein KAPITALISMUS wirkt sich nur während deiner Züge aus, betrifft aber alle Karten überall, also auch die Karten anderer Spieler. Ebenso wirkt sich auch die KAPITALISMUSFähigkeit eines anderen Spielers während dessen Zügen auf deine Aktionskarten mit + _ Coin-Karten aus. Immer wenn du eine kombinierte Aktions-/Geldkarte ausspielst, ist sie sowohl Aktion als auch Geld, unabhängig von der Phase, in der du dich gerade befindest. Dass du + 1 Aktion in deiner Kaufphase bekommst, erlaubt dir nicht, dass du in der Phase andere Aktionskarten ausspielen darfst.",
+        "name": "Kapitalismus"
     },
     "Cargo Ship": {
-        "description": "+2 Coin<br><br>Once this turn, when you gain a card, you may set it aside face up (on this). At the start of your next turn, put it into your hand.",
-        "extra": "The card you set aside doesn't have to be the next card you gain; you could gain multiple cards and then gain one where you decided to set it aside. If you don't set a card aside at all, Cargo Ship is discarded that turn.",
-        "name": "Frachtschiff",
-        "untranslated": "description, extra"
+        "description": "+2 Coin<br><br>Einmal in diesem Zug darfst du eine Karte, wenn du sie nimmst, mit der Bildseite nach oben zur Seite legen (auf diese Karte). Zu Beginn deines nächsten Zuges: nimm sie auf die Hand.",
+        "extra": "Die Karte, die du zur Seite legst, muss nicht die nächste Karte sein, die du nimmst; du könntest eine oder mehrere Karten nehmen und dann eine, die du zur Seite legst. Wenn du keine Karte zur Seite legst, wird das FRACHTSCHIFF in diesem Zug abgelegt.",
+        "name": "Frachtschiff"
     },
     "Cathedral": {
-        "description": "At the start of your turn, trash a card from your hand.",
-        "extra": "Once you have claimed this ability, it is not optional. There is no way to remove your cube.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Kathedrale",
-        "untranslated": "description, extra"
+        "description": "Zu Beginn deines Zuges: entsorge eine deiner Handkarten.",
+        "extra": "Sobald du diese Fähigkeit hast, musst du sie zu Beginn jedes deiner Züge einsetzen. Es gibt keine Möglichkeit, deinen Holzstein zurückzulegen.",
+        "name": "Kathedrale"
     },
     "Citadel": {
-        "description": "The first time you play an Action card during each of your turns, play it again afterwards.",
-        "extra": "Once you've clamed this ability, it is not optional. This can affect an Action card played outside of the Action phase, if it is your first Action card played that turn; for example if you also had Capitalism, you could opt to play a Flag Bearer in your Buy phase as your first play of the turn, and it would still be played twice. Citadel can cause a Duration card to be played twice; you will have to remember that on your next turn.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Zitadelle",
-        "untranslated": "description, extra"
+        "description": "In jedem deiner Züge: wenn du das erste Mal eine Aktionskarte ausspielst, spiele sie danach erneut aus.",
+        "extra": "Sobald du diese Fähigkeit hast, musst du sie in jedem deiner Züge einsetzen. Dies kann eine Aktionskarte betreffen, die außerhalb der Aktionsphase gespielt wurde, wenn dies deine erste ausgespielte Aktionskarte in diesem Zug ist. Wenn du z. B. auch den KAPITALISMUS hast, könntest du einen FAHNENTRÄGER in deiner Kaufphase als erste Aktionskarte in diesem Zug ausspielen und erhältst 2 Coins. Dann spielst du den FAHNENTRÄGER zum zweiten Mal aus und erhältst erneut 2 Coins. Ist die erste ausgespielte Aktionskarte eine Dauerkarte, musst du dich in deinem nächsten Zug selbstständig an die \"Verdopplung\" erinnern.",
+        "name": "Zitadelle"
     },
     "City Gate": {
-        "description": "At the start of your turn, +1 Card, then put a card from your hand onto you deck.",
-        "extra": "First you draw a card; then you put any card from your hand onto your deck.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Stadttor",
-        "untranslated": "description, extra"
+        "description": "Zu Beginn deines Zuges: + 1 Karte, danach lege eine deiner Handkarten auf deinen Nachziehstapel.",
+        "extra": "Zuerst ziehst du eine Karte. Dann legst du eine beliebige Karte aus deiner Hand auf deinen Nachziehstapel. Das kann auch die gerade gezogene Karte sein. Du musst auch eine Karte zurücklegen, wenn du zuvor keine ziehen konntest.",
+        "name": "Stadttor"
     },
     "Crop Rotation": {
-        "description": "At the start of your turn, you may discard a Victory card for +2 Cards.",
-        "extra": "If drawing causes you to shuffle, you will shuffle in the discarded Victory card.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Fruchtfolge",
-        "untranslated": "description, extra"
+        "description": "Zu Beginn deines Zuges darfst du eine Punktekarte für + 2 Karten ablegen.",
+        "extra": "Wenn du durch das Ziehen veranlasst wirst zu mischen, mischst du die abgelegte Punktekarte mit ein.",
+        "name": "Fruchtwechsel"
     },
     "Ducat": {
-        "description": "+1 Coffers<br>+1 Buy<line>When you gain this, you may trash a Copper from your hand.",
-        "extra": "When you play this, you get no _ Coin, but get +1 Coffers and +1 Buy.  When you gain this, you may trash a Copper from your hand; this is optional.",
-        "name": "Dukat",
-        "untranslated": "description, extra"
+        "description": "+1 Taler<br>+1 Kauf<line>Wenn du diese Karte nimmst, darfst du ein Kupfer aus deiner Hand entsorgen.",         
+		"extra": "Wenn du diese Karte ausspielst, bekommst du kein _ Coin, sondern legst einen Marker auf die Talerseite deines Taler-/Dorfbewohner-Tableaus und erhältst + 1 Kauf. Wenn du diese Karte nimmst, darfst du ein KUPFER von deiner Hand entsorgen; dies ist optional. Die GOLDMÜNZE ist trotzdem eine GELD-Karte und in der Kaufphase auszuspielen, obwohl sie Anweisungen ähnlich einer Aktionskarte enthält. Sie hat einen GELD-Wert von 0.",
+        "name": "Goldmünze"
     },
     "Experiment": {
-        "description": "+2 Cards<br>+1 Action<n>Return this to the Supply.<line>When you gain this, gain another Experiment (that doesn't come with another).",
-        "extra": "When you play this, you get +2 Cards and +1 Action, and return it to its Supply pile.  When you gain it, you gain another one; this applies whether you gain it via buying it or some other way. If you gain one to a place other than your discard pile, the 2nd copy goes to your discard pile. For example if you use Sculptor to gain Experiment, you get one in your hand, and one in your discard pile. If you plan Band of Misfits (from Dark Ages) or Overlord (from Empires) as Experiment, you will return the card to its own pile, not to the Experiment pile. If Experiment somehow is not in play (for example if played from the trash via Necromancer from Nocturne), it fails to return to its pile.",
-        "name": "Experiment",
-        "untranslated": "description, extra"
+        "description": "+2 Karten<br>+1 Aktion<n>Lege diese Karte in den Vorrat zurück.<line>Wenn du diese Karte nimmst, nimm noch ein Experiment (für das du kein weiteres Experiment nimmst).",
+        "extra": "Wenn du diese Karte nimmst, nimmst du dir ein weiteres EXPERIMENT aus dem Vorrat; dies gilt unabhängig davon, ob du die Karte kaufst oder auf irgendeine andere Art und Weise nimmst. Ist kein EXPERIMENT mehr im Vorrat, nimmst du keine zusätzliche Karte für diese Karte. Wenn du ein EXPERIMENT für einen anderen Ort als deinen Ablagestapel nimmst, legst du das weitere genommene EXPERIMENT ab. Wenn du zum Beispiel eine BILDHAUERIN benutzt, um ein EXPERIMENT zu nehmen, nimmst du eins auf die Hand und legst eins auf deinen Ablagestapel. Wenn du VOGELFREIE (aus Dark Ages) oder LEHNSHERR (aus Empires) als EXPERIMENT ausspielst, legst du die Karte jeweils auf ihren eigenen Stapel zurück, nicht auf den EXPERIMENT-Stapel. Falls das EXPERIMENT aus irgendeinem Grund nicht im Spiel ist (zum Beispiel weil es mit TOTENBESCHWÖRER (aus Nocturne) aus dem Müll gespielt wurde), wird es nicht auf seinen Stapel zurückgelegt.",
+        "name": "Experiment"
     },
     "Exploration": {
-        "description": "At the end of your Buy phase, if you didn't buy any cards, +1 Coffers and +1 Villager.",
-        "extra": "This only cares if you bought a card in your Buy phase; it does not care if you gained cards other ways, or if you bought an Event (from Adventures or Empires) or Project. For example if all you buy on your turn is Exploration, you will get +1 Coffers and +1 Villager that turn.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Erkunden",
-        "untranslated": "description, extra"
+        "description": "Am Ende deiner Kaufphase: wenn du keine Karten gekauft hast: + 1 Taler und + 1 Dorfbewohner.",
+        "extra": "Diese Fähigkeit kannst du nur nutzen, wenn du in deiner Kaufphase keine Karte gekauft hast. Ereignisse (aus Abenteuer und Empires) und Projekte gelten nicht als Karten im spieltechnischen Sinn. Entsprechend kannst du ein Ereignis oder ein Projekt kaufen bzw. eine Karte auf andere Art und Weise nehmen und kannst die Fähigkeit trotzdem nutzen. Wenn du z. B. in deinem Zug nur eine ERKUNDUNG kaufst, bekommst du + 1 Taler und + 1 Dorfbewohner in diesem Zug. Die Fähigkeit der ERKUNDUNG kannst du sofort in dem Zug nutzen, in dem du die ERKUNDUNG kaufst – falls du nur die ERKUNDUNG und ggf. andere Ereignisse oder Projekte gekauft hast und keine Karte.",
+        "name": "Erkundung"
     },
     "Fair": {
-        "description": "At the start of your turn, +1 Buy.",
-        "extra": "You simply have +1 Buy on each of your turns.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Messe",
-        "untranslated": "description, extra"
+        "description": "Zu Beginn deines Zuges: + 1 Kauf.",
+        "extra": "Du hast + 1 Kauf in jedem deiner Züge.",
+        "name": "Kleiner Markt"
     },
     "Flag": {
-        "description": "When drawing your hand, +1 Card.",
-        "extra": "Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Fahne",
-        "untranslated": "description, extra"
+        "description": "Wenn du die Handkarten für deinen nächsten Zug ziehst: + 1 Karte.",
+        "extra": "Die FAHNE veranlasst dich, eine weitere Karte zu ziehen, wenn du in der Aufräumphase deine Karten vom Nachziehstapel ziehst. Dies gilt auch, wenn auf deiner Hand normalerweise weniger oder mehr als 5 Karten wären; wenn du zum Beispiel einen AUSSENPOSTEN (aus Seaside) ausgespielt hast, würdest du statt 3 Karten für den AUSSENPOSTEN-Zug 4 Karten ziehen.",
+        "name": "Fahne"
     },
     "Flag Bearer": {
-        "description": "+2 Coin<n><line>When you gain or trash this, take the Flag",
-        "extra": "When you gain or trash a Flag Bearer, you take the Flag. The Flag causes you to draw an extra card when drawing your hand in Clean-up. This is true even if your hand would normally be some amount other than 5 cards - for example if you played Outpost (from Seaside), instead of drawing 3 cards for your Outpost turn, you would draw 4. If Flag Bearer is trashed, the player trashing it takes the Flag, regardless of whose turn it is.",
-        "name": "Fahnenträger",
-        "untranslated": "description, extra"
+        "description": "+2 Coin<n><line>Wenn du diese Karte nimmst oder entsorgst, erhalte die Fahne.",
+        "extra": "Wenn du den FAHNENTRÄGER nimmst oder entsorgst und nicht die FAHNE hast, erhalte die FAHNE und lege sie neben dir ab. Du behältst dieses Artefakt (und dessen Effekt), bis ein anderer Spieler die FAHNE erhält. Wird der FAHNENTRÄGER entsorgt, erhält der Spieler, der ihn entsorgt, die FAHNE, unabhängig davon, wer am Zug ist.",
+        "name": "Fahnenträger"
     },
     "Fleet": {
-        "description": "After the game ends, there's an extra round of turns just for players with this.",
-        "extra": "The extra turns go in order starting with the next player after the one that just took a turn. Other extra turns, such as from Outpost (in Seaside) can happen in-between those turns; however after the last extra turn due to Fleet, no other extra turns can happen (since e.g. Outpost does not keep the game going after it ends). Players do not sort through their cards and add up their scores until all of the Fleet turns are done, even the players without Fleet. If the game end conditions are no longer met after Fleet turns, the game is still over.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Flotte",
-        "untranslated": "description, extra"
+        "description": "Nachdem das Spiel endet, gibt es eine zusätzliche Runde von Zügen nur für Spieler hiermit.",
+        "extra": "Wenn mindestens ein Spieler die FLOTTE gekauft hat, gibt es eine zusätzliche Runde, nachdem das Spiel normalerweise enden würde. Nur Spieler mit der FLOTTE führen in der zusätzlichen Runde einen „normalen“ Zug aus. Ansonsten wird gehandelt, als wäre das Spiel um eine normale Runde verlängert. Spieler ohne die FLOTTE führen nur Extrazüge (AUSSENPOSTEN, MISSION, BESESSENHEIT) aus. Nach dem letzten durch die FLOTTE ermöglichten, normalen Zug werden keine Extrazüge mehr ausgeführt.\nDie zusätzliche Runde beginnt der Spieler, der im Uhrzeigersinn folgend am nächsten zu dem Spieler sitzt, der den letzten Zug gemacht hat.\nBis die zusätzliche Runde beendet ist, darf kein Spieler (auch nicht die Spieler ohne die FLOTTE) seine Karten durchsehen oder bereits zählen.\nSind die Spielende-Bedingungen nach der zusätzlichen Runde nicht mehr erfüllt, ist das Spiel trotzdem beendet.",
+        "name": "Flotte"
     },
     "Guildhall": {
-        "description": "When you gain a Treasure, +1 Coffers.",
-        "extra": "This happens whether you gain a Treasure due to buying it, or some other way.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Gildenhalle",
-        "untranslated": "description, extra"
+        "description": "Wenn du eine Geldkarte nimmst: + 1 Taler.",
+        "extra": "Es ist egal, auf welche Art und Weise du die Geldkarte nimmst (also ob du sie kaufst, aufgrund einer Kartenanweisung nehmen kannst o.ä.).",
+        "name": "Gildenhaus"
     },
     "Hideout": {
-        "description": "+1 Card<br>+2 Actions<br><br>Trash a card from your hand. If it's a Victory card, gain a Curse.",
-        "extra": "Trashing is not optional. Curses are not Victory cards.",
-        "name": "Versteck",
-        "untranslated": "description, extra"
+        "description": "+1 Karte<br>+2 Aktionen<br><br>Entsorge eine deiner Handkarten. Ist es eine Punktekarte, nimm einen Fluch.",
+        "extra": "Du musst eine Karte entsorgen. Flüche sind keine Punktekarten. Auch für kombinierte Karten, von denen ein Typ PUNKTE ist, musst du einen Fluch nehmen.",
+        "name": "Versteck"
     },
     "Horn": {
-        "description": "Once per turn, when you discard a Border Guard from play, you may put it onto your deck.",
-        "extra": "Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Horn",
-        "untranslated": "description, extra"
+        "description": "Einmal pro Zug: wenn du einen Grenzposten aus dem Spiel ablegst, darfst du ihn auf deinen Nachziehstapel legen.",
+        "extra": "Solange du das HORN hast, darfst du einmal pro eigenem Zug beim Ablegen eines GRENZPOSTENS aus dem Spiel diesen auf deinen Nachziehstapel legen anstatt auf deinen Ablagestapel. Das HORN wirkt schon in dem Zug, in dem du es bekommst.",
+        "name": "Horn"
     },
     "Improve": {
-        "description": "+2 Coin<br><br>At the start of Clean-up, you may trash an Action card you would discard from play this turn, to gain a card costing exactly 1 Coin more than it.",
-        "extra": "You can only trash an Action card that would be discarded this turn; you cannot trash a non-Action like Silver, or a Duration card that will stay out (but you can trash a Duration card that will be discarded). You can trash the Improve itself. The card you gain does not have to be an Action, it just has to cost exactly 1 Coin more than the trashed Action. Using this ability is optional, but if you trash a card then you have to gain one if you can.",
-        "name": "Dachbau",
-        "untranslated": "description, extra"
+        "description": "+2 Coin<br><br>Zu Beginn deiner Aufräumphase darfst du eine Aktionskarte entsorgen, die du in diesem Zug aus dem Spiel ablegen würdest, um eine Karte zu nehmen, die genau 1 Coin mehr kostet.",
+        "extra": "Du darfst nur eine Aktionskarte entsorgen, die in diesem Zug abgelegt werden würde. Du darfst keine Nicht-Aktionskarte wie SILBER oder eine Dauerkarte entsorgen, die nicht in diesem Zug abgelegt wird. Den ausgespielten FORTSCHRITT selbst darfst du entsorgen. Die Karte, die du nimmst, muss keine Aktionskarte sein, sie muss nur genau 1 Coin mehr kosten als die entsorgte Aktionskarte. Die Benutzung dieser Fähigkeit ist optional, aber wenn du eine Karte entsorgst, musst du eine Karte nehmen, wenn möglich.",
+        "name": "Fortschritt"
     },
     "Innovation": {
-        "description": "The first time you gain an Action card in each of your turns, you may set it aside.<n>If you do, play it.",
-        "extra": "This is optional, but only applies to your first Action card gained each turn; whether or not you use Innovation then, you will not be able to use it on subsequent gains that turn. This applies to cards gained due to being bought, or gained other ways. If the first Action card you gain in turn is in your Buy phase, that means you can play that card even though it is your Buy phase. If it gives you +Actions, that will not let you play more Action cards in your Buy phase; if it draws you Treasures, you can only play them if you have not bought anything yet.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Innovation",
-        "untranslated": "description, extra"
+        "description": "In jedem deiner Züge: sobald du das erste Mal eine Aktionskarte nimmst, darfst du sie zur Seite legen. Wenn du das tust: spiele sie aus.",
+        "extra": "Dies ist optional, betrifft aber nur die erste Aktionskarte, die du pro Zug genommen hast. Unabhängig davon, ob du die INNOVATION bei dieser ersten Karte benutzt, darfst du sie für folgende Karten, die du in dieser Kaufphase nimmst, nicht mehr benutzen. Dies gilt für Karten, die du kaufst oder auf andere Art und Weise nimmst. Wenn du die erste Aktionskarte deines Zuges in der Kaufphase nimmst, bedeutet das, dass du diese Karte ausspielen darfst, obwohl du es in deiner Kaufphase tust. Auch wenn die Karte dir + x Aktionen gibt, darfst du diese zusätzlichen Aktionen trotzdem in deiner Kaufphase nicht verwenden. Wenn du durch sie Karten ziehen darfst und sich unter den gezogenen Karten Geldkarten befinden, darfst du diese nur ausspielen, wenn du in dieser Kaufphase noch nichts gekauft hast (außer mit dem SCHWARZMARKT, der mit dem KAPITALISMUS als Geldkarte gespielt wurde).",
+        "name": "Innovation"
     },
     "Inventor": {
-        "description": "Gain a card costing up to 4 Coins, then cards cost 1 Coin less this turn (but not less than 0 Coin).",
-        "extra": "First you gain a card costing up to 4 Coin; then, after that happens, prices are lowered for the rest of the turn. The cost lowering applies to all cards everywhere, including cards in the Supply, in hands, and in Decks. It's cumulative; for example if you play two Inventors, the cost reduction from the first applies to playing the second (for example it could gain a Duchy, which would then cost 4 Coin), and afterwards cards cost 2 Coin less for the rest of the turn.",
-        "name": "Erfinder",
-        "untranslated": "description, extra"
+        "description": "Nimm eine Karte, die bis zu 4 Coins kostet, danach kosten Karten in diesem Zug 1 Coin weniger (aber nicht weniger als 0 Coin).",
+        "extra": "Zuerst nimmst du eine Karte, die bis zu 4 Coins kostet; danach sinken die Kosten für den Rest deines Zuges um 1 Coin. Die Kostensenkung betrifft alle Karten, einschließlich zur Seite gelegter Karten, aller Karten im Vorrat, in den Händen sowie den Nachzieh- und Ablagestapeln aller Spieler. Sie betrifft auch Karten auf allen Sonderstapeln (nicht im Vorrat), z. B. die Erscheinungen (aus Nocturne) und die Reisenden (aus Abenteuer), sowie das Schwarzmarktdeck. Nicht betroffen sind Projekte und Ereignisse, weil sie regeltechnisch keine Karten sind. Die Kostensenkung wirkt kumulativ: wenn du zum Beispiel zwei ERFINDER ausspielst, wirkt die Kostensenkung des ersten für das Nehmen beim zweiten (du könntest zum Beispiel ein HERZOGTUM nehmen, das dann 4 Coins kosten würde), und danach kosten alle Karten für den Rest des Zuges 2 Coins weniger.",
+        "name": "Erfinder"
     },
     "Key": {
-        "description": "At the start of your turn, +1 Coin.",
-        "extra": "Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Schlüssel",
-        "untranslated": "description, extra"
+        "description": "Zu Beginn deines Zuges: +1 Coin.",
+        "extra": "Artefakte sind Fähigkeiten, die Spieler auf eine bestimmte Art und Weise durch eine einzelne Königreich-Karte erhalten können. Wenn du ein Artefakt erhältst und ein anderer Spieler hat es, erhältst du es von ihm. Solange du ein Artefakt hast, steht dir dessen Fähigkeit zur Verfügung, und du verlierst diese Fähigkeit, wenn ein anderer Spieler das Artefakt erhält. Wenn du eine SCHATZMEISTERIN ausspielst, darfst du dich dafür entscheiden, den SCHLÜSSEL zu erhalten, der dir + 1 Coin am Anfang von jedem deiner Züge gibt. Solange du den SCHLÜSSEL hast, erhältst du zu Beginn deines Zuges + 1 Coin, also noch nicht in dem Zug, in dem du ihn erhältst.",
+        "name": "Schlüssel"
     },
     "Lackeys": {
-        "description": "+2 Cards<line>When you gain this, +2 Villagers.",
-        "extra": "Playing this gives +2 Cards; gaining it gives +2 Villagers.",
-        "name": "Diener",
-        "untranslated": "description, extra"
+        "description": "+2 Karten<line>Wenn du diese Karte nimmst: + 2 Dorfbewohner.",
+        "extra": "Das Ausspielen dieser Karte bringt +2 Karten; das Erhalten der Karte bringt +2 Dorfbewohner.",
+        "name": "Diener"
     },
     "Lantern": {
-        "description": "Your Border Guards reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",
-        "extra": "Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Laterne",
-        "untranslated": "description, extra"
+        "description": "Deine Grenzposten decken jeweils 3 Karten auf und legen 2 ab. (Alle 3 müssen Aktionskarten sein, um das Horn zu erhalten).",
+        "extra": "Wenn du die LATERNE hast, musst du in deinen Zügen bei jedem ausgespielten Grenzposten 3 Karten vom Nachziehstapel aufdecken und 2 ablegen. In diesem Fall müssen alle 3 Karten Aktionskarten sein, damit du das HORN erhältst. Die LATERNE wirkt schon in dem Zug, in dem du sie bekommst.",
+        "name": "Laterne"
     },
     "Mountain Village": {
-        "description": "+2 Actions<br><n>Look through your discard pile and put a card from it into your hand; if you can't, +1 Card.",
-        "extra": "If your discard pile has any cards in it, you have to take one of them, you cannot choose to draw a card instead. You get to look through your discard pile to pick the card to take. It does not matter what order you leave your discard pile in.",
-        "name": "Bergdorf",
-        "untranslated": "description, extra"
+        "description": "+2 Aktionen<br><n>Sieh deinen Ablagestapel durch und nimm eine Karte daraus auf deine Hand; wenn du das nicht kannst: + 1 Karte.",
+        "extra": "Wenn dein Ablagestapel Karten enthält, musst du eine von ihnen nehmen. Du kannst dich nicht bewusst dafür entscheiden, stattdessen eine Karte zu ziehen. Du darfst deinen Ablagestapel durchschauen und eine Karte heraussuchen, die du nimmst. Die Reihenfolge der Karten in deinem Ablagestapel spielt danach keine Rolle.",
+        "name": "Bergdorf"
     },
     "Old Witch": {
-        "description": "+3 Cards<br><br>Each other player gains a Curse and may trash a Curse from their hand.",
-        "extra": "After the Curse pile is empty, playing this still lets each other player trash a Curse from their hand. A player who is unaffected by Old Witch, such as due to Moat, neither gains a Curse nor may trash one.",
-        "name": "Alte Hexe",
-        "untranslated": "description, extra"
+        "description": "+3 Karten<br><br>Jeder Mitspieler nimmt einen Fluch und darf einen Fluch aus seiner Hand entsorgen.",
+        "extra": "Auch wenn der Fluch-Stapel leer wird oder ist und deshalb ein oder mehrere Spieler keinen Fluch nehmen können, dürfen trotzdem alle Mitspieler einen Fluch aus ihrer Hand entsorgen. Ist ein Spieler vom Effekt der ALTEN HEXE nicht betroffen, z. B. weil er als Reaktion einen BURGGRABEN aufgedeckt hat, nimmt er weder einen Fluch noch darf er einen entsorgen.",
+        "name": "Alte Hexe"
     },
     "Pageant": {
-        "description": "At the end of your Buy phase, you may pay 1 Coin for +1 Coffers.",
-        "extra": "If you have at least 1 Coin that you did not spend, you can spend 1 Coin for +1 Coffers. This only works once per turn.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Festzug",
-        "untranslated": "description, extra"
+        "description": "Am Ende deiner Kaufphase darfst du 1 Coin zahlen für + 1 Taler.",
+        "extra": "Wenn du mindestens 1 Coin hast, das du nicht ausgegeben hast, kannst du genau 1 Coin bezahlen, um 1 Marker zu nehmen und auf die Taler-Seite deines Tableaus zu legen. Dies ist nur einmal pro Zug möglich.",
+        "name": "Festzug"
     },
     "Patron": {
-        "description": "+1 Villager<br>+2 Coin<line>When something causes you to reveal this (using the word \"reveal\"), +1 Coffers.",
-        "extra": "Anything that causes you to reveal a Patron, and specifically uses the word \"reveal,\" causes you to get +1 Coffers. For example if you play a Border Guard and reveal two Patrons, you will get +2 Coffers. Other players seeing a card, without the word \"reveal\" being used, is not enough; for example if another player plays a Villain and you discard a Patron, you do not get +1 Coffers.",
-        "name": "Gönner",
-        "untranslated": "description, extra"
+        "description": "+1 Dorfbewohner<br>+2 Coin<line>Wenn dich etwas veranlasst, diese Karte aufzudecken (mit der Formulierung \"aufdecken\"): + 1 Taler.",
+        "extra": "Wirst du durch eine Anweisung mit der Formulierung \"aufdecken\" dazu veranlasst, einen PATRON aufzudecken, erhältst du + 1 Taler und legst einen Marker auf die Taler-Seite deines Tableaus. Spielst du zum Beispiel einen GRENZPOSTEN aus und deckst zwei PATRONE auf, erhältst du + 2 Taler. Es reicht nicht, dass andere Spieler eine Karte sehen, ohne dass die Formulierung \"aufdecken\" benutzt wird. Wenn zum Beispiel ein anderer Spieler einen SCHWARZEN MEISTER ausspielt und du einen PATRON ablegst, bekommst du nicht + 1 Taler. Wenn ein Spieler aber zum Beispiel 3 ERFINDER ausgespielt hat, sodass die Kosten der Karten um 3 Coins reduziert sind, kostet der PATRON auf deiner Hand nur noch 1 Coin. Spielt dieser Spieler dann einen SCHWARZEN MEISTER aus und du hast keine anderen Karten mit Kosten von 2 Coins oder mehr auf der Hand, musst du den PATRON \"aufdecken\" und erhältst + 1 Taler.",
+        "name": "Patron"
     },
     "Piazza": {
-        "description": "At the start of your turn, reveal the top card of your deck.  If it's an Action, play it.",
-        "extra": "Once you have claimed this ability, it is not optional. If the revealed card is not an Action, return it to the top of your deck.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Piazza",
-        "untranslated": "description, extra"
+        "description": "Zu Beginn deines Zuges: decke die oberste Karte deines Nachziehstapels auf. Ist es eine Aktionskarte, spiele sie aus.",
+        "extra": "Sobald du diese Fähigkeit hast, musst du sie zu Beginn jedes deiner Züge einsetzen. Wenn die aufgedeckte Karte keine Aktion ist, lege sie auf deinen Nachziehstapel zurück.",
+        "name": "Piazza"
     },
     "Priest": {
-        "description": "+2 Coin<br><n>Trash a card from your hand. For the rest of this turn, when you trash a card, +2 Coin.",
-        "extra": "When you play this, you get +2 Coin, trash a card from your hand (mandatory), and then for the rest of the turn, trashing a card from your hand will give you +2 Coin. This is cumulative, even if the same Priest is played multiple times (such as with Scepter). For example if you play two Priests and trash two Coppers, you will get +6 Coin total: +2 Coin from each play of Priest, and +2 Coin that the first Priest give you for the second Priest trashing a card. The bonus works even if the card was not trashed from your hand; for example you will get +2 Coin for trashing an Acting Troupe due to playing it, or for trashing a card from the Supply with Lurker (from Intrigue).",
-        "name": "Priester",
-        "untranslated": "description, extra"
+        "description": "+2 Coin<br><n>Entsorge eine deiner Handkarten. Für den Rest dieses Zuges, wenn du eine Karte entsorgst: +2 Coin.",
+        "extra": "Wenn du diese Karte ausspielst, bekommst du + 2 Coins und musst eine Karte von deiner Hand entsorgen; für den Rest deines Zuges gilt dann: + 2 Coins für jede Karte, die du entsorgst. Der Bonus wirkt sogar dann, wenn die Karte nicht aus deiner Hand entsorgt wurde; entsorgst du zum Beispiel eine SCHAUSPIELTRUPPE aus dem Spiel (aufgrund ihrer eigenen Anweisung), erhältst du den Bonus, ebenso für das Entsorgen einer Karte aus dem Vorrat mit der HERUMTREIBERIN (aus Intrige). Ein PRIESTER wirkt kumulativ, auch wenn der gleiche PRIESTER mehrmals gespielt wird (z. B. mit dem ZEPTER).",
+        "name": "Priester"
     },
     "Recruiter": {
-        "description": "+2 Cards<br><n>Trash a card from your hand. +1 Villager per 1 Coin it costs.",
-        "extra": "First you draw 2 cards, then you trash a card from your hand. Trashing is not optional. For each 1 Coin the trashed card costs, you get +1 Villager; for example if you trash a Silver, you get +3 Villagers. You do not get any for Potion or Debt amounts, just for _ Coin.",
-        "name": "Anwerber",
-        "untranslated": "description, extra"
+        "description": "+2 Karten<br><n>Entsorge eine deiner Handkarten. + 1 Dorfbewohner pro 1 Coin, das sie kostet.",
+        "extra": "Zuerst ziehst du 2 Karten, dann musst du eine Karte aus deiner Hand entsorgen. Pro 1 Coin, das die entsorgte Karte kostet, bekommst du + 1 Dorfbewohner. Wenn du zum Beispiel ein SILBER entsorgst, bekommst du + 3 Dorfbewohner. Du bekommst nichts für Potion oder Debt amounts, nur für _ Coin.",
+        "name": "Anwerber"
     },
     "Research": {
-        "description": "+1 Action<br><br>Trash a card from your hand. Per 1 Coin it costs, set aside a card from your deck face down (on this). At the start of your next turn, put those cards into your hand.",
-        "extra": "For each 1 Coin the trashed card costs, you set aside the top card of your deck for next turn; for example if you trash a Silver, you set aside the top 3 cards for next turn. If there are not enough cards, just set aside as many as you can. The cards are set aside face down; you can look at them and other players cannot.",
-        "name": "Forschung",
-        "untranslated": "description, extra"
+        "description": "+1 Aktion<br><br>Entsorge eine deiner Handkarten. Pro 1 Coin, das sie kostet, lege eine Karte von deinem Nachziehstapel mit der Bildseite nach unten zur Seite (auf diese Karte). Zu Beginn deines nächsten Zuges: nimm jene Karten auf deine Hand.",
+        "extra": "Für jedes 1 Coin, das die entsorgte Karte kostet, legst du die oberste Karte deines Nachziehstapels für den nächsten Zug zur Seite (auf diese Forscherin). Wenn du zum Beispiel ein SILBER entsorgst, legst du die obersten 3 Karten deines Nachziehstapels für deinen nächsten Zug zur Seite. Sind nicht genügend Karten im Nachziehstapel, mischst du zuerst deinen Ablagestapel und legst die Karten verdeckt als Nachziehstapel bereit. Sind dann immer noch nicht genügend Karten im Nachziehstapel, legst du so viele Karten zur Seite, wie du kannst. Die Karten werden verdeckt zur Seite gelegt. Du darfst sie anschauen, die anderen Spieler nicht.",
+        "name": "Forscherin"
     },
     "Road Network": {
-        "description": "When another player gains a Victory card, +1 Card.",
-        "extra": "This happens every time another player gains a Victory card, whether bought or gained another way, and even if it is your turn.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Strassennetz",
-        "untranslated": "description, extra"
+        "description": "Wenn ein Mitspieler eine Punktekarte nimmt: + 1 Karte.",
+        "extra": "Jedes Mal, wenn ein anderer Spieler eine Punktekarte nimmt (auch während deines Zuges), entweder gekauft oder auf andere Art und Weise, ziehst du eine Karte von deinem Nachziehstapel.",
+        "name": "Strassennetz"
     },
     "Scepter": {
-        "description": "When you play this, choose one:<br>+2 Coin; or replay an Action card you played this turn that's still in play.",
-        "extra": "This cannot replay a Duration card you played on previous turn, but can replay one played the same turn (in which case Scepter will stay in play until the Duration card leaves play). This can cause you to get +Actions in your Buy phase, but that does not let you play Action cards in your Buy phase (though Scepter itself replays one). If this causes you to draw cards and some of them are Treasures, you can still play those Treasures.",
-        "name": "Zepter",
-        "untranslated": "description, extra"
+        "description": "Wenn du diese Karte ausspielst, wähle eins:<br>+2 Coin oder spiele eine Aktionskarte, die du in diesem Zug ausgespielt hast und die noch im Spiel ist, noch einmal aus.",         
+		"extra": "Diese Karte ist eine Geldkarte und wird wie alle Geldkarten in der entsprechenden Spielphase ausgespielt. Wenn du sie ausspielst, kannst du wählen, ob sie in diesem Zug + 2 Coins bringt oder ob sie 0 Coins bringt und du dafür eine in diesem Zug ausgespielte Aktionskarte, die du noch im Spiel hast, erneut ausspielst. Dauerkarten, die in vergangenen Zügen ausgespielt wurden, können nicht noch einmal ausgespielt werden, in diesem Zug ausgespielte Dauerkarten aber schon (in diesem Fall bleibt das ZEPTER auch so lange im Spiel, bis die Dauerkarte abgelegt wird). Anweisungen auf der erneut ausgespielten Aktionskarte, die nur in der Aktionsphase nutzbar sind (z.B. \"+ x Aktionen\") verfallen. Anweisungen wie \"+ x Karten\" oder \"+ X Coins\" können genutzt werden. Wenn unter den gezogenen Karten Geldkarten sind, darfst du sie noch in diesem Zug ausspielen.",
+        "name": "Zepter"
     },
     "Scholar": {
-        "description": "Discard your hand.<n>+7 Cards.",
-        "extra": "If drawing causes you to shuffle, you will shuffle in the discarded cards.",
-        "name": "Gelehrte",
-        "untranslated": "description, extra"
+        "description": "Lege deine Handkarten ab.<n>+7 Karten.",
+        "extra": "Wenn du durch das Ziehen der 7 Karten veranlasst wirst zu mischen, mischst du die abgelegten Karten mit ein.",
+        "name": "Gelehrte"
     },
     "Sculptor": {
-        "description": "Gain a card to your hand costing up to 4 Coin. If it's a Treasure, +1 Villager.",
-        "extra": "The card is gained to your hand; that is not optional. If you gain a Nomad Camp (from Hinterlands) with this, it goes to your hand.",
-        "name": "Sculptor",
-        "untranslated": "description, extra, name"
+        "description": "Nimm eine Karte auf deine Hand, die bis zu 4 Coin kostet.Ist es eine Geldkarte: + 1 Dorfbewohner.",
+        "extra": "Die Karte musst du auf die Hand nehmen. Ist die genommene Karte eine Geldkarte (ggf. auch eine kombinierte), lege 1 Marker auf die Dorfbewohner-Seite deines Tableaus. Die BILDHAUERIN hat Vorrang, d. h. enthält die genommene Karte eine Anweisung, dass sie beim Nehmen nicht auf die Hand genommen werden soll (wie z. B. beim NOMADENCAMP aus Hinterland), nimmst du sie trotzdem auf die Hand.",
+        "name": "Bildhauerin"
     },
     "Seer": {
-        "description": "+1 Card<br>+1 Action<n>Reveal the top 3 cards of your deck. Put the ones costing from 2 Coin to 4 Coin into your hand. Put the rest back in any order.",
-        "extra": "Cards with Potion (from Alchemy) or Debt (from Empires) in their cost do not cost from 2 Coin to 4 Coin.",
-        "name": "Seher",
-        "untranslated": "description, extra"
+        "description": "+1 Karte<br>+1 Aktion<n>Decke die obersten 3 Karten deines Nachziehstapels auf. Nimm die, die 2 Coin bis 4 Coin kosten, auf deine Hand. Lege den Rest in beliebiger Reihenfolge zurück.",
+        "extra": "Karten mit Potion (aus Alchemisten) oder Debt (aus Empires) in ihren Kosten kosten nicht 2 Coins bis 4 Coins. Kannst du keine 3 Karten aufdecken, deckst du so viele auf wie möglich und führst die Aktion damit durch.",
+        "name": "Seher"
     },
     "Sewers": {
-        "description": "When you trash a card other than with this, you may trash a card from your hand.",
-        "extra": "This works however you trash the card. For example it works when trashing a card to Priest, when trashing a Curse to Old Witch, when trashing Acting Troupe when playing it, and when trashing a card from the Supply with Lurker (from Intrigue). the card you trash with Sewers must be from your hand, and can be any card in your hand, even if the thing that triggered Sewers could only trash certain cards.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Abwassertunnel",
-        "untranslated": "description, extra"
+        "description": "Wenn du eine Karte, außer hiermit, entsorgst, darfst du eine deiner Handkarten entsorgen.",
+        "extra": "Es ist egal, was dich dazu veranlasst, eine Karte zu entsorgen, es darf nur nicht der ABWASSERTUNNEL sein. Die Fähigkeit des ABWASSERTUNNELS kommt z. B. zum Einsatz, wenn du eine Karte mit einem PRIESTER entsorgst, wenn du einen Fluch mit einer ALTEN HEXE entsorgst, wenn du eine SCHAUSPIELTRUPPE entsorgst, nachdem du sie ausgespielt hast, und wenn du mit einer HERUMTREIBERIN (aus Intrige) eine Karte vom Vorrat entsorgst. Die mit Hilfe des ABWASSERTUNNELS entsorgte Karte kann eine beliebige Karte aus deiner Hand sein, auch wenn der ABWASSERTUNNEL durch etwas ausgelöst wurde, das nur das Entsorgen bestimmter Karten erlaubt.",
+        "name": "Abwassertunnel"
     },
     "Silk Merchant": {
-        "description": "+2 Cards<br>+1 Buy<n><line>When you gain or trash this, +1 Coffers and +1 Villager.",
-        "extra": "When you play this, you get +2 Cards and +1 Buy; when you trash it or gain it, you get +1 Coffers and +1 Villager. If Silk Merchant is trashed, the player trashing it takes the +1 Coffers and +1 Villager, regardless of whose turn it is.",
-        "name": "Seidenhändlerin",
-        "untranslated": "description, extra"
+        "description": "+2 Karten<br>+1 Kauf<n><line>Wenn du diese Karte nimmst oder entsorgst: + 1 Taler und + 1 Dorfbewohner.",
+        "extra": "Wenn du eine SEIDENHÄNDERLIN entsorgst oder nimmst (egal ob du am Zug bist oder nicht), bekommst du + 1 Taler sowie +1 Dorfbewohner und legst je 1 Marker auf die beiden Seiten deines Tableaus. Die SEIDENHÄNDLERIN selbst gibt dir nicht das Recht, sich selbst zu entsorgen.",
+        "name": "Seidenhändlerin"
     },
     "Silos": {
-        "description": "At the start of your turn, discard any number of Coppers, revealed, and draw that many cards.",
-        "extra": "First you discard the Coppers, then you draw. So if drawing causes you to shuffle, you will shuffle in the Coppers.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Silos",
-        "untranslated": "description, extra"
+        "description": "Zu Beginn deines Zuges: lege beliebig viele Kupfer aufgedeckt ab und ziehe die gleiche Anzahl Karten.",
+        "extra": "Zuerst legst du die KUPFER ab, dann ziehst du die gleiche Anzahl Karten nach. Wenn du durch das Ziehen mischen musst, mischst du die KUPFER mit ein.",
+        "name": "Speicher"
     },
     "Sinister Plot": {
-        "description": "At the start of your turn, add a token here, or remove your tokens here for +1 Card each.",
-        "extra": "Each player has a separate pile of coin tokens on Sinister Plot; keep yours by your cube. Each turn you either add a token (an unused one, not one from a mat), or remove all of your tokens to draw as many cards.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Finsterer Plan",
-        "untranslated": "description, extra"
+        "description": "Zu Beginn deines Zuges: füge hier einen Marker hinzu oder entferne alle deine Marker von hier für jeweils + 1 Karte.",
+        "extra": "Wenn du den FINSTEREN PLAN kaufst, legst du einen deiner Holzsteine darauf und zu Beginn deines nächsten Zuges einen Marker neben den Holzstein. Haltet die Marker-Stapel der einzelnen Spieler auf diesem Projekt gut voneinander getrennt.\nZu Beginn jedes deiner Züge legst du einen Marker hierher (einen unbenutzten, nicht einen vom Tableau) oder legst alle deine Marker von hier zurück und ziehst die entsprechende Anzahl Karten.",
+        "name": "Finsterer Plan"
     },
     "Spices": {
-        "description": "2 <*COIN*><br><br>+1 Buy<line>When you gain this, +2 Coffers.",
-        "extra": "This is a Treasure that makes 2 Coin and +1 Buy when played; when gaining it, you get +2 Coffers.",
-        "name": "Gewürze",
-        "untranslated": "description, extra"
+        "description": "2 <*COIN*><br><br>+1 Kauf<line>Wenn du diese Karte nimmst: + 2 Taler.",
+        "extra": "Diese Karte ist eine Geldkarte und bringt dir 2 Coins sowie + 1 Kauf. Wenn du sie nimmst, nimmst du 2 Marker und legst sie auf die Taler-Seite deines Tableaus.",
+        "name": "Gewürze"
     },
     "Star Chart": {
-        "description": "When you shuffle, you may pick one of the cards to go on top.",
-        "extra": "Each time you shuffle, you can look through the cards and pick one to go on top. Shuffle the other cards.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
-        "name": "Sternenkarte",
-        "untranslated": "description, extra"
+        "description": "Wenn du mischst, darfst du eine der zu mischenden Karten auswählen, um sie nach dem Mischen nach oben zu legen.",
+        "extra": "Jedes Mal, wenn du mischst, darfst du die zu mischenden Karten durchsehen und eine auswählen, die du nach dem Mischen der restlichen Karten oben auf die gemischten Karten legst.",
+        "name": "Sternenkarte"
     },
     "Swashbuckler": {
-        "description": "+3 Cards<n>If your discard pile has any cards in it:<n>+1 Coffer, then if you have at least 4 Coffers tokens, take the Treasure Chest",
-        "extra": "First you draw 3 cards, then you check to see if your discard pile has any cards in it; if drawing those cards caused you to shuffle, your discard pile would be empty. If your discard pile has at least one card, you get +1 Coffers, and if you then have 4 or more tokens on your Coffers, you take the Treasure Chest. You cannot get the Treasure Chest unless your discard pile had at least one card. Treasure Chest simply causes you to gain a Gold at the start of your Buy phase each turn, including the turn you take it; this is not optional.",
-        "name": "Freibeuterin",
-        "untranslated": "description, extra"
+        "description": "+3 Karten<n>Wenn dein Ablagestapel nicht leer ist: + 1 Taler und wenn du dann mindestens 4 Taler hast, erhalte die Schatzkiste.",
+        "extra": "Zuerst ziehst du 3 Karten, dann prüfst du, ob dein Ablagestapel Karten enthält. Wenn dich das Ziehen der 3 Karten veranlasst hat zu mischen, ist dein Ablagestapel leer. Wenn dein Ablagestapel mindestens eine Karte enthält, legst du 1 Marker auf die Taler-Seite deines Tableaus, und wenn dann 4 oder mehr Marker auf der Taler- Seite deines Tableaus liegen, erhältst du die SCHATZKISTE. Du erhältst die SCHATZKISTE nur, wenn du gerade einen Marker aufgrund der Anweisung auf dieser FREIBEUTERIN auf die Taler-Seite deines Tableaus gelegt hast. Hast du das nicht getan, erhältst du die SCHATZKISTE nicht, selbst wenn 4 Marker oder mehr auf der Taler-Seite deines Tableaus liegen.",
+        "name": "Freibeuterin"
     },
     "Treasure Chest": {
-        "description": "At the start of your Buy phase, gain a Gold.",
-        "extra": "Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Schatzkiste",
-        "untranslated": "description, extra"
+        "description": "Zu Beginn deiner Kaufphase: nimm ein Gold.",
+        "extra": "Solange du die SCHATZKISTE hast, nimmst du in jedem eigenen Zug zu Beginn deiner Kaufphase ein GOLD, einschließlich des Zuges, in dem du sie erhältst (aber nicht, wenn du sie erst nach Beginn deiner Kaufphase erhältst).",
+        "name": "Schatzkiste"
     },
     "Treasurer": {
-        "description": "+3 Coin<br><n>Choose one: Trash a Treasure from your hand; or gain a Treasure from the trash to your hand; or take the Key.",
-        "extra": "The Key does not help you the turn you take it; it gives +1 Coin at the start of your turn, which has already happened. When you use a Treasurer to gain a Treasure from the trash, that can trigger abilities like the ones on Ducat and Spices. You can choose to take the Key even if you already have it.",
-        "name": "Schatzmeisterin",
-        "untranslated": "description, extra"
+        "description": "+3 Coin<br><n>Wähle eins: Entsorge eine Geldkarte aus deiner Hand oder nimm eine Geldkarte aus dem Müll auf deine Hand oder erhalte den Schlüssel.",
+        "extra": "Wenn du die SCHATZMEISTERIN ausspielst, erhältst du auf jeden Fall + 3 Coins. Dann hast du die Wahl zwischen drei verschiedenen Optionen: Du kannst auch eine Option wählen, die du nicht erfüllen kannst, oder du kannst die Option \"SCHLÜSSEL erhalten\" wählen, wenn du den SCHLÜSSEL bereits hast. Entscheidest du dich dafür, eine Geldkarte aus dem Müll auf deine Hand zu nehmen, achte darauf, dass Geldkarten mit zusätzlichen Anweisungen möglicherweise Anweisungen enthalten, die beim Nehmen einer Karte ausgeführt werden müssen.",
+        "name": "Schatzmeisterin"
     },
     "Villain": {
-        "description": "+2 Coffers<br><n>Each other player with 5 or more cards in hand discards one costing 2 Coin or more (or reveals they can't).",
-        "extra": "For example a player could discard an Estate, which costs 2 Coin.",
-        "name": "Bösewicht",
-        "untranslated": "description, extra"
+        "description": "+2 Taler<br><n>Jeder Mitspieler mit 5 oder mehr Karten auf der Hand legt davon eine ab, die 2 Coin oder mehr kostet (oder deckt auf, dass er das nicht kann).",
+        "extra": "Hat ein Mitspieler keine Karten auf der Hand, die 2 oder mehr kosten, muss er dies \"beweisen\", indem er seine Handkarten aufdeckt.",
+        "name": "Schwarzer Meister"
     },
     "Ambassador": {
         "description": "Decke eine Karte aus deiner Hand auf. Lege bis zu 2 dieser Karten aus deiner Hand zurück in den Vorrat. Jeder Mitspieler muss sich eine solche Karte vom Vorrat nehmen.",
@@ -2690,34 +2637,29 @@
         "name": "Ereignisse Promo"
     },
     "renaissance projects": {
-        "description": "Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
+        "description": "Projekte sind Fähigkeiten, die Spieler sich bis zum Spielende kaufen können. Es gibt insgesamt 20 Projekte. Zu Spielbeginn wird von den Spielern entschieden, mit welchen Projekten gespielt wird. Wir empfehlen, pro Spiel maximal 2 Projekte zu verwenden. Die Projekte werden neben dem Vorrat bereitgelegt, gehören aber nicht zum Vorrat. Außerdem erhält jeder Spieler zu Beginn 2 Holzsteine derselben Farbe und legt sie vor sich ab. Diese Holzsteine legt ihr im Spielverlauf jeweils auf die Projekte, die ihr gekauft habt.",
         "extra": "",
-        "name": "Projects",
-        "untranslated": "description, extra, name"
+        "name": "Projekte"
     },
     "Border Guard - LanternHorn": {
-        "description": "<left><u>Border Guard</u>:</left><n>+1 Action<br>Reveal the top 2 cards of your deck.  Put one into your hand and discard the other.  If both were Actions, take the Lantern or Horn.<n><left><u>Horn</u>:</left><n>Once per turn, when you discard a Border Guard from play, you may put it onto your deck.<n><left><u>Lantern</u>:</left><n>Your Border Guards reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",
-        "extra": "When you play a Border Guard and do not have the Lantern, you reveal the top 2 cards of your deck, choose one and put it into your hand, and discard the other; then if they were both Action cards, you take the Lantern or the Horn.  When you play a Border Guard and have the Lantern, you reveal the top 3 cards of your deck, choose one and put it into your hand, and discard the rest; then if all three were Action cards, you may take the Horn.  If you reveal fewer than 2 cards, or fewer than 3 cards when you have the Lantern, you don't take an Artifact.  Both the Horn and the Lantern function the turn you get them.<n><n>Horn and Lantern are Artifacts. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Border Guard / Horn / Lantern",
-        "untranslated": "description, extra, name"
+        "description": "<left><u>Grenzposten</u>:</left><n>+1 Aktion<br><br>Decke die obersten 2 Karten deines Nachziehstapels auf. Nimm eine davon auf deine Hand und lege die andere ab. Sind beide Aktionskarten, erhalte die Laterne oder das Horn.<n><left><u>Horn</u>:</left><n>Einmal pro Zug: wenn du einen Grenzposten aus dem Spiel ablegst, darfst du ihn auf deinen Nachziehstapel legen<n><left><u>Laterne</u>:</left><n>Deine Grenzposten decken jeweils 3 Karten auf und legen 2 ab. (Alle 3 müssen Aktionskarten sein, um das Horn zu erhalten).",
+        "extra": "Wenn ihr den GRENZPOSTEN verwendet, sucht zu Spielbeginn das HORN und die LATERNE heraus und legt sie neben dem Vorrat bereit. Wenn du einen GRENZPOSTEN ausspielst und nicht die LATERNE hast, deckst du die obersten 2 Karten deines Nachziehstapels auf, wählst eine davon und nimmst sie zu deinen Handkarten; die andere legst du ab. Wenn beide Karten Aktionskarten sind, erhältst du danach die LATERNE oder das HORN. Wenn du nicht 2 Karten aufdecken kannst bzw. nicht 3 Karten, wenn du die LATERNE hast, erhältst du kein Artefakt.<n><n>Das Horn und die Laterne sind Artefakte. Artefakte sind Effekte, die für einen Spieler gelten und nicht durch normale Karten oder Ereignise ausgelöst werden. Sie funktionieren ähnlich wie Zustände (aus Nocturne). Artefakte sind keine \"Karten\"; alle Texte, die sich auf \"Karten\" beziehen finden keine Anwendung auf Artefakte. Es gibt jeden Artefakt nur genau einmal; wenn ein Spieler einen Artefakt immt wird die Artefakt-Karte vor ihm abgelegt, bis ein anderer Spieler sie nimmt.",
+        "name": "Grenzposten (+ Artefakte Horn/Laterne)"
     },
     "Flag Bearer - Flag": {
-        "description": "<left><u>Flag Bearer</u>:</left><n>+2 Coin<n><line>When you gain or trash this, take the Flag<n><left><u>Flag</u>:</left><n>When drawing your hand, +1 Card.",
-        "extra": "When you gain or trash a Flag Bearer, you take the Flag. The Flag causes you to draw an extra card when drawing your hand in Clean-up. This is true even if your hand would normally be some amount other than 5 cards - for example if you played Outpost (from Seaside), instead of drawing 3 cards for your Outpost turn, you would draw 4. If Flag Bearer is trashed, the player trashing it takes the Flag, regardless of whose turn it is.<n><n>Flag is an Artifact. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Flag Bearer / Flag",
-        "untranslated": "description, extra, name"
+        "description": "<left><u>Fahnenträger</u>:</left><n>+2 Coin<n><line>Wenn du diese Karte nimmst oder entsorgst, erhalte die Fahne.<n><left><u>Fahne</u>:</left><n>Wenn du die Handkarten für deinen nächsten Zug ziehst: + 1 Karte.",
+        "extra": "Wenn du den FAHNENTRÄGER nimmst oder entsorgst und nicht die FAHNE hast, erhalte die FAHNE und lege sie neben dir ab. Du behältst dieses Artefakt (und dessen Effekt), bis ein anderer Spieler die FAHNE erhält. Wird der FAHNENTRÄGER entsorgt, erhält der Spieler, der ihn entsorgt, die FAHNE, unabhängig davon, wer am Zug ist.<n><n>Die Fahne ist ein Artefakt. Artefakte sind Effekte, die für einen Spieler gelten und nicht durch normale Karten oder Ereignise ausgelöst werden. Sie funktionieren ähnlich wie Zustände (aus Nocturne). Artefakte sind keine \"Karten\"; alle Texte, die sich auf \"Karten\" beziehen finden keine Anwendung auf Artefakte. Es gibt jeden Artefakt nur genau einmal; wenn ein Spieler einen Artefakt immt wird die Artefakt-Karte vor ihm abgelegt, bis ein anderer Spieler sie nimmt.",
+        "name": "Fahnenträger (+ Artefakt Fahne)"
     },
     "Treasurer - Key": {
-        "description": "<left><u>Treasurer</u>:</left><n>+3 Coin<br><n>Choose one: Trash a Treasure from your hand; or gain a Treasure from the trash to your hand; or take the Key.<n><left><u>Key</u>:</left><n>At the start of your turn, +1 Coin.",
-        "extra": "The Key does not help you the turn you take it; it gives +1 Coin at the start of your turn, which has already happened. When you use a Treasurer to gain a Treasure from the trash, that can trigger abilities like the ones on Ducat and Spices. You can choose to take the Key even if you already have it.<n><n>Key is an Artifact. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Treasurer / Key",
-        "untranslated": "description, extra, name"
+        "description": "<left><u>Schatzmeisterin</u>:</left><n>++3 Coin<br><n>Wähle eins: Entsorge eine Geldkarte aus deiner Hand oder nimm eine Geldkarte aus dem Müll auf deine Hand oder erhalte den Schlüssel.<n><left><u>Schlüssel</u>:</left><n>Zu Beginn deines Zuges: +1 Coin.",
+        "extra": "Der Schlüssel nützt noch nichts in dem Zug, in dem er genommen wird; er bringt nur +1 Coin am Anfang des Zugs, der da bereits begonnen hat. Wenn Du die Schatzmeisterin benutzt, um einen Geld vom Müllstapel zu nehmen kann das die Wirkungen von Goldmünze und Gewürzen auslösen. Du kannst den Schlüssel nehmen, selbst wenn Du ihn schon hast.<n><n>Der Schlüssel ist ein Artefakt. Artefakte sind Effekte, die für einen Spieler gelten und nicht durch normale Karten oder Ereignise ausgelöst werden. Sie funktionieren ähnlich wie Zustände (aus Nocturne). Artefakte sind keine \"Karten\"; alle Texte, die sich auf \"Karten\" beziehen finden keine Anwendung auf Artefakte. Es gibt jeden Artefakt nur genau einmal; wenn ein Spieler einen Artefakt immt wird die Artefakt-Karte vor ihm abgelegt, bis ein anderer Spieler sie nimmt.",
+        "name": "Schatzmeisterin (+ Artefakt Schlüssel)"
     },
     "Swashbuckler - Treasure Chest": {
-        "description": "<left><u>Swashbuckler</u>:</left><n>+3 Cards<n>If your discard pile has any cards in it:<n>+1 Coffer, then if you have at least 4 Coffers tokens, take the Treasure Chest<n><left><u>Treasure Chest</u>:</left><n>At the start of your Buy phase, gain a Gold.",
-        "extra": "First you draw 3 cards, then you check to see if your discard pile has any cards in it; if drawing those cards caused you to shuffle, your discard pile would be empty. If your discard pile has at least one card, you get +1 Coffers, and if you then have 4 or more tokens on your Coffers, you take the Treasure Chest. You cannot get the Treasure Chest unless your discard pile had at least one card. Treasure Chest simply causes you to gain a Gold at the start of your Buy phase each turn, including the turn you take it; this is not optional.<n><n>Treasure Chest is an Artifact. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Swashbuckler / Treasure Chest",
-        "untranslated": "description, extra, name"
+        "description": "<left><u>Freibeuterin</u>:</left><n>+3 Karten<n>Wenn dein Ablagestapel nicht leer ist: + 1 Taler und wenn du dann mindestens 4 Taler hast, erhalte die Schatzkiste.<n><left><u>Schatzkiste</u>:</left><n>Zu Beginn deiner Kaufphase: nimm ein Gold.",
+        "extra": "Zuerst ziehst du 3 Karten, dann prüfst du, ob dein Ablagestapel Karten enthält. Wenn dich das Ziehen der 3 Karten veranlasst hat zu mischen, ist dein Ablagestapel leer. Wenn dein Ablagestapel mindestens eine Karte enthält, legst du 1 Marker auf die Taler-Seite deines Tableaus, und wenn dann 4 oder mehr Marker auf der Taler- Seite deines Tableaus liegen, erhältst du die SCHATZKISTE. Du erhältst die SCHATZKISTE nur, wenn du gerade einen Marker aufgrund der Anweisung auf dieser FREIBEUTERIN auf die Taler-Seite deines Tableaus gelegt hast. Hast du das nicht getan, erhältst du die SCHATZKISTE nicht, selbst wenn 4 Marker oder mehr auf der Taler-Seite deines Tableaus liegen.<n><n>Die Schatzkiste ist ein Artefakt. Artefakte sind Effekte, die für einen Spieler gelten und nicht durch normale Karten oder Ereignise ausgelöst werden. Sie funktionieren ähnlich wie Zustände (aus Nocturne). Artefakte sind keine \"Karten\"; alle Texte, die sich auf \"Karten\" beziehen finden keine Anwendung auf Artefakte. Es gibt jeden Artefakt nur genau einmal; wenn ein Spieler einen Artefakt immt wird die Artefakt-Karte vor ihm abgelegt, bis ein anderer Spieler sie nimmt.",
+        "name": "Freibeuterin (+ Artefakt Schatzkiste)"
     },
     "events": {
         "description": "<justify>Ereignisse sind keine Königreichkarten. In der Kaufphase des Spielers kann der Spieler statt einer Karte ein Ereignis kaufen. Das Ereignis wird gekauft, indem der auf dem Ereignis angegebene Preis bezahlt wird und dann die darauf angegebene Anweisung ausgeführt wird. Das Ereignis verbleibt dabei einfach auf dem Tisch; der Spieler nimmt die Karte nicht; es gibt keine Möglichkeit, eine zu erwerben oder in den eigene Kartensatz zu bringen. Der Erwerb eines Events verbraucht den Kauf; normalerweise kann der Spieler entweder eine Karte oder ein Ereignis kaufen. Ein Spieler mit zwei Käufen, wie z.B. nach dem Ausspielen eines Wildhüters könnte zwei Karten oder zwei Ereignisse oder eine Karte und ein Ereignis kaufen (in beliebiger Reihenfolge). Das gleiche Event kann mehrfach innerhalb eines Zugs gekauft werden, wenn der Spieler genug Käufe hat. Einige Ereignisse ergeben zusätzliche Käufe und ermöglichrollen dem Spieler so anschließend weitere Karten und Ereignisse zu kaufen. Spieler können im gleichen Zug kein weiteres Geld ausspielen nach dem Kauf eines Ereignisses. Der Kauf von Ereignissen ist nicht so wie der Kauf von Karten und löst so nicht Karten wie Sumpfhexe oder Halsabschneider (aus Blütezeit) aus. Kosten von Eregnissen werden nicht von Karten wie dem Brückentroll beeinflußt.</justify>",
