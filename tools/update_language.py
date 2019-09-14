@@ -18,6 +18,7 @@ import codecs
 import json
 from shutil import copyfile
 import argparse
+import collections
 
 import six
 
@@ -100,7 +101,7 @@ def main(args):
     #  Store in a list in the order found in types[]. Ordered by card_type
     #  1. card_tags, 2. group_tags, 3. super groups
     ###########################################################################
-    type_parts = []
+    type_parts = set()
 
     # Get the card data
     type_data = get_json_data(os.path.join(args.card_db_dir, "types_db.json"))
@@ -110,18 +111,10 @@ def main(args):
 
     with io.open(
         os.path.join(args.output_dir, "types_db.json"), "w", encoding="utf-8"
-    ) as lang_out:
-        lang_out.write(six.u("["))  # Start of list
-        sep = ""
-        for type in sorted_type_data:
-            # Collect all the individual types
-            type_parts = list(set(type["card_type"]) | set(type_parts))
-            lang_out.write(
-                sep + json.dumps(type, indent=4, ensure_ascii=False, sort_keys=True)
-            )
-            sep = ","
-        lang_out.write(six.u("\n]\n"))  # End of List
+    ) as f:
+        json.dump(sorted_type_data, f, indent=4, ensure_ascii=False)
 
+    type_parts = list(set().union(*[set(t["card_type"]) for t in sorted_type_data]))
     type_parts.sort()
     print("Unique Types:")
     print(type_parts)
@@ -136,19 +129,12 @@ def main(args):
     # Get the card data
     label_data = get_json_data(os.path.join(args.card_db_dir, "labels_db.json"))
 
+    all_labels = list(set().union(*[set(label["names"]) for label in label_data]))
+
     with io.open(
         os.path.join(args.output_dir, "labels_db.json"), "w", encoding="utf-8"
-    ) as lang_out:
-        lang_out.write(six.u("["))  # Start of list
-        sep = ""
-        for label in label_data:
-            # Collect all the individual types
-            all_labels = list(set(label["names"]) | set(all_labels))
-            lang_out.write(
-                sep + json.dumps(label, indent=4, ensure_ascii=False, sort_keys=True)
-            )
-            sep = ","
-        lang_out.write(six.u("\n]\n"))  # End of List
+    ) as f:
+        json.dump(label_data, f, indent=4, ensure_ascii=False)
 
     all_labels.sort()
     print("Labels: ")
@@ -171,47 +157,34 @@ def main(args):
         else:
             lang_type_data = {}
 
+        for t in sorted(type_parts):
+            if t not in lang_type_data:
+                if lang == LANGUAGE_DEFAULT:
+                    lang_type_data[t] = t
+                    lang_type_default = lang_type_data
+                else:
+                    lang_type_data[t] = lang_type_default[t]
+
         with io.open(
             os.path.join(args.output_dir, lang, lang_file), "w", encoding="utf-8"
-        ) as lang_out:
-            lang_out.write(six.u("{"))  # Start of types
-            sep = ""
-            used = []
+        ) as f:
+            json.dump(lang_type_data, f, indent=4, ensure_ascii=False)
 
-            for type in sorted(type_parts):
-                if type not in lang_type_data:
-                    if lang == LANGUAGE_DEFAULT:
-                        lang_type_data[type] = type
-                        lang_type_default = lang_type_data
-                    else:
-                        lang_type_data[type] = lang_type_default[type]
-
-                lang_out.write(json_dict_entry({type: lang_type_data[type]}, sep))
-                used.append(type)
-                sep = ","
-
-            # Now keep any unused values just in case needed in the future
-            for key in lang_type_data:
-                if key not in used:
-                    lang_out.write(json_dict_entry({key: lang_type_data[key]}, sep))
-                    sep = ","
-
-            lang_out.write(six.u("\n}\n"))  # End of Types
-
-            if lang == LANGUAGE_DEFAULT:
-                lang_type_default = lang_type_data  # Keep for later languages
+        if lang == LANGUAGE_DEFAULT:
+            lang_type_default = lang_type_data  # Keep for later languages
 
     ###########################################################################
     #  Get the cards_db information
     #  Store in a list in the order found in cards[]. Ordered as follows:
     #  1. card_tags, 2. group_tags, 3. super groups
     ###########################################################################
-    cards = []
-    groups = []
-    super_groups = [u"events", u"landmarks"]
 
     # Get the card data
     card_data = get_json_data(os.path.join(args.card_db_dir, "cards_db.json"))
+
+    cards = set(card["card_tag"] for card in card_data)
+    groups = set(card["group_tag"] for card in card_data if "group_tag" in card)
+    super_groups = set([u"events", u"landmarks"])
 
     # Sort the cardset_tags
     for card in card_data:
@@ -227,22 +200,10 @@ def main(args):
     with io.open(
         os.path.join(args.output_dir, "cards_db.json"), "w", encoding="utf-8"
     ) as lang_out:
-        lang_out.write(six.u("["))  # Start of list
-        sep = ""
-        for card in sorted_card_data:
-            if card["card_tag"] not in cards:
-                cards.append(card["card_tag"])
-            if "group_tag" in card:
-                if card["group_tag"] not in groups:
-                    groups.append(card["group_tag"])
-            lang_out.write(
-                sep + json.dumps(card, indent=4, ensure_ascii=False, sort_keys=True)
-            )
-            sep = ","
-        lang_out.write(six.u("\n]\n"))  # End of List
+        json.dump(sorted_card_data, lang_out, indent=4, ensure_ascii=False)
 
-    cards.extend(groups)
-    cards.extend(super_groups)
+    cards |= groups
+    cards |= super_groups
 
     print("Cards:")
     print(cards)
@@ -267,77 +228,70 @@ def main(args):
         else:
             lang_data = {}
 
+        sorted_lang_data = collections.OrderedDict()
+        fields = [u"description", u"extra", u"name"]
+
+        card_tag = card["card_tag"]
+        for card in sorted_card_data:
+            lang_card = lang_data.get(card_tag)
+            if not lang_card or lang == LANGUAGE_XX:
+                #  Card is missing, need to add it
+                lang_card = {}
+                if lang == LANGUAGE_DEFAULT:
+                    #  Default language gets bare minimum.  Really need to add by hand.
+                    lang_card["extra"] = ""
+                    lang_card["name"] = card
+                    lang_card["description"] = ""
+                    lang_card["untranslated"] = ", ".join(fields)
+                    lang_default = lang_data
+                else:
+                    #  All other languages should get the default languages' text
+                    lang_card["extra"] = lang_default[card_tag]["extra"]
+                    lang_card["name"] = lang_default[card_tag]["name"]
+                    lang_card["description"] = lang_default[card_tag]["description"]
+                    lang_card["untranslated"] = ", ".join(fields)
+            else:
+                # Card exists, figure out what needs updating (don't update default language)
+                if lang != LANGUAGE_DEFAULT:
+                    if "untranslated" in lang_card:
+                        #  Has an 'untranslated' field.  Process accordingly
+                        if not lang_card["untranslated"]:
+                            #  It is empty, so just remove it
+                            del lang_card["untranslated"]
+                        else:
+                            #  If a field remains untranslated, then replace with the default languages copy
+                            for field in fields:
+                                if field in lang_card["untranslated"]:
+                                    lang_card[field] = lang_default[card_tag][field]
+                    else:
+                        #  Need to create the 'untranslated' field and update based upon existing fields
+                        untranslated = []
+                        for field in fields:
+                            if field not in lang_data[card_tag]:
+                                lang_card[field] = lang_default[card_tag][field]
+                                untranslated.append(field)
+                        if untranslated:
+                            #  only add if something is still needing translation
+                            lang_card["untranslated"] = untranslated
+            lang_card["used"] = True
+            sorted_lang_data[card_tag] = lang_card
+
+        # Now keep any unused values just in case needed in the future
+        for key in lang_data:
+            if "used" not in lang_data[key]:
+                lang_data[key]["untranslated"] = [
+                    "Note: This card is currently not used."
+                ]
+                sorted_lang_data[key] = lang_data[key]
+
         #  Process the file
         with io.open(
             os.path.join(args.output_dir, lang, lang_file), "w", encoding="utf-8"
         ) as lang_out:
-            lang_out.write(six.u("{"))  # Start of set
-            sep = ""
-            fields = [u"description", u"extra", u"name"]
+            json.dump(sorted_lang_data, lang_out, indent=4, ensure_ascii=False)
 
-            for card in cards:
-                if card not in lang_data or lang == LANGUAGE_XX:
-                    #  Card is missing, need to add it
-                    lang_data[card] = {}
-                    if lang == LANGUAGE_DEFAULT:
-                        #  Default language gets bare minimum.  Really need to add by hand.
-                        lang_data[card]["extra"] = ""
-                        lang_data[card]["name"] = card
-                        lang_data[card]["description"] = ""
-                        lang_data[card]["untranslated"] = ", ".join(fields)
-                        lang_default = lang_data
-                    else:
-                        #  All other languages should get the default languages' text
-                        lang_data[card]["extra"] = lang_default[card]["extra"]
-                        lang_data[card]["name"] = lang_default[card]["name"]
-                        lang_data[card]["description"] = lang_default[card][
-                            "description"
-                        ]
-                        lang_data[card]["untranslated"] = ", ".join(fields)
-                else:
-                    # Card exists, figure out what needs updating (don't update default language)
-                    if lang != LANGUAGE_DEFAULT:
-                        if "untranslated" in lang_data[card]:
-                            #  Has an 'untranslated' field.  Process accordingly
-                            if not lang_data[card]["untranslated"].strip():
-                                #  It is empty, so just remove it
-                                del lang_data[card]["untranslated"]
-                            else:
-                                #  If a field remains untranslated, then replace with the default languages copy
-                                for field in fields:
-                                    if field in lang_data[card]["untranslated"]:
-                                        lang_data[card][field] = lang_default[card][
-                                            field
-                                        ]
-                        else:
-                            #  Need to create the 'untranslated' field and update based upon existing fields
-                            untranslated = []
-                            for field in fields:
-                                if field not in lang_data[card]:
-                                    lang_data[card][field] = lang_default[card][field]
-                                    untranslated.append(field)
-                            if untranslated:
-                                #  only add if something is still needing translation
-                                lang_data[card]["untranslated"] = ", ".join(
-                                    untranslated
-                                )
-
-                lang_out.write(json_dict_entry({card: lang_data[card]}, sep))
-                lang_data[card]["used"] = True
-                sep = ","
-
-            # Now keep any unused values just in case needed in the future
-            for key in lang_data:
-                if "used" not in lang_data[key]:
-                    lang_data[key][
-                        "untranslated"
-                    ] = "Note: This card is currently not used."
-                    lang_out.write(json_dict_entry({key: lang_data[key]}, sep))
-                    sep = ","
-            lang_out.write(six.u("\n}\n"))  # End of Set
-
-            if lang == LANGUAGE_DEFAULT:
-                lang_default = lang_data  # Keep for later languages
+        if lang == LANGUAGE_DEFAULT:
+            lang_default = lang_data  # Keep for later languages
 
     ###########################################################################
     # Fix up the sets_db.json file
