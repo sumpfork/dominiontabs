@@ -110,7 +110,7 @@ if cardlist:
                 # Have a new name, so update name
                 data["name"] = cardlist[card]
                 fields = [u"description", u"extra"]  # but no u"name"
-                data["untranslated"] = ", ".join(fields)
+                data["untranslated"] = fields
             lang_out.write(json_dict_entry({card: data}, sep))
             sep = ","
         lang_out.write("\n}\n")  # End of Set

@@ -20,8 +20,6 @@ from shutil import copyfile
 import argparse
 import collections
 
-import six
-
 LANGUAGE_DEFAULT = "en_us"  # default language, which takes priority
 LANGUAGE_XX = "xx"  # language for starting a translation
 
@@ -184,7 +182,7 @@ def main(args):
 
     cards = set(card["card_tag"] for card in card_data)
     groups = set(card["group_tag"] for card in card_data if "group_tag" in card)
-    super_groups = set([u"events", u"landmarks"])
+    super_groups = set(["events", "landmarks"])
 
     # Sort the cardset_tags
     for card in card_data:
@@ -202,8 +200,10 @@ def main(args):
     ) as lang_out:
         json.dump(sorted_card_data, lang_out, indent=4, ensure_ascii=False)
 
-    cards |= groups
-    cards |= super_groups
+    # maintain the sorted order, but expand with groups and super_groups
+    cards = [c["card_tag"] for c in sorted_card_data]
+    cards.extend(groups)
+    cards.extend(super_groups)
 
     print("Cards:")
     print(cards)
@@ -229,11 +229,10 @@ def main(args):
             lang_data = {}
 
         sorted_lang_data = collections.OrderedDict()
-        fields = [u"description", u"extra", u"name"]
-
-        card_tag = card["card_tag"]
-        for card in sorted_card_data:
+        fields = ["description", "extra", "name"]
+        for card_tag in cards:
             lang_card = lang_data.get(card_tag)
+            # print(f'looking at {card_tag}: {lang_card}')
             if not lang_card or lang == LANGUAGE_XX:
                 #  Card is missing, need to add it
                 lang_card = {}
@@ -242,14 +241,14 @@ def main(args):
                     lang_card["extra"] = ""
                     lang_card["name"] = card
                     lang_card["description"] = ""
-                    lang_card["untranslated"] = ", ".join(fields)
+                    lang_card["untranslated"] = fields
                     lang_default = lang_data
                 else:
                     #  All other languages should get the default languages' text
                     lang_card["extra"] = lang_default[card_tag]["extra"]
                     lang_card["name"] = lang_default[card_tag]["name"]
                     lang_card["description"] = lang_default[card_tag]["description"]
-                    lang_card["untranslated"] = ", ".join(fields)
+                    lang_card["untranslated"] = fields
             else:
                 # Card exists, figure out what needs updating (don't update default language)
                 if lang != LANGUAGE_DEFAULT:
@@ -275,14 +274,22 @@ def main(args):
                             lang_card["untranslated"] = untranslated
             lang_card["used"] = True
             sorted_lang_data[card_tag] = lang_card
-
+        unused = [c for c in lang_data.values() if "used" not in c]
+        print(
+            f'unused in {lang}: {len(unused)}, used: {len([c for c in lang_data.values() if "used" in c])}'
+        )
+        print([c["name"] for c in unused])
         # Now keep any unused values just in case needed in the future
-        for key in lang_data:
-            if "used" not in lang_data[key]:
-                lang_data[key]["untranslated"] = [
-                    "Note: This card is currently not used."
-                ]
-                sorted_lang_data[key] = lang_data[key]
+        for card_tag in lang_data:
+            lang_card = lang_data.get(card_tag)
+            if "used" not in lang_card:
+                if lang != LANGUAGE_XX:
+                    lang_card["untranslated"] = [
+                        "Note: This card is currently not used."
+                    ]
+                sorted_lang_data[card_tag] = lang_card
+            else:
+                del lang_card["used"]
 
         #  Process the file
         with io.open(
@@ -303,19 +310,10 @@ def main(args):
     with io.open(
         os.path.join(args.output_dir, lang_file), "w", encoding="utf-8"
     ) as lang_out:
-        lang_out.write(six.u("{"))  # Start of set
-        sep = ""
-        sets = []
-        for s in sorted(set_data):
-            lang_out.write(json_dict_entry({s: set_data[s]}, sep))
-            sep = ","
-            if s not in sets:
-                sets.append(s)
-
-        lang_out.write(six.u("\n}\n"))  # End of Set
+        json.dump(set_data, lang_out, sort_keys=True, indent=4, ensure_ascii=True)
 
     print("Sets:")
-    print(sets)
+    print(set(set_data))
     print()
 
     ###########################################################################
@@ -324,8 +322,6 @@ def main(args):
     # If entries don't exist:
     #    If the default language, set from information in the "sets_db.json" file,
     #    If not the default language, set based on information from the default language.
-    # Lastly, keep any extra entries that are not currently used, just in case needed
-    #    in the future or is a work in progress.
     ###########################################################################
     for lang in languages:
         lang_file = "sets_" + lang + ".json"
@@ -334,51 +330,37 @@ def main(args):
             lang_set_data = get_json_data(fname)
         else:
             lang_set_data = {}
+
+        for s in sorted(set_data):
+            if s not in lang_set_data:
+                lang_set_data[s] = {}
+                if lang == LANGUAGE_DEFAULT:
+                    lang_set_data[s]["set_name"] = s.title()
+                    lang_set_data[s]["text_icon"] = set_data[s]["text_icon"]
+                    if "short_name" in set_data[s]:
+                        lang_set_data[s]["short_name"] = set_data[s]["short_name"]
+                    if "set_text" in set_data[s]:
+                        lang_set_data[s]["set_text"] = set_data[s]["set_text"]
+                else:
+                    lang_set_data[s]["set_name"] = lang_default[s]["set_name"]
+                    lang_set_data[s]["text_icon"] = lang_default[s]["text_icon"]
+                    if "short_name" in lang_default[s]:
+                        lang_set_data[s]["short_name"] = lang_default[s]["short_name"]
+                    if "set_text" in lang_default[s]:
+                        lang_set_data[s]["set_text"] = lang_default[s]["set_text"]
+            else:
+                if lang != LANGUAGE_DEFAULT:
+                    for x in lang_default[s]:
+                        if x not in lang_set_data[s] and x != "used":
+                            lang_set_data[s][x] = lang_default[s][x]
+
+        if lang == LANGUAGE_DEFAULT:
+            lang_default = lang_set_data  # Keep for later languages
+
         with io.open(
             os.path.join(args.output_dir, lang, lang_file), "w", encoding="utf-8"
         ) as lang_out:
-            lang_out.write(six.u("{"))  # Start of set
-            sep = ""
-
-            for s in sorted(set_data):
-                if s not in lang_set_data:
-                    lang_set_data[s] = {}
-                    if lang == LANGUAGE_DEFAULT:
-                        lang_set_data[s]["set_name"] = s.title()
-                        lang_set_data[s]["text_icon"] = set_data[s]["text_icon"]
-                        if "short_name" in set_data[s]:
-                            lang_set_data[s]["short_name"] = set_data[s]["short_name"]
-                        if "set_text" in set_data[s]:
-                            lang_set_data[s]["set_text"] = set_data[s]["set_text"]
-                    else:
-                        lang_set_data[s]["set_name"] = lang_default[s]["set_name"]
-                        lang_set_data[s]["text_icon"] = lang_default[s]["text_icon"]
-                        if "short_name" in lang_default[s]:
-                            lang_set_data[s]["short_name"] = lang_default[s][
-                                "short_name"
-                            ]
-                        if "set_text" in lang_default[s]:
-                            lang_set_data[s]["set_text"] = lang_default[s]["set_text"]
-                else:
-                    if lang != LANGUAGE_DEFAULT:
-                        for x in lang_default[s]:
-                            if x not in lang_set_data[s] and x != "used":
-                                lang_set_data[s][x] = lang_default[s][x]
-
-                lang_out.write(json_dict_entry({s: lang_set_data[s]}, sep))
-                lang_set_data[s]["used"] = True
-                sep = ","
-
-            # Now keep any unused values just in case needed in the future
-            for key in lang_set_data:
-                if "used" not in lang_set_data[key]:
-                    lang_out.write(json_dict_entry({key: lang_set_data[key]}, sep))
-                    sep = ","
-
-            lang_out.write(six.u("\n}\n"))  # End of Set
-
-            if lang == LANGUAGE_DEFAULT:
-                lang_default = lang_set_data  # Keep for later languages
+            json.dump(lang_set_data, lang_out, ensure_ascii=True, indent=4)
 
     ###########################################################################
     # bonuses_xx files
