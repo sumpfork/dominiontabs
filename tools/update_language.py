@@ -202,8 +202,8 @@ def main(args):
 
     # maintain the sorted order, but expand with groups and super_groups
     cards = [c["card_tag"] for c in sorted_card_data]
-    cards.extend(groups)
-    cards.extend(super_groups)
+    cards.extend(sorted(groups))
+    cards.extend(sorted(super_groups))
 
     print("Cards:")
     print(cards)

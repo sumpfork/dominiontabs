@@ -2650,10 +2650,55 @@
         "extra": " Je trekt eerst 2 extra kaarten en krijgt 1 extra aanschaf in deze beurt. Aan het begin van je volgende beurt trek je nog 2 extra kaarten en krijg je 1 extra aanschaf in die beurt. Je trekt deze 2 kaarten pas als je volgende beurt begonnen is. De Scheepswerf blijft tot en met de opschoonfase van je volgende beurt in het spel.",
         "name": "Scheepswerf"
     },
-    "adventures events": {
-        "description": "<justify>Gebeurteniskaarten zijn geen koninkrijkkaarten. Een speler mag in zijn aanschaffase in plaats van een kaart een gebeurtenis kopen. Hij betaalt dan de op de gebeurteniskaart aangegeven kosten en voert de bijbehorende functie uit. De gebeurtenis blijft op tafel liggen (deze kan zich nooit in een stapel, op een tableau of in de hand van een speler bevinden). Met het kopen van een gebeurtenis verbruikt de speler 1 aanschaf. Heeft een speler meer aancshaffen in zijn beurt, dan mag hij deze naar believen (en in een volgorde naar keuze) verdelen over het kopen van kaarten en gebeurtenissen.</justify>",
-        "extra": "Het is toegestaan om dezelfde gebeurtenis meermaals per beurt te kopen (mits de speler voldoende aanschaffen en Coins heeft). Sommige gebeurtenissen geven extra aanschaffen, waardoor de speler daarna meer kaarten/gebeurtenissen zou kunnen kopen. Een speler mag na het kopen van een gebeurtenis deze beurt geen geldkaarten meer spelen. Het kopen van een gebeurtenis geldt niet als het kopen van een kaart en activeert daarom niet kaarten zoals Heks uit het moeras en Domkoppen (uit Dominion Welvaart). De kosten van het kopen van een gebeurtenis worden niet beïnvloed door kaarten zoals Brugtrol.",
-        "name": "Gebeurteniskaarten Avonturen"
+    "Border Guard - LanternHorn": {
+        "description": "<left><u>Border Guard</u>:</left><n>+1 Action<br>Reveal the top 2 cards of your deck.  Put one into your hand and discard the other.  If both were Actions, take the Lantern or Horn.<n><left><u>Horn</u>:</left><n>Once per turn, when you discard a Border Guard from play, you may put it onto your deck.<n><left><u>Lantern</u>:</left><n>Your Border Guards reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",
+        "extra": "When you play a Border Guard and do not have the Lantern, you reveal the top 2 cards of your deck, choose one and put it into your hand, and discard the other; then if they were both Action cards, you take the Lantern or the Horn.  When you play a Border Guard and have the Lantern, you reveal the top 3 cards of your deck, choose one and put it into your hand, and discard the rest; then if all three were Action cards, you may take the Horn.  If you reveal fewer than 2 cards, or fewer than 3 cards when you have the Lantern, you don't take an Artifact.  Both the Horn and the Lantern function the turn you get them.<n><n>Horn and Lantern are Artifacts. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
+        "name": "Border Guard / Horn / Lantern",
+        "untranslated": "description, extra, name"
+    },
+    "Catapult - Rocks": {
+        "description": "<left><u>Katapult:</u></left><left>+1 Coin</left><left>Vernietig een kaart uit je hand is deze 3 Coins of meer waard, dan pakt iedere andere speler een Vloek, Is het een geldkaart, dan legt iedere speler zoveel kaarten af dat hij 3 handkaarten overhoudt.</left><left><u>Rotsblokken:</u></left><left>+1 Coin</left><line><left>Als je deze kaart pakt of vernietigt, pak een Zilver. Is het je aanschaffase, leg het Zilver dan op je trekstapel. Zo niet, neem het Zilver dan in je hand.</left>",
+        "extra": "<left><u>Kaptapult:</u></left><left>Als de kaart die je vernietigd een geldkaart is, legt iedere andere speler handkaarten af totdat hij er nog 3 heeft. Is de kaart die vernietigt 3 Coins of meer waard, dan krijgt iedere andere speler een Vloek. Heeft de vernietigde kaart beide eigenschappen (bijvoorbeeld Zilver), dan gebeuren beide zaken. Heeft de kaart geen van beide eigenschappen, dan gebeurt er niets. Heb je geen kaarten in je hand om te vernietigen, dan gebeurt er niets.</left><left><u>Rotsblokken:</u></left><left>Is het de beurt van een andere speler, dan is het niet jouw aanschaffase, dus gaat het Zilver naar je hand.</left>",
+        "name": "Katapult / Rotsblokken"
+    },
+    "Cemetery - Haunted Mirror": {
+        "description": "<left><u>Cemetery</u>:</left><center>2 <*VP*></center><line>When you gain this, trash up to 4 cards from your hand.<br><i>Heirloom: Haunted Mirror</i><left><u>Haunted Mirror</u>:</left><center>1 <*COIN*></center><line>When you trash this, you may discard an Action card, to gain a Ghost from its pile.",
+        "extra": "<u>Cemetery</u>:In games using this, replace one of your starting Coppers with a Haunted Mirror. When you gain a Cemetery, trash from zero to four cards from your hand.\n<u>Haunted Mirror</u>: Haunted Mirror does not give you a way to trash it, but does something if you find a way to.",
+        "name": "Cemetery / Haunted Mirror",
+        "untranslated": "description, extra, name"
+    },
+    "Encampment - Plunder": {
+        "description": "<left><u>Kampement:</u></left><left>+2 Kaarten</left><left>+2 Acties</left><left>Je mag een goud of een plunderenkaart uit je hand tonen. Doe je dat niet, leg deze kaart dan opzij en leg hem aan het begin van je opschoonfase terug in de voorraad.</left><left><u>Plunder:</u></left><left>+2 Coins</left><left>+1<VP></left>",
+        "extra": "<left><u>Kampement:</u></left><left>Het tonen van een kaart \"Plunderen\" of \"Goud\" is optioneel. Leg je een Kampement terug op de voorraadstapel, dan gaat het altijd bovenop de stapel, ook als er een kaart \"Plunderen\" bovenop ligt.</left><left><u>Plunder:</u></left><left>Deze kaart geeft je elke keer dat je hem speelt een <VP>-fiche.</left>",
+        "name": "Kampement / Plunderen"
+    },
+    "Flag Bearer - Flag": {
+        "description": "<left><u>Flag Bearer</u>:</left><n>+2 Coin<n><line>When you gain or trash this, take the Flag<n><left><u>Flag</u>:</left><n>When drawing your hand, +1 Card.",
+        "extra": "When you gain or trash a Flag Bearer, you take the Flag. The Flag causes you to draw an extra card when drawing your hand in Clean-up. This is true even if your hand would normally be some amount other than 5 cards - for example if you played Outpost (from Seaside), instead of drawing 3 cards for your Outpost turn, you would draw 4. If Flag Bearer is trashed, the player trashing it takes the Flag, regardless of whose turn it is.<n><n>Flag is an Artifact. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
+        "name": "Flag Bearer / Flag",
+        "untranslated": "description, extra, name"
+    },
+    "Fool - Lucky Coin": {
+        "description": "<left><u>Fool</u>:</left><center>If you aren’t the player with Lost in the Woods, take it, take 3 Boons, and receive the Boons in any order.</center><left><i>Heirloom: Lucky Coin</i></left><left><u>Lucky Coin</u>:</left><center>1 <*COIN*></center><n><n>When you play this, gain a Silver.",
+        "extra": "If you have Lost in the Woods, playing Fool does nothing. If you do not have Lost in the Woods, you take it - even from another player, if another player has it - and also take 3 Boons and receive them in the order you choose (discarding them when receiving them, or in Clean-up as appropriate). You do not need to pick the full order in advance - pick one to resolve, then after resolving it pick another to resolve. The player with Lost in the Woods (if any) can optionally discard a card to receive a Boon, at the start of each of their turns. In games using Fool, replace one of your starting Coppers with a Lucky Coin.\nYou can choose not to play Lucky Coin, and thus not gain a Silver.",
+        "name": "Fool / Lucky Coin",
+        "untranslated": "description, extra, name"
+    },
+    "Gladiator - Fortune": {
+        "description": "<left><u>Gladiator:</u></left><left>+2 Coins</left><left> Toon een kaart uit je hand. Je linkerbuurman mag een zelfde exemplaar uit zijn hand tonen. Doet hij dat niet dan +2 Coins en vernietig een Gladiator uit de voorraad.</left><left><u>Fortuin:</u></left><left>+1 Aanschaf</left><left>Verdubbel bij het spelen van deze kaart je _ Coins als je dat deze beurt nog niet hebt gedaan.</left><justify>Als je deze kaart pakt, pak een Goud per Gladiator die je in het spel hebt.</justify>",
+        "extra": "<left><u>Gladiator:</u></left><left>Zijn er geen Gladiators in voorraad, dan kun je geen Gladiators meer vernietigen, maar je krijgt nog wel de +1 Coin. Heb je geen kaarten in je hand, dan kan je de linkerbuurman geen exemplaar tonen van de kaart die jij toonde, dus je krijgt de +1 Coin en vernietigt een Gladiator.</left><left><u>Fortuin:</u></left><left> Je verdubbelt je _ Coin alleen bij de eerste keer dat je Fortuin in je beurt speelt, bij elk volgende krijg je uitsluitend +1 Aanschaf.</left>",
+        "name": "Gladiator / Fortuin"
+    },
+    "Hermit - Madman": {
+        "description": "<justify><u>Kluizenaar</u>: Bij het spelen van deze kaart bekijk je je aflegstapel. Daarna mag je 1 kaart (geen geldkaart) uit je hand of je aflegstapel vernietigen. Dit is niet verplicht. Een kaart van meerdere soorten waaronder Geld (zoals Harem uit Dominion Intrige) geldt als een geldkaart. Ongeacht het voorgaande pak je een kaart met een waarde van ten hoogste 3 Coins. Pak deze uit de voorraad en leg hem op je aflegstapel. Het pakken van de kaart is verplicht, mits mogelijk. Als je de Kluizenaar, nadat je deze gespeeld hebt, in de opschoonfase aflegt en je hebt deze beurt geen kaarten gekocht, vernietig dan de Kluizenaar en pak een Krankzinnige. Pak de Krankzinnige van de stapel Krankzinnigen, die geen onderdeel is van de voorraad, en leg deze op je aflegstapel. Het is niet van belang of je al dan niet op andere manieren kaarten hebt gepakt, het gaat alleen om het al dan niet kopen van een kaart. Zijn er geen Krankzinnigen in voorraad, dan pak je er geen. Wordt de Kluizenaar op een ander moment dan de opschoonfase afgelegd (je legt hem bijvoorbeeld op je trekstapel met een Gekonkel uit Dominion: Het Achterland), dan wordt de vernietigeigenschap niet geactiveerd.</justify>",
+        "extra": " <u>Krankzinnige</u>: Deze kaart bevindt zich niet in de voorraad en kan uitsluitend via de Kluizenaar worden verkregen. Speel je de Krankzinnige, dan krijg je +2 acties en moet je hem op de stapel Krankzinningen terugleggen indien mogelijk (dit is verplicht). Lukt dat, dan trek je een kaart voor elke kaart in je hand. Voorbeeld: je hebt 3 kaarten in je hand na het spelen van de Krankzinnige. Je trekt nu 3 kaarten. Normaal gesproken houdt niets je tegen om de Krankzinnige terug op de stapel te leggen, maar dit zou kunnen mislukken bij meermaals gebruik als gevolg van een Optocht, Troonzaal (uit Dominion basisspel) of Koningshof (uit Dominion: Welvaart). Voorbeeld: Als je een Optocht op een Krankzinnige speelt, krijg je +2 Acties. Je legt de Kranzinnige terug op de stapel Krankzinnigen en trekt een kaart voor elke kaart in je hand. Vervolgens krijg je opnieuw +2 Acties, maar je kunt de Krankzinnige niet terug op de stpel Krankzinnigen leggen, dus je trekt geen kaarten. Je kunt de Krankzinnige ook niet vernietigen. Tot slot pak je een kaart met een waarde van ten hoogste 1 Coin indien mogelijk.",
+        "name": "Kluizenaar / Krankzinnige"
+    },
+    "Necromancer - Zombies": {
+        "description": "<left><u>Necromancer</u>:</left><center>Play a face-up, non-Duration Action card from the trash, leaving it there and turning it face down for the turn.</center><line>Setup: Put the 3 Zombies into the trash.<left><u>Zombie Apprentice</u>:</left><center>You may trash an Action card from your hand for +3 Cards and +1 Action.</center><left><u>Zombie Mason</u>:</left><center>Trash the top card of your deck. You may gain a card costing up to 1 Coin more than it.</center><left><u>Zombie Spy</u>:</left><center>+1 Card</center><center>+1 Action</center><center>Look at the top card of your deck. Discard it or put it back.</center>",
+        "extra": "Setup:  Put the three Zombies into the trash.\nNecromancer plays a non-Duration Action card from the trash. Normally it can at least play one of the three Zombies, since they start the game in the trash. It can play other Action cards that make their way into the trash too. The played cards are turned over, to track that each can only be used once per turn this way; at end of turn, turn them back face up. Necromancer can play another Necromancer, though normally that will not be useful. The Action card stays in the trash; if an effect tries to move it, such as Encampment (from Empires) returning to the Supply, it will fail to move it. Necromancer can be used on a card that trashes itself when played; if the card checks to see if it was trashed (such as Pixie), it was not, but if the card does not check (such as Tragic Hero), it will function normally. Since the played card is not in play, 'while this is in play' abilities (such as Tracker's) will not do anything.\n<u>Zombie Apprentice</u>: If you trash an Action card from your hand, you draw three cards and get +1 Action.\n<u>The Zombie Mason</u>: Gaining a card is optional. You can gain a card costing more than the trashed card, or any amount less; for example you can gain a copy of the trashed card. Usually if it is not something you want to trash, you can gain a copy of it back from the Supply.\n<u>Zombie Spy</u>: You draw a card before looking at the top card. The Zombie Spy is like a regular Spy except it can only discard the top card of your own deck.",
+        "name": "Necromancer / Zombies",
+        "untranslated": "description, extra, name"
     },
     "Page -> Champion": {
         "description": "<justify>Page is exchanged for Treasure Hunter, which is exchanged for Warrior, which is exchanged for Hero, which is exchanged for Champion.</justify><left><u>Page</u>: +1 Card; +1 Action</left><left><u>Treasure Hunter</u>: +1 Action; +1 Coin; Gain a Silver per card the player to your right gained in his last turn.<br><u>Warrior</u>: +2 Cards; For each Traveller you have in play (including this), each other player discards the top card of his deck and trashes it if it costs 3 Coins or 4 Coins.<br><u>Hero</u>: +2 Coins; Gain a Treasure.<br><u>Champion</u>: +1 Action; For the rest of the game, when another player plays an Attack, it doesn't affect you, and when you play an Action, +1 Action. (This stays in play. <i>This is not in the Supply.</i>)</left>",
@@ -2661,10 +2706,61 @@
         "name": "Page → Champion",
         "untranslated": "description, extra, name"
     },
+    "Patrician - Emporium": {
+        "description": "<left><u>Patriciër:</u></left><left>+1 Kaart</left><left>+1 Actie</left><left>Toon de bovenste kaart van je trekstapel. Is deze 5 Coins of meer waard, neem hem dan in je hand.</left><left><u>Emporium:</u></left><left>+1 Kaart</left><left>+1 Actie</left><left>+1 Coin</left><line><left>Als je deze kaart pakt en je hebt ten minste 5 actiekaarten in het spel, +2 <VP>.</left>",
+        "extra": "<left><u>Patriciër:</u></left><left>kaarten die Debt kosten, zijn niet 5 Coins of meer waard, tenzij ze ook _ Coin-kosten van 5 Coins of meer hebben. Fortuin dus bijvoorbeeld wel, maar Stadswijk niet. </left><left><u>Emporium:</u></left><left> Deze kaart telt actiekaarten in het spel, inclusief de deze beurt gespeelde, duurzame kaarten uit voorgaande beurten en reservekaarten (uit Dominion: Avonturen) die deze beurt zijn opgeroepen.</left>",
+        "name": "Patriciër / Emporium"
+    },
     "Peasant -> Teacher": {
         "description": "<justify>Peasant is exchanged for Soldier, which is exchanged for Fugitive, which is exchanged for Disciple, which is exchanged for Teacher.</justify><n><left><u>Peasant</u>: +1 Buy; +1 Coin</left><left><u>Soldier</u>: +2 Coins; +1 Coin per other Attack you have in play. Each other player with 4 or more cards in hand discards a card.<br><u>Fugitive</u>: +2 Cards; +1 Action; Discard a card.<br><u>Disciple</u>: You may play an Action card from your hand twice. Gain a copy of it.<br><u>Teacher</u>: Put this on your Tavern mat. At the start of your turn, you may call this, to move your +1 Card, +1 Action, +1 Buy, or +1 Coin token to an Action Supply pile you have no tokens on (when you play a card from that pile, you first get that bonus). <i>(This is not in the Supply.)</i></left>",
         "extra": "Peasant is a Kingdom card that is a Traveller. These cards have an arrow over the text box to remind players of their ability to upgrade into another card. Peasant is exchanged for Soldier, which is exchanged for Fugitive, which is exchanged for Disciple, which is exchanged for Teacher. Teacher is not a Traveller; it cannot be exchanged for anything. Peasant can be bought or otherwise gained when being used in a game, but the other cards cannot, they are not in the Supply. When a non-Supply pile is empty, that does not count as an empty pile for the game ending condition or for City (from Prosperity).<n><n>When a player discards a Traveller from play, they may exchange it for the card indicated; they return the card being exchanged to its pile, takes the card they are exchanging it for, and puts that card into their discard pile. Exchanging is not trashing or gaining, and so does not trigger abilities like Travelling Fair's. It is optional. It only happens when the card is discarded from play; discarding it from hand, such as due to not playing it, will not trigger it. It only happens if the card being exchanged for has any copies available. If multiple cards do something when discarded from play, the player picks the order.",
         "name": "Peasant → Teacher",
+        "untranslated": "description, extra, name"
+    },
+    "Pixie - Goat": {
+        "description": "<left><u>Pixie</u>:</left><center>+1 Card<br>+1 Action<br>Discard the top Boon. You may trash this to receive that Boon twice.</center><left><i>Heirloom: Goat</i></left><left><u>Goat</u>:</left><center>1 <*COIN*></center><n><n>When you play this, you may trash a card from your hand.",
+        "extra": "For Pixie: If you receive a Boon that says to keep it until Clean-up, move it to in front of you, and remember that you get it twice.\nIn games using Pixie, replace one of your starting Coppers with a Goat.\nFor Goat: Trashing a card is optional.",
+        "name": "Pixie / Goat",
+        "untranslated": "description, extra, name"
+    },
+    "Pooka - Cursed Gold": {
+        "description": "<left><u>Pooka</u>:</left><center>You may trash a Treasure other than Cursed Gold from your hand for +4 Cards.</center><left><i>Heirloom: Cursed Gold</i></left><left><u>Cursed Gold</u>:</left><center>3 <*COIN*></center><n><n>When you play this, gain a Curse.",
+        "extra": "In games using Pooka, replace one of your starting Coppers with a Cursed Gold.\nYou can choose not to play Cursed Gold, and thus not gain a Curse.",
+        "name": "Pooka / Cursed Gold",
+        "untranslated": "description, extra, name"
+    },
+    "Sauna - Avanto": {
+        "description": "<left><u>Sauna</u>:</left><n>+1 Card<br>+1 Action<n>You may play an Avanto from your hand.<n>While this is in play, when you play a Silver, you may trash a card from your hand.<n><left><u>Avanto</u>:</left><n>+3 Cards<n>You may play a Sauna from your hand.",
+        "extra": "Sauna / Avanto is a split pile with five copies of Sauna placed on top of five copies of Avanto during setup. Sauna is a cantrip that allows you to trash a card when you play a Silver. Avanto is a terminal draw card that can potentially become non-terminal if you have a Sauna in your hand to play.",
+        "name": "Sauna / Avanto",
+        "untranslated": "description, extra, name"
+    },
+    "Secret Cave - Magic Lamp": {
+        "description": "<left><u>Secret Cave</u>:</left><center>+1 Card</center><center>+1 Action</center><left>You may discard 3 cards. If you did, then at the start of your next turn, +3 Coin.</left><left><i>Heirloom: Magic Lamp</i></left><left><u>Magic Lamp</u>:</left><center>1 <*COIN*></center><n><n>When you play this, if there are at least 6 cards that you have exactly 1 copy of in play, trash this. If you do, gain 3 Wishes from their pile.",
+        "extra": "If you do not discard three cards, Secret Cave is discarded from play at end of turn. If you do discard three cards, Secret Cave stays out until the Cleanup of your next turn, and you get +3 Coins at the start of that turn. You can choose to discard three cards even with fewer cards in hand, and will discard your remaining cards, but will not get the bonus.\nIn games using Secret Cave, replace one of your starting Coppers with a Magic Lamp.\nMagic Lamp itself counts as one of the six cards. A card you have two or more copies of in play does not count; you have to have exactly one copy in play to count a card. You can play more Treasures after trashing Magic Lamp, and still got 1 Coin from it for that turn.",
+        "name": "Secret Cave / Magic Lamp",
+        "untranslated": "description, extra, name"
+    },
+    "Settlers - Bustling Village": {
+        "description": "<left><u>Kolonisten:</u></left><left>+1 Kaart</left><left>+1 Actie</left><left>Kijk door je aflegstapel. Je mag een Koper uit deze stapel tonen en in je hand nemen.</left><left><u>Levendig dorp:</u></left><left>+1 Kaart</left><left>+3 Acties</left><left>Kijk door je aflegstapel. Je mag een Kolonisten uit deze stapel tonen en in je hand nemen.</left>",
+        "extra": "<left><u>Kolonisten:</u></left><left> Je mag door je aflegstapel kijken, ook al weet je dat er geen Koper in zit.</left><left><u>Levendig dorp:</u></left><left> Je mag ook door je aflegstapel kijken als je weet dat er geen kaart \"Kolonisten\" in zit.</left>",
+        "name": "Kolonisten / Levendig dorp"
+    },
+    "Shelters": {
+        "description": "<left><u>Hutje</u>: Als je een overwinningskaart koopt, mag je het Hutje uit je hand vernietigen.</left><left><u>Necropolis</u>: +2 Acties</left><left><u>Verwilderd Landgoed</u>: 0 <VP>; Als je deze kaart vernietigd, +1 Kaart.</left>",
+        "extra": " Zie voobereiding. De onderdakkaarten zijn nooit in de voorraad. <u>Hutje</u>: Koop je een overwinningskaart als je een Hutje in je hand hebt, dan mag je het Hutje vernietigen. Een kaart van meerdere soorten waaronder Overwinning geldt als een overwinningskaart. Je krijgt niets voor het vernietigen van een Hutje, je bent er alleen vanaf. <u>Verwilderd Landgoed</u>: Dit is een overwinningskaart, ook al is deze 0 <VP> waard, wordt deze kaart vernietigd, dan trek je direct een kaart, ook al ben je nog met de acties van een andere kaart bezig. <b>Voorbeeld:</b> gebruik je het Altaal om een Verwilderd Landgoed te vernietigen, dan trek je eerst een kaart en daarna pak je een kaart met een waarde van ten hoogste 5 Coins. Deze kaart kan zelf geen kaarten vernietigen, maar doet alleen iets als het  je lukt om hem te vernietigen. <u>Necropolis</u>: Dit is een actiekaart. Bij het spelen ervan krijg je +2 Acties.",
+        "name": "Onderdakkaarten"
+    },
+    "Shepherd - Pasture": {
+        "description": "<left><u>Shepherd</u>:</left><center>+1 Action<br>Discard any number of Victory cards, revealing them.</center><center>+2 Cards per card discarded.</center><left><i>Heirloom: Pasture</i></left><left><u>Pasture</u>:</left><center>1 <*COIN*></center><n><line><n>Worth 1<VP> per Estate you have.",
+        "extra": "<u>Shepherd</u>: For example, you could discard three Victory cards to draw six cards.\nIn games using Shepherd, replace one of your starting Coppers with a Pasture.\n<u>Pasture</u>: For example if you have three Estates, then Pasture is worth 3<VP>.",
+        "name": "Shepherd / Pasture",
+        "untranslated": "description, extra, name"
+    },
+    "Swashbuckler - Treasure Chest": {
+        "description": "<left><u>Swashbuckler</u>:</left><n>+3 Cards<n>If your discard pile has any cards in it:<n>+1 Coffer, then if you have at least 4 Coffers tokens, take the Treasure Chest<n><left><u>Treasure Chest</u>:</left><n>At the start of your Buy phase, gain a Gold.",
+        "extra": "First you draw 3 cards, then you check to see if your discard pile has any cards in it; if drawing those cards caused you to shuffle, your discard pile would be empty. If your discard pile has at least one card, you get +1 Coffers, and if you then have 4 or more tokens on your Coffers, you take the Treasure Chest. You cannot get the Treasure Chest unless your discard pile had at least one card. Treasure Chest simply causes you to gain a Gold at the start of your Buy phase each turn, including the turn you take it; this is not optional.<n><n>Treasure Chest is an Artifact. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
+        "name": "Swashbuckler / Treasure Chest",
         "untranslated": "description, extra, name"
     },
     "Tournament and Prizes": {
@@ -2672,20 +2768,33 @@
         "extra": " Eerst krijg je +1 Actie. Daarna mag iedere speler, inclusief jijzelf, een Provincie uit zijn hand tonen. Toon jij zelf een Provincie, leg deze dan af en pak een Prijs naar keuze of een Hertogdom. Leg de gekozen kaart op je trekstapel. Heb je geen kaarten in je trekstapel, dan wordt de gekozen kaart de enige kaart van je trekstapel. Er zijn 5 Prijzen in het spel. Je mag uitsluitend Prijzen uit de voorraad pakken. Je mag zelf kiezen welke Prijs je pakt, dat hoeft dus niet de bovenste van de stapel te zijn. Ook als de Prijzen niet op zijn, mag je ervoor kiezen om een Hertogdom te pakken. Je kunt er ook voor kiezen om een Hertogdom te pakken als deze niet meer beschikbaar zijn. In dat geval pak je niets. Toon geen van de andere spelers een Provincie, dan trek je 1 kaart en je krijgt +1 Coin (ongeacht of je al dan niet een kaart gepakt). Als je een Prijs pakt, mag je vrij uit de Prijsstapel kiezen. Iedere speler mag op elk moment de Prijsstapel doorkijken.<line>Deze kaarten zijn nooit onderdeel van de voorraad. Dit is de enige regel voor Prijzen, maar dit heeft verschillende gevolgen. Is de stapel Prijzen leeg, dan telt deze niet mee bij het bepalen van het einde van het spel. Prijzen kunnen niet worden gekocht of worden gepakt als gevolg van bepaalde kaarten (zoals bijvoorbeeld Hoorn des Overvloeds). Ze kunnen uitsluitend via de kaart Toornooi worden gepakt of als gevolg van kaarten die geen betrekking op de voorraad hebben (zoals bijvoorbeeld de Dief uit het basisspel). De Boodschapper (uit Dominon Hijs de Zeilen!) kan geen Prijzen naar de Prijsstapel terugsturen. Vernietigde Prijzen komen zoals gebruikelijk op de stapel Vernietigde Kaarten. Prijzen kunnen niet worden gekocht, maar hebben een waarde van 0 Coins, die van belang is voor kaarten zoals bijvoorbeeld Nieuwe Versie.",
         "name": "Toernooi en Prizes"
     },
-    "Hermit - Madman": {
-        "description": "<justify><u>Kluizenaar</u>: Bij het spelen van deze kaart bekijk je je aflegstapel. Daarna mag je 1 kaart (geen geldkaart) uit je hand of je aflegstapel vernietigen. Dit is niet verplicht. Een kaart van meerdere soorten waaronder Geld (zoals Harem uit Dominion Intrige) geldt als een geldkaart. Ongeacht het voorgaande pak je een kaart met een waarde van ten hoogste 3 Coins. Pak deze uit de voorraad en leg hem op je aflegstapel. Het pakken van de kaart is verplicht, mits mogelijk. Als je de Kluizenaar, nadat je deze gespeeld hebt, in de opschoonfase aflegt en je hebt deze beurt geen kaarten gekocht, vernietig dan de Kluizenaar en pak een Krankzinnige. Pak de Krankzinnige van de stapel Krankzinnigen, die geen onderdeel is van de voorraad, en leg deze op je aflegstapel. Het is niet van belang of je al dan niet op andere manieren kaarten hebt gepakt, het gaat alleen om het al dan niet kopen van een kaart. Zijn er geen Krankzinnigen in voorraad, dan pak je er geen. Wordt de Kluizenaar op een ander moment dan de opschoonfase afgelegd (je legt hem bijvoorbeeld op je trekstapel met een Gekonkel uit Dominion: Het Achterland), dan wordt de vernietigeigenschap niet geactiveerd.</justify>",
-        "extra": " <u>Krankzinnige</u>: Deze kaart bevindt zich niet in de voorraad en kan uitsluitend via de Kluizenaar worden verkregen. Speel je de Krankzinnige, dan krijg je +2 acties en moet je hem op de stapel Krankzinningen terugleggen indien mogelijk (dit is verplicht). Lukt dat, dan trek je een kaart voor elke kaart in je hand. Voorbeeld: je hebt 3 kaarten in je hand na het spelen van de Krankzinnige. Je trekt nu 3 kaarten. Normaal gesproken houdt niets je tegen om de Krankzinnige terug op de stapel te leggen, maar dit zou kunnen mislukken bij meermaals gebruik als gevolg van een Optocht, Troonzaal (uit Dominion basisspel) of Koningshof (uit Dominion: Welvaart). Voorbeeld: Als je een Optocht op een Krankzinnige speelt, krijg je +2 Acties. Je legt de Kranzinnige terug op de stapel Krankzinnigen en trekt een kaart voor elke kaart in je hand. Vervolgens krijg je opnieuw +2 Acties, maar je kunt de Krankzinnige niet terug op de stpel Krankzinnigen leggen, dus je trekt geen kaarten. Je kunt de Krankzinnige ook niet vernietigen. Tot slot pak je een kaart met een waarde van ten hoogste 1 Coin indien mogelijk.",
-        "name": "Kluizenaar / Krankzinnige"
+    "Tracker - Pouch": {
+        "description": "<left><u>Tracker</u>:</left><center>+1 Coin</center><center>Receive a Boon.</center><line><center>While this is in play, when you gain a card, you may put that card onto your deck.</center><left><i>Heirloom: Pouch</i></left><left><u>Pouch</u>:</left><center>1 <*COIN*></center><n><n>+1 Buy",
+        "extra": "<u>Tracker</u>: If you gain multiple cards with this in play, this applies to each of them - you could put any or all of them on top of your deck. This applies both to cards gained due to being bought, and to cards gained other ways with Tracker in play. Tracker is in play when you resolve its Boon, so if the Boon causes you to gain a card, for example a Silver from The Mountain's Gift, you can put that card onto your deck.\nIn games using Tracker, replace one of your starting Coppers with a Pouch.\n<u>Pouch</u>: This simply gives you 1 Coin and +1 Buy when you play it.",
+        "name": "Tracker / Pouch",
+        "untranslated": "description, extra, name"
     },
-    "Shelters": {
-        "description": "<left><u>Hutje</u>: Als je een overwinningskaart koopt, mag je het Hutje uit je hand vernietigen.</left><left><u>Necropolis</u>: +2 Acties</left><left><u>Verwilderd Landgoed</u>: 0 <VP>; Als je deze kaart vernietigd, +1 Kaart.</left>",
-        "extra": " Zie voobereiding. De onderdakkaarten zijn nooit in de voorraad. <u>Hutje</u>: Koop je een overwinningskaart als je een Hutje in je hand hebt, dan mag je het Hutje vernietigen. Een kaart van meerdere soorten waaronder Overwinning geldt als een overwinningskaart. Je krijgt niets voor het vernietigen van een Hutje, je bent er alleen vanaf. <u>Verwilderd Landgoed</u>: Dit is een overwinningskaart, ook al is deze 0 <VP> waard, wordt deze kaart vernietigd, dan trek je direct een kaart, ook al ben je nog met de acties van een andere kaart bezig. <b>Voorbeeld:</b> gebruik je het Altaal om een Verwilderd Landgoed te vernietigen, dan trek je eerst een kaart en daarna pak je een kaart met een waarde van ten hoogste 5 Coins. Deze kaart kan zelf geen kaarten vernietigen, maar doet alleen iets als het  je lukt om hem te vernietigen. <u>Necropolis</u>: Dit is een actiekaart. Bij het spelen ervan krijg je +2 Acties.",
-        "name": "Onderdakkaarten"
+    "Treasurer - Key": {
+        "description": "<left><u>Treasurer</u>:</left><n>+3 Coin<br><n>Choose one: Trash a Treasure from your hand; or gain a Treasure from the trash to your hand; or take the Key.<n><left><u>Key</u>:</left><n>At the start of your turn, +1 Coin.",
+        "extra": "The Key does not help you the turn you take it; it gives +1 Coin at the start of your turn, which has already happened. When you use a Treasurer to gain a Treasure from the trash, that can trigger abilities like the ones on Ducat and Spices. You can choose to take the Key even if you already have it.<n><n>Key is an Artifact. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
+        "name": "Treasurer / Key",
+        "untranslated": "description, extra, name"
     },
     "Urchin - Mercenary": {
         "description": "<justify><u>Straatjongen</u>: Bij het spelen van deze kaart trek je een kaart en krijg je +1 Actie. Daarna legt iedere andere speler kaarten uit zijn hand af totdat hij er 4 overheeft. Een speler die al 4 of minder kaarten in zijn hand heeft, doet niets. Speel je een aanvalskaart terwijl de Straatjongen in het spel is, dan mag je voordat je de gevolgen van de aanvalskaart afhandelt de Straatjongen vernietigen. Doe je dat, dan pak je een Huurling van de huurlingenstapel (die geen onderdeel van de voorraad is) en leg je deze op je aflegstapel. Zijn er geen Huurlingen in voorraad, dan pak je er geen. Speel je dezelfde Straatjongen tweemaal in één beurt (zoals bij de Optocht), dan mag je daardoor de Straatjongen niet vernietigen in ruil voor een Huurling. Speel je twee verschillende Straatjongens, dan zorgt de tweede ervoor dat je de eerste mag vernietigen.</justify>",
         "extra": "<u>Huurling</u>: Deze kaart bevindt zich niet in de voorraad en kan uitsluitend via de straatjongen worden verkregen. Bij het spelen van deze kaart mag je 2 kaarten uit je hand vernietigen. Doe je dat, dan trek je 2 kaarten, krijg je +2 Coins en iedere andere speler moet zijn hand tot 3 kaarten reduceren. Spelers die op deze aanval willen reageren met kaarten zoals de Bedelaar moeten dat doen voordat jij bepaalt of je al dan niet 2 kaarten uit je hand vernietigt. ",
         "name": "Straatjongen / Huurling"
+    },
+    "Vampire - Bat": {
+        "description": "<left><u>Vampire</u>:</left><center>Each other player receives the next Hex.</center><center>Gain a card costing up to 5 Coin other than a Vampire.</center><center>Exchange this for a Bat.</center><left><u>Bat</u>:</left><center>Trash up to 2 cards from your hand. If you trashed at least one, exchange this for a Vampire.</center><left><i>(This is not in the Supply.)</i></left>",
+        "extra": "For Vampire: Follow the instructions in order. If the Bat pile is empty, you will be unable to exchange Vampire for a Bat, but will do the rest. The Bat is put into your discard pile.\nFor Bat: The Vampire is put into your discard pile. If there are no Vampires in their pile, you cannot exchange Bat for one, but can still trash cards.",
+        "name": "Vampire / Bat",
+        "untranslated": "description, extra, name"
+    },
+    "adventures events": {
+        "description": "<justify>Gebeurteniskaarten zijn geen koninkrijkkaarten. Een speler mag in zijn aanschaffase in plaats van een kaart een gebeurtenis kopen. Hij betaalt dan de op de gebeurteniskaart aangegeven kosten en voert de bijbehorende functie uit. De gebeurtenis blijft op tafel liggen (deze kan zich nooit in een stapel, op een tableau of in de hand van een speler bevinden). Met het kopen van een gebeurtenis verbruikt de speler 1 aanschaf. Heeft een speler meer aancshaffen in zijn beurt, dan mag hij deze naar believen (en in een volgorde naar keuze) verdelen over het kopen van kaarten en gebeurtenissen.</justify>",
+        "extra": "Het is toegestaan om dezelfde gebeurtenis meermaals per beurt te kopen (mits de speler voldoende aanschaffen en Coins heeft). Sommige gebeurtenissen geven extra aanschaffen, waardoor de speler daarna meer kaarten/gebeurtenissen zou kunnen kopen. Een speler mag na het kopen van een gebeurtenis deze beurt geen geldkaarten meer spelen. Het kopen van een gebeurtenis geldt niet als het kopen van een kaart en activeert daarom niet kaarten zoals Heks uit het moeras en Domkoppen (uit Dominion Welvaart). De kosten van het kopen van een gebeurtenis worden niet beïnvloed door kaarten zoals Brugtrol.",
+        "name": "Gebeurteniskaarten Avonturen"
     },
     "empires events": {
         "description": "<justify>Gebeurteniskaarten zijn geen koninkrijkkaarten. Een speler mag in zijn aanschaffase in plaats van een kaart een gebeurtenis kopen. Hij betaalt dan de op de gebeurteniskaart aangegeven kosten en voert de bijbehorende functie uit. De gebeurtenis blijft op tafel liggen (deze kan zich nooit in een stapel, op een tableau of in de hand van een speler bevinden). Met het kopen van een gebeurtenis verbruikt de speler 1 aanschaf. Heeft een speler meer aancshaffen in zijn beurt, dan mag hij deze naar believen (en in een volgorde naar keuze) verdelen over het kopen van kaarten en gebeurtenissen.</justify>",
@@ -2697,30 +2806,11 @@
         "extra": "Bezienswaardigheden zijn geen Koningkrijkskaarten. Bezienswaardigheden bieden nieuwe manieren om punten te scoren. De spelers kiezen zelf hoe ze bepalen met welke bezienswaardigheden ze spelen. Ze kunnen de bezienswaardigheden door de gebeurtenissen schudden en er vóór een spel 2 trekken. Ze kunnen er ook voor kiezen om de bezienswaardigheden (en gebeurtenissen) door de locatiekaarten te schudden en er dan 0-2 te gebruiken, afhankelijk van het aantal dat verschijnt voordat er 10 koninkrijkkaarten zijn getrokken. Of ze gberuiken een andere methode. De te gebruiken bezienswaardigheden zijn vanaf de start van het spel voor alle spelers zichtbaar. We raden aan om er niet meer dan 2 per spel te gebruiken.<n><n>Veel bezienswaardigheden hebben uitsluitend bij de puntentelling aan het einde van het spel een functie. Op basis van de aanwijzingen op de bezienswaardigheid krijgen de spelers dan bonus- of minpunten.<n><n>Sommige bezienswardigheden starten met 6 <VP>-fiches per speler. Dus, 12 <VP>-fiches in het spel met 2 spelers tot 36 <VP>-fiches bij 6 spelers. Deze bezienswaardigheden bieden een manier om aan <VP>-fiches te komen. Liggen er geen <VP>-fiches meer op een bezienswaardigheid, dan kunnen de spelers deze daar niet meer verdienen.",
         "name": "Bezienswaardigheden - Keizerrijken"
     },
-    "Settlers - Bustling Village": {
-        "description": "<left><u>Kolonisten:</u></left><left>+1 Kaart</left><left>+1 Actie</left><left>Kijk door je aflegstapel. Je mag een Koper uit deze stapel tonen en in je hand nemen.</left><left><u>Levendig dorp:</u></left><left>+1 Kaart</left><left>+3 Acties</left><left>Kijk door je aflegstapel. Je mag een Kolonisten uit deze stapel tonen en in je hand nemen.</left>",
-        "extra": "<left><u>Kolonisten:</u></left><left> Je mag door je aflegstapel kijken, ook al weet je dat er geen Koper in zit.</left><left><u>Levendig dorp:</u></left><left> Je mag ook door je aflegstapel kijken als je weet dat er geen kaart \"Kolonisten\" in zit.</left>",
-        "name": "Kolonisten / Levendig dorp"
-    },
-    "Catapult - Rocks": {
-        "description": "<left><u>Katapult:</u></left><left>+1 Coin</left><left>Vernietig een kaart uit je hand is deze 3 Coins of meer waard, dan pakt iedere andere speler een Vloek, Is het een geldkaart, dan legt iedere speler zoveel kaarten af dat hij 3 handkaarten overhoudt.</left><left><u>Rotsblokken:</u></left><left>+1 Coin</left><line><left>Als je deze kaart pakt of vernietigt, pak een Zilver. Is het je aanschaffase, leg het Zilver dan op je trekstapel. Zo niet, neem het Zilver dan in je hand.</left>",
-        "extra": "<left><u>Kaptapult:</u></left><left>Als de kaart die je vernietigd een geldkaart is, legt iedere andere speler handkaarten af totdat hij er nog 3 heeft. Is de kaart die vernietigt 3 Coins of meer waard, dan krijgt iedere andere speler een Vloek. Heeft de vernietigde kaart beide eigenschappen (bijvoorbeeld Zilver), dan gebeuren beide zaken. Heeft de kaart geen van beide eigenschappen, dan gebeurt er niets. Heb je geen kaarten in je hand om te vernietigen, dan gebeurt er niets.</left><left><u>Rotsblokken:</u></left><left>Is het de beurt van een andere speler, dan is het niet jouw aanschaffase, dus gaat het Zilver naar je hand.</left>",
-        "name": "Katapult / Rotsblokken"
-    },
-    "Patrician - Emporium": {
-        "description": "<left><u>Patriciër:</u></left><left>+1 Kaart</left><left>+1 Actie</left><left>Toon de bovenste kaart van je trekstapel. Is deze 5 Coins of meer waard, neem hem dan in je hand.</left><left><u>Emporium:</u></left><left>+1 Kaart</left><left>+1 Actie</left><left>+1 Coin</left><line><left>Als je deze kaart pakt en je hebt ten minste 5 actiekaarten in het spel, +2 <VP>.</left>",
-        "extra": "<left><u>Patriciër:</u></left><left>kaarten die Debt kosten, zijn niet 5 Coins of meer waard, tenzij ze ook _ Coin-kosten van 5 Coins of meer hebben. Fortuin dus bijvoorbeeld wel, maar Stadswijk niet. </left><left><u>Emporium:</u></left><left> Deze kaart telt actiekaarten in het spel, inclusief de deze beurt gespeelde, duurzame kaarten uit voorgaande beurten en reservekaarten (uit Dominion: Avonturen) die deze beurt zijn opgeroepen.</left>",
-        "name": "Patriciër / Emporium"
-    },
-    "Encampment - Plunder": {
-        "description": "<left><u>Kampement:</u></left><left>+2 Kaarten</left><left>+2 Acties</left><left>Je mag een goud of een plunderenkaart uit je hand tonen. Doe je dat niet, leg deze kaart dan opzij en leg hem aan het begin van je opschoonfase terug in de voorraad.</left><left><u>Plunder:</u></left><left>+2 Coins</left><left>+1<VP></left>",
-        "extra": "<left><u>Kampement:</u></left><left>Het tonen van een kaart \"Plunderen\" of \"Goud\" is optioneel. Leg je een Kampement terug op de voorraadstapel, dan gaat het altijd bovenop de stapel, ook als er een kaart \"Plunderen\" bovenop ligt.</left><left><u>Plunder:</u></left><left>Deze kaart geeft je elke keer dat je hem speelt een <VP>-fiche.</left>",
-        "name": "Kampement / Plunderen"
-    },
-    "Gladiator - Fortune": {
-        "description": "<left><u>Gladiator:</u></left><left>+2 Coins</left><left> Toon een kaart uit je hand. Je linkerbuurman mag een zelfde exemplaar uit zijn hand tonen. Doet hij dat niet dan +2 Coins en vernietig een Gladiator uit de voorraad.</left><left><u>Fortuin:</u></left><left>+1 Aanschaf</left><left>Verdubbel bij het spelen van deze kaart je _ Coins als je dat deze beurt nog niet hebt gedaan.</left><justify>Als je deze kaart pakt, pak een Goud per Gladiator die je in het spel hebt.</justify>",
-        "extra": "<left><u>Gladiator:</u></left><left>Zijn er geen Gladiators in voorraad, dan kun je geen Gladiators meer vernietigen, maar je krijgt nog wel de +1 Coin. Heb je geen kaarten in je hand, dan kan je de linkerbuurman geen exemplaar tonen van de kaart die jij toonde, dus je krijgt de +1 Coin en vernietigt een Gladiator.</left><left><u>Fortuin:</u></left><left> Je verdubbelt je _ Coin alleen bij de eerste keer dat je Fortuin in je beurt speelt, bij elk volgende krijg je uitsluitend +1 Aanschaf.</left>",
-        "name": "Gladiator / Fortuin"
+    "nocturne boons": {
+        "description": "Boons are a face-down deck of landscape-style instruction cards that are revealed as needed. Generally these have effects that are good for a player.<n>Setup: If any Kingdom cards being used have the Fate type, shuffle the Boons and put them near the Supply, and put the Will-o'-Wisp (Spirit) pile near the Supply also.<br>Fate cards can somehow give players Boons; all the Fate type means is that the Boons are shuffled at the start of the game.",
+        "extra": "The phrase 'receive a Boon' means, turn over the top Boon, and follow the instructions on it. If the Boons deck is empty, first shuffle the discarded Boons to reform the deck; you may also do this any time all Boons are in their discard pile. Received Boons normally go to the Boons discard pile, but three (The Field's Gift, The Forest's Gift, and The River's Gift) go in front of a player until that turn's Clean-up.\nBoons are never in a player's deck; they are physically cards but are not 'cards' in game terms. They are thus never 'cards in play,' receiving Boons is not 'gaining a card,' and so on.\nWith the exception of the following, most Boons are so simple that they do not need additional explanation.\n<u>The Moon's Gift</u>: If your discard pile is empty, this will not do anything.\n<u>The River's Gift</u>: You draw the card after drawing your hand for your next turn.\n<u>The Sky's Gift</u>: If you choose to do this with fewer than three cards in hand, you will discard the rest of your cards but not gain a Gold. Discarding three cards gets you one Gold, not three.",
+        "name": "Boons",
+        "untranslated": "description, extra, name"
     },
     "nocturne hexes": {
         "description": "Hexes are a face-down deck of landscape-style instruction cards that are revealed as needed. Generally these have effects that are not good for a player.<br>Setup: If any Kingdom cards being used have the Doom type, shuffle the Hexes and put them near the Supply, and put Deluded/Envious (States) and Miserable/Twice Miserable (States) near the Supply also.<br>Doom cards can somehow give players Hexes; all the Doom type means is that the Hexes are shuffled at the start of the game.",
@@ -2728,76 +2818,10 @@
         "name": "Hexes",
         "untranslated": "description, extra, name"
     },
-    "Vampire - Bat": {
-        "description": "<left><u>Vampire</u>:</left><center>Each other player receives the next Hex.</center><center>Gain a card costing up to 5 Coin other than a Vampire.</center><center>Exchange this for a Bat.</center><left><u>Bat</u>:</left><center>Trash up to 2 cards from your hand. If you trashed at least one, exchange this for a Vampire.</center><left><i>(This is not in the Supply.)</i></left>",
-        "extra": "For Vampire: Follow the instructions in order. If the Bat pile is empty, you will be unable to exchange Vampire for a Bat, but will do the rest. The Bat is put into your discard pile.\nFor Bat: The Vampire is put into your discard pile. If there are no Vampires in their pile, you cannot exchange Bat for one, but can still trash cards.",
-        "name": "Vampire / Bat",
-        "untranslated": "description, extra, name"
-    },
-    "Cemetery - Haunted Mirror": {
-        "description": "<left><u>Cemetery</u>:</left><center>2 <*VP*></center><line>When you gain this, trash up to 4 cards from your hand.<br><i>Heirloom: Haunted Mirror</i><left><u>Haunted Mirror</u>:</left><center>1 <*COIN*></center><line>When you trash this, you may discard an Action card, to gain a Ghost from its pile.",
-        "extra": "<u>Cemetery</u>:In games using this, replace one of your starting Coppers with a Haunted Mirror. When you gain a Cemetery, trash from zero to four cards from your hand.\n<u>Haunted Mirror</u>: Haunted Mirror does not give you a way to trash it, but does something if you find a way to.",
-        "name": "Cemetery / Haunted Mirror",
-        "untranslated": "description, extra, name"
-    },
-    "Pooka - Cursed Gold": {
-        "description": "<left><u>Pooka</u>:</left><center>You may trash a Treasure other than Cursed Gold from your hand for +4 Cards.</center><left><i>Heirloom: Cursed Gold</i></left><left><u>Cursed Gold</u>:</left><center>3 <*COIN*></center><n><n>When you play this, gain a Curse.",
-        "extra": "In games using Pooka, replace one of your starting Coppers with a Cursed Gold.\nYou can choose not to play Cursed Gold, and thus not gain a Curse.",
-        "name": "Pooka / Cursed Gold",
-        "untranslated": "description, extra, name"
-    },
     "nocturne states": {
         "description": "States are deck of landscape-style cards. State cards are a way of tracking special information about players. It sits in front of a player as a reminder until it goes away.",
         "extra": "A State is a card that goes in front of a player and applies a rule. States are never in a player's deck; they are physically cards but are not 'cards' in game terms. They are thus never 'cards in play,' taking a State is not 'gaining a card,' and so on.\n<u>Deluded / Envious</u>: This card is two-sided. Deluded prevents you from buying Action cards during one turn, starting in the Buy phase. If you get Deluded during your turn before the Buy phase (such as with Leprechaun), it will apply that turn; normally Deluded will apply to your next turn. Envious causes Silver and Gold to make 1 Coin when you played in your Buy phase for one turn, rather than their usual 2 Coins and 3 Coins, starting in the Buy phase. Envious does not affect other Treasures, just Silver and Gold. If you get Envious during your turn before the Buy phase (such as with Leprechaun), it will apply that turn; normally Envious will apply to your next turn.\n<u>Lost in the Woods</u>: The two sides are the same; use either. Using the ability is optional. Lost in the Woods stays in front of you turn after turn, until another players takes it with a Fool.\n<u>Miserable / Twice Miserable</u>: This card is two-sided. This does nothing until the end of the game. The card just sits in front of you. When scoring at the end of the game, if Miserable is in front of you, lose 2<VP>. If Twice Miserable is in front of you, lose 4<VP>.",
         "name": "States",
-        "untranslated": "description, extra, name"
-    },
-    "Fool - Lucky Coin": {
-        "description": "<left><u>Fool</u>:</left><center>If you aren’t the player with Lost in the Woods, take it, take 3 Boons, and receive the Boons in any order.</center><left><i>Heirloom: Lucky Coin</i></left><left><u>Lucky Coin</u>:</left><center>1 <*COIN*></center><n><n>When you play this, gain a Silver.",
-        "extra": "If you have Lost in the Woods, playing Fool does nothing. If you do not have Lost in the Woods, you take it - even from another player, if another player has it - and also take 3 Boons and receive them in the order you choose (discarding them when receiving them, or in Clean-up as appropriate). You do not need to pick the full order in advance - pick one to resolve, then after resolving it pick another to resolve. The player with Lost in the Woods (if any) can optionally discard a card to receive a Boon, at the start of each of their turns. In games using Fool, replace one of your starting Coppers with a Lucky Coin.\nYou can choose not to play Lucky Coin, and thus not gain a Silver.",
-        "name": "Fool / Lucky Coin",
-        "untranslated": "description, extra, name"
-    },
-    "Pixie - Goat": {
-        "description": "<left><u>Pixie</u>:</left><center>+1 Card<br>+1 Action<br>Discard the top Boon. You may trash this to receive that Boon twice.</center><left><i>Heirloom: Goat</i></left><left><u>Goat</u>:</left><center>1 <*COIN*></center><n><n>When you play this, you may trash a card from your hand.",
-        "extra": "For Pixie: If you receive a Boon that says to keep it until Clean-up, move it to in front of you, and remember that you get it twice.\nIn games using Pixie, replace one of your starting Coppers with a Goat.\nFor Goat: Trashing a card is optional.",
-        "name": "Pixie / Goat",
-        "untranslated": "description, extra, name"
-    },
-    "Secret Cave - Magic Lamp": {
-        "description": "<left><u>Secret Cave</u>:</left><center>+1 Card</center><center>+1 Action</center><left>You may discard 3 cards. If you did, then at the start of your next turn, +3 Coin.</left><left><i>Heirloom: Magic Lamp</i></left><left><u>Magic Lamp</u>:</left><center>1 <*COIN*></center><n><n>When you play this, if there are at least 6 cards that you have exactly 1 copy of in play, trash this. If you do, gain 3 Wishes from their pile.",
-        "extra": "If you do not discard three cards, Secret Cave is discarded from play at end of turn. If you do discard three cards, Secret Cave stays out until the Cleanup of your next turn, and you get +3 Coins at the start of that turn. You can choose to discard three cards even with fewer cards in hand, and will discard your remaining cards, but will not get the bonus.\nIn games using Secret Cave, replace one of your starting Coppers with a Magic Lamp.\nMagic Lamp itself counts as one of the six cards. A card you have two or more copies of in play does not count; you have to have exactly one copy in play to count a card. You can play more Treasures after trashing Magic Lamp, and still got 1 Coin from it for that turn.",
-        "name": "Secret Cave / Magic Lamp",
-        "untranslated": "description, extra, name"
-    },
-    "Necromancer - Zombies": {
-        "description": "<left><u>Necromancer</u>:</left><center>Play a face-up, non-Duration Action card from the trash, leaving it there and turning it face down for the turn.</center><line>Setup: Put the 3 Zombies into the trash.<left><u>Zombie Apprentice</u>:</left><center>You may trash an Action card from your hand for +3 Cards and +1 Action.</center><left><u>Zombie Mason</u>:</left><center>Trash the top card of your deck. You may gain a card costing up to 1 Coin more than it.</center><left><u>Zombie Spy</u>:</left><center>+1 Card</center><center>+1 Action</center><center>Look at the top card of your deck. Discard it or put it back.</center>",
-        "extra": "Setup:  Put the three Zombies into the trash.\nNecromancer plays a non-Duration Action card from the trash. Normally it can at least play one of the three Zombies, since they start the game in the trash. It can play other Action cards that make their way into the trash too. The played cards are turned over, to track that each can only be used once per turn this way; at end of turn, turn them back face up. Necromancer can play another Necromancer, though normally that will not be useful. The Action card stays in the trash; if an effect tries to move it, such as Encampment (from Empires) returning to the Supply, it will fail to move it. Necromancer can be used on a card that trashes itself when played; if the card checks to see if it was trashed (such as Pixie), it was not, but if the card does not check (such as Tragic Hero), it will function normally. Since the played card is not in play, 'while this is in play' abilities (such as Tracker's) will not do anything.\n<u>Zombie Apprentice</u>: If you trash an Action card from your hand, you draw three cards and get +1 Action.\n<u>The Zombie Mason</u>: Gaining a card is optional. You can gain a card costing more than the trashed card, or any amount less; for example you can gain a copy of the trashed card. Usually if it is not something you want to trash, you can gain a copy of it back from the Supply.\n<u>Zombie Spy</u>: You draw a card before looking at the top card. The Zombie Spy is like a regular Spy except it can only discard the top card of your own deck.",
-        "name": "Necromancer / Zombies",
-        "untranslated": "description, extra, name"
-    },
-    "Shepherd - Pasture": {
-        "description": "<left><u>Shepherd</u>:</left><center>+1 Action<br>Discard any number of Victory cards, revealing them.</center><center>+2 Cards per card discarded.</center><left><i>Heirloom: Pasture</i></left><left><u>Pasture</u>:</left><center>1 <*COIN*></center><n><line><n>Worth 1<VP> per Estate you have.",
-        "extra": "<u>Shepherd</u>: For example, you could discard three Victory cards to draw six cards.\nIn games using Shepherd, replace one of your starting Coppers with a Pasture.\n<u>Pasture</u>: For example if you have three Estates, then Pasture is worth 3<VP>.",
-        "name": "Shepherd / Pasture",
-        "untranslated": "description, extra, name"
-    },
-    "Tracker - Pouch": {
-        "description": "<left><u>Tracker</u>:</left><center>+1 Coin</center><center>Receive a Boon.</center><line><center>While this is in play, when you gain a card, you may put that card onto your deck.</center><left><i>Heirloom: Pouch</i></left><left><u>Pouch</u>:</left><center>1 <*COIN*></center><n><n>+1 Buy",
-        "extra": "<u>Tracker</u>: If you gain multiple cards with this in play, this applies to each of them - you could put any or all of them on top of your deck. This applies both to cards gained due to being bought, and to cards gained other ways with Tracker in play. Tracker is in play when you resolve its Boon, so if the Boon causes you to gain a card, for example a Silver from The Mountain's Gift, you can put that card onto your deck.\nIn games using Tracker, replace one of your starting Coppers with a Pouch.\n<u>Pouch</u>: This simply gives you 1 Coin and +1 Buy when you play it.",
-        "name": "Tracker / Pouch",
-        "untranslated": "description, extra, name"
-    },
-    "nocturne boons": {
-        "description": "Boons are a face-down deck of landscape-style instruction cards that are revealed as needed. Generally these have effects that are good for a player.<n>Setup: If any Kingdom cards being used have the Fate type, shuffle the Boons and put them near the Supply, and put the Will-o'-Wisp (Spirit) pile near the Supply also.<br>Fate cards can somehow give players Boons; all the Fate type means is that the Boons are shuffled at the start of the game.",
-        "extra": "The phrase 'receive a Boon' means, turn over the top Boon, and follow the instructions on it. If the Boons deck is empty, first shuffle the discarded Boons to reform the deck; you may also do this any time all Boons are in their discard pile. Received Boons normally go to the Boons discard pile, but three (The Field's Gift, The Forest's Gift, and The River's Gift) go in front of a player until that turn's Clean-up.\nBoons are never in a player's deck; they are physically cards but are not 'cards' in game terms. They are thus never 'cards in play,' receiving Boons is not 'gaining a card,' and so on.\nWith the exception of the following, most Boons are so simple that they do not need additional explanation.\n<u>The Moon's Gift</u>: If your discard pile is empty, this will not do anything.\n<u>The River's Gift</u>: You draw the card after drawing your hand for your next turn.\n<u>The Sky's Gift</u>: If you choose to do this with fewer than three cards in hand, you will discard the rest of your cards but not gain a Gold. Discarding three cards gets you one Gold, not three.",
-        "name": "Boons",
-        "untranslated": "description, extra, name"
-    },
-    "Sauna - Avanto": {
-        "description": "<left><u>Sauna</u>:</left><n>+1 Card<br>+1 Action<n>You may play an Avanto from your hand.<n>While this is in play, when you play a Silver, you may trash a card from your hand.<n><left><u>Avanto</u>:</left><n>+3 Cards<n>You may play a Sauna from your hand.",
-        "extra": "Sauna / Avanto is a split pile with five copies of Sauna placed on top of five copies of Avanto during setup. Sauna is a cantrip that allows you to trash a card when you play a Silver. Avanto is a terminal draw card that can potentially become non-terminal if you have a Sauna in your hand to play.",
-        "name": "Sauna / Avanto",
         "untranslated": "description, extra, name"
     },
     "promo events": {
@@ -2810,30 +2834,6 @@
         "description": "Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
         "extra": "",
         "name": "Projects",
-        "untranslated": "description, extra, name"
-    },
-    "Border Guard - LanternHorn": {
-        "description": "<left><u>Border Guard</u>:</left><n>+1 Action<br>Reveal the top 2 cards of your deck.  Put one into your hand and discard the other.  If both were Actions, take the Lantern or Horn.<n><left><u>Horn</u>:</left><n>Once per turn, when you discard a Border Guard from play, you may put it onto your deck.<n><left><u>Lantern</u>:</left><n>Your Border Guards reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",
-        "extra": "When you play a Border Guard and do not have the Lantern, you reveal the top 2 cards of your deck, choose one and put it into your hand, and discard the other; then if they were both Action cards, you take the Lantern or the Horn.  When you play a Border Guard and have the Lantern, you reveal the top 3 cards of your deck, choose one and put it into your hand, and discard the rest; then if all three were Action cards, you may take the Horn.  If you reveal fewer than 2 cards, or fewer than 3 cards when you have the Lantern, you don't take an Artifact.  Both the Horn and the Lantern function the turn you get them.<n><n>Horn and Lantern are Artifacts. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Border Guard / Horn / Lantern",
-        "untranslated": "description, extra, name"
-    },
-    "Flag Bearer - Flag": {
-        "description": "<left><u>Flag Bearer</u>:</left><n>+2 Coin<n><line>When you gain or trash this, take the Flag<n><left><u>Flag</u>:</left><n>When drawing your hand, +1 Card.",
-        "extra": "When you gain or trash a Flag Bearer, you take the Flag. The Flag causes you to draw an extra card when drawing your hand in Clean-up. This is true even if your hand would normally be some amount other than 5 cards - for example if you played Outpost (from Seaside), instead of drawing 3 cards for your Outpost turn, you would draw 4. If Flag Bearer is trashed, the player trashing it takes the Flag, regardless of whose turn it is.<n><n>Flag is an Artifact. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Flag Bearer / Flag",
-        "untranslated": "description, extra, name"
-    },
-    "Treasurer - Key": {
-        "description": "<left><u>Treasurer</u>:</left><n>+3 Coin<br><n>Choose one: Trash a Treasure from your hand; or gain a Treasure from the trash to your hand; or take the Key.<n><left><u>Key</u>:</left><n>At the start of your turn, +1 Coin.",
-        "extra": "The Key does not help you the turn you take it; it gives +1 Coin at the start of your turn, which has already happened. When you use a Treasurer to gain a Treasure from the trash, that can trigger abilities like the ones on Ducat and Spices. You can choose to take the Key even if you already have it.<n><n>Key is an Artifact. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Treasurer / Key",
-        "untranslated": "description, extra, name"
-    },
-    "Swashbuckler - Treasure Chest": {
-        "description": "<left><u>Swashbuckler</u>:</left><n>+3 Cards<n>If your discard pile has any cards in it:<n>+1 Coffer, then if you have at least 4 Coffers tokens, take the Treasure Chest<n><left><u>Treasure Chest</u>:</left><n>At the start of your Buy phase, gain a Gold.",
-        "extra": "First you draw 3 cards, then you check to see if your discard pile has any cards in it; if drawing those cards caused you to shuffle, your discard pile would be empty. If your discard pile has at least one card, you get +1 Coffers, and if you then have 4 or more tokens on your Coffers, you take the Treasure Chest. You cannot get the Treasure Chest unless your discard pile had at least one card. Treasure Chest simply causes you to gain a Gold at the start of your Buy phase each turn, including the turn you take it; this is not optional.<n><n>Treasure Chest is an Artifact. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
-        "name": "Swashbuckler / Treasure Chest",
         "untranslated": "description, extra, name"
     },
     "events": {
@@ -2850,36 +2850,48 @@
         "description": "- Als er een kaart van de \"bezeten\" speler wordt vernietigd, leg deze dan tijdelijk opzij. Aan het einde van de opschoonfase van de extra beurt, legt de \"bezeten\" speler de opzij gelegde kaarten op zijn aflegstaple. Deze kaarten gelden tijdens de extra beurt als vernietigd. Voorbeeld: je kunt een Mijndorp (iot Imtrige) vernietigen en het geld daarvan gebruiken voor aankopen. Als het Mijndorp aan het einde van de opschoonfase weer op de aflegstapel wordt gelegd, geldt deze dus nite als gepakt (je krijgt de kaart dus niet). Kaarten van andere spelers die tijdens deze extra beurt worden vernietigd, gaan niet terug naar de aflegstapel. \n- Kaarten die als gevolg van een Maskerade (uit Intrige) worden doorgegeven, gelden niet als vernietigd of gepakt. Daarvoor gelden dus de gebruikelijke spelregels. Kaarten die als gevolg van de Ambassadeur (uit Hijs de Zeilen!) terug in de voorraad worden gelegd, gelden ook niet als vernietigd en gaan dus zoals gebruikelijk naar de voorraad.\n- Als de \"bezeten\" speler een aanval speelt, word ook jij op de gebruikelijke manier getroffen. Als je op de aanval wilt reageren (met bijvoorbeeld een Geheimee Kamer uit Dominion Intruge), moet je deze uit je eigen hand tonen, niet uit de hand van de \"bezeten\" speler.",
         "extra": " - de kaart \"bezeten\" heeft als gevolg dat er een extra beurt wordt gespeeld, net als bij de Voorpost (uit Hijs de Zeilen!). De extra beurt vindt pas plaats nadat je jouw beurt helemaal hebt afgerod, inclusief de opschoonfase en het trekken van nieuwe kaarten. De Voorpost kan uistluitend bij het spelen van nog éé'n of meer Voorposten voorkomen dat een speler een extra beurt krijgt, de kaart voorkomt geen extra beurten bij het spelen van andere kaarten of bij het gebruiken van bepaalde spelregels. Voorbeeld: als je de kaart \"Bezeten\" speelt  in een spel met 2 spelers, krijgt de andere speler na de beurt waarin hij \"bezeten\" raakt, zijn eigen (extra) beurt. Als hij in deze beurt de Voorpost speelt, krijgt hij daarvoor geen extra beurt (die heeft hij namelijk al gehad als gevolg van de kaart \"Bezeten\"). Als je de Voorpost en de kaart Bezeten speelt, vindt eerst de extra beurt voor de kaart Voorpost plaats. Daarna de extra beurt voor de kaart \"Bezeten\". Als een \"bezeten\" speler de Voorpost speelt, geldt deze voor hem en niet voor jou.\n- Extra beurten gelden niet bij het bepalen van de winnaar bij een gelijke stand aan het einde van het spel. Als de voorwaarden voor het einde van het spel zijn vervuld vervallen eventuele extra beurten.\n- In tegenstelling tot de Voorpost is de kaart \"Bezeten\" geen duurzame kaart. LEg deze in de opschoonfase van je beurt af.\n- De kaart \"Bezten\" werkt cumulatief. Als je twee van deze kaarten in je beurt speelt, krijg je twee extra beurten.",
         "name": "Bezeten 2/2",
-        "untranslated": "Note: This card is currently not used."
+        "untranslated": [
+            "Note: This card is currently not used."
+        ]
     },
     "Ruined Market": {
         "description": "+1 Aanschaf",
         "extra": "Bij het spelen van deze kaart krijg je +1 Aanschaf. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
         "name": "Verwoeste Markt",
-        "untranslated": "Note: This card is currently not used."
+        "untranslated": [
+            "Note: This card is currently not used."
+        ]
     },
     "Ruined Village": {
         "description": "+1 Actie",
         "extra": "Bij het spelen van deze kaart krijg je +1 Actie. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
         "name": "Vernield Dorp",
-        "untranslated": "Note: This card is currently not used."
+        "untranslated": [
+            "Note: This card is currently not used."
+        ]
     },
     "Ruined Library": {
         "description": "+1 Kaart",
         "extra": "Bij het spelen van deze kaart trek je een kaart. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
         "name": "Ingestorte Bibliotheek",
-        "untranslated": "Note: This card is currently not used."
+        "untranslated": [
+            "Note: This card is currently not used."
+        ]
     },
     "Survivors": {
         "description": "Bekijk de 2 bovenste kaarten van je trekstapel. Leg deze af of leg ze terug in een volgorde naar keuze.",
         "extra": "Leg beide kaarten uit je hand af als je wilt en trek er daarna evenveel van je trekstapel. Leg vervolgens zoveel kaarten af als je wilt (dat mogen ook zojuist getrokken kaarten zijn) en ontvang +1 Coin per (bij de tweede keer) afgelegde kaart.",
         "name": "Overlevenden",
-        "untranslated": "Note: This card is currently not used."
+        "untranslated": [
+            "Note: This card is currently not used."
+        ]
     },
     "Abandoned Mine": {
         "description": "+1 Coin",
         "extra": "Bij het spelen van deze kaart krijg je alleen +1 Coin. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
         "name": "Verlaten Mijn",
-        "untranslated": "Note: This card is currently not used."
+        "untranslated": [
+            "Note: This card is currently not used."
+        ]
     }
 }

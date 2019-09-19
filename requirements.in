@@ -1,4 +1,4 @@
 reportlab
-Pillow
+Pillow<6    # pillow 6 is not supported by reportlab
 pre-commit
 pytest
