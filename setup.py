@@ -9,7 +9,7 @@ setup(
     package_dir={"": "src"},
     packages=["domdiv"],
     install_requires=[
-        "reportlab==3.5.17",
+        "reportlab==3.5.26",
         "Pillow<6",
     ],  # pillow 6 is not supported by reportlab
     setup_requires=["pytest-runner"],
