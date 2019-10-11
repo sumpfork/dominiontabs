@@ -310,7 +310,7 @@ def main(args):
     with io.open(
         os.path.join(args.output_dir, lang_file), "w", encoding="utf-8"
     ) as lang_out:
-        json.dump(set_data, lang_out, sort_keys=True, indent=4, ensure_ascii=True)
+        json.dump(set_data, lang_out, sort_keys=True, indent=4, ensure_ascii=False)
 
     print("Sets:")
     print(set(set_data))
@@ -360,7 +360,7 @@ def main(args):
         with io.open(
             os.path.join(args.output_dir, lang, lang_file), "w", encoding="utf-8"
         ) as lang_out:
-            json.dump(lang_set_data, lang_out, ensure_ascii=True, indent=4)
+            json.dump(lang_set_data, lang_out, ensure_ascii=False, indent=4)
 
     ###########################################################################
     # bonuses_xx files
