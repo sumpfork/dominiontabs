@@ -1,3 +1,5 @@
+
+
 import os
 import codecs
 import json
@@ -313,14 +315,6 @@ def parse_opts(cmdline_args=None):
         action="store_true",
         dest="no_tab_artwork",
         help="Don't show background artwork on tabs.",
-    )
-    group_tab.add_argument(
-        "--tab-artwork-opacity",
-        type=float,
-        default=1.0,
-        help="Multiply opacity of tab background art by this value; "
-        "can be used to make text show up clearer on dark backrounds, "
-        "particularly on printers that output darker than average",
     )
     group_tab.add_argument(
         "--use-text-set-icon",
@@ -1083,7 +1077,7 @@ def read_card_data(options):
     if options.include_blanks > 0:
         for x in range(0, options.include_blanks):
             c = Card(
-                card_tag="Blank",
+                card_tag=u"Blank",
                 cardset="extras",
                 cardset_tag="extras",
                 cardset_tags=["extras"],
@@ -1690,7 +1684,7 @@ def filter_sort_cards(cards, options):
                     if n["count"] > 1:
                         # Add number of copies
                         n["name"] = (
-                            "{}&nbsp;\u00d7&nbsp;".format(n["count"]) + n["name"]
+                            u"{}&nbsp;\u00d7&nbsp;".format(n["count"]) + n["name"]
                         )
                     card_names.append(n["name"])
 
