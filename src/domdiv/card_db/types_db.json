@@ -88,6 +88,16 @@
     {
         "card_type": [
             "Action",
+            "Command"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
             "Doom"
         ],
         "card_type_image": "action.png",
@@ -99,6 +109,17 @@
         "card_type": [
             "Action",
             "Duration"
+        ],
+        "card_type_image": "duration.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Duration",
+            "Command"
         ],
         "card_type_image": "duration.png",
         "defaultCardCount": 10,
