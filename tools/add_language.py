@@ -1,4 +1,3 @@
-from __future__ import print_function
 import os
 import codecs
 import json
@@ -109,8 +108,8 @@ if cardlist:
             if card in cardlist:
                 # Have a new name, so update name
                 data["name"] = cardlist[card]
-                fields = [u"description", u"extra"]  # but no u"name"
-                data["untranslated"] = ", ".join(fields)
+                fields = ["description", "extra"]  # but no u"name"
+                data["untranslated"] = fields
             lang_out.write(json_dict_entry({card: data}, sep))
             sep = ","
         lang_out.write("\n}\n")  # End of Set

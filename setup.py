@@ -8,7 +8,10 @@ setup(
     entry_points={"console_scripts": ["dominion_dividers = domdiv.main:main"]},
     package_dir={"": "src"},
     packages=["domdiv"],
-    install_requires=["reportlab==3.5.17", "Pillow==5.4.1"],
+    install_requires=[
+        "reportlab==3.5.26",
+        "Pillow<6",
+    ],  # pillow 6 is not supported by reportlab
     setup_requires=["pytest-runner"],
     tests_require=["pytest", "six", "pytest-flake8", "pre-commit"],
     url="http://domtabs.sandflea.org",

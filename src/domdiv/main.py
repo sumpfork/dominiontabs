@@ -1,5 +1,3 @@
-from __future__ import print_function, absolute_import
-
 import os
 import codecs
 import json
@@ -1085,7 +1083,7 @@ def read_card_data(options):
     if options.include_blanks > 0:
         for x in range(0, options.include_blanks):
             c = Card(
-                card_tag=u"Blank",
+                card_tag="Blank",
                 cardset="extras",
                 cardset_tag="extras",
                 cardset_tags=["extras"],
@@ -1692,7 +1690,7 @@ def filter_sort_cards(cards, options):
                     if n["count"] > 1:
                         # Add number of copies
                         n["name"] = (
-                            u"{}&nbsp;\u00d7&nbsp;".format(n["count"]) + n["name"]
+                            "{}&nbsp;\u00d7&nbsp;".format(n["count"]) + n["name"]
                         )
                     card_names.append(n["name"])
 
