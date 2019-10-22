@@ -10,7 +10,7 @@ setup(
     packages=["domdiv"],
     install_requires=[
         "reportlab==3.5.26",
-        "Pillow<6",
+        "Pillow<7",
     ],  # pillow 6 is not supported by reportlab
     setup_requires=["pytest-runner"],
     tests_require=["pytest", "six", "pytest-flake8", "pre-commit"],
