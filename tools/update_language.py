@@ -57,7 +57,6 @@ def multikeysort(items, columns):
 
 
 def main(card_db_dir, output_dir):
-    print("foo")
     ###########################################################################
     # Get all the languages, and place the default language first in the list
     ###########################################################################
@@ -224,8 +223,9 @@ def main(card_db_dir, output_dir):
         fields = ["description", "extra", "name"]
         for card_tag in cards:
             lang_card = lang_data.get(card_tag)
+
             # print(f'looking at {card_tag}: {lang_card}')
-            if not lang_card or lang == LANGUAGE_XX:
+            if lang_card is None or lang == LANGUAGE_XX:
                 #  Card is missing, need to add it
                 lang_card = {}
                 if lang == LANGUAGE_DEFAULT:
@@ -233,55 +233,28 @@ def main(card_db_dir, output_dir):
                     lang_card["extra"] = ""
                     lang_card["name"] = card
                     lang_card["description"] = ""
-                    lang_card["untranslated"] = fields
                     lang_default = lang_data
                 else:
                     #  All other languages should get the default languages' text
                     lang_card["extra"] = lang_default[card_tag]["extra"]
                     lang_card["name"] = lang_default[card_tag]["name"]
                     lang_card["description"] = lang_default[card_tag]["description"]
-                    lang_card["untranslated"] = fields
             else:
-                # Card exists, figure out what needs updating (don't update default language)
-                if lang != LANGUAGE_DEFAULT:
-                    if "untranslated" in lang_card:
-                        #  Has an 'untranslated' field.  Process accordingly
-                        if not lang_card["untranslated"]:
-                            #  It is empty, so just remove it
-                            del lang_card["untranslated"]
-                        else:
-                            #  If a field remains untranslated, then replace with the default languages copy
-                            for field in fields:
-                                if field in lang_card["untranslated"]:
-                                    lang_card[field] = lang_default[card_tag][field]
-                    else:
-                        #  Need to create the 'untranslated' field and update based upon existing fields
-                        untranslated = []
-                        for field in fields:
-                            if field not in lang_data[card_tag]:
-                                lang_card[field] = lang_default[card_tag][field]
-                                untranslated.append(field)
-                        if untranslated:
-                            #  only add if something is still needing translation
-                            lang_card["untranslated"] = untranslated
-            lang_card["used"] = True
+                # Card exists, figure out what needs updating
+                for field in fields:
+                    if field not in lang_card:
+                        lang_card[field] = lang_default[card_tag][field]
             sorted_lang_data[card_tag] = lang_card
-        unused = [c for c in lang_data.values() if "used" not in c]
+        unused = set(lang_data) - set(cards)
         print(
-            f'unused in {lang}: {len(unused)}, used: {len([c for c in lang_data.values() if "used" in c])}'
+            f"unused in {lang}: {len(unused)}, used: {len(set(cards) - set(lang_data))}"
         )
-        print([c["name"] for c in unused])
+        print(unused)
         # Now keep any unused values just in case needed in the future
-        for card_tag in lang_data:
+        for card_tag in unused:
             lang_card = lang_data.get(card_tag)
-            if "used" not in lang_card:
-                if lang != LANGUAGE_XX:
-                    lang_card["untranslated"] = [
-                        "Note: This card is currently not used."
-                    ]
-                sorted_lang_data[card_tag] = lang_card
-            else:
-                del lang_card["used"]
+            lang_card["notes"] = ["This card is currently not used."]
+            sorted_lang_data[card_tag] = lang_card
 
         #  Process the file
         with io.open(

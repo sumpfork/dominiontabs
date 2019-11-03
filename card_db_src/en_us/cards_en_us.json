@@ -2672,49 +2672,31 @@
     "Possession 2/2": {
         "description": "<justify>During the Possessed turn, whenever one of that player's cards is trashed, set it aside, and that player puts it into his discard pile at the end of the turn, after Clean-up. This counts as the card being trashed, so, for example, you could trash a Mining Village (from Intrigue) and get the 2 coins. Getting those cards back at end of turn does not count as those cards being gained (so for example, you won't get them). Other players' cards that are trashed during that turn are not returned.<n>-If you make another player play an Attack via Possession, that Attack will hit you like it would normally. If you want to use a Reaction in response to that Attack (such as Secret Chamber from Intrigue), you would be the one revealing the Reaction, not the player being Possessed.<n>-Possession is cumulative; if you play it twice in one turn, there will be two extra turns after this one.<n>-Cards passed with Masquerade (from Intrigue) are not being gained or trashed, and so are passed normally. Cards returned to the Supply with Ambassador (from Seaside) are also not being trashed, and so return to the Supply normally.</justify>",
         "extra": "Possession causes an extra turn to be played, like the card Outpost does (from Seaside). The extra turn happens only after this turn is completely over - you will have discarded everything and drawn your next hand. Outpost only prevents itself from giving a player two consecutive turns, it does not prevent other cards or the rules from doing so. So, for example, if you play Possession in a two player game, then after the Possession turn, that player still gets his normal turn. If he played Outpost during that turn though, it would not give him an extra turn. If you play both Outpost and Possession in the same turn, the Outpost turn happens first. If you make someone play Outpost during a turn in which you Possessed them, that player will get the extra turn and make decisions during it and so forth, not you; if you make someone play Possession during a turn in which you Possessed them, that will make that player Possess the player to his left, rather than you getting to Possess anyone further. Possession turns (and other extra turns) do not count for the tiebreaker. Once the game ends, no further turns are played, including extra turns from Possession and Outpost. -Unlike Outpost, Possession is not a Duration card. It is discarded in the Clean-up phase of the turn you played it. [Possession also gives the Possessing player all tokens the Possessed player would get, including _ Coins, <VP>, and Debt tokens.]",
-        "name": "Possession 2/2",
-        "untranslated": [
-            "Note: This card is currently not used."
-        ]
+        "name": "Possession 2/2"
     },
     "Ruined Market": {
         "description": "+1 Buy",
         "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.",
-        "name": "Ruined Market",
-        "untranslated": [
-            "Note: This card is currently not used."
-        ]
+        "name": "Ruined Market"
     },
     "Ruined Village": {
         "description": "+1 Action",
         "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.",
-        "name": "Ruined Village",
-        "untranslated": [
-            "Note: This card is currently not used."
-        ]
+        "name": "Ruined Village"
     },
     "Ruined Library": {
         "description": "+1 Card",
         "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.",
-        "name": "Ruined Library",
-        "untranslated": [
-            "Note: This card is currently not used."
-        ]
+        "name": "Ruined Library"
     },
     "Survivors": {
         "description": "Look at the top 2 cards of your deck. Discard them or put them back in any order.",
         "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.",
-        "name": "Survivors",
-        "untranslated": [
-            "Note: This card is currently not used."
-        ]
+        "name": "Survivors"
     },
     "Abandoned Mine": {
         "description": "+1 Coin",
         "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.",
-        "name": "Abandoned Mine",
-        "untranslated": [
-            "Note: This card is currently not used."
-        ]
+        "name": "Abandoned Mine"
     }
 }

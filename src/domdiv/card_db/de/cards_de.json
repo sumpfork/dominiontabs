@@ -1942,14 +1942,12 @@
     "Captain": {
         "description": "Now and at the start of your next turn: Play a non-Duration Action card from the Supply costing up to 4 Coins, leaving it there.",
         "extra": "On the second turn, you can choose to play a different card, or the same card if there is still a copy of it in the Supply.<n>Captain can only play a visible card in the Supply, and the top card of a pile; it cannot play a card from an empty pile, or a card that has not been uncovered from a split pile, or a card from a split pile that has been bought out, or a non-Supply card (such as Mercenary).<n>The Action card stays in the Supply; if an effect tries to move it (such as Island putting itself on your Island Mat) it will fail to move it.<n>Captain can play a card that trashes itself when played; if the card checks to see if it was trashed (such as Mining Village), it was not, but if the card does not check (such as Acting Troupe), it will function normally.<n>Cards that normally move other cards from the Supply can move themselves when played via Captain; for example playing Workshop can gain itself, and playing Lurker can trash itself.<n>Since the played card is not in play, 'while this is in play' abilities (such as Goons's) will not do anything.<n>If there are no non-Duration Action cards in the Supply that cost up to 4 Coins the turn you play Captain, Captain still stays in play and tries to play a card at the start of your next turn.<n>If Captain plays a card that plays a Duration card, that does not affect which turn Captain is discarded from play.<n>You can enter an infinite loop with Captain, Band of Misfits, Ferry, and cost reduction: With your –2 Coins cost token on the Captain Supply pile, Band of Misfits can be played as Captain, and with cost reduction, Captain can play Band of Misfits. Since this results in Captain being played arbitrarily many times, at the start of your next turn you can play arbitrarily many Actions costing up to 4 Coins.",
-        "name": "Captain",
-        "untranslated": "description, extra, name"
+        "name": "Captain"
     },
     "Church": {
         "description": "+1 Action<br>Set aside up to 3 cards from your hand face down. At the start of your next turn, put them into your hand, then you may trash a card from your hand.",
         "extra": "You may set aside zero, one, two, or three cards from your hand. Put them face down; you may look at them.<n>No matter how many cards you set aside, you may trash a card at the start of your next turn and Church is discarded at the end of that turn.<n>The card you trash can be a card you had set aside, or a card that was already in your hand.<n>If you play multiple Churches (or one Church multiple times such as via Throne Room), you may set aside multiple batches of up to three cards. What happens on your next turn is this: you put one batch of set-aside cards in hand, then trash, then put the next batch of set-aside cards in hand, then trash. You can choose which batch of set-aside cards you put in hand first.",
-        "name": "Church",
-        "untranslated": "description, extra, name"
+        "name": "Church"
     },
     "Dismantle": {
         "description": "Entsorge eine Handkarte. Wenn sie 1 Coin oder mehr kostet, nimm eine billigere Karte und ein Gold.",
@@ -2671,44 +2669,44 @@
         "extra": "Die Landmarken sind in der Übersicht alphabetisch sortiert. Einmal im Spiel, haben sie für alle Spieler gleichermaßen Gültigkeit. Sie können nicht gekauft werden. Einige Landmarken enthalten Anweisungen für die Spielvorbereitung (unterhalb der Trennlinie). Spielt ihr mit einer dieser Karten, beachtet dies in der Spielvorbereitung. Darfst du dir auf Grund einer Anweisung 1<VP>-Marker von einer Landmarkenkarte oder einem Vorratsstapel nehmen und dort sind zu diesem Zeitpunkt keine 1<VP>d-Marker vorhanden, erhältst du nichts. Sind die zu Spielbeginn platzierten 1<VP>-Marker aufgebraucht, werden keine neuen 1<VP>-Marker platziert.",
         "name": "Landmarken (Wahrzeichen)"
     },
-    "Ruined Market": {
-        "description": "+1 Kauf",
-        "extra": "",
-        "name": "Zerstörter Markt",
-        "untranslated": [
-            "Note: This card is currently not used."
-        ]
-    },
     "Ruined Village": {
         "description": "+1 Aktion",
         "extra": "",
         "name": "Zerstörtes Dorf",
-        "untranslated": [
-            "Note: This card is currently not used."
-        ]
-    },
-    "Ruined Library": {
-        "description": "+1 Karte",
-        "extra": "",
-        "name": "Zerstörte Bibliothek",
-        "untranslated": [
-            "Note: This card is currently not used."
+        "notes": [
+            "This card is currently not used."
         ]
     },
     "Survivors": {
         "description": "Sieh dir die obersten beiden Karten von deinem Nachziehstapel an. Lege beide Karten ab oder lege beide Karten in beliebiger Reihenfolge zurück auf deinen Nachziehstapel.",
         "extra": "",
         "name": "Überlebende",
-        "untranslated": [
-            "Note: This card is currently not used."
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Ruined Market": {
+        "description": "+1 Kauf",
+        "extra": "",
+        "name": "Zerstörter Markt",
+        "notes": [
+            "This card is currently not used."
         ]
     },
     "Abandoned Mine": {
         "description": "+1 Coin",
         "extra": "",
         "name": "Verlassene Mine",
-        "untranslated": [
-            "Note: This card is currently not used."
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Ruined Library": {
+        "description": "+1 Karte",
+        "extra": "",
+        "name": "Zerstörte Bibliothek",
+        "notes": [
+            "This card is currently not used."
         ]
     }
 }
