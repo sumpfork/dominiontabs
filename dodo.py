@@ -11,6 +11,20 @@ def glob_no_dirs(spec):
     return [fname for fname in glob.glob(spec) if os.path.isfile(fname)]
 
 
+def task_compile_requirements():
+    return {
+        "file_dep": ["requirements.in"],
+        "actions": [
+            "pip-compile requirements.in",
+            # pip-compile will add macfsevents on mac, which breaks installation
+            # on other platforms, so hack in the 'doit' requirement after the
+            # compile
+            'echo "doit  # hacked in via doit\n" >> requirements.txt',
+        ],
+        "targets": ["requirements.txt"],
+    }
+
+
 def task_update_languages():
     files = glob.glob("card_db_src/**/*.json") + glob.glob("card_db_src/*.json")
     return {
