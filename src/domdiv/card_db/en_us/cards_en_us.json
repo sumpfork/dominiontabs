@@ -2669,18 +2669,10 @@
         "extra": "Landmarks are not Kingdom cards. It is recommended that no more than two Landmarks be used per game. Players may choose how to determine what Landmarks to play with. They may shuffle them with Events and deal out 2 cards from that pile every game; they may shuffle them into the Randomizer deck and use 0-2 depending on how many come up before finding 10 Kingdom cards; or they may use any method they like.",
         "name": "Landmarks - All"
     },
-    "Ruined Village": {
-        "description": "+1 Action",
+    "Abandoned Mine": {
+        "description": "+1 Coin",
         "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.",
-        "name": "Ruined Village",
-        "notes": [
-            "This card is currently not used."
-        ]
-    },
-    "Survivors": {
-        "description": "Look at the top 2 cards of your deck. Discard them or put them back in any order.",
-        "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.",
-        "name": "Survivors",
+        "name": "Abandoned Mine",
         "notes": [
             "This card is currently not used."
         ]
@@ -2693,6 +2685,14 @@
             "This card is currently not used."
         ]
     },
+    "Ruined Library": {
+        "description": "+1 Card",
+        "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.",
+        "name": "Ruined Library",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
     "Ruined Market": {
         "description": "+1 Buy",
         "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.",
@@ -2701,18 +2701,18 @@
             "This card is currently not used."
         ]
     },
-    "Abandoned Mine": {
-        "description": "+1 Coin",
+    "Ruined Village": {
+        "description": "+1 Action",
         "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.",
-        "name": "Abandoned Mine",
+        "name": "Ruined Village",
         "notes": [
             "This card is currently not used."
         ]
     },
-    "Ruined Library": {
-        "description": "+1 Card",
+    "Survivors": {
+        "description": "Look at the top 2 cards of your deck. Discard them or put them back in any order.",
         "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition.",
-        "name": "Ruined Library",
+        "name": "Survivors",
         "notes": [
             "This card is currently not used."
         ]

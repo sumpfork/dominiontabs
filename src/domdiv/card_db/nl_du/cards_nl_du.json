@@ -2669,18 +2669,10 @@
         "extra": "Bezienswaardigheden zijn geen Koningkrijkskaarten. Bezienswaardigheden bieden nieuwe manieren om punten te scoren. De spelers kiezen zelf hoe ze bepalen met welke bezienswaardigheden ze spelen. Ze kunnen de bezienswaardigheden door de gebeurtenissen schudden en er vóór een spel 2 trekken. Ze kunnen er ook voor kiezen om de bezienswaardigheden (en gebeurtenissen) door de locatiekaarten te schudden en er dan 0-2 te gebruiken, afhankelijk van het aantal dat verschijnt voordat er 10 koninkrijkkaarten zijn getrokken. Of ze gberuiken een andere methode. De te gebruiken bezienswaardigheden zijn vanaf de start van het spel voor alle spelers zichtbaar. We raden aan om er niet meer dan 2 per spel te gebruiken.<n><n>Veel bezienswaardigheden hebben uitsluitend bij de puntentelling aan het einde van het spel een functie. Op basis van de aanwijzingen op de bezienswaardigheid krijgen de spelers dan bonus- of minpunten.<n><n>Sommige bezienswardigheden starten met 6 <VP>-fiches per speler. Dus, 12 <VP>-fiches in het spel met 2 spelers tot 36 <VP>-fiches bij 6 spelers. Deze bezienswaardigheden bieden een manier om aan <VP>-fiches te komen. Liggen er geen <VP>-fiches meer op een bezienswaardigheid, dan kunnen de spelers deze daar niet meer verdienen.",
         "name": "Bezienswaardigheden"
     },
-    "Ruined Village": {
-        "description": "+1 Actie",
-        "extra": "Bij het spelen van deze kaart krijg je +1 Actie. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
-        "name": "Vernield Dorp",
-        "notes": [
-            "This card is currently not used."
-        ]
-    },
-    "Survivors": {
-        "description": "Bekijk de 2 bovenste kaarten van je trekstapel. Leg deze af of leg ze terug in een volgorde naar keuze.",
-        "extra": "Leg beide kaarten uit je hand af als je wilt en trek er daarna evenveel van je trekstapel. Leg vervolgens zoveel kaarten af als je wilt (dat mogen ook zojuist getrokken kaarten zijn) en ontvang +1 Coin per (bij de tweede keer) afgelegde kaart.",
-        "name": "Overlevenden",
+    "Abandoned Mine": {
+        "description": "+1 Coin",
+        "extra": "Bij het spelen van deze kaart krijg je alleen +1 Coin. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
+        "name": "Verlaten Mijn",
         "notes": [
             "This card is currently not used."
         ]
@@ -2693,6 +2685,14 @@
             "This card is currently not used."
         ]
     },
+    "Ruined Library": {
+        "description": "+1 Kaart",
+        "extra": "Bij het spelen van deze kaart trek je een kaart. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
+        "name": "Ingestorte Bibliotheek",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
     "Ruined Market": {
         "description": "+1 Aanschaf",
         "extra": "Bij het spelen van deze kaart krijg je +1 Aanschaf. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
@@ -2701,18 +2701,18 @@
             "This card is currently not used."
         ]
     },
-    "Abandoned Mine": {
-        "description": "+1 Coin",
-        "extra": "Bij het spelen van deze kaart krijg je alleen +1 Coin. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
-        "name": "Verlaten Mijn",
+    "Ruined Village": {
+        "description": "+1 Actie",
+        "extra": "Bij het spelen van deze kaart krijg je +1 Actie. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
+        "name": "Vernield Dorp",
         "notes": [
             "This card is currently not used."
         ]
     },
-    "Ruined Library": {
-        "description": "+1 Kaart",
-        "extra": "Bij het spelen van deze kaart trek je een kaart. Dit is een Ruïne; zie Aanvullende spelregels en Voorbereiding.",
-        "name": "Ingestorte Bibliotheek",
+    "Survivors": {
+        "description": "Bekijk de 2 bovenste kaarten van je trekstapel. Leg deze af of leg ze terug in een volgorde naar keuze.",
+        "extra": "Leg beide kaarten uit je hand af als je wilt en trek er daarna evenveel van je trekstapel. Leg vervolgens zoveel kaarten af als je wilt (dat mogen ook zojuist getrokken kaarten zijn) en ontvang +1 Coin per (bij de tweede keer) afgelegde kaart.",
+        "name": "Overlevenden",
         "notes": [
             "This card is currently not used."
         ]
