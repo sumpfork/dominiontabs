@@ -1,6 +1,6 @@
 from setuptools import setup
 
-version = "3.8.4"
+version = "3.8.5"
 
 setup(
     name="domdiv",
