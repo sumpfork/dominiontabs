@@ -8,6 +8,7 @@ install:
 script:
   - python setup.py test
   - if [[ ${TRAVIS_PYTHON_VERSION:0:1} == "3" ]]; then pre-commit run --all-files; fi
+  - env
 deploy:
   provider: pypi
   user: "__token__"
@@ -16,4 +17,4 @@ deploy:
   distributions: "sdist bdist_wheel"
   on:
     tags: true
-    condition: $TRAVIS_TAG =~ /^v[0-9].*/
+    condition: $TRAVIS_TAG =~ ^v[0-9]+.[0-9]+.[0-9]+$
