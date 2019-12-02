@@ -469,10 +469,9 @@
         "name": "Partisans"
     },
     "Fortune Teller": {
-        "description": "+2 Coin<n>Each other player reveals cards from the top of his deck until he reveals a Victory of Curse card. He puts it on top and discards the other revealed cards.",
-        "extra": "Each other player reveals cards from the top of his deck until he reveals a Victory or Curse card. If he runs out of cards before finding one, he shuffles his discard pile (but not the revealed cards), and keeps revealing cards. If he still cannot find one, he just discards all of the revealed cards. If he does find one, he puts the Victory or Curse card on top of his deck, and discards the other revealed cards. If his deck has no other cards in it, it becomes the only card in his deck. A card with multiple types, one of which is Victory (such as Nobles from Intrigue), is a Victory card. You do not choose Victory or Curse - they stop on the first card that matches either type.",
+        "description": "+2 Coin<n>Tous vos adversaires dévoilent des cartes de leur deck jusqu'à ce qu'ils dévoilent une carte <i>Victoire</i> ou <i>Malédiction</i>. Ils replacent cette carte sur leur deck et défaussent les autres cartes.",
+        "extra": "Chacun de vos adversaires dévoile des cartes de son deck jusqu'à ce qu'il dévoile une carte Victoire ou Malédiction. S'il n'a plus de carte dans son deck avant d'en dévoiler une, il mélange sa défausse (en prenant soin de ne pas mélanger les cartes dévoilées) et continue de dévoiler des cartes. S'il n'en trouve toujours pas, il défausse toutes les cartes dévoilées. S'il en dévoile une, il place la carte Victoire ou Malédiction sur son deck et défausse les autres cartes dévoilées. S'il n'a plus de carte dans son deck, cette carte devient la seule carte dans son deck. Une carte de plusieurs types dont l'un d'eux est Victoire (comme la carte Nobles de Dominion - L'Intrigue) est une carte Victoire. Vous ne choisissez pas entre carte Victoire ou Malédiction, vos adversaires arrêtent à la première carte correspondante.",
         "name": "Diseuse de bonne aventure",
-        "untranslated": "description, extra"
     },
     "Hamlet": {
         "description": "+1 Card<br>+1 Action<n>You may discard a card; If you do +1 Action.<n>You may discard a card; If you do +1 Buy",
