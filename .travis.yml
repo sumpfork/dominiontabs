@@ -8,7 +8,6 @@ install:
 script:
   - python setup.py test
   - if [[ ${TRAVIS_PYTHON_VERSION:0:1} == "3" ]]; then pre-commit run --all-files; fi
-  - env
 deploy:
   provider: pypi
   user: "__token__"
