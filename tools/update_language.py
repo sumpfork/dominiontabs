@@ -182,7 +182,7 @@ def main(args):
 
     cards = set(card["card_tag"] for card in card_data)
     groups = set(card["group_tag"] for card in card_data if "group_tag" in card)
-    super_groups = set(["events", "landmarks"])
+    super_groups = set(["events", "landmarks", "projects"])
 
     # Sort the cardset_tags
     for card in card_data:
