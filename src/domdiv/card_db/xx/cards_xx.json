@@ -3202,5 +3202,11 @@
         "extra": "Landmarks are not Kingdom cards. It is recommended that no more than two Landmarks be used per game. Players may choose how to determine what Landmarks to play with. They may shuffle them with Events and deal out 2 cards from that pile every game; they may shuffle them into the Randomizer deck and use 0-2 depending on how many come up before finding 10 Kingdom cards; or they may use any method they like.",
         "name": "Landmarks - All",
         "untranslated": "description, extra, name"
+    },
+    "projects": {
+        "description": "Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
+        "extra": "",
+        "name": "Projects",
+        "untranslated": "description, extra, name"
     }
 }
