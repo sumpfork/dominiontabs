@@ -1,18 +1,13 @@
 from setuptools import setup
 
-version = "3.8.5"
-
 setup(
     name="domdiv",
-    version=version,
     entry_points={"console_scripts": ["dominion_dividers = domdiv.main:main"]},
     package_dir={"": "src"},
     packages=["domdiv"],
-    install_requires=[
-        "reportlab==3.5.26",
-        "Pillow<6",
-    ],  # pillow 6 is not supported by reportlab
-    setup_requires=["pytest-runner"],
+    use_scm_version=True,
+    setup_requires=["setuptools_scm", "pytest-runner"],
+    install_requires=["reportlab", "Pillow"],
     tests_require=["pytest", "six", "pytest-flake8", "pre-commit"],
     url="http://domtabs.sandflea.org",
     include_package_data=True,

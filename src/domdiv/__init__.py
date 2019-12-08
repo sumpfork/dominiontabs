@@ -1,3 +1,7 @@
-import pkg_resources
+from pkg_resources import get_distribution, DistributionNotFound
 
-__version__ = pkg_resources.require("domdiv")[0].version
+try:
+    __version__ = get_distribution("domdiv").version
+except DistributionNotFound:
+    # package is not installed
+    pass
