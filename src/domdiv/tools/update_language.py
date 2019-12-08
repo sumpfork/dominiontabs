@@ -17,7 +17,7 @@ from shutil import copyfile
 import argparse
 import collections
 
-from common import (
+from domdiv.tools.common import (
     get_json_data,
     load_language_cards,
     LANGUAGE_XX,
@@ -280,21 +280,18 @@ def main(card_db_dir, output_dir):
     )
 
 
-if __name__ == "__main__":
+def run():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--card_db_dir",
-        default=os.path.join(
-            os.path.dirname(os.path.abspath(__file__)), "..", "src", "domdiv", "card_db"
-        ),
-        help="directory of card data",
+        "card_db_dir",
+        help="directory of card data (usually card_db_src at the top level of the distribution)",
     )
     parser.add_argument(
-        "--output_dir",
-        default=os.path.join(
-            os.path.dirname(os.path.abspath(__file__)), ".", "card_db"
-        ),
-        help="directory for output data",
+        "output_dir", help="directory for output data (usually src/domdiv/card_db)"
     )
     args = parser.parse_args()
     main(args.card_db_dir, args.output_dir)
+
+
+if __name__ == "__main__":
+    run()

@@ -2,7 +2,12 @@ from setuptools import setup
 
 setup(
     name="domdiv",
-    entry_points={"console_scripts": ["dominion_dividers = domdiv.main:main"]},
+    entry_points={
+        "console_scripts": [
+            "dominion_dividers = domdiv.main:main",
+            "domdiv_update_language = domdiv.tools.update_language:run",
+        ]
+    },
     package_dir={"": "src"},
     packages=["domdiv"],
     use_scm_version=True,
