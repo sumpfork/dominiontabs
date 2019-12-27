@@ -1,5 +1,4 @@
 from __future__ import print_function
-import subprocess
 import shutil
 import os
 import contextlib
@@ -101,19 +100,6 @@ def change_cwd(d):
         yield
     finally:
         os.chdir(curdir)
-
-
-def test_languagetool_run(pytestconfig):
-    with change_cwd(str(pytestconfig.rootdir)):
-        cmd = "doit update_languages"
-        print(cmd)
-        assert subprocess.check_call(cmd.split()) == 0
-        cmd = "diff -rwB src/domdiv/card_db card_db_src"
-        try:
-            out = subprocess.check_output(cmd.split(), stderr=subprocess.STDOUT)
-        except subprocess.CalledProcessError as e:
-            assert e.output == ""
-        assert out.decode("utf-8") == ""
 
 
 def test_only_type():
