@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 setup_git() {
     git config --global user.email "travis@travis-ci.org"
@@ -13,7 +14,7 @@ commit_carddb_files() {
 upload_files() {
     git remote remove origin
     git remote add origin https://${GH_TOKEN}@github.com/sumpfork/dominiontabs.git >/dev/null 2>&1
-    git push --quiet origin $TRAVIS_BRANCH
+    git push origin $TRAVIS_BRANCH
 }
 
 echo "Branch: $TRAVIS_BRANCH"
