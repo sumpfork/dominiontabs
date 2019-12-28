@@ -3,6 +3,7 @@
 setup_git() {
     git config --global user.email "travis@travis-ci.org"
     git config --global user.name "Travis CI"
+    git config --global push.default current
 }
 
 commit_carddb_files() {
@@ -12,8 +13,11 @@ commit_carddb_files() {
 }
 
 upload_files() {
+    git stash
+    git checkout $TRAVIS_BRANCH
+    git stash pop
     git remote remove origin
-    git remote add origin https://${GH_TOKEN}@github.com/sumpfork/dominiontabs.git >/dev/null 2>&1
+    git remote add origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git >/dev/null 2>&1
     echo "pushing to origin $TRAVIS_BRANCH"
     git push origin $TRAVIS_BRANCH
 }
