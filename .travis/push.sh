@@ -7,15 +7,15 @@ setup_git() {
 }
 
 commit_carddb_files() {
-    git diff
+    git status
+    git stash
+    git checkout $TRAVIS_BRANCH
+    git stash pop
     git add src/domdiv/card_db
     git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_files() {
-    git stash
-    git checkout $TRAVIS_BRANCH
-    git stash pop
     git remote remove origin
     git remote add origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git >/dev/null 2>&1
     echo "pushing to origin $TRAVIS_BRANCH"
