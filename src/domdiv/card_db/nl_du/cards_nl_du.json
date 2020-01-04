@@ -850,19 +850,19 @@
         "name": "Werkplaats"
     },
     "Artisan": {
-        "description": "Pak een kaart die ten hoogste 5 kost en neem deze in je hand. <n>Leg een kaart uit je hand op je trekstapel.",
-        "extra": "De kaart die je pakt komt uit de voorraad en gaat naar je hand. Je mag geen _ Coin&nbsp; gebruiken om de kosten van de te pakken kaart te verhogen; de kaart kost altijd ten minste 0 Coin en ten hoogste 5 Coin. Na het pakken van de kaart leg je een kaart uit je hand op je trekstapel. Dat mag ook de juist gepakte kaart zijn.",
-        "name": "Ambachtsman"
+        "description": "Gain a card to your hand costing up to 5 Coins.<n>Put a card from your hand onto your deck.",
+        "extra": "The card you gain comes from the Supply and is put into your hand.<n>You cannot use _ Coin&nbsp;to increase how expensive of a card you gain; it always costs from 0 Coins to 5 Coins.<n>After gaining the card, you put a card from your hand onto your deck; that can be the card you just gained, or a different card.",
+        "name": "Artisan"
     },
     "Bandit": {
-        "description": "Pak een Goud. Iedere andere speler toont de 2 bovenste kaarten van zijn trekstapel, vernietigt 1 getoonde geldkaart met uitzondering van Koper, en legt de rest af.",
-        "extra": "Eerst pak je een Goud uit de voorraad, die je op je aflegstapel legt. Daarna toont iedere andere speler, met de klok mee, de bovenste 2 kaarten van zijn trekstapel en vernietigt er 1 naar zijn keuze van als het een andere geldkaart dan Koper is (bijvoorbeeld Zilver of Goud). Daarna legt hij de andere kaart af. Een speler die geen geldkaarten anders dan Koper toont, legt beide kaarten af.",
-        "name": "Bandiet"
+        "description": "Gain a Gold. Each other player reveals the top 2 cards of their deck, trashes a revealed Treasure other than Copper, and discards the rest.",
+        "extra": "First you gain a Gold from the Supply, putting it into your discard pile.<n>Then each other player, in turn order, reveals their top 2 cards, trashes one they choose that is a Treasure other than Copper (e.g. Silver or Gold), and discards the other revealed cards.<n>A player who did not reveal a Treasure card other than Copper simply discards both cards.",
+        "name": "Bandit"
     },
     "Harbinger": {
-        "description": "+1 Kaart<br>+1 Actie<n>Kijk door je aflegstapel. Je mag 1 kaart daaruit op je trekstapel legge.",
-        "extra": "Trek eerst een kaart en ontvang +1 actie. Kijk daarna door je aflegstapel en leg er, als je dat wilt, een kaart van op je trekstapel.",
-        "name": "Voorbode"
+        "description": "+1 Card<br>+1 Action<n>Look through your discard pile. You may put a card from it onto your deck.",
+        "extra": "First draw a card and get +1 Action; then look through your discard pile, and you may put a card from it on top of your deck.<n>Putting a card on top is optional.",
+        "name": "Harbinger"
     },
     "Merchant": {
         "description": "+1 Kaart<br>+1 Actie<n>De eerste keer dat je deze beurt een Zilver speelt: +1 Coin.",
@@ -870,19 +870,19 @@
         "name": "Koopman"
     },
     "Poacher": {
-        "description": "+1 Kaart<br>+1 Actie<br>+1 Coin<n>Leg per lege voorraadstapel 1 kaart af",
-        "extra": "Je trekt je kaart voordat je gaat afleggen. Zijn er geen lege stapels, dan leg je niets af. Is er 1 lege stapel, dan leg je 1 kaart af. Zijn er 2 lege stapels, dan leg je 2 kaarten af, enzovoort. Alle stapels in de voorraad tellen mee, met inbegrip van Vloeken, Koper, Wilddief zelf enzovoort. Heb je niet voldoende kaarten om af te leggen, leg dan de rest van je hand af.",
-        "name": "Wilddief"
+        "description": "+1 Card<br>+1 Action<br>+1 Coin<n>Discard a card per empty Supply pile.",
+        "extra": "You draw your one card before discarding.<n>If there are no empty piles, you do not discard.<n>If there is one empty pile, you discard one card; if there are two empty piles, you discard two cards, and so on.<n>This includes all Supply piles, including Curses, Coppers, Poacher itself, etc.<n>If you do not have enough cards to discard, just discard the rest of your hand.<n><n>Non-Supply piles, such as Spoils, do not matter to Poacher.",
+        "name": "Poacher"
     },
     "Sentry": {
-        "description": "+1 Kaart<br>+1 Actie<n>Bekijk de bovenste 2 kaarten van je trekstapel. Je mag er zoveel vernietigen en/of afleggen als je wilt. Leg de resterende kaarten in een volgorde naar keuze terug op je trekstapel.",
-        "extra": "Je trekt eerst 1 kaart en krijgt +1 Actie. Dan bekijk je de bovenste 2 kaarten van je trekstapel. Je mag beide vernietigen, beide afleggen, beide terugleggen in een volgorde naar keuze, 1 kaart vernietigen en 1 afleggen, 1 kaart vernietigen en 1 terugleggen, of 1 kaart afleggen en 1 kaart terugleggen.",
-        "name": "Cipier"
+        "description": "+1 Card<br>+1 Action<n>Look at the top 2 cards of your deck. Trash and/or discard any number of them.<n>Put the rest back on top in any order.",
+        "extra": "First you draw a card and get +1 Action.<n>Then you look at the top 2 cards of your deck.<n>You can trash both, or discard both, or put both back in either order; or you can trash one and discard one, or trash one and put one back, or discard one and put one back.",
+        "name": "Sentry"
     },
     "Vassal": {
-        "description": "+2 Coin<n>Leg de bovenste kaart van je trekstapel af. Is het een actiekaart, dan mag je deze spelen.",
-        "extra": "Is de kaart een actiekaart, dan mag je deze spelen, maar dat is niet verplicht. Speel je de kaart, leg deze dan zoals gebruikelijk 'in het spel' en volg de aanwijzingen erop. Dit kost je geen acties.",
-        "name": "Vazal"
+        "description": "+2 Coin<n>Discard the top card of your deck. If it's an Action card, you may play it",
+        "extra": "If the card is an Action card, you can play it, but do not have to.<n>If you do play it, you move it into your play area and follow its instructions; this does not use up one of your Action plays for the turn.",
+        "name": "Vassal"
     },
     "Advance": {
         "description": "Je mag een actiekaart uit je hand vernietigen. Doe je dat, pak dat een actiekaart die ten hoogste 6 Coins waard is.",
