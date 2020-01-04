@@ -24,7 +24,7 @@ must be encoded in ISO 8859-15, also known as  "Latin alphabet no. 9"
 This character set is used throughout the Americas, Western Europe, Oceania, and much of Africa.
 It is also commonly used in most standard romanizations of East-Asian languages.
 
-If you have a language that is not supported by ISO 8859-15 please contact the developers.
+If you have a language that is not supported by ISO 8859-15 please contact the developers by [creating a new issue](https://github.com/sumpfork/dominiontabs/issues/new).
 
 
 ## Anatomy of sets_xx.json
