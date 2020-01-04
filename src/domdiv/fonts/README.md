@@ -1,6 +1,6 @@
 ## Fonts
 
-I believe I cannot distribute one font (Minion Pro) domdiv uses as they are owned by Adobe with a License that I understand to disallow redistribution.
+I believe I cannot distribute one font (Minion Pro) domdiv uses as they are owned by Adobe with a License that I understand to disallow redistribution. However, you can download the [3 font files from a third party here](https://www.dropbox.com/s/tsqk69mayoa3pfz/MinionPro-ForDominionTabs.zip?dl=1).
 
 However, it appears you can download them here:
 
