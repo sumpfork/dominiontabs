@@ -1243,7 +1243,8 @@
         ],
         "cost": "5",
         "types": [
-            "Action"
+            "Action",
+            "Command",
         ]
     },
     {
@@ -2519,7 +2520,8 @@
         "cost": "0",
         "debtcost": "8",
         "types": [
-            "Action"
+            "Action",
+            "Command"
         ]
     },
     {
@@ -4463,7 +4465,8 @@
         "cost": "6",
         "types": [
             "Action",
-            "Duration"
+            "Duration",
+            "Command"
         ]
     },
     {
