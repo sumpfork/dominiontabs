@@ -1940,7 +1940,11 @@
         "name": "Schwarzmarkt"
     },
     "Captain": {},
-    "Church": {},
+    "Church": {
+        "description": "+1 Aktion<br>Lege bis zu 3 deiner Handkarten mit der Bildseite nach unten zur Seite. Nimm sie zu Beginn deines nächsten Zuges auf deine Hand, danach darfst du eine deiner Handkarten entsorgen.",
+        "extra": "Du darfst keine, eine, zwei oder drei Handkarten zur Seite legen. Lege sie mit der Vorderseite nach unten; du darfst sie dir ansehen.<n>Unabhängig davon, wie viele Karten du zur Seite legst, darfst du zu Beginn deines nächsten Zuges eine Karte entsorgen und der Schweriner Dom wird am Ende des nächsten Zuges abgelegt.<n>Die entsorgte Karte darf entweder eine der zur Seite gelegten Karten sein oder eine Karte die du bereits auf der Hand hattest.<n>Wenn du mehrere Schweriner Dome spielst (oder einen Schweriner Dom mehrmals etwa mit THRONSAAL), darfst du mehrere Stapel von bis zu drei Karten beiseite legen. In deinem nächsten Zug passiert folgendes: du nimmst einen Stapel der zur Seite gelegten Karten in die Hand, dann darfst du eine Karte entsorgen, dann nimmst du den nächsten Stapel in die Hand und darfst eine weitere Karte entsorgen. Du kannst dir aussuchen, welchen der zur Seite gelegten Kartenstapel du als erstes in die Hand nimmst.",
+        "name": "Schweriner Dom"
+    },
     "Dismantle": {
         "description": "Entsorge eine Handkarte. Wenn sie 1 Coin oder mehr kostet, nimm eine billigere Karte und ein Gold.",
         "extra": "Abbruch ist eine Promokarte.",
