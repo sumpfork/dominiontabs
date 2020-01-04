@@ -1,5 +1,4 @@
 from __future__ import print_function
-import subprocess
 import shutil
 import os
 import contextlib
@@ -23,12 +22,12 @@ def rmtestcardb(request):
 
 
 def test_cardread():
-    cardsExpected = 576
+    num_cards_expected = 576
 
     options = main.parse_opts([])
     options.data_path = "."
     cards = main.read_card_data(options)
-    assert len(cards) == cardsExpected
+    assert len(cards) == num_cards_expected
     valid_cardsets = {
         u"base",
         u"dominion1stEdition",
@@ -73,7 +72,7 @@ def test_cardread():
     #      Curse:       +2 * 4 sets = +8
     #      Start Decks: +4 * 4 sets = +16
     #      Blanks:      +7          = +7
-    assert len(cards) == cardsExpected + 28
+    assert len(cards) == num_cards_expected + 28
 
 
 def test_languages():
@@ -101,19 +100,6 @@ def change_cwd(d):
         yield
     finally:
         os.chdir(curdir)
-
-
-def test_languagetool_run(pytestconfig):
-    with change_cwd(str(pytestconfig.rootdir)):
-        cmd = "python tools/update_language.py"
-        print(cmd)
-        assert subprocess.check_call(cmd.split()) == 0
-        cmd = "diff -rwB src/domdiv/card_db tools/card_db"
-        try:
-            out = subprocess.check_output(cmd.split(), stderr=subprocess.STDOUT)
-        except subprocess.CalledProcessError as e:
-            assert e.output == ""
-        assert out.decode("utf-8") == ""
 
 
 def test_only_type():

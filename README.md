@@ -18,7 +18,9 @@ The script has an extensive set of options that are relatively well documented v
 
 ## Translations
 
-If you would like to help with translations to new (or updating existing) languages, please see [instructions here](https://github.com/sumpfork/dominiontabs/blob/master/domdiv/card_db/translation.md).
+When changing any of the [card database files](card_db_src) you should run the language update tool via `doit update_languages`. This produces [the package version of the card db](src/domdiv/card_db) from the card db source. This will also be run automatically and checked into git when you push to github. You should make sure that the resulting changes to the package are what you intend.
+
+If you would like to help with translations to new (or updating existing) languages, please see [instructions here](src/domdiv/card_db/translation.md).
 
 ## Fonts
 

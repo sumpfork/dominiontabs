@@ -2,13 +2,18 @@ from setuptools import setup
 
 setup(
     name="domdiv",
-    entry_points={"console_scripts": ["dominion_dividers = domdiv.main:main"]},
+    entry_points={
+        "console_scripts": [
+            "dominion_dividers = domdiv.main:main",
+            "domdiv_update_language = domdiv.tools.update_language:run",
+        ]
+    },
     package_dir={"": "src"},
     packages=["domdiv"],
     use_scm_version=True,
     setup_requires=["setuptools_scm", "pytest-runner"],
     install_requires=["reportlab", "Pillow"],
-    tests_require=["pytest", "six", "pytest-flake8", "pre-commit"],
+    tests_require=["pytest", "six", "pytest-flake8", "pre-commit", "doit"],
     url="http://domtabs.sandflea.org",
     include_package_data=True,
     author="Peter Gorniak",

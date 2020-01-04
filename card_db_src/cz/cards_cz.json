@@ -1,0 +1,758 @@
+{
+    "Alms": {},
+    "Amulet": {},
+    "Artificer": {},
+    "Ball": {},
+    "Bonfire": {},
+    "Borrow": {},
+    "Bridge Troll": {},
+    "Caravan Guard": {},
+    "Champion": {},
+    "Coin of the Realm": {},
+    "Disciple": {},
+    "Distant Lands": {},
+    "Dungeon": {},
+    "Duplicate": {},
+    "Expedition": {},
+    "Ferry": {},
+    "Fugitive": {},
+    "Gear": {},
+    "Giant": {},
+    "Guide": {},
+    "Haunted Woods": {},
+    "Hero": {},
+    "Hireling": {},
+    "Inheritance": {},
+    "Lost Arts": {},
+    "Lost City": {},
+    "Magpie": {},
+    "Messenger": {},
+    "Miser": {},
+    "Mission": {},
+    "Page": {},
+    "Pathfinding": {},
+    "Peasant": {},
+    "Pilgrimage": {},
+    "Plan": {},
+    "Port": {},
+    "Quest": {},
+    "Raid": {},
+    "Ranger": {},
+    "Ratcatcher": {},
+    "Raze": {},
+    "Relic": {},
+    "Royal Carriage": {},
+    "Save": {},
+    "Scouting Party": {},
+    "Seaway": {},
+    "Soldier": {},
+    "Storyteller": {},
+    "Swamp Hag": {},
+    "Teacher": {},
+    "Trade": {},
+    "Training": {},
+    "Transmogrify": {},
+    "Travelling Fair": {},
+    "Treasure Hunter": {},
+    "Treasure Trove": {},
+    "Warrior": {},
+    "Wine Merchant": {},
+    "Alchemist": {},
+    "Apothecary": {},
+    "Apprentice": {},
+    "Familiar": {},
+    "Golem": {},
+    "Herbalist": {},
+    "Philosopher's Stone": {},
+    "Possession": {},
+    "Scrying Pool": {},
+    "Transmute": {},
+    "University": {},
+    "Vineyard": {},
+    "Grey Mustang": {},
+    "Rabbits": {},
+    "Yard Dog": {},
+    "Potion": {},
+    "Copper": {
+        "name": "Stríbrnák"
+    },
+    "Curse": {
+        "name": "Kletba"
+    },
+    "Duchy": {
+        "name": "Vévodství"
+    },
+    "Estate": {
+        "name": "Statek"
+    },
+    "Gold": {
+        "name": "Zlaták"
+    },
+    "Province": {
+        "name": "Provincie"
+    },
+    "Silver": {
+        "name": "Medák"
+    },
+    "Start Deck": {},
+    "Trash": {
+        "name": "Smetište"
+    },
+    "Colony": {
+        "name": "Kolonie"
+    },
+    "Platinum": {
+        "name": "Platina"
+    },
+    "Bag of Gold": {},
+    "Diadem": {},
+    "Fairgrounds": {},
+    "Farming Village": {},
+    "Followers": {},
+    "Fortune Teller": {},
+    "Hamlet": {},
+    "Harvest": {},
+    "Horn of Plenty": {},
+    "Horse Traders": {},
+    "Hunting Party": {},
+    "Jester": {},
+    "Menagerie": {},
+    "Princess": {},
+    "Remake": {},
+    "Tournament": {},
+    "Trusty Steed": {},
+    "Young Witch": {},
+    "Altar": {},
+    "Armory": {},
+    "Band of Misfits": {},
+    "Bandit Camp": {},
+    "Beggar": {},
+    "Catacombs": {},
+    "Count": {},
+    "Counterfeit": {},
+    "Cultist": {},
+    "Death Cart": {},
+    "Feodum": {},
+    "Forager": {},
+    "Fortress": {},
+    "Graverobber": {},
+    "Hermit": {},
+    "Hovel": {},
+    "Hunting Grounds": {},
+    "Ironmonger": {},
+    "Junk Dealer": {},
+    "Knights": {},
+    "Madman": {},
+    "Marauder": {},
+    "Market Square": {},
+    "Mercenary": {},
+    "Mystic": {},
+    "Necropolis": {},
+    "Overgrown Estate": {},
+    "Pillage": {},
+    "Poor House": {},
+    "Procession": {},
+    "Rats": {},
+    "Rebuild": {},
+    "Rogue": {},
+    "Ruins": {},
+    "Sage": {},
+    "Scavenger": {},
+    "Spoils": {},
+    "Squire": {},
+    "Storeroom": {},
+    "Urchin": {},
+    "Vagrant": {},
+    "Wandering Minstrel": {},
+    "Adventurer": {
+        "name": "Dobrodruh"
+    },
+    "Chancellor": {
+        "name": "Kanclér"
+    },
+    "Feast": {
+        "name": "Hostina"
+    },
+    "Spy": {
+        "name": "Špion"
+    },
+    "Thief": {
+        "name": "Zlodej"
+    },
+    "Woodcutter": {
+        "name": "Drevorubec"
+    },
+    "Bureaucrat": {
+        "name": "Úredník"
+    },
+    "Cellar": {
+        "name": "Sklepení"
+    },
+    "Chapel": {
+        "name": "Kaple"
+    },
+    "Council Room": {
+        "name": "Zasedání Rady"
+    },
+    "Festival": {
+        "name": "Jarmark"
+    },
+    "Gardens": {
+        "name": "Zahrady"
+    },
+    "Laboratory": {
+        "name": "Laborator"
+    },
+    "Library": {
+        "name": "Knihovna"
+    },
+    "Market": {
+        "name": "Trh"
+    },
+    "Militia": {
+        "name": "Milice"
+    },
+    "Mine": {
+        "name": "Dul"
+    },
+    "Moat": {
+        "name": "Hradní Príkop"
+    },
+    "Moneylender": {
+        "name": "Lichvár"
+    },
+    "Remodel": {
+        "name": "Prestavba"
+    },
+    "Smithy": {
+        "name": "Kovárna"
+    },
+    "Throne Room": {
+        "name": "Trunní sál"
+    },
+    "Village": {
+        "name": "Vesnice"
+    },
+    "Witch": {
+        "name": "Carodejnice"
+    },
+    "Workshop": {
+        "name": "Dílna"
+    },
+    "Artisan": {},
+    "Bandit": {},
+    "Harbinger": {},
+    "Merchant": {},
+    "Poacher": {},
+    "Sentry": {},
+    "Vassal": {},
+    "Advance": {},
+    "Annex": {},
+    "Aqueduct": {},
+    "Archive": {},
+    "Arena": {},
+    "Bandit Fort": {},
+    "Banquet": {},
+    "Basilica": {},
+    "Baths": {},
+    "Battlefield": {},
+    "Bustling Village": {},
+    "Capital": {},
+    "Castles": {},
+    "Catapult": {},
+    "Chariot Race": {},
+    "Charm": {},
+    "City Quarter": {},
+    "Colonnade": {},
+    "Conquest": {},
+    "Crown": {},
+    "Defiled Shrine": {},
+    "Delve": {},
+    "Dominate": {},
+    "Donate": {},
+    "Emporium": {},
+    "Encampment": {},
+    "Enchantress": {},
+    "Engineer": {},
+    "Farmers' Market": {},
+    "Fortune": {},
+    "Forum": {},
+    "Fountain": {},
+    "Gladiator": {},
+    "Groundskeeper": {},
+    "Keep": {},
+    "Labyrinth": {},
+    "Legionary": {},
+    "Mountain Pass": {},
+    "Museum": {},
+    "Obelisk": {},
+    "Orchard": {},
+    "Overlord": {},
+    "Palace": {},
+    "Patrician": {},
+    "Plunder": {},
+    "Ritual": {},
+    "Rocks": {},
+    "Royal Blacksmith": {},
+    "Sacrifice": {},
+    "Salt the Earth": {},
+    "Settlers": {},
+    "Tax": {},
+    "Temple": {},
+    "Tomb": {},
+    "Tower": {},
+    "Triumph": {},
+    "Triumphal Arch": {},
+    "Villa": {},
+    "Wall": {},
+    "Wedding": {},
+    "Wild Hunt": {},
+    "Windfall": {},
+    "Wolf Den": {},
+    "Advisor": {},
+    "Baker": {},
+    "Butcher": {},
+    "Candlestick Maker": {},
+    "Doctor": {},
+    "Herald": {},
+    "Journeyman": {},
+    "Masterpiece": {},
+    "Merchant Guild": {},
+    "Plaza": {},
+    "Soothsayer": {},
+    "Stonemason": {},
+    "Taxman": {},
+    "Border Village": {
+        "name": "Pohranicní Vesnice"
+    },
+    "Cache": {
+        "name": "Úkryt"
+    },
+    "Cartographer": {
+        "name": "Kartograf"
+    },
+    "Crossroads": {
+        "name": "Križovatka"
+    },
+    "Develop": {
+        "name": "Výstavba"
+    },
+    "Duchess": {
+        "name": "Vévodkyne"
+    },
+    "Embassy": {
+        "name": "Velvyslanectví"
+    },
+    "Farmland": {
+        "name": "Úrodná zeme"
+    },
+    "Fool's Gold": {
+        "name": "Kocicí Zlato"
+    },
+    "Haggler": {
+        "name": "Handlír"
+    },
+    "Highway": {
+        "name": "Silnice"
+    },
+    "Ill-Gotten Gains": {
+        "name": "Necestné zisky"
+    },
+    "Inn": {
+        "name": "Hostinec"
+    },
+    "Jack of all Trades": {
+        "name": "Všeumel"
+    },
+    "Mandarin": {
+        "name": "Mandarín"
+    },
+    "Margrave": {
+        "name": "Markrabe"
+    },
+    "Noble Brigand": {
+        "name": "Zbojník"
+    },
+    "Nomad Camp": {
+        "name": "Tábor Nomádu"
+    },
+    "Oasis": {
+        "name": "Oáza"
+    },
+    "Oracle": {
+        "name": "Veštírna"
+    },
+    "Scheme": {
+        "name": "Pleticha"
+    },
+    "Silk Road": {
+        "name": "Hedvábná stezka"
+    },
+    "Spice Merchant": {
+        "name": "Korenár"
+    },
+    "Stables": {
+        "name": "Stáje"
+    },
+    "Trader": {
+        "name": "Kramár"
+    },
+    "Tunnel": {
+        "name": "Tunel"
+    },
+    "Coppersmith": {
+        "name": "Meditepec"
+    },
+    "Great Hall": {
+        "name": "Velký Sál"
+    },
+    "Saboteur": {
+        "name": "Sabotér"
+    },
+    "Scout": {
+        "name": "Zved"
+    },
+    "Secret Chamber": {
+        "name": "Tajemná Komnata"
+    },
+    "Tribute": {
+        "name": "Dar Poddaných"
+    },
+    "Baron": {
+        "name": "Baron"
+    },
+    "Bridge": {
+        "name": "Most"
+    },
+    "Conspirator": {
+        "name": "Spiklenec"
+    },
+    "Courtyard": {
+        "name": "Hradní Nádvorí"
+    },
+    "Duke": {
+        "name": "Vévoda"
+    },
+    "Harem": {
+        "name": "Harém"
+    },
+    "Ironworks": {
+        "name": "Hute"
+    },
+    "Masquerade": {
+        "name": "Maškary"
+    },
+    "Mining Village": {
+        "name": "Dulní Osada"
+    },
+    "Minion": {
+        "name": "Služebník"
+    },
+    "Nobles": {
+        "name": "Šlechtici"
+    },
+    "Pawn": {
+        "name": "Pešák"
+    },
+    "Shanty Town": {
+        "name": "Chudinská Ctvrt"
+    },
+    "Steward": {
+        "name": "Správce"
+    },
+    "Swindler": {
+        "name": "Podvodník"
+    },
+    "Torturer": {
+        "name": "Žalárník"
+    },
+    "Trading Post": {
+        "name": "Obchodní Místo"
+    },
+    "Upgrade": {
+        "name": "Pokrok"
+    },
+    "Wishing Well": {
+        "name": "Studna Prání"
+    },
+    "Courtier": {},
+    "Diplomat": {},
+    "Lurker": {},
+    "Mill": {},
+    "Patrol": {},
+    "Replace": {},
+    "Secret Passage": {},
+    "Bad Omens": {},
+    "Bard": {},
+    "Bat": {},
+    "Blessed Village": {},
+    "Cemetery": {},
+    "Changeling": {},
+    "Cobbler": {},
+    "Conclave": {},
+    "Crypt": {},
+    "Cursed Gold": {},
+    "Cursed Village": {},
+    "Delusion": {},
+    "Den of Sin": {},
+    "Devil's Workshop": {},
+    "Druid": {},
+    "Envious - Deluded": {},
+    "Envy": {},
+    "Exorcist": {},
+    "Faithful Hound": {},
+    "Famine": {},
+    "Fear": {},
+    "Fool": {},
+    "Ghost": {},
+    "Ghost Town": {},
+    "Goat": {},
+    "Greed": {},
+    "Guardian": {},
+    "Haunted Mirror": {},
+    "Haunting": {},
+    "Idol": {},
+    "Imp": {},
+    "Leprechaun": {},
+    "Locusts": {},
+    "Lost in the Woods": {},
+    "Lucky Coin": {},
+    "Magic Lamp": {},
+    "Miserable - Twice Miserable": {},
+    "Misery": {},
+    "Monastery": {},
+    "Necromancer": {},
+    "Night Watchman": {},
+    "Pasture": {},
+    "Pixie": {},
+    "Plague": {},
+    "Pooka": {},
+    "Pouch": {},
+    "Poverty": {},
+    "Raider": {},
+    "Sacred Grove": {},
+    "Secret Cave": {},
+    "Shepherd": {},
+    "Skulk": {},
+    "The Earth's Gift": {},
+    "The Field's Gift": {},
+    "The Flame's Gift": {},
+    "The Forest's Gift": {},
+    "The Moon's Gift": {},
+    "The Mountain's Gift": {},
+    "The River's Gift.": {},
+    "The Sea's Gift": {},
+    "The Sky's Gift": {},
+    "The Sun's Gift": {},
+    "The Swamp's Gift": {},
+    "The Wind's Gift": {},
+    "Tormentor": {},
+    "Tracker": {},
+    "Tragic Hero": {},
+    "Vampire": {},
+    "War": {},
+    "Werewolf": {},
+    "Will-O'-Wisp": {},
+    "Wish": {},
+    "Zombie Apprentice": {},
+    "Zombie Mason": {},
+    "Zombie Spy": {},
+    "Avanto": {},
+    "Black Market": {},
+    "Captain": {},
+    "Church": {},
+    "Dismantle": {},
+    "Envoy": {},
+    "Governor": {},
+    "Prince": {},
+    "Sauna": {},
+    "Stash": {},
+    "Summon": {},
+    "Walled Village": {},
+    "Bank": {
+        "name": "Banka"
+    },
+    "Bishop": {
+        "name": "Biskup"
+    },
+    "City": {
+        "name": "Mesto"
+    },
+    "Contraband": {
+        "name": "Kontraband"
+    },
+    "Counting House": {
+        "name": "Zastavárna"
+    },
+    "Expand": {
+        "name": "Rust"
+    },
+    "Forge": {
+        "name": "Kování"
+    },
+    "Goons": {
+        "name": "Hrdlorez"
+    },
+    "Grand Market": {
+        "name": "Velký Trh"
+    },
+    "Hoard": {
+        "name": "Bohatství"
+    },
+    "King's Court": {
+        "name": "Královský Dvur"
+    },
+    "Loan": {
+        "name": "Pujcka"
+    },
+    "Mint": {
+        "name": "Mincovna"
+    },
+    "Monument": {
+        "name": "Památník"
+    },
+    "Mountebank": {
+        "name": "Mastickár"
+    },
+    "Peddler": {
+        "name": "Podomní Obchodník"
+    },
+    "Quarry": {
+        "name": "Kamenolom"
+    },
+    "Rabble": {
+        "name": "Dav"
+    },
+    "Royal Seal": {
+        "name": "Královská pecet"
+    },
+    "Talisman": {
+        "name": "Talisman"
+    },
+    "Trade Route": {
+        "name": "Obchodní Stezka"
+    },
+    "Vault": {
+        "name": "Trezor"
+    },
+    "Venture": {
+        "name": "Odvážlivec"
+    },
+    "Watchtower": {
+        "name": "Strážní Vež"
+    },
+    "Worker's Village": {
+        "name": "Delnická Ctvrt"
+    },
+    "Academy": {},
+    "Acting Troupe": {},
+    "Barracks": {},
+    "Border Guard": {},
+    "Canal": {},
+    "Capitalism": {},
+    "Cargo Ship": {},
+    "Cathedral": {},
+    "Citadel": {},
+    "City Gate": {},
+    "Crop Rotation": {},
+    "Ducat": {},
+    "Experiment": {},
+    "Exploration": {},
+    "Fair": {},
+    "Flag": {},
+    "Flag Bearer": {},
+    "Fleet": {},
+    "Guildhall": {},
+    "Hideout": {},
+    "Horn": {},
+    "Improve": {},
+    "Innovation": {},
+    "Inventor": {},
+    "Key": {},
+    "Lackeys": {},
+    "Lantern": {},
+    "Mountain Village": {},
+    "Old Witch": {},
+    "Pageant": {},
+    "Patron": {},
+    "Piazza": {},
+    "Priest": {},
+    "Recruiter": {},
+    "Research": {},
+    "Road Network": {},
+    "Scepter": {},
+    "Scholar": {},
+    "Sculptor": {},
+    "Seer": {},
+    "Sewers": {},
+    "Silk Merchant": {},
+    "Silos": {},
+    "Sinister Plot": {},
+    "Spices": {},
+    "Star Chart": {},
+    "Swashbuckler": {},
+    "Treasure Chest": {},
+    "Treasurer": {},
+    "Villain": {},
+    "Ambassador": {},
+    "Bazaar": {},
+    "Caravan": {},
+    "Cutpurse": {},
+    "Embargo": {},
+    "Explorer": {},
+    "Fishing Village": {},
+    "Ghost Ship": {},
+    "Haven": {},
+    "Island": {},
+    "Lighthouse": {},
+    "Lookout": {},
+    "Merchant Ship": {},
+    "Native Village": {},
+    "Navigator": {},
+    "Outpost": {},
+    "Pearl Diver": {},
+    "Pirate Ship": {},
+    "Salvager": {},
+    "Sea Hag": {},
+    "Smugglers": {},
+    "Tactician": {},
+    "Treasure Map": {},
+    "Treasury": {},
+    "Warehouse": {},
+    "Wharf": {},
+    "Border Guard - LanternHorn": {},
+    "Catapult - Rocks": {},
+    "Cemetery - Haunted Mirror": {},
+    "Encampment - Plunder": {},
+    "Flag Bearer - Flag": {},
+    "Fool - Lucky Coin": {},
+    "Gladiator - Fortune": {},
+    "Hermit - Madman": {},
+    "Necromancer - Zombies": {},
+    "Page -> Champion": {},
+    "Patrician - Emporium": {},
+    "Peasant -> Teacher": {},
+    "Pixie - Goat": {},
+    "Pooka - Cursed Gold": {},
+    "Sauna - Avanto": {},
+    "Secret Cave - Magic Lamp": {},
+    "Settlers - Bustling Village": {},
+    "Shelters": {},
+    "Shepherd - Pasture": {},
+    "Swashbuckler - Treasure Chest": {},
+    "Tournament and Prizes": {},
+    "Tracker - Pouch": {},
+    "Treasurer - Key": {},
+    "Urchin - Mercenary": {},
+    "Vampire - Bat": {},
+    "adventures events": {},
+    "empires events": {},
+    "empires landmarks": {},
+    "nocturne boons": {},
+    "nocturne hexes": {},
+    "nocturne states": {},
+    "promo events": {},
+    "renaissance projects": {},
+    "events": {},
+    "landmarks": {}
+}

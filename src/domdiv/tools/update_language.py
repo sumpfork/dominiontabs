@@ -13,68 +13,28 @@
 
 import os
 import os.path
-import io
-import codecs
-import json
 from shutil import copyfile
 import argparse
 import collections
 
-LANGUAGE_DEFAULT = "en_us"  # default language, which takes priority
-LANGUAGE_XX = "xx"  # language for starting a translation
+from domdiv.tools.common import (
+    get_json_data,
+    load_language_cards,
+    LANGUAGE_XX,
+    LANGUAGE_DEFAULT,
+    get_languages,
+    multikeysort,
+    load_card_data,
+    write_data,
+    write_language_cards,
+)
 
 
-def get_lang_dirs(path):
-    # Find all valid languages.
-    languages = []
-    for name in os.listdir(path):
-        dir_path = os.path.join(path, name)
-        if os.path.isdir(dir_path):
-            cards_file = os.path.join(dir_path, "cards_" + name + ".json")
-            sets_file = os.path.join(dir_path, "sets_" + name + ".json")
-            if os.path.isfile(cards_file) and os.path.isfile(sets_file):
-                languages.append(name)
-    return languages
-
-
-def get_json_data(json_file_path):
-    print(("reading {}".format(json_file_path)))
-    # Read in the json from the specified file
-    with codecs.open(json_file_path, "r", "utf-8") as json_file:
-        data = json.load(json_file)
-    assert data, "Could not load json at: '%r' " % json_file_path
-    return data
-
-
-def json_dict_entry(entry, separator=""):
-    #  Return a nicely formated json dict entry.
-    #  It does not include the enclosing {} and removes trailing white space
-    json_data = json.dumps(entry, indent=4, ensure_ascii=False, sort_keys=True)
-    json_data = json_data.strip(
-        "{}"
-    ).rstrip()  # Remove outer{} and then trailing whitespace
-    return separator + json_data
-
-
-# Multikey sort
-# see: http://stackoverflow.com/questions/1143671/python-sorting-list-of-dictionaries-by-multiple-keys
-def multikeysort(items, columns):
-    from operator import itemgetter
-
-    for c in columns[::-1]:
-        items = sorted(items, key=itemgetter(c))
-    return items
-
-
-def main(args):
+def main(card_db_dir, output_dir):
     ###########################################################################
     # Get all the languages, and place the default language first in the list
     ###########################################################################
-    languages = get_lang_dirs(args.card_db_dir)
-    languages.remove(LANGUAGE_DEFAULT)
-    languages.insert(0, LANGUAGE_DEFAULT)
-    if LANGUAGE_XX not in languages:
-        languages.append(LANGUAGE_XX)
+    languages = get_languages(card_db_dir)
     print("Languages:")
     print(languages)
     print()
@@ -84,13 +44,13 @@ def main(args):
     ###########################################################################
 
     #  main output directory
-    if not os.path.exists(args.output_dir):
-        os.makedirs(args.output_dir)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     #  each language directory
     for lang in languages:
         #  Make sure the directory is there to hold the file
-        lang_dir = os.path.join(args.output_dir, lang)
+        lang_dir = os.path.join(output_dir, lang)
         if not os.path.exists(lang_dir):
             os.makedirs(lang_dir)
 
@@ -102,15 +62,12 @@ def main(args):
     type_parts = set()
 
     # Get the card data
-    type_data = get_json_data(os.path.join(args.card_db_dir, "types_db.json"))
+    type_data = get_json_data(os.path.join(card_db_dir, "types_db.json"))
 
     # Sort the cards by cardset_tags, then card_tag
     sorted_type_data = multikeysort(type_data, ["card_type"])
 
-    with io.open(
-        os.path.join(args.output_dir, "types_db.json"), "w", encoding="utf-8"
-    ) as f:
-        json.dump(sorted_type_data, f, indent=4, ensure_ascii=False)
+    write_data(sorted_type_data, os.path.join(output_dir, "types_db.json"))
 
     type_parts = list(set().union(*[set(t["card_type"]) for t in sorted_type_data]))
     type_parts.sort()
@@ -125,14 +82,10 @@ def main(args):
     all_labels = []
 
     # Get the card data
-    label_data = get_json_data(os.path.join(args.card_db_dir, "labels_db.json"))
+    label_data = get_json_data(os.path.join(card_db_dir, "labels_db.json"))
 
     all_labels = list(set().union(*[set(label["names"]) for label in label_data]))
-
-    with io.open(
-        os.path.join(args.output_dir, "labels_db.json"), "w", encoding="utf-8"
-    ) as f:
-        json.dump(label_data, f, indent=4, ensure_ascii=False)
+    write_data(label_data, os.path.join(output_dir, "labels_db.json"))
 
     all_labels.sort()
     print("Labels: ")
@@ -149,7 +102,7 @@ def main(args):
     ###########################################################################
     for lang in languages:
         lang_file = "types_" + lang + ".json"
-        fname = os.path.join(args.card_db_dir, lang, lang_file)
+        fname = os.path.join(card_db_dir, lang, lang_file)
         if os.path.isfile(fname):
             lang_type_data = get_json_data(fname)
         else:
@@ -162,43 +115,16 @@ def main(args):
                     lang_type_default = lang_type_data
                 else:
                     lang_type_data[t] = lang_type_default[t]
-
-        with io.open(
-            os.path.join(args.output_dir, lang, lang_file), "w", encoding="utf-8"
-        ) as f:
-            json.dump(lang_type_data, f, indent=4, ensure_ascii=False)
+        write_data(lang_type_data, os.path.join(output_dir, lang, lang_file))
 
         if lang == LANGUAGE_DEFAULT:
             lang_type_default = lang_type_data  # Keep for later languages
 
-    ###########################################################################
-    #  Get the cards_db information
-    #  Store in a list in the order found in cards[]. Ordered as follows:
-    #  1. card_tags, 2. group_tags, 3. super groups
-    ###########################################################################
-
-    # Get the card data
-    card_data = get_json_data(os.path.join(args.card_db_dir, "cards_db.json"))
-
-    cards = set(card["card_tag"] for card in card_data)
-    groups = set(card["group_tag"] for card in card_data if "group_tag" in card)
+    sorted_card_data = load_card_data(card_db_dir)
+    groups = set(card["group_tag"] for card in sorted_card_data if "group_tag" in card)
     super_groups = set(["events", "landmarks"])
 
-    # Sort the cardset_tags
-    for card in card_data:
-        card["cardset_tags"].sort()
-        # But put all the base cards together by moving to front of the list
-        if "base" in card["cardset_tags"]:
-            card["cardset_tags"].remove("base")
-            card["cardset_tags"].insert(0, "base")
-
-    # Sort the cards by cardset_tags, then card_tag
-    sorted_card_data = multikeysort(card_data, ["cardset_tags", "card_tag"])
-
-    with io.open(
-        os.path.join(args.output_dir, "cards_db.json"), "w", encoding="utf-8"
-    ) as lang_out:
-        json.dump(sorted_card_data, lang_out, indent=4, ensure_ascii=False)
+    write_data(sorted_card_data, os.path.join(output_dir, "cards_db.json"))
 
     # maintain the sorted order, but expand with groups and super_groups
     cards = [c["card_tag"] for c in sorted_card_data]
@@ -221,17 +147,12 @@ def main(args):
     for lang in languages:
 
         #  contruct the cards json file name
-        lang_file = "cards_" + lang + ".json"
-        fname = os.path.join(args.card_db_dir, lang, lang_file)
-        if os.path.isfile(fname):
-            lang_data = get_json_data(fname)
-        else:
-            lang_data = {}
+        lang_data = load_language_cards(lang, card_db_dir)
 
         sorted_lang_data = collections.OrderedDict()
-        fields = ["description", "extra", "name"]
         for card_tag in cards:
             lang_card = lang_data.get(card_tag)
+
             # print(f'looking at {card_tag}: {lang_card}')
             if not lang_card or lang == LANGUAGE_XX:
                 #  Card is missing, need to add it
@@ -239,63 +160,34 @@ def main(args):
                 if lang == LANGUAGE_DEFAULT:
                     #  Default language gets bare minimum.  Really need to add by hand.
                     lang_card["extra"] = ""
-                    lang_card["name"] = card
+                    lang_card["name"] = card_tag
                     lang_card["description"] = ""
-                    lang_card["untranslated"] = fields
                     lang_default = lang_data
                 else:
                     #  All other languages should get the default languages' text
-                    lang_card["extra"] = lang_default[card_tag]["extra"]
-                    lang_card["name"] = lang_default[card_tag]["name"]
-                    lang_card["description"] = lang_default[card_tag]["description"]
-                    lang_card["untranslated"] = fields
-            else:
-                # Card exists, figure out what needs updating (don't update default language)
-                if lang != LANGUAGE_DEFAULT:
-                    if "untranslated" in lang_card:
-                        #  Has an 'untranslated' field.  Process accordingly
-                        if not lang_card["untranslated"]:
-                            #  It is empty, so just remove it
-                            del lang_card["untranslated"]
-                        else:
-                            #  If a field remains untranslated, then replace with the default languages copy
-                            for field in fields:
-                                if field in lang_card["untranslated"]:
-                                    lang_card[field] = lang_default[card_tag][field]
-                    else:
-                        #  Need to create the 'untranslated' field and update based upon existing fields
-                        untranslated = []
-                        for field in fields:
-                            if field not in lang_data[card_tag]:
-                                lang_card[field] = lang_default[card_tag][field]
-                                untranslated.append(field)
-                        if untranslated:
-                            #  only add if something is still needing translation
-                            lang_card["untranslated"] = untranslated
-            lang_card["used"] = True
+                    lang_card = lang_default[card_tag].copy()
+            elif lang != LANGUAGE_DEFAULT:
+                # Card exists, figure out what needs updating
+                lang_card.update(
+                    {
+                        field: value
+                        for field, value in lang_default[card_tag].items()
+                        if field not in lang_card
+                    }
+                )
             sorted_lang_data[card_tag] = lang_card
-        unused = [c for c in lang_data.values() if "used" not in c]
+        unused = set(lang_data) - set(sorted_lang_data)
         print(
-            f'unused in {lang}: {len(unused)}, used: {len([c for c in lang_data.values() if "used" in c])}'
+            f"unused in {lang}: {len(unused)}, used: {len(set(lang_data) & set(sorted_lang_data))}"
         )
-        print([c["name"] for c in unused])
+        print(unused)
         # Now keep any unused values just in case needed in the future
-        for card_tag in lang_data:
+        for card_tag in sorted(unused):
             lang_card = lang_data.get(card_tag)
-            if "used" not in lang_card:
-                if lang != LANGUAGE_XX:
-                    lang_card["untranslated"] = [
-                        "Note: This card is currently not used."
-                    ]
-                sorted_lang_data[card_tag] = lang_card
-            else:
-                del lang_card["used"]
+            lang_card["notes"] = ["This card is currently not used."]
+            sorted_lang_data[card_tag] = lang_card
 
-        #  Process the file
-        with io.open(
-            os.path.join(args.output_dir, lang, lang_file), "w", encoding="utf-8"
-        ) as lang_out:
-            json.dump(sorted_lang_data, lang_out, indent=4, ensure_ascii=False)
+        write_language_cards(sorted_lang_data, lang, output_dir)
 
         if lang == LANGUAGE_DEFAULT:
             lang_default = lang_data  # Keep for later languages
@@ -305,12 +197,9 @@ def main(args):
     # Place entries in alphabetical order
     ###########################################################################
     lang_file = "sets_db.json"
-    set_data = get_json_data(os.path.join(args.card_db_dir, lang_file))
+    set_data = get_json_data(os.path.join(card_db_dir, lang_file))
 
-    with io.open(
-        os.path.join(args.output_dir, lang_file), "w", encoding="utf-8"
-    ) as lang_out:
-        json.dump(set_data, lang_out, sort_keys=True, indent=4, ensure_ascii=False)
+    write_data(set_data, os.path.join(output_dir, lang_file))
 
     print("Sets:")
     print(set(set_data))
@@ -325,7 +214,7 @@ def main(args):
     ###########################################################################
     for lang in languages:
         lang_file = "sets_" + lang + ".json"
-        fname = os.path.join(args.card_db_dir, lang, lang_file)
+        fname = os.path.join(card_db_dir, lang, lang_file)
         if os.path.isfile(fname):
             lang_set_data = get_json_data(fname)
         else:
@@ -357,10 +246,7 @@ def main(args):
         if lang == LANGUAGE_DEFAULT:
             lang_default = lang_set_data  # Keep for later languages
 
-        with io.open(
-            os.path.join(args.output_dir, lang, lang_file), "w", encoding="utf-8"
-        ) as lang_out:
-            json.dump(lang_set_data, lang_out, ensure_ascii=False, indent=4)
+        write_data(lang_set_data, os.path.join(output_dir, lang, lang_file))
 
     ###########################################################################
     # bonuses_xx files
@@ -373,42 +259,39 @@ def main(args):
 
         copyfile(
             os.path.join(
-                args.card_db_dir, fromLanguage, "bonuses_" + fromLanguage + ".json"
+                card_db_dir, fromLanguage, "bonuses_" + fromLanguage + ".json"
             ),
-            os.path.join(args.output_dir, lang, "bonuses_" + lang + ".json"),
+            os.path.join(output_dir, lang, "bonuses_" + lang + ".json"),
         )
 
     ###########################################################################
     # translation.txt
     ###########################################################################
     copyfile(
-        os.path.join(args.card_db_dir, "translation.md"),
-        os.path.join(args.output_dir, "translation.md"),
+        os.path.join(card_db_dir, "translation.md"),
+        os.path.join(output_dir, "translation.md"),
     )
 
     # Since xx is the starting point for new translations,
     # make sure xx has the latest copy of translation.txt
     copyfile(
-        os.path.join(args.card_db_dir, LANGUAGE_XX, "translation.txt"),
-        os.path.join(args.output_dir, LANGUAGE_XX, "translation.txt"),
+        os.path.join(card_db_dir, LANGUAGE_XX, "translation.txt"),
+        os.path.join(output_dir, LANGUAGE_XX, "translation.txt"),
     )
+
+
+def run():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "card_db_dir",
+        help="directory of card data (usually card_db_src at the top level of the distribution)",
+    )
+    parser.add_argument(
+        "output_dir", help="directory for output data (usually src/domdiv/card_db)"
+    )
+    args = parser.parse_args()
+    main(args.card_db_dir, args.output_dir)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--card_db_dir",
-        default=os.path.join(
-            os.path.dirname(os.path.abspath(__file__)), "..", "src", "domdiv", "card_db"
-        ),
-        help="directory of card data",
-    )
-    parser.add_argument(
-        "--output_dir",
-        default=os.path.join(
-            os.path.dirname(os.path.abspath(__file__)), ".", "card_db"
-        ),
-        help="directory for output data",
-    )
-    args = parser.parse_args()
-    main(args)
+    run()
