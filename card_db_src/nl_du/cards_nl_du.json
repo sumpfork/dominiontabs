@@ -829,17 +829,41 @@
         "extra": " Kies de kaart uit de voorraad. Leg de gekozen kaart op je aflegstapel. Je kunt geen geld van geldkaaten of gespeelde acties gebruiken om de waarde van de gekozen kaart te verhogen.",
         "name": "Werkplaats"
     },
-    "Artisan": {},
-    "Bandit": {},
-    "Harbinger": {},
+    "Artisan": {
+        "description": "Pak een kaart die ten hoogste 5 kost en neem deze in je hand. <n>Leg een kaart uit je hand op je trekstapel.",
+        "extra": "De kaart die je pakt komt uit de voorraad en gaat naar je hand. Je mag geen _ Coin&nbsp; gebruiken om de kosten van de te pakken kaart te verhogen; de kaart kost altijd ten minste 0 Coin en ten hoogste 5 Coin. Na het pakken van de kaart leg je een kaart uit je hand op je trekstapel. Dat mag ook de juist gepakte kaart zijn.",
+        "name": "Ambachtsman"
+    },
+    "Bandit": {
+        "description": "Pak een Goud. Iedere andere speler toont de 2 bovenste kaarten van zijn trekstapel, vernietigt 1 getoonde geldkaart met uitzondering van Koper, en legt de rest af.",
+        "extra": "Eerst pak je een Goud uit de voorraad, die je op je aflegstapel legt. Daarna toont iedere andere speler, met de klok mee, de bovenste 2 kaarten van zijn trekstapel en vernietigt er 1 naar zijn keuze van als het een andere geldkaart dan Koper is (bijvoorbeeld Zilver of Goud). Daarna legt hij de andere kaart af. Een speler die geen geldkaarten anders dan Koper toont, legt beide kaarten af.",
+        "name": "Bandiet"
+    },
+    "Harbinger": {
+        "description": "+1 Kaart<br>+1 Actie<n>Kijk door je aflegstapel. Je mag 1 kaart daaruit op je trekstapel legge.",
+        "extra": "Trek eerst een kaart en ontvang +1 actie. Kijk daarna door je aflegstapel en leg er, als je dat wilt, een kaart van op je trekstapel.",
+        "name": "Voorbode"
+    },
     "Merchant": {
         "description": "+1 Kaart<br>+1 Actie<n>De eerste keer dat je deze beurt een Zilver speelt: +1 Coin.",
         "extra": "Als je de koopman speelt, trek je 1 kaart en krijg je +1 Actie.<n>Speel je later in je beurt een Zilver, dan geeft deze 1 Coin.<n>Speel je meer dan 1 Koopman in je beurt, dan geeft elk van hen voor je eerste gespeelde Zilver +1 Coin. Speel je echter meer dan 1 Zilver, dan krijg je alleen de eerste ervan 1 Coin.<n><n>Speel je een Koopman na het spelen van een Zilver, dan geeft de Koopman je geen bonus(voor de voorgaande Zilver of elke Zilver die je later in je beurt speelt).<n>Het spelen van de Troonzaal op de koopman geeft je 2 Coin wanneer je je eerste Zilver speelt.",
         "name": "Koopman"
     },
-    "Poacher": {},
-    "Sentry": {},
-    "Vassal": {},
+    "Poacher": {
+        "description": "+1 Kaart<br>+1 Actie<br>+1 Coin<n>Leg per lege voorraadstapel 1 kaart af",
+        "extra": "Je trekt je kaart voordat je gaat afleggen. Zijn er geen lege stapels, dan leg je niets af. Is er 1 lege stapel, dan leg je 1 kaart af. Zijn er 2 lege stapels, dan leg je 2 kaarten af, enzovoort. Alle stapels in de voorraad tellen mee, met inbegrip van Vloeken, Koper, Wilddief zelf enzovoort. Heb je niet voldoende kaarten om af te leggen, leg dan de rest van je hand af.",
+        "name": "Wilddief"
+    },
+    "Sentry": {
+        "description": "+1 Kaart<br>+1 Actie<n>Bekijk de bovenste 2 kaarten van je trekstapel. Je mag er zoveel vernietigen en/of afleggen als je wilt. Leg de resterende kaarten in een volgorde naar keuze terug op je trekstapel.",
+        "extra": "Je trekt eerst 1 kaart en krijgt +1 Actie. Dan bekijk je de bovenste 2 kaarten van je trekstapel. Je mag beide vernietigen, beide afleggen, beide terugleggen in een volgorde naar keuze, 1 kaart vernietigen en 1 afleggen, 1 kaart vernietigen en 1 terugleggen, of 1 kaart afleggen en 1 kaart terugleggen.",
+        "name": "Cipier"
+    },
+    "Vassal": {
+        "description": "+2 Coin<n>Leg de bovenste kaart van je trekstapel af. Is het een actiekaart, dan mag je deze spelen.",
+        "extra": "Is de kaart een actiekaart, dan mag je deze spelen, maar dat is niet verplicht. Speel je de kaart, leg deze dan zoals gebruikelijk 'in het spel' en volg de aanwijzingen erop. Dit kost je geen acties.",
+        "name": "Vazal"
+    },
     "Advance": {
         "description": "Je mag een actiekaart uit je hand vernietigen. Doe je dat, pak dat een actiekaart die ten hoogste 6 Coins waard is.",
         "extra": "Vernietig je geen actiekaart, dan gebeurt er niets.",
