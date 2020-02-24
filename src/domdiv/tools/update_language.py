@@ -122,7 +122,7 @@ def main(card_db_dir, output_dir):
 
     sorted_card_data = load_card_data(card_db_dir)
     groups = set(card["group_tag"] for card in sorted_card_data if "group_tag" in card)
-    super_groups = set(["events", "landmarks"])
+    super_groups = set(["events", "landmarks", "projects"])
 
     write_data(sorted_card_data, os.path.join(output_dir, "cards_db.json"))
 

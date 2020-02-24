@@ -486,6 +486,11 @@ def parse_opts(cmdline_args=None):
         help="Group all 'Landmark' cards across all expansions into one divider.",
     )
     group_select.add_argument(
+        "--exclude-projects",
+        action="store_true",
+        help="Group all 'Project' cards across all expansions into one divider.",
+    )
+    group_select.add_argument(
         "--only-type-any",
         "--only-type",
         "--type-any",
@@ -1398,6 +1403,18 @@ def filter_sort_cards(cards, options):
             old_card_type="Landmark",
             new_type="Landmarks",
             new_card_tag="landmarks",
+            new_cardset_tag="extras",
+        )
+        if options.expansions:
+            options.expansions.append("extras")
+
+    # Combine all Projects across all expansions
+    if options.exclude_projects:
+        cards = combine_cards(
+            cards,
+            old_card_type="Project",
+            new_type="Projects",
+            new_card_tag="projects",
             new_cardset_tag="extras",
         )
         if options.expansions:
