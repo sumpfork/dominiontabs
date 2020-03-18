@@ -129,7 +129,6 @@ class CardPlot(object):
         cropOnLeft=False,
         cropOnRight=False,
     ):
-
         self.card = card
         self.x = x  # x location of the lower left corner of the card on the page
         self.y = y  # y location of the lower left corner of the card on the page
@@ -1935,13 +1934,13 @@ class DividerDrawer(object):
                 textTypeBack=options.text_back,
                 stackHeight=card.getStackHeight(options.thickness),
             )
-            #WGV
+
             if card.isExpansion() and options.full_expansion_dividers:
                 # Fix up the item to have a full tab with text centred
                 item.tabWidth = cardWidth
                 item.tabNumber = 1
                 item.tabOffset = 0
-            #WGV
+
             if (
                 options.flip
                 and (options.tab_number == 2)
