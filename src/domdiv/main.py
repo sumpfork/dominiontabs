@@ -344,7 +344,13 @@ def parse_opts(cmdline_args=None):
         "--centre-expansion-dividers",
         action="store_true",
         dest="centre_expansion_dividers",
-        help="Centre the tabs on expansion dividers.",
+        help="Centre the tabs on expansion dividers (same width as dividers.)",
+    )
+    group_expansion.add_argument(
+        "--full-expansion-dividers",
+        action="store_true",
+        dest="full_expansion_dividers",
+        help="Full width expansion dividers.",
     )
     group_expansion.add_argument(
         "--expansion-reset-tabs",

@@ -129,6 +129,7 @@ class CardPlot(object):
         cropOnLeft=False,
         cropOnRight=False,
     ):
+
         self.card = card
         self.x = x  # x location of the lower left corner of the card on the page
         self.y = y  # y location of the lower left corner of the card on the page
@@ -641,8 +642,8 @@ class DividerDrawer(object):
         return pageCount
 
     def wantCentreTab(self, card):
-        return (
-            card.isExpansion() and self.options.centre_expansion_dividers
+        return ( card.isExpansion() and 
+                (self.options.centre_expansion_dividers or self.options.full_expansion_dividers)
         ) or self.options.tab_side == "centre"
 
     def drawOutline(self, item, isBack=False):
@@ -672,7 +673,7 @@ class DividerDrawer(object):
         theTabWidth = item.tabWidth
         theTabHeight = item.tabHeight
 
-        left2tab = item.getTabOffset(backside=isBack)
+        left2tab = item.getTabOffset(backside=False) # translate/scale above takes care of backside
         right2tab = dividerWidth - tabLabelWidth - left2tab
         nearZero = 0.01
         left2tab = left2tab if left2tab > nearZero else 0
@@ -1908,7 +1909,9 @@ class DividerDrawer(object):
                 if lastCardSet != card.cardset_tag:
                     # In a new expansion, so reset the tabs to start over
                     nextTabIndex = CardPlot.tabRestart()
-                    if options.tab_number > Card.sets[card.cardset_tag]["count"]:
+                    if (options.tab_number > Card.sets[card.cardset_tag]["count"] and 
+                        Card.sets[card.cardset_tag]["count"] > 0):
+
                         #  Limit to the number of tabs to the number of dividers in the expansion
                         CardPlot.tabSetup(
                             tabNumber=Card.sets[card.cardset_tag]["count"]
@@ -1932,6 +1935,13 @@ class DividerDrawer(object):
                 textTypeBack=options.text_back,
                 stackHeight=card.getStackHeight(options.thickness),
             )
+            #WGV
+            if card.isExpansion() and options.full_expansion_dividers:
+                # Fix up the item to have a full tab with text centred
+                item.tabWidth = cardWidth
+                item.tabNumber = 1
+                item.tabOffset = 0
+            #WGV
             if (
                 options.flip
                 and (options.tab_number == 2)
