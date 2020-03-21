@@ -596,6 +596,20 @@ def parse_opts(cmdline_args=None):
         help="Width of lines for card outlines and crop marks.",
     )
     group_printing.add_argument(
+        "--front-offset",
+        type=float,
+        dest="front_offset",
+        default=0,
+        help="Front page horizontal offset points to shift to the right. Only needed for some printers.",
+    )
+    group_printing.add_argument(
+        "--front-offset-height",
+        type=float,
+        dest="front_offset_height",
+        default=0,
+        help="Front page vertical offset points to shift upward. Only needed for some printers.",
+    )
+    group_printing.add_argument(
         "--back-offset",
         type=float,
         dest="back_offset",

@@ -1551,6 +1551,10 @@ class DividerDrawer(object):
                 self.options.back_offset, self.options.back_offset_height
             )
             pageWidth -= 2 * self.options.back_offset
+        else:
+            self.canvas.translate(
+                self.options.front_offset, self.options.front_offset_height
+            )
 
         item.translate(self.canvas, pageWidth, isBack)
 
