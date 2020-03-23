@@ -9,9 +9,8 @@ script:
 - python setup.py test
 - if [[ ${TRAVIS_PYTHON_VERSION:0:1} == "3" ]]; then pre-commit run --all-files; fi
 - doit update_languages
-after_success:
-- echo "pushing to origin $TRAVIS_BRANCH"
-- git diff-index --quiet HEAD -- || .travis/push.sh
+#after_success:
+#- git diff-index --quiet HEAD -- || .travis/push.sh
 deploy:
   provider: pypi
   user: __token__
