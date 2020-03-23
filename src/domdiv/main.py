@@ -344,7 +344,13 @@ def parse_opts(cmdline_args=None):
         "--centre-expansion-dividers",
         action="store_true",
         dest="centre_expansion_dividers",
-        help="Centre the tabs on expansion dividers.",
+        help="Centre the tabs on expansion dividers (same width as dividers.)",
+    )
+    group_expansion.add_argument(
+        "--full-expansion-dividers",
+        action="store_true",
+        dest="full_expansion_dividers",
+        help="Full width expansion dividers.",
     )
     group_expansion.add_argument(
         "--expansion-reset-tabs",
@@ -593,6 +599,20 @@ def parse_opts(cmdline_args=None):
         type=float,
         default=0.1,
         help="Width of lines for card outlines and crop marks.",
+    )
+    group_printing.add_argument(
+        "--front-offset",
+        type=float,
+        dest="front_offset",
+        default=0,
+        help="Front page horizontal offset points to shift to the right. Only needed for some printers.",
+    )
+    group_printing.add_argument(
+        "--front-offset-height",
+        type=float,
+        dest="front_offset_height",
+        default=0,
+        help="Front page vertical offset points to shift upward. Only needed for some printers.",
     )
     group_printing.add_argument(
         "--back-offset",
