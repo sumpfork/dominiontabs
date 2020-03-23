@@ -78,17 +78,6 @@
         "card_type": [
             "Action",
             "Attack",
-            "Reaction"
-        ],
-        "card_type_image": "reaction.png",
-        "defaultCardCount": 10,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 0
-    },
-    {
-        "card_type": [
-            "Action",
-            "Attack",
             "Traveller"
         ],
         "card_type_image": "action.png",
@@ -110,17 +99,6 @@
         "card_type": [
             "Action",
             "Duration"
-        ],
-        "card_type_image": "duration.png",
-        "defaultCardCount": 10,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 0
-    },
-    {
-        "card_type": [
-            "Action",
-            "Duration",
-            "Attack"
         ],
         "card_type_image": "duration.png",
         "defaultCardCount": 10,
@@ -639,24 +617,6 @@
         ],
         "card_type_image": "victory-shelter.png",
         "defaultCardCount": 6,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 0
-    },
-    {
-        "card_type": [
-            "Way"
-        ],
-        "card_type_image": "way.png",
-        "defaultCardCount": 1,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 0
-    },
-    {
-        "card_type": [
-            "Ways"
-        ],
-        "card_type_image": "way.png",
-        "defaultCardCount": 0,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     }
