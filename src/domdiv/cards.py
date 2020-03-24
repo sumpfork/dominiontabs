@@ -190,9 +190,9 @@ class Card(object):
             self.potcost = other.potcost
             self.debtcost = other.debtcost
 
-    def setImage(self):
+    def setImage(self, use_set_icon=False):
         setImage = None
-        if self.image is not None:
+        if not use_set_icon and self.image is not None:
             setImage = self.image
         else:
             if self.cardset_tag in Card.sets:

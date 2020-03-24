@@ -1255,7 +1255,7 @@ class DividerDrawer(object):
             self.canvas.drawCentredString(item.tabWidth - 10, textHeight + 2, setText)
             textInsetRight = 15
         else:
-            setImage = card.setImage()
+            setImage = card.setImage(self.options.use_set_icon)
             if setImage and "tab" in self.options.set_icon:
                 setImageHeight = 3 + card.getType().getTabTextHeightOffset()
 
@@ -1419,7 +1419,7 @@ class DividerDrawer(object):
 
         Image_x_right = item.cardWidth - 4
         if "body-top" in self.options.set_icon and not card.isExpansion():
-            setImage = card.setImage()
+            setImage = card.setImage(self.options.use_set_icon)
             if setImage:
                 Image_x_right -= 16
                 self.drawSetIcon(
