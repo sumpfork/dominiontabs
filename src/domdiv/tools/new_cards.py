@@ -2,7 +2,6 @@
 # coding=utf-8
 
 import csv
-import sys
 import json
 import argparse
 
@@ -17,8 +16,8 @@ def parse_opts(cmdline_args=None):
                        "Sets" and "Types" are each a comma separated list.
                        A value for "Cost" is only needed if it is different from the default for the card Type.
                        "Randomizer" should contain an 'N' if the card has no randomizer.
-                       A blank "Sets" field will add the "Card", "Description", and "Extra" to the cards_en_us.json file,
-                       but no entry will be added to the cards_db.json file.
+                       A blank "Sets" field will add the "Card", "Description", and "Extra" to the
+                       cards_en_us.json file, but no entry will be added to the cards_db.json file.
 
                        If "Group" is used, this should be a unique card name value for the group.
                        Cards with the same "Group" value will be group together with --special-card-groups.
