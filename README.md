@@ -1,6 +1,6 @@
 # Dominion Divider Generation
 
-[![Build Status](https://travis-ci.org/sumpfork/dominiontabs.svg?branch=master)](https://travis-ci.org/sumpfork/dominiontabs)
+[![Build Status](https://travis-ci.com/sumpfork/dominiontabs.svg?branch=master)](https://travis-ci.com/sumpfork/dominiontabs)
 
 ## Introduction
 
