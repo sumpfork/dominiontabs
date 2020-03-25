@@ -328,6 +328,12 @@ def parse_opts(cmdline_args=None):
         dest="use_text_set_icon",
         help="Use text/letters to represent a card's set instead of the set icon.",
     )
+    group_tab.add_argument(
+        "--use-set-icon",
+        action="store_true",
+        dest="use_set_icon",
+        help="Use set icon instead of a card icon.  Applies to Promo cards.",
+    )
 
     # Expanion Dividers
     group_expansion = parser.add_argument_group(
