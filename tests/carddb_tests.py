@@ -22,7 +22,7 @@ def rmtestcardb(request):
 
 
 def test_cardread():
-    num_cards_expected = 576
+    num_cards_expected = 593
 
     options = main.parse_opts([])
     options.data_path = "."
@@ -45,6 +45,7 @@ def test_cardread():
         u"dark ages",
         u"dark ages extras",
         u"guilds",
+        u"guilds-bigbox2-de",
         u"adventures",
         u"adventures extras",
         u"empires",
@@ -52,6 +53,7 @@ def test_cardread():
         u"nocturne",
         u"nocturne extras",
         u"promo",
+        u"promo-bigbox2-de",
         u"renaissance",
         u"extras",
         u"animals",
