@@ -114,6 +114,7 @@ def get_global_groups():
 
 GROUP_GLOBAL_CHOICES, GROUP_GLOBAL_VALID = get_global_groups()
 
+
 def get_types(language="en_us"):
     # get a list of valid types
     language = language.lower()
@@ -934,13 +935,13 @@ def clean_opts(options):
         ]
     # For backwards compatibility
     if options.exclude_events:
-        options.group_global.append('events')
+        options.group_global.append("events")
     if options.exclude_landmarks:
-        options.group_global.append('landmarks')
+        options.group_global.append("landmarks")
     if options.exclude_projects:
-        options.group_global.append('projects')
+        options.group_global.append("projects")
     if options.exclude_ways:
-        options.group_global.append('ways')
+        options.group_global.append("ways")
     # Remove duplicates from the list
     options.group_global = list(set(options.group_global))
 
@@ -1517,7 +1518,7 @@ def filter_sort_cards(cards, options):
                 new_type=types_to_group[t],
                 new_card_tag=types_to_group[t].lower(),
                 new_cardset_tag=EXPANSION_GLOBAL_GROUP,
-        )
+            )
         if options.expansions:
             options.expansions.append(EXPANSION_GLOBAL_GROUP)
 
@@ -1574,8 +1575,13 @@ def filter_sort_cards(cards, options):
 
         # Now fix up card costs for groups by Type (Events, Landmarks, etc.)
         for card in cards:
-            if card.card_tag in group_cards and group_cards[card.group_tag].get_GroupCost():
-                group_cards[card.group_tag].cost = group_cards[card.group_tag].get_GroupCost()
+            if (
+                card.card_tag in group_cards
+                and group_cards[card.group_tag].get_GroupCost()
+            ):
+                group_cards[card.group_tag].cost = group_cards[
+                    card.group_tag
+                ].get_GroupCost()
                 group_cards[card.group_tag].debtcost = 0
                 group_cards[card.group_tag].potcost = 0
 
@@ -1647,7 +1653,9 @@ def filter_sort_cards(cards, options):
                 expanded_expansions.append(e)
 
         # Now get the actual sets that are matched above
-        options.expansions = set([e.lower() for e in expanded_expansions])  # Remove duplicates
+        options.expansions = set(
+            [e.lower() for e in expanded_expansions]
+        )  # Remove duplicates
         knownExpansions = set()
         for e in options.expansions:
             for s in Official_sets:
@@ -1768,7 +1776,10 @@ def filter_sort_cards(cards, options):
         cardnamesByExpansion = defaultdict(dict)
         randomizerCountByExpansion = Counter()
         for c in cards:
-            if c.isBlank() or (cardSorter.isBaseExpansionCard(c) and not options.base_cards_with_expansion):
+            if c.isBlank() or (
+                cardSorter.isBaseExpansionCard(c)
+                and not options.base_cards_with_expansion
+            ):
                 continue
             if c.randomizer:
                 randomizerCountByExpansion[c.cardset] += 1
