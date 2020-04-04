@@ -35,6 +35,9 @@ EDITION_CHOICES = ["1", "2", "latest", "all"]
 
 ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
 
+EXPANSION_GLOBAL_GROUP = "extras"
+EXPANSION_EXTRA_POSTFIX = " extras"
+
 LANGUAGE_DEFAULT = (
     "en_us"
 )  # the primary language used if a language's parts are missing
@@ -76,8 +79,8 @@ def get_expansions():
     fan = []
     official = []
     for s in set_file:
-        if "extras" not in s:
-            # Make sure this are set either True or False
+        if EXPANSION_EXTRA_POSTFIX not in s:
+            # Make sure these are set either True or False
             set_file[s]["fan"] = set_file[s].get("fan", False)
             if set_file[s]["fan"]:
                 fan.append(s)
@@ -90,6 +93,26 @@ def get_expansions():
 
 EXPANSION_CHOICES, FAN_CHOICES = get_expansions()
 
+
+def get_global_groups():
+    type_db_filepath = os.path.join("card_db", "types_db.json")
+    with get_resource_stream(type_db_filepath) as typefile:
+        type_file = json.loads(typefile.read().decode("utf-8"))
+    assert type_file, "Could not load any card types from database"
+
+    group_global_choices = []
+    group_global_valid = []
+    for t in type_file:
+        if "group_global_type" in t:
+            group_global_valid.append("-".join(t["card_type"]).lower())
+            group_global_choices.append(t["group_global_type"].lower())
+    group_global_valid.extend(group_global_choices)
+    group_global_valid.sort()
+    group_global_choices.sort()
+    return group_global_choices, group_global_valid
+
+
+GROUP_GLOBAL_CHOICES, GROUP_GLOBAL_VALID = get_global_groups()
 
 def get_types(language="en_us"):
     # get a list of valid types
@@ -458,10 +481,30 @@ def parse_opts(cmdline_args=None):
         "If this option is not given, all base cards are placed in their own 'Base' expansion.",
     )
     group_select.add_argument(
+        "--group-special",
         "--special-card-groups",
         action="store_true",
+        dest="group_special",
         help="Group cards that generally are used together "
         "(e.g., Shelters, Tournament and Prizes, Urchin/Mercenary, etc.).",
+    )
+    group_select.add_argument(
+        "--group-kingdom",
+        action="store_true",
+        dest="group_kingdom",
+        help="Group cards that have randomizers into the expansion, "
+        "and those that don't have randomizers into the expansion's 'Extra' section.",
+    )
+    group_select.add_argument(
+        "--group-global",
+        nargs="*",
+        action="append",
+        dest="group_global",
+        help="Group all cards of the specified types across all expansions into one 'Extras' divider. "
+        "This may be called multiple times. Values are not case sensitive. "
+        "Choices available include: {}".format(
+            ", ".join("%s" % x for x in GROUP_GLOBAL_VALID)
+        ),
     )
     group_select.add_argument(
         "--no-trash",
@@ -490,22 +533,26 @@ def parse_opts(cmdline_args=None):
     group_select.add_argument(
         "--exclude-events",
         action="store_true",
-        help="Group all 'Event' cards across all expansions into one divider.",
+        help="Group all 'Event' cards across all expansions into one divider."
+        "Same as '--group-global Events'",
     )
     group_select.add_argument(
         "--exclude-landmarks",
         action="store_true",
-        help="Group all 'Landmark' cards across all expansions into one divider.",
+        help="Group all 'Landmark' cards across all expansions into one divider."
+        "Same as '--group-global landmarks'",
     )
     group_select.add_argument(
         "--exclude-projects",
         action="store_true",
-        help="Group all 'Project' cards across all expansions into one divider.",
+        help="Group all 'Project' cards across all expansions into one divider."
+        "Same as '--group-global projects'",
     )
     group_select.add_argument(
         "--exclude-ways",
         action="store_true",
-        help="Group all 'Way' cards across all expansions into one divider.",
+        help="Group all 'Way' cards across all expansions into one divider."
+        "Same as '--group-global ways'",
     )
     group_select.add_argument(
         "--only-type-any",
@@ -875,6 +922,28 @@ def clean_opts(options):
             set([item.lower() for sublist in options.only_type_all for item in sublist])
         )
 
+    if options.group_global is None:
+        options.group_global = []
+    elif not any(options.group_global):
+        # option given with nothing indicates all possible global groupings
+        options.group_global = GROUP_GLOBAL_VALID
+    else:
+        # options.group_global is a list of lists.  Reduce to single lowercase list
+        options.group_global = [
+            item.lower() for sublist in options.group_global for item in sublist
+        ]
+    # For backwards compatibility
+    if options.exclude_events:
+        options.group_global.append('events')
+    if options.exclude_landmarks:
+        options.group_global.append('landmarks')
+    if options.exclude_projects:
+        options.group_global.append('projects')
+    if options.exclude_ways:
+        options.group_global.append('ways')
+    # Remove duplicates from the list
+    options.group_global = list(set(options.group_global))
+
     if options.tabs_only and options.label_name is None:
         # default is Avery 8867
         options.label_name = "8867"
@@ -1086,10 +1155,22 @@ def read_card_data(options):
     with get_resource_stream(set_db_filepath) as setfile:
         Card.sets = json.loads(setfile.read().decode("utf-8"))
     assert Card.sets, "Could not load any sets from database"
+    new_sets = {}
     for s in Card.sets:
         # Make sure these are set either True or False
         Card.sets[s]["no_randomizer"] = Card.sets[s].get("no_randomizer", False)
         Card.sets[s]["fan"] = Card.sets[s].get("fan", False)
+        Card.sets[s]["has_extras"] = Card.sets[s].get("has_extras", True)
+        Card.sets[s]["upgrades"] = Card.sets[s].get("upgrades", None)
+        new_sets[s] = Card.sets[s]
+        # Make an "Extras" set for normal expansions
+        if Card.sets[s]["has_extras"]:
+            e = s + EXPANSION_EXTRA_POSTFIX
+            new_sets[e] = copy.deepcopy(Card.sets[s])
+            new_sets[e]["set_name"] = "*" + s + EXPANSION_EXTRA_POSTFIX + "*"
+            new_sets[e]["no_randomizer"] = True
+            new_sets[e]["has_extras"] = False
+    Card.sets = new_sets
 
     # Remove the Trash card. Do early before propagating to various sets.
     if options.no_trash:
@@ -1120,9 +1201,9 @@ def read_card_data(options):
         for x in range(0, options.include_blanks):
             c = Card(
                 card_tag="Blank",
-                cardset="extras",
-                cardset_tag="extras",
-                cardset_tags=["extras"],
+                cardset=EXPANSION_GLOBAL_GROUP,
+                cardset_tag=EXPANSION_GLOBAL_GROUP,
+                cardset_tags=[EXPANSION_GLOBAL_GROUP],
                 randomizer=False,
                 types=("Blank",),
             )
@@ -1267,7 +1348,7 @@ class CardSorter(object):
         return (
             card.cardset,
             int(card.isExpansion()),
-            card.get_total_cost(card),
+            str(card.get_total_cost(card)),
             self.strip_accents(card.name),
         )
 
@@ -1408,72 +1489,45 @@ def filter_sort_cards(cards, options):
     # Combine upgrade cards with their expansion
     if options.upgrade_with_expansion:
         for card in cards:
-            if card.cardset_tag == "dominion2ndEditionUpgrade":
-                card.cardset_tag = "dominion1stEdition"
-                options.expansions.append(card.cardset_tag.lower())
-            elif card.cardset_tag == "intrigue2ndEditionUpgrade":
-                card.cardset_tag = "intrigue1stEdition"
+            if Card.sets[card.cardset_tag]["upgrades"]:
+                card.cardset_tag = Card.sets[card.cardset_tag]["upgrades"]
                 options.expansions.append(card.cardset_tag.lower())
 
-    # Combine all Events across all expansions
-    if options.exclude_events:
-        cards = combine_cards(
-            cards,
-            old_card_type="Event",
-            new_type="Events",
-            new_card_tag="events",
-            new_cardset_tag="extras",
-        )
-        if options.expansions:
-            options.expansions.append("extras")
+    # Combine globally all cards of the given types
+    # For example, Events, Landmarks, Projects, Ways
+    if options.group_global:
+        # First find all possible types to group that match options.group_global
+        types_to_group = {}
+        for t in Card.types:
+            group_global_type = Card.types[t].getGroupGlobalType()
+            if group_global_type:
+                theType = "-".join(t)
+                # Save if either the old or the new type matches the option
+                # Remember options.global_group is already lowercase
+                if theType.lower() in options.group_global:
+                    types_to_group[theType] = group_global_type
+                elif group_global_type.lower() in options.group_global:
+                    types_to_group[theType] = group_global_type
 
-    # Combine all Landmarks across all expansions
-    if options.exclude_landmarks:
-        cards = combine_cards(
-            cards,
-            old_card_type="Landmark",
-            new_type="Landmarks",
-            new_card_tag="landmarks",
-            new_cardset_tag="extras",
+        # Now work through the matching types to group
+        for t in types_to_group:
+            cards = combine_cards(
+                cards,
+                old_card_type=t,
+                new_type=types_to_group[t],
+                new_card_tag=types_to_group[t].lower(),
+                new_cardset_tag=EXPANSION_GLOBAL_GROUP,
         )
         if options.expansions:
-            options.expansions.append("extras")
-
-    # Combine all Projects across all expansions
-    if options.exclude_projects:
-        cards = combine_cards(
-            cards,
-            old_card_type="Project",
-            new_type="Projects",
-            new_card_tag="projects",
-            new_cardset_tag="extras",
-        )
-        if options.expansions:
-            options.expansions.append("extras")
-
-    # Combine all Ways across all expansions
-    if options.exclude_ways:
-        cards = combine_cards(
-            cards,
-            old_card_type="Way",
-            new_type="Ways",
-            new_card_tag="ways",
-            new_cardset_tag="extras",
-        )
-        if options.expansions:
-            options.expansions.append("extras")
+            options.expansions.append(EXPANSION_GLOBAL_GROUP)
 
     # Take care of any blank cards
     if options.include_blanks > 0:
         if options.expansions:
-            options.expansions.append("extras")
-
-    # FIX THIS: Combine all Prizes across all expansions
-    # if options.exclude_prizes:
-    #    cards = combine_cards(cards, 'Prize', 'prizes')
+            options.expansions.append(EXPANSION_GLOBAL_GROUP)
 
     # Group all the special cards together
-    if options.special_card_groups:
+    if options.group_special:
         keep_cards = []  # holds the cards that are to be kept
         group_cards = {}  # holds the cards for each group
         for card in cards:
@@ -1496,10 +1550,8 @@ def filter_sort_cards(cards, options):
                     )  # For now, change the name to the group_tab
                     card.description = error_msg
                     card.extra = error_msg
-                    if card.isType("Event") or card.isType("Project"):
-                        card.cost = "*"
-                    if card.isType("Landmark"):
-                        card.cost = ""
+                    if card.get_GroupCost():
+                        card.cost = card.get_GroupCost()
                     # now save the card
                     keep_cards.append(card)
                 else:
@@ -1520,19 +1572,26 @@ def filter_sort_cards(cards, options):
 
         cards = keep_cards
 
-        # Now fix up card costs
+        # Now fix up card costs for groups by Type (Events, Landmarks, etc.)
         for card in cards:
-            if card.card_tag in group_cards:
-                if group_cards[card.group_tag].isType("Event") or group_cards[
-                    card.group_tag
-                ].isType("Project"):
-                    group_cards[card.group_tag].cost = "*"
-                    group_cards[card.group_tag].debtcost = 0
-                    group_cards[card.group_tag].potcost = 0
-                if group_cards[card.group_tag].isType("Landmark"):
-                    group_cards[card.group_tag].cost = ""
-                    group_cards[card.group_tag].debtcost = 0
-                    group_cards[card.group_tag].potcost = 0
+            if card.card_tag in group_cards and group_cards[card.group_tag].get_GroupCost():
+                group_cards[card.group_tag].cost = group_cards[card.group_tag].get_GroupCost()
+                group_cards[card.group_tag].debtcost = 0
+                group_cards[card.group_tag].potcost = 0
+
+    # Separate Kingdom (with Randomizer) from non-Kingdom cards (without Randomizer)
+    if options.group_kingdom:
+        new_cards = []
+        new_sets = {}
+        for card in cards:
+            if not card.randomizer and Card.sets[card.cardset_tag]["has_extras"]:
+                card.cardset_tag += EXPANSION_EXTRA_POSTFIX
+                new_sets[card.cardset_tag] = True
+            new_cards.append(card)
+        cards = new_cards
+        if options.expansions and new_cards:
+            # Add the new expansion "extras" to the overall expansion list
+            options.expansions.extend([s for s in new_sets])
 
     # Get the final type names in the requested language
     Card.type_names = add_type_text(Card.type_names, LANGUAGE_DEFAULT)
@@ -1588,7 +1647,7 @@ def filter_sort_cards(cards, options):
                 expanded_expansions.append(e)
 
         # Now get the actual sets that are matched above
-        options.expansions = set([e for e in expanded_expansions])  # Remove duplicates
+        options.expansions = set([e.lower() for e in expanded_expansions])  # Remove duplicates
         knownExpansions = set()
         for e in options.expansions:
             for s in Official_sets:
@@ -1620,7 +1679,7 @@ def filter_sort_cards(cards, options):
                 expanded_expansions.append(e)
 
         # Now get the actual sets that are matched above
-        options.fan = set([e for e in expanded_expansions])  # Remove duplicates
+        options.fan = set([e.lower() for e in expanded_expansions])  # Remove duplicates
         knownExpansions = set()
         for e in options.fan:
             for s in Fan_sets:
@@ -1630,7 +1689,13 @@ def filter_sort_cards(cards, options):
         # Give indication if an imput did not match anything
         unknownExpansions = options.fan - knownExpansions
         if unknownExpansions:
-            print("Error - unknown fan expansion(s): %s" % ", ".join(unknownExpansions))
+            print(
+                (
+                    "Error - unknown expansion(s): {}".format(
+                        ", ".join(unknownExpansions)
+                    )
+                )
+            )
 
     if options.exclude_expansions:
         # Expand out any wildcards, matching set key or set name in the given language
@@ -1703,7 +1768,7 @@ def filter_sort_cards(cards, options):
         cardnamesByExpansion = defaultdict(dict)
         randomizerCountByExpansion = Counter()
         for c in cards:
-            if cardSorter.isBaseExpansionCard(c) or c.isBlank():
+            if c.isBlank() or (cardSorter.isBaseExpansionCard(c) and not options.base_cards_with_expansion):
                 continue
             if c.randomizer:
                 randomizerCountByExpansion[c.cardset] += 1
