@@ -1654,7 +1654,9 @@ class DividerDrawer(object):
 
             sets = []
             for item in pageItems:
-                setTitle = " ".join(word.capitalize() for word in item.card.cardset.split())
+                setTitle = " ".join(
+                    word.capitalize() for word in item.card.cardset.split()
+                )
                 if setTitle not in sets:
                     sets.append(setTitle)
 
