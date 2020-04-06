@@ -2,7 +2,7 @@ import os
 import codecs
 import json
 import sys
-import argparse
+import configargparse
 import copy
 import fnmatch
 import pkg_resources
@@ -131,8 +131,8 @@ def add_opt(options, option, value):
 
 
 def parse_opts(cmdline_args=None):
-    parser = argparse.ArgumentParser(
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    parser = configargparse.ArgParser(
+        formatter_class=configargparse.ArgumentDefaultsHelpFormatter,
         description="Generate Dominion Dividers",
         epilog="Source can be found at 'https://github.com/sumpfork/dominiontabs'. "
         "An online version can be found at 'http://domtabs.sandflea.org/'. ",
@@ -746,6 +746,17 @@ def parse_opts(cmdline_args=None):
         action="store_true",
         dest="write_json",
         help="Write json version of card definitions and extras.",
+    )
+    group_special.add_argument(
+        "-c",
+        is_config_file=True,
+        help="Use the specified configuration file to provide options. "
+        "Command line options override options from this file.",
+    )
+    group_special.add_argument(
+        "-w",
+        is_write_out_config_file_arg=True,
+        help="Write out the given options to the specified configuration file.",
     )
 
     options = parser.parse_args(args=cmdline_args)
