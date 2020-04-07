@@ -9,6 +9,17 @@
         "set_text": "",
         "text_icon": "*"
     },
+    "adventures extras": {
+        "edition": [
+            "1",
+            "latest"
+        ],
+        "image": "adventures_set.png",
+        "no_randomizer": true,
+        "set_name": "*adventures extras*",
+        "set_text": "",
+        "text_icon": "*"
+    },
     "alchemy": {
         "edition": [
             "1",
@@ -38,7 +49,6 @@
         ],
         "image": "",
         "no_randomizer": true,
-        "has_extras": false,
         "set_name": "*base*",
         "set_text": "",
         "text_icon": "*"
@@ -53,6 +63,17 @@
         "set_text": "",
         "text_icon": "*"
     },
+    "cornucopia extras": {
+        "edition": [
+            "1",
+            "latest"
+        ],
+        "image": "cornucopia_set.png",
+        "no_randomizer": true,
+        "set_name": "*cornucopia extras*",
+        "set_text": "",
+        "text_icon": "*"
+    },
     "dark ages": {
         "edition": [
             "1",
@@ -60,6 +81,17 @@
         ],
         "image": "dark_ages_set.png",
         "set_name": "*dark ages*",
+        "set_text": "",
+        "text_icon": "*"
+    },
+    "dark ages extras": {
+        "edition": [
+            "1",
+            "latest"
+        ],
+        "image": "dark_ages_set.png",
+        "no_randomizer": true,
+        "set_name": "*dark ages extras*",
         "set_text": "",
         "text_icon": "*"
     },
@@ -89,8 +121,6 @@
             "1"
         ],
         "image": "dominion2ndEdition_set.png",
-        "has_extras": false,
-        "upgrades": "dominion1stEdition",
         "set_name": "*dominion2ndEditionUpgrade*",
         "set_text": "",
         "text_icon": "*"
@@ -105,6 +135,17 @@
         "set_text": "",
         "text_icon": "*"
     },
+    "empires extras": {
+        "edition": [
+            "1",
+            "latest"
+        ],
+        "image": "empires_set.png",
+        "no_randomizer": true,
+        "set_name": "*empires extras*",
+        "set_text": "",
+        "text_icon": "*"
+    },
     "extras": {
         "edition": [
             "1",
@@ -112,7 +153,6 @@
         ],
         "image": "",
         "no_randomizer": true,
-        "has_extras": false,
         "set_name": "*extras*",
         "set_text": "",
         "text_icon": "*"
@@ -163,8 +203,6 @@
             "1"
         ],
         "image": "intrigue2ndEdition_set.png",
-        "has_extras": false,
-        "upgrades": "intrigue1stEdition",
         "set_name": "*intrigue2ndEditionUpgrade*",
         "set_text": "",
         "text_icon": "*"
@@ -179,6 +217,17 @@
         "set_text": "",
         "text_icon": "*"
     },
+    "menagerie extras": {
+        "edition": [
+            "1",
+            "latest"
+        ],
+        "image": "menagerie_set.png",
+        "no_randomizer": true,
+        "set_name": "*menagerie extras*",
+        "set_text": "",
+        "text_icon": "*"
+    },
     "nocturne": {
         "edition": [
             "1",
@@ -189,13 +238,23 @@
         "set_text": "",
         "text_icon": "*"
     },
+    "nocturne extras": {
+        "edition": [
+            "1",
+            "latest"
+        ],
+        "image": "nocturne_set.png",
+        "no_randomizer": true,
+        "set_name": "*nocturne extras*",
+        "set_text": "",
+        "text_icon": "*"
+    },
     "promo": {
         "edition": [
             "1",
             "latest"
         ],
         "image": "promo_set.png",
-        "has_extras": false,
         "set_name": "*promo*",
         "set_text": "",
         "text_icon": "*"
