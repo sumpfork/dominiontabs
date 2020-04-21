@@ -36,22 +36,16 @@ class CardPlot(object):
     )  # location & directional constants
 
     tabNumber = 1  # Number of different tab locations
-    tabIncrement = (
-        0
-    )  # Either 1, 0, or -1.  Used to select next tab. This can change if tabSerpentine.
+    tabIncrement = 0  # Either 1, 0, or -1.  Used to select next tab. This can change if tabSerpentine.
     tabIncrementStart = 0  # Starting value of tabIncrement
     tabStart = 1  # The starting tab location.
     tabStartSide = LEFT  # The starting side for the tabs
-    tabSerpentine = (
-        False
-    )  # What to do at the end of a line of tabs.  False = start over.  True = reverses direction.
+    tabSerpentine = False  # What to do at the end of a line of tabs.  False = start over.  True = reverses direction.
     lineType = "line"  # Type of outline to use: line, dot, none
     cardWidth = (
-        0
-    )  # Width of just the divider, with no extra padding/spacing. NEEDS TO BE SET.
-    cardHeight = (
-        0
-    )  # Height of just the divider, with no extra padding/spacing or tab. NEEDS TO BE SET.
+        0  # Width of just the divider, with no extra padding/spacing. NEEDS TO BE SET.
+    )
+    cardHeight = 0  # Height of just the divider, with no extra padding/spacing or tab. NEEDS TO BE SET.
     tabWidth = 0  # Width of the tab.  NEEDS TO BE SET.
     tabHeight = 0  # Height of the tab. NEEDS TO BE SET.
     wrapper = False  # If the divider is a sleeve/wrapper.
@@ -134,36 +128,26 @@ class CardPlot(object):
         self.y = y  # y location of the lower left corner of the card on the page
         self.rotation = rotation  # of the card. 0, 90, 180, 270
         self.stackHeight = (
-            stackHeight
-        )  # The height of a stack of these cards. Used for interleaving.
-        self.tabIndex = (
-            tabIndex
-        )  # Tab location index.  Starts at 1 and goes up to CardPlot.tabNumber
+            stackHeight  # The height of a stack of these cards. Used for interleaving.
+        )
+        self.tabIndex = tabIndex  # Tab location index.  Starts at 1 and goes up to CardPlot.tabNumber
         self.page = page  # holds page number of this printed card
         self.textTypeFront = (
-            textTypeFront
-        )  # What card text to put on the front of the divider
+            textTypeFront  # What card text to put on the front of the divider
+        )
         self.textTypeBack = (
-            textTypeBack
-        )  # What card text to put on the back of the divider
-        self.cropOnTop = (
-            cropOnTop
-        )  # When true, cropmarks needed along TOP *printed* edge of the card
-        self.cropOnBottom = (
-            cropOnBottom
-        )  # When true, cropmarks needed along BOTTOM *printed* edge of the card
-        self.cropOnLeft = (
-            cropOnLeft
-        )  # When true, cropmarks needed along LEFT *printed* edge of the card
-        self.cropOnRight = (
-            cropOnRight
-        )  # When true, cropmarks needed along RIGHT *printed* edge of the card
+            textTypeBack  # What card text to put on the back of the divider
+        )
+        self.cropOnTop = cropOnTop  # When true, cropmarks needed along TOP *printed* edge of the card
+        self.cropOnBottom = cropOnBottom  # When true, cropmarks needed along BOTTOM *printed* edge of the card
+        self.cropOnLeft = cropOnLeft  # When true, cropmarks needed along LEFT *printed* edge of the card
+        self.cropOnRight = cropOnRight  # When true, cropmarks needed along RIGHT *printed* edge of the card
 
         # And figure out the backside index
         if self.tabIndex == 0:
             self.tabIndexBack = (
-                0
-            )  # Exact Centre special case, so swapping is still exact centre
+                0  # Exact Centre special case, so swapping is still exact centre
+            )
         elif CardPlot.tabNumber == 1:
             self.tabIndex = (
                 self.tabIndexBack
@@ -372,7 +356,15 @@ class Plotter(object):
         self.canvas = canvas
         self.x = x
         self.y = y
-        self.LEFT, self.RIGHT, self.TOP, self.BOTTOM, self.LINE, self.NO_LINE, self.DOT = range(
+        (
+            self.LEFT,
+            self.RIGHT,
+            self.TOP,
+            self.BOTTOM,
+            self.LINE,
+            self.NO_LINE,
+            self.DOT,
+        ) = range(
             1, 8
         )  # Constants
         if cropmarkLength < 0:

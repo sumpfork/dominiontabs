@@ -36,8 +36,8 @@ EDITION_CHOICES = ["1", "2", "latest", "all"]
 ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
 
 LANGUAGE_DEFAULT = (
-    "en_us"
-)  # the primary language used if a language's parts are missing
+    "en_us"  # the primary language used if a language's parts are missing
+)
 LANGUAGE_XX = "xx"  # a dummy language for starting translations
 
 
@@ -800,8 +800,8 @@ def clean_opts(options):
                 "** Warning: --tab-side with 'flip' implies 2 tabs. Setting --tab-number to 2 **"
             )
         options.tab_number = (
-            2
-        )  # alternating left and right with a flip, so override tab_number
+            2  # alternating left and right with a flip, so override tab_number
+        )
         options.flip = True
     else:
         options.flip = False
