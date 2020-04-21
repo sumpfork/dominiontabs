@@ -12,7 +12,7 @@ setup(
     packages=["domdiv"],
     use_scm_version=True,
     setup_requires=["setuptools_scm", "pytest-runner"],
-    install_requires=["reportlab", "Pillow"],
+    install_requires=["reportlab", "Pillow", "configargparse"],
     tests_require=["pytest", "six", "pytest-flake8", "pre-commit", "doit"],
     url="http://domtabs.sandflea.org",
     include_package_data=True,
