@@ -1396,8 +1396,8 @@
     },
     "Coppersmith": {
         "name": "Chaudronnier",
-        "description": "Copper produces an extra 1 Coin this turn.",
-        "extra": "This just changes how much money you get when playing Copper. The effect is cumulative; if you use Throne Room on Coppersmith, each Copper that you play that turn will produce 3 coins."
+        "description": "Les cartes <i>Cuivre</i> donnent 1 Coin de plus ce tour-ci",
+        "extra": "Cette carte ne change que les pièces reçues lorsque vous jouez une carte <i>Cuivre</i>. L'effet est cumulatif; par exemple, si vous utilisez une <i>Salle du Trône</i> (D) avec un <i>Chaudronnier</i>, chaque <i>Cuivre</i> que vous jouez ce tour-ci vous donnera 3 pièces."
     },
     "Great Hall": {
         "name": "Grand Hall",
@@ -1416,8 +1416,8 @@
     },
     "Secret Chamber": {
         "name": "Chambre secrète",
-        "description": "Discard any number of cards. +1 Coin per card discarded.<line>When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.",
-        "extra": "When you play this as an Action on your turn, you first discard any number of cards from your hand, then get 1 coin per card you discarded. You may choose to discard zero cards, but then you will get zero additional coins. The other ability does nothing at that time as it is only used as a Reaction. When someone else plays an Attack card, you may reveal Secret Chamber from your hand. If you do, first you draw 2 cards, then you put at 2 cards from your hand on top of your deck (in any order). The cards you put back do not have to be the ones you drew. You can put Secret Chamber itself on top of your deck; it's still on your hand when you reveal it. Revealing Secret Chamber happens prior to resolving what an Attack does to you. For example, if another player plays Thief, you can reveal Secret Chamber, draw 2 cards, put 2 back, and then you resolve getting hit by the Thief. You can reveal Secret Chamber whenever another player plays an Attack card, even if that Attack would not affect you. Also, you can reveal more than one Reaction card in response to an Attack. For example, after revealing the Secret Chamber in response to an Attack and resolving the effect of the Secret Chamber, you can still reveal a Moat to avoid the Attack completely."
+        "description": "Défaussez autant de cartes que vous voulez, +1 Coin par carte défaussée.<line>Lorsqu'un adversaire joue une carte <i>Attaque</i>, vous pouvez dévoiler cette carte de votre main. Dans ce cas, +2 Cartes et placez ensuite sur votre deck 2 cartes de votre main.",
+        "extra": "Lorsque vous jouez cette carte comme <i>Action</i> à votre tour, vous devez d'abord défausser autant de cartes que vous voulez de votre main et vous recevez ensuite 1 pièce pour chaque carte défaussée. Vous pouvez ne pas défausser de carte mais bous ne recevez aucune pièce à ce moment. L'autre fonction ne sert que lorsque la carte est jouée comme <i>Réaction</i>. Lorsqu'un autre joueur joue une carte <i>Attaque</i> vous pouvez dévoiler la carte <i>Chambre secrète</i> de votre main. Si vous la dévoilez, piocher d'abord 2 cartes et placez ensuite 2 cartes au choix de votre main sur le dessus de votre deck (dans l'ordre que vous voulez). Les cartes que vous placez sur votre deck n'ont pas à être celles que vous venez de piocher. Vous pouvez même placer la carte <i>Chambre secrète</i> dévoilée sur le dessus de votre deck puisqu'elle fait toujours partie de votre main lorsque vous la dévoilez. On dévoile la carte <i>Chambre secrète</i> avant de résoudre ce que la carte <i>Attaque</i> vous fait. Par exemple, si un autre joueur joue la carte <i>Bourreau</i>, vous pouvez dévoiler la <i>Chambre secrète</i>, piocher 2 cartes, en replacer 2 pour finalement subir l'effet du <i>Bourreau</i>. Vous pouvez dévoiler <i>Chambre secrète</i> à tout moment ou un autre joueur utilise une carte <i>Attaque</i>, même si l'attaque ne vous affecte pas. De plus, vous pouvez dévoiller plus d'une carte <i>Réaction</i> en réponse à une carte <i>Attaque</i>. Pas exemple, après dévoilé et résolu une <i>Chambre secrète</i> en réponse à une <i>Attaque</i>, vous pouvez dévoiler une carte <i>Douve</i> (D) pour éviter complétement les effets de la carte <i>Attaque</i>."
     },
     "Tribute": {
         "name": "Hommage",
@@ -1426,8 +1426,8 @@
     },
     "Baron": {
         "name": "Baron",
-        "description": "+1 Buy<n>You may discard an Estate card. If you do, +4 Coins. Otherwise, gain an Estate card.",
-        "extra": "You are never obligated to discard an Estate, even if you have one in your hand. However, if you do not discard an Estate, you must gain an Estate (if there are any left); you cannot choose to just get +1 Buy from this Card."
+        "description": "+1 Achat<n>Vous pouvez défausser une carte <i>Domaine</i>. Dans ce cas, obtenez +4 Coin. Sinon, recevez une carte <i>Domaine</i>.",
+        "extra": "Vous n'êtes jamais obligé de défausser une carte <i>Domaine</i>, même si vous en avez une en main. Cependant, si vous ne défaussez pas de carte <i>Domaine</i> vous devez recevoir une carte <i>Domaine</i> (s'il en reste); vous ne pouvez pas choisir de recevoir uniquement +1 Achat de cette carte."
     },
     "Bridge": {
         "name": "Pont",
@@ -1436,13 +1436,13 @@
     },
     "Conspirator": {
         "name": "Conspirateur",
-        "description": "+2 Coins<n>If you've played 3 or more Actions this turn (counting this), +1 Card, +1 Action.",
-        "extra": "You evaluate whether or not Conspirator gives you +1 Card and +1 Action when you play it. Action cards played later in the turn do not change this evaluation. For the purposes of counting actions, if you Throne Room an Action, that's one Action of the Throne Room, one for the selected Action played the first time, and one for the selected Action played the second time. For example, if you play Throne Room on Conspirator, the first conspirator will be your second Action, and won't give you +1 Card or +1 Action, but the second Conspirator will be your third Action, and you will get +1 Card and +1 Action for that second Conspirator. Action - Victory cards are Actions."
+        "description": "+2 Coins<n>Si vous avez joué 3 cartes <i>Action</i> ou plus ce tour-ci (en comptant cette carte):<br>+1 Carte, +1 Action.",
+        "extra": "Vous évaluez si le <i>Conspirateur</i> vous donne +1 Carte et +1 Action lorsque vous jouez la carte. Si vous jouez d'autres cartes <i>Action</i> plus tard dans le tour, vous ne pouvez pas réévaluer un <i>Conspirateur</i> joué plus tôt. Si vous utilisez une <i>Salle du Trône</i> (D), comptez les actions de la façon suivante: une action pour la <i>Salle du Trône</i>, une action pour la première utilisation de la carte choisie et une action pour la deuxième utilisation de la carte choisie. Ainsi, si vous jouez une <i>Salle du Trône</i> sur la carte <i>Conspirateur</i>, la première utilisation de la carte <i>Conspirateur</i> sera votre deuxième action et ne vous donnera pas le +1 Carte et +1 Action, mais la deuxième utilisation du <i>Conspirateur</i>, qui elle est votre troisième action, vous donnera le +1 Carte et +1 Action. Les cartes <i>Action</i> - <i>Victoire</i> sont des actions."
     },
     "Courtyard": {
         "name": "Cour",
-        "description": "+3 Card<br>Put a card from your hand on top of your deck.",
-        "extra": "You draw cards and add them to your hand before putting one back. The card you put on top of your deck can be any card in your new hand and doesn't have to be one of the 3 you just drew."
+        "description": "+3 Cartes<n>Placez une carte de votre main sur le dessus de votre deck.",
+        "extra": "Vous piochez et ajoutez les trois cartes à votre main avant d'en remettre une sur votre deck. La carte que vous placez sur votre deck doit provenir de votre main, sans nécessairement être l'une des 3 cartes que vous venez de piocher."
     },
     "Duke": {
         "name": "Duc",
@@ -1501,13 +1501,13 @@
     },
     "Torturer": {
         "name": "Bourreau",
-        "description": "+3 Card<n>Each other player chooses one: he discards 2 cards; or he gains a Curse card, putting it in his hand.",
-        "extra": "Each other player chooses which option to suffer and then suffers it. A player can choose to gain a Curse even when there are no Curses left, in which case he doesn't gain one; and a player can choose to discard 2 cards even if he has no cards in hand or one card in hand (if he has one card, he discards that single card). Gained Curses go to the players' hands rather than their discard piles. If there aren't enough Curses left for everybody, deal them around in turn order starting with the player to your left. When the order matters (such as with very few Curses left), each player makes his decision of which fate to suffer in turn order."
+        "description": "+3 Cartes<n>Chacun de vos adversaires choisit:<br>défausser 2 carte<br><b>OU</b> recevoir une carte <i>Malédiction</i> qui est ajoutée à sa main.",
+        "extra": "Chaque autre joueur choisit quelle option il subit et la subit ensuite. Un joueur peut choisir de recevoir une carte <i>Malédiction</i> même s'il n'y en a plus, ce qui fait en sorte qu'il n'en reçoit pas; un joueur peut aussi choisir de défausser 2 cartes même s'il n'a plus de carte en main ou une seule (s'il possède une carte, il doit tout de même la défausser). Les cartes <i>Malédiction</i> reçues vont dans la main du joueur et non dans sa défausse. S'il n'y a plus suffisament de carte <i>Malédiction</i> pour tous les joueurs, distribuez-les en sens horaire en débutant par le joueur à votre gauche. Lorsque l'ordre est important (par exemple, lorsqu'il reste peu de carte <i>Malédiction</i>), chaque joueur chosit l'effet qu'il subit selon l'ordre de jeu."
     },
     "Trading Post": {
         "name": "Comptoir",
-        "description": "Trash 2 cards from your hand. If you do, gain a silver card; put it into your hand.",
-        "extra": "If you have 2 or more cards, you must trash exactly 2 cards and gain a Silver card. The gained Silver card goes into your hand and can be spent the same turn. If the Silver pile is empty, you do not gain a Silver card (but still trash cards if possible). If you only have one card left in your hand and you play Trading Post, you trash the one remaining card but you do not gain a Silver. If you have no cards left when you play this, nothing happens."
+        "description": "Écartez 2 cartes de votre main. Dans ce cas, recevez une carte <i>Argent</i>; ajoutez cette carte à votre main.",
+        "extra": "Si vous avez 2 cartes ou plus, vous devez écarter exactement 2 cartes et vous recevez ensuite une carte <i>Argent</i>. La carte <i>Argent</i> reçue va directement dans votre main et peut être jouée ce tour-ci. Si la pile de carte <i>Argent</i> est vide, vous nobtenez pas de carte <i>Argent</i> (mais vous devez tout de même écarter des cartes si possible). S'il ne vous reste qu'une carte en main après avoir joué le <i>Comptoir</i>, vous écartez la carte restante mais vous ne recevez pas de carte <i>Argent</i>. Si vous jouez cette carte et qu'il ne vous reste plus de carte en main, il ne se passe rien."
     },
     "Upgrade": {
         "name": "Mise à niveau",
