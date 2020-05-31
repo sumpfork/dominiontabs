@@ -36,22 +36,16 @@ class CardPlot(object):
     )  # location & directional constants
 
     tabNumber = 1  # Number of different tab locations
-    tabIncrement = (
-        0
-    )  # Either 1, 0, or -1.  Used to select next tab. This can change if tabSerpentine.
+    tabIncrement = 0  # Either 1, 0, or -1.  Used to select next tab. This can change if tabSerpentine.
     tabIncrementStart = 0  # Starting value of tabIncrement
     tabStart = 1  # The starting tab location.
     tabStartSide = LEFT  # The starting side for the tabs
-    tabSerpentine = (
-        False
-    )  # What to do at the end of a line of tabs.  False = start over.  True = reverses direction.
+    tabSerpentine = False  # What to do at the end of a line of tabs.  False = start over.  True = reverses direction.
     lineType = "line"  # Type of outline to use: line, dot, none
     cardWidth = (
-        0
-    )  # Width of just the divider, with no extra padding/spacing. NEEDS TO BE SET.
-    cardHeight = (
-        0
-    )  # Height of just the divider, with no extra padding/spacing or tab. NEEDS TO BE SET.
+        0  # Width of just the divider, with no extra padding/spacing. NEEDS TO BE SET.
+    )
+    cardHeight = 0  # Height of just the divider, with no extra padding/spacing or tab. NEEDS TO BE SET.
     tabWidth = 0  # Width of the tab.  NEEDS TO BE SET.
     tabHeight = 0  # Height of the tab. NEEDS TO BE SET.
     wrapper = False  # If the divider is a sleeve/wrapper.
@@ -134,36 +128,26 @@ class CardPlot(object):
         self.y = y  # y location of the lower left corner of the card on the page
         self.rotation = rotation  # of the card. 0, 90, 180, 270
         self.stackHeight = (
-            stackHeight
-        )  # The height of a stack of these cards. Used for interleaving.
-        self.tabIndex = (
-            tabIndex
-        )  # Tab location index.  Starts at 1 and goes up to CardPlot.tabNumber
+            stackHeight  # The height of a stack of these cards. Used for interleaving.
+        )
+        self.tabIndex = tabIndex  # Tab location index.  Starts at 1 and goes up to CardPlot.tabNumber
         self.page = page  # holds page number of this printed card
         self.textTypeFront = (
-            textTypeFront
-        )  # What card text to put on the front of the divider
+            textTypeFront  # What card text to put on the front of the divider
+        )
         self.textTypeBack = (
-            textTypeBack
-        )  # What card text to put on the back of the divider
-        self.cropOnTop = (
-            cropOnTop
-        )  # When true, cropmarks needed along TOP *printed* edge of the card
-        self.cropOnBottom = (
-            cropOnBottom
-        )  # When true, cropmarks needed along BOTTOM *printed* edge of the card
-        self.cropOnLeft = (
-            cropOnLeft
-        )  # When true, cropmarks needed along LEFT *printed* edge of the card
-        self.cropOnRight = (
-            cropOnRight
-        )  # When true, cropmarks needed along RIGHT *printed* edge of the card
+            textTypeBack  # What card text to put on the back of the divider
+        )
+        self.cropOnTop = cropOnTop  # When true, cropmarks needed along TOP *printed* edge of the card
+        self.cropOnBottom = cropOnBottom  # When true, cropmarks needed along BOTTOM *printed* edge of the card
+        self.cropOnLeft = cropOnLeft  # When true, cropmarks needed along LEFT *printed* edge of the card
+        self.cropOnRight = cropOnRight  # When true, cropmarks needed along RIGHT *printed* edge of the card
 
         # And figure out the backside index
         if self.tabIndex == 0:
             self.tabIndexBack = (
-                0
-            )  # Exact Centre special case, so swapping is still exact centre
+                0  # Exact Centre special case, so swapping is still exact centre
+            )
         elif CardPlot.tabNumber == 1:
             self.tabIndex = (
                 self.tabIndexBack
@@ -372,7 +356,15 @@ class Plotter(object):
         self.canvas = canvas
         self.x = x
         self.y = y
-        self.LEFT, self.RIGHT, self.TOP, self.BOTTOM, self.LINE, self.NO_LINE, self.DOT = range(
+        (
+            self.LEFT,
+            self.RIGHT,
+            self.TOP,
+            self.BOTTOM,
+            self.LINE,
+            self.NO_LINE,
+            self.DOT,
+        ) = range(
             1, 8
         )  # Constants
         if cropmarkLength < 0:
@@ -642,7 +634,11 @@ class DividerDrawer(object):
 
     def wantCentreTab(self, card):
         return (
-            card.isExpansion() and self.options.centre_expansion_dividers
+            card.isExpansion()
+            and (
+                self.options.centre_expansion_dividers
+                or self.options.full_expansion_dividers
+            )
         ) or self.options.tab_side == "centre"
 
     def drawOutline(self, item, isBack=False):
@@ -672,7 +668,9 @@ class DividerDrawer(object):
         theTabWidth = item.tabWidth
         theTabHeight = item.tabHeight
 
-        left2tab = item.getTabOffset(backside=isBack)
+        left2tab = item.getTabOffset(
+            backside=False
+        )  # translate/scale above takes care of backside
         right2tab = dividerWidth - tabLabelWidth - left2tab
         nearZero = 0.01
         left2tab = left2tab if left2tab > nearZero else 0
@@ -1249,7 +1247,7 @@ class DividerDrawer(object):
             self.canvas.drawCentredString(item.tabWidth - 10, textHeight + 2, setText)
             textInsetRight = 15
         else:
-            setImage = card.setImage()
+            setImage = card.setImage(self.options.use_set_icon)
             if setImage and "tab" in self.options.set_icon:
                 setImageHeight = 3 + card.getType().getTabTextHeightOffset()
 
@@ -1413,7 +1411,7 @@ class DividerDrawer(object):
 
         Image_x_right = item.cardWidth - 4
         if "body-top" in self.options.set_icon and not card.isExpansion():
-            setImage = card.setImage()
+            setImage = card.setImage(self.options.use_set_icon)
             if setImage:
                 Image_x_right -= 16
                 self.drawSetIcon(
@@ -1551,6 +1549,10 @@ class DividerDrawer(object):
                 self.options.back_offset, self.options.back_offset_height
             )
             pageWidth -= 2 * self.options.back_offset
+        else:
+            self.canvas.translate(
+                self.options.front_offset, self.options.front_offset_height
+            )
 
         item.translate(self.canvas, pageWidth, isBack)
 
@@ -1908,7 +1910,11 @@ class DividerDrawer(object):
                 if lastCardSet != card.cardset_tag:
                     # In a new expansion, so reset the tabs to start over
                     nextTabIndex = CardPlot.tabRestart()
-                    if options.tab_number > Card.sets[card.cardset_tag]["count"]:
+                    if (
+                        options.tab_number > Card.sets[card.cardset_tag]["count"]
+                        and Card.sets[card.cardset_tag]["count"] > 0
+                    ):
+
                         #  Limit to the number of tabs to the number of dividers in the expansion
                         CardPlot.tabSetup(
                             tabNumber=Card.sets[card.cardset_tag]["count"]
@@ -1932,6 +1938,13 @@ class DividerDrawer(object):
                 textTypeBack=options.text_back,
                 stackHeight=card.getStackHeight(options.thickness),
             )
+
+            if card.isExpansion() and options.full_expansion_dividers:
+                # Fix up the item to have a full tab with text centred
+                item.tabWidth = cardWidth
+                item.tabNumber = 1
+                item.tabOffset = 0
+
             if (
                 options.flip
                 and (options.tab_number == 2)
