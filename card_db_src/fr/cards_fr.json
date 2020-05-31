@@ -963,7 +963,9 @@
         "extra": "Lorsque vous jouez cette carte comme <i>Action</i> à votre tour, vous devez d'abord défausser autant de cartes que vous voulez de votre main et vous recevez ensuite 1 pièce pour chaque carte défaussée. Vous pouvez ne pas défausser de carte mais bous ne recevez aucune pièce à ce moment. L'autre fonction ne sert que lorsque la carte est jouée comme <i>Réaction</i>. Lorsqu'un autre joueur joue une carte <i>Attaque</i> vous pouvez dévoiler la carte <i>Chambre secrète</i> de votre main. Si vous la dévoilez, piocher d'abord 2 cartes et placez ensuite 2 cartes au choix de votre main sur le dessus de votre deck (dans l'ordre que vous voulez). Les cartes que vous placez sur votre deck n'ont pas à être celles que vous venez de piocher. Vous pouvez même placer la carte <i>Chambre secrète</i> dévoilée sur le dessus de votre deck puisqu'elle fait toujours partie de votre main lorsque vous la dévoilez. On dévoile la carte <i>Chambre secrète</i> avant de résoudre ce que la carte <i>Attaque</i> vous fait. Par exemple, si un autre joueur joue la carte <i>Bourreau</i>, vous pouvez dévoiler la <i>Chambre secrète</i>, piocher 2 cartes, en replacer 2 pour finalement subir l'effet du <i>Bourreau</i>. Vous pouvez dévoiler <i>Chambre secrète</i> à tout moment ou un autre joueur utilise une carte <i>Attaque</i>, même si l'attaque ne vous affecte pas. De plus, vous pouvez dévoiller plus d'une carte <i>Réaction</i> en réponse à une carte <i>Attaque</i>. Pas exemple, après dévoilé et résolu une <i>Chambre secrète</i> en réponse à une <i>Attaque</i>, vous pouvez dévoiler une carte <i>Douve</i> (D) pour éviter complétement les effets de la carte <i>Attaque</i>."
     },
     "Tribute": {
-        "name": "Hommage"
+        "name": "Hommage",
+        "description": "Le joueur à votre gauche dévoile et défausse les 2 premières cartes de son deck. Pour chaque carte dévoilée ayant un nom différent, recevez pour une...<br>carte <i>Action</i>: +2 Actions<br>carte <i>Trésor</i>: + 2 Coins<br>carte <i>Victoire</i>: +2 Cartes",
+        "extra": "Si le joueur à votre gauche à moins de 2 cartes dans son deck, il dévoile la carte restante dans son deck, mélange sa défausse (qui n'inclut pas la carte dévoilée) et dévoile ensuite la carte requise. Le joueur défausse ensuite les cartes dévoilées. Si le joueur à votre gauche n'a pas suffisamment de carte à dévoiler, il dévoile ce qu'il peut. Vous recevez les effets selon le(s) type(s) des cartes dévoilées, en ne comptant que les cartes différentes. Une carte de 2 types donne les deux effets. Par exemple, si un joueur dévoile une carte <i>Cuivre</i> et une carte <i>Harem</i>, vous recevez +4 Pièces et +2 Cartes alors que s'il dévoile 2 cartes <i>Argent</i> vous ne recevez que +2 Pièces. Les cartes <i>Malédiction</i> ne donnent rien."
     },
     "Baron": {
         "name": "Baron",
@@ -989,7 +991,9 @@
         "extra": "Cette carte n'a aucun effet avant la fin de la partie, où elle vaut alors 1 <VP> pour chaque <i>Duché</i> que vous avez. Ceci prend en considération toutes vos cartes car votre défausse et votre main font partie de votre deck à ce moment. Lors de la mise en place, il y aura 12 cartes <i>Duc</i> dans la réserve d'une partie à 3 et 4 joueurs et 8 <i>Duc</i> à 2 joueurs."
     },
     "Harem": {
-        "name": "Harem"
+        "name": "Harem",
+        "description": "2 <*COIN*><br><br>2<*VP*>",
+        "extra": "C'est une carte <i>Trésor</i> et une carte <i>Victoire</i>. Vous pouvez jouer cette carte pour 2 pièces, comme une carte <i>Argent</i>. À la fin de la partie, cette carte vaut 2 <VP>. Lors de la mise en place, il y aura 12 cartes <i>Harem</i> dans la réserve d'une partie à 3 ou 4 joueur et 8 <i>Harem</i> à 2 joueurs."
     },
     "Ironworks": {
         "name": "Fonderie",
@@ -1003,7 +1007,9 @@
         "name": "Village minier"
     },
     "Minion": {
-        "name": "Larbin"
+        "name": "Larbin",
+        "description": "+ 1 Action<n>Choisissez: +2 Coin <b>OU</b> défaussez votre main, +4 Cartes, et tous les autres joueurs qui ont au moins 5 cartes en main défausssent leur main et piochent 4 cartes.",
+        "extra": "Vous obtenez +1 Action peu importe l'option que vous choisissez. Les options sont: +2 Pièces OU tout ce qui suit, c'est à dire: vous défaussez votre main, vous piochez 4 cartes et les autres joueurs défaussent et piochent également. Un joeuur qui utilise la carte <i>Douves</i> (D) ne défausse pas sa main et ne pioche pas de carte. Les autres joeuurs sont uniquement affectés par cette carte s'ils ont 5 cartes ou plus dans leur main. Les autres joueur peuvent dévoiler une carte <i>Chambre secrète</i> lorsque vous jouez un <i>Larbin</i> même s'ils ont moins de 5 cartes en main."
     },
     "Nobles": {
         "name": "Nobles"
@@ -1015,7 +1021,9 @@
         "name": "Taudis"
     },
     "Steward": {
-        "name": "Intendant"
+        "name": "Intendant",
+        "description": "Choisissez: + 2 Cartes <b>OU</b> +2 Coins <b>OU</b> écartez 2 cartes de votre main.",
+        "extra": "Si vous avez 2 cartes ou plus dans votre main après avoir joué la carte <i>Intendant</i> et que vous choisissez d'écarter 2 cartes, vous devez écarter exactement 2 cartes. Vous pouvez choisir d'écarter 2 cartes même s'il ne vous reste que 1 carte en main après avoir joué l'<i>Intendant</i>, vous n'avez qu'à écarter la carte qu'il vous reste en main. Vous ne pouvez pas mélanger les effets de la carte, vous piochez 2 cartes OU vous recevez 2 pièces OU vous écatez 2 cartes."
     },
     "Swindler": {
         "name": "Escroc",

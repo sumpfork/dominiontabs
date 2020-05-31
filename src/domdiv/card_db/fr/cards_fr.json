@@ -1421,8 +1421,8 @@
     },
     "Tribute": {
         "name": "Hommage",
-        "description": "The player to your left reveals then discards the top 2 cards of his deck. For each differently named card revealed, if it is an...<n>Action Card, +2 Actions;<br>Treasure Card, +2 Coins;<br>Victory Card, +2 Cards.",
-        "extra": "If the player after you has fewer than 2 cards left in his deck, he reveals all the cards in his deck, shuffles his discard pile (which does not include currently revealed cards), and then reveals the remainder needed. The player then discards the revealed cards. If the player after you does not have enough cards to reveal 2, he reveals what he can. You get bonuses for the types of cards revealed, counting only the different cards. A card with 2 types gives you both bonuses. So if the player to your left reveals Copper and Harem, you get +4 Coins and +2 cards; if he reveals 2 Silvers, you just get +2 coins. Curse produces no bonus."
+        "description": "Le joueur à votre gauche dévoile et défausse les 2 premières cartes de son deck. Pour chaque carte dévoilée ayant un nom différent, recevez pour une...<br>carte <i>Action</i>: +2 Actions<br>carte <i>Trésor</i>: + 2 Coins<br>carte <i>Victoire</i>: +2 Cartes",
+        "extra": "Si le joueur à votre gauche à moins de 2 cartes dans son deck, il dévoile la carte restante dans son deck, mélange sa défausse (qui n'inclut pas la carte dévoilée) et dévoile ensuite la carte requise. Le joueur défausse ensuite les cartes dévoilées. Si le joueur à votre gauche n'a pas suffisamment de carte à dévoiler, il dévoile ce qu'il peut. Vous recevez les effets selon le(s) type(s) des cartes dévoilées, en ne comptant que les cartes différentes. Une carte de 2 types donne les deux effets. Par exemple, si un joueur dévoile une carte <i>Cuivre</i> et une carte <i>Harem</i>, vous recevez +4 Pièces et +2 Cartes alors que s'il dévoile 2 cartes <i>Argent</i> vous ne recevez que +2 Pièces. Les cartes <i>Malédiction</i> ne donnent rien."
     },
     "Baron": {
         "name": "Baron",
@@ -1451,8 +1451,8 @@
     },
     "Harem": {
         "name": "Harem",
-        "description": "2 <*COIN*><line>2 <*VP*>",
-        "extra": "This is both a Treasure card and a Victory card. You can play it for 2 coins, just like a Silver card. At the end of the game, it's worth 2<VP>. During set-up, place 12 Harems in the Supply for a 3- or 4- [or 5- or 6-] player game and 8 in the Supply for a 2-player game."
+        "description": "2 <*COIN*><br><br>2<*VP*>",
+        "extra": "C'est une carte <i>Trésor</i> et une carte <i>Victoire</i>. Vous pouvez jouer cette carte pour 2 pièces, comme une carte <i>Argent</i>. À la fin de la partie, cette carte vaut 2 <VP>. Lors de la mise en place, il y aura 12 cartes <i>Harem</i> dans la réserve d'une partie à 3 ou 4 joueur et 8 <i>Harem</i> à 2 joueurs."
     },
     "Ironworks": {
         "name": "Fonderie",
@@ -1471,8 +1471,8 @@
     },
     "Minion": {
         "name": "Larbin",
-        "description": "+1 Action<n>Choose one: +2 Coins; or discard your hand, +4 Cards, and each other player with at least 5 cards in hand discards his hand and draws 4 cards.",
-        "extra": "You get +1 Action whichever option you choose. The options are +2 coins, or everything after that - discarding, drawing 4 cards, and other players discarding and drawing. A player who Moats this neither discards nor draws. Other players are only affected by this if they have 5 or more cards in hand. Other players can use Secret Chamber when you play Minion even if they do not have 5 or more cards in hand. [You make your choice on how to use Minion after other players are done revealing Reactions.]"
+        "description": "+ 1 Action<n>Choisissez: +2 Coin <b>OU</b> défaussez votre main, +4 Cartes, et tous les autres joueurs qui ont au moins 5 cartes en main défausssent leur main et piochent 4 cartes.",
+        "extra": "Vous obtenez +1 Action peu importe l'option que vous choisissez. Les options sont: +2 Pièces OU tout ce qui suit, c'est à dire: vous défaussez votre main, vous piochez 4 cartes et les autres joueurs défaussent et piochent également. Un joeuur qui utilise la carte <i>Douves</i> (D) ne défausse pas sa main et ne pioche pas de carte. Les autres joeuurs sont uniquement affectés par cette carte s'ils ont 5 cartes ou plus dans leur main. Les autres joueur peuvent dévoiler une carte <i>Chambre secrète</i> lorsque vous jouez un <i>Larbin</i> même s'ils ont moins de 5 cartes en main."
     },
     "Nobles": {
         "name": "Nobles",
@@ -1491,8 +1491,8 @@
     },
     "Steward": {
         "name": "Intendant",
-        "description": "Choose one: +2 Cards; or +2 Coins; or trash 2 cards from your hand.",
-        "extra": "If you choose to trash 2 cards and have 2 or more cards in your hand after playing the Steward, then you must trash exactly 2 cards. You may choose to trash 2 cards, even if you only have 1 card left in your hand after playing the Steward; just trash the remaining card in your hand. You cannot mix and match - you either draw 2 cards, get 2 coins, or trash 2 cards."
+        "description": "Choisissez: + 2 Cartes <b>OU</b> +2 Coins <b>OU</b> écartez 2 cartes de votre main.",
+        "extra": "Si vous avez 2 cartes ou plus dans votre main après avoir joué la carte <i>Intendant</i> et que vous choisissez d'écarter 2 cartes, vous devez écarter exactement 2 cartes. Vous pouvez choisir d'écarter 2 cartes même s'il ne vous reste que 1 carte en main après avoir joué l'<i>Intendant</i>, vous n'avez qu'à écarter la carte qu'il vous reste en main. Vous ne pouvez pas mélanger les effets de la carte, vous piochez 2 cartes OU vous recevez 2 pièces OU vous écatez 2 cartes."
     },
     "Swindler": {
         "name": "Escroc",
