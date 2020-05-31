@@ -1401,8 +1401,8 @@
     },
     "Great Hall": {
         "name": "Grand Hall",
-        "description": "+1 Card<br>+1 Action<line>1 <*VP*>",
-        "extra": "This is both an Action card and a Victory card. When you play it, you draw a card and may play another Action. At the end of the game, it's worth 1<VP>, like an Estate. During set-up, place 12 Great Halls in the Supply for a 3- or 4- [or 5- or 6-] player game and 8 in the Supply for a 2-player game."
+        "description": "+1 Carte<br>+1 Action<line>1<*VP*>",
+        "extra": "Cette carte est une carte <i>Action</i> et une carte <i>Victoire</i>. Lorsque vous la jouez, vous piochez une carte et avez une action de plus. À la fin de la partie, la carte vaut 1 <VP> comme la carte <i>Domaine</i>. Lors de la mise en place, il y aura 12 cartes <i>Grand Hall</i> dans la réserve d'une partie à 3 et 4 joueurs et 8 <i>Grand Hall</i> à 2 joueurs."
     },
     "Saboteur": {
         "name": "Saboteur",
@@ -1411,8 +1411,8 @@
     },
     "Scout": {
         "name": "Éclaireur",
-        "description": "+1 Action<n>Reveal the top 4 cards of your deck. Put the revealed Victory cards into your hand. Put the other cards on top of your deck in any order.",
-        "extra": "If there are fewer than 4 cards left in your deck, reveal all the cards in your deck, shuffle your discard pile (which does not include currently revealed cards), and then reveal the remainder needed. Action - Victory cards are Victory cards. Curse cards are not Victory cards. Take all revealed Victory cards into your hand; you cannot choose to leave some on top. You do not have to reveal the order that you put the cards back in."
+        "description": "+1 Action<n>Dévoilez les 4 premières cartes de votre deck. Placez les cartes <i>Victoire</i> dévoilées dans votre main. Placez les autres cartes sur le dessus de votre decl dans l'ordre de votre choix.",
+        "extra": "S;il vous reste moins de 4 cartes dans votre deck, dévoilez toutes les cartes de votre deck, mélangez votre défausse (qui ne contient aucune des cartes dévoilées) et dévoilez ensuite la ou les cartes manquantes. Les cartes <i>Action - Victoire</i> sont des cartes <i>Victoire</i>. Les cartes <i>Malédition</i> ne sont pas des cartes <i>Victoire</i> Prenez les cartes <i>Victoire</i> dévoilées dans votre main, vous ne pouvez pas en remettre sur le dessus de votre deck. Vous n'avez pas à dévoiler l'ordre dans lequel vous replacez les autres cartes."
     },
     "Secret Chamber": {
         "name": "Chambre secrète",
@@ -1446,8 +1446,8 @@
     },
     "Duke": {
         "name": "Duc",
-        "description": "Worth 1 <VP> per Duchy you have.",
-        "extra": "This does nothing until the end of the game, at which time it's worth 1 <VP> per Duchy you have. This counts all of your cards - your Discard pile and hand are part of your Deck at that point. During set-up, place 12 Dukes in the Supply for a 3- or 4- [or 5- or 6-] player game and 8 in the Supply for a 2-player game."
+        "description": "Vaut 1 <VP> pour chaque <i>Duché</i> dans votre deck.",
+        "extra": "Cette carte n'a aucun effet avant la fin de la partie, où elle vaut alors 1 <VP> pour chaque <i>Duché</i> que vous avez. Ceci prend en considération toutes vos cartes car votre défausse et votre main font partie de votre deck à ce moment. Lors de la mise en place, il y aura 12 cartes <i>Duc</i> dans la réserve d'une partie à 3 et 4 joueurs et 8 <i>Duc</i> à 2 joueurs."
     },
     "Harem": {
         "name": "Harem",
@@ -1456,8 +1456,8 @@
     },
     "Ironworks": {
         "name": "Fonderie",
-        "description": "Gain a card costing up to 4 Coins. If it is an...<n>Action card, +1 Action.<n>Treasure card, +1 Coin.<n>Victory card, +1 Card.",
-        "extra": "The card you gain must be from the Supply and is put into your discard pile. You get a bonus depending on what type of card you gained. A card with 2 types gives you both bonuses; if you use Ironworks to gain a Great Hall, you will then draw a card (because Great Hall is a Victory card) and may play another Action (because Great Hall is an Action card). Costs of cards are affected by Bridge. [You cannot gain a card with Potion in the cost with Ironworks.]"
+        "description": "Recevez une carte coûtant jusqu'à 4 Coins.<n>Si celle-ci est une...<br>carte <i>Action</i>: +1 Action<br>carte <i>Trésor</i>: + 1 Coin<br>carte<i>Victoire</i>: +1 Carte",
+        "extra": "La carte reçue doit provenir de la réserve et est placée dans votre défausse. Vous obtenez l'autre effet selon le type de la carte reçue. Une carte de deux types donnera les deux effets. Par exemple, si vous utiliez la <i>Fonderie</i> pour obtenir un <i>Grand Hall</i>, vous piochez une carte (puisque le <i>Grand Hall</i> est une carte <i>Victoire</i>) et pouvez jouer une autre action (puisque le <i>Grand Hall</i> est aussi une carte <i>Action</i>). N'oubliez pas que le coût des cartes est affecté par la carte <i>Pont</i>, décrite plus loin."
     },
     "Masquerade": {
         "name": "Mascarade",
@@ -1496,8 +1496,8 @@
     },
     "Swindler": {
         "name": "Escroc",
-        "description": "+2 Coins<n>Each other player trashes the top card of his deck and gains a card with the same cost that you choose.",
-        "extra": "A player with no cards left in his Deck shuffles first; a player who still has no cards does not trash a card or gain a card. If the order matters (such as when piles are running low), resolve Swindler in turn order starting with the player to your left. Gained cards go to discard piles. If a player trashed a 0 Coins card such as Copper, you may choose to give him Curse (if there are any left). You can give a player another copy of the same card he trashed. The gained cards have to be ones from the Supply, and you have to pick a card that's left if you can (you cannot pick an empty pile). If there are no cards in the Supply with the same cost as a given player's trashed card, no card is gained by that player. A player who Moats this does not reveal a card from his deck, and so neither trashes a card nor gains a card."
+        "description": "+2 Coins<n>Tous vos adversaires écartent la carte du dessus de leur deck et reçoivent une carte du même coût que vous choisissez.",
+        "extra": "Un joueur qui n'a plus de carte dans son deck doit d'abord mélanger ses cartes; si, après avoir mélangé ses cartes, un joueur n'a toujours pas de carte, il n'écarte pas et ne gagne pas de carte. Si l'ordre a de l'importance (lorsque les piles sont presque vides), faites la résolution de l'<i>Escroc</i> en sens horaire en commençant par le joueur à votre gauche. Les cartes reçues vont dans la défausse. Si un joueur écarte une carte coûtant 0 comme une carte <i>Cuivre</i>, vous pouvez choisir qu'il reçoive une carte <i>Malédiction</i> (s'il en reste). Vous pouvez faire en sorte qu'un joueur reçoive une autre copie de la carte qu'il vient d'écarter. Les cartes reçues doivent provenir de la réserve et vous devez choisir des cartes encore disponibles (vous ne pouvez pas choisir une pile vide). S'il n'y a plus de carte du même coût que celle écartée dans la réserve, le joueur ne reçoit pas de carte. Si un joeuur utilise une carte <i>Douves</i> (D), il ne dévoile pas de carte, ainsi il n'écarte et ne reçoit pas de carte."
     },
     "Torturer": {
         "name": "Bourreau",
