@@ -1406,13 +1406,13 @@
     },
     "Saboteur": {
         "name": "Saboteur",
-        "description": "Each other player reveals cards from the top of his deck until revealing one costing 3 Coins or more. He trashes that card and may gain a card costing at most 2 Coins less than it. He discards the other revealed cards.",
-        "extra": "Each other player turns over the top cards of his deck until he reveals one costing 3 coins or more. If a player needs to shuffle to continue revealing cards, he does not shuffle in the already revealed cards. If he goes through all of his cards without finding a card costing 3 coins or more, he just discards everything revealed and is done. If he does find a card costing 3 coins or more, he trashes it, and then may choose to gain a card costing at most 2 coins less than the trashed card. For example, if he trashed a card costing 5 coins, he may gain a card costing up to 3 coins. The gained card must be from the Supply and is put into his discard pile, as are his revealed cards. Costs of cards are affected by Bridge."
+        "description": "Tous vos adversaire dévoilent des cartes de leur deck jusqu'à ce qu'ils en dévoilent une coûtant 3 Coins ou plus. Ils écartent cette carte et peuvent recevoir une carte coûtant au plus 2 Coins de moins. Ils défaussent les autres cartes dévoilées.",
+        "extra": "Tous les autres joueurs dévoilent des cartes du dessus de leur paquet jusqu'à ce qu'ils dévoilent tous une carte coûtant 3 pièces ou plus. Si un joueur doit mélanger afin de continuer à dévoiler, il ne mélange pas les cartes qui viennent d'être dévoilées. S'il passe à travers ses cartes sans dévoiler une carte coûtant 3 pièces ou plus, il défausse les cartes dévoilées et a terminé. S'il trouve une carte coûtant 3 pièces ou plus, il l'écarte et il peut ensuite choisir une carte coûtant au plus 2 pièces de moins que la carte écartée. Par exemple, si le joueur a écarté une carte coûtant 5 pièces, il peut alors recevoir une carte d'une valeur maximale de 3 pièces. La carte reçue provient de la réserve et doit être placée dans la défausse, tout comme les cartes dévoilées. Le coût des cartes est affecté par le <i>Pont</i>."
     },
     "Scout": {
         "name": "Éclaireur",
         "description": "+1 Action<n>Dévoilez les 4 premières cartes de votre deck. Placez les cartes <i>Victoire</i> dévoilées dans votre main. Placez les autres cartes sur le dessus de votre decl dans l'ordre de votre choix.",
-        "extra": "S;il vous reste moins de 4 cartes dans votre deck, dévoilez toutes les cartes de votre deck, mélangez votre défausse (qui ne contient aucune des cartes dévoilées) et dévoilez ensuite la ou les cartes manquantes. Les cartes <i>Action - Victoire</i> sont des cartes <i>Victoire</i>. Les cartes <i>Malédition</i> ne sont pas des cartes <i>Victoire</i> Prenez les cartes <i>Victoire</i> dévoilées dans votre main, vous ne pouvez pas en remettre sur le dessus de votre deck. Vous n'avez pas à dévoiler l'ordre dans lequel vous replacez les autres cartes."
+        "extra": "S'il vous reste moins de 4 cartes dans votre deck, dévoilez toutes les cartes de votre deck, mélangez votre défausse (qui ne contient aucune des cartes dévoilées) et dévoilez ensuite la ou les cartes manquantes. Les cartes <i>Action - Victoire</i> sont des cartes <i>Victoire</i>. Les cartes <i>Malédition</i> ne sont pas des cartes <i>Victoire</i> Prenez les cartes <i>Victoire</i> dévoilées dans votre main, vous ne pouvez pas en remettre sur le dessus de votre deck. Vous n'avez pas à dévoiler l'ordre dans lequel vous replacez les autres cartes."
     },
     "Secret Chamber": {
         "name": "Chambre secrète",
@@ -1431,8 +1431,8 @@
     },
     "Bridge": {
         "name": "Pont",
-        "description": "+1 Buy<br>+1 Coin<n>All cards (including cards in players' hands) cost 1 Coin less this turn, but not less than 0 Coins.",
-        "extra": "Costs are 1 coin lower for all purposes. For example, if you played Village, then Bridge, then Workshop, you could use Workshop to gain a Duchy (because Duchy now costs 4 Coins due to the Bridge). Then if you played 3 Coins, you could buy a Silver (for 2 Coins) and an Estate (for 1 coin). Cards in players' decks are also affected. The effect is cumulative; if you Throne Room a Bridge, all cards will cost 2 Coins less this turn. Costs never go below 0 Coins. For this reason, if you play Bridge and then play Upgrade, you could trash a Copper (which still costs zero, even though you played Bridge) and gain a Pawn (which costs 1 after Bridge is played)."
+        "description": "+1 Achat<br>+1 Coin<n>Toutes les cartes (incluant celles dans la main des joueurs) coûtent 1 Coin de moins pour le reste de votre tour. Les cartes ne peuvent pas coûter moins de 0 Coin.",
+        "extra": "Les coûts sont réduits de 1 pièce pour toutes les situations. Par exemple, si vous jouez une carte <i>Village</i> (D), ensuite une <i>Pont</i>, suivi d'un <i>Atelier</i>, vous pouvez vous servir de l'<i>Atelier</i> pour obtenir un <i>Duché</i> (puisque le <i>Duché</i> coûte maintenant 4 pièces grâce au <i>Pont</i>). Ensuite, si vous jouez 3 pièces, vous pouvez acheter une carte <i>Argent</i> (pour 2 pièces) et un <i>Domaine</i> (pour 1 pièce). Les cartes dans le deck des joueurs sont aussi affectées. L'effet est cumulatif; si vous utilisez un <i>Pont</i> avec une <i>Salle du Trône</i> (D), toutes les cartes coûteront 2 pièces de moins. Les coûts ne sont jamais inférieurs à 0. Ainsi, si vous jouez un <i>Pont</i> suivi d'une <i>Mise à niveau</i>, vous pouvez écarter 1 <i>Cuivre</i> (qui coûte toujours 0, malgré le <i>Pont</i>) et obtenir un <i>Pion</i> (au coût de 1 puisqu'un <i>Pont</i> a été joué)."
     },
     "Conspirator": {
         "name": "Conspirateur",
@@ -1461,13 +1461,13 @@
     },
     "Masquerade": {
         "name": "Mascarade",
-        "description": "+2 Card<n>Each player with any cards in hand passes one to the next such player to their left, at once. Then you may trash a card from your hand.<n>[Each player passes a card in their hand to the player on their left. You may trash a card from your hand.]",
-        "extra": "First you draw 2 cards. Next, each player (all at the same time) chooses a card from his hand and places it face down on the table between him and the player to his left. The player to the left then puts that card into his hand. Cards are passed simultaneously, so you may not look at the card you are receiving until you have chosen a card to pass. Finally, you may trash a card from your hand. Only the player who played Masquerade may trash a card. This is not an Attack and cannot be responded to with Moat or Secret Chamber."
+        "description": "+2 Cartes<n>Chaque joueurs passe simultanément une carte de sa main au joueur à sa gauche. Vous pouvez ensuite écarter une carte de votre main.",
+        "extra": "Piochez d'abord 2 cartes. Ensuite, tous les joeuurs (au même moment) choisissent une carte de leur main et la place face cachée entre eux et le joueur à leur gauche. Le joueur à gauche prend ensuite cette carte dans sa main. Les cartes sont passées simultanément, ainsi vous ne pouvez pas regarder la carte que vous recevez avant de choisir la carte que vous passez. Finalement, vous pouvez écarter une carte. Ceci n'est pas une carte <i>Attaque</i>, il n'est donc pas possible de jouer une carte <i>Réaction</i> (comme les cartes <i>Chambre secrète</i> et <i>Douves</i> (D))."
     },
     "Mining Village": {
         "name": "Village minier",
-        "description": "+1 Card<br>+2 Actions<n>You may trash this card immediately. If you do, +2 Coins.",
-        "extra": "You must decide whether or not to trash Mining Village or not before moving on to other actions or other phases. You get +1 Card and +2 Actions, whether you choose to trash it or not. If you trash it you also get +2 Coins. If you Throne Room a Mining Village, you cannot trash Mining Village twice. You will get +1 Card, +2 Actions, and +2 Coins the first time you play it and trash it and when you play it the second time with the Throne Room you get +1 Card and +2 Actions but cannot trash it again."
+        "description": "+1 Carte<br>+2 Actions<n>Vous pouvez écarter immédiatement cette carte.<br>Si vous l'écartez, +2 Coins.",
+        "extra": "Vous piochez d'abord une carte et obtenez +2 Actions, que vous écartiez la carte ou non. Vous devez ensuite décider d'écarter ou non la <i>Village minier</i> avant de procéder à d'autres actions ou phases. Si vous écartez la carte, vous obtenez aussi +2 Pièces. Si vous utiliez une <i>Salle du Trône</i> (D) sur le <i>Village minier</i>, vous ne pouvez pas écarter le <i>Village minier</i> deux fois. Vous obtenez alors +1 Carte, +2 Actions et +2 Pièces pour la première fois que vous jouez et écartez la carte. Pour la deuxième utilisation de la carte grâce à la <i>Salle du Trône</i>, vous obtenez +1 Carte et +2 Actions mais vous ne pouvez pas l'écarter."
     },
     "Minion": {
         "name": "Larbin",
@@ -1476,18 +1476,18 @@
     },
     "Nobles": {
         "name": "Nobles",
-        "description": "Choose one: +3 Cards, or +2 Actions.<line>2 <*VP*>",
-        "extra": "This is both an Action card and a Victory card. When you play it, you choose either to draw 3 cards or to get 2 more Actions to use; you cannot mix and match. At the end of the game, this is worth 2 <VP>. During set-up, place 12 Nobles in the Supply for a 3- or 4- [or 5- or 6-] player game and 8 in the Supply for a 2-player game."
+        "description": "Choisissez: +3 cartes <b>OU</b> +2 Actions.<line>2 <*VP*>",
+        "extra": "C'est une carte <i>Action</i> et <i>Victoire</i>. Lorsque vous la jouez, vous choisissez de piocher 3 cartes OU d'obtenir 2 actions supplémentaires. Il n'est pas possible de combiner. Cette carte vaut 2 <VP> à la fin de la partie. Lors de la mise en place, il y aura 12 cartes <i>Nobles</i> dans la réserve d'une partie à 3 ou 4 joueur et 8 <i>Nobles</i> à 2 joueurs."
     },
     "Pawn": {
         "name": "Pion",
-        "description": "Choose two: +1 Card, +1 Action, +1 Buy, +1 Coin.<br>The choices must be different.",
-        "extra": "First pick any 2 of the 4 options. You cannot pick the same option twice. After picking both, do both, in either order. You may not choose to draw a card, look at the card drawn, and then make your second choice."
+        "description": "Choisissez deux options différentes:<br>+1 Carte;<br>+1 Action;<br>+1 Achat;<br>+1 Coin.",
+        "extra": "Choisissez 2 des 4 options. Vous ne pouvez pas prendre la même option deux fois. Après avoir choisi, effectuez les deux options dans l'ordre de votre choix. Vous ne pouvez pas choisir +1 Carte, consulter la pioche et faire ensuite votre second choix."
     },
     "Shanty Town": {
         "name": "Taudis",
-        "description": "+2 Actions<n>Reveal your hand. If you have no Action cards in hand, +2 Cards.",
-        "extra": "You get 2 more Actions to use no matter what else happens. Then you must reveal your hand. If you have no Action cards in hand, you draw 2 cards. If the first card you draw is an Action card, you still draw the second card. Action - Victory cards are Action cards."
+        "description": "+2 Actions<n>Dévoilez votre main.<br>Si vous n'avez aucune carte <i>Action</i> en main, +2 Cartes.",
+        "extra": "Vous obtenez 2 actions supplémentaires, peu importe ce qui se produit. Vous dévoilez ensuite votre main. Si vous n'avez pas de carte <i>Action</i> en main, piochez 2 cartes. Si la première carte que vous piochez est une carte <i>Action</i>, vous piochez quand même votre deuxième carte. Les cartes <i>Action</i> - <i>Victoire</i> sont des cartes <i>Action</i>."
     },
     "Steward": {
         "name": "Intendant",
@@ -1511,13 +1511,13 @@
     },
     "Upgrade": {
         "name": "Mise à niveau",
-        "description": "+1 Card<br>+1 Action<n>Trash a card from your hand. Gain a card costing exactly 1 Coin more than it.",
-        "extra": "Draw a card first. Then, you must trash a card from your hand and gain a card costing exactly 1 coin more than the trashed card. The gained card has to be a card in the Supply, and it goes into your discard pile. If there are no cards available for that cost, you do not get one (you still trashed a card though). If you do not have a card in your hand to trash, you neither trash nor gain a card. Card costs are affected by Bridge. Since Bridge affects the costs of the card you trash and then card you gain, in most cases the Bridge will have no net effect. But since cards cannot go below zero in cost, a Bridge played before an Upgrade would allow you to trash a Copper and gain an Estate."
+        "description": "+1 Carte<br>+1 Action<n>Écartez une carte de votre main. Recevez une carte coûtant exactement 1 Coin de plus.",
+        "extra": "Piochez d'abord une carte. Vous devez ensuite écarter une carte de votre main et vous recevez une carte coûtant exactement 1 pièce de plus que la carte écartée. La carte reçue doit provenir de la réserve et va dans votre défausse. S'il n'y a pas de carte de ce coût disponible, vous n'obtenez pas de carte (vous devez quand même écarter une carte). Si vous n'avez pas de carte à écarter dans votre main, vous n'écartez pas de carte et n'en recevez pas. Le coût des cartes est affecté par le <i>Pont</i>. Comme le <i>Pont</i> affecte le coût de la carte écartée et de la carte reçue, le <i>Pont</i> n;aura pas d'effet dans la majorité des cas. Cependant, comme le coût d'une carte ne peut pas aller sous 0, un <i>Pont</i> joué avant une <i>Mise à niveau</i> permet, par exemple, d'écarter une carte <i>Cuivre</i> (coût de 0, même avec le <i>Pont</i>) et de recevoir une carte <i>Domaine</i> (coût de 1 grâce au <i>Pont</i>)."
     },
     "Wishing Well": {
         "name": "Puits aux souhaits",
-        "description": "+1 Card<br>+1 Action<n>Name a card, then reveal the top card of your deck. If it is the named card, put it in your hand.",
-        "extra": "First you draw your card. Then name a card (\"Copper,\" for example - not \"Treasure\") and reveal the top card of your deck; if you named the same card you revealed, put the revealed card in your hand. If you do not name the right card, you put the revealed card back on top."
+        "description": "+1 Carte<br>+1 Action<n>Nommez une carte.<br>Dévoilez la première carte de votre deck. Si c'est la carte nommée, prenez-la dans votre main.",
+        "extra": "Piochez d'abord votre carte. Nommez ensuite une carte (pas exemple <i>Cuivre</i> et non <i>Trésor</i>) et dévoilez la première carte de votre deck; si vous avez nommé la carte que vous venez de dévoiler, placez-la dans votre main. Si vous n'avez pas nommé la bonne carte, replacez-la sur le dessus de votre deck."
     },
     "Courtier": {
         "description": "Reveal a card from your hand. For each type it has (Action, Attack, etc.), choose one: +1 Action; or +1 Buy; or +3 Coin; or gain a Gold. The choices must be different.",
