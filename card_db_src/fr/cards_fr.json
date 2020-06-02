@@ -486,7 +486,9 @@
         "extra": "Cette carte <i>Trésor</i> vaut 1 Coin. Vous la jouez durant votre phase <b>Achat</b> comme les autres cartes <i>Trésor</i>. Lorsque vous la jouez, vous obtenez également +1 Achat et vous pouvez jouer deux fois une carte <i>Trésor</i> de votre main, vous devez ensuite écarter cette carte <i>Trésor</i> qui a été jouée deux fois. Vous obtenez les pièces même si la carte <i>Trésor</i> est écartée. Ainsi, si vous utilisez <i>Contrefaçon</i> pour jouer <i>Butin</i> deux fois, vous aurez +6 Coins (en plus du 1 Coin de <i>Contrefaçon</i>) et replacerez la carte <i>Butin</i> sur la pile <i>Butin</i> ; vous ne pourrez donc pas l'écarter. Si vous jouez <i>Contrefaçon</i> sur un <i>Trésor</i> ayant un effet particulier au moment où il est joué, l'effet s'appliquera deux fois. Les cartes de plusieurs types dont l'un d'eux est <i>Trésor</i> (comme <i>Harem</i> d'<i>Intrigue</i>) sont des carte <i>Trésor</i> et peuvent être jouée à l'aide de <i>Contrefaçon</i>."
     },
     "Cultist": {
-        "name": "Cultiste"
+        "name": "Cultiste",
+        "description": "+2 Cartes<n>Tous vos adversaires reçoivent une carte <i>Ruines</i>. Vous pouvez jouer un <i>Cultiste</i> de votre main.<line>Lorsque vous écartez cette carte, +3 Cartes.",
+        "extra": "Lorsque vous jouez cette carte, vous piochez deux cartes puis chacun de vos adversaires reçoit une carte <i>Ruines</i>. Ces dernières proviennent de la pile <i>Ruines</i> dans la réserve et sont placées dans leur défausse. Les <i>Ruines</i> sont prises en suivant l'ordre de jeu, en commençant par le joueur à votre gauche. Chaque joueur prend la première carte de la pile <i>Ruines</i> et il dévoile ensuite l'autre. S'il n'y a plus de carte dans la pile <i>Ruines</i>, les autres joueurs n'en reçoivent tout simplement pas. Une fois la distribution des cartes <i>Ruines</i> terminée, vous pouvez jouer une autre carte <i>Cultiste</i> de votre main. Elle peut faire partie des cartes que vous avez piochées ou de celles que vous aviez déjà en main. Si vous jouez un autre <i>Cultiste</i> ainsi, vous n'utilisez pas d'action supplémentaire obtenue à l'aide de cartes comme <i>Forteresse</i>. Cependant, le premier <i>Cultiste</i> joué nécessite une de vos actions. Lorsque vous écartez un de vos <i>Cultiste</i>, vous piochez 3 cartes. Cet effet a lieu à votre tour ou lors du tour d'un adversaire, peu importe la carte jouée qui fait en sorte que la carte <i>Cultiste</i> est écartée. Si vous écartez un <i>Cultiste</i> en dévoilant des cartes, comme lors de l'attaque d'un <i>Chevalier</i>, vous ne piochez pas les cartes dévoilées qui s'apprêtent à être défaussées."
     },
     "Death Cart": {
         "name": "Charrette de cadavres",
@@ -497,7 +499,9 @@
         "name": "Fief"
     },
     "Forager": {
-        "name": "Cueilleur"
+        "name": "Cueilleur",
+        "description": "+1 Action<br>+1 Achat<n>Écartez une carte de votre main. +1 Coin par carte <i>Trésor</i> ayant un nom différent dans le <i>Rebut</i>.",
+        "extra": "Vous obtenez +1 Action et +1 Achat. Ensuite, écartez une carte de votre main si possible. Vous obtenez +1 Coin par carte <i>Trésor</i> ayant un nom différent dans le <i>Rebut</i>, que vous ayez écarté une carte ou non. Plusieurs exemplaires d'une même carte <i>Trésor</i> n'augmentent pas le nombre de pièces que vous obtenez. Par exemple, si le <i>Rebut</i> contient 4 <i>Cuivre</i>, une <i>Contrefaçon</i> et 6 <i>Domaine</i>, vous obtiendrez alors +2 Coins. Les cartes de plusieurs types dont l'un d'eux est <i>Trésor</i> (comme <i>Harem</i> d'<i>Intrigue</i>) sont des cartes <i>Trésor</i>."
     },
     "Fortress": {
         "name": "Forteresse"

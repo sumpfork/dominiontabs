@@ -556,8 +556,8 @@
     },
     "Cultist": {
         "name": "Cultiste",
-        "description": "+2 Cards<n>Each other player gains a Ruins. You may play a Cultist from your hand.<line>When you trash this, +3 Cards.",
-        "extra": "When you play this, you draw two cards, then each other player gains a Ruins. These come from the Ruins pile in the Supply, and are put into discard piles. Go in turn order starting to your left; each player takes the top Ruins, revealing the next one each time. If the Ruins pile runs out, players stop gaining them at that point. After giving out Ruins, you may play another Cultist from your hand. It can be one you just drew from playing Cultist, or one you already had in your hand. Playing a Cultist this way does not use up any extra Actions you were allowed to play due to cards like Fortress - the original Cultist uses up one Action and that is it. When you trash a Cultist of yours, you draw three cards. This happens whether or not it is your turn, and whether or not the card that causes Cultist to be trashed was yours. If you trash a Cultist while revealing cards, such as to a Knight attack, you do not draw the revealed cards that are about to be discarded."
+        "description": "+2 Cartes<n>Tous vos adversaires reçoivent une carte <i>Ruines</i>. Vous pouvez jouer un <i>Cultiste</i> de votre main.<line>Lorsque vous écartez cette carte, +3 Cartes.",
+        "extra": "Lorsque vous jouez cette carte, vous piochez deux cartes puis chacun de vos adversaires reçoit une carte <i>Ruines</i>. Ces dernières proviennent de la pile <i>Ruines</i> dans la réserve et sont placées dans leur défausse. Les <i>Ruines</i> sont prises en suivant l'ordre de jeu, en commençant par le joueur à votre gauche. Chaque joueur prend la première carte de la pile <i>Ruines</i> et il dévoile ensuite l'autre. S'il n'y a plus de carte dans la pile <i>Ruines</i>, les autres joueurs n'en reçoivent tout simplement pas. Une fois la distribution des cartes <i>Ruines</i> terminée, vous pouvez jouer une autre carte <i>Cultiste</i> de votre main. Elle peut faire partie des cartes que vous avez piochées ou de celles que vous aviez déjà en main. Si vous jouez un autre <i>Cultiste</i> ainsi, vous n'utilisez pas d'action supplémentaire obtenue à l'aide de cartes comme <i>Forteresse</i>. Cependant, le premier <i>Cultiste</i> joué nécessite une de vos actions. Lorsque vous écartez un de vos <i>Cultiste</i>, vous piochez 3 cartes. Cet effet a lieu à votre tour ou lors du tour d'un adversaire, peu importe la carte jouée qui fait en sorte que la carte <i>Cultiste</i> est écartée. Si vous écartez un <i>Cultiste</i> en dévoilant des cartes, comme lors de l'attaque d'un <i>Chevalier</i>, vous ne piochez pas les cartes dévoilées qui s'apprêtent à être défaussées."
     },
     "Death Cart": {
         "name": "Charrette de cadavres",
@@ -571,8 +571,8 @@
     },
     "Forager": {
         "name": "Cueilleur",
-        "description": "+1 Action<br>+1 Buy<n>Trash a card from your hand.<n>+1 Coin per differently named Treasure in the trash.",
-        "extra": "Trash a card from your hand if you can. Whether or not you can, you still get +1 Coin per differently named Treasure in the trash, plus +1 Action and +1 Buy. Multiple copies of the same Treasure card do not increase how much you get. For example, if the trash has four Coppers, a Counterfeit, and six Estates, you get +2 Coins. Cards with multiple types, one of which is Treasure (such as Harem from Intrigue), are Treasures."
+        "description": "+1 Action<br>+1 Achat<n>Écartez une carte de votre main. +1 Coin par carte <i>Trésor</i> ayant un nom différent dans le <i>Rebut</i>.",
+        "extra": "Vous obtenez +1 Action et +1 Achat. Ensuite, écartez une carte de votre main si possible. Vous obtenez +1 Coin par carte <i>Trésor</i> ayant un nom différent dans le <i>Rebut</i>, que vous ayez écarté une carte ou non. Plusieurs exemplaires d'une même carte <i>Trésor</i> n'augmentent pas le nombre de pièces que vous obtenez. Par exemple, si le <i>Rebut</i> contient 4 <i>Cuivre</i>, une <i>Contrefaçon</i> et 6 <i>Domaine</i>, vous obtiendrez alors +2 Coins. Les cartes de plusieurs types dont l'un d'eux est <i>Trésor</i> (comme <i>Harem</i> d'<i>Intrigue</i>) sont des cartes <i>Trésor</i>."
     },
     "Fortress": {
         "name": "Forteresse",
