@@ -566,8 +566,8 @@
     },
     "Feodum": {
         "name": "Fief",
-        "description": "Worth 1<VP> for every 3 Silvers in your deck (round down).<line>When you trash this, gain 3 Silvers.",
-        "extra": "This is a Victory card. Play with 8 for games with 2 players, or 12 cards for games with 3 or more players. At the end of the game, each Feodum is worth 1 Victory for every 3 Silvers in your deck, rounded down. For example, if you have 11 Silvers, your Feodums are worth 3 Victory each. If a Feodum is trashed, you gain 3 Silvers. The Silvers come from the Supply and are put into your discard pile. If there are not enough Silvers left, gain as many as you can."
+        "description": "Vaut 1 <VP> pour chaque tranche de 3 cartes <i>Argent</i> dans votre deck (arrondie à l'unité inférieure).<line>Lorsque vous écartez cette carte, recevez 3 cartes <i>Argent</i>.",
+        "extra": "Ceci est une carte <i>Victoire</i>. Lors de la mise en place, placez 8 cartes <i>Fief</i> à 2 joueurs ou 12 cartes <i>Fief</i> à 3 joueurs ou plus. À la fin de la partie, chaque carte <i>Fief</i> vaut 1 <VP> pour chaque tranche de 3 cartes <i>Argent</i> dans votre deck, éventuellement arrondie à l'unité inférieur. Par exemple, si vous avez 11 cartes <i>Argent</i>, vos <i>Fief</i> valent 3 <VP> chacun. Si vous écartez une carte <i>Fief</i>, vous recevez 3 cartes <i>Argent</i>. Les cartes <i>Argent</i> proviennent de la réserve et sont placées dans la défausse. S'il n'y a pas suffisamment de carte <i>Argent</i> dans la réserve, vous recevez ce qui est possible."
     },
     "Forager": {
         "name": "Cueilleur",
@@ -576,8 +576,8 @@
     },
     "Fortress": {
         "name": "Forteresse",
-        "description": "+1 Card<br>+2 Actions<line>When you trash this, put it into your hand.",
-        "extra": "When you play this, you draw a card and get +2 Actions. If this is trashed, you take it from the trash and put it into your hand. This happens no matter whose turn it is when Fortress is trashed. It is not optional. You still trashed Fortress, even though you get it back; for example if you play Death Cart and choose to trash Fortress, the \"if you do\" on Death Cart is true, you did trash an Action, so you do not trash Death Cart."
+        "description": "+1 Carte<br>+2 Actions<line>Lorsque vous écartez cette carte, reprenez-la dans votre main.",
+        "extra": "Lorsque vous jouez cette carte, piochez une carte et vous avez +2 Actions. Lorsque <i>Forteresse</i> est écartée, vous la reprenez du <i>Rebut</i> et vous l'ajoutez à votre main. Cet effet à lieu à votre tout ou lors du tour d'un adversaire. Ce n'est pas facultatif. Vous avez quand même écarté <i>Forteresse</i>, même si vous la reprenez dans votre main. Par exemple, si vous jouez une <i>Charette de cadavres</i> et que vous choisissez d'écarter une <i>Forteresse</i>, la condition « vous pouvez écarter une carte » demeure remplie, car vous avez bel et bien écarté une carte <i>Action</i> ; vous n'aurez donc pas à écarter la <i>Charette de cadavres</i>."
     },
     "Graverobber": {
         "name": "Pilleur de tombes",
@@ -616,8 +616,8 @@
     },
     "Madman": {
         "name": "Fou",
-        "description": "+2 Actions<n>Return this to the Madman pile. If you do, +1 Card per card in your hand.<n><i>(This card is not in the supply.)</i>",
-        "extra": "This card is not in the Supply; it can only be obtained via Hermit. When you play it, you get +2 Actions, return it to the Madman pile if you can (this is not optional), and if you did return it, you draw a card per card in your hand. For example if you had three cards in hand after playing Madman, you would draw three cards. Normally, nothing will prevent you from returning Madman to the Madman pile, but you may fail to due to playing Madman twice via Procession, Throne Room (from Dominion), or King's Court (from Prosperity). So, for example, if you Procession a Madman, you will get +2 Actions, return Madman to the Madman pile, draw a card per card in your hand, get another +2 Actions, fail to return Madman and so not draw cards the second time, fail to trash Madman, and then gain an Action card costing exactly 1 Coin if you can."
+        "description": "+2 Actions<n>Replacez cette carte sur la pile <i>Fou</i>. Dans ce cas, +1 Carte par carte dans votre main.<br><i>(La pile Fou ne fait pas partie de la réserve</i>.",
+        "extra": "Cette carte ne fait pas partie de la réserve et peut uniquement être obtenue avec la carte <i>Ermite</i>. Lorsque vous la jouez, vous obtenez +2 Actions, vous replacez la carte <i>Fou</i> sur la pile (ceci n'est pas facultatif), et si vous avez replacé la carte <i>Fou</i>, vous piochez une carte pour chaque carte que vous avez dans votre main. Par exemple, si vous avez trois cartes dans votre main après avoir joué un <i>Fou</i>, vous piocherez trois cartes. Habituellement, vous pourrez toujours replacer la carte <i>Fou</i> sur la pile, mais il est possible que vous n'en soyez pas capable si vous avez joué une carte <i>Fou</i> avec <i>Procession</i>, une <i>Salle du Trône</i> (de <i>Dominion</i>) ou une <i>Cour du Roi</i> (de <i>Prospérité</i>). Ainsi, si vous jouez un <i>Fou</i> avec <i>Procession</i>, vous recevrez +2 Actions, replacerez le <i>Fou</i> sur la pile, piocherez une carte par carte dans votre main ; vous obtiendrez +2 Actions supplémentaires, ne parviendrez pas à replacer le <i>Fou</i> et donc ne piocherez pas d'autres cartes, puis vous ne parviendrez pas à écarter le <i>Fou</i> et vous recevrez une <i>Action</i> coûtant exactement 1 Coin, si possible."
     },
     "Marauder": {
         "name": "Maraudeur",
