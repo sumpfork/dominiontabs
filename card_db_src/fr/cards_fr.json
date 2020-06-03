@@ -510,7 +510,9 @@
         "name": "Pilleur de tombes"
     },
     "Hermit": {
-        "name": "Ermite"
+        "name": "Ermite",
+        "description": "Consultez votre défausse. Vous pouvez écarter une carte non-<i>Trésor</i> de votre défausse ou de votre main. Recevez une carte coûtant jusqu'à 3 Coins.<line>Lorsque vous défaussez cette carte de votre zone de jeu, si vous n'avez pas acheté de carte ce tour-ci, écartez cette carte et recevez un <i>Fou</i> de la pile.",
+        "extra": "Lorsque vous jouez cette carte, consulter votre défausse ; vous pouvez ensuite écarter une carte non-<i>Trésor</i> de votre main ou de votre défausse. Vous ne devez pas forcément écarter une carte et vous ne pouvez pas écarter une carte <i>Trésor</i>. Les cartes de plusieurs types dont l'un d'eux est <i>Trésor</i> (comme <i>Harem</i> d'<i>Intrigue</i>) sont des cartes <i>Trésor</i>. Après avoir écarté ou non une carte, vous recevez une carte coûtant jusqu'à 3 Coins. La carte reçue provient de la réserve et est placée dans votre défausse. Vous devez recevoir une carte si possible. Ensuite, lorsque vous défaussez cette carte de votre zone de jeu (habituellement durant la phase <b>Ajustement</b> suivant la phase <i>Action</i> où vous avez joué cette carte), si vous n'avez pas acheté de carte ce tour-ci, écartez l'<i>Ermite</i> et recevez un <i>Fou</i>. Le <i>Fou</i> provient de la pile <i>Fou</i> (qui ne fait pas partie de la réserve) et il est placé dans votre défausse. Pour recevoir un <i>Fou</i>, vous pouvez avoir reçu des cartes, mais vous ne pouvez pas en avoir acheté. S'il ne reste plus de <i>Fou</i>, vous n'en recevez pas. Si la carte <i>Ermite</i> n'est pas défaussée durant votre phase <b>Ajustement</b>, en la plaçant sur votre deck à l'aide de <i>Complot</i> (de l'<i>Arrière-pays</i>) par exemple, l'effet qui permet d'écarter l'<i>Ermite</i> ne s'applique pas."
     },
     "Hovel": {
         "name": "Cabane",
@@ -521,7 +523,9 @@
         "name": "Territoire de chasse"
     },
     "Ironmonger": {
-        "name": "Ferronnier"
+        "name": "Ferronnier",
+        "description": "+1 Carte<br>+1 Action<n>Dévoilez la première carte de votre deck ; vous pouvez la défausser. Dans tous les cas, si c'est une...<br>carte <i>Action</i> : +1 Action<br>carte <i>Trésor</i> : +1 Coin<br>carte <i>Victoire</i> : +1 Carte.",
+        "extra": "Piochez d'abord une carte. Ensuite, dévoilez la première carte de votre deck puis choisissez de la défausser ou de la replacer sur le dessus de votre deck. Ensuite, vous obtenez le bonus en fonction du ou des types de la carte dévoilée. Ainsi une carte de 2 types vous donnera les deux bonus. Par exemple, un <i>Harem</i> (d'<i>Intrigue</i>) dévoilé ainsi permet de piocher une carte et donne +1 Coin."
     },
     "Junk Dealer": {
         "name": "Brocanteur",
@@ -552,7 +556,9 @@
         "name": "Nécropole"
     },
     "Overgrown Estate": {
-        "name": "Domaine luxuriant"
+        "name": "Domaine luxuriant",
+        "description": "0 <*VP*><line>Lorsque vous écartez cette carte, +1 Carte.",
+        "extra": "Ceci est une carte <i>Refuge</i> (voir la <i>Mise en place</i>). Elle ne fait jamais partie de la réserve <i>Domaine luxuriant</i> est une carte <i>Victoire</i>, malgré sa valeur de 0 <VP>. Si cette carte est écartée. vous piochez une carte immédiatement, même si vous êtes en train de résoudre l'effet d'une autre carte. Par exemple, si vous utilisez un <i>Autel</i> pour écarter un <i>Domaine luxuriant</i>, vous piochez d'abord une carte puis vous recevez une carte coûtant jusqu'à 5 Coins. Cette carte ne vous permet pas de l'écarter ou d'écarter une autre carte, elle ne fait que vous offrir quelque chose lorsque vous l'écartez."
     },
     "Pillage": {
         "name": "Pillage"
@@ -589,7 +595,9 @@
         "extra": "Cette carte n'est jamais dans la réserve ; elle ne peut être obtenue qu'avec les cartes <i>Camp de bandits</i>, <i>Maraudeur</i> et <i>Pillage</i>. Lorsque vous jouez une carte <i>Butin</i>, vous obtenez +3 Coins pour ce tour et vous replacez cet exemplaire de <i>Butin</i> sur la pile <i>Butin</i>. Vous n'avez jamais à jouer toutes les cartes <i>Trésor</i> que vous avez en main."
     },
     "Squire": {
-        "name": "Écuyer"
+        "name": "Écuyer",
+        "description": "+1 Coin<br>Choisissez : +2 Actions, <b>OU</b> +2 Achats, <b>OU</b> recevez un <i>Argent</i>.<line>Lorsque vous écartez cette carte, recevez une carte <i>Attaque</i>.",
+        "extra": "Lorsque vous jouez cette carte, vous obtenez +1 Coin et, au choix, +2 Actions, +2 Achats, ou recevoir un <i>Argent</i>. La carte <i>Argent</i> provient de la réserve et est placée dans votre défausse. Si une de vos cartes <i>Écuyer</i> est écartée d'une manière quelconque, vous recevez une carte <i>Attaque</i>. La carte <i>Attaque</i> provient de la réserve et est placée dans votre défausse. Vous pouvez recevoir n'importe quelle carte <i>Attaque</i> disponible dans la réserve, mais s'il n'y a pas de carte <i>Attaque</i>, vous ne recevez rien."
     },
     "Storeroom": {
         "name": "Salle d'entreposage"
