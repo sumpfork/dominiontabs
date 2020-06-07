@@ -329,7 +329,9 @@
     "Rabbits": {},
     "Yard Dog": {},
     "Potion": {
-        "name": "Potion"
+        "name": "Potion",
+        "description": "1 <*POTION*>",
+        "extra": "Il s'agit d'une carte Trésor de base. Elle coûte 4 pièces et produit une Potion. Ce n'est pas une carte du Royaume. Choisissez, avec la méthode de votre choix, les 10 cartes <i>Royaume</i> qui forment la réserve. Si au moins l'une d'elles affiche Potion dans son coût, ajoutez les cartes <i>Potion</i> dans la réserve. Ajoutez aussi les cartes <i>Potion</i> si vous utilisez la carte <i>Marché noir</i> et qu'il y a au moins une carte avec Potion dans son coût présente dans le deck <i>Marché noir</i>. Si aucune carte de la réserve ou du deck <i>Marché noir</i> n'affiche Potion dans son coût, n'utilisez pas les cartes <i>Potion</i> dans cette partie. Lorsque la pioche <i>Potion</i> est présente, placez-y les 16 cartes <i>Potion</i>, peu importe le nombre de joueurs. Comme toute autre pile de la réserve, les cartes <i>Potion</i> comptent pour la fin de la partie. Ainsi, si la pile Potion se vide, cela compte comme l'une des trois piles à vider pour la fin de la partie."
     },
     "Copper": {
         "description": "1 <*COIN*>",
