@@ -290,40 +290,63 @@
         "name": "Marchand de vin"
     },
     "Alchemist": {
-        "name": "Alchimiste"
-    },
+        "name": "Alchimiste",
+        "description": "+2 Cartes<br>+1 Action<line>Lorsque vous défaussez cette carte de votre zone de jeu, vous pouvez la placer sur le dessus de votre deck si vous avez une <i>Potion</i> en jeu.",
+        "extra": "Lorsque vous jouez cette carte, vous piochez deux cartes et pouvez jouer une carte <i>Action</i> supplémentaire ce tour-ci. Lorsque vous défaussez cette carte durant la phase <b>Ajustement</b> et que vous avez au moins une <i>Potion</i> en jeu, vous pouvez mettre l'<i>Alchimiste</i> sur le dessus de votre deck. Ceci est optionnel et se produit avant de piocher votre nouvelle main. Si vous n'avez plus de carte dans votre deck lorsque vous faites ceci, l'<i>Alchimiste</i> sera alors la seule carte dans votre deck. Si vous avez plusieurs cartes <i>Alchimiste</i> et une <i>Potion</i>, vous pouvez placer le nombre d'<i>Alchimiste</i> que vous voulez sur votre deck. Vous n'avez pas à avoir utilisé la <i>Potion</i> pour acheter quoique ce soit, vous n'avez qu'à l'avoir jouée."    },
     "Apothecary": {
-        "name": "Apothicaire"
+        "name": "Apothicaire",
+        "description":"+1 Carte<br>+1 Action<n>Dévoilez les 4 premières cartes de votre deck. Placez les cartes <i>Cuivre</i> et <i>Potion</i> ainsi dévoilées dans votre main. Placez les autres cartes sur le dessus de votre deck dans l'ordre de votre choix.",
+        "extra":"Vous piochez d’abord une carte. Ensuite, vous dévoilez les quatre premières cartes de votre deck, placez les <i>Cuivre</i> et les <i>Potion</i> dans votre main et placez le reste sur le dessus de votre deck dans l’ordre de votre choix. Si vous n’avez pas quatre cartes dans votre deck, dévoilez ce que vous pouvez et mélangez pour obtenir les cartes manquantes. Si vous n’avez toujours pas suffisamment de cartes, dévoilez ce que vous pouvez. Vous devez prendre dans votre main tous les <i>Cuivre</i> et les <i>Potion</i>, vous ne pouvez pas les remettre sur votre deck. Après avoir dévoilé, s’il ne reste plus de carte dans votre deck, les cartes remises sur votre deck (toutes les cartes qui ne sont pas <i>Cuivre</i> ou <i>Potion</i>) y seront les seules présentes."
     },
     "Apprentice": {
-        "name": "Apprenti"
+        "name": "Apprenti",
+        "description": "+1 Action<n>Écartez une carte de votre main.<n>+1 Carte par _ Coin qu'elle coûte.<n>+2 Cartes supplémentaires si elle a Potion dans son coût.",
+        "extra": "Si vous n’avez aucune carte à écarter en main, vous ne piochez pas de carte. Si vous écartez une carte coûtant 0 coins, comme <i>Cuivre</i> ou <i>Malédiction</i>, vous ne piochez pas de cartes. Sinon, vous piochez une carte par _ Coin que la carte écartée coûte et deux cartes de plus si la carte écartée a Potion dans son coût. Par exemple, si vous écartez un <i>Golem</i>, au coût 4 Coins 1 Potion, vous piochez 6 cartes."
     },
     "Familiar": {
-        "name": "Familier"
+        "name": "Familier",
+        "description": "+1 Carte<br>+1 Action<n>Tous vos adversaires reçoivent une carte <i>Malédiction</i>.",
+        "extra": "S’il n’y a pas suffisamment de cartes <i>Malédiction</i> pour tous les joueurs lorsque vous jouez un <i>Familier</i>, vous les distribuez en suivant l’ordre de jeu, en débutant à votre gauche. Si vous jouez un <i>Familier</i> et qu’il ny a plus de <i>Malédiction</i>, vous recevez tout de même +1 Carte et +1 Action. Un joueur qui reçoit une <i>Malédiction</i> la place face visible dans sa défausse."
     },
     "Golem": {
-        "name": "Golem"
+        "name": "Golem",
+        "description": "Dévoilez des cartes de botre deck jusqu'à ce que vous ayez dévoilé 2 cartes <i>Action</i> qui ne sont pas <i>Golem</i>. Défaussez les autres cartes et jouez ensuite les cartes <i>Action</i> ainsi dévoilàes, dans l'ordre de botre choix.",
+        "extra": "Dévoilez des cartes du dessus de votre deck, une à la fois, jusqu’à ce que vous ayez dévoilé deux cartes <i>Action</i> qui ne sont pas un <i>Golem</i>. Si vous venez à court de cartes avant de dévoiler deux cartes <i>Action</i> qui ne sont pas un <i>Golem</i>, mélangez votre défausse (qui <b>n’inclut pas</b> les cartes dévoilées) et continuez. Si vous épuisez votre défausse et que vous n’avez toujours pas 2 cartes <i>Action</i>, vous jouerez la seule carte <i>Action</i> dévoilée ou aucune carte. Défaussez toutes les cartes dévoilées à l’exception des cartes <i>Action</i> autres que le <i>Golem</i>. Si vous n’avez dévoilé aucune carte <i>Action</i> autre que <i>Golem</i>, vous avez terminé. Si vous en avez dévoilée une, vous la jouez. Si vous avez dévoilé deux cartes, vous jouez les deux, dans l’ordre de votre choix. Vous ne pouvez pas choisir de ne pas jouer une carte. Ces cartes <i>Action</i> ne font pas partie de votre main et ne sont donc pas affectées par les cartes qui réfèrent aux cartes en main. Par exemple, si l’une de ces cartes et <i>Salle du Trône</i>(D), vous ne pouvez pas la jouer <b>avec</b> l’autre carte dévoilée."
     },
     "Herbalist": {
-        "name": "Herboriste"
+        "name": "Herboriste",
+        "description": "+1 Achat<br>+1 Coin<line>Lorsque vous défaussez cette carte de votre zone de jeu, vous pouvez placer sur le dessus de votre deck une de vos carte <i>Trésor</i> qui est en jeu.",
+        "extra": "Lorsque vous jouez cette carte, vous avez une pièce de plus à utiliser ce tour-ci et pouvez faire un achat supplémentaire lors de votre phase <b>Achat</b>. Au moment où vous défaussez cette carte du jeu (habituellement lors de la phase <b>Ajustement</b>), vous pouvez choisir l’une des cartes <i>Trésor</i> que vous avez en jeu et la placer sur votre deck. Si vous n’avez aucune carte dans votre deck, cette carte <i>Trésor</i> sera alors la seule carte dans votre eck. Vous choisissez l'ordre dans lequel vous défaussez les cartes lors de la phase <b>Ajustement</b>. Par exemple, si vous avez un  <i>Herboriste</i>, une <i>Potion</i> et un <i>Alchimiste</i> en jeu, vous pouvez choisir de défausser l’<i>Alchimiste</i> en premier et le placer sur votre deck pour ensuite défausser l’<i>Herboriste</i> et placer la <i>Potion</i> sur votre deck. Si vous avez plus d’un <i>Herboriste</i> en jeu, chacun d’eux vous permet de mettre une carte <i>Trésor</i>sur votre deck lorsque vous le défaussez."
     },
     "Philosopher's Stone": {
-        "name": "Pierre philosophale"
+        "name": "Pierre philosophale",
+        "description": "Lorsque vous jouez cette carte, comptez le nombre de cartes de votre deck et de votre défausse.<n>Vaut 1 Coin par tranche de 5 cartes qu'il y a au total<n>(arrondi à l'unité inférieure).",
+        "extra": "<i>Pierre Philosophale</i> est une carte <i>Trésor</i> mais il s’agit aussi d’une carte <i>Royaume</i>. Ceci veut dire qu’on l’utilise uniquement dans les parties où elle est sélectionnée (aléatoirement ou par les joueurs) parmi le 10 cartes <i>Royaume</i> de la partie. Elle est jouée lors de la phase <b>Achat</b> comme les autres cartes <i>Trésor</i>. Lorsque vous la jouez, comptez combien de cartes vous avez au total dans votre défausse et votre deck et divisez ensuite par 5, éventuellement arrondi à l’unité inférieure. Une fois jouée, le nombre de pièces obtenu ne change pas, même si le nombre de cartes dans votre deck et/ou votre défausse change plus tard dans le tour. Au prochain tour où vous la jouez, vous devez compter à nouveau et à chaque tour suivant. Si vous jouez plus d’une copie de cette carte dans le même tour, elles donneront toutes le même nombre de pièces. L’ordre de votre défausse n’a pas d’importance, mais l’ordre de votre deck en a. Il est donc très important de ne pas changer cet ordre lorsque vous comptez. En comptant votre défausse, vous aurez la possibilité de la consulter. Vous comptez uniquement les cartes de votre défausse et de votre deck, pas celles de votre main. ni celles en jeu ou celles mises de côté. Vous ne pouvez pas jouer de cartes <i>Trésor</i> supplémentaires après avoir acheté une carte dans votre phase <b>Achat</b>. Par exemple, vous ne pouvez pas acheter une carte, pour ensuite jouer une <i>Pierre Philosophale</i> et finalement acheter une autre carte."
     },
     "Possession": {
-        "name": "Possession"
+        "name": "Possession",
+        "description": "Après votre tour, le joueur à votrre gauche joue un tour supplémentaire lors duquel vous pouvez voir toutes ses cartes et vous prenez toutes les décisions pour lui. Vous obtenez à sa place toutes les cartes qu'il obtient lors de ce tour. les cartes écartées sont mises de côté et placées dans sa défausse à la fin du tour.",
+        "extra": "Vous ne jouez pas un tour supplémentaire avec le deck du joueur à votre gauche. Ce Joueur joue un tour lors duquel vous prenez les décisions et recevez les cartes. Cette différence cruciale est très importante lorsque l’on considère l’interaction des cartes: le \"vous\" réfère toujours au joueur <b>possédé</b> et non au joueur <b>qui possède</b> l’autre. La carte <i>Possession</i> implique les points suivants:<n>-Vous prenez toutes les décisions pour le joueur possédé. Ceci comprend quelles cartes jouer, comment utiliser les cartes jouées et quelles cartes acheter.<n>-Peu import la méthode, vous recevez à sa place toutes cartes que le joueur possédé reçoit. Ceci inclut les cartes achetées ainsi quel es cartes reçue à l’aide de cartes <i>Action</i>. les cartes que vous recevez ainsi sont placées dans votre défausse, même si elles seraient allées dans la main du joueur, sur son deck ou à tout autre endroit. Vous ne recevez que les cartes que le joueur possédé reçoit, vous ne recevez pas les jetons qu’il reçoit (par exemple, avec le <i>Bateau pirate</i> de <i>Dominion - Rivages</i>)."
     },
     "Scrying Pool": {
-        "name": "Bassin divinatoire"
+        "name": "Bassin divinatoire",
+        "description": "+1 Action<n>Tous les joueurs (vous aussi) dévoilent la première carte de leur deck. Décidez ensuite pour chauque carte dévoilée si elle est défaussée ou replacée sur son deck. Après, dévoilez des cartes de votre deck jusqu'à ce que vous dévoiliez une carte qui n'est pas une carte <i>Action</i>. Ajoutez toutes les cartes dévoilées à votre main.",
+        "extra": "Dévoilez d’abord la première carte du deck de chaque joueur et choisissez si cette carte est défaussée ou remise sur son deck. Si les joueurs accordent de l’importance à l’ordre, faites l'action en sens horaire, en commençant par votre deck. Vous prenez une décision différente pour chaque joueur. Une fois votre décision prise pour chaque deck, dévoilez des cartes du dessus de votre deck jusqu’à ce que vous dévoiliez une carte que n’est pas une carte <i>Action</i>. Si vous n’avez plus de carte avant de dévoiler une carte <i>Action</i>, mélangez votre défausse et continuez. Si vous n’avez plus de défausse, vous arrêtez. Placez toutes les cartes <i>Action</i>”dévoilées, ainsi que la première carte qui n’est pas une carte <i>Action</i>, dans votre main. Si la première carte dévoilée n’est pas une carte <i>Action</i>, elle va dans votre main. Les cartes de plusieurs types dont l’un d’eux est <i>Action</i> sont des cartes <i>Action</i>. Les seules cartes qui vont dans votre main sont celles dévoilées jusqu'à ce qu’une carte qui n’est pas une carte <i>Action</i> soit dévoilée; cette dernière va aussi dans votre main. Vous ne prenez pas en amian les cartes défaussées suite au premier effet du <i>Bassin divinatoire</i> et vous n’obtenez pas de carte du deck des autres joueurs.        "
     },
     "Transmute": {
-        "name": "Transmutation"
+        "name": "Transmutation",
+        "description": "Écartez une carte de votre main.<n>Si c'est...<n>une carte <i>Action</i>, recevez un <i>Duché</i>;<n>une carte <i>Trésor</i>, recevez une <i>Transmutation</i>;<n>une carte <i>Victoire</i>, recevez un <i>Or</i>.",
+        "extra": "Si vous n’avez pas de carte à écarter en main, vous ne recevez rien. Si vous écartez une <i>Malédiction</i>, vous ne recevez rien; les cartes <i>Malédiction</i> ne sont pas des cartes <i>Action</i>, <i>Victoire</i>, ou <i>Trésor</i>. Si vous écartez une carte avec plusieurs types, vous recevez chaque carte qui s’applique. Par exemple, si vous écartez une carte <i>Action-Victoire</i> (comme <i>Grand Hall</i> (DI)), vous obtiendrez un <i>Duché</i> et un <i>Or</i>. Les cartes reçues viennent de la réserve et vont dans votre défausse. S’il ne reste plus de carte appropriée à recevoir, vous ne recevez pas cette ou ces cartes."
     },
     "University": {
-        "name": "Université"
+        "name": "Université",
+        "description": "+2 Actions<n>Vous pouvez recevoir une carte <i>Action</i> coûtant jusqu'à 5 Coins.",
+        "extra": "Recevoir une carte <i>Action</i> est facultatif. Si vous choisissez d’en recevoir une, elle vint de la réserve, elle ne doit pas coûter plus de 5 Coins et elle va dans votre défausse. Les cartes de plusieurs types dont l’un d’eux est <i>Action</i> peuvent être reçues de cette façon. les cartes dont le coût comprend _ Potion ne peuvent pas être reçues à l’aide de l’<i>Université</i>."
     },
     "Vineyard": {
-        "name": "Vignoble"
+        "name": "Vignoble",
+        "description": "Vaut 1 <VP> pour chaque 3 cartes <i>Action</i> dans votre deck<n>(arrondi à l'unité inférieure).",
+        "extra": "Cette carte <i>Royaume</i> est une carte <i>Victoire</i> et non une carte <i>Action</i>. Elle n’a pas d’effet avant la fin de la partie, où elle vaut 1 point de victoire pour chaque lot de 3 cartes <i>Action</i> dans votre deck (incluant toutes vos cartes: celles de votre défausse, votre deck et votre main). Le tout arrondi à l’unité inférieure: si vous avez 11 cartes <i>Action</i>, votre <i>Vignoble</i> vaut 3 points de victoire. Lors de la mise en place, placez dans la réserve 12 cartes <i>Vignoble</i> à 3 et 4 joueurs et 8 cartes <i>Vignoble</i> à 2 joueurs. Les cartes de plus d’un types dont l’un d’eux et <i>Action</i> comptent pour le <i>Vignoble</i>."
     },
     "Grey Mustang": {},
     "Rabbits": {},
