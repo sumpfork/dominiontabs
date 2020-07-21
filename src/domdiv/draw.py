@@ -1220,7 +1220,7 @@ class DividerDrawer(object):
         if (
             not card.isExpansion()
             and not card.isBlank()
-            and not card.isLandmark()
+            and card.get_GroupCost() != ""
             and not card.isType("Trash")
         ):
             if "tab" in self.options.cost:
@@ -1646,7 +1646,9 @@ class DividerDrawer(object):
 
             sets = []
             for item in pageItems:
-                setTitle = item.card.cardset.title()
+                setTitle = " ".join(
+                    word.capitalize() for word in item.card.cardset.split()
+                )
                 if setTitle not in sets:
                     sets.append(setTitle)
 
