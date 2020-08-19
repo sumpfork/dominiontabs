@@ -1596,20 +1596,6 @@ def filter_sort_cards(cards, options):
                 group_cards[card.group_tag].debtcost = 0
                 group_cards[card.group_tag].potcost = 0
 
-    # Separate Kingdom (with Randomizer) from non-Kingdom cards (without Randomizer)
-    if options.group_kingdom:
-        new_cards = []
-        new_sets = {}
-        for card in cards:
-            if not card.randomizer and Card.sets[card.cardset_tag]["has_extras"]:
-                card.cardset_tag += EXPANSION_EXTRA_POSTFIX
-                new_sets[card.cardset_tag] = True
-            new_cards.append(card)
-        cards = new_cards
-        if options.expansions and new_cards:
-            # Add the new expansion "extras" to the overall expansion list
-            options.expansions.extend([s for s in new_sets])
-
     # Get the final type names in the requested language
     Card.type_names = add_type_text(Card.type_names, LANGUAGE_DEFAULT)
     if options.language != LANGUAGE_DEFAULT:
@@ -1748,6 +1734,10 @@ def filter_sort_cards(cards, options):
     keep_cards = []
     for c in cards:
         if c.cardset_tag in wantedSets:
+            if options.group_kingdom:
+                # Separate non-Kingdom cards (without Randomizer) into new "Extras" set
+                if not c.randomizer and Card.sets[c.cardset_tag]["has_extras"]:
+                    c.cardset_tag += EXPANSION_EXTRA_POSTFIX
             # Add the cardset informaiton to the card and add it to the list of cards to use
             c.cardset = Card.sets[c.cardset_tag].get("set_name", c.cardset_tag)
             keep_cards.append(c)
