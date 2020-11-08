@@ -10,12 +10,11 @@ script:
 - if [[ ${TRAVIS_PYTHON_VERSION:0:1} == "3" ]]; then pre-commit run --all-files; fi
 - doit update_languages
 after_success:
-- git diff-index --quiet HEAD -- || .travis/push.sh
+- if ! git diff-index --quiet HEAD --; then .travis/push.sh; fi
 - echo $TRAVIS_TAG
 deploy:
   provider: pypi
   user: __token__
-  skip_cleanup: true
   password:
     secure: fwzGM3PUyZSWGcDnrWwo+GLh+kySJiBCNv4QWbM/l2dw2bpdRziDkbqq7zTtTmgxL4HGrd6TtJPq3QJS12JUtp0I8/lZFwMpjk5DkDDLeeIGoysGSIzw0VuI4/rsaRVlWf5BBPKcGouwf4BGSuXImJDn0pv62crrP2fG/Pnn3sWj5m6y+FPCdTB2LQGj1Jw7+lO/lWTXGS6QFc0siAgnLisrVZbOtZJXXv8vbqBNusfomKvxqAfNrYSwLSU52OF3Sk6YP2/JG7YOsMhdkUrEeAcxsWcy5xeDJ/lg773rrWnv2BPsHnZfzOagOY46B33uu02jalPiBRcvzUbWsuXwCBv8zZAJmeyIkf5/R+UDxGDgsnb1jBSFwPnYQDmUqHFpSbBMH87pN8V2aa9pl7yfDy/wx6tdWfpHkAVBfGWAF/MtKKsPjRoJNLYo+aEpd/BGGagDWm/PXDGPpPS2JF0sw4BrhD3w4WEhCiDHuW54vhLXjxx6TNX+0vwKcJA+VuhXq5lowbbUvwh5Yp4m9rWMM/AE/t8fxzukpwRQHuKvWQgbyOgs5X9TbrXspebYRU+4PgtrSwz8I6RiZDugf/ckP4xNjNoMf1DjXPhOUEsqC5H4jSAyJon2s+Mplmu1at91l7VZb1Zi+Cd6R+xwC1Y96k8a4taIKnKRP+4uBk3TS8c=
   distributions: sdist bdist_wheel
