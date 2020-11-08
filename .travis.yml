@@ -11,6 +11,7 @@ script:
 - doit update_languages
 after_success:
 - git diff-index --quiet HEAD -- || .travis/push.sh
+- echo $TRAVIS_TAG
 deploy:
   provider: pypi
   user: __token__
