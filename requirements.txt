@@ -26,3 +26,4 @@ reportlab==3.5.49         # via -r requirements.in
 six==1.15.0               # via packaging, virtualenv
 toml==0.10.1              # via pre-commit, pytest
 virtualenv==20.0.31       # via pre-commit
+doit # manually added because automatic addition creates platform-dependent dependencies
