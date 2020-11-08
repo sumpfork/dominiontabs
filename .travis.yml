@@ -24,3 +24,7 @@ deploy:
 env:
   global:
     secure: bYXWpieVWLJctT3xo/2jNnsaiT7RM8C7VttYMZjCstxOr+8qL5jhCXkez/XqbYQ2WJmpW5C9AsK2MIwn1W9zrc9CSZ5VMONrwTqmT/tPmn4TvDTM4hLCVqMMz8wzq8kbfhdqCpTLCj8AqFlG/8emi9B2NN9wnWC/bS7hzSeBDOzl50s2soniyXIizq49BzAf9mOZ/+5MpbIxwt3v++ZfHkjYzamg+oxS3rrejWHi1drVUXhgIf72narfP7kLwfVm4jrfcfXbUm+Yf3MBQ0tO33jHlPhXRPFu1XdqDbYmEpMuQUtBasTrg2fuhraORxKpi7eFToIRg4K8DCN1Bj0ktPd83Voj2PnQBvyUqNHdIAfwER4ZAmBbDRmc7LDk58KqZFE5NB5HeL+/PFxwLRWIC4P+K0WWAWDy+y0rxzhXc8uNaghEBL03WvPKxv9OqGXdSL0vaPzVj5XnEZ7CHOxpCgG/kv5J4YtNCQycGo612IstRFMF0V07+HIpxrCX5F6C4FDt5zAFqnBRm2oB6cM9MV8foofed9z/h0q5qJ9N7btE5qnzqbnNdG/RMuS2EjOLwjz8IfXeRiToq0MC4LGDVISH4c/RUzU970OoIFvOyqi+J4bhUSNwFuB3dPPfGW2a/bg3CAZjM1XWpU6H1xhpBwkDSzNbCsRHRXhhtIGVUfY=
+cache:
+    directories:
+        - $HOME/.cache/pip
+        - $HOME/.cache/pre-commit
