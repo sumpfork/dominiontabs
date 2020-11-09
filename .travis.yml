@@ -2,6 +2,7 @@ language: python
 python:
 - '3.6'
 install:
+- python setup.py install_egg_info
 - pip install -U setuptools
 - pip install .
 - pip install -r requirements.txt
@@ -12,7 +13,6 @@ script:
 after_success:
 - if ! git diff-index --quiet HEAD --; then .travis/push.sh; fi
 - echo $TRAVIS_TAG
-- python setup.py install_egg_info
 deploy:
   provider: pypi
   user: __token__
