@@ -26,5 +26,4 @@ echo "Branch: $TRAVIS_BRANCH"
 setup_git
 commit_carddb_files
 upload_files
-git clean -df
 # credit: https://gist.github.com/willprice/e07efd73fb7f13f917ea
