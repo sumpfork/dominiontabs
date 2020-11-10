@@ -1,21 +1,25 @@
 language: python
 python:
-- '3.6'
+- '3.8'
 install:
 - python setup.py install_egg_info
 - pip install -U setuptools
-- pip install .
 - pip install -r requirements.txt
+- pip install .
 script:
 - python setup.py test
 - if [[ ${TRAVIS_PYTHON_VERSION:0:1} == "3" ]]; then pre-commit run --all-files; fi
 - doit update_languages
 after_success:
+- git diff
+- git status
 - git diff-index HEAD --
 - if ! git diff-index --quiet HEAD --; then .travis/push.sh; fi
 - echo $TRAVIS_TAG
 - git clean -df
 - git diff-index HEAD --
+- git diff
+- git status
 deploy:
   provider: pypi
   user: __token__
