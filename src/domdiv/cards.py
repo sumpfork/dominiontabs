@@ -160,14 +160,20 @@ class Card(object):
     def isPrize(self):
         return self.isType("Prize")
 
+    def get_GroupGlobalType(self):
+        return self.getType().getGroupGlobalType()
+
+    def get_GroupCost(self):
+        return self.getType().getGroupCost()
+
     def get_total_cost(self, c):
         # Return a tuple that represents the total cost of card c
         # Hightest cost cards are in order:
-        # - Landmarks to sort at the very end
+        # - Types with group cost of "" sort at the very end
         # - cards with * since that can mean anything
         # - cards with numeric errors
         # convert cost (a string) into a number
-        if c.isLandmark():
+        if c.get_GroupCost() == "":
             c_cost = 999
         elif not c.cost:
             c_cost = 0  # if no cost, treat as 0
@@ -245,12 +251,16 @@ class CardType(object):
         self,
         card_type,
         card_type_image,
+        group_global_type=None,
+        group_cost=None,
         defaultCardCount=10,
         tabTextHeightOffset=0,
         tabCostHeightOffset=-1,
     ):
         self.typeNames = tuple(card_type)
         self.tabImageFile = card_type_image
+        self.group_global_type = group_global_type
+        self.group_cost = group_cost
         self.defaultCardCount = defaultCardCount
         self.tabTextHeightOffset = tabTextHeightOffset
         self.tabCostHeightOffset = tabCostHeightOffset
@@ -265,6 +275,12 @@ class CardType(object):
         if not self.tabImageFile:
             return None
         return self.tabImageFile
+
+    def getGroupGlobalType(self):
+        return self.group_global_type
+
+    def getGroupCost(self):
+        return self.group_cost
 
     def getTabTextHeightOffset(self):
         return self.tabTextHeightOffset
