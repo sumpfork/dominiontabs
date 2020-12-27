@@ -2787,39 +2787,39 @@
         "name": "Valkenier"
     },
     "GateKeeper": {
-        "description": "At the start of your next turn, +3 Coin. Until then, when another player gains an Action or Treasure card they don't have an Exiled copy of, they Exile it.",
-        "extra": "While under this attack, whenever you gain an Action or Treasure that you do not have a copy of on your Exile mat, you Exile the gained card.<n>Gaining a card that you do have a copy of on your Exile mat is unaffected, and lets you discard copies from your Exile mat if you want to as usual.<n>Other abilities that happen when you gain a card happen at the same time, and you can only put the card on your mat if it has not moved anywhere since gaining it; so you can, for example, use a Sleigh to put a gained card into your hand, then fail to put it on your Exile mat.<n>Gatekeeper only Exiles Actions and Treasures, it does not Exile, for example, Province.<n>It only cares about cards in Exile, it does not care how they got there.",
-        "name": "GateKeeper"
+        "description": "Aan het begin van je volgende beurt, +3 Coin. Als een andere speler een actie- of geldkaart pakt waarvan hij geen exemplaar op zijn verbanningstableau heeft, verbant hij deze.",
+        "extra": "Zolang je door deze aanval bent getroffen, moet je elke keer dat je een actie- of geldkaart pakt waarvan je nog geen exemplaar op je verbanningstableau hebt, deze verbannen.<n>Het pakken van een kaart waarvan je een exemplaar op je verbanningstableau hebt, wordt niet beïnvloed, en laat je zoals gebruikelijk exemplaren die op je verbanningstableau liggen, afleggen.<n>Andere eigenschappen die bij het pakken van een kaart gebeuren, vinden op hetzelfde moment plaats. Je kunt de kaart uitsluitend op het verbanningstableau leggen als deze sinds het pakken ervan niet ergens anders naartoe verplaatst is. Je kunt bijvoorbeeld de Slede gebruiken om de gepakte kaart in je hand te nemen, waardoor je die niet op je verbanningstableau kunt leggen.<n>Poortwachter verbant uitsluitend Acties en Geld en bijvoorbeeld geen Provincies.<n>Het gaat uitsluitend om kaarten die op het verbanningstableau liggen, niet hoe ze daar zijn gekomen.",
+        "name": "Poortwachter"
     },
     "Hunting Lodge": {
-        "description": "+1 Card<br>+2 Actions<br>You may discard your hand for +5 Cards.",
-        "extra": "When you play this, first draw a card and get +2 Actions; then decide if you want to discard your hand (which will include the card you just drew).<n>If you do discard your hand, draw 5 cards (which may cause you to shuffle in the discarded cards).",
-        "name": "Hunting Lodge"
+        "description": "+1 Kaart<br>+2 Acties<br>Je mag je hand afleggen voor +5 Kaarten.",
+        "extra": "Als je deze kaart speelt, trek je eerst een kaart en krijg je +2 Acties. Daarna besluit je of je je hand wilt afleggen (inclusief de net getrokken kaart).<n>Leg je je hand af, trek dan 5 kaarten (wat kan betekenen dat je de net afgelegde kaarten weer moet terugschudden)..",
+        "name": "Jachthuis"
     },
     "Kiln": {
-        "description": "+2 Coin<br>The next time you play a card this turn, you may first gain a copy of it.",
-        "extra": "Kiln can gain any type of card, as long as the card is played directly after Kiln.<n>It can only gain cards from the Supply.<n>You (optionally) gain a copy of the card before following the instructions on the card.<n>If the card is an Attack and other players want to use cards like Moat, you gain the card before they choose to use Moat or not.<n>If you Throne Room a Kiln, you will play Kiln, play Kiln again, first gaining a Kiln (optionally), and then can still gain a copy of the next card you play after that.<n>If the next card you play is an Action and you use a Way for it, that has no special interaction with Kiln; you still may optionally gain a copy of that card.",
-        "name": "Kiln"
+        "description": "+2 Coin<br>De volgende keer dat je deze beurt een kaart speelt, mag je er eerst een exemplaar van pakken.",
+        "extra": "Oven kan elke soort kaart pakken, zolang de kaart direct na de Oven is gespeeld.<n>De Oven kan uitsluitend kaarten uit de voorraad pakken.<n>Je pakt (optioneel) een exemplaar van de kaart, voordat je de aanwijzingen op de kaart opvolgt.<n>Is de kaart een Aanval en willen andere spelers kaarten zoals Slotgracht gebruiken, dan pak je de kaart, voordat zij al dan niet de Slotgracht gebruiken.<n>Als je de Troonzaal op een Oven gebruikt, dan speel je de Oven, speel je de Oven weer, pak je (optioneel) een Oven en kun je daarna nog steeds een exemplaar pakken van de volgende kaart die je speelt.<n>Is de volgende kaart een Actie waarvoor je een spoor gebruikt, dan mag je alsnog een exemplaar van die kaart pakken.",
+        "name": "Oven"
     },
     "Livery": {
-        "description": "+3 Coin<br>This turn, when you gain a card costing 4 Coin or more, gain a Horse.",
-        "extra": "This is cumulative; for example, if you use Mastermind to play a Livery three times, then each card you gain that turn costing 4 Coin or more will come with three Horses.<n>Livery works on cards gained via buying them, and cards gained other ways.",
-        "name": "Livery"
+        "description": "+3 Coin<br>Deze beurt: als je een kaart pakt die 4 Coin of meer kost, pak je een Paard.",
+        "extra": "Deze kaart werkt cumulatief.<i><b>Voorbeeld: </b>speel je Meesterbrein om Stalhouderij driemaal te spelen, dan pak je voor elke kaart die je pakt doe 4 Coin of meer kost 3 Paarden.</i><n>Stalhouderij geldt voor gekochte kaarten en op andere manieren gepakte kaarten.",
+        "name": "Stalhouderij"
     },
     "Mastermind": {
-        "description": "At the start of your next turn, you may play an Action card from your hand three times.",
-        "extra": "Playing an Action card via this is optional. If you do play one, you resolve the card completely, then play it a second time, then play it a third time, without playing other cards in-between (unless told to by a card).<n>Playing these Actions does not use up Action plays. For example, if you Mastermind a Bounty Hunter, you will get +3 Actions total, and be able to play 4 Action cards after that - your normal one, plus 3 more for the +3 Actions.<n>If a Mastermind plays a Duration card, the Mastermind stays in play as long as the Duration card does.<n>If a Mastermind plays another Mastermind, both will stay in play, and the turn after that you can play three different Action cards from your hand three times each.<n>If you Mastermind a Horse, you will get +2 Cards and +1 Action, return the Horse to its pile, get +2 Cards and +1 Action, fail to return the Horse since you already did, and get +2 Cards and +1 Action a third time and fail to return the Horse again.",
-        "name": "Mastermind"
+        "description": "Aan het begin van je volgende beurt mag je een actiekaart uit je hand driemaal spelen.",
+        "extra": "Het is niet verplicht om hier een actiekaart mee te spelen. Speel je er één, handel die kaart dan volledig af, speel de kaart nogmaals, en daarna een derde keer zonder tussendoor een andere kaart te spelen (tenzij je dat door een kaart wordt verteld).<n>Het spelen van deze Acties verbruikt geen Acties<i><b>Voorbeeld: </b>je speelt Premiejager met Meesterbrein. Je krijgt in totaal +3 Acties en kunt daarna dus 4 actiekaarten spelen: je standaard Actie en de 3 extra Acties. Speel je een Duurzame kaart met Meesterbrein, dan blijft Meesterbrein in het spel zoalng de Duurzame kaart dat doet.</i>/<n>Speel je een andere Meesterbrein met Meesterbrein, dan blijven beide kaarten in het spel en kun je de beurt erna 3 verschillende actiekaarten uit je hand elk driemaal spelen.<n>Speel je een Paard met Meesterbrein, dan krijg je +2 Kaarten en +1 Actie, je legt het Paard op diens stapel, je krijgt +2 Kaarten en +1 Actie, je kunt het Paard niet terugleggen, want dat heb je al gedaan, en je krijgt een derde keer +2 Kaarten en +1 Actie, waarbij je het Paard weer niet kunt terugleggen.",
+        "name": "Meesterbrein"
     },
     "Paddock": {
-        "description": "+2 Coin<br>Gain 2 Horses.<br>+1 Action per empty Supply pile.",
-        "extra": "This only checks how many piles are empty when you play it; how many +Actions you got does not change if a pile becomes empty later in the turn (or non-empty, such as due to Ambassador from Seaside).<n>This only counts Supply piles, not non-Supply piles like Horse.",
-        "name": "Paddock"
+        "description": "+2 Coin<br>Pak 2 Paarden.<br>+1 Actie per lege voorraadstapel.",
+        "extra": "Deze kaart controleert uitsluitend op het moment van spelen hoeveel stapels er leeg zijn. Het aantal +Acties dat je krijgt, verandert niet als een stapel later in de beurt leegraakt (of juist niet leeg door bijvoorbeeld Boodschapper uit Hijs de Zeilen!).<n>Het gaat uitsluitend om voorraadstapels, niet om niet-voorraadstapels zoals Paard.",
+        "name": "Omheind Veld"
     },
     "Sanctuary": {
-        "description": "+1 Card<br>+1 Action<br>+1 Buy<br>You may Exile a card from your hand.",
-        "extra": "Exiling a card is optional.",
-        "name": "Sanctuary"
+        "description": "+1 Kaart<br>+1 Actie<br>+1 Aanschaf<br>Je mag een kaart uit je hand verbannen.",
+        "extra": "Het verbannen van een kaart is optioneel.",
+        "name": "Gewijde Plek"
     },
     "Fisherman": {
         "description": "+1 Card<br>+1 Action<br>+1 Coin<line>During your turns, if your discard pile is empty, this costs 3 Coin less.",
