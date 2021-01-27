@@ -833,13 +833,41 @@
         "extra": " La carte que vous recevez est placée dans votre défausse et doit être une carte de la réserve. Vous ne pouvez pas utiliser de pièces provenant de cartes Trésor ou Action (telle Marché) pour augmenter le coût de la carte que vous recevez. Vous ne pouvez pas recevoir une carte contenant une Potion dans son coût avec Atelier.",
         "name": "Atelier"
     },
-    "Artisan": {},
-    "Bandit": {},
-    "Harbinger": {},
-    "Merchant": {},
-    "Poacher": {},
-    "Sentry": {},
-    "Vassal": {},
+    "Artisan": {
+        "description": "Recevez en main une carte coûtant jusqu'à 5 Coins.<n>Placez une carte de votre main sur votre pioche",
+        "extra": "La carte que vous gagnez provient de la Réserve et est mise dans votre main.<n>Vous ne pouvez pas utiliser de _ Coin&nbsp; pour augmenter le prix d'une carte que vous gagnez. Elle coûte toujours de 0 à 5 pièces (et ne peut donc pas contenir de Potion dans son coût).<n>Après avoir reçu la carte, vous mettez une carte de votre main sur votre paquet; cela peut être la carte que vous venez de gagner, ou une carte différente.",
+        "name": "Artisan"
+    },
+    "Bandit": {
+        "description": "Recevez un Or.<n>Tous vos adversaires dévoilent les 2 premières cartes de leur pioche, écartent une carte Trésor dévoilée autre qu'un Cuivre, et défaussent le reste.",
+        "extra": "D'abord, vous gagnez un or de la réserve dans votre défausse. Ensuite, les autres joueurs, dans l'ordre du tour, révèlent leurs deux premières cartes, écartent un Trésor autre que le cuivre de leur choix (par exemple, l'argent ou l'or), et se défaussent des autres cartes révélées.<n>Un joueur qui n'a pas révélé de carte Trésor autre que des Cuivres défausse simplement les deux cartes.",
+        "name": "Brigand"
+    },
+    "Harbinger": {
+        "description": "+1 Carte<br>+1 Action<n> Consultez votre défausse. Vous pouvez placer une carte de votre défausse sur votre pioche.",
+        "extra": "Tirez d'abord une carte et obtenez +1 Action. Consultez ensuite votre pile de défausse, et vous pouvez placer une carte de celle-ci sur le dessus de votre pioche.<n>Placer une carte sur le dessus de votre pioche est facultatif.",
+        "name": "Présage"
+    },
+    "Merchant": {
+        "description": "+1 Carte<br>+1 Action<n>La première fois que vous jouez un Argent ce tour-ci, +1 Coin.",
+        "extra": "Lorsque vous jouez le Marchand, vous piochez une carte et obtenez +1 action.<n> Si vous jouez un Argent plus tard dans le tour, il sera accompagné d'une pièce.<n>Si vous jouez plus d'un Marchand, chacun vous donnera 1 pièce lorsque vous jouerez votre premier Argent ; mais si vous jouez plus d'un Argent, vous n'obtenez pas de pièces supplementaires. <n><n>Si vous parvenez à jouer un Marchand après avoir joué un Argent, il ne vous donne aucun bonus (ni pour l'Argent précédent ni pour tout Argent que vous pourriez jouer plus tard dans le tour).<n> Jouer la Salle du Trône sur le Marchand vous donnera 2 Pièces lorsque vous jouerez votre premier Argent.",
+        "name": "Marchand"
+    },
+    "Poacher": {
+        "description": "+1 Carte<br>+1 Action<br>+1 Coin<n>Défausser une carte pour chaque pile vide de la réserve.",
+        "extra": "Vous tirez la carte avant de défausser.<n> S'il n'y a pas de piles vides, vous ne vous défaussez pas.<n> S'il y a une pile vide, vous vous défaussez d'une carte ; s'il y a deux piles vides, vous vous défaussez de deux cartes, etc. <n> Cela inclut toutes les piles de la Réserve, y compris les Malédictions, les Cuivres, le Braconnier lui-même, etc.<n>Si vous n'avez pas assez de cartes pour vous défausser, défaussez simplement le reste de votre main.<n>Les piles qui ne font pas partie de la Réserve, telles que le Butin, n'ont pas d'importance pour le Braconnier.",
+        "name": "Braconnier"
+    },
+    "Sentry": {
+        "description": "+1 Carte<br>+1 Action<n>Consultez les 2 premières cartes de votre pioche. Écartez-en et/ou défaussez-en autant que vous le voulez.<n>Replacez le reste sur votre pioche dans l'ordre de votre choix.",
+        "extra": "D'abord, vous tirez une carte et obtenez +1 Action.<n> Ensuite, vous regardez les 2 premières cartes de votre pioche.<n>Vous pouvez écarter les deux, ou défausser les deux, ou replacer les deux dans l'ordre de votre choix sur votre pioche ; ou vous pouvez en écarter une et en défausser une, ou en écarter une et en remettre une, ou en écarter une et en remettre une.",
+        "name": "Sentinelle"
+    },
+    "Vassal": {
+        "description": "+2 Coin<n>Défaussez la carte du haut de votre pioche. Si c'est une carte Action, vous pouvez la jouer.",
+        "extra": "Si la carte est une carte Action, vous pouvez la jouer, mais vous n'êtes pas obligé de le faire.<n>Si vous la jouez, vous la déplacez dans votre zone de jeu et vous suivez ses instructions ; cela ne consomme pas une de vos Actions pour le tour.",
+        "name": "Vassal"
+    },
     "Advance": {},
     "Annex": {},
     "Aqueduct": {},
