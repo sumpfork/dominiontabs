@@ -1,6 +1,6 @@
 name: Compile Card DB
 
-on: push
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   compile_card_db:
