@@ -4,26 +4,51 @@
 #
 #    pip-compile
 #
-appdirs==1.4.4            # via virtualenv
-attrs==20.2.0             # via pytest
-cfgv==3.2.0               # via pre-commit
-configargparse==1.2.3     # via -r requirements.in
-distlib==0.3.1            # via virtualenv
-filelock==3.0.12          # via virtualenv
-identify==1.5.2           # via pre-commit
-iniconfig==1.0.1          # via pytest
-more-itertools==8.5.0     # via pytest
-nodeenv==1.5.0            # via pre-commit
-packaging==20.4           # via pytest
-pillow==7.2.0             # via -r requirements.in, reportlab
-pluggy==0.13.1            # via pytest
-pre-commit==2.7.1         # via -r requirements.in
-py==1.9.0                 # via pytest
-pyparsing==2.4.7          # via packaging
-pytest==6.0.2             # via -r requirements.in
-pyyaml==5.3.1             # via pre-commit
-reportlab==3.5.49         # via -r requirements.in
-six==1.15.0               # via packaging, virtualenv
-toml==0.10.1              # via pre-commit, pytest
-virtualenv==20.0.31       # via pre-commit
+appdirs==1.4.4
+    # via virtualenv
+attrs==20.3.0
+    # via pytest
+cfgv==3.2.0
+    # via pre-commit
+configargparse==1.2.3
+    # via -r requirements.in
+distlib==0.3.1
+    # via virtualenv
+filelock==3.0.12
+    # via virtualenv
+identify==1.5.13
+    # via pre-commit
+iniconfig==1.1.1
+    # via pytest
+nodeenv==1.5.0
+    # via pre-commit
+packaging==20.8
+    # via pytest
+pillow==8.1.0
+    # via
+    #   -r requirements.in
+    #   reportlab
+pluggy==0.13.1
+    # via pytest
+pre-commit==2.10.0
+    # via -r requirements.in
+py==1.10.0
+    # via pytest
+pyparsing==2.4.7
+    # via packaging
+pytest==6.2.2
+    # via -r requirements.in
+pyyaml==5.4.1
+    # via pre-commit
+reportlab==3.5.59
+    # via -r requirements.in
+six==1.15.0
+    # via virtualenv
+toml==0.10.2
+    # via
+    #   pre-commit
+    #   pytest
+virtualenv==20.4.0
+    # via pre-commit
+
 doit # manually added because automatic addition creates platform-dependent dependencies
