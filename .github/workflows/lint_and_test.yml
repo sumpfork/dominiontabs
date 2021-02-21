@@ -16,5 +16,12 @@ jobs:
         run: pre-commit run --all-files
       - name: Make PR
         uses: peter-evans/create-pull-request@v3
+        with:
+          base: ${{ github.head_ref }}
+          body: |
+            Fix style/lint issues
+          delete-branch: true
+          reviewers: sumpfork
+          assignees: sumpfork
       - name: Test
         run: python setup.py test

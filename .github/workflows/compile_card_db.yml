@@ -31,6 +31,7 @@ jobs:
       - name: Make PR
         uses: peter-evans/create-pull-request@v3
         with:
+          base: ${{ github.head_ref }}
           body: |
             Auto-generate package card DB to from source card DB
           delete-branch: true
