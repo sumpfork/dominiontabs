@@ -1,6 +1,6 @@
 name: Compile Card DB
 
-on: [push, pull_request, workflow_dispatch]
+on: [pull_request, workflow_dispatch]
 
 jobs:
   compile_card_db:
@@ -30,3 +30,9 @@ jobs:
           git commit -am "Compile Card DB"
       - name: Make PR
         uses: peter-evans/create-pull-request@v3
+        with:
+          body: |
+            Auto-generate package card DB to from source card DB
+          delete-branch: true
+          reviewers: sumpfork
+          assigness: sumpfork
