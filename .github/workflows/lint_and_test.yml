@@ -14,5 +14,7 @@ jobs:
           pip install -r requirements.txt
       - name: Lint
         run: pre-commit run --all-files
+      - name: Make PR
+        uses: peter-evans/create-pull-request@v3
       - name: Test
         run: python setup.py test
