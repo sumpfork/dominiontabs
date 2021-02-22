@@ -1,6 +1,6 @@
 name: Compile Card DB
 
-on: [pull_request, workflow_dispatch]
+on: [pull_request_target, workflow_dispatch]
 
 jobs:
   compile_card_db:
@@ -15,19 +15,6 @@ jobs:
           pip install .
       - name: Update Languages
         run: doit update_languages
-      - uses: dorny/paths-filter@v2
-        id: filter
-        with:
-          base: HEAD
-          filters: |
-            cardb_target:
-              - src/domdiv/card_db/**
-      - name: Commit Results
-        if: steps.filter.outputs.cardb_target == 'true'
-        run: |
-          git config --global user.name 'Github Action: Compile Card DB'
-          git config --global user.email 'sumpfork@users.noreply.github.com'
-          git commit -am "Compile Card DB"
       - name: Make PR
         uses: peter-evans/create-pull-request@v3
         with:
