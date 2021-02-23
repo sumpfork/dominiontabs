@@ -97,7 +97,7 @@ Entries in this file represent Dominion cards, and groups of cards.  A typical e
 - The key word `name` MUST NOT BE CHANGED, but the value after the `:` should be changed to the name of the card in the target language.
 - The key word `description` MUST NOT BE CHANGED, but the value after the `:` should be changed to the card text in the target language.
 - The key word `extra` MUST NOT BE CHANGED, but the value after the `:` should be changed to any extra rules or explanations for the card in the target language.  If you purposely want no extra text, enter `""`.
-
+- You can leave out/remove any of these keys in an entry while translating and they will be filled in with the English version
 ## Special Text
 These character sequences have special meaning in the "description" and "extra" text:
 
