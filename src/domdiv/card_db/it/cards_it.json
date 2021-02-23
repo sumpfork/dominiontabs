@@ -1,293 +1,293 @@
 {
     "Alms": {
-        "description": "Once per turn: If you have no Treasures in play, gain a card costing up to 4 Coin.",
-        "extra": "You can only buy this once per turn. When you do, if you have no Treasures in play, you gain a card costing up to 4 Coins. The gained card comes from the Supply and is put into your discard pile.",
-        "name": "Alms"
+        "description": " Una volta a turno: se non hai carte Tesoro in gioco, Ottieni una carta dal costo massimo di 4 <*COIN*>.",
+        "extra": " Puoi comprare questo Evento soltanto una volta per turno. Quando lo fai, se non hai Tesori in gioco, Ottieni una carta che costi al massimo 4 <*COIN*>. La carta Ottenuta viene dalla Riserva.",
+        "name": "Elemosina"
     },
     "Amulet": {
-        "description": "Now and at the start of your next turn, choose one: +1 Coin; or trash a card from your hand; or gain a Silver.",
-        "extra": "You choose something when you play it, and again at the start of your next turn; the choices may be the same or different.",
-        "name": "Amulet"
+        "description": "Adesso, e all'inizio del tuo prossimo turno, scegli: +1 <*COIN*> oppure Elimina una carta dalla tua mano oppure Ottieni una carta Argento.",
+        "extra": "Scegli qualcosa quando giochi questa carta, e scegli ancora all'inizio del tuo prossimo turno; le scelte possono essere uguali o diverse.",
+        "name": "Amuleto"
     },
     "Artificer": {
-        "description": "+1 Card<br>+1 Action<br>+1 Coin<n>Discard any number of cards. You may gain a card costing exactly 1 Coin per card discarded, putting it on top of your deck.",
-        "extra": "First you get +1 Card, +1 Action, and +1 Coin. Then you discard any number of cards. You may choose not to discard any cards. Then you may gain a card costing exactly 1 per card discarded. For example if you discarded two cards; you may gain a card costing 2 ; if you discard no cards, you may gain a card costing 0. The gained card comes from the Supply and is put on top of your deck. You may choose not to gain a card, even if you discard cards.",
-        "name": "Artificer"
+        "description": "",
+        "extra": "",
+        "name": "Artigiano"
     },
     "Ball": {
-        "description": "Take your - 1 Coin token. Gain 2 cards each costing up to 4 Coin.",
-        "extra": "When you buy this, you take your - 1 Coin token, which will cause you to get 1 Coin less the next time you get Coins. Then you gain 2 cards, each costing up 4 Coins. They can be 2 copies of the same card or 2 different cards.",
-        "name": "Ball"
+        "description": "",
+        "extra": "",
+        "name": "Ballo"
     },
     "Bonfire": {
-        "description": "Trash up to 2 cards you have in play.",
-        "extra": "This only trashes cards you have in play, not cards from your hand. You can trash zero, one, or two cards. If you trash Treasures with this, this does not remove the 1 Coin you got from playing those Treasures this turn. For example, with 5 Coppers in play and two Buys, you could pay 3 Coins for a Bonfire to trash two of the Coppers, then spend the other 2 Coins on a Peasant.",
-        "name": "Bonfire"
+        "description": "",
+        "extra": "",
+        "name": "Falò"
     },
     "Borrow": {
-        "description": "+1 Buy<n>Once per turn:<br>If your -1 Card token isn't on your deck, put it there and +1 Coin.",
-        "extra": "You can only buy this once per turn. When you do, if your -1 Card token is not on your deck, you put it on your deck and get + 1 Coin. The -1 Card token will cause you to draw one less card the next time you draw cards; see the Tokens section.",
-        "name": "Borrow"
+        "description": "",
+        "extra": "",
+        "name": "Prestito"
     },
     "Bridge Troll": {
-        "description": "Each other player takes his -1 Coin token. Now and at the start of your next turn:<n>+1 Buy<line>While this is in play, cards cost 1 Coin less on your turn, but not less than 0 Coins.",
-        "extra": "This gives each other player his - 1 Coin token, which will cause those players to get 1 Coin less the next time they get treasure; see the Tokens section. It also gives you +1 Buy both on the turn you play it and on your next turn. While Bridge Troll is in play, on your turns only, cards cost 1 Coin less, but not less than 0 Coins. This applies to all cards everywhere, including cards in the Supply, cards in hand, and cards in Decks. For example if you have Bridge Troll in play and play Raze, trashing Estate, Estate will only cost 1 Coin, so you'll only look at one card rather than two. This is cumulative; if you have two Bridge Trolls in play from last turn and play another Bridge Troll this turn, all cards will cost 3 Coins less this turn (to a minimum of 0 Coins).",
-        "name": "Bridge Troll"
+        "description": "",
+        "extra": "",
+        "name": "Troll del Ponte"
     },
     "Caravan Guard": {
-        "description": "+1 Card<br>+1 Action<n>At the start of your next turn, +1 Coin<line>When another player plays an Attack card, you may play this from your hand. (<i>+1 Action has no effect if it's not your turn.</i>)",
-        "extra": "This gives you +1 Card and +1 Action when you play it, and then + 1 Coin at the start of your next turn after that. This card has a Reaction ability that lets you play it when another player plays an Attack card. Playing this during another player's turn is similar to playing it during your own turn - you put Caravan Guard into play, get +1 Card and +1 Action, and will get + 1 Coin at the start of your next turn - the very next turn you take. However getting +1 Action during someone else's turn does not do anything for you; it does not let you play other Action cards during that player's turn. Similarly if a token gives you + 1 Coin or +1 Buy during another player's turn, that still does not let you buy cards during that player's turn (although + 1 Coin can cancel the - token given out by Bridge Troll). The +1 Action (or potential other +'s) does not carry over to your next turn either. After reacting with a Caravan Guard, you can use another one, even one you just drew, and also can use other Reactions, even ones you just drew; you keep going until you have no more Reactions you wish to respond to the Attack with.",
-        "name": "Caravan Guard"
+        "description": "",
+        "extra": "",
+        "name": "Guardia della Carovana"
     },
     "Champion": {
-        "description": "+1 Action<n>For the rest of the game, when another player plays an Attack, it doesn't affect you, and when you play an Action, +1 Action.<n><i>(This stays in play. This is not in the Supply.)</i>",
-        "extra": "Champion stays in play for the rest of the game once played. For the rest of the game, it provides you with an additional +1 Action each time you play an Action, which means you will always be able to play all of your Actions; and it protects you from all further Attacks played (whether you want the protection or not). Champion only protects you from Attacks played after it; for example it does not stop a previously played Swamp Hag from giving you Curses that turn.",
-        "name": "Champion"
+        "description": "",
+        "extra": "",
+        "name": "Campione"
     },
     "Coin of the Realm": {
-        "description": "1 <*COIN*><n>When you play this, put it on your Tavern mat.<line>Directly after resolving an Action, you may call this for +2 Actions.",
-        "extra": "This is a Treasure worth 1 Coin. You play it in your Buy phase, like other Treasures. When you play it, it goes on your Tavern mat. It produces 1 Coin that turn but is no longer in play. It stays on the mat until you call it. You can call it after resolving playing an Action card, for +2 Actions (which will let you play further Action cards). Move the Coin of the Realm into play when you call it, but it does not give you 1 Coin that turn, it just gives +2 Actions. It is discarded that turn with your other cards in play.",
-        "name": "Coin of the Realm"
+        "description": "",
+        "extra": "",
+        "name": "Moneta del Regno"
     },
     "Disciple": {
-        "description": "You may play an Action card from your hand twice. Gain a copy of it.<line>When you discard this from play, you may exchange it for a Teacher.<n><i>(This is not in the Supply.)</i>",
-        "extra": "Playing an Action card from your hand is optional. If you do play one, you play it twice, then gain a copy of it if possible; gaining the copy is not optional once you have played it. The copy comes from the Supply and is put into your discard pile; if the Action is a non-Supply card, such as Fugitive, you can play it twice, but do not gain a copy of it. This does not use up any extra Actions you were allowed to play due to cards like Port - Disciple itself uses up one Action and that is it. You cannot play any other cards in between resolving the Discipled Action card multiple times, unless that Action card specifically tells you to (such as Disciple itself does). If you Disciple a card that gives you +1 Action, such as Artificer, you will end up with 2 Actions to use afterwards, rather than the one you would have left if you just played two Artificers. If you use Disciple on a Duration card, Disciple will stay in play until the Duration card is discarded.",
-        "name": "Disciple"
+        "description": "",
+        "extra": "",
+        "name": "Discepolo"
     },
     "Distant Lands": {
-        "description": "Put this on your Tavern mat.<line>Worth 4 <VP> if on your Tavern mat at the end of the Game (otherwise worth 0 <VP>).",
-        "extra": "This is a Victory card. Use 8 for games with 2 players, or 12 for games with 3 or more players. This is also an Action card; when you play it, you put it on your Tavern mat. It will stay there the rest of the game; there is no way to call it. At the end of the game, Distant Lands is worth 4 <VP> if it is on your mat, or 0 <VP> if it is not. It counts as part of your deck either way (for example it can contribute to how many <VP> a Gardens is worth).",
-        "name": "Distant Lands"
+        "description": "",
+        "extra": "",
+        "name": "Terre Lontane"
     },
     "Dungeon": {
-        "description": "+1 Action<n>Now and at the start of your next turn: +2 Cards then discard 2 cards.",
-        "extra": "When you play this, you get +1 Action, draw 2 cards, and discard 2 cards; then at the start of your next turn, you again draw 2 cards and discard 2 cards.",
+        "description": "",
+        "extra": "",
         "name": "Dungeon"
     },
     "Duplicate": {
-        "description": "Put this on your Tavern mat.<line>When you gain a card costing up to 6 Coins, you may call this, to gain a copy of that card.",
-        "extra": "When you play this, you put it on your Tavern mat. It stays on your mat until you call it. You can call it when gaining a card costing up to 6 Coins , and gain another copy of that card. The gained card comes from the Supply and is put into your discard pile; Duplicate cannot gain non-supply cards such as Teacher. Duplicate can be called during other players' turns when you gain cards; for example, another player might buy Messenger and choose to have each player gain an Estate, and you could Duplicate that Estate. You can call multiple Duplicates to gain multiple copies of the same card. Duplicate is discarded during the Clean-up of the turn you call it, whether or not it is your turn.",
-        "name": "Duplicate"
+        "description": "",
+        "extra": "",
+        "name": "Replica"
     },
     "Expedition": {
-        "description": "Draw 2 extra cards for your next hand.",
-        "extra": "This increases the number of cards you draw in Clean- up of the same turn. It is cumulative. Normally you draw 5 cards; after an Expedition you would draw 7, after two Expeditions you would draw 9, and so on. It only applies for the turn you buy it. If you play Outpost (from Seaside), getting an extra turn with only 3 cards, and also buy Expedition, you add the 2 extra cards onto the base of 3 cards, for 5 cards total.",
-        "name": "Expedition"
+        "description": "",
+        "extra": "",
+        "name": "Spedizione"
     },
     "Ferry": {
-        "description": "Move your - 2 Coin cost token to an Action Supply pile (cards from that pile cost 2 Coin less on your turns, but not less than 0 Coin).",
-        "extra": "When you buy this, you move your - 2 Coin cost token to any Action Supply pile. This token makes cards from that pile cost 2 Coins less, but not less than 0 Coins, on your turns; see the Tokens section.",
-        "name": "Ferry"
+        "description": "",
+        "extra": "",
+        "name": "Traghetto"
     },
     "Fugitive": {
-        "description": "+2 Cards<br>+1 Action<n>Discard a card.<line>When you discard this from play, you may exchange it for a Disciple.<n><i>(This is not in the Supply.)</i>",
-        "extra": "When you play this, you draw 2 cards, get +1 Action, and then discard a card from your hand. The discarded card does not have to be one of the cards just drawn.",
-        "name": "Fugitive"
+        "description": "",
+        "extra": "",
+        "name": "Fuggitivo"
     },
     "Gear": {
-        "description": "+2 Cards<n>Set aside up to 2 cards from your hand face down. At the start of your next turn, put them into your hand.",
-        "extra": "You may set aside zero, one, or two cards from your hand. Put them face down under the Gear; you may look at them. They do not have to be cards you drew with Gear. If you set aside zero cards, Gear will be discarded the same turn you played it; if you set aside one or two cards, you put them into your hand at the start of your next turn, and Gear is discarded at the end of that turn.",
-        "name": "Gear"
+        "description": "",
+        "extra": "",
+        "name": "Attrezzi"
     },
     "Giant": {
-        "description": "Turn your Journey token over (it starts face up). If it's face down, +1 Coin. If it's face up, +5 Coins, and each other player reveals the top card of his deck, trashes it if it costs 3 Coins to 6 Coins, and otherwise discards it and gains a Curse.",
-        "extra": "At the start of the game, place your Journey token (the one with the boot) face up. When you play this, you turn the Journey token over. Then, if it is face down, you get + 1 Coin and nothing more happens. If it is face up, you get + 5 Coins and the attack part happens. The attack resolves in turn order, starting with the player to your left. The player reveals the top card of his deck, and either trashes it if it costs from 3 to 6 Coins, or discards it and gains a Curse otherwise. Cards with in the cost (from Alchemy) do not cost from 3 to 6 Coins. Cards with an asterisk or + by the cost that cost from 3 to 6 Coins (such as Teacher, or Masterpiece from Guilds) do get trashed. Players can respond to Giant being played with Reactions that respond to Attacks (such as Caravan Guard), even if Giant will only be producing + 1 Coin this time.",
-        "name": "Giant"
+        "description": "",
+        "extra": "",
+        "name": "Gigante"
     },
     "Guide": {
-        "description": "+1 Card<br>+1 Action<n>Put this on your Tavern mat.<line>At the start of your turn, you may call this, to discard your hand and draw 5 cards.",
-        "extra": "When you play this, you get +1 Card and +1 Action, and put it on your Tavern mat. It stays on your mat until you call it at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Guide, it moves from the mat into play, and you discard your hand, then draw 5 cards. You discard it that turn with your other cards in play.",
-        "name": "Guide"
+        "description": "",
+        "extra": "",
+        "name": "Guida"
     },
     "Haunted Woods": {
-        "description": "Until your next turn, when any other player buys a card, he puts his hand on top of his deck in any order.<n>At the start of your next turn:<n>+3 Cards",
-        "extra": "Playing this sets up two effects for the future: you will draw 3 cards at the start of your next turn; and until then, other players will put the rest of their hand on their deck whenever they buy a card. A player may not have any cards left in hand when buying a card; typically cards left in hand will include Victory cards, Curses, and unplayed Actions. A player may intentionally avoid playing Treasures and Actions in order to take advantage of having to put his hand on his deck. Players who do not buy any cards can discard their hand normally. Buying Events is not buying cards and so does not trigger this. If you play Haunted Woods and then take an extra turn immediately, such as with Mission or Outpost (from Seaside), you will draw the 3 cards at the start of that turn and discard Haunted Woods that turn, and other players will never be affected by it. If you want to use a Reaction card like Moat against Haunted Woods, you have to use it right when Haunted Woods is played.",
-        "name": "Haunted Woods"
+        "description": "",
+        "extra": "",
+        "name": "Foresta Infestata"
     },
     "Hero": {
-        "description": "+2 Coins<n>Gain a Treasure.<line>When you discard this from play, you may exchange it for a Champion.<n><i>(This is not in the Supply.)</i>",
-        "extra": "The Treasure comes from the Supply and is put into your discard pile. It can be any Treasure being used that game.",
-        "name": "Hero"
+        "description": "",
+        "extra": "",
+        "name": "Eroe"
     },
     "Hireling": {
-        "description": "At the start of each of your turns for the rest of the game:<n>+1 Card<n><i>(This stays in play.)</i>",
-        "extra": "After playing this, you draw an extra card at the start of each of your turns for the rest of the game. Hireling stays in play for the rest of the game to track this. If you use Disciple (or a similar card, like Throne Room) to play Hireling twice, you will draw two extra cards each turn, and Disciple will also stay in play for the rest of the game.",
-        "name": "Hireling"
+        "description": "",
+        "extra": "",
+        "name": "Bravo"
     },
     "Inheritance": {
-        "description": "Once per game: Set aside a non-Victory Action card from the Supply costing up to 4 Coin. Move your Estate token to it (your Estates gain the abilities and types of that card).",
-        "extra": "You can only buy this once per game. When you do, set aside a non-Victory Action card from the Supply that costs up to 4 Coins, and put your Estate token on it (the one depicting a house). This is not gaining a card, and does not count for things that care about gaining, such as Treasure Hunter; however at the end of the game, include the card in your deck when scoring. For the rest of the game, all of your Estates have the abilities and types of the set aside card. For example if you set aside a Port, then your Estates are Action - Victory cards, that can be played for +1 Card +2 Actions. This also changes Estates you buy or otherwise gain during the game; if you used Inheritance on a Port and then later bought an Estate, that Estate would come with a Port, just as buying a Port gains you a Port. This only affects your own Estates, not Estates of other players. An Estate is yours if either it started in your deck, or you gained it or bought it, or you were passed it with Masquerade (from Intrigue). An Estate stops being yours if you trash it, return it to the Supply, pass it with Masquerade, or are stopped from gaining it due to Possession (from Alchemy) or Trader (from Hinterlands). There are no limits on the set aside card other than being a non-Victory Action from the Supply costing up to 4 Coins; it may be a Duration card, a Reaction card, and so on. It does not have to continue costing up to 4 Coins, it only has to cost up to 4 Coins when set aside. Your Estates are still worth 1 Victory Point when scoring at the end of the game. Your Estates only copy abilities and types; they do not copy cost, name, or what pile they are from (thus they don't trigger tokens like +1 Action on the copied pile, and are not the Bane for Young Witch from Cornucopia even if the copied pile is the Bane). Starting Estates come from the Estates pile.",
-        "name": "Inheritance"
+        "description": "",
+        "extra": "",
+        "name": "Eredità"
     },
     "Lost Arts": {
-        "description": "Move your +1 Action token to an Action Supply pile (when you play a card from that pile, you first get +1 Action).",
-        "extra": "When you buy this, you move your +1 Action token to any Action Supply pile. This token gives you +1 Action whenever you play a card from that pile; see the Tokens section.",
-        "name": "Lost Arts"
+        "description": "",
+        "extra": "",
+        "name": "Arti Perdute"
     },
     "Lost City": {
-        "description": "+2 Cards<br>+2 Actions<line>When you gain this, each other player draws a card.",
-        "extra": "When you gain this, each other player draws a card. This applies whether you bought it or gained it some other way.",
-        "name": "Lost City"
+        "description": "",
+        "extra": "",
+        "name": "Città Perduta"
     },
     "Magpie": {
-        "description": "+1 Card<br>+1 Action<n>Reveal the top card of your deck. If it's a Treasure, put it into your hand. If it's an Action or Victory card, gain a Magpie.",
-        "extra": "If the top card of your deck is a Treasure, it goes into your hand. If the card is not a Treasure, leave it on top of your deck. If the card is an Action card or Victory card, you gain a Magpie; once the Magpie pile is empty, revealing an Action or Victory card will not get you anything. If you reveal a Harem (from Intrigue), you both put it into your hand and gain a Magpie, since it is both a Treasure and a Victory card.",
-        "name": "Magpie"
+        "description": "",
+        "extra": "",
+        "name": "Gazza Ladra"
     },
     "Messenger": {
-        "description": "+1 Buy<br>+2 Coins<n>You may put your deck into your discard pile.<line>When this is your first buy in a turn, gain a card costing up to 4 Coins, and each other player gains a copy of it.",
-        "extra": "When you play this, you get +1 Buy, + 2 Coin , and may optionally put your deck into your discard pile. This is not discarding cards and does not trigger Tunnel (from Hinterlands). When you buy Messenger, if it is the first thing you bought that turn (card or Event), you gain a card costing up to 4 Coins from the Supply, putting it into your discard pile, and then each other player in turn order also gains a copy of that card. If the Supply runs out of copies of the card, further players do not get anything.",
-        "name": "Messenger"
+        "description": "",
+        "extra": "",
+        "name": "Messaggero"
     },
     "Miser": {
-        "description": "Choose one: Put a Copper from your hand onto your Tavern mat; or +1 Coin per Copper on your Tavern mat.",
-        "extra": "You may choose to put a Copper from your hand on your mat even if you have no Coppers in hand; nothing will happen. You may also choose to get + 1 Coin per Copper on your mat if there are no Coppers on your mat; nothing will happen. Putting a Copper from your hand on your mat is not trashing it; Coppers on your mat are not in play, but count as part of your deck when scoring at the end.",
-        "name": "Miser"
+        "description": "",
+        "extra": "",
+        "name": "Spilorcio"
     },
     "Mission": {
-        "description": "Once per turn: If the previous turn wasn't yours, take another turn after this one, in which you can't buy cards.",
-        "extra": "You can only buy this once per turn. When you do, if the previous turn was not yours - if it was another player's turn before this turn - you take another turn after this turn ends. The extra turn is completely normal except that you cannot buy cards during it. You can still buy Events, and play cards, and gain cards in ways other than buying them (such as gaining a Silver from Amulet), and exchange Travellers. Buying Mission during a turn granted by Mission will not give you another turn, because the previous turn was yours.",
-        "name": "Mission"
+        "description": "",
+        "extra": "",
+        "name": "Missione"
     },
     "Page": {
-        "description": "+1 Card<br>+1 Action<line>When you discard this from play, you may exchange it for a Treasure Hunter.",
-        "extra": "See the section on Travellers. When you play Page, you get +1 Card and +1 Action. When you discard it from play, you may return it to its pile and take a Treasure Hunter, putting it into your discard pile.",
-        "name": "Page"
+        "description": "",
+        "extra": "",
+        "name": "Paggio"
     },
     "Pathfinding": {
-        "description": "Move your +1 Card token to an Action Supply pile (when you play a card from that pile, you first get +1 Card).",
-        "extra": "When you buy this, you move your +1 Card token to any Action Supply pile. This token gives you +1 Card whenever you play a card from that pile; see the Tokens section.",
-        "name": "Pathfinding"
+        "description": "",
+        "extra": "",
+        "name": "Esplorazione"
     },
     "Peasant": {
-        "description": "+1 Buy<br>+1 Coin<line>When you discard this from play, you may exchange it for a Soldier.",
-        "extra": "See the section on Travellers. When you play Peasant, you get +1 Buy and + 1 Coin. When you discard it from play, you may return it to its pile and take a Soldier, putting it into your discard pile.",
-        "name": "Peasant"
+        "description": "",
+        "extra": "",
+        "name": "Contadino"
     },
     "Pilgrimage": {
-        "description": "Once per turn: Turn your Journey token over (it starts face up); then if it's face up, choose up to 3 differently named cards you have in play and gain a copy of each.",
-        "extra": "At the start of the game, place your Journey token (the one with the boot) face up. You can only buy this once per turn. When you do, turn your Journey token over. Then if it is face down, nothing more happens. If it is face up, choose up to 3 cards you have in play with different names and gain a copy of each. The copies you gain come from the Supply and are put into your discard pile. So, every other time you buy this, you will gain up to 3 cards. It does not matter what turned over the Journey token; you could turn it face down with Ranger, then face up with Pilgrimage.",
-        "name": "Pilgrimage"
+        "description": "",
+        "extra": "",
+        "name": "Pellegrinaggio"
     },
     "Plan": {
-        "description": "Move your Trashing token to an Action Supply pile (when you buy a card from that pile, you may trash a card from your hand.)",
-        "extra": "When you buy this, you move your Trashing token (the one depicting a tombstone) to any Action Supply pile. This token will let you trash a card from your hand when buying a card from that pile; see the Tokens section.",
-        "name": "Plan"
+        "description": "",
+        "extra": "",
+        "name": "Pianificazione"
     },
     "Port": {
-        "description": "+1 Card<br>+2 Actions<line>When you buy this, gain another Port.",
-        "extra": "When you buy a Port, you gain another Port. If you gain a Port some other way, you do not get an extra Port. There are 12 Ports in the pile; use all 12.",
-        "name": "Port"
+        "description": "",
+        "extra": "",
+        "name": "Porto"
     },
     "Quest": {
-        "description": "You may discard an Attack, two Curses, or six cards. If you do, gain a Gold.",
-        "extra": "You may either discard an Attack to gain a Gold, or discard two Curses to gain a Gold, or discard any 6 cards to gain a Gold. The gained Gold is put into your discard pile. You may choose to discard 6 cards despite not having enough cards in hand; you will discard everything and not gain a Gold. You may choose to discard two Curses despite only having one; you will discard that Curse and not gain a Gold.",
-        "name": "Quest"
+        "description": "",
+        "extra": "",
+        "name": "Ricerca"
     },
     "Raid": {
-        "description": "Gain a Silver per Silver you have in play. Each other player puts his -1 Card token on his deck.",
-        "extra": "This Event is like an Attack, but buying it is not playing an Attack, and so cannot be responded to with cards like Moat and Caravan Guard. When you buy this, you gain a Silver for each Silver you have in play; for example, with four Silvers in play, you would gain four Silvers. The Silvers go to your discard pile; if there aren't enough left, just take what is left. Then each other player puts his -1 Card token on top of his deck, which will cause those players to draw one less card the next time they draw cards; see the Tokens section.",
-        "name": "Raid"
+        "description": "",
+        "extra": "",
+        "name": "Incursione"
     },
     "Ranger": {
-        "description": "+1 Buy<n>Turn your Journey token over (it starts face up). If it's face up, +5 Cards.",
-        "extra": "At the start of the game, place your Journey token (the one with the boot) face up. When you play this, you get +1 Buy, and turn the token over. Then if it is face down, nothing more happens. If it is face up, you draw 5 cards. So, every other time you play a Ranger, you will draw 5 cards. It does not matter what turned over the Journey token; you could turn it face down with Giant, then face up with Ranger.",
-        "name": "Ranger"
+        "description": "",
+        "extra": "",
+        "name": "Ricognitore"
     },
     "Ratcatcher": {
-        "description": "+1 Card<br>+1 Action<n>Put this on your Tavern mat.<line>At the start of your turn, you may call this, to trash a card from your hand.",
-        "extra": "When you play this, you get +1 Card and +1 Action, and put it on your Tavern mat. It stays on your mat until you call it at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Ratcatcher, you move it from the mat into play, and you trash a card from your hand. Ratcatcher is discarded that turn with your other cards in play.",
-        "name": "Ratcatcher"
+        "description": "",
+        "extra": "",
+        "name": "Cacciatore di Topi"
     },
     "Raze": {
-        "description": "+1 Action<n>Trash this or a card from your hand. Look at the number of cards from the top of your deck equal to the cost in _ Coins of the trashed card. Put one into your hand and discard the rest.",
-        "extra": "If you trash a card costing 0 Coins with this, you do not get any cards. If you trash a card costing 1 Coin or more, you look at a number of cards from the top of your deck equal to the cost in Coins of the trashed card, take one into your hand, and discard the rest. For example if you trash an Estate, you look at the top two cards of your deck, put one into your hand, and discard the other one. You can trash the Raze itself; normally it costs 2 Coins, so you would look at two cards. Costs may be affected by cards like Bridge Troll. Raze is unaffected by the -1 Card token; if it is on top of your deck, replace it after resolving Raze.",
-        "name": "Raze"
+        "description": "",
+        "extra": "",
+        "name": "Demolizione"
     },
     "Relic": {
-        "description": "2 <*COIN*><n>When you play this, each other player puts his -1 Card token on his deck.",
-        "extra": "This is a Treasure worth 2 Coins. You play it in your Buy phase, like other Treasures. When you play it, you also make each other player put his -1 Card token on his deck, which will cause those players to draw one less card the next time they draw cards; see the Tokens section. Relic is an Attack despite not being an Action; it can be blocked with Moat and responded to with Caravan Guard and so on. A player responding to Relic with Caravan Guard first plays Caravan Guard, including drawing a card, and then puts his -1 Card token on his deck.",
-        "name": "Relic"
+        "description": "",
+        "extra": "",
+        "name": "Reliquia"
     },
     "Royal Carriage": {
-        "description": "+1 Action<n>Put this on your Tavern mat.<line>Directly after resolving an Action, if it's still in play, you may call this, to replay that Action.",
-        "extra": "When you play this, you get +1 Action and put it on your Tavern mat. It stays on your mat until you call it, directly after resolving a played Action card that is still in play. Royal Carriage cannot respond to Actions that are no longer in play, such as a Reserve card that was put on the Tavern mat, or a card that trashed itself (like a Raze used to trash itself). When called, Royal Carriage causes you to replay the card you just played. You can call multiple Royal Carriages to replay the same Action multiple times (provided the Action is still in play). You completely resolve the Action before deciding whether or not to use Royal Carriage on it. If you use Royal Carriage to replay a Duration card, Royal Carriage will stay in play until the Duration card is discarded from play, to track the fact that the Duration card has been played twice.",
-        "name": "Royal Carriage"
+        "description": "",
+        "extra": "",
+        "name": "Carrozza Reale"
     },
     "Save": {
-        "description": "+1 Buy<n>Once per turn: Set aside a card from your hand, and put it into your hand at end of turn (after drawing).",
-        "extra": "You can only buy this once per turn. When you do, you get +1 Buy (letting you buy another Event or a card afterwards), set aside a card from your hand face down (the other players do not get to see it), and put it into your hand at the end of the turn, after drawing your hand for the next turn. For example you might set aside an unplayed Copper, and then after drawing your 5 cards for next turn, add the Copper to your hand.",
-        "name": "Save"
+        "description": "",
+        "extra": "",
+        "name": "Salvezza"
     },
     "Scouting Party": {
-        "description": "+1 Buy<n>Look at the top 5 cards of your deck. Discard 3 of them and put the rest back on top of your deck in any order.",
-        "extra": "When you buy this you get +1 Buy (letting you buy another Event or a card afterwards). Then look at the top 5 cards of your deck, discarding 3 and putting the rest on top of your deck in any order. If there are fewer than 5 cards even after shuffling, you still discard 3 of them; if there are only 3 cards left between your deck and discard pile, all 3 will be discarded. Scouting Party is unaffected by the -1 Card token; if it is on top of your deck, replace it after resolving Scouting Party.",
-        "name": "Scouting Party"
+        "description": "",
+        "extra": "",
+        "name": "Unità di Ricognizione"
     },
     "Seaway": {
-        "description": "Gain an Action card costing up to 4 Coin. Move your +1 Buy token to its pile (when you play a card from that pile, you first get +1 Buy).",
-        "extra": "When you buy this, first you gain an Action card costing up to 4 Coins. The Action card comes from the Supply and is put into your discard pile. Then move your +1 Buy token to the pile the Action card came from. The token gives you +1 Buy when playing a card from that pile; see the Tokens section. It only matters how much the card costs that you gain; the cost is not checked later. For example you can play Bridge Troll, then use Seaway to gain a Bridge Troll (currently costing 4 Coins due to its own effect), and the token will stay there even when Bridge Troll costs 5 Coins later. You can use Seaway to gain Sir Martin (from Dark Ages) when he's on top of the Knights pile; then your +1 Buy token will be on the Knights pile, even though any remaining Knights will cost 5 Coins. You cannot use Seaway on an empty pile just to move the +1 Buy token; you have to pick a card you can gain.",
-        "name": "Seaway"
+        "description": "",
+        "extra": "",
+        "name": "Canale Navigabile"
     },
     "Soldier": {
-        "description": "+2 Coins<br>+1 Coin per other Attack you have in play. Each other player with 4 or more cards in hand discards a card.<line>When you discard this from play, you may exchange it for a Fugitive.<n><i>(This is not in the Supply.)</i>",
-        "extra": "This gives + 2 Coins, and then an additional + 1 Coin per other Attack card you have in play. Then each other player with 4 or more cards in hand discards a card. So for example if you play Soldier, then another Soldier, and have an opponent with 5 cards in hand, you will get + 2 Coins and that opponent will discard a card, then you will get + 2 Coins and an extra + 1 Coin while that opponent discards again. Soldier only cares about Attack cards in play, not Attack cards played that turn; for example using Disciple on Soldier will not produce an extra + 1 Coin, because there is no other Attack card in play. Duration Attacks played on the previous turn are Attack cards in play and so do count for Soldier.",
-        "name": "Soldier"
+        "description": "",
+        "extra": "",
+        "name": "Soldato"
     },
     "Storyteller": {
-        "description": "+1 Action<br>+1 Coin<n>Play up to 3 Treasures from your hand. Pay all of your _ Coins. +1 Card per Coin paid.",
-        "extra": "This lets you play Treasures in your Action phase. They go into play and produce Coins, just like Treasures played in the Buy phase. Then Storyteller turns all of your Coins into +Cards; for each Coin you have you lose the Coin and get +1 Card. For example if you had 4 Coins, you lose the 4 Coins and draw 4 cards. This makes you lose all Coins you have so far that turn, including the Coins you get from playing the Treasures, the + 1 Coin Storyteller gives you directly, and any you made earlier in the turn. You can track that the Treasures have been \"spent\" by putting them under the Storyteller. Potions, produced by Potions from Alchemy, is not Coin and so is not lost and does not get you any cards.",
-        "name": "Storyteller"
+        "description": "",
+        "extra": "",
+        "name": "Cantastorie"
     },
     "Swamp Hag": {
-        "description": "Until your next turn, when any other player buys a card, he gains a Curse.<n>At the start of your next turn:<n>+3 Coins",
-        "extra": "You will get + 3 Coins at the start of your next turn; and until then, other players will gain a Curse whenever they buy a Card. Players who buy multiple cards will gain a Curse per card bought; players who do not buy any cards will not get any Curses. This is cumulative; if you play two Swamp Hags, and the player after you plays one, then the player after that will get three Curses with any card bought. This does not affect cards gained other ways, only bought cards. Buying Events is not buying cards and so does not trigger this. If you play Swamp Hag and then take an extra turn immediately, such as with Mission or Outpost (from Seaside), you will get + 3 Coins at the start of that turn and discard Swamp Hag that turn, and other players will never be affected by it. If you want to use a Reaction card like Moat against Swamp Hag, you have to use it right when Swamp Hag is played.",
-        "name": "Swamp Hag"
+        "description": "",
+        "extra": "",
+        "name": "Megera della Palude"
     },
     "Teacher": {
-        "description": "Put this on your Tavern mat.<line>At the start of your turn, you may call this, to move your +1 Card token, +1 Action token, +1 Buy token, or +1 Coin token to an Action Supply pile you have no tokens on (when you play a card from that pile, you first get that bonus).<n><i>(This is not in the Supply.)</i>",
-        "extra": "When you play this, put it on your Tavern mat. It stays on your mat until you call it at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Teacher, it moves from the mat into play, and you choose your +1 Action, +1 Card, +1 Buy, or + 1 Coin token, and move it to an Action Supply pile that you have no tokens on. The token on the pile means that every time you play a card from that pile, you will get the corresponding bonus - if you put your +1 Action token on a pile, you will get an extra +1 Action when playing a card from that pile. See the Tokens section. This cannot put a token on a pile you have tokens on, including the tokens Teacher places as well as your - 2 Coin cost token and Trashing token. This can put a token on a pile that other players have tokens on. Other things can put tokens on a pile you put a token on with Teacher; it is just Teacher itself that cannot put a token on a pile you have a token on. It is okay if the pile has a token that does not belong to you or anyone, such as an Embargo token (from Seaside) or coin token for Trade Route (from Prosperity). It is okay if you have an Estate token on a card set aside from that pile.",
-        "name": "Teacher"
+        "description": "",
+        "extra": "",
+        "name": "Insegnante"
     },
     "Trade": {
-        "description": "Trash up to 2 cards from your hand.<n>Gain a Silver per card you trashed.",
-        "extra": "You may trash zero, one, or two cards from your hand. For each card you actually trashed, you gain a Silver, putting it into your discard pile.",
-        "name": "Trade"
+        "description": "",
+        "extra": "",
+        "name": "Scambio"
     },
     "Training": {
-        "description": "Move your +1 Coin token to an Action Supply pile (when you play a card from that pile, you first get + 1 Coin).",
-        "extra": "When you buy this, you move your + 1 Coin token to any Action Supply pile. This token gives you + 1 Coin whenever you play a card from that pile; see the Tokens section.",
-        "name": "Training"
+        "description": "",
+        "extra": "",
+        "name": "Addestramento"
     },
     "Transmogrify": {
-        "description": "+1 Action<n>Put this on your Tavern mat.<line>At the start of your turn, you may call this, to trash a card from your hand, gain a card costing up to 1 Coin more than it, and put that card into your hand.",
-        "extra": "When you play this, you get +1 Action and put it on your Tavern mat. It stays on your mat until you call it, at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Transmogrify, it moves from the mat into play, and you trash a card from your hand, then gain a card costing up to 1 Coin more than the trashed card. The gained card comes from the Supply and is put into your hand; if you had no cards to trash, you do not gain one. Transmogrify is discarded that turn with your other cards in play. You may trash a card to gain a card costing 1 Coin more, or the same amount, or less; you may trash a card to gain a copy of the same card.",
-        "name": "Transmogrify"
+        "description": "",
+        "extra": "",
+        "name": "Trasformazione"
     },
     "Travelling Fair": {
-        "description": "+2 Buys<n>When you gain a card this turn, you may put it on top of your deck.",
-        "extra": "When you buy this, you get +2 Buys (letting you buy more Events or cards afterwards). Then for the rest of the turn, whenever you gain a card, you may put it on your deck. This works on cards you buy, as well as cards gained other ways, such as gaining cards with Ball. It does not work on Travellers exchanged for other cards; exchanging is not gaining. Putting the card on your deck is optional each time you gain a card that turn; you could put some on top and let the others go to your discard pile.",
-        "name": "Travelling Fair"
+        "description": "",
+        "extra": "",
+        "name": "Fiera Itinerante"
     },
     "Treasure Hunter": {
-        "description": "+1 Action<br>+1 Coin<n>Gain a Silver per card the player to your right gained in his last turn.<line>When you discard this from play, you may exchange it for a Warrior.<n><i>(This is not in the Supply.)</i>",
-        "extra": "This counts all cards gained, not just bought cards. For example if the player to your right played Amulet, gaining a Silver, then bought a Duchy, you would gain two Silvers. The gained Silvers are put into your discard pile.",
-        "name": "Treasure Hunter"
+        "description": "",
+        "extra": "",
+        "name": "Cacciatore di Tesori"
     },
     "Treasure Trove": {
-        "description": "2 <*COIN*><n>When you play this, gain a Gold and a Copper.",
-        "extra": "This is a Treasure worth 2 Coins. You play it in your Buy phase, like other Treasures. When you play it, you gain a Copper and a Gold from the Supply, putting them into your discard pile. If one of those piles is empty, you still gain the other card.",
-        "name": "Treasure Trove"
+        "description": "",
+        "extra": "",
+        "name": "Raccolta di Tesori"
     },
     "Warrior": {
-        "description": "+2 Cards<n>For each Traveller you have in play (including this), each other player discards the top card of his deck and trashes it if it costs 3 Coins or 4 Coins.<line>When you discard this from play, you may exchange it for a Hero.<n><i>(This is not in the Supply.)</i>",
-        "extra": "Each player, in turn order, discards the appropriate number of cards from the top of his deck, trashing the ones costing 3 or 4 Coins. If Warrior is your only Traveller in play, each other player will only discard and potentially trash one card. If you, for example, have a Peasant, a Fugitive, and the Warrior in play, each other player would discard and potentially trash three cards. Cards are only trashed if they cost exactly 3 Coins or exactly 4 Coins. Cards with Potion in the cost (from Alchemy) do not cost exactly 3 Coins or 4 Coins. Cards with an asterisk in the cost (such as Warrior) or + in the cost (such as Masterpiece from Guilds) may be trashed by Warrior (if costing 3 Coin or 4 Coin). Champion and Teacher are not Travellers.",
-        "name": "Warrior"
+        "description": "",
+        "extra": "",
+        "name": "Guerriero"
     },
     "Wine Merchant": {
-        "description": "+1 Buy<br>+4 Coins<n>Put this on your Tavern mat.<line>At the end of your Buy phase, if you have at least 2 Coins unspent, you may discard this from your Tavern mat.",
-        "extra": "When you play this, you get +1 Buy and + 4 Coins, and put it on your Tavern mat. It stays on your mat until the end of one of your Buy phases in which you have 2 Coins or more that you didn't spend. At that point you can discard Wine Merchant from your mat. If you have multiple Wine Merchants on your mat, you don't need 2 Coins per Wine Merchant, just 2 Coins total.",
-        "name": "Wine Merchant"
+        "description": "",
+        "extra": "",
+        "name": "Mercante di Vino"
     },
     "Alchemist": {
         "description": "+2 Carte\n+1 Azione\nQuando scarti questa carta dal gioco, puoi metterla in cima al tuo mazzo se hai una Pozione in gioco.",
@@ -515,169 +515,169 @@
         "name": "Giovane Strega"
     },
     "Altar": {
-        "description": "Trash a card from your hand. Gain a card costing up to 5 Coins.",
-        "extra": "You trash a card from your hand if you can, and then gain a card whether or not you trashed one. The gained card comes from the Supply and is put into your discard pile.",
-        "name": "Altar"
+        "description": "",
+        "extra": "",
+        "name": "Altare"
     },
     "Armory": {
-        "description": "Gain a card costing up to 4 Coins, putting it on top of your deck.",
-        "extra": "The card you gain comes from the Supply and is put on top of your deck.",
-        "name": "Armory"
+        "description": "",
+        "extra": "",
+        "name": "Armeria"
     },
     "Band of Misfits": {
-        "description": "Play this as if it were an Action card in the Supply costing less than it that you choose.<n>This is that card until it leaves play.",
-        "extra": "When you play this, you pick an Action card from the Supply that costs less than it, and treat this card as if it were the card you chose. Normally this will just mean that you follow the instructions on the card you picked. So, if you play Band of Misfits and Fortress is in the Supply, you could pick that and then you would draw a card and get +2 Actions, since that is what Fortress does when you play it. Band of Misfits also gets the chosen card's cost, name, and types. If you use Band of Misfits as a card that trashes itself, such as Death Cart, you will trash the Band of Misfits (at which point it will just be a Band of Misfits card in the trash). If you use Band of Misfits as a duration card (from Seaside), Band of Misfits will stay in play until next turn, just like the duration card would. If you use Band of Misfits as a Throne Room (from Dominion), King's Court (from Prosperity), or Procession, and use that effect to play a duration card, Band of Misfits will similarly stay in play. If you use Throne Room, King's Court, or Procession to play a Band of Misfits card multiple times, you only pick what to play it as the first time; the other times it is still copying the same card. For example, if you use Procession to play Band of Misfits twice and choose Fortress the first time, you will automatically replay it as Fortress, then trash the Band of Misfits, return it to your hand (it is a Fortress when it's trashed, and Fortress has a when-trashed ability that returns it to your hand), and gain an Action card costing exactly 6 Coins(1 Coin more than Band of Misfits, which has left play and so is no longer copying Fortress). If you use Band of Misfits as a card that does something during Clean-up, such as Hermit, it will do that thing during Clean-up. When you play Horn of Plenty (from Cornucopia), it counts Band of Misfits as whatever Band of Misfits was played as; for example if you play a Band of Misfits as a Fortress, and then play another Band of Misfits as a Scavenger, and then play Horn of Plenty, you will gain a card costing up to 3 Coins. Band of Misfits can only be played as a card that is visible in the Supply; it cannot be played as a card after its pile runs out, and cannot be played as a non-Supply card like Mercenary; it can be played as the top card of the Ruins pile, but no other Ruins, and can only be played as Sir Martin when that is the top card of the Knights pile",
-        "name": "Band of Misfits"
+        "description": "",
+        "extra": "",
+        "name": "Banda di Reietti"
     },
     "Bandit Camp": {
-        "description": "+1 Card<br>+2 Actions<n>Gain a Spoils from the Spoils pile.",
-        "extra": "Draw a card before gaining a Spoils. The Spoils comes from the Spoils pile, which is not part of the Supply, and is put into your discard pile. If there are no Spoils cards left, you do not get one.",
-        "name": "Bandit Camp"
+        "description": "",
+        "extra": "",
+        "name": "Accampamento dei Banditi"
     },
     "Beggar": {
-        "description": "Gain 3 Coppers, putting them into your hand.<line>When another player plays an Attack card, you may discard this.<n>If you do, gain two Silvers, putting one on top of your deck.",
-        "extra": "When you play this, you gain three Coppers from the Supply, putting them into your hand. If there are not three Coppers left, just gain as many as you can. When another player plays an Attack card, you may discard this from your hand. If you do, you gain two Silvers from the Supply, putting one on your deck and the other into your discard pile. If there is only one Silver left, put it on your deck; if there are no Silvers left, you do not gain any.",
-        "name": "Beggar"
+        "description": "",
+        "extra": "",
+        "name": "Mendicante"
     },
     "Catacombs": {
-        "description": "Look at the top 3 cards of your deck.<n>Choose one: Put them into your hand;<n>or discard them and +3 Cards.<line>When you trash this, gain a cheaper card.",
-        "extra": "When you play this, you look at the top 3 cards of your deck, and either put all 3 into your hand, or discard all 3 and draw the next 3 cards. If you discard them and have to shuffle to draw 3 cards, you will shuffle in the cards you discarded and may end up drawing some of them. When you trash Catacombs, you gain a card costing less than it. This happens whether Catacombs is trashed on your turn or someone else's, and no matter who has the card that trashed it. The gained card comes from the Supply and is put into your discard pile.",
-        "name": "Catacombs"
+        "description": "",
+        "extra": "",
+        "name": "Catacombe"
     },
     "Count": {
-        "description": "Choose one: Discard 2 cards; or put a card from your hand on top of your deck; or gain a Copper.<n><n>Choose one: +3 Coins; or trash your hand; or gain a Duchy.",
-        "extra": "This card gives you two separate choices: first you either discard 2 cards, put a card from your hand on top of your deck, or gain a Copper; after resolving that, you either get +3 Coins, trash your hand, or gain a Duchy. For example, you might choose to discard 2 cards, then gain a Duchy. Gained cards come from the Supply and are put into your discard pile. You can choose an option even if you cannot do it. If you trash multiple cards that do something when trashed at once, trash them all, then choose an order to resolve the things that happen due to them being trashed.",
-        "name": "Count"
+        "description": "",
+        "extra": "",
+        "name": "Conte"
     },
     "Counterfeit": {
-        "description": "1 <*COIN*><br><br>+1 Buy<n>When you play this, you may play a Treasure from your hand twice. If you do, trash that Treasure",
-        "extra": "This is a Treasure worth 1 Coin. You play it in your Buy phase, like other Treasures. When you play it, you also get +1 Buy, and you may play an additional Treasure card from your hand twice. If you choose to do that, you trash that Treasure. You still get any coins that Treasure gave you from playing it, despite trashing it. If you use Counterfeit to play Spoils twice, you will get + 6 Coins, (in addition to the 1 Coin, from Counterfeit) and return Spoils to the Spoils pile; you will be unable to trash it. If you use Counterfeit to play a Treasure that does something special when you play it, you will do that thing twice. Cards with two types, one of which is Treasure (such as Harem from Intrigue) are Treasures and so can be played via Counterfeit.",
-        "name": "Counterfeit"
+        "description": "",
+        "extra": "",
+        "name": "Contraffazione"
     },
     "Cultist": {
-        "description": "+2 Cards<n>Each other player gains a Ruins. You may play a Cultist from your hand.<line>When you trash this, +3 Cards.",
-        "extra": "When you play this, you draw two cards, then each other player gains a Ruins. These come from the Ruins pile in the Supply, and are put into discard piles. Go in turn order starting to your left; each player takes the top Ruins, revealing the next one each time. If the Ruins pile runs out, players stop gaining them at that point. After giving out Ruins, you may play another Cultist from your hand. It can be one you just drew from playing Cultist, or one you already had in your hand. Playing a Cultist this way does not use up any extra Actions you were allowed to play due to cards like Fortress - the original Cultist uses up one Action and that is it. When you trash a Cultist of yours, you draw three cards. This happens whether or not it is your turn, and whether or not the card that causes Cultist to be trashed was yours. If you trash a Cultist while revealing cards, such as to a Knight attack, you do not draw the revealed cards that are about to be discarded.",
-        "name": "Cultist"
+        "description": "",
+        "extra": "",
+        "name": "Cultista"
     },
     "Death Cart": {
-        "description": "+5 Coins<n>You may trash an Action card from your hand. If you don't, trash this.<line>When you gain this, gain 2 Ruins.",
-        "extra": "When you play Death Cart, you get + 5 Coins, and either trash an Action card from your hand, or trash the Death Cart. If you have no Action card in your hand, you will have to trash the Death Cart, but you can trash the Death Cart whether or not you have an Action card in hand. A card with multiple types, one of which is Action, is an Action card. When you gain a Death Cart, either from buying it or from gaining it some other way, you also gain 2 Ruins. You just take the top 2, whatever they are. If there are not enough Ruins left, take as many as you can. The Ruins come from the Supply and are put into your discard pile. The other players get to see which ones you got. The player gaining Death Cart is the one who gains Ruins; if Possession (from Alchemy) is used to make another player buy Death Cart, the player actually gaining the Death Cart (the one who played Possession) gains the Ruins. If you use Trader (from Hinterlands) to take a Silver instead of a Death Cart, you do not gain any Ruins. It doesn't matter whose turn it is; if you use Ambassador (from Seaside) to give Death Carts to each other player, those players also gain Ruins. Passing cards with Masquerade (from Intrigue) does not count as gaining them.",
-        "name": "Death Cart"
+        "description": "",
+        "extra": "",
+        "name": "Carretto della Morte"
     },
     "Feodum": {
-        "description": "Worth 1<VP> for every 3 Silvers in your deck (round down).<line>When you trash this, gain 3 Silvers.",
-        "extra": "This is a Victory card. Play with 8 for games with 2 players, or 12 cards for games with 3 or more players. At the end of the game, each Feodum is worth 1 Victory for every 3 Silvers in your deck, rounded down. For example, if you have 11 Silvers, your Feodums are worth 3 Victory each. If a Feodum is trashed, you gain 3 Silvers. The Silvers come from the Supply and are put into your discard pile. If there are not enough Silvers left, gain as many as you can.",
-        "name": "Feodum"
+        "description": "",
+        "extra": "",
+        "name": "Feudo"
     },
     "Forager": {
-        "description": "+1 Action<br>+1 Buy<n>Trash a card from your hand.<n>+1 Coin per differently named Treasure in the trash.",
-        "extra": "Trash a card from your hand if you can. Whether or not you can, you still get +1 Coin per differently named Treasure in the trash, plus +1 Action and +1 Buy. Multiple copies of the same Treasure card do not increase how much you get. For example, if the trash has four Coppers, a Counterfeit, and six Estates, you get +2 Coins. Cards with multiple types, one of which is Treasure (such as Harem from Intrigue), are Treasures.",
-        "name": "Forager"
+        "description": "",
+        "extra": "",
+        "name": "Raccoglitore"
     },
     "Fortress": {
-        "description": "+1 Card<br>+2 Actions<line>When you trash this, put it into your hand.",
-        "extra": "When you play this, you draw a card and get +2 Actions. If this is trashed, you take it from the trash and put it into your hand. This happens no matter whose turn it is when Fortress is trashed. It is not optional. You still trashed Fortress, even though you get it back; for example if you play Death Cart and choose to trash Fortress, the \"if you do\" on Death Cart is true, you did trash an Action, so you do not trash Death Cart.",
-        "name": "Fortress"
+        "description": "",
+        "extra": "",
+        "name": "Fortezza"
     },
     "Graverobber": {
-        "description": "Choose one: Gain a card from the trash costing from 3 Coins to 6 Coins, putting it on top of your deck; or trash an Action card from your hand and gain a card costing up to 3 Coins more than it.",
-        "extra": "You choose either option, then do as much of it as you can; you can choose an option even if you will not be able to do it. You can look through the trash at any time. If you choose to gain a card from the trash, the other players get to see what it is, and it goes on top of your deck. If there were no cards in your deck, it becomes the only card in your deck. If there is no card in the trash costing from 3 Coins to 6 Coins, you will fail to gain one. Cards with Potion in the cost (from Alchemy) do not cost from 3 Coins to 6 Coins. If you choose to trash an Action card from your hand, the card you gain comes from the Supply and is put into your discard pile.",
-        "name": "Graverobber"
+        "description": "",
+        "extra": "",
+        "name": "Tombarolo"
     },
     "Hermit": {
-        "description": "Look through your discard pile. You may trash a card from your discard pile or hand that is not a Treasure. Gain a card costing up to 3 Coins.<line>When you discard this from play, if you did not buy any cards this turn, trash this and gain a Madman from the Madman pile.",
-        "extra": "When you play this, look through your discard pile, and then you may choose to trash a card that is not a Treasure, from either your hand or your discard pile. You do not have to trash a card and cannot trash Treasures. A card with multiple types, one of which is Treasure (such as Harem from Intrigue), is a Treasure. After trashing or not, you gain a card costing up to 3 Coins. The card you gain comes from the Supply and is put into your discard pile. Gaining a card is mandatory if it is possible. Then, when you discard Hermit from play - normally, in Clean-up, after playing it in your Action phase - if you did not buy any cards this turn, you trash Hermit and gain a Madman. The Madman comes from the Madman pile, which is not in the Supply, and is put into your discard pile. It does not matter whether or not you gained cards other ways, only whether or not you bought a card. If there are no Madman cards left, you do not gain one. If Hermit is not discarded from play during Clean-up - for example, if you put it on your deck with Scheme (from Hinterlands) - then the ability that trashes it will not trigger.",
-        "name": "Hermit"
+        "description": "",
+        "extra": "",
+        "name": "Eremita"
     },
     "Hovel": {
-        "description": "When you buy a Victory card, you may trash this from your hand.",
-        "extra": "This is a Shelter; see Preparation. It is never in the Supply. When you buy a Victory card, if Hovel is in your hand, you may trash the Hovel. A card with multiple types, one of which is Victory, is a Victory card. You do not get anything for trashing Hovel; you just get to get rid of it.",
-        "name": "Hovel"
+        "description": "",
+        "extra": "",
+        "name": "Tugurio"
     },
     "Hunting Grounds": {
-        "description": "+ 4 Cards<line>When you trash this, gain a Duchy or 3 Estates.",
-        "extra": "When you play this, draw 4 cards. If this is trashed, you either gain a Duchy or 3 Estates, your choice. These cards come from the Supply and are put into your discard pile. If you choose the 3 Estates and there are not 3 left, just gain as many as you can.",
-        "name": "Hunting Grounds"
+        "description": "",
+        "extra": "",
+        "name": "Riserva di Caccia"
     },
     "Ironmonger": {
-        "description": "+1 Card<br>+1 Action<n>Reveal the top card of your deck; you may discard it. Either way, if it is an…<n>Action card, +1 Action<n>Treasure card, +1 Coin<n>Victory card, +1 Card",
-        "extra": "First you draw a card, then you reveal the top card of your deck, then you either discard that card or put it back on top of your deck. Then you get bonuses based on the types of the card you revealed. A card with 2 types gives you both bonuses; for example, if you revealed Harem (from Intrigue), you would both draw a card and get +1 Coins.",
-        "name": "Ironmonger"
+        "description": "",
+        "extra": "",
+        "name": "Ferramenta"
     },
     "Junk Dealer": {
-        "description": "+1 Card<br>+1 Action<br>+1 Coin<n>Trash a card from your hand.",
-        "extra": "You have to trash a card from your hand if you can. You draw before trashing.",
-        "name": "Junk Dealer"
+        "description": "",
+        "extra": "",
+        "name": "Rigattiere"
     },
     "Knights": {
-        "description": "Shuffle the Knights pile before each game with it. Keep it face down except for the top card, which is the only one that can be bought or gained.<line>Each card has the same trashing attack ability - \"Each other player reveals the top 2 cards of their deck, trashes one of them costing from 3 Coin to 6 Coin, and discards the rest. If a Knight is trashed by this, trash this card\" - and a unique second ability:<left>5 Coin<u>Dame Anna</u>: You may trash up to 2 cards from your hand.</left><left>5 Coin<u>Dame Josephine</u>: 2 <VP></left><left>5 Coin<u>Dame Molly</u>: +2 Actions</left><left>5 Coin<u>Dame Natalie</u>: You may gain a card costing up to 3 Coin.</left><left>5 Coin<u>Dame Sylvia</u>: +2 Coin</left><left>5 Coin<u>Sir Bailey</u>: +1 Card +1 Action</left><left>5 Coin<u>Sir Destry </u>: +2 Cards</left><left>4 Coin<u>Sir Martin </u>: +2 Buys</left><left>5 Coin<u>Sir Michael</u>: Each other player discards down to 3 cards in hand.</left><left>5 Coin<u>Sir Vander</u>: When you trash this, gain a Gold.</left>",
-        "extra": "This is a pile with 10 differently-named unique Knights with a single randomizer card. There is the same basic ability on each card, but also another ability unique to that card in the pile, and they all have different names. Follow the rules on Knights in order from top to bottom; Sir Michael causes players to discard before it trashes cards. The ability they have in common is, each other player reveals the top two cards of their deck, trashes one of them that they choose that costs from 3 Coin to 6 Coin, and discards the rest; then, if a Knight was trashed, you trash the Knight you played that caused this trashing. Resolve this ability in turn order, starting with the player to your left. Cards with Potion (from Alchemy) or Debt (from Empires) in the cost do not cost from 3 Coin to 6 Coin. The player losing a card only gets a choice if both cards revealed cost from 3 Coin to 6 Coin. If they both do and one is a Knight but the player picks the other card, that will not cause the played Knight to be trashed. When Sir Martin is the top card of the pile, it can be gained with an Armory and so on. If Sir Vander is trashed, you gain a Gold; this happens whether it is trashed on your turn or someone else's. The player who had Sir Vander is the one who gains the Gold, regardless of who played the card that trashed it. The Gold from Sir Vander, and the card gained for Dame Natalie, comes from the Supply and is put into your discard pile. When playing Dame Anna, you may choose to trash zero, one, or two cards from your hand. Dame Josephine is also a Victory card, worth 2 <VP> at the end of the game. The Knight pile is not a Victory pile, and does not get a counter for Trade Route (from Prosperity) even if Dame Josephine starts on top.  If you choose to use the Knights with Black Market (a promotional card), put a Knight directly into the Black Market deck, rather than using the randomizer card. Sir Martin only costs 4 Coins, though the other Knights all cost 5 Coins.",
-        "name": "Knights"
+        "description": "",
+        "extra": "",
+        "name": "Cavalieri"
     },
     "Madman": {
-        "description": "+2 Actions<n>Return this to the Madman pile. If you do, +1 Card per card in your hand.<n><i>(This card is not in the supply.)</i>",
-        "extra": "This card is not in the Supply; it can only be obtained via Hermit. When you play it, you get +2 Actions, return it to the Madman pile if you can (this is not optional), and if you did return it, you draw a card per card in your hand. For example if you had three cards in hand after playing Madman, you would draw three cards. Normally, nothing will prevent you from returning Madman to the Madman pile, but you may fail to due to playing Madman twice via Procession, Throne Room (from Dominion), or King's Court (from Prosperity). So, for example, if you Procession a Madman, you will get +2 Actions, return Madman to the Madman pile, draw a card per card in your hand, get another +2 Actions, fail to return Madman and so not draw cards the second time, fail to trash Madman, and then gain an Action card costing exactly 1 Coin if you can.",
-        "name": "Madman"
+        "description": "",
+        "extra": "",
+        "name": "Folle"
     },
     "Marauder": {
-        "description": "Gain a Spoils from the Spoils pile.<n>Each other player gains a Ruins.",
-        "extra": "First you gain a Spoils. It comes from the Spoils pile, which is not part of the Supply, and is put into your discard pile. If there are no Spoils cards left, you do not get one. Then each other player gains a Ruins. These come from the Ruins pile in the Supply, and are put into discard piles. Go in turn order starting to your left; each player takes the top Ruins, revealing the next one each time. If the Ruins pile runs out, players stop gaining them at that point.",
-        "name": "Marauder"
+        "description": "",
+        "extra": "",
+        "name": "Predone"
     },
     "Market Square": {
-        "description": "+1 Card<br>+1 Action<br>+1 Buy<line>When one of your cards is trashed, you may discard this from your hand. If you do, gain a Gold.",
-        "extra": "When you play this, you draw a card and get +1 Action and +1 Buy. When one of your cards is trashed, you may discard Market Square from your hand. If you do, you gain a Gold. The Gold comes from the Supply and is put into your discard pile. If there is no Gold left in the Supply, you do not gain one. You may discard multiple Market Squares when a single card of yours is trashed.",
-        "name": "Market Square"
+        "description": "",
+        "extra": "",
+        "name": "Piazza del Mercato"
     },
     "Mercenary": {
-        "description": "You may trash 2 cards from your hand.<n>If you do, +2 Cards, + 2 Coins, and each other player discards down to 3 cards in hand.<n><i>(This is not in the Supply.)</i>",
-        "extra": "This card is not in the Supply; it can only be obtained via Urchin. When you play it, you may trash 2 cards from your hand. If you do, you draw two cards, get +2 Coins, and each other player discards down to 3 cards in hand. Players who already have 3 or fewer cards in hand do nothing. Players responding to this Attack with cards like Beggar must choose to do so before you decide whether or not to trash 2 cards from your hand. If you play this with only one card in hand, you may choose to trash that card, but then will fail the \"if you do\" and will not draw cards and so on. If the cards you trash do things when trashed, first trash them both, then choose what order to resolve the things they do when trashed.",
-        "name": "Mercenary"
+        "description": "",
+        "extra": "",
+        "name": "Mercenario"
     },
     "Mystic": {
-        "description": "+1 Action<br>+ 2 Coins<n>Name a card.<n>Reveal the top card of your deck.<n>If it's the named card, put it into your hand.",
-        "extra": "You get +1 Action and +2 Coins. Then name a card (\"Copper,\" for example - not \"Treasure\") and reveal the top card of your deck; if you named the same card you revealed, put the revealed card into your hand. If you do not name the right card, put the revealed card back on top. You do not need to name a card being used this game. Names need to match exactly for you to get the card; for example Sir Destry and Sir Martin do not match. You do not need to name a card available in the Supply.",
-        "name": "Mystic"
+        "description": "",
+        "extra": "",
+        "name": "Mistica"
     },
     "Necropolis": {
-        "description": "+2 Actions",
-        "extra": "This is a Shelter; see Preparation. It is never in the Supply. It is an Action card; when you play it, you get +2 Actions.",
-        "name": "Necropolis"
+        "description": "",
+        "extra": "",
+        "name": "Necropoli"
     },
     "Overgrown Estate": {
-        "description": "0<*VP*><line>When you trash this, +1 Card.",
-        "extra": "This is a Shelter; see Preparation. It is never in the Supply. It is a Victory card despite being worth 0 Victory. If this is trashed, you draw a card, right then, even in the middle of resolving another card. For example, if you use Altar to trash Overgrown Estate, you first draw a card, then gain a card costing up to 5 Coins. This card does not give you a way to trash itself, it merely does something if you manage to trash it.",
-        "name": "Overgrown Estate"
+        "description": "",
+        "extra": "",
+        "name": "Tenuta Trascurata"
     },
     "Pillage": {
-        "description": "Trash this. Each other player with 5 or more cards in hand reveals his hand and discards a card that you choose.<n>Gain 2 Spoils from the Spoils pile.",
-        "extra": "First trash Pillage. Then each other player with 5 or more cards in hand reveals his hand and discards a card of your choice. This happens in turn order, starting with the player to your left. Then you gain two Spoils cards. The two Spoils cards come from the Spoils pile, which is not part of the Supply, and are put into your discard pile. If there are no Spoils cards left, you do not get one; if there is only one, you just get one.",
-        "name": "Pillage"
+        "description": "",
+        "extra": "",
+        "name": "Saccheggio"
     },
     "Poor House": {
-        "description": "+4 Coins<n>Reveal your hand. -1 Coin per Treasure card in your hand, to a minimum of 0 Coins.",
-        "extra": "First you get +4 Coins. Then you reveal your hand, and lose 1 Coin per Treasure card in it. You can lose more than 4 Coins this way, but the amount of coins you have available to spend can never go below 0 Coins. Cards with two types, one of which is Treasure (such as Harem from Intrigue) are Treasure cards.",
-        "name": "Poor House"
+        "description": "",
+        "extra": "",
+        "name": "Stamberga"
     },
     "Procession": {
-        "description": "You may play an Action card from your hand twice. Trash it. Gain an Action card costing exactly 1 Coin more than it.",
-        "extra": "Playing an Action card from your hand is optional. If you do play one, you then play it a second time, then trash it, then gain an Action card costing exactly 1 Coin more than it (even if somehow you failed to trash it). Gaining a card is not optional once you choose to play an Action card, but will fail to happen if no card in the Supply costs the exact amount needed. If something happens due to trashing the card - for example drawing 3 cards due to trashing a Cultist - that will resolve before you gain a card. The gained card comes from the Supply and is put into your discard pile. This does not use up any extra Actions you were allowed to play due to cards like Fortress - Procession itself uses up one Action and that is it. You cannot play any other cards in between resolving the Procession-ed Action card multiple times, unless that Action card specifically tells you to (such as Procession itself does). If you Procession a Procession, you will play one Action twice, trash it, gain an Action card costing 1 Coin more, then play another Action twice, trash it, gain an Action card costing 1 Coin more, then trash the Procession and gain an Action costing 1 Coin more than it. If you Procession a card that gives you +1 Action, such as Vagrant, you will end up with 2 Actions to use afterwards, rather than the one you would have left if you just played two Vagrants. If you use Procession on a Duration card (from Seaside), Procession will stay out until your next turn and the Duration card will have its effect twice on your next turn, even though the Duration card is trashed.",
-        "name": "Procession"
+        "description": "",
+        "extra": "",
+        "name": "Processione"
     },
     "Rats": {
-        "description": "+1 Card<br>+1 Action<n>Gain a Rats. Trash a card from your hand other than a Rats (or reveal a hand of all Rats).<line>When you trash this, +1 Card.",
-        "extra": "Follow the instructions in order. First draw a card; then gain a Rats from the Supply, putting it into your discard pile; then trash a card from your hand that is not a Rats card. If there are no Rats cards left, you do not gain one. If you have no cards in your hand other than Rats, reveal your hand and you do not trash a card. If Rats is trashed, you draw a card. This happens whether it is your turn or another player's, and regardless of which player has the card that trashed Rats. There are 20 copies of Rats, rather than the usual 10; the pile starts with all 20, regardless of the number of players.",
-        "name": "Rats"
+        "description": "",
+        "extra": "",
+        "name": "Ratti"
     },
     "Rebuild": {
-        "description": "+ 1 Action<n>Name a card. Reveal cards from the top of your deck until you reveal a Victory card that is not the named card. Discard the other cards. Trash the Victory card and gain a Victory card costing up to 3 Coins more than it.",
-        "extra": "You can name any card, whether or not it is being used this game or is a Victory card. Then reveal cards from your deck until you reveal a Victory card that is not what you named. If you run out of cards, shuffle your discard pile and continue, without shuffling in the revealed cards. If you run out of cards with no cards left in your discard pile, stop there, discard everything, and nothing more happens. If you did find a Victory card that was not what you named, you discard the other revealed cards, trash the Victory card, and gain a Victory card costing up to 3 Coins more than the trashed card. The card you gain comes from the Supply and is put into your discard pile.",
-        "name": "Rebuild"
+        "description": "",
+        "extra": "",
+        "name": "Ricostruzione"
     },
     "Rogue": {
-        "description": "+ 2 Coins<n>If there are any cards in the trash costing from 3 Coins to 6 Coins, gain one of them. Otherwise, each other player reveals the top 2 cards of his deck, trashes one of them costing from 3 Coins to 6 Coins, and discards the rest.",
-        "extra": "If there is a card in the trash costing from 3 Coins to 6 Coins, you have to gain one of them; it is not optional. You can look through the trash at any time. The other players get to see what card you took. The gained card goes into your discard pile. Cards with Potion in the cost (from Alchemy) do not cost from 3 Coins to 6 Coins. If there was no card in the trash costing from 3 Coins to 6 Coins, you instead have each other player reveal the top 2 cards of his deck, trash one of them of his choice that costs from 3 Coins to 6 Coins (if possible), and discard the rest. Go in turn order, starting with the player to your left.",
-        "name": "Rogue"
+        "description": "",
+        "extra": "",
+        "name": "Furfante"
     },
     "Ruins": {
         "name": "Rovine",
@@ -685,44 +685,44 @@
         "extra": "If any Kingdom card has the type Looter (e.g. Cultist, Death Cart, and Marauder), add the all the Ruins cards (Abandoned Mine, Ruined Library, Ruined Market, Ruined Village, Survivors), shuffle, then count 10 per player after the first: 10 for two players, 20 for three players, 30 for four players, and so on. Put the pile face down with the top card face up. Return any remaining Ruins cards to the box.<n>Players can buy Ruins. Ruins cards are Actions; they may be played in the Action phase, and count as Actions for things that refer to Action cards, such as Procession. The Ruins pile, when used, is in the Supply, and if it is empty that counts towards the normal end condition."
     },
     "Sage": {
-        "description": "+1 Action<n>Reveal cards from the top of your deck until you reveal one costing 3 Coins or more. Put that card into your hand and discard the rest.",
-        "extra": "If you run out of cards while revealing cards, shuffle your discard pile (not including the revealed cards) and continue. If you run out of cards to reveal and have no cards in your discard pile, stop there; discard everything revealed, and you do not get a card. If you find a card costing 3 Coins or more, put that one into your hand and discard the rest. For example you might reveal Copper, then Copper, then Curse, then Province; Province costs 8 Coins, so you would stop there, put Province in your hand, and discard the two Coppers and the Curse.",
-        "name": "Sage"
+        "description": "",
+        "extra": "",
+        "name": "Saggio"
     },
     "Scavenger": {
-        "description": "+2 Coins<n>You may put your deck into your discard pile. Look through your discard pile and put one card from it on top of your deck.",
-        "extra": "Putting your deck into your discard pile is optional, but putting a card from your discard pile on top of your deck is not; you do it unless there are no cards in your discard pile. Putting your deck into your discard pile will not trigger Tunnel (from Hinterlands). If your deck has no cards in it, such as from putting them into your discard pile, then the card you put on top of your deck will be the only card in your deck.",
-        "name": "Scavenger"
+        "description": "",
+        "extra": "",
+        "name": "Spazzino"
     },
     "Spoils": {
-        "description": "3 <*COIN*><n>When you play this, return it to the Spoils pile.<n><i>(This is not in the Supply.)</i>",
-        "extra": "This is never in the Supply; it can only be obtained via Bandit Camp, Marauder, and Pillage. When you play Spoils, you get +3 Coins to spend this turn, and return that copy of Spoils to its pile. You are not forced to play Treasures in your hand.",
-        "name": "Spoils"
+        "description": "",
+        "extra": "",
+        "name": "Bottino"
     },
     "Squire": {
-        "description": "+1 Coin<n>Choose one: +2 Actions; or +2 Buys; or gain a Silver.<line>When you trash this, gain an Action card.",
-        "extra": "When you play this, you get +1 Coins, and your choice of either +2 Actions, +2 Buys, or gaining a Silver. The Silver comes from the Supply and is put into your discard pile. If Squire is trashed somehow, you gain an Attack card; the Attack card comes from the Supply and is put into your discard pile. You can gain any Attack card available in the Supply, but if no Attack card is available, you do not gain one.",
-        "name": "Squire"
+        "description": "",
+        "extra": "",
+        "name": "Scudiero"
     },
     "Storeroom": {
-        "description": "+1 Buy<n>Discard any number of cards.<n>+1 Card per card discarded.<n>Discard any number of cards.<n>+ 1 Coins per card discarded the second time.",
-        "extra": "Discard any number of cards from your hand, and draw as many cards as you discarded. Then, discard any number of cards - which could include cards you just drew - and you get +1 Coins per card you discarded that time.",
-        "name": "Storeroom"
+        "description": "",
+        "extra": "",
+        "name": "Deposito"
     },
     "Urchin": {
-        "description": "+1 Card<br>+1 Action<n>Each other player discards down to 4 cards in hand.<line>When you play another Attack card with this in play, you may trash this.<n>If you do, gain a Mercenary from the Mercenary pile.",
-        "extra": "When you play this, you draw a card and get +1 Action, then each other player discards down to 4 cards in hand. Players who already have 4 or fewer cards in hand do not do anything. While Urchin is in play, when you play another Attack card, before resolving it, you may trash the Urchin. If you do, you gain a Mercenary. The Mercenary comes from the Mercenary pile, which is not in the Supply, and is put into your discard pile. If there are no Mercenaries left you do not gain one. If you play the same Urchin twice in one turn, such as via Procession, that does not let you trash it for a Mercenary. If you play two different Urchins however, playing the second one will let you trash the first one.",
-        "name": "Urchin"
+        "description": "",
+        "extra": "",
+        "name": "Monello"
     },
     "Vagrant": {
-        "description": "+1 Card<br>+1 Action<n>Reveal the top card of your deck. If it's a Curse, Ruins, Shelter, or Victory card, put it into your hand.",
-        "extra": "You draw a card before revealing your top card. If the top card of your deck is a Curse, Ruins, Shelter, or Victory card, it goes into your hand; otherwise it goes back on top. A card with multiple types goes into your hand if at least one of the types is Curse, Ruins, Shelter, or Victory.",
-        "name": "Vagrant"
+        "description": "",
+        "extra": "",
+        "name": "Vagabondo"
     },
     "Wandering Minstrel": {
-        "description": "+1 Card<br>+2 Actions<n>Reveal the top 3 cards of your deck.<n>Put the Actions back on top in any order and discard the rest.",
-        "extra": "First draw a card, then reveal the top 3 cards of your deck, shuffling your discard pile if there are not enough cards in your deck. If there still are not enough after shuffling, just reveal what you can. Put the revealed Action cards on top of your deck in any order, and discard the other cards. A card with multiple types, one of which is Action, is an Action card. If you didn't reveal any Action cards, no cards will be put on top.",
-        "name": "Wandering Minstrel"
+        "description": "",
+        "extra": "",
+        "name": "Menestrello Girovago"
     },
     "Adventurer": {
         "description": "Rivela carte dal tuo mazzo fino a rivelare 2 carte Tesoro. Metti queste carte Tesoro nella tua mano e scarta le altre carte rivelate.",

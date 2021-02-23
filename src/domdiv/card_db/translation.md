@@ -90,23 +90,13 @@ Entries in this file represent Dominion cards, and groups of cards.  A typical e
     "Gold": {
         "description": "Worth 3 Coins.",
         "extra": "30 cards per game.",
-        "name": "Gold",
-        "untranslated" : "description, extra, name"
+        "name": "Gold"
     },
 
 - The card key word (e.g., `Gold` for the above entry) MUST NOT BE CHANGED.  This value is used to identify the translation entry.
 - The key word `name` MUST NOT BE CHANGED, but the value after the `:` should be changed to the name of the card in the target language.
 - The key word `description` MUST NOT BE CHANGED, but the value after the `:` should be changed to the card text in the target language.
 - The key word `extra` MUST NOT BE CHANGED, but the value after the `:` should be changed to any extra rules or explanations for the card in the target language.  If you purposely want no extra text, enter `""`.
-- The key word `untranslated` MUST NOT BE CHANGED, but the value after the `:` should be changed.  Removed any key word for which you have provided a translation.
-For example:
-
-- if you provided the `name` of the card, and only the `name`, then change to `description, extra`
-- if you provided the `name` of the card and it's `description`, but have not translated the `extra`, then change to `extra`
-- if you provided all 3 entries, then change to `""`
-
-The "untranslated" entry is used during maintanance of the language files to update any remaining default language entries that might have changed.
-
 
 ## Special Text
 These character sequences have special meaning in the "description" and "extra" text:
