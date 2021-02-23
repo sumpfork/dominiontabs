@@ -1,62 +1,182 @@
 {
-    "Alms": {},
-    "Amulet": {},
-    "Artificer": {},
-    "Ball": {},
-    "Bonfire": {},
-    "Borrow": {},
-    "Bridge Troll": {},
-    "Caravan Guard": {},
-    "Champion": {},
-    "Coin of the Realm": {},
-    "Disciple": {},
-    "Distant Lands": {},
-    "Dungeon": {},
-    "Duplicate": {},
-    "Expedition": {},
-    "Ferry": {},
-    "Fugitive": {},
-    "Gear": {},
-    "Giant": {},
-    "Guide": {},
-    "Haunted Woods": {},
-    "Hero": {},
-    "Hireling": {},
-    "Inheritance": {},
-    "Lost Arts": {},
-    "Lost City": {},
-    "Magpie": {},
-    "Messenger": {},
-    "Miser": {},
-    "Mission": {},
-    "Page": {},
-    "Pathfinding": {},
-    "Peasant": {},
-    "Pilgrimage": {},
-    "Plan": {},
-    "Port": {},
-    "Quest": {},
-    "Raid": {},
-    "Ranger": {},
-    "Ratcatcher": {},
-    "Raze": {},
-    "Relic": {},
-    "Royal Carriage": {},
-    "Save": {},
-    "Scouting Party": {},
-    "Seaway": {},
-    "Soldier": {},
-    "Storyteller": {},
-    "Swamp Hag": {},
-    "Teacher": {},
-    "Trade": {},
-    "Training": {},
-    "Transmogrify": {},
-    "Travelling Fair": {},
-    "Treasure Hunter": {},
-    "Treasure Trove": {},
-    "Warrior": {},
-    "Wine Merchant": {},
+    "Alms": {
+        "description": " Una volta a turno: se non hai carte Tesoro in gioco, Ottieni una carta dal costo massimo di 4 <*COIN*>.",
+        "extra": " Puoi comprare questo Evento soltanto una volta per turno. Quando lo fai, se non hai Tesori in gioco, Ottieni una carta che costi al massimo 4 <*COIN*>. La carta Ottenuta viene dalla Riserva.",
+        "name": "Elemosina"
+    },
+    "Amulet": {
+        "description": "Adesso, e all'inizio del tuo prossimo turno, scegli: +1 <*COIN*> oppure Elimina una carta dalla tua mano oppure Ottieni una carta Argento.",
+        "extra": "Scegli qualcosa quando giochi questa carta, e scegli ancora all'inizio del tuo prossimo turno; le scelte possono essere uguali o diverse.",
+        "name": "Amuleto"
+    },
+    "Artificer": {
+        "name": "Artigiano"
+    },
+    "Ball": {
+        "name": "Ballo"
+    },
+    "Bonfire": {
+        "name": "Falò"
+    },
+    "Borrow": {
+        "name": "Prestito"
+    },
+    "Bridge Troll": {
+        "name": "Troll del Ponte"
+    },
+    "Caravan Guard": {
+        "name": "Guardia della Carovana"
+    },
+    "Champion": {
+        "name": "Campione"
+    },
+    "Coin of the Realm": {
+        "name": "Moneta del Regno"
+    },
+    "Disciple": {
+        "name": "Discepolo"
+    },
+    "Distant Lands": {
+        "name": "Terre Lontane"
+    },
+    "Dungeon": {
+        "name": "Dungeon"
+    },
+    "Duplicate": {
+        "name": "Replica"
+    },
+    "Expedition": {
+        "name": "Spedizione"
+    },
+    "Ferry": {
+        "name": "Traghetto"
+    },
+    "Fugitive": {
+        "name": "Fuggitivo"
+    },
+    "Gear": {
+        "name": "Attrezzi"
+    },
+    "Giant": {
+        "name": "Gigante"
+    },
+    "Guide": {
+        "name": "Guida"
+    },
+    "Haunted Woods": {
+        "name": "Foresta Infestata"
+    },
+    "Hero": {
+        "name": "Eroe"
+    },
+    "Hireling": {
+        "name": "Bravo"
+    },
+    "Inheritance": {
+        "name": "Eredità"
+    },
+    "Lost Arts": {
+        "name": "Arti Perdute"
+    },
+    "Lost City": {
+        "name": "Città Perduta"
+    },
+    "Magpie": {
+        "name": "Gazza Ladra"
+    },
+    "Messenger": {
+        "name": "Messaggero"
+    },
+    "Miser": {
+        "name": "Spilorcio"
+    },
+    "Mission": {
+        "name": "Missione"
+    },
+    "Page": {
+        "name": "Paggio"
+    },
+    "Pathfinding": {
+        "name": "Esplorazione"
+    },
+    "Peasant": {
+        "name": "Contadino"
+    },
+    "Pilgrimage": {
+        "name": "Pellegrinaggio"
+    },
+    "Plan": {
+        "name": "Pianificazione"
+    },
+    "Port": {
+        "name": "Porto"
+    },
+    "Quest": {
+        "name": "Ricerca"
+    },
+    "Raid": {
+        "name": "Incursione"
+    },
+    "Ranger": {
+        "name": "Ricognitore"
+    },
+    "Ratcatcher": {
+        "name": "Cacciatore di Topi"
+    },
+    "Raze": {
+        "name": "Demolizione"
+    },
+    "Relic": {
+        "name": "Reliquia"
+    },
+    "Royal Carriage": {
+        "name": "Carrozza Reale"
+    },
+    "Save": {
+        "name": "Salvezza"
+    },
+    "Scouting Party": {
+        "name": "Unità di Ricognizione"
+    },
+    "Seaway": {
+        "name": "Canale Navigabile"
+    },
+    "Soldier": {
+        "name": "Soldato"
+    },
+    "Storyteller": {
+        "name": "Cantastorie"
+    },
+    "Swamp Hag": {
+        "name": "Megera della Palude"
+    },
+    "Teacher": {
+        "name": "Insegnante"
+    },
+    "Trade": {
+        "name": "Scambio"
+    },
+    "Training": {
+        "name": "Addestramento"
+    },
+    "Transmogrify": {
+        "name": "Trasformazione"
+    },
+    "Travelling Fair": {
+        "name": "Fiera Itinerante"
+    },
+    "Treasure Hunter": {
+        "name": "Cacciatore di Tesori"
+    },
+    "Treasure Trove": {
+        "name": "Raccolta di Tesori"
+    },
+    "Warrior": {
+        "name": "Guerriero"
+    },
+    "Wine Merchant": {
+        "name": "Mercante di Vino"
+    },
     "Alchemist": {
         "description": "+2 Carte\n+1 Azione\nQuando scarti questa carta dal gioco, puoi metterla in cima al tuo mazzo se hai una Pozione in gioco.",
         "extra": " Quando lo giochi, peschi due carte e puoi giocare un'Azione addizionale in questo turno. Nella fase di Pulizia, quando lo scarti, se hai almeno una Pozione in gioco puoi mettere Alchimista in cima al tuo mazzo. E' opzionale e avviene prima di pescare la prossima mano. Se non hai carte nel mazzo quando lo fai, Alchimista diventa l'unica carta del mazzo. Se hai più di un Alchimista e una Pozione, puoi metterli tutti o alcuni sul tuo mazzo. Non è necessario che tu abbia comprato qualcosa con la Pozione, basta solo che tu l'abbia giocata.",
@@ -265,50 +385,132 @@
         "extra": " Questa carta fa sì che ci sia un mazzetto extra nella Riserva, chiamato mazzetto Scongiuro; vedi Preparazione. Il mazzetto extra è come tutti gli altri mazzetti Regno: può essere comprato, ottenuto con carte come Cornucopia, conta per il fine partita. Quando giochi Giovane Strega, dopo aver pescato 2 carte e scartato 2 carte, ogni altro giocatore può rivelare una carta Scongiuro dalla sua mano; se non lo fa, ottiene una Maledizione. Questo Attacco colpisce gli altri giocatori in ordine di turno. I giocatori possono comunque rispondere alla Giovane Strega con carte Reazione come Mercante di Cavalli o Fossato; questi si applicano prima dello Scongiuro. Se la carta Stanza Segreta è lo Scongiuro, prima puoi rivelarla per la sua abilità di Reazione, e poi, se è ancora nella tua mano, puoi rivelarla come Scongiuro per evitare di ottenere una Maledizione. ",
         "name": "Giovane Strega"
     },
-    "Altar": {},
-    "Armory": {},
-    "Band of Misfits": {},
-    "Bandit Camp": {},
-    "Beggar": {},
-    "Catacombs": {},
-    "Count": {},
-    "Counterfeit": {},
-    "Cultist": {},
-    "Death Cart": {},
-    "Feodum": {},
-    "Forager": {},
-    "Fortress": {},
-    "Graverobber": {},
-    "Hermit": {},
-    "Hovel": {},
-    "Hunting Grounds": {},
-    "Ironmonger": {},
-    "Junk Dealer": {},
-    "Knights": {},
-    "Madman": {},
-    "Marauder": {},
-    "Market Square": {},
-    "Mercenary": {},
-    "Mystic": {},
-    "Necropolis": {},
-    "Overgrown Estate": {},
-    "Pillage": {},
-    "Poor House": {},
-    "Procession": {},
-    "Rats": {},
-    "Rebuild": {},
-    "Rogue": {},
+    "Altar": {
+        "name": "Altare"
+    },
+    "Armory": {
+        "name": "Armeria"
+    },
+    "Band of Misfits": {
+        "name": "Banda di Reietti"
+    },
+    "Bandit Camp": {
+        "name": "Accampamento dei Banditi"
+    },
+    "Beggar": {
+        "name": "Mendicante"
+    },
+    "Catacombs": {
+        "name": "Catacombe"
+    },
+    "Count": {
+        "name": "Conte"
+    },
+    "Counterfeit": {
+        "name": "Contraffazione"
+    },
+    "Cultist": {
+        "name": "Cultista"
+    },
+    "Death Cart": {
+        "name": "Carretto della Morte"
+    },
+    "Feodum": {
+        "name": "Feudo"
+    },
+    "Forager": {
+        "name": "Raccoglitore"
+    },
+    "Fortress": {
+        "name": "Fortezza"
+    },
+    "Graverobber": {
+        "name": "Tombarolo"
+    },
+    "Hermit": {
+        "name": "Eremita"
+    },
+    "Hovel": {
+        "name": "Tugurio"
+    },
+    "Hunting Grounds": {
+        "name": "Riserva di Caccia"
+    },
+    "Ironmonger": {
+        "name": "Ferramenta"
+    },
+    "Junk Dealer": {
+        "name": "Rigattiere"
+    },
+    "Knights": {
+        "name": "Cavalieri"
+    },
+    "Madman": {
+        "name": "Folle"
+    },
+    "Marauder": {
+        "name": "Predone"
+    },
+    "Market Square": {
+        "name": "Piazza del Mercato"
+    },
+    "Mercenary": {
+        "name": "Mercenario"
+    },
+    "Mystic": {
+        "name": "Mistica"
+    },
+    "Necropolis": {
+        "name": "Necropoli"
+    },
+    "Overgrown Estate": {
+        "name": "Tenuta Trascurata"
+    },
+    "Pillage": {
+        "name": "Saccheggio"
+    },
+    "Poor House": {
+        "name": "Stamberga"
+    },
+    "Procession": {
+        "name": "Processione"
+    },
+    "Rats": {
+        "name": "Ratti"
+    },
+    "Rebuild": {
+        "name": "Ricostruzione"
+    },
+    "Rogue": {
+        "name": "Furfante"
+    },
     "Ruins": {
         "name": "Rovine"
     },
-    "Sage": {},
-    "Scavenger": {},
-    "Spoils": {},
-    "Squire": {},
-    "Storeroom": {},
-    "Urchin": {},
-    "Vagrant": {},
-    "Wandering Minstrel": {},
+    "Sage": {
+        "name": "Saggio"
+    },
+    "Scavenger": {
+        "name": "Spazzino"
+    },
+    "Spoils": {
+        "name": "Bottino"
+    },
+    "Squire": {
+        "name": "Scudiero"
+    },
+    "Storeroom": {
+        "name": "Deposito"
+    },
+    "Urchin": {
+        "name": "Monello"
+    },
+    "Vagrant": {
+        "name": "Vagabondo"
+    },
+    "Wandering Minstrel": {
+        "name": "Menestrello Girovago"
+    },
     "Adventurer": {
         "description": "Rivela carte dal tuo mazzo fino a rivelare 2 carte Tesoro. Metti queste carte Tesoro nella tua mano e scarta le altre carte rivelate.",
         "extra": " Se finisce il mazzo mentre riveli carte, mescola. Non mescolarvi dentro le carte rivelate in quanto queste carte non vanno nella pila degli scarti finchè non finisci di rivelare carte. Se finisci le carte dopo aver mescolato ed hai trovato una sola carta Tesoro, metti in mano solo quella carta Tesoro.",
