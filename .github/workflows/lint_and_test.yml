@@ -1,6 +1,6 @@
 name: Lint and Test
 
-on: [pull_request_target, workflow_dispatch]
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   lint_and_test:
@@ -14,14 +14,5 @@ jobs:
           pip install -r requirements.txt
       - name: Lint
         run: pre-commit run --all-files
-      - name: Make PR
-        uses: peter-evans/create-pull-request@v3
-        with:
-          base: ${{ github.head_ref }}
-          body: |
-            Fix style/lint issues
-          delete-branch: true
-          reviewers: sumpfork
-          assignees: sumpfork
       - name: Test
         run: python setup.py test
