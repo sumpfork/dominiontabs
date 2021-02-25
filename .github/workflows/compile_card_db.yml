@@ -23,7 +23,7 @@ jobs:
             cardb_target:
               - src/domdiv/card_db/**
       - name: Create Artifact
-        uses: actions/upload_artifact@v2
+        uses: actions/upload-artifact@v2
         if: steps.filter.outputs.cardb_target == 'true'
         with:
           name: card_db
