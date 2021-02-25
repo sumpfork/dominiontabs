@@ -40,12 +40,12 @@ jobs:
             } else {
               return 'no_artifact'
             }
-      - run: unzip -d src/domdiv/card_db card_db.zip
+      - run: unzip -o -d src/domdiv/card_db card_db.zip
         if: steps.get-artifact.outputs.result == 'found_artifact'
       - run: rm -f card_db.zip
         if: steps.get-artifact.outputs.result == 'found_artifact'
       - name: Make PR
-        if: steps.get-artifact.output.result == 'found_artifact'
+        if: steps.get-artifact.outputs.result == 'found_artifact'
         uses: peter-evans/create-pull-request@v3
         with:
           body: |
