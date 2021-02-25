@@ -1,6 +1,6 @@
 name: Compile Card DB
 
-on: [pull_request_target, workflow_dispatch]
+on: [pull_request, workflow_dispatch]
 
 jobs:
   compile_card_db:
@@ -15,12 +15,16 @@ jobs:
           pip install .
       - name: Update Languages
         run: doit update_languages
-      - name: Make PR
-        uses: peter-evans/create-pull-request@v3
+      - uses: dorny/paths-filter@v2
+        id: filter
         with:
-          base: ${{ github.head_ref }}
-          body: |
-            Auto-generate package card DB to from source card DB
-          delete-branch: true
-          reviewers: sumpfork
-          assignees: sumpfork
+          base: HEAD
+          filters: |
+            cardb_target:
+              - src/domdiv/card_db/**
+      - name: Create Artifact
+        uses: actions/upload_artifact@v2
+        if: steps.filter.outputs.cardb_target == 'true'
+        with:
+          name: card_db
+          path: src/domdiv/card_db/
