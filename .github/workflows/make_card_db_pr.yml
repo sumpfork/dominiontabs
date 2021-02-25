@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/github-script@v3.1.0
-        id: get-metadata
+        id: get-artifact
         with:
           result-encoding: string
           script: |
@@ -41,11 +41,11 @@ jobs:
               return 'no_artifact'
             }
       - run: unzip -d src/domdiv/card_db card_db.zip
-        if: steps.get-metadata.output.result == 'found_artifact'
+        if: steps.get-artifact.outputs.result == 'found_artifact'
       - run: rm -f card_db.zip
-        if: steps.get-metadata.output.result == 'found_artifact'
+        if: steps.get-artifact.outputs.result == 'found_artifact'
       - name: Make PR
-        if: steps.get-metadata.output.result == 'found_artifact'
+        if: steps.get-artifact.output.result == 'found_artifact'
         uses: peter-evans/create-pull-request@v3
         with:
           body: |
