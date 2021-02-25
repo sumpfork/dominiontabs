@@ -2,9 +2,10 @@ name: Make Card DB PR
 
 on:
   workflow_run:
-    workflows: ["Compile Card DB"]
+    workflows:
+      - Compile Card DB
     types:
-      -completed
+      - completed
 
 jobs:
   make_pr:
