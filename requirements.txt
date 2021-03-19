@@ -24,7 +24,7 @@ nodeenv==1.5.0
     # via pre-commit
 packaging==20.8
     # via pytest
-pillow==8.1.0
+pillow==8.1.1
     # via
     #   -r requirements.in
     #   reportlab
@@ -50,5 +50,3 @@ toml==0.10.2
     #   pytest
 virtualenv==20.4.0
     # via pre-commit
-
-doit # manually added because automatic addition creates platform-dependent dependencies
