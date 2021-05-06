@@ -1090,8 +1090,8 @@
         "name": "Orchard"
     },
     "Overlord": {
-        "description": "Play this as if it were an Action card in the Supply costing up to 5 Coin. This is that card until it leaves play.",
-        "extra": "When you play this, you pick an Action card from the Supply that costs up to 5 Coin, and treat this card as if it were the card you chose. Normally this will just mean that you follow the instructions on the card you picked. For example, with Village in the Supply, you could play Overlord as Village and get +1 Card +2 Actions. Overlord also gets the chosen card's cost, name, and types, until it leaves play. If you play Overlord as a card that moves itself somewhere, such as to the trash or the Supply, Overlord will do that; for example Overlord played as Encampment will be set aside and return to the Overlord pile at the start of Clean-up. If you play Overlord as a Duration card, or as a Throne Room on a Duration card, Overlord will stay in play the same way the Duration card or Throne Room would. If you play an Overlord multiple times such as via a Throne Room, you will only pick what to play it as the first time; the other times it will be the same thing. Once in play, Overlord is the thing it copied, rather than an Overlord; for example Colonnade will produce <VP> if you buy a copy of that card, but not if you buy an Overlord. Overlord can only be played as a visible card in the Supply, and the top card of a pile; it cannot be played as a card from an empty pile, or as a card that has not been uncovered from a split pile, or as a card from a split pile that has been bought out, or as a non-Supply card (like Mercenary from Dark Ages). Overlord cannot be played as Crown during a Buy phase, since Overlord itself is not a Treasure and so cannot be played in Buy phases.",
+        "description": "Play a non-Command Action card from the Supply costing up to 5 Coin, leaving it there.",
+        "extra": "",
         "name": "Overlord"
     },
     "Palace": {
@@ -2600,7 +2600,7 @@
         "name": "Lackeys"
     },
     "Lantern": {
-        "description": "Your Border Guards reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",
+        "description": "Border Guards you play reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",
         "extra": "Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
         "name": "Lantern"
     },
