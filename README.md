@@ -1,6 +1,6 @@
 # Dominion Divider Generation
 
-![Tests](https://github.com/github/docs/actions/workflows/lint_and_test.yml/badge.svg)
+![Tests](https://github.com/sumpfork/dominiontabs/actions/workflows/lint_and_test.yml/badge.svg)
 
 ## Introduction
 
