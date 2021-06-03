@@ -1091,7 +1091,7 @@
     },
     "Overlord": {
         "description": "Play a non-Command Action card from the Supply costing up to 5 Coin, leaving it there.",
-        "extra": "",
+        "extra": "When you play this, you pick a non-Command Action card from the Supply that costs up to 5 Coin, and play it.<br>The Action card stays in the Supply; it does not move to the play area and if an effect tries to move it, such as Encampment returning to the Supply, it will fail to move it.<br>Normally this will just mean that you follow the instructions on the card you picked.<br>For example, with Village in the Supply, you could have the Overlord play the Village and get +1 Card and +2 Actions.<br>If you have an Overlord play a Duration card, or a Throne Room on a Duration card, Overlord will stay in play the same way the Duration card or Throne Room would.<br>If you play an Overlord multiple times such as via a Throne Room, you will pick what to play with it each time; the choices can be different.<br>Overlord can only play a visible card in the Supply, and the top card of a pile; it cannot play a card from an empty pile, or a card that has not been uncovered from a split pile, or a card from a split pile that has been bought out, or a non-Supply card (like Mercenary from Dominion: Dark Ages).<br>Overlord cannot play a Crown during a Buy phase, since normally Overlord itself is not a Treasure and so cannot normally be played in Buy phases.",
         "name": "Overlord"
     },
     "Palace": {
