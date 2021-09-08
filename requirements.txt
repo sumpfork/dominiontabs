@@ -11,11 +11,10 @@ configargparse==1.4
 distlib==0.3.1
 filelock==3.0.12
 identify==2.2.4
-importlib-metadata==4.0.1
 iniconfig==1.1.1
 nodeenv==1.6.0
 packaging==20.9
-pillow==8.2.0
+pillow==8.3.2
 pluggy==0.13.1
 pre-commit==2.12.1
 py==1.10.0
@@ -25,8 +24,4 @@ pyyaml==5.4.1
 reportlab==3.5.59
 six==1.16.0
 toml==0.10.2
-typing-extensions==3.10.0.0
 virtualenv==20.4.6
-zipp==3.4.1
-
-doit # manually added because automatic addition creates platform-dependent dependencies
