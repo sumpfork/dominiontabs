@@ -18,19 +18,13 @@ filelock==3.0.12
     # via virtualenv
 identify==2.2.15
     # via pre-commit
-importlib-metadata==4.8.1
-    # via
-    #   pluggy
-    #   pre-commit
-    #   pytest
-    #   virtualenv
 iniconfig==1.1.1
     # via pytest
 nodeenv==1.6.0
     # via pre-commit
 packaging==21.0
     # via pytest
-pillow==8.3.2
+pillow==9.0.0
     # via
     #   -r requirements.in
     #   reportlab
@@ -56,11 +50,5 @@ toml==0.10.2
     # via
     #   pre-commit
     #   pytest
-typing-extensions==3.10.0.2
-    # via importlib-metadata
 virtualenv==20.8.0
     # via pre-commit
-zipp==3.5.0
-    # via importlib-metadata
-
-doit # manually added because automatic addition creates platform-dependent dependencies
