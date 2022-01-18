@@ -2694,5 +2694,36 @@
         "description": "+1 Coin",
         "extra": "",
         "name": "Verlassene Mine"
+    },
+
+    "Black Cat" : {
+        "description": "+2 Karten<n>Wenn jetzt nicht dein Zug ist, nimmt jeder Mitspieler einen Fluch.",
+        "extra": "Wenn ein Mitspieler eine Punktekarte nimmt, darfst du diese Karte aus deiner Hand ausspielen.",
+        "name": "Schwarze Katze"
+    },
+    "Sleigh" : {
+        "description": "Nimm 2 Pferde.",
+        "extra": "Wenn du eine Karte nimmst, darfst du diese Karte ablegen, um jende Karte auf deine Hand zu nehmen oder auf deinen Nachziehstapel zu legen",
+        "name": "Schlitten"
+    },
+    "Supplies" : {
+        "description": "1 <*COIN*><br><br>Wenn du diese Karte spielst, nimm ein Pferd auf deinen Nachziehstapel.",
+        "extra": "",
+        "name": "Nachschub"
+    },
+    "Camel Train" : {
+        "description": "Verbanne eine Nicht-Punktekarte aus deinem Vorrat",
+        "extra": "Wenn du diese Karte nimmst, verbanne ein Gold aus dem Vorrat.",
+        "name": "Kamelzug"
+    },
+    "Goatherd" : {
+        "description": "+1 Aktion<n>Du darfst eine deiner Handkarten entsorgen.<n>+1 Karte, die dein rechter Mitspieler in seinem letzten Zug entsorgt hat.",
+        "extra": "",
+        "name": "Ziegenhirtin"
+    },
+    "Scrap" : {
+        "description": "Entsorge eine deiner Handkarten. Wähle eine unterschiedliche Anweisung pro 1 <*COIN*>, die sie kostet: +1 Karte; +1 Aktion; +1 Kauf; + 1 <*COIN*>",
+        "extra": "",
+        "name": "Schrott"
     }
 }
