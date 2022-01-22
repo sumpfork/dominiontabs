@@ -2697,22 +2697,22 @@
     },
     "Black Cat" : {
         "description": "+2 Karten<n>Wenn jetzt nicht dein Zug ist, nimmt jeder Mitspieler einen Fluch<line>Wenn ein Mitspieler eine Punktekarte nimmt, darfst du diese Karte aus deiner Hand ausspielen",
-        "extra": "Wenn du diese Karte in deinem Zug spielst, ziehst du 2 Karten. Wenn du sie im Zug eines Mitspielers spielst, was normalerweise als Reaktion möglich ist, ziehst du 2 Karten und alle Mitspieler nehmen sich einen Fluch, und zwar in Zugreihenfolge beginnend bei dem Spieler, der am Zug ist.",
+        "extra": "Wenn du diese Karte in deinem Zug spielst, ziehst du 2 Karten. Wenn du sie im Zug eines Mitspielers spielst, was normalerweise als Reaktion möglich ist, ziehst du 2 Karten und alle Mitspieler nehmen sich einen <b>FLUCH</b>, und zwar in Zugreihenfolge beginnend bei dem Spieler, der am Zug ist.",
         "name": "Schwarze Katze"
     },
     "Sleigh" : {
         "description": "Nimm 2 Pferde<line>Wenn du eine Karte nimmst, darfst du diese Karte ablegen, um jende Karte auf deine Hand zu nehmen oder auf deinen Nachziehstapel zu legen",
-        "extra": "Normalerweise nimmst ud eine Karten auf deinen Ablagestapel, kannst dann den Schlitten aus deiner Hand ablegen, holst die genommende Karte unter dem Schlitten hervor und bewegst sie auf deine Hand oder auf deinen Nachziehstapel. Wenn eine genommene Karte an irgendeinem anderen Ort gelegt wird als auf deinen Ablagestapel (z.B. das Silver, dass du durch den Bürokraten nimmst), kann der Schlitten sie trotzdem in deine Hand oder auf den Nachziehstapel bewegen. Wenn schon etwas anderes die Karte bewegt hat, kannst du zwar immer noch mit dem Schlitten reagieren, aber die Karte nicht mehr bewegen.",
+        "extra": "Normalerweise nimmst ud eine Karten auf deinen Ablagestapel, kannst dann den <b>SCHLITTEN</b> aus deiner Hand ablegen, holst die genommende Karte unter dem <b>SCHLITTEN</b> hervor und bewegst sie auf deine Hand oder auf deinen Nachziehstapel. Wenn eine genommene Karte an irgendeinem anderen Ort gelegt wird als auf deinen Ablagestapel (z.B. das <b>SILBER</b>, dass du durch den <b>BÜROKRATEN</b> nimmst), kann der <b>SCHLITTEN</b> sie trotzdem in deine Hand oder auf den Nachziehstapel bewegen. Wenn schon etwas anderes die Karte bewegt hat, kannst du zwar immer noch mit dem <b>SCHLITTEN</b> reagieren, aber die Karte nicht mehr bewegen.",
         "name": "Schlitten"
     },
     "Supplies" : {
         "description": "1 <*COIN*><br><br>Wenn du diese Karte spielst, nimm ein Pferd auf deinen Nachziehstapel.",
-        "extra": "Dies ist eine Geldkarte mit dem Geldwert +1 Coins, wie Kupfer; du spielst sie normalerweise in deiner Kaufphase. Wenn du diese Karte spielst, nimm ein Pferd und lege es sofort auf deinen Nachziehstapel.",
+        "extra": "Dies ist eine Geldkarte mit dem Geldwert +1 Coins, wie <b>KUPFER</b>; du spielst sie normalerweise in deiner Kaufphase. Wenn du diese Karte spielst, nimm ein <b>PFERD</b> und lege es sofort auf deinen Nachziehstapel.",
         "name": "Nachschub"
     },
     "Camel Train" : {
         "description": "Verbanne eine Nicht-Punktekarte aus deinem Vorrat<line>Wenn du diese Karte nimmst, verbanne ein Gold aus dem Vorrat.",
-        "extra": "Wenn du diese Karte spielst, verbannst du eine Nicht-Punktekarte aus dem Vorrat. Wenn du diese Karte nimmst, verbannst du ein Gold aus dem Vorrat.",
+        "extra": "Wenn du diese Karte spielst, verbannst du eine Nicht-Punktekarte aus dem Vorrat. Wenn du diese Karte nimmst, verbannst du ein <b>GOLD</b> aus dem Vorrat.",
         "name": "Kamelzug"
     },
     "Goatherd" : {
@@ -2722,32 +2722,88 @@
     },
     "Scrap" : {
         "description": "Entsorge eine deiner Handkarten. Wähle eine unterschiedliche Anweisung pro 1 Coins, die sie kostet: +1 Karte; +1 Aktion; +1 Kauf; + 1 Coins",
-        "extra": "Du entsorgst erst eine Karte, wählst einen unterschlichen Bonus je +1 Coins, dass die Karte kostet, und führst die Boni dann in der augelisteten Reihenfolge aus. Beispiel: Du entsorgst ein Anwesen, wählst \"+1 Karte\" und \"nimm ein Pferd\", ziehst eine Karte und nimmst dann ein Pferd.",
+        "extra": "Du entsorgst erst eine Karte, wählst einen unterschlichen Bonus je +1 Coins, dass die Karte kostet, und führst die Boni dann in der augelisteten Reihenfolge aus. Beispiel: Du entsorgst ein <b>ANWESEN</b>, wählst \"+1 Karte\" und \"nimm ein <b>PFERD</b>\", ziehst eine Karte und nimmst dann ein <b>PFERD</b>.",
         "name": "Schrott"
     },
     "Sheepdog": {
         "description": "+2 Karten<line>Wenn du diese nimmst, darfst du diese Karte aus deiner Hand spielen.",
-        "extra": "Du kannst diese Karte als Reaktion spielen, wenn du eine Karte durch Kauf nimmst, wenn du eine Karte auf eine andere Art und Weise nimmst, wie z.B. durch eine Falknerin oder sogar, wenn du eine Karte wärend des Zuges eines Mitspielers nimmst, wie z.B. durch eine Schwarze Katze. Denke daran, dass du normalerweise in der Kaufphase keine Geldkarten mehr spielen kannst,, in der shcon eine Karte gekauft hast. Wenn du den Hirtenhund auf die Hand nimmst, z.B. durch eine Falknerin, kannst du auf dieses Nehmen reagieren und den Hirtenhund spielen.",
+        "extra": "Du kannst diese Karte als Reaktion spielen, wenn du eine Karte durch Kauf nimmst, wenn du eine Karte auf eine andere Art und Weise nimmst, wie z.B. durch eine <b>FALKNERIN</b> oder sogar, wenn du eine Karte wärend des Zuges eines Mitspielers nimmst, wie z.B. durch eine <b>SCHWARZE KATZE</b>. Denke daran, dass du normalerweise in der Kaufphase keine Geldkarten mehr spielen kannst,, in der shcon eine Karte gekauft hast. Wenn du den <b>HIRTENHUND</b> auf die Hand nimmst, z.B. durch eine <b>FALKNERIN</b>, kannst du auf dieses Nehmen reagieren und den <b>HIRTENHUND</b> spielen.",
         "name": "Hirtenhund"
     },
     "Snowy Village": {
         "description": "+1 Karte<br>+4 Aktionen<br>+1 Kauf<br><br>Ignoriere alle weiteren <b>+ Aktionen</b> die du in diesem Zug erhälst.",
-        "extra": "Alle zusätzlichen Aktionen, die du schon hattest, bevvor du diese Karte gespielt hast, verfallen nicht, auch Z.B. zurückgelegte Dorfbewohner (aus Renaissance). Wenn du z.B. das Dort spielst und dann das Verschneite Dorf, hast du 5 weitere Aktionen danach. Alle weiteren +X Aktionen, die du in diesem Zug noch erhälst, stheen dir nicht zur Verfügung, einschließlich diejenigen vom Spielen eines weiteren Verschneiten Dorfes oder vom Eintausch von Dorfbewohnern (Renaissance). Anweisungen, die dich anderweitig dazu auffordern, weiter Karten zu spielen, z.B. durch den Thronsaal, sind nicht betroffen - nur explizite +X Aktionen.",
+        "extra": "Alle zusätzlichen Aktionen, die du schon hattest, bevor du diese Karte gespielt hast, verfallen nicht, auch Z.B. zurückgelegte <b>DORFBEWOHNER</b> (aus <b>Renaissance</b>). Wenn du z.B. das <b>DORF</b> spielst und dann das <b>VERSCHNEITE DORF</b>, hast du 5 weitere Aktionen danach. Alle weiteren +X Aktionen, die du in diesem Zug noch erhälst, stheen dir nicht zur Verfügung, einschließlich diejenigen vom Spielen eines weiteren <b>VERSCHNEITE DORFES</b> oder vom Eintausch von <b>DORFBEWOHNER</b> ( aus <b>Renaissance</b>). Anweisungen, die dich anderweitig dazu auffordern, weiter Karten zu spielen, z.B. durch den <b>THRONSAAL</b>, sind nicht betroffen - nur explizite +X Aktionen.",
         "name": "Verschneites Dorf"
     },
     "Stockpile": {
         "description": "+3 Coins<br>+1 Kauf<br>Wenn du diese Karte spielst, verbanne sie.",
-        "extra": "Dies ist eine Geldkarte mit dem Geldwert +3 Coins, wie Gold; du spielst sie normalzierweise in deiner Kaufphase. Wenn du diese Karte spielst, erhälst du +1 Kauf und legst sie auf dein Exil-Tableau. Wenn du diese Karte durch eine Karte wie Krone (aus Empires) zweimal spielst, erhälst du insgesamt +6 Coins und +2 Käufe, auch wenn du sie nur einmal verbannen konntest.",
+        "extra": "Dies ist eine Geldkarte mit dem Geldwert +3 Coins, wie <b>GOLD</b>; du spielst sie normalzierweise in deiner Kaufphase. Wenn du diese Karte spielst, erhälst du +1 Kauf und legst sie auf dein <b>Exil</b>-Tableau. Wenn du diese Karte durch eine Karte wie <b>KRONE</b> (aus <b>Empires</b>) zweimal spielst, erhälst du insgesamt +6 Coins und +2 Käufe, auch wenn du sie nur einmal verbannen konntest.",
         "name": "Depot"
     },
     "Bounty Hunter" : {
         "description": "+1 Aktion<br><br>Verbanne eine deiner Handkarten. Wenn du dies gemacht hast und dabei keine gleiche Karten im Exil hattest: +3 Coins.",
-        "extra": "Zuerst erhälst du +1 Aktion und verbannst eine Kart aus deiner Hand auf dein Exil-Tableau; dies ist nicht optional. Wenn dies dann die einzige Karte dieses Names in deinem Exil ist, erhälst du +3 Coins. Wenn du keine Karte verbannen kannst - weil du z.B. keine Handkarten mehr hast - erhälst du nicht +3 Münzen.",
+        "extra": "Zuerst erhälst du +1 Aktion und verbannst eine Kart aus deiner Hand auf dein <b>Exil</b>-Tableau; dies ist nicht optional. Wenn dies dann die einzige Karte dieses Names in deinem <b>Exil</b> ist, erhälst du +3 Coins. Wenn du keine Karte verbannen kannst - weil du z.B. keine Handkarten mehr hast - erhälst du nicht +3 Coins.",
         "name": "Kopfgeldjägerin"
     },
     "Cardinal": {
         "description": "+2 Coins<br>Jeder Mitspieler deckt die obersten 2 Karten seines Nachziehstapels auf, verbannt eine davon, die 3 Coins bis 6 Coins kostet, und leg den Rest ab.",
-        "extra": "",
+        "extra": "Wenn ein angegriffener Spiler zwei Karten aufdeckt, die jeweils zwischen 3 Coins und 6 Coins kosten, wählt sicher Spieler selbst aus, welche Karte er verbannt. Karten die neben 0 Coins noch andere Kosten enthalten, wie Potion(aus <b>Alchemisten</b>) oder Debt(aus <b>Empires</b>), kosten niemals zwischen 3 Coins und 6 Coins. ",
         "name": "Kardinal"
+    },
+    "Cavalry":{
+        "description": "Nimm 2 Pferde.<line>Wenn du diese Karte nimmst: +2 Karten, +1 Kauf und wenn es deine Kaufphase ist, kehre wieder in die Aktionsphase zurück.",
+        "extra": "Wenn du diese Karte nimmst, kommt ihre Anweisung unterhalb der Trennlinie zum Einsatz - sie wird dadurch aber nicht gespielt oder befindet sich im Spiel.<br><br>Wenn du sie in der Kaufphase nimmst, ersthälst du +2 Karten, +1 Kauf und kehrst in deine Aktionsphase zurück. Wenn du diese Karte in einer anderen Phase oder während des Zuges eines Mitspielers nimmst, erhälst du +2 Karten und +1 Kauf. +1 Kauf nützt dir nichts, wenn du nicht am Zug bist. In deine Aktionsphase zurückzukehren bedeutet nicht, dass sich \"zu Beginn deines Zuges\"-Fähigkeiten wiederholen. Wenn aber deine Kaufphase danach wieder stattfindet, können sich \"zu Beginn deiner Kaufphase\"-Fähigkeiten wiederholen. In deine Aktionsphase zurückzukehren gibt dir keine +X Aktionen. Dir bleiben so viele Aktionen wie dir zu dem Zeitpunkt zur Verfügung stehen.",
+        "name": "Kavallerie"
+    },
+    "Groom":{
+        "description": "Nimm eine Karte, die bis zu 4 Coins kostet. Ist es eine ...<br> Aktionskarte: nimm ein Pferd;<br>Geldkarte: nimm ein Silber;<br>Punktekarte: +1 Karte und +1 Aktion.",
+        "extra": "Du nimmst zuerst eine Karte und wendest dann die Boni in der Reihenfolde an, in der sie aufgeführt sind. Eine Karte kann dir - wenn es sich um eine Karten mit mehreren Typen handel - mehrere Boni bringen: Wenn zu z.B. eine <b>Mühle</b>(aus <b>Intrige</b>) nimmst, nimmst du dir ein <b>PFERD</b> und erhälst dann +1 Karte und +1 Aktion.",
+        "name": "Stallbursche"
+    },
+    "Hostelry":{
+        "description": "+1 Karte<br>+2 Aktionen<line>Wenn du diese Karte nimmst, darfst du belieb viele Geldkarten aufgedeckt ablegen, um genau so viele Pferde zu nehmen.",
+        "extra": "Wenn du diese Karte nimmst darfst du eine beliebige Anzahl an Geldkarten aus der Hand aufgedeckt ablegen und entsprechend der Anzahl <b>PFERDE</b> vom <b>PFERDE</b>-Stapel nehmen. Du musst nichts ablegen (nimmst dafür aber auch keine <b>PFERDE</b>) und darfst nicht anderes ablegen als Geldkarten.",
+        "name": "Herberge"
+    },
+    "Village Green":{
+        "description": "Entweder jeder oder zu Beginn deines nächsten Zuges: +1 Karte und +2 Aktionen.<line>Wenn du diese Karte ausserhalb der Aufräumphase ablegst, darfst du sie aufdecken, um sie zu spielen.",
+        "extra": "Wenn du den <b>DORFANGER</b> spielst wählst du ob du +1 Karte und +2 Aktionen sofort ausführen willst oder zu Beginn deines nächsten Zuges. Wenn du \"sofort\" auswählst, wird der <b>DORFANGER</b> in der Aufräumphase dieses Zuges abgelegt. Wenn du \"zu Beginn deines nächsten Zuges\" auswählst, dann wir der <b>DORFANGER</b> in dem nächsten Zug abgelegt.<n>Wenn du den <b>DORFANGER</b> mehrmals spielen willst, wie z.B. mit dem <b>DRAHTZIEHER</b> wählst du jedes Mal ob du +1 Karte und +2 Aktionen sofort oder zu Beginn deines nächsten Zuges ausführst. Der <b>DORFANGER</b> bleibt dann nur bis zum deinem nächsten Zug im Spiel, wenn du dich mindest bei einem Spielen des <b>DORFANGERS</b> für eine Nutzung im nächsten Zug entschlieden hast (in diesem Fall bleibt der <b>DRAHZIEHER</b> auch im Spiel).<n>Die Reaktionsfähigkeit unterhalb der Trennlinie gilt nicht, wenn der <b>DORFANGER</b> - z.B. durch einen Kauf oder den <b>LUMPENSAMMLER</b> (aus <b>Dark Ages</b>) - in deinen Ablagestapel gelegt wird, ohne im spieltechnischen Sinne abgelegt zu werden. Es muss eine Spielsituation oder eine Karte geben, die dir explizit das \"Ablegen\" des <b>DORFANGERS</b> erlaubt.<n>Legst du den <b>DORFANGERS</b> außerhalb der Aufräumphase ab (was nur geht, wenn dich etwas dazu veranlasst bzw. es dir erlaubt, die Karte selbst gibt dir nicht das Recht, dies zu tun), kannst du ihn spielen. Das geht aber nur, wenn du den <b>DORFANGERS</b> in dem Moment, wo du ihn spielen willst, auch aus dem Ablagestapel (wo du ihn gerade hingelegt hast) aufdecken kannst. Tust du das nicht, weil er z.B. in den Nachziehstapel gemischt wurde, kannst du ihn nicht spielen. Dies funktioniert unabhängig, davon, ob du am Zug bist oder ein Mitspieler, und unabhängig davon, ob du den <b>DORFANGERS</b> aktuell zur Seite gelegt hast, ihn aus deiner Hand ablegst, vom Nachziehstapel (wie z.B. mit dem <b>KARDINAL</b>) oder aus dem <b>Exil</b>. Wenn du den <b>DORFANGERS</b> spielst, während du nicht am Zug bist, und auswählst. +1 Karte und +2 Aktionen sofort auszuführen, haben die +2 Aktionen keinen Nutzen für dich",
+        "name": "Dorfanger"
+    },
+    "Barge":{
+        "description": "Entweder jetzt oder zu Beginn deines nächsten Zuges:<br>+3 Karten und +1 Kauf.",
+        "extra": "Wenn du den <b>LASTKAHN</b> spielst, wähle aus, ob du + 3 Karten und + 1 Kauf sofort ausführst oder zu Beginn deines nächsten Zuges. Wenn du \"sofort auswählst\" wird der <b>LASTKAHN</b> in der Aufräumphase dieses Zuges abgelegt Wenn du \"zu Beginn deines nächsten Zuges\" auswählst, wird der <b>LASTKAHN</b> in deinem nächsten Zug abgelegt. Wenn du den <b>LASTKAHN</b> mehrmals spielst. wie z.B. mit dem <b>DRAHTZIEHER</b>. wählst du jedes Mal, ob du +3 Karten und +1 Kauf sofort oder zu Beginn deines nächsten Zuges ausführst, und der <b>LASTKAHN</b> bleibt nur bis zu deinem nächsten Zug im Spiel, wenn du dich bei mindestens einem Spielen des <b>LASTKAHNS</b> für eine Ausführung zu Beginn deines nächsten Zuges entschieden hast (in diesem Fall bleibt der <b>DRAHTZIEHER</b> auch im Spiel)",
+        "name": "Lastkahn"
+    },
+    "Coven":{
+        "description": "+1 Aktion<br>+2 Coin<n>Jeder Mitspieler verbannt einen FLucht aus dem Vorrat. Wer das nicht kann, legt seine verbanten Flüche ab.",
+        "extra": "Flüche werden in Zugswihenfolge verbannt (beginnend bei dein im Uhrzeigersinn auf den aktuellen Spieler folgenden Spiele). Es ist möglich, dass ein Spieler einen <b>FLUCH</b> verbannt. Während ein Mitspieler die Flüche von seinem <b>Exil</b>-Tableau ablegt.",
+        "name": "Hexenzirkel"
+    },
+    "Displace":{
+        "description": "Verbanne eine deiner Handkarten. Nimm eine Karte mit anderem Namen, die bis zu 2 Coins mehr kostet als jene.",
+        "extra": "DIe Karte, die du nimmst, muss nicht mehr kosten als die Karte, die du verbannt hast. Du könntest z.B eine <b>PROVINZ</b> verbannen und ein <b>GOLD</b> nehmen.",
+        "name": "Vertreibung"
+    },
+    "Falconer":{
+        "description": "Nimm eine Karte auf deine Hand die weniger kostet als diese Karte.<line>Nimmt ein Spieler eine Karte mit 2 oder mehr Typen (Aktion, Angriff, usw.), darfst du diese Karte aus deiner Hand spielen.",
+        "extra": "Wenn du diese Karte spielst, nimmst du eine Karte, die aus dem Vorrat stammt und weniger kostet, auf die Hand. Du kannst mit dieser Karte auf jede genommene Karte reagieren, die 2 oder mehr Typen hat. Dies kann eine Karte sein, die gekauft wurde, oder eine Karte, die auf eine andere Art und Weise genommen wurde, wie durch eine andere <b>FALKNERIN</b>. Du kannst das unabhängig davon run, wer die Karte genommen hat, du oder ein Mitspieler, und unabhängig davon, wer am Zug ist. Wenn du die <b>FALKNERIN</b> auf die Hand nimmst, wie z. B. durch eine <b>TÖPFEREI</b> (aus dem <b>Basisspiel 2. Edition</b>), kannst du auf dieses Nehmen reagieren und sie direkt spielen, da sie zwei Typen hat.",
+        "name": "Falknerin"
+    },
+    "GateKeeper":{
+        "description": "Zu Beginn deines nächsten Zuges: +3 Coins. Bis dahin: Nimmt ein Mitspieler eine Aktions- oder Geldkarte, von der er keine gleiche Karte im Exil hat, verbannt er jene.",
+        "extra": "Wenn du diese Karte spielst, bleibt sie bis zur Aufräumphase deines nächsten Zuges im Spiel. Bis zu deinem nächsten Zug muss jeder Mitspieler, wenn er eine Aktions- oder Geldkarte nimmt, von der er keine gleiche Karte im Exil hat, jene Karte verbannen. Hat der Mitspieler mindestens ein Exemplar der genommenen Karte auf seinem <b>Exil</b>-Tableau, ist er von der Anweisung der <b>WACHE</b> nicht betroffen. Er darf aber natürlich wie üblich freiwillig Exemplare der Karte dieses Namens von seinem <b>Exil</b>-Tableau ablegen. Genommene Karten werden nur auf das <b>Exil</b>-Tableau verbannt. wenn sie nicht durch andere Fähigkeiten, die sich auch auf das Nehmen von Karten beziehen, irgendwohin bewegt wurden, z.B. durch einen <b>SCHLITTEN</b>. Die <b>WACHE</b> verbannt nur Aktions- und Geldkarten, keine anderen Karten wie z. B die <b>PROVINZ</b>. Sie beachtet nur Karten auf dem <b>Exil</b>-Tableau und beachtet nicht, wie sie dorthin Gekommen sind.",
+        "name": "Wache"
+    },
+    "Hunting Lodge":{
+        "description": "+1 Karte<br>+2 Aktionen<n> Du darfst deine Handkarten für +5 Karten ablegen.",
+        "extra": "Wenn du diese Karte spielst, ziehst du zuerst eine Karte und erhältst dann +2 Aktionen, Dann entscheidest du, ob du deine Handkarten ablegen möchtest (die dann auch die Karten enthalten, die du soeben gezogen hast). Wenn du deine Handkarten ablegst, ziehst du 5 Karten (was dazu führen kann, dass du deine abgelegten Karten mischen musst).",
+        "name": "Jagdhütte"
+    },
+    "Kiln":{
+        "description": "+2 Coins<n>Von der nächsten Karte, die du in diesem Zug spielst, darfst du dir zuerst eine gleiche Karte nehmen.",
+        "extra": "Mit dem <b>BRENNOFEN</b> kannst du jede Art von Karte nehmen (aber nur aus dem Vorrat), solange du eine gleiche Karte direkt nach dein <b>BRENNOFEN</b> spielst. Du nimmst (optional) eine Karte, bevor du die Anweisungen auf der gespielten Karte befolgst. Ist die Karte eine Angriffskarte und andere Spieler möchten mit Reaktionskarten wie dem <b>BURGGRABEN</b> (aus dem <b>Basisspiel</b>) reagieren. Nimmst du die Karte, bevor sie entscheiden, ob sie den <b>BURGGRABEN</b> aufdecken oder nicht.<br> Wenn du den <b>THRONSAAL</b> (aus dem <b>Basisspiel</b>) auf den <b>BRENNOFEN</b> anwendest, spielst du den <b>BRENNOFEN</b> und noch einmal den <b>BRENNOFEN</b>. Das erste Spielen des BRENNOFENS bewirkt, dass du von der nächsten gespielten Karte (dein <b>BRENNOFEN</b>) eine gleiche Karte nehmen darfst - das zweite Spielen des <b>BRENNOFENS</b> bewirkt, dass du von der danach gespielten Karte ebenfalls eine gleiche Karte nehmen darfst. Ist deine nächste gespielte Karte eine Aktionskarte und du benutzt für sie einen Weg, bewirkt das keine spezielle Interaktion mit dem <b>BRENNOFEN</b>. Du darfst trotzdem (optional) eine gleiche Karte nehmen.",
+        "name": "Brennofen"
     }
+
 }
