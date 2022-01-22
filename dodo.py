@@ -31,7 +31,12 @@ def task_update_languages():
         "file_dep": files + ["src/domdiv/tools/update_language.py"],
         "actions": [lambda: update_language.main("card_db_src", "src/domdiv/card_db")],
         "targets": [
-            os.path.join("src/domdiv/card_db", "/".join(fname.split("/")[1:]))
+            os.path.join(
+                "src",
+                "domdiv",
+                "card_db",
+                os.path.sep.join(fname.split(os.path.sep)[1:]),
+            )
             for fname in files
         ],
         "clean": True,

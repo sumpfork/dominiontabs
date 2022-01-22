@@ -1580,9 +1580,9 @@
         "name": "Barge"
     },
     "Black Cat": {
-        "description": "+2 Cards<n>If it isn't your turn, each other player gains a Curse.<line>When another player gains a Victory card, you may play this from your hand.",
-        "extra": "When you play this on your turn, you draw 2 cards.<n>When you play it on another player's turn - normally only possible via its reaction - you draw 2 cards, and then everyone else gains a Curse, in turn order starting with the player whose turn it is.<n>When anyone else gains a Victory card - whether or not it is your turn - you may play this from your hand.",
-        "name": "Black Cat"
+        "description": "+2 Karten<n>Wenn jetzt nicht dein Zug ist, nimmt jeder Mitspieler einen Fluch.",
+        "extra": "Wenn ein Mitspieler eine Punktekarte nimmt, darfst du diese Karte aus deiner Hand ausspielen.",
+        "name": "Schwarze Katze"
     },
     "Bounty Hunter": {
         "description": "+1 Action<br>Exile a card from your hand.<n>If you didn't have a copy of it in Exile, +3 Coin.",
@@ -1590,9 +1590,9 @@
         "name": "Bounty Hunter"
     },
     "Camel Train": {
-        "description": "Exile a non-Victory card from the Supply.<line>When you gain this, Exile a Gold from the Supply.",
-        "extra": "When you play this, you Exile a non-Victory card from the Supply; when you gain this, you Exile a Gold from the Supply.<n>The Exiled cards are not available for use until discarded from the Exile mat.",
-        "name": "Camel Train"
+        "description": "Verbanne eine Nicht-Punktekarte aus deinem Vorrat",
+        "extra": "Wenn du diese Karte nimmst, verbanne ein Gold aus dem Vorrat.",
+        "name": "Kamelzug"
     },
     "Cardinal": {
         "description": "+2 Coin<br>Each other player reveals the top 2 cards of their deck, Exiles one costing from 3 Coin to 6 Coin, and discards the rest.",
@@ -1670,9 +1670,9 @@
         "name": "GateKeeper"
     },
     "Goatherd": {
-        "description": "+1 Action<n>You may trash a card from your hand.<n>+1 Card per card the player to your right trashed on their last turn.",
-        "extra": "You draw cards even if you did not trash a card.<n>One way to keep count of the number of cards trashed is to put them on the trash sideways.",
-        "name": "Goatherd"
+        "description": "+1 Aktion<n>Du darfst eine deiner Handkarten entsorgen.<n>+1 Karte, die dein rechter Mitspieler in seinem letzten Zug entsorgt hat.",
+        "extra": "",
+        "name": "Ziegenhirtin"
     },
     "Groom": {
         "description": "Gain a card costing up to 4 Coin If it's an...<n>Action card, gain a Horse;<n>Treasure card, gain a Silver;<n>Victory card, +1 Card and +1 Action.<n>",
@@ -1750,9 +1750,9 @@
         "name": "Sanctuary"
     },
     "Scrap": {
-        "description": "Trash a card from your hand.<n>Choose a different thing per 1 Coin it costs: +1 Card; +1 Action; +1 Buy; +1 Coin; gain a Silver; gain a Horse.",
-        "extra": "First trash a card, then choose a different bonus per 1 Coin the card cost, then do them in the order listed.<n>So you might trash an Estate, choose +1 Card and \"gain a Horse,\" then draw a card and then gain the Horse.",
-        "name": "Scrap"
+        "description": "Entsorge eine deiner Handkarten. Wähle eine unterschiedliche Anweisung pro 1 <*COIN*>, die sie kostet: +1 Karte; +1 Aktion; +1 Kauf; + 1 <*COIN*>",
+        "extra": "",
+        "name": "Schrott"
     },
     "Seize the Day": {
         "description": "Once per game: Take an extra turn after this one.",
@@ -1765,9 +1765,9 @@
         "name": "Sheepdog"
     },
     "Sleigh": {
-        "description": "Gain 2 Horses.<line>When you gain a card, you may discard this, to put that card into your hand or onto your deck.",
-        "extra": "You can move the gained card from your discard pile even though you discarded Sleigh on top of it.<n>If a gained card goes directly to somewhere other than your discard pile (for example, the Silver gained from Bureaucrat), Sleigh can still move it to your hand or the top of your deck.<n>If something else has moved the card since it was gained, Sleigh cannot move it.",
-        "name": "Sleigh"
+        "description": "Nimm 2 Pferde.",
+        "extra": "Wenn du eine Karte nimmst, darfst du diese Karte ablegen, um jende Karte auf deine Hand zu nehmen oder auf deinen Nachziehstapel zu legen",
+        "name": "Schlitten"
     },
     "Snowy Village": {
         "description": "+1 Card<br>+4 Actions<br>+1 Buy<br><n>Ignore any further +Actions you get this turn.",
@@ -1785,9 +1785,9 @@
         "name": "Stockpile"
     },
     "Supplies": {
-        "description": "1 <*COIN*><br><br>When you play this, gain a Horse onto your deck.",
-        "extra": "This is a Treasure worth 1 Coin, like Copper; you play it in your Buy phase.<n>When you play this, gain a Horse, putting it directly onto your deck.",
-        "name": "Supplies"
+        "description": "1 <*COIN*><br><br>Wenn du diese Karte spielst, nimm ein Pferd auf deinen Nachziehstapel.",
+        "extra": "",
+        "name": "Nachschub"
     },
     "Toil": {
         "description": "+1 Buy<n>You may play an Action card from your hand.",
