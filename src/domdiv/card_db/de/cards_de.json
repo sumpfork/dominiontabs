@@ -1580,24 +1580,24 @@
         "name": "Barge"
     },
     "Black Cat": {
-        "description": "+2 Karten<n>Wenn jetzt nicht dein Zug ist, nimmt jeder Mitspieler einen Fluch.",
-        "extra": "Wenn ein Mitspieler eine Punktekarte nimmt, darfst du diese Karte aus deiner Hand ausspielen.",
+        "description": "+2 Karten<n>Wenn jetzt nicht dein Zug ist, nimmt jeder Mitspieler einen Fluch<line>Wenn ein Mitspieler eine Punktekarte nimmt, darfst du diese Karte aus deiner Hand ausspielen",
+        "extra": "Wenn du diese Karte in deinem Zug spielst, ziehst du 2 Karten. Wenn du sie im Zug eines Mitspielers spielst, was normalerweise als Reaktion möglich ist, ziehst du 2 Karten und alle Mitspieler nehmen sich einen Fluch, und zwar in Zugreihenfolge beginnend bei dem Spieler, der am Zug ist.",
         "name": "Schwarze Katze"
     },
     "Bounty Hunter": {
-        "description": "+1 Action<br>Exile a card from your hand.<n>If you didn't have a copy of it in Exile, +3 Coin.",
-        "extra": "First you get +1 Action and Exile a card from your hand; this is not optional.<n>Then if that is the only copy of that card that you have in Exile, you get +3 Coin.<n>If you can't Exile a card, you don't get +3 Coin.",
-        "name": "Bounty Hunter"
+        "description": "+1 Aktion<br><br>Verbanne eine deiner Handkarten. Wenn du dies gemacht hast und dabei keine gleiche Karten im Exil hattest: +3 Coins.",
+        "extra": "Zuerst erhälst du +1 Aktion und verbannst eine Kart aus deiner Hand auf dein Exil-Tableau; dies ist nicht optional. Wenn dies dann die einzige Karte dieses Names in deinem Exil ist, erhälst du +3 Coins. Wenn du keine Karte verbannen kannst - weil du z.B. keine Handkarten mehr hast - erhälst du nicht +3 Münzen.",
+        "name": "Kopfgeldjägerin"
     },
     "Camel Train": {
-        "description": "Verbanne eine Nicht-Punktekarte aus deinem Vorrat",
-        "extra": "Wenn du diese Karte nimmst, verbanne ein Gold aus dem Vorrat.",
+        "description": "Verbanne eine Nicht-Punktekarte aus deinem Vorrat<line>Wenn du diese Karte nimmst, verbanne ein Gold aus dem Vorrat.",
+        "extra": "Wenn du diese Karte spielst, verbannst du eine Nicht-Punktekarte aus dem Vorrat. Wenn du diese Karte nimmst, verbannst du ein Gold aus dem Vorrat.",
         "name": "Kamelzug"
     },
     "Cardinal": {
-        "description": "+2 Coin<br>Each other player reveals the top 2 cards of their deck, Exiles one costing from 3 Coin to 6 Coin, and discards the rest.",
-        "extra": "If an attacked player reveals two cards each costing from 3 Coin to 6 Coin, that player chooses which card they Exile.",
-        "name": "Cardinal"
+        "description": "+2 Coins<br>Jeder Mitspieler deckt die obersten 2 Karten seines Nachziehstapels auf, verbannt eine davon, die 3 Coins bis 6 Coins kostet, und leg den Rest ab.",
+        "extra": "",
+        "name": "Kardinal"
     },
     "Cavalry": {
         "description": "Gain 2 Horses.<line>When you gain this, +2 Cards, +1 Buy, and if it's your Buy phase return to your Action phase.",
@@ -1671,7 +1671,7 @@
     },
     "Goatherd": {
         "description": "+1 Aktion<n>Du darfst eine deiner Handkarten entsorgen.<n>+1 Karte, die dein rechter Mitspieler in seinem letzten Zug entsorgt hat.",
-        "extra": "",
+        "extra": "Du ziehst Karten, auch wenn du keine Karten entsorgt hast. Eine Möglichkeit, um die Anzahl der entsorgten Karten zu verfolgen, ist sie um 90 Grad gedreht in den Müll zu legen.",
         "name": "Ziegenhirtin"
     },
     "Groom": {
@@ -1750,8 +1750,8 @@
         "name": "Sanctuary"
     },
     "Scrap": {
-        "description": "Entsorge eine deiner Handkarten. Wähle eine unterschiedliche Anweisung pro 1 <*COIN*>, die sie kostet: +1 Karte; +1 Aktion; +1 Kauf; + 1 <*COIN*>",
-        "extra": "",
+        "description": "Entsorge eine deiner Handkarten. Wähle eine unterschiedliche Anweisung pro 1 Coins, die sie kostet: +1 Karte; +1 Aktion; +1 Kauf; + 1 Coins",
+        "extra": "Du entsorgst erst eine Karte, wählst einen unterschlichen Bonus je +1 Coins, dass die Karte kostet, und führst die Boni dann in der augelisteten Reihenfolge aus. Beispiel: Du entsorgst ein Anwesen, wählst \"+1 Karte\" und \"nimm ein Pferd\", ziehst eine Karte und nimmst dann ein Pferd.",
         "name": "Schrott"
     },
     "Seize the Day": {
@@ -1760,19 +1760,19 @@
         "name": "Seize the Day"
     },
     "Sheepdog": {
-        "description": "+2 Cards<line>When you gain a card, you may play this from your hand.",
-        "extra": "You can use this when gaining a card due to buying it, when gaining a card some other way such as due to Falconer, and even when gaining a card on another player's turn, such as due to Black Cat.<n>Remember that when you buy a card, you can no longer play Treasures in that Buy phase.<n>If you gain a Sheepdog to your hand - such as via Falconer - you can react to that gain and play the Sheepdog.<n>f you gain a card with a \"when you gain\" clause, you can choose to resolve that before or after reacting with Sheepdog, for example, if you gain Hostelry, you can choose to discard Treasures for Horses before or after reacting with Sheepdog.",
-        "name": "Sheepdog"
+        "description": "+2 Karten<line>Wenn du diese nimmst, darfst du diese Karte aus deiner Hand spielen.",
+        "extra": "Du kannst diese Karte als Reaktion spielen, wenn du eine Karte durch Kauf nimmst, wenn du eine Karte auf eine andere Art und Weise nimmst, wie z.B. durch eine Falknerin oder sogar, wenn du eine Karte wärend des Zuges eines Mitspielers nimmst, wie z.B. durch eine Schwarze Katze. Denke daran, dass du normalerweise in der Kaufphase keine Geldkarten mehr spielen kannst,, in der shcon eine Karte gekauft hast. Wenn du den Hirtenhund auf die Hand nimmst, z.B. durch eine Falknerin, kannst du auf dieses Nehmen reagieren und den Hirtenhund spielen.",
+        "name": "Hirtenhund"
     },
     "Sleigh": {
-        "description": "Nimm 2 Pferde.",
-        "extra": "Wenn du eine Karte nimmst, darfst du diese Karte ablegen, um jende Karte auf deine Hand zu nehmen oder auf deinen Nachziehstapel zu legen",
+        "description": "Nimm 2 Pferde<line>Wenn du eine Karte nimmst, darfst du diese Karte ablegen, um jende Karte auf deine Hand zu nehmen oder auf deinen Nachziehstapel zu legen",
+        "extra": "Normalerweise nimmst ud eine Karten auf deinen Ablagestapel, kannst dann den Schlitten aus deiner Hand ablegen, holst die genommende Karte unter dem Schlitten hervor und bewegst sie auf deine Hand oder auf deinen Nachziehstapel. Wenn eine genommene Karte an irgendeinem anderen Ort gelegt wird als auf deinen Ablagestapel (z.B. das Silver, dass du durch den Bürokraten nimmst), kann der Schlitten sie trotzdem in deine Hand oder auf den Nachziehstapel bewegen. Wenn schon etwas anderes die Karte bewegt hat, kannst du zwar immer noch mit dem Schlitten reagieren, aber die Karte nicht mehr bewegen.",
         "name": "Schlitten"
     },
     "Snowy Village": {
-        "description": "+1 Card<br>+4 Actions<br>+1 Buy<br><n>Ignore any further +Actions you get this turn.",
-        "extra": "Any extra Actions you already had before playing this do not go away; for example, if you play Village and then Snowy Village, you can play 5 more Actions after that.<n>Any further +Actions you would get that turn, you do not, including from playing another Snowy Village or converting Villagers (from Renaissance).<n>This does not stop you from playing more cards via cards that tell you to play cards, such as Throne Room.<n>You can convert Villagers between drawing the card and reaching the last sentence which prevents further +Actions.",
-        "name": "Snowy Village"
+        "description": "+1 Karte<br>+4 Aktionen<br>+1 Kauf<br><br>Ignoriere alle weiteren <b>+ Aktionen</b> die du in diesem Zug erhälst.",
+        "extra": "Alle zusätzlichen Aktionen, die du schon hattest, bevvor du diese Karte gespielt hast, verfallen nicht, auch Z.B. zurückgelegte Dorfbewohner (aus Renaissance). Wenn du z.B. das Dort spielst und dann das Verschneite Dorf, hast du 5 weitere Aktionen danach. Alle weiteren +X Aktionen, die du in diesem Zug noch erhälst, stheen dir nicht zur Verfügung, einschließlich diejenigen vom Spielen eines weiteren Verschneiten Dorfes oder vom Eintausch von Dorfbewohnern (Renaissance). Anweisungen, die dich anderweitig dazu auffordern, weiter Karten zu spielen, z.B. durch den Thronsaal, sind nicht betroffen - nur explizite +X Aktionen.",
+        "name": "Verschneites Dorf"
     },
     "Stampede": {
         "description": "If you have 5 or fewer cards in play, gain 5 Horses onto your deck.",
@@ -1780,13 +1780,13 @@
         "name": "Stampede"
     },
     "Stockpile": {
-        "description": "3 <*COIN*><br><br>+1 Buy<n>When you play this, Exile it.",
-        "extra": "This is a Treasure worth 3 coin, like Gold; you play it in your Buy phase.<n>When you play this, you also get +1 Buy, and put this on your Exile mat.<n>If you play this twice with a card like Crown (from Empires), you will get +6 coin and +2 Buys total, even though you could only Exile it once.",
-        "name": "Stockpile"
+        "description": "+3 Coins<br>+1 Kauf<br>Wenn du diese Karte spielst, verbanne sie.",
+        "extra": "Dies ist eine Geldkarte mit dem Geldwert +3 Coins, wie Gold; du spielst sie normalzierweise in deiner Kaufphase. Wenn du diese Karte spielst, erhälst du +1 Kauf und legst sie auf dein Exil-Tableau. Wenn du diese Karte durch eine Karte wie Krone (aus Empires) zweimal spielst, erhälst du insgesamt +6 Coins und +2 Käufe, auch wenn du sie nur einmal verbannen konntest.",
+        "name": "Depot"
     },
     "Supplies": {
         "description": "1 <*COIN*><br><br>Wenn du diese Karte spielst, nimm ein Pferd auf deinen Nachziehstapel.",
-        "extra": "",
+        "extra": "Dies ist eine Geldkarte mit dem Geldwert +1 Coins, wie Kupfer; du spielst sie normalerweise in deiner Kaufphase. Wenn du diese Karte spielst, nimm ein Pferd und lege es sofort auf deinen Nachziehstapel.",
         "name": "Nachschub"
     },
     "Toil": {
