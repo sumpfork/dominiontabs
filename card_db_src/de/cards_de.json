@@ -2804,6 +2804,50 @@
         "description": "+2 Coins<n>Von der nächsten Karte, die du in diesem Zug spielst, darfst du dir zuerst eine gleiche Karte nehmen.",
         "extra": "Mit dem <b>BRENNOFEN</b> kannst du jede Art von Karte nehmen (aber nur aus dem Vorrat), solange du eine gleiche Karte direkt nach dein <b>BRENNOFEN</b> spielst. Du nimmst (optional) eine Karte, bevor du die Anweisungen auf der gespielten Karte befolgst. Ist die Karte eine Angriffskarte und andere Spieler möchten mit Reaktionskarten wie dem <b>BURGGRABEN</b> (aus dem <b>Basisspiel</b>) reagieren. Nimmst du die Karte, bevor sie entscheiden, ob sie den <b>BURGGRABEN</b> aufdecken oder nicht.<br> Wenn du den <b>THRONSAAL</b> (aus dem <b>Basisspiel</b>) auf den <b>BRENNOFEN</b> anwendest, spielst du den <b>BRENNOFEN</b> und noch einmal den <b>BRENNOFEN</b>. Das erste Spielen des BRENNOFENS bewirkt, dass du von der nächsten gespielten Karte (dein <b>BRENNOFEN</b>) eine gleiche Karte nehmen darfst - das zweite Spielen des <b>BRENNOFENS</b> bewirkt, dass du von der danach gespielten Karte ebenfalls eine gleiche Karte nehmen darfst. Ist deine nächste gespielte Karte eine Aktionskarte und du benutzt für sie einen Weg, bewirkt das keine spezielle Interaktion mit dem <b>BRENNOFEN</b>. Du darfst trotzdem (optional) eine gleiche Karte nehmen.",
         "name": "Brennofen"
+    },
+    "Livery":{
+        "description": "+3 Coins<n>Wenn du in diesem Zug eine Karte nimmst, die 4 Coins oder mehr kostet: Nimm ein Pferd.",
+        "extra": "Diese Karte wirkt kumulativ. Wenn du z. B. den <b>DRAHTZIEHER</b> benutzt, um einen <b>PFERDESTALL</b> dreimal zu spielen, wird jede Karte, die du in diesem Zug nimmst und die 4 Coins oder mehr kostet, drei <b>PFERDE</b> einbringen. Der <b>PFERDESTALL</b> gilt für Karten, die du durch Kauf nimmst, und Karten, die du auf eine andere Art und Weise nimmst.",
+        "name": "Pferdestall"
+    },
+    "Mastermind":{
+        "description": "Zu Beginn deines nächsten Zuges darfst ud eine Aktionskarte aus deiner Hand dreimal spielen.",
+        "extra": "Den <b>DRAHTZIEHER</b> auf eine Aktionskarte anzuwenden ist optional. Wenn du es tust, führe die Anweisungen der Karte komplett aus, spiele sie dann zum zweiten Mal und spiele sie dann zum dritten Mal ohne eine andere Karte dazwischen zu spielen (außer wenn du von einer Karte angewiesen wirst). Das dreimalige Spieleln der Aktionskarte verbraucht keine Aktionen. Wenn z.B. mit dem <b>DRAHTZIEHER</b> eine <b>KOPFGELDJÄGERIN</b> dreimal spielst, erhältst du insgesamt +3 Aktionen und kannst danach 4 Aktionskarten spielen: deine normale Aktion plus 3 weitere für die +3 Aktionen. Spielst du eine Dauerkarte mit dem <b>DRAHTZIEHER</b>, bleibt der <b>DRAHTZIEHER</b> so lanoe im Spiel wie die Dauerkarte. Spielt ein <b>DRAHTZIEHER</b> einen anderen DRAHTZIEHER, bleiben beide im Spiel, und im Zug danach darfst du drei verschiedene (es können auch gleiche darunter sein) Aktionskarten aus deiner Hand je dreimal spielen. Spielst du ein <b>PFERD</b> mit dem <b>DRAHTZIEHER</b>, erhältst du +2 Karten und +1 Aktion, legst das <b>PFERD</b> auf den <b>PFERDE</b>-Stapel zurück, erhältst +2 Karren und +1 Aktion, legst das <b>PFERD</b> nicht zurück. weil du dies schon getan hast, erhältst zum dritten Mal +2 Karten und +1 Aktion und kannst wieder das <b>PFERD</b> nicht zurücklegen.",
+        "name": "Drahtzieher"
+    },
+    "Paddock":{
+        "description": "+2 Coins<n>Nimm 2 Pferde.<br>+1 Aktion pro leerem Vorratsstapel.",
+        "extra": "Mit dieser Karte überprüfst du nun die Anzahl der leeren Stapel, wenn du sie spielst. Wie viele +X Aktionen du bekommen hast, ändert sich nicht, wenn ein Stapel später im Zug leer wird (oder wieder Karten enthält, wie mit dem <b>BOTSCHAFTER</b> aus <b>Seaside</b>). Bei dier Karte werden nur Vorratsstapel gezählt, keine Stapel, die nicht zum Vorrat gehören, wie der <b>PFERDE</b>_Stapel.",
+        "name": "Koppel"
+    },
+    "Sanctuary":{
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Kauf<br>Du darfst eine deiner Handkarten verbannen.",
+        "extra": "Eine Karte zu verbannen ist optional.",
+        "name": "Zufluchtsort"
+    },
+    "Fisherman":{
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Coins<line> Wärend deiner Züge: Ist dein Ablagestapel leer, kostet diese Karte 3 Coins weniger.",
+        "extra": "Diese Karte kostet normalerweise 5 Coins, aber 2 Coins, wenn du gerade einen leeren Ablagestapel hast.<br>Wenn du 4 Coins und 2 Käufe zur Verfügung hast sowie einen leeren Ablagestapel, kannst du einen <b>FISCHER</b> für 2 Coins kaufen, aber dann hast du keinen leeren Ablagestapel mehr und kannst also keinen zweiten für 2 Coins kaufen",
+        "name": "Fischer"
+    },
+    "Destrier":{
+        "description": "+2 Karten<br>+1 Aktion<line>Während deiner Züge: Diese Karte kostet 1 Coins weniger pro Karte, die du in diesem Zu genommen hast.",
+        "extra": "Das <b>SCHLACHTROSS</b> ist eine Karte mit variablen Kosten (wie bereits vorn <b>HAUSIERER</b> (aus <b>Blütezeit</b>) bekannt). Sie kostet während deiner Züge für alle Belange. bei denen die Kosten von Karten betrachtet werden, 1 Coin weniger pro Karte. die du in deinem Zug genommen hast. Du kannst z.B. den <b>SCHLITTEN</b> spielen, um zwei <b>PFERDE</b> zu nehmen, und dann die <b>WERKSTATT</b> (aus dein <b>Basisspiel</b>) benutzen, um ein <b>SCHLACHTROSS</b> zu nehmen. weil es - da du 2 <b>PFERDE</b> genommen hast - 4 Coins kostet. Das <b>SCHLACHTROSS</b> beachtet nur Karten, die vom Spieler genommen wurden, der am Zug ist. Eine <b>HEXE</b> (aus dem <b>Basisspiel</b>) zu spielen, um anderen Spielern Flüche zu geben, senkt z.B. nicht die Kosten des <b>SCHLACHTROSSES</b>.",
+        "name": "Schlachtross"
+    },
+    "Wayfarer":{
+        "description": "+3 Karten<br> Du darfst ein Silber nehmen.<line>Diese Karte kostet genauso viel wie die letzte andere Karte, die in diesem Zug genommen wurde (falls eine genommen wurde).",
+        "extra": "Diee <b>WANDERIN</b> ist eine Karte mit variablen Kosten (wie bereits vom <b>HAUSIERER</b> (aus <b>BLÜTEZEIT</b>) bekannt). Normalerweise kostet sie 6 Coins - sobald aber eine Karte genommen wird, ändern sich ihre Kosten. Karten, die Kosten senken, wie die <b>BRÜCKE</b> (aus <b>Intrige</b>) gelten nur für die <b>WANDERIN</b>, wenn bisher noch keine Karten genommen wurden, Sobald eine Karte genommen wird (egal ob von dir oder einem Mitspieler), nimmt die <b>WANDERIN</b> die Kosten der zuletzt genommenen Karte an.<n>Das heisst, wenn du eine andere Karte als die <b>WANDERIN</b> nimmst, kostet die <b>WANDERIN</b> so lange, bis eine andere Karte genommen wird bzw. bis zu mEnde dieses Zuges, genauso viel wie die genommene Karte. Nimmst du eine weitere Karte in diesem Zug, nimmt die <b>WANDERIN</b> deren Kosten an usw. Nimmt ein anderer Spieler in deinem ZUg eine Karte (z.B. einen <b>FLUCH</b> durch eine <b>HEXE</b> (aus dem <b>Basisspiel</b>), die du gespielt hast) nimmt die <b>WANDERIN</b> deren Kosten an.<n>Wenn du z.B. eine <b>WANDERIN</b> spielst und dich entscheidest, ein <b>SILBER</b> zu nehmen, kostet die <b>WANDERIN</b> 3 Coins, gneau wie das <b>SILBER</b>. Wenn du eine <b>HEXE</b> (aus dem <b>Basisspiel</b>) spielst, nimmt sich jeder andere Spieler einen <b>FLUCH</b> und die <b>WANDERIN</b> kostet 0 Coins, genau wie der <b>FLUCH</b>. Wenn du z.B. die <b>BRÜCKE</b> (aus <b>Intrige</b>) spielst, kostet die <b>WANDERIN</b> 5 Coins. Wenn du dann ein <b>SILBER</b> kaufst, kostet die <b>WANDERIN</b> zu dem Zeitpunkt 2 Coins, genau wie ein <b>SILBER</b>.<n>Die Kosten der <b>WANDERIN</b> kann Potion (aus <b>Alchemisten</b>) oder Dept (aus <b>Empires</b>) enthalten. Den <b>VIEHMARKT</b> zu kaufen, in dem du eine Aktionskarte entsorfst, verändert die Kosten der <b>WANDERIN</b> auf 7 Coins, die Kosten des <b>VIEHMARKTS</b>, nicht auf duie Kosten der entsorgten Aktionskarte. Es ist auch nicht möglich, zum Bezahlen der <b>WANDERIN</b> eine Aktionskarte zu entsorgen.",
+        "name": "Wanderin"
+    },
+    "Animal Fair":{
+        "description": "+4 Coins<br>+1 Kauf pro leerem Vorratsstapel.<line>Anstatt diese Karte zu bezahlen, darfst du eine Aktionskarte aus deiner Hand entsorgen.",
+        "extra": "Mit dieser Karte überprüfst du nur die Anzahl der leeren Stapel in dem Moment, wenn du sie spielst. Wie viele + Käufe du bekommsten hast, ändert sich nicht, wenn ein Stapel später im Zug leerw wird (oder wieder Karten enthält, wie mit dem <b>BOTSCHAFTER</b> aus <b>Seaside</b>).<br>Bei eider Karten werden nur Vorratsstapel gezählt, keine Stapelm die nicht zum Vorrat gehören, wie z.B. der <b>PFERDE</b>-Stapel.<n>Wenn du diese Karte kaufst, darfst du eine Aktionskarte aus deiner Hand entsorgen, anstatt 7 Coins zu bezahlen. Das kannst du aber nur machen, wenn du eine Aktionskarte zum Entsorgen auf der Hand hast. Du kannst es sogar machen, wenn du nicht 7 Coins hast. Wenn du auf diese Weise den <b>VIEHMARKT</b> kaufst, bezahlst du kein 0 Coins, verbrauchst aber trotzdem einen Kauf. Der <b>VIEHMARK</b> kostet - für alle Belange, in denen die Kosten der Karte betrachtet werden - 7 Coins, unanhängig davon, wie du bezahlst.",
+        "name": "Viehmarkt"
+    },
+    "Horse":{
+        "description": "+2 Karten<br>+1 Aktion<n> Lege diese Karte auf ihren Stapel zurück.<n><i>(Diese Karte gehört nicht zum Vorrat.)</i>",
+        "extra": "Pferde sind Aktionskarten, gehören aber nicht zu den Königreichtkarten und damit nicht zum Vorrat.",
+        "name": "Pferd"
     }
-
 }

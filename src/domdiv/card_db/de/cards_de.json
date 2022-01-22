@@ -1560,9 +1560,9 @@
         "name": "Alliance"
     },
     "Animal Fair": {
-        "description": "+4 Coin<br>+1 Buy per empty supply pile.<line>Instead of paying this card's cost, you may trash an Action card from your hand.",
-        "extra": "This only checks how many piles are empty when you play it; how many +Buys you got does not change if a pile becomes empty later in the turn (or non-empty, such as due to Ambassador from Seaside).<n>This only counts Supply piles, not non-Supply piles like Horse.<n>When buying this card, you can trash an Action card from your hand instead of paying 7 Coin. You can only do this if you have an Action card in hand to trash. You can do this even if you do not have 7 Coin. When buying Animal Fair this way, you spend no _ Coin, but still use up a Buy.<n>Animal Fair still has a cost of 7 Coin, regardless of how you pay for it.<n>In games using Shelters, you can use an opening buy on Animal Fair by trashing Necropolis.",
-        "name": "Animal Fair"
+        "description": "+4 Coins<br>+1 Kauf pro leerem Vorratsstapel.<line>Anstatt diese Karte zu bezahlen, darfst du eine Aktionskarte aus deiner Hand entsorgen.",
+        "extra": "Mit dieser Karte überprüfst du nur die Anzahl der leeren Stapel in dem Moment, wenn du sie spielst. Wie viele + Käufe du bekommsten hast, ändert sich nicht, wenn ein Stapel später im Zug leerw wird (oder wieder Karten enthält, wie mit dem <b>BOTSCHAFTER</b> aus <b>Seaside</b>).<br>Bei eider Karten werden nur Vorratsstapel gezählt, keine Stapelm die nicht zum Vorrat gehören, wie z.B. der <b>PFERDE</b>-Stapel.<n>Wenn du diese Karte kaufst, darfst du eine Aktionskarte aus deiner Hand entsorgen, anstatt 7 Coins zu bezahlen. Das kannst du aber nur machen, wenn du eine Aktionskarte zum Entsorgen auf der Hand hast. Du kannst es sogar machen, wenn du nicht 7 Coins hast. Wenn du auf diese Weise den <b>VIEHMARKT</b> kaufst, bezahlst du kein 0 Coins, verbrauchst aber trotzdem einen Kauf. Der <b>VIEHMARK</b> kostet - für alle Belange, in denen die Kosten der Karte betrachtet werden - 7 Coins, unanhängig davon, wie du bezahlst.",
+        "name": "Viehmarkt"
     },
     "Banish": {
         "description": "Exile any number of cards with the same name from your hand.",
@@ -1630,9 +1630,9 @@
         "name": "Desperation"
     },
     "Destrier": {
-        "description": "+2 Cards<br>+1 Action<line>During your turns, this costs 1 Coin less per card you've gained this turn.",
-        "extra": "Destrier costs 1 Coin less per card the player whose turn it is has gained that turn.<n>For example, you could play a Sleigh to gain two Horses, then use Workshop to gain a Destrier, as it would cost 4 Coin.<n>Destrier only cares about cards gained by the player whose turn it is; for example, playing Witch to give other players Curses will not lower its cost.",
-        "name": "Destrier"
+        "description": "+2 Karten<br>+1 Aktion<line>Während deiner Züge: Diese Karte kostet 1 Coins weniger pro Karte, die du in diesem Zu genommen hast.",
+        "extra": "Das <b>SCHLACHTROSS</b> ist eine Karte mit variablen Kosten (wie bereits vorn <b>HAUSIERER</b> (aus <b>Blütezeit</b>) bekannt). Sie kostet während deiner Züge für alle Belange. bei denen die Kosten von Karten betrachtet werden, 1 Coin weniger pro Karte. die du in deinem Zug genommen hast. Du kannst z.B. den <b>SCHLITTEN</b> spielen, um zwei <b>PFERDE</b> zu nehmen, und dann die <b>WERKSTATT</b> (aus dein <b>Basisspiel</b>) benutzen, um ein <b>SCHLACHTROSS</b> zu nehmen. weil es - da du 2 <b>PFERDE</b> genommen hast - 4 Coins kostet. Das <b>SCHLACHTROSS</b> beachtet nur Karten, die vom Spieler genommen wurden, der am Zug ist. Eine <b>HEXE</b> (aus dem <b>Basisspiel</b>) zu spielen, um anderen Spielern Flüche zu geben, senkt z.B. nicht die Kosten des <b>SCHLACHTROSSES</b>.",
+        "name": "Schlachtross"
     },
     "Displace": {
         "description": "Verbanne eine deiner Handkarten. Nimm eine Karte mit anderem Namen, die bis zu 2 Coins mehr kostet als jene.",
@@ -1655,9 +1655,9 @@
         "name": "Falknerin"
     },
     "Fisherman": {
-        "description": "+1 Card<br>+1 Action<br>+1 Coin<line>During your turns, if your discard pile is empty, this costs 3 Coin less.",
-        "extra": "This costs 5 Coin normally, but 2 Coin whenever the player whose turn it is has an empty discard pile.<n>If you have and two Buys with an empty discard pile, you can buy Fisherman for 2 Coin, but then you will no longer have an empty discard pile, so you cannot buy a second for 2 Coin.",
-        "name": "Fisherman"
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Coins<line> Wärend deiner Züge: Ist dein Ablagestapel leer, kostet diese Karte 3 Coins weniger.",
+        "extra": "Diese Karte kostet normalerweise 5 Coins, aber 2 Coins, wenn du gerade einen leeren Ablagestapel hast.<br>Wenn du 4 Coins und 2 Käufe zur Verfügung hast sowie einen leeren Ablagestapel, kannst du einen <b>FISCHER</b> für 2 Coins kaufen, aber dann hast du keinen leeren Ablagestapel mehr und kannst also keinen zweiten für 2 Coins kaufen",
+        "name": "Fischer"
     },
     "Gamble": {
         "description": "+1 Buy<n>Reveal the top card of your deck. If it's a Treasure or Action, you may play it. Otherwise, discard it.",
@@ -1680,9 +1680,9 @@
         "name": "Stallbursche"
     },
     "Horse": {
-        "description": "+2 Cards<br>+1 Action<n>Return this to its pile.<n><i>(This is not in the Supply.)</i>",
-        "extra": "It is a one-shot non-terminal draw card, similar to Experiment from Renaissance; but unlike Experiment, it is not in the supply, and therefore can only be gained in more restricted ways.",
-        "name": "Horse"
+        "description": "+2 Karten<br>+1 Aktion<n> Lege diese Karte auf ihren Stapel zurück.<n><i>(Diese Karte gehört nicht zum Vorrat.)</i>",
+        "extra": "",
+        "name": "Pferd"
     },
     "Hostelry": {
         "description": "+1 Karte<br>+2 Aktionen<line>Wenn du diese Karte nimmst, darfst du belieb viele Geldkarten aufgedeckt ablegen, um genau so viele Pferde zu nehmen.",
@@ -1705,9 +1705,9 @@
         "name": "Brennofen"
     },
     "Livery": {
-        "description": "+3 Coin<br>This turn, when you gain a card costing 4 Coin or more, gain a Horse.",
-        "extra": "This is cumulative; for example, if you use Mastermind to play a Livery three times, then each card you gain that turn costing 4 Coin or more will come with three Horses.<n>Livery works on cards gained via buying them, and cards gained other ways.",
-        "name": "Livery"
+        "description": "+3 Coins<n>Wenn du in diesem Zug eine Karte nimmst, die 4 Coins oder mehr kostet: Nimm ein Pferd.",
+        "extra": "Diese Karte wirkt kumulativ. Wenn du z. B. den <b>DRAHTZIEHER</b> benutzt, um einen <b>PFERDESTALL</b> dreimal zu spielen, wird jede Karte, die du in diesem Zug nimmst und die 4 Coins oder mehr kostet, drei <b>PFERDE</b> einbringen. Der <b>PFERDESTALL</b> gilt für Karten, die du durch Kauf nimmst, und Karten, die du auf eine andere Art und Weise nimmst.",
+        "name": "Pferdestall"
     },
     "March": {
         "description": "Look through your discard pile. You may play an Action card from it.",
@@ -1715,14 +1715,14 @@
         "name": "March"
     },
     "Mastermind": {
-        "description": "At the start of your next turn, you may play an Action card from your hand three times.",
-        "extra": "Playing an Action card via this is optional. If you do play one, you resolve the card completely, then play it a second time, then play it a third time, without playing other cards in-between (unless told to by a card).<n>Playing these Actions does not use up Action plays. For example, if you Mastermind a Bounty Hunter, you will get +3 Actions total, and be able to play 4 Action cards after that - your normal one, plus 3 more for the +3 Actions.<n>If a Mastermind plays a Duration card, the Mastermind stays in play as long as the Duration card does.<n>If a Mastermind plays another Mastermind, both will stay in play, and the turn after that you can play three different Action cards from your hand three times each.<n>If you Mastermind a Horse, you will get +2 Cards and +1 Action, return the Horse to its pile, get +2 Cards and +1 Action, fail to return the Horse since you already did, and get +2 Cards and +1 Action a third time and fail to return the Horse again.",
-        "name": "Mastermind"
+        "description": "Zu Beginn deines nächsten Zuges darfst ud eine Aktionskarte aus deiner Hand dreimal spielen.",
+        "extra": "Den <b>DRAHTZIEHER</b> auf eine Aktionskarte anzuwenden ist optional. Wenn du es tust, führe die Anweisungen der Karte komplett aus, spiele sie dann zum zweiten Mal und spiele sie dann zum dritten Mal ohne eine andere Karte dazwischen zu spielen (außer wenn du von einer Karte angewiesen wirst). Das dreimalige Spieleln der Aktionskarte verbraucht keine Aktionen. Wenn z.B. mit dem <b>DRAHTZIEHER</b> eine <b>KOPFGELDJÄGERIN</b> dreimal spielst, erhältst du insgesamt +3 Aktionen und kannst danach 4 Aktionskarten spielen: deine normale Aktion plus 3 weitere für die +3 Aktionen. Spielst du eine Dauerkarte mit dem <b>DRAHTZIEHER</b>, bleibt der <b>DRAHTZIEHER</b> so lanoe im Spiel wie die Dauerkarte. Spielt ein <b>DRAHTZIEHER</b> einen anderen DRAHTZIEHER, bleiben beide im Spiel, und im Zug danach darfst du drei verschiedene (es können auch gleiche darunter sein) Aktionskarten aus deiner Hand je dreimal spielen. Spielst du ein <b>PFERD</b> mit dem <b>DRAHTZIEHER</b>, erhältst du +2 Karten und +1 Aktion, legst das <b>PFERD</b> auf den <b>PFERDE</b>-Stapel zurück, erhältst +2 Karren und +1 Aktion, legst das <b>PFERD</b> nicht zurück. weil du dies schon getan hast, erhältst zum dritten Mal +2 Karten und +1 Aktion und kannst wieder das <b>PFERD</b> nicht zurücklegen.",
+        "name": "Drahtzieher"
     },
     "Paddock": {
-        "description": "+2 Coin<br>Gain 2 Horses.<br>+1 Action per empty Supply pile.",
-        "extra": "This only checks how many piles are empty when you play it; how many +Actions you got does not change if a pile becomes empty later in the turn (or non-empty, such as due to Ambassador from Seaside).<n>This only counts Supply piles, not non-Supply piles like Horse.",
-        "name": "Paddock"
+        "description": "+2 Coins<n>Nimm 2 Pferde.<br>+1 Aktion pro leerem Vorratsstapel.",
+        "extra": "Mit dieser Karte überprüfst du nun die Anzahl der leeren Stapel, wenn du sie spielst. Wie viele +X Aktionen du bekommen hast, ändert sich nicht, wenn ein Stapel später im Zug leer wird (oder wieder Karten enthält, wie mit dem <b>BOTSCHAFTER</b> aus <b>Seaside</b>). Bei dier Karte werden nur Vorratsstapel gezählt, keine Stapel, die nicht zum Vorrat gehören, wie der <b>PFERDE</b>_Stapel.",
+        "name": "Koppel"
     },
     "Populate": {
         "description": "Gain one card from each Action Supply pile.",
@@ -1745,9 +1745,9 @@
         "name": "Ride"
     },
     "Sanctuary": {
-        "description": "+1 Card<br>+1 Action<br>+1 Buy<br>You may Exile a card from your hand.",
-        "extra": "Exiling a card is optional.",
-        "name": "Sanctuary"
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Kauf<br>Du darfst eine deiner Handkarten verbannen.",
+        "extra": "Eine Karte zu verbannen ist optional.",
+        "name": "Zufluchtsort"
     },
     "Scrap": {
         "description": "Entsorge eine deiner Handkarten. Wähle eine unterschiedliche Anweisung pro 1 Coins, die sie kostet: +1 Karte; +1 Aktion; +1 Kauf; + 1 Coins",
@@ -1905,9 +1905,9 @@
         "name": "Way of the Worm"
     },
     "Wayfarer": {
-        "description": "+3 Cards<br>You may gain a Silver.<line>This has the same cost as the last other card gained this turn, if any.",
-        "extra": "Cards that lower costs, like Bridge from Intrigue, only apply to the other card, not to Wayfarer too (though they apply to Wayfarer if no other cards have been gained yet). For example, if you play Bridge, Wayfarer costs 5 Coin; if you then buy a Silver, at that point Wayfarer costs 2 Coin, the same as Silver.<n>Wayfarer can have a cost with Potion (from Alchemy) or Debt (from Empires) in it.<n>Buying Animal Fair via trashing an Action card changes the cost of Wayfarer to 7 Coin, Animal Fair's cost, not to trashing an Action card.<n>If the cost of the last card gained changes after it was gained, the cost of Wayfarer changes too. For example, if you gain a Peddler when it costs 8 Coin, and then play 2 Action cards, Peddler and therefore Wayfarer both now cost 4 Coin in the Buy phase.<n>The cost of Wayfarer can change while resolving other cards. For example, if you play Stonemason and trash a Wayfarer which costs 6 Coin, you then gain a cheaper card such as Duchy which costs 5 Coin; then you gain a second card costing less than Wayfarer which now costs 5 Coin.",
-        "name": "Wayfarer"
+        "description": "+3 Karten<br> Du darfst ein Silber nehmen.<line>Diese Karte kostet genauso viel wie die letzte andere Karte, die in diesem Zug genommen wurde (falls eine genommen wurde).",
+        "extra": "Diee <b>WANDERIN</b> ist eine Karte mit variablen Kosten (wie bereits vom <b>HAUSIERER</b> (aus <b>BLÜTEZEIT</b>) bekannt). Normalerweise kostet sie 6 Coins - sobald aber eine Karte genommen wird, ändern sich ihre Kosten. Karten, die Kosten senken, wie die <b>BRÜCKE</b> (aus <b>Intrige</b>) gelten nur für die <b>WANDERIN</b>, wenn bisher noch keine Karten genommen wurden, Sobald eine Karte genommen wird (egal ob von dir oder einem Mitspieler), nimmt die <b>WANDERIN</b> die Kosten der zuletzt genommenen Karte an.<n>Das heisst, wenn du eine andere Karte als die <b>WANDERIN</b> nimmst, kostet die <b>WANDERIN</b> so lange, bis eine andere Karte genommen wird bzw. bis zu mEnde dieses Zuges, genauso viel wie die genommene Karte. Nimmst du eine weitere Karte in diesem Zug, nimmt die <b>WANDERIN</b> deren Kosten an usw. Nimmt ein anderer Spieler in deinem ZUg eine Karte (z.B. einen <b>FLUCH</b> durch eine <b>HEXE</b> (aus dem <b>Basisspiel</b>), die du gespielt hast) nimmt die <b>WANDERIN</b> deren Kosten an.<n>Wenn du z.B. eine <b>WANDERIN</b> spielst und dich entscheidest, ein <b>SILBER</b> zu nehmen, kostet die <b>WANDERIN</b> 3 Coins, gneau wie das <b>SILBER</b>. Wenn du eine <b>HEXE</b> (aus dem <b>Basisspiel</b>) spielst, nimmt sich jeder andere Spieler einen <b>FLUCH</b> und die <b>WANDERIN</b> kostet 0 Coins, genau wie der <b>FLUCH</b>. Wenn du z.B. die <b>BRÜCKE</b> (aus <b>Intrige</b>) spielst, kostet die <b>WANDERIN</b> 5 Coins. Wenn du dann ein <b>SILBER</b> kaufst, kostet die <b>WANDERIN</b> zu dem Zeitpunkt 2 Coins, genau wie ein <b>SILBER</b>.<n>Die Kosten der <b>WANDERIN</b> kann Potion (aus <b>Alchemisten</b>) oder Dept (aus <b>Empires</b>) enthalten. Den <b>VIEHMARKT</b> zu kaufen, in dem du eine Aktionskarte entsorfst, verändert die Kosten der <b>WANDERIN</b> auf 7 Coins, die Kosten des <b>VIEHMARKTS</b>, nicht auf duie Kosten der entsorgten Aktionskarte. Es ist auch nicht möglich, zum Bezahlen der <b>WANDERIN</b> eine Aktionskarte zu entsorgen.",
+        "name": "Wanderin"
     },
     "Bad Omens": {
         "description": "Lege deinen Nachziehstapel auf deinen Ablagestapel. Sieh den Ablagestapel durch und lege 2 Kupfer daraus auf den Nachziehstapel (oder zeige vor, dass du das nicht kannst).",
