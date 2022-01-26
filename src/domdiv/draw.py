@@ -976,12 +976,12 @@ class DividerDrawer(object):
 
         return text.strip()
 
-    def add_inline_text(self, card, text):
+    def add_inline_text(self, card, text, emWidth):
         # Bonuses
         text = card.getBonusBoldText(text)
 
-        # <line>
-        replace = "<center>{}</center>\n".format("&ndash;" * 22)
+        # <line>: 11 em dashes, but not wider than the text box
+        replace = "<center>{}</center>\n".format("&mdash;" * min(11, int(emWidth)))
         text = re.sub(r"\<line\>", replace, text)
         #  <tab> and \t
         text = re.sub(r"\<tab\>", "\t", text)
@@ -1493,7 +1493,8 @@ class DividerDrawer(object):
         minSpacerHeight = 0.05 * cm
 
         if not card.isExpansion():
-            descriptions = self.add_inline_text(card, descriptions)
+            emWidth = textBoxWidth / s.fontSize
+            descriptions = self.add_inline_text(card, descriptions, emWidth)
         descriptions = re.split("\n", descriptions)
         while True:
             paragraphs = []
