@@ -4,4 +4,4 @@ pre-commit
 pytest
 configargparse
 doit
-flake8<4
+flake8<4 # Problem with pytest as shown here: https://github.com/tholo/pytest-flake8/issues/81

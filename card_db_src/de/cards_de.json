@@ -1939,7 +1939,12 @@
         "extra": "Der SCHWARZMARKT-Stapel darf nur aus Königreichkarten bestehen, die nicht im Spiel sind, sich also nicht im Vorrat befinden. Er muss mindestens 15 Karten umfassen. Ihr einigt euch darauf, welche Königreichkarten ihr im SCHWARZMARKT-Stapel haben wollt. Das können auch mehr als 15 Karten sein, ja sogar alle (nicht verwendeten) Königreichkarten dürfen im SCHWARZMARKT-Stapel vorkommen. Dann kommt von jeder ausgewählten Königreichkarte eine Karte in den SCHWARZMARKT- Stapel. Alle Spieler dürfen sich noch mal die Karten im Stapel anschauen. Danach wird der SCHWARZMARKT-Stapel gemischt und als verdeckter Stapel neben dem Vorrat bereitgelegt. Dieser Stapel gehört nicht zum Vorrat.<n> Der SCHWARZMARKT ist eine Aktionskarte.  Sie beinhaltet 2 Anweisungen:<n> 1) +2 Coins<n> 2) Erlaubt einen besonderen SCHWARZMARKT-Kauf.<n> Der SCHWARZMARKT-Kauf findet in der Aktionsphase statt, d. h. schon vor der eigentlichen Kaufphase. Zunächst deckt der Spieler die obersten drei Karten des SCHWARZMARKT-Stapels auf. Dann darf er beliebig viele Geldkarten ausspielen und eine der drei aufgedeckten Karten kaufen, wenn das Geld (ausgespielte Geldkarten und Geldwerte auf Aktionskarten) dazu reicht. Er darf auch darauf verzichten, eine der aufgedeckten Karten zu kaufen. Nicht gekaufte Karten werden in beliebiger Reihenfolge zurück unter den SCHWARZMARKT-Stapel gelegt. Die ausgespielten Geldkarten bleiben zunächst offen liegen. Nicht verwendetes Geld, Geldwerte und Münzen darf der Spieler noch in der Kaufphase seines Zuges nutzen.",
         "name": "Schwarzmarkt"
     },
-    "Captain": {},
+    "Captain": {
+        "description": "Jetzt und zu Beginn deines nächsten Zuges: Spiele eine Aktionskarte im Vorrat, die keine Dauerkarte ist und bis zu 4 Coins kostet und lasse sie dort liegen",
+        "extra": "",
+        "name": "Kapitän Tobias"
+
+    },
     "Church": {
         "description": "+1 Aktion<br>Lege bis zu 3 deiner Handkarten mit der Bildseite nach unten zur Seite. Nimm sie zu Beginn deines nächsten Zuges auf deine Hand, danach darfst du eine deiner Handkarten entsorgen.",
         "extra": "Du darfst keine, eine, zwei oder drei Handkarten zur Seite legen. Lege sie mit der Vorderseite nach unten; du darfst sie dir ansehen.<n>Unabhängig davon, wie viele Karten du zur Seite legst, darfst du zu Beginn deines nächsten Zuges eine Karte entsorgen und der Schweriner Dom wird am Ende des nächsten Zuges abgelegt.<n>Die entsorgte Karte darf entweder eine der zur Seite gelegten Karten sein oder eine Karte die du bereits auf der Hand hattest.<n>Wenn du mehrere Schweriner Dome spielst (oder einen Schweriner Dom mehrmals etwa mit THRONSAAL), darfst du mehrere Stapel von bis zu drei Karten beiseite legen. In deinem nächsten Zug passiert folgendes: du nimmst einen Stapel der zur Seite gelegten Karten in die Hand, dann darfst du eine Karte entsorgen, dann nimmst du den nächsten Stapel in die Hand und darfst eine weitere Karte entsorgen. Du kannst dir aussuchen, welchen der zur Seite gelegten Kartenstapel du als erstes in die Hand nimmst.",
@@ -2849,5 +2854,15 @@
         "description": "+2 Karten<br>+1 Aktion<n> Lege diese Karte auf ihren Stapel zurück.<n><i>(Diese Karte gehört nicht zum Vorrat.)</i>",
         "extra": "Pferde sind Aktionskarten, gehören aber nicht zu den Königreichtkarten und damit nicht zum Vorrat.",
         "name": "Pferd"
+    },
+    "menagerie ways": {
+        "description": "In der <b>Menagerie</b> gibt es Wege. Sie sind keine Königreichtkarten und können nicht gekauft oder wie <b>Ereignisse</b> erworben werden. Vor Spielbeginn entscheiden die Spiler, mit wie vielen <b>Wegen</b> gespielt wird. Wir empfehlen, pro Spiel maximal 1 <b>Weg</b> zu verwernden. Die <b>Wege</b> werden neben dem Vorrat bereitgelegt, gehören aber nicht zum Vorrat.<br>Jeder <b>Weg</b> gibt Aktionskarten eine alternative Möglichkeit: Entweder spielst du die Aktionskarte gemäß ihrer eigenen Anweisungn oder du führst stattdessen beim Spielen der Karte die Anweisung einer ausliegenden <b>Wege</b>-Karte aus.",
+        "extra": "Um den Überblick zu behalten, ist es rasam, die Aktionskarten um 90 Grad zu drehen, die mit einem <b>Weg</b> benutzt wurde. So kannst du dir merken, dass du den <b>Weg</b> benutzt hast anstatt der Anweisung auf der Aktionskarte.",
+        "name": "Wege - Menagerie"
+    },
+    "menagerie events": {
+        "description": "In der <b>Menagerie</b> gibt es <b>Ereignisse</b>, die erstmals in <b>Abenteurer</b> erschienen sind. In der Kaufphase kannst du eine <b>Ereignis</b> statt einer anderen Karte erwerben (dies verbraucht 1 Kauf). Du bezahlst die Kosten, die auf dem <b>Ereignis</b> stehen, und dessen Effekt tritt sofort ein.",
+        "extra": "<b>Ereignisse</b> sind keine Königreichkarten. Sie liegen lediglich aus und liefern einen Effekt, den du kaufen kannst. Es gibt keine Möglichkeit, dass du ein <b>Ereignis</b> nehmen kannst oder das ein <b>Ereignis</b> in deinem Kartensatz ist.",
+        "name": "Ereignisse - Menagerie"
     }
 }
