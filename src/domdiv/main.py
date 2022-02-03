@@ -727,6 +727,7 @@ def parse_opts(cmdline_args=None):
         "'line' will print a solid line outlining the divider; "
         "'dot' will print a dot at each corner of the divider; "
         "'cropmarks' will print cropmarks for the divider; "
+        "'line-cropmarks' will combine 'line' and 'cropmarks'; "
         "'dot-cropmarks' will combine 'dot' and 'cropmarks'",
     )
     group_printing.add_argument(
