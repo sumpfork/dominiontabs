@@ -29,7 +29,7 @@ TAB_SIDE_CHOICES = [
     "full",
 ]
 TEXT_CHOICES = ["card", "rules", "blank"]
-LINE_CHOICES = ["line", "dot", "cropmarks", "dot-cropmarks"]
+LINE_CHOICES = ["line", "dot", "cropmarks", "line-cropmarks", "dot-cropmarks"]
 
 EDITION_CHOICES = ["1", "2", "latest", "all"]
 
@@ -881,11 +881,7 @@ def clean_opts(options):
     if options.cropmarks and options.linetype == "line":
         options.linetype = "cropmarks"
 
-    if options.linetype == "cropmarks":
-        options.cropmarks = True
-
-    if options.linetype == "dot-cropmarks":
-        options.linetype = "dot"
+    if "cropmarks" in options.linetype:
         options.cropmarks = True
 
     if options.expansions is None:
