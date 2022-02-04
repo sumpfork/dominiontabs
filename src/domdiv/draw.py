@@ -26,6 +26,16 @@ def split(l, n):
     yield l[i:]
 
 
+def totalHeight(options, stackHeight):
+    return (
+        options.dividerBaseHeight
+        + options.headHeight
+        + options.tailHeight
+        + stackHeight * options.headWrapper
+        + stackHeight * options.tailWrapper
+    )
+
+
 class CardPlot(object):
     # This object contains information needed to print a divider on a page.
     # It goes beyond information about the general card/divider to include page specific drawing information.
@@ -122,6 +132,7 @@ class CardPlot(object):
         cropOnBottom=False,
         cropOnLeft=False,
         cropOnRight=False,
+        options=None,
     ):
         self.card = card
         self.x = x  # x location of the lower left corner of the card on the page
@@ -142,6 +153,7 @@ class CardPlot(object):
         self.cropOnBottom = cropOnBottom  # When true, cropmarks needed along BOTTOM *printed* edge of the card
         self.cropOnLeft = cropOnLeft  # When true, cropmarks needed along LEFT *printed* edge of the card
         self.cropOnRight = cropOnRight  # When true, cropmarks needed along RIGHT *printed* edge of the card
+        self.options = options  # other script options
 
         # And figure out the backside index
         if self.tabIndex == 0:
@@ -275,9 +287,7 @@ class CardPlot(object):
 
         # set width and height for this card
         width = self.cardWidth
-        height = self.cardHeight + self.tabHeight
-        if self.wrapper:
-            height = 2 * (height + self.stackHeight)
+        height = totalHeight(self.options, self.stackHeight)
 
         if backside:
             x = page_width - x - width
@@ -662,7 +672,8 @@ class DividerDrawer(object):
         )
 
         dividerWidth = item.cardWidth
-        dividerHeight = item.cardHeight + item.tabHeight
+        # TODO: remove this unused variable
+        # dividerHeight = item.cardHeight + item.tabHeight
         dividerBaseHeight = item.cardHeight
         tabLabelWidth = item.tabWidth
         theTabWidth = item.tabWidth
@@ -762,14 +773,17 @@ class DividerDrawer(object):
 
             # Even if wanted, there may not be room, and limit to one pair of notches
             if (right2tab - minNotch < notch1) or not notch1used:
-                notch1 = 0
-                notch1used = False
+                notch1 = notch3 = 0
+                notch1used = notch3used = False
             if (left2tab - minNotch < notch4) or not notch4used or notch1used:
                 notch4 = notch2 = 0
                 notch4used = notch2used = False
-            else:
-                notch3 = 0
-                notch3used = False
+            if not self.options.headWrapper:  # no top fold
+                notch1 = notch4 = 0
+                notch1used = notch4used = False
+            if not self.options.tailWrapper:  # no bottom fold
+                notch2 = notch3 = 0
+                notch2used = notch3used = False
 
             # Setup the rest of the lineStyle's
             lineStyle[1] = lineType if notch1used else lineTypeNoDot
@@ -779,10 +793,37 @@ class DividerDrawer(object):
             lineStyle[5] = lineType if notch1used and right2tab > 0 else lineTypeNoDot
             lineStyle[6] = lineType if notch4used and left2tab > 0 else lineTypeNoDot
 
-            stackHeight = item.stackHeight
-            body_minus_notches = dividerBaseHeight - (2.0 * notch_height)
+            # TODO: this needs generalizing to match the new head/tail system
+            headStackHeight = item.stackHeight * self.options.headWrapper
+            tailStackHeight = item.stackHeight * self.options.tailWrapper
+            frontTabHeight = self.options.headHeight
+            backTabHeight = theTabHeight if self.options.tail == "wrapper" else 0
+            backWrapHeight = self.options.tailHeight - backTabHeight
+            frontWrapHeight = dividerBaseHeight
+
+            front_minus_notches = frontWrapHeight - (2.0 * notch_height)
             tab2notch1 = right2tab - notch1
             tab2notch4 = left2tab - notch4
+            backBottomNotch = min(notch_height, backWrapHeight)
+            backTopNotch = (
+                max(notch_height + backWrapHeight - frontWrapHeight, 0)
+                if self.options.tailWrapper
+                else 0
+            )
+            back_minus_notches = max(backWrapHeight - backBottomNotch - backTopNotch, 0)
+
+            # Some corners collapse if the back tab height or notch height is 0
+            # external corners:
+            x5 = 5 if backTopNotch else 7
+            x6 = 6 if backTopNotch else 7
+            x7 = 7 if backTabHeight else 0
+            x8 = 8 if backTabHeight else 7 if backTopNotch else 0
+            x9 = 9 if backTabHeight else 7 if backTopNotch else 0
+            # internal corners:
+            i1 = 1 if backTopNotch else 0
+            i4 = 4 if backTopNotch else 0
+            i8 = 8 if backTabHeight else 0
+            i9 = 9 if backTabHeight else 0
 
             #     <-----left2tab----------> <--tabLabelWidth--> <-----right2tab-------->
             #    |         |               |                   |               |        |
@@ -799,7 +840,7 @@ class DividerDrawer(object):
             #    |                                                                      |
             # AA-2--------2BB                                                 N3--------3-O
             #     <notch2>|                                                    |<notch3>
-            #    +        0CC.................................................M0        +
+            #    +        0CC.................................................M0        +-Oa
             #             |                                                    |
             #    +        0DD.................................................L0        +
             #     <notch2>|                                                    |<notch3>
@@ -810,60 +851,60 @@ class DividerDrawer(object):
             #    |         Ca                                                  H        |
             # GG-6---------4<--tab2notch4->                     <--tab2notch1->1--------5-I
             #     <notch4 >|               C                   F               |<notch1>
-            #  B-+       Cb8---------------8                   9---------------1G       +-Ia
+            #  B-+       Cb8---------------8                   9---------------9G       +-Ia
             #                              |                   |
             #   -+A      Cc+              D7-------------------7E              +Ga      +-Ib
             #    |         |               |                   |               |        |
             #     <-----left2tab----------> <--tabLabelWidth--> <-----right2tab-------->
 
             plotter.plot(0, 0, NO_LINE, [BOTTOM, LEFT])  # ?  to A
-            plotter.plot(0, theTabHeight, NO_LINE, LEFT)  # A  to B
+            plotter.plot(0, backTabHeight, NO_LINE, LEFT)  # A  to B
             plotter.plot(
-                0, notch_height, NO_LINE, (LEFT, notch4used or notch1used)
+                0, backTopNotch, NO_LINE, (LEFT, notch4used or notch1used)
             )  # B  to GG
-            plotter.plot(notch4, 0, lineStyle[4])  # GG to Ca
-            plotter.plot(0, -notch_height, lineStyle[8])  # Ca to Cb
+            plotter.plot(notch4, 0, lineStyle[i4])  # GG to Ca
+            plotter.plot(0, -backTopNotch, lineStyle[x8])  # Ca to Cb
             plotter.plot(
-                0, -theTabHeight, NO_LINE, (BOTTOM, notch4used or notch2used)
+                0, -backTabHeight, NO_LINE, (BOTTOM, notch4used or notch2used)
             )  # Cb to Cc
-            plotter.plot(0, theTabHeight, NO_LINE)  # Cc to Cb
-            plotter.plot(tab2notch4, 0, lineStyle[8])  # Cb to C
-            plotter.plot(0, -theTabHeight, lineStyle[7], BOTTOM)  # C  to D
-            plotter.plot(tabLabelWidth, 0, lineStyle[7], BOTTOM)  # D  to E
-            plotter.plot(0, theTabHeight, lineStyle[9])  # E  to F
-            plotter.plot(tab2notch1, 0, lineStyle[1])  # F  to G
+            plotter.plot(0, backTabHeight, NO_LINE)  # Cc to Cb
+            plotter.plot(tab2notch4, 0, lineStyle[i8])  # Cb to C
+            plotter.plot(0, -backTabHeight, lineStyle[x7], BOTTOM)  # C  to D
+            plotter.plot(tabLabelWidth, 0, lineStyle[x7], BOTTOM)  # D  to E
+            plotter.plot(0, backTabHeight, lineStyle[i9])  # E  to F
+            plotter.plot(tab2notch1, 0, lineStyle[x9])  # F  to G
             plotter.plot(
-                0, -theTabHeight, NO_LINE, (BOTTOM, notch1used or notch3used)
+                0, -backTabHeight, NO_LINE, (BOTTOM, notch1used or notch3used)
             )  # G  to Ga
-            plotter.plot(0, theTabHeight, NO_LINE)  # Ga to G
-            plotter.plot(0, notch_height, lineStyle[1])  # G  to H
+            plotter.plot(0, backTabHeight, NO_LINE)  # Ga to G
+            plotter.plot(0, backTopNotch, lineStyle[i1])  # G  to H
             plotter.plot(
-                notch1, 0, lineStyle[5], (RIGHT, notch1used or notch4used)
+                notch1, 0, lineStyle[x5], (RIGHT, notch1used or notch4used)
             )  # H  to I
-            plotter.plot(0, -notch_height, NO_LINE, RIGHT)  # I  to Ia
-            plotter.plot(0, -theTabHeight, NO_LINE, [RIGHT, BOTTOM])  # Ia to Ib
-            plotter.plot(0, theTabHeight, NO_LINE)  # Ib to Ia
-            plotter.plot(0, notch_height, NO_LINE)  # Ia to I
+            plotter.plot(0, -backTopNotch, NO_LINE, RIGHT)  # I  to Ia
+            plotter.plot(0, -backTabHeight, NO_LINE, [RIGHT, BOTTOM])  # Ia to Ib
+            plotter.plot(0, backTabHeight, NO_LINE)  # Ib to Ia
+            plotter.plot(0, backTopNotch, NO_LINE)  # Ia to I
             plotter.plot(
-                0, body_minus_notches, lineStyle[3], (RIGHT, notch2used or notch3used)
+                0, back_minus_notches, lineStyle[3], (RIGHT, notch2used or notch3used)
             )  # I  to J
             plotter.plot(-notch3, 0, lineStyle[3])  # J  to K
-            plotter.plot(0, notch_height, lineStyle[0])  # K  to L
-            plotter.plot(0, stackHeight, lineStyle[0])  # L  to M
+            plotter.plot(0, backBottomNotch, lineStyle[0])  # K  to L
+            plotter.plot(0, tailStackHeight, lineStyle[0])  # L  to M
             plotter.plot(0, notch_height, lineStyle[3])  # M  to N
             plotter.plot(
                 notch3, 0, lineStyle[3], (RIGHT, notch2used or notch3used)
             )  # N  to O
             plotter.plot(
-                0, body_minus_notches, lineStyle[5], (RIGHT, notch1used or notch4used)
+                0, front_minus_notches, lineStyle[5], (RIGHT, notch1used or notch4used)
             )  # O  to P
             plotter.plot(0, notch_height, NO_LINE, RIGHT)  # P  to Pa
             plotter.plot(0, -notch_height, NO_LINE)  # Pa to P
             plotter.plot(-notch1, 0, lineStyle[1])  # P  to Q
             plotter.plot(0, notch_height, lineStyle[9])  # Q  to R
             plotter.plot(-tab2notch1, 0, lineStyle[9])  # R  to S
-            plotter.plot(0, stackHeight, lineStyle[0])  # S  to T
-            plotter.plot(0, theTabHeight, lineStyle[7], TOP)  # S  to U
+            plotter.plot(0, headStackHeight, lineStyle[0])  # S  to T
+            plotter.plot(0, frontTabHeight, lineStyle[7], TOP)  # S  to U
             plotter.plot(
                 tab2notch1, 0, NO_LINE, (TOP, notch1used or notch3used)
             )  # U  to Ua
@@ -875,8 +916,8 @@ class DividerDrawer(object):
                 -tab2notch4, 0, NO_LINE, (TOP, notch4used or notch2used)
             )  # V  to Va
             plotter.plot(tab2notch4, 0, NO_LINE)  # Va to V
-            plotter.plot(0, -theTabHeight, lineStyle[0])  # V  to W
-            plotter.plot(0, -stackHeight, lineStyle[8])  # W  to X
+            plotter.plot(0, -frontTabHeight, lineStyle[0])  # V  to W
+            plotter.plot(0, -headStackHeight, lineStyle[8])  # W  to X
             plotter.plot(-tab2notch4, 0, lineStyle[8])  # X  to Y
             plotter.plot(0, -notch_height, lineStyle[4])  # Y  to Ya
             plotter.plot(
@@ -884,35 +925,40 @@ class DividerDrawer(object):
             )  # Ya to Z
             plotter.plot(0, notch_height, NO_LINE, LEFT)  # Z  to Za
             plotter.plot(
-                0, theTabHeight + stackHeight, NO_LINE, [TOP, LEFT]
+                0, frontTabHeight + headStackHeight, NO_LINE, [TOP, LEFT]
             )  # Za to Zb
-            plotter.plot(0, -theTabHeight - stackHeight, NO_LINE)  # Zb to Za
+            plotter.plot(0, -frontTabHeight - headStackHeight, NO_LINE)  # Zb to Za
             plotter.plot(0, -notch_height, NO_LINE)  # Za to Z
             plotter.plot(
-                0, -body_minus_notches, lineStyle[2], (LEFT, notch2used or notch3used)
+                0, -front_minus_notches, lineStyle[2], (LEFT, notch2used or notch3used)
             )  # Z  to AA
             plotter.plot(notch2, 0, lineStyle[2])  # AA to BB
             plotter.plot(0, -notch_height, lineStyle[0])  # BB to CC
-            plotter.plot(0, -stackHeight, lineStyle[0])  # CC to DD
-            plotter.plot(0, -notch_height, lineStyle[2])  # DD to EE
+            plotter.plot(0, -tailStackHeight, lineStyle[0])  # CC to DD
+            plotter.plot(0, -backBottomNotch, lineStyle[2])  # DD to EE
             plotter.plot(
                 -notch2, 0, lineStyle[2], (LEFT, notch2used or notch3used)
             )  # EE to FF
-            plotter.plot(0, -body_minus_notches, lineStyle[6])  # FF to GG
+            plotter.plot(0, -back_minus_notches, lineStyle[x6])  # FF to GG
 
             # Add fold lines
             self.canvas.setStrokeGray(0.9)
+            # top fold
             plotter.setXY(
-                left2tab, dividerHeight + stackHeight + dividerBaseHeight
+                left2tab,
+                backTabHeight + backWrapHeight + tailStackHeight + frontWrapHeight,
             )  # ?  to X
             plotter.plot(theTabWidth, 0, plotter.LINE)  # X  to S
-            plotter.plot(0, stackHeight)  # S  to T
+            plotter.plot(0, headStackHeight)  # S  to T
             plotter.plot(-theTabWidth, 0, plotter.LINE)  # V  to S
-
-            plotter.setXY(notch2, dividerHeight)  # ?  to DD
-            plotter.plot(dividerWidth - notch2 - notch3, 0, plotter.LINE)  # DD to L
-            plotter.plot(0, stackHeight)  # L  to M
-            plotter.plot(-dividerWidth + notch2 + notch3, 0, plotter.LINE)  # M  to CC
+            # bottom fold
+            if backWrapHeight:
+                plotter.setXY(notch2, backTabHeight + backWrapHeight)  # ?  to DD
+                plotter.plot(dividerWidth - notch2 - notch3, 0, plotter.LINE)  # DD to L
+                plotter.plot(0, tailStackHeight)  # L  to M
+                plotter.plot(
+                    -dividerWidth + notch2 + notch3, 0, plotter.LINE
+                )  # M  to CC
 
         self.canvas.restoreState()
 
@@ -1157,6 +1203,7 @@ class DividerDrawer(object):
             translate_x = item.getTabOffset(backside=backside)
 
         if wrapper == "back":
+            # TODO: move this for cover wrapper type
             translate_y = item.tabHeight
             if self.wantCentreTab(card):
                 translate_x = item.cardWidth / 2 + item.tabWidth / 2
@@ -1164,9 +1211,17 @@ class DividerDrawer(object):
                 translate_x = item.getTabOffset(backside=False) + item.tabWidth
 
         if wrapper == "front":
-            translate_y = (
-                translate_y + item.cardHeight + item.tabHeight + 2.0 * item.stackHeight
-            )
+            # first, move to tab position
+            translate_y += self.options.tailHeight
+            translate_y += self.options.tailWrapper * item.stackHeight
+            if self.options.head == "wrapper":
+                # spine position
+                # TODO: fine tune the text position
+                translate_y += item.stackHeight / 2 - item.tabHeight / 2
+            elif self.options.head == "strap":
+                translate_y += item.stackHeight
+            elif self.options.head == "none":
+                pass  # TODO
 
         self.canvas.translate(translate_x, translate_y)
 
@@ -1181,11 +1236,19 @@ class DividerDrawer(object):
 
         # allow for 3 pt border on each side
         textWidth = item.tabWidth - 6
-        textHeight = 7
-        if self.options.no_tab_artwork:
-            textHeight = 4
-        textHeight = (
-            item.tabHeight / 2 - textHeight + card.getType().getTabTextHeightOffset()
+        # TODO: calculate text size/height before fitting to spine
+        # TODO: the art offset should not apply to --no-tab-artwork!
+        # textHeight = 7
+        # if self.options.no_tab_artwork:
+        #     textHeight = 4
+        # textHeight = (
+        #     item.tabHeight / 2 - textHeight + card.getType().getTabTextHeightOffset()
+        # )
+        textHeight = item.tabHeight / 2
+        textHeight -= (
+            4
+            if self.options.no_tab_artwork
+            else 7 - card.getType().getTabTextHeightOffset()
         )
 
         # draw banner
@@ -1346,7 +1409,12 @@ class DividerDrawer(object):
                     if i != len(words) - 1:
                         w += drawWordPiece(" ", fontSize)
 
-        if wrapper == "front" and card.getCardCount() >= 5:
+        # TODO: handle --spine option
+        if (
+            wrapper == "front"
+            and self.options.head == "strap"
+            and card.getCardCount() >= 5
+        ):
             # Print smaller version of name on the top wrapper edge
             self.canvas.translate(
                 0, -item.stackHeight
@@ -1387,6 +1455,7 @@ class DividerDrawer(object):
         totalHeight = item.cardHeight
 
         # Figure out if any translation needs to be done
+        # TODO: adjust non-sleeve wrappers as needed
         if wrapper == "back":
             self.canvas.translate(item.cardWidth, item.cardHeight + item.tabHeight)
             self.canvas.rotate(180)
@@ -1746,13 +1815,33 @@ class DividerDrawer(object):
         options.dividerWidthReserved = options.dividerWidth
         options.dividerHeightReserved = options.dividerHeight
 
+        # Set head & tail heights now that card & label heights are set
+        options.headHeight = (
+            options.head_height * cm
+            if options.head_height
+            else options.dividerBaseHeight
+            if options.head == "wrapper"
+            else options.labelHeight
+            if options.head in ["tab", "strap"]
+            else 0
+        )
+        options.tailHeight = (
+            options.tail_height * cm
+            if options.tail_height
+            else options.dividerHeight
+            if options.tail == "folder"
+            else options.dividerBaseHeight
+            if options.tail == "wrapper"
+            else options.labelHeight
+            if options.tail == "strap"
+            else 0
+        )
+
         if options.wrapper:
             # Adjust height for wrapper.  Use the maximum thickness of any divider so we know anything will fit.
             maxStackHeight = max(c.getStackHeight(options.thickness) for c in cards)
-            options.dividerHeightReserved = 2 * (
-                options.dividerHeightReserved + maxStackHeight
-            )
-            print("Max Card Stack Height: {:.2f}cm ".format(maxStackHeight / 10.0))
+            print("Max Card Stack Height: {:.2f}cm ".format(maxStackHeight / cm))
+            options.dividerHeightReserved = totalHeight(options, maxStackHeight)
 
         # Adjust for rotation
         if options.rotate == 90 or options.rotate == 270:
@@ -1937,6 +2026,7 @@ class DividerDrawer(object):
                 textTypeFront=options.text_front,
                 textTypeBack=options.text_back,
                 stackHeight=card.getStackHeight(options.thickness),
+                options=options,
             )
 
             if card.isExpansion() and options.full_expansion_dividers:

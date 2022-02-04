@@ -31,6 +31,12 @@ TAB_SIDE_CHOICES = [
 TEXT_CHOICES = ["card", "rules", "blank"]
 LINE_CHOICES = ["line", "dot", "cropmarks", "line-cropmarks", "dot-cropmarks"]
 
+HEAD_TAIL_CHOICES = ["wrapper", "strap", "none"]
+HEAD_CHOICES = ["tab"] + HEAD_TAIL_CHOICES
+TAIL_CHOICES = ["folder"] + HEAD_TAIL_CHOICES
+FACE_CHOICES = ["front", "back"]
+SPINE_CHOICES = ["name", "type", "tab"]
+
 EDITION_CHOICES = ["1", "2", "latest", "upgrade", "removed", "all"]
 
 ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
@@ -592,11 +598,114 @@ def parse_opts(cmdline_args=None):
     group_wrapper = parser.add_argument_group(
         "Card Sleeves/Wrappers", "Generating dividers that are card sleeves/wrappers."
     )
-    group_wrapper.add_argument(
+    group_wrapper.add_argument(  # TODO
         "--wrapper",
         action="store_true",
-        dest="wrapper",
-        help="Draw sleeves (aka wrapper) for the cards instead of a divider for the cards.",
+        dest="wrapper_meta",
+        help="Draw sleeves (wrappers) instead of dividers for the cards. "
+        "Same as --head=strap --tail=folder",
+    )
+    group_wrapper.add_argument(
+        "--pull-tab",
+        action="store_true",
+        dest="pull_tab_meta",
+        help="Draw folding pull tabs instead of dividers for the cards. "
+        "Same as --head=tab --tail=strap",
+    )
+    group_wrapper.add_argument(  # TODO
+        "--cover",
+        action="store_true",
+        dest="cover_meta",
+        help="Draw folding covers instead of dividers for the cards. "
+        "Same as --head=wrapper --head-facing=back --head-text=back",
+    )
+    group_wrapper.add_argument(  # TODO
+        "--head",
+        choices=HEAD_CHOICES,
+        dest="head",
+        default="tab",
+        help="Top tab or wrapper type; "
+        "'tab' will add divider tabs; "
+        "'wrapper' will add a folding cover; "
+        "'strap' will add a folding pull tab or tab cover; "
+        "'none' will leave the top edge plain.",
+    )
+    group_wrapper.add_argument(  # TODO
+        "--tail",
+        choices=TAIL_CHOICES,
+        dest="tail",
+        default="none",
+        help="Bottom wrapper type; "
+        "'folder' will create a folder with tabs; "
+        "'wrapper' will create a folder without tabs; "
+        "'strap' will add a bottom pull tab; "
+        "'none' will leave the bottom edge plain.",
+    )
+    group_wrapper.add_argument(  # TODO
+        "--head-facing",
+        choices=FACE_CHOICES,
+        dest="head_facing",
+        default="front",
+        help="Text facing for top tabs and wrappers; "
+        "'front' will show the text upright when flat or unfolded; "
+        "'back' will show it upright when folded over.",
+    )
+    group_wrapper.add_argument(  # TODO
+        "--tail-facing",
+        choices=FACE_CHOICES,
+        dest="tail_facing",
+        default="back",
+        help="Text facing for tail wrappers; "
+        "'front' will show the text upright when flat or unfolded; "
+        "'back' will show it upright when folded over.",
+    )
+    group_wrapper.add_argument(  # TODO
+        "--head-text",
+        choices=TEXT_CHOICES + FACE_CHOICES,
+        dest="head_text",
+        default="blank",
+        help="Text to print on top wrappers; "
+        "'card' will print the text from the game card; "
+        "'rules' will print additional rules for the game card; "
+        "'blank' will not print text on the divider; "
+        "'front' will use the same setting as --front; "
+        "'back' will use the same setting as --back.",
+    )
+    group_wrapper.add_argument(  # TODO
+        "--tail-text",
+        choices=TEXT_CHOICES + FACE_CHOICES,
+        dest="tail_text",
+        default="back",
+        help="Text to print on tail wrappers; "
+        "'card' will print the text from the game card; "
+        "'rules' will print additional rules for the game card; "
+        "'blank' will not print text on the divider; "
+        "'front' will use the same setting as --front; "
+        "'back' will use the same setting as --back.",
+    )
+    group_wrapper.add_argument(  # TODO
+        "--head-height",
+        type=float,
+        default=0.0,
+        help="Height of the divider head in centimeters "
+        "(a value of 0 uses tab height or card height as appropriate).",
+    )
+    group_wrapper.add_argument(  # TODO
+        "--tail-height",
+        type=float,
+        default=0.0,
+        help="Height of the tail wrapper in centimeters "
+        "(a value of 0 uses tab height or card height as appropriate).",
+    )
+    group_wrapper.add_argument(  # TODO
+        "--spine",
+        choices=SPINE_CHOICES,
+        dest="spine",
+        default="name",
+        help="Text to print on the top edge of wrappers; "
+        "'name' will print the card name."
+        "'type' will print the card type."
+        "'tab' will print all tab text and icons.",
     )
     group_wrapper.add_argument(
         "--thickness",
@@ -631,7 +740,7 @@ def parse_opts(cmdline_args=None):
         "--notch",
         action="store_true",
         dest="notch",
-        help="Same as --notch_length thickness 1.5.",
+        help="Same as --notch_length=1.5.",
     )
 
     # Printing
@@ -815,6 +924,23 @@ def parse_opts(cmdline_args=None):
 
 
 def clean_opts(options):
+
+    if options.wrapper_meta:
+        # Same as --head=strap --tail=folder
+        options.head = "strap"
+        options.tail = "folder"
+    if options.pull_tab_meta:
+        # Same as --head=tab --tail=strap
+        options.head = "tab"
+        options.tail = "strap"
+    if options.cover_meta:
+        # Same as --head=wrapper --head-facing=back --head-text=back
+        options.head = "wrapper"
+        options.head_facing = "back"
+        options.head_text = "back"
+    options.headWrapper = options.head in ["wrapper", "strap"]
+    options.tailWrapper = options.tail in ["folder", "wrapper", "strap"]
+    options.wrapper = options.headWrapper or options.tailWrapper
 
     if "center" in options.tab_side:
         options.tab_side = str(options.tab_side).replace("center", "centre")
