@@ -18,15 +18,17 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 from .cards import Card
 
 
-def split(l, n):
+def split(seq, n):
+    # Split a sequence into runs of n items each.
     i = 0
-    while i < len(l) - n:
-        yield l[i : i + n]
+    while i < len(seq) - n:
+        yield seq[i : i + n]
         i += n
-    yield l[i:]
+    yield seq[i:]
 
 
 def totalHeight(options, stackHeight):
+    # Calculate divider total height given current options and stack height.
     return (
         options.dividerBaseHeight
         + options.headHeight
@@ -797,7 +799,7 @@ class DividerDrawer(object):
             headStackHeight = item.stackHeight * self.options.headWrapper
             tailStackHeight = item.stackHeight * self.options.tailWrapper
             frontTabHeight = self.options.headHeight
-            backTabHeight = theTabHeight if self.options.tail == "wrapper" else 0
+            backTabHeight = theTabHeight if self.options.tail == "folder" else 0
             backWrapHeight = self.options.tailHeight - backTabHeight
             frontWrapHeight = dividerBaseHeight
 
@@ -1193,10 +1195,21 @@ class DividerDrawer(object):
         if card.isBlank():
             return
 
+        if wrapper == "front" and self.options.head == "none":
+            # TODO: bail out?
+            pass
+
         # draw tab flap
         self.canvas.saveState()
 
-        translate_y = item.cardHeight
+        translate_y = (
+            item.cardHeight
+            + self.options.tailHeight
+            + self.options.tailWrapper * item.stackHeight
+            + self.options.headWrapper * item.stackHeight
+            + self.options.headHeight
+            - item.tabHeight
+        )
         if self.wantCentreTab(card):
             translate_x = item.cardWidth / 2 - item.tabWidth / 2
         else:
@@ -1209,19 +1222,6 @@ class DividerDrawer(object):
                 translate_x = item.cardWidth / 2 + item.tabWidth / 2
             else:
                 translate_x = item.getTabOffset(backside=False) + item.tabWidth
-
-        if wrapper == "front":
-            # first, move to tab position
-            translate_y += self.options.tailHeight
-            translate_y += self.options.tailWrapper * item.stackHeight
-            if self.options.head == "wrapper":
-                # spine position
-                # TODO: fine tune the text position
-                translate_y += item.stackHeight / 2 - item.tabHeight / 2
-            elif self.options.head == "strap":
-                translate_y += item.stackHeight
-            elif self.options.head == "none":
-                pass  # TODO
 
         self.canvas.translate(translate_x, translate_y)
 
@@ -1409,38 +1409,73 @@ class DividerDrawer(object):
                     if i != len(words) - 1:
                         w += drawWordPiece(" ", fontSize)
 
-        # TODO: handle --spine option
-        if (
-            wrapper == "front"
-            and self.options.head == "strap"
-            and card.getCardCount() >= 5
-        ):
-            # Print smaller version of name on the top wrapper edge
-            self.canvas.translate(
-                0, -item.stackHeight
-            )  # move into area used by the wrapper
-            fontSize = 8  # use the smallest font
+        self.canvas.restoreState()
+
+    def drawSpine(self, item):
+        card = item.card
+        if self.options.spine == "tab":
+            # TODO: handle --spine=tab
+            pass
+
+        # Skip blank cards
+        if card.isBlank():
+            return
+
+        text = card.types_name if self.options.spine == "types" else card.name.upper()
+        if not text:
+            return
+
+        # Skip cards with little or no spine
+        # TODO: base this on available space, not card count
+        if not self.options.headWrapper or card.getCardCount() < 5:
+            return
+
+        # Print text on the top wrapper edge
+        self.canvas.saveState()
+
+        translate_y = (
+            item.cardHeight
+            + self.options.tailHeight
+            + self.options.tailWrapper * item.stackHeight
+        )
+        margin = 3
+        if self.options.head == "wrapper":
+            # use full width
+            textWidth = item.cardWidth - 2 * margin
+            translate_x = margin
+        elif self.wantCentreTab(card):
+            textWidth = item.tabWidth - 2 * margin
+            translate_x = item.cardWidth / 2 - item.tabWidth / 2 + margin
+        else:
+            textWidth = item.tabWidth - 2 * margin
+            translate_x = item.getTabOffset(backside=False) + margin
+        self.canvas.translate(translate_x, translate_y)
+
+        # Determine text size
+        fontSize = 8  # use the smallest font
+        width = self.nameWidth(text, fontSize)
+        while width > textWidth and fontSize > 6:
+            fontSize -= 0.01
+            width = self.nameWidth(text, fontSize)
+        # self.canvas.setFont(self.font_mapping["Regular"], fontSize)
+
+        textHeight = fontSize - 2
+        textHeight = item.stackHeight / 2 - textHeight / 2
+        h = textHeight
+        words = text.split()
+        w = textWidth / 2 - width / 2
+
+        def drawWordPiece(text, fontSize):
             self.canvas.setFont(self.font_mapping["Regular"], fontSize)
+            if text != " ":
+                self.canvas.drawString(w, h, text)
+            return pdfmetrics.stringWidth(text, self.font_mapping["Regular"], fontSize)
 
-            textHeight = fontSize - 2
-            textHeight = item.stackHeight / 2 - textHeight / 2
-            h = textHeight
-            words = name.split()
-            w = item.tabWidth / 2 - self.nameWidth(name, fontSize) / 2
-
-            def drawWordPiece(text, fontSize):
-                self.canvas.setFont(self.font_mapping["Regular"], fontSize)
-                if text != " ":
-                    self.canvas.drawString(w, h, text)
-                return pdfmetrics.stringWidth(
-                    text, self.font_mapping["Regular"], fontSize
-                )
-
-            for i, word in enumerate(words):
-                if i != 0:
-                    w += drawWordPiece(" ", fontSize)
-                w += drawWordPiece(word[0], fontSize)
-                w += drawWordPiece(word[1:], fontSize - 2)
+        for i, word in enumerate(words):
+            if i != 0:
+                w += drawWordPiece(" ", fontSize)
+            w += drawWordPiece(word[0], fontSize)
+            w += drawWordPiece(word[1:], fontSize - 2)
 
         self.canvas.restoreState()
 
@@ -1641,6 +1676,7 @@ class DividerDrawer(object):
             cardText = item.textTypeBack
 
         self.drawTab(item, wrapper=wrap, backside=isBack)
+        self.drawSpine(item)
         if not self.options.tabs_only:
             self.drawText(item, cardText, wrapper=wrap)
             if item.wrapper:

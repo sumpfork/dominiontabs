@@ -35,7 +35,7 @@ HEAD_TAIL_CHOICES = ["wrapper", "strap", "none"]
 HEAD_CHOICES = ["tab"] + HEAD_TAIL_CHOICES
 TAIL_CHOICES = ["folder"] + HEAD_TAIL_CHOICES
 FACE_CHOICES = ["front", "back"]
-SPINE_CHOICES = ["name", "type", "tab"]
+SPINE_CHOICES = ["name", "types", "tab"]
 
 EDITION_CHOICES = ["1", "2", "latest", "upgrade", "removed", "all"]
 
@@ -598,7 +598,7 @@ def parse_opts(cmdline_args=None):
     group_wrapper = parser.add_argument_group(
         "Card Sleeves/Wrappers", "Generating dividers that are card sleeves/wrappers."
     )
-    group_wrapper.add_argument(  # TODO
+    group_wrapper.add_argument(
         "--wrapper",
         action="store_true",
         dest="wrapper_meta",
@@ -612,14 +612,14 @@ def parse_opts(cmdline_args=None):
         help="Draw folding pull tabs instead of dividers for the cards. "
         "Same as --head=tab --tail=strap",
     )
-    group_wrapper.add_argument(  # TODO
+    group_wrapper.add_argument(
         "--cover",
         action="store_true",
         dest="cover_meta",
         help="Draw folding covers instead of dividers for the cards. "
         "Same as --head=wrapper --head-facing=back --head-text=back",
     )
-    group_wrapper.add_argument(  # TODO
+    group_wrapper.add_argument(
         "--head",
         choices=HEAD_CHOICES,
         dest="head",
@@ -630,7 +630,7 @@ def parse_opts(cmdline_args=None):
         "'strap' will add a folding pull tab or tab cover; "
         "'none' will leave the top edge plain.",
     )
-    group_wrapper.add_argument(  # TODO
+    group_wrapper.add_argument(
         "--tail",
         choices=TAIL_CHOICES,
         dest="tail",
@@ -683,14 +683,14 @@ def parse_opts(cmdline_args=None):
         "'front' will use the same setting as --front; "
         "'back' will use the same setting as --back.",
     )
-    group_wrapper.add_argument(  # TODO
+    group_wrapper.add_argument(
         "--head-height",
         type=float,
         default=0.0,
         help="Height of the divider head in centimeters "
         "(a value of 0 uses tab height or card height as appropriate).",
     )
-    group_wrapper.add_argument(  # TODO
+    group_wrapper.add_argument(
         "--tail-height",
         type=float,
         default=0.0,
