@@ -490,55 +490,69 @@ class DividerDrawer(object):
         self.canvas.save()
 
     def registerFonts(self):
-        # the following are filenames from both an Adobe Reader install and a download from fontsgeek
-        fontfilenames = [
-            "MinionPro-Regular.ttf",
-            "MinionPro-Bold.ttf",
-            "MinionPro-It.ttf",
-            "Minion Pro Regular.ttf",
-            "Minion Pro Bold.ttf",
-            "Minion Pro Italic.ttf",
-        ]
-        # first figure out which, if any, are present
-        fontpaths = [os.path.join("fonts", fname) for fname in fontfilenames]
-        fontpaths = [
-            fpath
-            for fpath in fontpaths
-            if pkg_resources.resource_exists("domdiv", fpath)
-        ]
-        self.font_mapping = {
-            "Regular": [fpath for fpath in fontpaths if "Regular" in fpath],
-            "Bold": [fpath for fpath in fontpaths if "Bold" in fpath],
-            "Italic": [fpath for fpath in fontpaths if "It" in fpath],
+        # Common filenames used by Adobe Reader and Creative Cloud, as well as
+        # alternatives available from free sites like fontsgeek:
+        fontfilenames = {
+            "TrajanPro-Regular": [
+                "TrajanPro3-Regular.ttf",
+                "TrajanPro-Regular.ttf",
+                "Trajan Pro Regular.ttf",
+            ],
+            "MinionPro-Regular": [
+                "MinionPro-Regular.ttf",
+                "Minion Pro Regular.ttf",
+            ],
+            "MinionPro-Bold": [
+                "MinionPro-Bold.ttf",
+                "Minion Pro Bold.ttf",
+            ],
+            "MinionPro-Italic": [
+                "MinionPro-Italic.ttf",
+                "MinionPro-It.ttf",
+                "Minion Pro Italic.ttf",
+            ],
         }
-        # then make sure that we have at least one for each type
-        for fonttype in self.font_mapping:
-            if not len(self.font_mapping[fonttype]):
+        fontpaths = {}
+        required = [font for font in fontfilenames.keys() if font.startswith("Minion")]
+        # Locate the files in package data, if present
+        for font, filenames in fontfilenames.items():
+            for fname in filenames:
+                fpath = os.path.join("fonts", fname)
+                if pkg_resources.resource_exists("domdiv", fpath):
+                    fontpaths[font] = fpath
+                    break
+        for font in required:
+            if font not in fontpaths:
                 print(
                     (
                         "Warning, Minion Pro ttf file for {} missing from domdiv/fonts!"
                         " Falling back on Times font for everything."
-                    ).format(fonttype),
+                    ).format(font),
                     file=sys.stderr,
                 )
                 self.font_mapping = {
+                    "Name": "Times-Roman",
                     "Regular": "Times-Roman",
                     "Bold": "Times-Bold",
-                    "Italic": "Times-Oblique",
+                    "Italic": "Times-Italic",
                 }
                 break
-            else:
-                # and finally register and tag one for each type
-                ftag = "MinionPro-{}".format(fonttype)
+        else:
+            self.font_mapping = {
+                "Name": "TrajanPro-Regular"
+                if "TrajanPro-Regular" in fontpaths
+                else "MinionPro-Regular",
+                "Regular": "MinionPro-Regular",
+                "Bold": "MinionPro-Bold",
+                "Italic": "MinionPro-Italic",
+            }
+            for font in self.font_mapping.values():
                 pdfmetrics.registerFont(
                     TTFont(
-                        ftag,
-                        pkg_resources.resource_filename(
-                            "domdiv", self.font_mapping[fonttype][0]
-                        ),
+                        font,
+                        pkg_resources.resource_filename("domdiv", fontpaths[font]),
                     )
                 )
-                self.font_mapping[fonttype] = ftag
         self.font_mapping["Monospaced"] = "Courier"
 
     def drawTextPages(self, pages, margin=1.0, fontsize=10, leading=10, spacer=0.05):
@@ -674,12 +688,10 @@ class DividerDrawer(object):
         )
 
         dividerWidth = item.cardWidth
-        # TODO: remove this unused variable
-        # dividerHeight = item.cardHeight + item.tabHeight
         dividerBaseHeight = item.cardHeight
         tabLabelWidth = item.tabWidth
         theTabWidth = item.tabWidth
-        theTabHeight = item.tabHeight
+        theTabHeight = self.options.headHeight
 
         left2tab = item.getTabOffset(
             backside=False
@@ -799,7 +811,7 @@ class DividerDrawer(object):
             headStackHeight = item.stackHeight * self.options.headWrapper
             tailStackHeight = item.stackHeight * self.options.tailWrapper
             frontTabHeight = self.options.headHeight
-            backTabHeight = theTabHeight if self.options.tail == "folder" else 0
+            backTabHeight = item.tabHeight if self.options.tail == "folder" else 0
             backWrapHeight = self.options.tailHeight - backTabHeight
             frontWrapHeight = dividerBaseHeight
 
@@ -944,7 +956,8 @@ class DividerDrawer(object):
             plotter.plot(0, -back_minus_notches, lineStyle[x6])  # FF to GG
 
             # Add fold lines
-            self.canvas.setStrokeGray(0.9)
+            # TODO: put this back
+            # self.canvas.setStrokeGray(0.9)
             # top fold
             plotter.setXY(
                 left2tab,
@@ -1111,7 +1124,7 @@ class DividerDrawer(object):
         width = 2
 
         costHeight = y + costOffset
-        coinHeight = costHeight - 5
+        coinHeight = costHeight - 4
         potHeight = y - 3
         potSize = 11
 
@@ -1130,7 +1143,7 @@ class DividerDrawer(object):
                 preserveAspectRatio=True,
                 mask="auto",
             )
-            self.canvas.setFont(self.font_mapping["Bold"], 12)
+            self.canvas.setFont(self.font_mapping["Bold"], 14)
             self.canvas.drawCentredString(x + 8, costHeight, str(card.cost))
             self.canvas.setFillColorRGB(0, 0, 0)
             x += 17
@@ -1147,7 +1160,7 @@ class DividerDrawer(object):
                 mask=[170, 255, 170, 255, 170, 255],
             )
             self.canvas.setFillColorRGB(1, 1, 1)
-            self.canvas.setFont(self.font_mapping["Bold"], 12)
+            self.canvas.setFont(self.font_mapping["Bold"], 14)
             self.canvas.drawCentredString(x + 8, costHeight, str(card.debtcost))
             self.canvas.setFillColorRGB(0, 0, 0)
             x += 17
@@ -1175,19 +1188,40 @@ class DividerDrawer(object):
         )
         return w + 14
 
+    def smallCapsConfig(self, text, fontSize):
+        # Adapter for installations that don't have access to Trajan Pro.
+        # Returns (font, fontSize, text) where:
+        # * font is the best match available for Trajan Pro,
+        # * text is made uppercase if the font doesn't support small caps, and
+        # * fontSize is equivalent to Trajan's x-height
+        # If Trajan is available, text and fontSize are unchanged.
+
+        # Trajan font metrics:
+        capheight = 0.750
+        xheight = 0.637
+        # Minion font metrics:
+        # capheight = 0.651
+        # xheight = 0.438
+        font = self.font_mapping["Name"]
+        if "Trajan" in font:
+            return font, text, fontSize
+        return font, text.upper(), fontSize * xheight / capheight
+
     def nameWidth(self, name, fontSize):
+        font, name, smallSize = self.smallCapsConfig(name, fontSize)
         w = 0
         name_parts = name.split()
         for i, part in enumerate(name_parts):
             if i != 0:
-                w += pdfmetrics.stringWidth(" ", self.font_mapping["Regular"], fontSize)
-            w += pdfmetrics.stringWidth(part[0], self.font_mapping["Regular"], fontSize)
-            w += pdfmetrics.stringWidth(
-                part[1:], self.font_mapping["Regular"], fontSize - 2
-            )
+                w += pdfmetrics.stringWidth(" ", font, fontSize)
+            if smallSize == fontSize:
+                w += pdfmetrics.stringWidth(part, font, fontSize)
+            else:
+                w += pdfmetrics.stringWidth(part[0], font, fontSize)
+                w += pdfmetrics.stringWidth(part[1:], font, smallSize)
         return w
 
-    def drawTab(self, item, wrapper="no", backside=False):
+    def drawTab(self, item, panel="main", backside=False):
         from io import BytesIO
 
         card = item.card
@@ -1195,64 +1229,92 @@ class DividerDrawer(object):
         if card.isBlank():
             return
 
-        if wrapper == "front" and self.options.head == "none":
-            # TODO: bail out?
-            pass
+        # Get panel options
+        if panel == "head":
+            if self.options.head == "none":
+                return  # no head!
+            edge = self.options.head
+            facing = self.options.head_facing
+        elif panel == "tail":
+            if not self.options.tailWrapper:
+                return  # no tail!
+            edge = self.options.tail
+            facing = self.options.tail_facing
+        elif panel == "spine":
+            if not self.options.headWrapper:
+                return  # no spine!
+            # The spine uses the head edge for widths, and it always faces front
+            edge = self.options.head
+            facing = "front"
 
-        # draw tab flap
-        self.canvas.saveState()
-
-        translate_y = (
-            item.cardHeight
-            + self.options.tailHeight
-            + self.options.tailWrapper * item.stackHeight
-            + self.options.headWrapper * item.stackHeight
-            + self.options.headHeight
-            - item.tabHeight
-        )
-        if self.wantCentreTab(card):
+        # set vertical dimensions
+        translate_y = 0
+        tabHeight = item.tabHeight
+        if panel == "head":
+            translate_y += (
+                self.options.headWrapper * item.stackHeight
+                + self.options.headHeight
+                - item.tabHeight
+            )
+        elif panel == "spine":
+            # center tab on the spine
+            translate_y += item.stackHeight / 2 - item.tabHeight / 2
+        if panel != "tail":
+            translate_y += (
+                item.cardHeight
+                + self.options.tailHeight
+                + self.options.tailWrapper * item.stackHeight
+            )
+        # set horizontal dimensions
+        if edge == "wrapper":
+            translate_x = 0
+            tabWidth = item.cardWidth
+        elif self.wantCentreTab(card):
             translate_x = item.cardWidth / 2 - item.tabWidth / 2
+            tabWidth = item.tabWidth
         else:
-            translate_x = item.getTabOffset(backside=backside)
+            translate_x = item.getTabOffset(backside=backside and panel == "head")
+            tabWidth = item.tabWidth
+        margin = 3
+        textWidth = tabWidth - 2 * margin
 
-        if wrapper == "back":
-            # TODO: move this for cover wrapper type
-            translate_y = item.tabHeight
-            if self.wantCentreTab(card):
-                translate_x = item.cardWidth / 2 + item.tabWidth / 2
-            else:
-                translate_x = item.getTabOffset(backside=False) + item.tabWidth
-
+        self.canvas.saveState()
         self.canvas.translate(translate_x, translate_y)
 
-        if wrapper == "back":
+        # set orientation
+        if facing == "back":
+            # Turn back faces around so they're right side up after folding
+            self.canvas.translate(tabWidth, item.tabHeight)
             self.canvas.rotate(180)
 
+        # set background color
         if self.options.black_tabs:
             self.canvas.saveState()
             self.canvas.setFillColorRGB(0, 0, 0)
-            self.canvas.rect(0, 0, item.tabWidth, item.tabHeight, fill=True)
+            self.canvas.rect(0, 0, tabWidth, tabHeight, fill=True)
             self.canvas.restoreState()
 
-        # allow for 3 pt border on each side
-        textWidth = item.tabWidth - 6
-        # TODO: calculate text size/height before fitting to spine
-        # TODO: the art offset should not apply to --no-tab-artwork!
-        # textHeight = 7
-        # if self.options.no_tab_artwork:
-        #     textHeight = 4
-        # textHeight = (
-        #     item.tabHeight / 2 - textHeight + card.getType().getTabTextHeightOffset()
-        # )
-        textHeight = item.tabHeight / 2
-        textHeight -= (
-            4
-            if self.options.no_tab_artwork
-            else 7 - card.getType().getTabTextHeightOffset()
-        )
+        # Determine relative vertical positioning of the tab elements
+        # On most cards, the cap height of the name aligns with the top of the card cost
+        # and the set icon.  In some sets, the set icon only comes up to the x-height of
+        # the text, and on some cards, the coins are a bit higher.  On cards with smaller
+        # text, the baseline stays constant, and the cap height shrinks.
+        font = pdfmetrics.getFont(self.font_mapping["Name"])
+        fontSize = 10
+        nameAscent = font.face.ascent / 1000 * fontSize
+        cardType = card.getType()
+        if self.options.no_tab_artwork:
+            textHeightOffset = 0
+            costHeightOffset = -1
+        else:
+            textHeightOffset = cardType.getTabTextHeightOffset() - 3.5
+            costHeightOffset = cardType.getTabCostHeightOffset()
+        setImageOffset = -3
+        tabHeight
+        textHeight = item.tabHeight / 2 - nameAscent / 2 + textHeightOffset
 
         # draw banner
-        img = card.getType().getTabImageFile()
+        img = cardType.getTabImageFile()
         if not self.options.no_tab_artwork and img:
             imgToDraw = DividerDrawer.get_image_filepath(img)
             if self.options.tab_artwork_opacity != 1.0:
@@ -1272,7 +1334,7 @@ class DividerDrawer(object):
                 imgToDraw,
                 1,
                 0,
-                item.tabWidth - 2,
+                tabWidth - 2,
                 item.tabHeight - 1,
                 preserveAspectRatio=False,
                 anchor="n",
@@ -1289,71 +1351,88 @@ class DividerDrawer(object):
             if "tab" in self.options.cost:
                 textInset = 4
                 textInset += self.drawCost(
-                    card, textInset, textHeight, card.getType().getTabCostHeightOffset()
+                    card, textInset, textHeight, costHeightOffset
                 )
+                textInset += 2
             else:
                 textInset = 6
         else:
             textInset = 13
 
         # draw set image
-        # always need to offset from right edge, to make sure it stays on
-        # banner
+        # always need to offset from right edge, to make sure it stays on banner
         textInsetRight = 6
         if self.options.use_text_set_icon:
-            setImageHeight = card.getType().getTabTextHeightOffset()
+            italic = self.font_mapping["Italic"]
+            setFontSize = 8
+            setAscent = pdfmetrics.getFont(italic).face.ascent / 1000 * 8
+            setTextHeight = textHeight + (nameAscent - setAscent) / 2
             setText = card.setTextIcon()
-            self.canvas.setFont(self.font_mapping["Italic"], 8)
+            self.canvas.setFont(italic, setFontSize)
             if setText is None:
                 setText = ""
-
-            self.canvas.drawCentredString(item.tabWidth - 10, textHeight + 2, setText)
+            self.canvas.drawCentredString(tabWidth - 10, setTextHeight, setText)
             textInsetRight = 15
         else:
             setImage = card.setImage(self.options.use_set_icon)
             if setImage and "tab" in self.options.set_icon:
-                setImageHeight = 3 + card.getType().getTabTextHeightOffset()
-
-                self.drawSetIcon(setImage, item.tabWidth - 20, setImageHeight)
-
+                setImageHeight = textHeight + setImageOffset
+                self.drawSetIcon(setImage, tabWidth - 20, setImageHeight)
                 textInsetRight = 20
 
         # draw name
-        fontSize = 12
-        name = card.name.upper()
-
         textWidth -= textInset
         textWidth -= textInsetRight
 
+        name = card.name
         width = self.nameWidth(name, fontSize)
         while width > textWidth and fontSize > 8:
             fontSize -= 0.01
             width = self.nameWidth(name, fontSize)
         tooLong = width > textWidth
+        delimiterText = ""
         if tooLong:
-            name_lines = name.partition(" / ")
-            if name_lines[1]:
-                name_lines = (name_lines[0] + " /", name_lines[2])
+            # Break on a delimiter, if possible
+            for delimiter in "/-→":
+                name_lines = name.partition(" {:s} ".format(delimiter))
+                if name_lines[1]:
+                    delimiterText = name_lines[1][:2]
+                    break
+            if delimiterText:
+                name_lines = (name_lines[0] + delimiterText, name_lines[2])
             else:
                 name_lines = name.split(None, 1)
         else:
             name_lines = [name]
 
+        nameAscent = font.face.ascent / 1000 * fontSize  # update for actual size
         for linenum, line in enumerate(name_lines):
             h = textHeight
             if tooLong and len(name_lines) > 1:
                 if linenum == 0:
-                    h += h / 2
+                    h += nameAscent / 2 + 1
                 else:
-                    h -= h / 2
+                    h -= nameAscent / 2
+            # handle line-break delimiters gracefully for centre & right alignment:
+            lineWidth = centreWidth = rightWidth = self.nameWidth(line, fontSize)
+            delimiterIndent = 0
+            if delimiterText:
+                if linenum == 0:
+                    # centering should ignore delimiters
+                    centreWidth = self.nameWidth(line[: -len(delimiterText)], fontSize)
+                    # right alignment should extend them into the margin
+                    delimiterIndent = max(centreWidth - lineWidth, -margin)
+                else:
+                    # right align subsequent lines
+                    rightWidth = self.nameWidth(line + delimiterText, fontSize)
+                    delimiterIndent = max(rightWidth - lineWidth - margin, 0)
 
-            words = line.split()
             NotRightEdge = not self.options.tab_name_align == "right" and (
                 self.options.tab_name_align == "centre"
                 or item.getClosestSide(backside=backside) != CardPlot.RIGHT
                 or not self.options.tab_name_align == "edge"
             )
-            if wrapper == "back" and not self.options.tab_name_align == "centre":
+            if panel == "tail" and not self.options.tab_name_align == "centre":
                 NotRightEdge = not NotRightEdge
             if NotRightEdge:
                 if (
@@ -1364,43 +1443,32 @@ class DividerDrawer(object):
                         and self.options.tab_name_align == "edge"
                     )
                 ):
-                    w = item.tabWidth / 2 - self.nameWidth(line, fontSize) / 2
+                    w = tabWidth / 2 - centreWidth / 2
                 else:
                     w = textInset
 
-                def drawWordPiece(text, fontSize):
-                    self.canvas.setFont(self.font_mapping["Regular"], fontSize)
-                    if text != " ":
-                        self.canvas.drawString(w, h, text)
-                    return pdfmetrics.stringWidth(
-                        text, self.font_mapping["Regular"], fontSize
-                    )
-
-                for i, word in enumerate(words):
-                    if i != 0:
-                        w += drawWordPiece(" ", fontSize)
-                    w += drawWordPiece(word[0], fontSize)
-                    w += drawWordPiece(word[1:], fontSize - 2)
+                self.drawSmallCaps(line, fontSize, w, h)
             else:
                 # align text to the right if tab is on right side
                 if self.options.tab_name_align == "centre" or self.wantCentreTab(card):
-                    w = item.tabWidth / 2 - self.nameWidth(line, fontSize) / 2
-                    w = item.tabWidth - w
+                    w = tabWidth / 2 - centreWidth / 2
+                    w = tabWidth - w
                 else:
-                    w = item.tabWidth - textInsetRight
+                    w = tabWidth - textInsetRight - delimiterIndent
 
                 # to make tabs easier to read when grouped together extra 3pt is for
                 # space between text + set symbol
                 w -= 3
 
+                words = line.split()
                 words.reverse()
 
                 def drawWordPiece(text, fontSize):
-                    self.canvas.setFont(self.font_mapping["Regular"], fontSize)
+                    self.canvas.setFont(self.font_mapping["Name"], fontSize)
                     if text != " ":
                         self.canvas.drawRightString(w, h, text)
                     return -pdfmetrics.stringWidth(
-                        text, self.font_mapping["Regular"], fontSize
+                        text, self.font_mapping["Name"], fontSize
                     )
 
                 for i, word in enumerate(words):
@@ -1411,23 +1479,52 @@ class DividerDrawer(object):
 
         self.canvas.restoreState()
 
+    def drawSmallCaps(self, text, fontSize, x, y, rightAlign=False):
+        # Print small caps text, simulating it if necessary
+
+        def drawWordPiece(text, fontSize):
+            self.canvas.setFont(font, fontSize)
+            if text != " ":
+                self.canvas.drawString(x, y, text)
+            return pdfmetrics.stringWidth(text, font, fontSize)
+
+        # TODO: design scaffolding, remove this
+        capheight = 0.750
+        xheight = 0.637
+        w = self.nameWidth(text, fontSize) + 48
+        self.canvas.saveState()
+        self.canvas.setStrokeGray(0.5)
+        self.canvas.setLineWidth(0.1)
+        self.canvas.rect(x - 24, y, w, capheight * fontSize)
+        self.canvas.rect(x - 24, y, w, xheight * fontSize)
+        self.canvas.restoreState()
+
+        font, text, smallSize = self.smallCapsConfig(text, fontSize)
+        for i, word in enumerate(text.split()):
+            if i != 0:
+                x += drawWordPiece(" ", fontSize)
+            if smallSize == fontSize:
+                x += drawWordPiece(word, fontSize)
+            else:
+                x += drawWordPiece(word[0], fontSize)
+                x += drawWordPiece(word[1:], smallSize)
+
     def drawSpine(self, item):
+        # Draw labels on the spine (top edge) of wrappers
         card = item.card
-        if self.options.spine == "tab":
-            # TODO: handle --spine=tab
-            pass
 
         # Skip blank cards
         if card.isBlank():
             return
+        # Use the drawTab method for tab-style labels
+        if self.options.spine == "tab":
+            return self.drawTab(item, panel="spine")
 
-        text = card.types_name if self.options.spine == "types" else card.name.upper()
-        if not text:
-            return
+        fontSize = 8  # use the smallest font
+        text = card.types_name if self.options.spine == "types" else card.name
 
-        # Skip cards with little or no spine
-        # TODO: base this on available space, not card count
-        if not self.options.headWrapper or card.getCardCount() < 5:
+        # Skip cards no text, no spine, or no room
+        if not text or not self.options.headWrapper or item.stackHeight < fontSize:
             return
 
         # Print text on the top wrapper edge
@@ -1452,31 +1549,18 @@ class DividerDrawer(object):
         self.canvas.translate(translate_x, translate_y)
 
         # Determine text size
-        fontSize = 8  # use the smallest font
         width = self.nameWidth(text, fontSize)
         while width > textWidth and fontSize > 6:
             fontSize -= 0.01
             width = self.nameWidth(text, fontSize)
-        # self.canvas.setFont(self.font_mapping["Regular"], fontSize)
+        # self.canvas.setFont(self.font_mapping["Name"], fontSize)
 
-        textHeight = fontSize - 2
-        textHeight = item.stackHeight / 2 - textHeight / 2
-        h = textHeight
-        words = text.split()
+        font = pdfmetrics.getFont(self.font_mapping["Name"])
+        textAscent = font.face.ascent / 1000 * fontSize
+        h = item.stackHeight / 2 - textAscent / 2
         w = textWidth / 2 - width / 2
 
-        def drawWordPiece(text, fontSize):
-            self.canvas.setFont(self.font_mapping["Regular"], fontSize)
-            if text != " ":
-                self.canvas.drawString(w, h, text)
-            return pdfmetrics.stringWidth(text, self.font_mapping["Regular"], fontSize)
-
-        for i, word in enumerate(words):
-            if i != 0:
-                w += drawWordPiece(" ", fontSize)
-            w += drawWordPiece(word[0], fontSize)
-            w += drawWordPiece(word[1:], fontSize - 2)
-
+        self.drawSmallCaps(text, fontSize, w, h)
         self.canvas.restoreState()
 
     def drawText(self, item, divider_text="card", wrapper="no"):
@@ -1545,7 +1629,7 @@ class DividerDrawer(object):
             #  use all the available space, even if it is not centered on the card
             fontSize = 8
             failover = False
-            width = stringWidth(card.types_name, self.font_mapping["Regular"], fontSize)
+            width = self.nameWidth(card.types_name, fontSize)
             while width > textWidth:
                 fontSize -= 0.01
                 if fontSize < 6 and not failover:
@@ -1554,15 +1638,12 @@ class DividerDrawer(object):
                     w = left_margin + (textWidth2 / 2)
                     fontSize = 8
                     failover = True
-                width = stringWidth(
-                    card.types_name, self.font_mapping["Regular"], fontSize
-                )
+                width = self.nameWidth(card.types_name, fontSize)
 
             #  Print out the text in the right spot
             h = totalHeight - usedHeight - 0.5 * cm
-            self.canvas.setFont(self.font_mapping["Regular"], fontSize)
             if card.types_name != " ":
-                self.canvas.drawCentredString(w, h, card.types_name)
+                self.drawSmallCaps(card.types_name, fontSize, w - width / 2, h)
             drewTopIcon = True
 
         if drewTopIcon:
@@ -1671,17 +1752,20 @@ class DividerDrawer(object):
         else:
             wrap = "no"
 
+        # TODO: simplify this
         cardText = item.textTypeFront
         if isBack:
             cardText = item.textTypeBack
 
-        self.drawTab(item, wrapper=wrap, backside=isBack)
+        self.drawTab(item, panel="head", backside=isBack)
         self.drawSpine(item)
         if not self.options.tabs_only:
-            self.drawText(item, cardText, wrapper=wrap)
-            if item.wrapper:
-                self.drawTab(item, wrapper="back", backside=True)
-                self.drawText(item, item.textTypeBack, wrapper="back")
+            self.drawTab(item, panel="tail", backside=True)
+            self.drawText(item, cardText, wrapper=wrap)  # TODO
+            # if self.options.headWrapper:
+            #     self.drawText(item, self.options.head_text, wrapper="back")  # TODO
+            if self.options.tailWrapper:
+                self.drawText(item, self.options.tail_text, wrapper="back")  # TODO
 
         # retore the canvas state to the way we found it
         self.canvas.restoreState()
@@ -1844,13 +1928,6 @@ class DividerDrawer(object):
             options.verticalBorderSpace = options.vertical_gap * cm
             options.horizontalBorderSpace = options.horizontal_gap * cm
 
-        # Set Height
-        options.dividerHeight = options.dividerBaseHeight + options.labelHeight
-
-        # Start building up the space reserved for each divider
-        options.dividerWidthReserved = options.dividerWidth
-        options.dividerHeightReserved = options.dividerHeight
-
         # Set head & tail heights now that card & label heights are set
         options.headHeight = (
             options.head_height * cm
@@ -1864,7 +1941,7 @@ class DividerDrawer(object):
         options.tailHeight = (
             options.tail_height * cm
             if options.tail_height
-            else options.dividerHeight
+            else options.dividerBaseHeight + options.labelHeight
             if options.tail == "folder"
             else options.dividerBaseHeight
             if options.tail == "wrapper"
@@ -1872,6 +1949,13 @@ class DividerDrawer(object):
             if options.tail == "strap"
             else 0
         )
+
+        # Set Height
+        options.dividerHeight = options.dividerBaseHeight + options.headHeight
+
+        # Start building up the space reserved for each divider
+        options.dividerWidthReserved = options.dividerWidth
+        options.dividerHeightReserved = options.dividerHeight
 
         if options.wrapper:
             # Adjust height for wrapper.  Use the maximum thickness of any divider so we know anything will fit.

@@ -938,6 +938,7 @@ def clean_opts(options):
         options.head = "wrapper"
         options.head_facing = "back"
         options.head_text = "back"
+    # Flags set if there's a head wrapper, a tail wrapper, or either
     options.headWrapper = options.head in ["wrapper", "strap"]
     options.tailWrapper = options.tail in ["folder", "wrapper", "strap"]
     options.wrapper = options.headWrapper or options.tailWrapper
@@ -1152,6 +1153,16 @@ def clean_opts(options):
         ) < MIN_WIDTH_CM_FOR_FULL:
             options.tab_side = "full"
         options.label = label
+
+    # Expand --head-text and --tail-text if they refer to --front or --back
+    if options.head_text == "front":
+        options.head_text = options.text_front
+    elif options.head_text == "back":
+        options.head_text = options.text_back
+    if options.tail_text == "front":
+        options.tail_text = options.text_front
+    elif options.tail_text == "back":
+        options.tail_text = options.text_back
 
     return options
 
@@ -1731,7 +1742,7 @@ def filter_sort_cards(cards, options):
     if options.language != LANGUAGE_DEFAULT:
         Card.type_names = add_type_text(Card.type_names, options.language)
     for card in cards:
-        card.types_name = " - ".join([Card.type_names[t] for t in card.types]).upper()
+        card.types_name = " - ".join([Card.type_names[t] for t in card.types])
 
     # Get the card bonus keywords in the requested language
     bonus = add_bonus_regex(options, LANGUAGE_DEFAULT)
