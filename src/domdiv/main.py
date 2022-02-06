@@ -29,7 +29,7 @@ TAB_SIDE_CHOICES = [
     "full",
 ]
 TEXT_CHOICES = ["card", "rules", "blank"]
-LINE_CHOICES = ["line", "dot", "cropmarks", "dot-cropmarks"]
+LINE_CHOICES = ["line", "dot", "cropmarks", "line-cropmarks", "dot-cropmarks"]
 
 EDITION_CHOICES = ["1", "2", "latest", "all"]
 
@@ -727,6 +727,7 @@ def parse_opts(cmdline_args=None):
         "'line' will print a solid line outlining the divider; "
         "'dot' will print a dot at each corner of the divider; "
         "'cropmarks' will print cropmarks for the divider; "
+        "'line-cropmarks' will combine 'line' and 'cropmarks'; "
         "'dot-cropmarks' will combine 'dot' and 'cropmarks'",
     )
     group_printing.add_argument(
@@ -881,11 +882,7 @@ def clean_opts(options):
     if options.cropmarks and options.linetype == "line":
         options.linetype = "cropmarks"
 
-    if options.linetype == "cropmarks":
-        options.cropmarks = True
-
-    if options.linetype == "dot-cropmarks":
-        options.linetype = "dot"
+    if "cropmarks" in options.linetype:
         options.cropmarks = True
 
     if options.expansions is None:
