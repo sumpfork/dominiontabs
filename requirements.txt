@@ -8,6 +8,8 @@ attrs==21.4.0
     # via pytest
 cfgv==3.3.1
     # via pre-commit
+cloudpickle==2.0.0
+    # via -r requirements.in
 configargparse==1.5.3
     # via -r requirements.in
 distlib==0.3.4
