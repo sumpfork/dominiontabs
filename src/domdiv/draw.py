@@ -1862,6 +1862,8 @@ class DividerDrawer(object):
         if options.cropmarks:
             if "dot" in options.linetype.lower():
                 lineType = "dot"  # Allow the DOTs if requested
+            elif "line" in options.linetype.lower():
+                lineType = "line"  # Allow the LINEs if requested
             else:
                 lineType = "no_line"
         else:
