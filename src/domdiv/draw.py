@@ -1905,20 +1905,15 @@ class DividerDrawer(object):
         items = []
         nextTabIndex = CardPlot.tabRestart()
         lastCardSet = None
-        reset_expansion_tabs = (
-            options.expansion_dividers and options.expansion_reset_tabs
-        )
 
         for card in cards:
             # Check if tab needs to be reset to the start
-            if reset_expansion_tabs and not card.isExpansion():
+            if options.expansion_reset_tabs and not card.isExpansion():
                 if lastCardSet != card.cardset_tag:
                     # In a new expansion, so reset the tabs to start over
                     nextTabIndex = CardPlot.tabRestart()
-                    if (
-                        options.tab_number > Card.sets[card.cardset_tag]["count"]
-                        and Card.sets[card.cardset_tag]["count"] > 0
-                    ):
+                    cardset_count = Card.sets[card.cardset_tag].get("count", 0)
+                    if options.tab_number > cardset_count and cardset_count > 0:
 
                         #  Limit to the number of tabs to the number of dividers in the expansion
                         CardPlot.tabSetup(

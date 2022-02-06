@@ -358,6 +358,13 @@ def parse_opts(cmdline_args=None):
         dest="use_set_icon",
         help="Use set icon instead of a card icon.  Applies to Promo cards.",
     )
+    group_tab.add_argument(
+        "--expansion-reset-tabs",
+        action="store_true",
+        dest="expansion_reset_tabs",
+        help="When set, the tabs are restarted (left/right) at the beginning of each expansion. "
+        "If not set, the tab pattern will continue from one expansion to the next. ",
+    )
 
     # Expanion Dividers
     group_expansion = parser.add_argument_group(
@@ -381,13 +388,6 @@ def parse_opts(cmdline_args=None):
         action="store_true",
         dest="full_expansion_dividers",
         help="Full width expansion dividers.",
-    )
-    group_expansion.add_argument(
-        "--expansion-reset-tabs",
-        action="store_true",
-        dest="expansion_reset_tabs",
-        help="When set, the tabs are restarted (left/right) at the beginning of each expansion. "
-        "If not set, the tab pattern will continue from one expansion to the next. ",
     )
     group_expansion.add_argument(
         "--expansion-dividers-long-name",
