@@ -8,22 +8,29 @@ attrs==21.4.0
     # via pytest
 cfgv==3.3.1
     # via pre-commit
+cloudpickle==2.0.0
+    # via -r requirements.in
 configargparse==1.5.3
     # via -r requirements.in
 distlib==0.3.4
     # via virtualenv
 filelock==3.4.2
     # via virtualenv
+flake8==3.9.2
+    # via -r requirements.in
 identify==2.4.8
     # via pre-commit
 importlib-metadata==4.10.1
     # via
+    #   flake8
     #   pluggy
     #   pre-commit
     #   pytest
     #   virtualenv
 iniconfig==1.1.1
     # via pytest
+mccabe==0.6.1
+    # via flake8
 nodeenv==1.6.0
     # via pre-commit
 packaging==21.3
@@ -40,6 +47,10 @@ pre-commit==2.17.0
     # via -r requirements.in
 py==1.11.0
     # via pytest
+pycodestyle==2.7.0
+    # via flake8
+pyflakes==2.3.1
+    # via flake8
 pyparsing==3.0.7
     # via packaging
 pytest==7.0.0
