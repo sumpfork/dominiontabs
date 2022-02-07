@@ -493,10 +493,14 @@ class DividerDrawer(object):
         # Common filenames used by Adobe Reader and Creative Cloud, as well as
         # alternatives available from free sites like fontsgeek:
         fontfilenames = {
-            "TrajanPro-Regular": [
-                "TrajanPro3-Regular.ttf",
-                "TrajanPro-Regular.ttf",
-                "Trajan Pro Regular.ttf",
+            "TrajanPro-Bold": [
+                "TrajanPro-Bold.ttf",
+                "TrajanPro3-Semibold.ttf",
+                "Trajan Pro Bold.ttf",
+            ],
+            "CharlemagneStd-Bold": [
+                "CharlemagneStd-Bold.ttf",
+                "Charlemagne Std Bold.ttf",
             ],
             "MinionPro-Regular": [
                 "MinionPro-Regular.ttf",
@@ -511,53 +515,88 @@ class DividerDrawer(object):
                 "MinionPro-It.ttf",
                 "Minion Pro Italic.ttf",
             ],
+            # Built-in fonts
+            "Times-Roman": None,
+            "Times-Bold": None,
+            "Times-Italic": None,
+            "Courier": None,
         }
-        fontpaths = {}
-        required = [font for font in fontfilenames.keys() if font.startswith("Minion")]
         # Locate the files in package data, if present
+        fontpaths = {}
         for font, filenames in fontfilenames.items():
+            if filenames is None:  # built-ins
+                fontpaths[font] = None
+                continue
             for fname in filenames:
                 fpath = os.path.join("fonts", fname)
                 if pkg_resources.resource_exists("domdiv", fpath):
                     fontpaths[font] = fpath
                     break
-        for font in required:
-            if font not in fontpaths:
+        # Mark the built-in files as pre-registered
+        registered = {
+            font: None for font, fontpath in fontpaths.items() if fontpath is None
+        }
+        # Determine the best matching fonts for each font type.
+        fontprefs = {
+            "Name": [  # card names & types
+                "TrajanPro-Bold",
+                "MinionPro-Regular",
+                "Times-Roman",
+            ],
+            "Expansion": [  # expansion names
+                "CharlemagneStd-Bold",
+                "TrajanPro-Bold",
+                "MinionPro-Regular",
+                "Times-Roman",
+            ],
+            "Regular": [  # regular text
+                "MinionPro-Regular",
+                "Times-Roman",
+            ],
+            "Bold": [  # card costs (coins, debt, etc)
+                "MinionPro-Bold",
+                "Times-Bold",
+            ],
+            "Italic": [  # for --use-set-text-icon
+                "MinionPro-Italic",
+                "Times-Italic",
+            ],
+            "Rules": [
+                "Times-Roman",
+            ],
+            "Monospaced": [
+                "Courier",
+            ],
+            # TODO: Times
+        }
+        self.fontStyle = {
+            # select the first matching preference for each font type
+            style: [font for font in prefs if font in fontpaths][0]
+            for style, prefs in fontprefs.items()
+        }
+        for style, font in self.fontStyle.items():
+            best = fontprefs[style][0]
+            if font != best:
                 print(
-                    (
-                        "Warning, Minion Pro ttf file for {} missing from domdiv/fonts!"
-                        " Falling back on Times font for everything."
-                    ).format(font),
+                    "Warning, {} missing from domdiv/fonts; "
+                    "using {} instead.".format(best, font),
                     file=sys.stderr,
                 )
-                self.font_mapping = {
-                    "Name": "Times-Roman",
-                    "Regular": "Times-Roman",
-                    "Bold": "Times-Bold",
-                    "Italic": "Times-Italic",
-                }
-                break
-        else:
-            self.font_mapping = {
-                "Name": "TrajanPro-Regular"
-                if "TrajanPro-Regular" in fontpaths
-                else "MinionPro-Regular",
-                "Regular": "MinionPro-Regular",
-                "Bold": "MinionPro-Bold",
-                "Italic": "MinionPro-Italic",
-            }
-            for font in self.font_mapping.values():
-                pdfmetrics.registerFont(
-                    TTFont(
-                        font,
-                        pkg_resources.resource_filename("domdiv", fontpaths[font]),
-                    )
+            if font in registered:
+                continue
+            fontpath = fontpaths[font]
+            # print("Registering {} = {}".format(font, fontpath))
+            pdfmetrics.registerFont(
+                TTFont(
+                    font,
+                    pkg_resources.resource_filename("domdiv", fontpath),
                 )
-        self.font_mapping["Monospaced"] = "Courier"
+            )
+            registered[font] = fontpath
 
     def drawTextPages(self, pages, margin=1.0, fontsize=10, leading=10, spacer=0.05):
         s = getSampleStyleSheet()["BodyText"]
-        s.fontName = self.font_mapping["Monospaced"]
+        s.fontName = self.fontStyle["Monospaced"]
         s.alignment = TA_LEFT
 
         textHorizontalMargin = margin * cm
@@ -1102,19 +1141,17 @@ class DividerDrawer(object):
                 preserveAspectRatio=True,
                 mask="auto",
             )
-            self.canvas.setFont(self.font_mapping["Bold"], 10)
+            self.canvas.setFont(self.fontStyle["Bold"], 10)
             self.canvas.drawCentredString(x + 8, countHeight + 4, str(value))
 
             # now draw the number of sets
             if count > 1:
                 count_string = "{}\u00d7".format(count)
-                width_string = stringWidth(
-                    count_string, self.font_mapping["Regular"], 10
-                )
+                width_string = stringWidth(count_string, self.fontStyle["Regular"], 10)
                 width_string -= 1  # adjust to make it closer to image
                 width += width_string
                 x -= width_string
-                self.canvas.setFont(self.font_mapping["Regular"], 10)
+                self.canvas.setFont(self.fontStyle["Regular"], 10)
                 self.canvas.drawString(x, countHeight + 4, count_string)
 
         return width + 1
@@ -1143,7 +1180,7 @@ class DividerDrawer(object):
                 preserveAspectRatio=True,
                 mask="auto",
             )
-            self.canvas.setFont(self.font_mapping["Bold"], 14)
+            self.canvas.setFont(self.fontStyle["Bold"], 14)
             self.canvas.drawCentredString(x + 8, costHeight, str(card.cost))
             self.canvas.setFillColorRGB(0, 0, 0)
             x += 17
@@ -1160,7 +1197,7 @@ class DividerDrawer(object):
                 mask=[170, 255, 170, 255, 170, 255],
             )
             self.canvas.setFillColorRGB(1, 1, 1)
-            self.canvas.setFont(self.font_mapping["Bold"], 14)
+            self.canvas.setFont(self.fontStyle["Bold"], 14)
             self.canvas.drawCentredString(x + 8, costHeight, str(card.debtcost))
             self.canvas.setFillColorRGB(0, 0, 0)
             x += 17
@@ -1188,27 +1225,28 @@ class DividerDrawer(object):
         )
         return w + 14
 
-    def smallCapsConfig(self, text, fontSize):
-        # Adapter for installations that don't have access to Trajan Pro.
-        # Returns (font, fontSize, text) where:
-        # * font is the best match available for Trajan Pro,
-        # * text is made uppercase if the font doesn't support small caps, and
-        # * fontSize is equivalent to Trajan's x-height
-        # If Trajan is available, text and fontSize are unchanged.
+    def smallCapsConfig(self, text, size, style="Name"):
+        # Adapter for installations that don't have access to Trajan or Charlemagne.
+        # Looks up the matching font for the style and determines whether the font has
+        # small caps. If so, it returns (text, font, size) with the text and size
+        # unchanged. Otherwise, it uppercases the text and adjusts the size to match the
+        # style's intended x-height.
+
+        font = self.fontStyle[style]
+        if "Trajan" in font or "Charlemagne" in font:
+            # Close enough, even if we're subbing Trajan for Charlemagne
+            return text, size, font
+        if style == "Expansion":
+            # Charlemagne has 100% x-height, so we don't need to shrink the small caps
+            return text.upper(), size, font
 
         # Trajan font metrics:
         capheight = 0.750
-        xheight = 0.637
-        # Minion font metrics:
-        # capheight = 0.651
-        # xheight = 0.438
-        font = self.font_mapping["Name"]
-        if "Trajan" in font:
-            return font, text, fontSize
-        return font, text.upper(), fontSize * xheight / capheight
+        xheight = 0.638
+        return text.upper(), size * xheight / capheight, font
 
-    def nameWidth(self, name, fontSize):
-        font, name, smallSize = self.smallCapsConfig(name, fontSize)
+    def nameWidth(self, name, fontSize, style="Name"):
+        name, smallSize, font = self.smallCapsConfig(name, fontSize, style)
         w = 0
         name_parts = name.split()
         for i, part in enumerate(name_parts):
@@ -1299,7 +1337,7 @@ class DividerDrawer(object):
         # and the set icon.  In some sets, the set icon only comes up to the x-height of
         # the text, and on some cards, the coins are a bit higher.  On cards with smaller
         # text, the baseline stays constant, and the cap height shrinks.
-        font = pdfmetrics.getFont(self.font_mapping["Name"])
+        font = pdfmetrics.getFont(self.fontStyle["Name"])
         fontSize = 10
         nameAscent = font.face.ascent / 1000 * fontSize
         cardType = card.getType()
@@ -1363,7 +1401,7 @@ class DividerDrawer(object):
         # always need to offset from right edge, to make sure it stays on banner
         textInsetRight = 6
         if self.options.use_text_set_icon:
-            italic = self.font_mapping["Italic"]
+            italic = self.fontStyle["Italic"]
             setFontSize = 8
             setAscent = pdfmetrics.getFont(italic).face.ascent / 1000 * 8
             setTextHeight = textHeight + (nameAscent - setAscent) / 2
@@ -1385,10 +1423,11 @@ class DividerDrawer(object):
         textWidth -= textInsetRight
 
         name = card.name
-        width = self.nameWidth(name, fontSize)
+        style = "Expansion" if card.isExpansion() else "Name"
+        width = self.nameWidth(name, fontSize, style)
         while width > textWidth and fontSize > 8:
             fontSize -= 0.01
-            width = self.nameWidth(name, fontSize)
+            width = self.nameWidth(name, fontSize, style)
         tooLong = width > textWidth
         delimiterText = ""
         if tooLong:
@@ -1414,17 +1453,19 @@ class DividerDrawer(object):
                 else:
                     h -= nameAscent / 2
             # handle line-break delimiters gracefully for centre & right alignment:
-            lineWidth = centreWidth = rightWidth = self.nameWidth(line, fontSize)
+            lineWidth = centreWidth = rightWidth = self.nameWidth(line, fontSize, style)
             delimiterIndent = 0
             if delimiterText:
                 if linenum == 0:
                     # centering should ignore delimiters
-                    centreWidth = self.nameWidth(line[: -len(delimiterText)], fontSize)
+                    centreWidth = self.nameWidth(
+                        line[: -len(delimiterText)], fontSize, style
+                    )
                     # right alignment should extend them into the margin
                     delimiterIndent = max(centreWidth - lineWidth, -margin)
                 else:
                     # right align subsequent lines
-                    rightWidth = self.nameWidth(line + delimiterText, fontSize)
+                    rightWidth = self.nameWidth(line + delimiterText, fontSize, style)
                     delimiterIndent = max(rightWidth - lineWidth - margin, 0)
 
             NotRightEdge = not self.options.tab_name_align == "right" and (
@@ -1447,7 +1488,7 @@ class DividerDrawer(object):
                 else:
                     w = textInset
 
-                self.drawSmallCaps(line, fontSize, w, h)
+                self.drawSmallCaps(line, fontSize, w, h, style=style)
             else:
                 # align text to the right if tab is on right side
                 if self.options.tab_name_align == "centre" or self.wantCentreTab(card):
@@ -1464,11 +1505,11 @@ class DividerDrawer(object):
                 words.reverse()
 
                 def drawWordPiece(text, fontSize):
-                    self.canvas.setFont(self.font_mapping["Name"], fontSize)
+                    self.canvas.setFont(self.fontStyle["Name"], fontSize)
                     if text != " ":
                         self.canvas.drawRightString(w, h, text)
                     return -pdfmetrics.stringWidth(
-                        text, self.font_mapping["Name"], fontSize
+                        text, self.fontStyle["Name"], fontSize
                     )
 
                 for i, word in enumerate(words):
@@ -1479,7 +1520,7 @@ class DividerDrawer(object):
 
         self.canvas.restoreState()
 
-    def drawSmallCaps(self, text, fontSize, x, y, rightAlign=False):
+    def drawSmallCaps(self, text, fontSize, x, y, rightAlign=False, style="Name"):
         # Print small caps text, simulating it if necessary
 
         def drawWordPiece(text, fontSize):
@@ -1490,16 +1531,15 @@ class DividerDrawer(object):
 
         # TODO: design scaffolding, remove this
         capheight = 0.750
-        xheight = 0.637
-        w = self.nameWidth(text, fontSize) + 48
+        xheight = 0.638
         self.canvas.saveState()
         self.canvas.setStrokeGray(0.5)
         self.canvas.setLineWidth(0.1)
-        self.canvas.rect(x - 24, y, w, capheight * fontSize)
-        self.canvas.rect(x - 24, y, w, xheight * fontSize)
+        self.canvas.rect(0, y, self.options.dividerWidth, capheight * fontSize)
+        self.canvas.rect(0, y, self.options.dividerWidth, xheight * fontSize)
         self.canvas.restoreState()
 
-        font, text, smallSize = self.smallCapsConfig(text, fontSize)
+        text, smallSize, font = self.smallCapsConfig(text, fontSize, style)
         for i, word in enumerate(text.split()):
             if i != 0:
                 x += drawWordPiece(" ", fontSize)
@@ -1549,18 +1589,19 @@ class DividerDrawer(object):
         self.canvas.translate(translate_x, translate_y)
 
         # Determine text size
-        width = self.nameWidth(text, fontSize)
+        style = "Expansion" if card.isExpansion() else "Name"
+        width = self.nameWidth(text, fontSize, style)
         while width > textWidth and fontSize > 6:
             fontSize -= 0.01
-            width = self.nameWidth(text, fontSize)
-        # self.canvas.setFont(self.font_mapping["Name"], fontSize)
+            width = self.nameWidth(text, fontSize, style)
+        # self.canvas.setFont(self.fontStyle["Name"], fontSize)
 
-        font = pdfmetrics.getFont(self.font_mapping["Name"])
+        font = pdfmetrics.getFont(self.fontStyle["Name"])
         textAscent = font.face.ascent / 1000 * fontSize
         h = item.stackHeight / 2 - textAscent / 2
         w = textWidth / 2 - width / 2
 
-        self.drawSmallCaps(text, fontSize, w, h)
+        self.drawSmallCaps(text, fontSize, w, h, style=style)
         self.canvas.restoreState()
 
     def drawText(self, item, divider_text="card", wrapper="no"):
@@ -1664,7 +1705,7 @@ class DividerDrawer(object):
             return
 
         s = getSampleStyleSheet()["BodyText"]
-        s.fontName = "Times-Roman"
+        s.fontName = self.fontStyle["Rules"]
         if divider_text == "card" and not card.isExpansion():
             s.alignment = TA_CENTER
         else:
@@ -1778,7 +1819,7 @@ class DividerDrawer(object):
             # calculate the text height, font size, and orientation
             maxFontsize = 12
             minFontsize = 6
-            fontname = self.font_mapping["Regular"]
+            fontname = self.fontStyle["Regular"]
             font = pdfmetrics.getFont(fontname)
             fontHeightRelative = (font.face.ascent + abs(font.face.descent)) / 1000.0
 
