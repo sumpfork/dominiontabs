@@ -490,6 +490,19 @@ class DividerDrawer(object):
         self.canvas.save()
 
     def registerFonts(self):
+        # Fonts used in Dominion:
+        # TrajanPro-Bold        card titles and types
+        # MinionStd-Black       numbers on base cards & icons
+        # Times-Roman           rules text*
+        # Times-Bold            bold rules text
+        # Times-Italic          italic rules text
+        # CharlemagneStd-Bold   expansion names on box art
+        # Capitals              player mat banners
+        # Barbedor-Bold         player mat rules
+
+        # * the cards mostly use Times New Roman rather than Times Roman, but they're
+        #   not totally consistent, and the differences are very subtle
+
         # Common filenames used by Adobe Reader and Creative Cloud, as well as
         # alternatives available from free sites like fontsgeek:
         fontfilenames = {
@@ -497,6 +510,10 @@ class DividerDrawer(object):
                 "TrajanPro-Bold.ttf",
                 "TrajanPro3-Semibold.ttf",
                 "Trajan Pro Bold.ttf",
+            ],
+            "MinionStd-Black": [
+                "MinionStd-Black.ttf",
+                "Minion Std Black.ttf",
             ],
             "CharlemagneStd-Bold": [
                 "CharlemagneStd-Bold.ttf",
@@ -549,11 +566,16 @@ class DividerDrawer(object):
                 "MinionPro-Regular",
                 "Times-Roman",
             ],
+            "Cost": [  # card costs (coins, debt, etc)
+                "MinionStd-Black",
+                "MinionPro-Bold",
+                "Times-Bold",
+            ],
             "Regular": [  # regular text
                 "MinionPro-Regular",
                 "Times-Roman",
             ],
-            "Bold": [  # card costs (coins, debt, etc)
+            "Bold": [  # miscellaneous bold text
                 "MinionPro-Bold",
                 "Times-Bold",
             ],
@@ -1180,7 +1202,7 @@ class DividerDrawer(object):
                 preserveAspectRatio=True,
                 mask="auto",
             )
-            self.canvas.setFont(self.fontStyle["Bold"], 14)
+            self.canvas.setFont(self.fontStyle["Cost"], 14)
             self.canvas.drawCentredString(x + 8, costHeight, str(card.cost))
             self.canvas.setFillColorRGB(0, 0, 0)
             x += 17
@@ -1197,7 +1219,7 @@ class DividerDrawer(object):
                 mask=[170, 255, 170, 255, 170, 255],
             )
             self.canvas.setFillColorRGB(1, 1, 1)
-            self.canvas.setFont(self.fontStyle["Bold"], 14)
+            self.canvas.setFont(self.fontStyle["Cost"], 14)
             self.canvas.drawCentredString(x + 8, costHeight, str(card.debtcost))
             self.canvas.setFillColorRGB(0, 0, 0)
             x += 17
