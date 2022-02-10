@@ -1248,11 +1248,12 @@ class DividerDrawer(object):
 
     def drawSetIcon(self, setImage, x, y):
         # set image
-        w = 2
+        size = 10
+        path = DividerDrawer.get_image_filepath(setImage)
         self.canvas.drawImage(
-            DividerDrawer.get_image_filepath(setImage), x, y, 14, 12, mask="auto"
+            path, x, y, size, size, mask="auto", preserveAspectRatio=True
         )
-        return w + 14
+        return size + 2
 
     def smallCapsConfig(self, text, size, style="Name"):
         # Adapter for installations that don't have access to Trajan or Charlemagne.
@@ -1446,14 +1447,18 @@ class DividerDrawer(object):
             setImage = card.setImage(self.options.use_set_icon)
             if setImage and "tab" in self.options.set_icon:
                 setImageHeight = textHeight + setImageOffset
-                self.drawSetIcon(setImage, tabWidth - 20, setImageHeight)
-                textInsetRight = 23
+                textInsetRight = 19
+                self.drawSetIcon(
+                    setImage, tabWidth - textInsetRight + margin, setImageHeight
+                )
 
         # draw name
         textWidth -= textInset
         textWidth -= textInsetRight
 
         name = card.name
+        # arrows don't format properly in all fonts, so convert them to en dashes
+        name = name.replace("→", "–")
         style = "Expansion" if card.isExpansion() else "Name"
         width = self.nameWidth(name, fontSize, style)
         while width > textWidth and fontSize > 7:
@@ -1463,7 +1468,7 @@ class DividerDrawer(object):
         delimiterText = ""
         if tooLong:
             # Break on a delimiter, if possible
-            for delimiter in "/-→":
+            for delimiter in "/-–—→":  # slashes, dashes, and arrows
                 name_lines = name.partition(" {:s} ".format(delimiter))
                 if name_lines[1]:
                     delimiterText = name_lines[1][:2]
