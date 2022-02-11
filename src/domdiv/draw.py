@@ -496,6 +496,7 @@ class DividerDrawer(object):
         # Times-Roman           rules text*
         # Times-Bold            bold rules text
         # Times-Italic          italic rules text
+        # Helvetica-Bold        superscript + in some card costs
         # CharlemagneStd-Bold   expansion names on box art
         # Capitals              player mat banners
         # Barbedor-Bold         player mat rules
@@ -536,6 +537,7 @@ class DividerDrawer(object):
             "Times-Roman": None,
             "Times-Bold": None,
             "Times-Italic": None,
+            "Helvetica-Bold": None,
             "Courier": None,
         }
         # Locate the files in package data, if present
@@ -585,6 +587,9 @@ class DividerDrawer(object):
             ],
             "Rules": [
                 "Times-Roman",
+            ],
+            "PlusCost": [
+                "Helvetica-Bold",
             ],
             "Monospaced": [
                 "Courier",
@@ -1181,16 +1186,61 @@ class DividerDrawer(object):
     def drawCost(self, card, x, y, costOffset=-1):
         # Measured card metrics:
         # coins are 17 pt with a 1 pt drop shadow
-        # cost numbers are Minion Std Black 18 (11.5 pt ascent)
+        # cost numbers are Minion Std Black 18 (11.7 pt ascent)
+        # with a baseline 3 pt above the bottom of the coin
         coinSize = 17
-        fontSize = 15  # TODO: make this work with 18 pt
+        fontSize = 18
         # width starts at 2 (1 pt border on each side)
         width = 2
 
         costHeight = y + costOffset
-        coinHeight = costHeight - 4
+        coinHeight = costHeight - 3
         potHeight = y - 3
         potSize = 11
+
+        def drawCostText(text, x, y, color=None):
+            # x, y = center of baseline
+            cost = str(text)
+            font = self.fontStyle["Cost"]
+
+            # handle superscript cost modifiers
+            mod = ""
+            modSize = modSpacing = modWidth = modHeight = 0
+            if cost[-1] in "*+":
+                mod = cost[-1]
+                cost = cost[:-1]
+                modFont = font
+                modSpacing = -0.5
+                if mod == "*":
+                    # asterisks are set in Minion Std Black 12 and raised 3.75 pt
+                    modSize = 12
+                    modHeight = 3.75
+                    modSpacing -= 0.25  # all asterisks are a little tighter
+                elif mod == "+":
+                    # plusses are set in Arial/Helvetica Bold 9 and raised 9 pt
+                    modFont = self.fontStyle["PlusCost"]
+                    modSize = 9
+                    modHeight = 6
+                    if cost.endswith("4"):  # "4+" is kerned tighter
+                        modSpacing += -0.5
+                modWidth = pdfmetrics.stringWidth(mod, modFont, modSize)
+
+            # get text metrics with and without modifier
+            costWidth = pdfmetrics.stringWidth(cost, font, fontSize)
+            totalWidth = costWidth + modSpacing + modWidth
+
+            # write the text
+            self.canvas.saveState()
+            if color is not None:
+                self.canvas.setFillColorRGB(*color)
+            self.canvas.setFont(font, fontSize)
+            self.canvas.drawString(x - totalWidth / 2, y, cost)
+            if mod:
+                self.canvas.setFont(modFont, modSize)
+                self.canvas.drawString(
+                    x + totalWidth / 2 - modWidth, y + modHeight, mod
+                )
+            self.canvas.restoreState()
 
         if not (
             card.cost == ""
@@ -1207,11 +1257,9 @@ class DividerDrawer(object):
                 preserveAspectRatio=True,
                 mask="auto",
             )
-            self.canvas.setFont(self.fontStyle["Cost"], fontSize)
-            self.canvas.drawCentredString(x + coinSize / 2, costHeight, str(card.cost))
-            self.canvas.setFillColorRGB(0, 0, 0)
-            x += 17
-            width += 16
+            drawCostText(card.cost, x + coinSize / 2, costHeight)
+            x += coinSize + 1
+            width += coinSize + 1
 
         if card.debtcost:
             self.canvas.drawImage(
@@ -1223,14 +1271,9 @@ class DividerDrawer(object):
                 preserveAspectRatio=True,
                 mask=[170, 255, 170, 255, 170, 255],
             )
-            self.canvas.setFillColorRGB(1, 1, 1)
-            self.canvas.setFont(self.fontStyle["Cost"], fontSize)
-            self.canvas.drawCentredString(
-                x + coinSize / 2, costHeight, str(card.debtcost)
-            )
-            self.canvas.setFillColorRGB(0, 0, 0)
-            x += 17
-            width += 16
+            drawCostText(card.debtcost, x + coinSize / 2, costHeight, color=(1, 1, 1))
+            x += coinSize + 1
+            width += coinSize + 1
 
         if card.potcost:
             self.canvas.drawImage(
@@ -1303,17 +1346,20 @@ class DividerDrawer(object):
                 return  # no head!
             edge = self.options.head
             facing = self.options.head_facing
+            artwork = not self.options.no_tab_artwork
         elif panel == "tail":
             if not self.options.tailWrapper:
                 return  # no tail!
             edge = self.options.tail
             facing = self.options.tail_facing
+            artwork = not self.options.no_tab_artwork
         elif panel == "spine":
             if not self.options.headWrapper:
                 return  # no spine!
             # The spine uses the head edge for widths, and it always faces front
             edge = self.options.head
             facing = "front"
+            artwork = not self.options.no_spine_artwork
 
         # set vertical dimensions
         translate_y = 0
@@ -1373,19 +1419,19 @@ class DividerDrawer(object):
         fontSize = 10  # same as the bottom banner on the cards
         nameAscent = font.face.ascent / 1000 * fontSize
         cardType = card.getType()
-        if self.options.no_tab_artwork:
-            textHeightOffset = 0
-            costHeightOffset = -1
-        else:
+        if artwork:
             textHeightOffset = cardType.getTabTextHeightOffset() - 3.5
             costHeightOffset = cardType.getTabCostHeightOffset() - 1
+        else:
+            textHeightOffset = 0
+            costHeightOffset = -1
         setImageOffset = -3
         tabHeight
         textHeight = item.tabHeight / 2 - nameAscent / 2 + textHeightOffset
 
         # draw banner
         img = cardType.getTabImageFile()
-        if not self.options.no_tab_artwork and img:
+        if artwork and img:
             imgToDraw = DividerDrawer.get_image_filepath(img)
             if self.options.tab_artwork_opacity != 1.0:
                 imgObj = Image.open(imgToDraw)

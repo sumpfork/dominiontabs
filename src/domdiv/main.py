@@ -697,15 +697,22 @@ def parse_opts(cmdline_args=None):
         help="Height of the tail wrapper in centimeters "
         "(a value of 0 uses tab height or card height as appropriate).",
     )
-    group_wrapper.add_argument(  # TODO
+    group_wrapper.add_argument(
         "--spine",
         choices=SPINE_CHOICES,
         dest="spine",
         default="name",
         help="Text to print on the top edge of wrappers; "
-        "'name' will print the card name."
-        "'type' will print the card type."
+        "'name' will print the card name; "
+        "'type' will print the card type; "
         "'tab' will print all tab text and icons.",
+    )
+    group_wrapper.add_argument(
+        "--no-spine-artwork",
+        action="store_true",
+        dest="no_spine_artwork",
+        help="Don't show background artwork on top of wrappers "
+        "(analogous to --no-tab-artwork).",
     )
     group_wrapper.add_argument(
         "--thickness",
