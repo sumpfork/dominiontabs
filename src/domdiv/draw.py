@@ -1084,6 +1084,7 @@ class DividerDrawer(object):
         # Coins
         replace_specs = [
             # Coins
+            # TODO: coin text baseline should align with surrounding text
             (r"(\d+)\s\<\*COIN\*\>", "coin_small_\\1.png", 2.4, 200),
             (r"(\d+)\s(c|C)oin(s)?", "coin_small_\\1.png", 1.2, 100),
             (r"\?\s(c|C)oin(s)?", "coin_small_question.png", 1.2, 100),
@@ -1183,20 +1184,25 @@ class DividerDrawer(object):
 
         return width + 1
 
-    def drawCost(self, card, x, y, costOffset=-1):
+    def drawCost(self, card, x, y, costOffset=-1, scale=1):
+        # card = subject card
+        # x = left side of coin
+        # y = baseline height for text
+        # (costOffset is no longer used)
+
         # Measured card metrics:
         # coins are 17 pt with a 1 pt drop shadow
         # cost numbers are Minion Std Black 18 (11.7 pt ascent)
         # with a baseline 3 pt above the bottom of the coin
-        coinSize = 17
-        fontSize = 18
-        # width starts at 2 (1 pt border on each side)
-        width = 2
+        fontSize = 18 * scale
+        coinSize = 17 * scale
+        potSize = 15 * scale
+        baseline = 3 * scale  # distance from coin bottom to baseline
 
-        costHeight = y + costOffset
-        coinHeight = costHeight - 3
-        potHeight = y - 3
-        potSize = 11
+        # set relative positions of coin and coin text
+        costHeight = y  # text baseline height
+        coinHeight = costHeight - baseline  # bottom of coin graphic
+        potHeight = coinHeight + (coinSize - potSize) / 2  # bottom of potion graphic
 
         def drawCostText(text, x, y, color=None):
             # x, y = center of baseline
@@ -1210,82 +1216,97 @@ class DividerDrawer(object):
                 mod = cost[-1]
                 cost = cost[:-1]
                 modFont = font
-                modSpacing = -0.5
+                modSpacing = -0.5 * scale
                 if mod == "*":
                     # asterisks are set in Minion Std Black 12 and raised 3.75 pt
-                    modSize = 12
-                    modHeight = 3.75
-                    modSpacing -= 0.25  # all asterisks are a little tighter
+                    modSize = 12 * scale
+                    modHeight = 3.75 * scale
+                    modSpacing -= 0.25 * scale  # all asterisks are a little tighter
                 elif mod == "+":
                     # plusses are set in Arial/Helvetica Bold 9 and raised 9 pt
                     modFont = self.fontStyle["PlusCost"]
-                    modSize = 9
-                    modHeight = 6
+                    modSize = 9 * scale
+                    modHeight = 6 * scale
                     if cost.endswith("4"):  # "4+" is kerned tighter
-                        modSpacing += -0.5
+                        modSpacing += -0.5 * scale
+                if not cost:  # lonely star or plus
+                    modSpacing = 0
                 modWidth = pdfmetrics.stringWidth(mod, modFont, modSize)
 
-            # get text metrics with and without modifier
-            costWidth = pdfmetrics.stringWidth(cost, font, fontSize)
-            totalWidth = costWidth + modSpacing + modWidth
+            # get text width metrics
+            costWidth = [
+                pdfmetrics.stringWidth(digit, font, fontSize) for digit in cost
+            ]
+            spacing = -2.0  # compress multi-digit costs
+            totalWidth = (
+                sum(costWidth)
+                + spacing * max(0, len(costWidth) - 1)
+                + modSpacing
+                + modWidth
+            )
 
             # write the text
             self.canvas.saveState()
             if color is not None:
                 self.canvas.setFillColorRGB(*color)
             self.canvas.setFont(font, fontSize)
-            self.canvas.drawString(x - totalWidth / 2, y, cost)
+            left = x - totalWidth / 2
+            right = x + totalWidth / 2
+            for i, digit in enumerate(cost):
+                prefix = sum(costWidth[:i]) + i * spacing
+                self.canvas.drawString(left + prefix, y, digit)
             if mod:
                 self.canvas.setFont(modFont, modSize)
-                self.canvas.drawString(
-                    x + totalWidth / 2 - modWidth, y + modHeight, mod
-                )
+                self.canvas.drawString(right - modWidth, y + modHeight, mod)
+            if False:  # TODO: debug scaffolding
+                self.canvas.saveState()
+                self.canvas.setLineWidth(0.2)
+                self.canvas.rect(x - totalWidth / 2, y, totalWidth, 0.624 * fontSize)
+                self.canvas.restoreState()
             self.canvas.restoreState()
 
-        if not (
-            card.cost == ""
-            or (card.debtcost and int(card.cost) == 0)
-            or (card.potcost and int(card.cost) == 0)
-        ):
+        def scaleImage(name, x, y, h, mask):
+            path = DividerDrawer.get_image_filepath(name)
+            with Image.open(path) as img:
+                w0, h0 = img.size
+            scale = h / h0
+            w = w0 * scale
+            self.canvas.drawImage(path, x, y, w, h, mask)
+            if False:  # TODO: debug scaffolding
+                self.canvas.saveState()
+                self.canvas.setLineWidth(0.1)
+                self.canvas.rect(x, y, w, h)
+                self.canvas.restoreState()
+            return w
 
-            self.canvas.drawImage(
-                DividerDrawer.get_image_filepath("coin_small.png"),
-                x,
-                coinHeight,
-                coinSize,
-                coinSize,
-                preserveAspectRatio=True,
-                mask="auto",
-            )
-            drawCostText(card.cost, x + coinSize / 2, costHeight)
-            x += coinSize + 1
-            width += coinSize + 1
+        width = 0
 
-        if card.debtcost:
-            self.canvas.drawImage(
-                DividerDrawer.get_image_filepath("debt.png"),
-                x,
-                coinHeight,
-                coinSize,
-                coinSize,
-                preserveAspectRatio=True,
-                mask=[170, 255, 170, 255, 170, 255],
-            )
-            drawCostText(card.debtcost, x + coinSize / 2, costHeight, color=(1, 1, 1))
-            x += coinSize + 1
-            width += coinSize + 1
+        cost = card.cost
+        debt = card.debtcost
+        pots = card.potcost
 
-        if card.potcost:
-            self.canvas.drawImage(
-                DividerDrawer.get_image_filepath("potion.png"),
-                x,
-                potHeight,
-                potSize,
-                potSize,
-                preserveAspectRatio=True,
-                mask="auto",
+        if cost and (cost[0] != "0" or not debt and not pots):
+            shadowXY = [0.5, 1]
+            # TODO: drop shadow
+            dx = scaleImage(
+                "coin_small.png", x + width, coinHeight, coinSize, mask="auto"
             )
-            width += potSize
+            drawCostText(cost, x + width + dx / 2, costHeight)
+            width += dx + shadowXY[0]
+
+        if debt:
+            shadowXY = [0.5, 1]
+            # TODO: drop shadow
+            mask = [170, 255, 170, 255, 170, 255]
+            dx = scaleImage("debt.png", x + width, coinHeight, coinSize, mask=mask)
+            drawCostText(debt, x + width + dx / 2, costHeight, color=(1, 1, 1))
+            width += dx + shadowXY[0]
+
+        if pots:
+            if width:  # add a little extra room before the potion
+                width += 1
+            dx = scaleImage("potion.png", x + width, potHeight, potSize, mask="auto")
+            width += dx
 
         return width
 
@@ -1300,36 +1321,47 @@ class DividerDrawer(object):
 
     def smallCapsConfig(self, text, size, style="Name"):
         # Adapter for installations that don't have access to Trajan or Charlemagne.
-        # Looks up the matching font for the style and determines whether the font has
-        # small caps. If so, it returns (text, font, size) with the text and size
-        # unchanged. Otherwise, it uppercases the text and adjusts the size to match the
-        # style's intended x-height.
+        # Looks up the best available font for the style and returns any necessary text
+        # or metric adjustments as (text, caps, small, font):
+        #   text    original text, or uppercase if simulating small caps
+        #   caps    font size for full capitals (first letter of each word)
+        #   small   font size for small caps (subsequent letters)
+        #   font    best matching font
+        # If the recommended font is present, returns (text, size, size, font) with the
+        # text and the two font sizes unchanged from the method parameters.
+
+        # Metrics for the two small caps fonts and the main fallback
+        capsMinion = 0.650  # Times is very similar, about 0.66
+        capsCharlemagne = 0.700
+        capsTrajan = 0.750
+        smallTrajan = 0.638
 
         font = self.fontStyle[style]
         if "Trajan" in font or "Charlemagne" in font:
             # Close enough, even if we're subbing Trajan for Charlemagne
-            return text, size, font
+            return text, size, size, font
         if style == "Expansion":
-            # Charlemagne has 100% x-height, so we don't need to shrink the small caps
-            return text.upper(), size, font
-
-        # Trajan font metrics:
-        capheight = 0.750
-        xheight = 0.638
-        return text.upper(), size * xheight / capheight, font
+            # Scale Minion up to Charlemagne metrics
+            caps = size * capsCharlemagne / capsMinion
+            small = caps  # the "small" caps are the same size as the full caps
+        else:
+            # Scale Minion up to Trajan metrics
+            caps = size * capsTrajan / capsMinion
+            small = caps * smallTrajan / capsTrajan
+        return text.upper(), caps, small, font
 
     def nameWidth(self, name, fontSize, style="Name"):
-        name, smallSize, font = self.smallCapsConfig(name, fontSize, style)
+        name, caps, small, font = self.smallCapsConfig(name, fontSize, style)
         w = 0
         name_parts = name.split()
         for i, part in enumerate(name_parts):
             if i != 0:
-                w += pdfmetrics.stringWidth(" ", font, fontSize)
-            if smallSize == fontSize:
-                w += pdfmetrics.stringWidth(part, font, fontSize)
+                w += pdfmetrics.stringWidth(" ", font, caps)
+            if small == caps:
+                w += pdfmetrics.stringWidth(part, font, caps)
             else:
-                w += pdfmetrics.stringWidth(part[0], font, fontSize)
-                w += pdfmetrics.stringWidth(part[1:], font, smallSize)
+                w += pdfmetrics.stringWidth(part[0], font, caps)
+                w += pdfmetrics.stringWidth(part[1:], font, small)
         return w
 
     def drawTab(self, item, panel="main", backside=False):
@@ -1408,26 +1440,58 @@ class DividerDrawer(object):
             self.canvas.rect(0, 0, tabWidth, tabHeight, fill=True)
             self.canvas.restoreState()
 
-        # TODO: update this to new design!
+        # Determine relative vertical positioning of the major tab elements:
+        # align the tops of the card name, the cost numerals, and the set icon.
 
-        # Determine relative vertical positioning of the tab elements
-        # On most cards, the cap height of the name aligns with the top of the card cost
-        # and the set icon.  In some sets, the set icon only comes up to the x-height of
-        # the text, and on some cards, the coins are a bit higher.  On cards with smaller
-        # text, the baseline stays constant, and the cap height shrinks.
-        font = pdfmetrics.getFont(self.fontStyle["Name"])
-        fontSize = 10  # same as the bottom banner on the cards
-        nameAscent = font.face.ascent / 1000 * fontSize
+        # The cost symbols determine vertical positioning, as they are the largest
+        # element.  On the Dominion cards, the coin symbols are 17 pt tall, and the cost
+        # numbers are set in Minion Std Black 18 (which has numerals ~11 pt tall).
+
+        # The card names and set icons are then top aligned with the cost numerals.  Both
+        # use the same 10 pt design size, but the set icon uses the full 10 pt whereas
+        # the text is set in small caps and has a higher baseline.
+
+        # If the text is too wide to fit in the space, the method finds a smaller size
+        # that fits, keeping the same baseline.  This could bring the text out of
+        # alignment with the other two elements, but that's OK.  The actual cards do the
+        # same thing.
+
+        # metrics measured from the cards
+        trueBannerSize = 18
+        trueCoinSize = 17
+        bannerSize = trueBannerSize
+        bannerHeight = 0
+
+        # metrics from the package assets
         cardType = card.getType()
         if artwork:
-            textHeightOffset = cardType.getTabTextHeightOffset() - 3.5
-            costHeightOffset = cardType.getTabCostHeightOffset() - 1
-        else:
-            textHeightOffset = 0
-            costHeightOffset = -1
-        setImageOffset = -3
-        tabHeight
-        textHeight = item.tabHeight / 2 - nameAscent / 2 + textHeightOffset
+            # adjust dimensions based on the application image metrics
+            # (ideally they will match the card metrics when space permits)
+            # TODO: correctly handle base cards and landscape card-shaped things
+            bannerSize = 17
+            bannerHeight = cardType.getTabTextHeightOffset()
+
+        # cost symbol metrics
+        coinSize = bannerSize - 1
+        coinScale = coinSize / trueCoinSize
+        coinHeight = bannerHeight
+        costHeight = coinHeight + 3 * coinScale
+        costTop = costHeight + coinScale * 18 * 0.624  # Minion Std Black numeral height
+
+        # card name metrics
+        font = pdfmetrics.getFont(self.fontStyle["Name"])
+        fontSize = maxFontSize = 10  # same as the bottom banner on the cards
+        nameAscent = fontSize * 0.750  # Trajan caps height
+        nameTop = costTop
+        nameHeight = nameTop - nameAscent
+        textHeight = nameHeight
+
+        # set symbol metrics
+        setTop = costTop
+        setImageSize = 10
+        setImageHeight = setTop - setImageSize
+        setTextSize = nameAscent / 0.701  # Minion Pro Italic ascender height
+        setTextHeight = textHeight
 
         # draw banner
         img = cardType.getTabImageFile()
@@ -1457,46 +1521,44 @@ class DividerDrawer(object):
                 mask="auto",
             )
 
+        # initialize margins
+        textInset = textInsetRight = 2 * margin
+        if card.isExpansion() and self.options.full_expansion_dividers:
+            # TODO: accommodate the scalloped ends on wider expansion dividers
+            pass
+
         # draw cost
         if (
-            not card.isExpansion()
+            "tab" in self.options.cost
+            and not card.isExpansion()
             and not card.isBlank()
             and card.get_GroupCost() != ""
             and not card.isType("Trash")
         ):
-            if "tab" in self.options.cost:
-                textInset = 4
-                textInset += self.drawCost(
-                    card, textInset, textHeight, costHeightOffset
-                )
-                textInset += 2
-            else:
-                textInset = 6
-        else:
-            textInset = 13
+            textInset = 4
+            textInset += self.drawCost(card, textInset, costHeight, scale=coinScale)
+            textInset += 2
 
         # draw set image
-        # always need to offset from right edge, to make sure it stays on banner
-        textInsetRight = 6
-        if self.options.use_text_set_icon:
-            italic = self.fontStyle["Italic"]
-            setFontSize = 8
-            setAscent = pdfmetrics.getFont(italic).face.ascent / 1000 * 8
-            setTextHeight = textHeight + (nameAscent - setAscent) / 2
-            setText = card.setTextIcon()
-            self.canvas.setFont(italic, setFontSize)
-            if setText is None:
-                setText = ""
-            self.canvas.drawCentredString(tabWidth - 10, setTextHeight, setText)
-            textInsetRight = 18
-        else:
-            setImage = card.setImage(self.options.use_set_icon)
-            if setImage and "tab" in self.options.set_icon:
-                setImageHeight = textHeight + setImageOffset
-                textInsetRight = 19
-                self.drawSetIcon(
-                    setImage, tabWidth - textInsetRight + margin, setImageHeight
-                )
+        if "tab" in self.options.set_icon:
+            if self.options.use_text_set_icon:
+                italic = self.fontStyle["Italic"]
+                setText = card.setTextIcon()
+                if setText:
+                    self.canvas.setFont(italic, setTextSize)
+                    setTextWidth = pdfmetrics.stringWidth(setText, italic, setTextSize)
+                    textInsetRight += setTextWidth
+                    self.canvas.drawString(
+                        tabWidth - textInsetRight, setTextHeight, setText
+                    )
+                    textInsetRight -= margin
+            else:
+                setImage = card.setImage(self.options.use_set_icon)
+                if setImage:
+                    textInsetRight += margin + setImageSize  # they're all square
+                    self.drawSetIcon(
+                        setImage, tabWidth - textInsetRight + margin, setImageHeight
+                    )
 
         # draw name
         textWidth -= textInset
@@ -1527,7 +1589,7 @@ class DividerDrawer(object):
         else:
             name_lines = [name]
 
-        nameAscent = font.face.ascent / 1000 * fontSize  # update for actual size
+        nameAscent = font.face.ascent / 1000 * fontSize  # recalc with actual font size
         for linenum, line in enumerate(name_lines):
             h = textHeight
             if tooLong and len(name_lines) > 1:
@@ -1569,8 +1631,21 @@ class DividerDrawer(object):
             elif side == CardPlot.RIGHT:
                 w = tabWidth - textInsetRight + delimiterIndent - lineWidth
             else:
-                w = tabWidth / 2 - centreWidth / 2
+                w = max(textInset, tabWidth / 2 - centreWidth / 2)
             self.drawSmallCaps(line, fontSize, w, h, style=style)
+
+        if False:  # TODO: debug scaffolding
+            capheight = 0.750
+            xheight = 0.638
+            self.canvas.saveState()
+            self.canvas.setStrokeGray(0.5)
+            self.canvas.setLineWidth(0.1)
+            self.canvas.rect(0, textHeight, tabWidth, capheight * maxFontSize)
+            self.canvas.rect(0, textHeight, tabWidth, xheight * maxFontSize)
+            self.canvas.setLineWidth(0.25)
+            self.canvas.setStrokeColorRGB(0.5, 0, 0)
+            self.canvas.rect(0, bannerHeight, tabWidth, bannerSize)
+            self.canvas.restoreState()
 
         self.canvas.restoreState()
 
@@ -1583,29 +1658,18 @@ class DividerDrawer(object):
                 self.canvas.drawString(x, y, text)
             return pdfmetrics.stringWidth(text, font, fontSize)
 
-        # TODO: design scaffolding, remove this
-        if False:
-            capheight = 0.750
-            xheight = 0.638
-            self.canvas.saveState()
-            self.canvas.setStrokeGray(0.5)
-            self.canvas.setLineWidth(0.1)
-            self.canvas.rect(0, y, self.options.dividerWidth, capheight * fontSize)
-            self.canvas.rect(0, y, self.options.dividerWidth, xheight * fontSize)
-            self.canvas.setLineWidth(0.25)
-            self.canvas.setStrokeColorRGB(0.5, 0, 0)
-            self.canvas.rect(0, 0, self.options.dividerWidth, 17)
-            self.canvas.restoreState()
+        # Improve typography
+        text = text.replace("'", "’")
 
-        text, smallSize, font = self.smallCapsConfig(text, fontSize, style)
+        text, caps, small, font = self.smallCapsConfig(text, fontSize, style)
         for i, word in enumerate(text.split()):
             if i != 0:
-                x += drawWordPiece(" ", fontSize)
-            if smallSize == fontSize:
-                x += drawWordPiece(word, fontSize)
+                x += drawWordPiece(" ", caps)
+            if small == caps:
+                x += drawWordPiece(word, caps)
             else:
-                x += drawWordPiece(word[0], fontSize)
-                x += drawWordPiece(word[1:], smallSize)
+                x += drawWordPiece(word[0], caps)
+                x += drawWordPiece(word[1:], small)
 
     def drawSpine(self, item):
         # Draw labels on the spine (top edge) of wrappers

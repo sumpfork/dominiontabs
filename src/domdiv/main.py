@@ -708,6 +708,8 @@ def parse_opts(cmdline_args=None):
         "'tab' will print all tab text and icons.",
     )
     group_wrapper.add_argument(
+        # TODO: is this the best way to do this?  Ideally it's a three-way choice between
+        # art, colors, or plain, but the existing option is just on/off.
         "--no-spine-artwork",
         action="store_true",
         dest="no_spine_artwork",
