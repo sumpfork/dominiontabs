@@ -1623,12 +1623,14 @@ class DividerDrawer(object):
             )
 
             # calculate x position and write text
+            lmin = textInset
+            rmax = tabWidth - textInsetRight + delimiterIndent - lineWidth
             if side == CardPlot.LEFT:
-                w = textInset
+                w = lmin
             elif side == CardPlot.RIGHT:
-                w = tabWidth - textInsetRight + delimiterIndent - lineWidth
-            else:
-                w = max(textInset, tabWidth / 2 - centreWidth / 2)
+                w = rmax
+            else:  # centre, but keep it inside the margins
+                w = max(lmin, min(tabWidth / 2 - centreWidth / 2, rmax))
             self.drawSmallCaps(line, fontSize, w, h, style=style)
 
         if False:  # TODO: debug scaffolding
@@ -1669,13 +1671,13 @@ class DividerDrawer(object):
                 x += drawWordPiece(word[1:], small)
 
     def drawSpine(self, item):
-        # Draw labels on the spine (top edge) of wrappers
+        # Draw on the spine (top edge) of wrappers
         card = item.card
 
         # Skip blank cards
         if card.isBlank():
             return
-        # Use the drawTab method for tab-style labels
+        # Use the drawTab method for tab-style spines
         if self.options.spine == "tab":
             return self.drawTab(item, panel="spine")
 
