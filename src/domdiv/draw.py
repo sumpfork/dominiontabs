@@ -573,6 +573,9 @@ class DividerDrawer(object):
                 "MinionPro-Bold",
                 "Times-Bold",
             ],
+            "PlusCost": [  # card cost superscript "+" modifiers
+                "Helvetica-Bold",
+            ],
             "Regular": [  # regular text
                 "MinionPro-Regular",
                 "Times-Roman",
@@ -588,13 +591,9 @@ class DividerDrawer(object):
             "Rules": [
                 "Times-Roman",
             ],
-            "PlusCost": [
-                "Helvetica-Bold",
-            ],
             "Monospaced": [
                 "Courier",
             ],
-            # TODO: Times
         }
         self.fontStyle = {
             # select the first matching preference for each font type
@@ -1022,8 +1021,7 @@ class DividerDrawer(object):
             plotter.plot(0, -back_minus_notches, lineStyle[x6])  # FF to GG
 
             # Add fold lines
-            # TODO: put this back
-            # self.canvas.setStrokeGray(0.9)
+            self.canvas.setStrokeGray(0.9)
             # top fold
             plotter.setXY(
                 left2tab,
@@ -1258,11 +1256,6 @@ class DividerDrawer(object):
             if mod:
                 self.canvas.setFont(modFont, modSize)
                 self.canvas.drawString(right - modWidth, y + modHeight, mod)
-            if False:  # TODO: debug scaffolding
-                self.canvas.saveState()
-                self.canvas.setLineWidth(0.2)
-                self.canvas.rect(x - totalWidth / 2, y, totalWidth, 0.624 * fontSize)
-                self.canvas.restoreState()
             self.canvas.restoreState()
 
         def scaleImage(name, x, y, h, mask):
@@ -1272,11 +1265,6 @@ class DividerDrawer(object):
             scale = h / h0
             w = w0 * scale
             self.canvas.drawImage(path, x, y, w, h, mask)
-            if False:  # TODO: debug scaffolding
-                self.canvas.saveState()
-                self.canvas.setLineWidth(0.1)
-                self.canvas.rect(x, y, w, h)
-                self.canvas.restoreState()
             return w
 
         width = 0
@@ -1286,8 +1274,7 @@ class DividerDrawer(object):
         pots = card.potcost
 
         if cost and (cost[0] != "0" or not debt and not pots):
-            shadowXY = [0.5, 1]
-            # TODO: drop shadow
+            shadowXY = [0.5, 1]  # leave room for a drop shadow (TODO: draw the shadow)
             dx = scaleImage(
                 "coin_small.png", x + width, coinHeight, coinSize, mask="auto"
             )
@@ -1295,8 +1282,7 @@ class DividerDrawer(object):
             width += dx + shadowXY[0]
 
         if debt:
-            shadowXY = [0.5, 1]
-            # TODO: drop shadow
+            shadowXY = [0.5, 1]  # leave room for a drop shadow (TODO: draw the shadow)
             mask = [170, 255, 170, 255, 170, 255]
             dx = scaleImage("debt.png", x + width, coinHeight, coinSize, mask=mask)
             drawCostText(debt, x + width + dx / 2, costHeight, color=(1, 1, 1))
@@ -1373,6 +1359,11 @@ class DividerDrawer(object):
             return
 
         # Get panel options
+        # TODO: Provide more options for tab & spine graphics, instead of a simple
+        # no_tab_artwork switch here.  Perhaps treat banners the same as --cost and
+        # --set-icon and add head / tail / spine to LOCATION_OPTIONS. Then you could
+        # choose any of the graphic options at any of the locations.  Also, add an option
+        # for simple block colors instead of banners.
         if panel == "head":
             if self.options.head == "none":
                 return  # no head!
@@ -1391,7 +1382,7 @@ class DividerDrawer(object):
             # The spine uses the head edge for widths, and it always faces front
             edge = self.options.head
             facing = "front"
-            artwork = not self.options.no_spine_artwork
+            artwork = not self.options.no_tab_artwork
 
         # set vertical dimensions
         translate_y = 0
@@ -1582,12 +1573,18 @@ class DividerDrawer(object):
                     delimiterText = name_lines[1][:2]
                     break
             if delimiterText:
-                name_lines = (name_lines[0] + delimiterText, name_lines[2])
+                name_lines = name_lines[0] + delimiterText, name_lines[2]
             else:
-                # TODO: try to break near the middle of the text
-                name_lines = name.split(None, 1)
+                # Othersie, break near the middle of the text
+                n = len(name) // 2
+                lname, _, lmid = name[:n].rpartition(" ")
+                rmid, _, rname = name[n:].partition(" ")
+                if len(lname) < len(rname):  # which end is shorter?
+                    name_lines = (lname + " " + lmid + rmid).lstrip(), rname
+                else:
+                    name_lines = lname, (lmid + rmid + " " + rname).rstrip()
         else:
-            name_lines = [name]
+            name_lines = (name,)
 
         nameAscent = font.face.ascent / 1000 * fontSize  # recalc with actual font size
         for linenum, line in enumerate(name_lines):
@@ -1916,9 +1913,7 @@ class DividerDrawer(object):
             wrap = "no"
 
         # TODO: simplify this
-        cardText = item.textTypeFront
-        if isBack:
-            cardText = item.textTypeBack
+        cardText = item.textTypeBack if isBack else item.textTypeFront
 
         self.drawTab(item, panel="head", backside=isBack)
         self.drawSpine(item)
