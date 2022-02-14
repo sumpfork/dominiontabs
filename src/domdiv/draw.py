@@ -1,6 +1,7 @@
 import os
 import re
 import sys
+import numbers
 
 import pkg_resources
 
@@ -428,44 +429,43 @@ class Plotter(object):
             # Each crop mark given is either:
             #   1. A tuple of direction and a boolean of additional enablement criteria
             #   2. A direction to draw a drop mark
-            if isinstance(mark, tuple):
-                direction, enable = mark
-                enable = (
-                    enable and self.CropEnable[direction]
-                    if direction in self.CropEnable
-                    else False
-                )
+            if isinstance(mark, numbers.Number):
+                self.cropmark(mark)
             else:
-                direction = mark
-                enable = (
-                    self.CropEnable[direction]
-                    if direction in self.CropEnable
-                    else False
-                )
-            if direction in self.CropEnable:
-                self.cropmark(direction, enable)
+                direction, enable = mark
+                if enable:
+                    self.cropmark(direction)
 
-    def cropmark(self, direction, enabled=False):
-        # From current point, draw a cropmark in the correct direction and return to starting point
-        if enabled:
-            x, y = self.getXY()  # Saving for later
+    def cropmark(self, direction, dx=0, dy=0):
+        # Draw a cropmark in the requested direction from a point,
+        # if cropmarks are enabled in that direction.
+        if not self.CropEnable.get(direction):
+            return
 
-            if direction == self.TOP:
-                self.plot(0, self.CropMarkSpacing)
-                self.plot(0, self.CropMarkLength, self.LINE)
-            if direction == self.BOTTOM:
-                self.plot(0, -self.CropMarkSpacing)
-                self.plot(0, -self.CropMarkLength, self.LINE)
-            if direction == self.RIGHT:
-                self.plot(self.CropMarkSpacing, 0)
-                self.plot(self.CropMarkLength, 0, self.LINE)
-            if direction == self.LEFT:
-                self.plot(-self.CropMarkSpacing, 0)
-                self.plot(-self.CropMarkLength, 0, self.LINE)
-            self.setXY(x, y)  # Restore to starting point
+        # Record the current point, then move relative to it
+        x, y = self.getXY()
+        if dx or dy:
+            self.setXY(x + dx, y + dy)
+
+        if direction == self.TOP:
+            self.plot(0, self.CropMarkSpacing)
+            self.plot(0, self.CropMarkLength, self.LINE)
+        if direction == self.BOTTOM:
+            self.plot(0, -self.CropMarkSpacing)
+            self.plot(0, -self.CropMarkLength, self.LINE)
+        if direction == self.RIGHT:
+            self.plot(self.CropMarkSpacing, 0)
+            self.plot(self.CropMarkLength, 0, self.LINE)
+        if direction == self.LEFT:
+            self.plot(-self.CropMarkSpacing, 0)
+            self.plot(-self.CropMarkLength, 0, self.LINE)
+        self.setXY(x, y)  # Restore the starting point
 
 
 class DividerDrawer(object):
+
+    HEAD, SPINE, BODY, TAIL = range(200, 204)  # panel identifiers
+
     def __init__(self, options=None):
         self.canvas = None
         self.pages = None
@@ -732,17 +732,159 @@ class DividerDrawer(object):
             )
         ) or self.options.tab_side == "centre"
 
-    def drawOutline(self, item, isBack=False):
-        # draw outline or cropmarks
-        if isBack and not self.options.cropmarks:
-            return
-        if self.options.linewidth <= 0.0:
-            return
+    def drawPanelOutline(
+        self, plotter, lineType, panel, size, notch, fold=0, height=0, tabX=0, tab=None
+    ):
+        # plotter setup
         self.canvas.saveState()
         self.canvas.setLineWidth(self.options.linewidth)
+        origin = plotter.getXY()
 
-        # The back is flipped
-        if isBack:
+        # line styles
+        NO_LINE = plotter.NO_LINE
+        # lines ending at a corner (creates dots)
+        line = (
+            plotter.LINE
+            if lineType.lower() == "line"
+            else plotter.DOT
+            if lineType.lower() == "dot"
+            else NO_LINE
+        )
+        # lines ending at a midpoint (no dots)
+        midline = NO_LINE if line == plotter.DOT else line
+
+        # crop marks
+        RIGHT = plotter.RIGHT
+        LEFT = plotter.LEFT
+        BOTTOM = plotter.BOTTOM
+        TOP = plotter.TOP
+
+        if panel == self.BODY:
+            if notch[0]:  # draw crop marks for notches
+                plotter.cropmark(LEFT, 0, notch[1])
+                plotter.cropmark(LEFT, 0, size[1] - notch[1])
+                plotter.cropmark(RIGHT, size[0], notch[1])
+                plotter.cropmark(RIGHT, size[0], size[1] - notch[1])
+            if 0 < notch[0]:
+                plotter.plot(notch[0], 0, NO_LINE)
+                plotter.plot(0, notch[1], line)
+                plotter.plot(-notch[0], 0, line)
+                plotter.plot(0, size[1] - 2 * notch[1], line)
+                plotter.plot(notch[0], 0, line)
+                plotter.plot(0, notch[1], midline)
+                plotter.plot(-notch[0], 0, NO_LINE)
+            else:
+                plotter.plot(0, size[1], midline)
+            plotter.setXY(origin[0] + size[0], origin[1])
+            if notch[0] < 0:
+                plotter.plot(notch[0], 0, NO_LINE)
+                plotter.plot(0, notch[1], line)
+                plotter.plot(-notch[0], 0, line)
+                plotter.plot(0, size[1] - 2 * notch[1], line)
+                plotter.plot(notch[0], 0, line)
+                plotter.plot(0, notch[1], midline)
+                plotter.plot(-notch[0], 0, NO_LINE)
+            else:
+                plotter.plot(0, size[1], midline)
+            self.canvas.restoreState()
+            return
+
+        def y(dy):  # adjust y coordinates for head/tail direction
+            return -dy if panel == self.TAIL else dy
+
+        # normalize tabs
+        if not tab:
+            tab = (size[0], 0)
+        hasTab = bool(tab[0] and tab[1])
+        # major horizontal coordinates
+        tabLeft = tabX if hasTab else 0
+        tabRight = size[0] - tab[0] - tabX if hasTab else 0
+        xnotch = notch[0] or None
+        # major vertical coordinates
+        top = height + fold  # end of panel, including tab
+        shoulder = top - tab[1] if tab[1] < height else 0  # base of tab
+        if xnotch:
+            fnotch = min(notch[1] + fold, shoulder)  # fold notch
+            enotch = min(size[1] - notch[1] + fold, shoulder)  # edge notch
+        else:
+            fnotch = enotch = None
+
+        # cropmarks for major horizontal coordinates
+        crop = BOTTOM if panel == self.TAIL else TOP
+        for cx in [0, xnotch, tabLeft, -tabRight, size[0]]:
+            if cx is not None:
+                if cx < 0:
+                    cx += size[0]
+                plotter.cropmark(crop, cx, y(top))
+        # cropmarks for major vertical coordinates
+        for cy in [fnotch, enotch, shoulder, top]:
+            if cy is not None:
+                plotter.cropmark(LEFT, 0, y(cy))
+                plotter.cropmark(RIGHT, size[0], y(cy))
+        # folds
+        lnotch = xnotch if xnotch and 0 < xnotch else 0
+        rnotch = -xnotch if xnotch and xnotch < 0 else 0
+        if fold:
+            self.canvas.saveState()
+            self.canvas.setStrokeGray(0.9)
+            foldx = origin[0] + (lnotch if shoulder else tabLeft)
+            foldw = size[0] - abs(xnotch or 0) if shoulder else tab[0]
+            foldy = origin[1]
+            for foldy in (origin[1], origin[1] + y(fold)):
+                self.canvas.line(foldx, foldy, foldx + foldw, foldy)
+            self.canvas.restoreState()
+        # left edge
+        plotter.setXY(origin[0] + lnotch, origin[1])
+        if tabLeft:
+            if lnotch and shoulder:
+                # TODO: test corner cases
+                plotter.plot(0, y(fnotch), line)
+                plotter.plot(-lnotch, 0, line)
+                plotter.plot(0, y(enotch - fnotch), line)
+                plotter.plot(lnotch, 0, line)
+                plotter.plot(0, y(shoulder - enotch), line)
+            else:
+                plotter.plot(0, y(shoulder), line)  # needed for dot, even if zero
+            plotter.plot(tabLeft - lnotch, 0, line)
+            plotter.plot(0, y(top - shoulder), line)
+        else:
+            plotter.plot(0, y(top), line)
+        # top edge
+        if hasTab:
+            plotter.plot(tab[0], 0, line)
+        elif enotch is not None and enotch <= top:
+            plotter.plot(size[0] - abs(xnotch), 0, line)
+        else:
+            plotter.plot(size[0], 0, line)
+        # right edge
+        plotter.setXY(origin[0] + size[0] - rnotch, origin[1])
+        if tabRight:
+            if rnotch and shoulder:
+                # TODO: test corner cases
+                plotter.plot(0, y(fnotch), line)
+                plotter.plot(rnotch, 0, line)
+                plotter.plot(0, y(enotch - fnotch), line)
+                plotter.plot(-rnotch, 0, line)
+                plotter.plot(0, y(shoulder - enotch), line)
+            else:
+                plotter.plot(0, y(shoulder), line)  # needed for dot, even if zero
+            plotter.plot(rnotch - tabRight, 0, line)
+            plotter.plot(0, y(top - shoulder), line)
+        else:
+            plotter.plot(0, y(top), line)
+
+        self.canvas.restoreState()
+
+    def drawOutline(self, item, isBack=False):
+        # bail out if there's nothing to draw
+        if self.options.linewidth <= 0.0:
+            return
+        # only the front gets an outline, unless cropmarks are set
+        if isBack and not self.options.cropmarks:
+            return
+
+        self.canvas.saveState()
+        if isBack:  # flip the back side
             self.canvas.translate(item.cardWidth, 0)
             self.canvas.scale(-1, 1)
 
@@ -751,294 +893,78 @@ class DividerDrawer(object):
             cropmarkLength=self.options.cropmarkLength,
             cropmarkSpacing=self.options.cropmarkSpacing,
         )
-
-        dividerWidth = item.cardWidth
-        dividerBaseHeight = item.cardHeight
-        tabLabelWidth = item.tabWidth
-        theTabWidth = item.tabWidth
-        theTabHeight = self.options.headHeight
-
-        left2tab = item.getTabOffset(
-            backside=False
-        )  # translate/scale above takes care of backside
-        right2tab = dividerWidth - tabLabelWidth - left2tab
-        nearZero = 0.01
-        left2tab = left2tab if left2tab > nearZero else 0
-        right2tab = right2tab if right2tab > nearZero else 0
-
-        if item.lineType.lower() == "line":
-            lineType = plotter.LINE
-            lineTypeNoDot = plotter.LINE
-        elif item.lineType.lower() == "dot":
-            lineType = plotter.DOT
-            lineTypeNoDot = plotter.NO_LINE
-        else:
-            lineType = plotter.NO_LINE
-            lineTypeNoDot = plotter.NO_LINE
-
-        # Setup bare minimum lineStyle's
-        lineStyle = [lineType for i in range(0, 10)]
-        lineStyle[0] = lineTypeNoDot
-        lineStyle[7] = lineType
-        lineStyle[8] = lineType if left2tab > 0 else lineTypeNoDot
-        lineStyle[9] = lineType if right2tab > 0 else lineTypeNoDot
-
         RIGHT = plotter.RIGHT
         LEFT = plotter.LEFT
         BOTTOM = plotter.BOTTOM
         TOP = plotter.TOP
-        NO_LINE = plotter.NO_LINE
+        if self.options.cropmarks:
+            plotter.setCropEnable(RIGHT, item.translateCropmarkEnable(item.RIGHT))
+            plotter.setCropEnable(LEFT, item.translateCropmarkEnable(item.LEFT))
+            plotter.setCropEnable(TOP, item.translateCropmarkEnable(item.TOP))
+            plotter.setCropEnable(BOTTOM, item.translateCropmarkEnable(item.BOTTOM))
+        lineType = item.lineType.lower()
 
-        plotter.setCropEnable(
-            RIGHT, self.options.cropmarks and item.translateCropmarkEnable(item.RIGHT)
-        )
-        plotter.setCropEnable(
-            LEFT, self.options.cropmarks and item.translateCropmarkEnable(item.LEFT)
-        )
-        plotter.setCropEnable(
-            TOP, self.options.cropmarks and item.translateCropmarkEnable(item.TOP)
-        )
-        plotter.setCropEnable(
-            BOTTOM, self.options.cropmarks and item.translateCropmarkEnable(item.BOTTOM)
-        )
+        # certain sizes smaller than this round to zero
+        # TODO: test all uses of epsilon
+        epsilon = 0.1 * cm
 
-        if not item.wrapper:
-            # Normal Card Outline
-            #     <-left2tab-> <--tabLabelWidth--> <-right2tab->
-            #    |            |                   |             |
-            #  Z-+           F7-------------------7E            +-Y
-            #                 |                   |
-            #  H-8------------8                   9-------------9-C
-            #    |            G                   D             |
-            #    |               Generic Divider                |
-            #    |            Tab Centered or to the Side       |
-            #    |                                              |
-            #  A-7------------0-------------------0-------------7-B
-            #    |           V|                  W|             |
-            #
-            plotter.plot(0, 0, NO_LINE, [LEFT, BOTTOM])  # ? to A
-            plotter.plot(left2tab, 0, lineStyle[0], BOTTOM)  # A to V
-            plotter.plot(theTabWidth, 0, lineStyle[0], BOTTOM)  # V to W
-            plotter.plot(right2tab, 0, lineStyle[7], [BOTTOM, RIGHT])  # W to B
-            plotter.plot(0, dividerBaseHeight, lineStyle[9], RIGHT)  # B to C
-            plotter.plot(-right2tab, 0, lineStyle[9])  # C to D
-            plotter.plot(0, theTabHeight, lineStyle[7], TOP)  # D to E
-            plotter.plot(right2tab, 0, NO_LINE, [TOP, RIGHT])  # E to Y
-            plotter.plot(-right2tab, 0, NO_LINE)  # Y to E
-            plotter.plot(-theTabWidth, 0, lineStyle[7], TOP)  # E to F
-            plotter.plot(0, -theTabHeight, lineStyle[8])  # F to G
-            plotter.plot(-left2tab, 0, lineStyle[8], LEFT)  # G to H
-            plotter.plot(0, theTabHeight, NO_LINE, [TOP, LEFT])  # H to Z
-            plotter.plot(0, -theTabHeight, NO_LINE)  # Z to H
-            plotter.plot(0, -dividerBaseHeight, lineStyle[7])  # H to A
-
+        # calculate card dimensions
+        body = (item.cardWidth, item.cardHeight)
+        head = self.options.headHeight
+        tail = self.options.tailHeight
+        headFold = item.stackHeight if self.options.headWrapper else 0
+        tailFold = item.stackHeight if self.options.tailWrapper else 0
+        # tab position
+        if epsilon <= item.cardWidth - item.tabWidth:  # tab is distinct from card
+            tab = (item.tabWidth, item.tabHeight)
+            tabLeft = item.getTabOffset(backside=False)  # mirroring is handled above
+            if tabLeft < epsilon:  # tab is very close to left edge, so align it
+                tabLeft = 0
+            tabRight = body[0] - tab[0] - tabLeft
+            if tabRight < epsilon:  # tab is very close to right edge, so align it
+                tabLeft += tabRight
+                tabRight = 0
         else:
-            # Card Wrapper Outline
+            # tab is full width or nearly so
+            tab = (item.cardWidth, item.tabHeight)
+            tabLeft = tabRight = 0
+        headTab = (  # head tab is always either full height or zero height
+            tab[0],
+            head if self.options.head in ["tab", "strap"] else 0,
+        )
+        tailTab = (
+            tab[0],
+            tab[1]
+            if self.options.tail == "folder"
+            else tail
+            if self.options.tail == "strap"
+            else 0,
+        )
+        # notch size and side
+        notchWidth = self.options.notch_length * cm
+        notchHeight = self.options.notch_height * cm if notchWidth else 0
+        if notchWidth <= tabRight:  # prefer the right side
+            if tabRight - notchWidth < epsilon:  # align to tab if it's very close
+                notchWidth = tabRight
+            notchWidth = -notchWidth
+        elif notchWidth <= tabLeft:
+            if tabLeft - notchWidth < epsilon:  # align to tab if it's very close
+                notchWidth = tabLeft
+        else:
+            notchWidth = notchHeight = 0
+        notch = (notchWidth, notchHeight)
 
-            # Set up values used in the outline
-            minNotch = 0.1 * cm  # Don't really want notches that are smaller than this.
-            if self.options.notch_length * cm > minNotch:
-                # A notch length was given, so notches are wanted
-                notch_height = self.options.notch_height * cm  # thumb notch height
-                notch1 = notch2 = notch3 = notch4 = (
-                    self.options.notch_length * cm
-                )  # thumb notch width
-                notch1used = notch2used = notch3used = notch4used = True  # For now
-            else:
-                # No notches are wanted
-                notch_height = 0
-                notch1 = notch2 = notch3 = notch4 = 0
-                notch1used = notch2used = notch3used = notch4used = False
-
-            # Even if wanted, there may not be room, and limit to one pair of notches
-            if (right2tab - minNotch < notch1) or not notch1used:
-                notch1 = notch3 = 0
-                notch1used = notch3used = False
-            if (left2tab - minNotch < notch4) or not notch4used or notch1used:
-                notch4 = notch2 = 0
-                notch4used = notch2used = False
-            if not self.options.headWrapper:  # no top fold
-                notch1 = notch4 = 0
-                notch1used = notch4used = False
-            if not self.options.tailWrapper:  # no bottom fold
-                notch2 = notch3 = 0
-                notch2used = notch3used = False
-
-            # Setup the rest of the lineStyle's
-            lineStyle[1] = lineType if notch1used else lineTypeNoDot
-            lineStyle[2] = lineType if notch2used else lineTypeNoDot
-            lineStyle[3] = lineType if notch3used else lineTypeNoDot
-            lineStyle[4] = lineType if notch4used else lineTypeNoDot
-            lineStyle[5] = lineType if notch1used and right2tab > 0 else lineTypeNoDot
-            lineStyle[6] = lineType if notch4used and left2tab > 0 else lineTypeNoDot
-
-            # TODO: this needs generalizing to match the new head/tail system
-            headStackHeight = item.stackHeight * self.options.headWrapper
-            tailStackHeight = item.stackHeight * self.options.tailWrapper
-            frontTabHeight = self.options.headHeight
-            backTabHeight = item.tabHeight if self.options.tail == "folder" else 0
-            backWrapHeight = self.options.tailHeight - backTabHeight
-            frontWrapHeight = dividerBaseHeight
-
-            front_minus_notches = frontWrapHeight - (2.0 * notch_height)
-            tab2notch1 = right2tab - notch1
-            tab2notch4 = left2tab - notch4
-            backBottomNotch = min(notch_height, backWrapHeight)
-            backTopNotch = (
-                max(notch_height + backWrapHeight - frontWrapHeight, 0)
-                if self.options.tailWrapper
-                else 0
-            )
-            back_minus_notches = max(backWrapHeight - backBottomNotch - backTopNotch, 0)
-
-            # Some corners collapse if the back tab height or notch height is 0
-            # external corners:
-            x5 = 5 if backTopNotch else 7
-            x6 = 6 if backTopNotch else 7
-            x7 = 7 if backTabHeight else 0
-            x8 = 8 if backTabHeight else 7 if backTopNotch else 0
-            x9 = 9 if backTabHeight else 7 if backTopNotch else 0
-            # internal corners:
-            i1 = 1 if backTopNotch else 0
-            i4 = 4 if backTopNotch else 0
-            i8 = 8 if backTabHeight else 0
-            i9 = 9 if backTabHeight else 0
-
-            #     <-----left2tab----------> <--tabLabelWidth--> <-----right2tab-------->
-            #    |         |               |                   |               |        |
-            # Zb-+       Va+              V7-------------------7U              +Ua      +-Ub
-            #               <--tab2notch4->|                   |<--tab2notch1->
-            #    +                        W0...................0T
-            #              Y               |                   |               R
-            # Za-+         8---------------8...................9---------------9        +-Pa
-            #     <notch4 >|               X                   S               |<notch1>
-            #  Z-6---------4Ya                                                Q1--------5-P
-            #    |                                                                      |
-            #    |                         Generic Wrapper                              |
-            #    |                           Normal Side                                |
-            #    |                                                                      |
-            # AA-2--------2BB                                                 N3--------3-O
-            #     <notch2>|                                                    |<notch3>
-            #    +        0CC.................................................M0        +-Oa
-            #             |                                                    |
-            #    +        0DD.................................................L0        +
-            #     <notch2>|                                                    |<notch3>
-            # FF-2--------2EE                                                 K3--------3-J
-            #    |                                                                      |
-            #    |                            Reverse Side                              |
-            #    |                            rotated 180                               |
-            #    |         Ca                                                  H        |
-            # GG-6---------4<--tab2notch4->                     <--tab2notch1->1--------5-I
-            #     <notch4 >|               C                   F               |<notch1>
-            #  B-+       Cb8---------------8                   9---------------9G       +-Ia
-            #                              |                   |
-            #   -+A      Cc+              D7-------------------7E              +Ga      +-Ib
-            #    |         |               |                   |               |        |
-            #     <-----left2tab----------> <--tabLabelWidth--> <-----right2tab-------->
-
-            plotter.plot(0, 0, NO_LINE, [BOTTOM, LEFT])  # ?  to A
-            plotter.plot(0, backTabHeight, NO_LINE, LEFT)  # A  to B
-            plotter.plot(
-                0, backTopNotch, NO_LINE, (LEFT, notch4used or notch1used)
-            )  # B  to GG
-            plotter.plot(notch4, 0, lineStyle[i4])  # GG to Ca
-            plotter.plot(0, -backTopNotch, lineStyle[x8])  # Ca to Cb
-            plotter.plot(
-                0, -backTabHeight, NO_LINE, (BOTTOM, notch4used or notch2used)
-            )  # Cb to Cc
-            plotter.plot(0, backTabHeight, NO_LINE)  # Cc to Cb
-            plotter.plot(tab2notch4, 0, lineStyle[i8])  # Cb to C
-            plotter.plot(0, -backTabHeight, lineStyle[x7], BOTTOM)  # C  to D
-            plotter.plot(tabLabelWidth, 0, lineStyle[x7], BOTTOM)  # D  to E
-            plotter.plot(0, backTabHeight, lineStyle[i9])  # E  to F
-            plotter.plot(tab2notch1, 0, lineStyle[x9])  # F  to G
-            plotter.plot(
-                0, -backTabHeight, NO_LINE, (BOTTOM, notch1used or notch3used)
-            )  # G  to Ga
-            plotter.plot(0, backTabHeight, NO_LINE)  # Ga to G
-            plotter.plot(0, backTopNotch, lineStyle[i1])  # G  to H
-            plotter.plot(
-                notch1, 0, lineStyle[x5], (RIGHT, notch1used or notch4used)
-            )  # H  to I
-            plotter.plot(0, -backTopNotch, NO_LINE, RIGHT)  # I  to Ia
-            plotter.plot(0, -backTabHeight, NO_LINE, [RIGHT, BOTTOM])  # Ia to Ib
-            plotter.plot(0, backTabHeight, NO_LINE)  # Ib to Ia
-            plotter.plot(0, backTopNotch, NO_LINE)  # Ia to I
-            plotter.plot(
-                0, back_minus_notches, lineStyle[3], (RIGHT, notch2used or notch3used)
-            )  # I  to J
-            plotter.plot(-notch3, 0, lineStyle[3])  # J  to K
-            plotter.plot(0, backBottomNotch, lineStyle[0])  # K  to L
-            plotter.plot(0, tailStackHeight, lineStyle[0])  # L  to M
-            plotter.plot(0, notch_height, lineStyle[3])  # M  to N
-            plotter.plot(
-                notch3, 0, lineStyle[3], (RIGHT, notch2used or notch3used)
-            )  # N  to O
-            plotter.plot(
-                0, front_minus_notches, lineStyle[5], (RIGHT, notch1used or notch4used)
-            )  # O  to P
-            plotter.plot(0, notch_height, NO_LINE, RIGHT)  # P  to Pa
-            plotter.plot(0, -notch_height, NO_LINE)  # Pa to P
-            plotter.plot(-notch1, 0, lineStyle[1])  # P  to Q
-            plotter.plot(0, notch_height, lineStyle[9])  # Q  to R
-            plotter.plot(-tab2notch1, 0, lineStyle[9])  # R  to S
-            plotter.plot(0, headStackHeight, lineStyle[0])  # S  to T
-            plotter.plot(0, frontTabHeight, lineStyle[7], TOP)  # S  to U
-            plotter.plot(
-                tab2notch1, 0, NO_LINE, (TOP, notch1used or notch3used)
-            )  # U  to Ua
-            plotter.plot(notch1, 0, NO_LINE, [TOP, RIGHT])  # Ua to Ub
-            plotter.plot(-notch1, 0, NO_LINE)  # Ub to Ua
-            plotter.plot(-tab2notch1, 0, NO_LINE)  # Ua to U
-            plotter.plot(-theTabWidth, 0, lineStyle[7], TOP)  # U  to V
-            plotter.plot(
-                -tab2notch4, 0, NO_LINE, (TOP, notch4used or notch2used)
-            )  # V  to Va
-            plotter.plot(tab2notch4, 0, NO_LINE)  # Va to V
-            plotter.plot(0, -frontTabHeight, lineStyle[0])  # V  to W
-            plotter.plot(0, -headStackHeight, lineStyle[8])  # W  to X
-            plotter.plot(-tab2notch4, 0, lineStyle[8])  # X  to Y
-            plotter.plot(0, -notch_height, lineStyle[4])  # Y  to Ya
-            plotter.plot(
-                -notch4, 0, lineStyle[6], (LEFT, notch1used or notch4used)
-            )  # Ya to Z
-            plotter.plot(0, notch_height, NO_LINE, LEFT)  # Z  to Za
-            plotter.plot(
-                0, frontTabHeight + headStackHeight, NO_LINE, [TOP, LEFT]
-            )  # Za to Zb
-            plotter.plot(0, -frontTabHeight - headStackHeight, NO_LINE)  # Zb to Za
-            plotter.plot(0, -notch_height, NO_LINE)  # Za to Z
-            plotter.plot(
-                0, -front_minus_notches, lineStyle[2], (LEFT, notch2used or notch3used)
-            )  # Z  to AA
-            plotter.plot(notch2, 0, lineStyle[2])  # AA to BB
-            plotter.plot(0, -notch_height, lineStyle[0])  # BB to CC
-            plotter.plot(0, -tailStackHeight, lineStyle[0])  # CC to DD
-            plotter.plot(0, -backBottomNotch, lineStyle[2])  # DD to EE
-            plotter.plot(
-                -notch2, 0, lineStyle[2], (LEFT, notch2used or notch3used)
-            )  # EE to FF
-            plotter.plot(0, -back_minus_notches, lineStyle[x6])  # FF to GG
-
-            # Add fold lines
-            self.canvas.setStrokeGray(0.9)
-            # top fold
-            plotter.setXY(
-                left2tab,
-                backTabHeight + backWrapHeight + tailStackHeight + frontWrapHeight,
-            )  # ?  to X
-            plotter.plot(theTabWidth, 0, plotter.LINE)  # X  to S
-            plotter.plot(0, headStackHeight)  # S  to T
-            plotter.plot(-theTabWidth, 0, plotter.LINE)  # V  to S
-            # bottom fold
-            if backWrapHeight:
-                plotter.setXY(notch2, backTabHeight + backWrapHeight)  # ?  to DD
-                plotter.plot(dividerWidth - notch2 - notch3, 0, plotter.LINE)  # DD to L
-                plotter.plot(0, tailStackHeight)  # L  to M
-                plotter.plot(
-                    -dividerWidth + notch2 + notch3, 0, plotter.LINE
-                )  # M  to CC
-
+        # draw panels
+        plotter.setXY(0, tail + tailFold)
+        self.drawPanelOutline(
+            plotter, lineType, self.TAIL, body, notch, tailFold, tail, tabLeft, tailTab
+        )
+        plotter.setXY(0, tail + tailFold)
+        self.drawPanelOutline(plotter, lineType, self.BODY, body, notch)
+        plotter.setXY(0, tail + tailFold + body[1])
+        self.drawPanelOutline(
+            plotter, lineType, self.HEAD, body, notch, headFold, head, tabLeft, headTab
+        )
         self.canvas.restoreState()
 
     def add_inline_images(self, text, fontsize):
@@ -1350,7 +1276,7 @@ class DividerDrawer(object):
                 w += pdfmetrics.stringWidth(part[1:], font, small)
         return w
 
-    def drawTab(self, item, panel="main", backside=False):
+    def drawTab(self, item, panel=None, backside=False):
         from io import BytesIO
 
         card = item.card
@@ -1364,19 +1290,19 @@ class DividerDrawer(object):
         # --set-icon and add head / tail / spine to LOCATION_OPTIONS. Then you could
         # choose any of the graphic options at any of the locations.  Also, add an option
         # for simple block colors instead of banners.
-        if panel == "head":
+        if panel == self.HEAD:
             if self.options.head == "none":
                 return  # no head!
             edge = self.options.head
             facing = self.options.head_facing
             artwork = not self.options.no_tab_artwork
-        elif panel == "tail":
+        elif panel == self.TAIL:
             if not self.options.tailWrapper:
                 return  # no tail!
             edge = self.options.tail
             facing = self.options.tail_facing
             artwork = not self.options.no_tab_artwork
-        elif panel == "spine":
+        elif panel == self.SPINE:
             if not self.options.headWrapper:
                 return  # no spine!
             # The spine uses the head edge for widths, and it always faces front
@@ -1387,16 +1313,16 @@ class DividerDrawer(object):
         # set vertical dimensions
         translate_y = 0
         tabHeight = item.tabHeight
-        if panel == "head":
+        if panel == self.HEAD:
             translate_y += (
                 self.options.headWrapper * item.stackHeight
                 + self.options.headHeight
                 - item.tabHeight
             )
-        elif panel == "spine":
+        elif panel == self.SPINE:
             # center tab on the spine
             translate_y += item.stackHeight / 2 - item.tabHeight / 2
-        if panel != "tail":
+        if panel != self.TAIL:
             translate_y += (
                 item.cardHeight
                 + self.options.tailHeight
@@ -1410,7 +1336,7 @@ class DividerDrawer(object):
             translate_x = item.cardWidth / 2 - item.tabWidth / 2
             tabWidth = item.tabWidth
         else:
-            translate_x = item.getTabOffset(backside=backside and panel == "head")
+            translate_x = item.getTabOffset(backside=backside and panel == self.HEAD)
             tabWidth = item.tabWidth
         margin = 3
         textWidth = tabWidth - 2 * margin
@@ -1679,7 +1605,7 @@ class DividerDrawer(object):
             return
         # Use the drawTab method for tab-style spines
         if self.options.spine == "tab":
-            return self.drawTab(item, panel="spine")
+            return self.drawTab(item, panel=self.SPINE)
 
         fontSize = 8  # use the smallest font
         text = card.types_name if self.options.spine == "types" else card.name
@@ -1917,10 +1843,10 @@ class DividerDrawer(object):
         # TODO: simplify this
         cardText = item.textTypeBack if isBack else item.textTypeFront
 
-        self.drawTab(item, panel="head", backside=isBack)
+        self.drawTab(item, panel=self.HEAD, backside=isBack)
         self.drawSpine(item)
         if not self.options.tabs_only:
-            self.drawTab(item, panel="tail", backside=True)
+            self.drawTab(item, panel=self.TAIL, backside=True)
             self.drawText(item, cardText, wrapper=wrap)  # TODO
             # if self.options.headWrapper:
             #     self.drawText(item, self.options.head_text, wrapper="back")  # TODO
@@ -2090,24 +2016,24 @@ class DividerDrawer(object):
 
         # Set head & tail heights now that card & label heights are set
         options.headHeight = (
-            options.head_height * cm
+            0
+            if options.head == "none"
+            else options.head_height * cm
             if options.head_height
             else options.dividerBaseHeight
             if options.head == "wrapper"
-            else options.labelHeight
-            if options.head in ["tab", "strap"]
-            else 0
+            else options.labelHeight  # tab or strap
         )
         options.tailHeight = (
-            options.tail_height * cm
+            0
+            if options.tail == "none"
+            else options.tail_height * cm
             if options.tail_height
             else options.dividerBaseHeight + options.labelHeight
             if options.tail == "folder"
             else options.dividerBaseHeight
             if options.tail == "wrapper"
-            else options.labelHeight
-            if options.tail == "strap"
-            else 0
+            else options.labelHeight  # strap
         )
 
         # Set Height
