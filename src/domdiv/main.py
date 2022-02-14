@@ -705,7 +705,8 @@ def parse_opts(cmdline_args=None):
         help="Text to print on the top edge of wrappers; "
         "'name' will print the card name; "
         "'type' will print the card type; "
-        "'tab' will print all tab text and icons.",
+        "'tab' will print all tab text and icons. "
+        "This is only valid with --wrapper or folding --head options.",
     )
     group_wrapper.add_argument(
         "--thickness",
@@ -713,7 +714,7 @@ def parse_opts(cmdline_args=None):
         default=2.0,
         help="Thickness of a stack of 60 cards (Copper) in centimeters. "
         "Typically unsleeved cards are 2.0, thin sleeved cards are 2.4, and thick sleeved cards are 3.2. "
-        "This is only valid with the --wrapper option.",
+        "This is only valid with --wrapper or other folding options.",
     )
     group_wrapper.add_argument(
         "--sleeved-thick",
@@ -734,7 +735,7 @@ def parse_opts(cmdline_args=None):
         help="Length of thumb notch on wrapper in centimeters "
         "(a value of 0.0 means no notch on wrapper). "
         "This can make it easier to remove the actual cards from the wrapper. "
-        "This is only valid with the --wrapper option.",
+        "This is only valid with --wrapper or other folding options.",
     )
     group_wrapper.add_argument(
         "--notch",
@@ -924,24 +925,6 @@ def parse_opts(cmdline_args=None):
 
 
 def clean_opts(options):
-
-    if options.wrapper_meta:
-        # Same as --head=strap --tail=folder
-        options.head = "strap"
-        options.tail = "folder"
-    if options.pull_tab_meta:
-        # Same as --head=tab --tail=strap
-        options.head = "tab"
-        options.tail = "strap"
-    if options.cover_meta:
-        # Same as --head=wrapper --head-facing=back --head-text=back
-        options.head = "wrapper"
-        options.head_facing = "back"
-        options.head_text = "back"
-    # Flags set if there's a head wrapper, a tail wrapper, or either
-    options.headWrapper = options.head in ["wrapper", "strap"]
-    options.tailWrapper = options.tail in ["folder", "wrapper", "strap"]
-    options.wrapper = options.headWrapper or options.tailWrapper
 
     if "center" in options.tab_side:
         options.tab_side = str(options.tab_side).replace("center", "centre")
@@ -1133,7 +1116,9 @@ def clean_opts(options):
 
         options.linewidth = 0.0
         options.cropmarks = False
-        options.wrapper = False
+        options.head = "tab"
+        options.tail = "none"
+        options.wrapper_meta = options.pull_tab_meta = options.cover_meta = False
         options.papersize = label["paper"]
         if label["tab-only"]:
             options.tabs_only = True
@@ -1153,6 +1138,24 @@ def clean_opts(options):
         ) < MIN_WIDTH_CM_FOR_FULL:
             options.tab_side = "full"
         options.label = label
+
+    if options.wrapper_meta:
+        # Same as --head=strap --tail=folder
+        options.head = "strap"
+        options.tail = "folder"
+    if options.pull_tab_meta:
+        # Same as --head=tab --tail=strap
+        options.head = "tab"
+        options.tail = "strap"
+    if options.cover_meta:
+        # Same as --head=wrapper --head-facing=back --head-text=back
+        options.head = "wrapper"
+        options.head_facing = "back"
+        options.head_text = "back"
+    # Flags set if there's a head wrapper, a tail wrapper, or either
+    options.headWrapper = options.head in ["wrapper", "strap"]
+    options.tailWrapper = options.tail in ["folder", "wrapper", "strap"]
+    options.wrapper = options.headWrapper or options.tailWrapper
 
     # Expand --head-text and --tail-text if they refer to --front or --back
     if options.head_text == "front":

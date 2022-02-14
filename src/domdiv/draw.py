@@ -2059,7 +2059,7 @@ class DividerDrawer(object):
                 # since that is used in the calculation of where to place the dividers on the page.
                 # This 'spins' the divider only, but keeps all the other calcuations the same.
                 options.spin = 270
-                # Now fix up the card dimentions.
+                # Now fix up the card dimensions.
                 options.dominionCardWidth = (
                     options.labelHeight + options.label["body-height"] * cm
                 )
