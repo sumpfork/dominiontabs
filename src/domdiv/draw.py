@@ -733,14 +733,38 @@ class DividerDrawer(object):
         ) or self.options.tab_side == "centre"
 
     def drawPanelOutline(
-        self, plotter, lineType, panel, size, notch, fold=0, height=0, tabX=0, tab=None
+        self, item, panel, size, notch, fold=0, height=0, tabLeft=0, tab=None
     ):
-        # plotter setup
+        # total height of panel, including head or tail fold
+        ymax = size[1] if panel == self.BODY else fold + height
+
+        # canvas setup
         self.canvas.saveState()
         self.canvas.setLineWidth(self.options.linewidth)
-        origin = plotter.getXY()
+        if panel == self.TAIL:
+            # flip the tail vertically, to match coordinates with the head
+            self.canvas.translate(0, ymax)
+            self.canvas.scale(1, -1)
+
+        # plotter setup
+        plotter = Plotter(
+            self.canvas,
+            cropmarkLength=self.options.cropmarkLength,
+            cropmarkSpacing=self.options.cropmarkSpacing,
+        )
+        if self.options.cropmarks:
+            cropmarks = {
+                plotter.RIGHT: item.translateCropmarkEnable(item.RIGHT),
+                plotter.LEFT: item.translateCropmarkEnable(item.LEFT),
+                plotter.TOP: item.translateCropmarkEnable(  # flip the tail here too
+                    item.BOTTOM if panel == self.TAIL else item.TOP
+                ),
+            }
+            for direction, enable in cropmarks.items():
+                plotter.setCropEnable(direction, enable)
 
         # line styles
+        lineType = item.lineType.lower()
         NO_LINE = plotter.NO_LINE
         # lines ending at a corner (creates dots)
         line = (
@@ -753,125 +777,118 @@ class DividerDrawer(object):
         # lines ending at a midpoint (no dots)
         midline = NO_LINE if line == plotter.DOT else line
 
-        # crop marks
-        RIGHT = plotter.RIGHT
-        LEFT = plotter.LEFT
-        BOTTOM = plotter.BOTTOM
-        TOP = plotter.TOP
+        # notch dimensions
+        notchLeft = round(max(notch[0], 0.0), 2)
+        notchRight = round(max(-notch[0], 0.0), 2)
 
+        def drawSideCropmarks(*args, zero=True):
+            for y in args:
+                if y or zero:
+                    plotter.cropmark(plotter.LEFT, 0, y)
+                    plotter.cropmark(plotter.RIGHT, size[0], y)
+
+        def drawEndCropmarks(*args, zero=True):
+            for x in args:
+                if x or zero:
+                    plotter.cropmark(plotter.TOP, x + size[0] if x < 0 else x, ymax)
+
+        def drawBodySide(notchSide):
+            if not notchSide:
+                plotter.plot(0, ymax, midline)
+                return
+            plotter.plot(notchSide, 0, NO_LINE)
+            plotter.plot(0, notch[1], line)
+            plotter.plot(-notchSide, 0, line)
+            plotter.plot(0, ymax - 2 * notch[1], line)
+            plotter.plot(notchSide, 0, line)
+            plotter.plot(0, notch[1], midline)
+
+        # draw body panel and return
         if panel == self.BODY:
             if notch[0]:  # draw crop marks for notches
-                plotter.cropmark(LEFT, 0, notch[1])
-                plotter.cropmark(LEFT, 0, size[1] - notch[1])
-                plotter.cropmark(RIGHT, size[0], notch[1])
-                plotter.cropmark(RIGHT, size[0], size[1] - notch[1])
-            if 0 < notch[0]:
-                plotter.plot(notch[0], 0, NO_LINE)
-                plotter.plot(0, notch[1], line)
-                plotter.plot(-notch[0], 0, line)
-                plotter.plot(0, size[1] - 2 * notch[1], line)
-                plotter.plot(notch[0], 0, line)
-                plotter.plot(0, notch[1], midline)
-                plotter.plot(-notch[0], 0, NO_LINE)
-            else:
-                plotter.plot(0, size[1], midline)
-            plotter.setXY(origin[0] + size[0], origin[1])
-            if notch[0] < 0:
-                plotter.plot(notch[0], 0, NO_LINE)
-                plotter.plot(0, notch[1], line)
-                plotter.plot(-notch[0], 0, line)
-                plotter.plot(0, size[1] - 2 * notch[1], line)
-                plotter.plot(notch[0], 0, line)
-                plotter.plot(0, notch[1], midline)
-                plotter.plot(-notch[0], 0, NO_LINE)
-            else:
-                plotter.plot(0, size[1], midline)
+                drawSideCropmarks(notch[1], ymax - notch[1])
+            drawBodySide(notchLeft)  # left side
+            plotter.setXY(size[0], 0)
+            drawBodySide(-notchRight)  # right side
             self.canvas.restoreState()
             return
 
-        def y(dy):  # adjust y coordinates for head/tail direction
-            return -dy if panel == self.TAIL else dy
+        # certain sizes smaller than this round to zero to avoid rounding errors
+        # TODO: test all uses of epsilon
+        epsilon = 0.1 * cm
 
-        # normalize tabs
-        if not tab:
-            tab = (size[0], 0)
-        hasTab = bool(tab[0] and tab[1])
-        # major horizontal coordinates
-        tabLeft = tabX if hasTab else 0
-        tabRight = size[0] - tab[0] - tabX if hasTab else 0
-        xnotch = notch[0] or None
-        # major vertical coordinates
-        top = height + fold  # end of panel, including tab
-        shoulder = top - tab[1] if tab[1] < height else 0  # base of tab
-        if xnotch:
-            fnotch = min(notch[1] + fold, shoulder)  # fold notch
-            enotch = min(size[1] - notch[1] + fold, shoulder)  # edge notch
-        else:
-            fnotch = enotch = None
+        # draw head & tail panels
+        hasNotch = bool(notchLeft or notchRight)
+        hasTab = bool(tab and tab[0] and tab[1])
+        # first, set horizontal major coordinates & draw their cropmarks
+        tabRight = max(size[0] - tab[0] - tabLeft, 0.0)
+        tabLeft = round(tabLeft, 2)
+        tabRight = round(tabRight, 2)
+        drawEndCropmarks(0, size[0])
+        drawEndCropmarks(notchLeft, tabLeft, -tabRight, -notchRight, zero=False)
+        # set vertical major coordinates & draw their cropmarks
+        shoulder = ymax - tab[1]  # base of tab
+        if height - tab[1] < epsilon:
+            # panel is all tab, so omit the shoulder and notches
+            shoulder = fnotch = tnotch = 0.0
+        drawSideCropmarks(shoulder, ymax)
+        if hasNotch and shoulder:
+            fnotch = fold + notch[1]  # fold-side notch
+            if shoulder - fnotch < epsilon:
+                fnotch = shoulder
+            else:
+                drawSideCropmarks(fnotch)
+            tnotch = fold + size[1] - notch[1]  # tab-side notch
+            if shoulder - tnotch < epsilon or not hasTab:
+                tnotch = shoulder
+            else:
+                drawSideCropmarks(tnotch)
 
-        # cropmarks for major horizontal coordinates
-        crop = BOTTOM if panel == self.TAIL else TOP
-        for cx in [0, xnotch, tabLeft, -tabRight, size[0]]:
-            if cx is not None:
-                if cx < 0:
-                    cx += size[0]
-                plotter.cropmark(crop, cx, y(top))
-        # cropmarks for major vertical coordinates
-        for cy in [fnotch, enotch, shoulder, top]:
-            if cy is not None:
-                plotter.cropmark(LEFT, 0, y(cy))
-                plotter.cropmark(RIGHT, size[0], y(cy))
+        def drawPanelSide(notchSide, tabSide):
+            if not tabSide:
+                plotter.plot(0, ymax, line)
+                return
+            plotter.plot(notchSide, 0, NO_LINE)
+            if notchSide and fnotch < shoulder:
+                # finish fold-side notch
+                plotter.plot(0, fnotch, line)
+                plotter.plot(-notchSide, 0, line)
+                plotter.plot(0, tnotch - fnotch, line)
+                if tnotch < shoulder:
+                    # draw tab-side notch
+                    plotter.plot(notchSide, 0, line)
+                    plotter.plot(0, shoulder - tnotch, line)
+                else:
+                    plotter.plot(notchSide, 0, midline)
+            else:
+                plotter.plot(0, shoulder, line)  # needed for dot, even if zero
+            if hasTab:
+                plotter.plot(tabSide - notchSide, 0, line)
+                plotter.plot(0, ymax - shoulder, line)
+
+        # left edge
+        plotter.setXY(0, 0)
+        drawPanelSide(notchLeft, tabLeft)
+        # top edge
+        endWidth = tab[0] if hasTab else size[0] - notchLeft - notchRight
+        plotter.plot(endWidth, 0, midline)
+        # right edge
+        plotter.setXY(size[0], 0)
+        drawPanelSide(-notchRight, -tabRight)
+
         # folds
-        lnotch = xnotch if xnotch and 0 < xnotch else 0
-        rnotch = -xnotch if xnotch and xnotch < 0 else 0
         if fold:
             self.canvas.saveState()
             self.canvas.setStrokeGray(0.9)
-            foldx = origin[0] + (lnotch if shoulder else tabLeft)
-            foldw = size[0] - abs(xnotch or 0) if shoulder else tab[0]
-            foldy = origin[1]
-            for foldy in (origin[1], origin[1] + y(fold)):
+            if shoulder:
+                foldx = notchLeft
+                foldw = size[0] - notchLeft - notchRight
+            else:
+                foldx = tabLeft
+                foldw = tab[0]
+            for foldy in (0, fold):
                 self.canvas.line(foldx, foldy, foldx + foldw, foldy)
             self.canvas.restoreState()
-        # left edge
-        plotter.setXY(origin[0] + lnotch, origin[1])
-        if tabLeft:
-            if lnotch and shoulder:
-                # TODO: test corner cases
-                plotter.plot(0, y(fnotch), line)
-                plotter.plot(-lnotch, 0, line)
-                plotter.plot(0, y(enotch - fnotch), line)
-                plotter.plot(lnotch, 0, line)
-                plotter.plot(0, y(shoulder - enotch), line)
-            else:
-                plotter.plot(0, y(shoulder), line)  # needed for dot, even if zero
-            plotter.plot(tabLeft - lnotch, 0, line)
-            plotter.plot(0, y(top - shoulder), line)
-        else:
-            plotter.plot(0, y(top), line)
-        # top edge
-        if hasTab:
-            plotter.plot(tab[0], 0, line)
-        elif enotch is not None and enotch <= top:
-            plotter.plot(size[0] - abs(xnotch), 0, line)
-        else:
-            plotter.plot(size[0], 0, line)
-        # right edge
-        plotter.setXY(origin[0] + size[0] - rnotch, origin[1])
-        if tabRight:
-            if rnotch and shoulder:
-                # TODO: test corner cases
-                plotter.plot(0, y(fnotch), line)
-                plotter.plot(rnotch, 0, line)
-                plotter.plot(0, y(enotch - fnotch), line)
-                plotter.plot(-rnotch, 0, line)
-                plotter.plot(0, y(shoulder - enotch), line)
-            else:
-                plotter.plot(0, y(shoulder), line)  # needed for dot, even if zero
-            plotter.plot(rnotch - tabRight, 0, line)
-            plotter.plot(0, y(top - shoulder), line)
-        else:
-            plotter.plot(0, y(top), line)
 
         self.canvas.restoreState()
 
@@ -883,87 +900,83 @@ class DividerDrawer(object):
         if isBack and not self.options.cropmarks:
             return
 
+        # canvas setup
         self.canvas.saveState()
-        if isBack:  # flip the back side
+        if isBack:  # flip the back side horizontally
             self.canvas.translate(item.cardWidth, 0)
             self.canvas.scale(-1, 1)
 
-        plotter = Plotter(
-            self.canvas,
-            cropmarkLength=self.options.cropmarkLength,
-            cropmarkSpacing=self.options.cropmarkSpacing,
-        )
-        RIGHT = plotter.RIGHT
-        LEFT = plotter.LEFT
-        BOTTOM = plotter.BOTTOM
-        TOP = plotter.TOP
-        if self.options.cropmarks:
-            plotter.setCropEnable(RIGHT, item.translateCropmarkEnable(item.RIGHT))
-            plotter.setCropEnable(LEFT, item.translateCropmarkEnable(item.LEFT))
-            plotter.setCropEnable(TOP, item.translateCropmarkEnable(item.TOP))
-            plotter.setCropEnable(BOTTOM, item.translateCropmarkEnable(item.BOTTOM))
-        lineType = item.lineType.lower()
-
-        # certain sizes smaller than this round to zero
+        # certain sizes smaller than this round to zero to avoid rounding errors
         # TODO: test all uses of epsilon
         epsilon = 0.1 * cm
 
         # calculate card dimensions
         body = (item.cardWidth, item.cardHeight)
-        head = self.options.headHeight
-        tail = self.options.tailHeight
+        headHeight = self.options.headHeight
+        tailHeight = self.options.tailHeight
         headFold = item.stackHeight if self.options.headWrapper else 0
         tailFold = item.stackHeight if self.options.tailWrapper else 0
-        # tab position
-        if epsilon <= item.cardWidth - item.tabWidth:  # tab is distinct from card
-            tab = (item.tabWidth, item.tabHeight)
+
+        # calcluate tab dimensions and position
+        def tabHeight(panelStyle, panelHeight):
+            return (
+                panelHeight
+                if panelStyle in ["tab", "strap"]
+                else item.tabHeight
+                if panelStyle == "folder"
+                else 0.0
+            )
+
+        headTabHeight = tabHeight(self.options.head, headHeight)
+        tailTabHeight = tabHeight(self.options.tail, tailHeight)
+        tabWidth = item.tabWidth
+        if headTabHeight + tailTabHeight == 0.0 or body[0] - tabWidth < epsilon:
+            # both tabs are full-width or missing
+            tabWidth = body[0]
+            tabLeft = tabRight = headTabHeight = tailTabHeight = 0.0
+        else:
+            # at least one panel has a distinct tab
             tabLeft = item.getTabOffset(backside=False)  # mirroring is handled above
             if tabLeft < epsilon:  # tab is very close to left edge, so align it
                 tabLeft = 0
-            tabRight = body[0] - tab[0] - tabLeft
+            tabRight = body[0] - tabWidth - tabLeft
             if tabRight < epsilon:  # tab is very close to right edge, so align it
                 tabLeft += tabRight
                 tabRight = 0
-        else:
-            # tab is full width or nearly so
-            tab = (item.cardWidth, item.tabHeight)
-            tabLeft = tabRight = 0
-        headTab = (  # head tab is always either full height or zero height
-            tab[0],
-            head if self.options.head in ["tab", "strap"] else 0,
-        )
-        tailTab = (
-            tab[0],
-            tab[1]
-            if self.options.tail == "folder"
-            else tail
-            if self.options.tail == "strap"
-            else 0,
-        )
+        headTab = (tabWidth, headTabHeight)
+        tailTab = (tabWidth, tailTabHeight)
+
         # notch size and side
         notchWidth = self.options.notch_length * cm
-        notchHeight = self.options.notch_height * cm if notchWidth else 0
-        if notchWidth <= tabRight:  # prefer the right side
+        notchHeight = min(
+            self.options.notch_height * cm if notchWidth else 0,
+            body[1] / 5,  # notch needs to be significantly shorter than the body
+        )
+        if notchHeight < epsilon:
+            notchWidth = notchHeight = 0
+        elif notchWidth < tabRight + epsilon:  # prefer the right side
             if tabRight - notchWidth < epsilon:  # align to tab if it's very close
                 notchWidth = tabRight
             notchWidth = -notchWidth
-        elif notchWidth <= tabLeft:
+        elif notchWidth < tabLeft + epsilon:
             if tabLeft - notchWidth < epsilon:  # align to tab if it's very close
                 notchWidth = tabLeft
         else:
             notchWidth = notchHeight = 0
         notch = (notchWidth, notchHeight)
 
-        # draw panels
-        plotter.setXY(0, tail + tailFold)
+        # draw panels:
+        # tail
         self.drawPanelOutline(
-            plotter, lineType, self.TAIL, body, notch, tailFold, tail, tabLeft, tailTab
+            item, self.TAIL, body, notch, tailFold, tailHeight, tabLeft, tailTab
         )
-        plotter.setXY(0, tail + tailFold)
-        self.drawPanelOutline(plotter, lineType, self.BODY, body, notch)
-        plotter.setXY(0, tail + tailFold + body[1])
+        # body
+        self.canvas.translate(0, tailHeight + tailFold)
+        self.drawPanelOutline(item, self.BODY, body, notch)
+        # head
+        self.canvas.translate(0, body[1])
         self.drawPanelOutline(
-            plotter, lineType, self.HEAD, body, notch, headFold, head, tabLeft, headTab
+            item, self.HEAD, body, notch, headFold, headHeight, tabLeft, headTab
         )
         self.canvas.restoreState()
 
