@@ -377,8 +377,9 @@ class Plotter(object):
             self.LINE,
             self.NO_LINE,
             self.DOT,
+            self.DEBUG,
         ) = range(
-            1, 8
+            1, 9
         )  # Constants
         if cropmarkLength < 0:
             cropmarkLength = 0.2
@@ -418,6 +419,9 @@ class Plotter(object):
             self.canvas.line(x, y, new_x, new_y)
         if pen == self.DOT:
             self.canvas.circle(new_x, new_y, self.DotSize)
+        if pen == self.DEBUG:
+            self.canvas.line(x, y, new_x, new_y)
+            self.canvas.circle(new_x, new_y, 10 * self.DotSize)
         self.setXY(new_x, new_y)  # save the new point
 
         # Make sure cropmarks is a list
@@ -465,6 +469,7 @@ class Plotter(object):
 class DividerDrawer(object):
 
     HEAD, SPINE, BODY, TAIL = range(200, 204)  # panel identifiers
+    LABEL_HEIGHT = 0.9 * cm
 
     def __init__(self, options=None):
         self.canvas = None
@@ -776,6 +781,7 @@ class DividerDrawer(object):
         )
         # lines ending at a midpoint (no dots)
         midline = NO_LINE if line == plotter.DOT else line
+        line = plotter.DEBUG  # TODO: debug
 
         # notch dimensions
         notchLeft = round(max(notch[0], 0.0), 2)
@@ -1351,8 +1357,7 @@ class DividerDrawer(object):
         else:
             translate_x = item.getTabOffset(backside=backside and panel == self.HEAD)
             tabWidth = item.tabWidth
-        margin = 3
-        textWidth = tabWidth - 2 * margin
+        textWidth = tabWidth  # margins & padding get subtracted later
 
         self.canvas.saveState()
         self.canvas.translate(translate_x, translate_y)
@@ -1386,11 +1391,18 @@ class DividerDrawer(object):
         # alignment with the other two elements, but that's OK.  The actual cards do the
         # same thing.
 
+        # adjust for alternate label sizes
+        bannerScale = tabHeight / self.LABEL_HEIGHT
+        tabScale = min(bannerScale, 1)
+
         # metrics measured from the cards
         trueBannerSize = 18
         trueCoinSize = 17
-        bannerSize = trueBannerSize
+        bannerSize = trueBannerSize * tabScale
         bannerHeight = 0
+
+        # whitespace
+        margin = padding = 2
 
         # metrics from the package assets
         cardType = card.getType()
@@ -1398,8 +1410,11 @@ class DividerDrawer(object):
             # adjust dimensions based on the application image metrics
             # (ideally they will match the card metrics when space permits)
             # TODO: correctly handle base cards and landscape card-shaped things
-            bannerSize = 17
-            bannerHeight = cardType.getTabTextHeightOffset()
+            bannerSize = 17 * tabScale
+            bannerHeight = (17 * bannerScale - bannerSize) / 2
+            bannerHeight += cardType.getTabTextHeightOffset() * tabScale
+            # adjust for space around banners and scalloped edges
+            margin = tabWidth / 18 if card.isExpansion() else tabWidth / 48
 
         # cost symbol metrics
         coinSize = bannerSize - 1
@@ -1410,7 +1425,8 @@ class DividerDrawer(object):
 
         # card name metrics
         font = pdfmetrics.getFont(self.fontStyle["Name"])
-        fontSize = maxFontSize = 10  # same as the bottom banner on the cards
+        fontSize = maxFontSize = 10 * tabScale  # same as the type banner on the cards
+        minFontSize = 7 * tabScale
         nameAscent = fontSize * 0.750  # Trajan caps height
         nameTop = costTop
         nameHeight = nameTop - nameAscent
@@ -1418,7 +1434,7 @@ class DividerDrawer(object):
 
         # set symbol metrics
         setTop = costTop
-        setImageSize = 10
+        setImageSize = maxFontSize
         setImageHeight = setTop - setImageSize
         setTextSize = nameAscent / 0.701  # Minion Pro Italic ascender height
         setTextHeight = textHeight
@@ -1452,10 +1468,7 @@ class DividerDrawer(object):
             )
 
         # initialize margins
-        textInset = textInsetRight = 2 * margin
-        if card.isExpansion() and self.options.full_expansion_dividers:
-            # TODO: accommodate the scalloped ends on wider expansion dividers
-            pass
+        textInset = textInsetRight = margin + padding
 
         # draw cost
         if (
@@ -1465,9 +1478,8 @@ class DividerDrawer(object):
             and card.get_GroupCost() != ""
             and not card.isType("Trash")
         ):
-            textInset = 4
             textInset += self.drawCost(card, textInset, costHeight, scale=coinScale)
-            textInset += 2
+            textInset += padding
 
         # draw set image
         if "tab" in self.options.set_icon:
@@ -1481,14 +1493,14 @@ class DividerDrawer(object):
                     self.canvas.drawString(
                         tabWidth - textInsetRight, setTextHeight, setText
                     )
-                    textInsetRight -= margin
             else:
                 setImage = card.setImage(self.options.use_set_icon)
                 if setImage:
-                    textInsetRight += margin + setImageSize  # they're all square
+                    textInsetRight += setImageSize  # they're all square
                     self.drawSetIcon(
-                        setImage, tabWidth - textInsetRight + margin, setImageHeight
+                        setImage, tabWidth - textInsetRight, setImageHeight
                     )
+            textInsetRight += padding
 
         # draw name
         textWidth -= textInset
@@ -1499,7 +1511,7 @@ class DividerDrawer(object):
         name = name.replace("→", "–")
         style = "Expansion" if card.isExpansion() else "Name"
         width = self.nameWidth(name, fontSize, style)
-        while width > textWidth and fontSize > 7:
+        while width > textWidth and fontSize > minFontSize:
             fontSize -= 0.01
             width = self.nameWidth(name, fontSize, style)
         tooLong = width > textWidth
@@ -1513,8 +1525,8 @@ class DividerDrawer(object):
                     break
             if delimiterText:
                 name_lines = name_lines[0] + delimiterText, name_lines[2]
-            else:
-                # Othersie, break near the middle of the text
+            elif " " in name:
+                # Otherwise, break near the middle of the text
                 n = len(name) // 2
                 lname, _, lmid = name[:n].rpartition(" ")
                 rmid, _, rname = name[n:].partition(" ")
@@ -1522,6 +1534,9 @@ class DividerDrawer(object):
                     name_lines = (lname + " " + lmid + rmid).lstrip(), rname
                 else:
                     name_lines = lname, (lmid + rmid + " " + rname).rstrip()
+            else:  # nowhere to break
+                print(name, round(width / cm, 2), round(textWidth / cm, 2))
+                name_lines = (name,)
         else:
             name_lines = (name,)
 
@@ -1537,13 +1552,13 @@ class DividerDrawer(object):
             lineWidth = centreWidth = rightWidth = self.nameWidth(line, fontSize, style)
             delimiterIndent = 0
             if delimiterText:
-                nudge = margin - 1  # how far delimiters can bleed into the margin
+                nudge = padding - 1  # how far delimiters can bleed
                 if linenum == 0:
                     # centering should ignore delimiters
                     centreWidth = self.nameWidth(
                         line[: -len(delimiterText)], fontSize, style
                     )
-                    # right alignment should extend them partly into the margin
+                    # right alignment should extend them partly into the margins
                     delimiterIndent = min(lineWidth - centreWidth, nudge)
                 else:
                     # right align subsequent lines
@@ -1580,6 +1595,9 @@ class DividerDrawer(object):
             self.canvas.setLineWidth(0.1)
             self.canvas.rect(0, textHeight, tabWidth, capheight * maxFontSize)
             self.canvas.rect(0, textHeight, tabWidth, xheight * maxFontSize)
+            self.canvas.setStrokeGray(0)
+            self.canvas.setLineWidth(0.25)
+            self.canvas.rect(lmin, textHeight, textWidth, capheight * maxFontSize)
             self.canvas.setLineWidth(0.25)
             self.canvas.setStrokeColorRGB(0.5, 0, 0)
             self.canvas.rect(0, bannerHeight, tabWidth, bannerSize)
@@ -1847,6 +1865,18 @@ class DividerDrawer(object):
         if not self.options.tabs_only:
             self.drawOutline(item, isBack)
 
+        if False and self.options.label:  # TODO: debug scaffolding
+            self.canvas.saveState()
+            self.canvas.setLineWidth(0.25)
+            self.canvas.setStrokeColorRGB(1, 0, 0)
+            dividerWidth = self.options.dividerWidth
+            labelHeight = self.options.labelHeight
+            baseHeight = self.options.dividerBaseHeight
+            self.canvas.rect(0, baseHeight, dividerWidth, labelHeight)
+            if self.options.dividerBaseHeight:
+                self.canvas.rect(0, 0, dividerWidth, baseHeight)
+            self.canvas.restoreState()
+
         if self.options.wrapper:
             wrap = "front"
             isBack = False  # Safety.  If a wrapper, there is no backside
@@ -2019,7 +2049,7 @@ class DividerDrawer(object):
         else:
             # Margins already set
             # Set Label size
-            options.labelHeight = 0.9 * cm
+            options.labelHeight = self.LABEL_HEIGHT
             options.labelWidth = options.tabwidth * cm
             if options.tab_side == "full" or options.labelWidth > options.dividerWidth:
                 options.labelWidth = options.dividerWidth
