@@ -1046,7 +1046,7 @@ class DividerDrawer(object):
 
             # now draw the number of sets
             if count > 1:
-                count_string = u"{}\u00d7".format(count)
+                count_string = "{}\u00d7".format(count)
                 width_string = stringWidth(
                     count_string, self.font_mapping["Regular"], 10
                 )
@@ -1509,7 +1509,7 @@ class DividerDrawer(object):
                     p = Paragraph(dmod, s)
                 except ValueError as e:
                     raise ValueError(
-                        u'Error rendering text from "{}": {} ("{}")'.format(
+                        'Error rendering text from "{}": {} ("{}")'.format(
                             card.name, e, dmod
                         )
                     )
