@@ -22,6 +22,28 @@
         "card_type": [
             "Action",
             "Attack",
+            "Augur"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Attack",
+            "Clash"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Attack",
             "Doom"
         ],
         "card_type_image": "action.png",
@@ -99,6 +121,37 @@
     {
         "card_type": [
             "Action",
+            "Attack",
+            "Wizard"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Augur"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Clash"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
             "Doom"
         ],
         "card_type_image": "action.png",
@@ -131,10 +184,66 @@
         "card_type": [
             "Action",
             "Duration",
+            "Attack",
+            "Clash"
+        ],
+        "card_type_image": "duration.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Duration",
+            "Fort"
+        ],
+        "card_type_image": "duration.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Duration",
+            "Liaison"
+        ],
+        "card_type_image": "duration.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Duration",
+            "Odyssey"
+        ],
+        "card_type_image": "duration.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Duration",
             "Reaction"
         ],
         "card_type_image": "duration-reaction.png",
         "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Duration",
+            "Wizard"
+        ],
+        "card_type_image": "duration.png",
+        "defaultCardCount": 16,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -151,7 +260,27 @@
     {
         "card_type": [
             "Action",
+            "Fort"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
             "Gathering"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Liaison"
         ],
         "card_type_image": "action.png",
         "defaultCardCount": 10,
@@ -165,6 +294,16 @@
         ],
         "card_type_image": "action.png",
         "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Odyssey"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 16,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -242,6 +381,16 @@
     {
         "card_type": [
             "Action",
+            "Townsfolk"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
             "Traveller"
         ],
         "card_type_image": "action.png",
@@ -272,6 +421,50 @@
     {
         "card_type": [
             "Action",
+            "Victory",
+            "Duration",
+            "Fort"
+        ],
+        "card_type_image": "reserve-victory.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Victory",
+            "Odyssey"
+        ],
+        "card_type_image": "action-victory.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Wizard"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Wizard",
+            "Liaison"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 16,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
             "Zombie"
         ],
         "card_type_image": "action.png",
@@ -280,219 +473,13 @@
         "tabTextHeightOffset": 0
     },
     {
-      "card_type": [
-        "Action",
-        "Liaison"
-      ],
-      "card_type_image": "action.png",
-      "defaultCardCount": 10,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-
-    },
-    {
-      "card_type": [
-        "Action",
-        "Duration",
-        "Liaison"
-      ],
-      "card_type_image": "duration.png",
-      "defaultCardCount": 10,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-
-    },
-    {
-      "card_type": [
-        "Action",
-        "Augur"
-      ],
-      "card_type_image": "action.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Attack",
-        "Augur"
-      ],
-      "card_type_image": "action.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Clash"
-      ],
-      "card_type_image": "action.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Attack",
-        "Clash"
-      ],
-      "card_type_image": "action.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Duration",
-        "Attack",
-        "Clash"
-      ],
-      "card_type_image": "duration.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Victory",
-        "Clash"
-      ],
-      "card_type_image": "victory.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Fort"
-      ],
-      "card_type_image": "action.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Duration",
-        "Fort"
-      ],
-      "card_type_image": "duration.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Victory",
-        "Duration",
-        "Fort"
-      ],
-      "card_type_image": "reserve-victory.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Odyssey"
-      ],
-      "card_type_image": "action.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Duration",
-        "Odyssey"
-      ],
-      "card_type_image": "duration.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Treasure",
-        "Odyssey"
-      ],
-      "card_type_image": "treasure.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Victory",
-        "Odyssey"
-      ],
-      "card_type_image": "action-victory.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Townsfolk"
-      ],
-      "card_type_image": "action.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Wizard",
-        "Liaison"
-      ],
-      "card_type_image": "action.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Duration",
-        "Wizard"
-      ],
-      "card_type_image": "duration.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Attack",
-        "Wizard"
-      ],
-      "card_type_image": "action.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
-    },
-    {
-      "card_type": [
-        "Action",
-        "Wizard"
-      ],
-      "card_type_image": "action.png",
-      "defaultCardCount": 16,
-      "tabCostHeightOffset": -1,
-      "tabTextHeightOffset": 0
+        "card_type": [
+            "Ally"
+        ],
+        "card_type_image": "ally.png",
+        "defaultCardCount": 1,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
     },
     {
         "card_type": [
@@ -769,6 +756,17 @@
     {
         "card_type": [
             "Treasure",
+            "Duration",
+            "Liaison"
+        ],
+        "card_type_image": "treasure.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
             "Heirloom"
         ],
         "card_type_image": "treasure.png",
@@ -789,11 +787,10 @@
     {
         "card_type": [
             "Treasure",
-            "Duration",
-            "Liaison"
+            "Odyssey"
         ],
-        "card_type_image": "treasure-duration.png",
-        "defaultCardCount": 10,
+        "card_type_image": "treasure.png",
+        "defaultCardCount": 16,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -864,6 +861,16 @@
         ],
         "card_type_image": "victory.png",
         "defaultCardCount": 12,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Victory",
+            "Clash"
+        ],
+        "card_type_image": "victory.png",
+        "defaultCardCount": 16,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },

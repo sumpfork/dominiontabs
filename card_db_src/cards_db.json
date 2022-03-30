@@ -1,5 +1,4 @@
-[
-    {
+[{
         "card_tag": "Alms",
         "cardset_tags": [
             "adventures"
@@ -809,6 +808,1676 @@
         "potcost": "1",
         "types": [
             "Victory"
+        ]
+    },
+    {
+        "card_tag": "bauble",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "2",
+        "types": [
+            "Treasure",
+            "Liaison"
+        ]
+    },
+    {
+        "card_tag": "sycophant",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "2",
+        "types": [
+            "Action",
+            "Liaison"
+        ]
+    },
+    {
+        "card_tag": "importer",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3",
+        "types": [
+            "Action",
+            "Duration",
+            "Liaison"
+        ]
+    },
+    {
+        "card_tag": "merchant_camp",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "sentinel",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "underling",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3",
+        "types": [
+            "Action",
+            "Liaison"
+        ]
+    },
+    {
+        "card_tag": "broker",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Liaison"
+        ]
+    },
+    {
+        "card_tag": "carpenter",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "courier",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "innkeeper",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "royal_galley",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "town",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "barbarian",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "capital_city",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "contract",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Treasure",
+            "Duration",
+            "Liaison"
+        ]
+    },
+    {
+        "card_tag": "emmissary",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Liaison"
+        ]
+    },
+    {
+        "card_tag": "galleria",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "guildmaster",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Liaison"
+        ]
+    },
+    {
+        "card_tag": "highwayman",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Duration",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "hunter",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "modify",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "skirmisher",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "specialist",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "swap",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "marquis",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "6",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "augurs",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3*",
+        "count": "16",
+        "group_tag": "Augurs",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Augur"
+        ]
+    },
+    {
+        "card_tag": "herb_gatherer",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3",
+        "count": "4",
+        "group_tag": "Augurs",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Augur"
+        ]
+    },
+    {
+        "card_tag": "acolyte",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "count": "4",
+        "group_tag": "Augurs",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Augur"
+        ]
+    },
+    {
+        "card_tag": "sorceress",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "count": "4",
+        "group_tag": "Augurs",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Attack",
+            "Augur"
+        ]
+    },
+    {
+        "card_tag": "sibyl",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "6",
+        "count": "4",
+        "group_tag": "Augurs",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Augur"
+        ]
+    },
+    {
+        "card_tag": "clashes",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3*",
+        "count": "16",
+        "group_tag": "Clashes",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Clash"
+        ]
+    },
+    {
+        "card_tag": "battle_plan",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3",
+        "count": "4",
+        "group_tag": "Clashes",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Clash"
+        ]
+    },
+    {
+        "card_tag": "archer",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "count": "4",
+        "group_tag": "Clashes",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Attack",
+            "Clash"
+        ]
+    },
+    {
+        "card_tag": "warlord",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "count": "4",
+        "group_tag": "Clashes",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Duration",
+            "Attack",
+            "Clash"
+        ]
+    },
+    {
+        "card_tag": "territory",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "6",
+        "count": "4",
+        "group_tag": "Clashes",
+        "randomizer": false,
+        "types": [
+            "Victory",
+            "Clash"
+        ]
+    },
+    {
+        "card_tag": "forts",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3*",
+        "count": "16",
+        "group_tag": "Forts",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Fort"
+        ]
+    },
+    {
+        "card_tag": "tent",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3",
+        "count": "4",
+        "group_tag": "Forts",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Fort"
+        ]
+    },
+    {
+        "card_tag": "garrison",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "count": "4",
+        "group_tag": "Forts",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Duration",
+            "Fort"
+        ]
+    },
+    {
+        "card_tag": "hill_fort",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "count": "4",
+        "group_tag": "Forts",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Fort"
+        ]
+    },
+    {
+        "card_tag": "stronghold",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "6",
+        "count": "4",
+        "group_tag": "Forts",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Victory",
+            "Duration",
+            "Fort"
+        ]
+    },
+    {
+        "card_tag": "odysseys",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3*",
+        "count": "16",
+        "group_tag": "Odysseys",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Odyssey"
+        ]
+    },
+    {
+        "card_tag": "old_map",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3",
+        "count": "4",
+        "group_tag": "Odysseys",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Odyssey"
+        ]
+    },
+    {
+        "card_tag": "voyage",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "count": "4",
+        "group_tag": "Odysseys",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Duration",
+            "Odyssey"
+        ]
+    },
+    {
+        "card_tag": "sunken_treasure",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "count": "4",
+        "group_tag": "Odysseys",
+        "randomizer": false,
+        "types": [
+            "Treasure",
+            "Odyssey"
+        ]
+    },
+    {
+        "card_tag": "distant_shore",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "6",
+        "count": "4",
+        "group_tag": "Odysseys",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Victory",
+            "Odyssey"
+        ]
+    },
+    {
+        "card_tag": "townsfolk",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "2*",
+        "count": "16",
+        "group_tag": "Townsfolk",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Townsfolk"
+        ]
+    },
+    {
+        "card_tag": "town_crier",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "2",
+        "count": "4",
+        "group_tag": "Townsfolk",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Townsfolk"
+        ]
+    },
+    {
+        "card_tag": "blacksmith",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3",
+        "count": "4",
+        "group_tag": "Townsfolk",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Townsfolk"
+        ]
+    },
+    {
+        "card_tag": "miller",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "count": "4",
+        "group_tag": "Townsfolk",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Townsfolk"
+        ]
+    },
+    {
+        "card_tag": "elder",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "count": "4",
+        "group_tag": "Townsfolk",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Townsfolk"
+        ]
+    },
+    {
+        "card_tag": "wizards",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3*",
+        "count": "16",
+        "group_tag": "Wizards",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Wizard"
+        ]
+    },
+    {
+        "card_tag": "student",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3",
+        "count": "4",
+        "group_tag": "Wizards",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Wizard"
+        ]
+    },
+    {
+        "card_tag": "conjurer",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "4",
+        "count": "4",
+        "group_tag": "Wizards",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Duration",
+            "Wizard"
+        ]
+    },
+    {
+        "card_tag": "sorcerer",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "5",
+        "count": "4",
+        "group_tag": "Wizards",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Attack",
+            "Wizard"
+        ]
+    },
+    {
+        "card_tag": "lich",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "6",
+        "count": "4",
+        "group_tag": "Wizards",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Wizard"
+        ]
+    },
+    {
+        "card_tag": "architects_guild",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "band_of_nomads",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "cave_dwellers",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "circle_of_witches",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "city_state",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "coastal_haven",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "crafters_guild",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "desert_guides",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "family_of_inventors",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "fellowship_of_scribes",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "forest_dweller",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "gang_of_pickpockets",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "island_folk",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "league_of_bankers",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "league_of_shopkeepers",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "market_towns",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "mountain_folk",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "order_of_astrologers",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "order_of_masons",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "peaceful_cult",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "plateau_shepherds",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "trappers_lodge",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "woodworkers_guild",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "",
+        "group_tag": "allies allies",
+        "randomizer": false,
+        "types": [
+            "Ally"
+        ]
+    },
+    {
+        "card_tag": "Grey Mustang",
+        "cardset_tags": [
+            "animals"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Victory"
+        ]
+    },
+    {
+        "card_tag": "Rabbits",
+        "cardset_tags": [
+            "animals"
+        ],
+        "cost": "3",
+        "types": [
+            "Action",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Yard Dog",
+        "cardset_tags": [
+            "animals"
+        ],
+        "cost": "2",
+        "types": [
+            "Action",
+            "Reaction"
+        ]
+    },
+    {
+        "card_tag": "Potion",
+        "cardset_tags": [
+            "base",
+            "alchemy"
+        ],
+        "cost": "4",
+        "count": "16",
+        "randomizer": false,
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Copper",
+        "cardset_tags": [
+            "base",
+            "dominion1stEdition",
+            "dominion2ndEdition",
+            "intrigue1stEdition"
+        ],
+        "cost": "0",
+        "count": "60",
+        "randomizer": false,
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Curse",
+        "cardset_tags": [
+            "base",
+            "dominion1stEdition",
+            "dominion2ndEdition",
+            "intrigue1stEdition"
+        ],
+        "cost": "0",
+        "count": "30",
+        "randomizer": false,
+        "types": [
+            "Curse"
+        ]
+    },
+    {
+        "card_tag": "Duchy",
+        "cardset_tags": [
+            "base",
+            "dominion1stEdition",
+            "dominion2ndEdition",
+            "intrigue1stEdition"
+        ],
+        "cost": "5",
+        "randomizer": false,
+        "types": [
+            "Victory"
+        ]
+    },
+    {
+        "card_tag": "Estate",
+        "cardset_tags": [
+            "base",
+            "dominion1stEdition",
+            "dominion2ndEdition",
+            "intrigue1stEdition"
+        ],
+        "cost": "2",
+        "count": "24",
+        "randomizer": false,
+        "types": [
+            "Victory"
+        ]
+    },
+    {
+        "card_tag": "Gold",
+        "cardset_tags": [
+            "base",
+            "dominion1stEdition",
+            "dominion2ndEdition",
+            "intrigue1stEdition"
+        ],
+        "cost": "6",
+        "count": "30",
+        "randomizer": false,
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Province",
+        "cardset_tags": [
+            "base",
+            "dominion1stEdition",
+            "dominion2ndEdition",
+            "intrigue1stEdition"
+        ],
+        "cost": "8",
+        "randomizer": false,
+        "types": [
+            "Victory"
+        ]
+    },
+    {
+        "card_tag": "Silver",
+        "cardset_tags": [
+            "base",
+            "dominion1stEdition",
+            "dominion2ndEdition",
+            "intrigue1stEdition"
+        ],
+        "cost": "3",
+        "count": "40",
+        "randomizer": false,
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Start Deck",
+        "cardset_tags": [
+            "base",
+            "dominion1stEdition",
+            "dominion2ndEdition",
+            "intrigue1stEdition"
+        ],
+        "cost": "",
+        "count": "0",
+        "randomizer": false,
+        "types": [
+            "Start Deck"
+        ]
+    },
+    {
+        "card_tag": "Trash",
+        "cardset_tags": [
+            "base",
+            "dominion1stEdition",
+            "intrigue1stEdition"
+        ],
+        "cost": "",
+        "count": "1",
+        "randomizer": false,
+        "types": [
+            "Trash"
+        ]
+    },
+    {
+        "card_tag": "Colony",
+        "cardset_tags": [
+            "base",
+            "prosperity"
+        ],
+        "cost": "11",
+        "randomizer": false,
+        "types": [
+            "Victory"
+        ]
+    },
+    {
+        "card_tag": "Platinum",
+        "cardset_tags": [
+            "base",
+            "prosperity"
+        ],
+        "cost": "9",
+        "count": "12",
+        "randomizer": false,
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Bag of Gold",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "0*",
+        "group_tag": "Tournament and Prizes",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Prize"
+        ]
+    },
+    {
+        "card_tag": "Diadem",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "0*",
+        "group_tag": "Tournament and Prizes",
+        "randomizer": false,
+        "types": [
+            "Treasure",
+            "Prize"
+        ]
+    },
+    {
+        "card_tag": "Fairgrounds",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "6",
+        "types": [
+            "Victory"
+        ]
+    },
+    {
+        "card_tag": "Farming Village",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Followers",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "0*",
+        "group_tag": "Tournament and Prizes",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Attack",
+            "Prize"
+        ]
+    },
+    {
+        "card_tag": "Fortune Teller",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "3",
+        "types": [
+            "Action",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Hamlet",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "2",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Harvest",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Horn of Plenty",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "5",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Horse Traders",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Reaction"
+        ]
+    },
+    {
+        "card_tag": "Hunting Party",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Jester",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Menagerie",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "3",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Princess",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "0*",
+        "group_tag": "Tournament and Prizes",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Prize"
+        ]
+    },
+    {
+        "card_tag": "Remake",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Tournament",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "4",
+        "group_tag": "Tournament and Prizes",
+        "group_top": true,
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Trusty Steed",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "0*",
+        "group_tag": "Tournament and Prizes",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Prize"
+        ]
+    },
+    {
+        "card_tag": "Young Witch",
+        "cardset_tags": [
+            "cornucopia"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Altar",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "6",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Armory",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Band of Misfits",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Bandit Camp",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Beggar",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "2",
+        "types": [
+            "Action",
+            "Reaction"
+        ]
+    },
+    {
+        "card_tag": "Catacombs",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Count",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Counterfeit",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "5",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Cultist",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Attack",
+            "Looter"
+        ]
+    },
+    {
+        "card_tag": "Death Cart",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Looter"
+        ]
+    },
+    {
+        "card_tag": "Feodum",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "4",
+        "types": [
+            "Victory"
+        ]
+    },
+    {
+        "card_tag": "Forager",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "3",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Fortress",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Graverobber",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Hermit",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "3",
+        "group_tag": "Hermit - Madman",
+        "group_top": true,
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Hovel",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "1",
+        "group_tag": "Shelters",
+        "group_top": true,
+        "randomizer": false,
+        "types": [
+            "Reaction",
+            "Shelter"
+        ]
+    },
+    {
+        "card_tag": "Hunting Grounds",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "6",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Ironmonger",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Junk Dealer",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Knights",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Madman",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "0*",
+        "group_tag": "Hermit - Madman",
+        "randomizer": false,
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Marauder",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Attack",
+            "Looter"
+        ]
+    },
+    {
+        "card_tag": "Market Square",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "3",
+        "types": [
+            "Action",
+            "Reaction"
+        ]
+    },
+    {
+        "card_tag": "Mercenary",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "0*",
+        "group_tag": "Urchin - Mercenary",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Mystic",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Necropolis",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "1",
+        "group_tag": "Shelters",
+        "randomizer": false,
+        "types": [
+            "Action",
+            "Shelter"
+        ]
+    },
+    {
+        "card_tag": "Overgrown Estate",
+        "cardset_tags": [
+            "dark ages"
+        ],
+        "cost": "1",
+        "group_tag": "Shelters",
+        "randomizer": false,
+        "types": [
+            "Victory",
+            "Shelter"
         ]
     },
     {
@@ -3529,6 +5198,851 @@
         ]
     },
     {
+        "card_tag": "Alliance",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "10",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Animal Fair",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "7*",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Banish",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "4",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Bargain",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "4",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Barge",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Black Cat",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "2",
+        "types": [
+            "Action",
+            "Attack",
+            "Reaction"
+        ]
+    },
+    {
+        "card_tag": "Bounty Hunter",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Camel Train",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "3",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Cardinal",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Cavalry",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Commerce",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Coven",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Delay",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "0",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Demand",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Desperation",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "0",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Destrier",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "6*",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Displace",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Enclave",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "8",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Enhance",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "3",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Falconer",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Reaction"
+        ]
+    },
+    {
+        "card_tag": "Fisherman",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5*",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Gamble",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "2",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "GateKeeper",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Duration",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Goatherd",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "3",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Groom",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Horse",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "3*",
+        "types": [
+            "Action"
+        ],
+        "randomizer": false,
+        "count": "30"
+    },
+    {
+        "card_tag": "Hostelry",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Hunting Lodge",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Invest",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "4",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Kiln",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Livery",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "March",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "3",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Mastermind",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Paddock",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Populate",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "10",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Pursue",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "2",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Reap",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "7",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Ride",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "2",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Sanctuary",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Scrap",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "3",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Seize the Day",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "4",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Sheepdog",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "3",
+        "types": [
+            "Action",
+            "Reaction"
+        ]
+    },
+    {
+        "card_tag": "Sleigh",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "2",
+        "types": [
+            "Action",
+            "Reaction"
+        ]
+    },
+    {
+        "card_tag": "Snowy Village",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "3",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Stampede",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "5",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Stockpile",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "3",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Supplies",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "2",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Toil",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "2",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Transport",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "3",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie events"
+    },
+    {
+        "card_tag": "Village Green",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Duration",
+            "Reaction"
+        ]
+    },
+    {
+        "card_tag": "Way of the Butterfly",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Camel",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Chameleon",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Frog",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Goat",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Horse",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Mole",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Monkey",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Mouse",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Mule",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Otter",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Owl",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Ox",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Pig",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Rat",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Seal",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Sheep",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Squirrel",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Turtle",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Way of the Worm",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "",
+        "types": [
+            "Way"
+        ],
+        "randomizer": false,
+        "count": "1",
+        "group_tag": "menagerie ways"
+    },
+    {
+        "card_tag": "Wayfarer",
+        "cardset_tags": [
+            "menagerie"
+        ],
+        "cost": "6*",
+        "types": [
+            "Action"
+        ]
+    },
+    {
         "card_tag": "Bad Omens",
         "cardset_tags": [
             "nocturne"
@@ -5658,850 +8172,5 @@
             "Action",
             "Duration"
         ]
-    },
-    {
-        "card_tag": "Black Cat",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "2",
-        "types": [
-            "Action",
-            "Attack",
-            "Reaction"
-        ]
-    },
-    {
-        "card_tag": "Sleigh",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "2",
-        "types": [
-            "Action",
-            "Reaction"
-        ]
-    },
-    {
-        "card_tag": "Supplies",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "2",
-        "types": [
-            "Treasure"
-        ]
-    },
-    {
-        "card_tag": "Camel Train",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "3",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Goatherd",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "3",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Scrap",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "3",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Sheepdog",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "3",
-        "types": [
-            "Action",
-            "Reaction"
-        ]
-    },
-    {
-        "card_tag": "Snowy Village",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "3",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Stockpile",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "3",
-        "types": [
-            "Treasure"
-        ]
-    },
-    {
-        "card_tag": "Bounty Hunter",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "4",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Cardinal",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "4",
-        "types": [
-            "Action",
-            "Attack"
-        ]
-    },
-    {
-        "card_tag": "Cavalry",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "4",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Groom",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "4",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Hostelry",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "4",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Village Green",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "4",
-        "types": [
-            "Action",
-            "Duration",
-            "Reaction"
-        ]
-    },
-    {
-        "card_tag": "Barge",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Action",
-            "Duration"
-        ]
-    },
-    {
-        "card_tag": "Coven",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Action",
-            "Attack"
-        ]
-    },
-    {
-        "card_tag": "Displace",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Falconer",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Action",
-            "Reaction"
-        ]
-    },
-    {
-        "card_tag": "GateKeeper",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Action",
-            "Duration",
-            "Attack"
-        ]
-    },
-    {
-        "card_tag": "Hunting Lodge",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Kiln",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Livery",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Mastermind",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Action",
-            "Duration"
-        ]
-    },
-    {
-        "card_tag": "Paddock",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Sanctuary",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Fisherman",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5*",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Destrier",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "6*",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Wayfarer",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "6*",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Animal Fair",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "7*",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Horse",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "3*",
-        "types": [
-            "Action"
-        ],
-        "randomizer": false,
-        "count": "30"
-    },
-    {
-        "card_tag": "Way of the Butterfly",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Camel",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Chameleon",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Frog",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Goat",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Horse",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Mole",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Monkey",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Mouse",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Mule",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Otter",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Owl",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Ox",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Pig",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Rat",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Seal",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Sheep",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Squirrel",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Turtle",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Way of the Worm",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "",
-        "types": [
-            "Way"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie ways"
-    },
-    {
-        "card_tag": "Delay",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "0",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Desperation",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "0",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Gamble",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "2",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Pursue",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "2",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Ride",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "2",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Toil",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "2",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Enhance",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "3",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "March",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "3",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Transport",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "3",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Banish",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "4",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Bargain",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "4",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Invest",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "4",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Seize the Day",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "4",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Commerce",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Demand",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Stampede",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "5",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Reap",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "7",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Enclave",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "8",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Alliance",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "10",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
-    },
-    {
-        "card_tag": "Populate",
-        "cardset_tags": [
-            "menagerie"
-        ],
-        "cost": "10",
-        "types": [
-            "Event"
-        ],
-        "randomizer": false,
-        "count": "1",
-        "group_tag": "menagerie events"
     }
 ]
