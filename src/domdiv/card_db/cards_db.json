@@ -1518,28 +1518,6 @@
         ]
     },
     {
-        "card_tag": "Grey Mustang",
-        "cardset_tags": [
-            "animals"
-        ],
-        "cost": "4",
-        "types": [
-            "Action",
-            "Victory"
-        ]
-    },
-    {
-        "card_tag": "Rabbits",
-        "cardset_tags": [
-            "animals"
-        ],
-        "cost": "3",
-        "types": [
-            "Action",
-            "Attack"
-        ]
-    },
-    {
         "card_tag": "Rabbits",
         "cardset_tags": [
             "animals"
@@ -1562,17 +1540,6 @@
         ]
     },
     {
-        "card_tag": "Yard Dog",
-        "cardset_tags": [
-            "animals"
-        ],
-        "cost": "2",
-        "types": [
-            "Action",
-            "Reaction"
-        ]
-    },
-    {
         "card_tag": "Potion",
         "cardset_tags": [
             "base",
@@ -1580,34 +1547,6 @@
         ],
         "cost": "4",
         "count": "16",
-        "randomizer": false,
-        "types": [
-            "Treasure"
-        ]
-    },
-    {
-        "card_tag": "Potion",
-        "cardset_tags": [
-            "base",
-            "alchemy"
-        ],
-        "cost": "4",
-        "count": "16",
-        "randomizer": false,
-        "types": [
-            "Treasure"
-        ]
-    },
-    {
-        "card_tag": "Copper",
-        "cardset_tags": [
-            "base",
-            "dominion1stEdition",
-            "dominion2ndEdition",
-            "intrigue1stEdition"
-        ],
-        "cost": "0",
-        "count": "60",
         "randomizer": false,
         "types": [
             "Treasure"
@@ -1644,21 +1583,6 @@
         ]
     },
     {
-        "card_tag": "Curse",
-        "cardset_tags": [
-            "base",
-            "dominion1stEdition",
-            "dominion2ndEdition",
-            "intrigue1stEdition"
-        ],
-        "cost": "0",
-        "count": "30",
-        "randomizer": false,
-        "types": [
-            "Curse"
-        ]
-    },
-    {
         "card_tag": "Duchy",
         "cardset_tags": [
             "base",
@@ -1667,35 +1591,6 @@
             "intrigue1stEdition"
         ],
         "cost": "5",
-        "randomizer": false,
-        "types": [
-            "Victory"
-        ]
-    },
-    {
-        "card_tag": "Duchy",
-        "cardset_tags": [
-            "base",
-            "dominion1stEdition",
-            "dominion2ndEdition",
-            "intrigue1stEdition"
-        ],
-        "cost": "5",
-        "randomizer": false,
-        "types": [
-            "Victory"
-        ]
-    },
-    {
-        "card_tag": "Estate",
-        "cardset_tags": [
-            "base",
-            "dominion1stEdition",
-            "dominion2ndEdition",
-            "intrigue1stEdition"
-        ],
-        "cost": "2",
-        "count": "24",
         "randomizer": false,
         "types": [
             "Victory"
@@ -1732,21 +1627,6 @@
         ]
     },
     {
-        "card_tag": "Gold",
-        "cardset_tags": [
-            "base",
-            "dominion1stEdition",
-            "dominion2ndEdition",
-            "intrigue1stEdition"
-        ],
-        "cost": "6",
-        "count": "30",
-        "randomizer": false,
-        "types": [
-            "Treasure"
-        ]
-    },
-    {
         "card_tag": "Province",
         "cardset_tags": [
             "base",
@@ -1758,35 +1638,6 @@
         "randomizer": false,
         "types": [
             "Victory"
-        ]
-    },
-    {
-        "card_tag": "Province",
-        "cardset_tags": [
-            "base",
-            "dominion1stEdition",
-            "dominion2ndEdition",
-            "intrigue1stEdition"
-        ],
-        "cost": "8",
-        "randomizer": false,
-        "types": [
-            "Victory"
-        ]
-    },
-    {
-        "card_tag": "Silver",
-        "cardset_tags": [
-            "base",
-            "dominion1stEdition",
-            "dominion2ndEdition",
-            "intrigue1stEdition"
-        ],
-        "cost": "3",
-        "count": "40",
-        "randomizer": false,
-        "types": [
-            "Treasure"
         ]
     },
     {
@@ -1820,35 +1671,6 @@
         ]
     },
     {
-        "card_tag": "Start Deck",
-        "cardset_tags": [
-            "base",
-            "dominion1stEdition",
-            "dominion2ndEdition",
-            "intrigue1stEdition"
-        ],
-        "cost": "",
-        "count": "0",
-        "randomizer": false,
-        "types": [
-            "Start Deck"
-        ]
-    },
-    {
-        "card_tag": "Trash",
-        "cardset_tags": [
-            "base",
-            "dominion1stEdition",
-            "intrigue1stEdition"
-        ],
-        "cost": "",
-        "count": "1",
-        "randomizer": false,
-        "types": [
-            "Trash"
-        ]
-    },
-    {
         "card_tag": "Trash",
         "cardset_tags": [
             "base",
@@ -1872,31 +1694,6 @@
         "randomizer": false,
         "types": [
             "Victory"
-        ]
-    },
-    {
-        "card_tag": "Colony",
-        "cardset_tags": [
-            "base",
-            "prosperity"
-        ],
-        "cost": "11",
-        "randomizer": false,
-        "types": [
-            "Victory"
-        ]
-    },
-    {
-        "card_tag": "Platinum",
-        "cardset_tags": [
-            "base",
-            "prosperity"
-        ],
-        "cost": "9",
-        "count": "12",
-        "randomizer": false,
-        "types": [
-            "Treasure"
         ]
     },
     {
@@ -1926,32 +1723,6 @@
         ]
     },
     {
-        "card_tag": "Bag of Gold",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "0*",
-        "group_tag": "Tournament and Prizes",
-        "randomizer": false,
-        "types": [
-            "Action",
-            "Prize"
-        ]
-    },
-    {
-        "card_tag": "Diadem",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "0*",
-        "group_tag": "Tournament and Prizes",
-        "randomizer": false,
-        "types": [
-            "Treasure",
-            "Prize"
-        ]
-    },
-    {
         "card_tag": "Diadem",
         "cardset_tags": [
             "cornucopia"
@@ -1975,16 +1746,6 @@
         ]
     },
     {
-        "card_tag": "Fairgrounds",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "6",
-        "types": [
-            "Victory"
-        ]
-    },
-    {
         "card_tag": "Farming Village",
         "cardset_tags": [
             "cornucopia"
@@ -1992,30 +1753,6 @@
         "cost": "4",
         "types": [
             "Action"
-        ]
-    },
-    {
-        "card_tag": "Farming Village",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "4",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Followers",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "0*",
-        "group_tag": "Tournament and Prizes",
-        "randomizer": false,
-        "types": [
-            "Action",
-            "Attack",
-            "Prize"
         ]
     },
     {
@@ -2044,42 +1781,11 @@
         ]
     },
     {
-        "card_tag": "Fortune Teller",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "3",
-        "types": [
-            "Action",
-            "Attack"
-        ]
-    },
-    {
         "card_tag": "Hamlet",
         "cardset_tags": [
             "cornucopia"
         ],
         "cost": "2",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Hamlet",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "2",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Harvest",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "5",
         "types": [
             "Action"
         ]
@@ -2105,27 +1811,6 @@
         ]
     },
     {
-        "card_tag": "Horn of Plenty",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "5",
-        "types": [
-            "Treasure"
-        ]
-    },
-    {
-        "card_tag": "Horse Traders",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "4",
-        "types": [
-            "Action",
-            "Reaction"
-        ]
-    },
-    {
         "card_tag": "Horse Traders",
         "cardset_tags": [
             "cornucopia"
@@ -2147,16 +1832,6 @@
         ]
     },
     {
-        "card_tag": "Hunting Party",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
         "card_tag": "Jester",
         "cardset_tags": [
             "cornucopia"
@@ -2165,27 +1840,6 @@
         "types": [
             "Action",
             "Attack"
-        ]
-    },
-    {
-        "card_tag": "Jester",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "5",
-        "types": [
-            "Action",
-            "Attack"
-        ]
-    },
-    {
-        "card_tag": "Menagerie",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "3",
-        "types": [
-            "Action"
         ]
     },
     {
@@ -2212,46 +1866,11 @@
         ]
     },
     {
-        "card_tag": "Princess",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "0*",
-        "group_tag": "Tournament and Prizes",
-        "randomizer": false,
-        "types": [
-            "Action",
-            "Prize"
-        ]
-    },
-    {
         "card_tag": "Remake",
         "cardset_tags": [
             "cornucopia"
         ],
         "cost": "4",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Remake",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "4",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Tournament",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "4",
-        "group_tag": "Tournament and Prizes",
-        "group_top": true,
         "types": [
             "Action"
         ]
@@ -2282,19 +1901,6 @@
         ]
     },
     {
-        "card_tag": "Trusty Steed",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "0*",
-        "group_tag": "Tournament and Prizes",
-        "randomizer": false,
-        "types": [
-            "Action",
-            "Prize"
-        ]
-    },
-    {
         "card_tag": "Young Witch",
         "cardset_tags": [
             "cornucopia"
@@ -2303,27 +1909,6 @@
         "types": [
             "Action",
             "Attack"
-        ]
-    },
-    {
-        "card_tag": "Young Witch",
-        "cardset_tags": [
-            "cornucopia"
-        ],
-        "cost": "4",
-        "types": [
-            "Action",
-            "Attack"
-        ]
-    },
-    {
-        "card_tag": "Altar",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "6",
-        "types": [
-            "Action"
         ]
     },
     {
@@ -2347,37 +1932,7 @@
         ]
     },
     {
-        "card_tag": "Armory",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "4",
-        "types": [
-            "Action"
-        ]
-    },
-    {
         "card_tag": "Band of Misfits",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Band of Misfits",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Bandit Camp",
         "cardset_tags": [
             "dark ages"
         ],
@@ -2408,38 +1963,7 @@
         ]
     },
     {
-        "card_tag": "Beggar",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "2",
-        "types": [
-            "Action",
-            "Reaction"
-        ]
-    },
-    {
         "card_tag": "Catacombs",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Catacombs",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Count",
         "cardset_tags": [
             "dark ages"
         ],
@@ -2469,16 +1993,6 @@
         ]
     },
     {
-        "card_tag": "Counterfeit",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "5",
-        "types": [
-            "Treasure"
-        ]
-    },
-    {
         "card_tag": "Cultist",
         "cardset_tags": [
             "dark ages"
@@ -2487,29 +2001,6 @@
         "types": [
             "Action",
             "Attack",
-            "Looter"
-        ]
-    },
-    {
-        "card_tag": "Cultist",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "5",
-        "types": [
-            "Action",
-            "Attack",
-            "Looter"
-        ]
-    },
-    {
-        "card_tag": "Death Cart",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "4",
-        "types": [
-            "Action",
             "Looter"
         ]
     },
@@ -2535,26 +2026,6 @@
         ]
     },
     {
-        "card_tag": "Feodum",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "4",
-        "types": [
-            "Victory"
-        ]
-    },
-    {
-        "card_tag": "Forager",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "3",
-        "types": [
-            "Action"
-        ]
-    },
-    {
         "card_tag": "Forager",
         "cardset_tags": [
             "dark ages"
@@ -2575,43 +2046,11 @@
         ]
     },
     {
-        "card_tag": "Fortress",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "4",
-        "types": [
-            "Action"
-        ]
-    },
-    {
         "card_tag": "Graverobber",
         "cardset_tags": [
             "dark ages"
         ],
         "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Graverobber",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Hermit",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "3",
-        "group_tag": "Hermit - Madman",
-        "group_top": true,
         "types": [
             "Action"
         ]
@@ -2643,30 +2082,6 @@
         ]
     },
     {
-        "card_tag": "Hovel",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "1",
-        "group_tag": "Shelters",
-        "group_top": true,
-        "randomizer": false,
-        "types": [
-            "Reaction",
-            "Shelter"
-        ]
-    },
-    {
-        "card_tag": "Hunting Grounds",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "6",
-        "types": [
-            "Action"
-        ]
-    },
-    {
         "card_tag": "Hunting Grounds",
         "cardset_tags": [
             "dark ages"
@@ -2687,37 +2102,7 @@
         ]
     },
     {
-        "card_tag": "Ironmonger",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "4",
-        "types": [
-            "Action"
-        ]
-    },
-    {
         "card_tag": "Junk Dealer",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Junk Dealer",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
-        "card_tag": "Knights",
         "cardset_tags": [
             "dark ages"
         ],
@@ -2749,18 +2134,6 @@
         ]
     },
     {
-        "card_tag": "Madman",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "0*",
-        "group_tag": "Hermit - Madman",
-        "randomizer": false,
-        "types": [
-            "Action"
-        ]
-    },
-    {
         "card_tag": "Marauder",
         "cardset_tags": [
             "dark ages"
@@ -2770,29 +2143,6 @@
             "Action",
             "Attack",
             "Looter"
-        ]
-    },
-    {
-        "card_tag": "Marauder",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "4",
-        "types": [
-            "Action",
-            "Attack",
-            "Looter"
-        ]
-    },
-    {
-        "card_tag": "Market Square",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "3",
-        "types": [
-            "Action",
-            "Reaction"
         ]
     },
     {
@@ -2820,29 +2170,6 @@
         ]
     },
     {
-        "card_tag": "Mercenary",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "0*",
-        "group_tag": "Urchin - Mercenary",
-        "randomizer": false,
-        "types": [
-            "Action",
-            "Attack"
-        ]
-    },
-    {
-        "card_tag": "Mystic",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "5",
-        "types": [
-            "Action"
-        ]
-    },
-    {
         "card_tag": "Mystic",
         "cardset_tags": [
             "dark ages"
@@ -2862,32 +2189,6 @@
         "randomizer": false,
         "types": [
             "Action",
-            "Shelter"
-        ]
-    },
-    {
-        "card_tag": "Necropolis",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "1",
-        "group_tag": "Shelters",
-        "randomizer": false,
-        "types": [
-            "Action",
-            "Shelter"
-        ]
-    },
-    {
-        "card_tag": "Overgrown Estate",
-        "cardset_tags": [
-            "dark ages"
-        ],
-        "cost": "1",
-        "group_tag": "Shelters",
-        "randomizer": false,
-        "types": [
-            "Victory",
             "Shelter"
         ]
     },

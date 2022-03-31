@@ -22,7 +22,7 @@ def rmtestcardb(request):
 
 
 def test_cardread():
-    num_cards_expected = 647
+    num_cards_expected = 725
 
     options = main.parse_opts([])
     options.data_path = "."
@@ -56,6 +56,7 @@ def test_cardread():
         "menagerie",
         "extras",
         "animals",
+        "allies",
     }
     for c in cards:
         assert isinstance(c, domdiv_cards.Card)
@@ -127,6 +128,7 @@ def test_only_type():
     #      Blank:         +5 added in options
     #      Curse:         +1 from base
     #      Action Attack: +2 from Alchemy
+    print(cards)
     assert len(cards) == 8
 
 
