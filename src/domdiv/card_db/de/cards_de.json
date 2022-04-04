@@ -349,6 +349,281 @@
         "extra": "Diese Karte ist eine Punktekarte und hat bis zum Ende des Spiels keine Funktion. Bei Spielende erhält der Spieler, der diese Karte in seinem Kartensatz (Nachziehstapel, Ablagestapel und Handkarten) hat, für jeweils 3 Aktionskarten (auch kombinierte Aktionskarten) 1 Siegpunkt. Es wird immer abgerundet, d. h. wer z.B. 12, 13 oder 14 Aktionskarten besitzt, erhält 4 Siegpunkte. Wer mehrere WEINBERGE besitzt, erhält für jeden WEINBERG die entsprechende Anzahl Siegpunkte.",
         "name": "Weinberg"
     },
+    "acolyte": {
+        "description": "You may trash an Action or Victory card from your hand to gain a Gold.<br>You may trash this to gain an Augur.",
+        "extra": "",
+        "name": "Acolyte"
+    },
+    "archer": {
+        "description": "+2 Coins<n>Each other player with 5 or more cards in hand reveals all but one, and discards one of those you choose.",
+        "extra": "",
+        "name": "Archer"
+    },
+    "augurs": {
+        "description": "This pile starts the game with 4 copies each of Herb Gatherer, Acolyte, Sorceress, and Sibyl, in that order. Only the top card can be gained or bought.",
+        "extra": "",
+        "name": "Augurs"
+    },
+    "barbarian": {
+        "description": "+2 Coins<n>Each other player trashes the top card of their deck. If it costs 3 Coins or more they gain a cheaper card sharing a type with it; otherwise they gain a Curse.",
+        "extra": "",
+        "name": "Barbarian"
+    },
+    "battle_plan": {
+        "description": "+1 Card<br>+1 Action<n>You man reveal an Attack card from your hand for +1 Card.<br>You may rotate any Supply pile.",
+        "extra": "",
+        "name": "Battle Plan"
+    },
+    "bauble": {
+        "description": "Choose two different options: +1 Buy; +1 Coin; +1 Favor; this turn, when you gain a card, you may put it onto your deck.",
+        "extra": "",
+        "name": "Bauble"
+    },
+    "blacksmith": {
+        "description": "Choose one: Draw until you have 6 cards in hand; or +2 Cards; or +1 Card and +1 Action.",
+        "extra": "",
+        "name": "Blacksmith"
+    },
+    "broker": {
+        "description": "Trash a card from your hand and choose one: +1 Card per 1 Coin it costs; or +1 Action per 1 Coin it costs; or +1 Coin per 1 Coin it costs; or +1 Favor per 1 Coin it costs.",
+        "extra": "",
+        "name": "Broker"
+    },
+    "capital_city": {
+        "description": "+1 Card<br>+2 Actions<n>You may discard 2 cards for +2 Coins.<br>You may pay 2 Coins for +2 Cards.",
+        "name": "Capital City",
+        "extra": ""
+    },
+    "carpenter": {
+        "description": "If no Supply piles are empty, +1 Action and gain a card costing up to 4 Coins.<br>Otherwise, trash a card from your hand and gain a card costing up to 2 Coins more than it.",
+        "extra": "",
+        "name": "Carpenter"
+    },
+    "clashes": {
+        "description": "This pile starts the game with 4 copies each of Battle Plan, Archer, Warlord, and Territory, in that order. Only the top card can be gained or bought.",
+        "extra": "",
+        "name": "Clashes"
+    },
+    "conjurer": {
+        "description": "Gain a card costing up to 4 Coins.<n>At the start of your next turn, put this into your hand.",
+        "extra": "",
+        "name": "Conjurer"
+    },
+    "contract": {
+        "description": "2 <*COIN*><br>+1 Favor<n>You may set aside an Action from your hand to play it at the start of your next turn.",
+        "extra": "",
+        "name": "Contract"
+    },
+    "courier": {
+        "description": "+1 Coin<n>Discard the top card of your deck. Look through your discard pile; you may play an Action or Treasure from it.",
+        "extra": "",
+        "name": "Courier"
+    },
+    "distant_shore": {
+        "description": "+2 Cards<br>+1 Action<n>Gain an Estate.<line>2 <*VP*>",
+        "extra": "",
+        "name": "Distant Shore"
+    },
+    "elder": {
+        "description": "+2 Coins<n>You may play an Action card from your hand. When it gives you a choice of abilities (e.g. \"choose one\") this turn, you may choose an extra (different) option.",
+        "extra": "",
+        "name": "Elder"
+    },
+    "emmissary": {
+        "description": "+3 Cards<n>If this made you shuffle (at least one card), +1 Action and +2 Favors.",
+        "extra": "",
+        "name": "Emmissary"
+    },
+    "forts": {
+        "description": "This pile starts the game with 4 copies each of Tent, Garrison, Hill Fort, and Stronghold, in that order. Only the top card can be gained or bought.",
+        "extra": "",
+        "name": "Forts"
+    },
+    "galleria": {
+        "description": "+3 Coins<n>This turn, when you gain a card costing 3 Coins or 4 Coins, +1 Buy.",
+        "extra": "",
+        "name": "Galleria"
+    },
+    "garrison": {
+        "description": "+2 Coins<n>This turn, when you gain a card, add a token here. At the start of your next turn, remove them for +1 Card each.",
+        "extra": "",
+        "name": "Garrison"
+    },
+    "guildmaster": {
+        "description": "+3 Coins<n>This turn, when you gain a card, +1 Favor.",
+        "extra": "",
+        "name": "Guildmaster"
+    },
+    "herb_gatherer": {
+        "description": "+1 Buy<n>Put your deck into your discard pile. Look through it and you may play a Treasure from it.<br>You may rotate the Augurs.",
+        "extra": "",
+        "name": "Herb Gatherer"
+    },
+    "highwayman": {
+        "description": "At the start of your next turn, discard this from play and +3 Cards.<br>Until then, the first Treasure each other player plays each turn does nothing.",
+        "extra": "",
+        "name": "Highwayman"
+    },
+    "hill_fort": {
+        "description": "Gain a card costing up to 4 Coins. Choose one: Put it into your hand; or +1 Card and +1 Action.",
+        "extra": "",
+        "name": "Hill Fort"
+    },
+    "hunter": {
+        "description": "+1 Action<n>Reveal the top 3 cards of your deck. From those cards, put an Action, a Treasure, and a Victory card into your hand. Discard the rest.",
+        "extra": "",
+        "name": "Hunter"
+    },
+    "importer": {
+        "description": "At the start of your next turn, gain a card costing up to 5 Coins.<line>Setup: Each player gets +4 Favors.",
+        "extra": "",
+        "name": "Importer"
+    },
+    "innkeeper": {
+        "description": "+1 Action<n>Choose one: +1 Card; or +3 Cards, then discard 3 cards; or +5 Cards, then discard 6 cards.",
+        "extra": "",
+        "name": "Innkeeper"
+    },
+    "lich": {
+        "description": "+6 Cards<br>+2 Actions<n>Skip a turn.<line>When you trash this, discard it and gain a cheaper card from the trash.",
+        "extra": "",
+        "name": "Lich"
+    },
+    "marquis": {
+        "description": "+1 Buy<n>+1 Card per card in your hand. Discard down to 10 cards in hand.",
+        "extra": "",
+        "name": "Marquis"
+    },
+    "merchant_camp": {
+        "description": "+2 Actions<br>+1 Coin<line>When you discard this from play, you may put it onto your deck.",
+        "extra": "",
+        "name": "Merchant Camp"
+    },
+    "miller": {
+        "description": "+1 Action<n>Look at the top 4 cards of your deck. Put one into your hand and discard the rest.",
+        "extra": "",
+        "name": "Miller"
+    },
+    "modify": {
+        "description": "Trash a card from your hand. Choose one: +1 Card and +1 Action; or gain a card costing up to 2 Coins more than the trashed card.",
+        "extra": "",
+        "name": "Modify"
+    },
+    "odysseys": {
+        "description": "This pile starts the game with 4 copies each of Old Map, Voyage, Sunken Treasure, and Distant Shore, in that order. Only the top card can be gained or bought.",
+        "extra": "",
+        "name": "Odysseys"
+    },
+    "old_map": {
+        "description": "+1 Card<br>+1 Action<n>Discard a card. +1 Card.<br>You may rotate the Odysseys",
+        "extra": "",
+        "name": "Old Map"
+    },
+    "royal_galley": {
+        "description": "+1 Card<n>You may play a non-Duration Action card from your hand. Set it aside; if you did, then at the start of your next turn, play it.",
+        "extra": "",
+        "name": "Royal Galley"
+    },
+    "sentinel": {
+        "description": "Look at the top 5 cards of your deck. You may trash up to 2 of them. Put the rest back in any order.",
+        "extra": "",
+        "name": "Sentinel"
+    },
+    "sibyl": {
+        "description": "+4 Cards<br>+1 Action<n>Put a card from your hand on top of your deck, and another on the bottom.",
+        "extra": "",
+        "name": "Sibyl"
+    },
+    "skirmisher": {
+        "extra": "",
+        "name": "Skirmisher",
+        "description": "+1 Card<br>+1 Action<br>+1 Coin<n>This turn, when you gain an Attack card, each other player discards down to 3 cards in hand."
+    },
+    "sorcerer": {
+        "description": "+1 Card<br>+1 Action<n>Each other player names a card, then reveals the top card of their deck. If wrong, they gain a Curse.",
+        "extra": "",
+        "name": "Sorcerer"
+    },
+    "sorceress": {
+        "description": "+1 Action<n>Name a card. Reveal the top card of your deck and put it into your hand. If it's the named card, each other player gains a Curse.",
+        "extra": "",
+        "name": "Sorceress"
+    },
+    "specialist": {
+        "description": "You may play an Action or Treasure from your hand. Choose one: play it again; or gain a copy of it.",
+        "extra": "",
+        "name": "Specialist"
+    },
+    "stronghold": {
+        "description": "Choose one: +3 Coins; or at the start of your next turn, +3 Cards.<line>2 <*VP*>",
+        "extra": "",
+        "name": "Stronghold"
+    },
+    "student": {
+        "description": "+1 Action<n>You may rotate the Wizards.<br>Trash a card from your hand. If it's a Treasure, +1 Favor and put this onto your deck.",
+        "extra": "",
+        "name": "Student"
+    },
+    "sunken_treasure": {
+        "description": "Gain an Action card you don't have a copy of in play.",
+        "extra": "",
+        "name": "Sunken Treasure"
+    },
+    "swap": {
+        "description": "+1 Card<br>+1 Action<n>You may return an Action from your hand to its pile, to gain to your hand a different Action costing up to 5 Coins.",
+        "extra": "",
+        "name": "Swap"
+    },
+    "sycophant": {
+        "description": "+1 Action<n>Discard 3 cards. If you discarded at least one, +3 Coins.<line>When you gain or trash this, +2 Favors.",
+        "extra": "",
+        "name": "Sycophant"
+    },
+    "tent": {
+        "description": "+2 Coins<n>You may rotate the Forts.<line>When you discard this from play, you may put it onto your deck.",
+        "extra": "",
+        "name": "Tent"
+    },
+    "territory": {
+        "description": "Worth 1 <VP> per differently named Victory card you have.<line>When you gain this, gain a Gold per empty Supply pile.",
+        "extra": "",
+        "name": "Territory"
+    },
+    "town": {
+        "description": "Choose one:<br>+1 Card and +2 Actions;<br>or +1 Buy and +2 Coins.",
+        "extra": "",
+        "name": "Town"
+    },
+    "town_crier": {
+        "description": "Choose one: +2 Coin; or gain a Silver; or +1 Card and +1 Action. You may rotate the Townsfolk.",
+        "extra": "",
+        "name": "Town Crier"
+    },
+    "townsfolk": {
+        "description": "This pile starts the game with 4 copies each of Town Crier, Blacksmith, Miller, and Elder, in that orer. Only the top card can be gained or bought.",
+        "extra": "",
+        "name": "Townsfolk"
+    },
+    "underling": {
+        "description": "+1 Card<br>+1Action<br>+1 Favor",
+        "extra": "",
+        "name": "Underling"
+    },
+    "voyage": {
+        "description": "+1 Action<n>If the previous turn wasn't yours, take an extra turn after this one, during which you can only play 3 cards from your hand.",
+        "extra": "",
+        "name": "Voyage"
+    },
+    "warlord": {
+        "description": "+1 Action<n>At the start of your next turn, +2 Cards. Until then, other players can't play an Action from their hand that they have 2 or more copies of in play.",
+        "extra": "",
+        "name": "Warlord"
+    },
+    "wizards": {
+        "description": "This pile starts the game with 4 copies each of Student, Conjurer, Sorcerer, and Lich, in that order. Only the top card can be gained or bought.",
+        "extra": "",
+        "name": "Wizards"
+    },
     "Grey Mustang": {
         "description": "+1 Karte<n>(Punktekarten werden überquert)<n>+2 Aktionen<n>-1 Coin<br>Das Geld dient bei Ausspielen dem Unterhalt des kostbaren Vollblüters.<line>1 <*VP*><br>Den Siegpunkt gibt es einmalig bei Spielende.",
         "extra": "",
@@ -1198,6 +1473,121 @@
         "description": "Beim Zählen der <VP> Punkte: -3<VP> pro Karte, von der du genau 1 Exemplar besitzt.",
         "extra": "Du bekommst keine Minuspunkte durch den WOLFSBAU, wenn du von einer Karte gar keine bzw. zwei oder mehr Stück in deinem kompletten Kartensatz besitzt. Hast du zum Beispiel einen FLUCH in deinem Nachziehstapel und einen in deinem Ablagestapel, hast du insgesamt zwei FLÜCHE und erhältst keine Minuspunkte durch den WOLFSBAU. Die Gesamtpunktzahl kann negativ sein.",
         "name": "Wolfsbau"
+    },
+    "architects_guild": {
+        "description": "When you gain a card, you may spend 2 Favors to gain a cheaper non-Victory card.",
+        "extra": "",
+        "name": "Architects Guild"
+    },
+    "band_of_nomads": {
+        "description": "When you gain a card costing 3 Coins or more, you may spend a Favor, for +1 Card, or +1 Action, or +1 Buy.",
+        "extra": "",
+        "name": "Band of Nomads"
+    },
+    "cave_dwellers": {
+        "description": "At the start of your turn, you may spend a Favor, to discard a card then draw a card. Repeat as desired.",
+        "extra": "",
+        "name": "Cave Dwellers"
+    },
+    "circle_of_witches": {
+        "description": "After playing a Liaison, you may spend 3 Favors to have each other player gain a Curse.",
+        "extra": "",
+        "name": "Circle of Witches"
+    },
+    "city_state": {
+        "description": "When you gain an Action card during your turn, you may spend 2 Favors to play it.",
+        "extra": "",
+        "name": "City-State"
+    },
+    "coastal_haven": {
+        "description": "When discarding your hand in Clean-up, you may spend any number of Favors to keep that many cards in hand for next turn (you still draw 5).",
+        "extra": "",
+        "name": "Coastal Haven"
+    },
+    "crafters_guild": {
+        "description": "At the start of your turn, you may spend 2 Favors to gain a card costing up to 4 Coins onto your deck.",
+        "extra": "",
+        "name": "Crafters Guild"
+    },
+    "desert_guides": {
+        "description": "At the start of your turn, you may spend a Favor to discard your hand and draw 5 cards. Repeat as desired.",
+        "extra": "",
+        "name": "Desert Guides"
+    },
+    "family_of_inventors": {
+        "description": "At the start of your Buy phase, you may put a Favor token you have on a non-Victory Supply pile.  Cards cost 1 Coin less per Favor token on their piles.",
+        "extra": "",
+        "name": "Family of Inventors"
+    },
+    "fellowship_of_scribes": {
+        "description": "After playing an Action, if you have 4 or fewer cards in hand, you may spend a Favor for +1 Card.",
+        "extra": "",
+        "name": "Fellowship of Scribes"
+    },
+    "forest_dweller": {
+        "description": "At the start of your turn, you may spend a Favor to look at the top 3 cards of your deck, discard any number and put the rest back in any order.",
+        "extra": "",
+        "name": "Forest Dweller"
+    },
+    "gang_of_pickpockets": {
+        "description": "At the start of your turn, discard down to 4 cards in hand unless you spend a Favor.",
+        "extra": "",
+        "name": "Gang of Pickpockets"
+    },
+    "island_folk": {
+        "description": "At the end of your turn, if the previous turn wasn't yours, you may spend 5 Favors to take another turn.",
+        "extra": "",
+        "name": "Island Folk"
+    },
+    "league_of_bankers": {
+        "description": "At the start of your Buy phase, +1 Coin per 4 Favors you have (round down).",
+        "extra": "",
+        "name": "League of Bankers"
+    },
+    "league_of_shopkeepers": {
+        "description": "After playing a Liaison, if you have 5 or more Favors, +1 Coin, and if 10 or more, +1 Action and +1 Buy.",
+        "extra": "",
+        "name": "League of Shopkeepers"
+    },
+    "market_towns": {
+        "description": "At the start of your Buy phase, you may spend a Favor to play an Action card from your hand. Repeat as desired.",
+        "extra": "",
+        "name": "Market Towns"
+    },
+    "mountain_folk": {
+        "description": "At the start of your turn, you may spend 5 Favors for +3 Cards.",
+        "extra": "",
+        "name": "Mountain Folk"
+    },
+    "order_of_astrologers": {
+        "description": "When shuffling, you may pick one card per Favor you spend to go on top.",
+        "extra": "",
+        "name": "Order of Astrologers"
+    },
+    "order_of_masons": {
+        "description": "When shuffling, you may pick up to 2 cards per Favor you spend to put into your discard pile.",
+        "extra": "",
+        "name": "Order of Masons"
+    },
+    "peaceful_cult": {
+        "description": "At the start of your Buy phase, you may spend any number of Favors to trash that many cards from your hand.",
+        "extra": "",
+        "name": "Peaceful Cult"
+    },
+    "plateau_shepherds": {
+        "description": "When scoring, pair up your Favors with cards you have costing 2 Coins, for 2 <VP> per pair.",
+        "extra": "",
+        "name": "Plateau Shepherds"
+    },
+    "trappers_lodge": {
+        "description": "When you gain a card, you may spend a Favor to put it onto your deck.",
+        "extra": "",
+        "name": "Trappers Lodge"
+    },
+    "woodworkers_guild": {
+        "description": "At the start of your Buy phase, you may spend a Favor to trash an Action card from your hand. If you did, gain an Action card.",
+        "extra": "",
+        "name": "Woodworkers Guild"
     },
     "Advisor": {
         "description": "+1 Aktion<br>Decke die 3 obersten Karten vom Nachziehstapel auf. Dein linker Nachbar wählt eine davon aus, die du dann ablegst. Die anderen Karten nimmst du auf die Hand.",
@@ -2849,6 +3239,11 @@
         "extra": "Die WERFT ist eine Dauerkarte. Du musst sofort 2 Karten nachziehen und darfst einen weiteren Kauf tätigen. Zu Beginn deines nächsten Zuges (nicht vorher) musst du wieder 2 Karten ziehen und darfst einen weiteren Kauf tätigen.",
         "name": "Werft"
     },
+    "Augurs": {
+        "extra": "",
+        "name": "Augurs",
+        "description": "This pile starts the game with 4 copies each of Herb Gatherer, Acolyte, Sorceress, and Sibyl, in that order. Only the top card can be gained or bought."
+    },
     "Border Guard - LanternHorn": {
         "description": "<left><u>Grenzposten</u>:</left><n>+1 Aktion<br><br>Decke die obersten 2 Karten deines Nachziehstapels auf. Nimm eine davon auf deine Hand und lege die andere ab. Sind beide Aktionskarten, erhalte die Laterne oder das Horn.<n><left><u>Horn</u>:</left><n>Einmal pro Zug: wenn du einen Grenzposten aus dem Spiel ablegst, darfst du ihn auf deinen Nachziehstapel legen<n><left><u>Laterne</u>:</left><n>Deine Grenzposten decken jeweils 3 Karten auf und legen 2 ab. (Alle 3 müssen Aktionskarten sein, um das Horn zu erhalten).",
         "extra": "Wenn ihr den GRENZPOSTEN verwendet, sucht zu Spielbeginn das HORN und die LATERNE heraus und legt sie neben dem Vorrat bereit. Wenn du einen GRENZPOSTEN ausspielst und nicht die LATERNE hast, deckst du die obersten 2 Karten deines Nachziehstapels auf, wählst eine davon und nimmst sie zu deinen Handkarten; die andere legst du ab. Wenn beide Karten Aktionskarten sind, erhältst du danach die LATERNE oder das HORN. Wenn du nicht 2 Karten aufdecken kannst bzw. nicht 3 Karten, wenn du die LATERNE hast, erhältst du kein Artefakt.<n><n>Das Horn und die Laterne sind Artefakte. Artefakte sind Effekte, die für einen Spieler gelten und nicht durch normale Karten oder Ereignisse ausgelöst werden. Sie funktionieren ähnlich wie Zustände (aus Nocturne). Artefakte sind keine \"Karten\"; alle Texte, die sich auf \"Karten\" beziehen finden keine Anwendung auf Artefakte. Es gibt jeden Artefakt nur genau einmal; wenn ein Spieler einen Artefakt immt wird die Artefakt-Karte vor ihm abgelegt, bis ein anderer Spieler sie nimmt.",
@@ -2863,6 +3258,11 @@
         "description": "<left><u>Friedhof</u>:</left><center>2 <*VP*></center><line>Wenn du diese Karte nimmst, entsorge bis zu 4 Handkarten.<br><i>Erbstück: Zauberspiegel</i><left><u>Zauberspiegel</u>:</left><center>1 <*COIN*></center><line>Wenn du diese Karte entsorgst, darfst du eine Aktionskarte ablegen. Wenn du das tust: Nimm einen Geist vom Geist-Stapel.",
         "extra": "<u>Friedhof</u>: In der Spielvorbereitung erhält jeder Spieler ein ERBSTÜCK ZAUBERSPIEGEL und dafür ein KUPFER weniger. Wenn du einen FRIEDHOF nimmst, entsorge 0 bis 4 Karten aus deiner Hand.\n<u>Zauberspiegel</u>: Dieses ERBSTÜCK wird nur verwendet, wenn die Königreichkarte FRIEDHOF verwendet wird. Du darfst diesen ZAUBERSPIEGEL nur entsorgen, wenn du dies durch die Anweisung einer anderen Karte tun darfst - der ZAUBERSPIEGEL selbst gibt dir dazu nicht das Recht. Solltest du aber eine Möglichkeit haben, diesen ZAUBERSPIEGEL zu entsorgen, darfst du eine Aktionskarte aus der Hand ablegen und einen GEIST von seinem Stapel nehmen.",
         "name": "Friedhof / Zauberspiegel"
+    },
+    "Clashes": {
+        "extra": "",
+        "name": "Clashes",
+        "description": "This pile starts the game with 4 copies each of Battle Plan, Archer, Warlord, and Territory, in that order. Only the top card can be gained or bought."
     },
     "Encampment - Plunder": {
         "description": "<left><u>Feldlager</u>:</left><n>+2 Karten<br>+2 Aktionen<n>Du darfst ein Gold oder ein Diebesgut aus deiner Hand aufdecken. Wenn du das nicht tust: Lege dieses Feldlager zur Seite und lege es zu Beginn der Aufräumphase in den Vorrat zurück.<n><left><u>Diebesgut</u>:</left><n>+2 Coins<br>+1 <VP>-Marker",
@@ -2879,6 +3279,11 @@
         "extra": "<u>Narr</u>: In der Spielvorbereitung erhält jeder Spieler ein ERBSTÜCK GLÜCKSTALER und dafür ein KUPFER weniger. Wenn du bereits den Zustand IM WALD VERIRRT vor dir liegen hast, passiert nichts. Wenn du IM WALD VERIRRT nicht hast, erhalte es (wenn es gerade bei einem Spieler liegt, gibt er es dir), lege es vor dir ab und decke dann die obersten 3 Gaben des Gaben- Stapels auf. Empfange die Gaben in einer von dir festgelegten Reihenfolge (diese musst du nicht zu Beginn festlegen - du kannst eine Gabe empfangen und dann die nächste wählen usw.) und lege sie direkt nach Empfang ab bzw. bewahre sie bis zu deiner Aufräumphase auf, wenn eine Gabe dies erfordert. Der Zustand bleibt vor dir liegen, bis ein anderer Spieler ihn mit Hilfe des NARREN erhält.\n<u>Glückstaler</u>: Dieses ERBSTÜCK wird nur verwendet, wenn die Königreichkarte NARR verwendet wird.",
         "name": "Narr / Glückstaler"
     },
+    "Forts": {
+        "extra": "",
+        "name": "Forts",
+        "description": "This pile starts the game with 4 copies each of Tent, Garrison, Hill Fort, and Stronghold, in that order. Only the top card can be gained or bought."
+    },
     "Gladiator - Fortune": {
         "description": "<left><u>Gladiator</u>:</left><n>+2 Coin<n>Decke eine Handkarte auf. Dein linker Mitspieler darf eine Handkarte mit gleichem Namen aufdecken. Wenn er das nicht tut: +1 Coin und entsorge einen Gladiator vom Vorrat.<n><left><u>Reichtum</u>:</left><n>+1 Kauf<n>Wenn du diese Karte ausspielst, verdoppelt sich dein Coin; nur 1x pro Zug möglich.<line>Wenn du diese Karte nimmst, nimm ein Gold pro Gladiator, den du im Spiel hast.",
         "extra": "<u>Gladiator</u>: Wenn du mindestens 1 Handkarte hast, musst du diese aufdecken. Wenn dein linker Mitspieler keine Karte mit gleichem Namen aufdecken kann oder will (z.B. auch, wenn du keine Handkarte aufdecken konntest, weil du keine hast), erhältst du zusätzlich + 1 Coin. Sind noch Karten auf dem GLADIATOR-Vorratsstapel vorhanden, musst du eine entsorgen. Deckt der Mitspieler eine Karte mit gleichem Namen auf, erhältst du nur + 2 Coins und darfst keinen GLADIATOR entsorgen.<n><u>Reichtum</u>: Es werden nur alle Coin verdoppelt, die du vor dem Ausspielen dieser Karte ausgespielt hast und nur, wenn du in diesem Zug noch keinen REICHTUM ausgespielt hast. Für jedes weitere Ausspielen eines REICHTUMS erhältst du nur + 1 Kauf.",
@@ -2893,6 +3298,11 @@
         "description": "<left><u>Totenbeschwörer</u>:</left><center>Spiele eine Aktionskarte, die mit der Vorderseite nach oben im Müll liegt und keine Dauerkarte ist, lasse sie dort und drehe sie für diesen Zug mit der Bildseite nach unten.</center><line>Spielvorbereitung: Legt die 3 Zombies in den Müll.<left><u>Zombie-Lehrling</u>:</left><center>Du darfst eine Aktionskarte aus der Hand entsorgen. Wenn du das tust: +3 Karten und +1 Aktion.</center><left><u>Zombie-Maurer</u>:</left><center>Entsorge die oberste Karte deines Nachziehstapels. Du darfst eine Karte nehmen, die bis zu 1 Coin mehr kostet als die entsorgte Karte.</center><left><u>Zombie-Spion</u>:</left><center>+1 Karte</center><center>+1 Aktion</center><center>Sieh die oberste Karte deines Nachziehstapels an. Lege sie ab oder zurück auf den Nachziehstapel.</center>",
         "extra": "<u>Totenbeschwörer</u>: In der Spielvorbereitung werden die 3 ZOMBIES aufgedeckt auf den Müllstapel gelegt. Der TOTENBESCHWÖRER kann damit mindestens einen der 3 ZOMBIES spielen, da diese von Spielbeginn an im Müll liegen. Im Verlauf des Spiels können weitere Aktionskarten, die im Müll landen, gespielt werden. Spiele eine Aktionskarte, die mit der Vorderseite nach oben im Müll liegt und keine Dauerkarte ist, lasse sie dort und drehe sie für diesen Zug mit der Bildseite nach unten - damit kann jede Karte des Müllstapels maximal einmal pro Zug gespielt werden. Am Ende des Zuges wird die Karte wieder umgedreht. Die so gespielte Aktionskarte befindet sich nicht 'im Spiel' und verbleibt auf jeden Fall im Müllstapel, auch wenn sie durch die Anweisung eigentlich anderswo hingelegt werden würde.\n<u>Zombie-Lehrling</u>: Nur, wenn du eine Karte aus der Hand entsorgst, ziehst du 3 Karten nach und erhältst + 1 Aktion. <u>Zombie-Maurer</u>: Du musst, auch wenn du eine Karte entsorgt hast, keine Karte nehmen. Du kannst auch nur eine Karte entsorgen und nichts weiter tun. Du kannst, wenn du eine Karte nimmst, auch eine Karte mit gleichen Kosten oder eine billigere nehmen, auch eine gleiche wie die entsorgte Karte. <u>Zombie-Spion</u>: Ziehe eine Karte, bevor du dir die oberste Karte des Nachziehstapels ansiehst.",
         "name": "Totenbeschwörer / Zombies"
+    },
+    "Odysseys": {
+        "extra": "",
+        "name": "Odysseys",
+        "description": "This pile starts the game with 4 copies each of Old Map, Voyage, Sunken Treasure, and Distant Shore, in that order. Only the top card can be gained or bought."
     },
     "Page -> Champion": {
         "description": "<justify>PAGE wird in einen SCHATZSUCHER eingetauscht, welcher in einen KRIEGER eingetauscht wird, welcher in einen HELDEN eingetauscht wird, welcher in einen CHAMPION eingetauscht wird.</justify><left><u>Page</u>: +1 Karte; +1 Aktion</left><left><u>Schatzsucher</u>: +1 Aktion; +1 Coin; Nimm dir pro Karte, die dein rechter Mitspieler in seinem letzten Zug genommen hat, ein Silber.</left><left><u>Krieger</u>: +2 Karten;Für jeden Reisenden (inklusive diesem), den du im Spiel hast, müssen alle Mitspieler die oberste Karte ihres Nachziehstapels ablegen und sie entsorgen, wenn sie 3 coins oder 4 coins kostet.</left><left><u>Held</u>: +2 Coins; Nimm dir eine Geldkarte.</left><left><u>Champion</u>: +1 Aktion; Immer wenn ein Mitspieler eine Angriffskarte spielt, bist du davon nicht betroffen. Immer wenn du eine Aktionskarte spielst: +1 Aktion </left><justify><i>(Diese Karte bleibt bis zum Spielende im Spiel.)</i>)</justify>",
@@ -2954,6 +3364,11 @@
         "extra": "Beim Ausspielen eines TURNIERS erhältst du +1 Aktion. Dann darfst du eine PROVINZ aus deiner Hand auf deinen Ablagestapel legen. Wenn du das machst, musst du dich entscheiden, entweder eine Preiskarte oder ein HERZOGTUM zu nehmen. Entscheidest du dich für die Preiskarte, suchst du dir eine der Karten vom Preisstapel aus. Entscheidest du dich für das HERZOGTUM, nimmst du dir ein HERZOGTUM vom Vorrat. Du kannst dich auch für einen der beiden Stapel entscheiden, wenn dieser leer ist. Ist der Stapel für den du dich entscheidest leer, nimmst du dir keine Karte.<n>Nun dürfen alle deine Mitspieler eine PROVINZ aus ihrer Hand aufdecken. Deine Mitspieler zeigen die PROVINZ vor und nehmen sie dann zurück auf ihre Hand. Wenn keiner deiner Mitspieler eine PROVINZ aufdeckt, erhältst du +1 Karte und +1 coin. Es gibt also 4 mögliche Ergebnisse: 1. Du legst keine PROVINZ ab und keiner deiner Mitspieler deckt eine PROVINZ auf: Du erhältst +1 Karte, +1 Aktion und +1 coin. 2. Du legst keine PROVINZ ab und mindestens einer deiner Mitspieler deckt eine PROVINZ auf: Du erhältst +1 Aktion. 3. Du legst eine PROVINZ ab aber keiner deiner Mitspieler deckt eine PROVINZ auf: Du nimmst dir eine Preiskarte oder ein HERZOGTUM und erhältst +1 Karte, +1 Aktion und +1 coin. 4. Du legst eine PROVINZ ab und mindestens einer deiner Mitspieler deckt eine PROVINZ auf: Du nimmst dir eine Preiskarte oder ein HERZOGTUM und erhältst +1 Aktion.<n> Du darfst den Preisstapel jederzeit durchsehen.",
         "name": "Turnier und Preise"
     },
+    "Townsfolk": {
+        "extra": "",
+        "name": "Townsfolk",
+        "description": ""
+    },
     "Tracker - Pouch": {
         "description": "<left><u>Fährtensucher</u>:</left><center>+1 Coin</center><center>Empfange eine Gabe.</center><line><center>Wenn diese Karte im Spiel ist und du eine Karte nimmst, darfst du die genommene Karte auf deinen Nachziehstapel legen.</center><left><i>Erbstück: Beutel</i></left><left><u>Beutel</u>:</left><center>1 <*COIN*></center><n><n>+1 Kauf",
         "extra": "<u>Fährtensucher</u>: In der Spielvorbereitung erhält jeder Spieler ein ERBSTÜCK BEUTEL und dafür ein KUPFER weniger. Wenn du diese Karte ausspielst und danach mehr als eine Karte nimmst (kaufst oder auf andere Art und Weise nimmst), darfst du für jede genommene Karte neu entscheiden, ob du sie auf deinen Nachziehstapel legst. Wenn du die durch den FÄHRTENSUCHER empfangene Gabe ausführst und dadurch eine Karte nimmst (z.B. ein SILBER durch GESCHENK DES BERGES), darfst du diese auf deinen Nachziehstapel legen.\n<u>Beutel</u>: Dieses ERBSTÜCK wird nur verwendet, wenn die Königreichkarte FÄHRTENSUCHER verwendet wird.",
@@ -2974,10 +3389,20 @@
         "extra": "<u>Vampirin</u>: Diese Karte ist eine Nachtkarte und kann nur in der Nachtphase ausgespielt werden. Führe die drei Anweisungen in der vorgegebenen Reihenfolge aus. Decke zuerst die oberste Plage auf. Jeder Mitspieler führt die Anweisung darauf (im Uhrzeigersinn, beginnend bei deinem linken Nachbarn) aus. Lege die Plage danach auf den separaten Plagen-Ablagestapel. Nimm dir dann eine Karte, die bis zu 5 Coins kostet (außer einer VAMPIRIN) und tausche dann die VAMPIRIN in eine FLEDERMAUS ein.\n<u>Fledermaus</u>: Diese Karte kann nicht gekauft werden - sie kann nur durch die Anweisung auf der Königreichkarte VAMPIRIN genommen werden. Diese Karte ist eine Nachtkarte und kann nur in der Nachtphase ausgespielt werden. Wenn du diese FLEDERMAUS in eine VAMPIRIN eintauschst, lege die FLEDERMAUS zurück auf ihren Stapel. Ist keine VAMPIRIN mehr im Vorrat vorhanden, kannst du die FLEDERMAUS nicht eintauschen, du kannst sie aber trotzdem ausspielen und Karten entsorgen.",
         "name": "Vampirin / Fledermaus"
     },
+    "Wizards": {
+        "extra": "",
+        "name": "Wizards",
+        "description": "This pile starts the game with 4 copies each of Student, Conjurer, Sorcerer, and Lich, in that order. Only the top card can be gained or bought."
+    },
     "adventures events": {
         "description": "<justify>Ereignisse sind keine Königreichkarten. In der Kaufphase eines Spielers kann der Spieler, wenn er auch eine Karte kaufen könnte, stattdessen ein Ereignis erwerben. Ein Ereignis zu erwerben bedeutet, die Kosten, die auf dem Ereignis angegeben sind, zu bezahlen und dann den Effekt des Ereignis' auszuführen. Das Ereignis bleibt dabei einfach auf dem Tisch, der Spieler nimmt es sich nicht; es ist in keinster Weise möglich, dass ein Spieler ein Ereignis nimmt oder eines in seinem Deck hat. Ein Ereignis zu erwerben benötigt einen Kauf, normalerweise kann sich ein Spieler entweder eine Karte kaufen oder ein Event erwerben. Hat ein Spieler zwei Käufe, weil er beispielsweise einen WILDHÜTER gespielt hat, so kann er sich zwei Karten kaufen, oder er erwirbt zwei Ereignisse, oder er kauft sich eine Karte und erwirbt ein Ereignis (in beliebiger Reihenfolge). Das selbe Ereignis kann in derselben Runde mehrfach erworben werden, falls der Spieler genügend Käufe verfügbar hat. Manche Ereignisse geben +Käufe und erlauben somit dem Spieler, später weitere Karten oder Ereignisse zu kaufen. Spieler können in einem Zug keine weiteren Schatzkarten spielen nachdem sie ein Ereignis erworben haben. Der Erwerb eines Ereignisses gilt nicht als Kaufen einer Karte. So findet z.B. die SUMPFHEXE keine Anwendung beim Erwerb eines Ereignisses. Die Kosten eines Ereignisses werden auch nicht von Karten wie dem BRÜCKENTROLL, die die Kosten von Karten betreffen, beeinflusst.</justify>",
         "extra": "Ereignisse sind spezielle \"Wenn du diese Karte kaufst\"-Effekte, die nicht auf einer Karte stehen. Spieler können Ereignisse während ihrer Kaufphase erwerben um den jeweiligen Effekt des Ereignis' auszulösen. Ereignisse sind keine Königreichkarten; sie zählen nicht zu den 10 Königreichstäpeln die den Vorrat ausmachen. Tatsächlich sind Ereignisse in keinster Weise \"Karten\". Jeder Text, der sich auf eine \"Karte\" bezieht (wie z.B. \"Nenne eine Karte\" oder Karten, die die Kosten aller Karten senken) wird nicht auf Ereignisse angewandt. Der Effekt und die Kosten eines Ereignis' sind im Querformat auf Karten mit silberner Umrandung gedruckt. <n> Im Prinzip können beliebig viele Ereignisse in einem Spiel verwendet werden. Es ist aber empfohlen, nicht mehr als zwei Ereignisse und Wahrzeichen gemeinsam zu verwenden. Beim Erstellen eines zufälligen Königreiches können die Ereignisse mit in die Platzhalterkarten gemischt werden, jedes Ereignis, dass vor den 10 Königreichkarten gezogen wird, wird im Spiel verwendet.",
         "name": "Ereignisse Abenteuer"
+    },
+    "allies allies": {
+        "description": "",
+        "extra": "",
+        "name": "Allies"
     },
     "empires events": {
         "description": "<justify>Ereignisse sind ein neuer Kartentyp (wie auch in Abenteuer). Jedes Ereignis ist nur einmal im Spiel enthalten. Die Anweisungen auf den Ereignissen werden sofort beim Erwerb ausgeführt</justify>",
