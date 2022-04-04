@@ -359,10 +359,20 @@
         "extra": "",
         "name": "Archer"
     },
+    "architects_guild": {
+        "description": "When you gain a card, you may spend 2 Favors to gain a cheaper non-Victory card.",
+        "extra": "",
+        "name": "Architects Guild"
+    },
     "augurs": {
         "description": "This pile starts the game with 4 copies each of Herb Gatherer, Acolyte, Sorceress, and Sibyl, in that order. Only the top card can be gained or bought.",
         "extra": "",
         "name": "Augurs"
+    },
+    "band_of_nomads": {
+        "description": "When you gain a card costing 3 Coins or more, you may spend a Favor, for +1 Card, or +1 Action, or +1 Buy.",
+        "extra": "",
+        "name": "Band of Nomads"
     },
     "barbarian": {
         "description": "+2 Coins<n>Each other player trashes the top card of their deck. If it costs 3 Coins or more they gain a cheaper card sharing a type with it; otherwise they gain a Curse.",
@@ -399,10 +409,30 @@
         "extra": "",
         "name": "Carpenter"
     },
+    "cave_dwellers": {
+        "description": "At the start of your turn, you may spend a Favor, to discard a card then draw a card. Repeat as desired.",
+        "extra": "",
+        "name": "Cave Dwellers"
+    },
+    "circle_of_witches": {
+        "description": "After playing a Liaison, you may spend 3 Favors to have each other player gain a Curse.",
+        "extra": "",
+        "name": "Circle of Witches"
+    },
+    "city_state": {
+        "description": "When you gain an Action card during your turn, you may spend 2 Favors to play it.",
+        "extra": "",
+        "name": "City-State"
+    },
     "clashes": {
         "description": "This pile starts the game with 4 copies each of Battle Plan, Archer, Warlord, and Territory, in that order. Only the top card can be gained or bought.",
         "extra": "",
         "name": "Clashes"
+    },
+    "coastal_haven": {
+        "description": "When discarding your hand in Clean-up, you may spend any number of Favors to keep that many cards in hand for next turn (you still draw 5).",
+        "extra": "",
+        "name": "Coastal Haven"
     },
     "conjurer": {
         "description": "Gain a card costing up to 4 Coins.<n>At the start of your next turn, put this into your hand.",
@@ -419,6 +449,16 @@
         "extra": "",
         "name": "Courier"
     },
+    "crafters_guild": {
+        "description": "At the start of your turn, you may spend 2 Favors to gain a card costing up to 4 Coins onto your deck.",
+        "extra": "",
+        "name": "Crafters Guild"
+    },
+    "desert_guides": {
+        "description": "At the start of your turn, you may spend a Favor to discard your hand and draw 5 cards. Repeat as desired.",
+        "extra": "",
+        "name": "Desert Guides"
+    },
     "distant_shore": {
         "description": "+2 Cards<br>+1 Action<n>Gain an Estate.<line>2 <*VP*>",
         "extra": "",
@@ -434,6 +474,21 @@
         "extra": "",
         "name": "Emmissary"
     },
+    "family_of_inventors": {
+        "description": "At the start of your Buy phase, you may put a Favor token you have on a non-Victory Supply pile.  Cards cost 1 Coin less per Favor token on their piles.",
+        "extra": "",
+        "name": "Family of Inventors"
+    },
+    "fellowship_of_scribes": {
+        "description": "After playing an Action, if you have 4 or fewer cards in hand, you may spend a Favor for +1 Card.",
+        "extra": "",
+        "name": "Fellowship of Scribes"
+    },
+    "forest_dweller": {
+        "description": "At the start of your turn, you may spend a Favor to look at the top 3 cards of your deck, discard any number and put the rest back in any order.",
+        "extra": "",
+        "name": "Forest Dweller"
+    },
     "forts": {
         "description": "This pile starts the game with 4 copies each of Tent, Garrison, Hill Fort, and Stronghold, in that order. Only the top card can be gained or bought.",
         "extra": "",
@@ -443,6 +498,11 @@
         "description": "+3 Coins<n>This turn, when you gain a card costing 3 Coins or 4 Coins, +1 Buy.",
         "extra": "",
         "name": "Galleria"
+    },
+    "gang_of_pickpockets": {
+        "description": "At the start of your turn, discard down to 4 cards in hand unless you spend a Favor.",
+        "extra": "",
+        "name": "Gang of Pickpockets"
     },
     "garrison": {
         "description": "+2 Coins<n>This turn, when you gain a card, add a token here. At the start of your next turn, remove them for +1 Card each.",
@@ -484,10 +544,30 @@
         "extra": "",
         "name": "Innkeeper"
     },
+    "island_folk": {
+        "description": "At the end of your turn, if the previous turn wasn't yours, you may spend 5 Favors to take another turn.",
+        "extra": "",
+        "name": "Island Folk"
+    },
+    "league_of_bankers": {
+        "description": "At the start of your Buy phase, +1 Coin per 4 Favors you have (round down).",
+        "extra": "",
+        "name": "League of Bankers"
+    },
+    "league_of_shopkeepers": {
+        "description": "After playing a Liaison, if you have 5 or more Favors, +1 Coin, and if 10 or more, +1 Action and +1 Buy.",
+        "extra": "",
+        "name": "League of Shopkeepers"
+    },
     "lich": {
         "description": "+6 Cards<br>+2 Actions<n>Skip a turn.<line>When you trash this, discard it and gain a cheaper card from the trash.",
         "extra": "",
         "name": "Lich"
+    },
+    "market_towns": {
+        "description": "At the start of your Buy phase, you may spend a Favor to play an Action card from your hand. Repeat as desired.",
+        "extra": "",
+        "name": "Market Towns"
     },
     "marquis": {
         "description": "+1 Buy<n>+1 Card per card in your hand. Discard down to 10 cards in hand.",
@@ -509,6 +589,11 @@
         "extra": "",
         "name": "Modify"
     },
+    "mountain_folk": {
+        "description": "At the start of your turn, you may spend 5 Favors for +3 Cards.",
+        "extra": "",
+        "name": "Mountain Folk"
+    },
     "odysseys": {
         "description": "This pile starts the game with 4 copies each of Old Map, Voyage, Sunken Treasure, and Distant Shore, in that order. Only the top card can be gained or bought.",
         "extra": "",
@@ -518,6 +603,26 @@
         "description": "+1 Card<br>+1 Action<n>Discard a card. +1 Card.<br>You may rotate the Odysseys",
         "extra": "",
         "name": "Old Map"
+    },
+    "order_of_astrologers": {
+        "description": "When shuffling, you may pick one card per Favor you spend to go on top.",
+        "extra": "",
+        "name": "Order of Astrologers"
+    },
+    "order_of_masons": {
+        "description": "When shuffling, you may pick up to 2 cards per Favor you spend to put into your discard pile.",
+        "extra": "",
+        "name": "Order of Masons"
+    },
+    "peaceful_cult": {
+        "description": "At the start of your Buy phase, you may spend any number of Favors to trash that many cards from your hand.",
+        "extra": "",
+        "name": "Peaceful Cult"
+    },
+    "plateau_shepherds": {
+        "description": "When scoring, pair up your Favors with cards you have costing 2 Coins, for 2 <VP> per pair.",
+        "extra": "",
+        "name": "Plateau Shepherds"
     },
     "royal_galley": {
         "description": "+1 Card<n>You may play a non-Duration Action card from your hand. Set it aside; if you did, then at the start of your next turn, play it.",
@@ -604,6 +709,11 @@
         "extra": "",
         "name": "Townsfolk"
     },
+    "trappers_lodge": {
+        "description": "When you gain a card, you may spend a Favor to put it onto your deck.",
+        "extra": "",
+        "name": "Trappers Lodge"
+    },
     "underling": {
         "description": "+1 Card<br>+1Action<br>+1 Favor",
         "extra": "",
@@ -623,6 +733,11 @@
         "description": "This pile starts the game with 4 copies each of Student, Conjurer, Sorcerer, and Lich, in that order. Only the top card can be gained or bought.",
         "extra": "",
         "name": "Wizards"
+    },
+    "woodworkers_guild": {
+        "description": "At the start of your Buy phase, you may spend a Favor to trash an Action card from your hand. If you did, gain an Action card.",
+        "extra": "",
+        "name": "Woodworkers Guild"
     },
     "Grey Mustang": {
         "description": "+1 Card<n>(Victory cards may be discarded, then draw another)<n>+2 Actions<n>-1 Coin<br>(The coin is used for the entertainment of the precious thoroughbred.)<line>1 <*VP*><br>The victory point is counted at the end of the game.",
@@ -1473,121 +1588,6 @@
         "description": "When scoring, -3<VP> per card you have exactly one copy of.",
         "extra": "Having no copies of a card, or two or more copies of a card, confers no penalty.<n>Scores can go negative.",
         "name": "Wolf Den"
-    },
-    "architects_guild": {
-        "description": "When you gain a card, you may spend 2 Favors to gain a cheaper non-Victory card.",
-        "extra": "",
-        "name": "Architects Guild"
-    },
-    "band_of_nomads": {
-        "description": "When you gain a card costing 3 Coins or more, you may spend a Favor, for +1 Card, or +1 Action, or +1 Buy.",
-        "extra": "",
-        "name": "Band of Nomads"
-    },
-    "cave_dwellers": {
-        "description": "At the start of your turn, you may spend a Favor, to discard a card then draw a card. Repeat as desired.",
-        "extra": "",
-        "name": "Cave Dwellers"
-    },
-    "circle_of_witches": {
-        "description": "After playing a Liaison, you may spend 3 Favors to have each other player gain a Curse.",
-        "extra": "",
-        "name": "Circle of Witches"
-    },
-    "city_state": {
-        "description": "When you gain an Action card during your turn, you may spend 2 Favors to play it.",
-        "extra": "",
-        "name": "City-State"
-    },
-    "coastal_haven": {
-        "description": "When discarding your hand in Clean-up, you may spend any number of Favors to keep that many cards in hand for next turn (you still draw 5).",
-        "extra": "",
-        "name": "Coastal Haven"
-    },
-    "crafters_guild": {
-        "description": "At the start of your turn, you may spend 2 Favors to gain a card costing up to 4 Coins onto your deck.",
-        "extra": "",
-        "name": "Crafters Guild"
-    },
-    "desert_guides": {
-        "description": "At the start of your turn, you may spend a Favor to discard your hand and draw 5 cards. Repeat as desired.",
-        "extra": "",
-        "name": "Desert Guides"
-    },
-    "family_of_inventors": {
-        "description": "At the start of your Buy phase, you may put a Favor token you have on a non-Victory Supply pile.  Cards cost 1 Coin less per Favor token on their piles.",
-        "extra": "",
-        "name": "Family of Inventors"
-    },
-    "fellowship_of_scribes": {
-        "description": "After playing an Action, if you have 4 or fewer cards in hand, you may spend a Favor for +1 Card.",
-        "extra": "",
-        "name": "Fellowship of Scribes"
-    },
-    "forest_dweller": {
-        "description": "At the start of your turn, you may spend a Favor to look at the top 3 cards of your deck, discard any number and put the rest back in any order.",
-        "extra": "",
-        "name": "Forest Dweller"
-    },
-    "gang_of_pickpockets": {
-        "description": "At the start of your turn, discard down to 4 cards in hand unless you spend a Favor.",
-        "extra": "",
-        "name": "Gang of Pickpockets"
-    },
-    "island_folk": {
-        "description": "At the end of your turn, if the previous turn wasn't yours, you may spend 5 Favors to take another turn.",
-        "extra": "",
-        "name": "Island Folk"
-    },
-    "league_of_bankers": {
-        "description": "At the start of your Buy phase, +1 Coin per 4 Favors you have (round down).",
-        "extra": "",
-        "name": "League of Bankers"
-    },
-    "league_of_shopkeepers": {
-        "description": "After playing a Liaison, if you have 5 or more Favors, +1 Coin, and if 10 or more, +1 Action and +1 Buy.",
-        "extra": "",
-        "name": "League of Shopkeepers"
-    },
-    "market_towns": {
-        "description": "At the start of your Buy phase, you may spend a Favor to play an Action card from your hand. Repeat as desired.",
-        "extra": "",
-        "name": "Market Towns"
-    },
-    "mountain_folk": {
-        "description": "At the start of your turn, you may spend 5 Favors for +3 Cards.",
-        "extra": "",
-        "name": "Mountain Folk"
-    },
-    "order_of_astrologers": {
-        "description": "When shuffling, you may pick one card per Favor you spend to go on top.",
-        "extra": "",
-        "name": "Order of Astrologers"
-    },
-    "order_of_masons": {
-        "description": "When shuffling, you may pick up to 2 cards per Favor you spend to put into your discard pile.",
-        "extra": "",
-        "name": "Order of Masons"
-    },
-    "peaceful_cult": {
-        "description": "At the start of your Buy phase, you may spend any number of Favors to trash that many cards from your hand.",
-        "extra": "",
-        "name": "Peaceful Cult"
-    },
-    "plateau_shepherds": {
-        "description": "When scoring, pair up your Favors with cards you have costing 2 Coins, for 2 <VP> per pair.",
-        "extra": "",
-        "name": "Plateau Shepherds"
-    },
-    "trappers_lodge": {
-        "description": "When you gain a card, you may spend a Favor to put it onto your deck.",
-        "extra": "",
-        "name": "Trappers Lodge"
-    },
-    "woodworkers_guild": {
-        "description": "At the start of your Buy phase, you may spend a Favor to trash an Action card from your hand. If you did, gain an Action card.",
-        "extra": "",
-        "name": "Woodworkers Guild"
     },
     "Advisor": {
         "name": "Conseiller",
