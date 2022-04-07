@@ -1477,7 +1477,7 @@
     "architects_guild": {
         "description": "When you gain a card, you may spend 2 Favors to gain a cheaper non-Victory card.",
         "extra": "",
-        "name": "Architects Guild"
+        "name": "Architects' Guild"
     },
     "band_of_nomads": {
         "description": "When you gain a card costing 3 Coins or more, you may spend a Favor, for +1 Card, or +1 Action, or +1 Buy.",
@@ -1497,7 +1497,7 @@
     "city_state": {
         "description": "When you gain an Action card during your turn, you may spend 2 Favors to play it.",
         "extra": "",
-        "name": "City-State"
+        "name": "City-state"
     },
     "coastal_haven": {
         "description": "When discarding your hand in Clean-up, you may spend any number of Favors to keep that many cards in hand for next turn (you still draw 5).",
@@ -1507,7 +1507,7 @@
     "crafters_guild": {
         "description": "At the start of your turn, you may spend 2 Favors to gain a card costing up to 4 Coins onto your deck.",
         "extra": "",
-        "name": "Crafters Guild"
+        "name": "Crafters' Guild"
     },
     "desert_guides": {
         "description": "At the start of your turn, you may spend a Favor to discard your hand and draw 5 cards. Repeat as desired.",
@@ -1527,7 +1527,7 @@
     "forest_dweller": {
         "description": "At the start of your turn, you may spend a Favor to look at the top 3 cards of your deck, discard any number and put the rest back in any order.",
         "extra": "",
-        "name": "Forest Dweller"
+        "name": "Forest Dwellers"
     },
     "gang_of_pickpockets": {
         "description": "At the start of your turn, discard down to 4 cards in hand unless you spend a Favor.",
@@ -1582,12 +1582,12 @@
     "trappers_lodge": {
         "description": "When you gain a card, you may spend a Favor to put it onto your deck.",
         "extra": "",
-        "name": "Trappers Lodge"
+        "name": "Trappers' Lodge"
     },
     "woodworkers_guild": {
         "description": "At the start of your Buy phase, you may spend a Favor to trash an Action card from your hand. If you did, gain an Action card.",
         "extra": "",
-        "name": "Woodworkers Guild"
+        "name": "Woodworkers' Guild"
     },
     "Advisor": {
         "description": "+1 Action<n>Reveal the top 3 cards of your deck. The player to your left chooses one of them. Discard that card. Put the other cards into your hand.",
@@ -2057,7 +2057,7 @@
     "GateKeeper": {
         "description": "At the start of your next turn, +3 Coin. Until then, when another player gains an Action or Treasure card they don't have an Exiled copy of, they Exile it.",
         "extra": "While under this attack, whenever you gain an Action or Treasure that you do not have a copy of on your Exile mat, you Exile the gained card.<n>Gaining a card that you do have a copy of on your Exile mat is unaffected, and lets you discard copies from your Exile mat if you want to as usual.<n>Other abilities that happen when you gain a card happen at the same time, and you can only put the card on your mat if it has not moved anywhere since gaining it; so you can, for example, use a Sleigh to put a gained card into your hand, then fail to put it on your Exile mat.<n>Gatekeeper only Exiles Actions and Treasures, it does not Exile, for example, Province.<n>It only cares about cards in Exile, it does not care how they got there.",
-        "name": "GateKeeper"
+        "name": "Gatekeeper"
     },
     "Goatherd": {
         "description": "+1 Action<n>You may trash a card from your hand.<n>+1 Card per card the player to your right trashed on their last turn.",
