@@ -349,25 +349,50 @@
         "description": "Vaut 1 <VP> pour chaque 3 cartes <i>Action</i> dans votre deck<n>(arrondi à l'unité inférieure).",
         "extra": "Cette carte <i>Royaume</i> est une carte <i>Victoire</i> et non une carte <i>Action</i>. Elle n'a pas d'effet avant la fin de la partie, où elle vaut 1 point de victoire pour chaque lot de 3 cartes <i>Action</i> dans votre deck (incluant toutes vos cartes: celles de votre défausse, votre deck et votre main). Le tout arrondi à l'unité inférieure: si vous avez 11 cartes <i>Action</i>, votre <i>Vignoble</i> vaut 3 points de victoire. Lors de la mise en place, placez dans la réserve 12 cartes <i>Vignoble</i> à 3 et 4 joueurs et 8 cartes <i>Vignoble</i> à 2 joueurs. Les cartes de plus d'un types dont l'un d'eux et <i>Action</i> comptent pour le <i>Vignoble</i>."
     },
+    "Augurs": {
+        "description": "This pile starts the game with 4 copies each of Herb Gatherer, Acolyte, Sorceress, and Sibyl, in that order. Only the top card can be gained or bought.",
+        "extra": "Herb Gatherer: Putting your deck into your discard pile does not trigger \"when you discard this\" abilities like Tunnel's. Playing a Treasure from your discard pile is optional, as is rotating the Augurs.<n>Acolyte: Both abilities are optional; you may do either or both or neither. You only gain a Gold if you actually trashed an Action or Victory card from your hand; you only gain an Augur if you actually trashed Acolyte. Gaining an Augur will give you whichever Augur is on top of the pile currently, even if that's another Acolyte.<n>Sorceress: Name a card; if the top card of your deck has that name, each other player gains a Curse. You put the card into your hand whether or not it had the name you chose.<n>Sibyl: If after drawing your deck has no cards in it, the first card you put back will become the top card of it.",
+        "name": "Augurs"
+    },
+    "Clashes": {
+        "description": "This pile starts the game with 4 copies each of Battle Plan, Archer, Warlord, and Territory, in that order. Only the top card can be gained or bought.",
+        "extra": "Battle Plan: First you get +1 Card and +1 Action, then you may reveal an Attack card from your hand to draw a card, and finally you may rotate any Supply pile.<n>Many piles won't do anything meaningful if you do this. It can be relevant though for split piles, or for the Castles, for the Knights, or for Ruins.<n>Archer: The players go in turn order if they care. Each other player, if they have 5 or more cards in hand, chooses one to keep secret and safe, and reveals the rest. You choose one of the revealed cards for them to discard.<n>Warlord: This doesn't stop players from playing cards that aren't in their hands. With Warlord affecting you, Throne Room can't play a card from your hand that you have two copies of in play; but it can play a card you have one copy of in play and then can replay that card, even though now you have two copies of it in play. This only affects Action cards.<n>Territory: For example, if your deck has 3 Estate, a Province, and a Territory, Territory is worth 3 <VP>. If gaining Territory causes the Clashes pile to be empty, that counts for how many Gold you get.",
+        "name": "Clashes"
+    },
+    "Forts": {
+        "description": "This pile starts the game with 4 copies each of Tent, Garrison, Hill Fort, and Stronghold, in that order. Only the top card can be gained or bought.",
+        "extra": "Tent: If you have multiple Tents in play, you can choose how many you want to put on top of your deck.<n>Garrison: This can only have tokens on it if it's in play; if it leaves play, it has no tokens. You can use coin tokens for this; on Garrison they have no other meaning, they're just tokens on Garrison. If you Throne Room Garrison and then gain 3 cards, it will get 6 tokens total, and you'll draw 6 cards next turn, not 12, as you can only remove the tokens once. If Garrison doesn't have any tokens on it, you discard Garrison from play during Clean-up.<n>Hill Fort: First completely resolve gaining a card costing up to 4 Coins; then choose whether to put it into your hand or get +1 Card and +1 Action. If the card is no longer where it was gained to then you will fail to put it into your hand if you choose that. If it's been covered up in your discard pile, you can still put it into your hand.<n>Stronghold: If you choose +3 Coins, Stronghold will be discarded that turn; if you choose the +3 Cards next turn, Stronghold will stay out until that turn's Clean-up.",
+        "name": "Forts"
+    },
+    "Odysseys": {
+        "description": "This pile starts the game with 4 copies each of Old Map, Voyage, Sunken Treasure, and Distant Shore, in that order. Only the top card can be gained or bought.",
+        "extra": "Old Map: Everything happens in the order listed: first you get +1 Card and +1 Action; then you discard a card; then you draw a card; then you choose whether or not to rotate the Odysseys.<n>Voyage: This doesn't stop you from playing cards that aren't in your hand. On a Voyage turn, if you Throne Room a card, both Throne Room and that card count as plays from your hand, but Throne Room replaying the card does not. This limits plays of all types of cards, including Treasures like Copper.<n>Sunken Treasure: If there's no such Action in the Supply, you don't gain one.<n>Distant Shore: Gaining an Estate isn't optional. If the Estate pile is empty you still get +2 Cards and +1 Action.",
+        "name": "Odysseys"
+    },
+    "Townsfolk": {
+        "description": "This pile starts the game with 4 copies each of Town Crier, Blacksmith, Miller, and Elder, in that orer. Only the top card can be gained or bought.",
+        "extra": "Town Crier: First choose either to get +2 Coins, or to gain a Silver, or to get +1 Card and +1 Action. Then, no matter what you picked, choose whether or not to rotate the Townsfolk pile.<n>Blacksmith: You either draw until you have 6 cards in hand, or draw 2 cards, or draw one card and get +1 Action.<n>Miller: If you have fewer than four cards (after shuffling), you just look at what's left.<n>Elder: You can play an Action card with no \"choose\" ability; it will simply do what it normally does. If you play one with a \"choose\" ability, you may take an extra choice, but don't have to. If you choose multiple things, you do those things in the order listed on the card. If you use Elder on Courtier, you get one extra choice, not one extra choice per type. Elder doesn't affect all choices, just ones that say \"choose\" and have a list of options.",
+        "name": "Townsfolk"
+    },
+    "Wizards": {
+        "description": "This pile starts the game with 4 copies each of Student, Conjurer, Sorcerer, and Lich, in that order. Only the top card can be gained or bought.",
+        "extra": "Student: Rotating the Wizards is optional, but trashing a card is mandatory. If you trash a Treasure, you get +1 Favor and put Student onto your deck: that's mandatory. This means you might draw that same Student again that turn and play it again. If you trash a non-Treasure, Student stays in play and is discarded in Clean-up like other cards.<n>Conjurer: This will keep returning to your hand each turn as long as you keep playing it.<n>Sorcerer: Each other player names a card, and reveals the top card of their deck. If it doesn't have that name, they gain a Curse. Whether or not it does, they return the card to the top of their deck. So if you play Sorcerer twice in a turn, they will probably know the card for the 2nd play.<n>Lich: Skipping a turn means that the next time you would take a turn, you don't; nothing happens for that turn: no \"start of turn\" abilities, no phases. Play continues with the player to your left as usual. You can skip an extra turn, like one from Voyage. Skipped turns still count for the tiebreaker however they would have if taken. If you play multiple Liches you will skip multiple turns. When you trash Lich, you put it from the trash into your discard pile, which does not trigger abilities that care about gaining cards; then you gain a card costing less than Lich from the trash, which does trigger such abilities. Gaining a cheaper card is mandatory if possible.",
+        "name": "Wizards"
+    },
     "acolyte": {
         "description": "You may trash an Action or Victory card from your hand to gain a Gold.<br>You may trash this to gain an Augur.",
-        "extra": "",
+        "extra": "Both abilities are optional; you may do either or both or neither.<n>You only gain a Gold if you actually trashed an Action or a Victory card from your hand; you only gain an Augur if you actually trashed Acolyte.<n>Gaining an Augur will give you whichever Augur is on top of the pile currently, even if that's another Acolyte.",
         "name": "Acolyte"
     },
     "archer": {
         "description": "+2 Coins<n>Each other player with 5 or more cards in hand reveals all but one, and discards one of those you choose.",
-        "extra": "",
+        "extra": "The players go in turn order if they care.<n>Each other player, if they have 5 or more cards in hand, chooses one to keep secret and safe and reveals the rest.<n>You choose one of the revealed cards for them to discard.",
         "name": "Archer"
     },
     "architects_guild": {
         "description": "When you gain a card, you may spend 2 Favors to gain a cheaper non-Victory card.",
         "extra": "",
         "name": "Architects' Guild"
-    },
-    "augurs": {
-        "description": "This pile starts the game with 4 copies each of Herb Gatherer, Acolyte, Sorceress, and Sibyl, in that order. Only the top card can be gained or bought.",
-        "extra": "",
-        "name": "Augurs"
     },
     "band_of_nomads": {
         "description": "When you gain a card costing 3 Coins or more, you may spend a Favor, for +1 Card, or +1 Action, or +1 Buy.",
@@ -376,37 +401,37 @@
     },
     "barbarian": {
         "description": "+2 Coins<n>Each other player trashes the top card of their deck. If it costs 3 Coins or more they gain a cheaper card sharing a type with it; otherwise they gain a Curse.",
-        "extra": "",
+        "extra": "For example, if a player trashes Contract to this, they could gain a Royal Galley, as they share the Duration type, or a Silver, as they share the Treasure type, or a Sycophant, as they share the Liaison type.<n>If the trashed card costs 3 Coins or more, they have to gain a cheaper card if they can; if there are no cheaper cards that share a type, they simply fail to gain a card.<n>The attack hits each other player in turn order, starting with the player to your left; this can be important.",
         "name": "Barbarian"
     },
     "battle_plan": {
         "description": "+1 Card<br>+1 Action<n>You man reveal an Attack card from your hand for +1 Card.<br>You may rotate any Supply pile.",
-        "extra": "",
+        "extra": "First you get +1 Card and +1 Action, then you may reveal an Attack card from your hand to draw a card, and finally you may rotate any Supply pile.<n>Many piles won't do anything meaningful if you do this. It can be relevant though for split piles, for the Castles from Empires, or for the Knights or Ruins from Dark Ages.",
         "name": "Battle Plan"
     },
     "bauble": {
         "description": "Choose two different options: +1 Buy; +1 Coin; +1 Favor; this turn, when you gain a card, you may put it onto your deck.",
-        "extra": "",
+        "extra": "Choose two of the four options; the first three options are simple +1's and the last is everything else. So, for example, you could choose to take +1 Buy and \"this turn, when you gain a card, you may put it onto your deck.\"",
         "name": "Bauble"
     },
     "blacksmith": {
         "description": "Choose one: Draw until you have 6 cards in hand; or +2 Cards; or +1 Card and +1 Action.",
-        "extra": "",
+        "extra": "You either draw until you have 6 cards in hand, or draw 2 cards, or draw one card and get +1 Action.",
         "name": "Blacksmith"
     },
     "broker": {
         "description": "Trash a card from your hand and choose one: +1 Card per 1 Coin it costs; or +1 Action per 1 Coin it costs; or +1 Coin per 1 Coin it costs; or +1 Favor per 1 Coin it costs.",
-        "extra": "",
+        "extra": "For example, if you trash an Estate, which costs 2 Coins, you could choose to get +2 Cards, or +2 Actions, or +2 Coins, or +2 Favors.<n>If you trash a card with Debt or Potions in the cost, you get nothing for those symbols.",
         "name": "Broker"
     },
     "capital_city": {
         "description": "+1 Card<br>+2 Actions<n>You may discard 2 cards for +2 Coins.<br>You may pay 2 Coins for +2 Cards.",
         "name": "Capital City",
-        "extra": ""
+        "extra": "First draw a card and get +2 Actions.<n>Then decide if you want to discard 2 cards for +2 Coins. You may choose to do this even with fewer than 2 cards in hand and will discard what you can, but you only get +2 Coins if you actually discarded 2 cards.<n>Then decide if you want to spend 2 Coins for +2 Cards. The 2 Coins can come from discarding to Capital City or some other source, e.g. a Barbarian you played earlier in the turn. You don't get to play Treasures here to make the 2 Coins, though.<n>If you play this with Way of the Chameleon, you may discard 2 cards for +2 Cards. You can also pay 2 Coins for +2 Coins, although this isn't useful."
     },
     "carpenter": {
         "description": "If no Supply piles are empty, +1 Action and gain a card costing up to 4 Coins.<br>Otherwise, trash a card from your hand and gain a card costing up to 2 Coins more than it.",
-        "extra": "",
+        "extra": "First see if there are any empty Supply piles.<n>If there are none, you get +1 Action and gain a card costing up to 4 Coins; if there are one or more empty piles, instead you trash a card from your hand and gain a card costing up to 2 Coins more than the card you trashed.",
         "name": "Carpenter"
     },
     "cave_dwellers": {
@@ -424,11 +449,6 @@
         "extra": "",
         "name": "City-state"
     },
-    "clashes": {
-        "description": "This pile starts the game with 4 copies each of Battle Plan, Archer, Warlord, and Territory, in that order. Only the top card can be gained or bought.",
-        "extra": "",
-        "name": "Clashes"
-    },
     "coastal_haven": {
         "description": "When discarding your hand in Clean-up, you may spend any number of Favors to keep that many cards in hand for next turn (you still draw 5).",
         "extra": "",
@@ -436,17 +456,17 @@
     },
     "conjurer": {
         "description": "Gain a card costing up to 4 Coins.<n>At the start of your next turn, put this into your hand.",
-        "extra": "",
+        "extra": "This will keep returning to your hand each turn as long as you keep playing it.<n>If you play this with a card like Band of Misfits, Band of Misfits will stay in play through the end of your next turn. Neither the Band of Misfits nor any Conjurer will move to your hand at the beginning of the next turn; it will try but fail to do so because of the stop-moving rule.",
         "name": "Conjurer"
     },
     "contract": {
         "description": "2 <*COIN*><br>+1 Favor<n>You may set aside an Action from your hand to play it at the start of your next turn.",
-        "extra": "",
+        "extra": "If you set aside a card, then Contract stays in play until the Clean-up of your next turn; if you don't set aside a card, Contract is discarded the same turn in Clean-up.<n>If you set aside a card, you have to play it at the start of your next turn.<n>The set-aside card is face up.",
         "name": "Contract"
     },
     "courier": {
         "description": "+1 Coin<n>Discard the top card of your deck. Look through your discard pile; you may play an Action or Treasure from it.",
-        "extra": "",
+        "extra": "First discard your top card, shuffling if needed. Then look through your discard pile, and you may play an Action or Treasure from it.<n>You resolve any effects from discarding the top card of your deck before you look through your discard pile. So if this discards a Tunnel, you can play the Gold that you gained from it.<n>If you have an empty discard pile after discarding the top card of your deck, you can't play any card.",
         "name": "Courier"
     },
     "crafters_guild": {
@@ -461,17 +481,17 @@
     },
     "distant_shore": {
         "description": "+2 Cards<br>+1 Action<n>Gain an Estate.<line>2 <*VP*>",
-        "extra": "",
+        "extra": "Gaining an Estate isn't optional. If the Estate pile is empty you still get +2 Cards and +1 Action.",
         "name": "Distant Shore"
     },
     "elder": {
         "description": "+2 Coins<n>You may play an Action card from your hand. When it gives you a choice of abilities (e.g. \"choose one\") this turn, you may choose an extra (different) option.",
-        "extra": "",
+        "extra": "You can play an Action card with no \"choose\" ability; it will simply do what it normally does.<n>If you play one with a \"choose\" ability, you may take an extra choice, but don't have to.<n>If you choose multiple things, you do those things in the order listed on the card.<n>If you use Elder on Courtier, you get one extra choice, not one extra choice per type.<n>Elder doesn't affect all choices, just ones that say \"choose\" and have a list of options.",
         "name": "Elder"
     },
     "emissary": {
         "description": "+3 Cards<n>If this made you shuffle (at least one card), +1 Action and +2 Favors.",
-        "extra": "",
+        "extra": "First draw 3 cards; then see if drawing those cards caused you to shuffle. If it did, you get +1 Action and +2 Favors.<n>It only counts as shuffling if at least one card was in your discard pile.",
         "name": "Emissary"
     },
     "family_of_inventors": {
@@ -489,14 +509,9 @@
         "extra": "",
         "name": "Forest Dwellers"
     },
-    "forts": {
-        "description": "This pile starts the game with 4 copies each of Tent, Garrison, Hill Fort, and Stronghold, in that order. Only the top card can be gained or bought.",
-        "extra": "",
-        "name": "Forts"
-    },
     "galleria": {
         "description": "+3 Coins<n>This turn, when you gain a card costing 3 Coins or 4 Coins, +1 Buy.",
-        "extra": "",
+        "extra": "What matters is how much a card actually costs when you gain it. If, for example, cards cost 1 Coin less due to Bridge, then gaining Silver would not produce +1 Buy, but gaining Duchy would.",
         "name": "Galleria"
     },
     "gang_of_pickpockets": {
@@ -506,42 +521,42 @@
     },
     "garrison": {
         "description": "+2 Coins<n>This turn, when you gain a card, add a token here. At the start of your next turn, remove them for +1 Card each.",
-        "extra": "",
+        "extra": "This can only have tokens on it if it's in play; if it leaves play, it has no tokens.<n>You can use coin tokens for this; on Garrison they have no other meaning, they're just tokens on Garrison.<n>If you Throne Room Garrison and then gain 3 cards, it will get 6 tokens total, and you'll draw 6 cards next turn, not 12, as you can only remove the tokens once.<n>If Garrison doesn't have any tokens on it (i.e. because you didn't gain any cards after playing it), you discard Garrison from play during Clean-up. This means you can Improve the Garrison if you haven't yet gained any cards this turn, since it is due to get discarded from play. Improve causes you to gain a card, but since Garrison is no longer in play by the time you gain it, you can't put tokens on Garrison at that point.<n>If you play Garrison with a card like Band of Misfits, it's not in play, so you can't put any tokens on it.",
         "name": "Garrison"
     },
     "guildmaster": {
         "description": "+3 Coins<n>This turn, when you gain a card, +1 Favor.",
-        "extra": "",
+        "extra": "If an Ally ability triggers on gaining cards, e.g. Band of Nomads, you can use the Favor you just got on it.",
         "name": "Guildmaster"
     },
     "herb_gatherer": {
         "description": "+1 Buy<n>Put your deck into your discard pile. Look through it and you may play a Treasure from it.<br>You may rotate the Augurs.",
-        "extra": "",
+        "extra": "Putting your deck into your discard pile does not trigger \"when you discard this\" abilities like Tunnel's.<n>Playing a Treasure from your discard pile is optional, as is rotating the Augurs.",
         "name": "Herb Gatherer"
     },
     "highwayman": {
         "description": "At the start of your next turn, discard this from play and +3 Cards.<br>Until then, the first Treasure each other player plays each turn does nothing.",
-        "extra": "",
+        "extra": "You draw the 3 cards even if Highwayman can't be discarded from play.<n>Discarding Highwayman happens first, so it's possible to even draw that Highwayman with the +3 Cards.<n>The attack stops each other player's first Treasure from doing anything, each turn; if they take extra turns, every turn is affected.<n>This isn't cumulative; if multiple players play copies of Highwayman, or one player plays multiple copies of it, still only one Treasure per turn does nothing.<n>The Treasure does nothing even if it's also an Action.<n>This stops the Treasure from doing what it does when played, but doesn't stop abilities below a dividing line, like Capital's.<n>If the Treasure is also an Action, a Way can still be used on it, and Enchantress can still work on it; the player who played the Treasure decides which effect applies.",
         "name": "Highwayman"
     },
     "hill_fort": {
         "description": "Gain a card costing up to 4 Coins. Choose one: Put it into your hand; or +1 Card and +1 Action.",
-        "extra": "",
+        "extra": "First completely resolve gaining a card costing up to 4 Coins; then choose whether to put it into your hand or to get +1 Card and +1 Action.<n>If the card is no longer where it was gained to (normally your discard pile) then you will fail to put it into your hand if you choose that. If it's been covered up in your discard pile, you can still put it into your hand.",
         "name": "Hill Fort"
     },
     "hunter": {
         "description": "+1 Action<n>Reveal the top 3 cards of your deck. From those cards, put an Action, a Treasure, and a Victory card into your hand. Discard the rest.",
-        "extra": "",
+        "extra": "From the three cards, choose an Action, then a Treasure, then a Victory card.<n>Cards with multiple types can be chosen for any matching type.",
         "name": "Hunter"
     },
     "importer": {
         "description": "At the start of your next turn, gain a card costing up to 5 Coins.<line>Setup: Each player gets +4 Favors.",
-        "extra": "",
+        "extra": "At the start of the game, each player gets five Favors instead of one. Importer doesn't provide a way to get any more Favors during the game.",
         "name": "Importer"
     },
     "innkeeper": {
         "description": "+1 Action<n>Choose one: +1 Card; or +3 Cards, then discard 3 cards; or +5 Cards, then discard 6 cards.",
-        "extra": "",
+        "extra": "First get +1 Action and choose which option you want, then do it.<n>You either get +1 Card, or get +3 Cards but discard 3 cards, or get +5 Cards but discard 6 cards.",
         "name": "Innkeeper"
     },
     "island_folk": {
@@ -561,7 +576,7 @@
     },
     "lich": {
         "description": "+6 Cards<br>+2 Actions<n>Skip a turn.<line>When you trash this, discard it and gain a cheaper card from the trash.",
-        "extra": "",
+        "extra": "Skipping a turn means that the next time you would take a turn, you don't; nothing happens for that turn: no \"start of turn\" abilities, no phases. Play continues with the player to your left as usual.<n>You can skip an extra turn, like one from Voyage.<n>Skipped turns still count for the tiebreaker however they would have if taken.<n>If you play multiple Liches you will skip multiple turns.<n>When you trash Lich, you put it from the trash into your discard pile, which does not trigger abilities that care about gaining cards; then you gain a card costing less than Lich from the trash, which does trigger such abilities.<n>Gaining a cheaper card is mandatory if possible.",
         "name": "Lich"
     },
     "market_towns": {
@@ -571,22 +586,22 @@
     },
     "marquis": {
         "description": "+1 Buy<n>+1 Card per card in your hand. Discard down to 10 cards in hand.",
-        "extra": "",
+        "extra": "Even if you were unable to draw the full amount, you still discard down to 10 cards in hand afterwards.",
         "name": "Marquis"
     },
     "merchant_camp": {
         "description": "+2 Actions<br>+1 Coin<line>When you discard this from play, you may put it onto your deck.",
-        "extra": "",
+        "extra": "If you have multiple Merchant Camps in play, you can choose how many you want to put on top of your deck.",
         "name": "Merchant Camp"
     },
     "miller": {
         "description": "+1 Action<n>Look at the top 4 cards of your deck. Put one into your hand and discard the rest.",
-        "extra": "",
+        "extra": "If you have fewer than four cards (after shuffling), you just look at what's left.",
         "name": "Miller"
     },
     "modify": {
         "description": "Trash a card from your hand. Choose one: +1 Card and +1 Action; or gain a card costing up to 2 Coins more than the trashed card.",
-        "extra": "",
+        "extra": "First trash a card from your hand. Then, choose whether to take +1 Card and +1 Action, or to gain a card costing up to 2 Coins more than the trashed card.",
         "name": "Modify"
     },
     "mountain_folk": {
@@ -594,14 +609,9 @@
         "extra": "",
         "name": "Mountain Folk"
     },
-    "odysseys": {
-        "description": "This pile starts the game with 4 copies each of Old Map, Voyage, Sunken Treasure, and Distant Shore, in that order. Only the top card can be gained or bought.",
-        "extra": "",
-        "name": "Odysseys"
-    },
     "old_map": {
         "description": "+1 Card<br>+1 Action<n>Discard a card. +1 Card.<br>You may rotate the Odysseys",
-        "extra": "",
+        "extra": "Everything happens in the order listed: first you get +1 Card and +1 Action; then you discard a card; then you draw a card; then you choose whether or not to rotate the Odysseys.",
         "name": "Old Map"
     },
     "order_of_astrologers": {
@@ -626,88 +636,83 @@
     },
     "royal_galley": {
         "description": "+1 Card<n>You may play a non-Duration Action card from your hand. Set it aside; if you did, then at the start of your next turn, play it.",
-        "extra": "",
+        "extra": "Playing a non-Duration Action card via this is optional. If you do play one, you resolve the card completely, then set it aside. If it moved elsewhere somehow (for example, if it trashed itself), you fail to set it aside, and Royal Galley is discarded that turn normally.<n>If you do set the card aside, then Royal Galley stays in play with it this turn, and at the start of your next turn you play the card again. Royal Galley and the card are both discarded that turn.<n>Playing a card via Royal Galley does not use up an Action play (though playing Royal Galley itself does).",
         "name": "Royal Galley"
     },
     "sentinel": {
         "description": "Look at the top 5 cards of your deck. You may trash up to 2 of them. Put the rest back in any order.",
-        "extra": "",
+        "extra": "Shuffle as needed; if you don't have five cards even after shuffling, you look at all of them.",
         "name": "Sentinel"
     },
     "sibyl": {
         "description": "+4 Cards<br>+1 Action<n>Put a card from your hand on top of your deck, and another on the bottom.",
-        "extra": "",
+        "extra": "If after drawing your deck has no cards in it, the first card you put back will become the top card of it.",
         "name": "Sibyl"
     },
     "skirmisher": {
-        "extra": "",
-        "name": "Skirmisher",
-        "description": "+1 Card<br>+1 Action<br>+1 Coin<n>This turn, when you gain an Attack card, each other player discards down to 3 cards in hand."
+        "description": "+1 Card<br>+1 Action<br>+1 Coin<n>This turn, when you gain an Attack card, each other player discards down to 3 cards in hand.",
+        "extra": "When played, Skirmisher sets up an ability for the rest of the turn; any time you gain an Attack card, each other player discards down to 3 cards in hand.<n>Revealing Moat when Skirmisher is played stops the attack; you can't reveal Moat when an Attack card is gained later.",
+        "name": "Skirmisher"
     },
     "sorcerer": {
         "description": "+1 Card<br>+1 Action<n>Each other player names a card, then reveals the top card of their deck. If wrong, they gain a Curse.",
-        "extra": "",
+        "extra": "Each other player names a card, and reveals the top card of their deck.<n>If it doesn't have that name, they gain a Curse.<n>Whether or not it does, they return the card to the top of their deck.<n>So if you play Sorcerer twice in a turn, they will probably know the card for the 2nd play.",
         "name": "Sorcerer"
     },
     "sorceress": {
         "description": "+1 Action<n>Name a card. Reveal the top card of your deck and put it into your hand. If it's the named card, each other player gains a Curse.",
-        "extra": "",
+        "extra": "Name a card; if the top card of your deck has that name, each other player gains a Curse.<n>You put the card into your hand whether or not it had the name you chose.",
         "name": "Sorceress"
     },
     "specialist": {
         "description": "You may play an Action or Treasure from your hand. Choose one: play it again; or gain a copy of it.",
-        "extra": "",
+        "extra": "First you may play an Action or Treasure card from your hand. If you did, then after completely resolving playing that card, you choose to either play it again or gain a copy of it.<n>You can play the card again even if it left play.<n>You can choose to gain a copy even if there are no copies left; you won't gain anything though.<n>This can only gain cards from the Supply.",
         "name": "Specialist"
     },
     "stronghold": {
         "description": "Choose one: +3 Coins; or at the start of your next turn, +3 Cards.<line>2 <*VP*>",
-        "extra": "",
+        "extra": "If you choose +3 Coins, Stronghold will be discarded that turn; if you choose the +3 Cards next turn, Stronghold will stay out until that turn's Clean-up (and if you choose both via Elder, it will stay out).",
         "name": "Stronghold"
     },
     "student": {
         "description": "+1 Action<n>You may rotate the Wizards.<br>Trash a card from your hand. If it's a Treasure, +1 Favor and put this onto your deck.",
-        "extra": "",
+        "extra": "Rotating the Wizards is optional, but trashing a card is mandatory.<n>If you trash a Treasure, you get +1 Favor and put Student onto your deck: that's mandatory. This means you might draw that same Student again that turn and play it again.<n>If you trash a non-Treasure, Student stays in play and is discarded in Clean-up like other cards.",
         "name": "Student"
     },
     "sunken_treasure": {
         "description": "Gain an Action card you don't have a copy of in play.",
-        "extra": "",
+        "extra": "If there's no such Action in the Supply, you don't gain one.",
         "name": "Sunken Treasure"
     },
     "swap": {
         "description": "+1 Card<br>+1 Action<n>You may return an Action from your hand to its pile, to gain to your hand a different Action costing up to 5 Coins.",
-        "extra": "",
+        "extra": "First you get +1 Card and +1 Action. Then you may return an Action card from your hand to its pile; this is optional. If you do, then gain an Action card from the Supply costing up to 5 Coins and put it into your hand.<n>The card you gain can't have the same name as the one you returned.<n>Returning the card isn't trashing it and won't trigger \"when you trash this\" abilities; gaining the card is gaining it and will trigger \"when you gain this\" abilities.",
         "name": "Swap"
     },
     "sycophant": {
         "description": "+1 Action<n>Discard 3 cards. If you discarded at least one, +3 Coins.<line>When you gain or trash this, +2 Favors.",
-        "extra": "",
+        "extra": "You can play this regardless of how many cards are left in your hand.<n>When you play this, if you have at least three cards left in hand, you discard three and get +3 Coins. If you have one or two cards, you discard them and get +3 Coins. If you have no cards, you don't get the +3 Coins.<n>When you gain or trash this, you get +2 Favors; you can immediately spend them, for example, on the ability of City-state.",
         "name": "Sycophant"
     },
     "tent": {
         "description": "+2 Coins<n>You may rotate the Forts.<line>When you discard this from play, you may put it onto your deck.",
-        "extra": "",
+        "extra": "If you have multiple Tents in play, you can choose how many you want to put on top of your deck.",
         "name": "Tent"
     },
     "territory": {
         "description": "Worth 1 <VP> per differently named Victory card you have.<line>When you gain this, gain a Gold per empty Supply pile.",
-        "extra": "",
+        "extra": "For example, if your deck has 3 Estates, a Province, and a Territory, Territory is worth 3 <VP>.<n>If gaining Territory causes the Clashes pile to be empty, that counts for how many Gold you get.",
         "name": "Territory"
     },
     "town": {
         "description": "Choose one:<br>+1 Card and +2 Actions;<br>or +1 Buy and +2 Coins.",
-        "extra": "",
+        "extra": "You simply choose to either get +1 Card and +2 Actions, or +1 Buy and +2 Coins. ",
         "name": "Town"
     },
     "town_crier": {
         "description": "Choose one: +2 Coin; or gain a Silver; or +1 Card and +1 Action. You may rotate the Townsfolk.",
-        "extra": "",
+        "extra": "First choose either to get +2 Coins, or to gain a Silver, or to get +1 Card and +1 Action. Then, no matter what you picked, choose whether or not to rotate the Townsfolk pile.",
         "name": "Town Crier"
-    },
-    "townsfolk": {
-        "description": "This pile starts the game with 4 copies each of Town Crier, Blacksmith, Miller, and Elder, in that orer. Only the top card can be gained or bought.",
-        "extra": "",
-        "name": "Townsfolk"
     },
     "trappers_lodge": {
         "description": "When you gain a card, you may spend a Favor to put it onto your deck.",
@@ -716,23 +721,18 @@
     },
     "underling": {
         "description": "+1 Card<br>+1Action<br>+1 Favor",
-        "extra": "",
+        "extra": "Playing this simply gives you +1 Card, +1 Action, and +1 Favor.",
         "name": "Underling"
     },
     "voyage": {
         "description": "+1 Action<n>If the previous turn wasn't yours, take an extra turn after this one, during which you can only play 3 cards from your hand.",
-        "extra": "",
+        "extra": "This doesn't stop you from playing cards that aren't in your hand; for example, if the third card you play is Golem, it can still play its two cards, which are set aside.<n>On a Voyage turn, if you Throne Room a card, both Throne Room and that card count as plays from your hand, but Throne Room replaying the card does not.<n>This limits plays of all types of cards, including Treasures like Copper.",
         "name": "Voyage"
     },
     "warlord": {
         "description": "+1 Action<n>At the start of your next turn, +2 Cards. Until then, other players can't play an Action from their hand that they have 2 or more copies of in play.",
-        "extra": "",
+        "extra": "This doesn't stop players from playing cards that aren't in their hands; for example, Golem can still play its two cards, which are set aside, no matter how many copies of them are in play.<n>With Warlord affecting you, Throne Room can't play a card from your hand that you have two copies of in play; but Throne can play a card you have one copy of in play and then can replay that card, even though now you have two copies of it in play.<n>This only affects Action cards; it doesn't affect Copper, for example.",
         "name": "Warlord"
-    },
-    "wizards": {
-        "description": "This pile starts the game with 4 copies each of Student, Conjurer, Sorcerer, and Lich, in that order. Only the top card can be gained or bought.",
-        "extra": "",
-        "name": "Wizards"
     },
     "woodworkers_guild": {
         "description": "At the start of your Buy phase, you may spend a Favor to trash an Action card from your hand. If you did, gain an Action card.",
@@ -2196,7 +2196,7 @@
     },
     "Way of the Butterfly": {
         "description": "You may return this to its pile to gain a card costing exactly 1 coin more than it.",
-        "extra": "You only gain a card if you manage to return the card to its pile. A non-Supply card (like HorseHorse.jpg) can return to its pile; a card with no pile, such as Necropolis (from Dark Ages), fails to return to its pile. The card you gain comes from the Supply, and can be any type; if there is no card in the Supply costing exactly more than the returned card, you do not gain one.",
+        "extra": "You only gain a card if you manage to return the card to its pile. A non-Supply card (like Horse) can return to its pile; a card with no pile, such as Necropolis (from Dark Ages), fails to return to its pile. The card you gain comes from the Supply, and can be any type; if there is no card in the Supply costing exactly more than the returned card, you do not gain one.",
         "name": "Way of the Butterfly"
     },
     "Way of the Camel": {
@@ -3239,11 +3239,6 @@
         "description": "Maintenant et au début de votre prochain tour : +2 Cartes et +1 Achat.",
         "extra": "Quai: Vous piochez 2 cartes et avez un achat supplémentaire ce tour-ci. Ensuite, au début de votre prochain tour, vous piochez à nouveau 2 cartes supplémentaires et vous avez un achat de plus. Vous ne piochez pas les 2 cartes de plus pour votre prochain tour avant que ce tour ne débute vraiment Laissez cette carte devant vous jusqu'à la phase <b>Ajustement</b> de votre prochain tour."
     },
-    "Augurs": {
-        "extra": "",
-        "name": "Augurs",
-        "description": "This pile starts the game with 4 copies each of Herb Gatherer, Acolyte, Sorceress, and Sibyl, in that order. Only the top card can be gained or bought."
-    },
     "Border Guard - LanternHorn": {
         "description": "<left><u>Border Guard</u>:</left><n>+1 Action<br>Reveal the top 2 cards of your deck.  Put one into your hand and discard the other.  If both were Actions, take the Lantern or Horn.<n><left><u>Horn</u>:</left><n>Once per turn, when you discard a Border Guard from play, you may put it onto your deck.<n><left><u>Lantern</u>:</left><n>Your Border Guards reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",
         "extra": "When you play a Border Guard and do not have the Lantern, you reveal the top 2 cards of your deck, choose one and put it into your hand, and discard the other; then if they were both Action cards, you take the Lantern or the Horn.  When you play a Border Guard and have the Lantern, you reveal the top 3 cards of your deck, choose one and put it into your hand, and discard the rest; then if all three were Action cards, you may take the Horn.  If you reveal fewer than 2 cards, or fewer than 3 cards when you have the Lantern, you don't take an Artifact.  Both the Horn and the Lantern function the turn you get them.<n><n>Horn and Lantern are Artifacts. Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
@@ -3258,11 +3253,6 @@
         "description": "<left><u>Cemetery</u>:</left><center>2 <*VP*></center><line>When you gain this, trash up to 4 cards from your hand.<br><i>Heirloom: Haunted Mirror</i><left><u>Haunted Mirror</u>:</left><center>1 <*COIN*></center><line>When you trash this, you may discard an Action card, to gain a Ghost from its pile.",
         "extra": "<u>Cemetery</u>:In games using this, replace one of your starting Coppers with a Haunted Mirror. When you gain a Cemetery, trash from zero to four cards from your hand.\n<u>Haunted Mirror</u>: Haunted Mirror does not give you a way to trash it, but does something if you find a way to.",
         "name": "Cemetery / Haunted Mirror"
-    },
-    "Clashes": {
-        "extra": "",
-        "name": "Clashes",
-        "description": "This pile starts the game with 4 copies each of Battle Plan, Archer, Warlord, and Territory, in that order. Only the top card can be gained or bought."
     },
     "Encampment - Plunder": {
         "description": "<left><u>Encampment</u>:</left><n>+2 Cards<br>+2 Actions<n>You may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up.<n><left><u>Plunder</u>:</left><n>+2 Coin<br>+1<VP>",
@@ -3279,11 +3269,6 @@
         "extra": "If you have Lost in the Woods, playing Fool does nothing. If you do not have Lost in the Woods, you take it - even from another player, if another player has it - and also take 3 Boons and receive them in the order you choose (discarding them when receiving them, or in Clean-up as appropriate). You do not need to pick the full order in advance - pick one to resolve, then after resolving it pick another to resolve. The player with Lost in the Woods (if any) can optionally discard a card to receive a Boon, at the start of each of their turns. In games using Fool, replace one of your starting Coppers with a Lucky Coin.\nYou can choose not to play Lucky Coin, and thus not gain a Silver.",
         "name": "Fool / Lucky Coin"
     },
-    "Forts": {
-        "extra": "",
-        "name": "Forts",
-        "description": "This pile starts the game with 4 copies each of Tent, Garrison, Hill Fort, and Stronghold, in that order. Only the top card can be gained or bought."
-    },
     "Gladiator - Fortune": {
         "description": "<left><u>Gladiator</u>:</left><n>If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator.<n><left><u>Fortune</u>:</left><n>+1 Buy<n>When you play this, double your Coin if you haven't yet this turn.<line>When you gain this, gain a Gold per Gladiator you have in play.",
         "extra": "If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator. Fortune: You only double your Coin the first time you play a Fortune in a turn; any further times only get you +1 Buy.",
@@ -3298,11 +3283,6 @@
         "description": "<left><u>Necromancer</u>:</left><center>Play a face-up, non-Duration Action card from the trash, leaving it there and turning it face down for the turn.</center><line>Setup: Put the 3 Zombies into the trash.<left><u>Zombie Apprentice</u>:</left><center>You may trash an Action card from your hand for +3 Cards and +1 Action.</center><left><u>Zombie Mason</u>:</left><center>Trash the top card of your deck. You may gain a card costing up to 1 Coin more than it.</center><left><u>Zombie Spy</u>:</left><center>+1 Card</center><center>+1 Action</center><center>Look at the top card of your deck. Discard it or put it back.</center>",
         "extra": "Setup:  Put the three Zombies into the trash.\nNecromancer plays a non-Duration Action card from the trash. Normally it can at least play one of the three Zombies, since they start the game in the trash. It can play other Action cards that make their way into the trash too. The played cards are turned over, to track that each can only be used once per turn this way; at end of turn, turn them back face up. Necromancer can play another Necromancer, though normally that will not be useful. The Action card stays in the trash; if an effect tries to move it, such as Encampment (from Empires) returning to the Supply, it will fail to move it. Necromancer can be used on a card that trashes itself when played; if the card checks to see if it was trashed (such as Pixie), it was not, but if the card does not check (such as Tragic Hero), it will function normally. Since the played card is not in play, 'while this is in play' abilities (such as Tracker's) will not do anything.\n<u>Zombie Apprentice</u>: If you trash an Action card from your hand, you draw three cards and get +1 Action.\n<u>The Zombie Mason</u>: Gaining a card is optional. You can gain a card costing more than the trashed card, or any amount less; for example you can gain a copy of the trashed card. Usually if it is not something you want to trash, you can gain a copy of it back from the Supply.\n<u>Zombie Spy</u>: You draw a card before looking at the top card. The Zombie Spy is like a regular Spy except it can only discard the top card of your own deck.",
         "name": "Necromancer / Zombies"
-    },
-    "Odysseys": {
-        "extra": "",
-        "name": "Odysseys",
-        "description": "This pile starts the game with 4 copies each of Old Map, Voyage, Sunken Treasure, and Distant Shore, in that order. Only the top card can be gained or bought."
     },
     "Page -> Champion": {
         "description": "<justify>Page est échangée contre Chasseuse de Trésors, qui est échangée contre Guerrière, qui est échangée contre Héroïne, qui est échangée contre Championne.</justify><left><u>Page</u>: +1 Carte ; +1 Action</left><left><u>Chasseuse de Trésors</u>: +1 Action ; +1 Coin ; Recevez une carte <i>Argent</i> par carte que le joueur à votre droite a reçue lors de son dernier tour.</left><left><u>Guerrière</u>: +2 Cartes ; Pour chaque carte <i>Itinérant</i> que vous avez en jeu (incluant celle-ci), tous vos adversaires défaussent la première carte de leur deck et l'écartent si celle-ci coûte 3 Coins ou 4 Coins.</left><left><u>Héroïne</u>: +2 Coins ; Recevez une carte Trésor.</left><left><u>Championne</u>: +1 Action ; Pour le reste de la partie, lorsqu'un adversaire joue une carte <i>Attaque</i>, elle n'a pas d'effet sur vous, et quand vous jouez une carte <i>Action</i> : +1 Action. <i>(Cette carte reste en jeu.)</i></left>",
@@ -3364,11 +3344,6 @@
         "description": "+ 1 Action<n> Chaque joueur peut dévoiler une carte <i>Province</i> de sa main. Si vous le faites, défaussez-la et recevez une carte <i>Prix</i> (de la pile <i>Prix</i>) ou <i>Duché</i>, que vous placez sur votre deck. Si personne d'autre ne le fait: +1 Carte et +1 Coin.<n><justify>Prix: <u>Sac d'or</u>, <u>Diadème</u>, <u>Partisans</u>, <u>Princesse</u>, <u>Fidèle destrier</u></justify>",
         "extra": "Vous obtenez d'abord +1 Action. Ensuite, tous les joueurs peuvent dévoiler une carte <i>Province</i> de leur main,y compris vous. Ceux qui dévoilent une carte <i>Province</i> la défausse, reçoivent une carte <i>Prix</i> de leur choix ou un <i>Duché</i> et ils placent la carte reçue sur leur deck. S'il n'y a plus de carte dans votre deck, ce sera donc la seule carte. Il y a cinq cartes <i>Prix</i>, placées près de la réserve au début de la partie (voir la mise en place). Vous ne pouvez prendre qu'une carte <i>Prix</i> de la pile <i>Prix</i>. Vous pouvez y prendre la carte <i>Prix</i> que vous voulez, vous n'avez pas à prendre celle du dessus. Vous pouvez également prendre une carte <i>Duché</i>, même si la pile <i>Prix</i> n'est pas vide. Vous pouvez également choisir un <i>Prix</i> ou un <i>Duché</i>, même si la pile respective est vide ; dans ce cas, vous ne recevez rien. Après avoir reçu ou non une carte, si aucun aune joueur n'a dévoilé une carte <i>Province</i> ; piochez une carte et obtenez +1 Coin.<br>Lorsque vous jouez <i>Tournoi</i>, quatre situations peuvent se produire:<br>1) Ni vous, ni vos adversaires ne dévoilent de <i>Province</i>: vous obtenez +1 Action, +1 Carte et +1 Coin.<br>2) Vous êtes le seul à dévoiler une <i>Province</i>: vous recevez une carte <i>Prix</i> ou <i>Duché</i> que vous piochez et vous obtenez +1 Action et +1 Coin.<br>3) Vous et au moins un autre joueur dévoilez une <i>Province</i>: vous recevez une carte <I>Prix</i> ou <I>Duché</i> que vous mettez sur votre deck et +1 Action.<br>4) Vous ne dévoilez pas de <i>Province</i> mais au moins un autre joueur le fait: vous obtenez uniquement +1 Action.<br>Lorsque vous recevez un <i>Prix</i>, prenez la carte <i>Prix</i> toujours disponible de votre choix. Vous pouvez consulter la pile de cartes Prix à tout moment."
     },
-    "Townsfolk": {
-        "extra": "",
-        "name": "Townsfolk",
-        "description": ""
-    },
     "Tracker - Pouch": {
         "description": "<left><u>Tracker</u>:</left><center>+1 Coin</center><center>Receive a Boon.</center><line><center>While this is in play, when you gain a card, you may put that card onto your deck.</center><left><i>Heirloom: Pouch</i></left><left><u>Pouch</u>:</left><center>1 <*COIN*></center><n><n>+1 Buy",
         "extra": "<u>Tracker</u>: If you gain multiple cards with this in play, this applies to each of them - you could put any or all of them on top of your deck. This applies both to cards gained due to being bought, and to cards gained other ways with Tracker in play. Tracker is in play when you resolve its Boon, so if the Boon causes you to gain a card, for example a Silver from The Mountain's Gift, you can put that card onto your deck.\nIn games using Tracker, replace one of your starting Coppers with a Pouch.\n<u>Pouch</u>: This simply gives you 1 Coin and +1 Buy when you play it.",
@@ -3388,11 +3363,6 @@
         "description": "<left><u>Vampire</u>:</left><center>Each other player receives the next Hex.</center><center>Gain a card costing up to 5 Coin other than a Vampire.</center><center>Exchange this for a Bat.</center><left><u>Bat</u>:</left><center>Trash up to 2 cards from your hand. If you trashed at least one, exchange this for a Vampire.</center><left><i>(This is not in the Supply.)</i></left>",
         "extra": "For Vampire: Follow the instructions in order. If the Bat pile is empty, you will be unable to exchange Vampire for a Bat, but will do the rest. The Bat is put into your discard pile.\nFor Bat: The Vampire is put into your discard pile. If there are no Vampires in their pile, you cannot exchange Bat for one, but can still trash cards.",
         "name": "Vampire / Bat"
-    },
-    "Wizards": {
-        "extra": "",
-        "name": "Wizards",
-        "description": "This pile starts the game with 4 copies each of Student, Conjurer, Sorcerer, and Lich, in that order. Only the top card can be gained or bought."
     },
     "adventures events": {
         "description": "<justify>Les Événements ne sont pas des cartes Royaume. Pendant la phase d'achat, au lieu d'acheter (et recevoir) une carte, vous pouvez acheter un Événement à la place. Acheter un Événement consiste à payer le coût indiqué sur la carte et faire ce qui est écrit dessus. La carte Événement reste en place sur la table et vous ne la prendrez jamais ; il n'y a AUCUN moyen de recevoir une carte Événement ou d'en avoir une dans son deck. Acheter un Événement consomme un Achat du tour ; en temps normal, vous ne pourrez acheter soit une carte (de la réserve), soit un Événement. Si vous avez deux Achats, comme par exemple après avoir joué Forestier, vous pourrez acheter deux cartes ou deux Événements, ou une carte et un Événement (dans l'ordre de votre choix). Un même Événement peut être acheté plusieurs fois dans un même tour si vous avez les Achats et des _ Coins suffisantes. Certains événements donnent des +Achats et permettent ainsi d'acheter d'autres cartes/Événements par la suite. Vous ne pourrez plus jouer de nouveaux Trésors une fois que vous avez acheté un Événement (mais vous pouvez jouer tous vos Trésor avant en prévision). Acheter un Événement n'est pas acheter une carte et ne déclenchera donc pas des cartes comme la Sorcière des Marais ou Fiers-à-Bras (de Dominion - Prospérité). Le coût des Événements n'est pas altéré par des cartes comme Pont aux Trolls.</justify>",
