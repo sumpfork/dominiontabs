@@ -812,6 +812,90 @@
         ]
     },
     {
+        "card_tag": "Augurs",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3*",
+        "count": "16",
+        "group_tag": "Augurs",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Augur"
+        ]
+    },
+    {
+        "card_tag": "Clashes",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3*",
+        "count": "16",
+        "group_tag": "Clashes",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Clash"
+        ]
+    },
+    {
+        "card_tag": "Forts",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3*",
+        "count": "16",
+        "group_tag": "Forts",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Fort"
+        ]
+    },
+    {
+        "card_tag": "Odysseys",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3*",
+        "count": "16",
+        "group_tag": "Odysseys",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Odyssey"
+        ]
+    },
+    {
+        "card_tag": "Townsfolk",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "2*",
+        "count": "16",
+        "group_tag": "Townsfolk",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Townsfolk"
+        ]
+    },
+    {
+        "card_tag": "Wizards",
+        "cardset_tags": [
+            "allies"
+        ],
+        "cost": "3*",
+        "count": "16",
+        "group_tag": "Wizards",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Wizard"
+        ]
+    },
+    {
         "card_tag": "acolyte",
         "cardset_tags": [
             "allies"
@@ -850,20 +934,6 @@
         "randomizer": false,
         "types": [
             "Ally"
-        ]
-    },
-    {
-        "card_tag": "augurs",
-        "cardset_tags": [
-            "allies"
-        ],
-        "cost": "3*",
-        "count": "16",
-        "group_tag": "Augurs",
-        "group_top": true,
-        "types": [
-            "Action",
-            "Augur"
         ]
     },
     {
@@ -992,20 +1062,6 @@
         "randomizer": false,
         "types": [
             "Ally"
-        ]
-    },
-    {
-        "card_tag": "clashes",
-        "cardset_tags": [
-            "allies"
-        ],
-        "cost": "3*",
-        "count": "16",
-        "group_tag": "Clashes",
-        "group_top": true,
-        "types": [
-            "Action",
-            "Clash"
         ]
     },
     {
@@ -1155,20 +1211,6 @@
         "randomizer": false,
         "types": [
             "Ally"
-        ]
-    },
-    {
-        "card_tag": "forts",
-        "cardset_tags": [
-            "allies"
-        ],
-        "cost": "3*",
-        "count": "16",
-        "group_tag": "Forts",
-        "group_top": true,
-        "types": [
-            "Action",
-            "Fort"
         ]
     },
     {
@@ -1407,20 +1449,6 @@
         "randomizer": false,
         "types": [
             "Ally"
-        ]
-    },
-    {
-        "card_tag": "odysseys",
-        "cardset_tags": [
-            "allies"
-        ],
-        "cost": "3*",
-        "count": "16",
-        "group_tag": "Odysseys",
-        "group_top": true,
-        "types": [
-            "Action",
-            "Odyssey"
         ]
     },
     {
@@ -1689,20 +1717,6 @@
         ]
     },
     {
-        "card_tag": "townsfolk",
-        "cardset_tags": [
-            "allies"
-        ],
-        "cost": "2*",
-        "count": "16",
-        "group_tag": "Townsfolk",
-        "group_top": true,
-        "types": [
-            "Action",
-            "Townsfolk"
-        ]
-    },
-    {
         "card_tag": "trappers_lodge",
         "cardset_tags": [
             "allies"
@@ -1754,20 +1768,6 @@
             "Duration",
             "Attack",
             "Clash"
-        ]
-    },
-    {
-        "card_tag": "wizards",
-        "cardset_tags": [
-            "allies"
-        ],
-        "cost": "3*",
-        "count": "16",
-        "group_tag": "Wizards",
-        "group_top": true,
-        "types": [
-            "Action",
-            "Wizard"
         ]
     },
     {
