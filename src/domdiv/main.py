@@ -1497,10 +1497,12 @@ def filter_sort_cards(cards, options):
 
     # Combine upgrade cards with their expansion
     if options.upgrade_with_expansion:
+        if not options.exclude_expansions:
+            options.exclude_expansions = []
         for card in cards:
             if Card.sets[card.cardset_tag]["upgrades"]:
+                options.exclude_expansions.append(card.cardset_tag.lower())
                 card.cardset_tag = Card.sets[card.cardset_tag]["upgrades"]
-                options.expansions.append(card.cardset_tag.lower())
 
     # Combine globally all cards of the given types
     # For example, Events, Landmarks, Projects, Ways
