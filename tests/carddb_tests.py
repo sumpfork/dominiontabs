@@ -31,9 +31,11 @@ def test_cardread():
     valid_cardsets = {
         "base",
         "dominion1stEdition",
+        "dominion1stEditionRemoved",
         "dominion2ndEdition",
         "dominion2ndEditionUpgrade",
         "intrigue1stEdition",
+        "intrigue1stEditionRemoved",
         "intrigue2ndEdition",
         "intrigue2ndEditionUpgrade",
         "seaside",
