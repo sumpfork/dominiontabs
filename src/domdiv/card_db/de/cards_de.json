@@ -3114,6 +3114,41 @@
         "extra": "Wähle eine beliebige Handkarte und zeige sie deinen Mitspielern. Du darfst dann bis zu 2 dieser Karten von deiner Hand zurück in den Vorrat legen. Jeder Mitspieler nimmt sich anschließend eine solche Karte aus dem Vorrat (reihum im Uhrzeigersinn, beginnend beim linken Mitspieler). Der ausgespielte BOTSCHAFTER kann nicht in den Vorrat zurückgelegt werden.",
         "name": "Botschafter"
     },
+    "Embargo": {
+        "description": "+2 Coin<br>Entsorge diese Karte. Lege einen Embargomarker auf einen Stapel im Vorrat. <line> Wenn ein Spieler eine Karte von diesem Stapel kauft, muss er sich für jeden Embargomarker einen Fluch nehmen.",
+        "extra": "Wenn du das EMBARGO in deiner Aktionsphase ausspielst, musst du es entsorgen und einen Embargomarker auf einen beliebigen Vorratsstapel (Königreichkarten und Geldkarten sind erlaubt) legen. Um die +2 Coins in der Kaufphase nicht zu „vergessen“, empfehlen wir, das entsorgte EMBARGO zunächst separat neben den Müllstapel zu legen und erst in der Aufräumphase endgültig zu entsorgen. Wenn du das EMBARGO auf einen THRONSAAL folgend ausspielst, legst du 2 Embargomarker. Du kannst sie auf denselben oder unterschiedliche Stapel legen. Wenn keine Embargomarker mehr vorhanden sind, benutze einen geeigneten Ersatz (z.B. echte Geldmünzen). Auf jeden Vorratsstapel dürfen beliebig viele Embargomarker gelegt werden. Spieler, die Karten von einem Vorratsstapel mit einem oder mehreren Embargomarkern kaufen, müssen pro Marker eine Fluchkarte nehmen. Wer Karten von einem Stapel mit Embargomarker(n) auf eine andere Weise nimmt (z.B. durch den SCHMUGGLER), nimmt keine Fluchkarte. Wenn keine Fluchkarten mehr vorrätig sind, haben die Marker keinen Effekt.",
+        "name": "Embargo"
+    },
+    "Explorer": {
+        "description": "Du darfst eine Provinz aus deiner Hand aufdecken. Wenn du das machst: Nimm dir ein Gold auf die Hand. Ansonsten: Nimm dir ein Silber auf die Hand.",
+        "extra": "Wenn du eine PROVINZ aus der Hand aufdeckst, erhältst du ein GOLD. Wenn du das nicht tun kannst (weil du keine PROVINZ auf der Hand hast) oder willst (weil du deine PROVINZ nicht zeigen möchtest), erhältst du ein SILBER. Nimm das GOLD oder SILBER auf die Hand.",
+        "name": "Entdecker"
+    },
+    "Ghost Ship": {
+        "description": "+2 Karten<br>Jeder Mitspieler, der mindestens 4 Karten auf der Hand hat, muss solange Karten aus seiner Hand verdeckt auf seinen Nachziehstapel legen, bis er nur noch 3 Karten auf der Hand hat.",
+        "extra": "Deine Mitspieler müssen Karten aus ihrer Hand verdeckt auf den Nachziehstapel legen, bis sie nur noch 3 Karten auf der Hand haben. Welche Karten sie auf den Nachziehstapel legen, entscheiden die Mitspieler selbst. Spieler, die zum Zeitpunkt des Angriffs bereits 3 oder weniger Karten auf der Hand haben, müssen keine Karten auf den Nachziehstapel legen.",
+        "name": "Geisterschiff"
+    },
+    "Navigator": {
+        "description": "+2 Coin<br>Sieh dir die obersten 5 Karten von deinem Nachziehstapel an. Lege entweder alle diese Karten ab oder lege sie in beliebiger Reihenfolge verdeckt zurück auf deinen Nachziehstapel.",
+        "extra": "Schau dir die obersten 5 Karten deines Nachziehstapels an. Sind nicht genügend Karten im Stapel, mischst du deinen Ablagestapel und legst ihn verdeckt unter deinen Nachziehstapel. Sind es nun immer noch weniger als 5 Karten, schaust du dir alle an und legst sie dann entweder ab oder in einer beliebigen Reihenfolge zurück auf den Nachziehstapel.",
+        "name": "Navigator"
+    },
+    "Pearl Diver": {
+        "description": "+1 Karte<br>+1 Aktion<br>Sieh dir die unterste Karte von deinem Nachziehstapel an. Du darfst diese Karte verdeckt auf deinen Nachziehstapel legen.",
+        "extra": "Zieh die unterste Karte des Nachziehstapels so hervor, dass du die benachbarte Karte nicht sehen kannst. Schaue sie dir an und lege sie dann verdeckt oben auf den Nachziehstapel oder zurück unter den Nachziehstapel.",
+        "name": "Perlentaucher"
+    },
+    "Pirate Ship": {
+        "description": "Wähle eins: Jeder Mitspieler muss die obersten beiden Karten von seinem Nachziehstapel aufdecken. Haben die Mitspieler eine oder mehrere Geldkarten aufgedeckt, muss jeder eine davon (nach deiner Wahl) entsorgen. Wenn auf diese Weise mindestens 1 Geldkarte entsorgt wird, erhältst du 1 Geldmarker auf dein Tableau Piratenschiff. Die übrigen aufgedeckten Karten legen die Spieler bei sich ab. Oder: +1 Coin für jeden deiner Geldmarker auf deinem Tableau Piratenschiff.",
+        "extra": "Wenn du dein erstes PIRATENSCHIFF nimmst oder kaufst, erhältst du ein Piratenschiff-Tableau und legst es vor dir ab. Immer wenn du ein PIRATENSCHIFF ausspielst, wählst du eine der beiden Anweisungen: Entweder die erste Anweisung: Alle Mitspieler decken die beiden obersten Karten ihres Nachziehstapels auf. Dann entsorgen sie jeweils eine Geldkarte nach deiner Wahl. Hat ein Mitspieler keine Geldkarte aufgedeckt, entsorgt er keine Karte. Die restlichen aufgedeckten Karten werden abgelegt. Wird mindestens eine Karte entsorgt, erhältst du einen Geldmarker und legst ihn auf dein Tableau; oder die zweite Anweisung: Du erhältst pro Geldmarker auf deinem Piratenschiff-Tableau in der Kaufphase +1 Coins. Nach der Nutzung in der Kaufphase verbleiben die Geldmarker auf dem Tableau und können beim erneuten Ausspielen eines PIRATENSCHIFFES wieder eingesetzt werden. Mitspieler können auf das Ausspielen eines PIRATENSCHIFFES mit Reaktionskarten reagieren, auch wenn du die zweite Anweisung wählst, die deine Mitspieler nicht direkt betrifft.",
+        "name": "Piratenschiff"
+    },
+    "Sea Hag": {
+        "description": "Jeder Mitspieler muss die oberste Karte seines Nachziehstapels ablegen und sich dann einen Fluch nehmen, den er verdeckt auf seinen Nachziehstapel legt.",
+        "extra": "Sollte der Nachziehstapel eines Mitspielers leer sein, mischt er seinen Ablagestapel und legt die oberste Karte des neuen Nachziehstapels ab. Hat ein Spieler keine Karten mehr in seinem Nachziehstapel, kann er zwar keine Karte ablegen, nimmt sich aber trotzdem eine Fluchkarte. Beginnend mit dem Mitspieler links von dem Spieler, der die SEEHEXE ausgespielt hat, nimmt sich jeder Mitspieler einen FLUCH vom Vorrat. Sollten nicht mehr genügend Fluchkarten für alle Spieler vorhanden sein, werden die restlichen in o. g. Reihenfolge verteilt.",
+        "name": "Seehexe"
+    },
     "Bazaar": {
         "description": "+1 Karte<br>+2 Aktionen<br>+1 Coin",
         "extra": "Du musst eine Karte nachziehen, darfst 2 weitere Aktionen ausführen und erhältst für die Kaufphase +2 Coins.",
@@ -3129,25 +3164,10 @@
         "extra": "Alle Mitspieler müssen eine Kupferkarte aus der Hand ablegen. Da der Beutelschneider eine Angriffskarte ist, dürfen die Mitspieler mit einer Reaktionskarte auf diesen Angriff reagieren.",
         "name": "Beutelschneider"
     },
-    "Embargo": {
-        "description": "+2 Coin<br>Entsorge diese Karte. Lege einen Embargomarker auf einen Stapel im Vorrat. <line> Wenn ein Spieler eine Karte von diesem Stapel kauft, muss er sich für jeden Embargomarker einen Fluch nehmen.",
-        "extra": "Wenn du das EMBARGO in deiner Aktionsphase ausspielst, musst du es entsorgen und einen Embargomarker auf einen beliebigen Vorratsstapel (Königreichkarten und Geldkarten sind erlaubt) legen. Um die +2 Coins in der Kaufphase nicht zu „vergessen“, empfehlen wir, das entsorgte EMBARGO zunächst separat neben den Müllstapel zu legen und erst in der Aufräumphase endgültig zu entsorgen. Wenn du das EMBARGO auf einen THRONSAAL folgend ausspielst, legst du 2 Embargomarker. Du kannst sie auf denselben oder unterschiedliche Stapel legen. Wenn keine Embargomarker mehr vorhanden sind, benutze einen geeigneten Ersatz (z.B. echte Geldmünzen). Auf jeden Vorratsstapel dürfen beliebig viele Embargomarker gelegt werden. Spieler, die Karten von einem Vorratsstapel mit einem oder mehreren Embargomarkern kaufen, müssen pro Marker eine Fluchkarte nehmen. Wer Karten von einem Stapel mit Embargomarker(n) auf eine andere Weise nimmt (z.B. durch den SCHMUGGLER), nimmt keine Fluchkarte. Wenn keine Fluchkarten mehr vorrätig sind, haben die Marker keinen Effekt.",
-        "name": "Embargo"
-    },
-    "Explorer": {
-        "description": "Du darfst eine Provinz aus deiner Hand aufdecken. Wenn du das machst: Nimm dir ein Gold auf die Hand. Ansonsten: Nimm dir ein Silber auf die Hand.",
-        "extra": "Wenn du eine PROVINZ aus der Hand aufdeckst, erhältst du ein GOLD. Wenn du das nicht tun kannst (weil du keine PROVINZ auf der Hand hast) oder willst (weil du deine PROVINZ nicht zeigen möchtest), erhältst du ein SILBER. Nimm das GOLD oder SILBER auf die Hand.",
-        "name": "Entdecker"
-    },
     "Fishing Village": {
         "description": "+2 Aktionen<br>+1 Coin<br>Bei Beginn deines nächsten Zuges: +1 Aktion, +1 Coin",
         "extra": "Das FISCHERDORF ist eine Dauerkarte. Du darfst 2 weitere Aktionen ausführen und erhältst für die Kaufphase +1 Coins. In deinem nächsten Zug darfst du eine weitere Aktion ausführen und erhältst für die Kaufphase +1 Coins.",
         "name": "Fischerdorf"
-    },
-    "Ghost Ship": {
-        "description": "+2 Karten<br>Jeder Mitspieler, der mindestens 4 Karten auf der Hand hat, muss solange Karten aus seiner Hand verdeckt auf seinen Nachziehstapel legen, bis er nur noch 3 Karten auf der Hand hat.",
-        "extra": "Deine Mitspieler müssen Karten aus ihrer Hand verdeckt auf den Nachziehstapel legen, bis sie nur noch 3 Karten auf der Hand haben. Welche Karten sie auf den Nachziehstapel legen, entscheiden die Mitspieler selbst. Spieler, die zum Zeitpunkt des Angriffs bereits 3 oder weniger Karten auf der Hand haben, müssen keine Karten auf den Nachziehstapel legen.",
-        "name": "Geisterschiff"
     },
     "Haven": {
         "description": "+1 Karte<br>+1 Aktion<br>Lege eine Handkarte verdeckt zur Seite. <n> Zu Beginn deines nächsten Zuges:<n>Nimm die zur Seite gelegte Karte auf die Hand.",
@@ -3179,35 +3199,15 @@
         "extra": "Wenn du dein erstes EINGEBORENENDORF nimmst oder kaufst, erhältst du ein Eingeborenen-Tableau und legst es vor dir ab. Immer wenn du ein EINGEBORENENDORF ausspielst, wählst du genau eine der beiden Anweisungen und führst sie wenn möglich aus. Du darfst eine Anweisung auch wählen, wenn du sie nicht ausführen kannst. Karten, die du auf das Tableau legst, werden immer verdeckt abgelegt. Du darfst dir jederzeit die Karten auf deinem Tableau ansehen. Die ausgespielte Aktionskarte EINGEBORENENDORF legst du in der Aufräumphase ab. Alle Karten auf dem Tableau gehören auch zum Kartensatz eines Spielers. Alle Karten auf den Tableaus werden bei Spielende mit berücksichtigt.",
         "name": "Eingeborenendorf"
     },
-    "Navigator": {
-        "description": "+2 Coin<br>Sieh dir die obersten 5 Karten von deinem Nachziehstapel an. Lege entweder alle diese Karten ab oder lege sie in beliebiger Reihenfolge verdeckt zurück auf deinen Nachziehstapel.",
-        "extra": "Schau dir die obersten 5 Karten deines Nachziehstapels an. Sind nicht genügend Karten im Stapel, mischst du deinen Ablagestapel und legst ihn verdeckt unter deinen Nachziehstapel. Sind es nun immer noch weniger als 5 Karten, schaust du dir alle an und legst sie dann entweder ab oder in einer beliebigen Reihenfolge zurück auf den Nachziehstapel.",
-        "name": "Navigator"
-    },
     "Outpost": {
         "description": "Ziehe in der folgenden Aufräumphase nur 3 Karten nach. Führe danach sofort einen weiteren Zug aus. Du kannst auf diese Weise nur einen weiteren Zug ausführen.",
         "extra": "Der AUSSENPOSTEN ist eine Dauerkarte, die bis zum Ende des nächsten Zuges (Extrazug) im Spiel bleibt und erst in der Aufräumphase des nächsten Zuges (Extrazug) abgelegt wird. Der AUSSENPOSTEN kommt erst in der Aufräumphase des Zuges, in dem er ausgespielt wird, zum Einsatz. Du ziehst in diesem Fall nur 3 statt 5 Karten nach und führst den Extrazug sofort aus. Wenn du den AUSSENPOSTEN zusammen mit weiteren Dauerkarten ausgespielt hast, kommen die „Zu Beginn deines nächsten Zuges“-Anweisungen der Dauerkarten in deinem Extrazug zum Einsatz. Spielst du in deinem Extrazug einen weiteren AUSSENPOSTEN, erhältst du keinen weiteren Extrazug. Am Ende deines Extrazuges legst du den AUSSENPOSTEN ab und ziehst 5 Karten nach.",
         "name": "Außenposten"
     },
-    "Pearl Diver": {
-        "description": "+1 Karte<br>+1 Aktion<br>Sieh dir die unterste Karte von deinem Nachziehstapel an. Du darfst diese Karte verdeckt auf deinen Nachziehstapel legen.",
-        "extra": "Zieh die unterste Karte des Nachziehstapels so hervor, dass du die benachbarte Karte nicht sehen kannst. Schaue sie dir an und lege sie dann verdeckt oben auf den Nachziehstapel oder zurück unter den Nachziehstapel.",
-        "name": "Perlentaucher"
-    },
-    "Pirate Ship": {
-        "description": "Wähle eins: Jeder Mitspieler muss die obersten beiden Karten von seinem Nachziehstapel aufdecken. Haben die Mitspieler eine oder mehrere Geldkarten aufgedeckt, muss jeder eine davon (nach deiner Wahl) entsorgen. Wenn auf diese Weise mindestens 1 Geldkarte entsorgt wird, erhältst du 1 Geldmarker auf dein Tableau Piratenschiff. Die übrigen aufgedeckten Karten legen die Spieler bei sich ab. Oder: +1 Coin für jeden deiner Geldmarker auf deinem Tableau Piratenschiff.",
-        "extra": "Wenn du dein erstes PIRATENSCHIFF nimmst oder kaufst, erhältst du ein Piratenschiff-Tableau und legst es vor dir ab. Immer wenn du ein PIRATENSCHIFF ausspielst, wählst du eine der beiden Anweisungen: Entweder die erste Anweisung: Alle Mitspieler decken die beiden obersten Karten ihres Nachziehstapels auf. Dann entsorgen sie jeweils eine Geldkarte nach deiner Wahl. Hat ein Mitspieler keine Geldkarte aufgedeckt, entsorgt er keine Karte. Die restlichen aufgedeckten Karten werden abgelegt. Wird mindestens eine Karte entsorgt, erhältst du einen Geldmarker und legst ihn auf dein Tableau; oder die zweite Anweisung: Du erhältst pro Geldmarker auf deinem Piratenschiff-Tableau in der Kaufphase +1 Coins. Nach der Nutzung in der Kaufphase verbleiben die Geldmarker auf dem Tableau und können beim erneuten Ausspielen eines PIRATENSCHIFFES wieder eingesetzt werden. Mitspieler können auf das Ausspielen eines PIRATENSCHIFFES mit Reaktionskarten reagieren, auch wenn du die zweite Anweisung wählst, die deine Mitspieler nicht direkt betrifft.",
-        "name": "Piratenschiff"
-    },
     "Salvager": {
         "description": "+1 Kauf<br>Entsorge eine Karte aus deiner Hand. + X entsprechend den Kosten der entsorgten Karte.",
         "extra": "Du musst eine Karte entsorgen, sofern du eine auf der Hand hast. Entsprechend der Kosten der entsorgten Karte erhältst du für die Kaufphase + X Coins. Wenn du keine Karte entsorgen kannst, erhältst du kein zusätzliches Geld.",
         "name": "Müllverwerter"
-    },
-    "Sea Hag": {
-        "description": "Jeder Mitspieler muss die oberste Karte seines Nachziehstapels ablegen und sich dann einen Fluch nehmen, den er verdeckt auf seinen Nachziehstapel legt.",
-        "extra": "Sollte der Nachziehstapel eines Mitspielers leer sein, mischt er seinen Ablagestapel und legt die oberste Karte des neuen Nachziehstapels ab. Hat ein Spieler keine Karten mehr in seinem Nachziehstapel, kann er zwar keine Karte ablegen, nimmt sich aber trotzdem eine Fluchkarte. Beginnend mit dem Mitspieler links von dem Spieler, der die SEEHEXE ausgespielt hat, nimmt sich jeder Mitspieler einen FLUCH vom Vorrat. Sollten nicht mehr genügend Fluchkarten für alle Spieler vorhanden sein, werden die restlichen in o. g. Reihenfolge verteilt.",
-        "name": "Seehexe"
     },
     "Smugglers": {
         "description": "Nimm dir eine Karte, die der Spieler rechts von dir in seinem letzten Zug genommen oder gekauft hat und die bis zu 6 kostet.",
@@ -3238,6 +3238,51 @@
         "description": "+2 Karten<br>+1 Kauf<br>Bei Beginn deines nächsten Zuges: +2 Karten, +1 Kauf.",
         "extra": "Die WERFT ist eine Dauerkarte. Du musst sofort 2 Karten nachziehen und darfst einen weiteren Kauf tätigen. Zu Beginn deines nächsten Zuges (nicht vorher) musst du wieder 2 Karten ziehen und darfst einen weiteren Kauf tätigen.",
         "name": "Werft"
+    },
+    "Astrolabe": {
+        "description": "Now and at the start of your next turn:<br><br>1 <*COIN*><br><br>+ 1 Buy",
+        "extra": "This gives you +1 Buy and +1 Coin on the turn you play it, and +1 Buy and +1 Coin on your next turn too.",
+        "name": "Astrolabe"
+    },
+    "Blockade": {
+        "description": "Gain a card costing up to 4 Coin, setting it aside.<br>At the start of your next turn, put it into your hand. While it's set aside, when another player gains a copy of it on their turn, they gain a Curse.",
+        "extra": "The gained card comes from the Supply and is set aside; put it on the <i>Blockade</i> to remember which card goes with <i>Blockade</i>.<br>If the gained card somehow doesn't end up set aside (for example if you trash it with <i>Watchtower</i> from Prosperity), nothing further happens; if the card is set aside, then you put it into your hand on your next turn, and until then, when other players gain the card on their own turns, they also gain a Curse.<br>Like all Duration attacks, you have to reveal your <i>Moat</i> as soon as an opponent plays a <i>Blockade</i>.<br>Unlike <i>Summon</i>, the card you gain is set aside immediately, but it can still get moved (with e.g. <i>Gatekeeper</i>). If it gets moved, you'll discard <i>Blockade</i> during Clean-up.<br>Because you don't gain the card to your discard pile, that means that the abilities on <i>Nomad Camp</i> and <i>Ghost Town</i> do not matter.<br>If you <i>Blockade</i> a Curse, then if another player on their turn gains a Curse, they will gain all the Curses. If they have a <i>Trader</i> in hand, they can get any and all Silvers in the Supply, but they'll still gain all the Curses.<br>This only Curses another player if they gain a copy of a <i>Blockaded</i> card during their turn. If you make them gain a copy when it's not their turn (e.g. you buy a <i>Messenger</i> and give them a copy), they won't gain a Curse.<br>During a <i>Possession</i> turn, no one will get Cursed from <i>Blockade</i>.",
+        "name": "Blockade"
+    },
+    "Corsair": {
+        "description": "+2 Coin<br><br>At the start of your next turn, +1 Card. Until then, each other player trashes the first Silver or Gold they play each turn.",
+        "extra": "The trashed Silver or Gold still made _ Coin for the player to spend that turn.<br>If you're under multiple <i>Corsair</i> attacks, you'll only trash 1 Silver and/or Gold.",
+        "name": "Corsair"
+    },
+    "Monkey": {
+        "description": "Until your next turn, when the player to your right gains a card,<br>+1 Card.<br><br>At the start of your next turn,<br>+1 Card.",
+        "extra": "This includes cards that the player gains on other players' turns, such as a Curse they gain on your turn via <i>Witch</i>.<br>When another player gains a card, they resolve any of their on-gain effects before you draw a card (which could matter vs <i>Skirmisher</i>).<br>If Monkey draws a <i>Reaction</i> that can react to the card they gained (such as <i>Falconer</i>), you can immediately use it.<br>If you play this with <i>Way of the Chameleon</i>, and the player to your right gains a card on the same turn, you'll get +1 Coin. Afterwards, you'll get +1 Card when they gain a card.",
+        "name": "Monkey"
+    },
+    "Pirate": {
+        "description": "At the start of your next turn, gain a Treasure costing up to 6 Coin to your hand.<line>When any player gains a Treasure, you may play this from your hand.",
+        "extra": "You can play this when you gain a Treasure, or when another player gains a Treasure.<br>If you play this during another player's turn, your following turn is when your <i>Pirate</i> gains you a Treasure.<br>The Treasure you gain comes from the Supply and goes directly to your hand.<br>This plays like the Reactions in <i>Menagerie</i>.<br>If you have <i>Capitalism</i>, gaining an Action with +_ Coin in its text will let all players play <i>Pirates</i> from their hand.",
+        "name": "Pirate"
+    },
+    "Sailor": {
+        "description": "+1 Action<br>Once this turn, when you gain a Duration card, you may play it.<br><br>At the start of your next turn, +2 Coin and you may trash a card from your hand.",
+        "extra": "If you gain a Duration card the turn you play <i>Sailor</i>, playing it is optional.<br>This is cumulative; if you play two <i>Sailors</i>, you can play up to two gained Duration cards. However two <i>Sailors</i> cannot play the same gained Duration card twice.<br><i>Sailor</i> applies to cards gained due to being bought, or gained other ways, such as with <i>Workshop</i>.<br>If you gain a Duration card in your Buy phase, <i>Sailor</i> can play it, even though it's your Buy phase. If such a card gives you +Actions, that doesn't let you play more Action cards in your Buy phase; if it draws Treasure cards, you can only play them if you haven't bought any cards yet.<br>The ability to play Duration cards only happens the turn you play <i>Sailor</i>; on your next turn, you just get +2 Coin and may trash a card from your hand.<br>The Duration doesn't need to be an Action, meaning that you can play Night-Durations when you gain them (like <i>Cobbler</i>).<br>If you exchange a <i>Hero</i> for a <i>Champion</i>, you aren't gaining it, so you can't play it.<br>If you gain a <i>Garrison</i> and play it, you'll immediately add a token to <i>Garrison</i>.<br>This can play a gained Duration even if it was gained to somewhere other than your discard pile (such as a <i>Guardian</i>, or a card gained with <i>Blockade</i>), or if another card is trying to move it at the same time (such as <i>Gatekeeper</i>). But if the gained card has already gotten moved (e.g. by another <i>Sailor</i>), then this can't play it.",
+        "name": "Sailor"
+    },
+    "Sea Chart": {
+        "description": "+1 Card<br>+1 Action<br><br>Reveal the top card of your deck. If you have a copy of it in play, put it into your hand.",
+        "extra": "If you have a copy of the revealed card in play - including the just played <i>Sea Chart</i>, or a Duration card that you have in play from a previous turn - then you put the revealed card into your hand; otherwise, you leave the card on top of your deck.",
+        "name": "Sea Chart"
+    },
+    "Sea Witch": {
+        "description": "+2 Cards<br>Each other player gains a Curse.<br><br>At the start of your next turn, +2 Cards, then discard 2 cards.",
+        "extra": "When you play this, you draw 2 cards and each other player gains a Curse; then at the start of your next turn, you draw 2 cards and then discard 2 cards.",
+        "name": "Sea Witch"
+    },
+    "Tide Pools": {
+        "description": "+3 Cards<br>+1 Action<br><br>At the start of your next turn, discard 2 cards.",
+        "extra": "When you play this, you get +3 Cards and +1 Action, but at the start of your next turn, you have to discard 2 cards.<br>If you have only one card left in hand you discard that one, and if you have no cards you don't discard any.<br>When you have multiple Duration cards doing things at the start of your turn, you can put them in an order to your advantage; for example if you have four <i>Tide Pools</i> and a <i>Wharf</i>, you could discard all of your cards to the <i>Tide Pools</i>, then draw the <i>Wharf</i> cards.",
+        "name": "Tide Pools"
     },
     "Border Guard - LanternHorn": {
         "description": "<left><u>Grenzposten</u>:</left><n>+1 Aktion<br><br>Decke die obersten 2 Karten deines Nachziehstapels auf. Nimm eine davon auf deine Hand und lege die andere ab. Sind beide Aktionskarten, erhalte die Laterne oder das Horn.<n><left><u>Horn</u>:</left><n>Einmal pro Zug: wenn du einen Grenzposten aus dem Spiel ablegst, darfst du ihn auf deinen Nachziehstapel legen<n><left><u>Laterne</u>:</left><n>Deine Grenzposten decken jeweils 3 Karten auf und legen 2 ab. (Alle 3 müssen Aktionskarten sein, um das Horn zu erhalten).",

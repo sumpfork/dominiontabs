@@ -796,6 +796,16 @@
     {
         "card_type": [
             "Treasure",
+            "Duration"
+        ],
+        "card_type_image": "treasure-duration.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
             "Attack",
             "Fate"
         ],

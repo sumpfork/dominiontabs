@@ -3114,6 +3114,41 @@
         "extra": "Je kiest 1 kaart uit je hand en laat deze aan de andere spelers zien. Daarna mag je maximaal 2 van deze kaarten terug in de voorraad leggen. Je mag er ook voor kiezen om geen kaarten in de voorraad terug te leggen. Vervolgens moet iedere andere speler, te beginnen met de speler links van je, één zo'n kaart uit de voorraad pakken. Als de stapel uitgeput is, krijgt niemand meer kaarten. Als je na het spelen van de Boodschapper geen kaarten in je hand hebt, leg je niets terug in de voorraad en krijgen de andere spelers geen kaarten. Als tijdens je beurt 3 voorraadstapels of de Provinciestapel uitgeput raakt, is het spel na jouw beurt afgelopen, ook zorgt de Boodschapper ervoor dat één van de stapels weer gevuld is.",
         "name": "Boodschapper"
     },
+    "Embargo": {
+        "description": "+2 Coins\nVernietig deze kaart. Leg één embargofiche op één van de stapels kaarten in de voorraad.<line>Als een speler een kaart koopt van een stapel waarop één of meer embargofiches liggen, moet hij voor elk embargofiche op deze stapel één Vloekkaart pakken.",
+        "extra": "Je kunt elke voorraadstapel kiezen. Als er meer dan één embargofiche op een stapel ligt, moet een speler voor elk embargofiche een Vloekkaart nemen als hij een kaart van deze stapel koopt. Hij hoeft alleen Vloekkaarten te nemen als hij een kaart van zo'n stapel koopt, niet als hij kaart van deze stapel pakt of op een andere manier verkrijgt (door bijvoorbeeld een Smokkelaar). Als je een Troonzaal op een Embargo speelt, mag je 2 embargofiches inzetten (als je wilt ook op verschillende stapels). Embargofiches zijn niet gelimiteerd. Mochten ze opraken, gebruik dan iets anders ter vervanging. Als de Vloekkaarten op zijn, hebben de embargofiches geen effect.",
+        "name": "Embargo"
+    },
+    "Explorer": {
+        "description": "Je mag een Provincie uit je hand tonen.\nAls je dat doet: neem een Goud uit de voorraad in je hand.\nAls je dat niet doet: neem een Zilver uit de voorraad in je hand.",
+        "extra": "Als je een Provincie uit je hand toont, neem je direct een Goudkaart uit de voorraad in je hand. Als je geen Provincie in je hand hebt of deze niet wilt tonen, neem je direct een Zilverkaart uit de voorraad in je hand.",
+        "name": "Ontdekkingsreiziger"
+    },
+    "Ghost Ship": {
+        "description": "+2 Kaarten\nIedere andere speler die ten minste 4 kaarten in zijn hand heeft, moet net zolang kaarten uit zijn hand op zijn trekstapel leggen totdat hij 3 kaarten in zijn hand heeft.",
+        "extra": "De andere spelers beslissen zelf welke kaarten ze uit hun hand op de trekstapel terugleggen en in welke volgorde. Spelers met 3 of minder handkaarten worden niet getroffen.",
+        "name": "De Vliegende Hollander"
+    },
+    "Navigator": {
+        "description": "+2 Coins\nBekijk de bovenste 5 kaarten van je trekstapel. Leg ze allemaal af of leg ze allemaal terug op je trekstapel in een volgorde naar keuze.",
+        "extra": "Je moet of alle 5 of helemaal geen kaarten afleggen. Als je de kaarten niet aflegt, mag je deze in een volgorde naar jouw keuze gedekt op je trekstapel terugleggen. Als je niet voldoende kaarten kunt trekken (ook na het eventueel schudden van je aflegstapel), trek je er zoveel mogelijk. Daarna beslis je of je ze allemaal aflegt of allemaal op je trekstapel teruglegt.",
+        "name": "Navigator"
+    },
+    "Pearl Diver": {
+        "description": "+1 Kaart\n+1 Actie\nBekijk de onderste kaart van je trekstapel. Je mag deze kaart gedekt op je trekstapel leggen.",
+        "extra": "Je trekt eerst je extra kaart voordat je de onderste kaart van de trekstapel bekijkt. Bekijk de onderste kaart zodanig dat je niet per ongeluk ook de volgende kaart ziet.",
+        "name": "Parelduiker"
+    },
+    "Pirate Ship": {
+        "description": "Kies één van de volgende 2 mogelijkheden: Iedere andere speler toont de 2 bovenste kaarten van zijn trekstapel. Tonen de andere spelers één of meer geldkaarten, dan moet ieder van hen één geldkaart (naar jouw keuze) vernietigen. Als je op deze manier ten minste één geldkaart hebt vernietigd, leg je 1 geldfiche op je piratenschiptableau. De spelers leggen alle overige getoonde kaarten af; of: + 1 Coin voor elk geldfiche op je piratenschiptableau.",
+        "extra": "Zodra je je eerste Piratenschip koopt of pakt, neem dan direct een piratenschiptableau en leg deze voor je neer. Als je een Piratenschip speelt, kies je voor één van de volgende 2 opties: of je kiest voor het vernietigen van geldkaarten van de andere spelers of je kiest voor extra munten voor je aanschaffase. Kies je voor de eerste mogelijkheid, dan mag je per andere speler ten hoogste één geldkaart vernietigen. Toont een andere speler 2 geldkaarten, dan kies jij welke van de 2 wordt vernietigd. Heb je in je beurt ten minste één geldkaart vernietigd, dan krijg je 1 geldfiche, dat je op je piratenschiptableau legt. Je kunt per gespeeld Piratenschip niet meer dan 1 geldfiche verdienen, ook al vernietig je meer geldkaarten. Als je de tweede mogelijkheid kiest, krijg je +1 Coin voor elk geldfiche op je piratenschiptableau. Geldfiches blijven tot het einde van het spel op je piratenschiptableau liggen. Bijvoorbeeld: je hebt je Piratenschip 3 keer succesvol gespeeld om geldkaarten te vernietigen. Daardoor liggen er 3 geldfiches op je piratenschiptableau. De volgende keer dat je een Piratenschip speelt, kun je ervoor kiezen om + 3 Coins voor je aanschaffase te krijgen. Het spelen van een Piratenschip geldt als een aanval. De andere spelers kunnen er met reactiekaarten op reageren, ook als je de extra munten kiest.<line><b>Errata</b>: In eerste instantie had de kaart een verkeerde vertaling, waarbij bij de eerste optie <i>iedere speler</i> twee kaarten moest laten zien, dus inclusief jezelf. Dit is later correct aangepast.",
+        "name": "Piratenschip"
+    },
+    "Sea Hag": {
+        "description": "Iedere andere speler moet de bovenste kaart van zijn trekstapel afleggen en daarna een Vloekkaart pakken, die hij op zijn trekstapel legt.",
+        "extra": "Is de trekstapel van een speler leeg, dan schud hij zijn aflegstapel en legt de bovenste kaart van zijn nieuwe trekstapel af. Daarna moeten alle andere spelers, te beginnen met de speler links van de aanvaller, Vloekkaart pakken en op hun trekstapel leggen. Zijn er niet voldoende Vloekkaarten in voorraad, dan worden de resterende Vloekkaarten in beurtvolgorde verdeeld.",
+        "name": "Zeeheks"
+    },
     "Bazaar": {
         "description": "+1 Kaart\n+2 Acties\n+1 Coin",
         "extra": "Je trekt één extra kaart, krijg 2 extra acties en + 1 Coin voor de aanschaffase.",
@@ -3129,25 +3164,10 @@
         "extra": "Alle andere spelers moeten 1 Koperkaart uit hun hand afleggen. Een speler die geen Koperkaart in zijn hand heeft, moet zijn handkaarten aan de andere spelers laten zien.",
         "name": "Beurzensnijder"
     },
-    "Embargo": {
-        "description": "+2 Coins\nVernietig deze kaart. Leg één embargofiche op één van de stapels kaarten in de voorraad.<line>Als een speler een kaart koopt van een stapel waarop één of meer embargofiches liggen, moet hij voor elk embargofiche op deze stapel één Vloekkaart pakken.",
-        "extra": "Je kunt elke voorraadstapel kiezen. Als er meer dan één embargofiche op een stapel ligt, moet een speler voor elk embargofiche een Vloekkaart nemen als hij een kaart van deze stapel koopt. Hij hoeft alleen Vloekkaarten te nemen als hij een kaart van zo'n stapel koopt, niet als hij kaart van deze stapel pakt of op een andere manier verkrijgt (door bijvoorbeeld een Smokkelaar). Als je een Troonzaal op een Embargo speelt, mag je 2 embargofiches inzetten (als je wilt ook op verschillende stapels). Embargofiches zijn niet gelimiteerd. Mochten ze opraken, gebruik dan iets anders ter vervanging. Als de Vloekkaarten op zijn, hebben de embargofiches geen effect.",
-        "name": "Embargo"
-    },
-    "Explorer": {
-        "description": "Je mag een Provincie uit je hand tonen.\nAls je dat doet: neem een Goud uit de voorraad in je hand.\nAls je dat niet doet: neem een Zilver uit de voorraad in je hand.",
-        "extra": "Als je een Provincie uit je hand toont, neem je direct een Goudkaart uit de voorraad in je hand. Als je geen Provincie in je hand hebt of deze niet wilt tonen, neem je direct een Zilverkaart uit de voorraad in je hand.",
-        "name": "Ontdekkingsreiziger"
-    },
     "Fishing Village": {
         "description": "+2 Acties\n+1 Coin<line>Aan het begin van je volgende beurt:\n+1 Actie\n+1 Coin.",
         "extra": "Je krijgt deze beurt 2 extra acties en 1 Coin extra voor de aanschaffase. Aan het begin van je volgende beurt krijg je nog 1 extra actie en 1 Coin extra voor de aanschaffase. Het Vissersdorp blijft tot en met de opschoonfase van je volgende beurt in het spel.",
         "name": "Vissersdorp"
-    },
-    "Ghost Ship": {
-        "description": "+2 Kaarten\nIedere andere speler die ten minste 4 kaarten in zijn hand heeft, moet net zolang kaarten uit zijn hand op zijn trekstapel leggen totdat hij 3 kaarten in zijn hand heeft.",
-        "extra": "De andere spelers beslissen zelf welke kaarten ze uit hun hand op de trekstapel terugleggen en in welke volgorde. Spelers met 3 of minder handkaarten worden niet getroffen.",
-        "name": "De Vliegende Hollander"
     },
     "Haven": {
         "description": "+1 Kaart\n+1 Actie\nLeg één kaart uit je hand gedekt opzij.<line>Aan het begin van je volgende beurt: Neem de opzijgelegde kaart in je hand.",
@@ -3179,35 +3199,15 @@
         "extra": "Zodra je je eerste Inheemse Dorp koopt of pakt, neem dan meteen een inheems dorptableau en leg deze voor je neer. Als je een Inheems Dorp speelt, moet je uit 2 mogelijkheden kiezen: of je bekijkt de bovenste kaart van je trekstapel en legt deze op je inheems dorptableau, of je neemt alle kaarten die op je inheems dorptableau liggen in je hand. Je mag een optie ook kiezen als je deze niet kunt uitvoeren. Je mag de kaarten op je inheems dorptableau op elk moment bekijken. Het Inheems Dorp zelf leg je in de opschoonfase zoals gebruikelijk op de aflegstapel. Aan het einde van het spel mag je alle kaarten die op je inheems dorptableau liggen weer in je deck doen.<line><b>Errata</b>: Oorspronkelijk had de kaart een verkeerde vertaling, waarbij niet stond dat je de kaart <i>gedekt</i> weg moest leggen. Dit is later aangepast.",
         "name": "Inheems Dorp"
     },
-    "Navigator": {
-        "description": "+2 Coins\nBekijk de bovenste 5 kaarten van je trekstapel. Leg ze allemaal af of leg ze allemaal terug op je trekstapel in een volgorde naar keuze.",
-        "extra": "Je moet of alle 5 of helemaal geen kaarten afleggen. Als je de kaarten niet aflegt, mag je deze in een volgorde naar jouw keuze gedekt op je trekstapel terugleggen. Als je niet voldoende kaarten kunt trekken (ook na het eventueel schudden van je aflegstapel), trek je er zoveel mogelijk. Daarna beslis je of je ze allemaal aflegt of allemaal op je trekstapel teruglegt.",
-        "name": "Navigator"
-    },
     "Outpost": {
         "description": "Trek in de volgende opschoonfase 3 in plaats van 5 kaarten. Voer daarna direct een extra beurt uit. Je kunt zo nooit meer dan één extra beurt krijgen.",
         "extra": "De extra beurt verloopt gelijk aan een normale beurt, met als enige verschil dat je deze met 3 kaarten uitvoert in plaats van met 5. Laat de Voorpost tot en met het einde van je extra beurt voor je liggen. Als je de Voorpost tegelijk met een kaart speelt die aan het begin van je volgende beurt iets oplevert (zoals bijvoorbeeld het Handelsschip), geldt je extra beurt direct voor deze kaart. Als je in je beurt meer dan één Voorpost speelt, krijg je niet meer dan één extra beurt. Ook als je tijdens je extra beurt een Voorpost speelt, krijg je geen extra beurt. Aan het einde van je extra beurt trek je zoals gebruikelijk 5 kaarten.<line><b>Errata</b>: In de oorspronkelijke Nederlandstalige versie, was de laatste zin <i>Je kunt zo per beurt nooit meer dan één extra beurt krijgen</i>, waardoor de indruk zou kunnen ontstaan dat je Voorpost vaker zou kunnen spelen in opeenvolgende \"beurten\". Dit is in latere versies gecorrigeerd. Een andere fout is echter niet gecorrigeerd; de oorspronkelijke Engelse versie stelt dat de extra beurt begint <b>na</b> de huidige beurt, waar de Nederlandse versie stelt dat deze <b>direct</b> begint.",
         "name": "Voorpost"
     },
-    "Pearl Diver": {
-        "description": "+1 Kaart\n+1 Actie\nBekijk de onderste kaart van je trekstapel. Je mag deze kaart gedekt op je trekstapel leggen.",
-        "extra": "Je trekt eerst je extra kaart voordat je de onderste kaart van de trekstapel bekijkt. Bekijk de onderste kaart zodanig dat je niet per ongeluk ook de volgende kaart ziet.",
-        "name": "Parelduiker"
-    },
-    "Pirate Ship": {
-        "description": "Kies één van de volgende 2 mogelijkheden: Iedere andere speler toont de 2 bovenste kaarten van zijn trekstapel. Tonen de andere spelers één of meer geldkaarten, dan moet ieder van hen één geldkaart (naar jouw keuze) vernietigen. Als je op deze manier ten minste één geldkaart hebt vernietigd, leg je 1 geldfiche op je piratenschiptableau. De spelers leggen alle overige getoonde kaarten af; of: + 1 Coin voor elk geldfiche op je piratenschiptableau.",
-        "extra": "Zodra je je eerste Piratenschip koopt of pakt, neem dan direct een piratenschiptableau en leg deze voor je neer. Als je een Piratenschip speelt, kies je voor één van de volgende 2 opties: of je kiest voor het vernietigen van geldkaarten van de andere spelers of je kiest voor extra munten voor je aanschaffase. Kies je voor de eerste mogelijkheid, dan mag je per andere speler ten hoogste één geldkaart vernietigen. Toont een andere speler 2 geldkaarten, dan kies jij welke van de 2 wordt vernietigd. Heb je in je beurt ten minste één geldkaart vernietigd, dan krijg je 1 geldfiche, dat je op je piratenschiptableau legt. Je kunt per gespeeld Piratenschip niet meer dan 1 geldfiche verdienen, ook al vernietig je meer geldkaarten. Als je de tweede mogelijkheid kiest, krijg je +1 Coin voor elk geldfiche op je piratenschiptableau. Geldfiches blijven tot het einde van het spel op je piratenschiptableau liggen. Bijvoorbeeld: je hebt je Piratenschip 3 keer succesvol gespeeld om geldkaarten te vernietigen. Daardoor liggen er 3 geldfiches op je piratenschiptableau. De volgende keer dat je een Piratenschip speelt, kun je ervoor kiezen om + 3 Coins voor je aanschaffase te krijgen. Het spelen van een Piratenschip geldt als een aanval. De andere spelers kunnen er met reactiekaarten op reageren, ook als je de extra munten kiest.<line><b>Errata</b>: In eerste instantie had de kaart een verkeerde vertaling, waarbij bij de eerste optie <i>iedere speler</i> twee kaarten moest laten zien, dus inclusief jezelf. Dit is later correct aangepast.",
-        "name": "Piratenschip"
-    },
     "Salvager": {
         "description": "+1 Aanschaf\nVernietig één kaart uit je hand +_ Coins gelijk aan de waarde van de vernietigde kaart.",
         "extra": "Je moet een kaart uit je hand vernietigen zolang je dat nog kunt. Heb je geen kaarten in je hand, dan krijg je geen extra munten, maar wel de extra aanschaf.",
         "name": "Afvalverwerker"
-    },
-    "Sea Hag": {
-        "description": "Iedere andere speler moet de bovenste kaart van zijn trekstapel afleggen en daarna een Vloekkaart pakken, die hij op zijn trekstapel legt.",
-        "extra": "Is de trekstapel van een speler leeg, dan schud hij zijn aflegstapel en legt de bovenste kaart van zijn nieuwe trekstapel af. Daarna moeten alle andere spelers, te beginnen met de speler links van de aanvaller, Vloekkaart pakken en op hun trekstapel leggen. Zijn er niet voldoende Vloekkaarten in voorraad, dan worden de resterende Vloekkaarten in beurtvolgorde verdeeld.",
-        "name": "Zeeheks"
     },
     "Smugglers": {
         "description": "Pak één kaart die de speler rechts van je in zijn laatste beurt gepakt of gekocht heeft en die niet meer waard is dan 6 Coins.",
@@ -3238,6 +3238,51 @@
         "description": "+2 Kaarten\n+1 Aanschaf<line>Aan het begin van je volgende beurt:\n+2 Kaarten\n+1 Aanschaf",
         "extra": "Je trekt eerst 2 extra kaarten en krijgt 1 extra aanschaf in deze beurt. Aan het begin van je volgende beurt trek je nog 2 extra kaarten en krijg je 1 extra aanschaf in die beurt. Je trekt deze 2 kaarten pas als je volgende beurt begonnen is. De Scheepswerf blijft tot en met de opschoonfase van je volgende beurt in het spel.",
         "name": "Scheepswerf"
+    },
+    "Astrolabe": {
+        "description": "Now and at the start of your next turn:<br><br>1 <*COIN*><br><br>+ 1 Buy",
+        "extra": "This gives you +1 Buy and +1 Coin on the turn you play it, and +1 Buy and +1 Coin on your next turn too.",
+        "name": "Astrolabe"
+    },
+    "Blockade": {
+        "description": "Gain a card costing up to 4 Coin, setting it aside.<br>At the start of your next turn, put it into your hand. While it's set aside, when another player gains a copy of it on their turn, they gain a Curse.",
+        "extra": "The gained card comes from the Supply and is set aside; put it on the <i>Blockade</i> to remember which card goes with <i>Blockade</i>.<br>If the gained card somehow doesn't end up set aside (for example if you trash it with <i>Watchtower</i> from Prosperity), nothing further happens; if the card is set aside, then you put it into your hand on your next turn, and until then, when other players gain the card on their own turns, they also gain a Curse.<br>Like all Duration attacks, you have to reveal your <i>Moat</i> as soon as an opponent plays a <i>Blockade</i>.<br>Unlike <i>Summon</i>, the card you gain is set aside immediately, but it can still get moved (with e.g. <i>Gatekeeper</i>). If it gets moved, you'll discard <i>Blockade</i> during Clean-up.<br>Because you don't gain the card to your discard pile, that means that the abilities on <i>Nomad Camp</i> and <i>Ghost Town</i> do not matter.<br>If you <i>Blockade</i> a Curse, then if another player on their turn gains a Curse, they will gain all the Curses. If they have a <i>Trader</i> in hand, they can get any and all Silvers in the Supply, but they'll still gain all the Curses.<br>This only Curses another player if they gain a copy of a <i>Blockaded</i> card during their turn. If you make them gain a copy when it's not their turn (e.g. you buy a <i>Messenger</i> and give them a copy), they won't gain a Curse.<br>During a <i>Possession</i> turn, no one will get Cursed from <i>Blockade</i>.",
+        "name": "Blockade"
+    },
+    "Corsair": {
+        "description": "+2 Coin<br><br>At the start of your next turn, +1 Card. Until then, each other player trashes the first Silver or Gold they play each turn.",
+        "extra": "The trashed Silver or Gold still made _ Coin for the player to spend that turn.<br>If you're under multiple <i>Corsair</i> attacks, you'll only trash 1 Silver and/or Gold.",
+        "name": "Corsair"
+    },
+    "Monkey": {
+        "description": "Until your next turn, when the player to your right gains a card,<br>+1 Card.<br><br>At the start of your next turn,<br>+1 Card.",
+        "extra": "This includes cards that the player gains on other players' turns, such as a Curse they gain on your turn via <i>Witch</i>.<br>When another player gains a card, they resolve any of their on-gain effects before you draw a card (which could matter vs <i>Skirmisher</i>).<br>If Monkey draws a <i>Reaction</i> that can react to the card they gained (such as <i>Falconer</i>), you can immediately use it.<br>If you play this with <i>Way of the Chameleon</i>, and the player to your right gains a card on the same turn, you'll get +1 Coin. Afterwards, you'll get +1 Card when they gain a card.",
+        "name": "Monkey"
+    },
+    "Pirate": {
+        "description": "At the start of your next turn, gain a Treasure costing up to 6 Coin to your hand.<line>When any player gains a Treasure, you may play this from your hand.",
+        "extra": "You can play this when you gain a Treasure, or when another player gains a Treasure.<br>If you play this during another player's turn, your following turn is when your <i>Pirate</i> gains you a Treasure.<br>The Treasure you gain comes from the Supply and goes directly to your hand.<br>This plays like the Reactions in <i>Menagerie</i>.<br>If you have <i>Capitalism</i>, gaining an Action with +_ Coin in its text will let all players play <i>Pirates</i> from their hand.",
+        "name": "Pirate"
+    },
+    "Sailor": {
+        "description": "+1 Action<br>Once this turn, when you gain a Duration card, you may play it.<br><br>At the start of your next turn, +2 Coin and you may trash a card from your hand.",
+        "extra": "If you gain a Duration card the turn you play <i>Sailor</i>, playing it is optional.<br>This is cumulative; if you play two <i>Sailors</i>, you can play up to two gained Duration cards. However two <i>Sailors</i> cannot play the same gained Duration card twice.<br><i>Sailor</i> applies to cards gained due to being bought, or gained other ways, such as with <i>Workshop</i>.<br>If you gain a Duration card in your Buy phase, <i>Sailor</i> can play it, even though it's your Buy phase. If such a card gives you +Actions, that doesn't let you play more Action cards in your Buy phase; if it draws Treasure cards, you can only play them if you haven't bought any cards yet.<br>The ability to play Duration cards only happens the turn you play <i>Sailor</i>; on your next turn, you just get +2 Coin and may trash a card from your hand.<br>The Duration doesn't need to be an Action, meaning that you can play Night-Durations when you gain them (like <i>Cobbler</i>).<br>If you exchange a <i>Hero</i> for a <i>Champion</i>, you aren't gaining it, so you can't play it.<br>If you gain a <i>Garrison</i> and play it, you'll immediately add a token to <i>Garrison</i>.<br>This can play a gained Duration even if it was gained to somewhere other than your discard pile (such as a <i>Guardian</i>, or a card gained with <i>Blockade</i>), or if another card is trying to move it at the same time (such as <i>Gatekeeper</i>). But if the gained card has already gotten moved (e.g. by another <i>Sailor</i>), then this can't play it.",
+        "name": "Sailor"
+    },
+    "Sea Chart": {
+        "description": "+1 Card<br>+1 Action<br><br>Reveal the top card of your deck. If you have a copy of it in play, put it into your hand.",
+        "extra": "If you have a copy of the revealed card in play - including the just played <i>Sea Chart</i>, or a Duration card that you have in play from a previous turn - then you put the revealed card into your hand; otherwise, you leave the card on top of your deck.",
+        "name": "Sea Chart"
+    },
+    "Sea Witch": {
+        "description": "+2 Cards<br>Each other player gains a Curse.<br><br>At the start of your next turn, +2 Cards, then discard 2 cards.",
+        "extra": "When you play this, you draw 2 cards and each other player gains a Curse; then at the start of your next turn, you draw 2 cards and then discard 2 cards.",
+        "name": "Sea Witch"
+    },
+    "Tide Pools": {
+        "description": "+3 Cards<br>+1 Action<br><br>At the start of your next turn, discard 2 cards.",
+        "extra": "When you play this, you get +3 Cards and +1 Action, but at the start of your next turn, you have to discard 2 cards.<br>If you have only one card left in hand you discard that one, and if you have no cards you don't discard any.<br>When you have multiple Duration cards doing things at the start of your turn, you can put them in an order to your advantage; for example if you have four <i>Tide Pools</i> and a <i>Wharf</i>, you could discard all of your cards to the <i>Tide Pools</i>, then draw the <i>Wharf</i> cards.",
+        "name": "Tide Pools"
     },
     "Border Guard - LanternHorn": {
         "description": "<left><u>Grenswacht</u>:</left>\n+1 Actie\nToon de bovenste 2 kaarten van je trekstapel. Doe er één in je hand en leg de andere af. Als beide actiekaarten waren, neem dan de Lantaarn of de Hoorn.\n<left><u>Lantaarn</u>:</left>\nJe Grenswachten tonen 3 kaarten en leggen er 2 af. (Om de Hoorn te nemen, moeten ze alle 3 Acties tonen.)\n<left><u>Hoorn</u>:</left>\nEenmaal per beurt, als je een Grenswacht die in het spel is aflegt, mag je die op je trekstapel leggen.",
