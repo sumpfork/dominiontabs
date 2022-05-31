@@ -1497,7 +1497,7 @@ def filter_sort_cards(cards, options):
 
     # Combine upgrade cards with their expansion
     if options.upgrade_with_expansion:
-        if not options.exclude_expansions:
+        if options.exclude_expansions is None:
             options.exclude_expansions = []
         for card in cards:
             if Card.sets[card.cardset_tag]["upgrades"]:
