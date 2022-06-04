@@ -22,7 +22,7 @@ def rmtestcardb(request):
 
 
 def test_cardread():
-    num_cards_expected = 768
+    num_cards_expected = 770
 
     options = main.parse_opts([])
     options.data_path = "."
