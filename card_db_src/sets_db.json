@@ -210,13 +210,43 @@
         "set_text": "",
         "text_icon": "*"
     },
-    "prosperity": {
+    "prosperity1stEdition": {
         "edition": [
-            "1",
+            "1"
+        ],
+        "image": "prosperity1stEdition_set.png",
+        "set_name": "*prosperity1stEdition*",
+        "set_text": "",
+        "text_icon": "*"
+    },
+    "prosperity1stEditionRemoved": {
+        "edition": [
+            "1"
+        ],
+        "image": "prosperity1stEdition_set.png",
+        "has_extras": false,
+        "set_name": "*prosperity1stEditionRemoved*",
+        "set_text": "",
+        "text_icon": "*"
+    },
+    "prosperity2ndEdition": {
+        "edition": [
+            "2",
             "latest"
         ],
-        "image": "prosperity_set.png",
-        "set_name": "*prosperity*",
+        "image": "prosperity2ndEdition_set.png",
+        "set_name": "*prosperity2ndEdition*",
+        "set_text": "",
+        "text_icon": "*"
+    },
+    "prosperity2ndEditionUpgrade": {
+        "edition": [
+            "1"
+        ],
+        "image": "prosperity2ndEdition_set.png",
+        "has_extras": false,
+        "upgrades": "prosperity1stEdition",
+        "set_name": "*prosperity2ndEditionUpgrade*",
         "set_text": "",
         "text_icon": "*"
     },

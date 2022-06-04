@@ -2734,21 +2734,6 @@
         "extra": "Wenn Du diese Karte spielst, ziehst Du eine Karte und kannst dann in diesem Zug zwei weitere Aktionen ausführen. Zu Beginn der Aufräumphase, bevor Du eine Karte ablegst und bevor Du für die nächste Runde ziehst kannst Du Carcassonne oben auf Deinen Nachziehstapel legen, wenn Du Carcassonne im Spiel und nicht mehr als zwei Aktionskarten (inklusive Carcassonne) im Spiel hast. Wenn die einzigen beiden Aktionskarten, die Du im Spiel hast beides Carcassonne-Karten sind darfst Du eine oder beide auf Deinen Nachziehstapel legen. Carcassonne muss im Spiel sein, um während er Aufräumphase oben auf den Nachziehstapel gelegt zu werden. Carcassonne wird zum Zeitpunkt des Ausspielens überprüft auf die Anzahl der im Spiel befindlichen Aktionskarten; Aktionskarten, die früher im Zug ausgespielt wurden aber nicht mehr im Spiel sind (wie z.B. Festmahl) werden nicht mitgezählt, währenddessen Aktionskarten, die aus früheren Spielzügen immer noch im Spiel sind (z.B. Dauerkarten aus Seaside) mitgezählt werden, genauso wie Aktionskarten, die gerade im Spiel sind aber nach dem Ausspielen von Carcassonne aus dem Spiel genommen werden (wie z.B. die Schatzkammer).",
         "name": "Carcassonne"
     },
-    "Bank": {
-        "description": "Wert 1 Coin für jede Geldkarte, die im Spiel ist (diese eingeschlossen).",
-        "extra": "Diese Karte ist eine Geldkarte mit einem variablen Wert: Pro Geldkarte (inklusive dieser / auch kombinierte Geldkarten), die du im Spiel hast, ist sie 1 Coin wert. Spielst du die BANK als erste Geldkarte in deinem Zug aus, ist sie genau 1 Coin wert. Spielst du dagegen zuerst ein GOLD, ein SILBER und zwei KUPFER und dann die BANK, ist die BANK 5 Coins wert. Spielst du im Anschluss noch eine BANK aus, bleibt die erste BANK 5 Coins wert, die zweite 6 Coins.",
-        "name": "Bank"
-    },
-    "Bishop": {
-        "description": "+1 Coin<br>+1 <VP><br>Entsorge eine Karte aus deiner Hand. Wenn du das machst: +<VP> entsprechend der Hälfte der Geld-Kosten der entsorgten Karte (abgerundet). Jeder Mitspieler darf sofort eine Karte seiner Hand entsorgen.",
-        "extra": "Du erhältst + 1 Coin und legst einen <VP>-Marker auf dein Spieler-Tableau. Dann musst du eine Handkarte entsorgen, wenn du mindestens 1 Karte auf der Hand hast. Lege halb so viele <VP>-Marker auf dein Spieler-Tableau, wie die entsorgte Karte gekostet hat. Ungerade Kosten werden abgerundet. Die Potion-Kosten (z.B. aus Alchemie) spielen keine Rolle. So erhältst du je 2 <VP>-Marker für ein entsorgtes ARBEITERDORF (Kosten: 4 Coins), ebenso wie für ein GESINDEL (Kosten: 5 Coins) oder einen GOLEM (Kosten: 4 Coins und Potion). Jeder Mitspieler darf eine Handkarte entsorgen, erhält dafür aber keine Siegpunktmarker.",
-        "name": "Bischof"
-    },
-    "City": {
-        "description": "+1 Karte<br>+2 Aktionen<br>Wenn im Vorrat genau 1 Stapel leer ist: +1 Karte. Oder, wenn 2 oder mehr Stapel leer sind: +1 Karte, +1 Coin, +1 Kauf.",
-        "extra": "Du erhältst + 1 Karte sowie + 2 Aktionen. Wenn noch kein Vorratsstapel leer ist, passiert nichts weiter. Wenn genau 1 Vorratsstapel leer ist, erhältst du nochmal + 1 Karte. Wenn 2 oder mehr Vorratsstapel leer sind, erhältst du stattdessen + 1 Karte, + 1 Coin und + 1 Kauf.",
-        "name": "Stadt"
-    },
     "Contraband": {
         "description": "3 <*COIN*><br><br>+1 Kauf<br>Wenn du diese Karte auslegst, benennt der Spieler links von dir eine Karte. Du darfst diese Karte nicht kaufen.",
         "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 3 Coins. Du erhältst + 1 Kauf. Dein linker Mitspieler nennt den Namen einer beliebigen Karte (z.B. „Provinz“). Diese muss nicht Teil des Vorrats sein. Du darfst diese Karte in diesem Zug nicht kaufen. Wenn du die Karte auf andere Weise nehmen kannst, darfst du das tun. Spielst du mehrere SCHMUGGELWAREN aus, nennt dein linker Mitspieler entsprechend viele Karten.",
@@ -2759,70 +2744,20 @@
         "extra": "Sieh dir deinen kompletten Ablagestapel an und nimm beliebig viele KUPFER auf die Hand. Zeige diese vorher deinen Mitspielern. Die restlichen Karten legst du in beliebiger Reihenfolge wieder auf den Ablagestapel.",
         "name": "Leihhaus"
     },
-    "Expand": {
-        "description": "Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die bis zu 3 Geld mehr kostet, als die entsorgte Karte.",
-        "extra": "Entsorge eine beliebige Handkarte und nimm eine Karte vom Vorrat, die bis zu 3 Coins mehr kostet als die entsorgte Karte. Du darfst den Betrag nicht mit zusätzlichem Coin erhöhen. Hast du keine Karte auf der Hand, die du entsorgen kannst, darfst du dir keine Karte vom Vorrat nehmen. Den ausgespielten AUSBAU selbst darfst du nicht entsorgen, da er sich nicht mehr auf deiner Hand befindet.",
-        "name": "Ausbau"
-    },
-    "Forge": {
-        "description": "Entsorge eine beliebige Anzahl Karten aus deiner Hand. Nimm dir eine Karte mit genau den gleichen Geld-Kosten, wie die entsorgten Karten zusammen gekostet haben.",
-        "extra": "Egal ob du keine Karte entsorgst ( 0 Coins insgesamt) oder z.B. drei Karten, die jeweils 2 Coins kosten ( 6 Coins insgesamt) - du musst eine Karte vom Vorrat nehmen, die genau so viel kostet wie die entsorgten Karten zusammen gekostet haben, außer es ist keine entsprechende Karte im Vorrat vorhanden. Entsorgst du keine Karten und ist beispielsweise der KUPFER-Stapel leer, musst du dir u.U. (wenn keine anderen Karten mit 0 Coins-Kosten vorhanden sind) einen FLUCH vom Vorrat nehmen, der ebenfalls 0 Coins kostet. Potion-Kosten für Karten aus Alchemie haben für die KUNSTSCHMIEDE keine Auswirkung. Es darf auch keine Karte, die Potion-Kosten enthält, genommen werden.",
-        "name": "Kunstschmiede"
-    },
     "Goons": {
         "description": "+1 Kauf<br>+2 Coin<br>Jeder Mitspieler muss solange Karten ablegen, bis er nur noch 3 Karten auf der Hand hat. Wenn diese Karte im Spiel ist und du eine Karte kaufst: +1 Punkt.",
         "extra": "Du erhältst + 1 Kauf sowie + 2 Coins. Alle Mitspieler müssen Handkarten ablegen, bis sie nur noch 3 Karten auf der Hand haben. Hat ein Mitspieler bereits 3 oder weniger Karten auf der Hand, muss er keine Karten ablegen. Solange diese Karte im Spiel ist, legst du immer, wenn du eine Karte kaufst (nicht wenn du sie auf andere Weise nimmst), einen <VP>-Marker auf dein Spieler-Tableau. Hast du zwei HALSABSCHNEIDER im Spiel, legst du zwei <VP>-Marker pro gekaufter Karte auf dein Tableau usw.",
         "name": "Halsabschneider"
-    },
-    "Grand Market": {
-        "description": "+1 Karte<br>+1 Aktion<br>+1 Kauf<br>+2 Coin<br>Du darfst diese Karte nicht kaufen, wenn du Kupfer im Spiel hast.",
-        "extra": "Du erhältst + 1 Karte, + 1 Aktion, + 1 Kauf sowie + 2 Coins.<n>Wenn du diese Karte kaufen möchtest, darfst du zu diesem Zeitpunkt kein KUPFER im Spiel haben. Wenn du zu einem früheren Zeitpunkt in deinem Zug KUPFER im Spiel hattest, dieses aber entsorgt hast, darfst du den GROSSEN MARKT kaufen. Kannst du den GROSSEN MARKT auf andere Art nehmen, darfst du das jederzeit tun, auch wenn du KUPFER im Spiel hast.",
-        "name": "Großer Markt"
-    },
-    "Hoard": {
-        "description": "2 <*COIN*><line>Wenn diese Karte im Spiel ist und du eine Punktekarte kaufst: Nimm dir ein Gold.",
-        "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Solange diese Karte im Spiel ist und du eine Punktekarte (auch kombinierte) kaufst, nimmst du ein GOLD vom Vorrat. Wenn kein GOLD mehr im Vorrat ist, erhältst du nichts. Nimmst du eine Punktekarte auf andere Weise (d.h. nicht durch einen Kauf), nimmst du dir kein GOLD. Hast du zwei HORTE im Spiel, nimmst du dir pro gekaufter Punktekarte zwei GOLD usw. Kaufst du in einem Spielzug zwei oder mehr Punktekarten, nimmst du dir für jede Punktekarte entsprechend viele GOLD vom Vorrat. Du erhältst auch GOLD, wenn du die gekaufte Punktekarte im gleichen Spielzug wieder entsorgst.",
-        "name": "Hort"
-    },
-    "King's Court": {
-        "description": "Du darfst eine Aktionskarte aus deiner Hand wählen. Spiele diese Aktionskarte dreimal aus.",
-        "extra": "Diese Karte ist ähnlich dem THRONSAAL aus dem Basisspiel - mit dem Unterschied, dass du die Aktionskarte, die du aus deiner Hand wählst, dreimal (statt zweimal) ausspielst. Lege die gewählte Aktionskarte aus, führe die Anweisungen darauf komplett aus, nimm sie zurück auf die Hand, spiele sie erneut aus, führe die Anweisungen darauf komplett aus, nimm sie zurück auf die Hand und spiele sie ein drittes Mal aus und führe die Anweisungen darauf komplett aus. Für das dreimalige Ausspielen der Aktionskarte benötigst du keine Aktionen. Du darfst zwischen dem dreimaligen Ausspielen der Aktionskarte keine andere Aktion ausspielen, außer die Aktionskarte selbst gibt dazu die Anweisung.",
-        "name": "Königshof"
     },
     "Loan": {
         "description": "1 <*COIN*><n>Wenn du diese Karte ausspielst, decke solange Karten von deinem Nachziehstapel auf, bis eine Geldkarte offen liegt. Entsorge die Geldkarte oder lege sie ab. Lege die übrigen aufgedeckten Karten ab.",
         "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 1 Coin. Decke solange Karten von deinem Nachziehstapel auf, bis du die erste Geld- oder kombinierte Geldkarte aufdeckst. Entsorge die aufgedeckte Geldkarte oder lege sie ab. Alle anderen aufgedeckten Karten legst du ab.",
         "name": "Lohn"
     },
-    "Mint": {
-        "description": "Du darfst eine Geldkarte aus deiner Hand aufdecken. Nimm dir eine Geldkarte mit gleichem Namen. Wenn du den Münzer kaufst, entsorge alle Geldkarten, die du im Spiel hast.",
-        "extra": "Du darfst eine Geldkarte aus deiner Hand aufdecken. Wenn du das tust, nimm dir eine Karte mit gleichem Namen vom Vorrat. Ist keine entsprechende Karte im Vorrat vorhanden, erhältst du nichts. Nimm die aufgedeckte Geldkarte zurück auf die Hand. Wenn du den MÜNZER kaufst, musst du alle Geldkarten, die du im Spiel hast, sofort entsorgen. Sofern du nach dem Kauf des MÜNZERS noch Coin und einen weiteren Kauf übrig hast, darfst du die Geldwerte der entsorgten Karten in diesem Zug noch verwenden. Wenn du den MÜNZER kaufst und eine Geldkarte im Spiel ist, deren zusätzliche Anweisung in Kraft tritt, sobald du eine Karte kaufst (z.B. KÖNIGLICHES SIEGEL), wird diese Geldkarte entsorgt, bevor deren Effekt eintreten kann. Beachte, dass du alle Geldkarten, die du in deiner Kaufphase verwenden möchtest, vor deinem ersten Kauf ausspielen musst. Du kannst nicht 1 GOLD und 1 SILBER ausspielen, den MÜNZER kaufen, diese Geldkarten entsorgen und dann weiteres Geld auslegen. Sobald eine Karte gekauft wurde, dürfen keinen weiteren Geldkarten mehr ausgespielt werden.",
-        "name": "Münzer"
-    },
-    "Monument": {
-        "description": "+2 Coin<br>+1 <VP>",
-        "extra": "Du erhältst + 2 Coins und legst einen <VP>-Marker aus dem Vorrat auf dein Spieler-Tableau.",
-        "name": "Denkmal"
-    },
     "Mountebank": {
         "description": "+2 Coin<br>Jeder Mitspieler darf eine Fluchkarte aus seiner Hand ablegen. Wenn er das nicht macht, muss er sich einen Fluch und ein Kupfer nehmen.",
         "extra": "Du erhältst + 2 Coins.<n>Jeder Mitspieler (beginnend bei deinem linken Nachbarn) legt entweder einen FLUCH aus seiner Hand ab oder er nimmt einen FLUCH und ein KUPFER vom Vorrat und legt diese ab. Dies dürfen die Spieler auch wählen, wenn der KUPFER- oder FLUCH-Stapel leer sind. Nimmt ein Spieler den FLUCH und das KUPFER und hat einen WACHTURM auf der Hand, darf er diesen nach jeder genommenen Karte aufdecken (oder wahlweise nur nach einer) und z.B. den FLUCH entsorgen und das KUPFER auf den Nachziehstapel legen (oder ebenfalls entsorgen).",
         "name": "Quacksalber"
-    },
-    "Peddler": {
-        "description": "+1 Karte<br>+1 Aktion<br>+1 Coin<br>Diese Karte kostet in der Kaufphase 2 Coin weniger für jede Aktionskarte, die du im Spiel hast, niemals jedoch weniger als 0 .",
-        "extra": "Diese Karte ist eine Karte mit variablen Kosten (vgl. NEUE REGELN; S. 6). Du erhältst + 1 Karte, + 1 Aktion sowie + 1 Coin.<n>Wenn du diese Karte in deiner Kaufphase kaufst, kostet sie für jede Aktionskarte, die du im Spiel hast, 2 Coins weniger, niemals allerdings weniger als 0 Coins. Kaufst du eine Karte außerhalb der Kaufphase (z.B. durch den SCHWARZMARKT), kostet der HAUSIERER 8 Coins, egal ob du weitere Aktionskarten im Spiel hast oder nicht. Aktionskarten, die durch den THRONSAAL (aus Basisspiel) oder den KÖNIGSHOF mehrfach ausgespielt wurden, sind trotzdem jeweils nur einmal im Spiel und reduzieren die Kosten eines HAUSIERERS um 2 Coins.",
-        "name": "Hausierer"
-    },
-    "Quarry": {
-        "description": "1 <*COIN*><line>Wenn diese Karte im Spiel ist, kostet jede Aktionskarte 2 weniger, niemals jedoch weniger als 0 .",
-        "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 1 Coin.<n>Solange diese Karte im Spiel ist, kosten alle Aktionskarten (auch kombinierte) 2 Coins weniger. Dies betrifft alle Aktionskarten, d.h. auch Handkarten, Karten in den Ablage- und Nachziehstapeln etc. Der Effekt ist kumulativ, d.h. mit einem zweiten STEINBRUCH oder anderen Aktionskarten, die die Kosten von Karten reduzieren, können die Kosten weiter gesenkt werden.",
-        "name": "Steinbruch"
-    },
-    "Rabble": {
-        "description": "+3 Karten<br>Jeder Mitspieler deckt die obersten 3 Karten von seinem Nachziehstapel auf. Er muss alle aufgedeckten Aktions- und Geldkarten ablegen. Die übrigen aufgedeckten Karten legt er in beliebiger Reihenfolge zurück auf seinen Nachziehstapel.",
-        "extra": "Ziehe drei Karten nach. Anschließend muss jeder Mitspieler (beginnend bei deinem linken Nachbarn) die obersten drei Karten seines Nachziehstapels aufdecken und alle aufgedeckten Geldkarten sowie Aktionskarten (auch kombinierte), ablegen. Alle anderen aufgedeckten Karten legt er in beliebiger Reihenfolge zurück auf den Nachziehstapel.",
-        "name": "Gesindel"
     },
     "Royal Seal": {
         "description": "2 <*COIN*><line>Wenn diese Karte im Spiel ist und du eine Karte nimmst oder kaufst, darfst du die neue Karte sofort auf deinen Nachziehstapel legen.",
@@ -2839,15 +2774,80 @@
         "extra": "Du erhältst + 1 Kauf und + 1 Coin pro Geldmarker, der sich zum Zeitpunkt des Ausspielens auf dem Handelsrouten-Tableau befindet. Du musst eine Handkarte entsorgen, wenn du mindestens 1 Karte auf der Hand hast. In allen Spielen mit der HANDELSROUTE (auch als Teil des SCHWARZMARKTES) wird zu Beginn des Spiels das Handelsrouten-Tableau neben dem Vorrat bereit gelegt. Außerdem wird auf jeden Punkte-Vorratsstapel (ANWESEN, HERZOGTUM, PROVINZ, ggf. KOLONIE sowie alle kombinierten oder reinen Punktekarten unter den Königreichkarten (z.B. GÄRTEN aus Basisspiel oder INSEL aus Seaside)) ein Geldmarker gelegt. Sobald die erste Karte eines Stapels genommen wird (egal von welchem Spieler und egal auf welche Weise), legt ihr den entsprechenden Geldmarker auf das Handelsrouten-Tableau. Es wird kein neuer Marker auf den Vorratsstapel gelegt. Auch wird unter keinen Umständen ein Marker vom Handelsrouten- Tableau entfernt.",
         "name": "Handelsroute"
     },
-    "Vault": {
-        "description": "+2 Karten<br>Lege eine beliebige Anzahl Karten aus deiner Hand ab: +1 Coin für jede abgelegte Karte. Jeder Mitspieler darf 2 Karten aus seiner Hand ablegen. Wenn er genau 2 Karten ablegt, zieht er eine Karte nach.",
-        "extra": "Ziehe 2 Karten nach. Lege anschließend beliebig viele Handkarten (auch 0) ab. Du darfst auch Karten ablegen, die du gerade erst nachgezogen hast. Für jede abgelegte Karte erhältst du + 1 Coin. Jeder Mitspieler darf 2 Handkarten ablegen und eine Karte nachziehen. Falls ein Mitspieler nur 1 Handkarte hat, darf er diese zwar ablegen, jedoch keine Karte nachziehen.",
-        "name": "Gewölbe"
-    },
     "Venture": {
         "description": "1 <*COIN*><n>Wenn du diese Karte ausspielst, decke solange Karten von deinem Nachziehstapel auf, bis eine Geldkarte offen liegt. Lege diese Geldkarte aus. Lege die übrigen aufgedeckten Karten ab.",
         "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 1 Coin. Sobald du diese Karte ausspielst (normalerweise in der Kaufphase), deckst du solange Karten vom Nachziehstapel auf, bis du die erste Geldkarte (auch kombinierte) aufdeckst. Ist der Nachziehstapel aufgebraucht, ohne eine Geldkarte zu finden, mischst du deinen Ablagestapel. Findest du auch dort keine Geldkarte, legst du alle aufgedeckten Karten ab. Spiele die erste aufgedeckte Geldkarte sofort aus und führe ggf. zusätzliche Anweisungen auf dieser Karte aus. Lege alle anderen aufgedeckten Karten ab.",
         "name": "Abenteuer"
+    },
+    "Bank": {
+        "description": "Wert 1 Coin für jede Geldkarte, die im Spiel ist (diese eingeschlossen).",
+        "extra": "Diese Karte ist eine Geldkarte mit einem variablen Wert: Pro Geldkarte (inklusive dieser / auch kombinierte Geldkarten), die du im Spiel hast, ist sie 1 Coin wert. Spielst du die BANK als erste Geldkarte in deinem Zug aus, ist sie genau 1 Coin wert. Spielst du dagegen zuerst ein GOLD, ein SILBER und zwei KUPFER und dann die BANK, ist die BANK 5 Coins wert. Spielst du im Anschluss noch eine BANK aus, bleibt die erste BANK 5 Coins wert, die zweite 6 Coins.",
+        "name": "Bank"
+    },
+    "Bishop": {
+        "description": "+1 Coin<br>+1 <VP><br>Entsorge eine Karte aus deiner Hand. Wenn du das machst: +<VP> entsprechend der Hälfte der Geld-Kosten der entsorgten Karte (abgerundet). Jeder Mitspieler darf sofort eine Karte seiner Hand entsorgen.",
+        "extra": "Du erhältst + 1 Coin und legst einen <VP>-Marker auf dein Spieler-Tableau. Dann musst du eine Handkarte entsorgen, wenn du mindestens 1 Karte auf der Hand hast. Lege halb so viele <VP>-Marker auf dein Spieler-Tableau, wie die entsorgte Karte gekostet hat. Ungerade Kosten werden abgerundet. Die Potion-Kosten (z.B. aus Alchemie) spielen keine Rolle. So erhältst du je 2 <VP>-Marker für ein entsorgtes ARBEITERDORF (Kosten: 4 Coins), ebenso wie für ein GESINDEL (Kosten: 5 Coins) oder einen GOLEM (Kosten: 4 Coins und Potion). Jeder Mitspieler darf eine Handkarte entsorgen, erhält dafür aber keine Siegpunktmarker.",
+        "name": "Bischof"
+    },
+    "City": {
+        "description": "+1 Karte<br>+2 Aktionen<br>Wenn im Vorrat genau 1 Stapel leer ist: +1 Karte. Oder, wenn 2 oder mehr Stapel leer sind: +1 Karte, +1 Coin, +1 Kauf.",
+        "extra": "Du erhältst + 1 Karte sowie + 2 Aktionen. Wenn noch kein Vorratsstapel leer ist, passiert nichts weiter. Wenn genau 1 Vorratsstapel leer ist, erhältst du nochmal + 1 Karte. Wenn 2 oder mehr Vorratsstapel leer sind, erhältst du stattdessen + 1 Karte, + 1 Coin und + 1 Kauf.",
+        "name": "Stadt"
+    },
+    "Expand": {
+        "description": "Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die bis zu 3 Geld mehr kostet, als die entsorgte Karte.",
+        "extra": "Entsorge eine beliebige Handkarte und nimm eine Karte vom Vorrat, die bis zu 3 Coins mehr kostet als die entsorgte Karte. Du darfst den Betrag nicht mit zusätzlichem Coin erhöhen. Hast du keine Karte auf der Hand, die du entsorgen kannst, darfst du dir keine Karte vom Vorrat nehmen. Den ausgespielten AUSBAU selbst darfst du nicht entsorgen, da er sich nicht mehr auf deiner Hand befindet.",
+        "name": "Ausbau"
+    },
+    "Forge": {
+        "description": "Entsorge eine beliebige Anzahl Karten aus deiner Hand. Nimm dir eine Karte mit genau den gleichen Geld-Kosten, wie die entsorgten Karten zusammen gekostet haben.",
+        "extra": "Egal ob du keine Karte entsorgst ( 0 Coins insgesamt) oder z.B. drei Karten, die jeweils 2 Coins kosten ( 6 Coins insgesamt) - du musst eine Karte vom Vorrat nehmen, die genau so viel kostet wie die entsorgten Karten zusammen gekostet haben, außer es ist keine entsprechende Karte im Vorrat vorhanden. Entsorgst du keine Karten und ist beispielsweise der KUPFER-Stapel leer, musst du dir u.U. (wenn keine anderen Karten mit 0 Coins-Kosten vorhanden sind) einen FLUCH vom Vorrat nehmen, der ebenfalls 0 Coins kostet. Potion-Kosten für Karten aus Alchemie haben für die KUNSTSCHMIEDE keine Auswirkung. Es darf auch keine Karte, die Potion-Kosten enthält, genommen werden.",
+        "name": "Kunstschmiede"
+    },
+    "Grand Market": {
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Kauf<br>+2 Coin<br>Du darfst diese Karte nicht kaufen, wenn du Kupfer im Spiel hast.",
+        "extra": "Du erhältst + 1 Karte, + 1 Aktion, + 1 Kauf sowie + 2 Coins.<n>Wenn du diese Karte kaufen möchtest, darfst du zu diesem Zeitpunkt kein KUPFER im Spiel haben. Wenn du zu einem früheren Zeitpunkt in deinem Zug KUPFER im Spiel hattest, dieses aber entsorgt hast, darfst du den GROSSEN MARKT kaufen. Kannst du den GROSSEN MARKT auf andere Art nehmen, darfst du das jederzeit tun, auch wenn du KUPFER im Spiel hast.",
+        "name": "Großer Markt"
+    },
+    "Hoard": {
+        "description": "2 <*COIN*><line>Wenn diese Karte im Spiel ist und du eine Punktekarte kaufst: Nimm dir ein Gold.",
+        "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 2 Coins. Solange diese Karte im Spiel ist und du eine Punktekarte (auch kombinierte) kaufst, nimmst du ein GOLD vom Vorrat. Wenn kein GOLD mehr im Vorrat ist, erhältst du nichts. Nimmst du eine Punktekarte auf andere Weise (d.h. nicht durch einen Kauf), nimmst du dir kein GOLD. Hast du zwei HORTE im Spiel, nimmst du dir pro gekaufter Punktekarte zwei GOLD usw. Kaufst du in einem Spielzug zwei oder mehr Punktekarten, nimmst du dir für jede Punktekarte entsprechend viele GOLD vom Vorrat. Du erhältst auch GOLD, wenn du die gekaufte Punktekarte im gleichen Spielzug wieder entsorgst.",
+        "name": "Hort"
+    },
+    "King's Court": {
+        "description": "Du darfst eine Aktionskarte aus deiner Hand wählen. Spiele diese Aktionskarte dreimal aus.",
+        "extra": "Diese Karte ist ähnlich dem THRONSAAL aus dem Basisspiel - mit dem Unterschied, dass du die Aktionskarte, die du aus deiner Hand wählst, dreimal (statt zweimal) ausspielst. Lege die gewählte Aktionskarte aus, führe die Anweisungen darauf komplett aus, nimm sie zurück auf die Hand, spiele sie erneut aus, führe die Anweisungen darauf komplett aus, nimm sie zurück auf die Hand und spiele sie ein drittes Mal aus und führe die Anweisungen darauf komplett aus. Für das dreimalige Ausspielen der Aktionskarte benötigst du keine Aktionen. Du darfst zwischen dem dreimaligen Ausspielen der Aktionskarte keine andere Aktion ausspielen, außer die Aktionskarte selbst gibt dazu die Anweisung.",
+        "name": "Königshof"
+    },
+    "Mint": {
+        "description": "Du darfst eine Geldkarte aus deiner Hand aufdecken. Nimm dir eine Geldkarte mit gleichem Namen. Wenn du den Münzer kaufst, entsorge alle Geldkarten, die du im Spiel hast.",
+        "extra": "Du darfst eine Geldkarte aus deiner Hand aufdecken. Wenn du das tust, nimm dir eine Karte mit gleichem Namen vom Vorrat. Ist keine entsprechende Karte im Vorrat vorhanden, erhältst du nichts. Nimm die aufgedeckte Geldkarte zurück auf die Hand. Wenn du den MÜNZER kaufst, musst du alle Geldkarten, die du im Spiel hast, sofort entsorgen. Sofern du nach dem Kauf des MÜNZERS noch Coin und einen weiteren Kauf übrig hast, darfst du die Geldwerte der entsorgten Karten in diesem Zug noch verwenden. Wenn du den MÜNZER kaufst und eine Geldkarte im Spiel ist, deren zusätzliche Anweisung in Kraft tritt, sobald du eine Karte kaufst (z.B. KÖNIGLICHES SIEGEL), wird diese Geldkarte entsorgt, bevor deren Effekt eintreten kann. Beachte, dass du alle Geldkarten, die du in deiner Kaufphase verwenden möchtest, vor deinem ersten Kauf ausspielen musst. Du kannst nicht 1 GOLD und 1 SILBER ausspielen, den MÜNZER kaufen, diese Geldkarten entsorgen und dann weiteres Geld auslegen. Sobald eine Karte gekauft wurde, dürfen keinen weiteren Geldkarten mehr ausgespielt werden.",
+        "name": "Münzer"
+    },
+    "Monument": {
+        "description": "+2 Coin<br>+1 <VP>",
+        "extra": "Du erhältst + 2 Coins und legst einen <VP>-Marker aus dem Vorrat auf dein Spieler-Tableau.",
+        "name": "Denkmal"
+    },
+    "Peddler": {
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Coin<br>Diese Karte kostet in der Kaufphase 2 Coin weniger für jede Aktionskarte, die du im Spiel hast, niemals jedoch weniger als 0 .",
+        "extra": "Diese Karte ist eine Karte mit variablen Kosten (vgl. NEUE REGELN; S. 6). Du erhältst + 1 Karte, + 1 Aktion sowie + 1 Coin.<n>Wenn du diese Karte in deiner Kaufphase kaufst, kostet sie für jede Aktionskarte, die du im Spiel hast, 2 Coins weniger, niemals allerdings weniger als 0 Coins. Kaufst du eine Karte außerhalb der Kaufphase (z.B. durch den SCHWARZMARKT), kostet der HAUSIERER 8 Coins, egal ob du weitere Aktionskarten im Spiel hast oder nicht. Aktionskarten, die durch den THRONSAAL (aus Basisspiel) oder den KÖNIGSHOF mehrfach ausgespielt wurden, sind trotzdem jeweils nur einmal im Spiel und reduzieren die Kosten eines HAUSIERERS um 2 Coins.",
+        "name": "Hausierer"
+    },
+    "Quarry": {
+        "description": "1 <*COIN*><line>Wenn diese Karte im Spiel ist, kostet jede Aktionskarte 2 weniger, niemals jedoch weniger als 0 .",
+        "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 1 Coin.<n>Solange diese Karte im Spiel ist, kosten alle Aktionskarten (auch kombinierte) 2 Coins weniger. Dies betrifft alle Aktionskarten, d.h. auch Handkarten, Karten in den Ablage- und Nachziehstapeln etc. Der Effekt ist kumulativ, d.h. mit einem zweiten STEINBRUCH oder anderen Aktionskarten, die die Kosten von Karten reduzieren, können die Kosten weiter gesenkt werden.",
+        "name": "Steinbruch"
+    },
+    "Rabble": {
+        "description": "+3 Karten<br>Jeder Mitspieler deckt die obersten 3 Karten von seinem Nachziehstapel auf. Er muss alle aufgedeckten Aktions- und Geldkarten ablegen. Die übrigen aufgedeckten Karten legt er in beliebiger Reihenfolge zurück auf seinen Nachziehstapel.",
+        "extra": "Ziehe drei Karten nach. Anschließend muss jeder Mitspieler (beginnend bei deinem linken Nachbarn) die obersten drei Karten seines Nachziehstapels aufdecken und alle aufgedeckten Geldkarten sowie Aktionskarten (auch kombinierte), ablegen. Alle anderen aufgedeckten Karten legt er in beliebiger Reihenfolge zurück auf den Nachziehstapel.",
+        "name": "Gesindel"
+    },
+    "Vault": {
+        "description": "+2 Karten<br>Lege eine beliebige Anzahl Karten aus deiner Hand ab: +1 Coin für jede abgelegte Karte. Jeder Mitspieler darf 2 Karten aus seiner Hand ablegen. Wenn er genau 2 Karten ablegt, zieht er eine Karte nach.",
+        "extra": "Ziehe 2 Karten nach. Lege anschließend beliebig viele Handkarten (auch 0) ab. Du darfst auch Karten ablegen, die du gerade erst nachgezogen hast. Für jede abgelegte Karte erhältst du + 1 Coin. Jeder Mitspieler darf 2 Handkarten ablegen und eine Karte nachziehen. Falls ein Mitspieler nur 1 Handkarte hat, darf er diese zwar ablegen, jedoch keine Karte nachziehen.",
+        "name": "Gewölbe"
     },
     "Watchtower": {
         "description": "Ziehe solange Karten nach, bis du 6 Karten auf der Hand hast. <line> Wenn du eine Karte nimmst oder kaufst, darfst du den Wachturm aus deiner Hand aufdecken. Wenn du das machst: Entsorge die neue Karte oder lege sie sofort auf deinen Nachziehstapel.",
@@ -2858,6 +2858,51 @@
         "description": "+1 Karte<br>+2 Aktionen<br>+1 Kauf",
         "extra": "Du musst eine Karte ziehen, darfst 2 weitere Aktionen ausführen und in der Kaufphase einen zusätzlichen Kauf durchführen.",
         "name": "Arbeiterdorf"
+    },
+    "Anvil": {
+        "description": "1 <*COIN*><n><n>You may discard a Treasure to gain a card costing up to 4 Coin.",
+        "extra": "Discarding a Treasure is optional. If you discard one, you gain a card costing up to 4 Coin which comes from the Supply and goes to your discard pile.",
+        "name": "Anvil"
+    },
+    "Charlatan": {
+        "description": "+3 Coin<n><n>Each other player gains a Curse.<line>In games using this, Curse is also a Treasure worth 1 Coin.",
+        "extra": "This turns Curses into Treasures for the entire game and in all situations; it's just like the bottom bar says \"Curse - Treasure.\" They may be played for +1 Coin in the Buy phase. They are trashed from play when gaining Mint, Magnate counts them in your hand, Courtier (from Intrigue) gives you two choices when revealing one, and so on. They are still Curses and still worth –1<VP> at the end of the game. Unlike Capitalism, Charlatan makes Curses stay as Treasures during scoring, so they will count for Keep. Curses will be Treasures if Charlatan is in the Black Market deck, even if no one actually gains it.",
+        "name": "Charlatan"
+    },
+    "Clerk": {
+        "description": "+2 Coin<n>Each other player with 5 or more cards in hand puts one onto their deck.<line>At the start of your turn, you may play this from your hand.",
+        "extra": "A player with no cards in their deck will have the card they put on top become the only card in their deck. At the start of your turn, you may play any number of Clerk cards from your hand, one at a time, without using up your regular Action play. You may use Clerk's self-playing start-of-turn ability before, between, or after other start-of-turn effects. For instance, if you draw Clerk due to the effect of Den of Sin, it's not too late to use Clerk's Reaction ability.",
+        "name": "Clerk"
+    },
+    "Collection": {
+        "description": "2 <*COIN*><n><n>+1 Buy<n><n>This turn, when you gain an Action card, +1<VP>.",
+        "extra": "You get +1<VP> for each Action card you gain, whether bought, or gained some other way.<n>Multiple copies of this are cumulative; if you have two Collections in play and buy a Village, you'll get +2<VP>. You only get <VP> for Actions you gain after you play the Collection; it doesn't retroactively give you points for cards you gained earlier in the turn. If the Collection leaves play (for instance, because you trashed it with Counterfeit), you still get <VP> from it for the rest of the turn.",
+        "name": "Collection"
+    },
+    "Crystal Ball": {
+        "description": "1 <*COIN*><n><n>Look at the top card of your deck. You may trash it, discard it, or, if it's an Action or Treasure, play it.",
+        "extra": "If you don't choose to do any of those things, you leave the card on your deck. If this plays an Action during your Buy phase that gives you +Actions, that doesn't let you play more Action cards in your Buy phase; if it draws Treasure cards, you can still play them.",
+        "name": "Crystal Ball"
+    },
+    "Investment": {
+        "description": "Trash a card from your hand.<n>Choose one: +1 Coin; or trash this to reveal your hand for +1<VP> per differently named Treasure there.",
+        "extra": "You trash a card no matter what; it's okay if Investment was your last card in hand, you just fail to trash a card then. Then you choose either to get +1 Coin or to trash Investment. If you trash it, you reveal your hand and get +1<VP> per differently named Treasure there; for example if you reveal two Coppers and a Silver, you get +2<VP>. You can still play the revealed Treasures after resolving Investment. If you play the same Investment twice (e.g. with Crown) and trash it on the first play for <VP>, then you can't trash it on the second play for <VP>.",
+        "name": "Investment"
+    },
+    "Magnate": {
+        "description": "Reveal your hand.<n>+1 Card per Treasure in it.",
+        "extra": "For example, if your hand had two Coppers and a Silver, you'd draw 3 cards.",
+        "name": "Magnate"
+    },
+    "Tiara": {
+        "description": "+1 Buy<n><n>This turn, when you gain a card, you may put it onto your deck.<n><n>You may play a Treasure from your hand twice.",
+        "extra": "If you gain multiple cards later in the turn after playing Tiara, you may put any or all of them onto your deck. This applies both to cards gained due to being bought, and to cards gained other ways, such as with War Chest. If you play a Tiara with a Tiara, you will be able to play two Treasures from your hand twice each - you don't play one Treasure four times.",
+        "name": "Tiara"
+    },
+    "War Chest": {
+        "description": "The player to your left names a card. Gain a card costing up to 5 Coin that hasn't been named for War Chest this turn.",
+        "extra": "The first War Chest you play in a turn can't gain whatever card they name; the second can't gain the card they name, or the card they previously named, and so on. The gained card comes from the Supply and is put into your discard pile. You can still gain the named cards other ways, just not via War Chests. They do not have to name a card in the Supply; however War Chest gains a card from the Supply, and puts it into your discard pile.",
+        "name": "War Chest"
     },
     "Academy": {
         "description": "Wenn du eine Aktionskarte nimmst: + 1 Dorfbewohner.",
