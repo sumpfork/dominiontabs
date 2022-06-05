@@ -1981,6 +1981,8 @@ class DividerDrawer(object):
         pages = []
         for pageNum, pageItems in enumerate(items):
             page = []
+            last_item = len(pageItems) - 1
+            last_row = (rows - 1) - (last_item // columns)
             for i in range(numPerPage):
                 if pageItems and i < len(pageItems):
                     # Given a CardPlot object called item, its number on the page, and the page number
@@ -1991,9 +1993,15 @@ class DividerDrawer(object):
                     pageItems[i].x = x * options.dividerWidthReserved
                     pageItems[i].y = y * options.dividerHeightReserved
                     pageItems[i].cropOnTop = (y == rows - 1) or RoomForCropV
-                    pageItems[i].cropOnBottom = (y == 0) or RoomForCropV
+                    pageItems[i].cropOnBottom = (
+                        (y == last_row)
+                        or (y == last_row + 1 and x > last_item % columns)
+                        or RoomForCropV
+                    )
                     pageItems[i].cropOnLeft = (x == 0) or RoomForCropH
-                    pageItems[i].cropOnRight = (x == columns - 1) or RoomForCropH
+                    pageItems[i].cropOnRight = (
+                        (x == columns - 1) or (i == last_item) or RoomForCropH
+                    )
                     # pageItems[i].rotation = 0
                     pageItems[i].page = pageNum + 1
                     page.append(pageItems[i])
