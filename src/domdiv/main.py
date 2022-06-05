@@ -1,19 +1,20 @@
-import os
 import codecs
-import json
-import sys
-import configargparse
 import copy
 import fnmatch
-import pkg_resources
+import functools
+import json
+import os
+import sqlite3
+import sys
 import unicodedata
 from collections import Counter, defaultdict
 
+import configargparse
+import pkg_resources
 import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
 
-from .cards import Card
-from .cards import CardType
+from .cards import Card, CardType
 from .draw import DividerDrawer
 
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
@@ -44,6 +45,13 @@ LANGUAGE_DEFAULT = (
 LANGUAGE_XX = "xx"  # a dummy language for starting translations
 
 
+@functools.lru_cache(maxsize=None)
+def load_db():
+    db = sqlite3.connect(pkg_resources.resource_filename("domdiv", "card_db/domdiv.db"))
+    db.row_factory = sqlite3.Row
+    return db
+
+
 def get_languages(path):
     languages = []
     for name in pkg_resources.resource_listdir("domdiv", path):
@@ -71,23 +79,14 @@ def get_resource_stream(path):
 
 
 def get_expansions():
-    set_db_filepath = os.path.join("card_db", "sets_db.json")
-    with get_resource_stream(set_db_filepath) as setfile:
-        set_file = json.loads(setfile.read().decode("utf-8"))
-    assert set_file, "Could not load any sets from database"
-
-    fan = []
-    official = []
-    for s in set_file:
-        if EXPANSION_EXTRA_POSTFIX not in s:
-            # Make sure these are set either True or False
-            set_file[s]["fan"] = set_file[s].get("fan", False)
-            if set_file[s]["fan"]:
-                fan.append(s)
-            else:
-                official.append(s)
-    fan.sort()
-    official.sort()
+    db = load_db()
+    sql = """
+        select set_tag from sets
+            where set_tag != 'extras' and is_fan_expansion={}
+        order by set_tag
+        """
+    official = db.execute(sql.format("FALSE")).fetchall()
+    fan = db.execute(sql.format("TRUE")).fetchall()
     return official, fan
 
 
@@ -1032,6 +1031,7 @@ def parseDimensions(dimensionsStr):
 
 def generate_sample(options):
     from io import BytesIO
+
     from wand.image import Image
 
     buf = BytesIO()

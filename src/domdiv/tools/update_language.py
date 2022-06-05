@@ -11,11 +11,13 @@
 # All output is in the designated output directory.  Original files are not overwritten.
 ###########################################################################
 
-import os
-import os.path
-from shutil import copyfile
 import argparse
 import collections
+import json
+import os
+import os.path
+import shutil
+import sqlite3
 
 from domdiv.tools.common import (
     get_json_data,
@@ -23,10 +25,7 @@ from domdiv.tools.common import (
     LANGUAGE_XX,
     LANGUAGE_DEFAULT,
     get_languages,
-    multikeysort,
     load_card_data,
-    write_data,
-    write_language_cards,
 )
 
 VALID_CARD_FIELD_NAMES = {"description", "extra", "name"}
@@ -48,255 +47,359 @@ def main(card_db_dir, output_dir):
     #  main output directory
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-
-    #  each language directory
-    for lang in languages:
-        #  Make sure the directory is there to hold the file
-        lang_dir = os.path.join(output_dir, lang)
-        if not os.path.exists(lang_dir):
-            os.makedirs(lang_dir)
-
-    ###########################################################################
-    #  Get the types_db information
-    #  Store in a list in the order found in types[]. Ordered by card_type
-    #  1. card_tags, 2. group_tags, 3. super groups
-    ###########################################################################
-    type_parts = set()
-
-    # Get the card data
-    type_data = get_json_data(os.path.join(card_db_dir, "types_db.json"))
-    types = set(tuple(t["card_type"]) for t in type_data)
-    assert len(type_data) == len(types), f"{len(type_data)} != {len(types)}"
-
-    # Sort the cards by cardset_tags, then card_tag
-    sorted_type_data = multikeysort(type_data, ["card_type"])
-
-    write_data(sorted_type_data, os.path.join(output_dir, "types_db.json"))
-
-    type_parts = list(set().union(*[set(t["card_type"]) for t in sorted_type_data]))
-    type_parts.sort()
-    print("Unique Types:")
-    print(type_parts)
-    print()
-
-    ###########################################################################
-    #  Get the labels_db information
-    #  Store in a list in the order found.
-    ###########################################################################
-    all_labels = []
-
-    # Get the card data
-    label_data = get_json_data(os.path.join(card_db_dir, "labels_db.json"))
-
-    all_labels = list(set().union(*[set(label["names"]) for label in label_data]))
-
-    write_data(label_data, os.path.join(output_dir, "labels_db.json"))
-
-    all_labels.sort()
-    print("Labels: ")
-    print(all_labels)
-    print()
-    ###########################################################################
-    # Fix up all the xx/types_xx.json files
-    # Place entries in alphabetical order
-    # If entries don't exist:
-    #    If the default language, set from information in the "types_db.json" file,
-    #    If not the default language, set based on information from the default language.
-    # Lastly, keep any extra entries that are not currently used, just in case needed
-    #    in the future or is a work in progress.
-    ###########################################################################
-    for lang in languages:
-        lang_file = "types_" + lang + ".json"
-        fname = os.path.join(card_db_dir, lang, lang_file)
-        if os.path.isfile(fname):
-            lang_type_data = get_json_data(fname)
-        else:
-            lang_type_data = {}
-
-        for t in sorted(type_parts):
-            if t not in lang_type_data:
-                if lang == LANGUAGE_DEFAULT:
-                    lang_type_data[t] = t
-                    lang_type_default = lang_type_data
-                else:
-                    lang_type_data[t] = lang_type_default[t]
-        write_data(lang_type_data, os.path.join(output_dir, lang, lang_file))
-
-        if lang == LANGUAGE_DEFAULT:
-            lang_type_default = lang_type_data  # Keep for later languages
-
-    sorted_card_data = load_card_data(card_db_dir)
-    seen = set()
-    for c in sorted_card_data:
-        if c["card_tag"] in seen:
-            assert False, f"Duplicate card detected: {c['card_tag']}"
-        seen.add(c["card_tag"])
-    groups = set(card["group_tag"] for card in sorted_card_data if "group_tag" in card)
-    super_groups = set(["events", "landmarks", "projects"])
-
-    write_data(sorted_card_data, os.path.join(output_dir, "cards_db.json"))
-
-    # maintain the sorted order, but expand with groups and super_groups
-    cards = [c["card_tag"] for c in sorted_card_data]
-    cards.extend(sorted(groups))
-    cards.extend(sorted(super_groups))
-
-    print("Cards:")
-    print(cards)
-    print()
-
-    ###########################################################################
-    # Fix up all the cards_xx.json files
-    # Place entries in the same order as given in "cards_db.json".
-    # If entries don't exist:
-    #    If the default language, set base on information in the "cards_db.json" file,
-    #    If not the default language, set based on information from the default language.
-    # Lastly, keep any extra entries that are not currently used, just in case needed
-    #    in the future or is a work in progress.
-    ###########################################################################
-
-    for lang in languages:
-
-        #  contruct the cards json file name
-        lang_data = load_language_cards(lang, card_db_dir)
-
-        sorted_lang_data = collections.OrderedDict()
-        for card_tag in cards:
-            lang_card = lang_data.get(card_tag)
-
-            # print(f'looking at {card_tag}: {lang_card}')
-            if not lang_card or lang == LANGUAGE_XX:
-                #  Card is missing, need to add it
-                lang_card = {}
-                if lang == LANGUAGE_DEFAULT:
-                    #  Default language gets bare minimum.  Really need to add by hand.
-                    lang_card["extra"] = ""
-                    lang_card["name"] = card_tag
-                    lang_card["description"] = ""
-                    lang_default = lang_data
-                    extra_fields = set(lang_card) - VALID_CARD_FIELD_NAMES
-                    assert (
-                        len(extra_fields) == 0
-                    ), f"invalid extra field names for {card_tag} ({lang}): {extra_fields}"
-                else:
-                    #  All other languages should get the default languages' text
-                    lang_card = lang_default[card_tag].copy()
-            elif lang != LANGUAGE_DEFAULT:
-                # Card exists, figure out what needs updating
-                extra_fields = set(lang_card) - VALID_CARD_FIELD_NAMES
-                assert (
-                    len(extra_fields) == 0
-                ), f"invalid extra field names for {card_tag} ({lang}): {extra_fields}"
-                lang_card.update(
-                    {
-                        field: value
-                        for field, value in lang_default[card_tag].items()
-                        if field not in lang_card
-                    }
+    # could move this to a tmp dir, but it's nice to have here for debugging
+    if os.path.exists("domdiv.db"):
+        os.remove("domdiv.db")
+    with sqlite3.connect("domdiv.db") as db:
+        db.execute("PRAGMA foreign_keys = ON")
+        db.execute(
+            """
+            create table card_types
+                (
+                    keywords text not null primary key,
+                    image text,
+                    default_count integer,
+                    tab_cost_height_offset integer default 0,
+                    tab_text_height_offset integer default 0,
+                    group_cost text,
+                    group_global_type text
                 )
-            sorted_lang_data[card_tag] = lang_card
-        unused = set(lang_data) - set(sorted_lang_data)
-        print(
-            f"unused in {lang}: {len(unused)}, used: {len(set(lang_data) & set(sorted_lang_data))}"
+            """
         )
-        print(unused)
-        # Now keep any unused values just in case needed in the future
-        for card_tag in sorted(unused):
-            lang_card = lang_data.get(card_tag)
-            lang_card["notes"] = ["This card is currently not used."]
-            sorted_lang_data[card_tag] = lang_card
 
-        write_language_cards(sorted_lang_data, lang, output_dir)
+        ###########################################################################
+        #  Get the types_db information
+        #  Store in a list in the order found in types[]. Ordered by card_type
+        #  1. card_tags, 2. group_tags, 3. super groups
+        ###########################################################################
+        # Get the card data
+        type_data = get_json_data(os.path.join(card_db_dir, "types_db.json"))
+        for t in type_data:
+            t["card_type"] = tuple(sorted(t["card_type"]))
 
-        if lang == LANGUAGE_DEFAULT:
-            lang_default = lang_data  # Keep for later languages
+        types = set(t["card_type"] for t in type_data)
+        assert len(type_data) == len(
+            types
+        ), f"{[t for t, c in collections.Counter(ty['card_type'] for ty in type_data).items() if c > 1]}"
 
-    ###########################################################################
-    # Fix up the sets_db.json file
-    # Place entries in alphabetical order
-    ###########################################################################
-    lang_file = "sets_db.json"
-    set_data = get_json_data(os.path.join(card_db_dir, lang_file))
+        type_parts = list(set().union(*[set(t["card_type"]) for t in type_data]))
+        type_parts.sort()
+        print("Unique Types:")
+        print(type_parts)
+        print()
 
-    write_data(set_data, os.path.join(output_dir, lang_file))
+        for t in type_data:
+            t["card_type"] = json.dumps(t["card_type"])
 
-    print("Sets:")
-    print(set(set_data))
-    print()
+        db.executemany(
+            """
+            insert into card_types values
+                (
+                    :card_type,
+                    :card_type_image,
+                    :defaultCardCount,
+                    :tabCostHeightOffset,
+                    :tabTextHeightOffset,
+                    :group_cost,
+                    :group_global_type
+                )
+            """,
+            [collections.defaultdict(lambda: None, t) for t in type_data],
+        )
 
-    ###########################################################################
-    # Fix up all the xx/sets_xx.json files
-    # Place entries in alphabetical order
-    # If entries don't exist:
-    #    If the default language, set from information in the "sets_db.json" file,
-    #    If not the default language, set based on information from the default language.
-    ###########################################################################
-    for lang in languages:
-        lang_file = "sets_" + lang + ".json"
-        fname = os.path.join(card_db_dir, lang, lang_file)
-        if os.path.isfile(fname):
+        ###########################################################################
+        #  Get the labels_db information
+        ###########################################################################
+
+        # db.execute("create table labels")
+        # label_data = get_json_data(os.path.join(card_db_dir, "labels_db.json"))
+        # label_table.insert_multiple(label_data)
+
+        # all_labels = list(
+        #     set().union(*[set(label["names"]) for label in label_table.all()])
+        # )
+
+        # print("Labels: ")
+        # print(all_labels)
+        # print()
+
+        # card type translations go into a single db table keyed by type and language
+        db.execute(
+            """
+            create table card_type_translations
+                (
+                    type_keyword text not null,
+                    language text not null,
+                    translation text not null,
+                    primary key (type_keyword, language)
+                )
+            """
+        )
+
+        for lang in languages:
+            lang_file = "types_" + lang + ".json"
+            fname = os.path.join(card_db_dir, lang, lang_file)
+            if os.path.isfile(fname):
+                lang_type_data = get_json_data(fname)
+                db.executemany(
+                    """
+                    insert into card_type_translations values
+                    (
+                        :type_keyword,
+                        :language,
+                        :translation
+                    )
+                """,
+                    [
+                        {
+                            "type_keyword": type_keyword,
+                            "language": lang,
+                            "translation": translation,
+                        }
+                        for type_keyword, translation in lang_type_data.items()
+                    ],
+                )
+
+        db.execute(
+            """
+            create table cards
+            (
+                card_tag text not null primary key,
+                types text not null,
+                cardset_tags text,
+                cost integer,
+                group_tag text,
+                randomizer integer
+            )
+        """
+        )
+        sorted_card_data = load_card_data(card_db_dir)
+        for c in sorted_card_data:
+            c["cardset_tags"] = json.dumps(sorted(c["cardset_tags"]))
+            c["types"] = json.dumps(sorted(c["types"]))
+
+        db.executemany(
+            """
+            insert into cards values
+            (
+                :card_tag,
+                :types,
+                :cardset_tags,
+                :cost,
+                :group_tag,
+                :randomizer
+            )
+        """,
+            [collections.defaultdict(lambda: None, c) for c in sorted_card_data],
+        )
+
+        groups = set(
+            card["group_tag"] for card in sorted_card_data if "group_tag" in card
+        )
+        super_groups = set(["events", "landmarks", "projects"])
+
+        # maintain the sorted order, but expand with groups and super_groups
+        card_tags = [c["card_tag"] for c in sorted_card_data]
+        card_tags.extend(sorted(groups))
+        card_tags.extend(sorted(super_groups))
+
+        print("Cards Tags:")
+        print(card_tags)
+        print()
+
+        ###########################################################################
+        # Fix up the sets_db.json file
+        # Place entries in alphabetical order
+        ###########################################################################
+        db.execute(
+            """
+            create table sets
+            (
+                set_tag text not null primary key,
+                edition text not null,
+                image text not null,
+                set_name_pattern text not null unique,
+                is_fan_expansion integer default 0,
+                no_randomizer integer default 0
+            )
+        """
+        )
+
+        lang_file = "sets_db.json"
+        set_data = get_json_data(os.path.join(card_db_dir, lang_file))
+        print([s["set_name"] for s in set_data.values()])
+        db.executemany(
+            """
+            insert into sets values
+            (
+                :set_tag,
+                :edition,
+                :image,
+                :set_name_pattern,
+                :is_fan_expansion,
+                :no_randomizer
+            )
+        """,
+            [
+                {
+                    "set_tag": set_tag,
+                    "edition": json.dumps(sorted(s["edition"])),
+                    "image": s["image"],
+                    "set_name_pattern": s["set_name"],
+                    "is_fan_expansion": s.get("is_fan_expansion", False),
+                    "no_randomizer": s.get("no_randomizer", False),
+                }
+                for set_tag, s in set_data.items()
+            ],
+        )
+        print("Sets:")
+        print(set(set_data))
+        print()
+
+        ###########################################################################
+        # Fix up all the cards_xx.json files
+        # Place entries in the same order as given in "cards_db.json".
+        # If entries don't exist:
+        #    If the default language, set base on information in the "cards_db.json" file,
+        #    If not the default language, set based on information from the default language.
+        # Lastly, keep any extra entries that are not currently used, just in case needed
+        #    in the future or is a work in progress.
+        ###########################################################################
+
+        db.execute(
+            """
+            create table card_translations
+            (
+                card_tag text,
+                name text default null,
+                description text default "",
+                extra text default "",
+                language text not null,
+                primary key (card_tag, language)
+            )
+        """
+        )
+        # would like to add 'foreign key (card_tag) references cards(card_tag)' above, but
+        # need to change groups and other cards generated on the fly
+
+        for lang in languages:
+            print(f"updating cards for {lang}")
+            #  contruct the cards json file name
+            lang_data = load_language_cards(lang, card_db_dir)
+            tags = set(lang_data)
+            print(
+                f"extra tags (from groups, etc): {tags - set(c['card_tag'] for c in sorted_card_data)}"
+            )
+            db.executemany(
+                """
+                insert into card_translations values
+                (
+                    :card_tag,
+                    :name,
+                    :description,
+                    :extra,
+                    :language
+                )
+            """,
+                [
+                    collections.defaultdict(
+                        lambda: None, {"card_tag": card_tag, "language": lang, **v}
+                    )
+                    for card_tag, v in lang_data.items()
+                ],
+            )
+        db.commit()
+        ###########################################################################
+        # Fix up all the xx/sets_xx.json files
+        # Place entries in alphabetical order
+        # If entries don't exist:
+        #    If the default language, set from information in the "sets_db.json" file,
+        #    If not the default language, set based on information from the default language.
+        ###########################################################################
+
+        db.execute(
+            """
+            create table set_translations
+            (
+                set_tag text not null,
+                name text not null,
+                description text,
+                short_name text,
+                text_icon text not null,
+                language text not null,
+                primary key (set_tag, language)
+            )
+            """
+        )
+        for lang in languages:
+            lang_file = "sets_" + lang + ".json"
+            fname = os.path.join(card_db_dir, lang, lang_file)
             lang_set_data = get_json_data(fname)
-        else:
-            lang_set_data = {}
+            db.executemany(
+                """
+                insert into set_translations values
+                (
+                    :set_tag,
+                    :name,
+                    :description,
+                    :short_name,
+                    :text_icon,
+                    :language
+                )
+            """,
+                [
+                    {
+                        "set_tag": set_tag,
+                        "name": s["set_name"],
+                        "description": s["set_text"],
+                        "short_name": s.get("short_name"),
+                        "text_icon": s["text_icon"],
+                        "language": lang,
+                    }
+                    for set_tag, s in lang_set_data.items()
+                ],
+            )
 
-        for s in sorted(set_data):
-            if s not in lang_set_data:
-                lang_set_data[s] = {}
-                if lang == LANGUAGE_DEFAULT:
-                    lang_set_data[s]["set_name"] = s.title()
-                    lang_set_data[s]["text_icon"] = set_data[s]["text_icon"]
-                    if "short_name" in set_data[s]:
-                        lang_set_data[s]["short_name"] = set_data[s]["short_name"]
-                    if "set_text" in set_data[s]:
-                        lang_set_data[s]["set_text"] = set_data[s]["set_text"]
-                else:
-                    lang_set_data[s]["set_name"] = lang_default[s]["set_name"]
-                    lang_set_data[s]["text_icon"] = lang_default[s]["text_icon"]
-                    if "short_name" in lang_default[s]:
-                        lang_set_data[s]["short_name"] = lang_default[s]["short_name"]
-                    if "set_text" in lang_default[s]:
-                        lang_set_data[s]["set_text"] = lang_default[s]["set_text"]
-            else:
-                if lang != LANGUAGE_DEFAULT:
-                    for x in lang_default[s]:
-                        if x not in lang_set_data[s] and x != "used":
-                            lang_set_data[s][x] = lang_default[s][x]
-
-        if lang == LANGUAGE_DEFAULT:
-            lang_default = lang_set_data  # Keep for later languages
-
-        write_data(lang_set_data, os.path.join(output_dir, lang, lang_file))
-
-    ###########################################################################
-    # bonuses_xx files
-    ###########################################################################
-    for lang in languages:
-        # Special case for xx.  Reseed from default language
-        fromLanguage = lang
-        if lang == LANGUAGE_XX:
-            fromLanguage = LANGUAGE_DEFAULT
-
-        copyfile(
-            os.path.join(
-                card_db_dir, fromLanguage, "bonuses_" + fromLanguage + ".json"
-            ),
-            os.path.join(output_dir, lang, "bonuses_" + lang + ".json"),
+        ###########################################################################
+        # bonuses_xx files
+        ###########################################################################
+        db.execute(
+            """
+            create table bonuses
+            (
+                word text not null,
+                include integer,
+                language text not null
+            )
+        """
         )
+        for lang in languages:
+            # Special case for xx.  Reseed from default language
+            fromLanguage = lang
+            if lang == LANGUAGE_XX:
+                fromLanguage = LANGUAGE_DEFAULT
 
-    ###########################################################################
-    # translation.txt
-    ###########################################################################
-    copyfile(
-        os.path.join(card_db_dir, "translation.md"),
-        os.path.join(output_dir, "translation.md"),
-    )
+            db.executemany(
+                """
+            insert into bonuses values
+            (
+                :word,
+                :include,
+                :language
+            )
+            """,
+                [
+                    {"word": word, "include": key == "include", "language": lang}
+                    for key, vals in get_json_data(
+                        os.path.join(
+                            card_db_dir, fromLanguage, f"bonuses_{fromLanguage}.json"
+                        )
+                    ).items()
+                    for word in vals
+                ],
+            )
 
-    # Since xx is the starting point for new translations,
-    # make sure xx has the latest copy of translation.txt
-    copyfile(
-        os.path.join(card_db_dir, LANGUAGE_XX, "translation.txt"),
-        os.path.join(output_dir, LANGUAGE_XX, "translation.txt"),
-    )
+    shutil.move("domdiv.db", os.path.join(output_dir, "domdiv.db"))
 
 
 def run():
