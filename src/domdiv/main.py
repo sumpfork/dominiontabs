@@ -31,7 +31,7 @@ TAB_SIDE_CHOICES = [
 TEXT_CHOICES = ["card", "rules", "blank"]
 LINE_CHOICES = ["line", "dot", "cropmarks", "line-cropmarks", "dot-cropmarks"]
 
-EDITION_CHOICES = ["1", "2", "latest", "all"]
+EDITION_CHOICES = ["1", "2", "latest", "upgrade", "removed", "all"]
 
 ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
 
@@ -408,7 +408,7 @@ def parse_opts(cmdline_args=None):
         action="append",
         dest="expansions",
         help="Limit dividers to only the specified expansions. "
-        "If no limits are set, then all expansions are included. "
+        "If no limits are set, then the latest expansions are included. "
         "Expansion names can also be given in the language specified by "
         "the --language parameter. Any expansion with a space in the name must "
         "be enclosed in double quotes. This may be called multiple times. "
@@ -460,13 +460,15 @@ def parse_opts(cmdline_args=None):
         "--edition",
         choices=EDITION_CHOICES,
         dest="edition",
-        default="all",
         help="Editions to include: "
         "'1' is for all 1st Editions; "
         "'2' is for all 2nd Editions; "
+        "'upgrade' is for all upgrade cards for each expansion; "
+        "'removed' is for all removed cards for each expansion; "
         "'latest' is for the latest edition for each expansion; "
-        "'all' is for all editions of expansions; "
-        " This can be combined with other options to refine the expansions to include in the output.",
+        "'all' is for all editions of expansions, upgrade cards, and removed cards; "
+        " This can be combined with other options to refine the expansions to include in the output."
+        " (default: all)",
     )
     group_select.add_argument(
         "--upgrade-with-expansion",
@@ -886,8 +888,10 @@ def clean_opts(options):
         options.cropmarks = True
 
     if options.expansions is None:
-        # No instance given, so default to all Official expansions
+        # No instance given, so default to the latest Official expansions
         options.expansions = ["*"]
+        if options.edition is None:
+            options.edition = "latest"
     else:
         # options.expansions is a list of lists.  Reduce to single lowercase list
         options.expansions = [
@@ -902,6 +906,10 @@ def clean_opts(options):
         options.exclude_expansions = [
             item.lower() for sublist in options.exclude_expansions for item in sublist
         ]
+
+    if options.edition is None:
+        # set the default
+        options.edition = "all"
 
     if options.fan is None:
         # No instance given, so default to no Fan expansions
