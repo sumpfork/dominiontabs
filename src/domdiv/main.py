@@ -793,12 +793,6 @@ def parse_opts(cmdline_args=None):
         help="Path to file that enumerates each card to be printed on its own line.",
     )
     group_special.add_argument(
-        "--write-json",
-        action="store_true",
-        dest="write_json",
-        help="Write json version of card definitions and extras.",
-    )
-    group_special.add_argument(
         "-c",
         is_config_file=True,
         help="Use the specified configuration file to provide options. "
