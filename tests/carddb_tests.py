@@ -22,7 +22,7 @@ def rmtestcardb(request):
 
 
 def test_cardread():
-    num_cards_expected = 725
+    num_cards_expected = 737
 
     options = main.parse_opts([])
     options.data_path = "."
@@ -31,9 +31,11 @@ def test_cardread():
     valid_cardsets = {
         "base",
         "dominion1stEdition",
+        "dominion1stEditionRemoved",
         "dominion2ndEdition",
         "dominion2ndEditionUpgrade",
         "intrigue1stEdition",
+        "intrigue1stEditionRemoved",
         "intrigue2ndEdition",
         "intrigue2ndEditionUpgrade",
         "seaside",
@@ -187,8 +189,10 @@ def test_exclude_expansion():
     card_sets = set(x.cardset.lower() for x in cards)
     assert card_sets == {
         "adventures",
+        "dominion 1st edition removed",
         "dominion 2nd edition upgrade",
         "intrigue 1st edition",
+        "intrigue 1st edition removed",
     }
 
 
