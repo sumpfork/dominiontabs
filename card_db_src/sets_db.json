@@ -83,6 +83,17 @@
         "short_name": "Dominion",
         "text_icon": "*"
     },
+    "dominion1stEditionRemoved": {
+        "edition": [
+            "1",
+            "removed"
+        ],
+        "image": "dominion1stEdition_set.png",
+        "has_extras": false,
+        "set_name": "*dominion1stEditionRemoved*",
+        "set_text": "",
+        "text_icon": "*"
+    },
     "dominion2ndEdition": {
         "edition": [
             "2",
@@ -96,7 +107,8 @@
     },
     "dominion2ndEditionUpgrade": {
         "edition": [
-            "1"
+            "1",
+            "upgrade"
         ],
         "image": "dominion2ndEdition_set.png",
         "has_extras": false,
@@ -157,6 +169,17 @@
         "short_name": "Intrigue",
         "text_icon": "*"
     },
+    "intrigue1stEditionRemoved": {
+        "edition": [
+            "1",
+            "removed"
+        ],
+        "image": "intrigue1stEdition_set.png",
+        "has_extras": false,
+        "set_name": "*intrigue1stEditionRemoved*",
+        "set_text": "",
+        "text_icon": "*"
+    },
     "intrigue2ndEdition": {
         "edition": [
             "2",
@@ -170,7 +193,8 @@
     },
     "intrigue2ndEditionUpgrade": {
         "edition": [
-            "1"
+            "1",
+            "upgrade"
         ],
         "image": "intrigue2ndEdition_set.png",
         "has_extras": false,

@@ -435,7 +435,7 @@
             "Duration",
             "Fort"
         ],
-        "card_type_image": "reserve-victory.png",
+        "card_type_image": "duration-victory.png",
         "defaultCardCount": 16,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
@@ -484,9 +484,21 @@
     },
     {
         "card_type": [
+            "Allies"
+        ],
+        "card_type_image": "ally.png",
+        "group_cost": "",
+        "defaultCardCount": 0,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
             "Ally"
         ],
         "card_type_image": "ally.png",
+        "group_cost": "",
+        "group_global_type": "Allies",
         "defaultCardCount": 1,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
@@ -496,6 +508,7 @@
             "Artifact"
         ],
         "card_type_image": "artifact.png",
+        "group_cost": "",
         "defaultCardCount": 1,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
@@ -514,7 +527,19 @@
             "Boon"
         ],
         "card_type_image": "boon.png",
+        "group_cost": "",
+        "group_global_type": "Boons",
         "defaultCardCount": 1,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Boons"
+        ],
+        "card_type_image": "boon.png",
+        "group_cost": "",
+        "defaultCardCount": 0,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -562,7 +587,19 @@
             "Hex"
         ],
         "card_type_image": "hex.png",
+        "group_cost": "",
+        "group_global_type": "Hexes",
         "defaultCardCount": 1,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Hexes"
+        ],
+        "card_type_image": "hex.png",
+        "group_cost": "",
+        "defaultCardCount": 0,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -720,7 +757,19 @@
             "State"
         ],
         "card_type_image": "state.png",
+        "group_cost": "",
+        "group_global_type": "States",
         "defaultCardCount": 1,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "States"
+        ],
+        "card_type_image": "state.png",
+        "group_cost": "",
+        "defaultCardCount": 0,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -779,7 +828,7 @@
             "Duration",
             "Liaison"
         ],
-        "card_type_image": "treasure.png",
+        "card_type_image": "treasure-duration.png",
         "defaultCardCount": 10,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
