@@ -790,7 +790,10 @@ def parse_opts(cmdline_args=None):
     group_special.add_argument(
         "--cardlist",
         dest="cardlist",
-        help="Path to file that enumerates each card to be printed on its own line.",
+        help="Path to file that enumerates each card on its own line to be included or excluded."
+        " To include a card, add its card name on a line.  The name can optionally be preceeded by '+'."
+        " To exclude a card, add its card name on a line preseeded by a '-'"
+        " If any card is included by this method, only cards specified in this file will be printed.",
     )
     group_special.add_argument(
         "-c",
@@ -1752,9 +1755,16 @@ def filter_sort_cards(cards, options):
     # Get list of cards from a file
     if options.cardlist:
         cardlist = set()
+        cardlist_exclude = set()
         with open(options.cardlist) as cardfile:
             for line in cardfile:
-                cardlist.add(line.strip())
+                line = line.strip()
+                if line.startswith("-"):
+                    cardlist_exclude.add(line.lstrip("- \t"))
+                else:
+                    cardlist.add(line.lstrip("+ \t"))
+        if cardlist_exclude:
+            cards = [card for card in cards if card.name not in cardlist_exclude]
         if cardlist:
             cards = [card for card in cards if card.name in cardlist]
 
