@@ -2734,21 +2734,6 @@
         "description": "+1 Carte<br>+2 Actions<line>Au début de la phase Ajustement, si vous avez cette carte et au plus une autre carte Action en jeu, vous pouvez remettre cette carte sur votre pioche.",
         "extra": "When you play this, you draw a card and can play two more Actions this turn. At the start of your Clean-up phase, before discarding anything and before drawing for next turn, if you have a Walled Village in play and no more than two Action cards in play (counting the Walled Village), you may put the Walled Village on top of your deck. If the only cards you have in play are two Walled Villages, you may put either or both of them on top of your deck. Walled Village has to be in play to be put on top of your deck. Walled Village only checks how many Action cards are in play when its ability resolves; Action cards you played earlier this turn but which are no longer in play (such as Feast from Dominion) are not counted, while Action cards still in play from previous turns (duration cards from Seaside) are counted, as are Action cards that are in play now but may leave play after resolving Walled Village (such as Treasury from Seaside)."
     },
-    "Bank": {
-        "name": "Banque",
-        "description": "Lorsque vous jouez cette carte elle vaut 1 Coin par carte <i>Trésor</i> en jeu (incluant celle-ci).",
-        "extra": "La valeur de cette carte <i>Trésor</i> varie. Lorsque vous jouez une <i>Banque</i>, elle vaut 1 Coin par carte <i>Tréso</i>r que vous avez en jeu, incluant la <i>Banque</i>. L'ordre dans lequel vous jouez vos cartes <i>Trésor</i> est donc très important. Si vous jouez <i>Banque</i> seule, elle vaut 1 Coin. Si vous jouez deux <i>Banque</i> de suite, la seconde vaut 1 Coin de plus que la première. La valeur d'une <i>Banque</i> est déterminée lorsqu'elle est jouée et elle ne peut changer plus tard, même si certains événements pourraient changer sa valeur."
-    },
-    "Bishop": {
-        "name": "Évêque",
-        "description": "+1 Coin<br>+1 <VP><n>Écartez une carte de votre main. +<VP> égal à la moitié de son coût en pièce, arrondi à l'unité inférieure. Tous vos adversaires peuvent écarter une carte de leur main.",
-        "extra": "Voir les règles additionnelles au sujet des jetons <VP>. Écarter une carte est facultatif pour vos adversaires mais obligatoire pour vous. Si l'ordre a de l'importance, défaussez en premier, suivi des autres joueurs, en sens horaire. Seul le joueur qui joue la carte <i>Évêque</i> peut obtenir des jetons <VP>. S'il y a Potion dans le coût, ce symbole est ignoré. Par exemple, si vous écartez la carte <i>Golem</i> (DA), au coût de 4 Coin Potion, vous obtiendrez un total de 3 <VP> (ce qui comprend le 1 <VP> que vous obtenez en jouant <i>Évêque</i>). Si vous n'avez plus de carte à écarter en main, vous obtenez tout de même 1 Coin et 1 <VP>."
-    },
-    "City": {
-        "name": "Ville",
-        "description": "+1 Carte<br>+2 Actions<n>S'il y a une pile ou plus de vide dans la réserve. +1 Carte. S'il y a deux piles vides ou plus. +1 Coin et +1 Achat.",
-        "extra": "Vous piochez 1 carte et vous pouvez jouer 2 cartes <i>Action</i> supplémentaires, peu importe la situation. S'il n'y a qu'une pile vide dans la réserve, vous piochez une carte de plus. S'il y a deux piles vides ou plus, vous piochez I carre de plus et vous obtenez + 1 Coin à utiliser ce tour-ci et un Achat supplémentaire pour la phase <b>Achat</b>. Il n'y a pas de bonus supplémentaire s'il y a 3 piles vides ou plus. Vous observez combien de pile vide il y a uniquement lorsque vous jouez cette carte, si d'autres piles se vident plus tard durant le tour, vous n'obtenez pas d'autre bonus. Si une pile vide se remplit à nouveau suite à l'action d'une carte comme <i>Ambassadeur</i> (DR), les cartes <i>Ville</i> jouées par la suite ne considéreront pas cette pile comme vide. Le rebut n'est jamais compté."
-    },
     "Contraband": {
         "name": "Contrebande",
         "description": "3 <*COIN*><br><br>+1 Achat<n>Lorsque vous jouez cette carte, le joueur à votre gauche nomme une carte. Vous ne pouvez pas acheter cette carte ce tour-ci.",
@@ -2759,70 +2744,20 @@
         "description": "Regardez dans votre défausse et dévoilez autant de cartes <i>Cuivre</i> que vous souhaitez de cet endroit. Prenez ces cartes dans votre main.",
         "extra": "Cette carte vous permet de regarder dans votre défausse, ce que vous ne pouvez pas faire en temps normal. Vous pouvez uniquement regarder dans votre défausse lorsque vous jouez cette carte. Vous n'avez pas à montrer votre défausse aux autres joueurs, uniquement les cartes <i>Cuivre</i> que vous prenez. Après avoir pris les cartes <i>Cuivre</i>, vous pouvez laisser les cartes de votre défausse dans l'ordre de votre choix."
     },
-    "Expand": {
-        "name": "Agrandissement",
-        "description": "Écartez une carte de votre main. Recevez une carte coûtant jusqu'à 3 Coin de plus que la carte écartée.",
-        "extra": "Cette carte n'est plus dans votre main lorsque vous la jouez, elle ne peut erre la carte écartée. La carte que vous recevez peut coûter jusqu'à 3 Coin de plus que la carte écartée, mais elle peut également coûter moins. La carte reçue peut même coûter moins que la carte écartée. Vous pouvez écarter une carte et recevoir un exemplaire de cette même carte. Si vous n'avez pas de carte en main, vous ne recevez pas de carte. La carte reçue provient de la réserve et va dans votre défausse."
-    },
-    "Forge": {
-        "name": "Forge",
-        "description": "Écartez autant de cartes que vous voulez de votre main. Recevez une carte coûtant exactement le coût total en pièces de toutes les cartes écartées.",
-        "extra": "«Autant» inclut zéro. Si vous n'écartez pas de carte, vous devez recevoir une carte coûtant 0 Coin, si possible. Ce fonctionnement est différent d'une carte comme <i>Agrandissement</i> si vous n'écartez rien puisque <i>Forge</i> observe le total des coûts et non le coût d'une seule carte. S'il n'y a pas de carte du coût requis, vous ne recevez pas de carte. La carte reçue vient de la réserve et va dans votre défausse. Les symboles Potion (sur les cartes de <i>Dominion - Alchimie</i>) ne sont pas additionnés au coût et les cartes reçues ne peuvent avoir Potion dans leur coût."
-    },
     "Goons": {
         "name": "Fiers-à-bras",
         "description": "+1 Achat<br>+ Coins<n>Tous vos adversaires défaussent des cartes pour n'avoir que 3 cartes en main.<line>Lorsque cette carte est en jeu, +1 <VP> à l'achat d'une carte.",
         "extra": "Voir les règles additionnelles au sujet des jetons <VP>. Vous obtenez 1 <VP> pour chaque carte que vous achetez, mais vous n'obtenez pas de<VP> pour les cartes reçues d'une autre façon. La carte <i>Fiers-à-bras</i> est cumulative avec elle-même, si vous avez deux Fiers-à-bras en jeu et que vous achetez une carte, vous obtenez 2 <VP>. Cependant, si vous utilisez <i>Cour du ro</i>i avec une carte <i>Fiers-à-bras</i>, bien que vous jouerez la carte 3 fois, il n'y aura qu'un exemplaire de cette carte en jeu ; ainsi, si vous achetez une carte, vous n'obtiendrez que 1 <VP>."
-    },
-    "Grand Market": {
-        "name": "Grand marché",
-        "description": "+1 Carte<br>+1 Action<br>+1 Achat<br>+2 Coins<line>Vous ne pouvez pas acheter cette carte si vous avez des <i>Cuivre</i> en jeu.",
-        "extra": "Vous n'avez pas à jouer toutes vos cartes <i>Trésor</i> en main lors de votre phase <b>Achat</b>. Les cartes <i>Cuivre</i> en main ne vous empêchent pas d'acheter un <i>Grand marché</i>, seules les cartes <i>Cuivre</i> en jeu vous en empêchent. Les cartes <i>Cuivre</i> jouées plus tôt dans le tour mais qui ne sont plus en jeu ne vous bloquent également pas. Par exemple, si vous avez 11 <i>Cuivre</i> en jeu et 2 achats, vous pourriez acheter un <i>Hôtel de la Monnaie</i>, qui vous fait écarter toutes vos cartes <i>Trésor</i> jouées (donc plus de <i>Cuivre</i> en jeu ), et ensuite acheter un <i>Grand marché</i>. Vous pouvez recevoir un <i>Grand marché</i> par d'autres moyens, à l'aide d'<i>Agrandissement</i> par exemple, que vous ayez des <i>Cuivre</i> en jeu ou non. Les cartes <i>Trésor</i> autres que <i>Cuivre</i> ne préviennent pas l'achat d'un <i>Grand marché</i>, même si elles valent 1 Coin (comme <i>Prêt</i>)."
-    },
-    "Hoard": {
-        "name": "Magot",
-        "description": "2 <*COIN*><br><line>Lorsque cette carte est jeu, vous recevez un <i>Or</i> à l'achat d'une carte <i>Victoire</i>.",
-        "extra": "Cette carte <i>Trésor</i> vaut 2 Coins , comme une carte <i>Argent</i>. Lorsque cette carte est en jeu et que vous achetez une carte <i>Victoire</i>, vous recevez une carte Or de la réserve que vous placez dans votre défausse. S'il n'y a plus de carte <i>Or</i>, vous n'en recevez pas. Si vous avez plus d'un <i>Magot</i> en jeu, vous recevrez plusieurs cartes <i>Or</i> suite à l'achat d'une seule carte <i>Victoire</i>. Si vous achetez plus d'une carre <i>Victoire</i>, vous recevrez un <i>Or</i> pour chacune d'elle. Par exemple, si vous avez uniquement deux <i>Magot</i> en jeu et +1 Achat, vous pourriez achetez deux <i>Domaine</i> et recevoir quatre cartes <i>Or</i>. Les cartes <i>Victoire</i> comprennent également les cartes de plus d'un type comme <i>Nobles</i> ( DI ) et <i>Harem</i> (DI). Vous recevez un <i>Or</i> même si vous utilisez un <i>Mirador</i> pour immédiatement écarter la carte <i>Victoire</i> reçue. Les carres <i>Victoire</i> reçues autrement que par un achat ne vous permettent pas d'obtenir une carte <i>Or</i>."
-    },
-    "King's Court": {
-        "name": "Cour du Roi",
-        "description": "Vous pouvez choisir une carte <i>Action</i> de votre main. Jouez-la trois fois.",
-        "extra": "Cette carte est similaire a <i>Salle du Trône</i> (D), mais vous jouez la carte <i>Action</i> trois fois plutôt que deux. Vous prenez une carte <i>Action</i> de votre main, vous la jouez, vous la rejouez une deuxième fois ET ensuite une troisième fois. Ceci n'utilise pas vos actions supplémentaires obtenues avec des cartes comme <i>Village ouvrier</i>, la carte <i>Cour du Roi</i> nécessite une seule action. Vous ne pouvez jouer de cartes entre les fonctions de la carte jouée avec <i>Cour du Roi</i>, à moins que la carte <i>Action</i> ne vous demande de le faire (par exemple <i>Cour du Roi</i>). Si vous utilisez une <i>Cour du Roi</i> avec une <i>Cour du Roi</i>, vous jouerez trois cartes <i>Action</i> différentes, trois fois chaque ; vous ne jouez pas une seule carte neuf fois. Si vous jouez <i>Cour du Roi</i> avec une carte vous donnant + 1 Action, comme <i>Grand marché</i>, vous aurez 3 actions supplémentaires, et non 1 seule action, comme si vous aviez joué trois cartes <i>Grand marché</i>."
     },
     "Loan": {
         "name": "Prêt",
         "description": "1 <*COIN*><br><br>Lorsque vous jouez cette carte, dévoilez des cartes de votre deck jusqu'à dévoiler une carte <i>Trésor</i>. Défaussez ou écartez-la. Défaussez les autres cartes.",
         "extra": "Cette carte <i>Trésor</i> vaut 1 Coin, comme un <i>Cuivre</i>. Lorsque vous la jouez, vous dévoilez des cartes du dessus de votre deck jusqu'à ce que vous dévoiliez une carte <i>Trésor</i>. Vous décidez ensuite si vous écartez ou défaussez la carte <i>Trésor</i> dévoilée. Défaussez ensuite les autres cartes dévoilées. Si vous n'avez plus de carte avant de dévoiler une carte <i>Trésor</i>, mélangez votre défausse (qui ne comprend pas les cartes dévoilées) et continuez. Si vous n'avez plus de défausse et toujours pas de carte <i>Trésor</i> ; vous arrêtez et défaussez toutes les cartes dévoilées. N'oubliez pas que vous pouvez jouer les cartes <i>Trésor</i> dans l'ordre de votre choix durant la phase <b>Achat</b> et que vous n'avez pas à jouer toutes vos cartes <i>Trésor</i>."
     },
-    "Mint": {
-        "name": "Hôtel de la Monnaie",
-        "description": "Vous pouvez dévoiler une carte <i>Trésor</i> de votre main. Recevez-en un exemplaire.<line>Lorsque vous achetez cette carte, écartez tous vos <i>Trésor</i> en jeu.",
-        "extra": "Lorsque vous achetez cette carte, écartez toutes vos cartes <i>Trésor</i> en jeu. Vous n'écartez pas les cartes <i>Trésor</i> dans votre main ou ailleurs, s'il y en a. Si vous achetez plusieurs cartes dans un tour, écartez vos cartes <i>Trésor</i> au moment où vous achetez <i>Hôtel de la Monnaie</i> ; les pièces produites par ces cartes ce tour-ci sont encore disponibles. N'oubliez pas que vous n'avez pas à jouer toutes vos cartes <i>Trésor</i> en main à chaque tour, uniquement celles que vous désirez utiliser. Vous ne pouvez pas jouer de cartes <i>Trésor</i> entre vos achats ; vous jouez d'abord vos cartes <i>Trésor</i> et vous faites vos achats ensuite. Lorsque vous jouez <i>Hôtel de la Monnaie</i>, dévoilez une carte <i>Trésor</i> de votre main et recevez de la réserve un exemplaire de cette carte. La carte reçue va dans votre défausse et la carte dévoilée demeure dans votre main. La carte <i>Trésor</i> peut avoir plus d'un type, comme <i>Harem</i> ( DI ). Si vous achetez un <i>Hôtel de la Monnaie</i> et que vous utilisez un <i>Mirador</i> pour défausser l'<i>Hôtel de la Monnaie</i> ou le mettre sur le dessus de votre deck, vous devez écarter tout de même toutes vos cartes <i>Trésor</i> en jeu. Toutefois, si vous achetez un <i>Hôtel de la Monnaie</i> avec un <i>Sceau Royal</i> en jeu, le <i>Sceau Royal</i> sera écarté avant que vous ne puissiez l'utiliser pour mettre <i>Hôtel de la Monnaie</i> sur votre deck."
-    },
-    "Monument": {
-        "name": "Monument",
-        "description": "+2 Coins<br>+1 <VP>",
-        "extra": "Voir les règles additionnelles au sujet des jetons <VP>."
-    },
     "Mountebank": {
         "name": "Charlatan",
         "description": "+2 Coin<n>Tous vos adversaires peuvent défausser une <i>Malédiction</i>. Ceux qui ne le font pas reçoivent une <i>Malédiction</i> et une carte <i>Cuivre</i>.",
         "extra": "Cette carte affecte vos adversaires en suivant l'ordre de tour, lorsque l'ordre a de l'importance (quand il y a peu de cartes dans la pile <i>Cuivre</i> ou <i>Malédiction</i> par exemple). Chacun des autres joueurs doit, à tour de rôle, choisir s'il défausse ou non une carte <i>Malédiction</i> de sa main. S'il le fait, il ne reçoit pas une carte <i>Malédiction</i> et une carte <i>Cuivre</i> de la réserve. Si la pile de <i>Cuivre</i> ou de <i>Malédiction</i> est vide, un joueur reçoit la carte disponible. Si les deux piles sont vides, il ne reçoit aucune carte mais il peut tout de même défausser une carte <i>Malédiction</i> s'il le désire. Un joueur qui joue la carte <i>Douves</i> (D) en réaction à cette carte ne peut défausser une <i>Malédiction</i> et ne reçoit pas une <i>Malédiction</i> et un <i>Cuivre</i>: la carte <i>Douves</i> prévient tous les effets de la carte <i>Attaque</i> et non ceux de votre choix. Un <i>Mirador</i> vous permet d'écarter la <i>Malédiction</i>, le <i>Cuivre</i> ou les deux."
-    },
-    "Peddler": {
-        "name": "Colporteur",
-        "description": "+1 Carte<br>+1 Action<br>+1 Coin<line>Pendant votre phase <b>Achat</b>, cette carte coûte 2 Coin de moins par carte <i>Action</i> que vous avez en jeu, au minimum 0 Coin.",
-        "extra": "La plupart du temps, cette carte coûte 8 Coins. Lors de votre phase Achat elle coûte 2 Coins de moins par carte <i>Action</i> que vous avez en jeu. Ce coût est le même pour toutes les cartes <i>Colporteur</i>, même celles en main et dans les decks. Elle ne coûte jamais moins que 0 Coin. Notez que si vous jouez une <i>Cour du Roi</i> avec un <i>Village ouvrier</i>, il n'y a que deux cartes <i>Action</i> en jeu, même si vous avez exécuté l'action d'une de ces cartes trois fois. Acheter des cartes avec la carte <i>Marché noir</i> ( * ) n'a pas lieu lors de la phase <b>Achat</b> la carte <i>Colporteur</i> coûte donc 8 Coins dans ce cas."
-    },
-    "Quarry": {
-        "name": "Carrière",
-        "description": "+1 Coin<br><line>Lorsque cette carte est en jeu, les cartes <i>Actions</i> coûtent 2 Coins de moins, mais pas moins que 0 Coin.",
-        "extra": "Cette carte Trésor vaut 1 Coin, comme une carte <i>Cuivre</i>. Lorsque cette carte est en jeu, les cartes <i>Action</i> coûtent 2 Coins de moins, jusqu'à un minimum de 0 Coin. Ceci est cumulatif: si vous jouez deux <i>Carrière</i> dans votre phase <b>Achat</b>, <i>Cour du Roi</i> ne coûtera que 3 Coins au lieu de 7 Coins. Ceci affecte aussi les cartes <i>Action</i> qui sont aussi un autre type comme <i>Nobles</i> (carte <i>Action - Victoire</i> de DI). La fonction de <i>Carrière</i> est cumulative avec d'autres fonctions modifiant le coût: si vous jouez un <i>Village ouvrier</i> dans votre phase <b>Action</b> et deux <i>Carrière</i> dans votre phase <b>Achat</b> la carte <i>Colporteur</i> coûtera 2 Coins. <i>Carrière</i> modifie le coût de toutes les cartes <i>Action</i>, incluant celles dans la main des joueurs."
-    },
-    "Rabble": {
-        "name": "Foule",
-        "description": "+3 Cartes<n>Tous vos adversaires dévoilent les 3 premières cartes de leur deck. Ils défaussent les cartes <i>Action</i> et <i>Trésor</i> ainsi dévoilées et replacent les autres cartes sur leurs deck, dans l'ordre de leur choix.",
-        "extra": "Vos adversaires mélangent au besoin, pour pouvoir dévoiler 3 cartes et ne dévoilent que ce qu'ils peuvent s'ils ont moins de 3 cartes. Ils défaussent les cartes <i>Trésor</i> et <i>Action</i> ainsi dévoilées et placent les autres cartes sur le dessus de leur deck, dans l'ordre de leur choix. Les cartes de plus d'un type correspondent à tous leurs types: si un joueur dévoile une carte <i>Nobles</i> ( DI ) par exemple, il doit la défausser car c'est une carte <i>Action - Victoire</i>."
     },
     "Royal Seal": {
         "name": "Sceau royal",
@@ -2839,15 +2774,80 @@
         "description": "+1 Achat<br>+1 Coin par jeton <i>Pièce</i> sur le plateau <i>Route Commerciale</i>. Écartez une carte de votre main.<line>Avant la partie, placez un jeton <i>Pièce</i> sur chaque pile de cartes <i>Victoire</i>. Lorsqu'une carte de cette pile est reçue, déplacez le jeton sur le plateau <i>Route Commerciale</i>.",
         "extra": "Vous avez un achat de plus dans votre phase <b>Achat</b>, Vous recevez +1 Coin par jeton <i>Pièce</i> sur la plateau <i>Route commerciale</i>. Vous écartez ensuite une carte de votre main. Si vous n'avez plus de carte en main, vous n'en écartez pas. Le nombre de pièces que vous recevez de <i>Route commercial</i> est le même que +1 Coin par pile de cartes <i>Victoire</i> dont une carte a été reçue. S'il y a eu des cartes <i>Victoire</i> reçues provenant de l'extérieur de la réserve, à l'aide de <i>Marché noir</i>(*) par exemple, ces cartes ne comptent pas pour <i>Route commerciale</i>. Placez un jeton <i>Pièce</i> sur chaque pile de cartes <i>Victoire</i> au début de la partie. Lorsqu'une carte <i>Victoire</i> est obtenue de la réserve, déplacez le jeton de cette pile sur la plateau <i>Route commerciale</i>. Si par exemple la carte <i>Harem</i> ( DI ) est en jeu, et qu'une carte <i>Harem</i> et une carte <i>Duché</i> out été achetées jusqu'à présent (et qu'aucune autre carte <i>Victoire</i> n'a été reçue), la carte <i>Route commerciale</i> vaut 2 Coins. Qui reçoit la carte et comment la carte est reçue n'a pas d'importance. Le nombre de cartes reçues d'une pile n'affecte pas le nombre de pièces, tour ce qui importe est qu'il y ait au moins une carte reçue de la pile. Même si une carte est remise dans la pile avec une carte comme <i>Ambassadeur</i> (DR), le nombre de pièces ne change pas car <i>Route commerciale</i> observe uniquement s'il y a une carre reçue de la pile. Si vous jouez avec le <i>Marché noir</i>(*) et que <i>Route commerciale</i> est dans le deck <i>Marché noir</i>, placez un jeton sur chaque pile de cartes <i>Victoire</i> au début de la partie."
     },
-    "Vault": {
-        "name": "Chambre forte",
-        "description": "+2 Cartes<n>Défaussez autant de cartes que vous voulez. +1 Coin par carte défaussée. Tous vos adversaires peuvent défausser 2 cartes. Ceux qui défaussent peuvent piocher 1 carte.",
-        "extra": "«Autant» inclut zéro. Vous piochez en premier. Vous pouvez défausser les cartes que vous venez de piocher. Chacun de vos adversaires choisit s'il défausse 2 cartes ou non. Ceux qui défaussent 2 cartes peuvent ensuite en piocher une. Si un de vos adversaires n'a qu'une seule carte, il peut choisir de la défausser, mais il ne piochera pas de carte. Dans le cas où un joueur défausse 2 cartes et n'a pas de carte à piocher, il mélange avant de piocher."
-    },
     "Venture": {
         "name": "Entreprise risquée",
         "description": "1 <*COIN*><br><n>Lorsque vous jouez cette carte, dévoilez des cartes de votre deck jusqu'à ce que vous dévoiliez une carte <i>Trésor</i>. Défaussez les autres cartes. Jouez cette carte <i>Trésor</i>.",
         "extra": "Cette carte <i>Trésor</i> vaut 1 Coin, comme une carte <i>Cuivre</i>. Lorsque vous jouez cette carte, dévoilez des cartes de votre deck jusqu'à ce que vous dévoiliez une carte <i>Trésor</i>. Si vous n'avez plus de carte avant de dévoiler une carte <i>Trésor</i>, mélangez votre défausse (qui ne comprend pas les cartes dévoilées) et continuez. Si vous n'avez plus de défausse et toujours pas de carte <i>Trésor</i>, vous arrêtez et défaussez toutes les cartes dévoilées. Si vous dévoilez une carte <i>Trésor</i>, défaussez les autres cartes et jouez la carte <i>Trésor</i>. Si cette carte <i>Trésor</i> a une fonction spéciale, appliquez-la. Par exemple, si vous dévoilez une <i>Entreprise risquée</i> avec <i>Entreprise risquée</i>, vous dévoilerez des cartes à nouveau. N'oubliez pas que vous choisissez l'ordre dans lequel vous jouez vos cartes <i>Trésor</i>, ainsi, si vous avez <i>Entreprise risquée</i> et <i>Prêt</i> en main, vous décidez laquelle des deux vous jouez en premier."
+    },
+    "Bank": {
+        "name": "Banque",
+        "description": "Lorsque vous jouez cette carte elle vaut 1 Coin par carte <i>Trésor</i> en jeu (incluant celle-ci).",
+        "extra": "La valeur de cette carte <i>Trésor</i> varie. Lorsque vous jouez une <i>Banque</i>, elle vaut 1 Coin par carte <i>Tréso</i>r que vous avez en jeu, incluant la <i>Banque</i>. L'ordre dans lequel vous jouez vos cartes <i>Trésor</i> est donc très important. Si vous jouez <i>Banque</i> seule, elle vaut 1 Coin. Si vous jouez deux <i>Banque</i> de suite, la seconde vaut 1 Coin de plus que la première. La valeur d'une <i>Banque</i> est déterminée lorsqu'elle est jouée et elle ne peut changer plus tard, même si certains événements pourraient changer sa valeur."
+    },
+    "Bishop": {
+        "name": "Évêque",
+        "description": "+1 Coin<br>+1 <VP><n>Écartez une carte de votre main. +<VP> égal à la moitié de son coût en pièce, arrondi à l'unité inférieure. Tous vos adversaires peuvent écarter une carte de leur main.",
+        "extra": "Voir les règles additionnelles au sujet des jetons <VP>. Écarter une carte est facultatif pour vos adversaires mais obligatoire pour vous. Si l'ordre a de l'importance, défaussez en premier, suivi des autres joueurs, en sens horaire. Seul le joueur qui joue la carte <i>Évêque</i> peut obtenir des jetons <VP>. S'il y a Potion dans le coût, ce symbole est ignoré. Par exemple, si vous écartez la carte <i>Golem</i> (DA), au coût de 4 Coin Potion, vous obtiendrez un total de 3 <VP> (ce qui comprend le 1 <VP> que vous obtenez en jouant <i>Évêque</i>). Si vous n'avez plus de carte à écarter en main, vous obtenez tout de même 1 Coin et 1 <VP>."
+    },
+    "City": {
+        "name": "Ville",
+        "description": "+1 Carte<br>+2 Actions<n>S'il y a une pile ou plus de vide dans la réserve. +1 Carte. S'il y a deux piles vides ou plus. +1 Coin et +1 Achat.",
+        "extra": "Vous piochez 1 carte et vous pouvez jouer 2 cartes <i>Action</i> supplémentaires, peu importe la situation. S'il n'y a qu'une pile vide dans la réserve, vous piochez une carte de plus. S'il y a deux piles vides ou plus, vous piochez I carre de plus et vous obtenez + 1 Coin à utiliser ce tour-ci et un Achat supplémentaire pour la phase <b>Achat</b>. Il n'y a pas de bonus supplémentaire s'il y a 3 piles vides ou plus. Vous observez combien de pile vide il y a uniquement lorsque vous jouez cette carte, si d'autres piles se vident plus tard durant le tour, vous n'obtenez pas d'autre bonus. Si une pile vide se remplit à nouveau suite à l'action d'une carte comme <i>Ambassadeur</i> (DR), les cartes <i>Ville</i> jouées par la suite ne considéreront pas cette pile comme vide. Le rebut n'est jamais compté."
+    },
+    "Expand": {
+        "name": "Agrandissement",
+        "description": "Écartez une carte de votre main. Recevez une carte coûtant jusqu'à 3 Coin de plus que la carte écartée.",
+        "extra": "Cette carte n'est plus dans votre main lorsque vous la jouez, elle ne peut erre la carte écartée. La carte que vous recevez peut coûter jusqu'à 3 Coin de plus que la carte écartée, mais elle peut également coûter moins. La carte reçue peut même coûter moins que la carte écartée. Vous pouvez écarter une carte et recevoir un exemplaire de cette même carte. Si vous n'avez pas de carte en main, vous ne recevez pas de carte. La carte reçue provient de la réserve et va dans votre défausse."
+    },
+    "Forge": {
+        "name": "Forge",
+        "description": "Écartez autant de cartes que vous voulez de votre main. Recevez une carte coûtant exactement le coût total en pièces de toutes les cartes écartées.",
+        "extra": "«Autant» inclut zéro. Si vous n'écartez pas de carte, vous devez recevoir une carte coûtant 0 Coin, si possible. Ce fonctionnement est différent d'une carte comme <i>Agrandissement</i> si vous n'écartez rien puisque <i>Forge</i> observe le total des coûts et non le coût d'une seule carte. S'il n'y a pas de carte du coût requis, vous ne recevez pas de carte. La carte reçue vient de la réserve et va dans votre défausse. Les symboles Potion (sur les cartes de <i>Dominion - Alchimie</i>) ne sont pas additionnés au coût et les cartes reçues ne peuvent avoir Potion dans leur coût."
+    },
+    "Grand Market": {
+        "name": "Grand marché",
+        "description": "+1 Carte<br>+1 Action<br>+1 Achat<br>+2 Coins<line>Vous ne pouvez pas acheter cette carte si vous avez des <i>Cuivre</i> en jeu.",
+        "extra": "Vous n'avez pas à jouer toutes vos cartes <i>Trésor</i> en main lors de votre phase <b>Achat</b>. Les cartes <i>Cuivre</i> en main ne vous empêchent pas d'acheter un <i>Grand marché</i>, seules les cartes <i>Cuivre</i> en jeu vous en empêchent. Les cartes <i>Cuivre</i> jouées plus tôt dans le tour mais qui ne sont plus en jeu ne vous bloquent également pas. Par exemple, si vous avez 11 <i>Cuivre</i> en jeu et 2 achats, vous pourriez acheter un <i>Hôtel de la Monnaie</i>, qui vous fait écarter toutes vos cartes <i>Trésor</i> jouées (donc plus de <i>Cuivre</i> en jeu ), et ensuite acheter un <i>Grand marché</i>. Vous pouvez recevoir un <i>Grand marché</i> par d'autres moyens, à l'aide d'<i>Agrandissement</i> par exemple, que vous ayez des <i>Cuivre</i> en jeu ou non. Les cartes <i>Trésor</i> autres que <i>Cuivre</i> ne préviennent pas l'achat d'un <i>Grand marché</i>, même si elles valent 1 Coin (comme <i>Prêt</i>)."
+    },
+    "Hoard": {
+        "name": "Magot",
+        "description": "2 <*COIN*><br><line>Lorsque cette carte est jeu, vous recevez un <i>Or</i> à l'achat d'une carte <i>Victoire</i>.",
+        "extra": "Cette carte <i>Trésor</i> vaut 2 Coins , comme une carte <i>Argent</i>. Lorsque cette carte est en jeu et que vous achetez une carte <i>Victoire</i>, vous recevez une carte Or de la réserve que vous placez dans votre défausse. S'il n'y a plus de carte <i>Or</i>, vous n'en recevez pas. Si vous avez plus d'un <i>Magot</i> en jeu, vous recevrez plusieurs cartes <i>Or</i> suite à l'achat d'une seule carte <i>Victoire</i>. Si vous achetez plus d'une carre <i>Victoire</i>, vous recevrez un <i>Or</i> pour chacune d'elle. Par exemple, si vous avez uniquement deux <i>Magot</i> en jeu et +1 Achat, vous pourriez achetez deux <i>Domaine</i> et recevoir quatre cartes <i>Or</i>. Les cartes <i>Victoire</i> comprennent également les cartes de plus d'un type comme <i>Nobles</i> ( DI ) et <i>Harem</i> (DI). Vous recevez un <i>Or</i> même si vous utilisez un <i>Mirador</i> pour immédiatement écarter la carte <i>Victoire</i> reçue. Les carres <i>Victoire</i> reçues autrement que par un achat ne vous permettent pas d'obtenir une carte <i>Or</i>."
+    },
+    "King's Court": {
+        "name": "Cour du Roi",
+        "description": "Vous pouvez choisir une carte <i>Action</i> de votre main. Jouez-la trois fois.",
+        "extra": "Cette carte est similaire a <i>Salle du Trône</i> (D), mais vous jouez la carte <i>Action</i> trois fois plutôt que deux. Vous prenez une carte <i>Action</i> de votre main, vous la jouez, vous la rejouez une deuxième fois ET ensuite une troisième fois. Ceci n'utilise pas vos actions supplémentaires obtenues avec des cartes comme <i>Village ouvrier</i>, la carte <i>Cour du Roi</i> nécessite une seule action. Vous ne pouvez jouer de cartes entre les fonctions de la carte jouée avec <i>Cour du Roi</i>, à moins que la carte <i>Action</i> ne vous demande de le faire (par exemple <i>Cour du Roi</i>). Si vous utilisez une <i>Cour du Roi</i> avec une <i>Cour du Roi</i>, vous jouerez trois cartes <i>Action</i> différentes, trois fois chaque ; vous ne jouez pas une seule carte neuf fois. Si vous jouez <i>Cour du Roi</i> avec une carte vous donnant + 1 Action, comme <i>Grand marché</i>, vous aurez 3 actions supplémentaires, et non 1 seule action, comme si vous aviez joué trois cartes <i>Grand marché</i>."
+    },
+    "Mint": {
+        "name": "Hôtel de la Monnaie",
+        "description": "Vous pouvez dévoiler une carte <i>Trésor</i> de votre main. Recevez-en un exemplaire.<line>Lorsque vous achetez cette carte, écartez tous vos <i>Trésor</i> en jeu.",
+        "extra": "Lorsque vous achetez cette carte, écartez toutes vos cartes <i>Trésor</i> en jeu. Vous n'écartez pas les cartes <i>Trésor</i> dans votre main ou ailleurs, s'il y en a. Si vous achetez plusieurs cartes dans un tour, écartez vos cartes <i>Trésor</i> au moment où vous achetez <i>Hôtel de la Monnaie</i> ; les pièces produites par ces cartes ce tour-ci sont encore disponibles. N'oubliez pas que vous n'avez pas à jouer toutes vos cartes <i>Trésor</i> en main à chaque tour, uniquement celles que vous désirez utiliser. Vous ne pouvez pas jouer de cartes <i>Trésor</i> entre vos achats ; vous jouez d'abord vos cartes <i>Trésor</i> et vous faites vos achats ensuite. Lorsque vous jouez <i>Hôtel de la Monnaie</i>, dévoilez une carte <i>Trésor</i> de votre main et recevez de la réserve un exemplaire de cette carte. La carte reçue va dans votre défausse et la carte dévoilée demeure dans votre main. La carte <i>Trésor</i> peut avoir plus d'un type, comme <i>Harem</i> ( DI ). Si vous achetez un <i>Hôtel de la Monnaie</i> et que vous utilisez un <i>Mirador</i> pour défausser l'<i>Hôtel de la Monnaie</i> ou le mettre sur le dessus de votre deck, vous devez écarter tout de même toutes vos cartes <i>Trésor</i> en jeu. Toutefois, si vous achetez un <i>Hôtel de la Monnaie</i> avec un <i>Sceau Royal</i> en jeu, le <i>Sceau Royal</i> sera écarté avant que vous ne puissiez l'utiliser pour mettre <i>Hôtel de la Monnaie</i> sur votre deck."
+    },
+    "Monument": {
+        "name": "Monument",
+        "description": "+2 Coins<br>+1 <VP>",
+        "extra": "Voir les règles additionnelles au sujet des jetons <VP>."
+    },
+    "Peddler": {
+        "name": "Colporteur",
+        "description": "+1 Carte<br>+1 Action<br>+1 Coin<line>Pendant votre phase <b>Achat</b>, cette carte coûte 2 Coin de moins par carte <i>Action</i> que vous avez en jeu, au minimum 0 Coin.",
+        "extra": "La plupart du temps, cette carte coûte 8 Coins. Lors de votre phase Achat elle coûte 2 Coins de moins par carte <i>Action</i> que vous avez en jeu. Ce coût est le même pour toutes les cartes <i>Colporteur</i>, même celles en main et dans les decks. Elle ne coûte jamais moins que 0 Coin. Notez que si vous jouez une <i>Cour du Roi</i> avec un <i>Village ouvrier</i>, il n'y a que deux cartes <i>Action</i> en jeu, même si vous avez exécuté l'action d'une de ces cartes trois fois. Acheter des cartes avec la carte <i>Marché noir</i> ( * ) n'a pas lieu lors de la phase <b>Achat</b> la carte <i>Colporteur</i> coûte donc 8 Coins dans ce cas."
+    },
+    "Quarry": {
+        "name": "Carrière",
+        "description": "+1 Coin<br><line>Lorsque cette carte est en jeu, les cartes <i>Actions</i> coûtent 2 Coins de moins, mais pas moins que 0 Coin.",
+        "extra": "Cette carte Trésor vaut 1 Coin, comme une carte <i>Cuivre</i>. Lorsque cette carte est en jeu, les cartes <i>Action</i> coûtent 2 Coins de moins, jusqu'à un minimum de 0 Coin. Ceci est cumulatif: si vous jouez deux <i>Carrière</i> dans votre phase <b>Achat</b>, <i>Cour du Roi</i> ne coûtera que 3 Coins au lieu de 7 Coins. Ceci affecte aussi les cartes <i>Action</i> qui sont aussi un autre type comme <i>Nobles</i> (carte <i>Action - Victoire</i> de DI). La fonction de <i>Carrière</i> est cumulative avec d'autres fonctions modifiant le coût: si vous jouez un <i>Village ouvrier</i> dans votre phase <b>Action</b> et deux <i>Carrière</i> dans votre phase <b>Achat</b> la carte <i>Colporteur</i> coûtera 2 Coins. <i>Carrière</i> modifie le coût de toutes les cartes <i>Action</i>, incluant celles dans la main des joueurs."
+    },
+    "Rabble": {
+        "name": "Foule",
+        "description": "+3 Cartes<n>Tous vos adversaires dévoilent les 3 premières cartes de leur deck. Ils défaussent les cartes <i>Action</i> et <i>Trésor</i> ainsi dévoilées et replacent les autres cartes sur leurs deck, dans l'ordre de leur choix.",
+        "extra": "Vos adversaires mélangent au besoin, pour pouvoir dévoiler 3 cartes et ne dévoilent que ce qu'ils peuvent s'ils ont moins de 3 cartes. Ils défaussent les cartes <i>Trésor</i> et <i>Action</i> ainsi dévoilées et placent les autres cartes sur le dessus de leur deck, dans l'ordre de leur choix. Les cartes de plus d'un type correspondent à tous leurs types: si un joueur dévoile une carte <i>Nobles</i> ( DI ) par exemple, il doit la défausser car c'est une carte <i>Action - Victoire</i>."
+    },
+    "Vault": {
+        "name": "Chambre forte",
+        "description": "+2 Cartes<n>Défaussez autant de cartes que vous voulez. +1 Coin par carte défaussée. Tous vos adversaires peuvent défausser 2 cartes. Ceux qui défaussent peuvent piocher 1 carte.",
+        "extra": "«Autant» inclut zéro. Vous piochez en premier. Vous pouvez défausser les cartes que vous venez de piocher. Chacun de vos adversaires choisit s'il défausse 2 cartes ou non. Ceux qui défaussent 2 cartes peuvent ensuite en piocher une. Si un de vos adversaires n'a qu'une seule carte, il peut choisir de la défausser, mais il ne piochera pas de carte. Dans le cas où un joueur défausse 2 cartes et n'a pas de carte à piocher, il mélange avant de piocher."
     },
     "Watchtower": {
         "name": "Mirador",
@@ -2858,6 +2858,51 @@
         "name": "Village ouvrier",
         "description": "+1 Carte<br>+2 Actions<br>+1 Achat",
         "extra": "Piochez une carre, vous pouvez jouer deux cartes <i>Action</i> de plus et vous pouvez acheter une carte de plus pendant votre phase <b>Achat</b> ce tour-ci."
+    },
+    "Anvil": {
+        "description": "1 <*COIN*><n><n>You may discard a Treasure to gain a card costing up to 4 Coin.",
+        "extra": "Discarding a Treasure is optional. If you discard one, you gain a card costing up to 4 Coin which comes from the Supply and goes to your discard pile.",
+        "name": "Anvil"
+    },
+    "Charlatan": {
+        "description": "+3 Coin<n><n>Each other player gains a Curse.<line>In games using this, Curse is also a Treasure worth 1 Coin.",
+        "extra": "This turns Curses into Treasures for the entire game and in all situations; it's just like the bottom bar says \"Curse - Treasure.\" They may be played for +1 Coin in the Buy phase. They are trashed from play when gaining Mint, Magnate counts them in your hand, Courtier (from Intrigue) gives you two choices when revealing one, and so on. They are still Curses and still worth –1<VP> at the end of the game. Unlike Capitalism, Charlatan makes Curses stay as Treasures during scoring, so they will count for Keep. Curses will be Treasures if Charlatan is in the Black Market deck, even if no one actually gains it.",
+        "name": "Charlatan"
+    },
+    "Clerk": {
+        "description": "+2 Coin<n>Each other player with 5 or more cards in hand puts one onto their deck.<line>At the start of your turn, you may play this from your hand.",
+        "extra": "A player with no cards in their deck will have the card they put on top become the only card in their deck. At the start of your turn, you may play any number of Clerk cards from your hand, one at a time, without using up your regular Action play. You may use Clerk's self-playing start-of-turn ability before, between, or after other start-of-turn effects. For instance, if you draw Clerk due to the effect of Den of Sin, it's not too late to use Clerk's Reaction ability.",
+        "name": "Clerk"
+    },
+    "Collection": {
+        "description": "2 <*COIN*><n><n>+1 Buy<n><n>This turn, when you gain an Action card, +1<VP>.",
+        "extra": "You get +1<VP> for each Action card you gain, whether bought, or gained some other way.<n>Multiple copies of this are cumulative; if you have two Collections in play and buy a Village, you'll get +2<VP>. You only get <VP> for Actions you gain after you play the Collection; it doesn't retroactively give you points for cards you gained earlier in the turn. If the Collection leaves play (for instance, because you trashed it with Counterfeit), you still get <VP> from it for the rest of the turn.",
+        "name": "Collection"
+    },
+    "Crystal Ball": {
+        "description": "1 <*COIN*><n><n>Look at the top card of your deck. You may trash it, discard it, or, if it's an Action or Treasure, play it.",
+        "extra": "If you don't choose to do any of those things, you leave the card on your deck. If this plays an Action during your Buy phase that gives you +Actions, that doesn't let you play more Action cards in your Buy phase; if it draws Treasure cards, you can still play them.",
+        "name": "Crystal Ball"
+    },
+    "Investment": {
+        "description": "Trash a card from your hand.<n>Choose one: +1 Coin; or trash this to reveal your hand for +1<VP> per differently named Treasure there.",
+        "extra": "You trash a card no matter what; it's okay if Investment was your last card in hand, you just fail to trash a card then. Then you choose either to get +1 Coin or to trash Investment. If you trash it, you reveal your hand and get +1<VP> per differently named Treasure there; for example if you reveal two Coppers and a Silver, you get +2<VP>. You can still play the revealed Treasures after resolving Investment. If you play the same Investment twice (e.g. with Crown) and trash it on the first play for <VP>, then you can't trash it on the second play for <VP>.",
+        "name": "Investment"
+    },
+    "Magnate": {
+        "description": "Reveal your hand.<n>+1 Card per Treasure in it.",
+        "extra": "For example, if your hand had two Coppers and a Silver, you'd draw 3 cards.",
+        "name": "Magnate"
+    },
+    "Tiara": {
+        "description": "+1 Buy<n><n>This turn, when you gain a card, you may put it onto your deck.<n><n>You may play a Treasure from your hand twice.",
+        "extra": "If you gain multiple cards later in the turn after playing Tiara, you may put any or all of them onto your deck. This applies both to cards gained due to being bought, and to cards gained other ways, such as with War Chest. If you play a Tiara with a Tiara, you will be able to play two Treasures from your hand twice each - you don't play one Treasure four times.",
+        "name": "Tiara"
+    },
+    "War Chest": {
+        "description": "The player to your left names a card. Gain a card costing up to 5 Coin that hasn't been named for War Chest this turn.",
+        "extra": "The first War Chest you play in a turn can't gain whatever card they name; the second can't gain the card they name, or the card they previously named, and so on. The gained card comes from the Supply and is put into your discard pile. You can still gain the named cards other ways, just not via War Chests. They do not have to name a card in the Supply; however War Chest gains a card from the Supply, and puts it into your discard pile.",
+        "name": "War Chest"
     },
     "Academy": {
         "description": "When you gain an Action card, +1 Villager.",

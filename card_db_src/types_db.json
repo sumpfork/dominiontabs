@@ -88,6 +88,18 @@
     {
         "card_type": [
             "Action",
+            "Reaction",
+            "Attack"
+
+        ],
+        "card_type_image": "reaction.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
             "Attack",
             "Traveller"
         ],
