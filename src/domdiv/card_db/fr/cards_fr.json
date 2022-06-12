@@ -3114,6 +3114,41 @@
         "description": "Dévoilez une carte de votre main. Replacez, de votre main à la réserve, jusqu'à exemplaires de cette carte. Ensuite, tous vos adversaires reçoivent un exemplaire de cette carte.",
         "extra": "Choisissez et dévoilez d'abord une carte de votre main. Vous pouvez prendre jusqu'à 2 exemplaires de cette carte de votre main et les replacer dans la réserve. Il vous est possible de ne rien replacer dans la réserve. Ensuite, tous vos adversaires reçoivent un exemplaire de cette carte de la réserve. S'il reste peu de copies de cette carte dans la réserve, les cartes sont distribuées en sens horaire en débutant par le joueur à votre gauche. Il est donc possible que des joueurs ne reçoivent pas de carte. Si vous n'avez aucune carte en main lorsque vous jouez cette carte, il ne se passe rien."
     },
+    "Embargo": {
+        "name": "Embargo",
+        "description": "+2 Coins<n>Écartez cette carte. Placez un jeton <i>Embargo</i> sur une pioche de la réserve.<line> Lorsqu'un joueur achète une carte, il reçoit une carte <i>Malédiction</i> par jeton <i>Embargo</i> sur cette pile.",
+        "extra": "Vous choisissez la pile de votre choix dans la réserve. Si plusieurs cartes <i>Embargo</i> sont utilisées pour placer des jetons <i>Embargo</i> sur la même pile, un joueur qui achète une carte de cette pile obtiendra une carte <i>Malédiction</i> pour chaque jeton <i>Embargo</i>. Vous ne recevez pas de carte <i>Malédiction</i> si vous recevez une carte, <b>sans l'acheter</b>, de la pile sous <i>Embargo</i> (par exemple, à l'aide de la carte <i>Contrebandiers</i>). Si vous utilisez une carte <i>Salle du Trône</i> (D) sur une carte <i>Embargo</i>, vous placez deux jetons <i>Embargo</i> et vous n'avez pas à placer les jetons sur la même pile. S'il ne reste plus de jetons <i>Embargo</i>, trouvez une pièce de remplacement convenable pour marquer les piles. S'il n'y a plus de carte <i>Malédiction</i>, les jetons <i>Embargo</i> n'ont plus d'effet."
+    },
+    "Explorer": {
+        "name": "Explorateur",
+        "description": "Vous pouvez dévoiler une carte <i>Province</i> de votre main. Dans ce cas, recevez une carte <i>Or</i> et ajoutez cette carte à votre main. Sinon, recevez une carte <i>Argent</i> et ajoutez cette carte à votre main.",
+        "extra": "Explorateur: Vous n'avez pas à dévoiler une carte <i>Province</i>, même si vous en avez une en main. Si vous en dévoilez une, vous recevez une carte <i>Or</i>, sinon une carte <i>Argent</i>. Le carte ainsi reçue provient de la réserve et est placée dans votre main, ce qui vous permet de l'utiliser ce tour-ci."
+    },
+    "Ghost Ship": {
+        "name": "Vaisseau fantôme",
+        "description": "+2 Cartes<n>Tous vos adversaires ayant au moins 4 cartes en main placent des cartes de leur main sur leur deck jusqu'à ce qu'ils aient 3 cartes en main.",
+        "extra": "Les autres joueurs choisissent quelles cartes ils remettent sur leur deck et dans quel ordre ils les remettent. Les joueurs qui n'ont que 3 cartes en main ne sont pas affectés par cette carte. Un joueur qui n'a plus de carte dans son deck ne mélange pas, les cartes remises seront les seules cartes dans son deck."
+    },
+    "Navigator": {
+        "name": "Navigateur",
+        "description": "+2 Coins<n>Consultez les 5 premières cartes de votre deck. Vous pouvez toutes les défausser <b>OU</b> toutes les remettre sur votre deck dans l'ordre de votre choix.",
+        "extra": "Vous défaussez la totalité des 5 cartes ou aucune. Si vous ne les défaussez pas, vous les replacez dans l'ordre de votre choix. Si vous n'avez pas 5 cartes dans votre deck, consultez en autant que possible, mélangez votre défausse (qui n'inclut pas les cartes présentement consultées) et consultez le reste. Si vous n'avez toujours pas 5 cartes à consulter, consultez-en autant que possible et replacez ces cartes sur le deck ou défaussez-les."
+    },
+    "Pearl Diver": {
+        "name": "Plongeur de perles",
+        "description": "+1 Carte<br>+1 Action<n>Consultez la carte du dessous de votre deck. Vous pouvez la placer sur le dessus.",
+        "extra": "Piochez une carte avant de consulter celle du dessous de votre deck. Si vous placez la carte sur le dessus de votre deck, assurez-vous de ne pas consulter la carte qui est maintenant sous le deck lors du déplacement. Si vous n'avez pas de carte à consulter dans votre deck, mélangez votre défausse pour constituer un nouveau deck et pouvoir consulter une carte."
+    },
+    "Pirate Ship": {
+        "name": "Bateau pirate",
+        "description": "Choisissez: Tous vos adversaires dévoilent les 2 premières cartes de leur deck, écartent une carte <i>Trésor</i> dévoilée de votre choix, défaussent le reste et vous prenez un jeton <b>Pièce</b> s'il y a eu au moins une carte Trésor écartée <b>OU</b> +1 Coin pour chaque jeton <b>Pièce</b> que vous avez obtenu avec les <b>Bateau pirate</b>.",
+        "extra": "Lorsque vous obtenez votre première carte <i>Bateau pirate</i>, prenez le plateau correspondant. Quand vous utilisez cette carte pour faire écarter des cartes <i>Trésor</i>, un joueur qui n'a qu'une seule carte dans son deck dévoile celle-ci et mélange sa défausse (qui n'inclut pas la carte dévoilée) pour pouvoir dévoiler la seconde carte ; un joueur qui n'a plus de carre dans son deck mélange sa défausse afin de pouvoir dévoiler les deux cartes. Si un joueur n'a toujours pas suffisamment de cartes, il dévoile ce qu'il peut. Chaque adversaire écarte au maximum une carte <i>Trésor</i>, de votre choix, parmi les deux cartes dévoilées. Si vous avez écarté au moins une carte <i>Trésor</i> de cette façon, placez un jeton <i>Pièce</i> sur votre plateau <i>Bateau pirate</i>. Peu importe le nombre de cartes <i>Trésor écartées</i>, vous ne pouvez obtenir qu'un seul jeton <i>Pièce</i> à chaque fois que vous jouez un <i>Bateau pirate</i>. Si vous choisissez de ne pas faire écarter de cartes <i>Trésor</i> à vos adversaires, le <i>Bateau pirate</i> vaut +1 pièce pour chaque jeton <i>Pièce</i> sur votre plateau <i>Bateau pirate</i>. Les jetons <i>Pièce</i> sont cumulatifs ; ainsi, si vous avez fait écarter des cartes <i>Trésor</i> 3 fois (vous avez donc joué le <i>Bateau pirate</i> avec succès 3 fois), toutes les cartes <i>Bateau pirate</i> que vous jouez par la suite valent 3 pièces. Le <i>Bateau pirate</i> est une carte <i>Action-Attaque</i>, les joueurs peuvent donc dévoiler une <i>Chambre secrète</i> ( DI ) même si vous jouez le <i>Bateau pirate</i> pour des pièces."
+    },
+    "Sea Hag": {
+        "name": "Sorcière de mer",
+        "description": "Tous vos adversaires défaussent la première carte de leur deck et reçoivent ensuite une carte <i>Malédiction</i> qu'ils placent sur le dessus de leur deck.",
+        "extra": "Un joueur qui n'a plus de carte dans son deck doit mélanger sa définisse afin d'avoir une carte à défausser. S'il n'a toujours pas de carte, il n'en défausse pas. Un joueur qui défausse sa dernière carte à cause de la <i>Sorcière de mer</i> n'aura donc que la carte <i>Malédiction</i> reçue dans son deck. S'il n'y a pas suffisamment de cartes <i>Malédiction</i>, distribuez-les selon l'ordre de jeu, en commençant par le joueur à gauche de celui qui a joué une <i>Sorcière de mer</i>."
+    },
     "Bazaar": {
         "name": "Bazar",
         "description": "+1 Carte<br>+2 Actions<br>+1 Coins",
@@ -3129,25 +3164,10 @@
         "description": "+2 Coins<n>Tous vos adversaires défaussent une carte <i>Cuivre</i> (sinon ils dévoilent leur main afin que vous puissiez voir qu'ils n'ont pas de carte <i>Cuivre</i>).",
         "extra": "Vos adversaires doivent défausser une seule carte <i>Cuivre</i>. S'ils n'ont pas de <i>Cuivre</i>, ils doivent dévoiler leur main à tous les joueurs."
     },
-    "Embargo": {
-        "name": "Embargo",
-        "description": "+2 Coins<n>Écartez cette carte. Placez un jeton <i>Embargo</i> sur une pioche de la réserve.<line> Lorsqu'un joueur achète une carte, il reçoit une carte <i>Malédiction</i> par jeton <i>Embargo</i> sur cette pile.",
-        "extra": "Vous choisissez la pile de votre choix dans la réserve. Si plusieurs cartes <i>Embargo</i> sont utilisées pour placer des jetons <i>Embargo</i> sur la même pile, un joueur qui achète une carte de cette pile obtiendra une carte <i>Malédiction</i> pour chaque jeton <i>Embargo</i>. Vous ne recevez pas de carte <i>Malédiction</i> si vous recevez une carte, <b>sans l'acheter</b>, de la pile sous <i>Embargo</i> (par exemple, à l'aide de la carte <i>Contrebandiers</i>). Si vous utilisez une carte <i>Salle du Trône</i> (D) sur une carte <i>Embargo</i>, vous placez deux jetons <i>Embargo</i> et vous n'avez pas à placer les jetons sur la même pile. S'il ne reste plus de jetons <i>Embargo</i>, trouvez une pièce de remplacement convenable pour marquer les piles. S'il n'y a plus de carte <i>Malédiction</i>, les jetons <i>Embargo</i> n'ont plus d'effet."
-    },
-    "Explorer": {
-        "name": "Explorateur",
-        "description": "Vous pouvez dévoiler une carte <i>Province</i> de votre main. Dans ce cas, recevez une carte <i>Or</i> et ajoutez cette carte à votre main. Sinon, recevez une carte <i>Argent</i> et ajoutez cette carte à votre main.",
-        "extra": "Explorateur: Vous n'avez pas à dévoiler une carte <i>Province</i>, même si vous en avez une en main. Si vous en dévoilez une, vous recevez une carte <i>Or</i>, sinon une carte <i>Argent</i>. Le carte ainsi reçue provient de la réserve et est placée dans votre main, ce qui vous permet de l'utiliser ce tour-ci."
-    },
     "Fishing Village": {
         "name": "Village de pêcheurs",
         "description": "+2 Actions<br>+1 Coin<n>Au début de votre prochain tour : +1 Action et +1 Coin",
         "extra": "Vous obtenez 2 actions supplémentaires ainsi qu'une pièce de plus à utiliser ce tour-ci. Au début de votre prochain tour, vous obtenez une seule action supplémentaire ainsi qu'une pièce supplémentaire. Ceci veut dire que vous pourrez jouer un minimum de 2 cartes <i>Action</i> au prochain tour (incluant votre action de base). Laissez cette carte devant vous jusqu'à la phase <b>Ajustement</b> de votre prochain tour."
-    },
-    "Ghost Ship": {
-        "name": "Vaisseau fantôme",
-        "description": "+2 Cartes<n>Tous vos adversaires ayant au moins 4 cartes en main placent des cartes de leur main sur leur deck jusqu'à ce qu'ils aient 3 cartes en main.",
-        "extra": "Les autres joueurs choisissent quelles cartes ils remettent sur leur deck et dans quel ordre ils les remettent. Les joueurs qui n'ont que 3 cartes en main ne sont pas affectés par cette carte. Un joueur qui n'a plus de carte dans son deck ne mélange pas, les cartes remises seront les seules cartes dans son deck."
     },
     "Haven": {
         "name": "Havre",
@@ -3179,35 +3199,15 @@
         "description": "+2 Actions<n>Choisissez: Menez de côté la première carte de votre deck, face cachée, sur votre plateau <i>Village indigène</i> <b>OU</b> prenez dans votre main toutes les cartes placées sur votre plateau.<n>Vous pouvez consulter les cartes placées sur votre plateau en tout temps. Replacez-les dans votre deck à la fin de la partie.",
         "extra": "Lorsque vous obtenez votre première copie de cette carte, prenez un plateau <i>Village indigène</i> afin de pouvoir y mettre des cartes. Lorsque vous jouez un <i>Village indigène</i>, soit vous prenez dans votre main toutes les cartes mises de coté sur votre plateau <i>Village indigène</i> soit vous mettez de côté, face cachée, la première carte de votre deck (mélangez au besoin) sur votre plateau <i>Village indigène</i>. Vous pouvez choisir une option ou l'autre, même si vous n'avez aucune carte sur votre plateau ou dans votre deck. Vous pouvez consulter les cartes sur votre plateau <i>Village indigène</i> en tout temps. À la fin de la partie, toutes les cartes toujours présentes sur votre plateau sont remises dans votre deck pour le pointage. La carte <i>Village indigène</i>, quant à elle, n'est pas mise de coté, elle est défaussée lors de la phase <b>Ajustement</b>."
     },
-    "Navigator": {
-        "name": "Navigateur",
-        "description": "+2 Coins<n>Consultez les 5 premières cartes de votre deck. Vous pouvez toutes les défausser <b>OU</b> toutes les remettre sur votre deck dans l'ordre de votre choix.",
-        "extra": "Vous défaussez la totalité des 5 cartes ou aucune. Si vous ne les défaussez pas, vous les replacez dans l'ordre de votre choix. Si vous n'avez pas 5 cartes dans votre deck, consultez en autant que possible, mélangez votre défausse (qui n'inclut pas les cartes présentement consultées) et consultez le reste. Si vous n'avez toujours pas 5 cartes à consulter, consultez-en autant que possible et replacez ces cartes sur le deck ou défaussez-les."
-    },
     "Outpost": {
         "name": "Avant-poste",
         "description": "Vous ne piochez que 3 cartes (plutôt que 5) lors de la phase <b>Ajustement</b> de ce tour. Vous jouez un tour supplémentaire après celui-ci. Ceci ne vous permet pas de jouer plus de deux tours consécutifs.",
         "extra": "Le tour supplémentaire est complété comme à l'habitude à l'exception du fait que votre main initiale n'est que de 3 cartes. Ceci signifie que vous avez pioché 3 cartes plutôt que 5 lors de la phase <b>Ajustement</b> du tour où vous avez joué l'<i>Avant-poste</i>. Laissez l'<i>Avant-poste</i> devant vous jusqu'à la fin du tour supplémentaire. Si vous jouez un <i>Avant-poste</i> ainsi qu'une carte qui agit « Maintenant et au début de votre prochain tour », comme le <i>Navire marchand</i>, le tour donné par l'<i>Avant-poste</i> sera le prochain et c'est à ce moment que vous aurez les pièces supplémentaires. Si vous arrivez à jouer plus d'un <i>Avant-poste</i> dans un même tour, vous n'obtenez qu'un seul tour supplémentaire. Si vous jouez un <i>Avant-poste</i> pendant votre tour supplémentaire, cela ne vous donne pas un tour de plus."
     },
-    "Pearl Diver": {
-        "name": "Plongeur de perles",
-        "description": "+1 Carte<br>+1 Action<n>Consultez la carte du dessous de votre deck. Vous pouvez la placer sur le dessus.",
-        "extra": "Piochez une carte avant de consulter celle du dessous de votre deck. Si vous placez la carte sur le dessus de votre deck, assurez-vous de ne pas consulter la carte qui est maintenant sous le deck lors du déplacement. Si vous n'avez pas de carte à consulter dans votre deck, mélangez votre défausse pour constituer un nouveau deck et pouvoir consulter une carte."
-    },
-    "Pirate Ship": {
-        "name": "Bateau pirate",
-        "description": "Choisissez: Tous vos adversaires dévoilent les 2 premières cartes de leur deck, écartent une carte <i>Trésor</i> dévoilée de votre choix, défaussent le reste et vous prenez un jeton <b>Pièce</b> s'il y a eu au moins une carte Trésor écartée <b>OU</b> +1 Coin pour chaque jeton <b>Pièce</b> que vous avez obtenu avec les <b>Bateau pirate</b>.",
-        "extra": "Lorsque vous obtenez votre première carte <i>Bateau pirate</i>, prenez le plateau correspondant. Quand vous utilisez cette carte pour faire écarter des cartes <i>Trésor</i>, un joueur qui n'a qu'une seule carte dans son deck dévoile celle-ci et mélange sa défausse (qui n'inclut pas la carte dévoilée) pour pouvoir dévoiler la seconde carte ; un joueur qui n'a plus de carre dans son deck mélange sa défausse afin de pouvoir dévoiler les deux cartes. Si un joueur n'a toujours pas suffisamment de cartes, il dévoile ce qu'il peut. Chaque adversaire écarte au maximum une carte <i>Trésor</i>, de votre choix, parmi les deux cartes dévoilées. Si vous avez écarté au moins une carte <i>Trésor</i> de cette façon, placez un jeton <i>Pièce</i> sur votre plateau <i>Bateau pirate</i>. Peu importe le nombre de cartes <i>Trésor écartées</i>, vous ne pouvez obtenir qu'un seul jeton <i>Pièce</i> à chaque fois que vous jouez un <i>Bateau pirate</i>. Si vous choisissez de ne pas faire écarter de cartes <i>Trésor</i> à vos adversaires, le <i>Bateau pirate</i> vaut +1 pièce pour chaque jeton <i>Pièce</i> sur votre plateau <i>Bateau pirate</i>. Les jetons <i>Pièce</i> sont cumulatifs ; ainsi, si vous avez fait écarter des cartes <i>Trésor</i> 3 fois (vous avez donc joué le <i>Bateau pirate</i> avec succès 3 fois), toutes les cartes <i>Bateau pirate</i> que vous jouez par la suite valent 3 pièces. Le <i>Bateau pirate</i> est une carte <i>Action-Attaque</i>, les joueurs peuvent donc dévoiler une <i>Chambre secrète</i> ( DI ) même si vous jouez le <i>Bateau pirate</i> pour des pièces."
-    },
     "Salvager": {
         "name": "Sauveteur",
         "description": "+1 Achat<br>Écartez une carte de votre main. + _ Coin égal au coût de la carte écartée.",
         "extra": "Si vous avez au moins une carte en main, vous devez l'écarter. Si vous n'avez pas de carte en main à écarter, vous n'obtenez pas de pièces, mais vous recevez tout de meme +1 Achat."
-    },
-    "Sea Hag": {
-        "name": "Sorcière de mer",
-        "description": "Tous vos adversaires défaussent la première carte de leur deck et reçoivent ensuite une carte <i>Malédiction</i> qu'ils placent sur le dessus de leur deck.",
-        "extra": "Un joueur qui n'a plus de carte dans son deck doit mélanger sa définisse afin d'avoir une carte à défausser. S'il n'a toujours pas de carte, il n'en défausse pas. Un joueur qui défausse sa dernière carte à cause de la <i>Sorcière de mer</i> n'aura donc que la carte <i>Malédiction</i> reçue dans son deck. S'il n'y a pas suffisamment de cartes <i>Malédiction</i>, distribuez-les selon l'ordre de jeu, en commençant par le joueur à gauche de celui qui a joué une <i>Sorcière de mer</i>."
     },
     "Smugglers": {
         "name": "Contrebandiers",
@@ -3238,6 +3238,51 @@
         "name": "Quai",
         "description": "Maintenant et au début de votre prochain tour : +2 Cartes et +1 Achat.",
         "extra": "Quai: Vous piochez 2 cartes et avez un achat supplémentaire ce tour-ci. Ensuite, au début de votre prochain tour, vous piochez à nouveau 2 cartes supplémentaires et vous avez un achat de plus. Vous ne piochez pas les 2 cartes de plus pour votre prochain tour avant que ce tour ne débute vraiment Laissez cette carte devant vous jusqu'à la phase <b>Ajustement</b> de votre prochain tour."
+    },
+    "Astrolabe": {
+        "description": "Now and at the start of your next turn:<br><br>1 <*COIN*><br><br>+ 1 Buy",
+        "extra": "This gives you +1 Buy and +1 Coin on the turn you play it, and +1 Buy and +1 Coin on your next turn too.",
+        "name": "Astrolabe"
+    },
+    "Blockade": {
+        "description": "Gain a card costing up to 4 Coin, setting it aside.<br>At the start of your next turn, put it into your hand. While it's set aside, when another player gains a copy of it on their turn, they gain a Curse.",
+        "extra": "The gained card comes from the Supply and is set aside; put it on the <i>Blockade</i> to remember which card goes with <i>Blockade</i>.<br>If the gained card somehow doesn't end up set aside (for example if you trash it with <i>Watchtower</i> from Prosperity), nothing further happens; if the card is set aside, then you put it into your hand on your next turn, and until then, when other players gain the card on their own turns, they also gain a Curse.<br>Like all Duration attacks, you have to reveal your <i>Moat</i> as soon as an opponent plays a <i>Blockade</i>.<br>Unlike <i>Summon</i>, the card you gain is set aside immediately, but it can still get moved (with e.g. <i>Gatekeeper</i>). If it gets moved, you'll discard <i>Blockade</i> during Clean-up.<br>Because you don't gain the card to your discard pile, that means that the abilities on <i>Nomad Camp</i> and <i>Ghost Town</i> do not matter.<br>If you <i>Blockade</i> a Curse, then if another player on their turn gains a Curse, they will gain all the Curses. If they have a <i>Trader</i> in hand, they can get any and all Silvers in the Supply, but they'll still gain all the Curses.<br>This only Curses another player if they gain a copy of a <i>Blockaded</i> card during their turn. If you make them gain a copy when it's not their turn (e.g. you buy a <i>Messenger</i> and give them a copy), they won't gain a Curse.<br>During a <i>Possession</i> turn, no one will get Cursed from <i>Blockade</i>.",
+        "name": "Blockade"
+    },
+    "Corsair": {
+        "description": "+2 Coin<br><br>At the start of your next turn, +1 Card. Until then, each other player trashes the first Silver or Gold they play each turn.",
+        "extra": "The trashed Silver or Gold still made _ Coin for the player to spend that turn.<br>If you're under multiple <i>Corsair</i> attacks, you'll only trash 1 Silver and/or Gold.",
+        "name": "Corsair"
+    },
+    "Monkey": {
+        "description": "Until your next turn, when the player to your right gains a card,<br>+1 Card.<br><br>At the start of your next turn,<br>+1 Card.",
+        "extra": "This includes cards that the player gains on other players' turns, such as a Curse they gain on your turn via <i>Witch</i>.<br>When another player gains a card, they resolve any of their on-gain effects before you draw a card (which could matter vs <i>Skirmisher</i>).<br>If Monkey draws a <i>Reaction</i> that can react to the card they gained (such as <i>Falconer</i>), you can immediately use it.<br>If you play this with <i>Way of the Chameleon</i>, and the player to your right gains a card on the same turn, you'll get +1 Coin. Afterwards, you'll get +1 Card when they gain a card.",
+        "name": "Monkey"
+    },
+    "Pirate": {
+        "description": "At the start of your next turn, gain a Treasure costing up to 6 Coin to your hand.<line>When any player gains a Treasure, you may play this from your hand.",
+        "extra": "You can play this when you gain a Treasure, or when another player gains a Treasure.<br>If you play this during another player's turn, your following turn is when your <i>Pirate</i> gains you a Treasure.<br>The Treasure you gain comes from the Supply and goes directly to your hand.<br>This plays like the Reactions in <i>Menagerie</i>.<br>If you have <i>Capitalism</i>, gaining an Action with +_ Coin in its text will let all players play <i>Pirates</i> from their hand.",
+        "name": "Pirate"
+    },
+    "Sailor": {
+        "description": "+1 Action<br>Once this turn, when you gain a Duration card, you may play it.<br><br>At the start of your next turn, +2 Coin and you may trash a card from your hand.",
+        "extra": "If you gain a Duration card the turn you play <i>Sailor</i>, playing it is optional.<br>This is cumulative; if you play two <i>Sailors</i>, you can play up to two gained Duration cards. However two <i>Sailors</i> cannot play the same gained Duration card twice.<br><i>Sailor</i> applies to cards gained due to being bought, or gained other ways, such as with <i>Workshop</i>.<br>If you gain a Duration card in your Buy phase, <i>Sailor</i> can play it, even though it's your Buy phase. If such a card gives you +Actions, that doesn't let you play more Action cards in your Buy phase; if it draws Treasure cards, you can only play them if you haven't bought any cards yet.<br>The ability to play Duration cards only happens the turn you play <i>Sailor</i>; on your next turn, you just get +2 Coin and may trash a card from your hand.<br>The Duration doesn't need to be an Action, meaning that you can play Night-Durations when you gain them (like <i>Cobbler</i>).<br>If you exchange a <i>Hero</i> for a <i>Champion</i>, you aren't gaining it, so you can't play it.<br>If you gain a <i>Garrison</i> and play it, you'll immediately add a token to <i>Garrison</i>.<br>This can play a gained Duration even if it was gained to somewhere other than your discard pile (such as a <i>Guardian</i>, or a card gained with <i>Blockade</i>), or if another card is trying to move it at the same time (such as <i>Gatekeeper</i>). But if the gained card has already gotten moved (e.g. by another <i>Sailor</i>), then this can't play it.",
+        "name": "Sailor"
+    },
+    "Sea Chart": {
+        "description": "+1 Card<br>+1 Action<br><br>Reveal the top card of your deck. If you have a copy of it in play, put it into your hand.",
+        "extra": "If you have a copy of the revealed card in play - including the just played <i>Sea Chart</i>, or a Duration card that you have in play from a previous turn - then you put the revealed card into your hand; otherwise, you leave the card on top of your deck.",
+        "name": "Sea Chart"
+    },
+    "Sea Witch": {
+        "description": "+2 Cards<br>Each other player gains a Curse.<br><br>At the start of your next turn, +2 Cards, then discard 2 cards.",
+        "extra": "When you play this, you draw 2 cards and each other player gains a Curse; then at the start of your next turn, you draw 2 cards and then discard 2 cards.",
+        "name": "Sea Witch"
+    },
+    "Tide Pools": {
+        "description": "+3 Cards<br>+1 Action<br><br>At the start of your next turn, discard 2 cards.",
+        "extra": "When you play this, you get +3 Cards and +1 Action, but at the start of your next turn, you have to discard 2 cards.<br>If you have only one card left in hand you discard that one, and if you have no cards you don't discard any.<br>When you have multiple Duration cards doing things at the start of your turn, you can put them in an order to your advantage; for example if you have four <i>Tide Pools</i> and a <i>Wharf</i>, you could discard all of your cards to the <i>Tide Pools</i>, then draw the <i>Wharf</i> cards.",
+        "name": "Tide Pools"
     },
     "Border Guard - LanternHorn": {
         "description": "<left><u>Border Guard</u>:</left><n>+1 Action<br>Reveal the top 2 cards of your deck.  Put one into your hand and discard the other.  If both were Actions, take the Lantern or Horn.<n><left><u>Horn</u>:</left><n>Once per turn, when you discard a Border Guard from play, you may put it onto your deck.<n><left><u>Lantern</u>:</left><n>Your Border Guards reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",
