@@ -2734,21 +2734,6 @@
         "extra": "When you play this, you draw a card and can play two more Actions this turn. At the start of your Clean-up phase, before discarding anything and before drawing for next turn, if you have a Walled Village in play and no more than two Action cards in play (counting the Walled Village), you may put the Walled Village on top of your deck. If the only cards you have in play are two Walled Villages, you may put either or both of them on top of your deck. Walled Village has to be in play to be put on top of your deck. Walled Village only checks how many Action cards are in play when its ability resolves; Action cards you played earlier this turn but which are no longer in play (such as Feast from Dominion) are not counted, while Action cards still in play from previous turns (duration cards from Seaside) are counted, as are Action cards that are in play now but may leave play after resolving Walled Village (such as Treasury from Seaside).",
         "name": "Walled Village"
     },
-    "Bank": {
-        "name": "Banka",
-        "description": "? Coins<n>+1 Coin per Treasure card you have in play (counting this).",
-        "extra": "This is a Treasure worth a variable amount. When you play Bank, it is worth 1 coin per Treasure you have in play, counting itself. Remember, you choose what order to play Treasure cards. If you play Bank with no other Treasures in play, it is worth 1 coin. If you play two copies of Bank in a row, the one you play second will be worth 1 coin more than the first one. Bank produces money right when you play it; things that happen later in the turn will not change how much money you got from it."
-    },
-    "Bishop": {
-        "name": "Biskup",
-        "description": "+1 Coin<br>+1 <VP><n>Trash a card from your hand. +<VP> equal to half its cost in coins, rounded down.<n>Each other player may trash a card from his hand.",
-        "extra": "[When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1<VP> and 5<VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score.] Trashing a card is optional for the other players but mandatory for you. You trash a card, then each other player may trash a card, in turn order. Only the player who played Bishop can get <VP> tokens from it. Potion in costs is ignored, for example if you trash Golem (from Alchemy) which costs 4 coins 1 potion, you get 3<VP> tokens total (counting the 1<VP> you always get from Bishop). If you have no cards left in your hand to trash, you still get the 1 coin and 1<VP> token."
-    },
-    "City": {
-        "name": "Mesto",
-        "description": "+1 Card<br>+2 Actions<n>If there are one or more empty Supply piles, +1 Card. If there are two or more, +1 Coin and +1 Buy.",
-        "extra": "You draw a card and can play two more Actions no matter what. If there is just one empty pile in the Supply, you also draw another card. If there are two or more empty piles, you both draw another card, and get 1 coin to spend and an extra Buy to use in the Buy phase. There are no further bonuses if three or more piles are empty. This only checks how many piles are empty when you play it; if piles become empty later in the turn, you do not go back and get the bonuses. If a pile stops being empty due to cards being returned to it, such as with the Seaside card Ambassador, Cities played after that will not count that pile as empty. An empty trash pile does not count for this."
-    },
     "Contraband": {
         "name": "Kontraband",
         "description": "3 <*COIN*><br><br>+1 Buy<n>The player to your left names a card. You can’t buy that card this turn.",
@@ -2759,70 +2744,20 @@
         "description": "Look through your discard pile, reveal any number of Copper cards from it, and put them into your hand.",
         "extra": "This card lets you look through your discard pile, something you normally are not allowed to do. You only get to look through your discard pile when you play this. You do not have to show the other players your entire discard pile, just the Coppers you take out. After you take out the Coppers, you can leave the cards in your discard pile in any order."
     },
-    "Expand": {
-        "name": "Rust",
-        "description": "Trash a card from your hand. Gain a card costing up to 3 Coins more than the trashed card.",
-        "extra": "This is not in your hand after you play it, so you cannot trash it as the card trashed. The card you gain can cost up to 3 coins more than the trashed card, but it can also cost any smaller amount, even less than the cost of the trashed card. You can trash a card and gain a copy of the same card. If you have no card in hand to trash, you do not gain a card. The card you gain comes from the Supply and is put into your discard pile."
-    },
-    "Forge": {
-        "name": "Kování",
-        "description": "Trash any number of cards from your hand. Gain a card with cost exactly equal to the total cost in coins of the trashed cards.",
-        "extra": "\"Any number\" includes zero. If you trash no cards, you have to gain a card costing 0 coins if you can. This is different from how cards like Expand work if you do not trash anything, because Forge looks at the total, not at any one card's cost. If there is no card at the required cost, you do not gain a card. The card you gain comes from the Supply and is put into your discard pile. Potion symbols (on cards from Alchemy) are not added, and the card you gain cannot have a potion symbol in its cost."
-    },
     "Goons": {
         "name": "Hrdlorez",
         "description": "+1 Buy<br>+2 Coins<n>Each other player discards down to 3 cards in hand.<line>While you have this in play, when you buy a card, +1<VP>.",
         "extra": "You get 1<VP> token for each card you buy, but do not get a <VP> token for gaining a card some other way. Multiple copies of Goons are cumulative; if you have two Goons in play and buy a Silver, you get 2<VP> tokens. However if you King's Court a Goons, despite having played the card 3 times, there is still only one copy of it in play, so buying Silver would only get you 1<VP> token.<n>When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1<VP> and 5<VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score."
-    },
-    "Grand Market": {
-        "name": "Velký Trh",
-        "description": "+1 Card<br>+1 Action<br>+1 Buy<br>+2 Coins<line>You can't buy this if you have any Copper in play.",
-        "extra": "You do not have to play all of the Treasures in your hand in your Buy phase. Coppers in your hand do not stop you from buying Grand Market - only Coppers in play do. Coppers that were in play earlier in the turn but are not anymore also don't stop you; if you have 11 Coppers in play and 2 Buys, you could buy a Mint, trash all of your played Treasures, and then buy a Grand Market. You can gain Grand Market other ways - for example with Expand - whether or not you have Coppers in play. Treasures other than Copper do not prevent you from buying Grand Market, even if they are worth 1 coin (such as Loan)."
-    },
-    "Hoard": {
-        "name": "Bohatství",
-        "description": "2 <*COIN*><line>While you have this in play, when you buy a Victory card, gain a Gold.",
-        "extra": "This is a Treasure worth 2 coins, like Silver. When you buy a Victory card with this in play, you gain a Gold card from the Supply, putting it into your discard pile. If there are no Golds left, you do not get one. If you have multiple Hoards in play, you will gain multiple Golds from buying a single one. So for example if you had two Hoards in play and no other money, with +1 Buy, you could buy two Estates and gain four Golds. Victory cards include cards that are other types as well, such as Nobles and Harem in Intrigue. You gain a Gold even if you use Watchtower to immediately trash the Victory card you gained. Victory cards gained other than by buying them do not get you Gold."
-    },
-    "King's Court": {
-        "name": "Královský Dvur",
-        "description": "You may choose an Action card in your hand. Play it three times.",
-        "extra": "This is similar to Throne Room (from Dominion), but plays the Action three times rather than twice. You pick another Action card in your hand, play it, play it again, and play it a third time. This does not use up any extra Actions you were allowed to play due to cards like Worker's Village - King's Court itself uses up one Action and that is it. You cannot play any other cards in between resolving the King's Court-ed Action card multiple times, unless that Action card specifically tells you to (such as King's Court itself does). If you King's Court a King's Court, you will play three different Actions after that, playing each one of them three times - you do not play one Action nine times. If you King's Court a card that gives you +1 Action, such as Grand Market, you will end up with 3 Actions left afterwards."
     },
     "Loan": {
         "name": "Pujcka",
         "description": "1 <*COIN*><n>Reveal cards from your deck until you reveal a Treasure. Discard it or trash it. Discard the other cards.",
         "extra": "This is a Treasure worth 1 coin, like Copper. When you play it, you reveal cards from the top of your deck until revealing a Treasure card, and then you decide whether to trash that card or discard it. Then you discard all of the other revealed cards. If you run out of cards before revealing a Treasure, shuffle your discard pile (but not the revealed cards) to get more; if you still do not find a Treasure, just discard all of the revealed cards. Remember that you can play Treasures in any order in the Buy phase and can choose not to play some of your Treasures if you want."
     },
-    "Mint": {
-        "name": "Mincovna",
-        "description": "You may reveal a Treasure card from your hand. Gain a copy of it.<line>When you buy this, trash all Treasures you have in play.",
-        "extra": "When you buy this, you trash all of your Treasure cards in play. You do not trash Treasure cards in your hand or elsewhere; just the ones in play, if any. If you buy multiple cards in a turn, trash your Treasures right when you buy Mint; you still have any leftover coins they produced for spending on something else. Remember you do not have to play all of the Treasures from your hand each turn (just all the ones you want producing money for you). You do not get additional chances to play Treasure cards between buys in the Buy phase; first you play Treasures, then you buy cards. When you play Mint, you reveal a Treasure card from your hand and gain a copy of it from the Supply. The gained card goes into your discard pile. The revealed card stays in your hand. The Treasure card can also have other types, like Harem (from Intrigue). If you buy a Mint and use Watchtower to put it on top of your deck or trash it, you still trash all of your Treasures from play. However, if you buy a Mint with Royal Seal in play, the Royal Seal will be gone before you can use it to put Mint on your deck."
-    },
-    "Monument": {
-        "name": "Památník",
-        "description": "+2 Coins<br>+1 <VP>",
-        "extra": "When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1 <VP> and 5 <VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score."
-    },
     "Mountebank": {
         "name": "Mastickár",
         "description": "+2 Coins<n>Each other player may discard a Curse. If he doesn't, he gains a Curse and a Copper.",
         "extra": "This hits the other players in turn order when that matters (such as when the Curse or Copper pile is low). Each of the other players in turn chooses whether or not to discard a Curse card from his hand, and if he does not, gains a Curse and a Copper from the Supply, putting them into his discard pile. If either the Curse or Copper pile is empty, he still gains the other one. If both are empty, he does not gain either, but can still discard Curse if he wants to. A player using Moat (from Dominion) on this may not discard a Curse, and doesn't gain a Curse or Copper - you cannot Moat just part of the attack. A player using Watchtower on this can use it just to trash the Curse, just to trash the Copper, or to trash both."
-    },
-    "Peddler": {
-        "name": "Podomní Obchodník",
-        "description": "+1 Card<br>+1 Action<br>+2 Coin<line>During a player's Buy phase, this costs 2 Coins less per Action card they have in play.",
-        "extra": "Most of the time, this costs 8 coins. During Buy phases, this costs 2 coins less per Action card you have in play. This cost applies to all Peddler cards, including ones in hands and decks. It never costs less than 0 coins. If you play King's Court on Worker's Village, for example, that is just two Action cards you have in play, even though you played the Worker's Village three times. Buying cards using the promotional card Black Market is something that does not happen during a Buy phase, so Peddler still costs 8 coins then."
-    },
-    "Quarry": {
-        "name": "Kamenolom",
-        "description": "1 <*COIN*><line>While this is in play, Action cards cost 2 Coins less.",
-        "extra": "This is a Treasure worth 1 coin, like Copper. While it is in play, Action cards cost 2 coins less, to a minimum of 0 coins. It is cumulative; if you play two Quarries during your Buy phase, then King's Court will only cost 3 coins, rather than the usual 7 coins. It affects the costs of cards that are Actions plus another type, such as Nobles (an Action - Victory card in Intrigue). It is also cumulative with other effects that modify costs; if you play Worker's Village in your Action phase, then two Quarries in your Buy phase, Peddler will cost 2 coins. It affects the costs of cards everywhere, such as cards in players' hands."
-    },
-    "Rabble": {
-        "name": "Dav",
-        "description": "+3 Cards<n>Each other player reveals the top 3 cards of his deck, discards the revealed Actions and Treasures, and puts the rest back on top in any order he chooses.",
-        "extra": "The other players shuffle if necessary to get 3 cards to reveal, and just reveal what they can if they still have fewer than 3 cards. They discard revealed Treasures and Actions and put the rest back on top in whatever order they want. Cards with more than one type match all of their types; for example if a player reveals Nobles from Intrigue, it is an Action - Victory card, which means it is an Action, so he discards it."
     },
     "Royal Seal": {
         "name": "Královská pecet",
@@ -2839,15 +2774,80 @@
         "description": "+1 Buy<br>+1 Coin per token on the Trade Route mat.<br>Trash a card from your hand.<line>Setup: Put a token on each Victory card Supply pile. When a card is gained from that pile, move the token to the Trade Route mat.",
         "extra": "You get an additional Buy to use in your Buy phase. You get +1 coin per token on the Trade Route mat. Then you trash a card from your hand. If you have no cards left in hand, you do not trash one. The amount you get from Trade Route is the same as +1 coin per Victory card pile that a card has been gained from this game. If Victory cards have been gained from outside the Supply piles, for example using the promotional card Black Market, then this does not count those. Put a coin token on each Victory card pile at the start of the game. When a card is gained from a Victory card pile, move its token onto the Trade Route mat. So for example if this game includes the Intrigue card Harem, and so far Harem and Duchy have been bought, but no one has bought (or otherwise gained) Estate or Province or Colony, then Trade Route makes 2 coins. It does not matter who gained the cards or how they gained them. You do not get any extra money if a pile has had multiple cards gained from it or is empty; all that matters is if at least one card has been gained from it. It does not matter if cards have been returned to a pile, such as with Ambassador from Seaside; Trade Route only cares if a card was ever gained from the pile this game. If you are using Black Market and Trade Route is in the Black Market deck, put tokens on Victory card piles at the start of the game."
     },
-    "Vault": {
-        "name": "Trezor",
-        "description": "+2 Cards<n>Discard any number of cards. +1 Coin per card discarded.<n>Each other player may discard 2 cards. If he does, he draws a card.",
-        "extra": "\"Any number\" includes zero. You draw cards first; you can discard the cards you just drew. Each other player chooses whether or not to discard 2 cards, then discards 2 cards if he chose to, then draws a card if he did discard 2 cards. If one of the other players has just one card, he can choose to discard it, but will not draw a card. Another player who discards but then has no cards left to draw shuffles in the discards before drawing."
-    },
     "Venture": {
         "name": "Odvážlivec",
         "description": "1 <*COIN*><n>Reveal cards from your deck until you reveal a Treasure. Discard the other cards. Play that Treasure.",
         "extra": "This is a Treasure card worth 1 coin, like Copper. When you play it, you reveal cards from your deck until revealing a Treasure card. If you run out of cards before revealing a Treasure, shuffle your discard pile (but not the revealed cards) to get more; if you still do not find a Treasure, just discard all of the revealed cards. If you do find a Treasure, discard the other cards and play the Treasure. If that Treasure does something when played, do that something. For example if Venture finds you another Venture, you reveal cards again. Remember that you choose what order to play Treasure cards; for example if you have both Venture and Loan in hand, you can play either one first."
+    },
+    "Bank": {
+        "name": "Banka",
+        "description": "? Coins<n>+1 Coin per Treasure card you have in play (counting this).",
+        "extra": "This is a Treasure worth a variable amount. When you play Bank, it is worth 1 coin per Treasure you have in play, counting itself. Remember, you choose what order to play Treasure cards. If you play Bank with no other Treasures in play, it is worth 1 coin. If you play two copies of Bank in a row, the one you play second will be worth 1 coin more than the first one. Bank produces money right when you play it; things that happen later in the turn will not change how much money you got from it."
+    },
+    "Bishop": {
+        "name": "Biskup",
+        "description": "+1 Coin<br>+1 <VP><n>Trash a card from your hand. +<VP> equal to half its cost in coins, rounded down.<n>Each other player may trash a card from his hand.",
+        "extra": "[When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1<VP> and 5<VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score.] Trashing a card is optional for the other players but mandatory for you. You trash a card, then each other player may trash a card, in turn order. Only the player who played Bishop can get <VP> tokens from it. Potion in costs is ignored, for example if you trash Golem (from Alchemy) which costs 4 coins 1 potion, you get 3<VP> tokens total (counting the 1<VP> you always get from Bishop). If you have no cards left in your hand to trash, you still get the 1 coin and 1<VP> token."
+    },
+    "City": {
+        "name": "Mesto",
+        "description": "+1 Card<br>+2 Actions<n>If there are one or more empty Supply piles, +1 Card. If there are two or more, +1 Coin and +1 Buy.",
+        "extra": "You draw a card and can play two more Actions no matter what. If there is just one empty pile in the Supply, you also draw another card. If there are two or more empty piles, you both draw another card, and get 1 coin to spend and an extra Buy to use in the Buy phase. There are no further bonuses if three or more piles are empty. This only checks how many piles are empty when you play it; if piles become empty later in the turn, you do not go back and get the bonuses. If a pile stops being empty due to cards being returned to it, such as with the Seaside card Ambassador, Cities played after that will not count that pile as empty. An empty trash pile does not count for this."
+    },
+    "Expand": {
+        "name": "Rust",
+        "description": "Trash a card from your hand. Gain a card costing up to 3 Coins more than the trashed card.",
+        "extra": "This is not in your hand after you play it, so you cannot trash it as the card trashed. The card you gain can cost up to 3 coins more than the trashed card, but it can also cost any smaller amount, even less than the cost of the trashed card. You can trash a card and gain a copy of the same card. If you have no card in hand to trash, you do not gain a card. The card you gain comes from the Supply and is put into your discard pile."
+    },
+    "Forge": {
+        "name": "Kování",
+        "description": "Trash any number of cards from your hand. Gain a card with cost exactly equal to the total cost in coins of the trashed cards.",
+        "extra": "\"Any number\" includes zero. If you trash no cards, you have to gain a card costing 0 coins if you can. This is different from how cards like Expand work if you do not trash anything, because Forge looks at the total, not at any one card's cost. If there is no card at the required cost, you do not gain a card. The card you gain comes from the Supply and is put into your discard pile. Potion symbols (on cards from Alchemy) are not added, and the card you gain cannot have a potion symbol in its cost."
+    },
+    "Grand Market": {
+        "name": "Velký Trh",
+        "description": "+1 Card<br>+1 Action<br>+1 Buy<br>+2 Coins<line>You can't buy this if you have any Copper in play.",
+        "extra": "You do not have to play all of the Treasures in your hand in your Buy phase. Coppers in your hand do not stop you from buying Grand Market - only Coppers in play do. Coppers that were in play earlier in the turn but are not anymore also don't stop you; if you have 11 Coppers in play and 2 Buys, you could buy a Mint, trash all of your played Treasures, and then buy a Grand Market. You can gain Grand Market other ways - for example with Expand - whether or not you have Coppers in play. Treasures other than Copper do not prevent you from buying Grand Market, even if they are worth 1 coin (such as Loan)."
+    },
+    "Hoard": {
+        "name": "Bohatství",
+        "description": "2 <*COIN*><line>While you have this in play, when you buy a Victory card, gain a Gold.",
+        "extra": "This is a Treasure worth 2 coins, like Silver. When you buy a Victory card with this in play, you gain a Gold card from the Supply, putting it into your discard pile. If there are no Golds left, you do not get one. If you have multiple Hoards in play, you will gain multiple Golds from buying a single one. So for example if you had two Hoards in play and no other money, with +1 Buy, you could buy two Estates and gain four Golds. Victory cards include cards that are other types as well, such as Nobles and Harem in Intrigue. You gain a Gold even if you use Watchtower to immediately trash the Victory card you gained. Victory cards gained other than by buying them do not get you Gold."
+    },
+    "King's Court": {
+        "name": "Královský Dvur",
+        "description": "You may choose an Action card in your hand. Play it three times.",
+        "extra": "This is similar to Throne Room (from Dominion), but plays the Action three times rather than twice. You pick another Action card in your hand, play it, play it again, and play it a third time. This does not use up any extra Actions you were allowed to play due to cards like Worker's Village - King's Court itself uses up one Action and that is it. You cannot play any other cards in between resolving the King's Court-ed Action card multiple times, unless that Action card specifically tells you to (such as King's Court itself does). If you King's Court a King's Court, you will play three different Actions after that, playing each one of them three times - you do not play one Action nine times. If you King's Court a card that gives you +1 Action, such as Grand Market, you will end up with 3 Actions left afterwards."
+    },
+    "Mint": {
+        "name": "Mincovna",
+        "description": "You may reveal a Treasure card from your hand. Gain a copy of it.<line>When you buy this, trash all Treasures you have in play.",
+        "extra": "When you buy this, you trash all of your Treasure cards in play. You do not trash Treasure cards in your hand or elsewhere; just the ones in play, if any. If you buy multiple cards in a turn, trash your Treasures right when you buy Mint; you still have any leftover coins they produced for spending on something else. Remember you do not have to play all of the Treasures from your hand each turn (just all the ones you want producing money for you). You do not get additional chances to play Treasure cards between buys in the Buy phase; first you play Treasures, then you buy cards. When you play Mint, you reveal a Treasure card from your hand and gain a copy of it from the Supply. The gained card goes into your discard pile. The revealed card stays in your hand. The Treasure card can also have other types, like Harem (from Intrigue). If you buy a Mint and use Watchtower to put it on top of your deck or trash it, you still trash all of your Treasures from play. However, if you buy a Mint with Royal Seal in play, the Royal Seal will be gone before you can use it to put Mint on your deck."
+    },
+    "Monument": {
+        "name": "Památník",
+        "description": "+2 Coins<br>+1 <VP>",
+        "extra": "When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1 <VP> and 5 <VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score."
+    },
+    "Peddler": {
+        "name": "Podomní Obchodník",
+        "description": "+1 Card<br>+1 Action<br>+2 Coin<line>During a player's Buy phase, this costs 2 Coins less per Action card they have in play.",
+        "extra": "Most of the time, this costs 8 coins. During Buy phases, this costs 2 coins less per Action card you have in play. This cost applies to all Peddler cards, including ones in hands and decks. It never costs less than 0 coins. If you play King's Court on Worker's Village, for example, that is just two Action cards you have in play, even though you played the Worker's Village three times. Buying cards using the promotional card Black Market is something that does not happen during a Buy phase, so Peddler still costs 8 coins then."
+    },
+    "Quarry": {
+        "name": "Kamenolom",
+        "description": "1 <*COIN*><line>While this is in play, Action cards cost 2 Coins less.",
+        "extra": "This is a Treasure worth 1 coin, like Copper. While it is in play, Action cards cost 2 coins less, to a minimum of 0 coins. It is cumulative; if you play two Quarries during your Buy phase, then King's Court will only cost 3 coins, rather than the usual 7 coins. It affects the costs of cards that are Actions plus another type, such as Nobles (an Action - Victory card in Intrigue). It is also cumulative with other effects that modify costs; if you play Worker's Village in your Action phase, then two Quarries in your Buy phase, Peddler will cost 2 coins. It affects the costs of cards everywhere, such as cards in players' hands."
+    },
+    "Rabble": {
+        "name": "Dav",
+        "description": "+3 Cards<n>Each other player reveals the top 3 cards of his deck, discards the revealed Actions and Treasures, and puts the rest back on top in any order he chooses.",
+        "extra": "The other players shuffle if necessary to get 3 cards to reveal, and just reveal what they can if they still have fewer than 3 cards. They discard revealed Treasures and Actions and put the rest back on top in whatever order they want. Cards with more than one type match all of their types; for example if a player reveals Nobles from Intrigue, it is an Action - Victory card, which means it is an Action, so he discards it."
+    },
+    "Vault": {
+        "name": "Trezor",
+        "description": "+2 Cards<n>Discard any number of cards. +1 Coin per card discarded.<n>Each other player may discard 2 cards. If he does, he draws a card.",
+        "extra": "\"Any number\" includes zero. You draw cards first; you can discard the cards you just drew. Each other player chooses whether or not to discard 2 cards, then discards 2 cards if he chose to, then draws a card if he did discard 2 cards. If one of the other players has just one card, he can choose to discard it, but will not draw a card. Another player who discards but then has no cards left to draw shuffles in the discards before drawing."
     },
     "Watchtower": {
         "name": "Strážní Vež",
@@ -2858,6 +2858,51 @@
         "name": "Delnická Ctvrt",
         "description": "+1 Card<br>+2 Actions<br>+1 Buy",
         "extra": "You draw a card, can play two more Actions this turn, and can buy one more card in your Buy phase this turn."
+    },
+    "Anvil": {
+        "description": "1 <*COIN*><n><n>You may discard a Treasure to gain a card costing up to 4 Coin.",
+        "extra": "Discarding a Treasure is optional. If you discard one, you gain a card costing up to 4 Coin which comes from the Supply and goes to your discard pile.",
+        "name": "Anvil"
+    },
+    "Charlatan": {
+        "description": "+3 Coin<n><n>Each other player gains a Curse.<line>In games using this, Curse is also a Treasure worth 1 Coin.",
+        "extra": "This turns Curses into Treasures for the entire game and in all situations; it's just like the bottom bar says \"Curse - Treasure.\" They may be played for +1 Coin in the Buy phase. They are trashed from play when gaining Mint, Magnate counts them in your hand, Courtier (from Intrigue) gives you two choices when revealing one, and so on. They are still Curses and still worth –1<VP> at the end of the game. Unlike Capitalism, Charlatan makes Curses stay as Treasures during scoring, so they will count for Keep. Curses will be Treasures if Charlatan is in the Black Market deck, even if no one actually gains it.",
+        "name": "Charlatan"
+    },
+    "Clerk": {
+        "description": "+2 Coin<n>Each other player with 5 or more cards in hand puts one onto their deck.<line>At the start of your turn, you may play this from your hand.",
+        "extra": "A player with no cards in their deck will have the card they put on top become the only card in their deck. At the start of your turn, you may play any number of Clerk cards from your hand, one at a time, without using up your regular Action play. You may use Clerk's self-playing start-of-turn ability before, between, or after other start-of-turn effects. For instance, if you draw Clerk due to the effect of Den of Sin, it's not too late to use Clerk's Reaction ability.",
+        "name": "Clerk"
+    },
+    "Collection": {
+        "description": "2 <*COIN*><n><n>+1 Buy<n><n>This turn, when you gain an Action card, +1<VP>.",
+        "extra": "You get +1<VP> for each Action card you gain, whether bought, or gained some other way.<n>Multiple copies of this are cumulative; if you have two Collections in play and buy a Village, you'll get +2<VP>. You only get <VP> for Actions you gain after you play the Collection; it doesn't retroactively give you points for cards you gained earlier in the turn. If the Collection leaves play (for instance, because you trashed it with Counterfeit), you still get <VP> from it for the rest of the turn.",
+        "name": "Collection"
+    },
+    "Crystal Ball": {
+        "description": "1 <*COIN*><n><n>Look at the top card of your deck. You may trash it, discard it, or, if it's an Action or Treasure, play it.",
+        "extra": "If you don't choose to do any of those things, you leave the card on your deck. If this plays an Action during your Buy phase that gives you +Actions, that doesn't let you play more Action cards in your Buy phase; if it draws Treasure cards, you can still play them.",
+        "name": "Crystal Ball"
+    },
+    "Investment": {
+        "description": "Trash a card from your hand.<n>Choose one: +1 Coin; or trash this to reveal your hand for +1<VP> per differently named Treasure there.",
+        "extra": "You trash a card no matter what; it's okay if Investment was your last card in hand, you just fail to trash a card then. Then you choose either to get +1 Coin or to trash Investment. If you trash it, you reveal your hand and get +1<VP> per differently named Treasure there; for example if you reveal two Coppers and a Silver, you get +2<VP>. You can still play the revealed Treasures after resolving Investment. If you play the same Investment twice (e.g. with Crown) and trash it on the first play for <VP>, then you can't trash it on the second play for <VP>.",
+        "name": "Investment"
+    },
+    "Magnate": {
+        "description": "Reveal your hand.<n>+1 Card per Treasure in it.",
+        "extra": "For example, if your hand had two Coppers and a Silver, you'd draw 3 cards.",
+        "name": "Magnate"
+    },
+    "Tiara": {
+        "description": "+1 Buy<n><n>This turn, when you gain a card, you may put it onto your deck.<n><n>You may play a Treasure from your hand twice.",
+        "extra": "If you gain multiple cards later in the turn after playing Tiara, you may put any or all of them onto your deck. This applies both to cards gained due to being bought, and to cards gained other ways, such as with War Chest. If you play a Tiara with a Tiara, you will be able to play two Treasures from your hand twice each - you don't play one Treasure four times.",
+        "name": "Tiara"
+    },
+    "War Chest": {
+        "description": "The player to your left names a card. Gain a card costing up to 5 Coin that hasn't been named for War Chest this turn.",
+        "extra": "The first War Chest you play in a turn can't gain whatever card they name; the second can't gain the card they name, or the card they previously named, and so on. The gained card comes from the Supply and is put into your discard pile. You can still gain the named cards other ways, just not via War Chests. They do not have to name a card in the Supply; however War Chest gains a card from the Supply, and puts it into your discard pile.",
+        "name": "War Chest"
     },
     "Academy": {
         "description": "When you gain an Action card, +1 Villager.",

@@ -2734,21 +2734,6 @@
         "extra": "When you play this, you draw a card and can play two more Actions this turn. At the start of your Clean-up phase, before discarding anything and before drawing for next turn, if you have a Walled Village in play and no more than two Action cards in play (counting the Walled Village), you may put the Walled Village on top of your deck. If the only cards you have in play are two Walled Villages, you may put either or both of them on top of your deck. Walled Village has to be in play to be put on top of your deck. Walled Village only checks how many Action cards are in play when its ability resolves; Action cards you played earlier this turn but which are no longer in play (such as Feast from Dominion) are not counted, while Action cards still in play from previous turns (duration cards from Seaside) are counted, as are Action cards that are in play now but may leave play after resolving Walled Village (such as Treasury from Seaside).",
         "name": "Walled Village"
     },
-    "Bank": {
-        "description": "? Coins\nQuando giochi questa carta, vale 1 Coin per ogni carta Tesoro che hai in gioco (inclusa questa).",
-        "extra": " Questo è un Tesoro dal valore variabile. Quando giochi Banca, vale 1 Coin per ogni Tesoro che hai in gioco, contando anche se stessa. Ricorda, scegli tu l'ordine in cui giochi le carte Tesoro. Se giochi Banca senza altri Tesori in gioco, vale 1 Coin. Se giochi due copie di Banca di fila, la seconda che giochi vale 1 Coin più della prima. La Banca produce Monete quando la giochi; ciò che avviene in seguito nel turno non cambia le Monete che ne ottieni.",
-        "name": "Banca"
-    },
-    "Bishop": {
-        "description": "+1 Coin\n+1 segnalino <VP>\nElimina una carta dalla tua mano. + segnalini <VP> uguale alla metà del suo costo in Monete, per difetto.\nOgni altro giocatore può eliminare una carta dalla sua mano.",
-        "extra": " Quando un giocatore prende segnalini PV, prende una plancia su cui metterli. I segnalini PV non sono privati e chiunque può contarli. I segnalini PV valgono 1 o 5 punti e i giocatori possono cambiarli se necessario. I segnalini sono illimitati, se finiscono usa qualcos'altro in loro vece. A fine partita, i giocatori aggiungono il valore totale dei loro segnalini al loro punteggio.]Eliminare una carta è opzionale per gli altri giocatori ma obbligatorio per te. Elimini una carta, quindi ogni altro giocatore può eliminare una carta, in ordine di turno. Solo chi ha giocato Vescovo può ottenerne segnalini PV. Il costo in Pozioni è ignorato. Se non hai carte rimaste nella tua mano da eliminare, ottieni comunque 1 Coin e un segnalino PV.",
-        "name": "Vescovo"
-    },
-    "City": {
-        "description": "+1 Carta\n+2 Azioni\nSe ci sono uno o più mazzetti vuoti nella Riserva, +1 Carta. Se ce ne sono due o più, +1 Coin e +1 Acquisto.",
-        "extra": " Peschi una carta e puoi giocare altre due Azioni a prescindere da tutto quanto. Se c'è solo un mazzetto vuoto nella Riserva, peschi anche un'altra carta. Se ci sono due o più mazzetti vuoti, peschi una carta in più e ricevi anche +1 Coin e un Acquisto in più. Non ci sono ulteriori bonus se tre o più mazzetti sono vuoi. Controlla quanti mazzetti sono vuoi solo quando giochi la carta; se i mazzetti si svuotano più tardi nel turno, non ottieni i bonus retroattivamente. Se un mazzetto cessa di essere vuoto a causa di carte che vi tornano, ad esempio tramite l'Ambasciatore, le Città giocate successivamente a ciò non considerano vuoto quel mazzetto. Una Pila delle Carte Eliminate vuote non conta.",
-        "name": "Città"
-    },
     "Contraband": {
         "description": "3 <*COIN*><br><br>+1 Acquisto\nQuando giochi questa carta, il giocatore alla tua sinistra nomina una carta. Non puoi comprare quella carta in questo turno.",
         "extra": " Questo è un Tesoro che vale 3 Coins, come l'Oro. Quando lo giochi, ricevi +1 Acquisto, il giocatore alla tua sinistra nomina una carta, e non puoi comprare la carta nominata in questo turno. Questo non ti impedisce di ottenerla in altri modi diversi dall'acquistarla (ad esempio tramite Mucchio). Non è costretto a nominare una carta presente nella Riserva. Se giochi più di un Contrabbando nello stesso turno, il giocatore alla tua sinistra nomina una carta ogni volta; se nomina carte differenti, non puoi comprare nessuna delle carte nominate in questo turno. Puoi giocare Tesori in qualsiasi ordine, e risolvi questa abilità appena giochi questa carta, prima di giocare ulteriori Tesori. Nota che una volta che compri una carta nella fase Acquisto, non puoi giocare altri Tesori. Il numero di carte rimaste in mano a un giocatore è informazione pubblica, non nascondere quante carte hai in mano quando giochi Contrabbando.",
@@ -2759,70 +2744,20 @@
         "extra": " Questa carta ti fa cercare nella tua pila degli scarti, qualcosa che generalmente non ti è permesso. Puoi guardare nei tuoi scarti solo mentre giochi questa carta. Non devi mostrare agli altri giocatori la tua intera pila degli scarti, solo i Rame che ne ricavi. Dopo che hai preso i Rame, puoi lasciare le carte nello scarto in qualsiasi ordine.",
         "name": "Contabilità"
     },
-    "Expand": {
-        "description": "Elimina una carta dalla tua mano. Ottieni una carta che costi fino a 3 Coins in più della carta eliminata.",
-        "extra": " Questa non è nella tua mano dopo che l'hai giocato, quindi non puoi sceglierla come carta da eliminare. La carta che ottieni costa fino a 3 Coins in più della carta eliminata, ma può costare qualsiasi ammontare inferiore, persino meno del costo della carta eliminata. Puoi eliminare una carta ed ottenere una copia della stessa carta. Se non hai carte in mano da eliminare, non ottieni carte. La carta che ottieni deve venire dalla Riserva e finisce nella tua pila degli scarti.",
-        "name": "Ampliamento"
-    },
-    "Forge": {
-        "description": "Elimina qualsiasi numero di carte dalla tua mano. Ottieni una carta che costi esattamente la somma del costo totale della carte eliminate.",
-        "extra": " Qualsiasi numero\" include lo zero. Se non elimini carte, devi ottenerne una che costa 0 Coins se puoi. E' diverso da come funzionano carte come Ampliamento se non elimini nulla, dal momento che Incastonare guarda il totale, non il costo della singola carta. Se non ci sono carte dal costo richiesto, non ottieni carte. La carta che ottieni viene dalla Riserva e finisce nella tua pila degli scarti. Simboli Pozione (sulle carte da Alchimia) non sono conteggiati, e la carta che ottieni non pul avere un simbolo Pozione nel costo.",
-        "name": "Incastonare"
-    },
     "Goons": {
         "description": "+1 Acquisto\n+2 Coins\nOgni altro giocatore scarta fino ad avere 3 carte nella propria mano.<line>Mentre questa carta è in gioco, quando acquisti una carta, +1 segnalino <VP>.",
         "extra": " Quando un giocatore prende segnalini PV, prende una plancia su cui metterli. I segnalini PV non sono privati e chiunque può contarli. I segnalini PV valgono 1 o 5 punti e i giocatori possono cambiarli se necessario. I segnalini sono illimitati, se finiscono usa qualcos'altro in loro vece. A fine partita, i giocatori aggiungono il valore totale dei loro segnalini al loro punteggio.]Ricevi un segnalino PV per ogni carta che acquisti, ma non ottieni segnalini PV per le carte ottenute in altro modo. Copie multiple di Scagnozzi sono cumulative; se hai due Scagnozzi in gioco e compri un Argento, ricevi 2 segnalini PV. Comunque se usi Corte su Scagnozzi, anche se hai giocato la carta 3 volte hai comunque in gioco solo una copia della carta, quindi comprare un Argento ti darebbe un solo segnalino PV.",
         "name": "Scagnozzi"
-    },
-    "Grand Market": {
-        "description": "+1 Carta\n+1 Azione\n+1 Acquisto\n+2 Coins<line>Non puoi comprare questa carta se hai delle carte Rame in gioco.",
-        "extra": " Non sei obbligato a giocare tutti i Tesori che hai in mano nella tua fase Acquisto. I Rame nella tua mano non ti impediscono di comprare Mercato di Lusso, solo i Rame che giochi. Neanche i Rame che erano in gioco prima e ora non lo sono più ti impediscono di comprarlo; se hai in gioco 11 Rame e 2 Acquisti, potresti comprare una Zecca, eliminare tutti i Tesori che hai giocato, quindi comprare Mercato di Lusso con le Monete che ti restano. Puoi ottenere Mercato di Lusso in altri modi, per esempio con Ampliamento, che tu abbia o meno Rame in gioco. I Tesori che non sono Rame non impediscono di comprare Mercato di Lusso, anche se valgono 1 Coin (come Prestito).",
-        "name": "Mercato di Lusso"
-    },
-    "Hoard": {
-        "description": "2 <*COIN*><line>Mentre questa carta è in gioco, quando acquisti una carta Vittoria ottieni una carta Oro.",
-        "extra": " Questo è un Tesoro che vale 2 Coins, come l'Argento. Quando compri una carta Vittoria con questa carta in gioco, guadagni un Oro dalla Riserva, mettendolo nel tuo scarto. Se non rimangono Ori, non ne ottieni. Se hai più di una carta Mucchio in giro, otterrai più di un Oro dall'acquisto di una singola carta Vittoria. Quindi se per esempio hai due Mucchio in gioco e nessun altro Tesoro, con +1 Acquisto, potresti comprare 2 Tenute ed ottenere 4 Ori. Le carte Vittoria includono carte che siano anche di altri tipi, come Nobili o Harem. Ottieni un Oro anche se usi Torre di Guardia per eliminare immediatamente la carta Vittoria ottenuta. Le carte Vittoria ottenute in modi diversi dall'acquisto non ti fanno ottenere Oro.",
-        "name": "Mucchio"
-    },
-    "King's Court": {
-        "description": "Puoi scegliere una carta Azione dalla tua mano. Giocala tre volte.",
-        "extra": " Questa carta è simile a Sala del Trono, ma fa giocare l'Azione tre volte e non due. Scegli un'altra carta Azione dalla tua mano, la giochi, la giochi ancora, e la giochi una terza volta. Questo non consuma nessuna azione extra che ti era permessa da carte come Cantiere: Corte usa un'Azione e questo è tutto. Non puoi giocare altre carte mentre risolvi la carta giocata tre volte, a meno che non sia richiesto (come fa la stessa Corte). Se usi Corte su Corte, giocherai tre diverse Azioni tre volte, non usi nove volte una singola Azione. Se usi Corte su una carta che ti da' +1 Azione, come Mercato di Lusso, finirai con 3 Azioni rimaste.",
-        "name": "Corte"
     },
     "Loan": {
         "description": "1 <*COIN*>\nQuando giochi questa carta, rivela carte dal tuo mazzo fino a rivelare una carta Tesoro. Scartala o eliminala. Scarta le altre carte.",
         "extra": " Questa è una carta Tesoro che vale 1 Coin, come Rame. Quando la giochi, riveli carte dalla cima del tuo mazzo fin quando riveli una carta Tesoro, quindi decidi se eliminare quella carta o scartarla. Dopodichè scarti tutte le altre carte rivelate. Se finisci le carte prima di rivelare un Tesoro, mescola il tuo scarto (ma non le carte rivelate) per averne altre; se ancora non trovi un Tesoro, scarta semplicemente tutte le carte rivelate. Ricorda che puoi giocare le carte Tesoro in qualsiasi ordine nella fase Acquisto e puoi scegliere di non giocare alcuni dei tuoi Tesori se vuoi.",
         "name": "Prestito"
     },
-    "Mint": {
-        "description": "Puoi rivelare una carta Tesoro dalla tua mano. Ne ottieni una copia.<line>Quando compri questa carta, elimina tutte le carte Tesoro che hai in gioco.",
-        "extra": " Quando compri questa carta, elimini tutte le tue carte Tesoro in gioco. Non elimini le carte Tesoro nella tua mano o altrove; solo quelle in gioco, se ce ne sono. Se compri più carte in un turno, elimini i tuoi Tesori subito dopo aver comprato la Zecca; hai ancora eventuali Monete prodotte per spenderle su qualcos'altro. Ricorda che non sei obbligato a giocare tutti i Tesori dalla tua mano ogni turno (solo quelli che vuoi che ti forniscano Monete). Non hai possibilità di giocare ulteriori carte Tesoro fra un'Acquisto e l'altro durante la fase; prima giochi carte Tesoro, poi compri carte. Quando giochi Zecca, riveli una carta Tesoro dalla tua mano e ne ottieni una copia dalla Riserva. La carta ottenuta finisce nel tuo scarto. La carta rivelata resta nella tua mano. La carta Tesoro può anche avere altri tipi, come Harem. Se compri una Zecca e usi Torre di Guardia per metterla in cima al mazzo o eliminarla, elimini comunque tutti i tuoi Tesori dal gioco. Comunque, se compri una Zecca col Sigillo Reale in gioco, il Sigillo Reale sarà sparito prima che tu possa usarlo per mettere Zecca in cima al tuo mazzo.",
-        "name": "Zecca"
-    },
-    "Monument": {
-        "description": "+2 Coins<br>+1 segnalino <VP>",
-        "extra": " Quando un giocatore prende segnalini PV, prende una plancia su cui metterli. I segnalini PV non sono privati e chiunque può contarli. I segnalini PV valgono 1 o 5 punti e i giocatori possono cambiarli se necessario. I segnalini sono illimitati, se finiscono usa qualcos'altro in loro vece. A fine partita, i giocatori aggiungono il valore totale dei loro segnalini al loro punteggio.]",
-        "name": "Monumento"
-    },
     "Mountebank": {
         "description": "+2 Coins\nOgni altro giocatore può scartare una Maledizione. Se non lo fa, ottiene un Rame e una Maledizione.",
         "extra": " Questa carta colpisce gli altri giocatori in ordine di turno. Ognuno degli altri giocatori sceglie se scartare o no una carta Maledizione dalla propria mano, e se non lo fa ottiene una Maledizione e un Rame dalla Riserva, mettendoli nello scarto. Se uno dei due mazzetti Maledizione o Rame è vuoto, ottiene comunque l'altra carta. Se sono vuoti entrambi, non ottiene nulla ma può comunque scartare una Maledizione se vuole. Un giocatore che usi Fossato come Reazione non può scartare una Maledizione, e non ottiene ne Maledizioni ne Rame: non puoi fare Fossato solo a parte dell'Attacco. Un giocatore che usi Torre di Guardia come Reazione può eliminare solo la Maledizione, solo il Rame, o entrambi.",
         "name": "Ciarlatano"
-    },
-    "Peddler": {
-        "description": "+1 Carta<br>+1 Azione<br>+2 Coins<line>Durante la tua fase Acquisto, questa carta costas 2 Coins in meno per ogni carta Azione che hai in gioco, ma non meno di 0 Coins.",
-        "extra": " La maggior parte delle volte, questa carta costa 8 Coins. Durante le fasi Acquisti, costa 2 Coins in meno per ogni carta Azione che hai in gioco. Questo costo si applica a tutti gli Ambulanti, inclusi quelli in mano o nei mazzi. Non costa mai meno di 0 Coins. Se giochi Corte su Cantiere, per esempio, hai solo due carte Azione in gioco, anche se hai giocato tre volte il Cantiere. Comprare carte usando la carta promo Mercato Nero non avviene durante la fase Acquisto, quindi in quel momento Ambulante costa ancora 8 Coins.",
-        "name": "Ambulante"
-    },
-    "Quarry": {
-        "description": "1 <*COIN*><line>Mentre questa carta è in gioco, le carte Azione costano 2 Coins in meno, ma non meno di 0 Coins.",
-        "extra": " Questa è una carta Tesoro che vale 1 Coin, come il Rame. Mentre è in gioco, le carte Azione costano 2 Coins in meno, fino al minimo di 0 Coins. E' cumulativa; se giochi due Cave durante la tua fase Acquisto, la Corte costerà solo 3 Coins e non le normali 7 Coins. Influenza i costi delle carte che sono sia Azioni che altri tipi, come Nobili. E' anche cumulativa con altri effetti che modificano i costi; se giochi Cantiere nella tua fase Azione, quindi due Cave nella tua fase Acquisto, l'Ambulante costerà 2 Coins. Influenza i costi delle carte ovunque, anche nelle mani dei giocatori.",
-        "name": "Cava"
-    },
-    "Rabble": {
-        "description": "+3 Carte\nOgni altro giocatore rivela le prime 3 carte del suo mazzo, elimina le carte Azione e Tesoro rivelate, e rimette in cima le altre nell'ordine che preferisce.",
-        "extra": " Gli altri giocatori mescolano se necessario per avere tre carte da rivelare, e rivelano solo quel che hanno se non arrivano ad avere tre carte. Scartano le carte Azione e Tesoro rivelate e rimettono il resto sul mazzo nell'ordine che vogliono. Le carte con più di un tipo sono di tutti i loro tipi; per esempio se un giocatore rivela Nobili, è una carta Azione - Vittoria, il che significa che è un'Azione, quindi la scarta.",
-        "name": "Tumulto"
     },
     "Royal Seal": {
         "description": "2 <*COIN*><line>Mentre questa carta è in gioco, quando ottieni una carta, puoi mettere quella carta in cima al tuo mazzo.",
@@ -2839,15 +2774,80 @@
         "extra": " Ricevi un Acquisto addizionale da usare nella tua fase Acquisto. Ricevi +1 Coin per ogni segnalino sulla plancia Mercante. Quindi elimini una carta dalla tua mano. Se non hai carte rimaste in mano, non elimini nulla. L'ammontare che ricevi dal Mercante è uguale a +1 per ogni mazzetto di carte Vittoria di cui sia stata ottenuta almeno una carta dall'inizio della partita. Se le carte Vittoria sono state ottenute da fuori dalla Riserva, per esempio usando la carta promo Mercato Nero, non vengono conteggiate. Metti un segnalino Moneta su ogni mazzetto di carte Vittoria all'inizio della partita. Quando una carta è ottenuta da un mazzetto di carte Vittoria, sposta il suo segnalino sulla plancia Mercante. Quindi per esempio se in questa partita ci fosse la carta Harem, e finora fossero stati comprati Ducato e Harem, ma nessuno avesse ottenuto Provincie, Tenute o Colonie, il Mercante produrrebbe 2 Coins. Non importa chi abbia ottenuto le carte o come. Non ci sono Monete extra se da un mazzetto son state prese più carte o se è vuoto; quel che conta è che almeno una carta sia stata presa. Non importa se le carte sono state messe nella Riserva, come con l'Ambasciatore; al Mercante importa solo se una carta sia mai stata presa dal mazzetto in questa partita. Se usi il Mercato Nero e il Mercante è nel mazzetto del Mercato Nero, metti i segnalini Moneta sui mazzetti delle carte Vittoria all'inizio della partita.",
         "name": "Mercante"
     },
-    "Vault": {
-        "description": "+2 Carte\nScarta qualsiasi numero di  carte. +1 Coin per carta scartata.\nOgni altro giocatore può scartare 2 carte. Se lo fa, pesca una carta.",
-        "extra": " Qualsiasi numero\" include lo zero. Prima peschi le carte; puoi quindi scartare le carte che hai appena pescato. Ogni altro giocatore scegli se scartare due carte o meno, e pescare una carta se lo ha fatto. Se uno degli altri giocatori ha solo una carta, può scegliere di scartarla, ma non pescherà. Se un giocatore scarta ma non ha carte rimaste da pescare, mescola.",
-        "name": "Nascondiglio"
-    },
     "Venture": {
         "description": "1 <*COIN*>\nQuando giochi questa carta, rivela carte dal tuo mazzo fino a rivelare una carta Tesoro. Scarta le altre carte, e gioca quella carta Tesoro.",
         "extra": " Questa è una carta Tesoro che vale 1 Coin, come il Rame. Quando la giochi, rivela carte dal tuo mazzo fino a rivelare una carta Tesoro. Se finisci le carte prima di rivelare un Tesoro, mescola il tuo scarto (ma non le carte rivelate) per averne altre; se ancora non trovi un Tesoro, scarta semplicemente tutte le carte rivelate. Se trovi un Tesoro, scarta le altre carte e gioca quel Tesoro. Se il Tesoro fa qualcosa quando giocato, fai quel qualcosa. Per esempio se il Soldo ti procura un altro Soldo, riveli ancora altre carte. Ricorda che scegli tu l'ordine in cui giocare carte Tesoro; per esempio se hai sia Soldo che Prestito in mano, puoi scegliere uno dei due da giocare per primo.",
         "name": "Soldo"
+    },
+    "Bank": {
+        "description": "? Coins\nQuando giochi questa carta, vale 1 Coin per ogni carta Tesoro che hai in gioco (inclusa questa).",
+        "extra": " Questo è un Tesoro dal valore variabile. Quando giochi Banca, vale 1 Coin per ogni Tesoro che hai in gioco, contando anche se stessa. Ricorda, scegli tu l'ordine in cui giochi le carte Tesoro. Se giochi Banca senza altri Tesori in gioco, vale 1 Coin. Se giochi due copie di Banca di fila, la seconda che giochi vale 1 Coin più della prima. La Banca produce Monete quando la giochi; ciò che avviene in seguito nel turno non cambia le Monete che ne ottieni.",
+        "name": "Banca"
+    },
+    "Bishop": {
+        "description": "+1 Coin\n+1 segnalino <VP>\nElimina una carta dalla tua mano. + segnalini <VP> uguale alla metà del suo costo in Monete, per difetto.\nOgni altro giocatore può eliminare una carta dalla sua mano.",
+        "extra": " Quando un giocatore prende segnalini PV, prende una plancia su cui metterli. I segnalini PV non sono privati e chiunque può contarli. I segnalini PV valgono 1 o 5 punti e i giocatori possono cambiarli se necessario. I segnalini sono illimitati, se finiscono usa qualcos'altro in loro vece. A fine partita, i giocatori aggiungono il valore totale dei loro segnalini al loro punteggio.]Eliminare una carta è opzionale per gli altri giocatori ma obbligatorio per te. Elimini una carta, quindi ogni altro giocatore può eliminare una carta, in ordine di turno. Solo chi ha giocato Vescovo può ottenerne segnalini PV. Il costo in Pozioni è ignorato. Se non hai carte rimaste nella tua mano da eliminare, ottieni comunque 1 Coin e un segnalino PV.",
+        "name": "Vescovo"
+    },
+    "City": {
+        "description": "+1 Carta\n+2 Azioni\nSe ci sono uno o più mazzetti vuoti nella Riserva, +1 Carta. Se ce ne sono due o più, +1 Coin e +1 Acquisto.",
+        "extra": " Peschi una carta e puoi giocare altre due Azioni a prescindere da tutto quanto. Se c'è solo un mazzetto vuoto nella Riserva, peschi anche un'altra carta. Se ci sono due o più mazzetti vuoti, peschi una carta in più e ricevi anche +1 Coin e un Acquisto in più. Non ci sono ulteriori bonus se tre o più mazzetti sono vuoi. Controlla quanti mazzetti sono vuoi solo quando giochi la carta; se i mazzetti si svuotano più tardi nel turno, non ottieni i bonus retroattivamente. Se un mazzetto cessa di essere vuoto a causa di carte che vi tornano, ad esempio tramite l'Ambasciatore, le Città giocate successivamente a ciò non considerano vuoto quel mazzetto. Una Pila delle Carte Eliminate vuote non conta.",
+        "name": "Città"
+    },
+    "Expand": {
+        "description": "Elimina una carta dalla tua mano. Ottieni una carta che costi fino a 3 Coins in più della carta eliminata.",
+        "extra": " Questa non è nella tua mano dopo che l'hai giocato, quindi non puoi sceglierla come carta da eliminare. La carta che ottieni costa fino a 3 Coins in più della carta eliminata, ma può costare qualsiasi ammontare inferiore, persino meno del costo della carta eliminata. Puoi eliminare una carta ed ottenere una copia della stessa carta. Se non hai carte in mano da eliminare, non ottieni carte. La carta che ottieni deve venire dalla Riserva e finisce nella tua pila degli scarti.",
+        "name": "Ampliamento"
+    },
+    "Forge": {
+        "description": "Elimina qualsiasi numero di carte dalla tua mano. Ottieni una carta che costi esattamente la somma del costo totale della carte eliminate.",
+        "extra": " Qualsiasi numero\" include lo zero. Se non elimini carte, devi ottenerne una che costa 0 Coins se puoi. E' diverso da come funzionano carte come Ampliamento se non elimini nulla, dal momento che Incastonare guarda il totale, non il costo della singola carta. Se non ci sono carte dal costo richiesto, non ottieni carte. La carta che ottieni viene dalla Riserva e finisce nella tua pila degli scarti. Simboli Pozione (sulle carte da Alchimia) non sono conteggiati, e la carta che ottieni non pul avere un simbolo Pozione nel costo.",
+        "name": "Incastonare"
+    },
+    "Grand Market": {
+        "description": "+1 Carta\n+1 Azione\n+1 Acquisto\n+2 Coins<line>Non puoi comprare questa carta se hai delle carte Rame in gioco.",
+        "extra": " Non sei obbligato a giocare tutti i Tesori che hai in mano nella tua fase Acquisto. I Rame nella tua mano non ti impediscono di comprare Mercato di Lusso, solo i Rame che giochi. Neanche i Rame che erano in gioco prima e ora non lo sono più ti impediscono di comprarlo; se hai in gioco 11 Rame e 2 Acquisti, potresti comprare una Zecca, eliminare tutti i Tesori che hai giocato, quindi comprare Mercato di Lusso con le Monete che ti restano. Puoi ottenere Mercato di Lusso in altri modi, per esempio con Ampliamento, che tu abbia o meno Rame in gioco. I Tesori che non sono Rame non impediscono di comprare Mercato di Lusso, anche se valgono 1 Coin (come Prestito).",
+        "name": "Mercato di Lusso"
+    },
+    "Hoard": {
+        "description": "2 <*COIN*><line>Mentre questa carta è in gioco, quando acquisti una carta Vittoria ottieni una carta Oro.",
+        "extra": " Questo è un Tesoro che vale 2 Coins, come l'Argento. Quando compri una carta Vittoria con questa carta in gioco, guadagni un Oro dalla Riserva, mettendolo nel tuo scarto. Se non rimangono Ori, non ne ottieni. Se hai più di una carta Mucchio in giro, otterrai più di un Oro dall'acquisto di una singola carta Vittoria. Quindi se per esempio hai due Mucchio in gioco e nessun altro Tesoro, con +1 Acquisto, potresti comprare 2 Tenute ed ottenere 4 Ori. Le carte Vittoria includono carte che siano anche di altri tipi, come Nobili o Harem. Ottieni un Oro anche se usi Torre di Guardia per eliminare immediatamente la carta Vittoria ottenuta. Le carte Vittoria ottenute in modi diversi dall'acquisto non ti fanno ottenere Oro.",
+        "name": "Mucchio"
+    },
+    "King's Court": {
+        "description": "Puoi scegliere una carta Azione dalla tua mano. Giocala tre volte.",
+        "extra": " Questa carta è simile a Sala del Trono, ma fa giocare l'Azione tre volte e non due. Scegli un'altra carta Azione dalla tua mano, la giochi, la giochi ancora, e la giochi una terza volta. Questo non consuma nessuna azione extra che ti era permessa da carte come Cantiere: Corte usa un'Azione e questo è tutto. Non puoi giocare altre carte mentre risolvi la carta giocata tre volte, a meno che non sia richiesto (come fa la stessa Corte). Se usi Corte su Corte, giocherai tre diverse Azioni tre volte, non usi nove volte una singola Azione. Se usi Corte su una carta che ti da' +1 Azione, come Mercato di Lusso, finirai con 3 Azioni rimaste.",
+        "name": "Corte"
+    },
+    "Mint": {
+        "description": "Puoi rivelare una carta Tesoro dalla tua mano. Ne ottieni una copia.<line>Quando compri questa carta, elimina tutte le carte Tesoro che hai in gioco.",
+        "extra": " Quando compri questa carta, elimini tutte le tue carte Tesoro in gioco. Non elimini le carte Tesoro nella tua mano o altrove; solo quelle in gioco, se ce ne sono. Se compri più carte in un turno, elimini i tuoi Tesori subito dopo aver comprato la Zecca; hai ancora eventuali Monete prodotte per spenderle su qualcos'altro. Ricorda che non sei obbligato a giocare tutti i Tesori dalla tua mano ogni turno (solo quelli che vuoi che ti forniscano Monete). Non hai possibilità di giocare ulteriori carte Tesoro fra un'Acquisto e l'altro durante la fase; prima giochi carte Tesoro, poi compri carte. Quando giochi Zecca, riveli una carta Tesoro dalla tua mano e ne ottieni una copia dalla Riserva. La carta ottenuta finisce nel tuo scarto. La carta rivelata resta nella tua mano. La carta Tesoro può anche avere altri tipi, come Harem. Se compri una Zecca e usi Torre di Guardia per metterla in cima al mazzo o eliminarla, elimini comunque tutti i tuoi Tesori dal gioco. Comunque, se compri una Zecca col Sigillo Reale in gioco, il Sigillo Reale sarà sparito prima che tu possa usarlo per mettere Zecca in cima al tuo mazzo.",
+        "name": "Zecca"
+    },
+    "Monument": {
+        "description": "+2 Coins<br>+1 segnalino <VP>",
+        "extra": " Quando un giocatore prende segnalini PV, prende una plancia su cui metterli. I segnalini PV non sono privati e chiunque può contarli. I segnalini PV valgono 1 o 5 punti e i giocatori possono cambiarli se necessario. I segnalini sono illimitati, se finiscono usa qualcos'altro in loro vece. A fine partita, i giocatori aggiungono il valore totale dei loro segnalini al loro punteggio.]",
+        "name": "Monumento"
+    },
+    "Peddler": {
+        "description": "+1 Carta<br>+1 Azione<br>+2 Coins<line>Durante la tua fase Acquisto, questa carta costas 2 Coins in meno per ogni carta Azione che hai in gioco, ma non meno di 0 Coins.",
+        "extra": " La maggior parte delle volte, questa carta costa 8 Coins. Durante le fasi Acquisti, costa 2 Coins in meno per ogni carta Azione che hai in gioco. Questo costo si applica a tutti gli Ambulanti, inclusi quelli in mano o nei mazzi. Non costa mai meno di 0 Coins. Se giochi Corte su Cantiere, per esempio, hai solo due carte Azione in gioco, anche se hai giocato tre volte il Cantiere. Comprare carte usando la carta promo Mercato Nero non avviene durante la fase Acquisto, quindi in quel momento Ambulante costa ancora 8 Coins.",
+        "name": "Ambulante"
+    },
+    "Quarry": {
+        "description": "1 <*COIN*><line>Mentre questa carta è in gioco, le carte Azione costano 2 Coins in meno, ma non meno di 0 Coins.",
+        "extra": " Questa è una carta Tesoro che vale 1 Coin, come il Rame. Mentre è in gioco, le carte Azione costano 2 Coins in meno, fino al minimo di 0 Coins. E' cumulativa; se giochi due Cave durante la tua fase Acquisto, la Corte costerà solo 3 Coins e non le normali 7 Coins. Influenza i costi delle carte che sono sia Azioni che altri tipi, come Nobili. E' anche cumulativa con altri effetti che modificano i costi; se giochi Cantiere nella tua fase Azione, quindi due Cave nella tua fase Acquisto, l'Ambulante costerà 2 Coins. Influenza i costi delle carte ovunque, anche nelle mani dei giocatori.",
+        "name": "Cava"
+    },
+    "Rabble": {
+        "description": "+3 Carte\nOgni altro giocatore rivela le prime 3 carte del suo mazzo, elimina le carte Azione e Tesoro rivelate, e rimette in cima le altre nell'ordine che preferisce.",
+        "extra": " Gli altri giocatori mescolano se necessario per avere tre carte da rivelare, e rivelano solo quel che hanno se non arrivano ad avere tre carte. Scartano le carte Azione e Tesoro rivelate e rimettono il resto sul mazzo nell'ordine che vogliono. Le carte con più di un tipo sono di tutti i loro tipi; per esempio se un giocatore rivela Nobili, è una carta Azione - Vittoria, il che significa che è un'Azione, quindi la scarta.",
+        "name": "Tumulto"
+    },
+    "Vault": {
+        "description": "+2 Carte\nScarta qualsiasi numero di  carte. +1 Coin per carta scartata.\nOgni altro giocatore può scartare 2 carte. Se lo fa, pesca una carta.",
+        "extra": " Qualsiasi numero\" include lo zero. Prima peschi le carte; puoi quindi scartare le carte che hai appena pescato. Ogni altro giocatore scegli se scartare due carte o meno, e pescare una carta se lo ha fatto. Se uno degli altri giocatori ha solo una carta, può scegliere di scartarla, ma non pescherà. Se un giocatore scarta ma non ha carte rimaste da pescare, mescola.",
+        "name": "Nascondiglio"
     },
     "Watchtower": {
         "description": "Pesca fino ad avere 6 carte in mano.<line>Quando ottieni una carta, puoi rivelare questa carta dalla tua mano. Se lo fai, elimina quella carta o mettila in cima al tuo mazzo.",
@@ -2858,6 +2858,51 @@
         "description": "+1 Carta\n+2 Azioni\n+1 Acquisto",
         "extra": " Peschi una carta, puoi giocare altre due Azioni in questo turno, e puoi acquistare un'altra carta nella tua fase Acquisto in questo turno.",
         "name": "Cantiere"
+    },
+    "Anvil": {
+        "description": "1 <*COIN*><n><n>You may discard a Treasure to gain a card costing up to 4 Coin.",
+        "extra": "Discarding a Treasure is optional. If you discard one, you gain a card costing up to 4 Coin which comes from the Supply and goes to your discard pile.",
+        "name": "Anvil"
+    },
+    "Charlatan": {
+        "description": "+3 Coin<n><n>Each other player gains a Curse.<line>In games using this, Curse is also a Treasure worth 1 Coin.",
+        "extra": "This turns Curses into Treasures for the entire game and in all situations; it's just like the bottom bar says \"Curse - Treasure.\" They may be played for +1 Coin in the Buy phase. They are trashed from play when gaining Mint, Magnate counts them in your hand, Courtier (from Intrigue) gives you two choices when revealing one, and so on. They are still Curses and still worth –1<VP> at the end of the game. Unlike Capitalism, Charlatan makes Curses stay as Treasures during scoring, so they will count for Keep. Curses will be Treasures if Charlatan is in the Black Market deck, even if no one actually gains it.",
+        "name": "Charlatan"
+    },
+    "Clerk": {
+        "description": "+2 Coin<n>Each other player with 5 or more cards in hand puts one onto their deck.<line>At the start of your turn, you may play this from your hand.",
+        "extra": "A player with no cards in their deck will have the card they put on top become the only card in their deck. At the start of your turn, you may play any number of Clerk cards from your hand, one at a time, without using up your regular Action play. You may use Clerk's self-playing start-of-turn ability before, between, or after other start-of-turn effects. For instance, if you draw Clerk due to the effect of Den of Sin, it's not too late to use Clerk's Reaction ability.",
+        "name": "Clerk"
+    },
+    "Collection": {
+        "description": "2 <*COIN*><n><n>+1 Buy<n><n>This turn, when you gain an Action card, +1<VP>.",
+        "extra": "You get +1<VP> for each Action card you gain, whether bought, or gained some other way.<n>Multiple copies of this are cumulative; if you have two Collections in play and buy a Village, you'll get +2<VP>. You only get <VP> for Actions you gain after you play the Collection; it doesn't retroactively give you points for cards you gained earlier in the turn. If the Collection leaves play (for instance, because you trashed it with Counterfeit), you still get <VP> from it for the rest of the turn.",
+        "name": "Collection"
+    },
+    "Crystal Ball": {
+        "description": "1 <*COIN*><n><n>Look at the top card of your deck. You may trash it, discard it, or, if it's an Action or Treasure, play it.",
+        "extra": "If you don't choose to do any of those things, you leave the card on your deck. If this plays an Action during your Buy phase that gives you +Actions, that doesn't let you play more Action cards in your Buy phase; if it draws Treasure cards, you can still play them.",
+        "name": "Crystal Ball"
+    },
+    "Investment": {
+        "description": "Trash a card from your hand.<n>Choose one: +1 Coin; or trash this to reveal your hand for +1<VP> per differently named Treasure there.",
+        "extra": "You trash a card no matter what; it's okay if Investment was your last card in hand, you just fail to trash a card then. Then you choose either to get +1 Coin or to trash Investment. If you trash it, you reveal your hand and get +1<VP> per differently named Treasure there; for example if you reveal two Coppers and a Silver, you get +2<VP>. You can still play the revealed Treasures after resolving Investment. If you play the same Investment twice (e.g. with Crown) and trash it on the first play for <VP>, then you can't trash it on the second play for <VP>.",
+        "name": "Investment"
+    },
+    "Magnate": {
+        "description": "Reveal your hand.<n>+1 Card per Treasure in it.",
+        "extra": "For example, if your hand had two Coppers and a Silver, you'd draw 3 cards.",
+        "name": "Magnate"
+    },
+    "Tiara": {
+        "description": "+1 Buy<n><n>This turn, when you gain a card, you may put it onto your deck.<n><n>You may play a Treasure from your hand twice.",
+        "extra": "If you gain multiple cards later in the turn after playing Tiara, you may put any or all of them onto your deck. This applies both to cards gained due to being bought, and to cards gained other ways, such as with War Chest. If you play a Tiara with a Tiara, you will be able to play two Treasures from your hand twice each - you don't play one Treasure four times.",
+        "name": "Tiara"
+    },
+    "War Chest": {
+        "description": "The player to your left names a card. Gain a card costing up to 5 Coin that hasn't been named for War Chest this turn.",
+        "extra": "The first War Chest you play in a turn can't gain whatever card they name; the second can't gain the card they name, or the card they previously named, and so on. The gained card comes from the Supply and is put into your discard pile. You can still gain the named cards other ways, just not via War Chests. They do not have to name a card in the Supply; however War Chest gains a card from the Supply, and puts it into your discard pile.",
+        "name": "War Chest"
     },
     "Academy": {
         "description": "When you gain an Action card, +1 Villager.",
