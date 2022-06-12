@@ -3114,6 +3114,41 @@
         "extra": " Prima scegli e rivela una carta dalla tua mano. Puoi mettere fino a 2 copie di quella carta dalla tua mano nella Riserva. Puoi anche non metterne alcuna. Quindi ogni altro giocatore ottiene una copia di quella carta dalla Riserva. Se il mazzetto della carta scelta finisce, alcuni giocatori potrebbereo non ottenerne una copia; le carte sono distribuite in ordine di turno a partire dal giocatore successivo. Se non hai altre carte in mano quando giochi questa carta, non succede nulla.",
         "name": "Ambasciatore"
     },
+    "Embargo": {
+        "description": "+2 Coins<br>Elimina questa carta. Metti un segnalino Embargo in cima ad un mazzetto della Riserva.<line>Quando un giocatore compra una carta, ottiene una carta Maledizione per ogni segnalino Embargo su quel mazzetto.",
+        "extra": " Puoi scegliere qualsiasi mazzetto nella Riserva. Se più carte Embargo vengono usate per mettere più segnalini Embargo sullo stesso mazzetto, un giocatore ottiene una carta Maledizione per ogni segnalino Embargo quando compra una carta da quel Mazzetto. Non ottieni carte Maledizione se ottieni una carta da un mazzetto con segnalini Embargo senza acquistarla (per esempio, se ottieni una carta coi Contrabbandieri). Se usi Sala del Trono su Embargo, piazzi due segnalini Embargo e non devono necessariamente andare sullo stesso mazzetto della Riserva. Se finisci i segnalini Embargo, usa qualsiasi cosa per sostituirli. Se non ci sono Maledizioni rimaste, i segnalini Embargo non fanno nulla.",
+        "name": "Embargo"
+    },
+    "Explorer": {
+        "description": "Puoi rivelare una carta Provincia dalla tua mano. Se lo fai, ottieni una carta Oro e la metti nella tua mano. Altrimenti, guadagni una carta Argento e la metti nella tua mano.",
+        "extra": " Non sei costretto a rivelare una Provincia se ce l'hai in mano. Se ne riveli una ottieni un Oro, altrimenti ottieni un Argento. La carta ottenuta deve venire dalla Riserva e finisce nella tua mano; puoi spenderla nello stesso turno.",
+        "name": "Avventuriero"
+    },
+    "Ghost Ship": {
+        "description": "+2 Carte<n>Ogni altro giocatore con 4 o più carte in mano mette carte dalla sua mano sopra al suo mazzo fino ad avere 3 carte in mano.",
+        "extra": " Gli altri giocatori scelgono queli carte mettere sui loro mazzi e in quale ordine. Questa carta non ha effetto su giocatori che abbiano già solo 3 carte in mano. Un giocatore senza carte rimaste nel mazzo non mescola; le carte messe sul mazzo diventano le uniche carte nel suo mazzo.",
+        "name": "Nave Fantasma"
+    },
+    "Navigator": {
+        "description": "+2 Coins<n>Guarda le prima 5 carte del tuo mazzo. Scartale tutte, o rimettile in cima al tuo mazzo nell'ordine che preferisci.",
+        "extra": " Scarti tutte e 5 le carte o nessuna di essa. Se non le scarti, rimettile in cima al mazzo nell'ordine che preferisci. Se non ci sono 5 carte rimaste nel tuo mazzo, guardane quante puoi, quindi mescola la tua pila degli scarti (senza includere le carte appena guardate), e guarda le carte rimanenti. Se ancora non ce ne sono 5, guarda solo quelle che sono rimaste, e rimettile a posto o scartale.",
+        "name": "Navigatore"
+    },
+    "Pearl Diver": {
+        "description": "+1 Carta<br>+1 Azione<n>Guarda la carta in fondo al tuo mazzo. Puoi metterla in cima.",
+        "extra": " Pesca una carta prima di guardare la carta in fondo al tuo mazzo. Se piazzi la carta in cima al tuo mazzo, assicurati di non guardare la carta che vi sta sotto in fondo al mazzo mentre la prendi. Se non hai carte rimaste quando devi vedere il fondo, prima mescola.",
+        "name": "Pescatore di Perle"
+    },
+    "Pirate Ship": {
+        "description": "Scegli: Ogni altro giocatore rivela le prime 2 carte del suo mazzo, elimina una carta Tesoro rivelata di tua scelta, scarta il resto e se è stata eliminata almeno una carta tesoro metti un segnalino Moneta sulla tua plancia Nave Pirata; o, +1 Coin per ogni segnalino Moneta presente sulla tua plancia Nave Pirata.",
+        "extra": " Quando ottieni questa carta per la prima volta, prendi una plancia Nave Pirata. Se usi la Nave Pirata per eliminare Tesori, un giocatore con solo una carta rimasta la rivela e quindi mescola (senza includere la carta appena rivelata) per avere l'altra carta da rivelare; un giocatore senza carte rimaste mescola per averle entrambe. Un giocatore che ancora non abbia due carte da rivelare dopo aver mescolato rivela solo quel che può. Ogni giocatore elimina al massimo una carta Tesoro, scelta da chi ha giocato Nave Pirata fra le carte rivelate. Se viene eliminata almeno una carta Tesoro in questo modo, metti un segnalino Moneta sulla plancia Nave Pirata. Non puoi ottenere più di un segnalino quando giochi questa carta, a prescindere da quanti Tesori vengano eliminati. Se scegli di non tentare di eliminare Tesori dagli altri giocatori, la Nave Pirata vale 1 Coin per ogni segnalino Moneta presente sulla plancia. La Nave Pirata è una carta Azione - Attacco e i giocatori possono rivelare Stanza Segreta anche se la usi per ricevere + Monete. [Scegli come usare la Nave Pirata dopo che gli altri giocatori han finito di rivelare Reazioni.]",
+        "name": "Nave Pirata"
+    },
+    "Sea Hag": {
+        "description": "Ogni altro giocatore scarta la carta in cime al proprio mazzo, quindi ottiene una carta Maledizione che mette in cima al proprio mazzo.",
+        "extra": " Un giocatore senza carte rimaste nel suo mazzo deve mescolare per avere una carta da scartare. Se dopo aver mescolato è ancora senza carte, non scarta. Un giocatore che scarti la sua ultima carta usa la Maledizione ottenuta come unica carta del suo mazzo. Se non ci sono abbastanza Maledizioni rimaste da dare, vengono distribuite in ordine di turno a partire dal giocatore a sinistra di chi ha giocato Megera dei Mari.",
+        "name": "Megera dei Mari"
+    },
     "Bazaar": {
         "description": "+1 Carta<br>+2 Azioni<br>+1 Coin",
         "extra": "Pesca una carta, hai altre 2 Azioni da usare, e ricevi 1 Coin in più da spendere in questo turno.",
@@ -3129,25 +3164,10 @@
         "extra": " Gli altri giocatori devono scartare uno e un solo Rame. Se non hanno un Rame, devono rivelare la loro mano a tutti i giocatori.",
         "name": "Borseggiatore"
     },
-    "Embargo": {
-        "description": "+2 Coins<br>Elimina questa carta. Metti un segnalino Embargo in cima ad un mazzetto della Riserva.<line>Quando un giocatore compra una carta, ottiene una carta Maledizione per ogni segnalino Embargo su quel mazzetto.",
-        "extra": " Puoi scegliere qualsiasi mazzetto nella Riserva. Se più carte Embargo vengono usate per mettere più segnalini Embargo sullo stesso mazzetto, un giocatore ottiene una carta Maledizione per ogni segnalino Embargo quando compra una carta da quel Mazzetto. Non ottieni carte Maledizione se ottieni una carta da un mazzetto con segnalini Embargo senza acquistarla (per esempio, se ottieni una carta coi Contrabbandieri). Se usi Sala del Trono su Embargo, piazzi due segnalini Embargo e non devono necessariamente andare sullo stesso mazzetto della Riserva. Se finisci i segnalini Embargo, usa qualsiasi cosa per sostituirli. Se non ci sono Maledizioni rimaste, i segnalini Embargo non fanno nulla.",
-        "name": "Embargo"
-    },
-    "Explorer": {
-        "description": "Puoi rivelare una carta Provincia dalla tua mano. Se lo fai, ottieni una carta Oro e la metti nella tua mano. Altrimenti, guadagni una carta Argento e la metti nella tua mano.",
-        "extra": " Non sei costretto a rivelare una Provincia se ce l'hai in mano. Se ne riveli una ottieni un Oro, altrimenti ottieni un Argento. La carta ottenuta deve venire dalla Riserva e finisce nella tua mano; puoi spenderla nello stesso turno.",
-        "name": "Avventuriero"
-    },
     "Fishing Village": {
         "description": "+2 Azioni<br>+1 Coin<n>All'inizio del tuo prossimo turno: +1 Azione, +1 Coin.",
         "extra": " Ricevi 1 Coin da spendere e 2 altre Azioni da usare in questo turno. All'inizio del tuo prossimo turno ricevi 1 Coin e 1 Azione in più. Questo significa che potrai giocare un totale di 2 Azioni nel tuo prossimo turno (contando anche la tua normale Azione). Lascia questa carta davanti a te fino alla fase di Pulizia del tuo prossimo turno.",
         "name": "Villaggio di Pescatori"
-    },
-    "Ghost Ship": {
-        "description": "+2 Carte<n>Ogni altro giocatore con 4 o più carte in mano mette carte dalla sua mano sopra al suo mazzo fino ad avere 3 carte in mano.",
-        "extra": " Gli altri giocatori scelgono queli carte mettere sui loro mazzi e in quale ordine. Questa carta non ha effetto su giocatori che abbiano già solo 3 carte in mano. Un giocatore senza carte rimaste nel mazzo non mescola; le carte messe sul mazzo diventano le uniche carte nel suo mazzo.",
-        "name": "Nave Fantasma"
     },
     "Haven": {
         "description": "+1 Carta<br>+1 Azione<n>Metti da parte una carta coperta dalla tua mano. All'inizio del tuo prossimo turno, mettila nella tua mano.",
@@ -3179,35 +3199,15 @@
         "extra": " La prima volta che ottieni una di queste carte, prendi una plancia Villaggio Indigeno. Quando giochi Villaggio Indigeno, prendi tutte le carte presenti sulla tua plancia Villaggio Indigeno e mettile nella tua mano, o metti via la prima carta del tuo mazzo coperta (mescola se necessario) sulla plancia Villaggio Indigeno. Puoi scegliere qualunque opzione anche se non hai carte sulla tua plancia o non hai carte nel tuo mazzo. Puoi guardare le tue carte sulla plancia in ogni momento. Alla fine della partita, qualsiasi carta che sia ancora sulla plancia torna nel tuo mazzo per il punteggio. Il Villaggio Indigeno in sè non viene messo via; va nella tua pila degli scarti nella fase Pulizia.",
         "name": "Villaggio Indigeno"
     },
-    "Navigator": {
-        "description": "+2 Coins<n>Guarda le prima 5 carte del tuo mazzo. Scartale tutte, o rimettile in cima al tuo mazzo nell'ordine che preferisci.",
-        "extra": " Scarti tutte e 5 le carte o nessuna di essa. Se non le scarti, rimettile in cima al mazzo nell'ordine che preferisci. Se non ci sono 5 carte rimaste nel tuo mazzo, guardane quante puoi, quindi mescola la tua pila degli scarti (senza includere le carte appena guardate), e guarda le carte rimanenti. Se ancora non ce ne sono 5, guarda solo quelle che sono rimaste, e rimettile a posto o scartale.",
-        "name": "Navigatore"
-    },
     "Outpost": {
         "description": "Peschi solo 3 carte (invece di 5) nella fase Pulizia di questo turno. Gioca un turno extra al termine di questo. Questo non può portarti a fare più di due turni consecutivi.",
         "extra": " Il turno extra è del tutto normale tranne che la tua mano iniziale per esso è di sole 3 carte. Questo significa che hai pescato solo 3 carte e non 5 durante la fase Pulizia del turno nel quale giochi Avamposto. Lascia Avamposto davanti a te fino alla fine del turno extra. Se giochi Avamposto e un'altra carta Durata, come Nave Mercantile, il turno dall'Avamposto sarà il \"prossimo turno\", quindi otterrai gli effetti in quel turno extra. Se giochi Avamposto due volte in un turno, avrai comunque un solo turno extra. Se giochi Avamposto durante un turno extra, non ti darà un altro turno.",
         "name": "Avamposto"
     },
-    "Pearl Diver": {
-        "description": "+1 Carta<br>+1 Azione<n>Guarda la carta in fondo al tuo mazzo. Puoi metterla in cima.",
-        "extra": " Pesca una carta prima di guardare la carta in fondo al tuo mazzo. Se piazzi la carta in cima al tuo mazzo, assicurati di non guardare la carta che vi sta sotto in fondo al mazzo mentre la prendi. Se non hai carte rimaste quando devi vedere il fondo, prima mescola.",
-        "name": "Pescatore di Perle"
-    },
-    "Pirate Ship": {
-        "description": "Scegli: Ogni altro giocatore rivela le prime 2 carte del suo mazzo, elimina una carta Tesoro rivelata di tua scelta, scarta il resto e se è stata eliminata almeno una carta tesoro metti un segnalino Moneta sulla tua plancia Nave Pirata; o, +1 Coin per ogni segnalino Moneta presente sulla tua plancia Nave Pirata.",
-        "extra": " Quando ottieni questa carta per la prima volta, prendi una plancia Nave Pirata. Se usi la Nave Pirata per eliminare Tesori, un giocatore con solo una carta rimasta la rivela e quindi mescola (senza includere la carta appena rivelata) per avere l'altra carta da rivelare; un giocatore senza carte rimaste mescola per averle entrambe. Un giocatore che ancora non abbia due carte da rivelare dopo aver mescolato rivela solo quel che può. Ogni giocatore elimina al massimo una carta Tesoro, scelta da chi ha giocato Nave Pirata fra le carte rivelate. Se viene eliminata almeno una carta Tesoro in questo modo, metti un segnalino Moneta sulla plancia Nave Pirata. Non puoi ottenere più di un segnalino quando giochi questa carta, a prescindere da quanti Tesori vengano eliminati. Se scegli di non tentare di eliminare Tesori dagli altri giocatori, la Nave Pirata vale 1 Coin per ogni segnalino Moneta presente sulla plancia. La Nave Pirata è una carta Azione - Attacco e i giocatori possono rivelare Stanza Segreta anche se la usi per ricevere + Monete. [Scegli come usare la Nave Pirata dopo che gli altri giocatori han finito di rivelare Reazioni.]",
-        "name": "Nave Pirata"
-    },
     "Salvager": {
         "description": "+1 Acquisto<n>Elimina una carta dalla tua mano.<n>+_ Coins, è il costo della carta eliminata.",
         "extra": " Se hai almeno una carta nella tua mano, devi eliminarne una. Se non hai carte in mano rimaste da eliminare, non ricevi Monete ma hai comunque +1 Acquisto.",
         "name": "Recupero"
-    },
-    "Sea Hag": {
-        "description": "Ogni altro giocatore scarta la carta in cime al proprio mazzo, quindi ottiene una carta Maledizione che mette in cima al proprio mazzo.",
-        "extra": " Un giocatore senza carte rimaste nel suo mazzo deve mescolare per avere una carta da scartare. Se dopo aver mescolato è ancora senza carte, non scarta. Un giocatore che scarti la sua ultima carta usa la Maledizione ottenuta come unica carta del suo mazzo. Se non ci sono abbastanza Maledizioni rimaste da dare, vengono distribuite in ordine di turno a partire dal giocatore a sinistra di chi ha giocato Megera dei Mari.",
-        "name": "Megera dei Mari"
     },
     "Smugglers": {
         "description": "Ottieni una copia di una carta che costi fino a 6 Coins che il giocatore alla tua destra abbia ottenuto nel suo ultimo turno.",
@@ -3238,6 +3238,51 @@
         "description": "Ora e all'inizio del tuo prossimo turno: +2 Carte, +1 Acquisto.",
         "extra": " Peschi 2 carte ed hai un Acquisto extra in questo turno, e peschi altre 2 carte con un Acquisto extra all'inizio del tuo prossimo turno. Non peschi le 2 carte extra per il prossimo turno fin quando quel turno non inizia. Tieni questa carta davanti a te fino alla fase Pulizia del prossimo turno.",
         "name": "Molo"
+    },
+    "Astrolabe": {
+        "description": "Now and at the start of your next turn:<br><br>1 <*COIN*><br><br>+ 1 Buy",
+        "extra": "This gives you +1 Buy and +1 Coin on the turn you play it, and +1 Buy and +1 Coin on your next turn too.",
+        "name": "Astrolabe"
+    },
+    "Blockade": {
+        "description": "Gain a card costing up to 4 Coin, setting it aside.<br>At the start of your next turn, put it into your hand. While it's set aside, when another player gains a copy of it on their turn, they gain a Curse.",
+        "extra": "The gained card comes from the Supply and is set aside; put it on the <i>Blockade</i> to remember which card goes with <i>Blockade</i>.<br>If the gained card somehow doesn't end up set aside (for example if you trash it with <i>Watchtower</i> from Prosperity), nothing further happens; if the card is set aside, then you put it into your hand on your next turn, and until then, when other players gain the card on their own turns, they also gain a Curse.<br>Like all Duration attacks, you have to reveal your <i>Moat</i> as soon as an opponent plays a <i>Blockade</i>.<br>Unlike <i>Summon</i>, the card you gain is set aside immediately, but it can still get moved (with e.g. <i>Gatekeeper</i>). If it gets moved, you'll discard <i>Blockade</i> during Clean-up.<br>Because you don't gain the card to your discard pile, that means that the abilities on <i>Nomad Camp</i> and <i>Ghost Town</i> do not matter.<br>If you <i>Blockade</i> a Curse, then if another player on their turn gains a Curse, they will gain all the Curses. If they have a <i>Trader</i> in hand, they can get any and all Silvers in the Supply, but they'll still gain all the Curses.<br>This only Curses another player if they gain a copy of a <i>Blockaded</i> card during their turn. If you make them gain a copy when it's not their turn (e.g. you buy a <i>Messenger</i> and give them a copy), they won't gain a Curse.<br>During a <i>Possession</i> turn, no one will get Cursed from <i>Blockade</i>.",
+        "name": "Blockade"
+    },
+    "Corsair": {
+        "description": "+2 Coin<br><br>At the start of your next turn, +1 Card. Until then, each other player trashes the first Silver or Gold they play each turn.",
+        "extra": "The trashed Silver or Gold still made _ Coin for the player to spend that turn.<br>If you're under multiple <i>Corsair</i> attacks, you'll only trash 1 Silver and/or Gold.",
+        "name": "Corsair"
+    },
+    "Monkey": {
+        "description": "Until your next turn, when the player to your right gains a card,<br>+1 Card.<br><br>At the start of your next turn,<br>+1 Card.",
+        "extra": "This includes cards that the player gains on other players' turns, such as a Curse they gain on your turn via <i>Witch</i>.<br>When another player gains a card, they resolve any of their on-gain effects before you draw a card (which could matter vs <i>Skirmisher</i>).<br>If Monkey draws a <i>Reaction</i> that can react to the card they gained (such as <i>Falconer</i>), you can immediately use it.<br>If you play this with <i>Way of the Chameleon</i>, and the player to your right gains a card on the same turn, you'll get +1 Coin. Afterwards, you'll get +1 Card when they gain a card.",
+        "name": "Monkey"
+    },
+    "Pirate": {
+        "description": "At the start of your next turn, gain a Treasure costing up to 6 Coin to your hand.<line>When any player gains a Treasure, you may play this from your hand.",
+        "extra": "You can play this when you gain a Treasure, or when another player gains a Treasure.<br>If you play this during another player's turn, your following turn is when your <i>Pirate</i> gains you a Treasure.<br>The Treasure you gain comes from the Supply and goes directly to your hand.<br>This plays like the Reactions in <i>Menagerie</i>.<br>If you have <i>Capitalism</i>, gaining an Action with +_ Coin in its text will let all players play <i>Pirates</i> from their hand.",
+        "name": "Pirate"
+    },
+    "Sailor": {
+        "description": "+1 Action<br>Once this turn, when you gain a Duration card, you may play it.<br><br>At the start of your next turn, +2 Coin and you may trash a card from your hand.",
+        "extra": "If you gain a Duration card the turn you play <i>Sailor</i>, playing it is optional.<br>This is cumulative; if you play two <i>Sailors</i>, you can play up to two gained Duration cards. However two <i>Sailors</i> cannot play the same gained Duration card twice.<br><i>Sailor</i> applies to cards gained due to being bought, or gained other ways, such as with <i>Workshop</i>.<br>If you gain a Duration card in your Buy phase, <i>Sailor</i> can play it, even though it's your Buy phase. If such a card gives you +Actions, that doesn't let you play more Action cards in your Buy phase; if it draws Treasure cards, you can only play them if you haven't bought any cards yet.<br>The ability to play Duration cards only happens the turn you play <i>Sailor</i>; on your next turn, you just get +2 Coin and may trash a card from your hand.<br>The Duration doesn't need to be an Action, meaning that you can play Night-Durations when you gain them (like <i>Cobbler</i>).<br>If you exchange a <i>Hero</i> for a <i>Champion</i>, you aren't gaining it, so you can't play it.<br>If you gain a <i>Garrison</i> and play it, you'll immediately add a token to <i>Garrison</i>.<br>This can play a gained Duration even if it was gained to somewhere other than your discard pile (such as a <i>Guardian</i>, or a card gained with <i>Blockade</i>), or if another card is trying to move it at the same time (such as <i>Gatekeeper</i>). But if the gained card has already gotten moved (e.g. by another <i>Sailor</i>), then this can't play it.",
+        "name": "Sailor"
+    },
+    "Sea Chart": {
+        "description": "+1 Card<br>+1 Action<br><br>Reveal the top card of your deck. If you have a copy of it in play, put it into your hand.",
+        "extra": "If you have a copy of the revealed card in play - including the just played <i>Sea Chart</i>, or a Duration card that you have in play from a previous turn - then you put the revealed card into your hand; otherwise, you leave the card on top of your deck.",
+        "name": "Sea Chart"
+    },
+    "Sea Witch": {
+        "description": "+2 Cards<br>Each other player gains a Curse.<br><br>At the start of your next turn, +2 Cards, then discard 2 cards.",
+        "extra": "When you play this, you draw 2 cards and each other player gains a Curse; then at the start of your next turn, you draw 2 cards and then discard 2 cards.",
+        "name": "Sea Witch"
+    },
+    "Tide Pools": {
+        "description": "+3 Cards<br>+1 Action<br><br>At the start of your next turn, discard 2 cards.",
+        "extra": "When you play this, you get +3 Cards and +1 Action, but at the start of your next turn, you have to discard 2 cards.<br>If you have only one card left in hand you discard that one, and if you have no cards you don't discard any.<br>When you have multiple Duration cards doing things at the start of your turn, you can put them in an order to your advantage; for example if you have four <i>Tide Pools</i> and a <i>Wharf</i>, you could discard all of your cards to the <i>Tide Pools</i>, then draw the <i>Wharf</i> cards.",
+        "name": "Tide Pools"
     },
     "Border Guard - LanternHorn": {
         "description": "<left><u>Border Guard</u>:</left><n>+1 Action<br>Reveal the top 2 cards of your deck.  Put one into your hand and discard the other.  If both were Actions, take the Lantern or Horn.<n><left><u>Horn</u>:</left><n>Once per turn, when you discard a Border Guard from play, you may put it onto your deck.<n><left><u>Lantern</u>:</left><n>Your Border Guards reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",

@@ -254,13 +254,47 @@
         "set_text": "",
         "text_icon": "*"
     },
-    "seaside": {
+    "seaside1stEdition": {
+        "edition": [
+            "1"
+        ],
+        "image": "seaside1stEdition_set.png",
+        "set_name": "*seaside*",
+        "set_text": "",
+        "text_icon": "*",
+        "short_name": "Seaside"
+    },
+    "seaside1stEditionRemoved": {
         "edition": [
             "1",
+            "removed"
+        ],
+        "image": "seaside1stEdition_set.png",
+        "has_extras": false,
+        "set_name": "*seaside1stEditionRemoved*",
+        "set_text": "",
+        "text_icon": "*"
+    },
+    "seaside2ndEdition": {
+        "edition": [
+            "2",
             "latest"
         ],
-        "image": "seaside_set.png",
-        "set_name": "*seaside*",
+        "image": "seaside2ndEdition_set.png",
+        "set_name": "*seaside2ndEdition*",
+        "set_text": "",
+        "short_name": "Seaside",
+        "text_icon": "*"
+    },
+    "seaside2ndEditionUpgrade": {
+        "edition": [
+            "1",
+            "upgrade"
+        ],
+        "image": "seaside2ndEdition_set.png",
+        "has_extras": false,
+        "upgrades": "seaside1stEdition",
+        "set_name": "*seaside2ndEditionUpgrade*",
         "set_text": "",
         "text_icon": "*"
     }

@@ -22,7 +22,7 @@ def rmtestcardb(request):
 
 
 def test_cardread():
-    num_cards_expected = 737
+    num_cards_expected = 781
 
     options = main.parse_opts([])
     options.data_path = "."
@@ -38,7 +38,10 @@ def test_cardread():
         "intrigue1stEditionRemoved",
         "intrigue2ndEdition",
         "intrigue2ndEditionUpgrade",
-        "seaside",
+        "seaside1stEdition",
+        "seaside1stEditionRemoved",
+        "seaside2ndEdition",
+        "seaside2ndEditionUpgrade",
         "alchemy",
         "prosperity",
         "cornucopia extras",

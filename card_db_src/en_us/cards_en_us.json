@@ -3509,5 +3509,50 @@
         "notes": [
             "This card is currently not used."
         ]
+    },
+    "Astrolabe": {
+        "description": "Now and at the start of your next turn:<br><br>1 <*COIN*><br><br>+ 1 Buy",
+        "extra": "This gives you +1 Buy and +1 Coin on the turn you play it, and +1 Buy and +1 Coin on your next turn too.",
+        "name": "Astrolabe"
+    },
+    "Monkey": {
+        "description": "Until your next turn, when the player to your right gains a card,<br>+1 Card.<br><br>At the start of your next turn,<br>+1 Card.",
+        "extra": "This includes cards that the player gains on other players' turns, such as a Curse they gain on your turn via <i>Witch</i>.<br>When another player gains a card, they resolve any of their on-gain effects before you draw a card (which could matter vs <i>Skirmisher</i>).<br>If Monkey draws a <i>Reaction</i> that can react to the card they gained (such as <i>Falconer</i>), you can immediately use it.<br>If you play this with <i>Way of the Chameleon</i>, and the player to your right gains a card on the same turn, you'll get +1 Coin. Afterwards, you'll get +1 Card when they gain a card.",
+        "name": "Monkey"
+    },
+    "Sea Chart": {
+        "description": "+1 Card<br>+1 Action<br><br>Reveal the top card of your deck. If you have a copy of it in play, put it into your hand.",
+        "extra": "If you have a copy of the revealed card in play - including the just played <i>Sea Chart</i>, or a Duration card that you have in play from a previous turn - then you put the revealed card into your hand; otherwise, you leave the card on top of your deck.",
+        "name": "Sea Chart"
+    },
+    "Blockade": {
+        "description": "Gain a card costing up to 4 Coin, setting it aside.<br>At the start of your next turn, put it into your hand. While it's set aside, when another player gains a copy of it on their turn, they gain a Curse.",
+        "extra": "The gained card comes from the Supply and is set aside; put it on the <i>Blockade</i> to remember which card goes with <i>Blockade</i>.<br>If the gained card somehow doesn't end up set aside (for example if you trash it with <i>Watchtower</i> from Prosperity), nothing further happens; if the card is set aside, then you put it into your hand on your next turn, and until then, when other players gain the card on their own turns, they also gain a Curse.<br>Like all Duration attacks, you have to reveal your <i>Moat</i> as soon as an opponent plays a <i>Blockade</i>.<br>Unlike <i>Summon</i>, the card you gain is set aside immediately, but it can still get moved (with e.g. <i>Gatekeeper</i>). If it gets moved, you'll discard <i>Blockade</i> during Clean-up.<br>Because you don't gain the card to your discard pile, that means that the abilities on <i>Nomad Camp</i> and <i>Ghost Town</i> do not matter.<br>If you <i>Blockade</i> a Curse, then if another player on their turn gains a Curse, they will gain all the Curses. If they have a <i>Trader</i> in hand, they can get any and all Silvers in the Supply, but they'll still gain all the Curses.<br>This only Curses another player if they gain a copy of a <i>Blockaded</i> card during their turn. If you make them gain a copy when it's not their turn (e.g. you buy a <i>Messenger</i> and give them a copy), they won't gain a Curse.<br>During a <i>Possession</i> turn, no one will get Cursed from <i>Blockade</i>.",
+        "name": "Blockade"
+    },
+    "Sailor": {
+        "description": "+1 Action<br>Once this turn, when you gain a Duration card, you may play it.<br><br>At the start of your next turn, +2 Coin and you may trash a card from your hand.",
+        "extra": "If you gain a Duration card the turn you play <i>Sailor</i>, playing it is optional.<br>This is cumulative; if you play two <i>Sailors</i>, you can play up to two gained Duration cards. However two <i>Sailors</i> cannot play the same gained Duration card twice.<br><i>Sailor</i> applies to cards gained due to being bought, or gained other ways, such as with <i>Workshop</i>.<br>If you gain a Duration card in your Buy phase, <i>Sailor</i> can play it, even though it's your Buy phase. If such a card gives you +Actions, that doesn't let you play more Action cards in your Buy phase; if it draws Treasure cards, you can only play them if you haven't bought any cards yet.<br>The ability to play Duration cards only happens the turn you play <i>Sailor</i>; on your next turn, you just get +2 Coin and may trash a card from your hand.<br>The Duration doesn't need to be an Action, meaning that you can play Night-Durations when you gain them (like <i>Cobbler</i>).<br>If you exchange a <i>Hero</i> for a <i>Champion</i>, you aren't gaining it, so you can't play it.<br>If you gain a <i>Garrison</i> and play it, you'll immediately add a token to <i>Garrison</i>.<br>This can play a gained Duration even if it was gained to somewhere other than your discard pile (such as a <i>Guardian</i>, or a card gained with <i>Blockade</i>), or if another card is trying to move it at the same time (such as <i>Gatekeeper</i>). But if the gained card has already gotten moved (e.g. by another <i>Sailor</i>), then this can't play it.",
+        "name": "Sailor"
+    },
+    "Tide Pools": {
+        "description": "+3 Cards<br>+1 Action<br><br>At the start of your next turn, discard 2 cards.",
+        "extra": "When you play this, you get +3 Cards and +1 Action, but at the start of your next turn, you have to discard 2 cards.<br>If you have only one card left in hand you discard that one, and if you have no cards you don't discard any.<br>When you have multiple Duration cards doing things at the start of your turn, you can put them in an order to your advantage; for example if you have four <i>Tide Pools</i> and a <i>Wharf</i>, you could discard all of your cards to the <i>Tide Pools</i>, then draw the <i>Wharf</i> cards.",
+        "name": "Tide Pools"
+    },
+    "Corsair": {
+        "description": "+2 Coin<br><br>At the start of your next turn, +1 Card. Until then, each other player trashes the first Silver or Gold they play each turn.",
+        "extra": "The trashed Silver or Gold still made _ Coin for the player to spend that turn.<br>If you're under multiple <i>Corsair</i> attacks, you'll only trash 1 Silver and/or Gold.",
+        "name": "Corsair"
+    },
+    "Pirate": {
+        "description": "At the start of your next turn, gain a Treasure costing up to 6 Coin to your hand.<line>When any player gains a Treasure, you may play this from your hand.",
+        "extra": "You can play this when you gain a Treasure, or when another player gains a Treasure.<br>If you play this during another player's turn, your following turn is when your <i>Pirate</i> gains you a Treasure.<br>The Treasure you gain comes from the Supply and goes directly to your hand.<br>This plays like the Reactions in <i>Menagerie</i>.<br>If you have <i>Capitalism</i>, gaining an Action with +_ Coin in its text will let all players play <i>Pirates</i> from their hand.",
+        "name": "Pirate"
+    },
+    "Sea Witch": {
+        "description": "+2 Cards<br>Each other player gains a Curse.<br><br>At the start of your next turn, +2 Cards, then discard 2 cards.",
+        "extra": "When you play this, you draw 2 cards and each other player gains a Curse; then at the start of your next turn, you draw 2 cards and then discard 2 cards.",
+        "name": "Sea Witch"
     }
 }
