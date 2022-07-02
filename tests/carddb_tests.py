@@ -22,7 +22,7 @@ def rmtestcardb(request):
 
 
 def test_cardread():
-    num_cards_expected = 826
+    num_cards_expected = 870
 
     options = main.parse_opts([])
     options.data_path = "."
@@ -49,7 +49,10 @@ def test_cardread():
         "prosperity2ndEditionUpgrade",
         "cornucopia extras",
         "cornucopia",
-        "hinterlands",
+        "hinterlands1stEdition",
+        "hinterlands1stEditionRemoved",
+        "hinterlands2ndEdition",
+        "hinterlands2ndEditionUpgrade",
         "dark ages",
         "dark ages extras",
         "guilds",
@@ -209,7 +212,7 @@ def test_expansion_description_card_order():
     options = main.parse_opts(
         [
             "--expansions",
-            "Hinterlands",
+            "hinterlands1stEdition",
             "--expansion-dividers",
             "--language",
             "fr",

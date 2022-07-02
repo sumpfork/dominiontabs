@@ -1654,15 +1654,55 @@
         "extra": "You may trash a Treasure card from your hand. This is optional. Cards with multiple types, one of which is Treasure (like Harem from Intrigue), are Treasures. If you do trash a Treasure, each other player with at least five cards in hand discards a copy of it from her hand if she can, or reveals a hand with no copies of it, and you gain a Treasure costing up to 3 Coins more than the trashed Treasure, putting it on top of your deck. If there are no cards in your deck, it becomes the only card in your deck. You do not have to gain a more expensive Treasure; you may gain a Treasure with the same cost, or a cheaper Treasure. You have to gain a card if you trashed one though, if possible. The gained Treasure comes from the Supply.",
         "name": "Taxman"
     },
-    "Border Village": {
-        "description": "+1 Card<br>+2 Actions<line>When you gain this, gain a card costing less than this.",
-        "extra": "When you play this, you draw a card and can play two more Actions this turn. When you gain this, you also gain a card from the Supply that costs less than Border Village. Normally that will be a card costing up to 5 coins, but if Border Village costs less than normal, such as due to Highway, then the card you gain will have a lower maximum cost. You only gain a card when you gain Border Village, not when you play it. You gain a card whether you gained Border Village due to buying it, or gained it some other way.",
-        "name": "Border Village"
-    },
     "Cache": {
         "description": "3 <*COIN*><line>When you gain this, gain two Coppers.",
         "extra": "This is a treasure worth 3 coins, like Gold. When you gain it, you also gain two Coppers from the Supply. if there are not two Coppers left, just gain as many as you can. You only gain Coppers when you gain Cache, not when you play it. You gain Coppers whether you gained Cache due to buying it, or gained it some other way.",
         "name": "Cache"
+    },
+    "Duchess": {
+        "description": "+2 Coins<n>Each player (including you) looks at the top card of his deck, and discards it or puts it back.<line>In games using this, when you gain a Duchy, you may gain a Duchess.",
+        "extra": "When you play this, you get +2 coins, and each player, including you, looks at the top card of his own deck and either discards it or puts it back on top, his choice. Any player with no cards in his deck shuffles his discard pile first; any player who still has no cards to look at does not look at one. When a player gains a Duchy in a game with Duchess in the Supply, that player may also gain a Duchess from the Supply. This works whether the player gained a Duchy due to buying one, or gained a Duchy some other way. Duchess does not interact in any special way with the promotional card Black Market.",
+        "name": "Duchess"
+    },
+    "Embassy": {
+        "description": "+5 Cards<br>Discard 3 cards.<line>When you gain this, each other player gains a Silver.",
+        "extra": "When you play this, you draw five cards, then discard three cards. The cards you discard can be ones that were in your hand and/or ones you just drew. You discard three cards if able, even if you were unable to draw the full five cards (due to not having enough cards in your deck and discard pile). If you do not have three cards to discard, you discard as many as you can. When you gain this, each other player gains a Silver. Players only gain Silvers when you gain this, not when you play this. They gain Silvers whether you gained Embassy due to buying it, or gained it some other way. Gaining Silvers is not optional for them. The Silvers come from the Supply. If there are not enough Silvers left to go around, deal them out in turn order, starting with the player to the left of the player who gained Embassy.",
+        "name": "Embassy"
+    },
+    "Ill-Gotten Gains": {
+        "description": "1 <*COIN*><n>You may gain a Copper to your hand.<line>When you gain this, each other player gains a Curse.",
+        "extra": "This is a Treasure worth 1 coin like Copper. When you play it, you may gain a Copper. The gained Copper comes from the Supply and is put into your hand; you can immediately play it. If there is no Copper left in the Supply, you do not gain one. When you gain Ill-Gotten Gains, each other player gains a Curse. This happens whether you gain Ill-Gotten Gains due to buying it, or you gain it some other way. The Curses come from the Supply and go into discard piles. If there are not enough Curses left to go around, deal them out in turn order, starting with the player to the left of the player who gained Ill-Gotten Gains. III-Gotten Gains is not an Attack, and gaining it is not playing an Attack; cards like Moat from Dominion do not work against it.",
+        "name": "Ill-Gotten Gains"
+    },
+    "Mandarin": {
+        "description": "+3 Coins<br>Put a card from your hand on top of your deck.<line>When you gain this, put all Treasures you have in play on top of your deck in any order.",
+        "extra": "When you play this, you get +3 coins, and put a card from your hand on top of your deck. If you have no cards left in hand, you do not put a card on top of your deck. If there are no cards left in your deck, the card you put on top becomes the only card in your deck. When you gain this, you put all of your Treasures from play on top of your deck in any order. You do not have to show this order to other players. You have to put all of your Treasures on top; you cannot leave some out. You only put Treasures from play on top of your deck, not unplayed Treasures from your hand. This does not stop you from having the coins you got from playing those Treasures; for example, if you have +1 Buy and play four Golds and buy a Mandarin, you put the Golds on top of your deck, and still have 7 coins left to spend. Mandarin puts your played Treasures on your deck whether you gained it due to buying it or gained it some other way, although normally you will only have Treasures in play in your Buy phase.",
+        "name": "Mandarin"
+    },
+    "Noble Brigand": {
+        "description": "+1 Coin<n>Each other player reveals the top 2 cards of their deck, trashes a revealed Silver or Gold you choose, discards the rest, and gains a Copper if they didn't reveal a Treasure. You gain the trashed cards.<line>When you buy this, do its attack.",
+        "extra": "When you play this, you get +1 coin. When you play this and also when you buy it, each other player reveals the top two cards of his deck, trashes a Silver or Gold he revealed that you choose, and discards the rest. Each of these players that did not reveal a Treasure at all gains a Copper from the Supply, putting it into his discard pile. Finally, you gain all of the Silvers and Golds trashed this way. This cannot trash any Treasures except Silver or Gold. Gaining a Noble Brigand without buying it does not cause this ability to happen. Noble Brigand is an Attack card, and when you play it, players can use cards like Moat from Dominion or Secret Chamber from Intrigue in response. However, buying a Noble Brigand is not \"playing an Attack card,\" and so cards like Moat cannot respond to that.",
+        "name": "Noble Brigand"
+    },
+    "Nomad Camp": {
+        "description": "+1 Buy<br>+2 Coins<line>When you gain this, put it on top of your deck.",
+        "extra": "When you gain this card, it goes on top of your deck rather than into your discard pile. This is true whether you gained it due to buying it or gained it some other way. If there were no cards in your deck, it becomes the only card in your deck.",
+        "name": "Nomad Camp"
+    },
+    "Oracle": {
+        "description": "Each player (including you) reveals the top 2 cards of their deck, and discards them or puts them back, your choice (they choose the order). Then, +2 Cards.",
+        "extra": "First, each player including you, reveals the top two cards of his deck, and either discards both of them or puts both of them back on top, your choice. A player putting the cards back puts them back in an order he chooses, and without needing to reveal that order. Then, you draw two cards. So if you put back the cards you revealed, you will draw them.",
+        "name": "Oracle"
+    },
+    "Silk Road": {
+        "description": "Worth 1 <VP> for every 4 Victory cards in your deck (round down).",
+        "extra": "This is a Victory card, not an Action card. It does nothing until the end of the game, when it is worth 1 victory point for every four Victory cards in your Deck (counting all of your cards - your Discard pile and hand are part of your Deck at that point). Silk Roads count themselves. Round down; if you have 11 Victory cards, Silk Road is worth 2 victory points. During set-up, put all 12 Silk Roads in the Supply for a game with 3 or more players, but only 8 in the Supply for a 2-player game. Cards with multiple types, one of which is Victory, are Victory cards and so are counted by Silk Road.",
+        "name": "Silk Road"
+    },
+    "Border Village": {
+        "description": "+1 Card<br>+2 Actions<line>When you gain this, gain a card costing less than this.",
+        "extra": "When you play this, you draw a card and can play two more Actions this turn. When you gain this, you also gain a card from the Supply that costs less than Border Village. Normally that will be a card costing up to 5 coins, but if Border Village costs less than normal, such as due to Highway, then the card you gain will have a lower maximum cost. You only gain a card when you gain Border Village, not when you play it. You gain a card whether you gained Border Village due to buying it, or gained it some other way.",
+        "name": "Border Village"
     },
     "Cartographer": {
         "description": "+1 Card<br>+1 Action<n>Look at the top 4 cards of your deck. Discard any number of them. Put the rest back on top in any order.",
@@ -1678,16 +1718,6 @@
         "description": "Trash a card from your hand. Gain a card costing exactly 1 coin more than it and a card costing exactly 1 less than it, in either order, putting them on top of your deck.",
         "extra": "First trash a card from your hand, if you have any cards in hand. Develop itself is no longer in your hand and so cannot trash itself (though it can trash other copies of Develop). If you trashed a card, gain two cards, one costing exactly 1 coin more than the trashed card, and one costing exactly 1 coin less than the trashed card. The gained cards come from the Supply; gain them in either order. If there is no card in the Supply at one of the costs, you still gain the other card if you can. Put the gained cards on top of your deck rather than into your discard pile. If you trash a Copper with Develop, which costs 0 coins, you will try and fail to gain a card costing -1 coins (and also try to gain a card costing 1 coin).",
         "name": "Develop"
-    },
-    "Duchess": {
-        "description": "+2 Coins<n>Each player (including you) looks at the top card of his deck, and discards it or puts it back.<line>In games using this, when you gain a Duchy, you may gain a Duchess.",
-        "extra": "When you play this, you get +2 coins, and each player, including you, looks at the top card of his own deck and either discards it or puts it back on top, his choice. Any player with no cards in his deck shuffles his discard pile first; any player who still has no cards to look at does not look at one. When a player gains a Duchy in a game with Duchess in the Supply, that player may also gain a Duchess from the Supply. This works whether the player gained a Duchy due to buying one, or gained a Duchy some other way. Duchess does not interact in any special way with the promotional card Black Market.",
-        "name": "Duchess"
-    },
-    "Embassy": {
-        "description": "+5 Cards<br>Discard 3 cards.<line>When you gain this, each other player gains a Silver.",
-        "extra": "When you play this, you draw five cards, then discard three cards. The cards you discard can be ones that were in your hand and/or ones you just drew. You discard three cards if able, even if you were unable to draw the full five cards (due to not having enough cards in your deck and discard pile). If you do not have three cards to discard, you discard as many as you can. When you gain this, each other player gains a Silver. Players only gain Silvers when you gain this, not when you play this. They gain Silvers whether you gained Embassy due to buying it, or gained it some other way. Gaining Silvers is not optional for them. The Silvers come from the Supply. If there are not enough Silvers left to go around, deal them out in turn order, starting with the player to the left of the player who gained Embassy.",
-        "name": "Embassy"
     },
     "Farmland": {
         "description": "2<*VP*><line>When you buy this, trash a card from your hand. Gain a card costing exactly 2 Coins more than the trashed card.",
@@ -1709,11 +1739,6 @@
         "extra": "This makes all cards cheaper (to a minimum of 0 coins) as long as it is in play. When it leaves play, it stops making cards cheaper. This applies to cards everywhere - cards in the Supply, cards in hand, cards in Decks. For example if you played Highway, then Develop, trashing a Copper, you could gain an Estate, as Estate would cost 1 coin while Copper would still cost 0 coins. Using a card that lets you play a card several times (like Throne Room from Dominion) on Highway will not make cards cost less, as there is still only one copy of Highway in play. The bonus is cumulative; if you have three Highways in play, all cards cost 3 coins less (to a minimum of 0 coins).",
         "name": "Highway"
     },
-    "Ill-Gotten Gains": {
-        "description": "1 <*COIN*><n>You may gain a Copper to your hand.<line>When you gain this, each other player gains a Curse.",
-        "extra": "This is a Treasure worth 1 coin like Copper. When you play it, you may gain a Copper. The gained Copper comes from the Supply and is put into your hand; you can immediately play it. If there is no Copper left in the Supply, you do not gain one. When you gain Ill-Gotten Gains, each other player gains a Curse. This happens whether you gain Ill-Gotten Gains due to buying it, or you gain it some other way. The Curses come from the Supply and go into discard piles. If there are not enough Curses left to go around, deal them out in turn order, starting with the player to the left of the player who gained Ill-Gotten Gains. III-Gotten Gains is not an Attack, and gaining it is not playing an Attack; cards like Moat from Dominion do not work against it.",
-        "name": "Ill-Gotten Gains"
-    },
     "Inn": {
         "description": "+2 Cards<br>+2 Actions<br>Discard 2 cards.<line>When you gain this, look through your discard pile (including this), reveal any number of Action cards from it, and shuffle them into your deck.",
         "extra": "When you play this, you draw 2 cards, get +2 Actions, then discard 2 cards. The cards you discard can be ones that were in your hand and/or ones you just drew. You discard cards if able, even if you were unable to draw 2 cards. When you gain this, you look through your discard pile (something normally not allowed) and shuffle any number of Action cards from it into your deck (leaving the rest of your discard pile in your discard pile). You do not have to shuffle any Action cards into your deck. You can shuffle the Inn you just gained into your deck; it is an Action card in your discard pile. Cards with two types, one of which is Action, are Action cards. You must reveal the Action cards that you choose to shuffle into your deck. It does not matter what order you leave your discard pile in afterwards. This ability functions if you gain Inn due to buying it, or gain Inn some other way.",
@@ -1724,45 +1749,20 @@
         "extra": "This card does four separate things, in the order listed; you do all of them (the last one is optional). First, gain a Silver from the Supply, putting it into your discard pile. If there are no Silvers left in the Supply, you do not gain one. Second, look at the top card of your deck, and either discard it or put it back on top. If there are no cards left in your deck, shuffle your discard pile to get a card to look at (this will shuffle in the Silver you just gained). If there are still no cards, you do not look at one. Third, draw cards until you have at least five cards in hand. If you already have five or more cards in hand, you do not draw any cards. If there are not enough cards left to draw between your deck and discard pile, just draw what you can. Fourth, you may trash a card from your hand that is not a Treasure card. Cards with two types, one of which is Treasure, are Treasures.",
         "name": "Jack of All Trades"
     },
-    "Mandarin": {
-        "description": "+3 Coins<br>Put a card from your hand on top of your deck.<line>When you gain this, put all Treasures you have in play on top of your deck in any order.",
-        "extra": "When you play this, you get +3 coins, and put a card from your hand on top of your deck. If you have no cards left in hand, you do not put a card on top of your deck. If there are no cards left in your deck, the card you put on top becomes the only card in your deck. When you gain this, you put all of your Treasures from play on top of your deck in any order. You do not have to show this order to other players. You have to put all of your Treasures on top; you cannot leave some out. You only put Treasures from play on top of your deck, not unplayed Treasures from your hand. This does not stop you from having the coins you got from playing those Treasures; for example, if you have +1 Buy and play four Golds and buy a Mandarin, you put the Golds on top of your deck, and still have 7 coins left to spend. Mandarin puts your played Treasures on your deck whether you gained it due to buying it or gained it some other way, although normally you will only have Treasures in play in your Buy phase.",
-        "name": "Mandarin"
-    },
     "Margrave": {
         "description": "+3 Cards<br>+1 Buy<br>Each other player draws a card, then discards down to 3 cards in hand.",
         "extra": "You draw 3 cards and get +1 Buy. Each other player draws a card, then discards down to 3 cards in hand. Drawing a card is not optional for them. A player who only has 3 cards or fewer after drawing does not discard.",
         "name": "Margrave"
-    },
-    "Noble Brigand": {
-        "description": "+1 Coin<n>Each other player reveals the top 2 cards of their deck, trashes a revealed Silver or Gold you choose, discards the rest, and gains a Copper if they didn't reveal a Treasure. You gain the trashed cards.<line>When you buy this, do its attack.",
-        "extra": "When you play this, you get +1 coin. When you play this and also when you buy it, each other player reveals the top two cards of his deck, trashes a Silver or Gold he revealed that you choose, and discards the rest. Each of these players that did not reveal a Treasure at all gains a Copper from the Supply, putting it into his discard pile. Finally, you gain all of the Silvers and Golds trashed this way. This cannot trash any Treasures except Silver or Gold. Gaining a Noble Brigand without buying it does not cause this ability to happen. Noble Brigand is an Attack card, and when you play it, players can use cards like Moat from Dominion or Secret Chamber from Intrigue in response. However, buying a Noble Brigand is not \"playing an Attack card,\" and so cards like Moat cannot respond to that.",
-        "name": "Noble Brigand"
-    },
-    "Nomad Camp": {
-        "description": "+1 Buy<br>+2 Coins<line>When you gain this, put it on top of your deck.",
-        "extra": "When you gain this card, it goes on top of your deck rather than into your discard pile. This is true whether you gained it due to buying it or gained it some other way. If there were no cards in your deck, it becomes the only card in your deck.",
-        "name": "Nomad Camp"
     },
     "Oasis": {
         "description": "+1 Card<br>+1 Action<br>+1 Coins<br>Discard a card.",
         "extra": "You draw before discarding. You can discard the card you drew. If you are unable to draw a card (due to having no cards in your deck, and none in your discard pile to shuffle), you still discard a card if able.",
         "name": "Oasis"
     },
-    "Oracle": {
-        "description": "Each player (including you) reveals the top 2 cards of their deck, and discards them or puts them back, your choice (they choose the order). Then, +2 Cards.",
-        "extra": "First, each player including you, reveals the top two cards of his deck, and either discards both of them or puts both of them back on top, your choice. A player putting the cards back puts them back in an order he chooses, and without needing to reveal that order. Then, you draw two cards. So if you put back the cards you revealed, you will draw them.",
-        "name": "Oracle"
-    },
     "Scheme": {
         "description": "+1 Card<br>+1 Action<n>At the start of Clean-up this turn, you may choose an Action card you have in play. If you discard it from play this turn, put it on your deck.",
         "extra": "When you play this, you get +1 card and +1 Action, and set up an effect to happen later in the turn, at the start of Clean- up. At that time, you may optionally choose an Action card you have in play. If you discard that Action card from play this turn, as you normally do, you will put it on top of your deck. This happens before you draw cards for next turn. The Action card you choose can be Scheme itself, or any other Action card you have in play, which might have been played before or after you played Scheme. If the Action card is not discarded during Clean-up, for example due to being a Duration card from Seaside that was played this turn, then it does not get put on top of your deck.",
         "name": "Scheme"
-    },
-    "Silk Road": {
-        "description": "Worth 1 <VP> for every 4 Victory cards in your deck (round down).",
-        "extra": "This is a Victory card, not an Action card. It does nothing until the end of the game, when it is worth 1 victory point for every four Victory cards in your Deck (counting all of your cards - your Discard pile and hand are part of your Deck at that point). Silk Roads count themselves. Round down; if you have 11 Victory cards, Silk Road is worth 2 victory points. During set-up, put all 12 Silk Roads in the Supply for a game with 3 or more players, but only 8 in the Supply for a 2-player game. Cards with multiple types, one of which is Victory, are Victory cards and so are counted by Silk Road.",
-        "name": "Silk Road"
     },
     "Spice Merchant": {
         "description": "You may trash a Treasure from your hand. If you do, choose one:<n>+2 Cards and +1 Action;<br>or +2 Coins and +1 Buy.",
@@ -1783,6 +1783,51 @@
         "description": "2 <*VP*><line>When you discard this other than during a Clean-up phase, you may reveal it. If you do, gain a Gold.",
         "extra": "This is both a Victory card and a Reaction. At the end of the game, Tunnel is worth 2<VP>. Tunnel's Reaction ability functions when you discard it. You cannot simply choose to discard it; something has to let you or make you discard it. This ability functions whether you discard Tunnel on your own turn (such as due to Oasis) or on someone else's (such as due to Margrave). It functions if Tunnel is discarded from your hand (such as due to Oasis) or from your deck, or when set aside (such as due to Cartographer). If Tunnel would normally not necessarily be revealed (such as when discarding multiple cards to Cartographer), you have to reveal it to get the Gold. Revealing it is optional, even if Tunnel was already revealed for some other reason; you are not forced to gain a Gold. This ability does not function if cards are put into your discard pile without being discarded, such as when you buy a card, when you gain a card directly (such as with Border Village), when your deck is put into your discard pile, such as with Chancellor from Dominion, or with Possession from Alchemy, when trashed cards are returned to you at end of turn. It also does not function during Clean-up, when you normally discard all of your played and unplayed cards. The key thing to look for is a card actually telling you to \"discard\" cards. The Gold you gain comes from the Supply and is put into your discard pile; if there is no Gold left in the Supply, you do not gain one.",
         "name": "Tunnel"
+    },
+    "Berserker": {
+        "description": "Gain a card costing less than this. Each other player discards down to 3 cards in hand.<line>When you gain this, if you have an Action in play, play this.",
+        "extra": "When you gain a Berserker, if you have an Action card in play, you play the Berserker; this means it will go into play, and you'll gain a cheaper card and then the other players will discard down to 3 cards in hand. They can still use cards like Moat then. If you gain a Berserker with no Actions in play, however, you don't play it. If you gain and play this with Innovation, Berserker loses track of itself, so Berserker telling you to play it will fail. If you gain this on another player's turn (e.g. their Barbarian trashes your Border Village), and you have an Action in play (most likely a Duration card), you can play the Berserker and attack them during their own turn. You'll discard the Berserker from play during their Clean-up. If you played 5 Highways, Berserker will cost 0 Coin, so it'll fail to gain a card.",
+        "name": "Berserker"
+    },
+    "Cauldron": {
+        "description": "2 <*COIN*><br><br>+1 Buy<br><br>The third time you gain an Action this turn, each other player gains a Curse.",
+        "extra": "If you gain three Actions before playing Cauldron that turn, then it won't give out a Curse. It doesn't matter how many non-Action cards you gained; the third time you gain an Action, each other player gains a Curse. This is cumulative if you play multiple Cauldrons. This a Treasure, so you play it in your Buy phase, but also an Attack, so cards like Guard Dog and Moat can be used in response to it.",
+        "name": "Cauldron"
+    },
+    "Guard Dog": {
+        "description": "+2 Cards<br>If you have 5 or fewer cards in hand, +2 Cards.<line>When another player plays an Attack, you may first play this from your hand.",
+        "extra": "When you play this, you draw 2 cards, then count the cards in your hand; if it's 5 or fewer, you draw 2 more cards. When another player plays an Attack card, you may play this before that Attack resolves; then the Attack still happens (unless you stop it another way, such as with a Moat you just drew). So if another player plays Berserker, and you respond with Guard Dog, you'll first draw 2 cards, then discard down to 3 cards in hand. As usual playing it means putting it into play and following its instructions. If you play this during another player's turn, you discard it from play during that turn's Clean-up.",
+        "name": "Guard Dog"
+    },
+    "Nomads": {
+        "description": "+1 Buy<br>+2 Coin<line>When you gain or trash this, +2 Coin.",
+        "extra": "",
+        "name": "Nomads"
+    },
+    "Souk": {
+        "description": "+1 Buy<br>+7 Coin<br>–1 Coin per card in your hand (you can't go below 0 Coin).<line>When you gain this, trash up to 2 cards from your hand.",
+        "extra": "For example, if you play Souk and have 3 other cards left in your hand, you'd get +7 Coin (and +1 Buy), and then lose 3 Coin for a net gain of +4 Coin. You can't go below 0 Coin but might end up with less _ Coin than you started with. When you gain Souk, trash up to 2 cards from your hand; you don't have to trash any.",
+        "name": "Souk"
+    },
+    "Trail": {
+        "description": "+1 Card<br>+1 Action<line>When you gain, trash, or discard this, other than in Clean-up, you may play it.",
+        "extra": "When you play this, you simply get +1 Card and +1 Action. When you gain, trash, or discard this, other than in Clean-up, you may play it. As usual playing it means putting it into play and following its instructions. If you play Trail on another player's turn, the +1 Action won't be useful, and you discard Trail from play in that turn's Clean-up. If you trash Trail, playing it means you get the Trail back; it will go into play, and be discarded into your discard pile in that turn's Clean-up. This still counts as trashing it; if you Remodel a Trail you can play it and then gain a Gold from Remodel, and so on. If you gain or trash a Trail during Clean-up (with e.g. Improve), you can't use its Reaction.",
+        "name": "Trail"
+    },
+    "Weaver": {
+        "description": "Gain two Silvers or a card costing up to 4 Coin.<line>When you discard this other than in Clean-up, you may play it.",
+        "extra": "You either gain 2 Silvers, or a card costing up to 4 Coin (which might be a Silver). You can play this when you discard it. As usual playing it means putting it into play and following its instructions. If you play it on another player's turn, it's discarded in that turn's Clean-up. This doesn't say \"choose one,\" so if you play this with Elder, you can't choose to gain 2 Silvers and a 4 Coin. If a Vassal discards Weaver, you can react with Weaver to play it. Doing this causes Vassal to lose track, so you will only play Weaver once. If you need to discard down to a certain number of cards (due to Militia), you discard all the cards at once. So if you discard multiple Weavers, you resolve their reactions one at a time. When discarding multiple Weavers, if playing one of them triggers a reshuffle (e.g. it gains a Cavalry, then you can't play any of the other Weavers.",
+        "name": "Weaver"
+    },
+    "Wheelwright": {
+        "description": "+1 Card<br>+1 Action<br><br>You may discard a card to gain an Action card costing as much as it or less.",
+        "extra": "You may discard any type of card, but can only gain an Action card. If you discard an Action card, you can gain a copy of it. If you do discard, you have to gain an Action card if there is one to gain.",
+        "name": "Wheelwright"
+    },
+    "Witch's Hut": {
+        "description": "+4 Cards<br><br>Discard 2 cards, revealed. If they're both Actions, each other player gains a Curse.",
+        "extra": "You reveal the discarded cards even if they aren't both Actions. If they're both Actions - even if they also have other types - each other player gains a Curse.",
+        "name": "Witch's Hut"
     },
     "Coppersmith": {
         "description": "Copper produces an extra 1 Coin this turn.",

@@ -1784,6 +1784,51 @@
         "extra": "This is both a Victory card and a Reaction. At the end of the game, Tunnel is worth 2<VP>. Tunnel's Reaction ability functions when you discard it. You cannot simply choose to discard it; something has to let you or make you discard it. This ability functions whether you discard Tunnel on your own turn (such as due to Oasis) or on someone else's (such as due to Margrave). It functions if Tunnel is discarded from your hand (such as due to Oasis) or from your deck, or when set aside (such as due to Cartographer). If Tunnel would normally not necessarily be revealed (such as when discarding multiple cards to Cartographer), you have to reveal it to get the Gold. Revealing it is optional, even if Tunnel was already revealed for some other reason; you are not forced to gain a Gold. This ability does not function if cards are put into your discard pile without being discarded, such as when you buy a card, when you gain a card directly (such as with Border Village), when your deck is put into your discard pile, such as with Chancellor from Dominion, or with Possession from Alchemy, when trashed cards are returned to you at end of turn. It also does not function during Clean-up, when you normally discard all of your played and unplayed cards. The key thing to look for is a card actually telling you to \"discard\" cards. The Gold you gain comes from the Supply and is put into your discard pile; if there is no Gold left in the Supply, you do not gain one.",
         "name": "Tunnel"
     },
+    "Guard Dog": {
+        "description": "+2 Cards<br>If you have 5 or fewer cards in hand, +2 Cards.<line>When another player plays an Attack, you may first play this from your hand.",
+        "extra": "When you play this, you draw 2 cards, then count the cards in your hand; if it's 5 or fewer, you draw 2 more cards. When another player plays an Attack card, you may play this before that Attack resolves; then the Attack still happens (unless you stop it another way, such as with a Moat you just drew). So if another player plays Berserker, and you respond with Guard Dog, you'll first draw 2 cards, then discard down to 3 cards in hand. As usual playing it means putting it into play and following its instructions. If you play this during another player's turn, you discard it from play during that turn's Clean-up.",
+        "name": "Guard Dog"
+    },
+    "Nomads": {
+        "description": "+1 Buy<br>+2 Coin<line>When you gain or trash this, +2 Coin.",
+        "extra": "",
+        "name": "Nomads"
+    },
+    "Trail": {
+        "description": "+1 Card<br>+1 Action<line>When you gain, trash, or discard this, other than in Clean-up, you may play it.",
+        "extra": "When you play this, you simply get +1 Card and +1 Action. When you gain, trash, or discard this, other than in Clean-up, you may play it. As usual playing it means putting it into play and following its instructions. If you play Trail on another player's turn, the +1 Action won't be useful, and you discard Trail from play in that turn's Clean-up. If you trash Trail, playing it means you get the Trail back; it will go into play, and be discarded into your discard pile in that turn's Clean-up. This still counts as trashing it; if you Remodel a Trail you can play it and then gain a Gold from Remodel, and so on. If you gain or trash a Trail during Clean-up (with e.g. Improve), you can't use its Reaction.",
+        "name": "Trail"
+    },
+    "Weaver": {
+        "description": "Gain two Silvers or a card costing up to 4 Coin.<line>When you discard this other than in Clean-up, you may play it.",
+        "extra": "You either gain 2 Silvers, or a card costing up to 4 Coin (which might be a Silver). You can play this when you discard it. As usual playing it means putting it into play and following its instructions. If you play it on another player's turn, it's discarded in that turn's Clean-up. This doesn't say \"choose one,\" so if you play this with Elder, you can't choose to gain 2 Silvers and a 4 Coin. If a Vassal discards Weaver, you can react with Weaver to play it. Doing this causes Vassal to lose track, so you will only play Weaver once. If you need to discard down to a certain number of cards (due to Militia), you discard all the cards at once. So if you discard multiple Weavers, you resolve their reactions one at a time. When discarding multiple Weavers, if playing one of them triggers a reshuffle (e.g. it gains a Cavalry, then you can't play any of the other Weavers.",
+        "name": "Weaver"
+    },
+    "Berserker": {
+        "description": "Gain a card costing less than this. Each other player discards down to 3 cards in hand.<line>When you gain this, if you have an Action in play, play this.",
+        "extra": "When you gain a Berserker, if you have an Action card in play, you play the Berserker; this means it will go into play, and you'll gain a cheaper card and then the other players will discard down to 3 cards in hand. They can still use cards like Moat then. If you gain a Berserker with no Actions in play, however, you don't play it. If you gain and play this with Innovation, Berserker loses track of itself, so Berserker telling you to play it will fail. If you gain this on another player's turn (e.g. their Barbarian trashes your Border Village), and you have an Action in play (most likely a Duration card), you can play the Berserker and attack them during their own turn. You'll discard the Berserker from play during their Clean-up. If you played 5 Highways, Berserker will cost 0 Coin, so it'll fail to gain a card.",
+        "name": "Berserker"
+    },
+    "Cauldron": {
+        "description": "2 <*COIN*><br><br>+1 Buy<br><br>The third time you gain an Action this turn, each other player gains a Curse.",
+        "extra": "If you gain three Actions before playing Cauldron that turn, then it won't give out a Curse. It doesn't matter how many non-Action cards you gained; the third time you gain an Action, each other player gains a Curse. This is cumulative if you play multiple Cauldrons. This a Treasure, so you play it in your Buy phase, but also an Attack, so cards like Guard Dog and Moat can be used in response to it.",
+        "name": "Cauldron"
+    },
+    "Souk": {
+        "description": "+1 Buy<br>+7 Coin<br>–1 Coin per card in your hand (you can't go below 0 Coin).<line>When you gain this, trash up to 2 cards from your hand.",
+        "extra": "For example, if you play Souk and have 3 other cards left in your hand, you'd get +7 Coin (and +1 Buy), and then lose 3 Coin for a net gain of +4 Coin. You can't go below 0 Coin but might end up with less _ Coin than you started with. When you gain Souk, trash up to 2 cards from your hand; you don't have to trash any.",
+        "name": "Souk"
+    },
+    "Wheelwright": {
+        "description": "+1 Card<br>+1 Action<br><br>You may discard a card to gain an Action card costing as much as it or less.",
+        "extra": "You may discard any type of card, but can only gain an Action card. If you discard an Action card, you can gain a copy of it. If you do discard, you have to gain an Action card if there is one to gain.",
+        "name": "Wheelwright"
+    },
+    "Witch's Hut": {
+        "description": "+4 Cards<br><br>Discard 2 cards, revealed. If they're both Actions, each other player gains a Curse.",
+        "extra": "You reveal the discarded cards even if they aren't both Actions. If they're both Actions - even if they also have other types - each other player gains a Curse.",
+        "name": "Witch's Hut"
+    },
     "Coppersmith": {
         "description": "Copper produces an extra 1 Coin this turn.",
         "extra": "This just changes how much money you get when playing Copper. The effect is cumulative; if you use Throne Room on Coppersmith, each Copper that you play that turn will produce 3 coins.",
