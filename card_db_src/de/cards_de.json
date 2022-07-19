@@ -1252,7 +1252,7 @@
     "Soothsayer": {
         "description": "Nimm dir ein Gold. Jeder Mitspieler nimmt sich eine Fluchkarte. Wer eine Fluchkarte nimmt, zieht eine Karte vom Nachziehstapel.",
         "extra": "Das GOLD und die Fluchkarten stammen aus dem Vorrat und werden auf den Ablagestapel gelegt. Wenn kein GOLD mehr vorhanden ist, erhältst du keins. Sind nicht mehr genügend Fluchkarten da, teilst du sie reihum aus, beginnend mit deinem linken Nachbarn. Jeder Spieler, der eine Fluchkarte erhalten hat, muss eine Karte vom Nachziehstapel ziehen. Falls ein Spieler keine Fluchkarte bekommen hat - weil nicht genügend Fluchkarten da waren oder aus einem anderen Grund -, zieht er keine Karte. Nutzt ein Spieler den Wachturm (Blütezeit), um den Fluch zu entsorgen, hat er dennoch eine Fluchkarte erhalten und zieht deshalb eine Karte. Nutzt ein Spieler den FAHRENDEN HÄNDLER (Hinterland), um stattdessen ein SILBER zu nehmen, hat er keine Fluchkarte erhalten und zieht infolgedessen auch keine Karte.",
-        "name": "Wahrsager"
+        "name": "Hellseherin"
     },
     "Stonemason": {
         "description": "Entsorge eine Karte aus deiner Hand. Nimm 2 Karten, die jeweils weniger als die entsorgte Karte kosten. <line> Wenn du diese Karte kaufst, darfst du mehr dafür zahlen. Falls du das tust, nimmst du 2 Aktionskarten, die jeweils so viel kosten, wie du zusätzlich bezahlt hast.",
@@ -1941,7 +1941,7 @@
     },
     "Captain": {
         "description": "Jetzt und zu Beginn deines nächsten Zuges: Spiele eine Aktionskarte im Vorrat, die keine Dauerkarte ist und bis zu 4 Coins kostet und lasse sie dort liegen",
-        "extra": "",
+        "extra": "In der zweiten Runde kannst du eine andere Karte ausspielen oder dieselbe Karte, wenn sich noch eine Kopie davon im Vorrat befindet.<n>Kapitän Tobias kann nur eine sichtbare Karte aus dem Vorrat und die oberste Karte eines Stapels ausspielen; er kann keine Karte von einem leeren Stapel, eine nicht aufgedeckte Karte von einem geteilten Stapel, eine Karte von einem geteilten Stapel, die aufgekauft wurde, oder eine Karte, die nicht aus dem Vorrat stammt (z. B. Söldner), ausspielen. <n>Die Aktionskarte bleibt im Vorrat; wenn ein Effekt versucht, sie zu bewegen (z.B. eine Insel, die sich selbst auf die Inselmatte legt), wird sie nicht bewegt.<n>Kapitän Tobias kann eine Karte spielen, die sich selbst zerstört, wenn sie gespielt wird; wenn die Karte überprüft, ob sie zerstört wurde (z.B. Bergbaudorf), wurde sie nicht zerstört, aber wenn die Karte nicht überprüft wird (z.B. Schauspielertruppe), funktioniert sie normal. <n>Karten, die normalerweise andere Karten aus dem Vorrat bewegen, können sich selbst bewegen, wenn sie über Kapitän Tobias gespielt werden; z.B. kann eine gespielte Werkstatt sich selbst gewinnen, und ein gespielter Lurker kann sich selbst zerstören.<n>Da die gespielte Karte nicht im Spiel ist, bewirken die Fähigkeiten "Solange sie im Spiel ist" (z.B. Goons) nichts. <n>Wenn in dem Zug, in dem du Kapitän Tobias spielst, keine Aktionskarten ohne Dauer im Vorrat sind, die bis zu 4 Coin kosten, bleibt Kapitän Tobias trotzdem im Spiel und versucht, zu Beginn deines nächsten Zuges eine Karte auszuspielen.<n>Wenn Kapitän Tobias eine Karte ausspielt, die eine Dauerkarte spielt, hat das keinen Einfluss darauf, in welchem Zug Kapitän Tobias aus dem Spiel genommen wird.<n>Du kannst mit Kapitän Tobias, Vogelfreie, Fähre und Kostenreduktion in eine Endlosschleife geraten: Mit deiner -2 Coins -Kostenmarke auf Kapitän-Tobias-Vorratsstapel kann Vogelfreie als Kapitän Tobias gespielt werden, und mit der Kostenreduktion kann Kapitän Tobias Vogelfreie spielen. Da dies dazu führt, dass Kapitän Tobias beliebig oft gespielt werden kann, kannst du zu Beginn deines nächsten Zuges beliebig viele Aktionen spielen, die bis zu 4 Münzen kosten.",
         "name": "Kapitän Tobias"
 
     },
@@ -1952,7 +1952,7 @@
     },
     "Dismantle": {
         "description": "Entsorge eine Handkarte. Wenn sie 1 Coin oder mehr kostet, nimm eine billigere Karte und ein Gold.",
-        "extra": "Abbruch ist eine Promokarte.",
+        "extra": "Abwerfen ist nicht optional. Wenn du eine Karte abwirfst, die 0 Coin kostet, oder wenn du keine Karten mehr auf der Hand hast, die du abwerfen kannst, passiert nichts weiter. Wenn du eine Karte abwirfst, die 1 Coin oder mehr kostet, erhältst du eine billigere Karte und ein Gold. Beide kommen aus dem Vorrat und werden auf deinen Ablagestapel gelegt. Die billigere Karte kommt zuerst auf deinen Ablagestapel. Wenn du zum Beispiel ein Silber (für 3 Coin) abwirfst, kannst du ein Anwesen (für 2 Coin) gewinnen. Es wird fast immer eine billigere Karte im Vorrat sein, da Kupfer und Fluch 0 Coin kosten, aber wenn es keine gibt, erhältst du trotzdem ein Gold. Wenn im Vorrat kein Gold mehr vorhanden ist, erhält man trotzdem die günstigere Karte. Karten, die nur Trank (wie Verwandlung aus Alchemie) oder nur Schulden (wie Ingenieurin aus Empires) kosten, kosten nicht 1 Coin oder mehr.",
         "name": "Abbruch"
     },
     "Envoy": {
@@ -1962,7 +1962,7 @@
     },
     "Governor": {
         "description": "+1 Aktion<br>Wähle eins (deine Mitspieler erhalten, was in Klammern angegeben ist): +3 Karten (+1 Karte)\noder\nNimm dir ein Gold (Silber)\noder\nJeder Spieler darf eine Karte aus seiner Hand entsorgen und nimmt sich dafür eine Karte, die genau 2 Coins (1 Coin) mehr kostet.",
-        "extra": "",
+        "extra": "Du erhältst immer +1 Aktion. Dann ziehst du entweder 1) drei Karten und jeder andere Spieler zieht eine Karte; 2) erhältst eine Goldkarte und jeder andere Spieler erhält eine Silberkarte; 3) darfst du eine Karte aus deiner Hand abwerfen und eine Karte erhalten, die genau 2 Coin mehr kostet, und jeder andere Spieler darf eine Karte aus seiner Hand abwerfen und eine Karte erhalten, die genau 1 Coin mehr kostet. Du beginnst mit dir selbst und gehst in dieser Reihenfolge vor; das kann wichtig sein, wenn die Stapel niedrig sind. Die gewonnenen Karten kommen aus dem Vorrat und werden auf die Ablagestapel gelegt; sind keine mehr vorhanden, werden diese Karten nicht gewonnen. Wenn du zum Beispiel die zweite Option wählst und nur ein Silber im Vorrat ist, bekommt der Spieler zu deiner Linken es, und niemand sonst bekommt es. Bei der dritten Option erhältst du nur dann eine Karte, wenn du eine Karte abgeworfen hast, und auch nur dann, wenn im Vorrat eine Karte mit genau den erforderlichen Kosten vorhanden ist. Wenn du eine Karte abwirfst, musst du eine Karte gewinnen, wenn du kannst. Du kannst einen Gouverneur, den du auf dich selbst gespielt hast, nicht abwerfen, da er sich nicht mehr auf deiner Hand befindet, wenn du ihn ausspielst (du kannst jedoch eine andere Kopie des Gouverneurs aus deiner Hand abwerfen).",
         "name": "Gouverneur"
     },
     "Prince": {
@@ -1988,7 +1988,7 @@
     "Walled Village": {
         "description": "+1 Karte<br>+2 Aktionen<br>Wenn du zu Beginn deiner Aufräumphase außer dieser Karte nur noch eine weitere Aktionskarte im Spiel hast, darfst du die Karte Carcassonne auf deinen Nachziehstapel legen.",
         "extra": "Wenn Du diese Karte spielst, ziehst Du eine Karte und kannst dann in diesem Zug zwei weitere Aktionen ausführen. Zu Beginn der Aufräumphase, bevor Du eine Karte ablegst und bevor Du für die nächste Runde ziehst kannst Du Carcassonne oben auf Deinen Nachziehstapel legen, wenn Du Carcassonne im Spiel und nicht mehr als zwei Aktionskarten (inklusive Carcassonne) im Spiel hast. Wenn die einzigen beiden Aktionskarten, die Du im Spiel hast beides Carcassonne-Karten sind darfst Du eine oder beide auf Deinen Nachziehstapel legen. Carcassonne muss im Spiel sein, um während er Aufräumphase oben auf den Nachziehstapel gelegt zu werden. Carcassonne wird zum Zeitpunkt des Ausspielens überprüft auf die Anzahl der im Spiel befindlichen Aktionskarten; Aktionskarten, die früher im Zug ausgespielt wurden aber nicht mehr im Spiel sind (wie z.B. Festmahl) werden nicht mitgezählt, währenddessen Aktionskarten, die aus früheren Spielzügen immer noch im Spiel sind (z.B. Dauerkarten aus Seaside) mitgezählt werden, genauso wie Aktionskarten, die gerade im Spiel sind aber nach dem Ausspielen von Carcassonne aus dem Spiel genommen werden (wie z.B. die Schatzkammer).",
-        "name": "Carcassonne"
+        "name": "Befestigtes Dorf"
     },
     "Bank": {
         "description": "Wert 1 Coin für jede Geldkarte, die im Spiel ist (diese eingeschlossen).",
@@ -2864,5 +2864,50 @@
         "description": "In der <b>Menagerie</b> gibt es <b>Ereignisse</b>, die erstmals in <b>Abenteurer</b> erschienen sind. In der Kaufphase kannst du eine <b>Ereignis</b> statt einer anderen Karte erwerben (dies verbraucht 1 Kauf). Du bezahlst die Kosten, die auf dem <b>Ereignis</b> stehen, und dessen Effekt tritt sofort ein.",
         "extra": "<b>Ereignisse</b> sind keine Königreichkarten. Sie liegen lediglich aus und liefern einen Effekt, den du kaufen kannst. Es gibt keine Möglichkeit, dass du ein <b>Ereignis</b> nehmen kannst oder das ein <b>Ereignis</b> in deinem Kartensatz ist.",
         "name": "Ereignisse - Menagerie"
+    }
+"Astrolabe": {
+        "description": "Jetzt und zu Beginn deines nächsten Zuges:<br><br>1 <*COIN*><br><br>+ 1 Kauf",
+        "extra": "Durch das Astrolabium erhältst du +1 Kauf and +1 Coin in dem Zug, in dem du es spielst, und in deinem nächsten Zug ebenfalls +1 Kauf and +1 Coin.",
+        "name": "Astrolabium"
+    },
+    "Monkey": {
+        "description": "Bis zu deinem nächsten Zug: +1 Karte, wenn dein rechter Mitspieler eine Karte nimmt.<br><br>Zu Beginn deines nächsten Zuges: +1 Karte.",
+        "extra": "Dies gilt auch für Karten, die der Spieler in Zügen anderer Mitspieler nimmt, wie z.B. einen <b>Fluch</b> in deinem Zug durch die <b>Hexe</b>.",
+        "name": "Affe"
+    },
+    "Sea Chart": {
+        "description": "+1 Karte<br>+1 Aktion<br><br>Decke die oberste Karte deines Nachziehstapels auf. Nimm sie auf deine Hand, wenn du eine gleiche Karte im Spiel hast.",
+        "extra": "Wenn du eine gleiche Karte wie die aufgedeckte im Spiel hast, einschließlich der gespielten <b>Seekarte</b> oder einer Dauerkarte, die du aus einem früheren Zug im Spiel hast, nimm die aufgedeckte Karte auf deine Hand. Ansonsten legst du die aufgedeckte Karte oben auf deinen Nachziehstapel.",
+        "name": "Seekarte"
+    },
+    "Blockade": {
+        "description": "Nimm eine Karte, die bis zu 4 Coin kostet, direkt zur Seite. Zu Beginn deines nächsten Zuges: Nimm sie auf die Hand. Solange sie zur Seite gelegt ist, nimmt ein Mitspieler, der in seinem Zug eine gleiche Karte nimmt, einen Fluch.",
+        "extra": "Die aufgenommene Karte kommt aus dem Vorrat und wird zur Seite gelegt. Lege sie auf die <b>Blockade</b>, damit du weißt, für welche Karte die <b>Blockade</b> gilt. Falls die genommene Karte aus irgendeinem Grund nicht zur Seite gelegt bleibt (z.B. weil du sie mit einem <b>Wachturm</b> aus <b>Blütezeit</b> entsorgst), wird die <b>Blockade</b> im aktuellen Zug abgeräumt. Ist die Karte zur Seite gelegt, nimmst du sie in deinem nächsten Zug auf deine Hand. Bis dahin gilt: Nehmen Mitspieler eine gleiche Karte in ihren Zügen, nehmen sie zusätzlich einen <b>Fluch</b>.",
+        "name": "Blockade"
+    },
+    "Sailor": {
+        "description": "+1 Aktion<br>Einmal in diesem Zug: Wenn du eine Dauerkarte nimmst, darfst du sie spielen.<br><br> Zu Beginn deines nächsten Zuges: +2 Coin und du darfst eine deiner Handkarten entsorgen.",
+        "extra": "Wenn du eine Dauerkarte in dem Zug nimmst, in dem du die <b>Seefahrerin</b> spielst, ist das Spielen der Dauerkarte optional. Die Karte wirkt kumulativ: Wenn du zwei <b>Seefahrerinnen</b> spielst darfst du bis zu zwei genommene Dauerkarten spielen. Allerdings kannst du nicht mit zwei <b>Seefahrerinnen</b> ein und dieselbe Dauerkarte zweimal nacheinander spielen.<br><b>Seefahrerin</b> betrifft alle von dir genommenen Dauerkarten, also z.B. gekaufte oder mit Karten wie der <b>Werkstatt</b> genommene. Nimmst du eine Dauerkarte in deiner Kaufphase, kannst du sie durch die <b>Seefahrerin</b> spielen, obwohl du in deiner Kaufphase bist. Gibt dir eigene solche Karte +<b>Aktionen</b>, darfst du dadurch keine Aktionskarten in deiner Kaufphase spielen. Wenn du dadurch Geldkarten ziehst, darfst du sie nur spielen, wenn du noch keine Karten gekauft hast. Die Fähigkeit Dauerkarten zu spielen, hast du nur in dem Zug, in dem du die Seefahrerin spielst. In deinem nächsten Zug erhältst du einfach nur +2 Coin und darfst eine Karte aus deiner Hand entsorgen.",
+        "name": "Seefahrerin"
+    },
+    "Tide Pools": {
+        "description": "+3 Karten<br>+1 Aktion<br><br>Zu Beginn deines nächsten Zuges: Lege 2 Karten ab.",
+        "extra": "Wenn du diese Karte spielst, ziehst du 3 Karten und erhältst + <b>1 Aktion</b>, aber zu Beginn deines nächsten Zuges musst du 2 Karten ablegen. Wenn du nur 1 Karte auf deiner Hand hast, legst du diese eine Karte ab. Und wenn du keine Karten auf deiner Hand hast, legst du keine ab. Wenn du mehrere Dauerkarten im Spiel hast, deren Anweisungen zu Beginn deines nächsten Zuges wirken, kannst du sie beliebig sortieren. Hast du zum Beispiel vier <b>Gezeitenbecken</b> und eine <b>Werft</b>, könntest du alle deine Karten mit den <b>Gezeitenbecken</b> ablegen und dann Karten für die <b>Werft</b> ziehen.",
+        "name": "Gezeitenbecken"
+    },
+    "Corsair": {
+        "description": "+2 Coin<br><br>Zu Beginn deines Zuges: +1 Karte. Bis dahin entsorgt jeder Mitspieler das erste Silber oder Gold, das er in einem Zug spielt.",
+        "extra": "Das entsorgte <b>Silber</b> oder <b>Gold</b> gibt in seinem Zug trotzdem _ Coin für den Spieler, der es entsorgt. <br> Wenn du <b>Silber</b> und <b>Gold</b> in einem Zug spielst und vom Angriff des Korsaren betroffen bist, wird nur eine Karte davon (die zuerst gespielte) entsorgt.",
+        "name": "Korsarenschiff"
+    },
+    "Pirate": {
+        "description": "Zu Beginn deines nächsten Zuges: Nimm eine Geldkarte, die bis zu 6 Coin kostet, auf deine Hand.<line> Nimmt ein Spieler eine Geldkarte, darfst du diese Karte (die Piratin) aus deiner Hand spielen.",
+        "extra": "Du kannst diese Karte spielen, wenn du eine Geldkarte nimmst, oder wenn ein Mitspieler eine Geldkarte nimmt. Spielst du diese Karte während des Zuges eines Mitspielers, ist dein nächster Zug der Zug, in dem du durch die <b>Piratin</b> eine Geldkarte nimmst. Die Geldkarte, die du nimmst, kommt aus dem Vorrat und du nimmst sie direkt auf deine Hand.",
+        "name": "Piratin"
+    },
+    "Sea Witch": {
+        "description": "+2 Karten<br>Jeder Mitspieler nimmt einen Fluch.<br><br>Zu Beginn deines nächsten Zuges: +2 Karten, lege dann 2 Karten ab.",
+        "extra": "Wenn du diese Karte spielst, ziehst du 2 Karten und jeder Mitspieler nimmt einen <b>Fluch</b>. Zu Beginn deines nächsten Zuges ziehst du 2 Karten und legst dann 2 Karten ab.",
+        "name": "Meerhexe"
     }
 }
