@@ -149,13 +149,49 @@
         "set_text": "",
         "text_icon": "*"
     },
-    "hinterlands": {
+    "hinterlands1stEdition": {
+        "edition": [
+            "1"
+        ],
+        "image": "hinterlands1stEdition_set.png",
+        "set_name": "*hinterlands1stEdition*",
+        "short_name": "Hinterlands",
+        "set_text": "",
+        "text_icon": "*"
+    },
+    "hinterlands1stEditionRemoved": {
         "edition": [
             "1",
+            "removed"
+        ],
+        "image": "hinterlands1stEdition_set.png",
+        "set_name": "*hinterlands1stEditionRemoved*",
+        "has_extras": false,
+        "short_name": "Hinterlands",
+        "set_text": "",
+        "text_icon": "*"
+    },
+    "hinterlands2ndEdition": {
+        "edition": [
+            "2",
             "latest"
         ],
-        "image": "hinterlands_set.png",
-        "set_name": "*hinterlands*",
+        "image": "hinterlands2ndEdition_set.png",
+        "set_name": "*hinterlands2ndEdition*",
+        "short_name": "Hinterlands",
+        "set_text": "",
+        "text_icon": "*"
+    },
+    "hinterlands2ndEditionUpgrade": {
+        "edition": [
+            "1",
+            "upgrade"
+        ],
+        "image": "hinterlands2ndEdition_set.png",
+        "set_name": "*hinterlands2ndEditionUpgrade*",
+        "has_extras": false,
+        "upgrades": "hinterlands1stEdition",
+        "short_name": "Hinterlands",
         "set_text": "",
         "text_icon": "*"
     },
