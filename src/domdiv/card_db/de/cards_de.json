@@ -1654,15 +1654,55 @@
         "extra": "Du darfst eine Geldkarte aus deiner Hand entsorgen. Karten, die mehreren Kartentypen angehören, von denen einer GELD ist (wie der HAREM aus Die Intrige), sind Geldkarten. Wenn du eine Geldkarte entsorgst, muss jeder Mitspieler, der mindestens fünf Karten in der Hand hat, die gleiche Karte aus seiner Hand auf seinen Ablagestapel legen oder seine Handkarten vorzeigen, damit die anderen Spieler sehen, dass er diese Karte nicht auf der Hand hat. Nimm dir für die entsorgte Karte eine Geldkarte, die bis zu 3 Coin mehr kostet als die entsorgte Geldkarte, und lege sie oben auf deinen Nachziehstapel. Wenn dein Nachziehstapel aufgebraucht ist, wird dies die einzige Karte deines Nachziehstapels. Du musst dir keine teurere Geldkarte nehmen, sondern darfst dir auch eine gleich teure oder preiswertere Geldkarte nehmen.",
         "name": "Steuereintreiber"
     },
-    "Border Village": {
-        "description": "+1 Karte<br>+2 Aktionen<line>Wenn du das Grenzdorf nimmst, nimm dir eine Karte, die weniger kostet als das Grenzdorf.",
-        "extra": " Wenn du das GRENZDORF ausspielst ziehst du 1 Karte von deinem Nachziehstapel und erhältst +2 Aktionen. Wenn du das GRENZDORF nimmst oder kaufst, musst du dir zusätzlich eine weitere Karte nehmen, die weniger kostet als das GRENZDORF. Üblicherweise nimmst du dir eine Karte, die bis zu 5 coins kostet. Sollte das GRENZDORF jedoch weniger als 6 coins gekostet haben, z.B. weil die Karte FERNSTRASSE im Spiel ist, darfst du dir eine nur eine Karte nehmen, die weniger kostet als das GRENZDORF momentan. Du nimmst dir die zusätzliche Karte nur, wenn du das GRENZDORF nimmst oder kaufst, nicht jedes mal, wenn du es ausspielst",
-        "name": "Grenzdorf"
-    },
     "Cache": {
         "description": "3 <*COIN*><line>Wenn du die Schatztruhe nimmst, nimm dir 2 Kupfer.",
         "extra": "Diese Geldkarte ist 3 Coins wert, wie ein GOLD. Wenn du die Schatztruhe nimmst oder kaufst, musst du dir zusätzlich 2 KUPFER nehmen. Sind nur weniger als 2 KUPFER im Vorrat, so nimmst du dir nur so viele wie möglich. Du nimmst dir die 2 KUPFER nur, wenn du die Schatztruhe nimmst oder kaufst, nicht jedes mal, wenn du sie ausspielst.",
         "name": "Schatztruhe"
+    },
+    "Duchess": {
+        "description": "+2 Coin<br>Jeder Spieler (auch du selbst) sieht sich die oberste Karte von seinem Nachziehstapel an und entscheidet, ob er die Karte ablegt oder zurück auf den Nachziehstapel legt. <line> Wird die Herzogin im Spiel verwendet, darfst du dir immer, wenn du ein Herzogtum nimmst, eine Herzogin nehmen.",
+        "extra": "Wenn du die HERZOGIN ausspielst, erhältst du zunächst + 2 coins. Dann sieht sich, beginnend mit dem Spieler links von dir, reihum jeder Spieler (auch du selbst) die oberste Karte von seinem Nachziehstapel an und entscheidet selbst, ob er sie ablegt oder zurück auf seinen Nachziehstapel legt. Kann ein Spieler, auch nach dem Mischen seines Ablagestapels, keine Karte ansehen, so sieht er keine Karte an. Wenn die HERZOGIN als eine der 10 Königreichkarten verwendet wird, darf sich jeder Spieler, immer wenn er ein HERZOGTUM nimmt oder kauft, zusätzlich eine Karte HERZOGIN nehmen.",
+        "name": "Herzogin"
+    },
+    "Embassy": {
+        "description": "+5 Karten<br>Lege 3 Karten auf deiner Hand ab. Wenn du die Botschaft nimmst, muss sich jeder Mitspieler ein Silber nehmen.",
+        "extra": "Wenn du die BOTSCHAFT ausspielst, ziehst du zunächst 5 Karten auf deine Hand nach. Wenn du, auch nach dem Mischen deines Ablagestapels, nur weniger als 5 Karten nachziehen kannst, ziehst du nur so viele Karten nach wie möglich. Dann legst du 3 Karten aus deiner Hand ab. Du kannst also auch Karten ablegen, die du gerade nachgezogen hast. Wenn du die BOTSCHAFT nimmst oder kaufst, muss sich, beginnend mit dem Spieler links von dir, reihum jeder Spieler ein SILBER nehmen. Ist kein SILBER mehr im Vorrat, nimmt der Spieler kein SILBER.",
+        "name": "Botschaft"
+    },
+    "Ill-Gotten Gains": {
+        "description": "1 <*COIN*><n>Wenn du den Blutzoll ausspielst, darfst du dir ein Kupfer nehmen. Nimm dieses Kupfer sofort auf die Hand. Wenn du den Blutzoll nimmst, muss sich jeder Mitspieler einen Fluch nehmen.",
+        "extra": "Diese Karte ist eine Geldkarte mit dem Wert 1 coin, wie ein Kupfer. Wenn du den BLUTZOLL ausspielst, darfst du dir ein KUPFER direkt auf die Hand nehmen. Du kannst dieses KUPFER also noch in diesem Zug ausspielen. Ist kein KUPFER mehr im Vorrat, so nimmst du dir kein KUPFER. Wenn du den BLUTZOLL nimmst oder kaufst, muss sich, beginnend mit dem Spieler links von dir, reihum jeder Mitspieler einen FLUCH nehmen. Sind nicht mehr genügend FLÜCHE im Vorrat, werden nur so viele verteilt wie möglich. BLUTZOLL ist keine Angriffskarte und kann z.B. nicht dem BURGGRABEN abgewehrt werden.",
+        "name": "Blutzoll"
+    },
+    "Mandarin": {
+        "description": "+3 Coin<br>Lege eine Karte aus deiner Hand zurück auf deinen Nachziehstapel. Wenn du den Mandarin nimmst, lege alle Geldkarten, die du im Spiel hast, in beliebiger Reihenfolge zurück auf deinen Nachziehstapel.",
+        "extra": " Wenn du diese Karte ausspielst erhältst du zuerst + 3 coins. Dann musst du eine Karte aus deiner Hand auf deinen Nachziehstapel legen. Wenn du keine Karte mehr auf der Hand hast, legst du keine Karte auf deinen Nachziehstapel. Wenn du diese Karte nimmst oder kaufst, musst du alle Geldkarten, die du im Spiel hast, in beliebiger Reihenfolge zurück auf deinen Nachziehstapel legen. Du musst deinen Mitspielern nicht zeigen, in welcher Reihenfolge du die Karten zurück legst. Du musst alle Geldkarten, die du im Spiel hast, zurück legen. Geldkarten auf deiner Hand sind nicht im Spiel. Du legst sie also nicht auf den Nachziehstapel. Du hast jedoch alle Münzen, der ausgespielten Geldkarten in dieser Kaufphase zur Verfügung. Hast du z.B. +1 Kauf und 4 Gold ausgespielt und kaufst den MANDARIN, so legst du die 4 GOLD zurück auf deinen Nachziehstapel und hast trotzdem noch 7 coins für den zweiten Kauf zur Verfügung. Du legst deine ausgespielten Geldkarten auch auf den Nachziehstapel zurück, wenn du den MANDARIN nimmst, wobei du üblicherweise nur in der Kaufphase Geldkarten im Spiel hast.",
+        "name": "Mandarin"
+    },
+    "Noble Brigand": {
+        "description": "+1 Coin<br>Wenn du diese Karte kaufst oder ausspielst, muss jeder Mitspieler die obersten 2 Karten von seinem Nachziehstapel aufdecken. Hat er ein Gold oder ein Silber aufgedeckt, muss er dieses entsorgen. Hat der Spieler beides aufgedeckt, entscheidest du, welche er entsorgen muss. Hat der Spieler keine Geldkarte aufgedeckt, muss er sich ein Kupfer nehmen. Die übrigen aufgedeckten Karten muss der Spieler ablegen. Du musst alle entsorgten Karten nehmen.",
+        "extra": "Wenn du diese Karte ausspielst, erhältst du + 1 coin. Wenn du diese Karte ausspielst und auch, wenn du diese Karte kaufst, muss beginnend bei dem Spieler links von dir, reihum jeder Mitspieler die obersten beiden Karten von seinem Nachziehstapel aufdecken. Hat der Spieler 1 SILBER oder 1 GOLD aufgedeckt, so muss er dieses entsorgen. Hat der Spieler ein SILBER und ein GOLD (oder auch 2 SILBER bzw. 2 GOLD) aufgedeckt, entscheidest du welches davon er entsorgen muss. Die andere aufgedeckte Karte legt er jeweils auf seinen Ablagestapel. Hat der Spieler weder SILBER noch GOLD aufgedeckt, so legt er beide Karten ab. Hat der Spieler überhaupt keine Geldkarte aufgedeckt, so legt er beide Karten ab und nimmt sich ein KUPFER. Du musst alle entsorgten SILBER und GOLD nehmen. Wenn du den EDLEN RÄUBER ausspielst, können deine Mitspieler mit Reaktionskarten, wie z.B. BURGGRABEN (Dominion - Basisspiel), auf den Angriff reagieren. Wenn du den EDLEN RÄUBER jedoch kaufst, dürfen deine Mitspieler keine Reaktionskarten aufdecken, da du den EDLEN RÄUBER nicht ausgespielt hast.",
+        "name": "Edler Räuber"
+    },
+    "Nomad Camp": {
+        "description": "+1 Kauf<br>+2 Coin<br>Wenn du das Nomadencamp nimmst, lege es sofort auf deinen Nachziehstapel.",
+        "extra": "Wenn du diese Karte ausspielst, erhältst du +1 Kauf und +2 coins. Wenn du das NOMADENCAMP nimmst, musst du es sofort auf deinen Nachziehstapel legen, statt wie üblich auf den Ablagestapel.",
+        "name": "Nomadencamp"
+    },
+    "Oracle": {
+        "description": "Jeder Spieler (auch du selbst) muss die obersten 2 Karten von seinem Nachziehstapel aufdecken. Du entscheidest, ob er beide Karten ablegen oder (in der von ihm bestimmten Reihenfolge) zurück auf seinen Nachziehstapel legen muss. +2 Karten.",
+        "extra": " Reihum, beginnend mit dem Spieler links von dir, muss jeder Spieler (auch du selbst) die obersten beiden Karten von seinem Nachziehstapel aufdecken. Du entscheidest, ob er beide Karten ablegen oder zurück auf seinen Nachziehstapel legen muss. Der Spieler entscheidet selbst, in welcher Reihenfolge er die Karten auf seinen Nachziehstapel legt. Dann erst ziehst du 2 Karten nach. Hast du also deine eigenen Karten zurück auf deinen Nachziehstapel gelegt, so ziehst du diese Karten nach.",
+        "name": "Orakel"
+    },
+    "Silk Road": {
+        "description": "Wert 1 <VP> für je 4 Punktekarten im eigenen Kartensatz (abgerundet).",
+        "extra": " Diese Königreichkarte ist eine Punktekarte, keine Aktionskarte. Sie hat bis zum Ende des Spiels keine Funktion. Bei der Wertung zählt sie 1 <VP> für je volle 4 Punktekarten in deinem gesamten Kartensatz (Nachziehstapel, Ablagestapel und Handkarten). Bei Spielende suchst du aus deinem gesamten Kartensatz alle Punktekarten heraus und zählst sie. (Die SEIDENSTRASSE selbst ist auch eine Punktekarte und zählt zur Gesamtzahl der Punktekarten.) Die Ergebnis durch 4 geteilt und abgerundet ergibt die Punkte. Im Spiel zu 3. und 4. werden 12 Karten SEIDENSTRASSE verwendet, im Spiel zu 2. werden 8 Karten SEIDENSTRASSE verwendet.",
+        "name": "Seidenstraße"
+    },
+    "Border Village": {
+        "description": "+1 Karte<br>+2 Aktionen<line>Wenn du das Grenzdorf nimmst, nimm dir eine Karte, die weniger kostet als das Grenzdorf.",
+        "extra": " Wenn du das GRENZDORF ausspielst ziehst du 1 Karte von deinem Nachziehstapel und erhältst +2 Aktionen. Wenn du das GRENZDORF nimmst oder kaufst, musst du dir zusätzlich eine weitere Karte nehmen, die weniger kostet als das GRENZDORF. Üblicherweise nimmst du dir eine Karte, die bis zu 5 coins kostet. Sollte das GRENZDORF jedoch weniger als 6 coins gekostet haben, z.B. weil die Karte FERNSTRASSE im Spiel ist, darfst du dir eine nur eine Karte nehmen, die weniger kostet als das GRENZDORF momentan. Du nimmst dir die zusätzliche Karte nur, wenn du das GRENZDORF nimmst oder kaufst, nicht jedes mal, wenn du es ausspielst",
+        "name": "Grenzdorf"
     },
     "Cartographer": {
         "description": "+1 Karte<br>+1 Aktion<br>Sieh dir die obersten 4 Karten von deinem Nachziehstapel an. Lege beliebig viele davon ab. Lege den Rest davon in beliebiger Reihenfolge zurück auf deinen Nachziehstapel.",
@@ -1678,16 +1718,6 @@
         "description": "Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die genau 1 Coin mehr kostet als die entsorgte Karte und nimm dir eine Karte, die genau 1 Coin weniger kostet als die entsorgte Karte. Du entscheidest, in welcher Reihenfolge du diese beiden Karten nimmst. Lege beide Karten sofort auf deinen Nachziehstapel.",
         "extra": " Zuerst musst du eine Karte aus deiner Hand entsorgen. Den gerade ausgespielten AUSBAU kannst du nicht entsorgen, da du ihn nicht mehr auf der Hand hast. Hast du keine Karte mehr auf der Hand, kannst du keine Karte entsorgen und darfst dir auch keine Karten nehmen. Wenn du eine Karte entsorgt hast nimmst du dir 2 Karten, eine Karte, die genau 1 coin mehr kostet, als die entsorgte Karte und eine Karte, die genau 1 coin weniger kostet, als die entsorgte Karte. Du nimmst beide Karten aus dem Vorrat. Kannst du eine der beiden Karten nicht nehmen, weil keine Karte mit genau den geforderten Kosten im Vorrat ist, nimmst du dir trotzdem die andere Karte (wenn eine im Vorrat ist). Du legst die beiden Karten sofort auf deinen Nachziehstapel, anstatt auf deinen Ablagestapel. Du darfst die Karten in beliebiger Reihenfolge nehmen. Entsorgst du z.B. eine HERZOGIN (2 coins), so nimmst du dir eine Karte, die genau 3 coins kostet (z.B. die OASE) und eine Karte, die genau 1 coin kostet. Da es (üblicherweise) keine Karte gibt, die 1 Coin kostet, nimmst du dir keine weitere Karte. Entsorgst du z.B. ein KUPFER, so müsstest du dir eine Karte mit den Kosten 1 coin und eine Karte mit den Kosten -1 Coin nehmen, da es (üblicherweise) beide Karten nicht gibt, nimmst du dir keine Karte.",
         "name": "Aufbau"
-    },
-    "Duchess": {
-        "description": "+2 Coin<br>Jeder Spieler (auch du selbst) sieht sich die oberste Karte von seinem Nachziehstapel an und entscheidet, ob er die Karte ablegt oder zurück auf den Nachziehstapel legt. <line> Wird die Herzogin im Spiel verwendet, darfst du dir immer, wenn du ein Herzogtum nimmst, eine Herzogin nehmen.",
-        "extra": "Wenn du die HERZOGIN ausspielst, erhältst du zunächst + 2 coins. Dann sieht sich, beginnend mit dem Spieler links von dir, reihum jeder Spieler (auch du selbst) die oberste Karte von seinem Nachziehstapel an und entscheidet selbst, ob er sie ablegt oder zurück auf seinen Nachziehstapel legt. Kann ein Spieler, auch nach dem Mischen seines Ablagestapels, keine Karte ansehen, so sieht er keine Karte an. Wenn die HERZOGIN als eine der 10 Königreichkarten verwendet wird, darf sich jeder Spieler, immer wenn er ein HERZOGTUM nimmt oder kauft, zusätzlich eine Karte HERZOGIN nehmen.",
-        "name": "Herzogin"
-    },
-    "Embassy": {
-        "description": "+5 Karten<br>Lege 3 Karten auf deiner Hand ab. Wenn du die Botschaft nimmst, muss sich jeder Mitspieler ein Silber nehmen.",
-        "extra": "Wenn du die BOTSCHAFT ausspielst, ziehst du zunächst 5 Karten auf deine Hand nach. Wenn du, auch nach dem Mischen deines Ablagestapels, nur weniger als 5 Karten nachziehen kannst, ziehst du nur so viele Karten nach wie möglich. Dann legst du 3 Karten aus deiner Hand ab. Du kannst also auch Karten ablegen, die du gerade nachgezogen hast. Wenn du die BOTSCHAFT nimmst oder kaufst, muss sich, beginnend mit dem Spieler links von dir, reihum jeder Spieler ein SILBER nehmen. Ist kein SILBER mehr im Vorrat, nimmt der Spieler kein SILBER.",
-        "name": "Botschaft"
     },
     "Farmland": {
         "description": "2 <*VP*><line>Wenn du das Fruchtbare Land kaufst, entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die genau 2 mehr kostet als die entsorgte Karte.",
@@ -1709,11 +1739,6 @@
         "extra": " Wenn du diese Karte ausspielst, ziehst du zuerst eine Karte nach und erhältst +1 Aktion. Solange diese Karte im Spiel ist, kosten alle Karten 1 coins weniger (niemals jedoch weniger als 0 coins). Das gilt für alle Karten im Vorrat, auf den Händen der Spieler und in deren Kartenstapeln. Spielst du z.B. die FERNSTRASSE, danach den AUFBAU und entsorgst ein KUPFER aus deiner Hand, so kannst du dir z.B. ein ANWESEN nehmen. Das ANWESEN kostet nur noch 1 coin, während das KUPFER immer noch 0 coins kostet. Diese Anweisung gilt nur, solange die FERNSTRASSE im Spiel ist. Spielst du die FERNSTRASSE z.B. auf einen THRONSAAL, spielst du die Karte zwar zweimal aus, die Karte ist jedoch nur einmal im Spiel. In diesem Fall kosten also alle Karten immer noch nur 1 coin weniger. Hast du 2 FERNSTRASSE im Spiel, so kosten alle Karten 2 Coins weniger (immer noch bis zu einem Minimum von 0 coins).",
         "name": "Fernstraße"
     },
-    "Ill-Gotten Gains": {
-        "description": "1 <*COIN*><n>Wenn du den Blutzoll ausspielst, darfst du dir ein Kupfer nehmen. Nimm dieses Kupfer sofort auf die Hand. Wenn du den Blutzoll nimmst, muss sich jeder Mitspieler einen Fluch nehmen.",
-        "extra": "Diese Karte ist eine Geldkarte mit dem Wert 1 coin, wie ein Kupfer. Wenn du den BLUTZOLL ausspielst, darfst du dir ein KUPFER direkt auf die Hand nehmen. Du kannst dieses KUPFER also noch in diesem Zug ausspielen. Ist kein KUPFER mehr im Vorrat, so nimmst du dir kein KUPFER. Wenn du den BLUTZOLL nimmst oder kaufst, muss sich, beginnend mit dem Spieler links von dir, reihum jeder Mitspieler einen FLUCH nehmen. Sind nicht mehr genügend FLÜCHE im Vorrat, werden nur so viele verteilt wie möglich. BLUTZOLL ist keine Angriffskarte und kann z.B. nicht dem BURGGRABEN abgewehrt werden.",
-        "name": "Blutzoll"
-    },
     "Inn": {
         "description": "+2 Karten<br>+2 Aktionen<br>Lege 2 Karten aus deiner Hand ab. Wenn du das Gasthaus nimmst, sieh dir deinen Ablagestapel durch, decke beliebig viele Aktionskarten (auch dieses Gasthaus) daraus auf und mische die aufgedeckten Karten in deinen Nachziehstapel.",
         "extra": " Wenn du diese Karte ausspielst, ziehst du zuerst 2 Karten nach und erhältst +2 Aktionen. Dann legst du 2 Karten aus deiner Hand ab. Du kannst auch Karten ablegen, die du gerade nachgezogen hast. Wenn du diese Karte nimmst oder kaufst, darfst du dir sofort deinen Nachziehstapel durchsehen (was üblicherweise nicht erlaubt ist) und beliebig viele Aktionskarten daraus in deinen Nachziehstapel einmischen. Du darfst auch das gerade genommene GASTHAUS selbst einmischen, da es, wenn die Anweisung ausgeführt wird, bereits auf dem Ablagestapel liegt. Kombinierte Aktionskarten sind auch Aktionskarten. Du musst die Aktionskarten, die du in deinen Nachziehstapel einmischt, deinen Mitspielern vorzeigen.",
@@ -1724,45 +1749,20 @@
         "extra": " Diese Karte hat 4 verschiedene Anweisungen, die du nacheinander ausführen musst (nur die letzte ist optional). Zuerst nimmst du dir ein SILBER vom Vorrat und legst es auf deinen Ablagestapel. Ist kein SILBER mehr im Vorrat, nimmst du dir kein SILBER. Danach siehst du dir die oberste Karte deines Nachziehstapels an und entscheidest, ob du sie zurück auf deinen Nachziehstapel legst oder ablegst. Wenn dein Nachzieh- und dein Ablagestapel leer sind, siehst du dir keine Karte an. Dann ziehst du solange Karten nach, bis du 5 Karten auf der Hand hast. Hast du bereits 5 oder mehr Karten auf der Hand, ziehst du keine Karten nach. Kannst du, auch nach dem Mischen deines Ablagestapels, nicht genügend Karten nachziehen, so ziehst du nur so viele Karten nach wie möglich. Zuletzt darfst du eine Karte aus deiner Hand entsorgen, die keine Geldkarte ist. Kombinierte Geldkarten sind auch Geldkarten.",
         "name": "Lebenskünstler"
     },
-    "Mandarin": {
-        "description": "+3 Coin<br>Lege eine Karte aus deiner Hand zurück auf deinen Nachziehstapel. Wenn du den Mandarin nimmst, lege alle Geldkarten, die du im Spiel hast, in beliebiger Reihenfolge zurück auf deinen Nachziehstapel.",
-        "extra": " Wenn du diese Karte ausspielst erhältst du zuerst + 3 coins. Dann musst du eine Karte aus deiner Hand auf deinen Nachziehstapel legen. Wenn du keine Karte mehr auf der Hand hast, legst du keine Karte auf deinen Nachziehstapel. Wenn du diese Karte nimmst oder kaufst, musst du alle Geldkarten, die du im Spiel hast, in beliebiger Reihenfolge zurück auf deinen Nachziehstapel legen. Du musst deinen Mitspielern nicht zeigen, in welcher Reihenfolge du die Karten zurück legst. Du musst alle Geldkarten, die du im Spiel hast, zurück legen. Geldkarten auf deiner Hand sind nicht im Spiel. Du legst sie also nicht auf den Nachziehstapel. Du hast jedoch alle Münzen, der ausgespielten Geldkarten in dieser Kaufphase zur Verfügung. Hast du z.B. +1 Kauf und 4 Gold ausgespielt und kaufst den MANDARIN, so legst du die 4 GOLD zurück auf deinen Nachziehstapel und hast trotzdem noch 7 coins für den zweiten Kauf zur Verfügung. Du legst deine ausgespielten Geldkarten auch auf den Nachziehstapel zurück, wenn du den MANDARIN nimmst, wobei du üblicherweise nur in der Kaufphase Geldkarten im Spiel hast.",
-        "name": "Mandarin"
-    },
     "Margrave": {
         "description": "+3 Karten<br>+1 Kauf<br>Jeder Mitspieler muss 1 Karte nachziehen und dann Karten ablegen, bis er nur noch 3 Karten auf der Hand hat.",
         "extra": " Zuerst ziehst du 3 Karten nach und erhältst +1 Kauf. Dann muss, beginnend mit dem Spieler links von dir, reihum jeder Mitspieler eine Karte nachziehen und dann solange Karten aus seiner Hand ablegen, bis er nur noch 3 Karten auf der Hand hat. Hat ein Spieler, auch nachdem er eine Karte nachgezogen hat, nur 3 oder weniger Karten auf der Hand, so legt er keine Karte ab.",
         "name": "Markgraf"
-    },
-    "Noble Brigand": {
-        "description": "+1 Coin<br>Wenn du diese Karte kaufst oder ausspielst, muss jeder Mitspieler die obersten 2 Karten von seinem Nachziehstapel aufdecken. Hat er ein Gold oder ein Silber aufgedeckt, muss er dieses entsorgen. Hat der Spieler beides aufgedeckt, entscheidest du, welche er entsorgen muss. Hat der Spieler keine Geldkarte aufgedeckt, muss er sich ein Kupfer nehmen. Die übrigen aufgedeckten Karten muss der Spieler ablegen. Du musst alle entsorgten Karten nehmen.",
-        "extra": "Wenn du diese Karte ausspielst, erhältst du + 1 coin. Wenn du diese Karte ausspielst und auch, wenn du diese Karte kaufst, muss beginnend bei dem Spieler links von dir, reihum jeder Mitspieler die obersten beiden Karten von seinem Nachziehstapel aufdecken. Hat der Spieler 1 SILBER oder 1 GOLD aufgedeckt, so muss er dieses entsorgen. Hat der Spieler ein SILBER und ein GOLD (oder auch 2 SILBER bzw. 2 GOLD) aufgedeckt, entscheidest du welches davon er entsorgen muss. Die andere aufgedeckte Karte legt er jeweils auf seinen Ablagestapel. Hat der Spieler weder SILBER noch GOLD aufgedeckt, so legt er beide Karten ab. Hat der Spieler überhaupt keine Geldkarte aufgedeckt, so legt er beide Karten ab und nimmt sich ein KUPFER. Du musst alle entsorgten SILBER und GOLD nehmen. Wenn du den EDLEN RÄUBER ausspielst, können deine Mitspieler mit Reaktionskarten, wie z.B. BURGGRABEN (Dominion - Basisspiel), auf den Angriff reagieren. Wenn du den EDLEN RÄUBER jedoch kaufst, dürfen deine Mitspieler keine Reaktionskarten aufdecken, da du den EDLEN RÄUBER nicht ausgespielt hast.",
-        "name": "Edler Räuber"
-    },
-    "Nomad Camp": {
-        "description": "+1 Kauf<br>+2 Coin<br>Wenn du das Nomadencamp nimmst, lege es sofort auf deinen Nachziehstapel.",
-        "extra": "Wenn du diese Karte ausspielst, erhältst du +1 Kauf und +2 coins. Wenn du das NOMADENCAMP nimmst, musst du es sofort auf deinen Nachziehstapel legen, statt wie üblich auf den Ablagestapel.",
-        "name": "Nomadencamp"
     },
     "Oasis": {
         "description": "+1 Karte<br>+1 Aktion<br>+1 Coin<br>Lege eine Karte aus deiner Hand ab.",
         "extra": " Du ziehst zuerst 1 Karte nach und erhältst +1 Aktion und +1 coin. Dann legst du eine Karte aus deiner Hand ab. Du darfst auch die gerade nachgezogene Karte ablegen. Wenn du keine Karte nachziehen kannst, weil dein Nachzieh- und Ablagestapel leer sind, musst du trotzdem eine Karte aus deiner Hand ablegen.",
         "name": "Oase"
     },
-    "Oracle": {
-        "description": "Jeder Spieler (auch du selbst) muss die obersten 2 Karten von seinem Nachziehstapel aufdecken. Du entscheidest, ob er beide Karten ablegen oder (in der von ihm bestimmten Reihenfolge) zurück auf seinen Nachziehstapel legen muss. +2 Karten.",
-        "extra": " Reihum, beginnend mit dem Spieler links von dir, muss jeder Spieler (auch du selbst) die obersten beiden Karten von seinem Nachziehstapel aufdecken. Du entscheidest, ob er beide Karten ablegen oder zurück auf seinen Nachziehstapel legen muss. Der Spieler entscheidet selbst, in welcher Reihenfolge er die Karten auf seinen Nachziehstapel legt. Dann erst ziehst du 2 Karten nach. Hast du also deine eigenen Karten zurück auf deinen Nachziehstapel gelegt, so ziehst du diese Karten nach.",
-        "name": "Orakel"
-    },
     "Scheme": {
         "description": "+1 Karte<br>+1 Aktion<br>Zu Beginn deiner Aufräumphase darfst du eine deiner ausgespielten Aktionskarten wählen. Wenn du die gewählte Karte in dieser Aufräumphase ablegen würdest, darfst du sie stattdessen auf deinen Nachziehstapel legen.",
         "extra": " Wenn du diese Karte ausspielst, ziehst du zuerst 1 Karte nach und erhältst +1 Aktion. Zu Beginn deiner Aufräumphase darfst du eine Aktionskarte wählen, die du im Spiel hast. Du kannst das auch gerade ausgespielte KOMPLOTT selbst wählen. Statt die gewählte Aktionskarte in dieser Aufräumphase auf deinen Ablagestapel zu legen, darfst du sie auf deinen Nachziehstapel legen. Das machst du, bevor du Karten für die nächste Runde nachziehst. Wenn du die gewählte Aktionskarte nicht in dieser Aufräumphase ablegst (z.B. eine Dauerkarte aus Dominion - Seaside), kannst du sie auch nicht auf deinen Nachziehstapel legen.",
         "name": "Komplott"
-    },
-    "Silk Road": {
-        "description": "Wert 1 <VP> für je 4 Punktekarten im eigenen Kartensatz (abgerundet).",
-        "extra": " Diese Königreichkarte ist eine Punktekarte, keine Aktionskarte. Sie hat bis zum Ende des Spiels keine Funktion. Bei der Wertung zählt sie 1 <VP> für je volle 4 Punktekarten in deinem gesamten Kartensatz (Nachziehstapel, Ablagestapel und Handkarten). Bei Spielende suchst du aus deinem gesamten Kartensatz alle Punktekarten heraus und zählst sie. (Die SEIDENSTRASSE selbst ist auch eine Punktekarte und zählt zur Gesamtzahl der Punktekarten.) Die Ergebnis durch 4 geteilt und abgerundet ergibt die Punkte. Im Spiel zu 3. und 4. werden 12 Karten SEIDENSTRASSE verwendet, im Spiel zu 2. werden 8 Karten SEIDENSTRASSE verwendet.",
-        "name": "Seidenstraße"
     },
     "Spice Merchant": {
         "description": " Du darfst eine Karte aus deiner Hand entsorgen. Wenn du das machst, wählst du eine der beiden angegebenen Kombinationen. Entweder ziehst du 2 Karten nach und erhältst +1 Aktion oder du erhältst + 2 coins und +1 Kauf. Wenn du keine Karte aus deiner Hand entsorgen kannst oder willst, darfst du auch keine der angegebenen Anweisungen ausführen.",
@@ -1783,6 +1783,51 @@
         "description": "2 <*VP*><line>Wenn du diese Karte außerhalb der Aufräumphase ablegst, darfst du sie aufdecken. Wenn du das machst: Nimm dir ein Gold.",
         "extra": " Diese Karte ist gleichzeitig eine Punktekarte und eine Reaktionskarte. Bei der Wertung zählt sie 2 <VP>. Die Reaktion kann eingesetzt werden, wenn du den TUNNEL außerhalb einer Aufräumphase ablegen musst. Du darfst dann den TUNNEL aufdecken bevor du ihn ablegst und nimmst dir ein GOLD. Du darfst den TUNNEL nicht „freiwillig“ ablegen, eine Kartenanweisung muss dich dazu zwingen. Dies kann in deinem eigenen Zug (z.B. durch die OASE) geschehen, oder im Zug eines Mitspielers (z.B. durch den MARKGRAFEN). Die Reaktion setzt auch ein, wenn du den TUNNEL nicht wie üblich aus deiner Hand ablegst, sondern von deinem Nachziehstapel oder von aufgedeckten Karten ablegst (z.B. durch das ORAKEL). Wenn der TUNNEL normalerweise nicht aufgedeckt würde (z.B. durch den KARTOGRAPHEN), musst du ihn aufdecken, um dir ein GOLD zu nehmen. Du musst den TUNNEL nicht aufdecken (und dementsprechend auch kein GOLD nehmen), wenn du ihn ablegst. Die Reaktion wird nicht ausgelöst, wenn du die Karte auf deinen Ablagestapel legst, ohne sie aufzudecken. Du kannst die Karte nicht aufdecken, wenn du sie gerade genommen oder gekauft hast. Du kannst den TUNNEL auch nicht aufdecken, wenn du z.B. durch den KANZLER (Dominion - Basisspiel) deinen Nachziehstapel ablegst oder wenn durch die BESESSENHEIT (Dominion - Die Alchemisten) entsorgte Karten auf deinen Ablagestapel gelegt werden. Die Reaktion setzt auch nicht ein, wenn du den TUNNEL regulär in der Aufräumphase ablegst. Es muss eine Anweisung geben, die dich zwingt, eine Karte abzulegen. Das GOLD nimmst du dir aus dem Vorrat. Ist dort kein GOLD mehr, nimmst du dir keines.",
         "name": "Tunnel"
+    },
+    "Berserker": {
+        "description": "Gain a card costing less than this. Each other player discards down to 3 cards in hand.<line>When you gain this, if you have an Action in play, play this.",
+        "extra": "When you gain a Berserker, if you have an Action card in play, you play the Berserker; this means it will go into play, and you'll gain a cheaper card and then the other players will discard down to 3 cards in hand. They can still use cards like Moat then. If you gain a Berserker with no Actions in play, however, you don't play it. If you gain and play this with Innovation, Berserker loses track of itself, so Berserker telling you to play it will fail. If you gain this on another player's turn (e.g. their Barbarian trashes your Border Village), and you have an Action in play (most likely a Duration card), you can play the Berserker and attack them during their own turn. You'll discard the Berserker from play during their Clean-up. If you played 5 Highways, Berserker will cost 0 Coin, so it'll fail to gain a card.",
+        "name": "Berserker"
+    },
+    "Cauldron": {
+        "description": "2 <*COIN*><br><br>+1 Buy<br><br>The third time you gain an Action this turn, each other player gains a Curse.",
+        "extra": "If you gain three Actions before playing Cauldron that turn, then it won't give out a Curse. It doesn't matter how many non-Action cards you gained; the third time you gain an Action, each other player gains a Curse. This is cumulative if you play multiple Cauldrons. This a Treasure, so you play it in your Buy phase, but also an Attack, so cards like Guard Dog and Moat can be used in response to it.",
+        "name": "Cauldron"
+    },
+    "Guard Dog": {
+        "description": "+2 Cards<br>If you have 5 or fewer cards in hand, +2 Cards.<line>When another player plays an Attack, you may first play this from your hand.",
+        "extra": "When you play this, you draw 2 cards, then count the cards in your hand; if it's 5 or fewer, you draw 2 more cards. When another player plays an Attack card, you may play this before that Attack resolves; then the Attack still happens (unless you stop it another way, such as with a Moat you just drew). So if another player plays Berserker, and you respond with Guard Dog, you'll first draw 2 cards, then discard down to 3 cards in hand. As usual playing it means putting it into play and following its instructions. If you play this during another player's turn, you discard it from play during that turn's Clean-up.",
+        "name": "Guard Dog"
+    },
+    "Nomads": {
+        "description": "+1 Buy<br>+2 Coin<line>When you gain or trash this, +2 Coin.",
+        "extra": "",
+        "name": "Nomads"
+    },
+    "Souk": {
+        "description": "+1 Buy<br>+7 Coin<br>–1 Coin per card in your hand (you can't go below 0 Coin).<line>When you gain this, trash up to 2 cards from your hand.",
+        "extra": "For example, if you play Souk and have 3 other cards left in your hand, you'd get +7 Coin (and +1 Buy), and then lose 3 Coin for a net gain of +4 Coin. You can't go below 0 Coin but might end up with less _ Coin than you started with. When you gain Souk, trash up to 2 cards from your hand; you don't have to trash any.",
+        "name": "Souk"
+    },
+    "Trail": {
+        "description": "+1 Card<br>+1 Action<line>When you gain, trash, or discard this, other than in Clean-up, you may play it.",
+        "extra": "When you play this, you simply get +1 Card and +1 Action. When you gain, trash, or discard this, other than in Clean-up, you may play it. As usual playing it means putting it into play and following its instructions. If you play Trail on another player's turn, the +1 Action won't be useful, and you discard Trail from play in that turn's Clean-up. If you trash Trail, playing it means you get the Trail back; it will go into play, and be discarded into your discard pile in that turn's Clean-up. This still counts as trashing it; if you Remodel a Trail you can play it and then gain a Gold from Remodel, and so on. If you gain or trash a Trail during Clean-up (with e.g. Improve), you can't use its Reaction.",
+        "name": "Trail"
+    },
+    "Weaver": {
+        "description": "Gain two Silvers or a card costing up to 4 Coin.<line>When you discard this other than in Clean-up, you may play it.",
+        "extra": "You either gain 2 Silvers, or a card costing up to 4 Coin (which might be a Silver). You can play this when you discard it. As usual playing it means putting it into play and following its instructions. If you play it on another player's turn, it's discarded in that turn's Clean-up. This doesn't say \"choose one,\" so if you play this with Elder, you can't choose to gain 2 Silvers and a 4 Coin. If a Vassal discards Weaver, you can react with Weaver to play it. Doing this causes Vassal to lose track, so you will only play Weaver once. If you need to discard down to a certain number of cards (due to Militia), you discard all the cards at once. So if you discard multiple Weavers, you resolve their reactions one at a time. When discarding multiple Weavers, if playing one of them triggers a reshuffle (e.g. it gains a Cavalry, then you can't play any of the other Weavers.",
+        "name": "Weaver"
+    },
+    "Wheelwright": {
+        "description": "+1 Card<br>+1 Action<br><br>You may discard a card to gain an Action card costing as much as it or less.",
+        "extra": "You may discard any type of card, but can only gain an Action card. If you discard an Action card, you can gain a copy of it. If you do discard, you have to gain an Action card if there is one to gain.",
+        "name": "Wheelwright"
+    },
+    "Witch's Hut": {
+        "description": "+4 Cards<br><br>Discard 2 cards, revealed. If they're both Actions, each other player gains a Curse.",
+        "extra": "You reveal the discarded cards even if they aren't both Actions. If they're both Actions - even if they also have other types - each other player gains a Curse.",
+        "name": "Witch's Hut"
     },
     "Coppersmith": {
         "description": "Kupfer produziert in diesem Zug 1 mehr.",
