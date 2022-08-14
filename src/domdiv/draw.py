@@ -1425,7 +1425,7 @@ class DividerDrawer(object):
 
         # card name metrics
         font = pdfmetrics.getFont(self.fontStyle["Name"])
-        fontSize = maxFontSize = 10 * tabScale  # same as the type banner on the cards
+        fontSize = 10 * tabScale  # same as the type banner on the cards
         minFontSize = 7 * tabScale
         nameAscent = fontSize * 0.750  # Trajan caps height
         nameTop = costTop
@@ -1585,22 +1585,6 @@ class DividerDrawer(object):
             else:  # centre, but keep it inside the margins
                 w = max(lmin, min(tabWidth / 2 - centreWidth / 2, rmax))
             self.drawSmallCaps(line, fontSize, w, h, style=style)
-
-        if False:  # TODO: debug scaffolding
-            capheight = 0.750
-            xheight = 0.638
-            self.canvas.saveState()
-            self.canvas.setStrokeGray(0.5)
-            self.canvas.setLineWidth(0.1)
-            self.canvas.rect(0, textHeight, tabWidth, capheight * maxFontSize)
-            self.canvas.rect(0, textHeight, tabWidth, xheight * maxFontSize)
-            self.canvas.setStrokeGray(0)
-            self.canvas.setLineWidth(0.25)
-            self.canvas.rect(lmin, textHeight, textWidth, capheight * maxFontSize)
-            self.canvas.setLineWidth(0.25)
-            self.canvas.setStrokeColorRGB(0.5, 0, 0)
-            self.canvas.rect(0, bannerHeight, tabWidth, bannerSize)
-            self.canvas.restoreState()
 
         self.canvas.restoreState()
 
@@ -1872,18 +1856,6 @@ class DividerDrawer(object):
         # actual drawing
         if not self.options.tabs_only:
             self.drawOutline(item, isBack)
-
-        if False and self.options.label:  # TODO: debug scaffolding
-            self.canvas.saveState()
-            self.canvas.setLineWidth(0.25)
-            self.canvas.setStrokeColorRGB(1, 0, 0)
-            dividerWidth = self.options.dividerWidth
-            labelHeight = self.options.labelHeight
-            baseHeight = self.options.dividerBaseHeight
-            self.canvas.rect(0, baseHeight, dividerWidth, labelHeight)
-            if self.options.dividerBaseHeight:
-                self.canvas.rect(0, 0, dividerWidth, baseHeight)
-            self.canvas.restoreState()
 
         cardText = item.textTypeBack if isBack else item.textTypeFront
         self.drawTab(item, panel=self.HEAD, backside=isBack)
