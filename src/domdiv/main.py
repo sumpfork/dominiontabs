@@ -31,9 +31,7 @@ TAB_SIDE_CHOICES = [
 TEXT_CHOICES = ["card", "rules", "blank"]
 LINE_CHOICES = ["line", "dot", "cropmarks", "line-cropmarks", "dot-cropmarks"]
 
-HEAD_TAIL_CHOICES = ["wrapper", "strap", "none"]
-HEAD_CHOICES = ["tab"] + HEAD_TAIL_CHOICES
-TAIL_CHOICES = ["folder"] + HEAD_TAIL_CHOICES
+HEAD_TAIL_CHOICES = ["tab", "strap", "cover", "folder", "none"]
 FACE_CHOICES = ["front", "back"]
 SPINE_CHOICES = ["name", "types", "tab"]
 
@@ -617,28 +615,30 @@ def parse_opts(cmdline_args=None):
         action="store_true",
         dest="cover_meta",
         help="Draw folding covers instead of dividers for the cards. "
-        "Same as --head=wrapper --head-facing=back --head-text=back",
+        "Same as --head=cover --head-facing=back --head-text=back",
     )
     group_wrapper.add_argument(
         "--head",
-        choices=HEAD_CHOICES,
+        choices=HEAD_TAIL_CHOICES,
         dest="head",
         default="tab",
         help="Top tab or wrapper type; "
         "'tab' will add divider tabs; "
-        "'wrapper' will add a folding cover; "
-        "'strap' will add a folding pull tab or tab cover; "
+        "'strap' will add a longer folding tab; "
+        "'cover' will create a matchbook-style cover; "
+        # 'folder' is possible but not very useful for --head
         "'none' will leave the top edge plain.",
     )
     group_wrapper.add_argument(
         "--tail",
-        choices=TAIL_CHOICES,
+        choices=HEAD_TAIL_CHOICES,
         dest="tail",
         default="none",
         help="Bottom wrapper type; "
-        "'folder' will create a folder with tabs; "
-        "'wrapper' will create a folder without tabs; "
-        "'strap' will add a bottom pull tab; "
+        # 'tab' is possible but not very useful for --tail
+        "'strap' will add a folding pull tab; "
+        "'cover' will create a simple folding cover; "
+        "'folder' will create a tab folder; "
         "'none' will leave the bottom edge plain.",
     )
     group_wrapper.add_argument(  # TODO
@@ -1148,13 +1148,13 @@ def clean_opts(options):
         options.head = "tab"
         options.tail = "strap"
     if options.cover_meta:
-        # Same as --head=wrapper --head-facing=back --head-text=back
-        options.head = "wrapper"
+        # Same as --head=cover --head-facing=back --head-text=back
+        options.head = "cover"
         options.head_facing = "back"
         options.head_text = "back"
     # Flags set if there's a head wrapper, a tail wrapper, or either
-    options.headWrapper = options.head in ["wrapper", "strap"]
-    options.tailWrapper = options.tail in ["folder", "wrapper", "strap"]
+    options.headWrapper = options.head in ["strap", "cover", "folder"]
+    options.tailWrapper = options.tail in ["strap", "cover", "folder"]
     options.wrapper = options.headWrapper or options.tailWrapper
 
     # Expand --head-text and --tail-text if they refer to --front or --back

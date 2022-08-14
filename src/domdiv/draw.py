@@ -28,7 +28,7 @@ def split(seq, n):
     yield seq[i:]
 
 
-def totalHeight(options, stackHeight):
+def totalHeight(options, stackHeight=0):
     # Calculate divider total height given current options and stack height.
     return (
         options.dividerBaseHeight
@@ -1316,7 +1316,7 @@ class DividerDrawer(object):
             facing = self.options.head_facing
             artwork = not self.options.no_tab_artwork
         elif panel == self.TAIL:
-            if not self.options.tailWrapper:
+            if self.options.tail == "none":
                 return  # no tail!
             edge = self.options.tail
             facing = self.options.tail_facing
@@ -1348,14 +1348,14 @@ class DividerDrawer(object):
                 + self.options.tailWrapper * item.stackHeight
             )
         # set horizontal dimensions
-        if edge == "wrapper":
+        if edge == "cover":
             translate_x = 0
             tabWidth = item.cardWidth
         elif self.wantCentreTab(card):
             translate_x = item.cardWidth / 2 - item.tabWidth / 2
             tabWidth = item.tabWidth
         else:
-            translate_x = item.getTabOffset(backside=backside and panel == self.HEAD)
+            translate_x = item.getTabOffset(backside=backside)
             tabWidth = item.tabWidth
         textWidth = tabWidth  # margins & padding get subtracted later
 
@@ -1654,7 +1654,7 @@ class DividerDrawer(object):
             + self.options.tailWrapper * item.stackHeight
         )
         margin = 3
-        if self.options.head == "wrapper":
+        if self.options.head in ["cover", "folder"]:
             # use full width
             textWidth = item.cardWidth - 2 * margin
             translate_x = margin
@@ -1889,7 +1889,7 @@ class DividerDrawer(object):
         self.drawTab(item, panel=self.HEAD, backside=isBack)
         self.drawSpine(item)
         if not self.options.tabs_only:
-            self.drawTab(item, panel=self.TAIL, backside=True)
+            self.drawTab(item, panel=self.TAIL, backside=isBack)
             self.drawText(item, cardText, wrapper=wrap)  # TODO
             # if self.options.headWrapper:
             #     self.drawText(item, self.options.head_text, wrapper="back")  # TODO
@@ -2063,8 +2063,10 @@ class DividerDrawer(object):
             if options.head == "none"
             else options.head_height * cm
             if options.head_height
+            else options.dividerBaseHeight + options.labelHeight
+            if options.head == "folder"
             else options.dividerBaseHeight
-            if options.head == "wrapper"
+            if options.head == "cover"
             else options.labelHeight  # tab or strap
         )
         options.tailHeight = (
@@ -2075,12 +2077,12 @@ class DividerDrawer(object):
             else options.dividerBaseHeight + options.labelHeight
             if options.tail == "folder"
             else options.dividerBaseHeight
-            if options.tail == "wrapper"
-            else options.labelHeight  # strap
+            if options.tail == "cover"
+            else options.labelHeight  # tab or strap
         )
 
         # Set Height
-        options.dividerHeight = options.dividerBaseHeight + options.headHeight
+        options.dividerHeight = totalHeight(options)
 
         # Start building up the space reserved for each divider
         options.dividerWidthReserved = options.dividerWidth
