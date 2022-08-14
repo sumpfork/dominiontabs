@@ -1134,18 +1134,23 @@ class DividerDrawer(object):
         # (costOffset is no longer used)
 
         # Measured card metrics:
-        # coins are 17 pt with a 1 pt drop shadow
+        # coin and debt icons are 17 pt with a 1 pt drop shadow (18 pt total)
         # cost numbers are Minion Std Black 18 (11.7 pt ascent)
         # with a baseline 3 pt above the bottom of the coin
         fontSize = 18 * scale
-        coinSize = 17 * scale
+        coinSize = 18 * scale  # shadow included in graphic
+        debtSize = 17 * scale
         potSize = 15 * scale
-        baseline = 3 * scale  # distance from coin bottom to baseline
+        # distance from text baseline to bottom edge of graphic
+        coinBase = 4 * scale  # shadow included in graphic
+        debtBase = 3 * scale
+        potBase = 2 * scale
 
-        # set relative positions of coin and coin text
-        costHeight = y  # text baseline height
-        coinHeight = costHeight - baseline  # bottom of coin graphic
-        potHeight = coinHeight + (coinSize - potSize) / 2  # bottom of potion graphic
+        # set relative positions of symbols and text
+        textHeight = y  # text baseline height
+        coinHeight = textHeight - coinBase  # bottom of coin graphic
+        debtHeight = textHeight - debtBase  # bottom of debt graphic
+        potHeight = textHeight - potBase  # bottom of potion graphic
 
         def drawCostText(text, x, y, color=None):
             # x, y = center of baseline
@@ -1203,7 +1208,7 @@ class DividerDrawer(object):
                 self.canvas.drawString(right - modWidth, y + modHeight, mod)
             self.canvas.restoreState()
 
-        def scaleImage(name, x, y, h, mask):
+        def scaleImage(name, x, y, h, mask="auto"):
             path = DividerDrawer.get_image_filepath(name)
             with Image.open(path) as img:
                 w0, h0 = img.size
@@ -1219,24 +1224,20 @@ class DividerDrawer(object):
         pots = card.potcost
 
         if cost and (cost[0] != "0" or not debt and not pots):
-            shadowXY = [0.5, 1]  # leave room for a drop shadow (TODO: draw the shadow)
-            dx = scaleImage(
-                "coin_small.png", x + width, coinHeight, coinSize, mask="auto"
-            )
-            drawCostText(cost, x + width + dx / 2, costHeight)
-            width += dx + shadowXY[0]
+            dx = scaleImage("coin_small.png", x + width, coinHeight, coinSize)
+            drawCostText(cost, x + width + dx / 2, textHeight)
+            width += dx
 
         if debt:
-            shadowXY = [0.5, 1]  # leave room for a drop shadow (TODO: draw the shadow)
             mask = [170, 255, 170, 255, 170, 255]
-            dx = scaleImage("debt.png", x + width, coinHeight, coinSize, mask=mask)
-            drawCostText(debt, x + width + dx / 2, costHeight, color=(1, 1, 1))
-            width += dx + shadowXY[0]
+            dx = scaleImage("debt.png", x + width, debtHeight, debtSize, mask=mask)
+            drawCostText(debt, x + width + dx / 2, textHeight, color=(1, 1, 1))
+            width += dx
 
         if pots:
             if width:  # add a little extra room before the potion
                 width += 1
-            dx = scaleImage("potion.png", x + width, potHeight, potSize, mask="auto")
+            dx = scaleImage("potion.png", x + width, potHeight, potSize)
             width += dx
 
         return width
@@ -1397,7 +1398,6 @@ class DividerDrawer(object):
 
         # metrics measured from the cards
         trueBannerSize = 18
-        trueCoinSize = 17
         bannerSize = trueBannerSize * tabScale
         bannerHeight = 0
 
@@ -1417,10 +1417,9 @@ class DividerDrawer(object):
             margin = tabWidth / 18 if card.isExpansion() else tabWidth / 48
 
         # cost symbol metrics
-        coinSize = bannerSize - 1
-        coinScale = coinSize / trueCoinSize
-        coinHeight = bannerHeight
-        costHeight = coinHeight + 3 * coinScale
+        coinScale = bannerSize / trueBannerSize
+        coinHeight = bannerHeight - 1
+        costHeight = coinHeight + 4 * coinScale
         costTop = costHeight + coinScale * 18 * 0.624  # Minion Std Black numeral height
 
         # card name metrics
