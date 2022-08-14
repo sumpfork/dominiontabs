@@ -1419,11 +1419,6 @@ class DividerDrawer(object):
                 # make room for coin shadows
                 artHeight = minBannerHeight - bannerHeight
                 bannerHeight = minBannerHeight
-            if panel == self.SPINE:
-                # center banner visually on the spine
-                centerHeight = (tabHeight - artSize) / 2
-                if bannerHeight < centerHeight:
-                    self.canvas.translate(0, centerHeight - bannerHeight)
             # adjust for space around banners and scalloped edges
             margin = tabWidth / 18 if card.isExpansion() else tabWidth / 48
 
@@ -1439,8 +1434,13 @@ class DividerDrawer(object):
         minFontSize = 7 * tabScale
         nameAscent = fontSize * 0.750  # Trajan caps height
         nameTop = costTop
-        nameHeight = nameTop - nameAscent
-        textHeight = nameHeight
+        textHeight = nameTop - nameAscent
+
+        # if this is the spine, adjust vertical alignment to center the text
+        if panel == self.SPINE:
+            centerHeight = (tabHeight - nameAscent) / 2
+            if textHeight < centerHeight:
+                self.canvas.translate(0, centerHeight - textHeight)
 
         # set symbol metrics
         setTop = costTop
