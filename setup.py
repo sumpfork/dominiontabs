@@ -13,7 +13,7 @@ setup(
     use_scm_version=True,
     setup_requires=["setuptools_scm", "pytest-runner"],
     install_requires=["reportlab", "Pillow", "configargparse"],
-    tests_require=["pytest", "six", "pytest-flake8", "pre-commit", "doit"],
+    tests_require=["pytest", "six", "pre-commit", "doit"],
     url="http://domtabs.sandflea.org",
     project_urls={
         "Say Thanks!": "https://boardgamegeek.com/thread/926575/web-page-generate-tabbed-dividers",
