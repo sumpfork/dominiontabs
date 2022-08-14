@@ -470,6 +470,7 @@ class DividerDrawer(object):
 
     HEAD, SPINE, BODY, TAIL = range(200, 204)  # panel identifiers
     LABEL_HEIGHT = 0.9 * cm
+    SET_ICON_SIZE = 10
 
     def __init__(self, options=None):
         self.canvas = None
@@ -781,7 +782,6 @@ class DividerDrawer(object):
         )
         # lines ending at a midpoint (no dots)
         midline = NO_LINE if line == plotter.DOT else line
-        line = plotter.DEBUG  # TODO: debug
 
         # notch dimensions
         notchLeft = round(max(notch[0], 0.0), 2)
@@ -1243,7 +1243,7 @@ class DividerDrawer(object):
 
     def drawSetIcon(self, setImage, x, y):
         # set image
-        size = 10
+        size = self.SET_ICON_SIZE
         path = DividerDrawer.get_image_filepath(setImage)
         self.canvas.drawImage(
             path, x, y, size, size, mask="auto", preserveAspectRatio=True
@@ -1434,8 +1434,7 @@ class DividerDrawer(object):
 
         # set symbol metrics
         setTop = costTop
-        setImageSize = maxFontSize
-        setImageHeight = setTop - setImageSize
+        setImageHeight = setTop - self.SET_ICON_SIZE
         setTextSize = nameAscent / 0.701  # Minion Pro Italic ascender height
         setTextHeight = textHeight
 
@@ -1496,7 +1495,7 @@ class DividerDrawer(object):
             else:
                 setImage = card.setImage(self.options.use_set_icon)
                 if setImage:
-                    textInsetRight += setImageSize  # they're all square
+                    textInsetRight += self.SET_ICON_SIZE  # they're all square
                     self.drawSetIcon(
                         setImage, tabWidth - textInsetRight, setImageHeight
                     )
@@ -1728,7 +1727,7 @@ class DividerDrawer(object):
         if "body-top" in self.options.set_icon and not card.isExpansion():
             setImage = card.setImage(self.options.use_set_icon)
             if setImage:
-                Image_x_right -= 16
+                Image_x_right -= self.SET_ICON_SIZE
                 self.drawSetIcon(
                     setImage, Image_x_right, totalHeight - usedHeight - 0.5 * cm - 3
                 )
