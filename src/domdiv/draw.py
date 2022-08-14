@@ -1670,29 +1670,32 @@ class DividerDrawer(object):
         if card.isBlank():
             return
 
+        facing = "front"
         totalHeight = item.cardHeight
         usedHeight = 0
 
         # Figure out if any translation needs to be done
-        translate_x = 0
         translate_y = self.options.tailHeight
         if self.options.tailWrapper and panel != self.TAIL:
             translate_y += item.stackHeight
 
         if panel == self.HEAD:
+            facing = self.options.head_facing
             totalHeight = self.options.headHeight - item.tabHeight
             translate_y += item.cardHeight + item.stackHeight
         elif panel == self.TAIL:
+            facing = self.options.tail_facing
             totalHeight = self.options.tailHeight - item.tabHeight
-            translate_x = item.cardWidth
+            translate_y -= totalHeight
 
         self.canvas.saveState()
-        self.canvas.translate(translate_x, translate_y)
-        if panel == self.TAIL:
+        self.canvas.translate(0, translate_y)
+        if facing == "back":
+            self.canvas.translate(item.cardWidth, totalHeight)
             self.canvas.rotate(180)
 
         # Accomodate spine labels and wrapper notches
-        if panel == self.BODY and self.options.spine == "tab":
+        if self.options.spine == "tab" and panel == self.BODY:
             usedHeight = max(usedHeight, (item.tabHeight - item.stackHeight) / 2)
         if self.options.notch_length:
             usedHeight = max(usedHeight, self.options.notch_height * cm)
