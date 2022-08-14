@@ -1682,30 +1682,38 @@ class DividerDrawer(object):
         self.drawSmallCaps(text, fontSize, w, h, style=style)
         self.canvas.restoreState()
 
-    def drawText(self, item, divider_text="card", wrapper="no"):
+    def drawText(self, item, panel, divider_text="card"):
         card = item.card
         # Skip blank cards
         if card.isBlank():
             return
 
-        self.canvas.saveState()
-        usedHeight = 0
         totalHeight = item.cardHeight
+        usedHeight = 0
 
         # Figure out if any translation needs to be done
-        # TODO: adjust non-sleeve wrappers as needed
-        if wrapper == "back":
-            self.canvas.translate(item.cardWidth, item.cardHeight + item.tabHeight)
+        translate_x = 0
+        translate_y = self.options.tailHeight
+        if self.options.tailWrapper and panel != self.TAIL:
+            translate_y += item.stackHeight
+
+        if panel == self.HEAD:
+            totalHeight = self.options.headHeight - item.tabHeight
+            translate_y += item.cardHeight + item.stackHeight
+        elif panel == self.TAIL:
+            totalHeight = self.options.tailHeight - item.tabHeight
+            translate_x = item.cardWidth
+
+        self.canvas.saveState()
+        self.canvas.translate(translate_x, translate_y)
+        if panel == self.TAIL:
             self.canvas.rotate(180)
 
-        if wrapper == "front":
-            self.canvas.translate(
-                0, item.cardHeight + item.tabHeight + item.stackHeight
-            )
-
-        if wrapper == "front" or wrapper == "back":
-            if self.options.notch_length > 0:
-                usedHeight += self.options.notch_height * cm
+        # Accomodate spine labels and wrapper notches
+        if panel == self.BODY and self.options.spine == "tab":
+            usedHeight = max(usedHeight, (item.tabHeight - item.stackHeight) / 2)
+        if self.options.notch_length:
+            usedHeight = max(usedHeight, self.options.notch_height * cm)
 
         # Add 'body-top' items
         drewTopIcon = False
@@ -1748,7 +1756,8 @@ class DividerDrawer(object):
             #  use all the available space, even if it is not centered on the card
             fontSize = 8
             failover = False
-            width = self.nameWidth(card.types_name, fontSize)
+            types_name = card.types_name
+            width = self.nameWidth(types_name, fontSize)
             while width > textWidth:
                 fontSize -= 0.01
                 if fontSize < 6 and not failover:
@@ -1757,12 +1766,12 @@ class DividerDrawer(object):
                     w = left_margin + (textWidth2 / 2)
                     fontSize = 8
                     failover = True
-                width = self.nameWidth(card.types_name, fontSize)
+                width = self.nameWidth(types_name, fontSize)
 
             #  Print out the text in the right spot
             h = totalHeight - usedHeight - 0.5 * cm
-            if card.types_name != " ":
-                self.drawSmallCaps(card.types_name, fontSize, w - width / 2, h)
+            if types_name != " ":
+                self.drawSmallCaps(types_name, fontSize, w - width / 2, h)
             drewTopIcon = True
 
         if drewTopIcon:
@@ -1877,24 +1886,16 @@ class DividerDrawer(object):
                 self.canvas.rect(0, 0, dividerWidth, baseHeight)
             self.canvas.restoreState()
 
-        if self.options.wrapper:
-            wrap = "front"
-            isBack = False  # Safety.  If a wrapper, there is no backside
-        else:
-            wrap = "no"
-
-        # TODO: simplify this
         cardText = item.textTypeBack if isBack else item.textTypeFront
-
         self.drawTab(item, panel=self.HEAD, backside=isBack)
         self.drawSpine(item)
         if not self.options.tabs_only:
             self.drawTab(item, panel=self.TAIL, backside=isBack)
-            self.drawText(item, cardText, wrapper=wrap)  # TODO
-            # if self.options.headWrapper:
-            #     self.drawText(item, self.options.head_text, wrapper="back")  # TODO
-            if self.options.tailWrapper:
-                self.drawText(item, self.options.tail_text, wrapper="back")  # TODO
+            self.drawText(item, self.BODY, cardText)
+            if self.options.head in ["cover", "folder"]:
+                self.drawText(item, self.HEAD, self.options.head_text)
+            if self.options.tail in ["cover", "folder"]:
+                self.drawText(item, self.TAIL, self.options.tail_text)
 
         # retore the canvas state to the way we found it
         self.canvas.restoreState()
