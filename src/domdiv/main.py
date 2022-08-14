@@ -1899,7 +1899,9 @@ def filter_sort_cards(cards, options):
         with open(options.cardlist) as cardfile:
             for line in cardfile:
                 line = line.strip()
-                if line.startswith("-"):
+                if not line or line.startswith("#"):
+                    pass  # ignore empty and "comment" lines
+                elif line.startswith("-"):
                     cardlist_exclude.add(line.lstrip("- \t"))
                 else:
                     cardlist.add(line.lstrip("+ \t"))
