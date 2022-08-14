@@ -1337,11 +1337,11 @@ class DividerDrawer(object):
             translate_y += (
                 self.options.headWrapper * item.stackHeight
                 + self.options.headHeight
-                - item.tabHeight
+                - tabHeight
             )
         elif panel == self.SPINE:
             # center tab on the spine
-            translate_y += item.stackHeight / 2 - item.tabHeight / 2
+            translate_y += item.stackHeight / 2 - tabHeight / 2
         if panel != self.TAIL:
             translate_y += (
                 item.cardHeight
@@ -1366,7 +1366,7 @@ class DividerDrawer(object):
         # set orientation
         if facing == "back":
             # Turn back faces around so they're right side up after folding
-            self.canvas.translate(tabWidth, item.tabHeight)
+            self.canvas.translate(tabWidth, tabHeight)
             self.canvas.rotate(180)
 
         # set background color
@@ -1399,7 +1399,7 @@ class DividerDrawer(object):
         # metrics measured from the cards
         trueBannerSize = 18
         bannerSize = trueBannerSize * tabScale
-        bannerHeight = 0
+        bannerHeight = minBannerHeight = 1 * tabScale  # room for coin shadows
 
         # whitespace
         margin = padding = 2
@@ -1410,15 +1410,26 @@ class DividerDrawer(object):
             # adjust dimensions based on the application image metrics
             # (ideally they will match the card metrics when space permits)
             # TODO: correctly handle base cards and landscape card-shaped things
+            artSize = 17 * bannerScale
+            artHeight = 0
             bannerSize = 17 * tabScale
-            bannerHeight = (17 * bannerScale - bannerSize) / 2
-            bannerHeight += cardType.getTabTextHeightOffset() * tabScale
+            bannerHeight = cardType.getTabTextHeightOffset() * tabScale
+            bannerHeight += (artSize - bannerSize) / 2  # use extra room
+            if bannerHeight < minBannerHeight:
+                # make room for coin shadows
+                artHeight = minBannerHeight - bannerHeight
+                bannerHeight = minBannerHeight
+            if panel == self.SPINE:
+                # center banner visually on the spine
+                centerHeight = (tabHeight - artSize) / 2
+                if bannerHeight < centerHeight:
+                    self.canvas.translate(0, centerHeight - bannerHeight)
             # adjust for space around banners and scalloped edges
             margin = tabWidth / 18 if card.isExpansion() else tabWidth / 48
 
         # cost symbol metrics
         coinScale = bannerSize / trueBannerSize
-        coinHeight = bannerHeight - 1
+        coinHeight = bannerHeight - 1 * coinScale
         costHeight = coinHeight + 4 * coinScale
         costTop = costHeight + coinScale * 18 * 0.624  # Minion Std Black numeral height
 
@@ -1457,9 +1468,9 @@ class DividerDrawer(object):
             self.canvas.drawImage(
                 imgToDraw,
                 1,
-                0,
+                artHeight,
                 tabWidth - 2,
-                item.tabHeight - 1,
+                tabHeight - artHeight,
                 preserveAspectRatio=False,
                 anchor="n",
                 mask="auto",
@@ -1695,7 +1706,7 @@ class DividerDrawer(object):
             self.canvas.rotate(180)
 
         # Accomodate spine labels and wrapper notches
-        if self.options.spine == "tab" and panel == self.BODY:
+        if self.options.spine == "tab" and panel in [self.BODY, self.HEAD]:
             usedHeight = max(usedHeight, (item.tabHeight - item.stackHeight) / 2)
         if self.options.notch_length:
             usedHeight = max(usedHeight, self.options.notch_height * cm)
