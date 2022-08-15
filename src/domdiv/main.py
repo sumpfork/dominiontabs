@@ -622,79 +622,81 @@ def parse_opts(cmdline_args=None):
         choices=HEAD_TAIL_CHOICES,
         dest="head",
         default="tab",
-        help="Top tab or wrapper type; "
-        "'tab' will add divider tabs; "
-        "'strap' will add a longer folding tab; "
-        "'cover' will create a matchbook-style cover; "
-        # 'folder' is possible but not very useful for --head
-        "'none' will leave the top edge plain.",
+        help="Top tab or wrapper type: "
+        "'tab' for divider tabs, "
+        "'strap' for longer folding tabs, "
+        "'cover' for matchbook-style folding covers, "
+        "'folder' for covers with tabs, or "
+        "'none' to leave the top edge plain. "
+        "The folding options create a top spine that you can customize "
+        "with --spine.",
     )
     group_wrapper.add_argument(
         "--tail",
         choices=HEAD_TAIL_CHOICES,
         dest="tail",
         default="none",
-        help="Bottom wrapper type; "
-        # 'tab' is possible but not very useful for --tail
-        "'strap' will add a folding pull tab; "
-        "'cover' will create a simple folding cover; "
-        "'folder' will create a tab folder; "
-        "'none' will leave the bottom edge plain.",
+        help="Bottom tab or wrapper type: "
+        "'none' to leave the bottom edge plain, "
+        "'folder' to create tab folders, "
+        "'cover' for a simple back cover, "
+        "'strap' for long pull tabs, or "
+        "'tab' for short tabs.",
     )
-    group_wrapper.add_argument(  # TODO
+    group_wrapper.add_argument(
         "--head-facing",
         choices=FACE_CHOICES,
         dest="head_facing",
         default="front",
-        help="Text facing for top tabs and wrappers; "
-        "'front' will show the text upright when flat or unfolded; "
-        "'back' will show it upright when folded over.",
+        help="Text orientation for top tabs and wrappers: "
+        "'front' shows the text upright when flat, "
+        "'back' shows it upright when folded over.",
     )
-    group_wrapper.add_argument(  # TODO
+    group_wrapper.add_argument(
         "--tail-facing",
         choices=FACE_CHOICES,
         dest="tail_facing",
         default="back",
-        help="Text facing for tail wrappers; "
-        "'front' will show the text upright when flat or unfolded; "
-        "'back' will show it upright when folded over.",
+        help="Text orientation for tail wrappers: "
+        "'front' shows the text upright when flat, "
+        "'back' shows it upright when folded under.",
     )
-    group_wrapper.add_argument(  # TODO
+    group_wrapper.add_argument(
         "--head-text",
         choices=TEXT_CHOICES + FACE_CHOICES,
         dest="head_text",
         default="blank",
-        help="Text to print on top wrappers; "
-        "'card' will print the text from the game card; "
-        "'rules' will print additional rules for the game card; "
-        "'blank' will not print text on the divider; "
-        "'front' will use the same setting as --front; "
-        "'back' will use the same setting as --back.",
+        help="Text to print on top cover panels: "
+        "'card' shows the text from the game card, "
+        "'rules' shows additional rules for the game card, "
+        "'blank' leaves the panel blank; "
+        "'front' uses the same setting as --front; "
+        "'back' uses the same setting as --back.",
     )
-    group_wrapper.add_argument(  # TODO
+    group_wrapper.add_argument(
         "--tail-text",
         choices=TEXT_CHOICES + FACE_CHOICES,
         dest="tail_text",
         default="back",
-        help="Text to print on tail wrappers; "
-        "'card' will print the text from the game card; "
-        "'rules' will print additional rules for the game card; "
-        "'blank' will not print text on the divider; "
-        "'front' will use the same setting as --front; "
-        "'back' will use the same setting as --back.",
+        help="Text to print on bottom folder panels: "
+        "'card' shows the text from the game card, "
+        "'rules' shows additional rules for the game card, "
+        "'blank' leaves the panel blank; "
+        "'front' uses the same setting as --front; "
+        "'back' uses the same setting as --back.",
     )
     group_wrapper.add_argument(
         "--head-height",
         type=float,
         default=0.0,
-        help="Height of the divider head in centimeters "
+        help="Height of the top panel in centimeters "
         "(a value of 0 uses tab height or card height as appropriate).",
     )
     group_wrapper.add_argument(
         "--tail-height",
         type=float,
         default=0.0,
-        help="Height of the tail wrapper in centimeters "
+        help="Height of the bottom panel in centimeters "
         "(a value of 0 uses tab height or card height as appropriate).",
     )
     group_wrapper.add_argument(
@@ -702,11 +704,11 @@ def parse_opts(cmdline_args=None):
         choices=SPINE_CHOICES,
         dest="spine",
         default="name",
-        help="Text to print on the top edge of wrappers; "
-        "'name' will print the card name; "
-        "'type' will print the card type; "
-        "'tab' will print all tab text and icons. "
-        "This is only valid with --wrapper or folding --head options.",
+        help="Text to print on the spine of top covers: "
+        "'name' prints the card name; "
+        "'type' prints the card type; "
+        "'tab' prints tab text and graphics. "
+        "This is only valid with folding --head options.",
     )
     group_wrapper.add_argument(
         "--thickness",
