@@ -1158,10 +1158,10 @@ def clean_opts(options):
         options.tail = "cover"
     if options.tent_meta:
         # Same as --head=cover --head-facing=back --head-text=back
+        #         --tail=tab --tail-facing=front
         options.head = "cover"
         options.head_facing = "back"
         options.head_text = "back"
-        print(options.tail, options.tail_facing)
         options.tail = "tab"
         options.tail_facing = "front"
     # Flags set if there's a head wrapper, a tail wrapper, or either
