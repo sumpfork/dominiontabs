@@ -608,13 +608,13 @@ def parse_opts(cmdline_args=None):
         action="store_true",
         dest="pull_tab_meta",
         help="Draw folding pull tabs instead of dividers for the cards. "
-        "Same as --head=tab --tail=strap",
+        "Same as --head=tab --tail=cover",
     )
     group_wrapper.add_argument(
-        "--cover",
+        "--tent",
         action="store_true",
-        dest="cover_meta",
-        help="Draw folding covers instead of dividers for the cards. "
+        dest="tent_meta",
+        help="Draw folding tent covers instead of dividers for the cards. "
         "Same as --head=cover --head-facing=back --head-text=back",
     )
     group_wrapper.add_argument(
@@ -1118,7 +1118,7 @@ def clean_opts(options):
         options.cropmarks = False
         options.head = "tab"
         options.tail = "none"
-        options.wrapper_meta = options.pull_tab_meta = options.cover_meta = False
+        options.wrapper_meta = options.pull_tab_meta = options.tent_meta = False
         options.papersize = label["paper"]
         if label["tab-only"]:
             options.tabs_only = True
@@ -1144,10 +1144,10 @@ def clean_opts(options):
         options.head = "strap"
         options.tail = "folder"
     if options.pull_tab_meta:
-        # Same as --head=tab --tail=strap
+        # Same as --head=tab --tail=cover
         options.head = "tab"
-        options.tail = "strap"
-    if options.cover_meta:
+        options.tail = "cover"
+    if options.tent_meta:
         # Same as --head=cover --head-facing=back --head-text=back
         options.head = "cover"
         options.head_facing = "back"

@@ -1217,29 +1217,25 @@ class DividerDrawer(object):
             self.canvas.drawImage(path, x, y, w, h, mask)
             return w
 
-        width = 0
-
         cost = card.cost
         debt = card.debtcost
         pots = card.potcost
 
+        width = 0
         if cost and (cost[0] != "0" or not debt and not pots):
             dx = scaleImage("coin_small.png", x + width, coinHeight, coinSize)
             drawCostText(cost, x + width + dx / 2, textHeight)
             width += dx
-
         if debt:
             mask = [170, 255, 170, 255, 170, 255]
             dx = scaleImage("debt.png", x + width, debtHeight, debtSize, mask=mask)
             drawCostText(debt, x + width + dx / 2, textHeight, color=(1, 1, 1))
             width += dx
-
         if pots:
             if width:  # add a little extra room before the potion
                 width += 1
             dx = scaleImage("potion.png", x + width, potHeight, potSize)
             width += dx
-
         return width
 
     def drawSetIcon(self, setImage, x, y):
