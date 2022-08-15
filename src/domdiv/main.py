@@ -31,7 +31,8 @@ TAB_SIDE_CHOICES = [
 TEXT_CHOICES = ["card", "rules", "blank"]
 LINE_CHOICES = ["line", "dot", "cropmarks", "line-cropmarks", "dot-cropmarks"]
 
-HEAD_TAIL_CHOICES = ["tab", "strap", "cover", "folder", "none"]
+HEAD_CHOICES = ["tab", "strap", "cover", "none"]
+TAIL_CHOICES = ["tab", "strap", "cover", "folder", "none"]
 FACE_CHOICES = ["front", "back"]
 SPINE_CHOICES = ["name", "types", "tab"]
 
@@ -204,7 +205,7 @@ def parse_opts(cmdline_args=None):
         "--size",
         dest="size",
         default="normal",
-        help="Dimentions of the cards to use with the dividers '<%%f>x<%%f>' (size in cm), "
+        help="Dimensions of the cards to use with the dividers '<%%f>x<%%f>' (size in cm), "
         "or 'normal' = '9.1x5.9', or 'sleeved' = '9.4x6.15'.",
     )
     group_basic.add_argument(
@@ -615,33 +616,33 @@ def parse_opts(cmdline_args=None):
         action="store_true",
         dest="tent_meta",
         help="Draw folding tent covers instead of dividers for the cards. "
-        "Same as --head=cover --head-facing=back --head-text=back",
+        "Same as --head=cover --head-facing=back --head-text=back "
+        "--tail=tab --tail-facing=front",
     )
     group_wrapper.add_argument(
         "--head",
-        choices=HEAD_TAIL_CHOICES,
+        choices=HEAD_CHOICES,
         dest="head",
         default="tab",
         help="Top tab or wrapper type: "
         "'tab' for divider tabs, "
         "'strap' for longer folding tabs, "
         "'cover' for matchbook-style folding covers, "
-        "'folder' for covers with tabs, or "
-        "'none' to leave the top edge plain. "
+        "or 'none' to leave the top edge plain. "
         "The folding options create a top spine that you can customize "
         "with --spine.",
     )
     group_wrapper.add_argument(
         "--tail",
-        choices=HEAD_TAIL_CHOICES,
+        choices=TAIL_CHOICES,
         dest="tail",
         default="none",
         help="Bottom tab or wrapper type: "
-        "'none' to leave the bottom edge plain, "
-        "'folder' to create tab folders, "
+        "'tab' for a bottom tab banner, "
+        "'strap' for a pull tab under the cards, "
         "'cover' for a simple back cover, "
-        "'strap' for long pull tabs, or "
-        "'tab' for short tabs.",
+        "'folder' to create tab folders, "
+        "or 'none' to leave the bottom edge plain.",
     )
     group_wrapper.add_argument(
         "--head-facing",
@@ -731,19 +732,24 @@ def parse_opts(cmdline_args=None):
         help="Same as --size=sleeved --thickness 2.4.",
     )
     group_wrapper.add_argument(
-        "--notch-length",
-        type=float,
-        default=0.0,
-        help="Length of thumb notch on wrapper in centimeters "
-        "(a value of 0.0 means no notch on wrapper). "
-        "This can make it easier to remove the actual cards from the wrapper. "
-        "This is only valid with --wrapper or other folding options.",
-    )
-    group_wrapper.add_argument(
         "--notch",
         action="store_true",
         dest="notch",
-        help="Same as --notch_length=1.5.",
+        help="Creates thumb notches opposite to the divider tabs, "
+        "which can make it easier to remove cards from wrappers or stacks. "
+        "Equivalent to --notch-length=1.5 --notch-height=0.25",
+    )
+    group_wrapper.add_argument(
+        "--notch-length",
+        type=float,
+        default=0.0,
+        help="Sets the length of thumb notches in centimeters.",
+    )
+    group_wrapper.add_argument(
+        "--notch-height",
+        type=float,
+        default=0.0,
+        help="Sets the height of thumb notches in centimeters.",
     )
 
     # Printing
@@ -984,11 +990,12 @@ def clean_opts(options):
         options.thickness = 2.4
         options.sleeved = True
 
-    if options.notch:
+    # if notch is enabled with missing dimensions, provide defaults
+    notch = options.notch or options.notch_length or options.notch_height
+    if notch and not options.notch_length:
         options.notch_length = 1.5
-
-    if options.notch_length > 0:
-        options.notch_height = 0.25  # thumb notch height
+    if notch and not options.notch_height:
+        options.notch_height = 0.25
 
     if options.cropmarks and options.linetype == "line":
         options.linetype = "cropmarks"
@@ -1154,6 +1161,9 @@ def clean_opts(options):
         options.head = "cover"
         options.head_facing = "back"
         options.head_text = "back"
+        print(options.tail, options.tail_facing)
+        options.tail = "tab"
+        options.tail_facing = "front"
     # Flags set if there's a head wrapper, a tail wrapper, or either
     options.headWrapper = options.head in ["strap", "cover", "folder"]
     options.tailWrapper = options.tail in ["strap", "cover", "folder"]

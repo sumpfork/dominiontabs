@@ -739,7 +739,7 @@ class DividerDrawer(object):
         ) or self.options.tab_side == "centre"
 
     def drawPanelOutline(
-        self, item, panel, size, notch, fold=0, height=0, tabLeft=0, tab=None
+        self, item, panel, size, fold=0, height=0, tabLeft=0, tab=None
     ):
         # total height of panel, including head or tail fold
         ymax = size[1] if panel == self.BODY else fold + height
@@ -784,6 +784,7 @@ class DividerDrawer(object):
         midline = NO_LINE if line == plotter.DOT else line
 
         # notch dimensions
+        notch = (item.notchWidth, item.notchHeight)
         notchLeft = round(max(notch[0], 0.0), 2)
         notchRight = round(max(-notch[0], 0.0), 2)
 
@@ -820,7 +821,6 @@ class DividerDrawer(object):
             return
 
         # certain sizes smaller than this round to zero to avoid rounding errors
-        # TODO: test all uses of epsilon
         epsilon = 0.1 * cm
 
         # draw head & tail panels
@@ -851,7 +851,7 @@ class DividerDrawer(object):
                 drawSideCropmarks(tnotch)
 
         def drawPanelSide(notchSide, tabSide):
-            if not tabSide:
+            if not (notchSide or tabSide):  # straight edge
                 plotter.plot(0, ymax, line)
                 return
             plotter.plot(notchSide, 0, NO_LINE)
@@ -913,7 +913,6 @@ class DividerDrawer(object):
             self.canvas.scale(-1, 1)
 
         # certain sizes smaller than this round to zero to avoid rounding errors
-        # TODO: test all uses of epsilon
         epsilon = 0.1 * cm
 
         # calculate card dimensions
@@ -958,7 +957,7 @@ class DividerDrawer(object):
             self.options.notch_height * cm if notchWidth else 0,
             body[1] / 5,  # notch needs to be significantly shorter than the body
         )
-        if notchHeight < epsilon:
+        if notchWidth < epsilon or notchHeight < epsilon:
             notchWidth = notchHeight = 0
         elif notchWidth < tabRight + epsilon:  # prefer the right side
             if tabRight - notchWidth < epsilon:  # align to tab if it's very close
@@ -967,22 +966,25 @@ class DividerDrawer(object):
         elif notchWidth < tabLeft + epsilon:
             if tabLeft - notchWidth < epsilon:  # align to tab if it's very close
                 notchWidth = tabLeft
-        else:
+        else:  # no room
             notchWidth = notchHeight = 0
-        notch = (notchWidth, notchHeight)
+
+        # remember notch dimensions for later steps
+        item.notchWidth = notchWidth
+        item.notchHeight = notchHeight
 
         # draw panels:
         # tail
         self.drawPanelOutline(
-            item, self.TAIL, body, notch, tailFold, tailHeight, tabLeft, tailTab
+            item, self.TAIL, body, tailFold, tailHeight, tabLeft, tailTab
         )
         # body
         self.canvas.translate(0, tailHeight + tailFold)
-        self.drawPanelOutline(item, self.BODY, body, notch)
+        self.drawPanelOutline(item, self.BODY, body)
         # head
         self.canvas.translate(0, body[1])
         self.drawPanelOutline(
-            item, self.HEAD, body, notch, headFold, headHeight, tabLeft, headTab
+            item, self.HEAD, body, headFold, headHeight, tabLeft, headTab
         )
         self.canvas.restoreState()
 
@@ -1309,20 +1311,21 @@ class DividerDrawer(object):
         if panel == self.HEAD:
             if self.options.head == "none":
                 return  # no head!
-            edge = self.options.head
+            fullWidth = self.options.head == "cover"
             facing = self.options.head_facing
             artwork = not self.options.no_tab_artwork
         elif panel == self.TAIL:
             if self.options.tail == "none":
                 return  # no tail!
-            edge = self.options.tail
+            # The tail "tab" is always full width
+            fullWidth = self.options.tail in ["tab", "cover"]
             facing = self.options.tail_facing
             artwork = not self.options.no_tab_artwork
         elif panel == self.SPINE:
             if not self.options.headWrapper:
                 return  # no spine!
-            # The spine uses the head edge for widths, and it always faces front
-            edge = self.options.head
+            # The spine width matches the head edge, and it always faces front
+            fullWidth = self.options.head == "cover"
             facing = "front"
             artwork = not self.options.no_tab_artwork
 
@@ -1345,15 +1348,19 @@ class DividerDrawer(object):
                 + self.options.tailWrapper * item.stackHeight
             )
         # set horizontal dimensions
-        if edge == "cover":
-            translate_x = 0
+        translate_x = 0
+        if fullWidth:
             tabWidth = item.cardWidth
-        elif self.wantCentreTab(card):
+            if panel == self.SPINE:
+                # make room for notches, if needed
+                tabWidth -= abs(item.notchWidth)  # either side
+                translate_x = max(0, item.notchWidth)  # left side only
+        elif self.wantCentreTab(card):  # centered tab
+            tabWidth = item.tabWidth
             translate_x = item.cardWidth / 2 - item.tabWidth / 2
+        else:  # offset tab
             tabWidth = item.tabWidth
-        else:
             translate_x = item.getTabOffset(backside=backside)
-            tabWidth = item.tabWidth
         textWidth = tabWidth  # margins & padding get subtracted later
 
         self.canvas.saveState()
@@ -1401,7 +1408,6 @@ class DividerDrawer(object):
         # metrics from the package assets
         cardType = card.getType()
         if artwork:
-            # TODO: fix images for Ways and non-base Treasures
             # adjust dimensions based on the application image metrics
             bannerHeight += cardType.getTabTextHeightOffset() * tabScale
             # adjust for space around banners and scalloped edges
@@ -1688,6 +1694,10 @@ class DividerDrawer(object):
             facing = self.options.tail_facing
             totalHeight = self.options.tailHeight - item.tabHeight
             translate_y -= totalHeight
+        elif panel == self.BODY and self.options.tail == "tab":
+            # the tail "tab" uses the bottom edge of the body panel
+            totalHeight -= item.tabHeight
+            translate_y += item.tabHeight
 
         self.canvas.saveState()
         self.canvas.translate(0, translate_y)
@@ -2034,7 +2044,7 @@ class DividerDrawer(object):
 
         # Set head & tail heights now that card & label heights are set
         options.headHeight = (
-            0
+            0.0
             if options.head == "none"
             else options.head_height * cm
             if options.head_height
@@ -2045,15 +2055,15 @@ class DividerDrawer(object):
             else options.labelHeight  # tab or strap
         )
         options.tailHeight = (
-            0
-            if options.tail == "none"
+            0.0
+            if options.tail in ["none", "tab"]  # not a real tab
             else options.tail_height * cm
             if options.tail_height
             else options.dividerBaseHeight + options.labelHeight
             if options.tail == "folder"
             else options.dividerBaseHeight
             if options.tail == "cover"
-            else options.labelHeight  # tab or strap
+            else options.labelHeight  # strap
         )
 
         # Set Height
