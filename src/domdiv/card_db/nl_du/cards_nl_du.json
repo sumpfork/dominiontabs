@@ -1654,15 +1654,55 @@
         "extra": "Je mag een geldkaart uit je hand vernietigen. Gecombineerde kaarten waarvan een van de soorten Geld is (zoals Harem uit Dominion: Intrige), gelden als geldkaarten. Vernietig je een geldkaart, dan moet iedere andere speler met ten minste 5 handkaarten 1 exemplaar van de vernietigde kaart afleggen indien mogelijk, of zijn hand tonen als hij geen exemplaar heeft. Jij pakt een geldkaart die maximaal 3 Coins meer kost dan de vernietigde kaart en legt deze op je trekstapel. Is je trekstapel leeg, dan wordt dit de enige kaart van je trekstapel. Je bent niet verplicht om een duurdere geldkaart te pakken, je mag ervoor kiezen om een gelijke of een goedkopere te pakken. Als je een geldkaart vernietigt, moet je een nieuwe geldkaart pakken. Gepakte geldkaarten komen uit de voorraad.",
         "name": "Belastinginner"
     },
-    "Border Village": {
-        "description": "+1 Kaart\n+2 Acties<line>Als je deze kaart pakt, pak dan direct nog een kaart die minder waard is dan deze kaart.",
-        "extra": "Bij het spelen van deze kaart trek je een kaart en mag je deze beurt 2 extra acties uitvoeren. Als je deze kaart pakt, pak je een kaart uit de voorraad die minder waard is dan het Grensdorp. Normaal gesproken betekent dat en kaart van maximaal 5 Coins, maar kost het Grensdorp minder dan normaal (bijvoorbeeld vanwege de Hoofdweg), dan heeft ook de kaart die je pakt een lagere maximale waarde, Je pakt uitsluitend een extra kaart als je het Grensdorp pakt, niet als je het Grensdorp speelt. Je pakt een extra kaart in alle gevallen waarin je een Grensdorp pakt (na het kopen ervan of als je de kaart op een andere manier pakt).",
-        "name": "Grensdorp"
-    },
     "Cache": {
         "description": "3 <*COIN*><line>Als je deze kaart pakt pak dan ook direct 2 Koper.",
         "extra": "Dit is een geldkaart met een waarde van 3 Coins munten, net als Goud. Pak je deze kaart, dan pak je ook 2 Koper uit de voorraad. Is er niet voldoende Koper, pak er dan zoveel mogelijk. Je pakt uitsluitend 2 Koper als je de Bewaarplaats pakt, niet als je de Bewaarplaats speelt. Je pakt 2 Koper in alle gevallen waarin je een Bewaarplaats pakt (na het kopen ervan of als je de kaart op een andere manier pakt).",
         "name": "Bewaarplaats"
+    },
+    "Duchess": {
+        "description": "+2 Coins\nIedere speler (ook jij) bekijkt de bovenste kaart van zijn trekstapel en legt deze af of legt deze terug op zijn trekstapel.<line>Als je een Hertogdom pakt, mag je een Hertogin pakken.",
+        "extra": "Bij het spelen van deze kaart krijg je +2 Coins en iedere speler (met inbegrip van jezelf) bekijkt de bovenste kaart van zijn eigen trekstapel en legt deze naar eigen keuze af of terug op zijn trekstapel. Een speler zonder trekstapel schudt zijn aflegstapel. Heeft een speler ook geen kaarten in zijn aflegstapel, dan bekijkt hij geen kaart, Pakt een speler in een spel met de Hertogin een Hertogdom, dan mag hij direct een Hertogin pakken. Dit geldt zowel bij het kopen als het op een andere manier pakken van een Hertogdom.",
+        "name": "Hertogin"
+    },
+    "Embassy": {
+        "description": "+5 Kaarten\nLeg 3 kaarten af.<line>Als je deze kaart pakt, pakt iedere andere speler 1 Zilver.",
+        "extra": "Bij het spelen van deze kaart trek je 5 kaarten. Daarna leg je 3 kaarten af. De afgelegde kaarten mogen kaarten zijn die je net getrokken hebt en/of kaarten die je in je hand had. Je moet altijd 3 kaarten afleggen, ook al was je niet in staat om 5 kaarten te trekken (doordat er te weinig kaarten in je trek- en aflegstapel zaten). kun je geen 3 kaarten afleggen, leg er dan zoveel mogelijk af. Bij het pakken van een Ambassade pakt iedere andere speler een Zilver. De andere spelers krijgen uitsluitend een Zilver als je de Ambassade pakt, niet als je deze speelt. Ze pakken een Zilver in alle gevallen waarin je een ambassade pakt (na het kopen ervan of als je de kaart op een andere manier pakt). Het pakken van Zilver is niet optioneel. Ze pakken het Zilver uit de voorraad. Is er niet voldoende Zilver, verdeel de beschikbare Zilverkaarten dan met de klok mee, te beginnen bij speler links van degene die de Ambassade speelt.",
+        "name": "Ambassade"
+    },
+    "Ill-Gotten Gains": {
+        "description": "1 <*COIN*><n>Als je deze kaart speelt, mag je een Koper pakken en in je hand nemen.<line>Als je deze kaart pakt, pakt iedere andere speler een Vloek.",
+        "extra": "Dit is een geldkaart met een waarde van 1 Coin munt, net als Koper. Bij het spelen van deze kaart mag je een Koper uit de voorraad pakken. Deze neem je in je hand, zodat je de kaart direct kunt spelen. Is er geen Koper in voorraad, dan pak je niets. Bij het pakken van een Gestolen Goed pakt iedere andere speler een Vloek. Dit gebeurt zowel als je het Gestolen Goed koopt, als wanneer je het Gestolen Goed op een andere manier pakt. De andere spelers pakken de Vloek uit de voorraad en leggen deze zoals gebruikelijk op hun aflegstapels. Zijn er niet voldoende Vloeken in voorraad, verdeel ze dan met de klok mee, te beginnen bij de spelers links van degene die het Gestolen Goed heeft gepakt. Gestolen goed is geen aanval. Daardoor hebben kaarten zoals de Slotgracht uit het basisspel geen effect tegen het Gestolen Goed.",
+        "name": "Gestolen Goed"
+    },
+    "Mandarin": {
+        "description": "+3 Coins\nLeg een kaart uit je hand op je trekstapel.<line>Als je deze kaart pakt, leg dan alle geldkaarten die je in het spel hebt op je trekstapel in een volgorde naar keuze.",
+        "extra": "Bij het spelen van deze kaart krijg je +3 Coins en leg je een kaart uit je hand op je trekstapel. Heb je geen kaarten meer in je hand, dan leg je niets op je trekstapel. Is je trekstapel leeg, dan is de zojuist gelegde kaart de enige kaart in je trekstapel. Bij het pakken van deze kaart leg je alle geldkaarten die je in het spel hebt op je trekstapel in een volgorde naar keuze. Je hoeft de volgorde niet aan andere spelers te tonen. Je moet al je geldkaarten op je trekstapel leggen, niet slechts een deel. Je kunt geen geldkaarten uit je hand op je trekstapel leggen. Je mag de munten van de gespeelde kaarten wel spenderen. Voorbeeld: je hebt +1 Aanschaf en je speelt 4 Goud. Je koopt een Mandarijn en legt het Goud op je trekstapel. Nu mag je nog 1 Coin spenderen. Je kunt de eigenschap van Mandarijn gebruiken als je deze koopt of als je deze op een andere manier pakt (hoewel je normaal gesproken alleen geld in het spel hebt tijdens je aanschaffase).",
+        "name": "Mandarijn"
+    },
+    "Noble Brigand": {
+        "description": "+1 Coin\nAls je deze kaart koopt of speelt, toont iedere andere speler de bovenste 2 kaarten van zijn trekstapel. Hij vernietigt een getoonde Zilver of Goud naar jouw keuze en legt de rest af. Toont hij geen geldkaart, dan pakt hij een Koper. Jij pakt de vernietigde kaarten.",
+        "extra": "Bij het spelen van deze kaart krijg je +1 Coin. Bij het spelen of kopen van deze kaart toont iedere andere speler de bovenste 2 kaarten van zijn trekstapel. Hij vernietigt een getoonde Zilver of Goud naar jouw keuze. Hij legt de resterende kaarten af. Iedere andere speler die geen geldkaart toont, pakt een Koper uit de voorraad en legt deze zoals gebruikelijk op zijn aflegstapel. Tot slot pak jij alle op deze manier vernietigde Zilver en Goud. Het is niet mogelijk om met deze kaart andere kaarten dan Zilver of Goud te vernietigen. Pak je een Nobele Bandiet op een andere manier dan deze te kopen, dan gebeurt er niets. Nobele Bandiet is een aanvalskaart. Spelers kunnen hierop reageren met bijvoorbeeld de Slotgracht uit het basispel of de Geheime Kamer uit Dominion: Intrige. Maar, het kopen van de Nobele Bandiet geldt niet als het  \"spelen van een actiekaart\", zodat bijvoorbeeld een Slotgracht dan niet kan reageren.",
+        "name": "Nobele Bandiet"
+    },
+    "Nomad Camp": {
+        "description": "+1 Aanschaf\n+2 Coins<line>Als je deze kaart pakt, leg deze dan op je trekstapel.",
+        "extra": "Leg een gepakt Nomadenkamp op je trekstapel (in plaats van op je trekstapel). Dit geldt zowel als je de kaart koopt, als wanneer je de kaart op een andere manier pakt. Is je trekstapel leeg, dan wordt het Nomadenkamp de enige kaart in je trekstapel.",
+        "name": "Nomadenkamp"
+    },
+    "Oracle": {
+        "description": "Iedere speler (ook jij) toont de bovenste 2 kaarten van zijn trekstapel. Jij kiest voor ieder van hen één van de volgende: hij legt beide kaarten af of hij legt beide kaarten op zijn trekstapel in een volgorde naar zijn keuze.\n+2 Kaarten",
+        "extra": "Eerst toont iedere speler, inclusief jijzelf, de bovenste 2 kaarten van zijn trekstapel en kiest of hij ze beide aflegt of beide in een volgorde naar keuze op zijn trekstapel teruglegt. Een speler hoeft de volgorde waarin hij de kaarten op zijn trekstapel legt niet te tonen. Daarna trek je 2 kaarten. Dus als je de 2 kaarten terug hebt gelegd, trek je deze nu.",
+        "name": "Orakel"
+    },
+    "Silk Road": {
+        "description": "Is 1 <VP> waard voor elke 4 overwinningskaarten in je deck (naar beneden afronden).",
+        "extra": "Dit is een overwinningskaart, geen actiekaart. Tijdens het spel doet de kaart niets. Aan het einde van het spel is de kaart 1 <VP> waard voor elke 4 overwinningskaarten in je deck (alle kaarten die je bezit). De Zijderoute telt zelf ook mee. Rond naar beneden af, dus als je 11 overwinningskaarten hebt, is de Zijde route 2 <VP> waard. Gebruik 8 exemplaren van de Zijderoute in een spel met 2 spelers en 12 exemplaren in een spel met 2 spelers. Kaarten van 2 soorten waaronder Overwinning gelden als overwinningskaarten.",
+        "name": "Zijderoute"
+    },
+    "Border Village": {
+        "description": "+1 Kaart\n+2 Acties<line>Als je deze kaart pakt, pak dan direct nog een kaart die minder waard is dan deze kaart.",
+        "extra": "Bij het spelen van deze kaart trek je een kaart en mag je deze beurt 2 extra acties uitvoeren. Als je deze kaart pakt, pak je een kaart uit de voorraad die minder waard is dan het Grensdorp. Normaal gesproken betekent dat en kaart van maximaal 5 Coins, maar kost het Grensdorp minder dan normaal (bijvoorbeeld vanwege de Hoofdweg), dan heeft ook de kaart die je pakt een lagere maximale waarde, Je pakt uitsluitend een extra kaart als je het Grensdorp pakt, niet als je het Grensdorp speelt. Je pakt een extra kaart in alle gevallen waarin je een Grensdorp pakt (na het kopen ervan of als je de kaart op een andere manier pakt).",
+        "name": "Grensdorp"
     },
     "Cartographer": {
         "description": "+1 Kaart\n+1 Actie\nBekijk de 4 bovenste kaarten van je trekstapel. Leg er zoveel af als je wilt. Leg de overige kaarten op je trekstapel terug in een volgorde naar keuze.",
@@ -1678,16 +1718,6 @@
         "description": "Vernietig een kaart uit je hand. Pak 1 kaart die 1 Coin meer waard is en 1 Kaart die 1 Coin minder waard is dan de vernietigde kaart. Leg beide kaarten op je trekstapel in een volgorde naar keuze.",
         "extra": "Vernietig een kaart uit je hand (als je die hebt). De kaart Ontwikkelen bevindt zich niet meer in je hand, dus deze kan zichzelf niet vernietigen (maar wel andere exemplaren van Ontwikkelen die zich eventueel in je hand bevinden). Als je een kaart vernietigd, pak dan 2 kaarten, waarvan de een 1 Coin meer waard is en de ander 1 Coin minder waard is dan de vernietigde kaart. Pak deze kaarten uit de voorraad in een volgorde naar keuze. Is een kaart met een gevraagde waarde niet voorradig, dan pak je uitsluitend de kaart van de andere waarde. Leg de gepakte kaarten op je trekstapel (in plaats van op je trekstapel). Vernietig je met Ontwikkelen een Koper, die 0 Coin waard is, dan kun je geen kaart pakken die -1 Coins waard is, maar wellicht wel een die 1 Coin waard is.",
         "name": "Ontwikkelen"
-    },
-    "Duchess": {
-        "description": "+2 Coins\nIedere speler (ook jij) bekijkt de bovenste kaart van zijn trekstapel en legt deze af of legt deze terug op zijn trekstapel.<line>Als je een Hertogdom pakt, mag je een Hertogin pakken.",
-        "extra": "Bij het spelen van deze kaart krijg je +2 Coins en iedere speler (met inbegrip van jezelf) bekijkt de bovenste kaart van zijn eigen trekstapel en legt deze naar eigen keuze af of terug op zijn trekstapel. Een speler zonder trekstapel schudt zijn aflegstapel. Heeft een speler ook geen kaarten in zijn aflegstapel, dan bekijkt hij geen kaart, Pakt een speler in een spel met de Hertogin een Hertogdom, dan mag hij direct een Hertogin pakken. Dit geldt zowel bij het kopen als het op een andere manier pakken van een Hertogdom.",
-        "name": "Hertogin"
-    },
-    "Embassy": {
-        "description": "+5 Kaarten\nLeg 3 kaarten af.<line>Als je deze kaart pakt, pakt iedere andere speler 1 Zilver.",
-        "extra": "Bij het spelen van deze kaart trek je 5 kaarten. Daarna leg je 3 kaarten af. De afgelegde kaarten mogen kaarten zijn die je net getrokken hebt en/of kaarten die je in je hand had. Je moet altijd 3 kaarten afleggen, ook al was je niet in staat om 5 kaarten te trekken (doordat er te weinig kaarten in je trek- en aflegstapel zaten). kun je geen 3 kaarten afleggen, leg er dan zoveel mogelijk af. Bij het pakken van een Ambassade pakt iedere andere speler een Zilver. De andere spelers krijgen uitsluitend een Zilver als je de Ambassade pakt, niet als je deze speelt. Ze pakken een Zilver in alle gevallen waarin je een ambassade pakt (na het kopen ervan of als je de kaart op een andere manier pakt). Het pakken van Zilver is niet optioneel. Ze pakken het Zilver uit de voorraad. Is er niet voldoende Zilver, verdeel de beschikbare Zilverkaarten dan met de klok mee, te beginnen bij speler links van degene die de Ambassade speelt.",
-        "name": "Ambassade"
     },
     "Farmland": {
         "description": "2 <*VP*><line>Als je deze kaart koopt, vernietig dan een kaart uit je hand.\nPak een kaart die precies 2 Coins meer waard is dan de vernietigde kaart.",
@@ -1709,11 +1739,6 @@
         "extra": "Zolang deze kaart in het spel is, worden alle kaarten voor jou goedkoper (met een minimum van 0 Coin). Deze eigenschap gaat direct verloren zodra de kaart uit het spel is. De eigenschap geldt voor alle kaarten, die in de voorraad, die in een hand en die in de trek- en aflegstapel. Voorbeeld: Je speelt de Hoofdweg en daarna Ontwikkelen. Je vernietigt een Koper. Nu kun je een Landgoed pakken, omdat deze nu 1 Coin waard is, terwijl de waarde van Koper 0 Coins blijft. Speel je een kaart die je toestaat een andere kaart meermaals te spelen (zoals bijvoorbeeld de Troonzaal uit het basisspel), dan wordt een kaart niet 2 Coins of meer munten goedkoper (omdat je nog altijd maar 1 Hoofdweg in het spel hebt). Heb je meer Hoofdwegen in het spel, dan worden kaarten wel 1 Coins per Hoofdweg goedkoper (met een minimum van 0 Coins).",
         "name": "Hoofdweg"
     },
-    "Ill-Gotten Gains": {
-        "description": "1 <*COIN*><n>Als je deze kaart speelt, mag je een Koper pakken en in je hand nemen.<line>Als je deze kaart pakt, pakt iedere andere speler een Vloek.",
-        "extra": "Dit is een geldkaart met een waarde van 1 Coin munt, net als Koper. Bij het spelen van deze kaart mag je een Koper uit de voorraad pakken. Deze neem je in je hand, zodat je de kaart direct kunt spelen. Is er geen Koper in voorraad, dan pak je niets. Bij het pakken van een Gestolen Goed pakt iedere andere speler een Vloek. Dit gebeurt zowel als je het Gestolen Goed koopt, als wanneer je het Gestolen Goed op een andere manier pakt. De andere spelers pakken de Vloek uit de voorraad en leggen deze zoals gebruikelijk op hun aflegstapels. Zijn er niet voldoende Vloeken in voorraad, verdeel ze dan met de klok mee, te beginnen bij de spelers links van degene die het Gestolen Goed heeft gepakt. Gestolen goed is geen aanval. Daardoor hebben kaarten zoals de Slotgracht uit het basisspel geen effect tegen het Gestolen Goed.",
-        "name": "Gestolen Goed"
-    },
     "Inn": {
         "description": "+2 Kaarten\n+2 Acties\nLeg 2 kaarten af.<line>Als je deze kaart pakt, bekijk je je aflegstapel (inclusief deze kaart). Toon zoveel actiekaarten uit de aflegstapel als je wilt en schud ze vervolgens door je trekstapel.",
         "extra": "Bij het spelen van deze kaart trek je 2 kaarten, krijg je 2 extra acties en leg je 2 kaarten af. De kaarten die je aflegt, kunnen kaarten zijn die je net getrokken hebt en/of kaarten die je al in je hand had. Je moet altijd 2 kaarten afleggen, ook al kon je er geen 2 trekken. Bij het pakken van deze kaart bekijk je jouw aflegstapel (wat normaal gesproken niet mag) en schud je zoveel actiekaarten als je wilt uit de aflegstapel door je trekstapel (de resterende kaarten blijven in de aflegstapel). Je mag ervoor kiezen om geen actiekaarten door je trekstapel te schudden. Je kunt ook de zojuist gespeelde Herberg door de trekstapel schudden. Kaarten van 2 soorten waaronder Actie, gelden als actiekaarten. Je moet de kaarten die je door je trekstapel schudt aan de andere spelers tonen. De volgorde van je kaarten in je aflegstapel na het afhandelen van de actie is niet van belang. Deze eigenschap mag je gebruiken als je de Herberg koopt of als je de Herberg op een andere manier pakt.",
@@ -1724,45 +1749,20 @@
         "extra": "Deze kaart laat je 4 verschillende dingen doen in de aangegeven volgorde. Je moet ze allemaal doen (alleen de laatste is optioneel). Eerst pak je een Zilver uit de voorraad en legt deze op je aflegstapel. Is er geen Zilver in de voorraad, dan pak je er geen. Daarna bekijk je de bovenste kaart van je trekstapel en legt deze op je aflegstapel of terug op je trekstapel. Heb je geen kaarten in je trekstapel, schud dan je aflegstapel om een kaart te kunnen bekijken (inclusief de zojuist gepakte Zilver). Heb je nog steeds geen kaarten, dan bekijk je er geen. Vervolgens trek je zoveel kaarten dat je er 5 in je handen hebt. Heb je er al 5 of meer, dan trek je geen kaarten. Zijn er niet voldoende kaarten in je trek- en aflegstapel om alle kaarten te trekken, trek er dan zoveel mogelijk. Tot slot mag je een kaart uit je hand vernietigen (maar geen geldkaarten). Kaarten van 2 soorten waaronder Geld gelden als geldkaarten.",
         "name": "Manusje-Van-Alles"
     },
-    "Mandarin": {
-        "description": "+3 Coins\nLeg een kaart uit je hand op je trekstapel.<line>Als je deze kaart pakt, leg dan alle geldkaarten die je in het spel hebt op je trekstapel in een volgorde naar keuze.",
-        "extra": "Bij het spelen van deze kaart krijg je +3 Coins en leg je een kaart uit je hand op je trekstapel. Heb je geen kaarten meer in je hand, dan leg je niets op je trekstapel. Is je trekstapel leeg, dan is de zojuist gelegde kaart de enige kaart in je trekstapel. Bij het pakken van deze kaart leg je alle geldkaarten die je in het spel hebt op je trekstapel in een volgorde naar keuze. Je hoeft de volgorde niet aan andere spelers te tonen. Je moet al je geldkaarten op je trekstapel leggen, niet slechts een deel. Je kunt geen geldkaarten uit je hand op je trekstapel leggen. Je mag de munten van de gespeelde kaarten wel spenderen. Voorbeeld: je hebt +1 Aanschaf en je speelt 4 Goud. Je koopt een Mandarijn en legt het Goud op je trekstapel. Nu mag je nog 1 Coin spenderen. Je kunt de eigenschap van Mandarijn gebruiken als je deze koopt of als je deze op een andere manier pakt (hoewel je normaal gesproken alleen geld in het spel hebt tijdens je aanschaffase).",
-        "name": "Mandarijn"
-    },
     "Margrave": {
         "description": "+3 Kaarten\n+1 Aanschaf\nIedere andere speler trekt 1 kaart en legt daarna zoveel kaarten af dat hij er 3 in zijn hand overhoudt.",
         "extra": "Je trekt 3 kaarten en krijgt +1 Aanschaf. Iedere andere speler trekt een kaart en legt er vervolgens zoveel af dat hij er 3 in zijn hand overhoudt. Het trekken van een kaart is niet optioneel. Een andere speler die na het rekken van een kaart 3 of minder kaarten heeft, legt geen kaarten af.",
         "name": "Markgraaf"
-    },
-    "Noble Brigand": {
-        "description": "+1 Coin\nAls je deze kaart koopt of speelt, toont iedere andere speler de bovenste 2 kaarten van zijn trekstapel. Hij vernietigt een getoonde Zilver of Goud naar jouw keuze en legt de rest af. Toont hij geen geldkaart, dan pakt hij een Koper. Jij pakt de vernietigde kaarten.",
-        "extra": "Bij het spelen van deze kaart krijg je +1 Coin. Bij het spelen of kopen van deze kaart toont iedere andere speler de bovenste 2 kaarten van zijn trekstapel. Hij vernietigt een getoonde Zilver of Goud naar jouw keuze. Hij legt de resterende kaarten af. Iedere andere speler die geen geldkaart toont, pakt een Koper uit de voorraad en legt deze zoals gebruikelijk op zijn aflegstapel. Tot slot pak jij alle op deze manier vernietigde Zilver en Goud. Het is niet mogelijk om met deze kaart andere kaarten dan Zilver of Goud te vernietigen. Pak je een Nobele Bandiet op een andere manier dan deze te kopen, dan gebeurt er niets. Nobele Bandiet is een aanvalskaart. Spelers kunnen hierop reageren met bijvoorbeeld de Slotgracht uit het basispel of de Geheime Kamer uit Dominion: Intrige. Maar, het kopen van de Nobele Bandiet geldt niet als het  \"spelen van een actiekaart\", zodat bijvoorbeeld een Slotgracht dan niet kan reageren.",
-        "name": "Nobele Bandiet"
-    },
-    "Nomad Camp": {
-        "description": "+1 Aanschaf\n+2 Coins<line>Als je deze kaart pakt, leg deze dan op je trekstapel.",
-        "extra": "Leg een gepakt Nomadenkamp op je trekstapel (in plaats van op je trekstapel). Dit geldt zowel als je de kaart koopt, als wanneer je de kaart op een andere manier pakt. Is je trekstapel leeg, dan wordt het Nomadenkamp de enige kaart in je trekstapel.",
-        "name": "Nomadenkamp"
     },
     "Oasis": {
         "description": "+1 Kaart\n+1 Actie\n+1 Coins\nLeg een kaart af.",
         "extra": "Je trekt een kaart voordat je er eentje aflegt. Je mag de getrokken kaart afleggen. Heb je niet voldoende kaarten in je trek- en aflegstapel om de kaart te trekken, dan moet je alsnog een kaart afleggen.",
         "name": "Oase"
     },
-    "Oracle": {
-        "description": "Iedere speler (ook jij) toont de bovenste 2 kaarten van zijn trekstapel. Jij kiest voor ieder van hen één van de volgende: hij legt beide kaarten af of hij legt beide kaarten op zijn trekstapel in een volgorde naar zijn keuze.\n+2 Kaarten",
-        "extra": "Eerst toont iedere speler, inclusief jijzelf, de bovenste 2 kaarten van zijn trekstapel en kiest of hij ze beide aflegt of beide in een volgorde naar keuze op zijn trekstapel teruglegt. Een speler hoeft de volgorde waarin hij de kaarten op zijn trekstapel legt niet te tonen. Daarna trek je 2 kaarten. Dus als je de 2 kaarten terug hebt gelegd, trek je deze nu.",
-        "name": "Orakel"
-    },
     "Scheme": {
         "description": "+1 Kaart\n+1 Actie\nAan het begin van de opschoonfase mag je een actiekaart kiezen die je in het spel hebt. Als je deze in deze beurt moet afleggen, leg je hem op je trekstapel.",
         "extra": "Bij het spelen van deze kaart trek je een kaart, krijg je 1 extra actie en een eigenschap aan het begin van je opschoonfase. Op dat moment mag je ervoor kiezen om een actiekaart die je normaal gesproken zou afleggen op je trekstapel te leggen. Dit gebeurt voordat je kaarten voor je volgende beurt trekt. De gekozen actiekaart mag elke in deze beurt gespeelde actiekaart zijn, inclusief Gekonkel zelf. Je kunt een gespeelde actiekaart die niet afgelegd wordt (zoals bijvoorbeeld een Duurzame kaart uit Dominion: Hijs de Zeilen!) niet op je trekstapel leggen.",
         "name": "Gekonkel"
-    },
-    "Silk Road": {
-        "description": "Is 1 <VP> waard voor elke 4 overwinningskaarten in je deck (naar beneden afronden).",
-        "extra": "Dit is een overwinningskaart, geen actiekaart. Tijdens het spel doet de kaart niets. Aan het einde van het spel is de kaart 1 <VP> waard voor elke 4 overwinningskaarten in je deck (alle kaarten die je bezit). De Zijderoute telt zelf ook mee. Rond naar beneden af, dus als je 11 overwinningskaarten hebt, is de Zijde route 2 <VP> waard. Gebruik 8 exemplaren van de Zijderoute in een spel met 2 spelers en 12 exemplaren in een spel met 2 spelers. Kaarten van 2 soorten waaronder Overwinning gelden als overwinningskaarten.",
-        "name": "Zijderoute"
     },
     "Spice Merchant": {
         "description": "Je mag een geldkaart uit je hand vernietigen. Als je dat doet, kies dan één van de volgende:\n+2 Kaarten en +1 Actie;\nof +2 Coins en +1 Aanschaf.",
@@ -1783,6 +1783,51 @@
         "description": "2 <*VP*><line>Als je deze kaart aflegt op een ander moment dan tijdens de opschoonfase, mag je deze tonen. Als je dat doet, pak je een Goud.",
         "extra": "Dit is zowel een overwinnings- als een reactiekaart. De Tunnel is aan het einde van het spel 2 <VP> waard. Het reactiedeel van de Tunnel geldt uitsluitend als iets je deze kaart laat afleggen op een ander moment dan tijdens de opschoonfase, zowel in je eigen beurt (door bijvoorbeeld de Oase) of een beurt van een andere speler (door bijvoorbeeld de Markgraaf). Het reactiedeel wordt geactiveerd als de Tunnel uit je hand wordt afgelegd (door bijvoorbeeld de Oase) of uit je trekstapel wordt afgelegd (door bijvoorbeeld de Cartograaf) of opzij wordt gelegd. Als de Tunnel normaal gesproken niet hoeft te worden getoond (zoals bij het afleggen van meerdere kaarten bij de Cartograaf), moet je de Tunnel tonen om het Goud te mogen pakken. Het is niet verplicht om de Tunnel te tonen, ook al had je deze al om een andere reden getoond. Je bent dus niet verplicht om het Goud te pakken. Het reactiedeel van deze kaart wordt niet geactiveerd als kaarten op je trekstapel terechtkomen zonder afgelegd te zijn, zoals bij het kopen van een kaart, het direct pakken van een kaart (zoals bij het Grensdorp), als je trekstapel op de aflegstapel wordt gelegd (zoals bij de Raadsheer uit het basisspel) of als vernietigde kaarten aan het einde van je beurt weer op je aflegstapel worden gelegd (zoals bij Bezeten uit Dominion: de Alchemisten). Ook wordt het deel niet tijdens de opschoonfase geactiveerd als je al je gespeelde en niet-gespeelde kaarten op je aflegstapel legt. Pak het Goud uit de voorraad en leg deze zoals gebruikelijk op je aflegstapel. Is er geen Goud meer in de voorraad, dan pak je niets.",
         "name": "Tunnel"
+    },
+    "Berserker": {
+        "description": "Gain a card costing less than this. Each other player discards down to 3 cards in hand.<line>When you gain this, if you have an Action in play, play this.",
+        "extra": "When you gain a Berserker, if you have an Action card in play, you play the Berserker; this means it will go into play, and you'll gain a cheaper card and then the other players will discard down to 3 cards in hand. They can still use cards like Moat then. If you gain a Berserker with no Actions in play, however, you don't play it. If you gain and play this with Innovation, Berserker loses track of itself, so Berserker telling you to play it will fail. If you gain this on another player's turn (e.g. their Barbarian trashes your Border Village), and you have an Action in play (most likely a Duration card), you can play the Berserker and attack them during their own turn. You'll discard the Berserker from play during their Clean-up. If you played 5 Highways, Berserker will cost 0 Coin, so it'll fail to gain a card.",
+        "name": "Berserker"
+    },
+    "Cauldron": {
+        "description": "2 <*COIN*><br><br>+1 Buy<br><br>The third time you gain an Action this turn, each other player gains a Curse.",
+        "extra": "If you gain three Actions before playing Cauldron that turn, then it won't give out a Curse. It doesn't matter how many non-Action cards you gained; the third time you gain an Action, each other player gains a Curse. This is cumulative if you play multiple Cauldrons. This a Treasure, so you play it in your Buy phase, but also an Attack, so cards like Guard Dog and Moat can be used in response to it.",
+        "name": "Cauldron"
+    },
+    "Guard Dog": {
+        "description": "+2 Cards<br>If you have 5 or fewer cards in hand, +2 Cards.<line>When another player plays an Attack, you may first play this from your hand.",
+        "extra": "When you play this, you draw 2 cards, then count the cards in your hand; if it's 5 or fewer, you draw 2 more cards. When another player plays an Attack card, you may play this before that Attack resolves; then the Attack still happens (unless you stop it another way, such as with a Moat you just drew). So if another player plays Berserker, and you respond with Guard Dog, you'll first draw 2 cards, then discard down to 3 cards in hand. As usual playing it means putting it into play and following its instructions. If you play this during another player's turn, you discard it from play during that turn's Clean-up.",
+        "name": "Guard Dog"
+    },
+    "Nomads": {
+        "description": "+1 Buy<br>+2 Coin<line>When you gain or trash this, +2 Coin.",
+        "extra": "",
+        "name": "Nomads"
+    },
+    "Souk": {
+        "description": "+1 Buy<br>+7 Coin<br>–1 Coin per card in your hand (you can't go below 0 Coin).<line>When you gain this, trash up to 2 cards from your hand.",
+        "extra": "For example, if you play Souk and have 3 other cards left in your hand, you'd get +7 Coin (and +1 Buy), and then lose 3 Coin for a net gain of +4 Coin. You can't go below 0 Coin but might end up with less _ Coin than you started with. When you gain Souk, trash up to 2 cards from your hand; you don't have to trash any.",
+        "name": "Souk"
+    },
+    "Trail": {
+        "description": "+1 Card<br>+1 Action<line>When you gain, trash, or discard this, other than in Clean-up, you may play it.",
+        "extra": "When you play this, you simply get +1 Card and +1 Action. When you gain, trash, or discard this, other than in Clean-up, you may play it. As usual playing it means putting it into play and following its instructions. If you play Trail on another player's turn, the +1 Action won't be useful, and you discard Trail from play in that turn's Clean-up. If you trash Trail, playing it means you get the Trail back; it will go into play, and be discarded into your discard pile in that turn's Clean-up. This still counts as trashing it; if you Remodel a Trail you can play it and then gain a Gold from Remodel, and so on. If you gain or trash a Trail during Clean-up (with e.g. Improve), you can't use its Reaction.",
+        "name": "Trail"
+    },
+    "Weaver": {
+        "description": "Gain two Silvers or a card costing up to 4 Coin.<line>When you discard this other than in Clean-up, you may play it.",
+        "extra": "You either gain 2 Silvers, or a card costing up to 4 Coin (which might be a Silver). You can play this when you discard it. As usual playing it means putting it into play and following its instructions. If you play it on another player's turn, it's discarded in that turn's Clean-up. This doesn't say \"choose one,\" so if you play this with Elder, you can't choose to gain 2 Silvers and a 4 Coin. If a Vassal discards Weaver, you can react with Weaver to play it. Doing this causes Vassal to lose track, so you will only play Weaver once. If you need to discard down to a certain number of cards (due to Militia), you discard all the cards at once. So if you discard multiple Weavers, you resolve their reactions one at a time. When discarding multiple Weavers, if playing one of them triggers a reshuffle (e.g. it gains a Cavalry, then you can't play any of the other Weavers.",
+        "name": "Weaver"
+    },
+    "Wheelwright": {
+        "description": "+1 Card<br>+1 Action<br><br>You may discard a card to gain an Action card costing as much as it or less.",
+        "extra": "You may discard any type of card, but can only gain an Action card. If you discard an Action card, you can gain a copy of it. If you do discard, you have to gain an Action card if there is one to gain.",
+        "name": "Wheelwright"
+    },
+    "Witch's Hut": {
+        "description": "+4 Cards<br><br>Discard 2 cards, revealed. If they're both Actions, each other player gains a Curse.",
+        "extra": "You reveal the discarded cards even if they aren't both Actions. If they're both Actions - even if they also have other types - each other player gains a Curse.",
+        "name": "Witch's Hut"
     },
     "Coppersmith": {
         "description": "Elke Koperkaart is deze beurt 1 Coin meer waard.",
