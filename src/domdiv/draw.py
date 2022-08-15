@@ -1393,13 +1393,11 @@ class DividerDrawer(object):
         # same thing.
 
         # adjust for alternate label sizes
-        bannerScale = tabHeight / self.LABEL_HEIGHT
-        tabScale = min(bannerScale, 1)
-
-        # metrics measured from the cards
-        trueBannerSize = 18
-        bannerSize = trueBannerSize * tabScale
-        bannerHeight = minBannerHeight = 1 * tabScale  # room for coin shadows
+        # LABEL_HEIGHT = 0.9cm design size
+        # tabHeight = actual height of tab area
+        artSize = min(tabHeight, self.LABEL_HEIGHT)  # size of the art area
+        artHeight = bannerHeight = (tabHeight - artSize) / 2
+        tabScale = artSize / self.LABEL_HEIGHT
 
         # whitespace
         margin = padding = 2
@@ -1407,43 +1405,35 @@ class DividerDrawer(object):
         # metrics from the package assets
         cardType = card.getType()
         if artwork:
+            # TODO: fix images for Ways and non-base Treasures
             # adjust dimensions based on the application image metrics
-            # (ideally they will match the card metrics when space permits)
-            # TODO: correctly handle base cards and landscape card-shaped things
-            artSize = 17 * bannerScale
-            artHeight = 0
-            bannerSize = 17 * tabScale
-            bannerHeight = cardType.getTabTextHeightOffset() * tabScale
-            bannerHeight += (artSize - bannerSize) / 2  # use extra room
-            if bannerHeight < minBannerHeight:
-                # make room for coin shadows
-                artHeight = minBannerHeight - bannerHeight
-                bannerHeight = minBannerHeight
+            bannerHeight += cardType.getTabTextHeightOffset() * tabScale
             # adjust for space around banners and scalloped edges
             margin = tabWidth / 18 if card.isExpansion() else tabWidth / 48
 
         # cost symbol metrics
-        coinScale = bannerSize / trueBannerSize
-        coinHeight = bannerHeight - 1 * coinScale
-        costHeight = coinHeight + 4 * coinScale
-        costTop = costHeight + coinScale * 18 * 0.624  # Minion Std Black numeral height
+        coinHeight = bannerHeight - 1 * tabScale
+        costHeight = coinHeight + 4 * tabScale
+        costTop = costHeight + tabScale * 18 * 0.624  # Minion Std Black numeral height
+
+        # loosely align the tops of the banner text & symbols
+        nameTop = costTop - 0.5
+        setTop = costTop
 
         # card name metrics
         font = pdfmetrics.getFont(self.fontStyle["Name"])
         fontSize = 10 * tabScale  # same as the type banner on the cards
         minFontSize = 7 * tabScale
         nameAscent = fontSize * 0.750  # Trajan caps height
-        nameTop = costTop
-        textHeight = nameTop - nameAscent
+        textHeight = nameTop - nameAscent  # text baseline goes here
 
-        # if this is the spine, adjust vertical alignment to center the text
+        # when setting the spine, adjust vertical alignment to center the text
         if panel == self.SPINE:
             centerHeight = (tabHeight - nameAscent) / 2
             if textHeight < centerHeight:
                 self.canvas.translate(0, centerHeight - textHeight)
 
         # set symbol metrics
-        setTop = costTop
         setImageHeight = setTop - self.SET_ICON_SIZE
         setTextSize = nameAscent / 0.701  # Minion Pro Italic ascender height
         setTextHeight = textHeight
@@ -1470,7 +1460,7 @@ class DividerDrawer(object):
                 1,
                 artHeight,
                 tabWidth - 2,
-                tabHeight - artHeight,
+                artSize,
                 preserveAspectRatio=False,
                 anchor="n",
                 mask="auto",
@@ -1487,7 +1477,7 @@ class DividerDrawer(object):
             and card.get_GroupCost() != ""
             and not card.isType("Trash")
         ):
-            textInset += self.drawCost(card, textInset, costHeight, scale=coinScale)
+            textInset += self.drawCost(card, textInset, costHeight, scale=tabScale)
             textInset += padding
 
         # draw set image
@@ -1549,14 +1539,18 @@ class DividerDrawer(object):
         else:
             name_lines = (name,)
 
-        nameAscent = font.face.ascent / 1000 * fontSize  # recalc with actual font size
+        # Recalculate text position based on adjusted font size
+        lineAscent = font.face.ascent / 1000 * fontSize
+        lines = len(name_lines)
+        blockAscent = lines * (lineAscent + 1) - 1
+        textHeight += (nameAscent - blockAscent) / 2
+
+        # Render text
         for linenum, line in enumerate(name_lines):
             h = textHeight
-            if tooLong and len(name_lines) > 1:
-                if linenum == 0:
-                    h += nameAscent / 2 + 1
-                else:
-                    h -= nameAscent / 2
+            # adjust multi-line text to fit vertically
+            if linenum < lines - 1:
+                h += (lines - linenum - 1) * (lineAscent + 1)
             # handle line-break delimiters gracefully for centre & right alignment:
             lineWidth = centreWidth = rightWidth = self.nameWidth(line, fontSize, style)
             delimiterIndent = 0
@@ -1634,7 +1628,7 @@ class DividerDrawer(object):
         fontSize = 8  # use the smallest font
         text = card.types_name if self.options.spine == "types" else card.name
 
-        # Skip cards no text, no spine, or no room
+        # Skip cards with no text, no spine, or no room
         if not text or not self.options.headWrapper or item.stackHeight < fontSize:
             return
 
@@ -1685,7 +1679,7 @@ class DividerDrawer(object):
         totalHeight = item.cardHeight
         usedHeight = 0
 
-        # Figure out if any translation needs to be done
+        # Determine panel boundaries and location
         translate_y = self.options.tailHeight
         if self.options.tailWrapper and panel != self.TAIL:
             translate_y += item.stackHeight
