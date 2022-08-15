@@ -376,7 +376,7 @@
         ],
         "card_type_image": "ruins.png",
         "defaultCardCount": 10,
-        "tabCostHeightOffset": 1,
+        "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
     {
@@ -560,7 +560,7 @@
         ],
         "card_type_image": "curse.png",
         "defaultCardCount": 30,
-        "tabCostHeightOffset": -1,
+        "tabCostHeightOffset": 0,
         "tabTextHeightOffset": 3
     },
     {
@@ -590,8 +590,8 @@
         ],
         "card_type_image": "expansion.png",
         "defaultCardCount": 0,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 4
+        "tabCostHeightOffset": 0,
+        "tabTextHeightOffset": 3
     },
     {
         "card_type": [
@@ -861,8 +861,8 @@
         ],
         "card_type_image": "treasure.png",
         "defaultCardCount": 10,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 0
+        "tabCostHeightOffset": 0,
+        "tabTextHeightOffset": 3
     },
     {
         "card_type": [
@@ -871,8 +871,8 @@
         ],
         "card_type_image": "treasure.png",
         "defaultCardCount": 16,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 0
+        "tabCostHeightOffset": 0,
+        "tabTextHeightOffset": 3
     },
     {
         "card_type": [
@@ -891,7 +891,7 @@
         ],
         "card_type_image": "treasure-reaction.png",
         "defaultCardCount": 10,
-        "tabCostHeightOffset": 0,
+        "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
     {
@@ -961,7 +961,7 @@
         ],
         "card_type_image": "victory-reaction.png",
         "defaultCardCount": 12,
-        "tabCostHeightOffset": 0,
+        "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
     {
@@ -982,8 +982,8 @@
         "group_cost": "",
         "group_global_type": "Ways",
         "defaultCardCount": 1,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 0
+        "tabCostHeightOffset": 0,
+        "tabTextHeightOffset": 3
     },
     {
         "card_type": [
@@ -992,7 +992,7 @@
         "card_type_image": "way.png",
         "group_cost": "",
         "defaultCardCount": 0,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 0
+        "tabCostHeightOffset": 0,
+        "tabTextHeightOffset": 3
     }
 ]
