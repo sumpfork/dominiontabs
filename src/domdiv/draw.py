@@ -1489,12 +1489,12 @@ class DividerDrawer(object):
             margin = tabWidth / 18
 
         # cost symbol metrics
-        coinHeight = bannerHeight - 1 * tabScale
+        coinHeight = bannerHeight
         costHeight = coinHeight + 4 * tabScale
         costTop = costHeight + tabScale * 18 * 0.624  # Minion Std Black numeral height
 
         # loosely align the tops of the banner text & symbols
-        nameTop = costTop - 0.5
+        nameTop = costTop - 1
         setTop = costTop
 
         # card name metrics
@@ -1665,6 +1665,10 @@ class DividerDrawer(object):
                 w = rmax
             else:  # centre, but keep it inside the margins
                 w = max(lmin, min(tabWidth / 2 - centreWidth / 2, rmax))
+            # use white text for Night cards
+            # TODO: instead of guessing, this should be in types_db.json
+            if "night" in img:
+                self.canvas.setFillColorRGB(1, 1, 1)
             self.drawSmallCaps(line, fontSize, w, h, style=style)
 
         self.canvas.restoreState()
