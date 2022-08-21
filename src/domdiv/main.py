@@ -34,7 +34,7 @@ LINE_CHOICES = ["line", "dot", "cropmarks", "line-cropmarks", "dot-cropmarks"]
 HEAD_CHOICES = ["tab", "strap", "cover", "none"]
 TAIL_CHOICES = ["tab", "strap", "cover", "folder", "none"]
 FACE_CHOICES = ["front", "back"]
-SPINE_CHOICES = ["name", "types", "tab"]
+SPINE_CHOICES = ["name", "types", "tab", "blank"]
 
 EDITION_CHOICES = ["1", "2", "latest", "upgrade", "removed", "all"]
 
@@ -708,7 +708,8 @@ def parse_opts(cmdline_args=None):
         help="Text to print on the spine of top covers: "
         "'name' prints the card name; "
         "'type' prints the card type; "
-        "'tab' prints tab text and graphics. "
+        "'tab' prints tab text and graphics; "
+        "'blank' leaves the spine blank. "
         "This is only valid with folding --head options.",
     )
     group_wrapper.add_argument(

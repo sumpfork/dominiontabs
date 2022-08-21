@@ -1620,8 +1620,8 @@ class DividerDrawer(object):
         # Draw on the spine (top edge) of wrappers
         card = item.card
 
-        # Skip blank cards
-        if card.isBlank():
+        # Skip blank cards and blank spines
+        if card.isBlank() or self.options.spine == "blank":
             return
         # Use the drawTab method for tab-style spines
         if self.options.spine == "tab":
