@@ -788,37 +788,68 @@ class DividerDrawer(object):
         notchLeft = round(max(notch[0], 0.0), 2)
         notchRight = round(max(-notch[0], 0.0), 2)
 
+        # given a list of y heights, draw left and right cropmarks for each
+        # (the plotter will filter out any that don't fit the layout)
         def drawSideCropmarks(*args, zero=True):
             for y in args:
                 if y or zero:
                     plotter.cropmark(plotter.LEFT, 0, y)
                     plotter.cropmark(plotter.RIGHT, size[0], y)
 
+        # given a list of x locations, draw vertical cropmarks for each
+        # (always on top, because the tail gets turned 180 degrees)
         def drawEndCropmarks(*args, zero=True):
             for x in args:
                 if x or zero:
                     plotter.cropmark(plotter.TOP, x + size[0] if x < 0 else x, ymax)
 
+        # ====================================================================
+        # BODY panel only
+
+        # draw one side of the body panel, from bottom to top.
+        # this is called once each for left and right.
+        # the sign of the argument indicates which direction to indent the notch
+        # (positive for the left side, negative for the right side).
+        # if there's no notch, it's just a straight line.
         def drawBodySide(notchSide):
-            if not notchSide:
-                plotter.plot(0, ymax, midline)
+            if not notchSide:  # straight line, no notch
+                plotter.plot(0, ymax, midline)  # A
                 return
-            plotter.plot(notchSide, 0, NO_LINE)
-            plotter.plot(0, notch[1], line)
-            plotter.plot(-notchSide, 0, line)
-            plotter.plot(0, ymax - 2 * notch[1], line)
-            plotter.plot(notchSide, 0, line)
-            plotter.plot(0, notch[1], midline)
+            plotter.plot(notchSide, 0, NO_LINE)  # (N)
+            plotter.plot(0, notch[1], line)  # B
+            plotter.plot(-notchSide, 0, line)  # C
+            plotter.plot(0, ymax - 2 * notch[1], line)  # D
+            plotter.plot(notchSide, 0, line)  # E
+            plotter.plot(0, notch[1], midline)  # F
+
+        #            |                    |
+        #  notch     | F                  |
+        #         E  |                    |
+        #  --- +-----+                    | --- Y2
+        #      |                          |
+        #      |                          |
+        #    D |              BODY        | A
+        #      |                          |
+        #      |                          |
+        #  --- +-----+                    | --- Y1
+        #         C  |                    |
+        #  notch     | B                  |
+        #            |                    |
+        #     (L)   (N)                  (R)    origin
+        # diagram for notchLeft > 0 and notchRight == 0
 
         # draw body panel and return
         if panel == self.BODY:
             if notch[0]:  # draw crop marks for notches
-                drawSideCropmarks(notch[1], ymax - notch[1])
-            drawBodySide(notchLeft)  # left side
+                drawSideCropmarks(notch[1], ymax - notch[1])  # Y1, Y2
+            drawBodySide(notchLeft)  # left side, origin at (L)
             plotter.setXY(size[0], 0)
-            drawBodySide(-notchRight)  # right side
+            drawBodySide(-notchRight)  # right side, origin at (R)
             self.canvas.restoreState()
             return
+
+        # ====================================================================
+        # HEAD or TAIL panel only
 
         # certain sizes smaller than this round to zero to avoid rounding errors
         epsilon = 0.1 * cm
@@ -850,37 +881,81 @@ class DividerDrawer(object):
             else:
                 drawSideCropmarks(tnotch)
 
+        # draw one side of the end panel (head or tail), from bottom to top.
+        # this is called once each for left and right.  the tail panel is
+        # reversed vertically so that it can share code with the head panel.
+        #
+        # parameters:
+        #   notchSide  x indent of notch (negative on right side)
+        #   tabSide    x indent of tab (negative on right side)
+        # bound variables (defined above):
+        #   ymax       y height of panel, including tab
+        #   shoulder   y height of panel, excluding tab
+        #   tnotch     y height of notch at tab end
+        #   fnotch     y height of notch at folding end
+        #   line       line style
+        # notes:
+        # shoulder == ymax if there are no distinct tabs
+        # shoulder == 0 for "tab" and "strap" styles
+        # fnotch == 0 and tnotch == shoulder if there's no notch
+        # top edge of panel & fold line are drawn elsewhere
         def drawPanelSide(notchSide, tabSide):
-            if not (notchSide or tabSide):  # straight edge
-                plotter.plot(0, ymax, line)
+            if not (notchSide or tabSide):  # straight line, no indentations
+                plotter.plot(0, ymax, line)  # A
                 return
-            plotter.plot(notchSide, 0, NO_LINE)
+            plotter.plot(notchSide, 0, NO_LINE)  # (N)
             if notchSide and fnotch < shoulder:
                 # finish fold-side notch
-                plotter.plot(0, fnotch, line)
-                plotter.plot(-notchSide, 0, line)
-                plotter.plot(0, tnotch - fnotch, line)
+                plotter.plot(0, fnotch, line)  # B
+                plotter.plot(-notchSide, 0, line)  # C
+                plotter.plot(0, tnotch - fnotch, line)  # D
                 if tnotch < shoulder:
                     # draw tab-side notch
-                    plotter.plot(notchSide, 0, line)
-                    plotter.plot(0, shoulder - tnotch, line)
+                    plotter.plot(notchSide, 0, line)  # E
+                    plotter.plot(0, shoulder - tnotch, line)  # F
                 else:
-                    plotter.plot(notchSide, 0, midline)
-            else:
+                    plotter.plot(notchSide, 0, midline)  # E (no F)
+            else:  # B + D + F all as a straight line
                 plotter.plot(0, shoulder, line)  # needed for dot, even if zero
             if hasTab:
-                plotter.plot(tabSide - notchSide, 0, line)
-                plotter.plot(0, ymax - shoulder, line)
+                plotter.plot(tabSide - notchSide, 0, line)  # G
+                plotter.plot(0, ymax - shoulder, line)  # H
+
+        #      :     :         :                   :
+        #      :     :         :                   :
+        #  ---                 +-------------------+ --- ymax
+        #                      |         Y         |
+        #  tab                 | H                 |
+        #                 G    |                   |
+        #  ---       +---------+                   | --- shoulder
+        #            |                             |
+        #  notch     | F                           |
+        #         E  |                             |
+        #  --- +-----+                             | --- tnotch
+        #      |                                   |
+        #      |                                   |
+        #    D |               HEAD/TAIL           | A
+        #      |                                   |
+        #      |                                   |
+        #  --- +-----+                             | --- fnotch
+        #         C  |                             |
+        # notch      | B                           |
+        #            |                             |
+        #            | - - - - - - - - - - - - - - |     fold
+        # spine      |             Z               |
+        #            | - - - - - - - - - - - - - - |     fold
+        #     (L)   (N)                           (R)    origin
+        # diagram for notch/tabLeft > 0 and notch/tabRight == 0
 
         # left edge
         plotter.setXY(0, 0)
-        drawPanelSide(notchLeft, tabLeft)
+        drawPanelSide(notchLeft, tabLeft)  # (L)
         # top edge
         endWidth = tab[0] if hasTab else size[0] - notchLeft - notchRight
-        plotter.plot(endWidth, 0, midline)
+        plotter.plot(endWidth, 0, midline)  # Y
         # right edge
         plotter.setXY(size[0], 0)
-        drawPanelSide(-notchRight, -tabRight)
+        drawPanelSide(-notchRight, -tabRight)  # (R)
 
         # folds
         if fold:
@@ -893,7 +968,7 @@ class DividerDrawer(object):
                 foldx = tabLeft
                 foldw = tab[0]
             for foldy in (0, fold):
-                self.canvas.line(foldx, foldy, foldx + foldw, foldy)
+                self.canvas.line(foldx, foldy, foldx + foldw, foldy)  # Z
             self.canvas.restoreState()
 
         self.canvas.restoreState()
