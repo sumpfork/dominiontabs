@@ -1952,7 +1952,7 @@
     },
     "Dismantle": {
         "description": "Entsorge eine Handkarte. Wenn sie 1 Coin oder mehr kostet, nimm eine billigere Karte und ein Gold.",
-        "extra": "Abwerfen ist nicht optional. Wenn du eine Karte abwirfst, die 0 Coin kostet, oder wenn du keine Karten mehr auf der Hand hast, die du abwerfen kannst, passiert nichts weiter. Wenn du eine Karte abwirfst, die 1 Coin oder mehr kostet, erhältst du eine billigere Karte und ein Gold. Beide kommen aus dem Vorrat und werden auf deinen Ablagestapel gelegt. Die billigere Karte kommt zuerst auf deinen Ablagestapel. Wenn du zum Beispiel ein Silber (für 3 Coin) abwirfst, kannst du ein Anwesen (für 2 Coin) gewinnen. Es wird fast immer eine billigere Karte im Vorrat sein, da Kupfer und Fluch 0 Coin kosten, aber wenn es keine gibt, erhältst du trotzdem ein Gold. Wenn im Vorrat kein Gold mehr vorhanden ist, erhält man trotzdem die günstigere Karte. Karten, die nur Trank (wie Verwandlung aus Alchemie) oder nur Schulden (wie Ingenieurin aus Empires) kosten, kosten nicht 1 Coin oder mehr.",
+        "extra": "Entsorgen ist nicht optional. Wenn du eine Karte entsorgst, die 0 Coin kostet, oder wenn du keine Karten mehr auf der Hand hast, die du entsorgen kannst, passiert nichts weiter. Wenn du eine Karte entsorgst, die 1 Coin oder mehr kostet, erhältst du eine billigere Karte und ein Gold. Beide kommen aus dem Vorrat und werden auf deinen Ablagestapel gelegt. Die billigere Karte kommt zuerst auf deinen Ablagestapel. Wenn du zum Beispiel ein Silber (für 3 Coin) entsorgst, kannst du ein Anwesen (für 2 Coin) gewinnen. Es wird fast immer eine billigere Karte im Vorrat sein, da Kupfer und Fluch 0 Coin kosten, aber wenn es keine gibt, erhältst du trotzdem ein Gold. Wenn im Vorrat kein Gold mehr vorhanden ist, erhält man trotzdem die günstigere Karte. Karten, die nur Trank (wie Verwandlung aus Alchemie) oder nur Schulden (wie Ingenieurin aus Empires) kosten, kosten nicht 1 Coin oder mehr.",
         "name": "Abbruch"
     },
     "Envoy": {
@@ -1962,7 +1962,7 @@
     },
     "Governor": {
         "description": "+1 Aktion<br>Wähle eins (deine Mitspieler erhalten, was in Klammern angegeben ist): +3 Karten (+1 Karte)\noder\nNimm dir ein Gold (Silber)\noder\nJeder Spieler darf eine Karte aus seiner Hand entsorgen und nimmt sich dafür eine Karte, die genau 2 Coins (1 Coin) mehr kostet.",
-        "extra": "Du erhältst immer +1 Aktion. Dann ziehst du entweder 1) drei Karten und jeder andere Spieler zieht eine Karte; 2) erhältst eine Goldkarte und jeder andere Spieler erhält eine Silberkarte; 3) darfst du eine Karte aus deiner Hand abwerfen und eine Karte erhalten, die genau 2 Coin mehr kostet, und jeder andere Spieler darf eine Karte aus seiner Hand abwerfen und eine Karte erhalten, die genau 1 Coin mehr kostet. Du beginnst mit dir selbst und gehst in dieser Reihenfolge vor; das kann wichtig sein, wenn die Stapel niedrig sind. Die gewonnenen Karten kommen aus dem Vorrat und werden auf die Ablagestapel gelegt; sind keine mehr vorhanden, werden diese Karten nicht gewonnen. Wenn du zum Beispiel die zweite Option wählst und nur ein Silber im Vorrat ist, bekommt der Spieler zu deiner Linken es, und niemand sonst bekommt es. Bei der dritten Option erhältst du nur dann eine Karte, wenn du eine Karte abgeworfen hast, und auch nur dann, wenn im Vorrat eine Karte mit genau den erforderlichen Kosten vorhanden ist. Wenn du eine Karte abwirfst, musst du eine Karte gewinnen, wenn du kannst. Du kannst einen Gouverneur, den du auf dich selbst gespielt hast, nicht abwerfen, da er sich nicht mehr auf deiner Hand befindet, wenn du ihn ausspielst (du kannst jedoch eine andere Kopie des Gouverneurs aus deiner Hand abwerfen).",
+        "extra": "Du erhältst immer +1 Aktion. Dann ziehst du entweder 1) drei Karten und jeder andere Spieler zieht eine Karte; 2) erhältst eine Goldkarte und jeder andere Spieler erhält eine Silberkarte; 3) darfst du eine Karte aus deiner Hand entsorgen und eine Karte erhalten, die genau 2 Coin mehr kostet, und jeder andere Spieler darf eine Karte aus seiner Hand entsorgen und eine Karte erhalten, die genau 1 Coin mehr kostet. Du beginnst mit dir selbst und gehst in dieser Reihenfolge vor; das kann wichtig sein, wenn die Stapel niedrig sind. Die gewonnenen Karten kommen aus dem Vorrat und werden auf die Ablagestapel gelegt; sind keine mehr vorhanden, werden diese Karten nicht gewonnen. Wenn du zum Beispiel die zweite Option wählst und nur ein Silber im Vorrat ist, bekommt der Spieler zu deiner Linken es, und niemand sonst bekommt es. Bei der dritten Option erhältst du nur dann eine Karte, wenn du eine Karte abgeworfen hast, und auch nur dann, wenn im Vorrat eine Karte mit genau den erforderlichen Kosten vorhanden ist. Wenn du eine Karte entsorgst, musst du eine Karte gewinnen, wenn du kannst. Du kannst einen Gouverneur, den du auf dich selbst gespielt hast, nicht entsorgen, da er sich nicht mehr auf deiner Hand befindet, wenn du ihn ausspielst (du kannst jedoch eine andere Kopie des Gouverneurs aus deiner Hand entsorgen).",
         "name": "Gouverneur"
     },
     "Prince": {
@@ -2104,6 +2104,51 @@
         "description": "1 <*COIN*><n>Wenn du diese Karte ausspielst, decke solange Karten von deinem Nachziehstapel auf, bis eine Geldkarte offen liegt. Lege diese Geldkarte aus. Lege die übrigen aufgedeckten Karten ab.",
         "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 1 Coin. Sobald du diese Karte ausspielst (normalerweise in der Kaufphase), deckst du solange Karten vom Nachziehstapel auf, bis du die erste Geldkarte (auch kombinierte) aufdeckst. Ist der Nachziehstapel aufgebraucht, ohne eine Geldkarte zu finden, mischst du deinen Ablagestapel. Findest du auch dort keine Geldkarte, legst du alle aufgedeckten Karten ab. Spiele die erste aufgedeckte Geldkarte sofort aus und führe ggf. zusätzliche Anweisungen auf dieser Karte aus. Lege alle anderen aufgedeckten Karten ab.",
         "name": "Abenteuer"
+    },
+	"Anvil": {
+        "description": "1 <*COIN*><n><n>Du darfst eine Geldkarte ablegen, um eine Karte zunehmen, die bis zu 4 Coin kostet.",
+        "extra": "Das Ablegen einer Geldkarte ist optional. Wenn du eine Geldkarte ablegst, nimmst du eine Karte mit einem Wert von bis zu 4 Coin aus dem Vorrat und legst diese auf deinen Ablagestapel.",
+        "name": "Amboss"
+    },
+    "Clerk": {
+        "description": "+2 Coin<n>Jeder Mitspieler mit 5 oder mehr Handkarten legt eine Handkarte auf seinen Nachziehstapel.<line>Zu Beginn deines Zuges darfst du diese Karte aus deiner Hand spielen.",
+        "extra": "Wenn ein Spieler keine Karten in seinem Nachziehstapel hat, wird die Karte, die er auf den Nachziehstapel legt, die einzige Karte in seinem Nachziehstapel. Zu Beginn deines Zuges darfst du eine beliebige Anzahl von Buchhalterin-Karten aus deiner Hand ausspielen, eine nach der anderen, ohne deine reguläre Aktion zu verbrauchen. Du kannst die Fähigkeit der Buchhalterin, sich zu Beginn des Zuges selbst auszuspielen, vor, zwischen oder nach anderen Effekten zu Beginn des Zuges nutzen. Wenn du zum Beispiel durch den Effekt von Sündenpfuhl eine Buchhalterin ziehst, ist es noch nicht zu spät, um die Reaktionsfähigkeit der Buchhalterin zu nutzen.",
+        "name": "Buchhalterin"
+    },
+    "Investment": {
+        "description": "Entsorge eine deiner Handkarten.<n>Wähle eins: +1 Coin oder entsorge diese Karte, um deine Handkarten aufzudecken für +1<VP> pro Geldkarte unterschiedlichen Namens darunter.",
+        "extra": "Du musst eine Karte entsorgen. Es ist okay, wenn 'Geldanlage' deine letzte Karte auf der Hand war, du entsorgst dann einfach keine Karte. Dann wählst du entweder +1 Coin aus oder du entsorgst die Geldanlage. Wenn du sie entsorgst, deckst du deine Hand auf und erhältst +1<VP> für jede Geldkarte unterschiedlichen Namens; wenn du zum Beispiel zwei Kupfer und ein Silber aufdeckst, erhältst du +2<VP>. Du kannst die aufgedeckten Geldkarten immer noch spielen, nachdem du Geldanlage abgehandelt hast. Wenn du dieselbe Geldanlage zweimal spielst (z.B. mit einer Krone) und sie beim ersten Mal für <VP> entsorgst, kannst du sie beim zweiten Mal nicht mehr für <VP> entsorgen.",
+        "name": "Geldanlage"
+    },
+    "Tiara": {
+        "description": "+1 Kauf<n><n>Wenn du in diesem Zug eine Karte nimmst, darfst du sie auf deinen Nachziehstapel legen. <br><br> Du darfst eine Geldkarte aus deiner Hand zweimal spielen.",
+        "extra": "Wenn du später in der Runde mehrere Karten erhältst, nachdem du Brautkrone gespielt hast, darfst du eine oder alle davon auf deinen Nachziehstapel legen. Dies gilt sowohl für Karten, die du durch einen Kauf erhalten hast, als auch für Karten, die du auf andere Weise erhalten hast, z. B. durch eine Waffenkiste. Wenn du eine Brautkrone mit einer Brautkrone ausspielst, kannst du zwei Geldkarten aus deiner Hand jeweils zweimal ausspielen - du spielst eine Geldkarte nicht viermal aus.",
+        "name": "Brautkrone"
+    },
+    "Charlatan": {
+        "description": "+3 Coin<n><n>Jeder Mitspieler nimmt einen Fluch.<line>In Spielen mit dieser Karte ist ein Fluch auch eine Geldkarte mit dem Wert 1 Coin.",
+        "extra": "Dadurch werden Flüche für das gesamte Spiel und in allen Situationen zusätzlich zu Geldkarten; es ist genau so, als würde in der unteren Leiste 'Fluch – Geldkarte' stehen. Sie können in der Kaufphase für +1 Coin gespielt werden. Sie werden aus dem Spiel geworfen, wenn man Münzer erhält, Magnatin zählt sie auf der Hand, Höflinge (aus Intrige) gibt dir zwei Möglichkeiten, wenn du einen aufdeckst, und so weiter. Sie sind immer noch Flüche und am Ende des Spiels immer noch -1<VP> wert. Anders als bei Kapitalismus bleiben bei Scharlatan die Flüche während der Wertung als Schätze erhalten, sie zählen also für den Erhalt. Flüche werden zu Schätzen, wenn Wunderheilerin im Schwarzmarkt-Deck ist, auch wenn sie tatsächlich niemand nimmt.",
+        "name": "Wunderheilerin"
+    },
+    "Collection": {
+        "description": "2 <*COIN*><n><n>+1 Kauf<n><n>Wenn du in diesem Zug eine Aktionskarte nimmst: +1<VP>.",
+        "extra": "Du bekommst +1<VP> für jede Aktionskarte, die du nimmst, egal ob du sie gekauft oder auf andere Weise genommen hast.<n>Mehrere Exemplare davon sind kumulativ; wenn du zwei Sammelsurium-Karten im Spiel hast und ein Dorf kaufst, bekommst du +2<VP>. Du bekommst nur <VP> für Aktionen, die du nimmst, nachdem du das Sammelsurium gespielt hast; sie gibt dir nicht rückwirkend Punkte für Karten, die du früher in der Runde genommen hast. Wenn die Sammlung das Spiel verlässt (z.B. weil du sie mit Falschgeld entsorgt hast), erhältst du für den Rest des Zuges immer noch <VP> von ihr.",
+        "name": "Sammelsurium"
+    },
+    "Crystal Ball": {
+        "description": "1 <*COIN*><n><n>Sieh dir die oberste Karte deines Nachziehstapels an. Du darfst jene entsorgen, ablegen oder, falls es eine Aktions- oder Geldkarte ist, spielen.",
+        "extra": "Wenn du dich für keine der Möglichkeiten entscheidest, bleibt die Karte auf deinem Nachziehstapel. Wenn diese Karte in deiner Kaufphase eine Aktionskarte ausspielt, die dir +Aktionen gibt, kannst du in deiner Kaufphase keine weiteren Aktionskarten spielen; wenn sie Schatzkarten zieht, kannst du sie immer noch spielen.",
+        "name": "Kristallkugel"
+    },
+    "Magnate": {
+        "description": "Decke deine Handkarten auf.<n>+1 Karte pro Geldkarte darunter.",
+        "extra": "Wenn du zum Beispiel zwei Kupfer und ein Silber auf der Hand hättest, würdest du 3 Karten ziehen.",
+        "name": "Magnatin"
+    },
+    "War Chest": {
+        "description": "Dein linker Mitspieler nennt eine Karte. Nimm eine Karte, die bis zu 5 Coin kostet und noch nicht für eine Waffenkiste genannt wurde.",
+        "extra": "Die erste Waffenkiste, die du in einer Runde ausspielst, kann die Karte, die genannt wird, nicht nehmen; die zweite kann weder die Karte, die nun genannt wird, noch die zuvor genannte Karte nehmen, und so weiter. Die genommene Karte kommt aus dem Vorrat und wird auf deinen Ablagestapel gelegt. Du kannst die genannten Karten immer noch auf andere Weise nehmen, nur nicht über Waffenkisten. Sie müssen keine Karte aus dem Vorrat benennen, aber die Waffenkiste nimmt eine Karte aus dem Vorrat und legt sie auf deinen Ablagestapel.",
+        "name": "Waffenkiste"
     },
     "Watchtower": {
         "description": "Ziehe solange Karten nach, bis du 6 Karten auf der Hand hast. <line> Wenn du eine Karte nimmst oder kaufst, darfst du den Wachturm aus deiner Hand aufdecken. Wenn du das machst: Entsorge die neue Karte oder lege sie sofort auf deinen Nachziehstapel.",
