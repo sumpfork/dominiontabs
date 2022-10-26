@@ -3,6 +3,7 @@ import os
 import distutils.core
 
 from domdiv.tools import update_language
+from domdiv.tools import bgg_release
 
 DOIT_CONFIG = {"default_tasks": ["build"]}
 
@@ -57,6 +58,10 @@ def task_build():
             lambda: True if distutils.core.run_setup("setup.py", "sdist") else False
         ],
     }
+
+
+def task_make_bgg_release():
+    return {"actions": [lambda: bgg_release.make_bgg_release()]}
 
 
 def task_test():
