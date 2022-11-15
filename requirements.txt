@@ -24,7 +24,7 @@ nodeenv==1.7.0
     # via pre-commit
 packaging==21.3
     # via pytest
-pillow==9.2.0
+pillow==9.3.0
     # via
     #   -r requirements.in
     #   reportlab
@@ -53,5 +53,3 @@ virtualenv==20.16.3
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
-
-doit # manually added because automatic addition creates platform-dependent dependencies
