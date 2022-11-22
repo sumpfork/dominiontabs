@@ -24,6 +24,3 @@ enable = true
 [build-system]
 requires = ["poetry-core>=1.0.2", "poetry-dynamic-versioning"]
 build-backend = "poetry_dynamic_versioning.backend"
-
-[tool.black]
-line-length = 120
