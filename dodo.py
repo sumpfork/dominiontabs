@@ -29,7 +29,8 @@ def task_compile_requirements():
 def task_update_languages():
     files = glob.glob("card_db_src/**/*.json") + glob.glob("card_db_src/*.json")
     return {
-        "file_dep": files + ["src/domdiv/tools/update_language.py"],
+        "file_dep": files
+        + ["src/domdiv/tools/update_language.py", "src/domdiv/tools/common.py"],
         "actions": [lambda: update_language.main("card_db_src", "src/domdiv/card_db")],
         "targets": [
             os.path.join(
