@@ -11,8 +11,8 @@
 # All output is in the designated output directory.  Original files are not overwritten.
 ###########################################################################
 
+import gzip
 import os
-import os.path
 from shutil import copyfile
 import argparse
 import collections
@@ -276,12 +276,14 @@ def main(card_db_dir, output_dir):
         if lang == LANGUAGE_XX:
             fromLanguage = LANGUAGE_DEFAULT
 
-        copyfile(
-            os.path.join(
-                card_db_dir, fromLanguage, "bonuses_" + fromLanguage + ".json"
-            ),
-            os.path.join(output_dir, lang, "bonuses_" + lang + ".json"),
-        )
+        with gzip.open(
+            os.path.join(output_dir, lang, f"bonuses_{lang}.json.gz"),
+            "wt",
+            encoding="utf-8",
+        ) as fout, open(
+            os.path.join(card_db_dir, fromLanguage, "bonuses_" + fromLanguage + ".json")
+        ) as fin:
+            fout.writelines(fin)
 
     ###########################################################################
     # translation.txt

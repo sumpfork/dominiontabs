@@ -1,5 +1,5 @@
 import codecs
-import io
+import gzip
 import json
 import os
 
@@ -61,8 +61,10 @@ def load_language_cards(lang, card_db_dir):
 
 def write_data(data, fname):
     #  Process the file
-    print(f"writing {fname}")
-    with io.open(os.path.join(fname), "w", encoding="utf-8") as lang_out:
+    gzipped_name = f"{fname}.gz"
+    print(f"writing {gzipped_name}")
+
+    with gzip.open(os.path.join(gzipped_name), "wt", encoding="utf-8") as lang_out:
         json.dump(data, lang_out, indent=4, ensure_ascii=False)
         lang_out.write("\n")
 
