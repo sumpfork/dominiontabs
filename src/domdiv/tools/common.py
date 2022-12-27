@@ -59,12 +59,14 @@ def load_language_cards(lang, card_db_dir):
     return lang_data
 
 
-def write_data(data, fname):
+def write_data(data, fname, do_gzip=True):
     #  Process the file
-    gzipped_name = f"{fname}.gz"
-    print(f"writing {gzipped_name}")
+    final_name = f"{fname}.gz" if do_gzip else fname
+    mode = "wt" if do_gzip else "w"
+    print(f"writing {final_name}")
 
-    with gzip.open(os.path.join(gzipped_name), "wt", encoding="utf-8") as lang_out:
+    open_func = gzip.open if do_gzip else open
+    with open_func(os.path.join(final_name), mode, encoding="utf-8") as lang_out:
         json.dump(data, lang_out, indent=4, ensure_ascii=False)
         lang_out.write("\n")
 
