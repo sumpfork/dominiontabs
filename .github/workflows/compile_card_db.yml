@@ -11,10 +11,11 @@ jobs:
         with:
           python-version: 3.8
       - run: |
-          pip install -r requirements.txt
+          pip install poetry
+          poetry install
           pip install .
       - name: Update Languages
-        run: doit update_languages
+        run: poetry run doit update_languages
       - uses: dorny/paths-filter@v2
         id: filter
         with:
