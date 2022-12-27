@@ -27,6 +27,7 @@ from domdiv.tools.common import (
     load_card_data,
     write_data,
     write_language_cards,
+    check_compressed_json_change,
 )
 
 VALID_CARD_FIELD_NAMES = {"description", "extra", "name"}
@@ -276,14 +277,18 @@ def main(card_db_dir, output_dir):
         if lang == LANGUAGE_XX:
             fromLanguage = LANGUAGE_DEFAULT
 
-        with gzip.open(
-            os.path.join(output_dir, lang, f"bonuses_{lang}.json.gz"),
-            "wt",
-            encoding="utf-8",
-        ) as fout, open(
+        with open(
             os.path.join(card_db_dir, fromLanguage, "bonuses_" + fromLanguage + ".json")
-        ) as fin:
-            fout.writelines(fin)
+        ) as f:
+            data = f.read()
+            output_fname = os.path.join(output_dir, lang, f"bonuses_{lang}.json.gz")
+            if check_compressed_json_change(output_fname, data):
+                with gzip.open(
+                    output_fname,
+                    "wt",
+                    encoding="utf-8",
+                ) as fout:
+                    fout.write(data)
 
     ###########################################################################
     # translation.txt

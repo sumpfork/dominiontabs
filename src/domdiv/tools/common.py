@@ -59,6 +59,14 @@ def load_language_cards(lang, card_db_dir):
     return lang_data
 
 
+def check_compressed_json_change(gzip_fname, data):
+    if os.path.exists(gzip_fname):
+        with gzip.open(gzip_fname, "rt", encoding="utf-8") as f:
+            existing_contents = f.read()
+            new_contents = json.dumps(data, indent=4, ensure_ascii=False) + "\n"
+            return existing_contents == new_contents
+
+
 def write_data(data, fname, do_gzip=True, check_changed=True):
     #  Process the file
     final_name = f"{fname}.gz" if do_gzip else fname
@@ -69,12 +77,9 @@ def write_data(data, fname, do_gzip=True, check_changed=True):
 
     if do_gzip and check_changed:
         if os.path.exists(final_name):
-            with gzip.open(final_name, "rt", encoding="utf-8") as f:
-                existing_contents = f.read()
-                new_contents = json.dumps(data, indent=4, ensure_ascii=False) + "\n"
-                if existing_contents == new_contents:
-                    print(f"not rewriting {fname} - contents didn't change")
-                    return
+            if check_compressed_json_change(final_name, data):
+                print(f"not rewriting {fname} - contents didn't change")
+                return
 
     with open_func(final_name, mode, encoding="utf-8") as lang_out:
         json.dump(data, lang_out, indent=4, ensure_ascii=False)
