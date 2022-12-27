@@ -48,7 +48,7 @@ def task_build():
     files = [
         fname
         for fname in glob_no_dirs("src/domdiv/**/*")
-        + glob.glob("card_db_src/**/*.json" + "setup.py")
+        + glob.glob("card_db_src/**/*.json")
         if os.path.isfile(fname)
     ]
     return {
