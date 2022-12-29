@@ -2719,6 +2719,481 @@
         "extra": "You draw a card before looking at the top card. The Zombie Spy is like a regular Spy except it can only discard the top card of your own deck.",
         "name": "Zombie Spy"
     },
+    "Abundance": {
+        "description": "The next time you gain an Action card: +1 Buy and +3 Coin.",
+        "extra": "This triggers when you gain an Action card due to buying it, or gain one some other way.<br>If it happens during another player's turn, the +3 Coin and +1 Buy won't be useful.",
+        "name": "Abundance"
+    },
+    "Amphora": {
+        "description": "Either now or at the start of your next turn:<br>+1 Buy and +3 Coin.",
+        "extra": "When playing Amphora, choose whether to get +3 Coin and +1 Buy immediately, or at the start of your next turn.<br>If you choose \"immediately,\" Amphora will be discarded in the same turn's Clean-up; if you choose \"next turn,\" Amphora will be discarded that turn.<br>If you play Amphora multiple times, such as with King's Cache, you choose each time whether to get the +3 Coin and +1 Buy now or next turn, and Amphora only stays in play if at least one of the plays was for next turn (in which case the King's Cache also stays in play).",
+        "name": "Amphora",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Avoid": {
+        "description": "+1 Buy<br>The next time you shuffle this turn, pick up to 3 of those cards to put into your discard pile.",
+        "extra": "If you don't end up shuffling this turn, this does nothing.<br>If you do shuffle, you first look through the cards and pick up to 3 to put into your discard pile. Shuffle the other cards normally, but don't shuffle those 3 in.<br>Avoid is cumulative; if you Avoid 3 times, you will pick up to 9 cards to not shuffle in.<br>You might leave so many cards in your discard pile that you don't have enough to draw; this does not trigger another shuffle, you just draw what you can.",
+        "name": "Avoid"
+    },
+    "Buried Treasure": {
+        "description": "At the start of your next turn, +1 Buy and +3 Coin.<line>When you gain this, play it.",
+        "extra": "When you gain this, you have to play it; it's not optional.",
+        "name": "Buried Treasure"
+    },
+    "Bury": {
+        "description": "+1 Buy<br>Put any card from your discard pile on the bottom of your deck.",
+        "extra": "Once you buy this, the ability is mandatory.",
+        "name": "Bury"
+    },
+    "Cabin Boy": {
+        "description": "+1 Card<br>+1 Action<br>At the start of your next turn, choose one: +2 Coin; or trash this to gain a Duration card.",
+        "extra": "You can trash a Cabin Boy to gain another Cabin Boy.",
+        "name": "Cabin Boy"
+    },
+    "Cage": {
+        "description": "Set aside up to 4 cards from your hand face down (on this). The next time you gain a Victory card, trash this, and put the set aside cards into your hand at end of turn.",
+        "extra": "The cards go to your hand after drawing your regular hand of 5 cards for next turn.<br>For example you might set aside two Estate and two Copper on a Cage on an early turn; then on a late turn, buy a Province, trash the Cage, and add the two Estates and two Coppers to your hand at end of turn.",
+        "name": "Cage"
+    },
+    "Crew": {
+        "description": "+3 Cards<br>At the start of your next turn, put this onto your deck.",
+        "extra": "Putting this onto your deck isn't optional.",
+        "name": "Crew"
+    },
+    "Crucible": {
+        "description": "Trash a card from your hand. +1 Coin per 1 Coin it costs.",
+        "extra": "For example if you trash an Estate, which costs 2 Coin you get +2 Coin.<br>If you trash a card with Debt or Potion in its cost (from other expansions), you get nothing for those symbols.",
+        "name": "Crucible"
+    },
+    "Cutthroat": {
+        "description": "Each other player discards down to 3\u00a0cards in hand.<br>The next time anyone gains a Treasure costing 5 Coin or more, gain a Loot.",
+        "extra": "Loot itself is a Treasure costing 5 Coin or more, so a player gaining one will trigger Cutthroats.",
+        "name": "Cutthroat"
+    },
+    "Deliver": {
+        "description": "+1 Buy<br>This turn, each time you gain a card, set it aside, and put it into your hand at end of turn.",
+        "extra": "Buying this more than once doesn't do anything extra.<br>The set aside cards go into your hand after drawing your usual 5 cards.",
+        "name": "Deliver"
+    },
+    "Doubloons": {
+        "description": "3 <*COIN*><line>When you gain this, gain a Gold.",
+        "extra": "When you gain this, you also gain a Gold.",
+        "name": "Doubloons",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Endless Chalice": {
+        "description": "Now and at the start of each of your turns for the rest of the game:<br>1 <*COIN*><br><br>+1 Buy",
+        "extra": "Once played, this stays in play for the rest of the game.",
+        "name": "Endless Chalice",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Enlarge": {
+        "description": "Now and at the start of your next turn: Trash a card from your hand, and gain one costing up to 2 Coin more.",
+        "extra": "Once you've played Enlarge, trashing a card at the start of your next turn is mandatory.",
+        "name": "Enlarge"
+    },
+    "Figurehead": {
+        "description": "3 <*COIN*><br><br>At the start of your next turn, +2 Cards.",
+        "extra": "When you play this, you get +3 Coin and at the start of your next turn, you get +2 Cards.",
+        "name": "Figurehead",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Figurine": {
+        "description": "+2 Cards<br>You may discard an Action card for +1 Buy and +1 Coin.",
+        "extra": "This is a Treasure, and so is played in your Buy phase, but draws cards.<br>This means that usually if it draws you an Action card, that card won't be useful that turn, except that Figurine itself lets you discard one Action card for +1 Buy and +1 Coin.",
+        "name": "Figurine"
+    },
+    "First Mate": {
+        "description": "Play any number of Action cards with the same name from your hand, then draw until you have 6 cards in hand.",
+        "extra": "If you don't have any Action cards to play, you'll still draw up to 6.<br>If the Action card you play draws you another copy of itself, you can play that copy, and so on.<br>First Mate can play First Mates; keep careful track of which card you're resolving, as you would with multiple Throne Room.",
+        "name": "First Mate"
+    },
+    "Flagship": {
+        "description": "+2 Coin<br>The next time you play a non-Command Action card, replay it.",
+        "extra": "This isn't optional; whatever that next non-Command Action card is, Flagship replays it.<br>It replays it even if the card trashed itself, and even if it isn't your turn.<br>Command cards, such as Flagship itself, are not replayed; Flagship waits for a non-Command Action card.",
+        "name": "Flagship"
+    },
+    "Foray": {
+        "description": "Discard 3 cards, revealing them. If they have 3 different names, gain a Loot.",
+        "extra": "If you didn't have 3 cards to discard, you don't gain a Loot.",
+        "name": "Foray"
+    },
+    "Fortune Hunter": {
+        "description": "+2 Coin<br>Look at the top 3 cards of your deck. You may play a Treasure from them. Put the rest back in any order.",
+        "extra": "Completely resolve playing the Treasure before putting the other cards back on top; for example if the Treasure is a Figurine, the two cards you draw won't be the other ones you looked at with Fortune Hunter.",
+        "name": "Fortune Hunter"
+    },
+    "Frigate": {
+        "description": "+3 Coin<br>Until the start of your next turn, each time another player plays an Action card, they discard down to 4 cards in hand afterwards.",
+        "extra": "This applies each time another player plays an Action, until your next turn. That includes later on during your turn, if they manage to play an Action then (for example a Stowaway). They completely resolve playing the Action before discarding.",
+        "name": "Frigate"
+    },
+    "Gondola": {
+        "description": "Either now or at the start of your next turn: +2 Coin.<line>When you gain this, you may play an Action card from your hand.",
+        "extra": "When playing Gondola, choose whether to get +2 Coin immediately, or at the start of your next turn.<br>If you play Gondola multiple times, such as with King's Cache, you choose each time whether to get the +2 Coin now or next turn, and Gondola only stays in play if at least one of the plays was for next turn (in which case the King's Cache also stays in play).",
+        "name": "Gondola"
+    },
+    "Grotto": {
+        "description": "+1 Action<br>Set aside up to 4 cards from your hand face down (on this). At the start of your next turn, discard them, then draw as many.",
+        "extra": "For example you could set aside 3 cards from your hand, and at the start of your next turn, discard those 3 cards, then draw 3 cards.",
+        "name": "Grotto"
+    },
+    "Hammer": {
+        "description": "3 <*COIN*><br><br>Gain a card costing up to 4 Coin.",
+        "extra": "Each time you play this, you get +3 Coin and gain a card costing up to 4 Coin. This isn't optional.",
+        "name": "Hammer",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Harbor Village": {
+        "description": "+1 Card<br>+2 Actions<br>After the next Action you play this turn, if it gave you +_ Coin, +1 Coin.",
+        "extra": "This only cares if the Action itself gave you +_ Coin not if you otherwise got +_ Coin due to playing it (such as due to Training, from Adventures, or due to receiving The Forest's Gift, from Nocturne).<br>It's okay if you no longer have the _ Coin (such as due to Storyteller).<br>+Coffers (from Guilds and Renaissance) is not +_ Coin.<br>+0 Coin doesn't get you the bonus.<br>Using a Way (from Menagerie) to get +_ Coin (e.g. Way of the Sheep) does get you the bonus.<br>If you Throne Room a Harbor Village and then play a Militia, you played Harbor Village, then Harbor Village, then Militia, so you get nothing for the first play of Harbor Village and +1 Coin for the second play of it.",
+        "name": "Harbor Village"
+    },
+    "Insignia": {
+        "description": "3 <*COIN*><br><br>This turn, when you gain a card, you may put it onto your deck.",
+        "extra": "If you gain multiple cards, this applies to each of them - you can put any or all of them on top of your deck.",
+        "name": "Insignia",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Invasion": {
+        "description": "You may play an Attack from your hand.<br>Gain a Duchy. Gain an Action onto your deck.<br>Gain a Loot; play it.",
+        "extra": "You do the four things in that order.<br>Playing an Attack card is optional; the rest are mandatory.",
+        "name": "Invasion"
+    },
+    "Jewelled Egg": {
+        "description": "1 <*COIN*><br><br>+1 Buy<line>When you trash this, gain a Loot.",
+        "extra": "The player trashing Jewelled Egg gets the Loot, regardless of which player played the card that caused them to trash it.",
+        "name": "Jewelled Egg"
+    },
+    "Jewels": {
+        "description": "3 <*COIN*><br><br>+1 Buy<br>At the start of your next turn, put this on the bottom of your deck.",
+        "extra": "When you play this, you get +3 Coin and +1 Buy, and at the start of your next turn, put this on the bottom of your deck.",
+        "name": "Jewels",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Journey": {
+        "description": "Once per turn: If the previous turn wasn't yours, you don't discard cards from play in Clean-up this turn, and take an extra turn after this one.",
+        "extra": "You can only buy this once per turn. When you do, if the previous turn was not yours - if it was another player's turn before this turn - you don't discard cards from play this turn, and you take another turn after this turn ends. You still discard your hand.<br>The extra turn is completely normal except that it doesn't count for the tiebreaker.<br>The cards left in play don't do anything special on the extra turn; a Copper left in play doesn't make 1 Coin on the extra turn and so on.<br>Cards with \"while this is in play\" abilities can continue to function, and the cards are in play for things that care about that, such as Swamp Shacks; otherwise, the cards being in play just means you won't draw them that turn.",
+        "name": "Journey"
+    },
+    "King's Cache": {
+        "description": "You may play a Treasure from your hand 3 times.",
+        "extra": "If you King's Cache a King's Cache, you will play three more Treasures three times each.<br>If you King's Cache a Treasure-Duration card, King's Cache will stay in play as long as that card does.",
+        "name": "King's Cache"
+    },
+    "Landing Party": {
+        "description": "+2 Cards<br>+2 Actions<br>The next time the first card you play on a turn is a Treasure, put this onto your deck afterwards.",
+        "extra": "Resolve the Treasure before putting Landing Party on your deck.<br>It's okay if the Treasure has more types, including Action (like Spell Scroll).",
+        "name": "Landing Party"
+    },
+    "Launch": {
+        "description": "Once per turn: Return to your Action phase.<br>+1 Card, +1 Action, and +1 Buy.",
+        "extra": "This ends your Buy phase and returns you to your Action phase.<br>This does not cause \"start of turn\" abilities to repeat; however when your Buy phase happens again after that, \"start of Buy phase\" abilities can repeat.",
+        "name": "Launch"
+    },
+    "Longship": {
+        "description": "+2 Actions<br>At the start of your next turn, +2 Cards.",
+        "extra": "Playing this gives you +2 Actions then, and +2 Cards at the start of your next turn.",
+        "name": "Longship"
+    },
+    "Loot": {
+      "description": "<left><u>Amphora</u>: Either now or at the start of your next turn: +1 Buy and +3 Coin.</left><left><u>Doubloons</u>: 3 Coin; When you gain this, gain a Gold.</left><left><u>Endless Chalice</u>: Now and at the start of each of your turns for the rest of the game: 1 Coin; +1 Buy</left><left><u>Figurehead</u>: 3 Coin; At the start of your next turn, +2 Cards.</left><left><u>Hammer</u>: 3 Coin; Gain a card costing up to 4 Coin.</left><left><u>Insignia</u>: 3 Coin; This turn, when you gain a card, you may put it onto your deck.</left><left><u>Jewels</u>: 3 Coin; +1 Buy; At the start of your next turn, put this on the bottom of your deck.</left><left><u>Orb</u>: Look through your discard pile. Choose one: Play an Action or Treasure from it; or +1 Buy and +3 Coin.</left><left><u>Prize Goat</u>: 3 Coin; +1 Buy; You may trash a card from your hand.</left><left><u>Puzzle Box</u>3 Coin; +1 Buy; You may set aside a card from your hand face down. Put it into your hand at end of turn.</left><left><u>Sextant</u>: 3 Coin; +1 Buy; Look at the top 5 cards of your deck. Discard any number. Put the rest back in any order.</left><left><u>Shield</u>: 3 Coin; +1 Buy; When another player plays an Attack, you may first reveal this from your hand to be unaffected.</left><left><u>Spell Scroll</u>: Trash this to gain a cheaper card. If it's an Action or Treasure, you may play it.</left><left><u>Staff</u>: 3 Coin; +1 Buy; You may play an Action from your hand.</left><left><u>Sword</u>: 3 Coin; +1 Buy; Each other player discards down to 4 cards in hand.</left>",
+      "extra": "There are 15 Loot cards, with two copies of each.Shuffle them into a face-down pile before the game if any cards refer to Loot.<br>During the game, \"gain a Loot\" means you gain the top card of the Loot pile.<br>When you gain a Loot reveal it to all players. Then put it into your discard pile as usual.<br>Players can't loot through the Loot pile during a game.<br>The Loot pile isn't in the Supply; players can't buy or gain from it, except with cards that specifically gain Loot.",
+        "name": "Loot"
+    },
+    "Looting": {
+        "description": "Gain a Loot.",
+        "extra": "You simply gain a Loot.",
+        "name": "Looting"
+    },
+    "Maelstrom": {
+        "description": "Trash 3 cards from your hand. Each other player with 5 or more cards in hand trashes one of them.",
+        "extra": "This isn't optional for the other players; they must trash a card if they have 5 or more cards in hand.",
+        "name": "Maelstrom"
+    },
+    "Mapmaker": {
+        "description": "Look at the top 4 cards of your deck. Put 2 into your hand and discard the rest.<line>When any player gains a Victory card, you may play this from your hand.",
+        "extra": "If you have fewer than four cards (after shuffling), you just look at what's left.<br>You may play this when someone (including you) gains a Victory card due to buying it, or some other way.<br>When you play Mapmaker in response to someone gaining a Victory card, you can immediately play another Mapmaker afterwards - even one you just got via the first Mapmaker.",
+        "name": "Mapmaker"
+    },
+    "Maroon": {
+        "description": "Trash a card from your hand. +2 Cards per type it has (Action, Attack, etc.).",
+        "extra": "Types are the words on the bottom banner of cards - Action, Attack, and so on.",
+        "name": "Maroon"
+    },
+    "Mining Road": {
+        "description": "+1 Action<br>+1 Buy<br>+2 Coin<br>Once this turn, when you gain a Treasure, you may play it.",
+        "extra": "Playing the Treasure is optional.<br>This ability is cumulative; if you play two Mining Roads, then twice that turn you may play a Treasure when you gain one. However two Mining Roads can't play the same gained Treasure twice.<br>Mining Road applies to Treasures gained due to being bought, or gained other ways.<br>It works in your Action phase if you gain a Treasure then.",
+        "name": "Mining Road"
+    },
+    "Mirror": {
+        "description": "+1 Buy<br>The next time you gain an Action card this turn, gain a copy of it.",
+        "extra": "This is cumulative; if you buy Mirror three times and then buy an Action, you'll gain three extra copies of it.",
+        "name": "Mirror"
+    },
+    "Orb": {
+        "description": "Look through your discard pile. Choose one: Play an Action or Treasure from it; or +1 Buy and +3 Coin.",
+        "extra": "First look through your discard pile; then choose either to play an Action or Treasure from it, or to get +1 Buy and +3 Coin.",
+        "name": "Orb",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Pendant": {
+        "description": "+1 Coin per differently named Treasure you have in play.",
+        "extra": "This counts itself. For example if you had three Copper, an Astrolabe played last turn, and the Pendant in play, it would make +3 Coin.",
+        "name": "Pendant"
+    },
+    "Peril": {
+        "description": "You may trash an Action card from your hand to gain a Loot.",
+        "extra": "You only gain a Loot if you trashed an Action card.",
+        "name": "Peril"
+    },
+    "Pickaxe": {
+        "description": "1 <*COIN*><br><br>Trash a card from your hand. If it costs 3 Coin or more, gain a Loot to your hand.",
+        "extra": "Trashing is mandatory, if you have any cards left in hand. Remember that you have to reveal the gained Loot.",
+        "name": "Pickaxe"
+    },
+    "Pilgrim": {
+        "description": "+4 Cards<br>Put a card from your hand onto your deck.",
+        "extra": "The card you put on top doesn't have to be one of the 4 you just drew.",
+        "name": "Pilgrim"
+    },
+    "Prepare": {
+        "description": "Set aside your hand face up.<br>At the start of your next turn, play those Actions and Treasures in any order, then discard the rest.",
+        "extra": "Once you've set the cards aside, playing all of those Actions and Treasures next turn is mandatory.",
+        "name": "Prepare"
+    },
+    "Prize Goat": {
+        "description": "3 <*COIN*><br><br>+1 Buy<br>You may trash a card from your hand.",
+        "extra": "Trashing a card is optional.",
+        "name": "Prize Goat",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Prosper": {
+        "description": "Gain a Loot, plus any number of differently named Treasures.",
+        "extra": "Gain the Loot first. Then, one at a time, you can choose differently named Treasures to gain, resolving each gain in turn.<br>You don't have to gain any Treasures you don't want (after the Loot).",
+        "name": "Prosper"
+    },
+    "Puzzle Box": {
+        "description": "3 <*COIN*><br><br>+1 Buy<br>You may set aside a card from your hand face down. Put it into your hand at end of turn.",
+        "extra": "If you set aside a card, the Puzzle Box itself is still discarded normally that turn.<br>The set-aside card goes into your hand after drawing for the next turn.",
+        "name": "Puzzle Box",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Quartermaster": {
+        "description": "At the start of each of your turns for the rest of the game, choose one: Gain a card costing up to 4 Coin, setting it aside on this; or put a card from this into your hand.",
+        "extra": "Quartermaster stays in play for the rest of the game.<br>Each turn you either gain a card and put it on the Quartermaster, or take one of the cards you've already gained with that Quartermaster and put it into your hand.<br>If you play two Quartermasters, they each have their own set of cards. However if you Throne Room a Quartermaster, you just have one set of cards for it, and twice on each of your turns, either add one or take one.",
+        "name": "Quartermaster"
+    },
+    "Rope": {
+        "description": "1 <*COIN*><br><br>+1 Buy<br>At the start of your next turn, +1 Card and you may trash a card from your hand.",
+        "extra": "When you play this, you get +1 Coin and +1 Buy, and at the start of your next turn, you first draw a card, then may trash a card from your hand.",
+        "name": "Rope"
+    },
+    "Rush": {
+        "description": "+1 Buy<br>The next time you gain an Action card this turn, play it.",
+        "extra": "If you Rush twice in a row, you'll still only play the Action once. You can however Rush, buy an Action and play it, Rush again, and buy another Action and play it.",
+        "name": "Rush"
+    },
+    "Sack of Loot": {
+        "description": "1 <*COIN*><br><br>+1 Buy<br>Gain a Loot.",
+        "extra": "When you play this, you get +1 Coin and +1 Buy, and gain a Loot.",
+        "name": "Sack of Loot"
+    },
+    "Scrounge": {
+        "description": "Choose one: Trash a card from your hand;<br>or gain an Estate from the trash, and if you did, gain a card costing up to 5 Coin.",
+        "extra": "You may either trash a card from your hand, or may gain an Estate from the trash.<br>If you gained an Estate, you then also gain a card costing up to 5 Coin from the Supply.",
+        "name": "Scrounge"
+    },
+    "Search": {
+        "description": "+2 Coin<br>The next time a Supply pile empties, trash this and gain a Loot.",
+        "extra": "If you Throne Room a Search, Throne Room will stay out with Search until a pile empties, and then you'll trash Search once but gain two Loots (and discard Throne Room that turn).",
+        "name": "Search"
+    },
+    "Secluded Shrine": {
+        "description": "+1 Coin<br>The next time you gain a Treasure, trash up to 2 cards from your hand.",
+        "extra": "This can trigger on any player's turn.<br>It triggers even if the player can't or doesn't want to trash anything; they don't have to trash anything, but Secluded Shrine is done, and is discarded that turn.",
+        "name": "Secluded Shrine"
+    },
+    "Sextant": {
+        "description": "3 <*COIN*><br><br>+1 Buy<br>Look at the top 5 cards of your deck. Discard any number. Put the rest back in any order.",
+        "extra": "You can put all 5 cards back, or discard all 5, or anything in between.",
+        "name": "Sextant",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Shaman": {
+        "description": "+1 Action<br>+1 Coin<br>You may trash a card from your hand.<line>In games using this, at the start of your turn, gain a card from the trash costing up to 6 Coin.",
+        "extra": "In games using Shaman, for the whole game, at the start of each of your turns (including extra turns), you gain a card from the trash costing up to 6 Coin. This is mandatory.<br>If there's no such card, you don't gain one.<br>This applies even on your first turn (relevant with Necromancer, from Nocturne).<br>It applies even if no-one ever gets a Shaman.<br>The gained card goes into your discard pile. It's a card you gained, and can trigger things that care about that; for example gaining a Treasure would trigger Secluded Shrine ability.",
+        "name": "Shaman"
+    },
+    "Shield": {
+        "description": "3 <*COIN*><br><br>+1 Buy<line>When another player plays an Attack, you may first reveal this from your hand to be unaffected.",
+        "extra": "You can reveal this when another player plays an Attack card to be unaffected by it, exactly as with Moat.<br>You do this before the Attack card has done anything, and can use Shield against multiple Attacks in a turn.<br>Shield stays in your hand and can still be played for +3 Coin and +1 Buy on your turn.",
+        "name": "Shield",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Silver Mine": {
+        "description": "Gain a Treasure costing less than this to your hand.",
+        "extra": "This can gain Silver, but also other Treasures costing less than Silver Mine, when in the Supply: Gondola, Jewelled Egg, and so on.",
+        "name": "Silver Mine"
+    },
+    "Siren": {
+        "description": "Each other player gains a Curse. At the start of your next turn, draw until you have 8 cards in hand.<line>When you gain this, trash it unless you trash an Action from your hand.",
+        "extra": "When you gain a Siren, it's immediately trashed unless you trash an Action card from your hand.<br>However if you manage to move the Siren from where it was gained (whether it was gained to your discard pile or somewhere else) before resolving this ability - for example putting it on top of your deck with Insignia - then it will fail to be trashed (though you can still trash an Action card if you want).",
+        "name": "Siren"
+    },
+    "Spell Scroll": {
+        "description": "Trash this to gain a cheaper card. If it's an Action or Treasure, you may play it.",
+        "extra": "You can play this in your Action phase or Buy phase; if played in your Action phase, it uses up an Action play for the turn. However playing the card you gain from Spell Scroll does not use up an Action play.",
+        "name": "Spell Scroll",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Staff": {
+        "description": "3 <*COIN*><br><br>+1 Buy<br>You may play an Action from your hand.",
+        "extra": "Playing an Action card from your hand is optional.",
+        "name": "Staff",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Stowaway": {
+        "description": "At the start of your next turn, +2 Cards.<line>When anyone gains a Duration card, you may play this from your hand.",
+        "extra": "You may play this from your hand when you personally gain a Duration card, or when another player does.",
+        "name": "Stowaway"
+    },
+    "Swamp Shacks": {
+        "description": "+2 Actions<br>+1 Card per 3 cards you have in play (round down).",
+        "extra": "This counts the Swamp Shacks itself, and Duration cards played on previous turns that are still in play.<br>It counts Treasures if you have some in play, such as Treasure Duration cards, or due to Storyteller.<br>It does not count set aside cards, such as cards on a Quartermaster.<br>Round down the number of cards you draw; if you have 8 cards in play, you draw 2.",
+        "name": "Swamp Shacks"
+    },
+    "Sword": {
+        "description": "3 <*COIN*><br><br>+1 Buy<br>Each other player discards down to 4 cards in hand.",
+        "extra": "This is an Attack, and so cards like Moat and Shield protect from it.",
+        "name": "Sword",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
+    "Taskmaster": {
+        "description": "+1 Action, +1 Coin, and if you gain a card costing exactly 5 Coin this turn, then at the start of your next turn, repeat this ability.",
+        "extra": "Taskmaster can end up making +1 Action and +1 Coin turn after turn, as long as you keep gaining at least one card costing 5 Coin.",
+        "name": "Taskmaster"
+    },
+    "Tools": {
+        "description": "Gain a copy of a card anyone has in play.",
+        "extra": "This can gain a copy of a card any player has in play; other players may for example have Duration cards in play.<br>Tools itself is in play, so you can gain a copy of that.",
+        "name": "Tools"
+    },
+    "Trickster": {
+        "description": "Each other player gains a Curse.<br>Once this turn, when you discard a Treasure from play, you may set it aside. Put it in your hand at end of turn.",
+        "extra": "This is cumulative; if you play two Tricksters, then you can set aside up to two Treasures you discard from play and put them into your hand at end of turn, after drawing.",
+        "name": "Trickster"
+    },
+    "Wealthy Village": {
+        "description": "+1 Card<br>+2 Actions<line>When you gain this, if you have at least 3 differently named Treasures in play, gain a Loot.",
+        "extra": "The 3 differently named Treasures can include Duration Treasures you played on a previous turn, and Loots themselves.",
+        "name": "Wealthy Village"
+    },
+    "Cheap": {
+        "description": "Cheap cards cost 1 Coin less.",
+        "extra": "This lowers the cost of a pile for the entire game (including when scoring).<br>Costs can't go below 0 Coin.<br>This doesn't reduce non-_ Coin like Potion and Debt, for example this does nothing on the Engineer pile (from Empires).<br>This does not apply during setup; it can't for example cause a 4 Coin to be used as Young Witch Bane (from Cornucopia).",
+        "name": "Cheap"
+    },
+    "Cursed": {
+        "description": "When you gain a Cursed card, gain a Loot and a Curse.",
+        "extra": "When you gain a card from the Cursed pile, you also gain a Loot and a Curse.<br>If there are no Curses left, you still gain a Loot.",
+        "name": "Cursed"
+    },
+    "Fated": {
+        "description": "When shuffling, you may look through the cards and reveal Fated cards to put them on the top or bottom.",
+        "extra": "Each time you shuffle, you can choose to put Fated cards on the top or bottom of your deck, while shuffling the other cards normally.<br>In games with Fated, you can look through your deck before shuffling, even if you're sure you don't have any Fated cards.",
+        "name": "Fated"
+    },
+    "Fawning": {
+        "description": "When you gain a Province, gain a Fawning card. A card that has this trait gains you a free copy of itself whenever you gain a Province.",
+        "extra": "This is mandatory.",
+        "name": "Fawning"
+    },
+    "Friendly": {
+        "description": "At the start of your Clean-up phase, you may discard a Friendly card to gain a Friendly card.",
+        "extra": "You may only discard one Friendly card per turn this way.",
+        "name": "Friendly"
+    },
+    "Hasty": {
+        "description": "When you gain a Hasty card, set it aside, and play it at the start of your next turn.",
+        "extra": "If this plays a card that can't normally be played, like Territory (from Allies), that card goes into play but doesn't do anything else then.",
+        "name": "Hasty"
+    },
+    "Inherited": {
+        "description": "Setup: You start the game with an Inherited card in place of a starting card you choose.",
+        "extra": "If they care, players decide which card to replace in turn order.<br>Replaced Copper go back to the pile; replaced Estate go back to the box.<br>Replaced other cards (Shelters from Dark Ages, Heirlooms from Nocturne) go back to the box.<br>If the Inherited pile is a split pile (from Empires or Allies), players take cards from the pile in turn order. So in a 6-player game with the Townsfolk pile, the first four players get a Town Crier, and the next two get a Blacksmith.<br>Cards starting in your deck due to Inherited were never \"gained\" and did not trigger \"when you gain this\" effects.",
+        "name": "Inherited"
+    },
+    "Inspiring": {
+        "description": "After playing an Inspiring card on your turn, you may play an Action from your hand that you don't have a copy of in play.",
+        "extra": "When you play an Inspiring card, after resolving it, you can play an Action card from your hand, provided that you don't have a copy of that card in play.<br>Duration cards that you played on previous turns that are still in play, are in play; cards that have left play somehow, like a Mining Village (from Intrigue) trashing itself, are not in play.<br>An Inspiring card can sometimes play a different Inspiring card (when Inspiring is on a split pile, like those in Empires and Allies), but can't normally play another copy of itself.",
+        "name": "Inspiring"
+    },
+    "Nearby": {
+        "description": "When you gain a Nearby card, +1 Buy.",
+        "extra": "Each time you gain a Nearby card, you get +1 Buy.",
+        "name": "Nearby"
+    },
+    "Patient": {
+        "description": "At the start of your Clean-up phase, you may set aside Patient cards from your hand to play them at the start of your next turn.",
+        "extra": "You can set aside multiple Patient cards at once; play them all at the start of your next turn, in any order.<br>If this plays a card that can't normally be played, like Territory (from Allies), that card goes into play but doesn't do anything else then.",
+        "name": "Patient"
+    },
+    "Pious": {
+        "description": "When you gain a Pious card, you may trash a card from your hand.",
+        "extra": "Each time you gain a Pious card, you may optionally trash a card from your hand.",
+        "name": "Pious"
+    },
+    "Reckless": {
+        "description": "Follow the instructions of played Reckless cards twice. When discarding one from play, return it to its pile.",
+        "extra": "Reckless does two things, at different times. When you play a Reckless card, you follow its instructions an extra time - follow them entirely, then follow them again - and when you discard one from play, you return it to its Supply pile.<br>With Duration cards those may not happen on the same turn.<br>If you skip following the instructions of the card - for example by using a Way (from Menagerie) instead - then you don't follow them an extra time, but still return the card when discarding it from play.",
+        "name": "Reckless"
+    },
+    "Rich": {
+        "description": "When you gain a Rich card, gain a Silver.",
+        "extra": "Each time you gain a Rich card, you also gain a Silver.",
+        "name": "Rich"
+    },
+    "Shy": {
+        "description": "At the start of your turn, you may discard one Shy card for +2 Cards.",
+        "extra": "You can only discard one Shy card per turn this way.",
+        "name": "Shy"
+    },
+    "Tireless": {
+        "description": "When you discard a Tireless card from play, set it aside, and put it onto your deck at end of turn.",
+        "extra": "This is mandatory.<br>You draw your next hand before putting the card onto your deck.",
+        "name": "Tireless"
+    },
     "Avanto": {
         "description": "+3 Cards<br>You may play a Sauna from your hand.",
         "extra": "Avanto is a promotional Action card. It's a terminal draw card that can potentially become non-terminal if you have a Sauna in your hand to play. It is a split pile card, with five copies of Avanto sitting under five copies of Sauna.",
@@ -3519,6 +3994,16 @@
         "extra": "A State is a card that goes in front of a player and applies a rule. States are never in a player's deck; they are physically cards but are not 'cards' in game terms. They are thus never 'cards in play,' taking a State is not 'gaining a card,' and so on.\n<u>Deluded / Envious</u>: This card is two-sided. Deluded prevents you from buying Action cards during one turn, starting in the Buy phase. If you get Deluded during your turn before the Buy phase (such as with Leprechaun), it will apply that turn; normally Deluded will apply to your next turn. Envious causes Silver and Gold to make 1 Coin when you played in your Buy phase for one turn, rather than their usual 2 Coins and 3 Coins, starting in the Buy phase. Envious does not affect other Treasures, just Silver and Gold. If you get Envious during your turn before the Buy phase (such as with Leprechaun), it will apply that turn; normally Envious will apply to your next turn.\n<u>Lost in the Woods</u>: The two sides are the same; use either. Using the ability is optional. Lost in the Woods stays in front of you turn after turn, until another players takes it with a Fool.\n<u>Miserable / Twice Miserable</u>: This card is two-sided. This does nothing until the end of the game. The card just sits in front of you. When scoring at the end of the game, if Miserable is in front of you, lose 2<VP>. If Twice Miserable is in front of you, lose 4<VP>.",
         "name": "States"
     },
+    "plunder events": {
+        "description": "<justify>Events are not Kingdom cards. In a player's Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.</justify>",
+        "extra": "Events are not Kingdom cards. In a player's Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.",
+        "name": "Events - Plunder"
+    },
+    "plunder traits": {
+        "description": "<justify>Traits are not Kingdom cards. During Setup, Traits can be assigned to random Action or Treasure Kingdom card piles. Traits only go on Kingdom cards and are never bought or gained. No pile can have more than one Trait. Traits refer to the pile using the name of the Trait; for example, Pious refers to \"Pious cards.\" That just means any card from that pile. A Trait on a split pile addects all of those different cards. Traits continue to affect the cards from a pile even after the pile is empty.</justify>",
+        "extra": "Traits are not Kingdom cards. During Setup, Traits can be assigned to random Action or Treasure Kingdom card piles. Traits only go on Kingdom cards and are never bought or gained. No pile can have more than one Trait. Traits refer to the pile using the name of the Trait; for example, Pious refers to \"Pious cards.\" That just means any card from that pile. A Trait on a split pile addects all of those different cards. Traits continue to affect the cards from a pile even after the pile is empty.",
+        "name": "Traits - Plunder"
+    },
     "promo events": {
         "description": "<justify>Events are not Kingdom cards. In a player's Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.</justify>",
         "extra": "Events are not Kingdom cards. In a player's Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.",
@@ -3543,6 +4028,14 @@
         "description": "<justify>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.</justify>",
         "extra": "Projects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
         "name": "Projects - All"
+    },
+    "traits": {
+        "description": "<justify>Traits are not Kingdom cards. During Setup, Traits can be assigned to random Action or Treasure Kingdom card piles. Traits only go on Kingdom cards and are never bought or gained. No pile can have more than one Trait. Traits refer to the pile using the name of the Trait; for example, Pious refers to \"Pious cards.\" That just means any card from that pile. A Trait on a split pile addects all of those different cards. Traits continue to affect the cards from a pile even after the pile is empty.</justify>",
+        "extra": "Traits are not Kingdom cards. During Setup, Traits can be assigned to random Action or Treasure Kingdom card piles. Traits only go on Kingdom cards and are never bought or gained. No pile can have more than one Trait. Traits refer to the pile using the name of the Trait; for example, Pious refers to \"Pious cards.\" That just means any card from that pile. A Trait on a split pile addects all of those different cards. Traits continue to affect the cards from a pile even after the pile is empty.",
+        "name": "Traits - All",
+        "notes": [
+            "This card is currently not used."
+        ]
     },
     "Abandoned Mine": {
         "description": "+1 Coin",

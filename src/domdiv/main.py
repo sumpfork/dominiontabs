@@ -554,6 +554,12 @@ def parse_opts(cmdline_args=None):
         "Same as '--group-global ways'",
     )
     group_select.add_argument(
+        "--exclude-traits",
+        action="store_true",
+        help="Group all 'Trait' cards across all expansions into one divider."
+        "Same as '--group-global traits'",
+    )
+    group_select.add_argument(
         "--only-type-any",
         "--only-type",
         "--type-any",
@@ -951,6 +957,8 @@ def clean_opts(options):
         options.group_global.append("projects")
     if options.exclude_ways:
         options.group_global.append("ways")
+    if options.exclude_traits:
+        options.group_global.append("traits")
     # Remove duplicates from the list
     options.group_global = list(set(options.group_global))
 
@@ -1502,7 +1510,7 @@ def filter_sort_cards(cards, options):
                 card.cardset_tag = Card.sets[card.cardset_tag]["upgrades"]
 
     # Combine globally all cards of the given types
-    # For example, Events, Landmarks, Projects, Ways
+    # For example, Events, Landmarks, Projects, Ways, Traits
     if options.group_global:
         # First find all possible types to group that match options.group_global
         types_to_group = {}
