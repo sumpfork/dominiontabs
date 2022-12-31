@@ -16,7 +16,7 @@ def task_compile_requirements():
     return {
         "file_dep": ["requirements.in"],
         "actions": [
-            "pip-compile requirements.in",
+            "pip-compile -U --no-emit-index-url --resolver=backtracking requirements.in",
             # pip-compile will add macfsevents on mac, which breaks installation
             # on other platforms, so hack in the 'doit' requirement after the
             # compile
