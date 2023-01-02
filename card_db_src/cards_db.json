@@ -6395,6 +6395,806 @@
         ]
     },
     {
+        "card_tag": "Abundance",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Treasure",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Avoid",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "2",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Buried Treasure",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Treasure",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Bury",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "1",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Cabin Boy",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Cage",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "2",
+        "types": [
+            "Treasure",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Crew",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Crucible",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Cutthroat",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Duration",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Deliver",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "2",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Enlarge",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Figurine",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "First Mate",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Flagship",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Duration",
+            "Command"
+        ]
+    },
+    {
+        "card_tag": "Foray",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "3",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Fortune Hunter",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Frigate",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Duration",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Gondola",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Treasure",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Grotto",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "2",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Harbor Village",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Invasion",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "10",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Jewelled Egg",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "2",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Journey",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "King's Cache",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "7",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Landing Party",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Launch",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "3",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Longship",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Loot",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "7*",
+        "count": "30",
+        "randomizer": false,
+        "types": [
+            "Treasure",
+            "Loot"
+        ]
+    },
+    {
+        "card_tag": "Looting",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "6",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Maelstrom",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Mapmaker",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Action",
+            "Reaction"
+        ]
+    },
+    {
+        "card_tag": "Maroon",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Mining Road",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Mirror",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "3",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Pendant",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Peril",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "2",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Pickaxe",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Pilgrim",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Prepare",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "3",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Prosper",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "10",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Quartermaster",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Rope",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Treasure",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Rush",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "2",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Sack of Loot",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "6",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Scrounge",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "3",
+        "types": [
+            "Event"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder events"
+    },
+    {
+        "card_tag": "Search",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "2",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Secluded Shrine",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "3",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Shaman",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "2",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Silver Mine",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Siren",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "3",
+        "types": [
+            "Action",
+            "Duration",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Stowaway",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "3",
+        "types": [
+            "Action",
+            "Duration",
+            "Reaction"
+        ]
+    },
+    {
+        "card_tag": "Swamp Shacks",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Taskmaster",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "3",
+        "types": [
+            "Action",
+            "Duration"
+        ]
+    },
+    {
+        "card_tag": "Tools",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "4",
+        "types": [
+            "Treasure"
+        ]
+    },
+    {
+        "card_tag": "Trickster",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Attack"
+        ]
+    },
+    {
+        "card_tag": "Wealthy Village",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "5",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Cheap",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Cursed",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Fated",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Fawning",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Friendly",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Hasty",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Inherited",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Inspiring",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Nearby",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Patient",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Pious",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Reckless",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Rich",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Shy",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
+        "card_tag": "Tireless",
+        "cardset_tags": [
+            "plunder"
+        ],
+        "cost": "",
+        "types": [
+            "Trait"
+        ],
+        "randomizer": false,
+        "group_tag": "plunder traits"
+    },
+    {
         "card_tag": "Avanto",
         "cardset_tags": [
             "promo"

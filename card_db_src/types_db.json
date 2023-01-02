@@ -153,6 +153,17 @@
         "card_type": [
             "Action",
             "Duration",
+            "Command"
+        ],
+        "card_type_image": "duration.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Duration",
             "Reaction"
         ],
         "card_type_image": "duration-reaction.png",
@@ -829,6 +840,27 @@
     },
     {
         "card_type": [
+            "Trait"
+        ],
+        "card_type_image": "trait.png",
+        "group_cost": "",
+        "group_global_type": "Traits",
+        "defaultCardCount": 1,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 1
+    },
+    {
+        "card_type": [
+            "Traits"
+        ],
+        "card_type_image": "trait.png",
+        "group_cost": "",
+        "defaultCardCount": 0,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
             "Trash"
         ],
         "card_type_image": "action.png",
@@ -868,6 +900,17 @@
     {
         "card_type": [
             "Treasure",
+            "Duration",
+            "Loot"
+        ],
+        "card_type_image": "treasure-duration.png",
+        "defaultCardCount": 2,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
             "Attack",
             "Fate"
         ],
@@ -889,6 +932,16 @@
     {
         "card_type": [
             "Treasure",
+            "Loot"
+        ],
+        "card_type_image": "treasure.png",
+        "defaultCardCount": 2,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
             "Prize"
         ],
         "card_type_image": "treasure.png",
@@ -904,6 +957,17 @@
         "card_type_image": "treasure-reaction.png",
         "defaultCardCount": 10,
         "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
+            "Reaction",
+            "Loot"
+        ],
+        "card_type_image": "treasure-reaction.png",
+        "defaultCardCount": 2,
+        "tabCostHeightOffset": 1,
         "tabTextHeightOffset": 0
     },
     {

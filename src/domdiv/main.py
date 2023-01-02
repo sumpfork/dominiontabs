@@ -1,6 +1,7 @@
 import os
-import codecs
+import functools
 import json
+import gzip
 import sys
 import configargparse
 import copy
@@ -49,14 +50,15 @@ LANGUAGE_DEFAULT = (
 LANGUAGE_XX = "xx"  # a dummy language for starting translations
 
 
-def get_languages(path):
+@functools.lru_cache()
+def get_languages(path="card_db"):
     languages = []
     for name in pkg_resources.resource_listdir("domdiv", path):
         dir_path = os.path.join(path, name)
         if pkg_resources.resource_isdir("domdiv", dir_path):
-            cards_file = os.path.join(dir_path, "cards_{}.json".format(name))
-            sets_file = os.path.join(dir_path, "sets_{}.json".format(name))
-            types_file = os.path.join(dir_path, "types_{}.json".format(name))
+            cards_file = os.path.join(dir_path, f"cards_{name}.json.gz")
+            sets_file = os.path.join(dir_path, f"sets_{name}.json.gz")
+            types_file = os.path.join(dir_path, f"types_{name}.json.gz")
             if (
                 pkg_resources.resource_exists("domdiv", cards_file)
                 and pkg_resources.resource_exists("domdiv", sets_file)
@@ -68,15 +70,15 @@ def get_languages(path):
     return languages
 
 
-LANGUAGE_CHOICES = get_languages("card_db")
-
-
 def get_resource_stream(path):
-    return codecs.EncodedFile(pkg_resources.resource_stream("domdiv", path), "utf-8")
+    return gzip.GzipFile(
+        fileobj=pkg_resources.resource_stream("domdiv", path),
+    )
 
 
+@functools.lru_cache()
 def get_expansions():
-    set_db_filepath = os.path.join("card_db", "sets_db.json")
+    set_db_filepath = os.path.join("card_db", "sets_db.json.gz")
     with get_resource_stream(set_db_filepath) as setfile:
         set_file = json.loads(setfile.read().decode("utf-8"))
     assert set_file, "Could not load any sets from database"
@@ -96,11 +98,9 @@ def get_expansions():
     return official, fan
 
 
-EXPANSION_CHOICES, FAN_CHOICES = get_expansions()
-
-
+@functools.lru_cache()
 def get_global_groups():
-    type_db_filepath = os.path.join("card_db", "types_db.json")
+    type_db_filepath = os.path.join("card_db", "types_db.json.gz")
     with get_resource_stream(type_db_filepath) as typefile:
         type_file = json.loads(typefile.read().decode("utf-8"))
     assert type_file, "Could not load any card types from database"
@@ -117,15 +117,11 @@ def get_global_groups():
     return group_global_choices, group_global_valid
 
 
-GROUP_GLOBAL_CHOICES, GROUP_GLOBAL_VALID = get_global_groups()
-
-
-def get_types(language="en_us"):
+@functools.lru_cache()
+def get_types(language=LANGUAGE_DEFAULT):
     # get a list of valid types
     language = language.lower()
-    type_text_filepath = os.path.join(
-        "card_db", language, "types_{}.json".format(language)
-    )
+    type_text_filepath = os.path.join("card_db", language, f"types_{language}.json.gz")
     with get_resource_stream(type_text_filepath) as type_text_file:
         type_text = json.loads(type_text_file.read().decode("utf-8"))
     assert type_text, "Could not load type file for %r" % language
@@ -135,23 +131,23 @@ def get_types(language="en_us"):
     return types
 
 
-TYPE_CHOICES = get_types(LANGUAGE_DEFAULT)
-
-
-# Load Label information
-LABEL_INFO = None
-LABEL_CHOICES = []
-LABEL_KEYS = []
-LABEL_SELECTIONS = []
-labels_db_filepath = os.path.join("card_db", "labels_db.json")
-with get_resource_stream(labels_db_filepath) as labelfile:
-    LABEL_INFO = json.loads(labelfile.read().decode("utf-8"))
-assert LABEL_INFO, "Could not load label information from database"
-for label in LABEL_INFO:
-    if len(label["names"]) > 0:
-        LABEL_KEYS.append(label["names"][0])
-        LABEL_SELECTIONS.append(label["name"] if "name" in label else label["names"][0])
-        LABEL_CHOICES.extend(label["names"])
+@functools.lru_cache()
+def get_label_data():
+    labels_db_filepath = os.path.join("card_db", "labels_db.json.gz")
+    label_choices = []
+    label_keys = []
+    label_selections = []
+    with get_resource_stream(labels_db_filepath) as labelfile:
+        label_info = json.loads(labelfile.read().decode("utf-8"))
+    assert label_info, "Could not load label information from database"
+    for label in label_info:
+        if len(label["names"]) > 0:
+            label_keys.append(label["names"][0])
+            label_selections.append(
+                label["name"] if "name" in label else label["names"][0]
+            )
+            label_choices.extend(label["names"])
+    return label_info, label_keys, label_selections, label_choices
 
 
 def add_opt(options, option, value):
@@ -191,7 +187,7 @@ def parse_opts(cmdline_args=None):
         "-l",
         dest="language",
         default=LANGUAGE_DEFAULT,
-        choices=LANGUAGE_CHOICES,
+        choices=get_languages(),
         help="Language of divider text.",
     )
     group_basic.add_argument(
@@ -422,7 +418,7 @@ def parse_opts(cmdline_args=None):
         "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
         "For example, 'dominion*' will match all expansions that start with 'dominion'. "
         "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in EXPANSION_CHOICES)
+            ", ".join("%s" % x for x in get_expansions()[0])
         ),
     )
     group_select.add_argument(
@@ -439,7 +435,7 @@ def parse_opts(cmdline_args=None):
         "'*' any number of characters, '?' matches any single character, "
         "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
         "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in FAN_CHOICES)
+            ", ".join("%s" % x for x in get_expansions()[1])
         ),
     )
     group_select.add_argument(
@@ -511,7 +507,7 @@ def parse_opts(cmdline_args=None):
         help="Group all cards of the specified types across all expansions into one 'Extras' divider. "
         "This may be called multiple times. Values are not case sensitive. "
         "Choices available include: {}".format(
-            ", ".join("%s" % x for x in GROUP_GLOBAL_VALID)
+            ", ".join("%s" % x for x in get_global_groups()[1])
         ),
     )
     group_select.add_argument(
@@ -563,6 +559,12 @@ def parse_opts(cmdline_args=None):
         "Same as '--group-global ways'",
     )
     group_select.add_argument(
+        "--exclude-traits",
+        action="store_true",
+        help="Group all 'Trait' cards across all expansions into one divider."
+        "Same as '--group-global traits'",
+    )
+    group_select.add_argument(
         "--only-type-any",
         "--only-type",
         "--type-any",
@@ -575,7 +577,7 @@ def parse_opts(cmdline_args=None):
         "Any type with a space in the name must be enclosed in double quotes. "
         "Values are not case sensitive. "
         "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in TYPE_CHOICES)
+            ", ".join("%s" % x for x in get_types())
         ),
     )
     group_select.add_argument(
@@ -589,7 +591,7 @@ def parse_opts(cmdline_args=None):
         "Any type with a space in the name must be enclosed in double quotes. "
         "Values are not case sensitive. "
         "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in TYPE_CHOICES)
+            ", ".join("%s" % x for x in get_types())
         ),
     )
 
@@ -874,7 +876,7 @@ def parse_opts(cmdline_args=None):
     group_printing.add_argument(
         "--label",
         dest="label_name",
-        choices=LABEL_CHOICES,
+        choices=get_label_data()[3],
         default=None,
         help="Use preset label dimentions. Specify a label name. "
         "This will override settings that conflict with the preset label settings.",
@@ -1060,7 +1062,7 @@ def clean_opts(options):
         options.group_global = []
     elif not any(options.group_global):
         # option given with nothing indicates all possible global groupings
-        options.group_global = GROUP_GLOBAL_VALID
+        options.group_global = get_global_groups()[1]
     else:
         # options.group_global is a list of lists.  Reduce to single lowercase list
         options.group_global = [
@@ -1075,6 +1077,8 @@ def clean_opts(options):
         options.group_global.append("projects")
     if options.exclude_ways:
         options.group_global.append("ways")
+    if options.exclude_traits:
+        options.group_global.append("traits")
     # Remove duplicates from the list
     options.group_global = list(set(options.group_global))
 
@@ -1084,7 +1088,7 @@ def clean_opts(options):
 
     options.label = None
     if options.label_name is not None:
-        for label in LABEL_INFO:
+        for label in get_label_data()[0]:
             if options.label_name.upper() in [n.upper() for n in label["names"]]:
                 options.label = label
                 break
@@ -1291,7 +1295,7 @@ def find_index_of_object(lst=[], attributes={}):
 def read_card_data(options):
 
     # Read in the card types
-    types_db_filepath = os.path.join("card_db", "types_db.json")
+    types_db_filepath = os.path.join("card_db", "types_db.json.gz")
     with get_resource_stream(types_db_filepath) as typefile:
         Card.types = json.loads(
             typefile.read().decode("utf-8"), object_hook=CardType.decode_json
@@ -1311,14 +1315,14 @@ def read_card_data(options):
     Card.types = dict(((c.getTypeNames(), c) for c in Card.types))
 
     # Read in the card database
-    card_db_filepath = os.path.join("card_db", "cards_db.json")
+    card_db_filepath = os.path.join("card_db", "cards_db.json.gz")
     with get_resource_stream(card_db_filepath) as cardfile:
         cards = json.loads(
             cardfile.read().decode("utf-8"), object_hook=Card.decode_json
         )
     assert cards, "Could not load any cards from database"
 
-    set_db_filepath = os.path.join("card_db", "sets_db.json")
+    set_db_filepath = os.path.join("card_db", "sets_db.json.gz")
     with get_resource_stream(set_db_filepath) as setfile:
         Card.sets = json.loads(setfile.read().decode("utf-8"))
     assert Card.sets, "Could not load any sets from database"
@@ -1535,7 +1539,7 @@ def add_card_text(cards, language="en_us"):
     language = language.lower()
     # Read in the card text file
     card_text_filepath = os.path.join(
-        "card_db", language, "cards_" + language.lower() + ".json"
+        "card_db", language, "cards_" + language.lower() + ".json.gz"
     )
     with get_resource_stream(card_text_filepath) as card_text_file:
         card_text = json.loads(card_text_file.read().decode("utf-8"))
@@ -1556,9 +1560,7 @@ def add_card_text(cards, language="en_us"):
 def add_set_text(options, sets, language="en_us"):
     language = language.lower()
     # Read in the set text and store for later
-    set_text_filepath = os.path.join(
-        "card_db", language, "sets_{}.json".format(language)
-    )
+    set_text_filepath = os.path.join("card_db", language, f"sets_{language}.json.gz")
     with get_resource_stream(set_text_filepath) as set_text_file:
         set_text = json.loads(set_text_file.read().decode("utf-8"))
     assert set_text, "Could not load set text for %r" % language
@@ -1574,9 +1576,7 @@ def add_set_text(options, sets, language="en_us"):
 def add_type_text(types={}, language="en_us"):
     language = language.lower()
     # Read in the type text and store for later
-    type_text_filepath = os.path.join(
-        "card_db", language, "types_{}.json".format(language)
-    )
+    type_text_filepath = os.path.join("card_db", language, f"types_{language}.json.gz")
     with get_resource_stream(type_text_filepath) as type_text_file:
         type_text = json.loads(type_text_file.read().decode("utf-8"))
     assert type_text, "Could not load type text for %r" % language
@@ -1599,7 +1599,7 @@ def add_bonus_regex(options, language="en_us"):
     language = language.lower()
     # Read in the bonus regex terms
     bonus_regex_filepath = os.path.join(
-        "card_db", language, "bonuses_{}.json".format(language)
+        "card_db", language, f"bonuses_{language}.json.gz"
     )
     with get_resource_stream(bonus_regex_filepath) as bonus_regex_file:
         bonus_regex = json.loads(bonus_regex_file.read().decode("utf-8"))
@@ -1663,7 +1663,7 @@ def filter_sort_cards(cards, options):
                 card.cardset_tag = Card.sets[card.cardset_tag]["upgrades"]
 
     # Combine globally all cards of the given types
-    # For example, Events, Landmarks, Projects, Ways
+    # For example, Events, Landmarks, Projects, Ways, Traits
     if options.group_global:
         # First find all possible types to group that match options.group_global
         types_to_group = {}

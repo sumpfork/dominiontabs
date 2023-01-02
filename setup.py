@@ -6,6 +6,7 @@ setup(
         "console_scripts": [
             "dominion_dividers = domdiv.main:main",
             "domdiv_update_language = domdiv.tools.update_language:run",
+            "domdiv_bgg_release = domdiv.tools.bgg_release:make_bgg_release",
         ]
     },
     package_dir={"": "src"},
