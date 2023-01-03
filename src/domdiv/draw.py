@@ -1478,15 +1478,19 @@ class DividerDrawer(object):
         tabScale = artSize / self.LABEL_HEIGHT
 
         # whitespace
-        margin = padding = 2
+        safety = 1  # empty zone inside tab edge
+        padding = 3  # minimum space around text
+        margin = 0  # space for banner/frame artwork, if any
+        # most non-landscape cards have 2.5mm margins in 52.5mm banners
+        marginRatio = 2.5 / 52.5
 
         # metrics from the package assets
         cardType = card.getType()
         if artwork:
             # adjust dimensions based on the application image metrics
             bannerHeight += cardType.getTabTextHeightOffset() * tabScale
-            # adjust for space around banners and scalloped edges
-            margin = tabWidth / 18
+            # fit text inside banner/frame graphics
+            margin = (tabWidth - 2 * safety) * marginRatio
 
         # cost symbol metrics
         coinHeight = bannerHeight
@@ -1536,7 +1540,7 @@ class DividerDrawer(object):
                 imgToDraw,
                 1,
                 artHeight,
-                tabWidth - 2,
+                tabWidth - 2 * safety,
                 artSize,
                 preserveAspectRatio=False,
                 anchor="n",
@@ -1544,7 +1548,7 @@ class DividerDrawer(object):
             )
 
         # initialize margins
-        textInset = textInsetRight = margin + padding
+        textInset = textInsetRight = safety + margin
 
         # draw cost
         if (
@@ -1555,7 +1559,6 @@ class DividerDrawer(object):
             and not card.isType("Trash")
         ):
             textInset += self.drawCost(card, textInset, costHeight, scale=tabScale)
-            textInset += padding
 
         # draw set image
         if "tab" in self.options.set_icon:
@@ -1576,7 +1579,12 @@ class DividerDrawer(object):
                     self.drawSetIcon(
                         setImage, tabWidth - textInsetRight, setImageHeight
                     )
-            textInsetRight += padding
+            # leave extra room between the set icon and text
+            textInsetRight += padding / 2
+
+        # add padding between the text and any icons or margins
+        textInset += padding
+        textInsetRight += padding
 
         # draw name
         textWidth -= textInset
@@ -1666,8 +1674,11 @@ class DividerDrawer(object):
             else:  # centre, but keep it inside the margins
                 w = max(lmin, min(tabWidth / 2 - centreWidth / 2, rmax))
             # use white text for Night cards
-            # TODO: instead of guessing, this should be in types_db.json
-            if "night" in img:
+            if (
+                "Night" in card.types
+                and "Action" not in card.types
+                and "Duration" not in card.types
+            ):
                 self.canvas.setFillColorRGB(1, 1, 1)
             self.drawSmallCaps(line, fontSize, w, h, style=style)
 
