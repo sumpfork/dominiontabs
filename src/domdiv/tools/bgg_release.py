@@ -5,14 +5,12 @@ import domdiv
 import domdiv.main
 
 
-gen_dir = "generated"
+gen_dir = "sumpfork_dividers"
 prefix = f"{gen_dir}/sumpfork_dominion_tabs_"
 postfix = "v" + domdiv.__version__ + ".pdf"
 argsets = [
     ("", ""),
     ("--orientation=vertical", "vertical_"),
-    ("--papersize=A4", "A4_"),
-    ("--papersize=A4 --orientation=vertical", "vertical_A4_"),
     ("--size=sleeved", "sleeved_"),
     ("--size=sleeved --orientation=vertical", "vertical_sleeved_"),
 ]

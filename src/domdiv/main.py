@@ -32,6 +32,11 @@ TAB_SIDE_CHOICES = [
 TEXT_CHOICES = ["card", "rules", "blank"]
 LINE_CHOICES = ["line", "dot", "cropmarks", "line-cropmarks", "dot-cropmarks"]
 
+HEAD_CHOICES = ["tab", "strap", "cover", "none"]
+TAIL_CHOICES = ["tab", "strap", "cover", "folder", "none"]
+FACE_CHOICES = ["front", "back"]
+SPINE_CHOICES = ["name", "types", "tab", "blank"]
+
 EDITION_CHOICES = ["1", "2", "latest", "upgrade", "removed", "all"]
 
 ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
@@ -196,7 +201,7 @@ def parse_opts(cmdline_args=None):
         "--size",
         dest="size",
         default="normal",
-        help="Dimentions of the cards to use with the dividers '<%%f>x<%%f>' (size in cm), "
+        help="Dimensions of the cards to use with the dividers '<%%f>x<%%f>' (size in cm), "
         "or 'normal' = '9.1x5.9', or 'sleeved' = '9.4x6.15'.",
     )
     group_basic.add_argument(
@@ -597,8 +602,117 @@ def parse_opts(cmdline_args=None):
     group_wrapper.add_argument(
         "--wrapper",
         action="store_true",
-        dest="wrapper",
-        help="Draw sleeves (aka wrapper) for the cards instead of a divider for the cards.",
+        dest="wrapper_meta",
+        help="Draw sleeves (wrappers) instead of dividers for the cards. "
+        "Same as --head=strap --tail=folder",
+    )
+    group_wrapper.add_argument(
+        "--pull-tab",
+        action="store_true",
+        dest="pull_tab_meta",
+        help="Draw folding pull tabs instead of dividers for the cards. "
+        "Same as --head=tab --tail=cover",
+    )
+    group_wrapper.add_argument(
+        "--tent",
+        action="store_true",
+        dest="tent_meta",
+        help="Draw folding tent covers instead of dividers for the cards. "
+        "Same as --head=cover --head-facing=back --head-text=back "
+        "--tail=tab --tail-facing=front",
+    )
+    group_wrapper.add_argument(
+        "--head",
+        choices=HEAD_CHOICES,
+        dest="head",
+        default="tab",
+        help="Top tab or wrapper type: "
+        "'tab' for divider tabs, "
+        "'strap' for longer folding tabs, "
+        "'cover' for matchbook-style folding covers, "
+        "or 'none' to leave the top edge plain. "
+        "The folding options create a top spine that you can customize "
+        "with --spine.",
+    )
+    group_wrapper.add_argument(
+        "--tail",
+        choices=TAIL_CHOICES,
+        dest="tail",
+        default="none",
+        help="Bottom tab or wrapper type: "
+        "'tab' for a bottom tab banner, "
+        "'strap' for a pull tab under the cards, "
+        "'cover' for a simple back cover, "
+        "'folder' to create tab folders, "
+        "or 'none' to leave the bottom edge plain.",
+    )
+    group_wrapper.add_argument(
+        "--head-facing",
+        choices=FACE_CHOICES,
+        dest="head_facing",
+        default="front",
+        help="Text orientation for top tabs and wrappers: "
+        "'front' shows the text upright when flat, "
+        "'back' shows it upright when folded over.",
+    )
+    group_wrapper.add_argument(
+        "--tail-facing",
+        choices=FACE_CHOICES,
+        dest="tail_facing",
+        default="back",
+        help="Text orientation for tail wrappers: "
+        "'front' shows the text upright when flat, "
+        "'back' shows it upright when folded under.",
+    )
+    group_wrapper.add_argument(
+        "--head-text",
+        choices=TEXT_CHOICES + FACE_CHOICES,
+        dest="head_text",
+        default="blank",
+        help="Text to print on top cover panels: "
+        "'card' shows the text from the game card, "
+        "'rules' shows additional rules for the game card, "
+        "'blank' leaves the panel blank; "
+        "'front' uses the same setting as --front; "
+        "'back' uses the same setting as --back.",
+    )
+    group_wrapper.add_argument(
+        "--tail-text",
+        choices=TEXT_CHOICES + FACE_CHOICES,
+        dest="tail_text",
+        default="back",
+        help="Text to print on bottom folder panels: "
+        "'card' shows the text from the game card, "
+        "'rules' shows additional rules for the game card, "
+        "'blank' leaves the panel blank; "
+        "'front' uses the same setting as --front; "
+        "'back' uses the same setting as --back.",
+    )
+    group_wrapper.add_argument(
+        "--head-height",
+        type=float,
+        default=0.0,
+        help="Height of the top panel in centimeters "
+        "(a value of 0 uses tab height or card height as appropriate).",
+    )
+    group_wrapper.add_argument(
+        "--tail-height",
+        type=float,
+        default=0.0,
+        help="Height of the bottom panel in centimeters "
+        "(a value of 0 uses tab height or card height as appropriate).",
+    )
+    group_wrapper.add_argument(
+        "--spine",
+        choices=SPINE_CHOICES,
+        dest="spine",
+        default="name",
+        help="Text to print on the spine of top covers: "
+        "'name' prints the card name; "
+        "'type' prints the card type; "
+        "'tab' prints tab text and graphics; "
+        "'blank' leaves the spine blank. "
+        "This is only valid with folding --head options.",
     )
     group_wrapper.add_argument(
         "--thickness",
@@ -606,7 +720,7 @@ def parse_opts(cmdline_args=None):
         default=2.0,
         help="Thickness of a stack of 60 cards (Copper) in centimeters. "
         "Typically unsleeved cards are 2.0, thin sleeved cards are 2.4, and thick sleeved cards are 3.2. "
-        "This is only valid with the --wrapper option.",
+        "This is only valid with --wrapper or other folding options.",
     )
     group_wrapper.add_argument(
         "--sleeved-thick",
@@ -621,19 +735,24 @@ def parse_opts(cmdline_args=None):
         help="Same as --size=sleeved --thickness 2.4.",
     )
     group_wrapper.add_argument(
-        "--notch-length",
-        type=float,
-        default=0.0,
-        help="Length of thumb notch on wrapper in centimeters "
-        "(a value of 0.0 means no notch on wrapper). "
-        "This can make it easier to remove the actual cards from the wrapper. "
-        "This is only valid with the --wrapper option.",
-    )
-    group_wrapper.add_argument(
         "--notch",
         action="store_true",
         dest="notch",
-        help="Same as --notch_length thickness 1.5.",
+        help="Creates thumb notches opposite to the divider tabs, "
+        "which can make it easier to remove cards from wrappers or stacks. "
+        "Equivalent to --notch-length=1.5 --notch-height=0.25",
+    )
+    group_wrapper.add_argument(
+        "--notch-length",
+        type=float,
+        default=0.0,
+        help="Sets the length of thumb notches in centimeters.",
+    )
+    group_wrapper.add_argument(
+        "--notch-height",
+        type=float,
+        default=0.0,
+        help="Sets the height of thumb notches in centimeters.",
     )
 
     # Printing
@@ -874,11 +993,12 @@ def clean_opts(options):
         options.thickness = 2.4
         options.sleeved = True
 
-    if options.notch:
+    # if notch is enabled with missing dimensions, provide defaults
+    notch = options.notch or options.notch_length or options.notch_height
+    if notch and not options.notch_length:
         options.notch_length = 1.5
-
-    if options.notch_length > 0:
-        options.notch_height = 0.25  # thumb notch height
+    if notch and not options.notch_height:
+        options.notch_height = 0.25
 
     if options.cropmarks and options.linetype == "line":
         options.linetype = "cropmarks"
@@ -1010,7 +1130,9 @@ def clean_opts(options):
 
         options.linewidth = 0.0
         options.cropmarks = False
-        options.wrapper = False
+        options.head = "tab"
+        options.tail = "none"
+        options.wrapper_meta = options.pull_tab_meta = options.tent_meta = False
         options.papersize = label["paper"]
         if label["tab-only"]:
             options.tabs_only = True
@@ -1030,6 +1152,37 @@ def clean_opts(options):
         ) < MIN_WIDTH_CM_FOR_FULL:
             options.tab_side = "full"
         options.label = label
+
+    if options.wrapper_meta:
+        # Same as --head=strap --tail=folder
+        options.head = "strap"
+        options.tail = "folder"
+    if options.pull_tab_meta:
+        # Same as --head=tab --tail=cover
+        options.head = "tab"
+        options.tail = "cover"
+    if options.tent_meta:
+        # Same as --head=cover --head-facing=back --head-text=back
+        #         --tail=tab --tail-facing=front
+        options.head = "cover"
+        options.head_facing = "back"
+        options.head_text = "back"
+        options.tail = "tab"
+        options.tail_facing = "front"
+    # Flags set if there's a head wrapper, a tail wrapper, or either
+    options.headWrapper = options.head in ["strap", "cover", "folder"]
+    options.tailWrapper = options.tail in ["strap", "cover", "folder"]
+    options.wrapper = options.headWrapper or options.tailWrapper
+
+    # Expand --head-text and --tail-text if they refer to --front or --back
+    if options.head_text == "front":
+        options.head_text = options.text_front
+    elif options.head_text == "back":
+        options.head_text = options.text_back
+    if options.tail_text == "front":
+        options.tail_text = options.text_front
+    elif options.tail_text == "back":
+        options.tail_text = options.text_back
 
     return options
 
@@ -1605,7 +1758,7 @@ def filter_sort_cards(cards, options):
     if options.language != LANGUAGE_DEFAULT:
         Card.type_names = add_type_text(Card.type_names, options.language)
     for card in cards:
-        card.types_name = " - ".join([Card.type_names[t] for t in card.types]).upper()
+        card.types_name = " - ".join([Card.type_names[t] for t in card.types])
 
     # Get the card bonus keywords in the requested language
     bonus = add_bonus_regex(options, LANGUAGE_DEFAULT)
@@ -1759,7 +1912,9 @@ def filter_sort_cards(cards, options):
         with open(options.cardlist) as cardfile:
             for line in cardfile:
                 line = line.strip()
-                if line.startswith("-"):
+                if not line or line.startswith("#"):
+                    pass  # ignore empty and "comment" lines
+                elif line.startswith("-"):
                     cardlist_exclude.add(line.lstrip("- \t"))
                 else:
                     cardlist.add(line.lstrip("+ \t"))

@@ -1,6 +1,7 @@
 import os
 import re
 import sys
+import numbers
 
 import pkg_resources
 
@@ -18,12 +19,24 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 from .cards import Card
 
 
-def split(l, n):
+def split(seq, n):
+    # Split a sequence into runs of n items each.
     i = 0
-    while i < len(l) - n:
-        yield l[i : i + n]
+    while i < len(seq) - n:
+        yield seq[i : i + n]
         i += n
-    yield l[i:]
+    yield seq[i:]
+
+
+def totalHeight(options, stackHeight=0):
+    # Calculate divider total height given current options and stack height.
+    return (
+        options.dividerBaseHeight
+        + options.headHeight
+        + options.tailHeight
+        + stackHeight * options.headWrapper
+        + stackHeight * options.tailWrapper
+    )
 
 
 class CardPlot(object):
@@ -122,6 +135,7 @@ class CardPlot(object):
         cropOnBottom=False,
         cropOnLeft=False,
         cropOnRight=False,
+        options=None,
     ):
         self.card = card
         self.x = x  # x location of the lower left corner of the card on the page
@@ -142,6 +156,7 @@ class CardPlot(object):
         self.cropOnBottom = cropOnBottom  # When true, cropmarks needed along BOTTOM *printed* edge of the card
         self.cropOnLeft = cropOnLeft  # When true, cropmarks needed along LEFT *printed* edge of the card
         self.cropOnRight = cropOnRight  # When true, cropmarks needed along RIGHT *printed* edge of the card
+        self.options = options  # other script options
 
         # And figure out the backside index
         if self.tabIndex == 0:
@@ -275,9 +290,7 @@ class CardPlot(object):
 
         # set width and height for this card
         width = self.cardWidth
-        height = self.cardHeight + self.tabHeight
-        if self.wrapper:
-            height = 2 * (height + self.stackHeight)
+        height = totalHeight(self.options, self.stackHeight)
 
         if backside:
             x = page_width - x - width
@@ -364,8 +377,9 @@ class Plotter(object):
             self.LINE,
             self.NO_LINE,
             self.DOT,
+            self.DEBUG,
         ) = range(
-            1, 8
+            1, 9
         )  # Constants
         if cropmarkLength < 0:
             cropmarkLength = 0.2
@@ -405,6 +419,9 @@ class Plotter(object):
             self.canvas.line(x, y, new_x, new_y)
         if pen == self.DOT:
             self.canvas.circle(new_x, new_y, self.DotSize)
+        if pen == self.DEBUG:
+            self.canvas.line(x, y, new_x, new_y)
+            self.canvas.circle(new_x, new_y, 10 * self.DotSize)
         self.setXY(new_x, new_y)  # save the new point
 
         # Make sure cropmarks is a list
@@ -416,44 +433,45 @@ class Plotter(object):
             # Each crop mark given is either:
             #   1. A tuple of direction and a boolean of additional enablement criteria
             #   2. A direction to draw a drop mark
-            if isinstance(mark, tuple):
-                direction, enable = mark
-                enable = (
-                    enable and self.CropEnable[direction]
-                    if direction in self.CropEnable
-                    else False
-                )
+            if isinstance(mark, numbers.Number):
+                self.cropmark(mark)
             else:
-                direction = mark
-                enable = (
-                    self.CropEnable[direction]
-                    if direction in self.CropEnable
-                    else False
-                )
-            if direction in self.CropEnable:
-                self.cropmark(direction, enable)
+                direction, enable = mark
+                if enable:
+                    self.cropmark(direction)
 
-    def cropmark(self, direction, enabled=False):
-        # From current point, draw a cropmark in the correct direction and return to starting point
-        if enabled:
-            x, y = self.getXY()  # Saving for later
+    def cropmark(self, direction, dx=0, dy=0):
+        # Draw a cropmark in the requested direction from a point,
+        # if cropmarks are enabled in that direction.
+        if not self.CropEnable.get(direction):
+            return
 
-            if direction == self.TOP:
-                self.plot(0, self.CropMarkSpacing)
-                self.plot(0, self.CropMarkLength, self.LINE)
-            if direction == self.BOTTOM:
-                self.plot(0, -self.CropMarkSpacing)
-                self.plot(0, -self.CropMarkLength, self.LINE)
-            if direction == self.RIGHT:
-                self.plot(self.CropMarkSpacing, 0)
-                self.plot(self.CropMarkLength, 0, self.LINE)
-            if direction == self.LEFT:
-                self.plot(-self.CropMarkSpacing, 0)
-                self.plot(-self.CropMarkLength, 0, self.LINE)
-            self.setXY(x, y)  # Restore to starting point
+        # Record the current point, then move relative to it
+        x, y = self.getXY()
+        if dx or dy:
+            self.setXY(x + dx, y + dy)
+
+        if direction == self.TOP:
+            self.plot(0, self.CropMarkSpacing)
+            self.plot(0, self.CropMarkLength, self.LINE)
+        if direction == self.BOTTOM:
+            self.plot(0, -self.CropMarkSpacing)
+            self.plot(0, -self.CropMarkLength, self.LINE)
+        if direction == self.RIGHT:
+            self.plot(self.CropMarkSpacing, 0)
+            self.plot(self.CropMarkLength, 0, self.LINE)
+        if direction == self.LEFT:
+            self.plot(-self.CropMarkSpacing, 0)
+            self.plot(-self.CropMarkLength, 0, self.LINE)
+        self.setXY(x, y)  # Restore the starting point
 
 
 class DividerDrawer(object):
+
+    HEAD, SPINE, BODY, TAIL = range(200, 204)  # panel identifiers
+    LABEL_HEIGHT = 0.9 * cm
+    SET_ICON_SIZE = 10
+
     def __init__(self, options=None):
         self.canvas = None
         self.pages = None
@@ -478,60 +496,139 @@ class DividerDrawer(object):
         self.canvas.save()
 
     def registerFonts(self):
-        # the following are filenames from both an Adobe Reader install and a download from fontsgeek
-        fontfilenames = [
-            "MinionPro-Regular.ttf",
-            "MinionPro-Bold.ttf",
-            "MinionPro-It.ttf",
-            "Minion Pro Regular.ttf",
-            "Minion Pro Bold.ttf",
-            "Minion Pro Italic.ttf",
-        ]
-        # first figure out which, if any, are present
-        fontpaths = [os.path.join("fonts", fname) for fname in fontfilenames]
-        fontpaths = [
-            fpath
-            for fpath in fontpaths
-            if pkg_resources.resource_exists("domdiv", fpath)
-        ]
-        self.font_mapping = {
-            "Regular": [fpath for fpath in fontpaths if "Regular" in fpath],
-            "Bold": [fpath for fpath in fontpaths if "Bold" in fpath],
-            "Italic": [fpath for fpath in fontpaths if "It" in fpath],
+        # Fonts used in Dominion:
+        # TrajanPro-Bold        card titles and types
+        # MinionStd-Black       numbers on base cards & icons
+        # Times-Roman           rules text*
+        # Times-Bold            bold rules text
+        # Times-Italic          italic rules text
+        # Helvetica-Bold        superscript + in some card costs
+        # CharlemagneStd-Bold   expansion names on box art
+        # Capitals              player mat banners
+        # Barbedor-Bold         player mat rules
+
+        # * the cards mostly use Times New Roman rather than Times Roman, but they're
+        #   not totally consistent, and the differences are very subtle
+
+        # Common filenames used by Adobe Reader and Creative Cloud, as well as
+        # alternatives available from free sites like fontsgeek:
+        fontfilenames = {
+            "TrajanPro-Bold": [
+                "TrajanPro-Bold.ttf",
+                "TrajanPro3-Semibold.ttf",
+                "Trajan Pro Bold.ttf",
+            ],
+            "MinionStd-Black": [
+                "MinionStd-Black.ttf",
+                "Minion Std Black.ttf",
+            ],
+            "CharlemagneStd-Bold": [
+                "CharlemagneStd-Bold.ttf",
+                "Charlemagne Std Bold.ttf",
+            ],
+            "MinionPro-Regular": [
+                "MinionPro-Regular.ttf",
+                "Minion Pro Regular.ttf",
+            ],
+            "MinionPro-Bold": [
+                "MinionPro-Bold.ttf",
+                "Minion Pro Bold.ttf",
+            ],
+            "MinionPro-Italic": [
+                "MinionPro-Italic.ttf",
+                "MinionPro-It.ttf",
+                "Minion Pro Italic.ttf",
+            ],
+            # Built-in fonts
+            "Times-Roman": None,
+            "Times-Bold": None,
+            "Times-Italic": None,
+            "Helvetica-Bold": None,
+            "Courier": None,
         }
-        # then make sure that we have at least one for each type
-        for fonttype in self.font_mapping:
-            if not len(self.font_mapping[fonttype]):
+        # Locate the files in package data, if present
+        fontpaths = {}
+        for font, filenames in fontfilenames.items():
+            if filenames is None:  # built-ins
+                fontpaths[font] = None
+                continue
+            for fname in filenames:
+                fpath = os.path.join("fonts", fname)
+                if pkg_resources.resource_exists("domdiv", fpath):
+                    fontpaths[font] = fpath
+                    break
+        # Mark the built-in files as pre-registered
+        registered = {
+            font: None for font, fontpath in fontpaths.items() if fontpath is None
+        }
+        # Determine the best matching fonts for each font type.
+        fontprefs = {
+            "Name": [  # card names & types
+                "TrajanPro-Bold",
+                "MinionPro-Regular",
+                "Times-Roman",
+            ],
+            "Expansion": [  # expansion names
+                "CharlemagneStd-Bold",
+                "TrajanPro-Bold",
+                "MinionPro-Regular",
+                "Times-Roman",
+            ],
+            "Cost": [  # card costs (coins, debt, etc)
+                "MinionStd-Black",
+                "MinionPro-Bold",
+                "Times-Bold",
+            ],
+            "PlusCost": [  # card cost superscript "+" modifiers
+                "Helvetica-Bold",
+            ],
+            "Regular": [  # regular text
+                "MinionPro-Regular",
+                "Times-Roman",
+            ],
+            "Bold": [  # miscellaneous bold text
+                "MinionPro-Bold",
+                "Times-Bold",
+            ],
+            "Italic": [  # for --use-set-text-icon
+                "MinionPro-Italic",
+                "Times-Italic",
+            ],
+            "Rules": [
+                "Times-Roman",
+            ],
+            "Monospaced": [
+                "Courier",
+            ],
+        }
+        self.fontStyle = {
+            # select the first matching preference for each font type
+            style: [font for font in prefs if font in fontpaths][0]
+            for style, prefs in fontprefs.items()
+        }
+        for style, font in self.fontStyle.items():
+            best = fontprefs[style][0]
+            if font != best:
                 print(
-                    (
-                        "Warning, Minion Pro ttf file for {} missing from domdiv/fonts!"
-                        " Falling back on Times font for everything."
-                    ).format(fonttype),
+                    "Warning, {} missing from domdiv/fonts; "
+                    "using {} instead.".format(best, font),
                     file=sys.stderr,
                 )
-                self.font_mapping = {
-                    "Regular": "Times-Roman",
-                    "Bold": "Times-Bold",
-                    "Italic": "Times-Oblique",
-                }
-                break
-            else:
-                # and finally register and tag one for each type
-                ftag = "MinionPro-{}".format(fonttype)
-                pdfmetrics.registerFont(
-                    TTFont(
-                        ftag,
-                        pkg_resources.resource_filename(
-                            "domdiv", self.font_mapping[fonttype][0]
-                        ),
-                    )
+            if font in registered:
+                continue
+            fontpath = fontpaths[font]
+            # print("Registering {} = {}".format(font, fontpath))
+            pdfmetrics.registerFont(
+                TTFont(
+                    font,
+                    pkg_resources.resource_filename("domdiv", fontpath),
                 )
-                self.font_mapping[fonttype] = ftag
-        self.font_mapping["Monospaced"] = "Courier"
+            )
+            registered[font] = fontpath
 
     def drawTextPages(self, pages, margin=1.0, fontsize=10, leading=10, spacer=0.05):
         s = getSampleStyleSheet()["BodyText"]
-        s.fontName = self.font_mapping["Monospaced"]
+        s.fontName = self.fontStyle["Monospaced"]
         s.alignment = TA_LEFT
 
         textHorizontalMargin = margin * cm
@@ -641,279 +738,329 @@ class DividerDrawer(object):
             )
         ) or self.options.tab_side == "centre"
 
-    def drawOutline(self, item, isBack=False):
-        # draw outline or cropmarks
-        if isBack and not self.options.cropmarks:
-            return
-        if self.options.linewidth <= 0.0:
-            return
+    def drawPanelOutline(
+        self, item, panel, size, fold=0, height=0, tabLeft=0, tab=None
+    ):
+        # total height of panel, including head or tail fold
+        ymax = size[1] if panel == self.BODY else fold + height
+
+        # canvas setup
         self.canvas.saveState()
         self.canvas.setLineWidth(self.options.linewidth)
+        if panel == self.TAIL:
+            # flip the tail vertically, to match coordinates with the head
+            self.canvas.translate(0, ymax)
+            self.canvas.scale(1, -1)
 
-        # The back is flipped
-        if isBack:
-            self.canvas.translate(item.cardWidth, 0)
-            self.canvas.scale(-1, 1)
-
+        # plotter setup
         plotter = Plotter(
             self.canvas,
             cropmarkLength=self.options.cropmarkLength,
             cropmarkSpacing=self.options.cropmarkSpacing,
         )
+        if self.options.cropmarks:
+            cropmarks = {
+                plotter.RIGHT: item.translateCropmarkEnable(item.RIGHT),
+                plotter.LEFT: item.translateCropmarkEnable(item.LEFT),
+                plotter.TOP: item.translateCropmarkEnable(  # flip the tail here too
+                    item.BOTTOM if panel == self.TAIL else item.TOP
+                ),
+            }
+            for direction, enable in cropmarks.items():
+                plotter.setCropEnable(direction, enable)
 
-        dividerWidth = item.cardWidth
-        dividerHeight = item.cardHeight + item.tabHeight
-        dividerBaseHeight = item.cardHeight
-        tabLabelWidth = item.tabWidth
-        theTabWidth = item.tabWidth
-        theTabHeight = item.tabHeight
-
-        left2tab = item.getTabOffset(
-            backside=False
-        )  # translate/scale above takes care of backside
-        right2tab = dividerWidth - tabLabelWidth - left2tab
-        nearZero = 0.01
-        left2tab = left2tab if left2tab > nearZero else 0
-        right2tab = right2tab if right2tab > nearZero else 0
-
-        if item.lineType.lower() == "line":
-            lineType = plotter.LINE
-            lineTypeNoDot = plotter.LINE
-        elif item.lineType.lower() == "dot":
-            lineType = plotter.DOT
-            lineTypeNoDot = plotter.NO_LINE
-        else:
-            lineType = plotter.NO_LINE
-            lineTypeNoDot = plotter.NO_LINE
-
-        # Setup bare minimum lineStyle's
-        lineStyle = [lineType for i in range(0, 10)]
-        lineStyle[0] = lineTypeNoDot
-        lineStyle[7] = lineType
-        lineStyle[8] = lineType if left2tab > 0 else lineTypeNoDot
-        lineStyle[9] = lineType if right2tab > 0 else lineTypeNoDot
-
-        RIGHT = plotter.RIGHT
-        LEFT = plotter.LEFT
-        BOTTOM = plotter.BOTTOM
-        TOP = plotter.TOP
+        # line styles
+        lineType = item.lineType.lower()
         NO_LINE = plotter.NO_LINE
-
-        plotter.setCropEnable(
-            RIGHT, self.options.cropmarks and item.translateCropmarkEnable(item.RIGHT)
+        # lines ending at a corner (creates dots)
+        line = (
+            plotter.LINE
+            if lineType.lower() == "line"
+            else plotter.DOT
+            if lineType.lower() == "dot"
+            else NO_LINE
         )
-        plotter.setCropEnable(
-            LEFT, self.options.cropmarks and item.translateCropmarkEnable(item.LEFT)
-        )
-        plotter.setCropEnable(
-            TOP, self.options.cropmarks and item.translateCropmarkEnable(item.TOP)
-        )
-        plotter.setCropEnable(
-            BOTTOM, self.options.cropmarks and item.translateCropmarkEnable(item.BOTTOM)
-        )
+        # lines ending at a midpoint (no dots)
+        midline = NO_LINE if line == plotter.DOT else line
 
-        if not item.wrapper:
-            # Normal Card Outline
-            #     <-left2tab-> <--tabLabelWidth--> <-right2tab->
-            #    |            |                   |             |
-            #  Z-+           F7-------------------7E            +-Y
-            #                 |                   |
-            #  H-8------------8                   9-------------9-C
-            #    |            G                   D             |
-            #    |               Generic Divider                |
-            #    |            Tab Centered or to the Side       |
-            #    |                                              |
-            #  A-7------------0-------------------0-------------7-B
-            #    |           V|                  W|             |
-            #
-            plotter.plot(0, 0, NO_LINE, [LEFT, BOTTOM])  # ? to A
-            plotter.plot(left2tab, 0, lineStyle[0], BOTTOM)  # A to V
-            plotter.plot(theTabWidth, 0, lineStyle[0], BOTTOM)  # V to W
-            plotter.plot(right2tab, 0, lineStyle[7], [BOTTOM, RIGHT])  # W to B
-            plotter.plot(0, dividerBaseHeight, lineStyle[9], RIGHT)  # B to C
-            plotter.plot(-right2tab, 0, lineStyle[9])  # C to D
-            plotter.plot(0, theTabHeight, lineStyle[7], TOP)  # D to E
-            plotter.plot(right2tab, 0, NO_LINE, [TOP, RIGHT])  # E to Y
-            plotter.plot(-right2tab, 0, NO_LINE)  # Y to E
-            plotter.plot(-theTabWidth, 0, lineStyle[7], TOP)  # E to F
-            plotter.plot(0, -theTabHeight, lineStyle[8])  # F to G
-            plotter.plot(-left2tab, 0, lineStyle[8], LEFT)  # G to H
-            plotter.plot(0, theTabHeight, NO_LINE, [TOP, LEFT])  # H to Z
-            plotter.plot(0, -theTabHeight, NO_LINE)  # Z to H
-            plotter.plot(0, -dividerBaseHeight, lineStyle[7])  # H to A
+        # notch dimensions
+        notch = (item.notchWidth, item.notchHeight)
+        notchLeft = round(max(notch[0], 0.0), 2)
+        notchRight = round(max(-notch[0], 0.0), 2)
 
-        else:
-            # Card Wrapper Outline
+        # given a list of y heights, draw left and right cropmarks for each
+        # (the plotter will filter out any that don't fit the layout)
+        def drawSideCropmarks(*args, zero=True):
+            for y in args:
+                if y or zero:
+                    plotter.cropmark(plotter.LEFT, 0, y)
+                    plotter.cropmark(plotter.RIGHT, size[0], y)
 
-            # Set up values used in the outline
-            minNotch = 0.1 * cm  # Don't really want notches that are smaller than this.
-            if self.options.notch_length * cm > minNotch:
-                # A notch length was given, so notches are wanted
-                notch_height = self.options.notch_height * cm  # thumb notch height
-                notch1 = notch2 = notch3 = notch4 = (
-                    self.options.notch_length * cm
-                )  # thumb notch width
-                notch1used = notch2used = notch3used = notch4used = True  # For now
+        # given a list of x locations, draw vertical cropmarks for each
+        # (always on top, because the tail gets turned 180 degrees)
+        def drawEndCropmarks(*args, zero=True):
+            for x in args:
+                if x or zero:
+                    plotter.cropmark(plotter.TOP, x + size[0] if x < 0 else x, ymax)
+
+        # ====================================================================
+        # BODY panel only
+
+        # draw one side of the body panel, from bottom to top.
+        # this is called once each for left and right.
+        # the sign of the argument indicates which direction to indent the notch
+        # (positive for the left side, negative for the right side).
+        # if there's no notch, it's just a straight line.
+        def drawBodySide(notchSide):
+            if not notchSide:  # straight line, no notch
+                plotter.plot(0, ymax, midline)  # A
+                return
+            plotter.plot(notchSide, 0, NO_LINE)  # (N)
+            plotter.plot(0, notch[1], line)  # B
+            plotter.plot(-notchSide, 0, line)  # C
+            plotter.plot(0, ymax - 2 * notch[1], line)  # D
+            plotter.plot(notchSide, 0, line)  # E
+            plotter.plot(0, notch[1], midline)  # F
+
+        #            |                    |
+        #  notch     | F                  |
+        #         E  |                    |
+        #  --- +-----+                    | --- Y2
+        #      |                          |
+        #      |                          |
+        #    D |              BODY        | A
+        #      |                          |
+        #      |                          |
+        #  --- +-----+                    | --- Y1
+        #         C  |                    |
+        #  notch     | B                  |
+        #            |                    |
+        #     (L)   (N)                  (R)    origin
+        # diagram for notchLeft > 0 and notchRight == 0
+
+        # draw body panel and return
+        if panel == self.BODY:
+            if notch[0]:  # draw crop marks for notches
+                drawSideCropmarks(notch[1], ymax - notch[1])  # Y1, Y2
+            drawBodySide(notchLeft)  # left side, origin at (L)
+            plotter.setXY(size[0], 0)
+            drawBodySide(-notchRight)  # right side, origin at (R)
+            self.canvas.restoreState()
+            return
+
+        # ====================================================================
+        # HEAD or TAIL panel only
+
+        # certain sizes smaller than this round to zero to avoid rounding errors
+        epsilon = 0.1 * cm
+
+        # draw head & tail panels
+        hasNotch = bool(notchLeft or notchRight)
+        hasTab = bool(tab and tab[0] and tab[1])
+        # first, set horizontal major coordinates & draw their cropmarks
+        tabRight = max(size[0] - tab[0] - tabLeft, 0.0)
+        tabLeft = round(tabLeft, 2)
+        tabRight = round(tabRight, 2)
+        drawEndCropmarks(0, size[0])
+        drawEndCropmarks(notchLeft, tabLeft, -tabRight, -notchRight, zero=False)
+        # set vertical major coordinates & draw their cropmarks
+        shoulder = ymax - tab[1]  # base of tab
+        if height - tab[1] < epsilon:
+            # panel is all tab, so omit the shoulder and notches
+            shoulder = fnotch = tnotch = 0.0
+        drawSideCropmarks(shoulder, ymax)
+        if hasNotch and shoulder:
+            fnotch = fold + notch[1]  # fold-side notch
+            if shoulder - fnotch < epsilon:
+                fnotch = shoulder
             else:
-                # No notches are wanted
-                notch_height = 0
-                notch1 = notch2 = notch3 = notch4 = 0
-                notch1used = notch2used = notch3used = notch4used = False
-
-            # Even if wanted, there may not be room, and limit to one pair of notches
-            if (right2tab - minNotch < notch1) or not notch1used:
-                notch1 = 0
-                notch1used = False
-            if (left2tab - minNotch < notch4) or not notch4used or notch1used:
-                notch4 = notch2 = 0
-                notch4used = notch2used = False
+                drawSideCropmarks(fnotch)
+            tnotch = fold + size[1] - notch[1]  # tab-side notch
+            if shoulder - tnotch < epsilon or not hasTab:
+                tnotch = shoulder
             else:
-                notch3 = 0
-                notch3used = False
+                drawSideCropmarks(tnotch)
 
-            # Setup the rest of the lineStyle's
-            lineStyle[1] = lineType if notch1used else lineTypeNoDot
-            lineStyle[2] = lineType if notch2used else lineTypeNoDot
-            lineStyle[3] = lineType if notch3used else lineTypeNoDot
-            lineStyle[4] = lineType if notch4used else lineTypeNoDot
-            lineStyle[5] = lineType if notch1used and right2tab > 0 else lineTypeNoDot
-            lineStyle[6] = lineType if notch4used and left2tab > 0 else lineTypeNoDot
+        # draw one side of the end panel (head or tail), from bottom to top.
+        # this is called once each for left and right.  the tail panel is
+        # reversed vertically so that it can share code with the head panel.
+        #
+        # parameters:
+        #   notchSide  x indent of notch (negative on right side)
+        #   tabSide    x indent of tab (negative on right side)
+        # bound variables (defined above):
+        #   ymax       y height of panel, including tab
+        #   shoulder   y height of panel, excluding tab
+        #   tnotch     y height of notch at tab end
+        #   fnotch     y height of notch at folding end
+        #   line       line style
+        # notes:
+        # shoulder == ymax if there are no distinct tabs
+        # shoulder == 0 for "tab" and "strap" styles
+        # fnotch == 0 and tnotch == shoulder if there's no notch
+        # top edge of panel & fold line are drawn elsewhere
+        def drawPanelSide(notchSide, tabSide):
+            if not (notchSide or tabSide):  # straight line, no indentations
+                plotter.plot(0, ymax, line)  # A
+                return
+            plotter.plot(notchSide, 0, NO_LINE)  # (N)
+            if notchSide and fnotch < shoulder:
+                # finish fold-side notch
+                plotter.plot(0, fnotch, line)  # B
+                plotter.plot(-notchSide, 0, line)  # C
+                plotter.plot(0, tnotch - fnotch, line)  # D
+                if tnotch < shoulder:
+                    # draw tab-side notch
+                    plotter.plot(notchSide, 0, line)  # E
+                    plotter.plot(0, shoulder - tnotch, line)  # F
+                else:
+                    plotter.plot(notchSide, 0, midline)  # E (no F)
+            else:  # B + D + F all as a straight line
+                plotter.plot(0, shoulder, line)  # needed for dot, even if zero
+            if hasTab:
+                plotter.plot(tabSide - notchSide, 0, line)  # G
+                plotter.plot(0, ymax - shoulder, line)  # H
 
-            stackHeight = item.stackHeight
-            body_minus_notches = dividerBaseHeight - (2.0 * notch_height)
-            tab2notch1 = right2tab - notch1
-            tab2notch4 = left2tab - notch4
+        #      :     :         :                   :
+        #      :     :         :                   :
+        #  ---                 +-------------------+ --- ymax
+        #                      |         Y         |
+        #  tab                 | H                 |
+        #                 G    |                   |
+        #  ---       +---------+                   | --- shoulder
+        #            |                             |
+        #  notch     | F                           |
+        #         E  |                             |
+        #  --- +-----+                             | --- tnotch
+        #      |                                   |
+        #      |                                   |
+        #    D |               HEAD/TAIL           | A
+        #      |                                   |
+        #      |                                   |
+        #  --- +-----+                             | --- fnotch
+        #         C  |                             |
+        # notch      | B                           |
+        #            |                             |
+        #            | - - - - - - - - - - - - - - |     fold
+        # spine      |             Z               |
+        #            | - - - - - - - - - - - - - - |     fold
+        #     (L)   (N)                           (R)    origin
+        # diagram for notch/tabLeft > 0 and notch/tabRight == 0
 
-            #     <-----left2tab----------> <--tabLabelWidth--> <-----right2tab-------->
-            #    |         |               |                   |               |        |
-            # Zb-+       Va+              V7-------------------7U              +Ua      +-Ub
-            #               <--tab2notch4->|                   |<--tab2notch1->
-            #    +                        W0...................0T
-            #              Y               |                   |               R
-            # Za-+         8---------------8...................9---------------9        +-Pa
-            #     <notch4 >|               X                   S               |<notch1>
-            #  Z-6---------4Ya                                                Q1--------5-P
-            #    |                                                                      |
-            #    |                         Generic Wrapper                              |
-            #    |                           Normal Side                                |
-            #    |                                                                      |
-            # AA-2--------2BB                                                 N3--------3-O
-            #     <notch2>|                                                    |<notch3>
-            #    +        0CC.................................................M0        +
-            #             |                                                    |
-            #    +        0DD.................................................L0        +
-            #     <notch2>|                                                    |<notch3>
-            # FF-2--------2EE                                                 K3--------3-J
-            #    |                                                                      |
-            #    |                            Reverse Side                              |
-            #    |                            rotated 180                               |
-            #    |         Ca                                                  H        |
-            # GG-6---------4<--tab2notch4->                     <--tab2notch1->1--------5-I
-            #     <notch4 >|               C                   F               |<notch1>
-            #  B-+       Cb8---------------8                   9---------------1G       +-Ia
-            #                              |                   |
-            #   -+A      Cc+              D7-------------------7E              +Ga      +-Ib
-            #    |         |               |                   |               |        |
-            #     <-----left2tab----------> <--tabLabelWidth--> <-----right2tab-------->
+        # left edge
+        plotter.setXY(0, 0)
+        drawPanelSide(notchLeft, tabLeft)  # (L)
+        # top edge
+        endWidth = tab[0] if hasTab else size[0] - notchLeft - notchRight
+        plotter.plot(endWidth, 0, midline)  # Y
+        # right edge
+        plotter.setXY(size[0], 0)
+        drawPanelSide(-notchRight, -tabRight)  # (R)
 
-            plotter.plot(0, 0, NO_LINE, [BOTTOM, LEFT])  # ?  to A
-            plotter.plot(0, theTabHeight, NO_LINE, LEFT)  # A  to B
-            plotter.plot(
-                0, notch_height, NO_LINE, (LEFT, notch4used or notch1used)
-            )  # B  to GG
-            plotter.plot(notch4, 0, lineStyle[4])  # GG to Ca
-            plotter.plot(0, -notch_height, lineStyle[8])  # Ca to Cb
-            plotter.plot(
-                0, -theTabHeight, NO_LINE, (BOTTOM, notch4used or notch2used)
-            )  # Cb to Cc
-            plotter.plot(0, theTabHeight, NO_LINE)  # Cc to Cb
-            plotter.plot(tab2notch4, 0, lineStyle[8])  # Cb to C
-            plotter.plot(0, -theTabHeight, lineStyle[7], BOTTOM)  # C  to D
-            plotter.plot(tabLabelWidth, 0, lineStyle[7], BOTTOM)  # D  to E
-            plotter.plot(0, theTabHeight, lineStyle[9])  # E  to F
-            plotter.plot(tab2notch1, 0, lineStyle[1])  # F  to G
-            plotter.plot(
-                0, -theTabHeight, NO_LINE, (BOTTOM, notch1used or notch3used)
-            )  # G  to Ga
-            plotter.plot(0, theTabHeight, NO_LINE)  # Ga to G
-            plotter.plot(0, notch_height, lineStyle[1])  # G  to H
-            plotter.plot(
-                notch1, 0, lineStyle[5], (RIGHT, notch1used or notch4used)
-            )  # H  to I
-            plotter.plot(0, -notch_height, NO_LINE, RIGHT)  # I  to Ia
-            plotter.plot(0, -theTabHeight, NO_LINE, [RIGHT, BOTTOM])  # Ia to Ib
-            plotter.plot(0, theTabHeight, NO_LINE)  # Ib to Ia
-            plotter.plot(0, notch_height, NO_LINE)  # Ia to I
-            plotter.plot(
-                0, body_minus_notches, lineStyle[3], (RIGHT, notch2used or notch3used)
-            )  # I  to J
-            plotter.plot(-notch3, 0, lineStyle[3])  # J  to K
-            plotter.plot(0, notch_height, lineStyle[0])  # K  to L
-            plotter.plot(0, stackHeight, lineStyle[0])  # L  to M
-            plotter.plot(0, notch_height, lineStyle[3])  # M  to N
-            plotter.plot(
-                notch3, 0, lineStyle[3], (RIGHT, notch2used or notch3used)
-            )  # N  to O
-            plotter.plot(
-                0, body_minus_notches, lineStyle[5], (RIGHT, notch1used or notch4used)
-            )  # O  to P
-            plotter.plot(0, notch_height, NO_LINE, RIGHT)  # P  to Pa
-            plotter.plot(0, -notch_height, NO_LINE)  # Pa to P
-            plotter.plot(-notch1, 0, lineStyle[1])  # P  to Q
-            plotter.plot(0, notch_height, lineStyle[9])  # Q  to R
-            plotter.plot(-tab2notch1, 0, lineStyle[9])  # R  to S
-            plotter.plot(0, stackHeight, lineStyle[0])  # S  to T
-            plotter.plot(0, theTabHeight, lineStyle[7], TOP)  # S  to U
-            plotter.plot(
-                tab2notch1, 0, NO_LINE, (TOP, notch1used or notch3used)
-            )  # U  to Ua
-            plotter.plot(notch1, 0, NO_LINE, [TOP, RIGHT])  # Ua to Ub
-            plotter.plot(-notch1, 0, NO_LINE)  # Ub to Ua
-            plotter.plot(-tab2notch1, 0, NO_LINE)  # Ua to U
-            plotter.plot(-theTabWidth, 0, lineStyle[7], TOP)  # U  to V
-            plotter.plot(
-                -tab2notch4, 0, NO_LINE, (TOP, notch4used or notch2used)
-            )  # V  to Va
-            plotter.plot(tab2notch4, 0, NO_LINE)  # Va to V
-            plotter.plot(0, -theTabHeight, lineStyle[0])  # V  to W
-            plotter.plot(0, -stackHeight, lineStyle[8])  # W  to X
-            plotter.plot(-tab2notch4, 0, lineStyle[8])  # X  to Y
-            plotter.plot(0, -notch_height, lineStyle[4])  # Y  to Ya
-            plotter.plot(
-                -notch4, 0, lineStyle[6], (LEFT, notch1used or notch4used)
-            )  # Ya to Z
-            plotter.plot(0, notch_height, NO_LINE, LEFT)  # Z  to Za
-            plotter.plot(
-                0, theTabHeight + stackHeight, NO_LINE, [TOP, LEFT]
-            )  # Za to Zb
-            plotter.plot(0, -theTabHeight - stackHeight, NO_LINE)  # Zb to Za
-            plotter.plot(0, -notch_height, NO_LINE)  # Za to Z
-            plotter.plot(
-                0, -body_minus_notches, lineStyle[2], (LEFT, notch2used or notch3used)
-            )  # Z  to AA
-            plotter.plot(notch2, 0, lineStyle[2])  # AA to BB
-            plotter.plot(0, -notch_height, lineStyle[0])  # BB to CC
-            plotter.plot(0, -stackHeight, lineStyle[0])  # CC to DD
-            plotter.plot(0, -notch_height, lineStyle[2])  # DD to EE
-            plotter.plot(
-                -notch2, 0, lineStyle[2], (LEFT, notch2used or notch3used)
-            )  # EE to FF
-            plotter.plot(0, -body_minus_notches, lineStyle[6])  # FF to GG
-
-            # Add fold lines
+        # folds
+        if fold:
+            self.canvas.saveState()
             self.canvas.setStrokeGray(0.9)
-            plotter.setXY(
-                left2tab, dividerHeight + stackHeight + dividerBaseHeight
-            )  # ?  to X
-            plotter.plot(theTabWidth, 0, plotter.LINE)  # X  to S
-            plotter.plot(0, stackHeight)  # S  to T
-            plotter.plot(-theTabWidth, 0, plotter.LINE)  # V  to S
+            if shoulder:
+                foldx = notchLeft
+                foldw = size[0] - notchLeft - notchRight
+            else:
+                foldx = tabLeft
+                foldw = tab[0]
+            for foldy in (0, fold):
+                self.canvas.line(foldx, foldy, foldx + foldw, foldy)  # Z
+            self.canvas.restoreState()
 
-            plotter.setXY(notch2, dividerHeight)  # ?  to DD
-            plotter.plot(dividerWidth - notch2 - notch3, 0, plotter.LINE)  # DD to L
-            plotter.plot(0, stackHeight)  # L  to M
-            plotter.plot(-dividerWidth + notch2 + notch3, 0, plotter.LINE)  # M  to CC
+        self.canvas.restoreState()
 
+    def drawOutline(self, item, isBack=False):
+        # bail out if there's nothing to draw
+        if self.options.linewidth <= 0.0:
+            return
+        # only the front gets an outline, unless cropmarks are set
+        if isBack and not self.options.cropmarks:
+            return
+
+        # canvas setup
+        self.canvas.saveState()
+        if isBack:  # flip the back side horizontally
+            self.canvas.translate(item.cardWidth, 0)
+            self.canvas.scale(-1, 1)
+
+        # certain sizes smaller than this round to zero to avoid rounding errors
+        epsilon = 0.1 * cm
+
+        # calculate card dimensions
+        body = (item.cardWidth, item.cardHeight)
+        headHeight = self.options.headHeight
+        tailHeight = self.options.tailHeight
+        headFold = item.stackHeight if self.options.headWrapper else 0
+        tailFold = item.stackHeight if self.options.tailWrapper else 0
+
+        # calcluate tab dimensions and position
+        def tabHeight(panelStyle, panelHeight):
+            return (
+                panelHeight
+                if panelStyle in ["tab", "strap"]
+                else item.tabHeight
+                if panelStyle == "folder"
+                else 0.0
+            )
+
+        headTabHeight = tabHeight(self.options.head, headHeight)
+        tailTabHeight = tabHeight(self.options.tail, tailHeight)
+        tabWidth = item.tabWidth
+        if headTabHeight + tailTabHeight == 0.0 or body[0] - tabWidth < epsilon:
+            # both tabs are full-width or missing
+            tabWidth = body[0]
+            tabLeft = tabRight = headTabHeight = tailTabHeight = 0.0
+        else:
+            # at least one panel has a distinct tab
+            tabLeft = item.getTabOffset(backside=False)  # mirroring is handled above
+            if tabLeft < epsilon:  # tab is very close to left edge, so align it
+                tabLeft = 0
+            tabRight = body[0] - tabWidth - tabLeft
+            if tabRight < epsilon:  # tab is very close to right edge, so align it
+                tabLeft += tabRight
+                tabRight = 0
+        headTab = (tabWidth, headTabHeight)
+        tailTab = (tabWidth, tailTabHeight)
+
+        # notch size and side
+        notchWidth = self.options.notch_length * cm
+        notchHeight = min(
+            self.options.notch_height * cm if notchWidth else 0,
+            body[1] / 5,  # notch needs to be significantly shorter than the body
+        )
+        if notchWidth < epsilon or notchHeight < epsilon:
+            notchWidth = notchHeight = 0
+        elif notchWidth < tabRight + epsilon:  # prefer the right side
+            if tabRight - notchWidth < epsilon:  # align to tab if it's very close
+                notchWidth = tabRight
+            notchWidth = -notchWidth
+        elif notchWidth < tabLeft + epsilon:
+            if tabLeft - notchWidth < epsilon:  # align to tab if it's very close
+                notchWidth = tabLeft
+        else:  # no room
+            notchWidth = notchHeight = 0
+
+        # remember notch dimensions for later steps
+        item.notchWidth = notchWidth
+        item.notchHeight = notchHeight
+
+        # draw panels:
+        # tail
+        self.drawPanelOutline(
+            item, self.TAIL, body, tailFold, tailHeight, tabLeft, tailTab
+        )
+        # body
+        self.canvas.translate(0, tailHeight + tailFold)
+        self.drawPanelOutline(item, self.BODY, body)
+        # head
+        self.canvas.translate(0, body[1])
+        self.drawPanelOutline(
+            item, self.HEAD, body, headFold, headHeight, tabLeft, headTab
+        )
         self.canvas.restoreState()
 
     def add_inline_images(self, text, fontsize):
@@ -957,6 +1104,7 @@ class DividerDrawer(object):
         # Coins
         replace_specs = [
             # Coins
+            # TODO: coin text baseline should align with surrounding text
             (r"(\d+)\s\<\*COIN\*\>", "coin_small_\\1.png", 2.4, 200),
             (r"(\d+)\s(c|C)oin(s)?", "coin_small_\\1.png", 1.2, 100),
             (r"\?\s(c|C)oin(s)?", "coin_small_question.png", 1.2, 100),
@@ -1041,105 +1189,187 @@ class DividerDrawer(object):
                 preserveAspectRatio=True,
                 mask="auto",
             )
-            self.canvas.setFont(self.font_mapping["Bold"], 10)
+            self.canvas.setFont(self.fontStyle["Bold"], 10)
             self.canvas.drawCentredString(x + 8, countHeight + 4, str(value))
 
             # now draw the number of sets
             if count > 1:
                 count_string = "{}\u00d7".format(count)
-                width_string = stringWidth(
-                    count_string, self.font_mapping["Regular"], 10
-                )
+                width_string = stringWidth(count_string, self.fontStyle["Regular"], 10)
                 width_string -= 1  # adjust to make it closer to image
                 width += width_string
                 x -= width_string
-                self.canvas.setFont(self.font_mapping["Regular"], 10)
+                self.canvas.setFont(self.fontStyle["Regular"], 10)
                 self.canvas.drawString(x, countHeight + 4, count_string)
 
         return width + 1
 
-    def drawCost(self, card, x, y, costOffset=-1):
-        # width starts at 2 (1 pt border on each side)
-        width = 2
+    def drawCost(self, card, x, y, costOffset=-1, scale=1):
+        # card = subject card
+        # x = left side of coin
+        # y = baseline height for text
+        # (costOffset is no longer used)
 
-        costHeight = y + costOffset
-        coinHeight = costHeight - 5
-        potHeight = y - 3
-        potSize = 11
+        # Measured card metrics:
+        # coin and debt icons are 17 pt with a 1 pt drop shadow (18 pt total)
+        # cost numbers are Minion Std Black 18 (11.7 pt ascent)
+        # with a baseline 3 pt above the bottom of the coin
+        fontSize = 18 * scale
+        coinSize = 18 * scale  # shadow included in graphic
+        debtSize = 17 * scale
+        potSize = 15 * scale
+        # distance from text baseline to bottom edge of graphic
+        coinBase = 4 * scale  # shadow included in graphic
+        debtBase = 3 * scale
+        potBase = 2 * scale
 
-        if not (
-            card.cost == ""
-            or (card.debtcost and int(card.cost) == 0)
-            or (card.potcost and int(card.cost) == 0)
-        ):
+        # set relative positions of symbols and text
+        textHeight = y  # text baseline height
+        coinHeight = textHeight - coinBase  # bottom of coin graphic
+        debtHeight = textHeight - debtBase  # bottom of debt graphic
+        potHeight = textHeight - potBase  # bottom of potion graphic
 
-            self.canvas.drawImage(
-                DividerDrawer.get_image_filepath("coin_small.png"),
-                x,
-                coinHeight,
-                16,
-                16,
-                preserveAspectRatio=True,
-                mask="auto",
+        def drawCostText(text, x, y, color=None):
+            # x, y = center of baseline
+            cost = str(text)
+            font = self.fontStyle["Cost"]
+
+            # handle superscript cost modifiers
+            mod = ""
+            modSize = modSpacing = modWidth = modHeight = 0
+            if cost[-1] in "*+":
+                mod = cost[-1]
+                cost = cost[:-1]
+                modFont = font
+                modSpacing = -0.5 * scale
+                if mod == "*":
+                    # asterisks are set in Minion Std Black 12 and raised 3.75 pt
+                    modSize = 12 * scale
+                    modHeight = 3.75 * scale
+                    modSpacing -= 0.25 * scale  # all asterisks are a little tighter
+                elif mod == "+":
+                    # plusses are set in Arial/Helvetica Bold 9 and raised 9 pt
+                    modFont = self.fontStyle["PlusCost"]
+                    modSize = 9 * scale
+                    modHeight = 6 * scale
+                    if cost.endswith("4"):  # "4+" is kerned tighter
+                        modSpacing += -0.5 * scale
+                if not cost:  # lonely star or plus
+                    modSpacing = 0
+                modWidth = pdfmetrics.stringWidth(mod, modFont, modSize)
+
+            # get text width metrics
+            costWidth = [
+                pdfmetrics.stringWidth(digit, font, fontSize) for digit in cost
+            ]
+            spacing = -2.0  # compress multi-digit costs
+            totalWidth = (
+                sum(costWidth)
+                + spacing * max(0, len(costWidth) - 1)
+                + modSpacing
+                + modWidth
             )
-            self.canvas.setFont(self.font_mapping["Bold"], 12)
-            self.canvas.drawCentredString(x + 8, costHeight, str(card.cost))
-            self.canvas.setFillColorRGB(0, 0, 0)
-            x += 17
-            width += 16
 
-        if card.debtcost:
-            self.canvas.drawImage(
-                DividerDrawer.get_image_filepath("debt.png"),
-                x,
-                coinHeight,
-                16,
-                16,
-                preserveAspectRatio=True,
-                mask=[170, 255, 170, 255, 170, 255],
-            )
-            self.canvas.setFillColorRGB(1, 1, 1)
-            self.canvas.setFont(self.font_mapping["Bold"], 12)
-            self.canvas.drawCentredString(x + 8, costHeight, str(card.debtcost))
-            self.canvas.setFillColorRGB(0, 0, 0)
-            x += 17
-            width += 16
+            # write the text
+            self.canvas.saveState()
+            if color is not None:
+                self.canvas.setFillColorRGB(*color)
+            self.canvas.setFont(font, fontSize)
+            left = x - totalWidth / 2
+            right = x + totalWidth / 2
+            for i, digit in enumerate(cost):
+                prefix = sum(costWidth[:i]) + i * spacing
+                self.canvas.drawString(left + prefix, y, digit)
+            if mod:
+                self.canvas.setFont(modFont, modSize)
+                self.canvas.drawString(right - modWidth, y + modHeight, mod)
+            self.canvas.restoreState()
 
-        if card.potcost:
-            self.canvas.drawImage(
-                DividerDrawer.get_image_filepath("potion.png"),
-                x,
-                potHeight,
-                potSize,
-                potSize,
-                preserveAspectRatio=True,
-                mask="auto",
-            )
-            width += potSize
+        def scaleImage(name, x, y, h, mask="auto"):
+            path = DividerDrawer.get_image_filepath(name)
+            with Image.open(path) as img:
+                w0, h0 = img.size
+            scale = h / h0
+            w = w0 * scale
+            self.canvas.drawImage(path, x, y, w, h, mask)
+            return w
 
+        cost = card.cost
+        debt = card.debtcost
+        pots = card.potcost
+
+        width = 0
+        if cost and (cost[0] != "0" or not debt and not pots):
+            dx = scaleImage("coin.png", x + width, coinHeight, coinSize)
+            drawCostText(cost, x + width + dx / 2, textHeight)
+            width += dx
+        if debt:
+            mask = [170, 255, 170, 255, 170, 255]
+            dx = scaleImage("debt.png", x + width, debtHeight, debtSize, mask=mask)
+            drawCostText(debt, x + width + dx / 2, textHeight, color=(1, 1, 1))
+            width += dx
+        if pots:
+            if width:  # add a little extra room before the potion
+                width += 1
+            dx = scaleImage("potion.png", x + width, potHeight, potSize)
+            width += dx
         return width
 
     def drawSetIcon(self, setImage, x, y):
         # set image
-        w = 2
+        size = self.SET_ICON_SIZE
+        path = DividerDrawer.get_image_filepath(setImage)
         self.canvas.drawImage(
-            DividerDrawer.get_image_filepath(setImage), x, y, 14, 12, mask="auto"
+            path, x, y, size, size, mask="auto", preserveAspectRatio=True
         )
-        return w + 14
+        return size + 2
 
-    def nameWidth(self, name, fontSize):
+    def smallCapsConfig(self, text, size, style="Name"):
+        # Adapter for installations that don't have access to Trajan or Charlemagne.
+        # Looks up the best available font for the style and returns any necessary text
+        # or metric adjustments as (text, caps, small, font):
+        #   text    original text, or uppercase if simulating small caps
+        #   caps    font size for full capitals (first letter of each word)
+        #   small   font size for small caps (subsequent letters)
+        #   font    best matching font
+        # If the recommended font is present, returns (text, size, size, font) with the
+        # text and the two font sizes unchanged from the method parameters.
+
+        # Metrics for the two small caps fonts and the main fallback
+        capsMinion = 0.650  # Times is very similar, about 0.66
+        capsCharlemagne = 0.700
+        capsTrajan = 0.750
+        smallTrajan = 0.638
+
+        font = self.fontStyle[style]
+        if "Trajan" in font or "Charlemagne" in font:
+            # Close enough, even if we're subbing Trajan for Charlemagne
+            return text, size, size, font
+        if style == "Expansion":
+            # Scale Minion up to Charlemagne metrics
+            caps = size * capsCharlemagne / capsMinion
+            small = caps  # the "small" caps are the same size as the full caps
+        else:
+            # Scale Minion up to Trajan metrics
+            caps = size * capsTrajan / capsMinion
+            small = caps * smallTrajan / capsTrajan
+        return text.upper(), caps, small, font
+
+    def nameWidth(self, name, fontSize, style="Name"):
+        name, caps, small, font = self.smallCapsConfig(name, fontSize, style)
         w = 0
         name_parts = name.split()
         for i, part in enumerate(name_parts):
             if i != 0:
-                w += pdfmetrics.stringWidth(" ", self.font_mapping["Regular"], fontSize)
-            w += pdfmetrics.stringWidth(part[0], self.font_mapping["Regular"], fontSize)
-            w += pdfmetrics.stringWidth(
-                part[1:], self.font_mapping["Regular"], fontSize - 2
-            )
+                w += pdfmetrics.stringWidth(" ", font, caps)
+            if small == caps:
+                w += pdfmetrics.stringWidth(part, font, caps)
+            else:
+                w += pdfmetrics.stringWidth(part[0], font, caps)
+                w += pdfmetrics.stringWidth(part[1:], font, small)
         return w
 
-    def drawTab(self, item, wrapper="no", backside=False):
+    def drawTab(self, item, panel=None, backside=False):
         from io import BytesIO
 
         card = item.card
@@ -1147,56 +1377,153 @@ class DividerDrawer(object):
         if card.isBlank():
             return
 
-        # draw tab flap
-        self.canvas.saveState()
+        # Get panel options
+        # TODO: Provide more options for tab & spine graphics, instead of a simple
+        # no_tab_artwork switch here.  Perhaps treat banners the same as --cost and
+        # --set-icon and add head / tail / spine to LOCATION_OPTIONS. Then you could
+        # choose any of the graphic options at any of the locations.  Also, add an option
+        # for simple block colors instead of banners.
+        if panel == self.HEAD:
+            if self.options.head == "none":
+                return  # no head!
+            fullWidth = self.options.head == "cover"
+            facing = self.options.head_facing
+            artwork = not self.options.no_tab_artwork
+        elif panel == self.TAIL:
+            if self.options.tail == "none":
+                return  # no tail!
+            # The tail "tab" is always full width
+            fullWidth = self.options.tail in ["tab", "cover"]
+            facing = self.options.tail_facing
+            artwork = not self.options.no_tab_artwork
+        elif panel == self.SPINE:
+            if not self.options.headWrapper:
+                return  # no spine!
+            # The spine width matches the head edge, and it always faces front
+            fullWidth = self.options.head == "cover"
+            facing = "front"
+            artwork = not self.options.no_tab_artwork
 
-        translate_y = item.cardHeight
-        if self.wantCentreTab(card):
-            translate_x = item.cardWidth / 2 - item.tabWidth / 2
-        else:
-            translate_x = item.getTabOffset(backside=backside)
-
-        if wrapper == "back":
-            translate_y = item.tabHeight
-            if self.wantCentreTab(card):
-                translate_x = item.cardWidth / 2 + item.tabWidth / 2
-            else:
-                translate_x = item.getTabOffset(backside=False) + item.tabWidth
-
-        if wrapper == "front":
-            translate_y = (
-                translate_y + item.cardHeight + item.tabHeight + 2.0 * item.stackHeight
+        # set vertical dimensions
+        translate_y = 0
+        tabHeight = item.tabHeight
+        if panel == self.HEAD:
+            translate_y += (
+                self.options.headWrapper * item.stackHeight
+                + self.options.headHeight
+                - tabHeight
             )
+        elif panel == self.SPINE:
+            # center tab on the spine
+            translate_y += item.stackHeight / 2 - tabHeight / 2
+        if panel != self.TAIL:
+            translate_y += (
+                item.cardHeight
+                + self.options.tailHeight
+                + self.options.tailWrapper * item.stackHeight
+            )
+        # set horizontal dimensions
+        translate_x = 0
+        if fullWidth:
+            tabWidth = item.cardWidth
+            if panel == self.SPINE:
+                # make room for notches, if needed
+                tabWidth -= abs(item.notchWidth)  # either side
+                translate_x = max(0, item.notchWidth)  # left side only
+        elif self.wantCentreTab(card):  # centered tab
+            tabWidth = item.tabWidth
+            translate_x = item.cardWidth / 2 - item.tabWidth / 2
+        else:  # offset tab
+            tabWidth = item.tabWidth
+            translate_x = item.getTabOffset(backside=backside)
+        textWidth = tabWidth  # margins & padding get subtracted later
 
+        self.canvas.saveState()
         self.canvas.translate(translate_x, translate_y)
 
-        if wrapper == "back":
+        # set orientation
+        if facing == "back":
+            # Turn back faces around so they're right side up after folding
+            self.canvas.translate(tabWidth, tabHeight)
             self.canvas.rotate(180)
 
+        # set background color
         if self.options.black_tabs:
             self.canvas.saveState()
             self.canvas.setFillColorRGB(0, 0, 0)
-            self.canvas.rect(0, 0, item.tabWidth, item.tabHeight, fill=True)
+            self.canvas.rect(0, 0, tabWidth, tabHeight, fill=True)
             self.canvas.restoreState()
 
-        # allow for 3 pt border on each side
-        textWidth = item.tabWidth - 6
-        textHeight = 7
-        if self.options.no_tab_artwork:
-            textHeight = 4
-        textHeight = (
-            item.tabHeight / 2 - textHeight + card.getType().getTabTextHeightOffset()
-        )
+        # Determine relative vertical positioning of the major tab elements:
+        # align the tops of the card name, the cost numerals, and the set icon.
+
+        # The cost symbols determine vertical positioning, as they are the largest
+        # element.  On the Dominion cards, the coin symbols are 17 pt tall, and the cost
+        # numbers are set in Minion Std Black 18 (which has numerals ~11 pt tall).
+
+        # The card names and set icons are then top aligned with the cost numerals.  Both
+        # use the same 10 pt design size, but the set icon uses the full 10 pt whereas
+        # the text is set in small caps and has a higher baseline.
+
+        # If the text is too wide to fit in the space, the method finds a smaller size
+        # that fits, keeping the same baseline.  This could bring the text out of
+        # alignment with the other two elements, but that's OK.  The actual cards do the
+        # same thing.
+
+        # adjust for alternate label sizes
+        # LABEL_HEIGHT = 0.9cm design size
+        # tabHeight = actual height of tab area
+        artSize = min(tabHeight, self.LABEL_HEIGHT)  # size of the art area
+        artHeight = bannerHeight = (tabHeight - artSize) / 2
+        tabScale = artSize / self.LABEL_HEIGHT
+
+        # whitespace
+        margin = padding = 2
+
+        # metrics from the package assets
+        cardType = card.getType()
+        if artwork:
+            # adjust dimensions based on the application image metrics
+            bannerHeight += cardType.getTabTextHeightOffset() * tabScale
+            # adjust for space around banners and scalloped edges
+            margin = tabWidth / 18
+
+        # cost symbol metrics
+        coinHeight = bannerHeight - 1 * tabScale
+        costHeight = coinHeight + 4 * tabScale
+        costTop = costHeight + tabScale * 18 * 0.624  # Minion Std Black numeral height
+
+        # loosely align the tops of the banner text & symbols
+        nameTop = costTop - 0.5
+        setTop = costTop
+
+        # card name metrics
+        font = pdfmetrics.getFont(self.fontStyle["Name"])
+        fontSize = 10 * tabScale  # same as the type banner on the cards
+        minFontSize = 7 * tabScale
+        nameAscent = fontSize * 0.750  # Trajan caps height
+        textHeight = nameTop - nameAscent  # text baseline goes here
+
+        # when setting the spine, adjust vertical alignment to center the text
+        if panel == self.SPINE:
+            centerHeight = (tabHeight - nameAscent) / 2
+            if textHeight < centerHeight:
+                self.canvas.translate(0, centerHeight - textHeight)
+
+        # set symbol metrics
+        setImageHeight = setTop - self.SET_ICON_SIZE
+        setTextSize = nameAscent / 0.701  # Minion Pro Italic ascender height
+        setTextHeight = textHeight
 
         # draw banner
-        img = card.getType().getTabImageFile()
-        if not self.options.no_tab_artwork and img:
+        img = cardType.getTabImageFile()
+        if artwork and img:
             imgToDraw = DividerDrawer.get_image_filepath(img)
             if self.options.tab_artwork_opacity != 1.0:
                 imgObj = Image.open(imgToDraw)
                 if imgObj.mode != "RGBA":
                     imgObj = imgObj.convert("RGBA")
-                alpha = imgObj.split()[3]
+                alpha = imgObj.getchannel("A")
                 alpha = ImageEnhance.Brightness(alpha).enhance(
                     self.options.tab_artwork_opacity
                 )
@@ -1208,197 +1535,256 @@ class DividerDrawer(object):
             self.canvas.drawImage(
                 imgToDraw,
                 1,
-                0,
-                item.tabWidth - 2,
-                item.tabHeight - 1,
+                artHeight,
+                tabWidth - 2,
+                artSize,
                 preserveAspectRatio=False,
                 anchor="n",
                 mask="auto",
             )
 
+        # initialize margins
+        textInset = textInsetRight = margin + padding
+
         # draw cost
         if (
-            not card.isExpansion()
+            "tab" in self.options.cost
+            and not card.isExpansion()
             and not card.isBlank()
             and card.get_GroupCost() != ""
             and not card.isType("Trash")
         ):
-            if "tab" in self.options.cost:
-                textInset = 4
-                textInset += self.drawCost(
-                    card, textInset, textHeight, card.getType().getTabCostHeightOffset()
-                )
-            else:
-                textInset = 6
-        else:
-            textInset = 13
+            textInset += self.drawCost(card, textInset, costHeight, scale=tabScale)
+            textInset += padding
 
         # draw set image
-        # always need to offset from right edge, to make sure it stays on
-        # banner
-        textInsetRight = 6
-        if self.options.use_text_set_icon:
-            setImageHeight = card.getType().getTabTextHeightOffset()
-            setText = card.setTextIcon()
-            self.canvas.setFont(self.font_mapping["Italic"], 8)
-            if setText is None:
-                setText = ""
-
-            self.canvas.drawCentredString(item.tabWidth - 10, textHeight + 2, setText)
-            textInsetRight = 15
-        else:
-            setImage = card.setImage(self.options.use_set_icon)
-            if setImage and "tab" in self.options.set_icon:
-                setImageHeight = 3 + card.getType().getTabTextHeightOffset()
-
-                self.drawSetIcon(setImage, item.tabWidth - 20, setImageHeight)
-
-                textInsetRight = 20
+        if "tab" in self.options.set_icon:
+            if self.options.use_text_set_icon:
+                italic = self.fontStyle["Italic"]
+                setText = card.setTextIcon()
+                if setText:
+                    self.canvas.setFont(italic, setTextSize)
+                    setTextWidth = pdfmetrics.stringWidth(setText, italic, setTextSize)
+                    textInsetRight += setTextWidth
+                    self.canvas.drawString(
+                        tabWidth - textInsetRight, setTextHeight, setText
+                    )
+            else:
+                setImage = card.setImage(self.options.use_set_icon)
+                if setImage:
+                    textInsetRight += self.SET_ICON_SIZE  # they're all square
+                    self.drawSetIcon(
+                        setImage, tabWidth - textInsetRight, setImageHeight
+                    )
+            textInsetRight += padding
 
         # draw name
-        fontSize = 12
-        name = card.name.upper()
-
         textWidth -= textInset
         textWidth -= textInsetRight
 
-        width = self.nameWidth(name, fontSize)
-        while width > textWidth and fontSize > 8:
+        name = card.name
+        # arrows don't format properly in all fonts, so convert them to en dashes
+        name = name.replace("→", "–")
+        style = "Expansion" if card.isExpansion() else "Name"
+        width = self.nameWidth(name, fontSize, style)
+        while width > textWidth and fontSize > minFontSize:
             fontSize -= 0.01
-            width = self.nameWidth(name, fontSize)
+            width = self.nameWidth(name, fontSize, style)
         tooLong = width > textWidth
+        delimiterText = ""
         if tooLong:
-            name_lines = name.partition(" / ")
-            if name_lines[1]:
-                name_lines = (name_lines[0] + " /", name_lines[2])
-            else:
-                name_lines = name.split(None, 1)
+            # Break on a delimiter, if possible
+            for delimiter in "/-–—→":  # slashes, dashes, and arrows
+                name_lines = name.partition(" {:s} ".format(delimiter))
+                if name_lines[1]:
+                    delimiterText = name_lines[1][:2]
+                    break
+            if delimiterText:
+                name_lines = name_lines[0] + delimiterText, name_lines[2]
+            elif " " in name:
+                # Otherwise, break near the middle of the text
+                n = len(name) // 2
+                lname, _, lmid = name[:n].rpartition(" ")
+                rmid, _, rname = name[n:].partition(" ")
+                if len(lname) < len(rname):  # which end is shorter?
+                    name_lines = (lname + " " + lmid + rmid).lstrip(), rname
+                else:
+                    name_lines = lname, (lmid + rmid + " " + rname).rstrip()
+            else:  # nowhere to break
+                print(name, round(width / cm, 2), round(textWidth / cm, 2))
+                name_lines = (name,)
         else:
-            name_lines = [name]
+            name_lines = (name,)
 
+        # Recalculate text position based on adjusted font size
+        lineAscent = font.face.ascent / 1000 * fontSize
+        lines = len(name_lines)
+        blockAscent = lines * (lineAscent + 1) - 1
+        textHeight += (nameAscent - blockAscent) / 2
+
+        # Render text
         for linenum, line in enumerate(name_lines):
             h = textHeight
-            if tooLong and len(name_lines) > 1:
+            # adjust multi-line text to fit vertically
+            if linenum < lines - 1:
+                h += (lines - linenum - 1) * (lineAscent + 1)
+            # handle line-break delimiters gracefully for centre & right alignment:
+            lineWidth = centreWidth = rightWidth = self.nameWidth(line, fontSize, style)
+            delimiterIndent = 0
+            if delimiterText:
+                nudge = padding - 1  # how far delimiters can bleed
                 if linenum == 0:
-                    h += h / 2
+                    # centering should ignore delimiters
+                    centreWidth = self.nameWidth(
+                        line[: -len(delimiterText)], fontSize, style
+                    )
+                    # right alignment should extend them partly into the margins
+                    delimiterIndent = min(lineWidth - centreWidth, nudge)
                 else:
-                    h -= h / 2
+                    # right align subsequent lines
+                    rightWidth = self.nameWidth(line + delimiterText, fontSize, style)
+                    delimiterIndent = min(lineWidth - rightWidth + nudge, 0)
 
-            words = line.split()
-            NotRightEdge = not self.options.tab_name_align == "right" and (
-                self.options.tab_name_align == "centre"
-                or item.getClosestSide(backside=backside) != CardPlot.RIGHT
-                or not self.options.tab_name_align == "edge"
+            # determine tab alignment
+            side = (
+                CardPlot.CENTRE
+                if self.options.tab_name_align == "centre" or self.wantCentreTab(card)
+                else CardPlot.LEFT
+                if self.options.tab_name_align == "left"
+                else CardPlot.RIGHT
+                if self.options.tab_name_align == "right"
+                else item.getClosestSide(backside=backside)
             )
-            if wrapper == "back" and not self.options.tab_name_align == "centre":
-                NotRightEdge = not NotRightEdge
-            if NotRightEdge:
-                if (
-                    self.options.tab_name_align == "centre"
-                    or self.wantCentreTab(card)
-                    or (
-                        item.getClosestSide(backside=backside) == CardPlot.CENTRE
-                        and self.options.tab_name_align == "edge"
-                    )
-                ):
-                    w = item.tabWidth / 2 - self.nameWidth(line, fontSize) / 2
-                else:
-                    w = textInset
 
-                def drawWordPiece(text, fontSize):
-                    self.canvas.setFont(self.font_mapping["Regular"], fontSize)
-                    if text != " ":
-                        self.canvas.drawString(w, h, text)
-                    return pdfmetrics.stringWidth(
-                        text, self.font_mapping["Regular"], fontSize
-                    )
-
-                for i, word in enumerate(words):
-                    if i != 0:
-                        w += drawWordPiece(" ", fontSize)
-                    w += drawWordPiece(word[0], fontSize)
-                    w += drawWordPiece(word[1:], fontSize - 2)
-            else:
-                # align text to the right if tab is on right side
-                if self.options.tab_name_align == "centre" or self.wantCentreTab(card):
-                    w = item.tabWidth / 2 - self.nameWidth(line, fontSize) / 2
-                    w = item.tabWidth - w
-                else:
-                    w = item.tabWidth - textInsetRight
-
-                # to make tabs easier to read when grouped together extra 3pt is for
-                # space between text + set symbol
-                w -= 3
-
-                words.reverse()
-
-                def drawWordPiece(text, fontSize):
-                    self.canvas.setFont(self.font_mapping["Regular"], fontSize)
-                    if text != " ":
-                        self.canvas.drawRightString(w, h, text)
-                    return -pdfmetrics.stringWidth(
-                        text, self.font_mapping["Regular"], fontSize
-                    )
-
-                for i, word in enumerate(words):
-                    w += drawWordPiece(word[1:], fontSize - 2)
-                    w += drawWordPiece(word[0], fontSize)
-                    if i != len(words) - 1:
-                        w += drawWordPiece(" ", fontSize)
-
-        if wrapper == "front" and card.getCardCount() >= 5:
-            # Print smaller version of name on the top wrapper edge
-            self.canvas.translate(
-                0, -item.stackHeight
-            )  # move into area used by the wrapper
-            fontSize = 8  # use the smallest font
-            self.canvas.setFont(self.font_mapping["Regular"], fontSize)
-
-            textHeight = fontSize - 2
-            textHeight = item.stackHeight / 2 - textHeight / 2
-            h = textHeight
-            words = name.split()
-            w = item.tabWidth / 2 - self.nameWidth(name, fontSize) / 2
-
-            def drawWordPiece(text, fontSize):
-                self.canvas.setFont(self.font_mapping["Regular"], fontSize)
-                if text != " ":
-                    self.canvas.drawString(w, h, text)
-                return pdfmetrics.stringWidth(
-                    text, self.font_mapping["Regular"], fontSize
-                )
-
-            for i, word in enumerate(words):
-                if i != 0:
-                    w += drawWordPiece(" ", fontSize)
-                w += drawWordPiece(word[0], fontSize)
-                w += drawWordPiece(word[1:], fontSize - 2)
+            # calculate x position and write text
+            lmin = textInset
+            rmax = tabWidth - textInsetRight + delimiterIndent - lineWidth
+            if side == CardPlot.LEFT:
+                w = lmin
+            elif side == CardPlot.RIGHT:
+                w = rmax
+            else:  # centre, but keep it inside the margins
+                w = max(lmin, min(tabWidth / 2 - centreWidth / 2, rmax))
+            self.drawSmallCaps(line, fontSize, w, h, style=style)
 
         self.canvas.restoreState()
 
-    def drawText(self, item, divider_text="card", wrapper="no"):
+    def drawSmallCaps(self, text, fontSize, x, y, rightAlign=False, style="Name"):
+        # Print small caps text, simulating it if necessary
+
+        def drawWordPiece(text, fontSize):
+            self.canvas.setFont(font, fontSize)
+            if text != " ":
+                self.canvas.drawString(x, y, text)
+            return pdfmetrics.stringWidth(text, font, fontSize)
+
+        # Improve typography
+        text = text.replace("'", "’")
+
+        text, caps, small, font = self.smallCapsConfig(text, fontSize, style)
+        for i, word in enumerate(text.split()):
+            if i != 0:
+                x += drawWordPiece(" ", caps)
+            if small == caps:
+                x += drawWordPiece(word, caps)
+            else:
+                x += drawWordPiece(word[0], caps)
+                x += drawWordPiece(word[1:], small)
+
+    def drawSpine(self, item):
+        # Draw on the spine (top edge) of wrappers
+        card = item.card
+
+        # Skip blank cards and blank spines
+        if card.isBlank() or self.options.spine == "blank":
+            return
+        # Use the drawTab method for tab-style spines
+        if self.options.spine == "tab":
+            return self.drawTab(item, panel=self.SPINE)
+
+        fontSize = 8  # use the smallest font
+        text = card.types_name if self.options.spine == "types" else card.name
+
+        # Skip cards with no text, no spine, or no room
+        if not text or not self.options.headWrapper or item.stackHeight < fontSize:
+            return
+
+        # Print text on the top wrapper edge
+        self.canvas.saveState()
+
+        translate_y = (
+            item.cardHeight
+            + self.options.tailHeight
+            + self.options.tailWrapper * item.stackHeight
+        )
+        margin = 3
+        if self.options.head in ["cover", "folder"]:
+            # use full width
+            textWidth = item.cardWidth - 2 * margin
+            translate_x = margin
+        elif self.wantCentreTab(card):
+            textWidth = item.tabWidth - 2 * margin
+            translate_x = item.cardWidth / 2 - item.tabWidth / 2 + margin
+        else:
+            textWidth = item.tabWidth - 2 * margin
+            translate_x = item.getTabOffset(backside=False) + margin
+        self.canvas.translate(translate_x, translate_y)
+
+        # Determine text size
+        style = "Expansion" if card.isExpansion() else "Name"
+        width = self.nameWidth(text, fontSize, style)
+        while width > textWidth and fontSize > 6:
+            fontSize -= 0.01
+            width = self.nameWidth(text, fontSize, style)
+        # self.canvas.setFont(self.fontStyle["Name"], fontSize)
+
+        font = pdfmetrics.getFont(self.fontStyle["Name"])
+        textAscent = font.face.ascent / 1000 * fontSize
+        h = item.stackHeight / 2 - textAscent / 2
+        w = textWidth / 2 - width / 2
+
+        self.drawSmallCaps(text, fontSize, w, h, style=style)
+        self.canvas.restoreState()
+
+    def drawText(self, item, panel, divider_text="card"):
         card = item.card
         # Skip blank cards
         if card.isBlank():
             return
 
-        self.canvas.saveState()
-        usedHeight = 0
+        facing = "front"
         totalHeight = item.cardHeight
+        usedHeight = 0
 
-        # Figure out if any translation needs to be done
-        if wrapper == "back":
-            self.canvas.translate(item.cardWidth, item.cardHeight + item.tabHeight)
+        # Determine panel boundaries and location
+        translate_y = self.options.tailHeight
+        if self.options.tailWrapper and panel != self.TAIL:
+            translate_y += item.stackHeight
+
+        if panel == self.HEAD:
+            facing = self.options.head_facing
+            totalHeight = self.options.headHeight - item.tabHeight
+            translate_y += item.cardHeight + item.stackHeight
+        elif panel == self.TAIL:
+            facing = self.options.tail_facing
+            totalHeight = self.options.tailHeight - item.tabHeight
+            translate_y -= totalHeight
+        elif panel == self.BODY and self.options.tail == "tab":
+            # the tail "tab" uses the bottom edge of the body panel
+            totalHeight -= item.tabHeight
+            translate_y += item.tabHeight
+
+        self.canvas.saveState()
+        self.canvas.translate(0, translate_y)
+        if facing == "back":
+            self.canvas.translate(item.cardWidth, totalHeight)
             self.canvas.rotate(180)
 
-        if wrapper == "front":
-            self.canvas.translate(
-                0, item.cardHeight + item.tabHeight + item.stackHeight
-            )
-
-        if wrapper == "front" or wrapper == "back":
-            if self.options.notch_length > 0:
-                usedHeight += self.options.notch_height * cm
+        # Accomodate spine labels and wrapper notches
+        if self.options.spine == "tab" and panel in [self.BODY, self.HEAD]:
+            usedHeight = max(usedHeight, (item.tabHeight - item.stackHeight) / 2)
+        if self.options.notch_length:
+            usedHeight = max(usedHeight, self.options.notch_height * cm)
 
         # Add 'body-top' items
         drewTopIcon = False
@@ -1413,7 +1799,7 @@ class DividerDrawer(object):
         if "body-top" in self.options.set_icon and not card.isExpansion():
             setImage = card.setImage(self.options.use_set_icon)
             if setImage:
-                Image_x_right -= 16
+                Image_x_right -= self.SET_ICON_SIZE
                 self.drawSetIcon(
                     setImage, Image_x_right, totalHeight - usedHeight - 0.5 * cm - 3
                 )
@@ -1441,7 +1827,8 @@ class DividerDrawer(object):
             #  use all the available space, even if it is not centered on the card
             fontSize = 8
             failover = False
-            width = stringWidth(card.types_name, self.font_mapping["Regular"], fontSize)
+            types_name = card.types_name
+            width = self.nameWidth(types_name, fontSize)
             while width > textWidth:
                 fontSize -= 0.01
                 if fontSize < 6 and not failover:
@@ -1450,15 +1837,12 @@ class DividerDrawer(object):
                     w = left_margin + (textWidth2 / 2)
                     fontSize = 8
                     failover = True
-                width = stringWidth(
-                    card.types_name, self.font_mapping["Regular"], fontSize
-                )
+                width = self.nameWidth(types_name, fontSize)
 
             #  Print out the text in the right spot
             h = totalHeight - usedHeight - 0.5 * cm
-            self.canvas.setFont(self.font_mapping["Regular"], fontSize)
-            if card.types_name != " ":
-                self.canvas.drawCentredString(w, h, card.types_name)
+            if types_name != " ":
+                self.drawSmallCaps(types_name, fontSize, w - width / 2, h)
             drewTopIcon = True
 
         if drewTopIcon:
@@ -1479,7 +1863,7 @@ class DividerDrawer(object):
             return
 
         s = getSampleStyleSheet()["BodyText"]
-        s.fontName = "Times-Roman"
+        s.fontName = self.fontStyle["Rules"]
         if divider_text == "card" and not card.isExpansion():
             s.alignment = TA_CENTER
         else:
@@ -1561,22 +1945,16 @@ class DividerDrawer(object):
         if not self.options.tabs_only:
             self.drawOutline(item, isBack)
 
-        if self.options.wrapper:
-            wrap = "front"
-            isBack = False  # Safety.  If a wrapper, there is no backside
-        else:
-            wrap = "no"
-
-        cardText = item.textTypeFront
-        if isBack:
-            cardText = item.textTypeBack
-
-        self.drawTab(item, wrapper=wrap, backside=isBack)
+        cardText = item.textTypeBack if isBack else item.textTypeFront
+        self.drawTab(item, panel=self.HEAD, backside=isBack)
+        self.drawSpine(item)
         if not self.options.tabs_only:
-            self.drawText(item, cardText, wrapper=wrap)
-            if item.wrapper:
-                self.drawTab(item, wrapper="back", backside=True)
-                self.drawText(item, item.textTypeBack, wrapper="back")
+            self.drawTab(item, panel=self.TAIL, backside=isBack)
+            self.drawText(item, self.BODY, cardText)
+            if self.options.head in ["cover", "folder"]:
+                self.drawText(item, self.HEAD, self.options.head_text)
+            if self.options.tail in ["cover", "folder"]:
+                self.drawText(item, self.TAIL, self.options.tail_text)
 
         # retore the canvas state to the way we found it
         self.canvas.restoreState()
@@ -1589,7 +1967,7 @@ class DividerDrawer(object):
             # calculate the text height, font size, and orientation
             maxFontsize = 12
             minFontsize = 6
-            fontname = self.font_mapping["Regular"]
+            fontname = self.fontStyle["Regular"]
             font = pdfmetrics.getFont(fontname)
             fontHeightRelative = (font.face.ascent + abs(font.face.descent)) / 1000.0
 
@@ -1710,7 +2088,7 @@ class DividerDrawer(object):
                 # since that is used in the calculation of where to place the dividers on the page.
                 # This 'spins' the divider only, but keeps all the other calcuations the same.
                 options.spin = 270
-                # Now fix up the card dimentions.
+                # Now fix up the card dimensions.
                 options.dominionCardWidth = (
                     options.labelHeight + options.label["body-height"] * cm
                 )
@@ -1731,7 +2109,7 @@ class DividerDrawer(object):
         else:
             # Margins already set
             # Set Label size
-            options.labelHeight = 0.9 * cm
+            options.labelHeight = self.LABEL_HEIGHT
             options.labelWidth = options.tabwidth * cm
             if options.tab_side == "full" or options.labelWidth > options.dividerWidth:
                 options.labelWidth = options.dividerWidth
@@ -1739,8 +2117,32 @@ class DividerDrawer(object):
             options.verticalBorderSpace = options.vertical_gap * cm
             options.horizontalBorderSpace = options.horizontal_gap * cm
 
+        # Set head & tail heights now that card & label heights are set
+        options.headHeight = (
+            0.0
+            if options.head == "none"
+            else options.head_height * cm
+            if options.head_height
+            else options.dividerBaseHeight + options.labelHeight
+            if options.head == "folder"
+            else options.dividerBaseHeight
+            if options.head == "cover"
+            else options.labelHeight  # tab or strap
+        )
+        options.tailHeight = (
+            0.0
+            if options.tail in ["none", "tab"]  # not a real tab
+            else options.tail_height * cm
+            if options.tail_height
+            else options.dividerBaseHeight + options.labelHeight
+            if options.tail == "folder"
+            else options.dividerBaseHeight
+            if options.tail == "cover"
+            else options.labelHeight  # strap
+        )
+
         # Set Height
-        options.dividerHeight = options.dividerBaseHeight + options.labelHeight
+        options.dividerHeight = totalHeight(options)
 
         # Start building up the space reserved for each divider
         options.dividerWidthReserved = options.dividerWidth
@@ -1749,10 +2151,8 @@ class DividerDrawer(object):
         if options.wrapper:
             # Adjust height for wrapper.  Use the maximum thickness of any divider so we know anything will fit.
             maxStackHeight = max(c.getStackHeight(options.thickness) for c in cards)
-            options.dividerHeightReserved = 2 * (
-                options.dividerHeightReserved + maxStackHeight
-            )
-            print("Max Card Stack Height: {:.2f}cm ".format(maxStackHeight / 10.0))
+            print("Max Card Stack Height: {:.2f}cm ".format(maxStackHeight / cm))
+            options.dividerHeightReserved = totalHeight(options, maxStackHeight)
 
         # Adjust for rotation
         if options.rotate == 90 or options.rotate == 270:
@@ -1937,6 +2337,7 @@ class DividerDrawer(object):
                 textTypeFront=options.text_front,
                 textTypeBack=options.text_back,
                 stackHeight=card.getStackHeight(options.thickness),
+                options=options,
             )
 
             if card.isExpansion() and options.full_expansion_dividers:
