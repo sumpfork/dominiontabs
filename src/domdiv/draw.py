@@ -1486,7 +1486,7 @@ class DividerDrawer(object):
             # adjust dimensions based on the application image metrics
             bannerHeight += cardType.getTabTextHeightOffset() * tabScale
             # adjust for space around banners and scalloped edges
-            margin = tabWidth / 18 if card.isExpansion() else tabWidth / 48
+            margin = tabWidth / 18
 
         # cost symbol metrics
         coinHeight = bannerHeight - 1 * tabScale
