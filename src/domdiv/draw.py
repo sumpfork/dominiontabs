@@ -1491,6 +1491,8 @@ class DividerDrawer(object):
             bannerHeight += cardType.getTabTextHeightOffset() * tabScale
             # fit text inside banner/frame graphics
             margin = (tabWidth - 2 * safety) * marginRatio
+            if card.get_GroupGlobalType() in ("Events", "Landmarks", "Projects"):
+                margin *= 1.75
 
         # cost symbol metrics
         coinHeight = bannerHeight
