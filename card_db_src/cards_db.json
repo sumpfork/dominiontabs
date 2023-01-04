@@ -3757,7 +3757,8 @@
     {
         "card_tag": "Advisor",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "4",
         "types": [
@@ -3767,7 +3768,8 @@
     {
         "card_tag": "Baker",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "5",
         "types": [
@@ -3777,7 +3779,8 @@
     {
         "card_tag": "Butcher",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "5",
         "types": [
@@ -3787,7 +3790,8 @@
     {
         "card_tag": "Candlestick Maker",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "2",
         "types": [
@@ -3797,7 +3801,8 @@
     {
         "card_tag": "Doctor",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "3+",
         "types": [
@@ -3807,7 +3812,8 @@
     {
         "card_tag": "Herald",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "4+",
         "types": [
@@ -3817,7 +3823,8 @@
     {
         "card_tag": "Journeyman",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "5",
         "types": [
@@ -3827,7 +3834,8 @@
     {
         "card_tag": "Masterpiece",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "3+",
         "types": [
@@ -3837,7 +3845,8 @@
     {
         "card_tag": "Merchant Guild",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "5",
         "types": [
@@ -3847,7 +3856,8 @@
     {
         "card_tag": "Plaza",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "4",
         "types": [
@@ -3866,9 +3876,21 @@
         ]
     },
     {
+        "card_tag": "Soothsayer BB2DE",
+        "cardset_tags": [
+            "guilds-bigbox2-de"
+        ],
+        "cost": "5",
+        "types": [
+            "Action",
+            "Attack"
+        ]
+    },
+    {
         "card_tag": "Stonemason",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "2+",
         "types": [
@@ -3878,7 +3900,8 @@
     {
         "card_tag": "Taxman",
         "cardset_tags": [
-            "guilds"
+            "guilds",
+            "guilds-bigbox2-de"
         ],
         "cost": "4",
         "types": [
@@ -7210,7 +7233,8 @@
     {
         "card_tag": "Black Market",
         "cardset_tags": [
-            "promo"
+            "promo",
+            "promo-bigbox2-de"
         ],
         "cost": "3",
         "image": "black_market_set.png",
@@ -7300,7 +7324,8 @@
     {
         "card_tag": "Stash",
         "cardset_tags": [
-            "promo"
+            "promo",
+            "promo-bigbox2-de"
         ],
         "cost": "5",
         "image": "stash_set.png",
@@ -7324,6 +7349,17 @@
         "card_tag": "Walled Village",
         "cardset_tags": [
             "promo"
+        ],
+        "cost": "4",
+        "image": "walled_village_set.png",
+        "types": [
+            "Action"
+        ]
+    },
+    {
+        "card_tag": "Walled Village BB2DE",
+        "cardset_tags": [
+            "promo-bigbox2-de"
         ],
         "cost": "4",
         "image": "walled_village_set.png",
@@ -8302,7 +8338,8 @@
         "card_tag": "Caravan",
         "cardset_tags": [
             "seaside1stEdition",
-            "seaside2ndEdition"
+            "seaside2ndEdition",
+            "promo-bigbox2-de"
         ],
         "cost": "4",
         "types": [
