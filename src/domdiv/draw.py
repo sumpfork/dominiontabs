@@ -1371,7 +1371,7 @@ class DividerDrawer(object):
         return w
 
     @staticmethod
-    @functools.cache
+    @functools.lru_cache(maxsize=None)
     def prepArtwork(image, w, h, resolution, opacity):
         from io import BytesIO
 
