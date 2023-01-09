@@ -1373,6 +1373,10 @@ class DividerDrawer(object):
     @staticmethod
     @functools.lru_cache(maxsize=None)
     def prepArtwork(image, w, h, resolution, opacity):
+        # This method is factored out to cache the image processing.
+        # Otherwise, it overwhelms the runtime with unnecessary,
+        # repeated work.
+
         from io import BytesIO
 
         # Get the original image.
