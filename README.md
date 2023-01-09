@@ -18,7 +18,7 @@ The script has an extensive set of options that are relatively well documented v
 
 ## Translations
 
-When changing any of the [card database files](card_db_src) you should run the language update tool via `doit update_languages`. This produces [the package version of the card db](src/domdiv/card_db) from the card db source. This will also be run automatically and checked into git when you push to github. You should make sure that the resulting changes to the package are what you intend.
+When changing any of the [card database files](card_db_src) you should run the language update tool via `doit update_languages`. This produces [the package version of the card db](src/domdiv/card_db) from the card db source. This will also be run automatically and checked into git when you push to github. You should make sure that the resulting changes to the package are what you intend by generating dividers in the relevant languages.
 
 If you would like to help with translations to new (or updating existing) languages, please see [instructions here](src/domdiv/card_db/translation.md).
 
@@ -49,3 +49,7 @@ Install requirements via `pip install -r requirements.txt`. Then, run `pre-commi
 Feel free to comment on boardgamegeek at <https://boardgamegeek.com/thread/926575/web-page-generate-tabbed-dividers> or file issues on github (<https://github.com/sumpfork/dominiontabs/issues>).
 
 Tests can be run (and their dependencies installed) via `python setup.py test`, which will also happen if/when you push a branch or make a PR.
+
+## Image Sources
+
+There is a [directory of source images](source_images/) at the top level of the directory. While these are optional, they can be useful reference and/or used for creating new or recreating old tab banners, icons, etc. Many of these were originally scans of the physical game. Some of them have a lot of layers and are approaching 1GB in size, so they are hosted via [Git LFS](https://git-lfs.com/). As the Github version of that incurs a higher monthly cost, I instead host them on a private LFS server. If you would like the images or would like to contribute images let me know and I can make you an account on said server, or you I can copy them for you for easier access.
