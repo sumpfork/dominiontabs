@@ -4,3 +4,7 @@
 *.md text
 *.csv text
 *.in text
+img_sources/*.pxm filter=lfs diff=lfs merge=lfs -text
+img_sources/*.psd filter=lfs diff=lfs merge=lfs -text
+img_sources/*.xcf filter=lfs diff=lfs merge=lfs -text
+img_sources/*.png filter=lfs diff=lfs merge=lfs -text
