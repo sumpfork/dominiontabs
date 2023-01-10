@@ -1,9 +1,9 @@
-import os
 import codecs
-import json
-import sys
-import io
 import csv
+import io
+import json
+import os
+import sys
 from shutil import copyfile
 
 LANGUAGE_DEFAULT = "en_us"  # default language, which takes priority

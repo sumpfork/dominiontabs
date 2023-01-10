@@ -1,22 +1,21 @@
 import functools
+import numbers
 import os
 import re
 import sys
-import numbers
 
 import pkg_resources
-
 from PIL import Image, ImageEnhance
-
-from reportlab.lib.units import cm
-from reportlab.pdfbase import pdfmetrics
+from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY, TA_LEFT
 from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.platypus import Paragraph, XPreformatted
-from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER, TA_LEFT
+from reportlab.lib.units import cm
 from reportlab.lib.utils import ImageReader
-from reportlab.pdfgen import canvas
-from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.pdfmetrics import stringWidth
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfgen import canvas
+from reportlab.platypus import Paragraph, XPreformatted
+
 from .cards import Card
 
 
@@ -409,7 +408,7 @@ class Plotter(object):
         if mark in self.CropEnable:
             self.CropEnable[mark] = enable
 
-    def plot(self, delta_x=0, delta_y=0, pen=False, cropmarks=[]):
+    def plot(self, delta_x=0, delta_y=0, pen=False, cropmarks=None):
         # Move the pen, drawing along the way
         if pen is False:
             pen = self.NO_LINE
@@ -426,6 +425,8 @@ class Plotter(object):
         self.setXY(new_x, new_y)  # save the new point
 
         # Make sure cropmarks is a list
+        if cropmarks is None:
+            cropmarks = []
         cropmarks = cropmarks if isinstance(cropmarks, list) else [cropmarks]
         # Now add any cropmarks
         for mark in cropmarks:
@@ -482,7 +483,9 @@ class DividerDrawer(object):
     def get_image_filepath(fname):
         return pkg_resources.resource_filename("domdiv", os.path.join("images", fname))
 
-    def draw(self, cards=[], options=None):
+    def draw(self, cards=None, options=None):
+        if cards is None:
+            cards = []
         if options is not None:
             self.options = options
 
@@ -2292,13 +2295,15 @@ class DividerDrawer(object):
         items = self.setupCardPlots(options, cards)  # Turn cards into items to plot
         self.pages = self.convert2pages(options, items)  # plot items into pages
 
-    def setupCardPlots(self, options, cards=[]):
+    def setupCardPlots(self, options, cards=None):
         # First, set up common information for the dividers
         # Doing a lot of this up front, while the cards are ordered
         # just in case the dividers need to be reordered on the page.
         # By setting up first, any tab or text flipping will be correct,
         # even if the divider moves around a bit on the pages.
 
+        if cards is None:
+            cards = []
         # Drawing line type
         if options.cropmarks:
             if "dot" in options.linetype.lower():
@@ -2403,7 +2408,9 @@ class DividerDrawer(object):
             items.append(item)
         return items
 
-    def convert2pages(self, options, items=[]):
+    def convert2pages(self, options, items=None):
+        if items is None:
+            items = []
         # Take the layout and all the items and separate the items into pages.
         # Each item will have all its plotting information filled in.
         rows = options.numDividersVertical
@@ -2451,7 +2458,9 @@ class DividerDrawer(object):
             pages.append((options.horizontalMargin, options.verticalMargin, page))
         return pages
 
-    def drawDividers(self, cards=[]):
+    def drawDividers(self, cards=None):
+        if cards is None:
+            cards = []
         if not self.pages:
             self.calculatePages(cards)
 

@@ -1,20 +1,19 @@
-import os
-import functools
-import json
-import gzip
-import sys
-import configargparse
 import copy
 import fnmatch
-import pkg_resources
+import functools
+import gzip
+import json
+import os
+import sys
 import unicodedata
 from collections import Counter, defaultdict
 
+import configargparse
+import pkg_resources
 import reportlab.lib.pagesizes as pagesizes
 from reportlab.lib.units import cm
 
-from .cards import Card
-from .cards import CardType
+from .cards import Card, CardType
 from .draw import DividerDrawer
 
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
@@ -1202,6 +1201,7 @@ def parseDimensions(dimensionsStr):
 
 def generate_sample(options):
     from io import BytesIO
+
     from wand.image import Image
 
     buf = BytesIO()
@@ -1274,7 +1274,11 @@ def parse_cardsize(spec, sleeved):
     return dominionCardWidth, dominionCardHeight
 
 
-def find_index_of_object(lst=[], attributes={}):
+def find_index_of_object(lst=None, attributes=None):
+    if lst is None:
+        lst = []
+    if attributes is None:
+        attributes = {}
     # Returns the index of the first object in lst that matches the given attributes.  Otherwise returns None.
     # attributes is a dict of key: value pairs.   Object attributes that are lists are checked to have value in them.
     for i, d in enumerate(lst):
@@ -1581,7 +1585,9 @@ def add_set_text(options, sets, language="en_us"):
     return sets
 
 
-def add_type_text(types={}, language="en_us"):
+def add_type_text(types=None, language="en_us"):
+    if types is None:
+        types = {}
     language = language.lower()
     # Read in the type text and store for later
     type_text_filepath = os.path.join("card_db", language, f"types_{language}.json.gz")
@@ -2073,7 +2079,9 @@ def filter_sort_cards(cards, options):
     return cards
 
 
-def calculate_layout(options, cards=[]):
+def calculate_layout(options, cards=None):
+    if cards is None:
+        cards = []
     # This is in place to allow for test cases to it call directly to get
     options = clean_opts(options)
     options.dominionCardWidth, options.dominionCardHeight = parse_cardsize(
