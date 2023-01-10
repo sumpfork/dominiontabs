@@ -1,3 +1,4 @@
+import functools
 import os
 import re
 import sys
@@ -1369,9 +1370,51 @@ class DividerDrawer(object):
                 w += pdfmetrics.stringWidth(part[1:], font, small)
         return w
 
-    def drawTab(self, item, panel=None, backside=False):
+    @staticmethod
+    @functools.lru_cache(maxsize=None)
+    def prepArtwork(image, w, h, resolution, opacity):
+        # This method is factored out to cache the image processing.
+        # Otherwise, it overwhelms the runtime with unnecessary,
+        # repeated work.
+
         from io import BytesIO
 
+        # Get the original image.
+        artwork = DividerDrawer.get_image_filepath(image)
+
+        # Make any optional adjustments.
+        if resolution != 0 or opacity != 1.0:
+            imgObj = Image.open(artwork)
+            if resolution:
+                # Limit artwork resolution.
+                wmax = round(w * resolution / 72)
+                hmax = round(h * resolution / 72)
+                wnew = min(imgObj.width, wmax)
+                hnew = min(imgObj.height, hmax)
+                imgObj = imgObj.resize((wnew, hnew), Image.ANTIALIAS)
+            if opacity != 1.0:
+                # Set image opacity.
+                if imgObj.mode != "RGBA":
+                    imgObj = imgObj.convert("RGBA")
+                alpha = imgObj.getchannel("A")
+                alpha = ImageEnhance.Brightness(alpha).enhance(opacity)
+                imgObj.putalpha(alpha)
+            imageBytes = BytesIO()
+            imgObj.save(imageBytes, "PNG")
+            imageBytes.seek(0)
+            artwork = ImageReader(imageBytes)
+
+        return artwork
+
+    def drawArtwork(self, image, x, y, w, h):
+        resolution = self.options.tab_artwork_resolution
+        opacity = self.options.tab_artwork_opacity
+        artwork = self.prepArtwork(image, w, h, resolution, opacity)
+        self.canvas.drawImage(
+            artwork, x, y, w, h, preserveAspectRatio=False, anchor="n", mask="auto"
+        )
+
+    def drawTab(self, item, panel=None, backside=False):
         card = item.card
         # Skip blank cards
         if card.isBlank():
@@ -1478,23 +1521,29 @@ class DividerDrawer(object):
         tabScale = artSize / self.LABEL_HEIGHT
 
         # whitespace
-        margin = padding = 2
+        safety = 1  # empty zone inside tab edge
+        padding = 3  # minimum space around text
+        margin = 0  # space for banner/frame artwork, if any
+        # most non-landscape cards have 2.5mm margins in 52.5mm banners
+        marginRatio = 2.5 / 52.5
 
         # metrics from the package assets
         cardType = card.getType()
         if artwork:
             # adjust dimensions based on the application image metrics
             bannerHeight += cardType.getTabTextHeightOffset() * tabScale
-            # adjust for space around banners and scalloped edges
-            margin = tabWidth / 18
+            # fit text inside banner/frame graphics
+            margin = (tabWidth - 2 * safety) * marginRatio
+            if card.get_GroupGlobalType() in ("Events", "Landmarks", "Projects"):
+                margin *= 1.75
 
         # cost symbol metrics
-        coinHeight = bannerHeight - 1 * tabScale
+        coinHeight = bannerHeight
         costHeight = coinHeight + 4 * tabScale
         costTop = costHeight + tabScale * 18 * 0.624  # Minion Std Black numeral height
 
         # loosely align the tops of the banner text & symbols
-        nameTop = costTop - 0.5
+        nameTop = costTop - 1
         setTop = costTop
 
         # card name metrics
@@ -1518,33 +1567,10 @@ class DividerDrawer(object):
         # draw banner
         img = cardType.getTabImageFile()
         if artwork and img:
-            imgToDraw = DividerDrawer.get_image_filepath(img)
-            if self.options.tab_artwork_opacity != 1.0:
-                imgObj = Image.open(imgToDraw)
-                if imgObj.mode != "RGBA":
-                    imgObj = imgObj.convert("RGBA")
-                alpha = imgObj.getchannel("A")
-                alpha = ImageEnhance.Brightness(alpha).enhance(
-                    self.options.tab_artwork_opacity
-                )
-                imgObj.putalpha(alpha)
-                imageBytes = BytesIO()
-                imgObj.save(imageBytes, "PNG")
-                imageBytes.seek(0)
-                imgToDraw = ImageReader(imageBytes)
-            self.canvas.drawImage(
-                imgToDraw,
-                1,
-                artHeight,
-                tabWidth - 2,
-                artSize,
-                preserveAspectRatio=False,
-                anchor="n",
-                mask="auto",
-            )
+            self.drawArtwork(img, safety, artHeight, tabWidth - 2 * safety, artSize)
 
         # initialize margins
-        textInset = textInsetRight = margin + padding
+        textInset = textInsetRight = safety + margin
 
         # draw cost
         if (
@@ -1555,7 +1581,6 @@ class DividerDrawer(object):
             and not card.isType("Trash")
         ):
             textInset += self.drawCost(card, textInset, costHeight, scale=tabScale)
-            textInset += padding
 
         # draw set image
         if "tab" in self.options.set_icon:
@@ -1576,7 +1601,12 @@ class DividerDrawer(object):
                     self.drawSetIcon(
                         setImage, tabWidth - textInsetRight, setImageHeight
                     )
-            textInsetRight += padding
+            # leave extra room between the set icon and text
+            textInsetRight += padding / 2
+
+        # add padding between the text and any icons or margins
+        textInset += padding
+        textInsetRight += padding
 
         # draw name
         textWidth -= textInset
@@ -1611,7 +1641,11 @@ class DividerDrawer(object):
                 else:
                     name_lines = lname, (lmid + rmid + " " + rname).rstrip()
             else:  # nowhere to break
-                print(name, round(width / cm, 2), round(textWidth / cm, 2))
+                print(
+                    f"Could not break up long card name: {name}",
+                    round(width / cm, 2),
+                    round(textWidth / cm, 2),
+                )
                 name_lines = (name,)
         else:
             name_lines = (name,)
@@ -1665,6 +1699,13 @@ class DividerDrawer(object):
                 w = rmax
             else:  # centre, but keep it inside the margins
                 w = max(lmin, min(tabWidth / 2 - centreWidth / 2, rmax))
+            # use white text for Night cards
+            if (
+                "Night" in card.types
+                and "Action" not in card.types
+                and "Duration" not in card.types
+            ):
+                self.canvas.setFillColorRGB(1, 1, 1)
             self.drawSmallCaps(line, fontSize, w, h, style=style)
 
         self.canvas.restoreState()
