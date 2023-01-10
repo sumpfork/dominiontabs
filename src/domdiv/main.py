@@ -348,6 +348,14 @@ def parse_opts(cmdline_args=None):
         "particularly on printers that output darker than average",
     )
     group_tab.add_argument(
+        "--tab-artwork-resolution",
+        type=int,
+        default=0,
+        help="Limit the DPI resolution of tab background art.  "
+        "If nonzero, any higher-resolution images will be resized to "
+        "reduce output file size.",
+    )
+    group_tab.add_argument(
         "--use-text-set-icon",
         action="store_true",
         dest="use_text_set_icon",
@@ -1369,7 +1377,7 @@ def read_card_data(options):
 
     # Add any blank cards
     if options.include_blanks > 0:
-        for x in range(0, options.include_blanks):
+        for _ in range(0, options.include_blanks):
             c = Card(
                 card_tag="Blank",
                 cardset=EXPANSION_GLOBAL_GROUP,
