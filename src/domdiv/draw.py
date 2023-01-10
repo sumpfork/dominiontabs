@@ -1,3 +1,4 @@
+import functools
 import os
 import re
 import sys
@@ -1369,9 +1370,51 @@ class DividerDrawer(object):
                 w += pdfmetrics.stringWidth(part[1:], font, small)
         return w
 
-    def drawTab(self, item, panel=None, backside=False):
+    @staticmethod
+    @functools.lru_cache(maxsize=None)
+    def prepArtwork(image, w, h, resolution, opacity):
+        # This method is factored out to cache the image processing.
+        # Otherwise, it overwhelms the runtime with unnecessary,
+        # repeated work.
+
         from io import BytesIO
 
+        # Get the original image.
+        artwork = DividerDrawer.get_image_filepath(image)
+
+        # Make any optional adjustments.
+        if resolution != 0 or opacity != 1.0:
+            imgObj = Image.open(artwork)
+            if resolution:
+                # Limit artwork resolution.
+                wmax = round(w * resolution / 72)
+                hmax = round(h * resolution / 72)
+                wnew = min(imgObj.width, wmax)
+                hnew = min(imgObj.height, hmax)
+                imgObj = imgObj.resize((wnew, hnew), Image.ANTIALIAS)
+            if opacity != 1.0:
+                # Set image opacity.
+                if imgObj.mode != "RGBA":
+                    imgObj = imgObj.convert("RGBA")
+                alpha = imgObj.getchannel("A")
+                alpha = ImageEnhance.Brightness(alpha).enhance(opacity)
+                imgObj.putalpha(alpha)
+            imageBytes = BytesIO()
+            imgObj.save(imageBytes, "PNG")
+            imageBytes.seek(0)
+            artwork = ImageReader(imageBytes)
+
+        return artwork
+
+    def drawArtwork(self, image, x, y, w, h):
+        resolution = self.options.tab_artwork_resolution
+        opacity = self.options.tab_artwork_opacity
+        artwork = self.prepArtwork(image, w, h, resolution, opacity)
+        self.canvas.drawImage(
+            artwork, x, y, w, h, preserveAspectRatio=False, anchor="n", mask="auto"
+        )
+
+    def drawTab(self, item, panel=None, backside=False):
         card = item.card
         # Skip blank cards
         if card.isBlank():
@@ -1524,30 +1567,7 @@ class DividerDrawer(object):
         # draw banner
         img = cardType.getTabImageFile()
         if artwork and img:
-            imgToDraw = DividerDrawer.get_image_filepath(img)
-            if self.options.tab_artwork_opacity != 1.0:
-                imgObj = Image.open(imgToDraw)
-                if imgObj.mode != "RGBA":
-                    imgObj = imgObj.convert("RGBA")
-                alpha = imgObj.getchannel("A")
-                alpha = ImageEnhance.Brightness(alpha).enhance(
-                    self.options.tab_artwork_opacity
-                )
-                imgObj.putalpha(alpha)
-                imageBytes = BytesIO()
-                imgObj.save(imageBytes, "PNG")
-                imageBytes.seek(0)
-                imgToDraw = ImageReader(imageBytes)
-            self.canvas.drawImage(
-                imgToDraw,
-                1,
-                artHeight,
-                tabWidth - 2 * safety,
-                artSize,
-                preserveAspectRatio=False,
-                anchor="n",
-                mask="auto",
-            )
+            self.drawArtwork(img, safety, artHeight, tabWidth - 2 * safety, artSize)
 
         # initialize margins
         textInset = textInsetRight = safety + margin
@@ -1621,7 +1641,11 @@ class DividerDrawer(object):
                 else:
                     name_lines = lname, (lmid + rmid + " " + rname).rstrip()
             else:  # nowhere to break
-                print(name, round(width / cm, 2), round(textWidth / cm, 2))
+                print(
+                    f"Could not break up long card name: {name}",
+                    round(width / cm, 2),
+                    round(textWidth / cm, 2),
+                )
                 name_lines = (name,)
         else:
             name_lines = (name,)
