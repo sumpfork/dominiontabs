@@ -1641,7 +1641,11 @@ class DividerDrawer(object):
                 else:
                     name_lines = lname, (lmid + rmid + " " + rname).rstrip()
             else:  # nowhere to break
-                print(name, round(width / cm, 2), round(textWidth / cm, 2))
+                print(
+                    f"Could not break up long card name: {name}",
+                    round(width / cm, 2),
+                    round(textWidth / cm, 2),
+                )
                 name_lines = (name,)
         else:
             name_lines = (name,)
