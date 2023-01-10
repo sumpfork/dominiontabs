@@ -1,23 +1,23 @@
 {
-  "exclude": [
-    "token",
-    "Tokens"
-  ],
-  "include": [
-    "Coins",
-    "Coin",
-    "Cards",
-    "Card",
-    "Buys",
-    "Buy",
-    "Actions",
-    "Action",
-    "Coffer",
-    "Coffers",
-    "Villager",
-    "Villagers",
-    "<VP>",
-    "Favor",
-    "Favors"
-  ]
+    "exclude": [
+        "token",
+        "Tokens"
+    ],
+    "include": [
+        "Coins",
+        "Coin",
+        "Cards",
+        "Card",
+        "Buys",
+        "Buy",
+        "Actions",
+        "Action",
+        "Coffer",
+        "Coffers",
+        "Villager",
+        "Villagers",
+        "<VP>",
+        "Favor",
+        "Favors"
+    ]
 }

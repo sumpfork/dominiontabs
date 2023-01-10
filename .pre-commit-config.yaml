@@ -15,7 +15,7 @@ repos:
           - id: end-of-file-fixer
           - id: check-json
           - id: pretty-format-json
-            args: [--autofix, --no-ensure-ascii]
+            args: [--autofix, --no-ensure-ascii, --indent=4]
     - repo: https://github.com/pycqa/flake8
       rev: 6.0.0
       hooks:
