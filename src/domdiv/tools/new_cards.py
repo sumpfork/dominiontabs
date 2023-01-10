@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 # coding=utf-8
 
+import argparse
 import csv
 import json
-import argparse
 
 
 def parse_opts(cmdline_args=None):

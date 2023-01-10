@@ -1,9 +1,8 @@
+import distutils.core
 import glob
 import os
-import distutils.core
 
-from domdiv.tools import update_language
-from domdiv.tools import bgg_release
+from domdiv.tools import bgg_release, update_language
 
 DOIT_CONFIG = {"default_tasks": ["build"]}
 

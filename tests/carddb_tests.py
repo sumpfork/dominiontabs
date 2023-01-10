@@ -1,13 +1,14 @@
 from __future__ import print_function
-import shutil
-import os
+
 import contextlib
+import os
+import shutil
 import unicodedata
 
 import pytest
 
-from domdiv import main
 from domdiv import cards as domdiv_cards
+from domdiv import main
 
 
 @pytest.fixture

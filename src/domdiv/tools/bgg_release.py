@@ -1,9 +1,8 @@
 import os
-from zipfile import ZipFile, ZIP_DEFLATED
+from zipfile import ZIP_DEFLATED, ZipFile
 
 import domdiv
 import domdiv.main
-
 
 gen_dir = "sumpfork_dividers"
 prefix = f"{gen_dir}/sumpfork_dominion_tabs_"
