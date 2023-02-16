@@ -34,6 +34,11 @@
         "extra": "Wenn du zusätzlich zu dieser Karte einen TRANK im Spiel hast, darfst du diese Karte in der Aufräumphase zurück auf den Nachziehstapel legen, statt sie abzulegen. Wenn du mindestens 1 TRANK im Spiel hast, darfst du beliebig viele ausgespielte ALCHEMISTEN zurück auf den Nachziehstapel legen.",
         "name": "Alchemist"
     },
+    "Alliance": {
+        "description": "Nimm eine Provinz, ein Herzogtum, ein Anwesen, ein Gold, ein Silber und ein Kupfer",
+        "extra": "Nimm je eine der Karten, die noch im Vorrat sind. Man muss die Karte nehmen, wenn diese im Vorrat verfügbar ist. Die Karten werden in der Reihefolge gezogen, wie auf der Karte genannt.",
+        "name": "Bündnis"
+    },
     "Alms": {
         "description": "Einmal pro Zug: Wenn du keine Geldkarten im Spiel hast, nimm dir eine Karte, die bis zu 4 Coins kostet.",
         "extra": "Dieses Ereignis darf nur 1x pro Zug erworben werden. Falls du keine Geldkarte zu diesem Zeitpunkt im Spiel hast, nimm dir eine Karte vom Vorrat, die bist zu 4 Coins kostet. Eintausch-Karten oder Preiskarten (aus Reiche Ernte) mit * Coins gehören nicht zum Vorrat und dürfen nicht genommen werden.",
@@ -114,10 +119,17 @@
         "extra": "Durch das Astrolabium erhältst du +1 Kauf and +1 Coin in dem Zug, in dem du es spielst, und in deinem nächsten Zug ebenfalls +1 Kauf and +1 Coin.",
         "name": "Astrolabium"
     },
+    "Augurs": {
+        "name": "Augurinnen"
+    },
     "Avanto": {
         "description": "+3 Karten\nDu darfst eine Sauna aus deiner Hand ausspielen.",
         "extra": "Eisloch ist eine Aktionskarte, die als Promokarte erschienen ist. Sie ist eine letzter-Zug-Karte, die das Potential hat, die vorletzte Karte des Zugs zu werden, wenn Du eine weitere Sauna-Karte auf der Hand hast zum ausspielen. Es handelt sich um einen Teil eines gemischter Vorratsstapels, bei dem 5 Eisloch-Karten unter 5 Sauna-Karten liegen.",
         "name": "Eisloch"
+    },
+    "Avoid": {
+        "description": "+1 Kauf<br>Wenn du in diesem Zug zum nächsten Mal mischst, wähle bis zu 3 jener Karten und lege sie auf deinen Ablagestapel.",
+        "name": "Ausweichen"
     },
     "Bad Omens": {
         "description": "Lege deinen Nachziehstapel auf deinen Ablagestapel. Sieh den Ablagestapel durch und lege 2 Kupfer daraus auf den Nachziehstapel (oder zeige vor, dass du das nicht kannst).",
@@ -289,6 +301,11 @@
         "extra": "Ist dein Nachziehstapel aufgebraucht, wenn du diese Karte spielst, legst du die Silberkarte verdeckt ab. Sie bildet dann deinen Nachziehstapel. Das Gleiche gilt für alle Mitspieler, die eine Punktekarte verdeckt auf den eigenen Nachziehstapel legen müssen.",
         "name": "Bürokrat"
     },
+    "Buried Treasure": {
+        "description": "Zu Beginn deines nächsten Zuges:<br>+1 Kauf und +3 Coins<line>Wenn du diese Karte nimmst, spiele sie",
+        "extra": "Wenn du diese Karte nimmst, dann spiele sie. Dies ist nicht optional!",
+        "name": "Vergrabener Schatz"
+    },
     "Bustling Village": {
         "description": "+1 Karte<br>+3 Aktionen<n>Schau dir deinen Ablagestapel an. Du darfst einen Siedler daraus aufdecken und auf die Hand nehmen.",
         "extra": "Du darfst deinen Ablagestapel auch dann durchsehen, wenn du weißt, dass du keine SIEDLER darin hast. Du darfst die Reihenfolge der Karten in deinem Ablagestapel nicht verändern.",
@@ -298,6 +315,11 @@
         "description": "Nimm 2 Münzen. Du darfst eine Karte aus deiner Hand entsorgen und eine beliebige Anzahl Münzen zahlen. Wenn du eine Karte entsorgt hast, nimmst du dir eine Karte, deren Kosten maximal so hoch sein dürfen wie die Summe aus den Kosten der entsorgten Karte und der Anzahl der gezahlten Münzen.",
         "extra": "Zuerst nimmst du dir 2 Münzen. Dann darfst du eine Karte aus deiner Hand entsorgen und eine beliebige Anzahl an Münzen einsetzen (auch 0 Münzen). Da du den METZGER nicht mehr auf der Hand hast, kannst du diese Karte nicht entsorgen. Allerdings kannst du eine andere METZGER -Karte entsorgen. Wenn du eine Karte entsorgt hast, nimmst du dir eine Karte, deren Kosten höchstens der Summe aus den Kosten der entsorgten Karte und der Anzahl der eingesetzten Münzen entsprechen darf. So könntest du beispielsweise ein ANWESEN entsorgen und sechs Münzen zahlen, um dir eine PROVINZ zu nehmen; oder du könntest einen weiteren METZGER entsorgen und null Münzen zahlen, um dir ein HERZOGTUM zu nehmen. Die Münzen, die du einsetzt, werden in den Vorrat zurückgelegt und dürfen in der Kaufphase nicht mehr benutzt werden, um andere Karten zu kaufen.",
         "name": "Metzger"
+    },
+    "Cabin Boy": {
+        "description": "+1 Karte<br>+1 Aktion<br>Zu Beginn deines nächsten Zuges wähle eins: +2 Coin oder entsorge diese Karte, um eine Dauerkarte zu nehmen.",
+        "extra": "You can trash a Cabin Boy to gain another Cabin Boy.",
+        "name": "Schiffsjunge"
     },
     "Cache": {
         "description": "3 <*COIN*><line>Wenn du die Schatztruhe nimmst, nimm dir 2 Kupfer.",
@@ -464,6 +486,10 @@
         "extra": "Karten mit mehreren Kartentypen, die Aktion beinhalten - wie z.B. Krone (Aktion - Geld) zählen als Aktionskarten.",
         "name": "Stadtviertel"
     },
+    "Clashes": {
+        "description": "Dieser Stapel besteht zu Beginn aus je 4 KartenSchlachtplan, Bogenschützin, Kriegsherrund Territorium (von oben nach unten). Nur die oberste Karte darf genommen oder gekauft werden.",
+        "name": "Konflikte"
+    },
     "Clerk": {
         "description": "+2 Coin<n>Jeder Mitspieler mit 5 oder mehr Handkarten legt eine Handkarte auf seinen Nachziehstapel.<line>Zu Beginn deines Zuges darfst du diese Karte aus deiner Hand spielen.",
         "extra": "Wenn ein Spieler keine Karten in seinem Nachziehstapel hat, wird die Karte, die er auf den Nachziehstapel legt, die einzige Karte in seinem Nachziehstapel. Zu Beginn deines Zuges darfst du eine beliebige Anzahl von Buchhalterin-Karten aus deiner Hand ausspielen, eine nach der anderen, ohne deine reguläre Aktion zu verbrauchen. Du kannst die Fähigkeit der Buchhalterin, sich zu Beginn des Zuges selbst auszuspielen, vor, zwischen oder nach anderen Effekten zu Beginn des Zuges nutzen. Wenn du zum Beispiel durch den Effekt von Sündenpfuhl eine Buchhalterin ziehst, ist es noch nicht zu spät, um die Reaktionsfähigkeit der Buchhalterin zu nutzen.",
@@ -564,6 +590,11 @@
         "extra": "Flüche werden in Zugreihenfolge verbannt (beginnend bei dein im Uhrzeigersinn auf den aktuellen Spieler folgenden Spiele). Es ist möglich, dass ein Spieler einen <b>FLUCH</b> verbannt. Während ein Mitspieler die Flüche von seinem <b>Exil</b>-Tableau ablegt.",
         "name": "Hexenzirkel"
     },
+    "Crew": {
+        "description": "+3 Karten<br>Zu Beginn deines nächsten Zuges lege diese Karte auf deinen Nachziehstapel.",
+        "extra": "Diese Karte auf den Nachziehstapel zu legen ist nicht optional",
+        "name": "Mannschaft"
+    },
     "Crop Rotation": {
         "description": "Zu Beginn deines Zuges darfst du eine Punktekarte für + 2 Karten ablegen.",
         "extra": "Wenn du durch das Ziehen veranlasst wirst zu mischen, mischst du die abgelegte Punktekarte mit ein.",
@@ -613,6 +644,11 @@
         "description": "+2 Coin<n>Jeder Mitspieler muss ein Kupfer aus seiner Hand ablegen. Hat ein Spieler kein Kupfer auf der Hand, muss er seine Kartenhand vorzeigen.",
         "extra": "Alle Mitspieler müssen eine Kupferkarte aus der Hand ablegen. Da der Beutelschneider eine Angriffskarte ist, dürfen die Mitspieler mit einer Reaktionskarte auf diesen Angriff reagieren.",
         "name": "Beutelschneider"
+    },
+    "Cutthroat": {
+        "description": "Jeder Mitspieler legt seine Handkarten bis auf 3 ab.<br>Das nächste Mal, wenn irgendjemand eine Geldkarte nimmt, die 5 oder mehr kostet, nimm eine Kostbarkeit.",
+        "extra": "Kostbarkeiten sind ebenfalls Geldkarten. Wenn eine Kostbarkeit, die +5 Coin kostet, dann wird die Daueraktion ausgelöst."
+        "name": "Meuchlerin"
     },
     "Death Cart": {
         "description": "+ 5 Coin<br>Du darfst eine Aktionskarte aus deiner Hand entsorgen. Wenn du das nicht machst: Entsorge diese Karte. Wenn du diese Karte nimmst, nimm dir 2 Ruinen-Karten.",
@@ -699,6 +735,14 @@
         "extra": "Befinden sich unter den entsorgten Karten welche, die Anweisungen beinhalten, die beim Entsorgen ausgeführt werden, musst du diese ausführen, bevor du die restlichen Karten mischst. Die SPENDE wird erst nach dem Zug, in dem sie erworben wird, ausgeführt (d.h. zwischen zwei Zügen). Damit hat zum Beispiel die BESESSENHEIT (aus Alchemisten) auf diese Anweisung keine Auswirkung.",
         "name": "Spende"
     },
+    "Doubloons": {
+        "description": "3 <*COIN*><line>Wenn du diese Karte nimmst, nimm ein Gold.",
+        "extra": "Wenn du diese Karte nimmt, dann nehme ebenfalls ein Gold.",
+        "name": "Dublonen",
+        "notes": [
+            "This card is currently not used."
+        ]
+    },
     "Druid": {
         "description": "+1 Kauf<br>Empfange eine der zur Seite gelegten Gaben (lasse sie dort liegen).<line>Spielvorbereitung: Lege die obersten 3 Gaben aufgedeckt zur Seite.",
         "extra": "In der Spielvorbereitung werden die obersten 3 Gaben aufgedeckt neben dem Druidinnen-Stapel zur Seite gelegt. Diese 3 Gaben werden in diesem Spiel ausschließlich für die DRUIDIN verwendet. Verwendet ihr weitere SEGEN-Karten im Spiel, besteht der entsprechende Gaben-Stapel aus den restlichen neun Gaben. Wenn du die DRUIDIN ausspielst, wähle eine der drei zur Seite gelegten Gaben, empfange sofort die entsprechende Gabe, lasse die Gabe aber zur Seite gelegt (auch wenn die Gabe eigentlich sagt, du sollst sie bis zu deiner Aufräumphase aufbewahren).",
@@ -768,6 +812,11 @@
         "description": "Nimm eine Karte, die bis zu 4 Coins kostet. Du darfst diese Ingenieurin entsorgen. Wenn du das tust: Nimm eine Karte, die bis zu 4 Coins kostet.",
         "extra": "Du darfst dir KEINE Karte nehmen, die mehr als 4 Coins kostet oder mit Debt in den Kosten hat. Nimm die gewählte Karte. Dann darfst du diese INGENIEURIN entsorgen. Wenn du das tust, nimm eine weitere Karte, die bis zu 4 kostet. Dies kann die gleiche Karte wie die erste sein oder eine andere.",
         "name": "Ingenieurin"
+    },
+    "Enlarge": {
+        "description": "Jetzt und zu Beginn deines nächsten Zuges: Entsorge eine deiner Handkarten und nimm eine Karte, die bis zu 2 Coin mehr kostet.",
+        "extra": "Das Entsorgen der Handkarten ist nicht optional.",
+        "name": "Vergrößerung"
     },
     "Envious - Deluded": {
         "description": "Dies ist eine zweiseitige Karte.<left><u>Neidisch</u>:</left><center>Lege diesen Zustand zu Beginn deiner Kaufphase zurück; Silber und Gold sind in diesem Zug 1 Coin wert.</center><left><u>Getäuscht</u>:</left><center>Lege diesen Zustand zu Beginn deiner Kaufphase zurück; du darfst in diesem Zug keine Aktionskarten kaufen.</center>",
@@ -889,6 +938,11 @@
         "extra": "Spielst du mehrere JAHRMÄRKTE hintereinander, zählst du am besten laut mit, wie viele Aktionen du noch ausspielen darfst, damit du den Überblick behältst.",
         "name": "Jahrmarkt"
     },
+    "First Mate": {
+        "description": "Spiele beliebig viele Aktionskarten mit gleichem Namen aus deiner Hand, dann zieh, bis du 6 Handkarten hast.",
+        "extra": "Wenn du keine Aktionskarten ausspielen kannst, ziehst du trotzdem bis zu 6.<br>Wenn die ausgespielte Aktionskarte eine weitere Kopie von sich selbst zieht, kannst du diese Kopie ausspielen, und so weiter.<br>Erster Maatin kann Erste Maatin ausspielen; behalte genau im Auge, welche Karte du auflöst, wie du es bei mehreren Thronsälen tun würdest.",
+        "name": "Erste Maatin"
+    },
     "Fisherman": {
         "description": "+1 Karte<br>+1 Aktion<br>+1 Coins<line> Während deiner Züge: Ist dein Ablagestapel leer, kostet diese Karte 3 Coins weniger.",
         "extra": "Diese Karte kostet normalerweise 5 Coins, aber 2 Coins, wenn du gerade einen leeren Ablagestapel hast.<br>Wenn du 4 Coins und 2 Käufe zur Verfügung hast sowie einen leeren Ablagestapel, kannst du einen <b>FISCHER</b> für 2 Coins kaufen, aber dann hast du keinen leeren Ablagestapel mehr und kannst also keinen zweiten für 2 Coins kaufen",
@@ -913,6 +967,11 @@
         "description": "<left><u>Fahnenträger</u>:</left><n>+2 Coin<n><line>Wenn du diese Karte nimmst oder entsorgst, erhalte die Fahne.<n><left><u>Fahne</u>:</left><n>Wenn du die Handkarten für deinen nächsten Zug ziehst: + 1 Karte.",
         "extra": "Wenn du den FAHNENTRÄGER nimmst oder entsorgst und nicht die FAHNE hast, erhalte die FAHNE und lege sie neben dir ab. Du behältst dieses Artefakt (und dessen Effekt), bis ein anderer Spieler die FAHNE erhält. Wird der FAHNENTRÄGER entsorgt, erhält der Spieler, der ihn entsorgt, die FAHNE, unabhängig davon, wer am Zug ist.<n><n>Die Fahne ist ein Artefakt. Artefakte sind Effekte, die für einen Spieler gelten und nicht durch normale Karten oder Ereignisse ausgelöst werden. Sie funktionieren ähnlich wie Zustände (aus Nocturne). Artefakte sind keine \"Karten\"; alle Texte, die sich auf \"Karten\" beziehen finden keine Anwendung auf Artefakte. Es gibt jeden Artefakt nur genau einmal; wenn ein Spieler einen Artefakt nimmt wird die Artefakt-Karte vor ihm abgelegt, bis ein anderer Spieler sie nimmt.",
         "name": "Fahnenträger (+ Artefakt Fahne)"
+    },
+    "Flagship": {
+        "description": "+2 Coin<br>Das nächste Mal, wenn du eine Aktionskarte spielst, die keine Befehlskarte ist, spiele sie erneut.",
+        "extra": "Dies ist nicht optional; Egal welche die nächste Aktionskarte, aber nicht Befehlskarte ist, wird durch das Flaggschiff erneut gespielt.<br>Es spielt sie auch dann aus, wenn die Karte sich selbst entsorgt hat, und auch dann, wenn du nicht am Zug bist.<br>Befehlskarten, wie das Flaggschiff selbst, werden nicht abgespielt; das Flaggschiff wartet auf eine Nicht-Befehls-Aktionskarte.",
+        "name": "Flaggschiff"
     },
     "Fleet": {
         "description": "Nachdem das Spiel endet, gibt es eine zusätzliche Runde von Zügen nur für Spieler hiermit.",
@@ -954,10 +1013,19 @@
         "extra": "Wenn du diese Karte ausspielst, ziehst du zunächst eine Karte nach. Dann darfst du bis zu 2 weitere Aktionen ausführen. Wenn du die Festung entsorgst, nimmst du die Karte zurück auf die Hand. Es spielt dabei keine Rolle, ob du die Festung in deinem eigenen Zug oder im Zug eines Mitspielers entsorgst. Die Festung gilt als entsorgt, obwohl du sie sofort zurück auf die Hand nimmst. Spielst du z.B. den Leichenkarren aus und entscheidest dich dafür, die Festung zu entsorgen, gilt die Bedingung als erfüllt und du muss den Leichenkarren nicht entsorgen.",
         "name": "Festung"
     },
+    "Forts": {
+        "description": "Dieser Stapel besteht zu Beginn aus je 4 Karten Zelt, Garnison, Hügelfort und Burg (von oben nach unten). Nur die oberste Karte darf genommen oder gekauft werden.",
+        "name": "Bastionen"
+    },
     "Fortune": {
         "description": "+1 Kauf<n>Wenn du diese Karte ausspielst, verdoppelt sich dein Coin; nur 1x pro Zug möglich.<line>Wenn du diese Karte nimmst, nimm ein Gold pro Gladiator, den du im Spiel hast.",
         "extra": "Es werden nur alle Coin verdoppelt, die du vor dem Ausspielen dieser Karte ausgespielt hast und nur, wenn du in diesem Zug noch keinen REICHTUM ausgespielt hast. Für jedes weitere Ausspielen eines REICHTUMS erhältst du nur + 1 Kauf.",
         "name": "Reichtum"
+    },
+    "Fortune Hunter": {
+        "description": "+2 Coin<br>Sieh dir die obersten 3 Karten deines Nachziehstapels an. Du darfst eine Geldkarte von ihnen spielen. Lege den Rest in beliebiger Reihenfolge zurück.",
+        "extra": "Beende das Ausspielen des Schatzes, bevor du die anderen Karten wieder zurück nach oben legst; wenn der Schatz zum Beispiel eine Figurine ist, sind die beiden Karten, die du ziehst, nicht die anderen, die du dir mit der Abenteurerin angesehen hast.",
+        "name": "Abenteurerin"
     },
     "Fortune Teller": {
         "description": "+2 Coin<br>Jeder Mitspieler muss solange Karten von seinem Nachziehstapel aufdecken, bis entweder eine Punktekarte oder eine Fluchkarte offen liegt. Diese aufgedeckte Karte muss er auf seinen Nachziehstapel legen. Die übrigen aufgedeckten Karten legt er ab.",
