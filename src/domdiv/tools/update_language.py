@@ -157,7 +157,6 @@ def main(card_db_dir, output_dir):
     ###########################################################################
 
     for lang in languages:
-
         #  contruct the cards json file name
         lang_data = load_language_cards(lang, card_db_dir)
 
