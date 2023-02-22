@@ -469,7 +469,6 @@ class Plotter(object):
 
 
 class DividerDrawer(object):
-
     HEAD, SPINE, BODY, TAIL = range(200, 204)  # panel identifiers
     LABEL_HEIGHT = 0.9 * cm
     SET_ICON_SIZE = 10
@@ -1856,7 +1855,6 @@ class DividerDrawer(object):
             drewTopIcon = True
 
         if self.options.types and not card.isExpansion():
-
             #  Calculate how much width have for printing
             #  Want centered, but number of other items can limit
             left_margin = Image_x_left
@@ -2051,7 +2049,7 @@ class DividerDrawer(object):
             if fontsize < minFontsize:
                 import warnings
 
-                warnings.warn("Not enough space to display set names")
+                warnings.warn("Not enough space to display set names", stacklevel=2)
                 return
 
             layout = layouts[layoutIndex]
@@ -2360,7 +2358,6 @@ class DividerDrawer(object):
                     nextTabIndex = CardPlot.tabRestart()
                     cardset_count = Card.sets[card.cardset_tag].get("count", 0)
                     if options.tab_number > cardset_count and cardset_count > 0:
-
                         #  Limit to the number of tabs to the number of dividers in the expansion
                         CardPlot.tabSetup(
                             tabNumber=Card.sets[card.cardset_tag]["count"]

@@ -5,7 +5,6 @@ from reportlab.lib.units import cm
 
 
 class Card(object):
-
     sets = None
     types = None
     type_names = None
@@ -41,7 +40,6 @@ class Card(object):
         randomizer=True,
         cardset_tag="",
     ):
-
         if types is None:
             types = []  # make sure types is a list
         if cardset_tags is None:

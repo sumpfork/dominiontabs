@@ -98,7 +98,6 @@ if cardlist:
         "w",
         encoding="utf-8",
     ) as lang_out:
-
         lang_out.write("{")  # Start of set
         sep = ""
 
