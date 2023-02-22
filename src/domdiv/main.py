@@ -190,6 +190,10 @@ def parse_opts(cmdline_args=None):
         help="Language of divider text.",
     )
     group_basic.add_argument(
+        "--font-dir",
+        help="A directory path to scan for font files, preferring them over fonts in the domdiv package",
+    )
+    group_basic.add_argument(
         "--orientation",
         choices=["horizontal", "vertical"],
         dest="orientation",

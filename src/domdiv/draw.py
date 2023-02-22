@@ -557,6 +557,11 @@ class DividerDrawer(object):
                 fontpaths[font] = None
                 continue
             for fname in filenames:
+                if self.options is not None and self.options.font_dir:
+                    fpath = os.path.join(self.options.font_dir, fname)
+                    if os.path.exists(fpath):
+                        fontpaths[font] = fpath
+                        break
                 fpath = os.path.join("fonts", fname)
                 if pkg_resources.resource_exists("domdiv", fpath):
                     fontpaths[font] = fpath
