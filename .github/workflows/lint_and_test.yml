@@ -15,4 +15,4 @@ jobs:
       - name: Lint
         run: pre-commit run --all-files
       - name: Test
-        run: python setup.py test
+        run: pytest
