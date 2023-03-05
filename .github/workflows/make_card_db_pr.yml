@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/github-script@v3.1.0
         id: get-artifact
         with:
@@ -46,10 +46,12 @@ jobs:
         if: steps.get-artifact.outputs.result == 'found_artifact'
       - name: Make PR
         if: steps.get-artifact.outputs.result == 'found_artifact'
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           body: |
             Auto-generate package card DB to from source card DB
           delete-branch: true
           reviewers: sumpfork
           assignees: sumpfork
+          add-paths: |
+            src/domdiv/card_db/

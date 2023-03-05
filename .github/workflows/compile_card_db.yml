@@ -16,6 +16,10 @@ jobs:
           pip install .
       - name: Update Languages
         run: poetry run doit update_languages
+      - run: |
+          pip install .
+      - name: test generation with compiled Languages
+        run: pytest -k "test_languages"
       - uses: dorny/paths-filter@v2
         id: filter
         with:

@@ -11,23 +11,23 @@
 # All output is in the designated output directory.  Original files are not overwritten.
 ###########################################################################
 
+import argparse
+import collections
 import gzip
 import os
 from shutil import copyfile
-import argparse
-import collections
 
 from domdiv.tools.common import (
-    get_json_data,
-    load_language_cards,
-    LANGUAGE_XX,
     LANGUAGE_DEFAULT,
+    LANGUAGE_XX,
+    check_compressed_json_change,
+    get_json_data,
     get_languages,
-    multikeysort,
     load_card_data,
+    load_language_cards,
+    multikeysort,
     write_data,
     write_language_cards,
-    check_compressed_json_change,
 )
 
 VALID_CARD_FIELD_NAMES = {"description", "extra", "name"}
@@ -130,7 +130,7 @@ def main(card_db_dir, output_dir):
     seen = set()
     for c in sorted_card_data:
         if c["card_tag"] in seen:
-            assert False, f"Duplicate card detected: {c['card_tag']}"
+            raise RuntimeError(f"Duplicate card detected: {c['card_tag']}")
         seen.add(c["card_tag"])
     groups = set(card["group_tag"] for card in sorted_card_data if "group_tag" in card)
     super_groups = set(["events", "landmarks", "projects"])
@@ -157,7 +157,6 @@ def main(card_db_dir, output_dir):
     ###########################################################################
 
     for lang in languages:
-
         #  contruct the cards json file name
         lang_data = load_language_cards(lang, card_db_dir)
 

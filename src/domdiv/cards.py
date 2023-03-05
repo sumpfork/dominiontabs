@@ -1,10 +1,10 @@
 import json
 import re
+
 from reportlab.lib.units import cm
 
 
 class Card(object):
-
     sets = None
     types = None
     type_names = None
@@ -40,7 +40,6 @@ class Card(object):
         randomizer=True,
         cardset_tag="",
     ):
-
         if types is None:
             types = []  # make sure types is a list
         if cardset_tags is None:
@@ -159,6 +158,9 @@ class Card(object):
 
     def isPrize(self):
         return self.isType("Prize")
+
+    def isLandscape(self):
+        return self.getType().getGroupGlobalType() is not None
 
     def get_GroupGlobalType(self):
         return self.getType().getGroupGlobalType()

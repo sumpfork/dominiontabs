@@ -1,8 +1,8 @@
 # coding=utf-8
 
 import csv
-import sys
 import json
+import sys
 
 converted = []
 

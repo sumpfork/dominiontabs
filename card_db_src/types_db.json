@@ -90,7 +90,6 @@
             "Action",
             "Reaction",
             "Attack"
-
         ],
         "card_type_image": "reaction.png",
         "defaultCardCount": 10,
@@ -143,6 +142,17 @@
             "Action",
             "Duration",
             "Attack"
+        ],
+        "card_type_image": "duration.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Duration",
+            "Command"
         ],
         "card_type_image": "duration.png",
         "defaultCardCount": 10,
@@ -238,7 +248,7 @@
         ],
         "card_type_image": "ruins.png",
         "defaultCardCount": 10,
-        "tabCostHeightOffset": 1,
+        "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
     {
@@ -306,9 +316,9 @@
             "Ally"
         ],
         "card_type_image": "ally.png",
+        "defaultCardCount": 1,
         "group_cost": "",
         "group_global_type": "Allies",
-        "defaultCardCount": 1,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -317,8 +327,8 @@
             "Allies"
         ],
         "card_type_image": "ally.png",
-        "group_cost": "",
         "defaultCardCount": 0,
+        "group_cost": "",
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -561,8 +571,8 @@
             "Artifact"
         ],
         "card_type_image": "artifact.png",
-        "group_cost": "",
         "defaultCardCount": 1,
+        "group_cost": "",
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -580,9 +590,9 @@
             "Boon"
         ],
         "card_type_image": "boon.png",
+        "defaultCardCount": 1,
         "group_cost": "",
         "group_global_type": "Boons",
-        "defaultCardCount": 1,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -591,19 +601,18 @@
             "Boons"
         ],
         "card_type_image": "boon.png",
-        "group_cost": "",
         "defaultCardCount": 0,
+        "group_cost": "",
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
-
     {
         "card_type": [
             "Curse"
         ],
         "card_type_image": "curse.png",
         "defaultCardCount": 30,
-        "tabCostHeightOffset": -1,
+        "tabCostHeightOffset": 0,
         "tabTextHeightOffset": 3
     },
     {
@@ -611,9 +620,9 @@
             "Event"
         ],
         "card_type_image": "event.png",
+        "defaultCardCount": 1,
         "group_cost": "*",
         "group_global_type": "Events",
-        "defaultCardCount": 1,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -622,8 +631,8 @@
             "Events"
         ],
         "card_type_image": "event.png",
-        "group_cost": "*",
         "defaultCardCount": 0,
+        "group_cost": "*",
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -633,17 +642,17 @@
         ],
         "card_type_image": "expansion.png",
         "defaultCardCount": 0,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 4
+        "tabCostHeightOffset": 0,
+        "tabTextHeightOffset": 3
     },
     {
         "card_type": [
             "Hex"
         ],
         "card_type_image": "hex.png",
+        "defaultCardCount": 1,
         "group_cost": "",
         "group_global_type": "Hexes",
-        "defaultCardCount": 1,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -652,8 +661,8 @@
             "Hexes"
         ],
         "card_type_image": "hex.png",
-        "group_cost": "",
         "defaultCardCount": 0,
+        "group_cost": "",
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -662,9 +671,9 @@
             "Landmark"
         ],
         "card_type_image": "landmark.png",
+        "defaultCardCount": 1,
         "group_cost": "",
         "group_global_type": "Landmarks",
-        "defaultCardCount": 1,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -673,8 +682,8 @@
             "Landmarks"
         ],
         "card_type_image": "landmark.png",
-        "group_cost": "",
         "defaultCardCount": 0,
+        "group_cost": "",
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -753,9 +762,9 @@
             "Project"
         ],
         "card_type_image": "project.png",
+        "defaultCardCount": 1,
         "group_cost": "*",
         "group_global_type": "Projects",
-        "defaultCardCount": 1,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -764,8 +773,8 @@
             "Projects"
         ],
         "card_type_image": "project.png",
-        "group_cost": "*",
         "defaultCardCount": 0,
+        "group_cost": "*",
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -811,9 +820,9 @@
             "State"
         ],
         "card_type_image": "state.png",
+        "defaultCardCount": 1,
         "group_cost": "",
         "group_global_type": "States",
-        "defaultCardCount": 1,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -822,8 +831,29 @@
             "States"
         ],
         "card_type_image": "state.png",
-        "group_cost": "",
         "defaultCardCount": 0,
+        "group_cost": "",
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Trait"
+        ],
+        "card_type_image": "trait.png",
+        "defaultCardCount": 1,
+        "group_cost": "",
+        "group_global_type": "Traits",
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 1
+    },
+    {
+        "card_type": [
+            "Traits"
+        ],
+        "card_type_image": "trait.png",
+        "defaultCardCount": 0,
+        "group_cost": "",
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -842,8 +872,8 @@
         ],
         "card_type_image": "treasure.png",
         "defaultCardCount": 10,
-        "tabCostHeightOffset": 0,
-        "tabTextHeightOffset": 3
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
     },
     {
         "card_type": [
@@ -862,6 +892,17 @@
         ],
         "card_type_image": "treasure-duration.png",
         "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
+            "Duration",
+            "Loot"
+        ],
+        "card_type_image": "treasure-duration.png",
+        "defaultCardCount": 2,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -889,12 +930,22 @@
     {
         "card_type": [
             "Treasure",
+            "Loot"
+        ],
+        "card_type_image": "treasure.png",
+        "defaultCardCount": 2,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
             "Prize"
         ],
         "card_type_image": "treasure.png",
         "defaultCardCount": 1,
-        "tabCostHeightOffset": 0,
-        "tabTextHeightOffset": 3
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
     },
     {
         "card_type": [
@@ -903,6 +954,17 @@
         ],
         "card_type_image": "treasure-reaction.png",
         "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
+            "Reaction",
+            "Loot"
+        ],
+        "card_type_image": "treasure-reaction.png",
+        "defaultCardCount": 2,
         "tabCostHeightOffset": 1,
         "tabTextHeightOffset": 0
     },
@@ -963,7 +1025,7 @@
         ],
         "card_type_image": "victory-reaction.png",
         "defaultCardCount": 12,
-        "tabCostHeightOffset": 1,
+        "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
     {
@@ -981,20 +1043,20 @@
             "Way"
         ],
         "card_type_image": "way.png",
+        "defaultCardCount": 1,
         "group_cost": "",
         "group_global_type": "Ways",
-        "defaultCardCount": 1,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 0
+        "tabCostHeightOffset": 0,
+        "tabTextHeightOffset": 3
     },
     {
         "card_type": [
             "Ways"
         ],
         "card_type_image": "way.png",
-        "group_cost": "",
         "defaultCardCount": 0,
-        "tabCostHeightOffset": -1,
-        "tabTextHeightOffset": 0
+        "group_cost": "",
+        "tabCostHeightOffset": 0,
+        "tabTextHeightOffset": 3
     }
 ]
