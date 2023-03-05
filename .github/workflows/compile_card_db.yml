@@ -12,9 +12,10 @@ jobs:
           python-version: 3.8
       - run: |
           pip install -r requirements.txt
-          pip install .
       - name: Update Languages
         run: doit update_languages
+      - run: |
+          pip install .
       - name: test generation with compiled Languages
         run: pytest -k "test_languages"
       - uses: dorny/paths-filter@v2
