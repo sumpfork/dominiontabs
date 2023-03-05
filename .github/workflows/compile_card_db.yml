@@ -19,7 +19,7 @@ jobs:
       - run: |
           pip install .
       - name: test generation with compiled Languages
-        run: pytest -k "test_languages"
+        run: poetry run pytest -k "test_languages"
       - uses: dorny/paths-filter@v2
         id: filter
         with:
