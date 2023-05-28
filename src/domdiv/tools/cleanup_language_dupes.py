@@ -35,8 +35,8 @@ def main():
                         new_card_spec[key] = entry
                     else:
                         trimmed_counts[key] += 1
-                # never remove just the name
-                if set(card_spec) - set(new_card_spec) == {"name"}:
+                # do not remove name if something else is translated
+                if len(set(new_card_spec) - {"name"}) > 1:
                     new_card_spec["name"] = card_spec["name"]
                     trimmed_counts["name"] -= 1
                 if new_card_spec:
