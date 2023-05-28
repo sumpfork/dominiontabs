@@ -56,7 +56,8 @@
     },
     "Artisan": {
         "description": "Recevez en main une carte coûtant jusqu'à 5 Coins.<n>Placez une carte de votre main sur votre pioche",
-        "extra": "La carte que vous gagnez provient de la Réserve et est mise dans votre main.<n>Vous ne pouvez pas utiliser de _ Coin&nbsp; pour augmenter le prix d'une carte que vous gagnez. Elle coûte toujours de 0 à 5 pièces (et ne peut donc pas contenir de Potion dans son coût).<n>Après avoir reçu la carte, vous mettez une carte de votre main sur votre paquet; cela peut être la carte que vous venez de gagner, ou une carte différente."
+        "extra": "La carte que vous gagnez provient de la Réserve et est mise dans votre main.<n>Vous ne pouvez pas utiliser de _ Coin&nbsp; pour augmenter le prix d'une carte que vous gagnez. Elle coûte toujours de 0 à 5 pièces (et ne peut donc pas contenir de Potion dans son coût).<n>Après avoir reçu la carte, vous mettez une carte de votre main sur votre paquet; cela peut être la carte que vous venez de gagner, ou une carte différente.",
+        "name": "Artisan"
     },
     "Bag of Gold": {
         "description": "+1 Action<n>Recevez une carte Or que vous placez sur le dessus de votre deck.<n><i>(Ne pas mettre dans la réserve.)</i>",
@@ -95,7 +96,8 @@
     },
     "Baron": {
         "description": "+1 Achat<n>Vous pouvez défausser une carte <i>Domaine</i>. Dans ce cas, obtenez +4 Coin. Sinon, recevez une carte <i>Domaine</i>.",
-        "extra": "Vous n'êtes jamais obligé de défausser une carte <i>Domaine</i>, même si vous en avez une en main. Cependant, si vous ne défaussez pas de carte <i>Domaine</i> vous devez recevoir une carte <i>Domaine</i> (s'il en reste) ; vous ne pouvez pas choisir de recevoir uniquement +1 Achat de cette carte."
+        "extra": "Vous n'êtes jamais obligé de défausser une carte <i>Domaine</i>, même si vous en avez une en main. Cependant, si vous ne défaussez pas de carte <i>Domaine</i> vous devez recevoir une carte <i>Domaine</i> (s'il en reste) ; vous ne pouvez pas choisir de recevoir uniquement +1 Achat de cette carte.",
+        "name": "Baron"
     },
     "Bazaar": {
         "description": "+1 Carte<br>+2 Actions<br>+1 Coins",
@@ -153,7 +155,8 @@
     },
     "Cache": {
         "description": "3 <*COIN*><line>Lorsque vous recevez cette carte, recevez 2 cartes <i>Cuivre</i>.",
-        "extra": "C'est un trésor qui vaut 3 Coins, comme Or. Quand vous le recevez, vous recevez également deux Cuivres de la Réserve. S'il ne reste plus deux Cuivres, recevez-en le plus possible. Vous recevez seulement des Cuivres quand vous recevez la Cache, pas quand vous la jouez. Vous recevez des Cuivres que vous ayez reçu la Cache en l'achetant, ou que vous l'ayez reçue d'une autre manière."
+        "extra": "C'est un trésor qui vaut 3 Coins, comme Or. Quand vous le recevez, vous recevez également deux Cuivres de la Réserve. S'il ne reste plus deux Cuivres, recevez-en le plus possible. Vous recevez seulement des Cuivres quand vous recevez la Cache, pas quand vous la jouez. Vous recevez des Cuivres que vous ayez reçu la Cache en l'achetant, ou que vous l'ayez reçue d'une autre manière.",
+        "name": "Cache"
     },
     "Candlestick Maker": {
         "description": "+1 Action<br>+1 Achat<n>Prenez un jeton <i>Pièce</i>.",
@@ -310,7 +313,8 @@
     },
     "Disciple": {
         "description": "Vous pouvez jouer une carte <i>Action</i> de votre main deux fois. Recevez un exemplaire de cette carte.<line>Lorsque vous défaussez cette carte de votre zone de jeu, vous pouvez l'échanger contre une carte <i>Maître</i>.<n><i>(Cette pile ne fait pas partie de la réserve.)</i>",
-        "extra": "Jouer une carte Action de votre main est facultatif. Si vous en jouez une, vous la jouez alors deux fois, puis en recevez un exemplaire (si c'est possible) de la réserve dans votre défausse ; recevoir un exemplaire est obligatoire si vous avez joué une carte Action. Si une carte Action ne fait pas partie de la réserve, comme la carte Fugitif, vous pouvez l'appliquer deux fois, mais vous ne recevez pas de nouvel exemplaire. Disciple n'utilise qu'une seule de vos actions pour jouer deux fois l'autre carte (et ne consomme donc pas d'autres actions supplémentaires que vous auriez pu acquérir précédemment, comme avec les cartes Village ou Ville portuaire). Vous ne pouvez pas jouer de cartes avant d'avoir jouer deux fois la carte Action, sauf si la carte Action elle-même ne vous le demande spécifiquement (comme un Disciple sur un Disciple qui implique de jouer encore une autre carte Action). Si vous jouez Disciple sur une carte donnant +1 Action, comme le Maître-artisan, vous obtiendrez au final +2 Actions (si vous aviez joué deux Maître-artisans à la suite, vous n'en n'auriez obtenu qu'une seule). Si vous jouez Disciple sur une carte de type Durée, la carte Disciple reste en jeu jusqu'à ce que la carte Durée soit défaussée."
+        "extra": "Jouer une carte Action de votre main est facultatif. Si vous en jouez une, vous la jouez alors deux fois, puis en recevez un exemplaire (si c'est possible) de la réserve dans votre défausse ; recevoir un exemplaire est obligatoire si vous avez joué une carte Action. Si une carte Action ne fait pas partie de la réserve, comme la carte Fugitif, vous pouvez l'appliquer deux fois, mais vous ne recevez pas de nouvel exemplaire. Disciple n'utilise qu'une seule de vos actions pour jouer deux fois l'autre carte (et ne consomme donc pas d'autres actions supplémentaires que vous auriez pu acquérir précédemment, comme avec les cartes Village ou Ville portuaire). Vous ne pouvez pas jouer de cartes avant d'avoir jouer deux fois la carte Action, sauf si la carte Action elle-même ne vous le demande spécifiquement (comme un Disciple sur un Disciple qui implique de jouer encore une autre carte Action). Si vous jouez Disciple sur une carte donnant +1 Action, comme le Maître-artisan, vous obtiendrez au final +2 Actions (si vous aviez joué deux Maître-artisans à la suite, vous n'en n'auriez obtenu qu'une seule). Si vous jouez Disciple sur une carte de type Durée, la carte Disciple reste en jeu jusqu'à ce que la carte Durée soit défaussée.",
+        "name": "Disciple"
     },
     "Dismantle": {
         "description": "Écartez une carte de votre main. Si elle coûte 1 Coin, ou plus, recevez une carte moins chère et un Or.",
@@ -352,7 +356,8 @@
     },
     "Embargo": {
         "description": "+2 Coins<n>Écartez cette carte. Placez un jeton <i>Embargo</i> sur une pioche de la réserve.<line> Lorsqu'un joueur achète une carte, il reçoit une carte <i>Malédiction</i> par jeton <i>Embargo</i> sur cette pile.",
-        "extra": "Vous choisissez la pile de votre choix dans la réserve. Si plusieurs cartes <i>Embargo</i> sont utilisées pour placer des jetons <i>Embargo</i> sur la même pile, un joueur qui achète une carte de cette pile obtiendra une carte <i>Malédiction</i> pour chaque jeton <i>Embargo</i>. Vous ne recevez pas de carte <i>Malédiction</i> si vous recevez une carte, <b>sans l'acheter</b>, de la pile sous <i>Embargo</i> (par exemple, à l'aide de la carte <i>Contrebandiers</i>). Si vous utilisez une carte <i>Salle du Trône</i> (D) sur une carte <i>Embargo</i>, vous placez deux jetons <i>Embargo</i> et vous n'avez pas à placer les jetons sur la même pile. S'il ne reste plus de jetons <i>Embargo</i>, trouvez une pièce de remplacement convenable pour marquer les piles. S'il n'y a plus de carte <i>Malédiction</i>, les jetons <i>Embargo</i> n'ont plus d'effet."
+        "extra": "Vous choisissez la pile de votre choix dans la réserve. Si plusieurs cartes <i>Embargo</i> sont utilisées pour placer des jetons <i>Embargo</i> sur la même pile, un joueur qui achète une carte de cette pile obtiendra une carte <i>Malédiction</i> pour chaque jeton <i>Embargo</i>. Vous ne recevez pas de carte <i>Malédiction</i> si vous recevez une carte, <b>sans l'acheter</b>, de la pile sous <i>Embargo</i> (par exemple, à l'aide de la carte <i>Contrebandiers</i>). Si vous utilisez une carte <i>Salle du Trône</i> (D) sur une carte <i>Embargo</i>, vous placez deux jetons <i>Embargo</i> et vous n'avez pas à placer les jetons sur la même pile. S'il ne reste plus de jetons <i>Embargo</i>, trouvez une pièce de remplacement convenable pour marquer les piles. S'il n'y a plus de carte <i>Malédiction</i>, les jetons <i>Embargo</i> n'ont plus d'effet.",
+        "name": "Embargo"
     },
     "Embassy": {
         "description": "+5 Cartes<br>Défaussez 3 cartes.<line>Lorsque vous recevez cette carte, tous vos adversaires reçoivent une carte <i>Argent</i>.",
@@ -419,7 +424,8 @@
     },
     "Festival": {
         "description": "+2 Actions<br>+1 Achat<br>+2 Coins",
-        "extra": "Si vous jouez plus d'une carte Festival, faites attention à votre nombre d'actions. Comptez votre nombre d'actions à voix haute (par exemple : « Je joue la carte Festival et il me reste deux actions. Je joue la carte Marché et il me reste toujours deux actions. Je joue une autre carte Festival et il me reste maintenant trois actions... »)."
+        "extra": "Si vous jouez plus d'une carte Festival, faites attention à votre nombre d'actions. Comptez votre nombre d'actions à voix haute (par exemple : « Je joue la carte Festival et il me reste deux actions. Je joue la carte Marché et il me reste toujours deux actions. Je joue une autre carte Festival et il me reste maintenant trois actions... »).",
+        "name": "Festival"
     },
     "Fishing Village": {
         "description": "+2 Actions<br>+1 Coin<n>Au début de votre prochain tour : +1 Action et +1 Coin",
@@ -443,7 +449,8 @@
     },
     "Forge": {
         "description": "Écartez autant de cartes que vous voulez de votre main. Recevez une carte coûtant exactement le coût total en pièces de toutes les cartes écartées.",
-        "extra": "«Autant» inclut zéro. Si vous n'écartez pas de carte, vous devez recevoir une carte coûtant 0 Coin, si possible. Ce fonctionnement est différent d'une carte comme <i>Agrandissement</i> si vous n'écartez rien puisque <i>Forge</i> observe le total des coûts et non le coût d'une seule carte. S'il n'y a pas de carte du coût requis, vous ne recevez pas de carte. La carte reçue vient de la réserve et va dans votre défausse. Les symboles Potion (sur les cartes de <i>Dominion - Alchimie</i>) ne sont pas additionnés au coût et les cartes reçues ne peuvent avoir Potion dans leur coût."
+        "extra": "«Autant» inclut zéro. Si vous n'écartez pas de carte, vous devez recevoir une carte coûtant 0 Coin, si possible. Ce fonctionnement est différent d'une carte comme <i>Agrandissement</i> si vous n'écartez rien puisque <i>Forge</i> observe le total des coûts et non le coût d'une seule carte. S'il n'y a pas de carte du coût requis, vous ne recevez pas de carte. La carte reçue vient de la réserve et va dans votre défausse. Les symboles Potion (sur les cartes de <i>Dominion - Alchimie</i>) ne sont pas additionnés au coût et les cartes reçues ne peuvent avoir Potion dans leur coût.",
+        "name": "Forge"
     },
     "Fortress": {
         "description": "+1 Carte<br>+2 Actions<line>Lorsque vous écartez cette carte, reprenez-la dans votre main.",
@@ -486,7 +493,8 @@
     },
     "Golem": {
         "description": "Dévoilez des cartes de votre deck jusqu'à ce que vous ayez dévoilé 2 cartes <i>Action</i> qui ne sont pas <i>Golem</i>. Défaussez les autres cartes et jouez ensuite les cartes <i>Action</i> ainsi dévoilées, dans l'ordre de votre choix.",
-        "extra": "Dévoilez des cartes du dessus de votre deck, une à la fois, jusqu'à ce que vous ayez dévoilé deux cartes <i>Action</i> qui ne sont pas un <i>Golem</i>. Si vous venez à court de cartes avant de dévoiler deux cartes <i>Action</i> qui ne sont pas un <i>Golem</i>, mélangez votre défausse (qui <b>n'inclut pas</b> les cartes dévoilées) et continuez. Si vous épuisez votre défausse et que vous n'avez toujours pas 2 cartes <i>Action</i>, vous jouerez la seule carte <i>Action</i> dévoilée ou aucune carte. Défaussez toutes les cartes dévoilées à l'exception des cartes <i>Action</i> autres que le <i>Golem</i>. Si vous n'avez dévoilé aucune carte <i>Action</i> autre que <i>Golem</i>, vous avez terminé. Si vous en avez dévoilée une, vous la jouez. Si vous avez dévoilé deux cartes, vous jouez les deux, dans l'ordre de votre choix. Vous ne pouvez pas choisir de ne pas jouer une carte. Ces cartes <i>Action</i> ne font pas partie de votre main et ne sont donc pas affectées par les cartes qui réfèrent aux cartes en main. Par exemple, si l'une de ces cartes et <i>Salle du Trône</i>(D), vous ne pouvez pas la jouer <b>avec</b> l'autre carte dévoilée."
+        "extra": "Dévoilez des cartes du dessus de votre deck, une à la fois, jusqu'à ce que vous ayez dévoilé deux cartes <i>Action</i> qui ne sont pas un <i>Golem</i>. Si vous venez à court de cartes avant de dévoiler deux cartes <i>Action</i> qui ne sont pas un <i>Golem</i>, mélangez votre défausse (qui <b>n'inclut pas</b> les cartes dévoilées) et continuez. Si vous épuisez votre défausse et que vous n'avez toujours pas 2 cartes <i>Action</i>, vous jouerez la seule carte <i>Action</i> dévoilée ou aucune carte. Défaussez toutes les cartes dévoilées à l'exception des cartes <i>Action</i> autres que le <i>Golem</i>. Si vous n'avez dévoilé aucune carte <i>Action</i> autre que <i>Golem</i>, vous avez terminé. Si vous en avez dévoilée une, vous la jouez. Si vous avez dévoilé deux cartes, vous jouez les deux, dans l'ordre de votre choix. Vous ne pouvez pas choisir de ne pas jouer une carte. Ces cartes <i>Action</i> ne font pas partie de votre main et ne sont donc pas affectées par les cartes qui réfèrent aux cartes en main. Par exemple, si l'une de ces cartes et <i>Salle du Trône</i>(D), vous ne pouvez pas la jouer <b>avec</b> l'autre carte dévoilée.",
+        "name": "Golem"
     },
     "Goons": {
         "description": "+1 Achat<br>+ Coins<n>Tous vos adversaires défaussent des cartes pour n'avoir que 3 cartes en main.<line>Lorsque cette carte est en jeu, +1 <VP> à l'achat d'une carte.",
@@ -514,7 +522,8 @@
     },
     "Guide": {
         "description": "+1 Carte<br>+1 Action<n>Placez cette carte dans votre <i>Taverne</i>.<line>Au début de votre tour, vous pouvez recourir à ce <i>Guide</i> pour défausser votre main et piocher 5 nouvelles cartes.",
-        "extra": "Lorsque vous jouez cette carte, obtenez +1 Carte et +1 Action, puis placez-la sur votre plateau Taverne. Elle y reste jusqu'à ce que vous ayez recours à elle au début d'un de vos tours. Si plusieurs effets ont lieu au début d'un de vos tours (dus à différentes cartes), vous choisissez l'ordre dans lesquelles vous les faites. Recourir au Guide le déplace du plateau vers votre zone de jeu, et vous permet de défausser votre main pour piocher 5 nouvelles cartes ; Guide est ensuite défaussée ce tour pendant la phase d'ajustement avec les autres cartes en jeu."
+        "extra": "Lorsque vous jouez cette carte, obtenez +1 Carte et +1 Action, puis placez-la sur votre plateau Taverne. Elle y reste jusqu'à ce que vous ayez recours à elle au début d'un de vos tours. Si plusieurs effets ont lieu au début d'un de vos tours (dus à différentes cartes), vous choisissez l'ordre dans lesquelles vous les faites. Recourir au Guide le déplace du plateau vers votre zone de jeu, et vous permet de défausser votre main pour piocher 5 nouvelles cartes ; Guide est ensuite défaussée ce tour pendant la phase d'ajustement avec les autres cartes en jeu.",
+        "name": "Guide"
     },
     "Haggler": {
         "description": "+2 Coins<line>Lorsque cette carte est en jeu et que vous achetez une carte, vous recevez une carte coûtant moins que la carte achetée. La carte reçue ne peut pas être une carte <i>Victoire</i>.",
@@ -533,7 +542,8 @@
     },
     "Harem": {
         "description": "2 <*COIN*><br><br>2<*VP*>",
-        "extra": "C'est une carte <i>Trésor</i> et une carte <i>Victoire</i>. Vous pouvez jouer cette carte pour 2 pièces, comme une carte <i>Argent</i>. À la fin de la partie, cette carte vaut 2 <VP>. Lors de la mise en place, il y aura 12 cartes <i>Harem</i> dans la réserve d'une partie à 3 ou 4 joueur et 8 <i>Harem</i> à 2 joueurs."
+        "extra": "C'est une carte <i>Trésor</i> et une carte <i>Victoire</i>. Vous pouvez jouer cette carte pour 2 pièces, comme une carte <i>Argent</i>. À la fin de la partie, cette carte vaut 2 <VP>. Lors de la mise en place, il y aura 12 cartes <i>Harem</i> dans la réserve d'une partie à 3 ou 4 joueur et 8 <i>Harem</i> à 2 joueurs.",
+        "name": "Harem"
     },
     "Harvest": {
         "description": "Dévoilez les 4 premières cartes de votre deck et défaussez-les. +1 Coin pour chaque carte dévoilée ayant un nom différent.",
@@ -724,7 +734,8 @@
     },
     "Mandarin": {
         "description": "+3 Coins<br>Placez une carte de votre main sur le dessus de votre deck.<line>Lorsque vous recevez cette carte, placez toutes vos cartes <i>Trésor</i> en jeu sur le dessus de votre deck, dans l'ordre de votre choix.",
-        "extra": "Lorsque vous jouez cette carte, vous obtenez +3 Coins et mettez une carte de votre main sur votre deck. Si vous n'avez plus de cartes en main, vous ne placez pas de carte sur votre deck. S'il n'y a plus de cartes dans votre deck, la carte que vous placez au dessus devient la seule carte de votre deck. Lorsque vous recevez cette carte, vous placez tous vos Trésors actuellement en jeu sur le dessus de votre deck, dans n'importe quel ordre. Vous n'avez pas besoin de montrer cet ordre aux autres joueurs. Vous devez mettre tous vos trésors sur votre deck ; vous ne pouvez pas en laisser certains. Vous ne placez que des Trésors en jeu sur votre deck, pas des Trésors non joués de votre main. Cela ne vous empêche pas d'avoir les pièces que vous avez obtenues en jouant ces Trésors ; par exemple, si vous avez +1 Achat, jouez quatre Ors et achetez un Mandarin, vous placez les Ors sur votre deck, et vous avez encore 7 Coins à dépenser. Le Mandarin met vos Trésors joués sur votre deck, que vous l'ayez reçu en l'achetant ou reçu d'une autre manière, bien que normalement vous n'aurez des Trésors en jeu que pendant votre phase Achat."
+        "extra": "Lorsque vous jouez cette carte, vous obtenez +3 Coins et mettez une carte de votre main sur votre deck. Si vous n'avez plus de cartes en main, vous ne placez pas de carte sur votre deck. S'il n'y a plus de cartes dans votre deck, la carte que vous placez au dessus devient la seule carte de votre deck. Lorsque vous recevez cette carte, vous placez tous vos Trésors actuellement en jeu sur le dessus de votre deck, dans n'importe quel ordre. Vous n'avez pas besoin de montrer cet ordre aux autres joueurs. Vous devez mettre tous vos trésors sur votre deck ; vous ne pouvez pas en laisser certains. Vous ne placez que des Trésors en jeu sur votre deck, pas des Trésors non joués de votre main. Cela ne vous empêche pas d'avoir les pièces que vous avez obtenues en jouant ces Trésors ; par exemple, si vous avez +1 Achat, jouez quatre Ors et achetez un Mandarin, vous placez les Ors sur votre deck, et vous avez encore 7 Coins à dépenser. Le Mandarin met vos Trésors joués sur votre deck, que vous l'ayez reçu en l'achetant ou reçu d'une autre manière, bien que normalement vous n'aurez des Trésors en jeu que pendant votre phase Achat.",
+        "name": "Mandarin"
     },
     "Marauder": {
         "description": "Recevez une carte <i>Butin</i> de la pile. Tous vos adversaires reçoivent une carte <i>Ruines</i>.",
@@ -733,7 +744,8 @@
     },
     "Margrave": {
         "description": "+3 Cartes<br>+1 Achat<br>Tous vos adversaires piochent une carte. Ensuite, ils défaussent pour n'avoir que 3 cartes en main.",
-        "extra": "Vous piochez 3 cartes et obtenez +1 Achat. Chaque autre joueur pioche une carte, puis défausse jusqu'à n'avoir que 3 cartes en main. Les autres joueurs sont obligés de piocher une carte. Un joueur qui n'a que 3 cartes (ou moins) en main après avoir pioché ne défausse pas de carte."
+        "extra": "Vous piochez 3 cartes et obtenez +1 Achat. Chaque autre joueur pioche une carte, puis défausse jusqu'à n'avoir que 3 cartes en main. Les autres joueurs sont obligés de piocher une carte. Un joueur qui n'a que 3 cartes (ou moins) en main après avoir pioché ne défausse pas de carte.",
+        "name": "Margrave"
     },
     "Market": {
         "description": "+1 Carte<br>+1 Action<br>+1 Achat<br>+1 Coin<n>",
@@ -796,7 +808,8 @@
     },
     "Mine": {
         "description": "Écartez une carte <i>Trésor</i> de votre main. Recevez une carte <i>Trésor</i> coûtant jusqu'à 3 Coins de plus ; ajoutez cette carte à votre main.",
-        "extra": "Généralement, vous écartez une carte Cuivre au Rebut afin d'obtenir une carte Argent ou bien une carte Argent pour obtenir une carte Or. Cependant il est aussi possible d'écarter une carte Trésor afin d'obtenir la même carte Trésor ou une de valeur moindre. La carte reçue va immédiatement dans votre main, elle peut donc être utilisée le tour où elle est acquise. Si vous n'avez pas de carte Trésor à écarter dans votre main, vous ne recevez rien."
+        "extra": "Généralement, vous écartez une carte Cuivre au Rebut afin d'obtenir une carte Argent ou bien une carte Argent pour obtenir une carte Or. Cependant il est aussi possible d'écarter une carte Trésor afin d'obtenir la même carte Trésor ou une de valeur moindre. La carte reçue va immédiatement dans votre main, elle peut donc être utilisée le tour où elle est acquise. Si vous n'avez pas de carte Trésor à écarter dans votre main, vous ne recevez rien.",
+        "name": "Mine"
     },
     "Mining Village": {
         "description": "+1 Carte<br>+2 Actions<n>Vous pouvez écarter immédiatement cette carte.<br>Si vous l'écartez, +2 Coins.",
@@ -820,7 +833,8 @@
     },
     "Mission": {
         "description": "<b>Une fois par tour et si le tour précédent n'était pas déjà le vôtre :</b> jouez un tour supplémentaire pendant lequel vous ne pourrez pas acheter de cartes.",
-        "extra": "Vous ne pouvez acheter cet événement qu'une fois par tour. Lorsque vous le faites, si le tour précédent n'était pas le vôtre - donc si le tour précédent était celui d'un autre joueur - vous jouez un autre tour une fois le tour actuel terminé. Le tour supplémentaire est complètement normal, sauf que vous ne pouvez pas acheter de cartes pendant le tour. Vous pouvez toujours acheter des événements, jouer des cartes et recevoir des cartes autrement qu'en les achetant (comme recevoir un Argent avec Amulette) et échanger des cartes Itinérantes. Acheter Mission durant un tour accordé par Mission ne vous donnera pas un autre tour, car le tour précédent était à vous."
+        "extra": "Vous ne pouvez acheter cet événement qu'une fois par tour. Lorsque vous le faites, si le tour précédent n'était pas le vôtre - donc si le tour précédent était celui d'un autre joueur - vous jouez un autre tour une fois le tour actuel terminé. Le tour supplémentaire est complètement normal, sauf que vous ne pouvez pas acheter de cartes pendant le tour. Vous pouvez toujours acheter des événements, jouer des cartes et recevoir des cartes autrement qu'en les achetant (comme recevoir un Argent avec Amulette) et échanger des cartes Itinérantes. Acheter Mission durant un tour accordé par Mission ne vous donnera pas un autre tour, car le tour précédent était à vous.",
+        "name": "Mission"
     },
     "Moat": {
         "description": "+2 Cartes<line>Lorsqu'un adversaire joue une carte <i>Attaque</i>, vous pouvez dévoiler cette carte de votre main. Dans ce cas, l'attaque n'a pas d'effet sur vous.",
@@ -866,7 +880,8 @@
     },
     "Nobles": {
         "description": "Choisissez : +3 cartes <b>OU</b> +2 Actions.<line>2 <*VP*>",
-        "extra": "C'est une carte <i>Action</i> et <i>Victoire</i>. Lorsque vous la jouez, vous choisissez de piocher 3 cartes OU d'obtenir 2 actions supplémentaires. Il n'est pas possible de combiner. Cette carte vaut 2 <VP> à la fin de la partie. Lors de la mise en place, il y aura 12 cartes <i>Nobles</i> dans la réserve d'une partie à 3 ou 4 joueur et 8 <i>Nobles</i> à 2 joueurs."
+        "extra": "C'est une carte <i>Action</i> et <i>Victoire</i>. Lorsque vous la jouez, vous choisissez de piocher 3 cartes OU d'obtenir 2 actions supplémentaires. Il n'est pas possible de combiner. Cette carte vaut 2 <VP> à la fin de la partie. Lors de la mise en place, il y aura 12 cartes <i>Nobles</i> dans la réserve d'une partie à 3 ou 4 joueur et 8 <i>Nobles</i> à 2 joueurs.",
+        "name": "Nobles"
     },
     "Nomad Camp": {
         "description": "+1 Achat<br>+2 Coins<line>Lorsque vous recevez cette carte, placez-là sur votre deck.",
@@ -875,11 +890,13 @@
     },
     "Oasis": {
         "description": "+1 Carte<br>+1 Action<br>+1 Coin<br>Défaussez une carte.",
-        "extra": "Vous piochez avant de défausser. Vous pouvez défausser la carte que vous avez piochée. Si vous êtes incapable de piocher une carte (parce que vous n'avez plus de carte dans votre deck, et aucune dans votre défausse pour mélanger), vous pouvez toujours défausser une carte si possible."
+        "extra": "Vous piochez avant de défausser. Vous pouvez défausser la carte que vous avez piochée. Si vous êtes incapable de piocher une carte (parce que vous n'avez plus de carte dans votre deck, et aucune dans votre défausse pour mélanger), vous pouvez toujours défausser une carte si possible.",
+        "name": "Oasis"
     },
     "Oracle": {
         "description": "Tous les joueurs (vous aussi) dévoilent les 2 premières cartes de leur deck et vous choisissez pour chacun : soit il les défausse, soit il les remet sur le dessus de son deck dans l'ordre de son choix.<n>+2 Cartes",
-        "extra": "Tout d'abord, chaque joueur, y compris vous, dévoile les deux premières cartes de son deck, et soit les défausse toutes les deux, soit les remet toutes les deux (selon votre choix). Un joueur remettant les cartes les remet dans l'ordre qu'il choisit, sans avoir besoin de révéler cet ordre. Ensuite, vous piochez deux cartes. Donc, si vous remettez les cartes que vous avez dévoilées sur votre deck, vous les piocherez."
+        "extra": "Tout d'abord, chaque joueur, y compris vous, dévoile les deux premières cartes de son deck, et soit les défausse toutes les deux, soit les remet toutes les deux (selon votre choix). Un joueur remettant les cartes les remet dans l'ordre qu'il choisit, sans avoir besoin de révéler cet ordre. Ensuite, vous piochez deux cartes. Donc, si vous remettez les cartes que vous avez dévoilées sur votre deck, vous les piocherez.",
+        "name": "Oracle"
     },
     "Outpost": {
         "description": "Vous ne piochez que 3 cartes (plutôt que 5) lors de la phase <b>Ajustement</b> de ce tour. Vous jouez un tour supplémentaire après celui-ci. Ceci ne vous permet pas de jouer plus de deux tours consécutifs.",
@@ -893,7 +910,8 @@
     },
     "Page": {
         "description": "+1 Carte<br>+1 Action<line>Lorsque vous défaussez cette carte de votre zone de jeu, vous pouvez l'échanger contre une carte <i>Chasseuse de Trésors</i>.",
-        "extra": "Voir la section Itinérant. Lorsque vous jouez cette carte, obtenez +1 Carte et +1 Action. Lorsque vous défaussez cette carte de votre zone de jeu, elle peut retourner dans sa pile pour prendre une Chasseuse de Trésors à la place, cette dernière allant dans votre défausse."
+        "extra": "Voir la section Itinérant. Lorsque vous jouez cette carte, obtenez +1 Carte et +1 Action. Lorsque vous défaussez cette carte de votre zone de jeu, elle peut retourner dans sa pile pour prendre une Chasseuse de Trésors à la place, cette dernière allant dans votre défausse.",
+        "name": "Page"
     },
     "Page -> Champion": {
         "description": "<justify>Page est échangée contre Chasseuse de Trésors, qui est échangée contre Guerrière, qui est échangée contre Héroïne, qui est échangée contre Championne.</justify><left><u>Page</u>: +1 Carte ; +1 Action</left><left><u>Chasseuse de Trésors</u>: +1 Action ; +1 Coin ; Recevez une carte <i>Argent</i> par carte que le joueur à votre droite a reçue lors de son dernier tour.</left><left><u>Guerrière</u>: +2 Cartes ; Pour chaque carte <i>Itinérant</i> que vous avez en jeu (incluant celle-ci), tous vos adversaires défaussent la première carte de leur deck et l'écartent si celle-ci coûte 3 Coins ou 4 Coins.</left><left><u>Héroïne</u>: +2 Coins ; Recevez une carte Trésor.</left><left><u>Championne</u>: +1 Action ; Pour le reste de la partie, lorsqu'un adversaire joue une carte <i>Attaque</i>, elle n'a pas d'effet sur vous, et quand vous jouez une carte <i>Action</i> : +1 Action. <i>(Cette carte reste en jeu.)</i></left>",
@@ -946,7 +964,8 @@
     },
     "Pillage": {
         "description": "Écartez cette carte. Tous vos adversaires qui ont 5 cartes ou plus en main dévoilent leur main et défaussent une carte de votre chois. Recevez 2 cartes <i>Butin</i> de la pile.",
-        "extra": "Écartez d'abord <i>Pillage</i>. Ensuite, tous vos adversaires ayant 5 cartes ou plus en main dévoilent leur main et défaussent une carte de votre choix. Ceci se déroule en suivant l'ordre de jeu, en commençant par le joueur à votre gauche. Ensuite, vous recevez 2 cartes <i>Butin</i>. Les cartes <i>Butin</i> proviennent de la pile <i>Butin</i> (cette dernière n'est pas dans la réserve) et sont placées dans votre défausse. S'il ne reste aucune carte <i>Butin</i> ou une seule, vous recevez ce qui reste."
+        "extra": "Écartez d'abord <i>Pillage</i>. Ensuite, tous vos adversaires ayant 5 cartes ou plus en main dévoilent leur main et défaussent une carte de votre choix. Ceci se déroule en suivant l'ordre de jeu, en commençant par le joueur à votre gauche. Ensuite, vous recevez 2 cartes <i>Butin</i>. Les cartes <i>Butin</i> proviennent de la pile <i>Butin</i> (cette dernière n'est pas dans la réserve) et sont placées dans votre défausse. S'il ne reste aucune carte <i>Butin</i> ou une seule, vous recevez ce qui reste.",
+        "name": "Pillage"
     },
     "Pirate Ship": {
         "description": "Choisissez: Tous vos adversaires dévoilent les 2 premières cartes de leur deck, écartent une carte <i>Trésor</i> dévoilée de votre choix, défaussent le reste et vous prenez un jeton <b>Pièce</b> s'il y a eu au moins une carte Trésor écartée <b>OU</b> +1 Coin pour chaque jeton <b>Pièce</b> que vous avez obtenu avec les <b>Bateau pirate</b>.",
@@ -984,13 +1003,15 @@
     },
     "Possession": {
         "description": "Après votre tour, le joueur à votre gauche joue un tour supplémentaire lors duquel vous pouvez voir toutes ses cartes et vous prenez toutes les décisions pour lui. Vous obtenez à sa place toutes les cartes qu'il obtient lors de ce tour. les cartes écartées sont mises de côté et placées dans sa défausse à la fin du tour.",
-        "extra": "Vous ne jouez pas un tour supplémentaire avec le deck du joueur à votre gauche. Ce Joueur joue un tour lors duquel vous prenez les décisions et recevez les cartes. Cette différence cruciale est très importante lorsque l'on considère l'interaction des cartes: le \"vous\" réfère toujours au joueur <b>possédé</b> et non au joueur <b>qui possède</b> l'autre. La carte <i>Possession</i> implique les points suivants:<n>-Vous prenez toutes les décisions pour le joueur possédé. Ceci comprend quelles cartes jouer, comment utiliser les cartes jouées et quelles cartes acheter.<n>-Peu import la méthode, vous recevez à sa place toutes cartes que le joueur possédé reçoit. Ceci inclut les cartes achetées ainsi quel es cartes reçue à l'aide de cartes <i>Action</i>. les cartes que vous recevez ainsi sont placées dans votre défausse, même si elles seraient allées dans la main du joueur, sur son deck ou à tout autre endroit. Vous ne recevez que les cartes que le joueur possédé reçoit, vous ne recevez pas les jetons qu'il reçoit (par exemple, avec le <i>Bateau pirate</i> de <i>Dominion - Rivages</i>)."
+        "extra": "Vous ne jouez pas un tour supplémentaire avec le deck du joueur à votre gauche. Ce Joueur joue un tour lors duquel vous prenez les décisions et recevez les cartes. Cette différence cruciale est très importante lorsque l'on considère l'interaction des cartes: le \"vous\" réfère toujours au joueur <b>possédé</b> et non au joueur <b>qui possède</b> l'autre. La carte <i>Possession</i> implique les points suivants:<n>-Vous prenez toutes les décisions pour le joueur possédé. Ceci comprend quelles cartes jouer, comment utiliser les cartes jouées et quelles cartes acheter.<n>-Peu import la méthode, vous recevez à sa place toutes cartes que le joueur possédé reçoit. Ceci inclut les cartes achetées ainsi quel es cartes reçue à l'aide de cartes <i>Action</i>. les cartes que vous recevez ainsi sont placées dans votre défausse, même si elles seraient allées dans la main du joueur, sur son deck ou à tout autre endroit. Vous ne recevez que les cartes que le joueur possédé reçoit, vous ne recevez pas les jetons qu'il reçoit (par exemple, avec le <i>Bateau pirate</i> de <i>Dominion - Rivages</i>).",
+        "name": "Possession"
     },
     "Potion": {
         "extra": "Il s'agit d'une carte Trésor de base. Elle coûte 4 pièces et produit une Potion. Ce n'est pas une carte du Royaume. Choisissez, avec la méthode de votre choix, les 10 cartes <i>Royaume</i> qui forment la réserve. Si au moins l'une d'elles affiche Potion dans son coût, ajoutez les cartes <i>Potion</i> dans la réserve. Ajoutez aussi les cartes <i>Potion</i> si vous utilisez la carte <i>Marché noir</i> et qu'il y a au moins une carte avec Potion dans son coût présente dans le deck <i>Marché noir</i>. Si aucune carte de la réserve ou du deck <i>Marché noir</i> n'affiche Potion dans son coût, n'utilisez pas les cartes <i>Potion</i> dans cette partie. Lorsque la pioche <i>Potion</i> est présente, placez-y les 16 cartes <i>Potion</i>, peu importe le nombre de joueurs. Comme toute autre pile de la réserve, les cartes <i>Potion</i> comptent pour la fin de la partie. Ainsi, si la pile Potion se vide, cela compte comme l'une des trois piles à vider pour la fin de la partie."
     },
     "Prince": {
-        "description": "Vous pouvez mettre cette carte de côté. Dans ce cas, mettez de côté une carte Action de votre main coûtant jusqu'à 4 Coins. Au début de tous vos prochains tours, jouez cette action, en la mettant à nouveau de côté quand vous la défaussez de votre zone de jeu. (Cessez de la jouer si vous échouez à la mettre de côté.)"
+        "description": "Vous pouvez mettre cette carte de côté. Dans ce cas, mettez de côté une carte Action de votre main coûtant jusqu'à 4 Coins. Au début de tous vos prochains tours, jouez cette action, en la mettant à nouveau de côté quand vous la défaussez de votre zone de jeu. (Cessez de la jouer si vous échouez à la mettre de côté.)",
+        "name": "Prince"
     },
     "Princess": {
         "description": "+1 Achat<line>Lorsque cette carte est en jeu, les cartes coûtent 2 Coins de moins, au minimum 0 Coin.<br><i>(Ne pas mettre dans la réserve.)</i>",
@@ -999,7 +1020,8 @@
     },
     "Procession": {
         "description": "Vous pouvez jouer une carte <i>Action</i> de votre main deux fois. Écartez-la. Recevez une carte <i>Action</i> coûtant exactement 1 Coin de plus que cette carte.",
-        "extra": "Vous n'avez pas forcément à jouer une carte <i>Action</i>. Si vous jouez une carte, vous la jouez une première et une deuxième fois, puis vous l'écartez et recevez une carte <i>Action</i> coûtant exactement 1 Coin de plus que la carte jouée (même si d'une façon ou d'une autre, vous ne l'avez pas écartée). Recevoir une carte n'est pas optionnel à compter du moment où vous jouez une carte <i>Action</i> de votre main, mais échouera s'il n'y a pas de carte du coût requis dans la réserve. Si un effet se produit parce qu'une carte est écartée, par exemple piocher 3 cartes avec un <i>Cultiste</i>, cet effet est résolu avant que vous ne receviez la carte. La carte reçue provient de la réserve et est placée dans votre défausse. Jouer une carte <i>Procession</i> ne prend qu'une seule action (vous n'avez donc pas besoin d'actions supplémentaires comme l'on peut obtenir à l'aide d'une carte comme <i>Forteresse</i>). Vous ne pouvez jouer de carte entre deux résolutions de la carte jouée avec <i>Procession</i>, à moins que cette carte ne vous dise spécifiquement de jouer une carte (comme <i>Procession</i> elle-même). Si vous jouez <i>Procession</i> avec une <i>Procession</i>, vous jouez une autre carte <i>Action</i> deux fois, vous écartez cette carte et recevez une carte <i>Action</i> coûtant 1 Coin de plus ; puis vous jouez encore une autre carte <i>Action</i> deux fois, que vous écartez et ensuite recevez une carte <i>Action</i> coûtant 1 Coin de plus ; finalement, vous écartez la carte <i>Procession</i> et vous recevez une carte <i>Action</i> coûtant un de plus. Si vous utilisez <i>Procession</i> avec une carte donnant +1 Action, comme <i>Vagabond</i>, vous aurez 2 actions de plus, contrairement à une seule si vous aviez tout simplement joué 2 <i>Vagabond</i>. Si vous jouez une carte <i>Durée</i> (de <i>Rivages</i>) avec <i>Procession</i>, <i>Procession</i> demeurera devant vous jusqu'à la fin du prochain tour et vous appliquerez deux fois l'effet de la carte <i>Durée</i> au prochain tour, même si la carte <i>Durée</i> a été écartée."
+        "extra": "Vous n'avez pas forcément à jouer une carte <i>Action</i>. Si vous jouez une carte, vous la jouez une première et une deuxième fois, puis vous l'écartez et recevez une carte <i>Action</i> coûtant exactement 1 Coin de plus que la carte jouée (même si d'une façon ou d'une autre, vous ne l'avez pas écartée). Recevoir une carte n'est pas optionnel à compter du moment où vous jouez une carte <i>Action</i> de votre main, mais échouera s'il n'y a pas de carte du coût requis dans la réserve. Si un effet se produit parce qu'une carte est écartée, par exemple piocher 3 cartes avec un <i>Cultiste</i>, cet effet est résolu avant que vous ne receviez la carte. La carte reçue provient de la réserve et est placée dans votre défausse. Jouer une carte <i>Procession</i> ne prend qu'une seule action (vous n'avez donc pas besoin d'actions supplémentaires comme l'on peut obtenir à l'aide d'une carte comme <i>Forteresse</i>). Vous ne pouvez jouer de carte entre deux résolutions de la carte jouée avec <i>Procession</i>, à moins que cette carte ne vous dise spécifiquement de jouer une carte (comme <i>Procession</i> elle-même). Si vous jouez <i>Procession</i> avec une <i>Procession</i>, vous jouez une autre carte <i>Action</i> deux fois, vous écartez cette carte et recevez une carte <i>Action</i> coûtant 1 Coin de plus ; puis vous jouez encore une autre carte <i>Action</i> deux fois, que vous écartez et ensuite recevez une carte <i>Action</i> coûtant 1 Coin de plus ; finalement, vous écartez la carte <i>Procession</i> et vous recevez une carte <i>Action</i> coûtant un de plus. Si vous utilisez <i>Procession</i> avec une carte donnant +1 Action, comme <i>Vagabond</i>, vous aurez 2 actions de plus, contrairement à une seule si vous aviez tout simplement joué 2 <i>Vagabond</i>. Si vous jouez une carte <i>Durée</i> (de <i>Rivages</i>) avec <i>Procession</i>, <i>Procession</i> demeurera devant vous jusqu'à la fin du prochain tour et vous appliquerez deux fois l'effet de la carte <i>Durée</i> au prochain tour, même si la carte <i>Durée</i> a été écartée.",
+        "name": "Procession"
     },
     "Province": {
         "extra": "Avec 2 joueurs, placez 8 Provinces dans la Réserve.<n>Avec 3 ou 4 joueurs, placez 12 Provinces dans la Réserve.<n>Avec 5 joueurs, placez 15 Provinces dans la Réserve.<n>Avec 6 joueurs, placez 18 Provinces dans la Réserve."
@@ -1021,7 +1043,8 @@
     },
     "Raid": {
         "description": "Recevez une carte <i>Argent</i> par <i>Argent</i> dans votre zone de jeu. Tous vos adversaires placent leur jeton « -1 Carte » sur leur deck.",
-        "extra": "Cet événement ressemble à une Attaque, mais l'acheter n'est pas une Attaque, et on ne peut donc pas y répondre avec des cartes comme Douves ou Escorte. Lorsque vous achetez cet évènement, vous gagnez un Argent pour chaque Argent que vous avez en jeu ; par exemple, avec quatre Argents en jeu, vous gagnerez quatre Argents. Les Argents vont dans votre défausse ; s'il n'y en a pas assez, prenez ce qui reste. Ensuite, chaque autre joueur met son jeton « -1 Carte » sur son deck, ce qui obligera ces joueurs à tirer une carte de moins la prochaine fois qu'ils piocheront des cartes ; voir la section Jetons."
+        "extra": "Cet événement ressemble à une Attaque, mais l'acheter n'est pas une Attaque, et on ne peut donc pas y répondre avec des cartes comme Douves ou Escorte. Lorsque vous achetez cet évènement, vous gagnez un Argent pour chaque Argent que vous avez en jeu ; par exemple, avec quatre Argents en jeu, vous gagnerez quatre Argents. Les Argents vont dans votre défausse ; s'il n'y en a pas assez, prenez ce qui reste. Ensuite, chaque autre joueur met son jeton « -1 Carte » sur son deck, ce qui obligera ces joueurs à tirer une carte de moins la prochaine fois qu'ils piocheront des cartes ; voir la section Jetons.",
+        "name": "Raid"
     },
     "Ranger": {
         "description": "+1 Achat<n>Retournez votre jeton « Voyage » (face visible en début de partie). S'il se retrouve face visible, +5 Cartes.",
@@ -1035,7 +1058,8 @@
     },
     "Rats": {
         "description": "+1 Carte<br>+1 Action<br>Recevez une carte <i>Rats</i>. Écartez une carte de votre main, qui n'est pas une carte <i>Rats</i> (ou dévoilez une main de <i>Rats</i>).<line>Lorsque vous écartez cette carte, +1 Carte.",
-        "extra": "Suivez les instruction de la carte dans l'ordre. Piochez d'abord une carte et vous recevez une carte <i>Rats</i> de la réserve (que vous placez dans votre défausse) ; ensuite, vous écartez une carte de votre main qui n'est pas une carte <i>Rats</i>. S'il ne reste plus de carte <i>Rats</i>, vous n'en recevez pas. Si vous n'avez que des cartes <i>Rats</i> en main, dévoilez votre main et vous n'écartez pas de carte. Si vous écartez une carte <i>Rats</i>, vous piocher une carte. Cet effet a lieu à votre tour ou lors du tour d'un adversaire, et peu importe la carte jouée qui fait en sorte que la carte <i>Rats</i> est écartée. Il y a 20 exemplaires de la carte <i>Rats</i>, contrairement aux 10 habituels. La pile <i>Rats</i> comprend 20 cartes, peu importe le nombre de joueur."
+        "extra": "Suivez les instruction de la carte dans l'ordre. Piochez d'abord une carte et vous recevez une carte <i>Rats</i> de la réserve (que vous placez dans votre défausse) ; ensuite, vous écartez une carte de votre main qui n'est pas une carte <i>Rats</i>. S'il ne reste plus de carte <i>Rats</i>, vous n'en recevez pas. Si vous n'avez que des cartes <i>Rats</i> en main, dévoilez votre main et vous n'écartez pas de carte. Si vous écartez une carte <i>Rats</i>, vous piocher une carte. Cet effet a lieu à votre tour ou lors du tour d'un adversaire, et peu importe la carte jouée qui fait en sorte que la carte <i>Rats</i> est écartée. Il y a 20 exemplaires de la carte <i>Rats</i>, contrairement aux 10 habituels. La pile <i>Rats</i> comprend 20 cartes, peu importe le nombre de joueur.",
+        "name": "Rats"
     },
     "Raze": {
         "description": "+1 Action<n>Écartez soit cette carte, soit une autre carte de votre main. Consultez un nombre de cartes du dessus de votre deck égal au coût en _ Coins de la carte écartée. Conservez-en une en main et défaussez les autres.",
@@ -1088,11 +1112,13 @@
     },
     "Saboteur": {
         "description": "Tous vos adversaire dévoilent des cartes de leur deck jusqu'à ce qu'ils en dévoilent une coûtant 3 Coins ou plus. Ils écartent cette carte et peuvent recevoir une carte coûtant au plus 2 Coins de moins. Ils défaussent les autres cartes dévoilées.",
-        "extra": "Tous les autres joueurs dévoilent des cartes du dessus de leur paquet jusqu'à ce qu'ils dévoilent tous une carte coûtant 3 pièces ou plus. Si un joueur doit mélanger afin de continuer à dévoiler, il ne mélange pas les cartes qui viennent d'être dévoilées. S'il passe à travers ses cartes sans dévoiler une carte coûtant 3 pièces ou plus, il défausse les cartes dévoilées et a terminé. S'il trouve une carte coûtant 3 pièces ou plus, il l'écarte et il peut ensuite choisir une carte coûtant au plus 2 pièces de moins que la carte écartée. Par exemple, si le joueur a écarté une carte coûtant 5 pièces, il peut alors recevoir une carte d'une valeur maximale de 3 pièces. La carte reçue provient de la réserve et doit être placée dans la défausse, tout comme les cartes dévoilées. Le coût des cartes est affecté par le <i>Pont</i>."
+        "extra": "Tous les autres joueurs dévoilent des cartes du dessus de leur paquet jusqu'à ce qu'ils dévoilent tous une carte coûtant 3 pièces ou plus. Si un joueur doit mélanger afin de continuer à dévoiler, il ne mélange pas les cartes qui viennent d'être dévoilées. S'il passe à travers ses cartes sans dévoiler une carte coûtant 3 pièces ou plus, il défausse les cartes dévoilées et a terminé. S'il trouve une carte coûtant 3 pièces ou plus, il l'écarte et il peut ensuite choisir une carte coûtant au plus 2 pièces de moins que la carte écartée. Par exemple, si le joueur a écarté une carte coûtant 5 pièces, il peut alors recevoir une carte d'une valeur maximale de 3 pièces. La carte reçue provient de la réserve et doit être placée dans la défausse, tout comme les cartes dévoilées. Le coût des cartes est affecté par le <i>Pont</i>.",
+        "name": "Saboteur"
     },
     "Sage": {
         "description": "+1 Action<n>Dévoilez des cartes du dessus de votre deck jusqu'à ce que vous dévoiliez une carte coûtant 3 Coins ou plus. Prenez cette carte en main et défaussez le reste.",
-        "extra": "Si vous n'avez plus de carte à dévoiler, mélangez votre défausse (en prenant soin de ne pas mélanger les cartes dévoilées) et continuez. Si vous n'avez plus de défausse, vous arrêtez, défausser les autres cartes et il n'y a pas d'autres effet. Si vous trouvez une carte coûtant 3 Coins ou plus, prenez cette carte en main et défaussez les autres cartes. Par exemple, vous pourriez dévoiler un <i>Cuivre</i>, une <i>Malédiction</i>, un autre <i>Cuivre</i> puis une <i>Province</i> ; comme la <i>Province</i> a un coût de 8 Coins, vous devriez arrêter à ce moment, prendre la <i>Province</i> en main et défausser les deux <i>Cuivre</i> et la <i>Malédiction</i>."
+        "extra": "Si vous n'avez plus de carte à dévoiler, mélangez votre défausse (en prenant soin de ne pas mélanger les cartes dévoilées) et continuez. Si vous n'avez plus de défausse, vous arrêtez, défausser les autres cartes et il n'y a pas d'autres effet. Si vous trouvez une carte coûtant 3 Coins ou plus, prenez cette carte en main et défaussez les autres cartes. Par exemple, vous pourriez dévoiler un <i>Cuivre</i>, une <i>Malédiction</i>, un autre <i>Cuivre</i> puis une <i>Province</i> ; comme la <i>Province</i> a un coût de 8 Coins, vous devriez arrêter à ce moment, prendre la <i>Province</i> en main et défausser les deux <i>Cuivre</i> et la <i>Malédiction</i>.",
+        "name": "Sage"
     },
     "Salvager": {
         "description": "+1 Achat<br>Écartez une carte de votre main. + _ Coin égal au coût de la carte écartée.",
@@ -1263,7 +1289,8 @@
     },
     "Talisman": {
         "description": "1 <*COIN*><br><line>Lorsque cette carte est en jeu et que vous achetez une carte coûtant 4 Coin ou moins qui n'est pas une carte <i>Victoire</i>, recevez-en un exemplaire de plus.",
-        "extra": "Cette carre Trésor vaut 1 Coin , comme un <i>Cuivre</i>. Lorsque <i>Talisman</i> est en jeu, à chaque fois que vous achetez une carte courant 4 Coins ou moins qui n'est pas une carre Victoire, vous recevez un autre exemplaire de la carte achetée. S'il n'y en a plus, vous n'en recevez pas. La carte est reçue de la réserve et va dans votre défausse. Vous recevez une carte supplémentaire pour chaque <i>Talisman</i> que vous avez en jeu. Si vous achetez plusieurs cartes pour 4 Coin ou moins, la fonction de <i>Talisman</i> s'applique à chacune d'elle. Par exemple, vous avez deux <i>Talisman</i>, quatre <i>Cuivre</i> et deux achats. Vous pourriez acheter un <i>Argent</i> et une <i>Route commerciale</i> et vous recevriez deux <i>Argent</i> et deux <i>Route commercial</i> supplémentaires. <i>Talisman</i> s'applique uniquement sur les cartes achetées, la fonction de <i>Talisman</i> ne concerne pas les cartes reçues autrement, par exemple à l'aide de la carte <i>Agrandissement</i>. Une carte est une carte <i>Victoire</i> si au moins un de ses types est <i>Victoire</i>. <i>Grand Hall</i> (DI) est une carte <i>Action - Victoire</i> Le coût d'une carte est observé à l'achat ; ainsi, si vous avez joué deux cartes <i>Action</i> ce tour-ci, le coût de <i>Colporteur</i> est 4 Coin ce qui vous permet de recevoir un autre exemplaire de <i>Colporteur</i> ou encore, vous pourriez recevoir un <i>Grand marché</i> de plus si vous jouez une <i>Carrière</i>."
+        "extra": "Cette carre Trésor vaut 1 Coin , comme un <i>Cuivre</i>. Lorsque <i>Talisman</i> est en jeu, à chaque fois que vous achetez une carte courant 4 Coins ou moins qui n'est pas une carre Victoire, vous recevez un autre exemplaire de la carte achetée. S'il n'y en a plus, vous n'en recevez pas. La carte est reçue de la réserve et va dans votre défausse. Vous recevez une carte supplémentaire pour chaque <i>Talisman</i> que vous avez en jeu. Si vous achetez plusieurs cartes pour 4 Coin ou moins, la fonction de <i>Talisman</i> s'applique à chacune d'elle. Par exemple, vous avez deux <i>Talisman</i>, quatre <i>Cuivre</i> et deux achats. Vous pourriez acheter un <i>Argent</i> et une <i>Route commerciale</i> et vous recevriez deux <i>Argent</i> et deux <i>Route commercial</i> supplémentaires. <i>Talisman</i> s'applique uniquement sur les cartes achetées, la fonction de <i>Talisman</i> ne concerne pas les cartes reçues autrement, par exemple à l'aide de la carte <i>Agrandissement</i>. Une carte est une carte <i>Victoire</i> si au moins un de ses types est <i>Victoire</i>. <i>Grand Hall</i> (DI) est une carte <i>Action - Victoire</i> Le coût d'une carte est observé à l'achat ; ainsi, si vous avez joué deux cartes <i>Action</i> ce tour-ci, le coût de <i>Colporteur</i> est 4 Coin ce qui vous permet de recevoir un autre exemplaire de <i>Colporteur</i> ou encore, vous pourriez recevoir un <i>Grand marché</i> de plus si vous jouez une <i>Carrière</i>.",
+        "name": "Talisman"
     },
     "Taxman": {
         "description": "Vous pouvez écarter une carte <i>Trésor</i> de votre main. Tous les autres joueurs avec 5 cartes ou plus en main défaussent une carte similaire (ou dévoilent leur main s'ils n'en ont pas). Recevez une carte <i>Trésor</i> coûtant jusqu'à 3 Coin de plus et placez-la sur le dessus du deck.",
@@ -1376,7 +1403,8 @@
     },
     "Tunnel": {
         "description": "2 <*VP*><line>Lorsque vous défaussez cette carte à un autre moment que votre phase <b>Ajustement</b>, vous pouvez la dévoiler. Dans ce cas, recevez un <i>Or</i>.",
-        "extra": "Ceci est à la fois une carte Victoire et une Réaction. À la fin de la partie, Tunnel vaut 2 <VP>. La capacité de réaction de Tunnel fonctionne lorsque vous la défaussez. Vous ne pouvez pas simplement choisir de la défausser ; quelque chose doit vous permettre de la défausser, ou vous y obliger. Cette capacité fonctionne si vous défaussez un Tunnel pendant votre tour (comme avec Oasis) ou celui de quelqu'un d'autre (comme avec Margrave). Elle fonctionne si le Tunnel est défaussé de votre main (par exemple avec Oasis) ou de votre deck, ou s'il est mis de côté (par exemple avec Cartographe). Si le Tunnel ne doit pas obligatoirement être dévoilé (par exemple en défaussant plusieurs cartes avec Cartographe), vous devez le dévoiler pour recevoir l'Or. Le dévoiler est facultatif, même si Tunnel a déjà été dévoilé pour une autre raison ; vous n'êtes pas obligé de recevoir un Or. Cette capacité ne fonctionne pas si des cartes sont mises dans votre défausse sans être explicitement défaussées, comme lorsque vous achetez une carte, quand vous recevez une carte directement (comme avec Village Frontalier), quand votre deck est mis dans votre défausse (comme avec Chancelier de Dominion), ou quand les cartes écartées vous sont retournées à la fin du tour (avec Possession d'Alchimie). Elle ne fonctionne pas non plus pendant la phase Ajustement, lorsque vous défaussez normalement toutes vos cartes jouées et non jouées. Le mot clé à rechercher est une carte qui vous dit de « défausser » des cartes. L'Or que vous recevez provient de la Réserve et est mis dans votre défausse ; s'il n'y a plus d'Or dans la Réserve, vous n'en recevez pas."
+        "extra": "Ceci est à la fois une carte Victoire et une Réaction. À la fin de la partie, Tunnel vaut 2 <VP>. La capacité de réaction de Tunnel fonctionne lorsque vous la défaussez. Vous ne pouvez pas simplement choisir de la défausser ; quelque chose doit vous permettre de la défausser, ou vous y obliger. Cette capacité fonctionne si vous défaussez un Tunnel pendant votre tour (comme avec Oasis) ou celui de quelqu'un d'autre (comme avec Margrave). Elle fonctionne si le Tunnel est défaussé de votre main (par exemple avec Oasis) ou de votre deck, ou s'il est mis de côté (par exemple avec Cartographe). Si le Tunnel ne doit pas obligatoirement être dévoilé (par exemple en défaussant plusieurs cartes avec Cartographe), vous devez le dévoiler pour recevoir l'Or. Le dévoiler est facultatif, même si Tunnel a déjà été dévoilé pour une autre raison ; vous n'êtes pas obligé de recevoir un Or. Cette capacité ne fonctionne pas si des cartes sont mises dans votre défausse sans être explicitement défaussées, comme lorsque vous achetez une carte, quand vous recevez une carte directement (comme avec Village Frontalier), quand votre deck est mis dans votre défausse (comme avec Chancelier de Dominion), ou quand les cartes écartées vous sont retournées à la fin du tour (avec Possession d'Alchimie). Elle ne fonctionne pas non plus pendant la phase Ajustement, lorsque vous défaussez normalement toutes vos cartes jouées et non jouées. Le mot clé à rechercher est une carte qui vous dit de « défausser » des cartes. L'Or que vous recevez provient de la Réserve et est mis dans votre défausse ; s'il n'y a plus d'Or dans la Réserve, vous n'en recevez pas.",
+        "name": "Tunnel"
     },
     "University": {
         "description": "+2 Actions<n>Vous pouvez recevoir une carte <i>Action</i> coûtant jusqu'à 5 Coins.",
@@ -1403,7 +1431,8 @@
     },
     "Vassal": {
         "description": "+2 Coin<n>Défaussez la carte du haut de votre pioche. Si c'est une carte Action, vous pouvez la jouer.",
-        "extra": "Si la carte est une carte Action, vous pouvez la jouer, mais vous n'êtes pas obligé de le faire.<n>Si vous la jouez, vous la déplacez dans votre zone de jeu et vous suivez ses instructions ; cela ne consomme pas une de vos Actions pour le tour."
+        "extra": "Si la carte est une carte Action, vous pouvez la jouer, mais vous n'êtes pas obligé de le faire.<n>Si vous la jouez, vous la déplacez dans votre zone de jeu et vous suivez ses instructions ; cela ne consomme pas une de vos Actions pour le tour.",
+        "name": "Vassal"
     },
     "Vault": {
         "description": "+2 Cartes<n>Défaussez autant de cartes que vous voulez. +1 Coin par carte défaussée. Tous vos adversaires peuvent défausser 2 cartes. Ceux qui défaussent peuvent piocher 1 carte.",
@@ -1417,7 +1446,8 @@
     },
     "Village": {
         "description": "+1 Carte<br>+2 Actions",
-        "extra": "Si vous jouez plus d'un Village, portez une attention particulière à votre nombre d'actions. Comptez-les à voix haute afin de ne pas vous tromper."
+        "extra": "Si vous jouez plus d'un Village, portez une attention particulière à votre nombre d'actions. Comptez-les à voix haute afin de ne pas vous tromper.",
+        "name": "Village"
     },
     "Vineyard": {
         "description": "Vaut 1 <VP> pour chaque 3 cartes <i>Action</i> dans votre deck<n>(arrondi à l'unité inférieure).",

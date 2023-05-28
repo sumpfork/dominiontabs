@@ -248,12 +248,16 @@
         "extra": " Questa carta non fa nulla fino alla fine della partita, quando varrà 1 PV per ogni Ducato in tuo possesso. Se contino tutte le tue carte, la tua pila degli scarti e la tua mano sono parte del mazzo a quel punto. Durante la preparazione, metti 12 Duchi nella Riserva per una partita con 3, 4, 5 o 6 giocatori, 8 nella Riserva per una partita a 2 giocatori.",
         "name": "Duca"
     },
+    "Dungeon": {
+        "name": "Dungeon"
+    },
     "Duplicate": {
         "name": "Replica"
     },
     "Embargo": {
         "description": "+2 Coins<br>Elimina questa carta. Metti un segnalino Embargo in cima ad un mazzetto della Riserva.<line>Quando un giocatore compra una carta, ottiene una carta Maledizione per ogni segnalino Embargo su quel mazzetto.",
-        "extra": " Puoi scegliere qualsiasi mazzetto nella Riserva. Se più carte Embargo vengono usate per mettere più segnalini Embargo sullo stesso mazzetto, un giocatore ottiene una carta Maledizione per ogni segnalino Embargo quando compra una carta da quel Mazzetto. Non ottieni carte Maledizione se ottieni una carta da un mazzetto con segnalini Embargo senza acquistarla (per esempio, se ottieni una carta coi Contrabbandieri). Se usi Sala del Trono su Embargo, piazzi due segnalini Embargo e non devono necessariamente andare sullo stesso mazzetto della Riserva. Se finisci i segnalini Embargo, usa qualsiasi cosa per sostituirli. Se non ci sono Maledizioni rimaste, i segnalini Embargo non fanno nulla."
+        "extra": " Puoi scegliere qualsiasi mazzetto nella Riserva. Se più carte Embargo vengono usate per mettere più segnalini Embargo sullo stesso mazzetto, un giocatore ottiene una carta Maledizione per ogni segnalino Embargo quando compra una carta da quel Mazzetto. Non ottieni carte Maledizione se ottieni una carta da un mazzetto con segnalini Embargo senza acquistarla (per esempio, se ottieni una carta coi Contrabbandieri). Se usi Sala del Trono su Embargo, piazzi due segnalini Embargo e non devono necessariamente andare sullo stesso mazzetto della Riserva. Se finisci i segnalini Embargo, usa qualsiasi cosa per sostituirli. Se non ci sono Maledizioni rimaste, i segnalini Embargo non fanno nulla.",
+        "name": "Embargo"
     },
     "Embassy": {
         "description": "+5 Carte\nScarta 3 carte.<line>Quando ottieni questa carta, ogni altro giocatore ottiene una carta Argento.",
@@ -372,7 +376,8 @@
     },
     "Golem": {
         "description": "Rivela carte dal tuo mazzo finchè non riveli due carte Azione che non siano Golem.\nScarta le altre carte, quindi gioca le due carte Azione nell'ordine che preferisci.",
-        "extra": " Rivela carte dalla cima del tuo mazzo, una alla volta, finchè non hai rivelato due carte Azione che non siano Golem. Se finisci le carte prima di rivelare due Azioni non Golem, mescola gli scarti (ma non le carte rivelate) e continua. Se finisci le carte e non hai scarto rimasto, tieni solo le Azioni che hai trovato. Scarta tutte le carte rivelate eccetto le carte Azione non Golem che hai trovato. Se non ne hai trovate, hai finito. Se ne hai trovata una, giocala. Se ne hai trovate due, giocale entrambe nell'ordine che vuoi. Non puoi scegliere di non giocare una di loro. Queste carte Azione non sono nella tua mano e quindi non sono influenzate da effetti che puntino carte nella tua mano. Per esempio, se una di loro è Sala del Trono non puoi giocarla sull'altra."
+        "extra": " Rivela carte dalla cima del tuo mazzo, una alla volta, finchè non hai rivelato due carte Azione che non siano Golem. Se finisci le carte prima di rivelare due Azioni non Golem, mescola gli scarti (ma non le carte rivelate) e continua. Se finisci le carte e non hai scarto rimasto, tieni solo le Azioni che hai trovato. Scarta tutte le carte rivelate eccetto le carte Azione non Golem che hai trovato. Se non ne hai trovate, hai finito. Se ne hai trovata una, giocala. Se ne hai trovate due, giocale entrambe nell'ordine che vuoi. Non puoi scegliere di non giocare una di loro. Queste carte Azione non sono nella tua mano e quindi non sono influenzate da effetti che puntino carte nella tua mano. Per esempio, se una di loro è Sala del Trono non puoi giocarla sull'altra.",
+        "name": "Golem"
     },
     "Goons": {
         "description": "+1 Acquisto\n+2 Coins\nOgni altro giocatore scarta fino ad avere 3 carte nella propria mano.<line>Mentre questa carta è in gioco, quando acquisti una carta, +1 segnalino <VP>.",
@@ -850,7 +855,8 @@
     },
     "Scout": {
         "description": "+1 Azione<n>Rivela le prime 4 carte del tuo mazzo. Metti le carte Vittoria rivelate nella tua mano. Rimetti le altre carte in cima al tuo mazzo nell'ordine che preferisci.",
-        "extra": " Se ci sono meno di 4 carte rimaste nel tuo mazzo, rivela tutte le carte rimaste, mescola la tua pila degli scarti (che non include le carte appena rivelate), quindi rivela il resto delle carte necessarie. Le carte Azione - Vittoria sono carte Vittoria. Le carte Maledizione non sono carte Vittoria. Metti in mano tutte le carte Vittoria rivelate; non puoi lasciarne alcune in cima al mazzo. Non sei tenuto a rivelare l'ordine in cui rimetti le carte in cima al mazzo."
+        "extra": " Se ci sono meno di 4 carte rimaste nel tuo mazzo, rivela tutte le carte rimaste, mescola la tua pila degli scarti (che non include le carte appena rivelate), quindi rivela il resto delle carte necessarie. Le carte Azione - Vittoria sono carte Vittoria. Le carte Maledizione non sono carte Vittoria. Metti in mano tutte le carte Vittoria rivelate; non puoi lasciarne alcune in cima al mazzo. Non sei tenuto a rivelare l'ordine in cui rimetti le carte in cima al mazzo.",
+        "name": "Scout"
     },
     "Scouting Party": {
         "name": "Unità di Ricognizione"

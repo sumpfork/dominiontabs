@@ -1,42 +1,58 @@
 import argparse
 import collections
 import json
+import os
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("en_card_file")
-    parser.add_argument("other_card_file")
+    parser.add_argument("card_db_src_dir")
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
 
-    with open(args.en_card_file) as f:
+    with open(os.path.join(args.card_db_src_dir, "en_us/cards_en_us.json")) as f:
         en_contents = json.load(f)
-    with open(args.other_card_file) as f:
-        other_contents = json.load(f)
-    trimmed = {}
-    trimmed_counts = collections.Counter()
 
-    for card_name, card_spec in other_contents.items():
-        matched = en_contents[card_name]
-        new_card_spec = {}
-        for key in ["description", "extra", "name"]:
-            entry = card_spec.get(key)
-            if entry is not None and entry != matched[key]:
-                new_card_spec[key] = entry
-            else:
-                trimmed_counts[key] += 1
-        if new_card_spec:
-            trimmed[card_name] = new_card_spec
+    for fname in os.listdir(args.card_db_src_dir):
+        if fname not in ["en_us", "xx"] and os.path.isdir(
+            os.path.join(args.card_db_src_dir, fname)
+        ):
+            print(f"processing {fname}")
+            full_fname = os.path.join(
+                args.card_db_src_dir, fname, f"cards_{fname}.json"
+            )
+            with open(full_fname) as f:
+                other_contents = json.load(f)
+            trimmed = {}
+            trimmed_counts = collections.Counter()
 
-    print(f"trimmed: {trimmed_counts}")
-    print(f"{len(trimmed)} cards left of {len(other_contents)}")
-    print(f"{len(trimmed)} cards (partially) translated of {len(en_contents)}")
+            for card_name, card_spec in other_contents.items():
+                matched = en_contents[card_name]
+                new_card_spec = {}
+                for key in ["description", "extra", "name"]:
+                    entry = card_spec.get(key)
+                    if entry is not None and entry != matched[key]:
+                        new_card_spec[key] = entry
+                    else:
+                        trimmed_counts[key] += 1
+                # never remove just the name
+                if set(card_spec) - set(new_card_spec) == {"name"}:
+                    new_card_spec["name"] = card_spec["name"]
+                    trimmed_counts["name"] -= 1
+                if new_card_spec:
+                    trimmed[card_name] = new_card_spec
 
-    if args.write:
-        with open(args.other_card_file, "wt", encoding="utf-8") as outf:
-            json.dump(trimmed, outf, indent=4, ensure_ascii=False)
-            outf.write("\n")
+            print(f"trimmed: {dict(trimmed_counts)}")
+            print(f"{len(trimmed)} cards left of {len(other_contents)}")
+            print(f"{len(trimmed)} cards (partially) translated of {len(en_contents)}")
+
+            if args.write:
+                with open(full_fname, "wt", encoding="utf-8") as outf:
+                    json.dump(trimmed, outf, indent=4, ensure_ascii=False)
+                    outf.write("\n")
+                print("rewrote contents")
+
+            print()
 
 
 if __name__ == "__main__":
