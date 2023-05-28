@@ -847,7 +847,8 @@
         "name": "Prêteur sur gages"
     },
     "Monument": {
-        "extra": "Voir les règles additionnelles au sujet des jetons <VP>."
+        "extra": "Voir les règles additionnelles au sujet des jetons <VP>.",
+        "name": "Monument"
     },
     "Mountebank": {
         "description": "+2 Coin<n>Tous vos adversaires peuvent défausser une <i>Malédiction</i>. Ceux qui ne le font pas reçoivent une <i>Malédiction</i> et une carte <i>Cuivre</i>.",
@@ -1007,10 +1008,12 @@
         "name": "Possession"
     },
     "Potion": {
-        "extra": "Il s'agit d'une carte Trésor de base. Elle coûte 4 pièces et produit une Potion. Ce n'est pas une carte du Royaume. Choisissez, avec la méthode de votre choix, les 10 cartes <i>Royaume</i> qui forment la réserve. Si au moins l'une d'elles affiche Potion dans son coût, ajoutez les cartes <i>Potion</i> dans la réserve. Ajoutez aussi les cartes <i>Potion</i> si vous utilisez la carte <i>Marché noir</i> et qu'il y a au moins une carte avec Potion dans son coût présente dans le deck <i>Marché noir</i>. Si aucune carte de la réserve ou du deck <i>Marché noir</i> n'affiche Potion dans son coût, n'utilisez pas les cartes <i>Potion</i> dans cette partie. Lorsque la pioche <i>Potion</i> est présente, placez-y les 16 cartes <i>Potion</i>, peu importe le nombre de joueurs. Comme toute autre pile de la réserve, les cartes <i>Potion</i> comptent pour la fin de la partie. Ainsi, si la pile Potion se vide, cela compte comme l'une des trois piles à vider pour la fin de la partie."
+        "extra": "Il s'agit d'une carte Trésor de base. Elle coûte 4 pièces et produit une Potion. Ce n'est pas une carte du Royaume. Choisissez, avec la méthode de votre choix, les 10 cartes <i>Royaume</i> qui forment la réserve. Si au moins l'une d'elles affiche Potion dans son coût, ajoutez les cartes <i>Potion</i> dans la réserve. Ajoutez aussi les cartes <i>Potion</i> si vous utilisez la carte <i>Marché noir</i> et qu'il y a au moins une carte avec Potion dans son coût présente dans le deck <i>Marché noir</i>. Si aucune carte de la réserve ou du deck <i>Marché noir</i> n'affiche Potion dans son coût, n'utilisez pas les cartes <i>Potion</i> dans cette partie. Lorsque la pioche <i>Potion</i> est présente, placez-y les 16 cartes <i>Potion</i>, peu importe le nombre de joueurs. Comme toute autre pile de la réserve, les cartes <i>Potion</i> comptent pour la fin de la partie. Ainsi, si la pile Potion se vide, cela compte comme l'une des trois piles à vider pour la fin de la partie.",
+        "name": "Potion"
     },
     "Prince": {
-        "description": "Vous pouvez mettre cette carte de côté. Dans ce cas, mettez de côté une carte Action de votre main coûtant jusqu'à 4 Coins. Au début de tous vos prochains tours, jouez cette action, en la mettant à nouveau de côté quand vous la défaussez de votre zone de jeu. (Cessez de la jouer si vous échouez à la mettre de côté.)"
+        "description": "Vous pouvez mettre cette carte de côté. Dans ce cas, mettez de côté une carte Action de votre main coûtant jusqu'à 4 Coins. Au début de tous vos prochains tours, jouez cette action, en la mettant à nouveau de côté quand vous la défaussez de votre zone de jeu. (Cessez de la jouer si vous échouez à la mettre de côté.)",
+        "name": "Prince"
     },
     "Princess": {
         "description": "+1 Achat<line>Lorsque cette carte est en jeu, les cartes coûtent 2 Coins de moins, au minimum 0 Coin.<br><i>(Ne pas mettre dans la réserve.)</i>",
@@ -1023,7 +1026,8 @@
         "name": "Procession"
     },
     "Province": {
-        "extra": "Avec 2 joueurs, placez 8 Provinces dans la Réserve.<n>Avec 3 ou 4 joueurs, placez 12 Provinces dans la Réserve.<n>Avec 5 joueurs, placez 15 Provinces dans la Réserve.<n>Avec 6 joueurs, placez 18 Provinces dans la Réserve."
+        "extra": "Avec 2 joueurs, placez 8 Provinces dans la Réserve.<n>Avec 3 ou 4 joueurs, placez 12 Provinces dans la Réserve.<n>Avec 5 joueurs, placez 15 Provinces dans la Réserve.<n>Avec 6 joueurs, placez 18 Provinces dans la Réserve.",
+        "name": "Province"
     },
     "Quarry": {
         "description": "+1 Coin<br><line>Lorsque cette carte est en jeu, les cartes <i>Actions</i> coûtent 2 Coins de moins, mais pas moins que 0 Coin.",
