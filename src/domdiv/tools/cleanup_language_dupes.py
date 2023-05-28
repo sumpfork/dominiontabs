@@ -40,6 +40,9 @@ def main():
                     new_card_spec["name"] = card_spec["name"]
                     trimmed_counts["name"] -= 1
                 if new_card_spec:
+                    # preserve other keys
+                    for other_key in set(card_spec) - {"name", "description", "extra"}:
+                        new_card_spec[other_key] = card_spec[other_key]
                     trimmed[card_name] = new_card_spec
 
             print(f"trimmed: {dict(trimmed_counts)}")

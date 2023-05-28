@@ -734,7 +734,10 @@
     "Doubloons": {
         "description": "3 <*COIN*><line>Wenn du diese Karte nimmst, nimm ein Gold.",
         "extra": "Wenn du diese Karte nimmt, dann nehme ebenfalls ein Gold.",
-        "name": "Dublonen"
+        "name": "Dublonen",
+        "notes": [
+            "This card is currently not used."
+        ]
     },
     "Druid": {
         "description": "+1 Kauf<br>Empfange eine der zur Seite gelegten Gaben (lasse sie dort liegen).<line>Spielvorbereitung: Lege die obersten 3 Gaben aufgedeckt zur Seite.",
