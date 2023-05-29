@@ -192,8 +192,6 @@ def main(card_db_dir, output_dir):
                 )
             if lang_card:
                 sorted_lang_data[card_tag] = lang_card
-            if card_tag == "Soothsayer BB2DE":
-                print(card_tag, lang, lang_card)
         unused = set(lang_data) - set(sorted_lang_data)
         print(
             f"unused in {lang}: {len(unused)}, used: {len(set(lang_data) & set(sorted_lang_data))}"
