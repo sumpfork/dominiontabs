@@ -1911,8 +1911,6 @@ def filter_sort_cards(cards, options):
     cards = keep_cards
 
     # Now add text to the cards.  Waited as long as possible to catch all groupings
-    # cards = add_card_text(cards, LANGUAGE_DEFAULT)
-    # if options.language != LANGUAGE_DEFAULT:
     cards = add_card_text(cards, options.language)
 
     # Get list of cards from a file
