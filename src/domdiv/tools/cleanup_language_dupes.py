@@ -27,7 +27,11 @@ def main():
             trimmed_counts = collections.Counter()
 
             for card_name, card_spec in other_contents.items():
-                matched = en_contents[card_name]
+                matched = en_contents.get(card_name)
+                if matched is None:
+                    print(f"warning - leaving {card_name} as it doesn't exist in en_us")
+                    trimmed[card_name] = card_spec
+                    continue
                 new_card_spec = {}
                 for key in ["description", "extra", "name"]:
                     entry = card_spec.get(key)
@@ -36,7 +40,11 @@ def main():
                     else:
                         trimmed_counts[key] += 1
                 # do not remove name if something else is translated
-                if "name" in card_spec and len(set(new_card_spec) - {"name"}) > 0:
+                if (
+                    "name" in card_spec
+                    and "name" not in new_card_spec
+                    and len(set(new_card_spec) - {"name"}) > 0
+                ):
                     new_card_spec["name"] = card_spec["name"]
                     trimmed_counts["name"] -= 1
                 if new_card_spec:
