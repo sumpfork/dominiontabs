@@ -32,3 +32,14 @@ jobs:
         with:
           name: card_db
           path: src/domdiv/card_db/
+      - name: Save PR number
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          mkdir -p ./pr
+          echo $PR_NUMBER > ./pr/pr_number
+      - name: Upload PR Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: pr_number
+          path: pr/
