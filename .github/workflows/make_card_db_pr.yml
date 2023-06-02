@@ -35,7 +35,7 @@ jobs:
                 archive_format: 'zip',
               });
               var fs = require('fs');
-              fs.writeFileSync('${process.env.GITHUB_WORKSPACE}/card_db.zip', Buffer.from(download.data));
+              fs.writeFileSync('${{github.workspace}}/card_db.zip', Buffer.from(download.data));
               return 'found_artifact';
             } else {
               return 'no_artifact'
