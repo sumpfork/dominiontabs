@@ -13,7 +13,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/github-script@v3.1.0
+      - uses: actions/github-script@v6
         id: get-artifact
         with:
           result-encoding: string
@@ -44,14 +44,59 @@ jobs:
         if: steps.get-artifact.outputs.result == 'found_artifact'
       - run: rm -f card_db.zip
         if: steps.get-artifact.outputs.result == 'found_artifact'
-      - name: Make PR
+      - name: 'Download PR number artifact'
         if: steps.get-artifact.outputs.result == 'found_artifact'
-        uses: peter-evans/create-pull-request@v4
+        uses: actions/github-script@v6
         with:
+          script: |
+            let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               run_id: context.payload.workflow_run.id,
+            });
+            let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "pr_number"
+            })[0];
+            let download = await github.rest.actions.downloadArtifact({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               artifact_id: matchArtifact.id,
+               archive_format: 'zip',
+            });
+            let fs = require('fs');
+            fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/pr_number.zip`, Buffer.from(download.data));
+      - name: 'Unzip PR Number artifact'
+        run: unzip pr_number.zip
+      - name: 'Read PR number'
+        id: read-pr-number
+        uses: actions/github-script@v6
+        with:
+          script: |
+            let pr_number = Number(fs.readFileSync('./pr_number'));
+            return pr_number
+      - name: Make PR
+        id: make-pr
+        if: steps.get-artifact.outputs.result == 'found_artifact'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: 'Auto Card DB compile for #{{ steps.make-pr.pull-request-number }}'
           body: |
-            Auto-generate package card DB to from source card DB
+            Auto-generate package card DB to from source card DB for PR #{{ steps.read-pr-number.result }}
           delete-branch: true
           reviewers: sumpfork
           assignees: sumpfork
           add-paths: |
             src/domdiv/card_db/
+      - name: 'Comment on PR'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            let fs = require('fs');
+            let issue_number = Number(fs.readFileSync('./pr_number'));
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              body: 'It seems compiling the card DB produced changes. PR #{{ steps.make-pr.pull-request-number }}, or run `doit update-language` yourself on this PR.'
+            });
