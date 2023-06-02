@@ -18,7 +18,7 @@ jobs:
         with:
           result-encoding: string
           script: |
-            var artifacts = await github.actions.listWorkflowRunArtifacts({
+            var artifacts = await github.rest.actions.listWorkflowRunArtifacts({
                owner: context.repo.owner,
                repo: context.repo.repo,
                run_id: ${{github.event.workflow_run.id }},
@@ -28,14 +28,14 @@ jobs:
             });
             if (matchArtifacts.length > 0) {
               var matchArtifact = matchArtifacts[0];
-              var download = await github.actions.downloadArtifact({
+              var download = await github.rest.actions.downloadArtifact({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 artifact_id: matchArtifact.id,
                 archive_format: 'zip',
               });
               var fs = require('fs');
-              fs.writeFileSync('${{github.workspace}}/card_db.zip', Buffer.from(download.data));
+              fs.writeFileSync('${process.env.GITHUB_WORKSPACE}/card_db.zip', Buffer.from(download.data));
               return 'found_artifact';
             } else {
               return 'no_artifact'
@@ -52,7 +52,7 @@ jobs:
             let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
                owner: context.repo.owner,
                repo: context.repo.repo,
-               run_id: context.payload.workflow_run.id,
+               run_id: ${{github.event.workflow_run.id }},
             });
             let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
               return artifact.name == "pr_number"
