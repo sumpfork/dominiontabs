@@ -13,7 +13,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/github-script@v3.1.0
+      - uses: actions/github-script@v6
         id: get-artifact
         with:
           result-encoding: string
