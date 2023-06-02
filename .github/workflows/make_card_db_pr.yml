@@ -13,6 +13,8 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: better_pr
       - uses: actions/github-script@v6
         id: get-artifact
         with:
