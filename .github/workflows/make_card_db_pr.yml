@@ -97,6 +97,9 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            console.log(`new PR number: ${{ steps.make-pr.outputs.pull-request-number }}`)
+            console.log(process.env)
+            const { THIS_PR_NUMBER } = process.env
             console.log(`new PR number: ${THIS_PR_NUMBER}`)
             let fs = require('fs');
             let issue_number = Number(fs.readFileSync('./pr_number'));
