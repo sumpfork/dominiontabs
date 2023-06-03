@@ -81,12 +81,10 @@ jobs:
         id: make-pr
         if: steps.get-artifact.outputs.result == 'found_artifact'
         uses: peter-evans/create-pull-request@v5
-        env:
-          ORIG_PR_NUMBER: ${{ steps.read-pr-number.outputs.result }}
         with:
-          title: 'Auto Card DB compile for #${ ORIG_PR_NUMBER }'
+          title: 'Auto Card DB compile for #${{ steps.read-pr-number.outputs.result }}'
           body: |
-            Auto-generate package card DB to from source card DB for PR #${ ORIG_PR_NUMBER }
+            Auto-generate package card DB to from source card DB for PR #${{ steps.read-pr-number.outputs.result }}
           delete-branch: true
           reviewers: sumpfork
           assignees: sumpfork
@@ -99,6 +97,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            console.log(`new PR number: ${THIS_PR_NUMBER}`)
             let fs = require('fs');
             let issue_number = Number(fs.readFileSync('./pr_number'));
             await github.rest.issues.createComment({
