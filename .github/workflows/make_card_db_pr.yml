@@ -100,7 +100,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issue_number,
-              body: `It seems compiling the card DB on this PR produced changes.
-                     Ideally, please run "doit update-language" yourself on this PR and check in the results.
-                     Otherwise, PR #${ steps.make-pr.outputs.pull-request-number } has the necessary (but unreviewed) changes.`
+              body: 'It seems compiling the card DB on this PR produced changes. Ideally, please run "doit update-language" yourself on this PR and check in the results. Otherwise, PR #${ steps.make-pr.outputs.pull-request-number } has the necessary (but unreviewed) changes.'
             });
