@@ -71,7 +71,7 @@ jobs:
         id: read-pr-number
         uses: actions/github-script@v6
         with:
-          result-encoding: int
+          result-encoding: string
           script: |
             let fs = require('fs');
             let pr_number = Number(fs.readFileSync('./pr_number'));
