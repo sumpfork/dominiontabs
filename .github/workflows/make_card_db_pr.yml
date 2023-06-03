@@ -72,6 +72,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
+            let fs = require('fs');
             let pr_number = Number(fs.readFileSync('./pr_number'));
             return pr_number
       - name: Make PR
