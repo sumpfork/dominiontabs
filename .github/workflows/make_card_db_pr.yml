@@ -71,6 +71,7 @@ jobs:
         id: read-pr-number
         uses: actions/github-script@v6
         with:
+          result-encoding: int
           script: |
             let fs = require('fs');
             let pr_number = Number(fs.readFileSync('./pr_number'));
@@ -80,9 +81,9 @@ jobs:
         if: steps.get-artifact.outputs.result == 'found_artifact'
         uses: peter-evans/create-pull-request@v5
         with:
-          title: 'Auto Card DB compile for #${{ steps.make-pr.pull-request-number }}'
+          title: 'Auto Card DB compile for #${ steps.read-pr-number.result }'
           body: |
-            Auto-generate package card DB to from source card DB for PR #${{ steps.read-pr-number.result }}
+            Auto-generate package card DB to from source card DB for PR #${ steps.read-pr-number.result }
           delete-branch: true
           reviewers: sumpfork
           assignees: sumpfork
@@ -99,7 +100,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issue_number,
-              body: `It seems compiling the card DB produced changes.
-                     Ideally, please run `doit update-language` yourself on this PR.
-                     Otherwise, PR #${{ steps.make-pr.pull-request-number }} has the necessary (but unreviewed) changes.`
+              body: `It seems compiling the card DB on this PR produced changes.
+                     Ideally, please run `doit update-language` yourself on this PR and check in the results.
+                     Otherwise, PR #${ steps.make-pr.pull-request-number } has the necessary (but unreviewed) changes.`
             });
