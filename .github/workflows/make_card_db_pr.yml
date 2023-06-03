@@ -71,19 +71,22 @@ jobs:
         id: read-pr-number
         uses: actions/github-script@v6
         with:
-          result-encoding: int
+          result-encoding: string
           script: |
             let fs = require('fs');
             let pr_number = Number(fs.readFileSync('./pr_number'));
+            console.log(`original pr number: ${pr_number}`)
             return pr_number
       - name: Make PR
         id: make-pr
         if: steps.get-artifact.outputs.result == 'found_artifact'
         uses: peter-evans/create-pull-request@v5
+        env:
+          ORIG_PR_NUMBER: ${{ steps.read-pr-number.outputs.result }}
         with:
-          title: 'Auto Card DB compile for #${ steps.read-pr-number.outputs.result }'
+          title: 'Auto Card DB compile for #${ ORIG_PR_NUMBER }'
           body: |
-            Auto-generate package card DB to from source card DB for PR #${ steps.read-pr-number.outputs.result }
+            Auto-generate package card DB to from source card DB for PR #${ ORIG_PR_NUMBER }
           delete-branch: true
           reviewers: sumpfork
           assignees: sumpfork
@@ -91,6 +94,8 @@ jobs:
             src/domdiv/card_db/
       - name: 'Comment on PR'
         uses: actions/github-script@v6
+        env:
+          THIS_PR_NUMBER: ${{ steps.make-pr.outputs.pull-request-number }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -100,5 +105,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issue_number,
-              body: 'It seems compiling the card DB on this PR produced changes. Ideally, please run "doit update-language" yourself on this PR and check in the results. Otherwise, PR #${ steps.make-pr.outputs.pull-request-number } has the necessary (but unreviewed) changes.'
+              body: `It seems compiling the card DB on this PR produced changes.\n` +
+                    `Ideally, please run "doit update-language" yourself on this PR and check in the results.\n` +
+                    `Otherwise, PR #${THIS_PR_NUMBER} has the necessary (but unreviewed) changes.\n`
             });
