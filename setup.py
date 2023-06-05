@@ -7,6 +7,7 @@ setup(
             "dominion_dividers = domdiv.main:main",
             "domdiv_update_language = domdiv.tools.update_language:run",
             "domdiv_bgg_release = domdiv.tools.bgg_release:make_bgg_release",
+            "domdiv_dedupe_cards = domdiv.tools.cleanup_language_dupes:main",
         ]
     },
     package_dir={"": "src"},

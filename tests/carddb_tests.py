@@ -92,21 +92,20 @@ def test_cardread():
     assert len(cards) == num_cards_expected + 28
 
 
-def test_languages():
-    languages = main.get_languages("card_db")
-    for lang in languages:
-        print("checking " + lang)
-        # for now, just test that they load
-        options = main.parse_opts(["--language", lang])
-        options.data_path = "."
-        cards = main.read_card_data(options)
-        assert cards, '"{}" cards did not read properly'.format(lang)
-        cards = main.add_card_text(cards, "en_us")
-        cards = main.add_card_text(cards, lang)
-        if lang == "it":
-            assert "Maledizione" in [card.name for card in cards]
-        elif lang == "de":
-            assert "Fluch" in [card.name for card in cards]
+@pytest.mark.parametrize("lang", main.get_languages("card_db"))
+def test_languages_db(lang):
+    print("checking " + lang)
+    # for now, just test that they load
+    options = main.parse_opts(["--language", lang])
+    options.data_path = "."
+    cards = main.read_card_data(options)
+    assert cards, '"{}" cards did not read properly'.format(lang)
+    cards = main.add_card_text(cards, "en_us")
+    cards = main.add_card_text(cards, lang)
+    if lang == "it":
+        assert "Maledizione" in [card.name for card in cards]
+    elif lang == "de":
+        assert "Fluch" in [card.name for card in cards]
 
 
 @contextlib.contextmanager

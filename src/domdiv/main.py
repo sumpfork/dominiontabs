@@ -947,7 +947,6 @@ def parse_opts(cmdline_args=None):
 
 
 def clean_opts(options):
-
     if "center" in options.tab_side:
         options.tab_side = str(options.tab_side).replace("center", "centre")
 
@@ -1309,7 +1308,6 @@ def find_index_of_object(lst=None, attributes=None):
 
 
 def read_card_data(options):
-
     # Read in the card types
     types_db_filepath = os.path.join("card_db", "types_db.json.gz")
     with get_resource_stream(types_db_filepath) as typefile:
@@ -1630,7 +1628,6 @@ def add_bonus_regex(options, language="en_us"):
 
 
 def combine_cards(cards, old_card_type, new_card_tag, new_cardset_tag, new_type):
-
     holder = Card(
         name="*Replace Later*",
         card_tag=new_card_tag,
@@ -1655,7 +1652,6 @@ def combine_cards(cards, old_card_type, new_card_tag, new_cardset_tag, new_type)
 
 
 def filter_sort_cards(cards, options):
-
     # Filter out cards by edition
     if options.edition and options.edition != "all":
         keep_sets = []
@@ -1919,9 +1915,7 @@ def filter_sort_cards(cards, options):
     cards = keep_cards
 
     # Now add text to the cards.  Waited as long as possible to catch all groupings
-    cards = add_card_text(cards, LANGUAGE_DEFAULT)
-    if options.language != LANGUAGE_DEFAULT:
-        cards = add_card_text(cards, options.language)
+    cards = add_card_text(cards, options.language)
 
     # Get list of cards from a file
     if options.cardlist:
@@ -1957,7 +1951,6 @@ def filter_sort_cards(cards, options):
 
     # Add expansion divider
     if options.expansion_dividers:
-
         cardnamesByExpansion = defaultdict(dict)
         randomizerCountByExpansion = Counter()
         for c in cards:
@@ -2100,7 +2093,6 @@ def calculate_layout(options, cards=None):
 
 
 def generate(options):
-
     cards = read_card_data(options)
     assert cards, "No cards after reading"
     cards = filter_sort_cards(cards, options)

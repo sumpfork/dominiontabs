@@ -18,7 +18,12 @@ def test_standard_opts():
 
 
 @pytest.mark.parametrize("lang", main.get_languages("card_db"))
-def test_grouped(lang):
+def test_languages(lang):
     print("checking " + lang)
-    options = get_clean_opts(["--special-card-groups", "--language={}".format(lang)])
+    options = get_clean_opts(["--language={}".format(lang)])
+    main.generate(options)
+
+
+def test_grouped():
+    options = get_clean_opts(["--special-card-groups"])
     main.generate(options)
