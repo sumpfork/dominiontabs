@@ -66,9 +66,11 @@ jobs:
             let fs = require('fs');
             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/pr_number.zip`, Buffer.from(download.data));
       - name: 'Unzip PR Number artifact'
+        if: steps.get-artifact.outputs.result == 'found_artifact'
         run: unzip pr_number.zip
       - name: 'Read PR number'
         id: read-pr-number
+        if: steps.get-artifact.outputs.result == 'found_artifact'
         uses: actions/github-script@v6
         with:
           result-encoding: string
@@ -91,6 +93,7 @@ jobs:
           add-paths: |
             src/domdiv/card_db/
       - name: 'Comment on PR'
+        if: steps.get-artifact.outputs.result == 'found_artifact'
         uses: actions/github-script@v6
         env:
           THIS_PR_NUMBER: ${{ steps.make-pr.outputs.pull-request-number }}
