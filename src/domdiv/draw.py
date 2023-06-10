@@ -559,11 +559,11 @@ class DividerDrawer(object):
                 if self.options is not None and self.options.font_dir:
                     fpath = os.path.join(self.options.font_dir, fname)
                     if os.path.exists(fpath):
-                        fontpaths[font] = fpath
+                        fontpaths[font] = (fpath, True)
                         break
                 fpath = os.path.join("fonts", fname)
                 if pkg_resources.resource_exists("domdiv", fpath):
-                    fontpaths[font] = fpath
+                    fontpaths[font] = (fpath, False)
                     break
         # Mark the built-in files as pre-registered
         registered = {
@@ -618,18 +618,20 @@ class DividerDrawer(object):
             best = fontprefs[style][0]
             if font != best:
                 print(
-                    "Warning, {} missing from domdiv/fonts; "
+                    "Warning, {} missing from font dirs; "
                     "using {} instead.".format(best, font),
                     file=sys.stderr,
                 )
             if font in registered:
                 continue
-            fontpath = fontpaths[font]
+            fontpath, is_local = fontpaths[font]
             # print("Registering {} = {}".format(font, fontpath))
             pdfmetrics.registerFont(
                 TTFont(
                     font,
-                    pkg_resources.resource_filename("domdiv", fontpath),
+                    fontpath
+                    if is_local
+                    else pkg_resources.resource_filename("domdiv", fontpath),
                 )
             )
             registered[font] = fontpath
