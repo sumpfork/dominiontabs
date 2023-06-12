@@ -10,10 +10,12 @@ postfix = "v" + domdiv.__version__ + ".pdf"
 argsets = [
     ("", ""),
     ("--orientation=vertical", "vertical_"),
+    ("--papersize=A4", "A4_"),
+    ("--papersize=A4 --orientation=vertical", "vertical_A4_"),
     ("--size=sleeved", "sleeved_"),
     ("--size=sleeved --orientation=vertical", "vertical_sleeved_"),
 ]
-additional = ["--expansion-dividers"]
+additional = ["--expansion-dividers", "--tab-artwork-resolution=300"]
 
 
 def run_generator(args, main):
