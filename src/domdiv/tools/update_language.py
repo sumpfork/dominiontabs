@@ -169,10 +169,6 @@ def main(card_db_dir, output_dir):
                 #  Card is missing, need to add it
                 lang_card = {}
                 if lang == LANGUAGE_DEFAULT:
-                    #  Default language gets bare minimum.  Really need to add by hand.
-                    lang_card["extra"] = ""
-                    lang_card["name"] = card_tag
-                    lang_card["description"] = ""
                     lang_default = lang_data
                     extra_fields = set(lang_card) - VALID_CARD_FIELD_NAMES
                     assert (
@@ -180,7 +176,7 @@ def main(card_db_dir, output_dir):
                     ), f"invalid extra field names for {card_tag} ({lang}): {extra_fields}"
                 else:
                     #  All other languages should get the default languages' text
-                    lang_card = lang_default[card_tag].copy()
+                    lang_card = lang_default.get(card_tag, {}).copy()
             elif lang != LANGUAGE_DEFAULT:
                 # Card exists, figure out what needs updating
                 extra_fields = set(lang_card) - VALID_CARD_FIELD_NAMES
@@ -190,11 +186,12 @@ def main(card_db_dir, output_dir):
                 lang_card.update(
                     {
                         field: value
-                        for field, value in lang_default[card_tag].items()
+                        for field, value in lang_default.get(card_tag, {}).items()
                         if field not in lang_card
                     }
                 )
-            sorted_lang_data[card_tag] = lang_card
+            if lang_card:
+                sorted_lang_data[card_tag] = lang_card
         unused = set(lang_data) - set(sorted_lang_data)
         print(
             f"unused in {lang}: {len(unused)}, used: {len(set(lang_data) & set(sorted_lang_data))}"
@@ -203,8 +200,9 @@ def main(card_db_dir, output_dir):
         # Now keep any unused values just in case needed in the future
         for card_tag in sorted(unused):
             lang_card = lang_data.get(card_tag)
-            lang_card["notes"] = ["This card is currently not used."]
-            sorted_lang_data[card_tag] = lang_card
+            if lang_card:
+                lang_card["notes"] = ["This card is currently not used."]
+                sorted_lang_data[card_tag] = lang_card
 
         write_language_cards(sorted_lang_data, lang, output_dir)
 
