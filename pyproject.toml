@@ -28,7 +28,7 @@ doit = "^0.33.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^6.2.4"
-tox-poetry = "^0.4.1"
+tox-poetry-installer = {extras = ["poetry"], version = "^0.10.3"}
 
 [tool.poetry-dynamic-versioning]
 enable = true
