@@ -38,12 +38,14 @@ jobs:
             echo '```' >> "Documentation-(Script-Options)"
       - name: Commit files
         run: |
-              git config --local user.email "action@github.com"
-              git config --local user.name "GitHub Action"
-              git add "Documentation-(Script-Options)"
-              git commit -m "Update script options on wiki"
+            cd wiki_repo
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add "Documentation-(Script-Options)"
+            git commit -m "Update script options on wiki"
       - name: Push changes to wiki repo
         uses: ad-m/github-push-action@master
         with:
+            directory: wiki_repo
             repository: ${{github.repository}}.wiki
             github_token: ${{ secrets.GITHUB_TOKEN }}
