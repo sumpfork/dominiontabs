@@ -26,7 +26,7 @@ jobs:
         shell: bash
         run: |
             cd wiki
-            echo '```' > Documentation-(Script-Options)
-            dominion_dividers --help >> Documentation-(Script-Options)
-            echo '```' >> Documentation-(Script-Options)
+            echo '```' > "Documentation-(Script-Options)"
+            dominion_dividers --help >> "Documentation-(Script-Options)"
+            echo '```' >> "Documentation-(Script-Options)"
       - uses: Andrew-Chen-Wang/github-wiki-action@v4
