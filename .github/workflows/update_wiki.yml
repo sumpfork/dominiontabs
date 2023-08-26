@@ -1,0 +1,32 @@
+name: Update wiki
+on:
+  push:
+    branches: [master]
+    paths:
+      - wiki/
+      - .github/workflows/update_wiki.yml
+concurrency:
+  group: update_wiki
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  publish-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+      - name: Install dominion-dividers
+        run: |
+          pip install -r requirements.txt
+          pip install .
+      - name: Generate Options Doc
+        shell: bash
+        run: |
+            cd wiki
+            echo '```' > Documentation-(Script-Options)
+            dominion_dividers --help >> Documentation-(Script-Options)
+            echo '```' >> Documentation-(Script-Options)
+      - uses: Andrew-Chen-Wang/github-wiki-action@v4
