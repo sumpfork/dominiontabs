@@ -1,0 +1,6 @@
+# For now, we're auto-generating some files in this folder on check-in
+# via a github action
+# So, ignore everything in this directory
+*
+# Except this file
+!.gitignore
