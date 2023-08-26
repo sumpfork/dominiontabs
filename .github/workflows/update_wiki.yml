@@ -2,9 +2,9 @@ name: Update wiki
 on:
   push:
     branches: [autoupdate_wiki]
-    paths:
-      - wiki/
-      - .github/workflows/update_wiki.yml
+    # paths:
+    #   - wiki/
+    #   - .github/workflows/update_wiki.yml
 concurrency:
   group: update_wiki
   cancel-in-progress: true
