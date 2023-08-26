@@ -15,18 +15,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          repository: ${{github.repository}}.wiki
+          path: wiki_repo
+      - uses: actions/checkout@v3
+        with:
+            path: repo
       - uses: actions/setup-python@v4
         with:
           python-version: 3.8
       - name: Install dominion-dividers
         run: |
+          cd repo
           pip install -r requirements.txt
           pip install .
       - name: Generate Options Doc
         shell: bash
         run: |
-            cd wiki
+            cd wiki_repo
             echo '```' > "Documentation-(Script-Options)"
             dominion_dividers --help >> "Documentation-(Script-Options)"
             echo '```' >> "Documentation-(Script-Options)"
-      - uses: Andrew-Chen-Wang/github-wiki-action@v4
+      - name: Commit files
+        run: |
+              git config --local user.email "action@github.com"
+              git config --local user.name "GitHub Action"
+              git add "Documentation-(Script-Options)"
+              git commit -m "Update script options on wiki"
+      - name: Push changes to wiki repo
+        uses: ad-m/github-push-action@master
+        with:
+            repository: ${{github.repository}}.wiki
+            github_token: ${{ secrets.GITHUB_TOKEN }}
