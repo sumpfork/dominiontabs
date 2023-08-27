@@ -33,13 +33,13 @@ jobs:
         shell: bash
         run: |
             cd wiki_repo
-            echo '```' > "Documentation-(Script-Options)"
-            dominion_dividers --help >> "Documentation-(Script-Options)"
-            echo '```' >> "Documentation-(Script-Options)"
+            echo '```' > "Documentation-(Script-Options).md"
+            dominion_dividers --help >> "Documentation-(Script-Options).md"
+            echo '```' >> "Documentation-(Script-Options).md"
       - name: Commit files
         run: |
             cd wiki_repo
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
-            git add "Documentation-(Script-Options)"
+            git add "Documentation-(Script-Options).md"
             git diff-index --quiet HEAD || git commit -m "Update script options on wiki" && git push
