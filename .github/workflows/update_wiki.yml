@@ -47,5 +47,5 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
             directory: wiki_repo
-            repository: ${{github.repository}}.wiki
+##            repository: ${{github.repository}}.wiki
             github_token: ${{ secrets.GITHUB_TOKEN }}
