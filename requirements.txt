@@ -14,8 +14,6 @@ configargparse==1.5.3
     # via -r requirements.in
 distlib==0.3.6
     # via virtualenv
-exceptiongroup==1.1.0
-    # via pytest
 filelock==3.9.0
     # via virtualenv
 identify==2.5.11
@@ -40,13 +38,10 @@ pytest==7.2.0
     # via -r requirements.in
 pyyaml==6.0
     # via pre-commit
-reportlab==3.6.12
+reportlab==3.6.13
     # via -r requirements.in
-tomli==2.0.1
-    # via pytest
 virtualenv==20.17.1
     # via pre-commit
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
-doit  # hacked in via doit
