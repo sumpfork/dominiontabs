@@ -1,0 +1,42 @@
+name: Update wiki
+on:
+  push:
+    branches: [master]
+concurrency:
+  group: update_wiki
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  publish-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: ${{github.repository}}.wiki
+          path: wiki_repo
+      - uses: actions/checkout@v3
+        with:
+            path: repo
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+      - name: Install dominion-dividers
+        run: |
+          cd repo
+          pip install -r requirements.txt
+          pip install .
+      - name: Generate Options Doc
+        shell: bash
+        run: |
+            cd wiki_repo
+            echo '```' > "Documentation-(Script-Options).md"
+            dominion_dividers --help >> "Documentation-(Script-Options).md"
+            echo '```' >> "Documentation-(Script-Options).md"
+      - name: Commit files
+        run: |
+            cd wiki_repo
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add "Documentation-(Script-Options).md"
+            git diff-index --quiet HEAD || git commit -m "Update script options on wiki" && git push

@@ -159,7 +159,7 @@ def parse_opts(cmdline_args=None):
         formatter_class=configargparse.ArgumentDefaultsHelpFormatter,
         description="Generate Dominion Dividers",
         epilog="Source can be found at 'https://github.com/sumpfork/dominiontabs'. "
-        "An online version can be found at 'http://domtabs.sandflea.org/'. ",
+        "An online version can be found at 'http://domdiv.bgtools.net/'. ",
     )
 
     # Basic Divider Information

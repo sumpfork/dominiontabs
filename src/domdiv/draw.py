@@ -691,7 +691,7 @@ class DividerDrawer(object):
             text += "</b></font></para>\n"
             text += blank_line
             text += "Online generator at: "
-            text += "<a href='http://domtabs.sandflea.org/' color='blue'>http://domtabs.sandflea.org</a>\n\n"
+            text += "<a href='http://domdiv.bgtools.net/' color='blue'>http://domdiv.bgtools.net</a>\n\n"
             text += "Source code on GitHub at: "
             text += "<a href='https://github.com/sumpfork/dominiontabs' color='blue'>"
             text += "https://github.com/sumpfork/dominiontabs</a>\n\n"
