@@ -1,16 +1,26 @@
 {
     "exclude": [
-        "token",
-        "Tokens"
+        "Žeton",
+        "Žetony",
+		"Žetonů"
     ],
     "include": [
-        "Coins",
         "Coin",
-        "Cards",
-        "Card",
-        "Buys",
-        "Buy",
-        "Actions",
-        "Action"
+        "Coins",
+        "Mince",
+        "Mincí",
+		"Karty",
+		"Karta",
+		"Kartu",
+		"Karet",
+		"Nákup",
+		"Nákupy",
+		"Akce",
+		"Akci",
+        "Coffer",
+        "Coffers",
+        "Villager",
+        "Villagers",
+        "<VP>"
     ]
 }

@@ -549,6 +549,17 @@ class DividerDrawer(object):
             "Helvetica-Bold": None,
             "Courier": None,
         }
+
+        # ReportLab only supports ISO-8859-1 (Latin1) encoding. Only certain languages are supported. For other
+        # languages TTF fonts must be loaded instead. Not great, consider switching to TTF fonts for all languages...
+        langlatin1 = True
+        while self.options.language not in ["de", "en_us", "es", "fr", "it", "nl_du"]:
+            langlatin1 = False
+            fontfilenames.update({"Times-Roman-TTF": ["Times-Roman.ttf", "Times Roman.ttf"]})
+            fontfilenames.update({"Times-Bold-TTF": ["Times-Roman-Bold.ttf", "Times Roman Bold.ttf"]})
+            fontfilenames.update({"Times-Italic-TTF": ["Times-Roman-Italic.ttf", "Times Roman Italic.ttf"]})
+            break
+
         # Locate the files in package data, if present
         fontpaths = {}
         for font, filenames in fontfilenames.items():
@@ -569,41 +580,68 @@ class DividerDrawer(object):
         registered = {
             font: None for font, fontpath in fontpaths.items() if fontpath is None
         }
+
+        # Check if *all three* Times Roman TTF fonts have been found and register them. If not -> remove all three
+        # from the paths list
+        timesTTFfound = ("Times-Roman-TTF" in fontpaths and
+                         "Times-Bold-TTF" in fontpaths and
+                         "Times-Italic-TTF" in fontpaths)
+        if not langlatin1 and timesTTFfound:
+            pdfmetrics.registerFont(TTFont("Times-Roman-TTF", pkg_resources.resource_filename("domdiv", fontpaths.get(
+                "Times-Roman-TTF")[0])))
+            pdfmetrics.registerFont(TTFont("Times-Bold-TTF", pkg_resources.resource_filename("domdiv", fontpaths.get(
+                "Times-Bold-TTF")[0])))
+            pdfmetrics.registerFont(TTFont("Times-Italic-TTF", pkg_resources.resource_filename("domdiv", fontpaths.get(
+                "Times-Italic-TTF")[0])))
+
+            # Register Times Roman TTF as font family. Necessary for <b> and <i> attributes to work in Platypus!
+            pdfmetrics.registerFontFamily("Times-Roman-TTF", normal="Times-Roman-TTF", bold="Times-Bold-TTF",
+                                              italic="Times-Italic-TTF")
+
+            # Since we registered them already, mark the Times Roman TTF as pre-registered
+            registered.update({"Times-Roman-TTF": None})
+            registered.update({"Times-Bold-TTF": None})
+            registered.update({"Times-Italic-TTF": None})
+        else:
+            fontpaths.pop("Times-Roman-TTF", None)
+            fontpaths.pop("Times-Bold-TTF", None)
+            fontpaths.pop("Times-Italic-TTF", None)
+
         # Determine the best matching fonts for each font type.
         fontprefs = {
             "Name": [  # card names & types
                 "TrajanPro-Bold",
                 "MinionPro-Regular",
-                "Times-Roman",
+                "Times-Roman" if langlatin1 or not timesTTFfound else "Times-Roman-TTF",
             ],
             "Expansion": [  # expansion names
                 "CharlemagneStd-Bold",
                 "TrajanPro-Bold",
                 "MinionPro-Regular",
-                "Times-Roman",
+                "Times-Roman" if langlatin1 or not timesTTFfound else "Times-Roman-TTF",
             ],
             "Cost": [  # card costs (coins, debt, etc)
                 "MinionStd-Black",
                 "MinionPro-Bold",
-                "Times-Bold",
+                "Times-Bold" if langlatin1 or not timesTTFfound else "Times-Bold-TTF",
             ],
             "PlusCost": [  # card cost superscript "+" modifiers
                 "Helvetica-Bold",
             ],
             "Regular": [  # regular text
                 "MinionPro-Regular",
-                "Times-Roman",
+                "Times-Roman" if langlatin1 or not timesTTFfound else "Times-Roman-TTF",
             ],
             "Bold": [  # miscellaneous bold text
                 "MinionPro-Bold",
-                "Times-Bold",
+                "Times-Bold" if langlatin1 or not timesTTFfound else "Times-Bold-TTF",
             ],
             "Italic": [  # for --use-set-text-icon
                 "MinionPro-Italic",
-                "Times-Italic",
+                "Times-Italic" if langlatin1 or not timesTTFfound else "Times-Italic-TTF",
             ],
             "Rules": [
-                "Times-Roman",
+                "Times-Roman" if langlatin1 or not timesTTFfound else "Times-Roman-TTF",
             ],
             "Monospaced": [
                 "Courier",
@@ -1117,6 +1155,7 @@ class DividerDrawer(object):
             # TODO: coin text baseline should align with surrounding text
             (r"(\d+)\s\<\*COIN\*\>", "coin_small_\\1.png", 2.4, 200),
             (r"(\d+)\s(c|C)oin(s)?", "coin_small_\\1.png", 1.2, 100),
+            (r"([Xx])\s(c|C)oin(s)?", "coin_small_x.png", 1.2, 100),
             (r"\?\s(c|C)oin(s)?", "coin_small_question.png", 1.2, 100),
             (r"(empty|\_)\s(c|C)oin(s)?", "coin_small_empty.png", 1.2, 100),
             # VP
