@@ -6,6 +6,7 @@ import json
 import os
 import sys
 import unicodedata
+import locale
 from collections import Counter, defaultdict
 
 import configargparse
@@ -1464,7 +1465,7 @@ def read_card_data(options):
 
 
 class CardSorter(object):
-    def __init__(self, order, baseCards):
+    def __init__(self, order, lang, baseCards):
         self.order = order
         if order == "global":
             self.sort_key = self.by_global_sort_key
@@ -1498,6 +1499,9 @@ class CardSorter(object):
         for tag in baseCards:
             self.baseCards.append(baseCards[tag])
 
+        # Set the locale to the selected language. Necessary for correct sorting using accented characters
+        locale.setlocale(locale.LC_COLLATE, lang)
+
     # When sorting cards, want to always put "base" cards after all
     # kingdom cards, and order the base cards in a particular order
     # (ie, all normal treasures by worth, then potion, then all
@@ -1515,7 +1519,7 @@ class CardSorter(object):
         return (
             int(card.isExpansion()),
             self.baseIndex(card.name),
-            self.strip_accents(card.name),
+            locale.strxfrm(card.name),
         )
 
     def by_expansion_sort_key(self, card):
@@ -1523,18 +1527,18 @@ class CardSorter(object):
             card.cardset,
             int(card.isExpansion()),
             self.baseIndex(card.name),
-            self.strip_accents(card.name),
+            locale.strxfrm(card.name),
         )
 
     def by_colour_sort_key(self, card):
-        return card.getType().getTypeNames(), self.strip_accents(card.name)
+        return card.getType().getTypeNames(), locale.strxfrm(card.name)
 
     def by_cost_sort_key(self, card):
         return (
             card.cardset,
             int(card.isExpansion()),
             str(card.get_total_cost(card)),
-            self.strip_accents(card.name),
+            locale.strxfrm(card.name),
         )
 
     @staticmethod
@@ -1938,6 +1942,7 @@ def filter_sort_cards(cards, options):
     # Set up the card sorter
     cardSorter = CardSorter(
         options.order,
+        options.language,
         {
             card.card_tag: card.name
             for card in cards
