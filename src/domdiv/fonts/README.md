@@ -20,4 +20,4 @@ If you select language in domdiv options which is not supported in [ISO/IEC 8859
 - Times-Roman-Bold.ttf
 - Times-Roman-Italic.ttf
 
-The reason is that reportlab package only [supports Windows-1252 / ISO-8859-1 encoding](https://docs.reportlab.com/reportlab/userguide/ch3_fonts/#standard-single-byte-font-encodings) using the default embedded fonts. For example, on Windows OS the Times TTF fonts are located in C:\Windows\Fonts called `times.ttf`, `timesbd.ttf` and `timesi.ttf`.
+The reason is that reportlab package only [supports Windows-1252 / ISO-8859-1 encoding](https://docs.reportlab.com/reportlab/userguide/ch3_fonts/#standard-single-byte-font-encodings) using the default embedded fonts and non Latin1 characters will render as black boxes. For example, on Windows OS the Times TTF fonts are located in C:\Windows\Fonts called `times.ttf`, `timesbd.ttf` and `timesi.ttf`.
