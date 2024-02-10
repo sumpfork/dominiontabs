@@ -555,9 +555,20 @@ class DividerDrawer(object):
         langlatin1 = True
         while self.options.language not in ["de", "en_us", "es", "fr", "it", "nl_du"]:
             langlatin1 = False
-            fontfilenames.update({"Times-Roman-TTF": ["Times-Roman.ttf", "Times Roman.ttf"]})
-            fontfilenames.update({"Times-Bold-TTF": ["Times-Roman-Bold.ttf", "Times Roman Bold.ttf"]})
-            fontfilenames.update({"Times-Italic-TTF": ["Times-Roman-Italic.ttf", "Times Roman Italic.ttf"]})
+            fontfilenames.update(
+                {"Times-Roman-TTF": ["Times-Roman.ttf", "Times Roman.ttf"]}
+            )
+            fontfilenames.update(
+                {"Times-Bold-TTF": ["Times-Roman-Bold.ttf", "Times Roman Bold.ttf"]}
+            )
+            fontfilenames.update(
+                {
+                    "Times-Italic-TTF": [
+                        "Times-Roman-Italic.ttf",
+                        "Times Roman Italic.ttf",
+                    ]
+                }
+            )
             break
 
         # Locate the files in package data, if present
@@ -583,20 +594,44 @@ class DividerDrawer(object):
 
         # Check if *all three* Times Roman TTF fonts have been found and register them. If not -> remove all three
         # from the paths list
-        timesTTFfound = ("Times-Roman-TTF" in fontpaths and
-                         "Times-Bold-TTF" in fontpaths and
-                         "Times-Italic-TTF" in fontpaths)
+        timesTTFfound = (
+            "Times-Roman-TTF" in fontpaths
+            and "Times-Bold-TTF" in fontpaths
+            and "Times-Italic-TTF" in fontpaths
+        )
         if not langlatin1 and timesTTFfound:
-            pdfmetrics.registerFont(TTFont("Times-Roman-TTF", pkg_resources.resource_filename("domdiv", fontpaths.get(
-                "Times-Roman-TTF")[0])))
-            pdfmetrics.registerFont(TTFont("Times-Bold-TTF", pkg_resources.resource_filename("domdiv", fontpaths.get(
-                "Times-Bold-TTF")[0])))
-            pdfmetrics.registerFont(TTFont("Times-Italic-TTF", pkg_resources.resource_filename("domdiv", fontpaths.get(
-                "Times-Italic-TTF")[0])))
+            pdfmetrics.registerFont(
+                TTFont(
+                    "Times-Roman-TTF",
+                    pkg_resources.resource_filename(
+                        "domdiv", fontpaths.get("Times-Roman-TTF")[0]
+                    ),
+                )
+            )
+            pdfmetrics.registerFont(
+                TTFont(
+                    "Times-Bold-TTF",
+                    pkg_resources.resource_filename(
+                        "domdiv", fontpaths.get("Times-Bold-TTF")[0]
+                    ),
+                )
+            )
+            pdfmetrics.registerFont(
+                TTFont(
+                    "Times-Italic-TTF",
+                    pkg_resources.resource_filename(
+                        "domdiv", fontpaths.get("Times-Italic-TTF")[0]
+                    ),
+                )
+            )
 
             # Register Times Roman TTF as font family. Necessary for <b> and <i> attributes to work in Platypus!
-            pdfmetrics.registerFontFamily("Times-Roman-TTF", normal="Times-Roman-TTF", bold="Times-Bold-TTF",
-                                              italic="Times-Italic-TTF")
+            pdfmetrics.registerFontFamily(
+                "Times-Roman-TTF",
+                normal="Times-Roman-TTF",
+                bold="Times-Bold-TTF",
+                italic="Times-Italic-TTF",
+            )
 
             # Since we registered them already, mark the Times Roman TTF as pre-registered
             registered.update({"Times-Roman-TTF": None})
@@ -638,7 +673,9 @@ class DividerDrawer(object):
             ],
             "Italic": [  # for --use-set-text-icon
                 "MinionPro-Italic",
-                "Times-Italic" if langlatin1 or not timesTTFfound else "Times-Italic-TTF",
+                "Times-Italic"
+                if langlatin1 or not timesTTFfound
+                else "Times-Italic-TTF",
             ],
             "Rules": [
                 "Times-Roman" if langlatin1 or not timesTTFfound else "Times-Roman-TTF",

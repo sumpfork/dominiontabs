@@ -3,10 +3,10 @@ import fnmatch
 import functools
 import gzip
 import json
+import locale
 import os
 import sys
 import unicodedata
-import locale
 from collections import Counter, defaultdict
 
 import configargparse
