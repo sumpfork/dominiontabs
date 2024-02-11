@@ -1500,7 +1500,10 @@ class CardSorter(object):
             self.baseCards.append(baseCards[tag])
 
         # Set the locale to the selected language. Necessary for correct sorting using accented characters
-        locale.setlocale(locale.LC_COLLATE, lang)
+        if os.name == "nt":
+            locale.setlocale(locale.LC_COLLATE, lang)
+        elif os.name == "posix":
+            locale.setlocale(locale.LC_COLLATE, (lang, ""))
 
     # When sorting cards, want to always put "base" cards after all
     # kingdom cards, and order the base cards in a particular order

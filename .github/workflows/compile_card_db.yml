@@ -17,6 +17,19 @@ jobs:
         run: doit update_languages
       - run: |
           pip install .
+      - name: Install locales
+        run: |
+          apt-get update
+          apt-get -y install locales
+          locale-gen en_US
+          locale-gen de_DE
+          locale-gen fr_FR
+          locale-gen en_US
+          locale-gen es_ES
+          locale-gen it_IT
+          locale-gen nl_NL
+          locale-gen cs_CZ
+          locale -a
       - name: test generation with compiled Languages
         run: pytest -k "test_languages"
       - uses: dorny/paths-filter@v2
