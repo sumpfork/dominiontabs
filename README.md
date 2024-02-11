@@ -12,6 +12,9 @@ Again, to generate tabs go to the **[Online Generator](http://domdiv.bgtools.net
 
 If you do need to install the package locally (the script provides a lot more options than the web-based generator), a simple `pip install domdiv` should suffice, providing a command by the name of `dominion_dividers`. However, see the note under Prerequisites->Fonts below as the default install will fall back on a font that doesn't match the cards (though most people don't notice). Run `dominion_dividers <outfile>` to get a pdf of all dividers with the default options, or run `dominion_dividers --help` to see the (extensive) list of options.
 
+Linux only: to ensure the dividers are generated sorted by correct alphabetical order in your selected language, you have to generate the appropriate locale on your system. Run `apt-get -y install locales`, followed by `locale-gen xx_XX`, where `xx_XX` is one of the following: `en_US`, `de_DE`, `fr_FR`, `en_US`, `es_ES`, `it_IT`, `nl_NL,` `cs_CZ` (according to your selected language). In Windows OS this step is not necessary.
+
+
 ## Documentation
 
 The script has an extensive set of options that are relatively well documented via `dominion_dividers --help`. Some are hard to describe unless you see output samples, so we recommend running the script with various options to see which configuration you like. The help output is replicated [here](https://github.com/sumpfork/dominiontabs/wiki/Documentation-%28Script-Options%29) for reference.
