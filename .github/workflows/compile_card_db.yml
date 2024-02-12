@@ -19,17 +19,16 @@ jobs:
           pip install .
       - name: Install locales
         run: |
-          apt-get update
-          apt-get -y install locales
-          locale-gen en_US
-          locale-gen de_DE
-          locale-gen fr_FR
-          locale-gen en_US
-          locale-gen es_ES
-          locale-gen it_IT
-          locale-gen nl_NL
-          locale-gen cs_CZ
-          locale -a
+          sudo apt update
+          sudo apt -y install locales
+          sudo locale-gen en_US
+          sudo locale-gen de_DE
+          sudo locale-gen fr_FR
+          sudo locale-gen en_US
+          sudo locale-gen es_ES
+          sudo locale-gen it_IT
+          sudo locale-gen nl_NL
+          sudo locale-gen cs_CZ
       - name: test generation with compiled Languages
         run: pytest -k "test_languages"
       - uses: dorny/paths-filter@v2
