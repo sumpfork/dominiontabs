@@ -14,7 +14,7 @@ Sadly, all these fonts use features that are not support by the reportlab packag
 
 Copy the converted `.ttf` files to the `fonts` directory in the `domdiv` package/directory, then perform the package install below.
 
-If you select language in domdiv options which is not supported in [ISO/IEC 8859-1:1998 (Latin1)](https://en.wikipedia.org/wiki/ISO/IEC_8859-1#Modern_languages_with_complete_coverage) (e.g. Czech), you will have to obtain Times Roman TTF fonts as well:
+If you select language in `domdiv` options which is not supported in [ISO/IEC 8859-1:1998 (Latin1)](https://en.wikipedia.org/wiki/ISO/IEC_8859-1#Modern_languages_with_complete_coverage) (e.g. Czech), you will have to obtain Times Roman TTF fonts as well:
 
 - Times-Roman.ttf
 - Times-Roman-Bold.ttf

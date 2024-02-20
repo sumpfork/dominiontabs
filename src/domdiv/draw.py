@@ -553,7 +553,7 @@ class DividerDrawer(object):
         # ReportLab only supports ISO-8859-1 (Latin1) encoding. Only certain languages are supported. For other
         # languages TTF fonts must be loaded instead. Not great, consider switching to TTF fonts for all languages...
         langlatin1 = True
-        while self.options.language not in ["de", "en_us", "es", "fr", "it", "nl_du"]:
+        if self.options.language not in ("de", "en_us", "es", "fr", "it", "nl_du"):
             langlatin1 = False
             fontfilenames.update(
                 {"Times-Roman-TTF": ["Times-Roman.ttf", "Times Roman.ttf"]}
@@ -569,7 +569,6 @@ class DividerDrawer(object):
                     ]
                 }
             )
-            break
 
         # Locate the files in package data, if present
         fontpaths = {}

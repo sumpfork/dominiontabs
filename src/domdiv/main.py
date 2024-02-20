@@ -1506,13 +1506,12 @@ class CardSorter(object):
             if os.name == "nt":
                 locale.setlocale(locale.LC_COLLATE, lang)
             elif os.name == "posix":
-                locale.setlocale(locale.LC_COLLATE, (lang, ""))
+                locale.setlocale(locale.LC_COLLATE, (lang, "UTF-8"))
         except locale.Error:
             print(
                 "** Warning: Unable to set correct locale: "
                 + lang
-                + " (will use default locale for cards sorting). "
-                "If running Linux OS, make sure to run "
+                + ".UTF-8 (will use default locale for cards sorting). If running Linux OS, make sure to run "
                 "locale-gen for the desired language!\n",
                 file=sys.stderr,
             )
