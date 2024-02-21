@@ -1466,29 +1466,6 @@ def read_card_data(options):
 
 class CardSorter(object):
     def __init__(self, order, lang, baseCards):
-        # Set the locale to the selected language. Necessary for correct sorting using accented characters
-        # The upcoming setlocale is not thread safe + if changed, it might affect some other Python calls
-        # Not ideal, but a viable workaround is to store / restore the current default value
-        # See https://docs.python.org/3/library/locale.html#background-details-hints-tips-and-caveats
-        curr_loc = locale.getlocale()  # Store the  current locale
-
-        try:
-            # "nt" = Windows
-            # "posix" = Linux / macOS
-            if os.name == "nt":
-                locale.setlocale(locale.LC_COLLATE, lang)
-            elif os.name == "posix":
-                locale.setlocale(locale.LC_COLLATE, (lang, "UTF-8"))
-        except locale.Error:
-            print(
-                "** Warning: Unable to set correct locale: "
-                + lang
-                + ".UTF-8 (will use default locale for cards sorting). If running Linux OS, make sure to run "
-                "locale-gen for the desired language!\n",
-                file=sys.stderr,
-            )
-
-        # The sort key generation functions use locale.strxfrm() based on the temporary locale set above
         self.order = order
         if order == "global":
             self.sort_key = self.by_global_sort_key
@@ -1498,8 +1475,6 @@ class CardSorter(object):
             self.sort_key = self.by_cost_sort_key
         else:
             self.sort_key = self.by_expansion_sort_key
-
-        locale.setlocale(locale.LC_ALL, curr_loc)  # Restore saved locale
 
         self.baseOrder = [
             "Copper",
@@ -1523,6 +1498,23 @@ class CardSorter(object):
         # now pick up those that have not been specified
         for tag in baseCards:
             self.baseCards.append(baseCards[tag])
+
+        # Set the locale to the selected language. Necessary for correct sorting using accented characters
+        # "nt" = Windows
+        # "posix" = Linux / macOS
+        try:
+            if os.name == "nt":
+                locale.setlocale(locale.LC_COLLATE, lang)
+            elif os.name == "posix":
+                locale.setlocale(locale.LC_COLLATE, (lang, "UTF-8"))
+        except locale.Error:
+            print(
+                "** Warning: Unable to set correct locale: "
+                + lang
+                + ".UTF-8 (will use default locale for cards sorting). If running Linux OS, make sure to run "
+                "locale-gen for the desired language!\n",
+                file=sys.stderr,
+            )
 
     # When sorting cards, want to always put "base" cards after all
     # kingdom cards, and order the base cards in a particular order
