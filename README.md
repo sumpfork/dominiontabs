@@ -58,17 +58,18 @@ Once you have the `dominiontabs` container you can run it from your CLI and pass
 
 <!--TODO update this doc to pull pre-built images from GitHub once those are set up-->
 
-Which will, by default, dump the output of the help text of the CLI tool. But we're going to want to add in some extra args 99% of the time. 
+Which will, by default, dump the output of the help text of the CLI tool. But we're going to want to add in some extra args 99% of the time.
 
 1. Bind mount to an output directory (`-v`) and tell the script to output there so that we get a PDF in the local filesystem when things are done (`--outfile ./output/foo.pdf`).
-2. Add the `--rm` argo to tell docker not to save a container each time it runs.
-3. Add a few CLI args to reduce the runtime and file size (`--expansions cornucopia`).
+1. Add the `--rm` argo to tell docker not to save a container each time it runs.
+1. Point to the fonts built in to the image with `--font-dir /fonts`
+1. Add a few CLI args to reduce the runtime and file size (`--expansions cornucopia`).
 
 So now we have
 
 `docker run --rm -v $PWD/output:/app/output dominiontabs --expansions cornucopia --outfile ./output/dominion_dividers_docker.pdf`
 
-Once that runs you should have under your current directory: 
+Once that runs you should have under your current directory:
 
 `./output/dominion_dividers_docker.pdf`
 

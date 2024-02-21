@@ -1,5 +1,8 @@
 FROM python:3.9-slim AS compile-image
 
+# get fonts
+COPY --from=pacodrokad/fonts /fonts /fonts
+
 # Add git for hooks
 RUN apt-get update && apt-get install -y --no-install-recommends git
 
