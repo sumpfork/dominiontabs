@@ -67,7 +67,7 @@ Which will, by default, dump the output of the help text of the CLI tool. But we
 
 So now we have
 
-`docker run --rm -v $PWD/output:/app/output dominiontabs --expansions cornucopia --outfile ./output/dominion_dividers_docker.pdf`
+`docker run -v $PWD/output:/app/output --rm dominiontabs --font-dir /fonts --expansions cornucopia --outfile ./output/dominion_dividers_docker.pdf`
 
 Once that runs you should have under your current directory:
 
