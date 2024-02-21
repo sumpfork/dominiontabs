@@ -21,14 +21,14 @@ jobs:
         run: |
           sudo apt update
           sudo apt -y install locales
-          sudo locale-gen en_US
-          sudo locale-gen de_DE
-          sudo locale-gen fr_FR
-          sudo locale-gen en_US
-          sudo locale-gen es_ES
-          sudo locale-gen it_IT
-          sudo locale-gen nl_NL
-          sudo locale-gen cs_CZ
+          sudo locale-gen en_US.UTF-8
+          sudo locale-gen de_DE.UTF-8
+          sudo locale-gen fr_FR.UTF-8
+          sudo locale-gen en_US.UTF-8
+          sudo locale-gen es_ES.UTF-8
+          sudo locale-gen it_IT.UTF-8
+          sudo locale-gen nl_NL.UTF-8
+          sudo locale-gen cs_CZ.UTF-8
       - name: test generation with compiled Languages
         run: pytest -k "test_languages"
       - uses: dorny/paths-filter@v2
