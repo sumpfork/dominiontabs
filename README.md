@@ -45,3 +45,32 @@ Tests can be run (and their dependencies installed) via `python setup.py test`, 
 ## Image Sources
 
 There is a separate [repo](https://github.com/sumpfork/dominiontabs_img_sources) for the image sources. While these are optional, they can be useful reference and/or used for creating new or recreating old tab banners, icons, etc. Many of these were originally scans of the physical game. Some of them have a lot of layers and are approaching 1GB in size, so they are hosted via [Git LFS](https://git-lfs.com/). As the Github version of that incurs a higher monthly cost, I instead host them on a private LFS server. If you would like the images or would like to contribute images let me know and I can make you an account on said server, or you I can copy them for you for easier access.
+
+## Docker
+
+The project can be compiled into a container:
+
+`docker build . -t dominiontabs`
+
+Once you have the `dominiontabs` container you can run it from your CLI and pass it arguments like so:
+
+`docker run dominiontabs`
+
+<!--TODO update this doc to pull pre-built images from GitHub once those are set up-->
+
+Which will, by default, dump the output of the help text of the CLI tool. But we're going to want to add in some extra args 99% of the time.
+
+1. Bind mount to an output directory (`-v`) and tell the script to output there so that we get a PDF in the local filesystem when things are done (`--outfile ./output/foo.pdf`).
+1. Add the `--rm` argo to tell docker not to save a container each time it runs.
+1. Point to the fonts built in to the image with `--font-dir /fonts`
+1. Add a few CLI args to reduce the runtime and file size (`--expansions cornucopia`).
+
+So now we have
+
+`docker run -v $PWD/output:/app/output --rm dominiontabs --font-dir /fonts --expansions cornucopia --outfile ./output/dominion_dividers_docker.pdf`
+
+Once that runs you should have under your current directory:
+
+`./output/dominion_dividers_docker.pdf`
+
+From there you feel free to add other arguments as you like!
