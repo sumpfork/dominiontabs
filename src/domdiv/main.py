@@ -3,7 +3,6 @@ import fnmatch
 import functools
 import gzip
 import json
-import locale
 import os
 import sys
 import unicodedata
@@ -16,6 +15,14 @@ from reportlab.lib.units import cm
 
 from .cards import Card, CardType
 from .draw import DividerDrawer
+
+try:
+    from icu import Collator, Locale
+except ImportError:
+    print(
+        "** Warning: PyICU library not found. The dividers will be ordered by default sort key (might not be the "
+        "correct alphabetical order for the selected language)."
+    )
 
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
@@ -1467,6 +1474,14 @@ def read_card_data(options):
 class CardSorter(object):
     def __init__(self, order, lang, baseCards):
         self.order = order
+
+        # If PyICU has been successfully imported
+        if "icu" in sys.modules:
+            # Create a sort collator based on the selected language. Will be used the generate the sort keys.
+            self.collator = Collator.createInstance(Locale(lang))
+        else:
+            self.collator = None
+
         if order == "global":
             self.sort_key = self.by_global_sort_key
         elif order == "colour":
@@ -1499,23 +1514,6 @@ class CardSorter(object):
         for tag in baseCards:
             self.baseCards.append(baseCards[tag])
 
-        # Set the locale to the selected language. Necessary for correct sorting using accented characters
-        # "nt" = Windows
-        # "posix" = Linux / macOS
-        try:
-            if os.name == "nt":
-                locale.setlocale(locale.LC_COLLATE, lang)
-            elif os.name == "posix":
-                locale.setlocale(locale.LC_COLLATE, (lang, "UTF-8"))
-        except locale.Error:
-            print(
-                "** Warning: Unable to set correct locale: "
-                + lang
-                + ".UTF-8 (will use default locale for cards sorting). If running Linux OS, make sure to run "
-                "locale-gen for the desired language!\n",
-                file=sys.stderr,
-            )
-
     # When sorting cards, want to always put "base" cards after all
     # kingdom cards, and order the base cards in a particular order
     # (ie, all normal treasures by worth, then potion, then all
@@ -1533,7 +1531,7 @@ class CardSorter(object):
         return (
             int(card.isExpansion()),
             self.baseIndex(card.name),
-            locale.strxfrm(card.name),
+            self.get_card_name_sort_key(card.name),
         )
 
     def by_expansion_sort_key(self, card):
@@ -1541,19 +1539,27 @@ class CardSorter(object):
             card.cardset,
             int(card.isExpansion()),
             self.baseIndex(card.name),
-            locale.strxfrm(card.name),
+            self.get_card_name_sort_key(card.name),
         )
 
     def by_colour_sort_key(self, card):
-        return card.getType().getTypeNames(), locale.strxfrm(card.name)
+        return card.getType().getTypeNames(), self.get_card_name_sort_key(card.name)
 
     def by_cost_sort_key(self, card):
         return (
             card.cardset,
             int(card.isExpansion()),
             str(card.get_total_cost(card)),
-            locale.strxfrm(card.name),
+            self.get_card_name_sort_key(card.name),
         )
+
+    def get_card_name_sort_key(self, c):
+        if (
+            self.collator
+        ):  # If the PyICU collator attribute has been set up, get the collator based sort key
+            return self.collator.getSortKey(c)
+        else:  # Default method: strip the card name character accents
+            return self.strip_accents(c)
 
     @staticmethod
     def strip_accents(s):
@@ -1995,7 +2001,10 @@ def filter_sort_cards(cards, options):
                     "randomizer": c.randomizer,
                     "count": 1,
                     "sort": "%03d%s"
-                    % (order, CardSorter.strip_accents(c.name.strip())),
+                    % (
+                        order,
+                        cardSorter.get_card_name_sort_key(c.name.strip()),
+                    ),
                 }
 
         for set_tag, set_values in Card.sets.items():
