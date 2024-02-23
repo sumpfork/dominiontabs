@@ -1,10 +1,12 @@
+FROM --platform=linux/arm64 pacodrokad/fonts:latest AS fonts-image
+
 FROM python:3.9-slim AS compile-image
 
-# get fonts
-COPY --from=pacodrokad/fonts /fonts /fonts
+# get fonts from the specified platform image
+COPY --from=fonts-image /fonts /fonts
 
 # Add git for hooks
-RUN apt-get update && apt-get install -y --no-install-recommends git
+RUN apt-get update && apt-get install -y --no-install-recommends python3-icu git
 
 # get pip tools for computing requirements, and compile them
 RUN python -m pip install pip-tools
