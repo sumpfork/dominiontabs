@@ -20,7 +20,7 @@
         "text_icon": "An"
     },
     "base": {
-        "set_name": "Base",
+        "set_name": "Základní karty",
         "set_text": "This is all the basic Victory, Treasure, and Curse cards from the <i>Dominion</i> games and its expansions. It does not include any Victory or Treasure cards that are Kingdom cards.",
         "text_icon": "B"
     },
@@ -82,15 +82,16 @@
         "set_text": "Jobs, everyone’s worried about jobs. Whatever happened to tilling the fields in obscurity? The economy is just a trick, like stealing someone's nose, but lately people seem to have seen through it, like when you realize someone hasn’t really stolen your nose. So now everyone’s joining a guild, learning a craft, and working on a masterpiece - a painting so beautiful it blinds you, or a cheese grater so amazing that you never eat cheese again. The only people left tilling the fields are the ones doing it ironically. The guilds cover everything - ironic tilling, butchering, baking, candlestick making, shoemaking, cheesemaking, cheese destruction. Your advisor is convinced that somehow, control of the stonecutters is key to world domination. Very well. You will have stone handled so expertly that the world trembles before you.\nThis is the 8th addition to the game of <i>Dominion</i>. It adds 13 new Kingdom cards to <i>Dominion</i>. It has coin tokens that you can save to spend later, and cards you can get more out of by paying extra for them.",
         "text_icon": "G"
     },
-    "hinterlands": {
+    "hinterlands1stEdition": {
         "set_name": "Vzdálené kraje",
         "set_text": "Připravte si mapy a zásoby, výprava do neznámých krajin právě začíná!Kdo ví, co se nachází za hustou džunglí, nad níž každé ráno vychází slunce? Jen málo je známo a je na čase tato místa prozkoumat. Věštba tvrdí, že tyto končiny ukrývají mocná ložiska zlata a nyní jsou výpravě bohové nakloněni.\nNa co ještě čekáte, vyrážíme!\nVzdálené kraje jsou 5. samostatně nehratelným rozšířením Dominionu. Přináší do hry 26 nových karet království – nové karty akcí, peněz a vítězných bodů, včetně několika kombinovaných karet. Ústředním tématem tohoto rozšíření jsou karty, které něco dělají ihned poté, co je získáte.\nDominion: Vzdálené kraje jsou rozšíření a nemohou být hrány samy o sobě. Abyste je mohli používat, budete potřebovat základní hru Dominion nebo její samostatně hratelnou edici Dominion: Intriky. V nich jsou obsaženy základní karty, které jsou zapotřebí ke hře, stejně jako pravidla pro přípravu hry a hraní samotné. Dominion: Vzdálené kraje lze kombinovat s libovolnými dalšími rozšířeními Dominionu, která vlastníte.\nDoufáme, že si s rozrůstajícím se světem Dominionu užijete spoustu zábavy!",
-        "text_icon": "H"
+        "short_name": "Vzdálené kraje",
+        "text_icon": "H1"
     },
     "intrigue1stEdition": {
         "set_name": "Intriky",
         "set_text": "Něco visí ve vzduchu. Správce vypadá, jako by skrýval tajemství. Tvůj věrný sluha tě však varuje. Chystá se spiknutí. Tohle si přece nenecháš líbit. Vymysli vlastní plán, využij svého vlivu a známostí. Vyšli zvědy, zjisti co se chystá. Je baron tvůj přítel nebo je to podvodník? Je na čase povolat žalářníka, ten už si se spiklenci poradí. Výborně! Situaci máš pevně v rukou! Anebo je to všechno úplně jinak?\n<i>Dominion - Intriky:</i> svět plný napínavých tajemství. <i>Intriky</i> se hrají samostatně nebo v kombinaci se základní hrou. V každém případě <i>Dominion</i> nabízí nesčetné množství variant a pestrou herní zábavu.",
-        "short_name": "Intrigue",
+        "short_name": "Intriky",
         "text_icon": "I1"
     },
     "intrigue2ndEdition": {
@@ -121,19 +122,27 @@
         "set_text": "Promotional cards are official <i>Dominion</i> kingdom cards and Events which do not belong to any particular set. They are typically either released to help promote <i>Dominion</i> at conventions (such as Origins or GenCon), or to commemorate the anniversary of another game in order to help promote both.",
         "text_icon": "Po"
     },
-    "prosperity": {
+    "prosperity1stEdition": {
         "set_name": "Prosperita",
         "set_text": "Ach, peníze! Není přece nic krásnějšího, než cinkot mincí ve vlastních rukou. Zní mnohem lépe než cinkání mincí v rukou někoho jiného.\nNámaha...ta je nyní za tebou. Život byl k tobě přívětivý. Před několika lety jsi ještě měl slaměný klobouk a vlastníma rukama jsi obdělával pole. Dnes se tvé království rozprostírá od jednoho oceánu k druhému. Vlastníš také nejmenšího psa na světě a svou sochu v životní velikosti zhotovenou v Baklavě. Pravda, za peníze si štěstí nekoupíš, peníze dokonce vzbuzují závist, probouzejí zlobu a způsobují samotu. I nadále máš potíže, například se svými nepříjemnými sousedy, kteří musí být poraženi. A tentokrát je přemůžeš ve velkém stylu.\nProsperita je třetí rozsíření ke hře <i>Dominion</i> a může být libovolně kombinována se všemi doposud vydanými rozšířeními. Základní pravidla se nemění. V těchto pravidlech jsou popsána pouze nová případně pozměněná pravidla. Prosperita obsahuje 25 nových karet království a 2 nové základní karty. Ústřední téma tohoto rozšíření je bohatství: jsou zde cenné karty peněz s doplňujícími pokyny, bodovací karta, která má větší hodnotu než provincie a silné (ale drahé) akční karty.",
-        "text_icon": "Py"
+        "short_name": "Prosperita",
+        "text_icon": "Py1"
     },
     "renaissance": {
         "set_name": "Renaissance",
         "set_text": "It's a momentous time. Art has been revolutionized by the invention of \"perspective,\" and also of \"funding.\" A picture used to be worth a dozen or so words; these new ones are more like a hundred. Oil paintings have gotten so realistic that you've hired an artist to do a portrait of you each morning, so you can make sure your hair is good. Busts have gotten better too; no more stopping at the shoulders, they go all the way to the ground. Science and medicine have advanced; there's no more superstition, now they know the perfect number of leeches to apply for each ailment. You have a clock accurate to within an hour, and a calendar accurate to within a week. Your physician heals himself, and your barber cuts his own hair. This is truly a golden age.\nThis is the 12th expansion to <i>Dominion</i>. It has 300 cards, with 25 new Kingdom cards. There are tokens that let you save coins and actions for later, Projects that grant abilities, and Artifacts to fight over.",
         "text_icon": "R"
     },
+    "seaside": {
+        "set_name": "Pobřeží",
+        "set_text": "Zde je tvá loď a posádka, co netrpělivě čeká na svého kapitána... Konečně můžeš vyplout na širé moře.\nČeká tě dlouhá a náročná cesta ke vzdáleným přístavům. Během plavby budeš čelit nástrahám pirátů, kteří tě bez milosti okradou do posledního měďáku. O mapu ostrova s vysněným pokladem nesmíš přijít za žádnou cenu! Až ostrov najdeš, vymysli plán, jak poklad získat. Nebudeš to mít lehké, poklad je dobře střežen. Říká se, že kolem ostrova noc co noc pluje loď duchů a potápí lodě přiblíživších se odvážlivců. Vylez do strážního koše a měj oči dokořán. Nebezpečí číhá na každém rohu, ale stojí to za to. Poklad je příliš cenný na to, abys mu odolal!",
+        "short_name": "Pobřeží",
+        "text_icon": "S"
+    },
     "seaside1stEdition": {
         "set_name": "Pobřeží",
         "set_text": "Zde je tvá loď a posádka, co netrpělivě čeká na svého kapitána... Konečně můžeš vyplout na širé moře.\nČeká tě dlouhá a náročná cesta ke vzdáleným přístavům. Během plavby budeš čelit nástrahám pirátů, kteří tě bez milosti okradou do posledního měďáku. O mapu ostrova s vysněným pokladem nesmíš přijít za žádnou cenu! Až ostrov najdeš, vymysli plán, jak poklad získat. Nebudeš to mít lehké, poklad je dobře střežen. Říká se, že kolem ostrova noc co noc pluje loď duchů a potápí lodě přiblíživších se odvážlivců. Vylez do strážního koše a měj oči dokořán. Nebezpečí číhá na každém rohu, ale stojí to za to. Poklad je příliš cenný na to, abys mu odolal!",
-        "text_icon": "S"
+        "short_name": "Pobřeží",
+        "text_icon": "S1"
     }
 }

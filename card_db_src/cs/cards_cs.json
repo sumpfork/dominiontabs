@@ -25,9 +25,9 @@
         "name": "Advisor"
     },
     "Alchemist": {
-        "description": "+2 Cards<br>+1 Action<line>When you discard this from play, you may put this on top of your deck if you have a Potion in play.",
-        "extra": "When you play this, you draw two cards and may play an additional Action card this turn. In the Clean-up Phase, when you discard this, if you have at least one Potion card in play, you may put Alchemist on top of your deck. This is optional and happens before drawing your new hand. If you have no cards in your deck when you do this, Alchemist becomes the only card in your deck. If you have multiple Alchemists and a Potion, you can put any or all of the Alchemists on top of your deck. You don't have to have used the Potion to buy anything, you only need to have played it.",
-        "name": "Alchemist"
+        "description": "+2 karty<br>+1 akce<line>Když tyto kartu odkládáš ze hry, můžeš ji, pokud máš ve hře elixír, položit nahoru na svůj dobírací balíček.",
+        "extra": "Když zahrajete tuto kartu, doberete si ihned dvě karty a můžete v tomto tahu zahrát další akční kartu. Ve fázi úklid, když tuto kartu odkládáte a pokud máte alespoň jednu kartu elixíru ve hře, můžete alchymistu položit nahoru na svůj dobírací balíček. Toto není povinné a provede se ještě před dobráním nových karet do ruky. Pokud v tuto chvíli nemáte žádné karty ve svém dobíracím balíčku, stává se alchymista jedinou kartou ve vašem dobíracím balíčku. Pokud máte ve hře více alchymistů a jeden elixír, můžete položit libovolný počet nebo, i všechny alchymisty nahoru na svůj dobírací balíček. Elixír nemusíte použít k žádnému nákupu, pouze jej musíte mít vyložený.",
+        "name": "Alchymista"
     },
     "Alms": {
         "description": "Once per turn: If you have no Treasures in play, gain a card costing up to 4 Coin.",
@@ -55,14 +55,14 @@
         "name": "Annex"
     },
     "Apothecary": {
-        "description": "+1 Card<br>+1 Action<n>Reveal the top 4 cards of your deck. Put the revealed Coppers and Potions into your hand. Put the other cards back on top in any order.",
-        "extra": "You draw a card first. Then reveal the top four cards, put the Coppers and Potions into your hand, and put the rest back on top of your deck. If there aren't four cards left in your deck, reveal what you can and shuffle to get the rest. If there still aren't enough cards, just reveal what there is. Any cards that are not Copper and are not Potion go back on top of your deck in an order your choose. You cannot choose not to take all of the Coppers and Potions. If after revealing four cards there are no cards left in your deck, the cards you put back will become the only cards in your deck.",
-        "name": "Apothecary"
+        "description": "+1 karta<br>+1 akce<n>Ukaž vrchní 4 karty svého dobíracího balíčku. Odkryté měďáky a elixíry si dej do ruky. Ostatní odkryté karty polož zpět na svůj dobírací balíček v libovolném pořadí.",
+        "extra": "Nejprve si doberte kartu. Poté ukažte horní čtyři karty svého dobíracího balíčku, odkryté měďáky a elixíry si vezměte do ruky a zbylé karty vraťte nahoru na svůj dobírací balíček. Pokud ve svém dobíracím balíčku nemáte čtyři karty, odkryjte všechny, zamíchejte odkládací balíček a odkryjte z něj zbývající karty. Pokud stále nemáte dostatečný počet karet, ukažte jich tolik, kolik můžete. Všechny karty, které nejsou měďák či elixír, dejte zpět nahoru na svůj dobírací balíček v pořadí, které si zvolíte. Měďáky a elixíry si do ruky vzít musíte, nemůžete se rozhodnout jinak. Pokud po ukázání čtyř karet nezbývají ve vašem dobíracím balíčku žádné karty, tak karty, které vrátíte zpět, budou jedinými kartami ve vašem dobíracím balíčku.",
+        "name": "Lékárník"
     },
     "Apprentice": {
-        "description": "+1 Action<n>Trash a card from your hand.<n>+1 Card per _ Coin it costs.<n>+2 Cards if it has Potion in its cost.",
-        "extra": "If you do not have any cards left in hand to trash, you do not draw any cards. If you trash a card costing 0 coins, such as Curse or Copper, you do not draw any cards. Otherwise you draw a card per _ Coin the card you trashed cost, and another two cards if it had Potion in its cost. For example, if you trash a Golem, which costs 4 Coins and 1 Potion, you draw 6 cards.",
-        "name": "Apprentice"
+        "description": "+1 akce<n>Zahoď na smetiště karty z ruky.<br>Vezmi si +1 kartu za každou _ Coin její ceny. Vezmi si + 2 karty, jestliže má ve své ceně Potion.",
+        "extra": "Pokud v ruce nemáte k dispozici žádné karty pro zahození na smetiště, nedobíráte si žádné karty. Pokud zahodíte kartu stojící 0 Coins, jako například kletbu či měďák, nedobíráte si žádné karty. V opačném případě dobíráte jednu kartu za každou minci, kterou zahozená karta stojí, a další dvě karty, pokud má odhozená karta v ceně Potion. Například, pokud zahodíte golema, který stojí 4 CoinsPotion, doberete si 6 karet.",
+        "name": "Učedník"
     },
     "Aqueduct": {
         "description": "When you gain a Treasure, move 1<VP> from its pile to this. When you gain a Victory card, take the <VP> from this.<line>Setup: Put 8<VP> on the Silver and Gold piles.",
@@ -105,9 +105,9 @@
         "name": "Bad Omens"
     },
     "Bag of Gold": {
-        "description": "+1 Action<n>Gain a Gold, putting it on top of your deck.<n><i>(This is not in the Supply.)</i>",
-        "extra": "The Gold you gain comes from the Supply and is put on top of your deck. If your deck has no cards in it, it becomes the only card in your deck. If there are no Golds left in the Supply, you do not gain one. This is a Prize; see the Additional Rules.",
-        "name": "Bag of Gold"
+        "description": "+1 akce<n>Vezmi si zlaťák a polož na svůj dobírací balíček.<n><i>(Tato karta není součástí společné zásoby karet)</i>",
+        "extra": "Vezměte si zlaťák ze společné zásoby a položte jej nahoru na svůj dobírací balíček. Pokud ve svém dobíracím balíčku nemáte žádnou kartu, stává se zlaťák jeho jedinou kartou. Pokud již ve společné zásobě není zlaťák, nevezmete si nic. Pytel zlata je karta odměny; podívejte se na nová pravidla výše.",
+        "name": "Pytel zlata"
     },
     "Baker": {
         "description": "+1 Card<br>+1 Action<br>+1 Coffers (take a Coin token).<line>Setup: Each player takes a Coin token.",
@@ -140,9 +140,9 @@
         "name": "Bandit Fort"
     },
     "Bank": {
-        "description": "? Coins.<n>When you play this, it`s worth 1 Coin per Treasure card you have in play (counting this).",
-        "extra": "This is a Treasure worth a variable amount. When you play Bank, it is worth 1 coin per Treasure you have in play, counting itself. Remember, you choose what order to play Treasure cards. If you play Bank with no other Treasures in play, it is worth 1 coin. If you play two copies of Bank in a row, the one you play second will be worth 1 coin more than the first one. Bank produces money right when you play it; things that happen later in the turn will not change how much money you got from it.",
-        "name": "Bank"
+        "description": "Když vyložíš tuto kartu, má hodnotu 1 Coin za každou kartu peněz, kterou máš ve hře (včetně této).",
+        "extra": "Tato karta peněz má proměnlivou hodnotu. Banka má hodnotu 1 Coin za každou kartu peněz, která je v danou chvíli ve hře. Banka přitom bude počítat také sama sebe. V tomto případě je důležité, že můžete karty peněz vykládat v libovolném pořadí. Pokud máte vyloženu pouze jedinou banku, má hodnotu 1 Coin. Pokud však vyložíte 2 banky za sebou, má první banka hodnotu 1 Coin a druhá banka hodnotu 2 Coins. Hodnota každé banky bude určena ihned po vyložení a později se již nezmění, například díky vyložení dalších karet peněz.",
+        "name": "Banka"
     },
     "Banquet": {
         "description": "Gain 2 Coppers and a non-Victory card costing up to 5 Coins.",
@@ -195,9 +195,9 @@
         "name": "Žebrák"
     },
     "Bishop": {
-        "description": "+1 Coin<br>+1 <VP><n>Trash a card from your hand. +<VP> equal to half its cost in coins, rounded down.<n>Each other player may trash a card from his hand.",
-        "extra": "[When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1<VP> and 5<VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score.] Trashing a card is optional for the other players but mandatory for you. You trash a card, then each other player may trash a card, in turn order. Only the player who played Bishop can get <VP> tokens from it. Potion in costs is ignored, for example if you trash Golem (from Alchemy) which costs 4 coins 1 potion, you get 3<VP> tokens total (counting the 1<VP> you always get from Bishop). If you have no cards left in your hand to trash, you still get the 1 coin and 1<VP> token.",
-        "name": "Bishop"
+        "description": "+ 1 Coin<br>+1 <VP><n>Zahoď kartu z ruky na smetiště.<br>+<VP> se rovná polovině její ceny v mincích, zaokrouhleno dolů.<br>Všichni ostatní hráči mohou zahodit kartu z ruky na smetiště.",
+        "extra": "Pro tuto kartu budete potřebovat žetony vítězných bodů <VP> (viz Nová pravidla). Nejprve získáte +1 Coin virtuální minci a 1 žeton vítězného bodu na svou podložku. Poté musíte jednu kartu zahodit na smetiště, pokud ještě máte nějakou kartu v ruce. Můžete si vzít tolik vítězných bodů v žetonech, kolik je polovina ceny v _ Coins zahozené karty. Přitom bude brána v potaz pouze cena v _ Coins. Cena v Potion bude ignorována. Když například zahodíte kartu golem 4 CoinsPotion (Dominion - Alchymisté), vezmete si 2 další žetony vítězných bodů a položíte je na svou podložku. Poté mohou vaši spoluhráči popořadě zahodit na smetiště každý jednu kartu. Avšak nezískají žádný žeton vítězného bodu.<n>Karty s +1<VP> (biskup, památník, hrdlořez): Budete-li hrát s jednou (či několika) z těchto karet království, dostane každý hráč navíc podložku (viz herní materiál). Dále se vedle společné zásoby položí žetony bodů (viz herní materiál). <n>Počet žetonů není omezen. Bude-li jich potřeba více, použijte vhodnou náhradu.",
+        "name": "Biskup"
     },
     "Black Market": {
         "description": "+2 Coins<n>Ukažte vrchní 3 karty z balíčku černého trhu. Jednů z nich můžete okamžitě koupit. Zbylé karty dejte v libovolném pořadí do spodu balíčku černého trhu.<n><i>(Před začátkem hry utvořte balíček černého trhu z karet království, které zrovna nejsou v zásobě. Od každého druhu jednu.)</i>",
@@ -225,9 +225,9 @@
         "name": "Border Guard / Horn / Lantern"
     },
     "Border Village": {
-        "description": "+1 Card<br>+2 Actions<line>When you gain this, gain a card costing less than this.",
-        "extra": "When you play this, you draw a card and can play two more Actions this turn. When you gain this, you also gain a card from the Supply that costs less than Border Village. Normally that will be a card costing up to 5 coins, but if Border Village costs less than normal, such as due to Highway, then the card you gain will have a lower maximum cost. You only gain a card when you gain Border Village, not when you play it. You gain a card whether you gained Border Village due to buying it, or gained it some other way.",
-        "name": "Border Village"
+        "description": "+1 karta<br>+2 akce<line>Když získáš tuto kartu, vezmi si kartu, která má nižší cenu než Pohraniční vesnice.",
+        "extra": "Když zahrajete tuto kartu, doberete si jednu kartu a máte pro tento tah k dispozici +2 akce. Když tuto kartu získáte, získáte rovněž kartu ze společné zásoby, která stojí méně než Pohraniční vesnice. Za běžných okolností to znamená, že to bude karta s cenou nanejvýš 5 Coins, ale pokud Pohraniční vesnice stojí méně než obvykle, například díky kartě Silnice, bude mít získaná karta ještě nižší cenu. Kartu dostanete pouze tehdy, když Pohraniční vesnici získáte, ne když ji zahrajete. Kartu získáte, ať již si Pohraniční vesnici koupíte nebo získáte jiným způsobem.",
+        "name": "Pohraniční vesnice"
     },
     "Borrow": {
         "description": "+1 Buy<n>Once per turn:<br>If your -1 Card token isn't on your deck, put it there and +1 Coin.",
@@ -260,9 +260,9 @@
         "name": "Butcher"
     },
     "Cache": {
-        "description": "3 <*COIN*><line>When you gain this, gain two Coppers.",
-        "extra": "This is a treasure worth 3 coins, like Gold. When you gain it, you also gain two Coppers from the Supply. if there are not two Coppers left, just gain as many as you can. You only gain Coppers when you gain Cache, not when you play it. You gain Coppers whether you gained Cache due to buying it, or gained it some other way.",
-        "name": "Cache"
+        "description": "3 <*COIN*><line>Když získáš tuto kartu, vezmi si 2 Měďáky.",
+        "extra": "Jedná se o kartu peněz s hodnotou 3 Coins jako Zlaťák. Když tuto kartu získáte, získáte zároveň i dva Měďáky ze společné zásoby. Pokud tam již dva Měďáky nezbývají, získáte pouze tolik, kolik je možné. Měďáky získáte pouze tehdy, když Úkryt získáte, nikoli když ho zahrajete. Měďáky získáte, ať už si Úkryt koupíte nebo získáte jiným způsobem.",
+        "name": "Úkryt"
     },
     "Canal": {
         "description": "During your turns, cards cost 1 Coin less, but not less than 0 Coin.",
@@ -305,9 +305,9 @@
         "name": "Cargo Ship"
     },
     "Cartographer": {
-        "description": "+1 Card<br>+1 Action<n>Look at the top 4 cards of your deck. Discard any number of them. Put the rest back on top in any order.",
-        "extra": "You draw a card first, then look at the top 4 cards of your deck. If there are fewer than 4 cards left in your deck, look at the remaining cards, and shuffle your discard pile (which does not include those cards) to get the remainder needed to look at. If there are still not enough cards, just look at as many as you can. Discard any number of the cards you looked at - none, all four, or something in-between - and put the rest back on top of your deck in any order. if there were no cards left in your deck, these become the only cards in your deck. You do not reveal the cards you put back.",
-        "name": "Cartographer"
+        "description": "+1 karta<br>+1 akce<n>Podívej se na vrchní 4 karty svého dobíracího balíčku. Odlož z nich jakýkoli počet a zbývající vrať zpět v libovolném pořadí.",
+        "extra": "Nejprve si doberete jednu kartu. Poté se podíváte na vrchní 4 karty ze svého dobíracího balíčku. Pokud se tam nachází méně než 4 karty, podívejte se na ně a následně zamíchejte svůj odkládací balíček (který nebude obsahovat tyto karty) a použijte tolik karet, kolik ještě zbývá. Jestliže tam ani potom není dostatek karet, podívejte se pouze na tolik, kolik je možné. Odložte libovolný počet karet, na něž jste se podívali – žádnou, všechny čtyři nebo jakýkoli počet mezi tím. Pokud už vám v dobíracím balíčku nezbyly žádné karty, stávají se vrácené karty jedinými kartami balíčku. Karty, které vracíte zpátky, neukazujete.",
+        "name": "Kartograf"
     },
     "Castles": {
         "description": "Sort the Castle pile by cost, putting the more expensive Castles on the bottom. For a 2-player game, use only one of each Castle. Only the top card of the pile can be gained or bought.",
@@ -390,9 +390,9 @@
         "name": "Citadel"
     },
     "City": {
-        "description": "+1 Card<br>+2 Actions<n>If there are one or more empty Supply piles, +1 Card. If there are two or more, +1 Coin and +1 Buy.",
-        "extra": "You draw a card and can play two more Actions no matter what. If there is just one empty pile in the Supply, you also draw another card. If there are two or more empty piles, you both draw another card, and get 1 coin to spend and an extra Buy to use in the Buy phase. There are no further bonuses if three or more piles are empty. This only checks how many piles are empty when you play it; if piles become empty later in the turn, you do not go back and get the bonuses. If a pile stops being empty due to cards being returned to it, such as with the Seaside card Ambassador, Cities played after that will not count that pile as empty. An empty trash pile does not count for this.",
-        "name": "City"
+        "description": "+ 1 karta<br>+ 2 akce<n>Je-li jeden nebo více balíčků ve společné zásobě prázdných, +1 karta. Jsou-li to dva nebo více balíčků, +1 Coin a +1 nákup.",
+        "extra": "Nejprve si doberete jednu kartu a získáte +2 akce. Pokud je alespoň jeden balíček ve společné zásobě prázdný, doberete si jednu další kartu. Pokud je přesně 1 balíček ve společné zásobě prázdný, získáváte pouze tuto další +1 kartu. Avšak pokud je prázdných 2 či více balíčků ve společné zásobě, získáváte +1 kartu, +1 Coin virtuální minci a +1 nákup. Pokud jsou prázdné 3 či více balíčků ve společné zásobě, nezískáváte již žádný další bonus navíc.<n>Příslušné podmínky musí být splněny při vyložení karty. Efekt karty nebude zpětně změněn, pokud se později nějaký balíček ve společné zásobě dobere (například díky kartě růst) nebo třeba znovu doplní (například díky kartě velvyslanec, Dominion - Pobřeží).<n>Smetiště není část společné zásoby a bude tedy ignorováno. Jsou-li tudíž při vyložení této karty např. 2 balíčky prázdné, získáváte celkově +2 karty, +2 akce, +1 Coin a +1 nákup.",
+        "name": "Město"
     },
     "City Gate": {
         "description": "At the start of your turn, +1 Card, then put a card from your hand onto you deck.",
@@ -421,8 +421,8 @@
     },
     "Colony": {
         "description": "10 <*VP*>",
-        "extra": "This is not a Kingdom card. You do not use it every game. It is a Victory card worth 10 VP. If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]",
-        "name": "Colony"
+        "extra": "Tato bodovací karta <b>není kartou království</b>. Kolonie je základní karta. Tato karta nemusí být použita v každé hře, jak je popsáno v pravidlech v sekci Příprava hry (Dominion - Prosperita).<n>Můžete vyložit balíček karet platina (12 karet) a balíček karet kolonie (při 2 hráčích 8 karet, jinak 12 karet) jako nové balíčky základních karet. Doporučujeme použít obě nové základní karty, když bude pro hru vybráno 4 či více karet království z rozšíření Dominion - Prosperita.",
+        "name": "Kolonie"
     },
     "Conclave": {
         "description": "+2 Coins<n>You may play an Action card from your hand that you don’t have a copy of in play. If you do, +1 Action.",
@@ -440,9 +440,9 @@
         "name": "Spiklenec"
     },
     "Contraband": {
-        "description": "3 <*COIN*><br><br>+1 Buy<n>When you play this, the player to your left names a card. You can't buy that card this turn.",
-        "extra": "This is a Treasure worth 3 coins, like Gold. When you play it, you get +1 Buy, the player to your left names a card, and you cannot buy the named card this turn. This does not stop you from gaining the card in ways other than buying it (such as via Hoard). He does not have to name a card in the Supply. If you play multiple Contrabands in one turn, the player to your left names a card each time; if he names different cards, you cannot buy any of the named cards this turn. You can play Treasures in any order, and you resolve this ability right when you play it, before playing any further Treasure cards. Note that once you buy a card in the Buy phase, you cannot play more Treasures. The number of cards left in a player's hand is public information; you can ask whenever you want to know it (for example, when that player plays Contraband).",
-        "name": "Contraband"
+        "description": "3 <*COIN*><br><br>+ 1 nákup<n>Když vyložíš tuto kartu, hráč po tvé levici řekne název karty. V tomto tahu nemůžeš tuto jmenovanou kartu koupit.",
+        "extra": "Tato karta peněz má hodnotu 3 Coins, jako zlaťák. Když je tato karta vyložena, získáváte nejprve +1 nákup. Poté hráč po vaší levici řekne název karty, kterou si v tomto tahu nesmíte koupit. Takto může také označit kartu, která není ve společné zásobě, ale je například v balíčku černého trhu. Pokud vyložíte více karet kontraband, označí hráč po vaší levici pokaždé jedu kartu. V tomto tahu nesmíte koupit ani jednu z označených karet. Nezapomeňte, že karty peněz můžete vykládat v libovolném pořadí. Můžete tedy například nejprve vyložit kontraband, poté hráč nalevo označí jednu kartu, potom můžete vyložit další kartu peněz. Počet karet, které hráč ještě drží v ruce, je pro ostatní hráče viditelný. Nesmíte si označenou kartu koupit, ale můžete si ji vzít, pokud vám to nějaký pokyn na jiné kartě umožňuje, např. bohatství. Nezapomeňte, že v daném tahu již nesmíte vyložit žádnou další kartu peněz, jakmile jste nějakou kartu koupili.",
+        "name": "Kontraband"
     },
     "Copper": {
         "description": "1 <*COIN*>",
@@ -470,9 +470,9 @@
         "name": "Padělek"
     },
     "Counting House": {
-        "description": "Look through your discard pile, reveal any number of Copper cards from it, and put them into your hand.",
-        "extra": "This card lets you look through your discard pile, something you normally are not allowed to do. You only get to look through your discard pile when you play this. You do not have to show the other players your entire discard pile, just the Coppers you take out. After you take out the Coppers, you can leave the cards in your discard pile in any order.",
-        "name": "Counting House"
+        "description": "Prohlédni si svůj odkládací balíček, ukaž z něj libovolný počet měďáků a ty si vezmi do své ruky.",
+        "extra": "Tato karta vám umožňuje prohlédnutí odkládacího balíčku (což normálně není povoleno). Můžete si prohlédnout pouze svůj odkládací balíček, právě v okamžiku, kdy vykládáte kartu zastavárna. Nemusíte svým spoluhráčům ukazovat všechny karty v odkládacím balíčku, pouze měďáky, které si berete do ruky. Poté, co jste si vzali měďáky do ruky, odložte zbývající karty v libovolném pořadí zpět na odkládací balíček.",
+        "name": "Zastavárna"
     },
     "Courtier": {
         "description": "Reveal a card from your hand. For each type it has (Action, Attack, etc.), choose one: +1 Action; or +1 Buy; or +3 Coin; or gain a Gold. The choices must be different.",
@@ -490,9 +490,9 @@
         "name": "Crop Rotation"
     },
     "Crossroads": {
-        "description": "Reveal your hand.<n>+1 Card per Victory card revealed. If this is the first time you played a Crossroads this turn, +3 Actions.",
-        "extra": "First reveal your hand, and draw a card for each Victory card you revealed, if any. The revealed cards all stay in your hand. Cards with two types, one of which is Victory, are Victory cards. Then, if this is the first time you played a Crossroads this turn, you get +3 Actions. Subsequent Crossroads this turn will give you cards but not Actions. Using a card that lets you play a card several times (like Throne Room from Dominion) on Crossroads, you will play Crossroads multiple times, getting +3 Actions the first time but not the others.",
-        "name": "Crossroads"
+        "description": "Ukaž všechny své karty v ruce.<n>+1 karta za každou takto ukázanou kartu vítězných bodů.<n>+3 akce, pokud se jedná o první kartu Křižovatka zahranou v tomto tahu.",
+        "extra": "Nejprve ukažte všechny karty, které máte v ruce, a za každou takto ukázanou kartu vítězných bodů si jednu kartu doberte. Karty více typů, z nichž jeden představují vítězné body, jsou považovány za karty vítězných bodů. Jestliže je to v tomto tahu poprvé, co jste zahráli Křižovatku, dostáváte k dispozici +3 akce. Další Křižovatky vyložené v tomtéž tahu vám poskytnou karty, ale nikoli akce. Jestliže použijete na Křižovatku karty, které vám dovolují zahrát jednu kartu několikrát (například Trůnní sál z Dominionu), můžete ji zahrát vícekrát, přičemž 3 akce navíc dostanete pouze při prvním zahrání.",
+        "name": "Křižovatka"
     },
     "Crown": {
         "description": "If it's your Action phase, you may play an Action from your hand twice. If it's your Buy phase, you may play a Treasure from your hand twice.",
@@ -555,9 +555,9 @@
         "name": "Den of Sin"
     },
     "Develop": {
-        "description": "Trash a card from your hand. Gain a card costing exactly 1 coin more than it and a card costing exactly 1 less than it, in either order, putting them on top of your deck.",
-        "extra": "First trash a card from your hand, if you have any cards in hand. Develop itself is no longer in your hand and so cannot trash itself (though it can trash other copies of Develop). If you trashed a card, gain two cards, one costing exactly 1 coin more than the trashed card, and one costing exactly 1 coin less than the trashed card. The gained cards come from the Supply; gain them in either order. If there is no card in the Supply at one of the costs, you still gain the other card if you can. Put the gained cards on top of your deck rather than into your discard pile. If you trash a Copper with Develop, which costs 0 coins, you will try and fail to gain a card costing -1 coins (and also try to gain a card costing 1 coin).",
-        "name": "Develop"
+        "description": "Zahoď kartu z ruky na smetiště.<br>Vezmi si kartu, která stojí přesně o 1 Coin méně než zahozená karta, a kartu, která stojí přesně o 1 Coin více než zahozená karta. Obě karty polož v libovolném pořadí na svůj dobírací balíček.",
+        "extra": "Nejprve zahoďte kartu z ruky na smetiště, pokud v ruce máte alespoň jednu kartu. Právě zahraná Výstavba se již ve vaší ruce nenachází, takže ji samotnou nemůžete zahodit (další kopie Výstavby, jež máte v ruce, ovšem zahodit lze). Jestliže zahodíte kartu na smetiště, získáte dvě karty, přičemž jedna z nich stojí přes-ně o 1 Coin více a druhá o 1 Coin méně než zahozená karta. Takto získané karty si berete ze společné zásoby v libovolném pořadí. Pokud se tam nenachází dvě karty odpovídající výše uvedeným cenám, získáte pouze jednu, je-li to možné. Získané karty si pokládáte místo na odkládací balíček na vršek svého dobíracího balíčku. Pokud pomocí Výstavby zahodíte Měďák, který stojí 0 Coins, nepodaří se vám najít kartu s cenou -1 Coin. Proto se snažte nalézt kartu stojící 1 Coin, která však za běžných okolností rovněž neexistuje.",
+        "name": "Výstavba"
     },
     "Devil's Workshop": {
         "description": "If the number of cards you've gained this turn is:<br>2+, gain an Imp from its pile;<br>1, gain a card costing up to 4 Coin;<br>0, gain a Gold.",
@@ -565,9 +565,9 @@
         "name": "Devil's Workshop"
     },
     "Diadem": {
-        "description": "2 <*COIN*><n>When you play this, +1 Coins per unused Action you have (Action, not Action card).<n><i>(This is not in the Supply.)</i>",
-        "extra": "This is a Treasure worth 2 coins, like Silver. You play it in your Buy phase, like other Treasures. When you play it, you get an extra +1 coin per unused Action you have. This means Actions, not Action cards. So for example if you play Farming Village (which gives you +2 Actions), then Diadem, Diadem will give you an extra + 2 coins, for 4 coins total. If you play no Action cards at all on your turn, you will have one unused Action, so you will get total from Diadem. This is a Prize; see the Additional Rules.",
-        "name": "Diadem"
+        "description": "2 <*COIN*><n><n>Když hrajete tuto kartu, +1 Coin za každou nevyužitou akci, kterou máte. (Pozor, počítají se akce, ne akční karty.)<n><i>(Tato karta není součástí společné zásoby karet)</i>",
+        "extra": "Toto je karta peněz mající hodnotu 2 Coins jako stříbrňák. Tuto kartu vykládáte ve své fázi Nákup jako ostatní karty peněz. Při vyložení této karty získáte navíc + 1 Coin za každou nevyužitou akci, kterou máte. Jsou tím míněny akce, ne akční karty. Pokud tedy například vyložíte kartu selský dvůr (která vám dává + 2 akce) a pak diadém, dává vám diadém navíc + 2 Coins, čili celkem 4 Coins. Pokud ve svém tahu nevyložíte žádné akční karty, zbude vám jedna nevyužitá akce, dostanete díky diadému celkem 3 Coins. Diadém je karta odměny; podívejte se na nová pravidla výše.",
+        "name": "Diadém"
     },
     "Diplomat": {
         "description": "+ 2 Cards<br>If you have 5 or fewer cards in hand (after drawing), +2 Actions.<line>When another player plays an Attack card, you may first reveal this from a hand of 5 or more cards, to draw 2 cards then discard 3.",
@@ -615,9 +615,9 @@
         "name": "Ducat"
     },
     "Duchess": {
-        "description": "+2 Coins<n>Each player (including you) looks at the top card of his deck, and discards it or puts it back.<line>In games using this, when you gain a Duchy, you may gain a Duchess.",
-        "extra": "When you play this, you get +2 coins, and each player, including you, looks at the top card of his own deck and either discards it or puts it back on top, his choice. Any player with no cards in his deck shuffles his discard pile first; any player who still has no cards to look at does not look at one. When a player gains a Duchy in a game with Duchess in the Supply, that player may also gain a Duchess from the Supply. This works whether the player gained a Duchy due to buying one, or gained a Duchy some other way. Duchess does not interact in any special way with the promotional card Black Market.",
-        "name": "Duchess"
+        "description": "+2 Coins<n>Všichni hráči (včetně tebe) se podívají na vrchní kartu svého dobíracího balíčku a podle své volby ji odloží nebo vrátí zpět.<line>Vždy, když získáš Vévodství, můžeš si vzít Vévodkyni, je-li ve společné zásobě.",
+        "extra": "Když tuto kartu zahrajete, dostanete +2 Coins a každý hráč (včetně vás) se podívá na vrchní kartu svého dobíracího balíčku. Podle své volby ji buď odloží, nebo vrátí zpět. Všichni hráči, kteří nemají ve svém dobíracím balíčku žádné karty, si nejprve zamíchají odkládací balíček. Hráč, který ani potom nemá žádné karty, se na žádnou kartu nedívá. Pokud získáte Vévodství a ve hře se používá i Vévodkyně, můžete si rovněž vzít Vévodkyni ze společné zásoby. Toto platí, ať již si Vévodství koupíte nebo získáte jiným způsobem. Pro současné použití s promo kartou Černý trh neplatí žádná zvláštní pravidla.",
+        "name": "Vévodkyně"
     },
     "Duchy": {
         "description": "3 <*VP*>",
@@ -645,9 +645,9 @@
         "name": "Embargo"
     },
     "Embassy": {
-        "description": "+5 Cards<br>Discard 3 cards.<line>When you gain this, each other player gains a Silver.",
-        "extra": "When you play this, you draw five cards, then discard three cards. The cards you discard can be ones that were in your hand and/or ones you just drew. You discard three cards if able, even if you were unable to draw the full five cards (due to not having enough cards in your deck and discard pile). If you do not have three cards to discard, you discard as many as you can. When you gain this, each other player gains a Silver. Players only gain Silvers when you gain this, not when you play this. They gain Silvers whether you gained Embassy due to buying it, or gained it some other way. Gaining Silvers is not optional for them. The Silvers come from the Supply. If there are not enough Silvers left to go around, deal them out in turn order, starting with the player to the left of the player who gained Embassy.",
-        "name": "Embassy"
+        "description": "+5 karet<br>Odlož 3 karty.<line>Když získáš tuto kartu, všichni ostatní hráči si vezmou Stříbrňák.",
+        "extra": "Když zahrajete tuto kartu, nejprve si 5 karet doberete a následně 3 odložíte. Odložené karty mohou být jak ty, které jste již předtím měli v ruce, tak i ty právě dobrané. Pokud je to možné, vždy odkládáte 3 karty, i kdybyste nebyli schopni si 5 karet dobrat (protože v dobíracím ani odkládacím balíčku nemáte dohromady dost karet). Pokud nemůžete odložit 3 karty, odložte jich tolik, kolik můžete. Když získáte tuto kartu, všichni ostatní hráči získají Stříbrňák. Hráči dostanou Stříbrňáky pouze tehdy, jestliže Vyslanectví získáte, ne když ho zahrajete. Stříbrňáky získají, ať už si Vyslanectví koupíte nebo získáte jiným způsobem. Zisk Stříbrňáku je pro ně povinný. Stříbrňáky se berou ze společné zásoby. Jestliže jich tam už není tolik, aby se dostalo na všechny, přidělujte je v pořadí tahů, počínaje hráčem nalevo od toho, kdo Vyslanectví získal.",
+        "name": "Vyslanectví"
     },
     "Emporium": {
         "description": "+1 Card<br>+1 Action<br>+1 Coin<line>When you gain this, if you have at least 5 Action cards in play, +2 <VP>.",
@@ -700,9 +700,9 @@
         "name": "Exorcist"
     },
     "Expand": {
-        "description": "Trash a card from your hand. Gain a card costing up to 3 Coins more than the trashed card.",
-        "extra": "This is not in your hand after you play it, so you cannot trash it as the card trashed. The card you gain can cost up to 3 coins more than the trashed card, but it can also cost any smaller amount, even less than the cost of the trashed card. You can trash a card and gain a copy of the same card. If you have no card in hand to trash, you do not gain a card. The card you gain comes from the Supply and is put into your discard pile.",
-        "name": "Expand"
+        "description": "Zahoď kartu ze své ruky na smetiště.<br>Vezmi si kartu, která stojí až o 3 Coins více než zahozená karta.",
+        "extra": "Nemůžete zahodit na smetiště právě vykládanou kartu růst, protože tuto kartu již nemáte v ruce, když pokyn provádíte. Avšak máte-li v ruce další kartu růst, můžete ji zahodit. Nemáte-li v ruce žádnou kartu, kterou byste zahodili, nesmíte si také žádnou novou kartu vzít. Nová karta může stát až o 3 Coins více než zahozená karta. Nesmíte použít žádné karty peněz či virtuální mince, abyste tuto hodnotu zvýšili. Taktéž si můžete vzít kartu, která stojí méně nebo stejnou kartu, jakou jste zahodili. Kartu, kterou si vezmete, odložte na svůj odkládací balíček. ",
+        "name": "Růst"
     },
     "Expedition": {
         "description": "Draw 2 extra cards for your next hand.",
@@ -730,9 +730,9 @@
         "name": "Fair"
     },
     "Fairgrounds": {
-        "description": "Worth 2<VP> for every 5 differently named cards in your deck (rounded down).",
-        "extra": "At the end of the game, this is worth 2 <VP> per 5 differently named cards in your deck, rounded down. So if you have 0-4 different cards, it is worth 0 VP; if you have 5-9, it is worth 2 VP; if you have 10-14, it is worth 4 VP; if you have 15-19, it is worth 6; and so on. By default there are only 17 differently named cards available in a game, but sometimes there may be more cards, such as via Young Witch's setup rule, or due to Tournament. Use 8 Fairgrounds in a game with 2 players, and 12 for a game with 3 or more players.",
-        "name": "Fairgrounds"
+        "description": "Karta má hodnotu 2<VP> za každých 5 odlišně pojmenovaných karet ve tvém balíčku (zaokrouhleno dolů).",
+        "extra": "Na konci hry má karta tržiště hodnotu 2 <VP> za každých 5 odlišně pojmenovaných karet ve vašem balíčku, zaokrouhleno dolů. Pokud máte v balíčku 0–4 odlišné karty, je hodnota karty tržiště 0 <VP>; pokud máte odlišných karet 5–9, je hodnota 2 <VP>; pokud máte 10–14 odlišných karet, je hodnota 4 <VP>; pokud máte 15–19 odlišných karet, je hodnota karty tržiště 6 <VP>, atd. Standardně je ve hře k dispozici 17 odlišně pojmenovaných karet, ale občas může být odlišných karet více, například díky kartě mladá čarodějka nebo kartě turnaj. Při hře ve dvou hráčích použijte pouze 8 karet tržiště, při hře ve 3 či více hráčích jich použijte 12.",
+        "name": "Tržiště"
     },
     "Faithful Hound": {
         "description": "+2 Cards<line>When you discard this other than during Clean-up, you may set it aside, and put it into your hand at end of turn.",
@@ -740,9 +740,9 @@
         "name": "Faithful Hound"
     },
     "Familiar": {
-        "description": "+1 Card<br>+1 Action<n>Each other player gains a curse.",
-        "extra": "If there aren't enough Curses left to go around when you play Familiar, you deal them out in turn order, starting with the player to your left. If you play Familiar with no Curses remaining, you will still get +1 Card and +1 Action. A player gaining a Curse puts it face-up into his Discard pile.",
-        "name": "Familiar"
+        "description": "+1 karta<br>+1 akce<n>Všichni ostatní hráči získávají kletbu.",
+        "extra": "Pokud při zahrání alchymistova poskoka není dostatečné množství kleteb pro všechny, rozdejte je postupně podle pořadí, počínaje hráčem po vaší levici. Pokud zahrajete alchymistova poskoka a již nejsou k dispozici žádné kletby, tak i v tomto případě dostanete + 1 kartu a +1 akci. Hráč, který získal kletbu, ji položí lícem nahoru na svůj odkládací balíček.",
+        "name": "Alchymistův poskok"
     },
     "Famine": {
         "description": "Reveal the top 3 cards of your deck. Discard the Actions. Shuffle the rest into your deck.",
@@ -755,14 +755,14 @@
         "name": "Farmers' Market"
     },
     "Farming Village": {
-        "description": "+2 Actions<n>Reveal cards from the top of your deck until you reveal an Action or Treasure card. Put that card into your hand and discard the other cards.",
-        "extra": "Reveal cards from the top of your deck until you reveal a Treasure or Action card. If you run out of cards before finding one, shuffle your discard pile (but not the revealed cards), and keep revealing cards. If you still cannot find one, just discard all of the revealed cards. If you do find a Treasure or Action card, put it into your hand, and discard the rest of the revealed cards. A card with multiple types, one of which is Treasure or Action (for example Diadem, a Treasure - Prize), is a Treasure or Action and so will be drawn by this. You do not choose Treasure or Action - you stop on the first card matching either type.",
-        "name": "Farming Village"
+        "description": "+2 akce<n>Ukazuj karty ze svého dobíracího balíčku, dokud neukážeš nějakou akční kartu nebo kartu peněz. Vezmi si ji do ruky a ostatní ukázané karty odlož na odkládací balíček.",
+        "extra": "Ukazujte karty ze svého dobíracího balíčku, dokud neukážete kartu peněz nebo akční kartu. Pokud před nalezením takovéto karty dobírací balíček spotřebujete, zamíchejte svůj odkládací balíček (kromě ukázaných karet) a pokračujte v ukazování karet. Pokud stále nemůžete najít příslušnou kartu, pak jen všechny ukázané karty odložte na odkládací balíček. Pokud kartu peněz či akční kartu najdete, dejte si ji do ruky a zbytek ukázaných karet odložte na odkládací balíček. Karta kombinovaného typu, kde jedním z typů je karta peněz či akční karta (například karta diadém, peníze – odměna), je kartou peněz či akční kartou, a proto si ji můžete vzít do ruky. Kartu peněz či akční kartu si nevybíráte – zastavíte při první kartě odpovídající jednomu z typů.",
+        "name": "Selský dvůr"
     },
     "Farmland": {
-        "description": "2<*VP*><line>When you buy this, trash a card from your hand. Gain a card costing exactly 2 Coins more than the trashed card.",
-        "extra": "This is a Victory card, not an Action card. It is worth 2 victory points at the end of the game. When you buy it, you trash a card from your hand if able, and if you did, you gain a card from the supply costing exactly 2 coins more than the trashed card if able. If there are no cards left in your hand to trash, you do not trash or gain a card, and if you trashed a card but there are no cards in the supply costing exactly 2 coins more than the trashed card, you do not gain a card. This ability only functions when you buy Farmland, not when you gain it some other way. During set-up, put all 12 Farmlands in the Supply for a game with 3 or more players, but only 8 in the Supply for a 2-player game.",
-        "name": "Farmland"
+        "description": "2<*VP*><line>Když si tuto kartu koupíš, zahoď kartu z ruky na smetiště.<n>Vezmi si kartu, která stojí přesně o 2 Coins více než zahozená karta.",
+        "extra": "Toto je karta vítězných bodů, nikoli akce. Na konci hry má hodnotu 2 <VP>. Když si ji koupíte, zahoďte kartu na smetiště, je-li to možné. Pokud tak učiníte, získáte kartu ze společné zásoby, která je přesně o 2 Coins dražší než zahozená karta. Pokud nemáte v ruce žádné karty, abyste mohli zahazovat, nic nezahazujete a žádnou kartu nezískáte. Žádnou kartu nezískáte ani tehdy, jestliže kartu z ruky na smetiště zahodíte, ale ve společné zásobě není žádná karta, jež by stála přesně o 2 Coins více než zahozená. Tato schopnost funguje, pouze pokud si Úrodnou zemi koupíte, ne když ji získáte jiným způsobem. Při přípravě hry umístěte do společné zásoby všech 12 karet Úrodná země, pokud hrají 3 a více hráčů. V případě hry 2 hráčů se použije pouze 8 karet.",
+        "name": "Úrodná země"
     },
     "Fear": {
         "description": "If you have at least 5 cards in hand, discard an Action or Treasure (or reveal you can't.)",
@@ -815,9 +815,9 @@
         "name": "Fleet"
     },
     "Followers": {
-        "description": "+2 Cards<n>Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand.<n><i>(This is not in the Supply.)</i>",
-        "extra": "Do the things in the order listed. You draw 2 cards; then you gain an Estate from the Supply, putting it into your discard pile; then each other player gains a Curse from the Supply, putting it into his discard pile; then each other player discards down to 3 cards in hand. A player with 3 or fewer cards in hand does not discard any cards. If there are no Estates left, you do not gain one. If there are not enough Curses left, deal out the remaining Curses in turn order. This is a Prize; see the Additional Rules.",
-        "name": "Followers"
+        "description": "+2 karty<n>Vezmi si statek. Všichni ostatní hráči si vezmou kletbu. Všichni ostatní hráči musí odložit do tří karet v ruce. <n><i>(Tato karta není součástí společné zásoby karet)</i>",
+        "extra": "Pokyny provádějte v uvedeném pořadí. Doberte si 2 karty; pak získáte kartu statek ze společné zásoby, tu odložíte na svůj odkládací balíček; poté všichni ostatní hráči dostanou kletbu ze společné zásoby, tu si každý odloží na svůj odkládací balíček; potom každý hráč kromě vás odloží karty z ruky tak, aby mu v ruce zbyly 3 karty. Hráč, který má v ruce 3  či méně karet, neodloží žádné karty. Pokud již karta statek není k dispozici, nezískáváte žádnou kartu. Pokud nezbývá dostatek karet kletba, rozdávejte zbývající karty kletba postupně dokola. Stoupenci jsou karta odměny; podívejte se na nová pravidla výše.",
+        "name": "Stoupenci"
     },
     "Fool": {
         "description": "If you aren’t the player with Lost in the Woods, take it, take 3 Boons, and receive the Boons in any order.<br><br><i>Heirloom: Lucky Coin</i>",
@@ -830,9 +830,9 @@
         "name": "Fool / Lucky Coin"
     },
     "Fool's Gold": {
-        "description": "If this is the first time you played a Fool's Gold this turn, this is worth 1 coin, otherwise it's worth 4 coins.<line>When another player gains a Province, you may trash this from your hand. If you do, gain a Gold, putting it on your deck.",
-        "extra": "This is both a Treasure and a Reaction. It can be played in your Buy phase like other Treasures. When you play it, it is worth 1 coin if this is the first time you played a Fool's Gold this turn, and otherwise it is worth 4 coins. So if your lay three Fool's Golds in the same turn, the first is worth 1 coin, the second is worth 4 coins, and the third is worth 4 coins. Fool's Gold is also a Reaction. When another player gains a Province, you may trash Fool's Gold from your hand; if you do, you gain a Gold from the Supply, putting it on top of your deck rather than into your discard pile. If there are no cards in your deck, the Gold becomes the only card in your deck. If there are no Gold cards left in the Supply, you do not gain one, but can still trash Fool's Gold. This Reaction is only usable when another player gains a Province, not you. It is usable whether a Province was gained due to being bought, or gained some other way.",
-        "name": "Fool's Gold"
+        "description": "První Kočičí zlato zahrané ve tvém tahu má hodnotu 1 Coin, každé další 4 Coins.<line>Pokud některý jiný hráč získá Provincii, můžeš tuto kartu zahodit z ruky na smetiště.<br>Když tak učiníš, vezmi si Zlaťák a polož ho na svůj dobírací balíček.",
+        "extra": "Toto je zároveň karta peněz a reakce. Lze ji zahrát ve fázi nákupu stejně jako ostatní karty peněz. Když zahrajete ve svém tahu první Kočičí zlato, má hodnotu 1 Coin, jinak má hodnotu 4 Coins. Pokud tedy zahrajete ve stejném tahu třikrát Kočičí zlato, první má hodnotu 1 Coin, druhé 4 Coins a třetí 4 Coins. Kočičí zlato je současně karta reakce. Když některý jiný hráč získá Provincii, můžete zahodit Kočičí zlato z ruky na smetiště. Jestliže tak učiníte, vezměte si ze společné zásoby Zlaťák a umístěte ho na vršek svého dobíracího balíčku místo na odkládací balíček. Pokud v dobíracím balíčku žádnou kartu nemáte, stane se Zlaťák jeho jedinou kartou. Jestliže už ve společné zásobě nezbývá žádný Zlaťák, nedostanete ho, ale stále můžete Kočičí zlato zahodit z ruky na smetiště. Uvedená reakce je použitelná pouze tehdy, když Provincii získá jiný hráč. Zlaťák získáte, ať už byla Provincie koupena nebo získána jiným způsobem.",
+        "name": "Kočičí zlato"
     },
     "Forager": {
         "description": "+1 akce<br>+1 nákup<n>Zahoď kartu z ruky na smetiště.<n>+1 Coin za každou kartu peněz s odlišným názvem na smetišti.",
@@ -840,9 +840,9 @@
         "name": "Sběrač"
     },
     "Forge": {
-        "description": "Trash any number of cards from your hand. Gain a card with cost exactly equal to the total cost in coins of the trashed cards.",
-        "extra": "\"Any number\" includes zero. If you trash no cards, you have to gain a card costing 0 coins if you can. This is different from how cards like Expand work if you do not trash anything, because Forge looks at the total, not at any one card's cost. If there is no card at the required cost, you do not gain a card. The card you gain comes from the Supply and is put into your discard pile. Potion symbols (on cards from Alchemy) are not added, and the card you gain cannot have a potion symbol in its cost.",
-        "name": "Forge"
+        "description": "Zahoď libovolný počet karet ze své ruky na smetiště. Vezmi si kartu s přesně stejnou cenou, jaká je celková cena v mincích všech těchto zahozených karet.",
+        "extra": "Můžete zahodit libovolný počet karet z ruky na smetiště. To znamená, že můžete zahodit také 0 karet. V takovém případě si musíte vzít kartu, která stojí 0 Coins. Tento pokyn se liší od karet jako například růst, protože tady bude brán v úvahu součet ceny všech zahozených karet, ne pouze počet či cena jednotlivých karet. Není-li ve společné zásobě žádná karta, která stojí přesně tolik, kolik dohromady stojí zahozené karty, nesmíte si vzít žádnou kartu. V potaz se bere pouze cena v _ Coin. Cena v Potion (Dominion - Alchymisté) je ignorována. Nepřičítejte Potion ani k součtu, ani si nesmíte vzít kartu s Potion v ceně.",
+        "name": "Kování"
     },
     "Fortress": {
         "description": "+1 karta<br>+2 akce<line>Když tuto kartu zahodíš na smetiště, vezmi si ji do ruky.",
@@ -855,9 +855,9 @@
         "name": "Fortune"
     },
     "Fortune Teller": {
-        "description": "+2 Coin<n>Each other player reveals cards from the top of his deck until he reveals a Victory of Curse card. He puts it on top and discards the other revealed cards.",
-        "extra": "Each other player reveals cards from the top of his deck until he reveals a Victory or Curse card. If he runs out of cards before finding one, he shuffles his discard pile (but not the revealed cards), and keeps revealing cards. If he still cannot find one, he just discards all of the revealed cards. If he does find one, he puts the Victory or Curse card on top of his deck, and discards the other revealed cards. If his deck has no other cards in it, it becomes the only card in his deck. A card with multiple types, one of which is Victory (such as Nobles from Intrigue), is a Victory card. You do not choose Victory or Curse - they stop on the first card that matches either type.",
-        "name": "Fortune Teller"
+        "description": "+2 Coins<n>Každý hráč kromě tebe bude ukazovat karty ze svého dobíracího balíčku, dokud neukáže kartu vítězných bodů nebo kartu kletby, kterou poté položí nahoru na dobírací balíček a ostatní ukázané karty odloží.",
+        "extra": "Každý hráč kromě tebe ukazuje horní karty svého dobíracího balíčku, dokud neukáže kartu vítězných bodů nebo kartu kletby. Pokud před nalezením takovéto karty dobírací balíček spotřebuje, zamíchá svůj odkládací balíček (ale ne ukázané karty) a pokračuje v ukazování karet. Pokud stále nemůže najít příslušnou kartu, pak jen všechny ukázané karty odloží na odkládací balíček. Pokud kartu vítězných bodů či kartu kletby najde, položí si ji nahoru na svůj dobírací balíček a zbytek ukázaných karet odloží na odkládací balíček. Pokud již v hráčově dobíracím balíčku není žádná jiná karta, stává se nalezená karta jedinou kartou jeho dobíracího balíčku. Karta kombinovaného typu, jejíž jeden z typů je karta vítězných bodů (například karta šlechtici, edice Dominion: Intriky), je kartou vítězných bodů. Kartu vítězných bodů či kartu kletby si hráči nevybírají – zastaví při první kartě odpovídající jednomu z typů.",
+        "name": "Věštkyně"
     },
     "Forum": {
         "description": "+3 Cards<br>+1 Action<n>Discard 2 cards.<line>When you buy this, +1 Buy.",
@@ -925,14 +925,14 @@
         "name": "Zlaťák"
     },
     "Golem": {
-        "description": "Reveal cards from your deck until you reveal 2 Action cards other than Golem Cards.<n>Discard the other cards, then play the Action cards in either order.",
-        "extra": "Reveal cards from the top of your deck, one at a time, until you have revealed two Action cards that are not Golem. If you run out of cards before revealing two non-Golem Actions, shuffle your discard pile (but not the revealed cards) and continue. If you run out and have no discard pile left either, you just get the Actions you found. Discard all of the revealed cards except for the non-Golem Actions you found. If you did not find any, you're done. If you found one, play it. If you found two, play them both, in either order. You cannot choose not to play one of them. These Action cards are not in your hand and so are unaffected by things that look for cards in your hand. For example, if one of them is Throne Room (from Dominion), you cannot use it on the other one.",
+        "description": "Ukazuj karty ze svého dobíracího balíčku, dokud neodkryješ 2 akční karty, jiné než karty golem.<n>Všechny ukázané karty odlož na odkládací balíček, kromě 2 akčních karet, které poté zahraj v libovolném pořadí.",
+        "extra": "Ukazujte horní karty ze svého dobíracího balíčku, jednu po druhé, dokud nejsou odkryty dvě akční karty, které nejsou golem. Pokud vyčerpáte dobírací balíček před odkrytím dvou akčních karet zamíchejte svůj odkládací balíček (ne však odkryté karty) a pokračujte v hledání dvou akčních karet. V případě, že vyčerpáte celý dobírací balíček a odkládací balíček je také prázdný, obdržíte pouze akční karty, které jste nalezli. Odložte na odkládací balíček všechny odkryté karty kromě nalezených akčních karet, které nejsou golem. Pokud jste nenalezli žádnou, pokračujte ve svém tahu. Pokud jste nalezli jednu, zahrajte ji. Pokud jste nalezli dvě, zahrajte obě v libovolném pořadí. Obě karty musíte vyložit. Tyto akční karty nejsou ve vaší ruce a tak nejsou ovlivňovány  čímkoli, co se týká karet ve vaší ruce. Například, pokud je jednou z nalezených karet trůnní sál (Dominion - základní hra), nelze jej použít na druhou nalezenou kartu.",
         "name": "Golem"
     },
     "Goons": {
-        "description": "+1 Buy<br>+2 Coins<n>Each other player discards down to 3 cards in hand.<line>While this is in play, when you buy a card, +1<VP>.",
-        "extra": "You get 1<VP> token for each card you buy, but do not get a <VP> token for gaining a card some other way. Multiple copies of Goons are cumulative; if you have two Goons in play and buy a Silver, you get 2<VP> tokens. However if you King's Court a Goons, despite having played the card 3 times, there is still only one copy of it in play, so buying Silver would only get you 1<VP> token.<n>When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1<VP> and 5<VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score.",
-        "name": "Goons"
+        "description": "+ 1 nákup<br>+ 2 Coins<n>Všichni ostatní hráči odloží karty tak, aby jim zbyly na ruce 3 karty.<line>Když je tato karta ve hře, tak při nákupu karty získáš +1<VP>.",
+        "extra": "Pro tuto kartu budete potřebovat žetony vítězných bodů (viz Nová pravidla). Nejprve získáváš +1 nákup a +2 Coins virtuální mince. Poté musí popořadě všichni vaši spoluhráči snížit počet karet ve své ruce na 3. Za každou kartu, kterou v tomto tahu koupíte, si vezmete jeden žeton vítězného bodu a položíte si jej na svou podložku. Máte-li ve hře více karet hrdlořez, získáte za každou kartu hrdlořez jeden žeton vítězného bodu za každou koupenou kartu. Avšak pokud jste kartu hrdlořez vyložili na kartu královský dvůr, získáváte za nákup karty pouze po jednom vítězném bodu, protože karta hrdlořez je ve hře pouze jedenkrát.<n>Karty s +1<VP> (biskup, památník, hrdlořez): Budete-li hrát s jednou (či několika) z těchto karet království, dostane každý hráč navíc podložku (viz herní materiál). Dále se vedle společné zásoby položí žetony bodů (viz herní materiál). <n>Počet žetonů není omezen. Bude-li jich potřeba více, použijte vhodnou náhradu.",
+        "name": "Hrdlořez"
     },
     "Governor": {
         "description": "+1 Action<n>Choose one; you get the version in parentheses: Each player gets +1(+3) Cards; or each player gains a Silver (Gold); or each player may trash a card from his hand and gain a card costing exactly 1 Coin (2 Coins) more.",
@@ -940,9 +940,9 @@
         "name": "Governor"
     },
     "Grand Market": {
-        "description": "+1 Card<br>+1 Action<br>+1 Buy<br>+2 Coins<line>You can't buy this if you have any Copper in play.",
-        "extra": "You do not have to play all of the Treasures in your hand in your Buy phase. Coppers in your hand do not stop you from buying Grand Market - only Coppers in play do. Coppers that were in play earlier in the turn but are not anymore also don't stop you; if you have 11 Coppers in play and 2 Buys, you could buy a Mint, trash all of your played Treasures, and then buy a Grand Market. You can gain Grand Market other ways - for example with Expand - whether or not you have Coppers in play. Treasures other than Copper do not prevent you from buying Grand Market, even if they are worth 1 coin (such as Loan).",
-        "name": "Grand Market"
+        "description": "+ 1 karta<br>+ 1 akce<br>+ 1 nákup<br>+ 2 Coins<line>Pokud máš ve hře nějaký měďák, nemůžeš tuto kartu koupit.",
+        "extra": "Nemusíte vykládat z ruky všechny karty peněz. Měďák, který máte v ruce, vám nebrání velký trh koupit. Měďák, který v tomto tahu ve hře byl, ale nyní již ve hře není, vám také nebrání velký trh koupit. Máte-li například 2 nákupy a vyloženo 11 měďáků a nejprve koupíte mincovnu, tak tímto nákupem zahodíte na smetiště všechny karty peněz ve hře. Nyní již nemáte ve hře žádný měďák a můžete koupit velký trh (viz také mincovna). Když si berete Velký trh jiným způsobem, například díky kartě růst, tak měďák, který je ve hře, vám také nebrání, abyste si velký trh vzali. Jiné karty peněz než měďák vám také nebrání velký trh koupit, i kdyby tyto karty měly také hodnotu 1 Coin, jako například karta půjčka.",
+        "name": "Velký trh"
     },
     "Graverobber": {
         "description": "Vyber si jeden pokyn: vezmi si ze smetiště kartu v ceně 3 Coins až 6 Coins a polož ji na svůj dobírací balíček;<br>zahoď na smetiště kartu akce z ruky a vezmi si kartu která je až o 3 Coins dražší než zahozená karta.",
@@ -985,14 +985,14 @@
         "name": "Guildhall"
     },
     "Haggler": {
-        "description": "+2 Coins<line>While this is in play, when you buy a card, gain a card costing less than it that is not a Victory card.",
-        "extra": "When you play this, you get +2 coins. While this is in play, whenever you buy a card, you gain a cheaper card that is not a Victory card. For example, you could buy a Province, and gain a Gold via Haggler. Gaining a card is not optional. The gained card comes from the Supply and is put into your discard pile. Haggler only gives you an extra card when you buy a card, not when you gain a card some other way (such as with Haggler itself). If there is no cheaper card available in the Supply (e.g., if you buy a Copper), you do not gain a card. Using a card that lets you play a card several times (like Throne Room from Dominion) on Haggler does not gain you two or more cards per card bought, as there is still only one copy of Haggler in play. The bonus is cumulative if you have three Hagglers in play, you will gain three more cards for each card you buy. Cards with two types, one of which is Victory, are Victory cards and so cannot be gained with Haggler.",
-        "name": "Haggler"
+        "description": "+2 Coins<line>Pokud je ve hře, když si kupuješ kartu, vezmi si navíc kartu, která stojí méně než koupená karta a není kartou vítězných bodů.",
+        "extra": "Když tuto kartu zahrajete, dostanete +2 Coins. Dokud je ve hře, platí: kdykoli si koupíte kartu, získáte ještě navíc jednu levnější kartu, která však nesmí být kartou vítězných bodů. Například koupíte-li si Provincii, můžete získat díky Handlíři Zlaťák. Získání karty je povinné. Získanou kartu vezměte ze společné zásoby a položte ji na svůj odkládací balíček. Handlíř vám poskytuje kartu navíc pouze tehdy, jestliže si kartu kupujete, nikoli pokud ji získáte jiným způsobem (včetně té, kterou získáte díky schopnosti Handlíře). Jestliže ve společné zásobě není dostupná žádná levnější karta (například když si koupíte Měďák), žádnou kartu nezískáte. Pokud použijete na Handlíře karty, které vám dovolují zahrát jednu kartu několikrát (například Trůnní sál ze základní hry), nedostanete za každou koupenou kartu dvě či více karet, protože je ve hře pouze jedna kopie Handlíře. Bonus je kumulativní: máte-li ve hře tři Handlíře, získáte za každou koupenou kartu tři karty navíc. Karty více typů, z nichž jeden je karta vítězných bodů, jsou považovány za karty vítězných bodů, a proto je nelze díky Handlíři získat.",
+        "name": "Handlíř"
     },
     "Hamlet": {
-        "description": "+1 Card<br>+1 Action<n>You may discard a card; If you do +1 Action.<n>You may discard a card; If you do +1 Buy",
-        "extra": "First draw a card, and get +1 Action. Then you may either discard one card to get another +1 Action; or you may discard one card to get +1 Buy; or you may discard two cards and get both +1 Action and +1 Buy; or you may discard no cards at all. You only get the extra +1 Action or +1 Buy if you actually discarded a card for it. You cannot discard multiple cards to get multiple +Actions or multiple +Buys.",
-        "name": "Hamlet"
+        "description": "+1 karta<br>+1 akce<n>Můžeš odložit kartu.<br>Pokud tak učiníš +1 akce.<br>Můžeš odložit kartu.<br>Pokud tak učiníš +1 nákup.",
+        "extra": "Nejprve doberete kartu a dostanete + 1 akci. Pak můžete buď odložit jednu kartu a získat další + 1 akci; nebo můžete odložit jednu kartu a získat + 1 nákup; nebo můžete odložit dvě karty a získat obojí, + 1 akci i + 1 nákup; nebo nemusíte odložit žádnou kartu. + 1 akci nebo + 1 nákup navíc dostanete pouze v tom případě, pokud skutečně odložíte kartu pro příslušný pokyn. Nelze odložit více karet, abyste získali vícenásobné + akce nebo vícenásobné + nákupy.",
+        "name": "Osada"
     },
     "Harbinger": {
         "description": "+1 karta<br>+1 akce<n>Prohledejte odkládací balíček. Můžete z něj vzít jednu kartu do ruky.",
@@ -1005,9 +1005,9 @@
         "name": "Harém"
     },
     "Harvest": {
-        "description": "Reveal the top 4 cards of your deck, then discard them. +1 Coin per differently named card revealed.",
-        "extra": "Reveal the top 4 cards of your deck. If there are not enough cards, reveal what you can, shuffle your discard pile, and reveal the rest. If there still are not 4 cards total to reveal, just reveal what you can. You discard the revealed cards, and get +1 coin per differently named card revealed. For example if you revealed Copper, Silver, Copper, Estate, that would be +3 coins .",
-        "name": "Harvest"
+        "description": "Ukaž 4 vrchní karty svého dobíracího balíčku a odlož je. +1 Coin za každou odlišně pojmenovanou ukázanou kartu.",
+        "extra": "Ukažte 4 horní karty svého dobíracího balíčku. Pokud v něm není dostatek karet, ukažte všechny dostupné, zamíchejte svůj odkládací balíček a ukažte zbývající. Pokud stále nemůžete ukázat celkem 4 karty, ukažte jich tolik, kolik můžete. Ukázané karty odložte a získáte + 1 Coin za  každou odlišně pojmenovanou ukázanou kartu. Pokud byste například ukázali měďák, stříbrňák, měďák a statek, tak byste získali + 3 Coins.",
+        "name": "Sklizeň"
     },
     "Haunted Mirror": {
         "description": "1 <*COIN*><line>When you trash this, you may discard an Action card, to gain a Ghost from its pile.",
@@ -1035,9 +1035,9 @@
         "name": "Herald"
     },
     "Herbalist": {
-        "description": "+1 Buy<br>+1 Coin<line>When you discard this from play, you may put one of your Treasures from play on top of your deck.",
-        "extra": "You get an extra 1 Coin to spend this turn, and may buy an additional card in your Buy phase. When you discard this from play (usually during Clean-up), you may choose a Treasure card you have in play, and put that card on your deck. If you have no cards in your deck, that Treasure will become the only card in your deck. You choose what order to discard cards during Clean-up; so, for example, if you have Herbalist, Potion, and Alchemist in play, you could choose to discard Alchemist first, putting it on top of your deck, then discard Herbalist, and put Potion on top of your deck. If you have multiple Herbalists in play, each one will let you put another Treasure from play onto your deck.",
-        "name": "Herbalist"
+        "description": "+1 nákup<br>+1 Coin<line>Když tuto kartu odkládáš ze hry, můžeš položit jednu ze svých karet peněz ve hře nahoru na svůj dobírací balíček.",
+        "extra": "Když zahrajete tuto kartu, dostanete minci navíc na útratu v tomto tahu a ve své fázi nákup můžete koupit kartu navíc. Když tuto kartu odložíte ze hry (obvykle během fáze úklid), můžete si vybrat kartu peněz, kterou máte ve hře, a položit ji na svůj dobírací balíček. Pokud nemáte žádné karty ve svém dobíracím balíčku, bude tato karta peněz jedinou kartou vašeho dobíracího balíčku. Pořadí, v jakém odkládáte karty během fáze úklid, si vybíráte vy; tudíž, pokud například máte ve hře bylinkáře, elixír a alchymistu, můžete si nejdříve zvolit odložení alchymisty, položíte jej nahoru na svůj dobírací balíček, poté odložíte bylinkáře a položíte elixír nahoru na svůj dobírací balíček. Pokud máte ve hře více bylinkářů, umožní vám každý, při svém odložení, položit další kartu peněz na dobírací balíček.",
+        "name": "Bylinkář"
     },
     "Hermit": {
         "description": "Prohlédni si svůj odkládací balíček. Můžeš zahodit na smetiště kartu z odkládacího balíčku nebo z ruky, která není kartou peněz.<br>Vezmi si kartu s cenou až 3 Coins.<line>Pokud odkládáš Poustevníka ze hry v tahu, kdy jsi nekoupil žádnou kartu, zahoď ho místo toho na smetiště a vezmi si Šílence z balíčku karet Šílenců.",
@@ -1060,9 +1060,9 @@
         "name": "Hideout"
     },
     "Highway": {
-        "description": "+1 Card<br>+1 Action<line>While this is in play, cards cost 1 Coin less, but not less than 0 Coins.",
-        "extra": "This makes all cards cheaper (to a minimum of 0 coins) as long as it is in play. When it leaves play, it stops making cards cheaper. This applies to cards everywhere - cards in the Supply, cards in hand, cards in Decks. For example if you played Highway, then Develop, trashing a Copper, you could gain an Estate, as Estate would cost 1 coin while Copper would still cost 0 coins. Using a card that lets you play a card several times (like Throne Room from Dominion) on Highway will not make cards cost less, as there is still only one copy of Highway in play. The bonus is cumulative; if you have three Highways in play, all cards cost 3 coins less (to a minimum of 0 coins).",
-        "name": "Highway"
+        "description": "+1 karta<br>+1 akce<line>Pokud je ve hře, karty stojí o 1 Coin méně, ale nikdy ne méně než 0 Coins.",
+        "extra": "Tato karta všechny ostatní karty zlevňuje (na minimum 0 Coins), dokud se nachází ve hře. Jakmile hru opustí, skončí také zlevňování. Sleva se vztahuje na karty kdekoli – ve společné zásobě, v ruce, v dobíracím i odkládacím balíčku. Například pokud zahrajete Silnici, po ní Výstavbu a zahodíte na smetiště Měďák, můžete získat Statek, protože Statek by stál 1 Coin, zatímco Měďák by měl stále cenu 0 Coin. Jestliže použijete na Silnici karty, které vám dovolují zahrát jednu kartu několikrát (například Trůnní sál z Dominionu), nesníží cenu žádné karty o 2 Coins, protože je ve hře stále pouze jedna kopie této karty. Bonus je kumulativní: máte-li ve hře tři Silnice, všechny karty vás budou stát o 3 Coins méně (minimálně 0 Coins).",
+        "name": "Silnice"
     },
     "Hireling": {
         "description": "At the start of each of your turns for the rest of the game:<n>+1 Card<n><i>(This stays in play.)</i>",
@@ -1070,9 +1070,9 @@
         "name": "Hireling"
     },
     "Hoard": {
-        "description": "2 <*COIN*><line>While this is in play, when you buy a Victory card, gain a Gold.",
-        "extra": "This is a Treasure worth 2 coins, like Silver. When you buy a Victory card with this in play, you gain a Gold card from the Supply, putting it into your discard pile. If there are no Golds left, you do not get one. If you have multiple Hoards in play, you will gain multiple Golds from buying a single one. So for example if you had two Hoards in play and no other money, with +1 Buy, you could buy two Estates and gain four Golds. Victory cards include cards that are other types as well, such as Nobles and Harem in Intrigue. You gain a Gold even if you use Watchtower to immediately trash the Victory card you gained. Victory cards gained other than by buying them do not get you Gold.",
-        "name": "Hoard"
+        "description": "2 <*COIN*><line>Pokud koupíš nějakou kartu vítězných bodů, když je tato karta ve hře, vezmi si zlaťák.",
+        "extra": "Tato karta peněz má hodnotu 2 Coins, jako stříbrňák. Pokud je tato karta ve hře a koupíte si nějakou bodovací kartu, vezmete si navíc jeden zlaťák, který odložíte na svůj odkládací balíček. Pokud ve společné zásobě již není žádný zlaťák, nevezmete si nic. Pokud máte ve hře více karet bohatství, vezmete si více zlaťáků za každý nákup bodovací karty. Když máte například +1 nákup a vyloženy 2 karty bohatství, tak si při nákupu 2 statků vezmete navíc 4 zlaťáky. Také kombinované karty, jako například šlechtici či harém (Dominion - Intriky), jsou bodovací karty. Zlaťák si vezmete také, když například ukážete strážní věž a zakoupenou bodovací kartu ihned zahodíte na smetiště. Zlaťák si vezmete pouze tehdy, když bodovací kartu skutečně kupujete, pokud ji získáváte jiným způsobem, žádný zlaťák si nevezmete.",
+        "name": "Bohatství"
     },
     "Horn": {
         "description": "Once per turn, when you discard a Border Guard from play, you may put it onto your deck.",
@@ -1080,14 +1080,14 @@
         "name": "Horn"
     },
     "Horn of Plenty": {
-        "description": "0 <*COIN*><n>When you play this, gain a card costing up to 1 Coin per differently named card you have in play, counting this. If it's a Victory card, trash this.",
-        "extra": "This is a Treasure worth 0 coins. You play it in your Buy phase, like other Treasures. It does not produce any coins to spend. However, when you play it, you gain a card costing up to per differently named card you have in play. This includes itself, other played Treasures, played Actions, and any Duration cards (from Seaside) played on your previous turn. It only counts cards currently in play, not ones that were in play but left; for example if you played a Feast (from Dominion) this turn, you will have trashed it, so it will not count for Horn of Plenty. The card you gain must come from the Supply, and is put into your discard pile. If it is a Victory card, trash Horn of Plenty. Cards with multiple types, one of which is Victory (such as Nobles from Intrigue) are Victory cards. You do not have to play Horn of Plenty in your Buy phase, and you choose the order that you play Treasures. You do not trash Horn of Plenty if you gain a Victory card some other way while it's in play (such as by buying one).",
-        "name": "Horn of Plenty"
+        "description": "0 <*COIN*><n>Při vyložení této karty si vezmi kartu s cenou až 1 Coin za každou odlišně pojmenovanou kartu, kterou máš ve hře, včetně této. Pokud si vezmeš kartu vítězných bodů, zahoď tuto kartu na smetiště.",
+        "extra": "Tato karta má hodnotu 0 Coins. Tuto kartu vyložíte ve své fázi Nákup stejně jako jiné karty peněz. Neprodukuje žádné mince, které byste mohli utratit. Avšak při vyložení si vezmete kartu s cenou až 1 Coin za každou odlišně pojmenovanou kartu, kterou máte ve hře. To zahrnuje tuto vyloženou kartu, ostatní vyložené karty peněz, vyložené akční karty a jakékoli dlouhodobé karty (rozšíření Dominion: Pobřeží) vyložené ve vašem předchozím tahu. Počítají se pouze aktuální karty ve hře, ne  takové, které ve hře byly, ale již nejsou. Pokud jste například v tomto tahu vyložili kartu hostina (edice základní Dominion) a zahodili jste ji na smetiště, pak nebude pro kartu roh hojnosti započítávána. Karta, kterou si vezmete, musí pocházet ze společné zásoby a bude odložena na váš odkládací balíček. Pokud si vezmete bodovací kartu, tak kartu roh hojnosti zahoďte na smetiště. Karty kombinovaného typu, z nichž jedním je bodovací karta (například karta šlechtici, edice Dominion: Intriky), jsou bodovacími kartami. Kartu roh hojnosti ve své fázi nákup nemusíte vyložit a vy si vybíráte pořadí vykládání karet peněz. Kartu roh hojnosti nezahazujete na smetiště, pokud je ve hře, a bodovací kartu získáte jiným způsobem (například nákupem).",
+        "name": "Roh hojnosti"
     },
     "Horse Traders": {
-        "description": "+1 Buy<br>+3 Coin<br>Discard 2 Cards<line>When another player plays an Attack card, you may set this aside from your hand. If you do, then at the start of your next turn, +1 Card and return this to your hand.",
-        "extra": "When you play this, you get +1 Buy and +3 coins, and discard 2 cards from your hand. If you do not have enough cards to discard, just discard what you can; you still get the +1 Buy and +3 coins. When another player plays an Attack card, before that card does anything, you may reveal this from your hand. If you do, you set it aside, and at the start of your next turn, you return it to your hand and draw a card. While it is set aside, it is not in play or in your hand, and cannot be further revealed to Attacks. Therefore it will only work on one Attack per round of turns. You can reveal it for an Attack and still play it on your next turn. You can reveal multiple Horse Traders to a single Attack. For example, if another player plays Followers, you could reveal and set aside two Horse Traders from your hand, then gain a Curse but discard no cards, as you would only have three cards in hand at that point. Then on your next turn you would pick up the two Horse Traders and also draw two cards.",
-        "name": "Horse Traders"
+        "description": "+1 nákup<br>+3 Coins<br><b>Odlož 2 karty</b><line>Když jiný hráč zahraje kartu útoku, můžeš tuto kartu ze své ruky položit stranou. Pokud to uděláš, pak na začátku svého dalšího tahu +1 karta a vrať si tuto kartu do ruky.",
+        "extra": "Při vyložení této karty získáte + 1 nákup a + 3 Coins a odložíte 2  karty z ruky. Pokud nemáte dost karet na odložení, pak odložte tolik, kolik máte; stále získáváte + 1 nákup a + 3 Coins. Když jiný hráč vyloží kartu útok, tak dříve než jeho karta cokoli způsobí, můžete ukázat z ruky kartu koňští handlíři. Pokud to uděláte, položte ji stranou a na začátku svého nejbližšího tahu si ji vraťte zpět do ruky a doberte si kartu. V době, kdy karta leží stranou, není ve hře ani ve vaší ruce a nemůže být dále ukazována při útocích. Proto bude působit pouze na jeden útok za kolo. Můžete tuto kartu ukázat kvůli útoku a stále ji ve svém nejbližším tahu vyložit. Na jeden útok můžete ukázat i více karet koňští handlíři. Pokud například jiný hráč zahraje kartu stoupenci, můžete ze své ruky ukázat a položit stranou dvě karty koňští handlíři, poté si vzít kletbu, ale nemusíte již odkládat další karty, neboť v tuto chvíli budete mít v ruce pouze tři karty. Poté si ve svém nejbližším tahu vezmete obě karty koňští handlíři zpět do ruky a také si doberete dvě karty.",
+        "name": "Koňští handlíři"
     },
     "Hovel": {
         "description": "Když si koupíš kartu vítězných bodů, můžeš zahodit Chýši z ruky na smetiště.",
@@ -1100,9 +1100,9 @@
         "name": "Revír"
     },
     "Hunting Party": {
-        "description": "+1 Card<br>+1 Action<n>Reveal your hand. Reveal cards from your deck until you reveal a card that isn't in a duplicate of one in your hand and discard the rest.",
-        "extra": "First you draw a card and get +1 Action. Then you reveal your hand, and reveal cards from your deck until revealing one that is not a duplicate of one in your hand. A card is not a duplicate of one in your hand if it does not have the same name as any cards in your hand. If you run out of cards while revealing cards, shuffle your discard pile (but not the revealed cards) and keep revealing cards. If you still do not find one, just discard all of the cards revealed from your deck. If you do find a card not matching any cards in your hand, put it into your hand and discard the other cards revealed from your deck.",
-        "name": "Hunting Party"
+        "description": "+1 karta<br>+1 akce<n>Ukaž karty z ruky. Ukazuj karty ze svého dobíracího balíčku, dokud neukážeš kartu, která není stejná s žádnou kartou v tvé ruce. Poslední ukázanou kartu si dejte do ruky a zbytek ukázaných karet odložte.",
+        "extra": "Nejprve si doberete kartu a získáte + 1 akci. Poté ukážete karty v ruce a budete ukazovat karty ze svého dobíracího balíčku, dokud se neobjeví karta odlišná od kopií karet ve vaší ruce. Kopie je každá karta, která má stejný název jako jakákoliv karta ve vaší ruce. Pokud dobírací balíček při ukazování karet vyčerpáte, zamíchejte svůj odkládací balíček (ne ukázané karty) a pokračujte v ukazování karet. Pokud ani tehdy nějakou nenaleznete, tak pouze všechny ukázané karty odložte. Pokud naleznete kartu, která neodpovídá žádné kartě ve vaší ruce, dejte si ji do ruky a ostatní ukázané karty z dobíracího balíčku odložte.",
+        "name": "Lovci"
     },
     "Idol": {
         "description": "2 <*COIN*><br>When you play this, if you then have an odd number of Idols in play, receive a Boon; if an even number, each other player gains a Curse.",
@@ -1110,9 +1110,9 @@
         "name": "Idol"
     },
     "Ill-Gotten Gains": {
-        "description": "1 <*COIN*><n>When you play this, you may gain a Copper, putting it into your hand.<line>When you gain this, each other player gains a Curse.",
-        "extra": "This is a Treasure worth 1 coin like Copper. When you play it, you may gain a Copper. The gained Copper comes from the Supply and is put into your hand; you can immediately play it. If there is no Copper left in the Supply, you do not gain one. When you gain Ill-Gotten Gains, each other player gains a Curse. This happens whether you gain Ill-Gotten Gains due to buying it, or you gain it some other way. The Curses come from the Supply and go into discard piles. If there are not enough Curses left to go around, deal them out in turn order, starting with the player to the left of the player who gained Ill-Gotten Gains. III-Gotten Gains is not an Attack, and gaining it is not playing an Attack; cards like Moat from Dominion do not work against it.",
-        "name": "Ill-Gotten Gains"
+        "description": "1 <*COIN*><n>Když zahraješ tuto kartu, můžeš si vzít do ruky Měďák.<line>Když získáš tuto kartu, všichni ostatní hráči si vezmou Kletbu.",
+        "extra": "Jedná se o kartu peněz s hodnotou 1 Coin jako Měďák. Když tuto kartu získáte, můžete si vzít Měďák. Ten si berete ze společné zásoby přímo do ruky a můžete ho zahrát ještě v tomto tahu. Pokud se už ve společné zásobě žádný Měďák nenachází, žádný nedostanete. Když získáte Nečestné zisky, všichni ostatní hráči si vezmou Kletbu. K tomu dojde, ať již si Nečestné zisky koupíte nebo získáte jiným způsobem. Kletby se berou ze společné zásoby a umisťují se na odkládací balíčky. Jestliže ve společné zásobě již není dost Kleteb pro všechny, rozdělte je mezi hráče podle pořadí tahů, počínaje hráčem po levici od hráče, který Nečestné zisky získal. Nečestné zisky nejsou útočná karta a jejich získání se nepovažuje za útok, proto proti nim neúčinkují karty jako Hradní příkop z Dominionu.",
+        "name": "Nečestné zisky"
     },
     "Imp": {
         "description": "+2 Cards<br>You may play an Action card from your hand that you don’t have a copy of in play.<br><br><i>(This is not in the supply).</i>",
@@ -1130,9 +1130,9 @@
         "name": "Inheritance"
     },
     "Inn": {
-        "description": "+2 Cards<br>+2 Actions<br>Discard 2 cards.<line>When you gain this, look through your discard pile (including this), reveal any number of Action cards from it, and shuffle them into your deck.",
-        "extra": "When you play this, you draw 2 cards, get +2 Actions, then discard 2 cards. The cards you discard can be ones that were in your hand and/or ones you just drew. You discard cards if able, even if you were unable to draw 2 cards. When you gain this, you look through your discard pile (something normally not allowed) and shuffle any number of Action cards from it into your deck (leaving the rest of your discard pile in your discard pile). You do not have to shuffle any Action cards into your deck. You can shuffle the Inn you just gained into your deck; it is an Action card in your discard pile. Cards with two types, one of which is Action, are Action cards. You must reveal the Action cards that you choose to shuffle into your deck. It does not matter what order you leave your discard pile in afterwards. This ability functions if you gain Inn due to buying it, or gain Inn some other way.",
-        "name": "Inn"
+        "description": "+2 karty<br>+2 akce<br>Odlož 2 karty.<line>Když získáš tuto kartu, prohlédni si svůj odkládací balíček (včetně této karty), vezmi z něj libovolný počet karet akcí, ukaž je a zamíchej do svého dobíracího balíčku.",
+        "extra": "Když tuto kartu zahrajete, doberete si 2 karty a dostanete k dispozici +2 akce. Poté odložte 2 karty. Odložené karty mohou být jak ty, které jste již předtím měli v ruce, tak i ty právě dobrané. Pokud je to možné, vždy odkládáte 2 karty, i kdybyste nebyli schopni si 2 karty dobrat. Když Hostinec získáte, prohlédněte si svůj odkládací balíček (což není normálně dovoleno) a zamíchejte libovolný počet karet akcí do svého dobíracího balíčku (zbytek karet z odkládacího balíčku také v odkládacím balíčku zůstane). Můžete do dobíracího balíčku zamíchat i právě získaný Hostinec, protože se jedná o kartu akce v odkládacím balíčku. Karty více typů, z nichž jeden je karta akce, jsou považovány za karty akcí. Akční karty, které si chcete zamíchat do dobíracího balíčku, musíte ukázat. Je jedno, v jakém pořadí se poté budou nacházet karty v odkládacím balíčku. Tato schopnost funguje, ať už si Hostinec koupíte nebo ho získáte jiným způsobem.",
+        "name": "Hostinec"
     },
     "Innovation": {
         "description": "The first time you gain an Action card in each of your turns, you may set it aside.<n>If you do, play it.",
@@ -1160,14 +1160,14 @@
         "name": "Ostrov"
     },
     "Jack of all Trades": {
-        "description": "Gain a Silver.<n>Look at the top card of your deck; discard it or put it back.<n>Draw until you have 5 cards in hand.<n>You may trash a card from your hand that is not a Treasure.",
-        "extra": "This card does four separate things, in the order listed; you do all of them (the last one is optional). First, gain a Silver from the Supply, putting it into your discard pile. If there are no Silvers left in the Supply, you do not gain one. Second, look at the top card of your deck, and either discard it or put it back on top. If there are no cards left in your deck, shuffle your discard pile to get a card to look at (this will shuffle in the Silver you just gained). If there are still no cards, you do not look at one. Third, draw cards until you have at least five cards in hand. If you already have five or more cards in hand, you do not draw any cards. If there are not enough cards left to draw between your deck and discard pile, just draw what you can. Fourth, you may trash a card from your hand that is not a Treasure card. Cards with two types, one of which is Treasure, are Treasures.",
-        "name": "Jack of All Trades"
+        "description": "Vezmi si Stříbrňák.<n>Podívej se na vrchní kartu svého dobíracího balíčku a podle své volby ji odlož, nebo vrať zpět.<n>Dober si karty, abys jich měl v ruce 5.<n>Můžeš zahodit kartu ze své ruky na smetiště, nesmí se jednat o kartu peněz.",
+        "extra": "Tato karta obsahuje čtyři oddělené pokyny, které provádíte v uvedeném pořadí (poslední z nich je nepovinný). Nejprve si vezměte ze společné zásoby Stříbrňák a položte ho na svůj odkládací balíček. Pokud již ve společné zásobě žádné Stříbrňáky nejsou, žádný nedostanete. Zadruhé, podívejte se na vrchní kartu svého dobíracího balíčku a podle své volby ji odložte nebo nechte na místě. Pokud se již v dobíracím balíčku žádné karty nenachází, zamíchejte odkládací balíček (včetně právě získaného Stříbrňáku) a podívejte se na vrchní kartu nového dobíracího balíčku. Pokud v něm ani poté nejsou žádné karty, na žádnou kartu se nepodíváte. Zatřetí, doberte si karty, abyste jich měli v ruce 5. Pokud již máte v ruce 5 či více karet, žádné si nedobíráte. Jestliže se dohromady v dobíracím a odkládacím balíčku nenachází dostatek karet, doberte si tolik, kolik můžete. Začtvrté, můžete zahodit kartu z ruky na smetiště, pokud se nejedná o kartu peněz. Karty více typů, z nichž jeden je karta peněz, jsou považovány za karty peněz.",
+        "name": "Všeuměl"
     },
     "Jester": {
-        "description": "+2 Coins<n>Each other player discards the top card of his deck. If it's a Victory card he gains a Curse. Otherwise he gains a copy of the discarded card or you do, your choice.",
-        "extra": "Each player with no cards in his deck shuffles his discard pile in order to get a card to discard. If he still has no cards, he does not discard one. For each player who discarded a card, if it is a Victory card, he gains a Curse, and otherwise, you choose: either that player gains a copy of the card, or you do. The gained copies and Curses come from the Supply and are put into the discard piles of the players who gain them. If a card is revealed for which there are no copies in the Supply, no one gains a copy of it. This Attack hits other players in turn order, which can matter when some piles are low. A card with multiple types, one of which is Victory (such as Nobles from Intrigue) is a Victory card.",
-        "name": "Jester"
+        "description": "+2 Coins<n>Všichni ostatní hráči odloží horní kartu ze svého dobíracího balíčku. Pokud je to karta vítězných bodů, vezme si kletbu. V opačném případě si buď vezme kopii odložené karty, nebo si ji vezmeš ty, dle tvé volby.",
+        "extra": "Každý hráč, který nemá ve svém dobíracím balíčku žádnou kartu, zamíchá svůj odkládací balíček, aby mohl kartu odložit. Pokud stále nemá žádné karty, neodkládá žádnou. Každý hráč, který odložil kartu vítězných bodů, si vezme kletbu. V jiném případě se u každého hráče rozhodnete: buď si kopii odložené karty vezme tento hráč, nebo vy. Získané kopie a kletby musí pocházet ze společné zásoby a jsou odloženy na odkládací balíčky hráčů, kteří je získali. Pokud již ve společné zásobě není kopie odložené karty, nikdo tuto kopii nezískává. Tento útok zasáhne ostatní hráče postupně. Může to být důležité v případě, kdy je již v některých balíčcích méně karet. Karta kombinovaného typu, kde jedním typem je karta vítězných bodů (například šlechtici, edice Dominion: Intriky), je kartou vítězných bodů.",
+        "name": "Šašek"
     },
     "Journeyman": {
         "description": "Name a card. Reveal cards from the top of your deck until you reveal 3 cards that are not the named card. Put those cards into your hand and discard the rest.",
@@ -1190,9 +1190,9 @@
         "name": "Key"
     },
     "King's Court": {
-        "description": "You may choose an Action card in your hand. Play it three times.",
-        "extra": "This is similar to Throne Room (from Dominion), but plays the Action three times rather than twice. You pick another Action card in your hand, play it, play it again, and play it a third time. This does not use up any extra Actions you were allowed to play due to cards like Worker's Village - King's Court itself uses up one Action and that is it. You cannot play any other cards in between resolving the King's Court-ed Action card multiple times, unless that Action card specifically tells you to (such as King's Court itself does). If you King's Court a King's Court, you will play three different Actions after that, playing each one of them three times - you do not play one Action nine times. If you King's Court a card that gives you +1 Action, such as Grand Market, you will end up with 3 Actions left afterwards.",
-        "name": "King's Court"
+        "description": "Vyber si akční kartu z ruky.<br>Tuto kartu zahraješ třikrát.",
+        "extra": "Tato karta působí obdobně jako karta trůnní sál (Dominion - základní hra), s rozdílem, že zvolenou kartu zahrajete třikrát. Zvolíte si tedy akční kartu z ruky, vyložíte ji, zcela provedete její pokyny, vezmete si ji zpět do ruky, znovu ji vyložíte, opět provedete její pokyny, vezmete si ji opět do ruky a poté ji potřetí vyložíte a provedete její pokyny. Toto trojnásobné vyložení nespotřebovává žádnou akci (vyložení karty královský dvůr spotřebuje jednu akci). Nesmíte vyložit žádné jiné akční karty, dokud vybraná karta není třikrát vyložena a provedena, kromě případu, kdy to pokyn na vybrané kartě výslovně povoluje (například když je vybranou akční kartou další karta královský dvůr). Když si vyberete kartu, která vám dává +1 akci, získáte po dokončení Královského dvora +3 akce. Vyložíte-li královský dvůr na jiný královský dvůr, tak si vyberete postupně 3 karty a každou vybranou kartu třikrát vyložíte. Tudíž nevyložíte jednu kartu devětkrát.",
+        "name": "Královský dvůr"
     },
     "Knights": {
         "description": "Před každou hrou, v niž se používají rytíři, zamíchej jejich balíček. Polož ho lícem dolů s výjimkou vrchní karty. Tu jedinou je možné získat.<n>V balíčku rytířů je každá karta jiná. Všechny karty mají společnou základní vlastnost, ale zároveň i svou vlastní jedinečnou schopnost. Všechny karty mají různé názvy. Pokud budete s rytíři hrát, zamíchejte před hrou jejich balíček a položte ho lícem dolů s výjimkou první karty, která se otočí lícem nahoru a jako jedinou ji je možné získat, viz Speciální pravidla pro Temné časy a Příprava hry. Pokyny na kartách rytířů provádějte od shora dolů, tj. Sir Michael donutí hráče k odložení karet předtím, než dojde k zahazování.",
@@ -1240,9 +1240,9 @@
         "name": "Maják"
     },
     "Loan": {
-        "description": "1 <*COIN*><n>When you play this, reveal cards from your deck until you reveal a Treasure. Discard it or trash it. Discard the other cards.",
-        "extra": "This is a Treasure worth 1 coin, like Copper. When you play it, you reveal cards from the top of your deck until revealing a Treasure card, and then you decide whether to trash that card or discard it. Then you discard all of the other revealed cards. If you run out of cards before revealing a Treasure, shuffle your discard pile (but not the revealed cards) to get more; if you still do not find a Treasure, just discard all of the revealed cards. Remember that you can play Treasures in any order in the Buy phase and can choose not to play some of your Treasures if you want.",
-        "name": "Loan"
+        "description": "1 <*COIN*><n>Když vyložíš tuto kartu, ukazuj karty ze svého dobíracího balíčku, dokud neukážeš kartu peněz.<br>Tuto ukázanou kartu peněz odlož na odkládací balíček nebo zahoď na smetiště. Ostatní ukázané karty odlož na odkládací balíček.",
+        "extra": "Tato karta peněz má hodnotu 1 Coin, jako měďák. Když je tato karta vyložena, ukazujete karty ze svého dobíracího balíčku tak dlouho, dokud neukážete nějakou kartu peněz. Poté se rozhodnete, zda tuto ukázanou kartu peněz zahodíte na smetiště nebo odložíte na odkládací balíček. Potom odložíte na odkládací balíček ostatní ukázané karty. Pokud (také po zamíchání vašeho odkládacího balíčku) nemůžete ukázat žádné další karty, odložíte na odkládací balíček všechny ukázané karty. Nezapomeňte, že můžete karty peněz vykládat v libovolném pořadí a nemusíte vyložit všechny karty peněz v ruce.",
+        "name": "Půjčka"
     },
     "Locusts": {
         "description": "Trash the top card of your deck. If it's Copper or Estate, gain a Curse. Otherwise, gain a cheaper card that shares a type with it.",
@@ -1295,9 +1295,9 @@
         "name": "Magpie"
     },
     "Mandarin": {
-        "description": "+3 Coins<br>Put a card from your hand on top of your deck.<line>When you gain this, put all Treasures you have in play on top of your deck in any order.",
-        "extra": "When you play this, you get +3 coins, and put a card from your hand on top of your deck. If you have no cards left in hand, you do not put a card on top of your deck. If there are no cards left in your deck, the card you put on top becomes the only card in your deck. When you gain this, you put all of your Treasures from play on top of your deck in any order. You do not have to show this order to other players. You have to put all of your Treasures on top; you cannot leave some out. You only put Treasures from play on top of your deck, not unplayed Treasures from your hand. This does not stop you from having the coins you got from playing those Treasures; for example, if you have +1 Buy and play four Golds and buy a Mandarin, you put the Golds on top of your deck, and still have 7 coins left to spend. Mandarin puts your played Treasures on your deck whether you gained it due to buying it or gained it some other way, although normally you will only have Treasures in play in your Buy phase.",
-        "name": "Mandarin"
+        "description": "+3 Coins<br>Polož kartu ze své ruky na svůj dobírací balíček.<line>Když získáš tuto kartu, polož všechny karty peněz, které máš ve hře, v libovolném pořadí na svůj dobírací balíček.",
+        "extra": "Když zahrajete tuto kartu, dostanete +3 Coins a položíte kartu z ruky na svůj dobírací balíček. Jestliže v ruce žádné karty nemáte, na dobírací balíček nic nepokládáte. Pokud v dobíracím balíčku nejsou žádné karty, stává se položená karta jedinou kartou dobíracího balíčku. Když Mandarína získáte, umístíte všechny své karty peněz ze hry na vršek svého dobíracího balíčku v libovolném pořadí. Toto pořadí nemusíte ostatním hráčům ukazovat. Na dobírací balíček musíte umístit všechny vyložené karty peněz, nemůžete žádné z nich vynechat. Takto nepřicházíte o mince, které jste díky těmto kartám peněz získali.<n><i><b>Příklad</b>: Máte k dispozici +1 nákup a 4 Zlaťáky a koupíte si Mandarína. Poté položíte všechny Zlaťáky na svůj dobírací balíček a stále budete mít na nakupování k dispozici 7 Coins.</i><n>Díky Mandarínovi se karty peněz pokládají na dobírací balíček bez ohledu na to, zda si ho koupíte nebo získáte jiným způsobem, ačkoli za běžných okolností budete mít karty peněz ve hře pouze ve fázi nákupu.",
+        "name": "Mandarín"
     },
     "Marauder": {
         "description": " Vezmi si Kořist z balíčku karet Kořisti. Všichni ostatní hráči si vezmou ruinu.",
@@ -1305,9 +1305,9 @@
         "name": "Nájezdník"
     },
     "Margrave": {
-        "description": "+3 Cards<br>+1 Buy<br>Each other player draws a card, then discards down to 3 cards in hand.",
-        "extra": "You draw 3 cards and get +1 Buy. Each other player draws a card, then discards down to 3 cards in hand. Drawing a card is not optional for them. A player who only has 3 cards or fewer after drawing does not discard.",
-        "name": "Margrave"
+        "description": "+3 karty<br>+1 nákup<n>Všichni ostatní hráči si doberou jednu kartu a poté odloží tolik karet, aby jim zbyly v ruce 3.",
+        "extra": "Doberete si 3 karty a máte k dispozici +1 nákup. Všichni ostatní hráči si doberou jednu kartu a poté odloží tolik karet z ruky, aby jim tam zbyly pouze 3. Dobírání karty je pro ně povinné. Hráči, kteří mají po dobrání v ruce 3 a méně karet, žádné karty neodkládají.",
+        "name": "Markrabě"
     },
     "Market": {
         "description": "+1 karta<br>+1 akce<br>+1 nákup<br>+1 Coin<n>",
@@ -1330,9 +1330,9 @@
         "name": "Masterpiece"
     },
     "Menagerie": {
-        "description": "+1 Action<n>Reveal your hand.<n>If there are no duplicate cards in it, +3 Cards.<n>Otherwise, +1 Card.",
-        "extra": "If there are any two or more cards in your hand with the same name, you only draw one card; if there are no matches, you draw three cards. Only the card names matter for this; Copper and Silver are different cards for example, despite both being Treasures. If you have no cards in hand at all after playing Menagerie, then you have no matching cards, and so get +3 Cards.",
-        "name": "Menagerie"
+        "description": "+1 akce<n>Ukaž karty v ruce.<br>Pokud v ruce nemáš žádné dvě stejné karty: +3 karty<br>V opačném případě: +1 karta",
+        "extra": "Máte-li v ruce dvě či více karet se stejným názvem, doberete si pouze jednu kartu; pokud nemáte v ruce žádné shodné karty, doberete si tři karty. Záleží pouze na názvu karet; například měďák a stříbrňák jsou odlišné karty, i když obě jsou karty peněz. Pokud po vyložení karty zvěřinec nemáte v ruce žádnou kartu, pak nemáte žádné shodné karty a získáváte + 3 karty.",
+        "name": "Zvěřinec"
     },
     "Mercenary": {
         "description": "Můžeš zahodit 2 karty z ruky na smetiště.<n>Pokud tak učiníš, +2 karty, +2 Coins a všichni ostatní hráči odloží tolik karet z ruky, aby jim zbyly 3.<br><i>(Nepatří do společné zásoby.)</i>",
@@ -1385,9 +1385,9 @@
         "name": "Služebník"
     },
     "Mint": {
-        "description": "You may reveal a Treasure card from your hand. Gain a copy of it.<line>When you buy this, trash all Treasures you have in play.",
-        "extra": "When you buy this, you trash all of your Treasure cards in play. You do not trash Treasure cards in your hand or elsewhere; just the ones in play, if any. If you buy multiple cards in a turn, trash your Treasures right when you buy Mint; you still have any leftover coins they produced for spending on something else. Remember you do not have to play all of the Treasures from your hand each turn (just all the ones you want producing money for you). You do not get additional chances to play Treasure cards between buys in the Buy phase; first you play Treasures, then you buy cards. When you play Mint, you reveal a Treasure card from your hand and gain a copy of it from the Supply. The gained card goes into your discard pile. The revealed card stays in your hand. The Treasure card can also have other types, like Harem (from Intrigue). If you buy a Mint and use Watchtower to put it on top of your deck or trash it, you still trash all of your Treasures from play. However, if you buy a Mint with Royal Seal in play, the Royal Seal will be gone before you can use it to put Mint on your deck.",
-        "name": "Mint"
+        "description": "Můžeš ukázat jednu kartu peněz ze své ruky. Vezmi si kopii ukázané karty.<line>Při nákupu této karty zahoď na smetiště všechny karty peněz, které máš ve hře.",
+        "extra": "Když kupujete tuto kartu, zahoďte na smetiště všechny karty peněz, které máte v tuto chvíli ve hře (ne karty z ruky nebo odjinud). Nezapomeňte, že nemusíte vyložit všechny karty peněz v ruce. Když v tomto tahu kupujete více karet, zahodíte karty peněz ve hře ihned poté, co jste mincovnu koupili. Karty peněz, které v tomto tahu byly vyložené, již provedly svou „produkci“, i když jsou nyní zahozené. Nové karty tedy můžete nakupovat za celou hodnotu vyložených karet peněz. Jakmile jste ovšem nějakou kartu koupili, nesmíte již vyložit žádnou další kartu peněz.<n>Když kartu mincovna vyložíte, můžete ze své ruky ukázat jednu kartu peněz. Poté si ihned vezmete jednu totožnou kartu ze společné zásoby a odložíte si ji na svůj odkládací balíček. Ukázanou kartu si vrátíte zpět do ruky. Ukázaná karta může být také kombinovaná karta, např. harém (Dominion - Intriky).<n>Když kupujete mincovnu a z ruky ukážete strážní věž, můžete si mincovnu ihned položit na svůj dobírací balíček. Vyložené karty peněz však musí být zahozeny na smetiště.<n>Když kupujete mincovnu ve chvíli, kdy je ve hře královská pečeť, bude královská pečeť zahozena na smetiště dříve, než byste mincovnu mohli položit zpět na svůj dobírací balíček.",
+        "name": "Mincovna"
     },
     "Miser": {
         "description": "Choose one: Put a Copper from your hand onto your Tavern mat; or +1 Coin per Copper on your Tavern mat.",
@@ -1425,9 +1425,9 @@
         "name": "Lichvář"
     },
     "Monument": {
-        "description": "+2 Coins<br>+1 <VP>",
-        "extra": "When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1 <VP> and 5 <VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score.",
-        "name": "Monument"
+        "description": "+ 2 Coins<br>+1 <VP>",
+        "extra": "Pro tuto kartu budete potřebovat žetony vítězných bodů (viz Nová Pravidla).<n>Karty s +1<VP> (biskup, památník, hrdlořez): Budete-li hrát s jednou (či několika) z těchto karet království, dostane každý hráč navíc podložku (viz herní materiál). Dále se vedle společné zásoby položí žetony bodů (viz herní materiál). <n>Počet žetonů není omezen. Bude-li jich potřeba více, použijte vhodnou náhradu.",
+        "name": "Památník"
     },
     "Mountain Pass": {
         "description": "When you are the first player to gain a Province, after that turn, each player bids once, up to 40 Debt, ending with you. High bidder gets +8<VP> and takes the Debt they bid.",
@@ -1440,9 +1440,9 @@
         "name": "Mountain Village"
     },
     "Mountebank": {
-        "description": "+2 Coins<n>Each other player may discard a Curse. If he doesn't, he gains a Curse and a Copper.",
-        "extra": "This hits the other players in turn order when that matters (such as when the Curse or Copper pile is low). Each of the other players in turn chooses whether or not to discard a Curse card from his hand, and if he does not, gains a Curse and a Copper from the Supply, putting them into his discard pile. If either the Curse or Copper pile is empty, he still gains the other one. If both are empty, he does not gain either, but can still discard Curse if he wants to. A player using Moat (from Dominion) on this may not discard a Curse, and doesn't gain a Curse or Copper - you cannot Moat just part of the attack. A player using Watchtower on this can use it just to trash the Curse, just to trash the Copper, or to trash both.",
-        "name": "Mountebank"
+        "description": "+ 2 Coins<n>Všichni ostatní hráči mohou odložit kletbu. Kdo to neudělá, vezme si kletbu a měďák.",
+        "extra": "Počínaje hráčem nalevo od vás musí se každý hráč rozhodnout, zda z ruky odloží na odkládací balíček jednu kletbu nebo si ze společné zásoby vezme jeden měďák a jednu kletbu a odloží je na svůj odkládací balíček. Hráč se smí pro druhou možnost rozhodnout i tehdy, když je jeden či oba balíčky prázdné. V tom případě si vezme pouze jednu z ještě dostupných karet nebo, když jsou prázdné oba balíčky, žádnou kartu. Ukáže-li hráč z ruky hradní příkop (Dominion - základní hra), nesmí si ani jednu kartu vzít ani jednu kartu odložit. Nemůže se bránit jen jedné části útoku. Rozhodne-li se hráč pro druhou možnost a ukáže z ruky strážní věž, může ihned jednu nebo obě karty zahodit na smetiště.",
+        "name": "Mastičkář"
     },
     "Museum": {
         "description": "When scoring, 2<VP> per differently named card you have.",
@@ -1485,9 +1485,9 @@
         "name": "Night Watchman"
     },
     "Noble Brigand": {
-        "description": "+1 Coin<n>When you buy this or play it, each other player reveals the top 2 cards of his deck, trashes a revealed Silver or Gold you choose, and discards the rest. If he didn't reveal a Treasure, he gains a Copper. You gain the trashed cards.",
-        "extra": "When you play this, you get +1 coin. When you play this and also when you buy it, each other player reveals the top two cards of his deck, trashes a Silver or Gold he revealed that you choose, and discards the rest. Each of these players that did not reveal a Treasure at all gains a Copper from the Supply, putting it into his discard pile. Finally, you gain all of the Silvers and Golds trashed this way. This cannot trash any Treasures except Silver or Gold. Gaining a Noble Brigand without buying it does not cause this ability to happen. Noble Brigand is an Attack card, and when you play it, players can use cards like Moat from Dominion or Secret Chamber from Intrigue in response. However, buying a Noble Brigand is not \"playing an Attack card,\" and so cards like Moat cannot respond to that.",
-        "name": "Noble Brigand"
+        "description": "+1 Coin<n>Když si tuto kartu koupíš nebo ji zahraješ, každý hráč (vyjma tebe) otočí vrchní 2 karty ze svého dobíracího balíčku, a podle tvé volby zahodí na smetiště takto otočený Stříbrňák nebo Zlaťák. Zbývající kartu odloží. Pokud neotočí žádnou kartu peněz, vezme si Měďák. Všechny takto zahozené karty si vezmeš.",
+        "extra": "Když ho zahrajete, dostanete +1 Coins. Jakmile Zbojníka zahrajete a rovněž když si ho koupíte, všichni ostatní hráči ukážou vrchní 2 karty ze svých dobíracích balíčků, zahodí na smetiště takto ukázaný Zlaťák nebo Stříbrňák a zbylé karty odloží. Jestliže si takto někdo ukáže současně Zlaťák i Stříbrňák, případně dva Zlaťáky nebo dva Stříbrňáky, rozhodnete, co musí zahodit. Pomocí této karty nelze na smetiště zahodit žádné jiné karty peněz než Zlaťáky a Stříbrňáky. Každý hráč, který takto neukáže ani jednu kartu peněz, si vezme ze společné zásoby Měďák a položí ho na svůj odkládací balíček. Poté získáte takto zahozené Zlaťáky a Stříbrňáky. Jestliže Zbojníka získáte jinak než nákupem, jeho schopnost se neaktivuje. Zbojník je karta útoku, a když ho zahrajete, lze jako reakci použít karty typu Hradní příkop ze základní hry nebo Tajemná komnata z Dominionu: Intrik. Ovšem koupě Zbojníka se za zahrání karty útoku nepovažuje, takže na ni pomocí karet jako Hradní příkop nelze reagovat.",
+        "name": "Zbojník"
     },
     "Nobles": {
         "description": "Vyber jeden pokyn:<br>+3 karty;<br>nebo<br>+2 akce.<line>2 <*VP*>",
@@ -1495,14 +1495,14 @@
         "name": "Šlechtici"
     },
     "Nomad Camp": {
-        "description": "+1 Buy<br>+2 Coins<line>When you gain this, put it on top of your deck.",
-        "extra": "When you gain this card, it goes on top of your deck rather than into your discard pile. This is true whether you gained it due to buying it or gained it some other way. If there were no cards in your deck, it becomes the only card in your deck.",
-        "name": "Nomad Camp"
+        "description": "+1 nákup<br>+2 Coins<line>Když tuto kartu získáš, polož ji na svůj dobírací balíček.",
+        "extra": "Když tuto kartu získáte, položte ji na svůj dobírací balíček místo na odkládací. To platí jak při koupi, tak při získání jiným způsobem. Pokud ve svém dobíracím balíčku nemáte žádné karty, stává se jedinou kartou ve vašem dobíracím balíčku.",
+        "name": "Tábor nomádů"
     },
     "Oasis": {
-        "description": "+1 Card<br>+1 Action<br>+1 Coins<br>Discard a card.",
-        "extra": "You draw before discarding. You can discard the card you drew. If you are unable to draw a card (due to having no cards in your deck, and none in your discard pile to shuffle), you still discard a card if able.",
-        "name": "Oasis"
+        "description": "+1 karta<br>+1 akce<br>+1 Coins<br>Odlož jednu kartu.",
+        "extra": "Nejprve si dobíráte a až potom odkládáte. Můžete odložit kartu, kterou jste si právě dobrali. Pokud si nemůžete kartu dobrat (protože nemáte žádné karty v dobíracím ani odkládacím balíčku), musíte stále jednu kartu odložit, je-li to možné.",
+        "name": "Oáza"
     },
     "Obelisk": {
         "description": "When scoring, 2<VP> per card you have from the chosen pile.<line>Setup: Choose a random Action Supply pile.",
@@ -1515,9 +1515,9 @@
         "name": "Old Witch"
     },
     "Oracle": {
-        "description": "Each player (including you) reveals the top 2 cards of his deck, and you choose one: either he discards them, or he puts them back on top in an order he chooses.<n>+2 Cards",
-        "extra": "First, each player including you, reveals the top two cards of his deck, and either discards both of them or puts both of them back on top, your choice. A player putting the cards back puts them back in an order he chooses, and without needing to reveal that order. Then, you draw two cards. So if you put back the cards you revealed, you will draw them.",
-        "name": "Oracle"
+        "description": "Všichni hráči (včetně tebe) otočí vrchní 2 karty ze svých dobíracích balíčků a u každého z nich rozhodneš, zda tyto karty odloží nebo je vrátí na dobírací balíček v jím zvoleném pořadí.<n>+2 karty",
+        "extra": "Nejprve všichni hráči (včetně vás) ukážou vrchní 2 karty ze svých dobíracích balíčků. Poté podle vašeho rozhodnutí tyto karty buď odloží, nebo vrátí zpět. U každého hráče se rozhodujete zvlášť. Při odkládání hráči umisťují karty v libovolném pořadí, které nemusí ostatním ukazovat. Poté si doberte 2 karty. Pokud jste tedy své karty vrátili zpět, doberete si je.",
+        "name": "Věštírna"
     },
     "Orchard": {
         "description": "When scoring, 4<VP> per differently named Action card you have 3 or more copies of.",
@@ -1610,14 +1610,14 @@
         "name": "Peasant → Teacher"
     },
     "Peddler": {
-        "description": "+1 Card<br>+1 Action<br>+2 Coin<line>During your Buy phase, this costs 2 Coins less per Action card you have in play, but not less than 0 Coins.",
-        "extra": "Most of the time, this costs 8 coins. During Buy phases, this costs 2 coins less per Action card you have in play. This cost applies to all Peddler cards, including ones in hands and decks. It never costs less than 0 coins. If you play King's Court on Worker's Village, for example, that is just two Action cards you have in play, even though you played the Worker's Village three times. Buying cards using the promotional card Black Market is something that does not happen during a Buy phase, so Peddler still costs 8 coins then.",
-        "name": "Peddler"
+        "description": "+ 1 karta<br>+ 1 akce<br>+ 1 Coins<line>Během tvé fáze Nákup tě tato karta stojí o 2 Coins méně za každou akční kartu, kterou máš ve hře, ale ne méně než 0 Coins.",
+        "extra": "Tato karta stojí normálně 8 Coins. Ve fázi Nákup se cena podomního obchodníka snižuje o 2 Coins za každou akční kartu, kterou máte ve hře. To se také týká podomního obchodníka v rukou nebo v balíčcích všech hráčů. Cena nikdy neklesne pod 0 Coins. Když například vyložíte kartu dělnická čtvrť na kartu královský dvůr, máte ve hře 2 akční karty, ačkoli jste kartu dělnická čtvrť zahráli třikrát. Když kartu podomní obchodník získáváte či kupujete mimo obvyklou fázi Nákup (například díky černému trhu) stojí podomní obchodník 8 Coins.",
+        "name": "Podomní obchodník"
     },
     "Philosopher's Stone": {
-        "description": "When you play this, count your deck and discard pile.<n>Worth 1 Coin per 5 cards total between them (rounded down).",
-        "extra": "This is a Treasure card. It is a Kingdom card; it will only be in games where it is randomly dealt out as one of the 10 Kingdom cards, or otherwise selected to be one of them. It is played during your Buy phase, like other Treasure cards. When you play it, count the number of cards in your deck and discard pile combined, divide by 5, and round down. That is how many coins this produces for you. Once played, the amount of coins you get does not change even if the number of cards changes later in the turn. The next time you play it, count again. If you play multiple copies, obviously the number will be the same for all of them. It does not matter what order your discard pile is in, but the order your deck is in matters. Do not change that order while counting! You will get to look through your discard pile as you count it. You only get to count your deck and discard pile, not your hand or cards in play or set aside cards. You cannot play more Treasures after buying something in your buy phrase; so for example you cannot buy a card, then play Philosopher's Stone, then buy another card.",
-        "name": "Philosopher's Stone"
+        "description": "Když zahraješ tuto kartu, sečti dohromady karty ve svém dobíracím a odkládacím balíčku.<br>Získáš 1 Coin za každých 5 karet ve svých balíčcích (zaokrouhleno dolů). ",
+        "extra": "Tato karta je karta peněz. Patří ovšem mezi karty království; tudíž se do hry dostane pouze tehdy, když bude vybrána jako jedna z 10 karet království při přípravě hry. Vykládá se během vaší fáze nákup, stejně jako ostatní karty peněz. Když tuto kartu vyložíte, sečtěte dohromady počet karet ve svém dobíracím a odkládacím balíčku, vydělte 5 a zaokrouhlete dolů. Výsledek je počet mincí, které vám kámen mudrců přinese. Jakmile je tato karta vyložena, tak se počet mincí, které dostanete, nemění, i kdyby se později v tahu změnil poměr karet v balíčcích. Až příště zahrajete tuto kartu, spočítejte její hodnotu znovu. Pokud hrajete více kopií ve stejném tahu, bude hodnota pravděpodobně stejná pro všechny z nich. Na pořadí vašich karet v odkládacím balíčku nezáleží, avšak záleží na pořadí karet ve vašem dobíracím balíčku. Neměňte tedy pořadí karet při počítání! Neprohlížejte si při počítání své odložené karty v odkládacím balíčku. Počítejte pouze karty v dobíracím a odkládacím balíčku, ne karty ve své ruce či karty ve hře či karty odložené stranou. Nemůžete vyložit další peníze poté, co ve své fázi nákup něco nakoupíte; tedy například nemůžete koupit kartu, poté vyložit kámen mudrců a pak koupit další kartu.",
+        "name": "Kámen mudrců"
     },
     "Piazza": {
         "description": "At the start of your turn, reveal the top card of your deck.  If it's an Action, play it.",
@@ -1661,8 +1661,8 @@
     },
     "Platinum": {
         "description": "5 <*COIN*>",
-        "extra": "This is not a Kingdom card. You do not use it every game. It is a Treasure worth 5 coins. If only Kingdom cards from Prosperity are being used this game, then the Platinum and Colony piles are added to the Basic cards in the Supply for the game. If a mix of Kingdom cards from Prosperity and other sets are being used, then the inclusion of Platinum and Colony in the Supply should be determined randomly, based on the proportion of Prosperity and non-Prosperity cards in use. For example, choose a random Kingdom card being used - such as the first card dealt out from the Randomizer deck [this is equivalent to rolling a d10 or choosing a card at random after all 10 have been selected] - and if it is from Prosperity, add Platinum and Colony to the Supply. Platinum and Colony are not Kingdom cards; when those are included, there are 10 Kingdom cards, plus Copper, Silver, Gold, Platinum, Estate, Duchy, Province, Colony, and Curse, in the Supply. Use 8 Colonies for a 2-player game, or 12 Colonies for a game with 3 or more players. [Use all 12 Platinum regardless of the number of players. Platinum and Colony are meant to be used together and both or neither should be used, not one or the other.]",
-        "name": "Platinum"
+        "extra": "Tato karta peněz není karta království, ale základní karta. Tato karta nemusí být použita v každé hře, jak je popsáno v pravidlech v sekci Příprava hry (Dominion - Prosperita). Tato karta peněz má hodnotu 5.<n>Můžete vyložit balíček karet platina (12 karet) a balíček karet kolonie (při 2 hráčích 8 karet, jinak 12 karet) jako nové balíčky základních karet. Doporučujeme použít obě nové základní karty, když bude pro hru vybráno 4 či více karet království z rozšíření Dominion - Prosperita.",
+        "name": "Platina"
     },
     "Plaza": {
         "description": "+1 Card<br>+2 Actions<n>You may discard a Treasure card. If you do, +1 Coffers (take a Coin token).",
@@ -1700,14 +1700,14 @@
         "name": "Port"
     },
     "Possession": {
-        "description": "The player to your left takes an extra turn after this one, in which you can see all cards he can and make all decisions for him. Any cards he would gain on that turn, you gain instead; any cards of his that are trashed are set aside and returned to his discard pile at end of turn.",
-        "extra": "You are not taking a turn with the deck of the player to your left; that player is taking a turn, with you making the decisions and gaining the cards. This is a crucial difference to keep in mind when considering card interactions - the \"you\" in all cards still refers to the player being Possessed, not the player doing the Possessing. Possession has several pieces to it: -You can see the Possessed player's cards for the entire turn, which means you will see his next hand during Clean-up. You will also see any cards he is entitled to see due to card rules; for example, you can look at cards he has set aside with Native Village (from Seaside). You can count any cards he can count. -Any cards the Possessed player would have gained in any way, you gain instead; this includes cards bought, as well as cards gained due to Actions. The cards you gain this way go to your discard pile, even if they would have gone to that player's hand or the top of his deck or somewhere else. [Possession also gives the Possessing player all tokens the Possessed player would get, including _ Coins, <VP>, and Debt tokens.]",
-        "name": "Possession"
+        "description": "Hráč po tvé levici provede po ukončení tvého tahu extra tah, ve kterém se díváš na jeho karty a provádíš všechna rozhodnutí za něj.<n>Všechny karty, které by v tomto extra tahu získal, získáváš místo něho ty; všechny jeho karty, které má zahodit na smetiště, pokládejte stranou a na konci tahu je vraťte na jeho odkládací balíček.",
+        "extra": "Vy neprovádíte tah s balíčkem hráče po své levici; tah provádí tento hráč podle vašich rozhodnutí a vy získáváte karty. Toto je velmi důležitý rozdíl vzhledem k vzájemnému ovlivňování karet - „ty“ na všech kartách stále odkazuje na hráče, který je posedlý, ne na hráče, který posedlost zahrál. Posedlost má více částí:<n>- Můžete se dívat na karty posedlého hráče během celého tahu, což znamená, že uvidíte jeho další karty v ruce během fáze úklid. Také uvidíte všechny karty, které má hráč nárok vidět díky pravidlům pro karty; například, můžete se podívat na karty, které si posedlý hráč položil stranou do domorodé vesnice (Dominion - Pobřeží). Můžete také počítat jakékoli karty, které může počítat posedlý hráč.<n>- Všechny karty, které by měl jakýmkoli způsobem získat posedlý hráč, místo něj získáte vy; včetně zakoupených karet a včetně karet získaných díky akcím. Takto získané karty položte na svůj odkládací balíček, dokonce i tehdy, když by si tyto karty měl hráč vzít do ruky, či položit nahoru na svůj dobírací balíček, či umístit kamkoli jinam. Získáte pouze karty, které by posedlý hráč mohl získat; nezískáte žetony, které by získal (například u karty pirátská loď z Dominionu – Pobřeží).",
+        "name": "Posedlost"
     },
     "Potion": {
         "description": "1 <*POTION*>",
-        "extra": "This is a basic Treasure card. It costs 4 Coins and produces Potion. It is not a Kingdom card. After you choose 10 Kingdom cards for the Supply, if any of them have Potion in the cost, add the Potion pile to the Supply. Also add the Potion pile if you are using the promotional card Black Market, and the Black Market deck includes at least one card with Potion in the cost. If you don't have any cards with Potion in the cost in the Supply or the Black Market deck, do not use the Potion pile in this game. When you have a Potion pile, put all 16 Potions in it, no matter how many players there are. In games using this pile, if the pile becomes empty, that will count towards the game ending condition.",
-        "name": "Potion"
+        "extra": "Toto je základní karta peněz. Stojí 4 Coins a produkuje Potion. Není to karta království.<n>Použijete-li však pro hru karty království, které mají v ceně Potion, musíte do společné zásoby k ostatním základním kartám přidat také balíček karet elixírů. Balíček elixírů přidejte také tehdy, pokud používáte promokartu černý trh a balíček černého trhu obsahuje alespoň jednu kartu s Potion v ceně. Použijte vždy všech 16 karet elixírů, bez ohledu na to, kolik hráčů se hry zúčastní. Pokud je balíček elixírů součástí společné zásoby, počítá se jeho dobrání do podmínky pro ukončení hry, stejně jako každý jiný balíček ve společné zásobě. Jelikož však karty elixírů nejsou karty království, tak bude i nadále v této hře použito 10 karet království.",
+        "name": "Elixír"
     },
     "Pouch": {
         "description": "1 <*COIN*><br><br>+1 Buy",
@@ -1725,14 +1725,14 @@
         "name": "Priest"
     },
     "Prince": {
-        "description": "You may set this aside. If you do, set aside an Action card from your hand costing up to 4 coins. At the start of each of your turns, play that Action, setting it aside again when you discard it from play. (Stop playing it if you fail to set it aside on a turn you play it).",
-        "extra": "Prince has you play the same cheap action every turn for the rest of the game. The turn you play Prince, you set it aside with an Action from your hand costing 4 coins or less; then every turn after that you play the Action at the start of the turn, and then set it aside again when you discard it from play. If you don't discard the Action then you stop playing it with Prince; Prince at that point is just set aside doing nothing for the rest of the game. That won't normally happen but will happen for example if the Action is a Feast or Mining Village and you trashed it, or if it's a Duration card and so it stayed in play, or if it's a Madman and was returned to its pile, or if it's an Island and was set aside, or if it's a card you put back on your deck with Scheme. The set aside Action technically goes back and forth from being in play to being set aside each turn, but in practice it's easier to leave it sitting on the Prince and just announce resolving it each turn.",
-        "name": "Prince"
+        "description": "Tuto kartu můžeš položit stranou. Pokud to uděláš, polož stranou také akční kartu ze své ruky s cenou až 4 Coins. Na začátku každého svého tahu tuto akční kartu zahraj a odlož ji znovu stranou, když ji budeš odstraňovat ze hry.<br>(Přestaň ji zahrávat, pokud se ti ji nepodaří odložit stranou v tahu, kdy jsi ji zahrál.)",
+        "extra": "Princ vám umožňuje zahrávat stejnou levnou akční kartu každé kolo po zbytek hry. V tahu, ve kterém zahrajete Prince, jej položíte stranou spolu s akční kartou z ruky, jejíž cena je 4 a méně; poté na začátku každého dalšího svého tahu onu akční kartu zahrajte a při jejím odstranění ze hry ji znovu položte stranou na Prince. Pokud tato akční karta není odstraněna ze hry, pak ji nadále nemůžete pomocí Prince zahrávat. Princ je v tuto chvíli pouze odložen stranou a po zbytek hry již nemá žádný efekt.<br>To se obvykle nestane, ale tato situace může nastat v případě, je-li akční karta například: <br>• Hostina nebo Důlní osada a je zahozena na smetiště,<br>• nebo pokud se jedná o dlouhodobou kartu, takže zůstala ve hře,<br>• nebo jde-li o kartu [Madman] a byla vrácena do jeho balíčku,<br>• nebo je to Ostrov a byl odložen stranou,<br>• nebo je to karta, která byla vrácena zpět do balíčku díky kartě Pleticha.<n>Ve skutečnosti si nejspíš nevyberete položení Prince stranou s kartou, se kterou nebude dobře fungovat, a tak budete od této chvíle zahrávat odloženou akci v každém tahu. Odložená akce jde technicky v každém kole opakovaně do hry a stranou, ale v zásadě je jednodušší nechat ji ležet na Princovi a pouze v každém kole oznámit její vyhodnocení.",
+        "name": "Princ"
     },
     "Princess": {
-        "description": "+1 Buy<line>While this is in play, cards cost 2 Coins less, but not less than 0 Coins.<n><i>(This is not in the Supply.)</i>",
-        "extra": "This makes all cards cheaper (to a minimum of 0 coins) as long as it is in play. When it leaves play, it stops making cards cheaper. This applies to cards everywhere - cards in the Supply, cards in hand, cards in decks. For example if you played Princess, then Remake, trashing a Copper, you could gain a Silver, as Silver would cost 1 coin while Copper would still cost 0 coins. Using Throne Room (from Dominion) on Princess will not make cards cost less, as there is still only one copy of Princess in play. This is a Prize; see the Additional Rules.",
-        "name": "Princess"
+        "description": "+1 nákup<line>Když je tato karta ve hře, všechny karty stojí o 2 Coin méně, ale ne méně než 0 Coins.<n><i>(Tato karta není součástí společné zásoby karet)</i>",
+        "extra": "Pokud je tato karta ve hře, zlevňuje všechny karty (až do minima 0 Coins). Když tato karta odchází ze hry, končí i zlevňování karet. Zlevňování platí pro karty umístěné kdekoli – karty ve společné zásobě, karty v ruce, karty v balíčcích. Pokud jste například vyložili kartu princezna, potom kartu nové provedení, můžete na smetiště zahodit měďák a získat tak stříbrňák, protože cena stříbrňáku bude 1 Coin, zatímco cena měďáku je stále 0 Coins. Použití karty princezna na kartu trůnní sál (edice základní Dominion) nezlevní karty o 4 Coins, protože je ve hře stále pouze jedna kopie karty princezna. Princezna je karta odměny; podívejte se na nová pravidla výše.",
+        "name": "Princezna"
     },
     "Procession": {
         "description": " Můžeš zahrát kartu akce z ruky dvakrát. Zahoď ji na smetiště. Vezmi si kartu akce, která stojí přesně o 1 Coin vice než zahozená karta.",
@@ -1745,9 +1745,9 @@
         "name": "Provincie"
     },
     "Quarry": {
-        "description": "1 <*COIN*><line>While this is in play, Action cards cost 2 Coins less, but not less than 0 Coins.",
-        "extra": "This is a Treasure worth 1 coin, like Copper. While it is in play, Action cards cost 2 coins less, to a minimum of 0 coins. It is cumulative; if you play two Quarries during your Buy phase, then King's Court will only cost 3 coins, rather than the usual 7 coins. It affects the costs of cards that are Actions plus another type, such as Nobles (an Action - Victory card in Intrigue). It is also cumulative with other effects that modify costs; if you play Worker's Village in your Action phase, then two Quarries in your Buy phase, Peddler will cost 2 coins. It affects the costs of cards everywhere, such as cards in players' hands.",
-        "name": "Quarry"
+        "description": "1 <*COIN*><line>Když je tato karta ve hře, akční karty stojí o 2 Coins méně, ale ne méně než 0 Coins.",
+        "extra": "Tato karta peněz má hodnotu 1 Coin, jako měďák. Když je tato karta ve hře, stojí akční karty o 2 Coins méně. Tento efekt je kumulativní. Když máte např. ve fázi Nákup vyloženy 2 kamenolomy, stojí vás akční karty o 4 Coins méně. Tento efekt může být také doplněn díky jiným kartám. Vyložíte-li ve fázi Akce kartu dělnická čtvrť a ve fázi Nákup 2 karty kamenolom, stojí vás karta podomní obchodník už pouze 2 Coins. Tento efekt působí i na karty v ruce, karty v dobíracím i karty v odkládacím balíčku. Kombinované karty, jako např. šlechtici (Dominion - Intriky), jsou také akční karty.",
+        "name": "Kamenolom"
     },
     "Quest": {
         "description": "You may discard an Attack, two Curses, or six cards. If you do, gain a Gold.",
@@ -1760,9 +1760,9 @@
         "name": "Rabbits"
     },
     "Rabble": {
-        "description": "+3 Cards<n>Each other player reveals the top 3 cards of his deck, discards the revealed Actions and Treasures, and puts the rest back on top in any order he chooses.",
-        "extra": "The other players shuffle if necessary to get 3 cards to reveal, and just reveal what they can if they still have fewer than 3 cards. They discard revealed Treasures and Actions and put the rest back on top in whatever order they want. Cards with more than one type match all of their types; for example if a player reveals Nobles from Intrigue, it is an Action - Victory card, which means it is an Action, so he discards it.",
-        "name": "Rabble"
+        "description": "+ 3 karty<n>Všichni ostatní hráči ukážou vrchní 3 karty ze svého dobíracího balíčku, ukázané akční karty a karty peněz jsou odloženy a zbývající karty jsou položeny zpět nahoru na dobírací balíček v libovolném pořadí.",
+        "extra": "Nejprve si doberete 3 karty. Poté musí každý váš spoluhráč, počínaje hráčem po vaší levici, ukázat 3 karty ze svého dobíracího balíčku. Pokud nějaký hráč může ukázat (také po případném zamíchání odkládacího balíčku) méně než 3 karty, ukáže pouze tolik, kolik může. Poté odloží všechny takto ukázané akční karty a karty peněz na svůj odkládací balíček. Karet kombinovaného typu (např. harém, Dominion - Intriky) se to týká také. Ostatní právě ukázané karty položí hráč v libovolném pořadí zpět na svůj dobírací balíček.",
+        "name": "Dav"
     },
     "Raid": {
         "description": "Gain a Silver per Silver you have in play. Each other player puts his -1 Card token on his deck.",
@@ -1810,9 +1810,9 @@
         "name": "Relic"
     },
     "Remake": {
-        "description": "Do this twice: Trash a card from your hand then gain a card costing exactly 1 more than the trashed card.",
-        "extra": "Trash a card from your hand, and gain a card costing exactly 1 coin more than it; then trash another card from your hand, and gain a card costing exactly 1 coin more than that card. If you have no cards in hand, you do not trash anything or gain anything; if you have only one card in hand, trash it and gain a card costing 1 coin more than it. Gained cards come from the Supply and are put into your discard pile. If there is no card at the exact cost needed, you do not gain a card for that trashed card. For example you could use Remake to trash an Estate, gaining a Silver, then trash a Copper, gaining nothing.",
-        "name": "Remake"
+        "description": "Proveď dvakrát: Zahoď kartu z ruky na smetiště. Vezmi si kartu o ceně přesně o 1 Coin větší než je cena zahozené karty.",
+        "extra": "Zahoďte na smetiště kartu z ruky a vezměte si kartu stojící přesně o 1 Coin více; pak zahoďte na smetiště další kartu z ruky a vezměte si kartu stojící přesně o 1 Coin více než druhá zahozená karta. Pokud v ruce nemáte žádné karty, nezahodíte na smetiště nic ani si nic nevezmete; pokud máte v ruce pouze jednu kartu, zahoďte ji a vezměte si kartu stojící o 1 Coin více než zahozená karta. Získané karty si vezměte ze společné zásoby a odložte je na svůj odkládací balíček. Pokud již není žádná karta s přesnou cenou, kterou potřebujete, nezískáte za zahozenou kartu žádnou kartu. Kartu nové provedení můžete například použít na zahození karty statek a k získání stříbrňáku, poté zahodíte měďák, ale za něj nezískáte nic.",
+        "name": "Nové provedení"
     },
     "Remodel": {
         "description": "Zahoďte 1 kartu z ruky na smetiště. Získáte kartu o hodnotě až o 2 Coins větší, než je cena zahozené karty.",
@@ -1860,9 +1860,9 @@
         "name": "Royal Carriage"
     },
     "Royal Seal": {
-        "description": "2 <*COIN*><line>While this is in play, when you gain a card, you may put that card on top of your deck.",
-        "extra": "This is a Treasure worth 2 coins, like Silver. If you gain multiple cards with this in play, this applies to each of them - you could put any or all of them on top of your deck. If you use this ability and there are no cards left in your deck, you do not shuffle; the card you gained becomes the only card in your deck. Royal Seal applies to all cards you gain while it is in play, whether bought or gained other ways. If you play the Alchemy card Possession, and during the extra turn you have the possessed played play Royal Seal, he cannot put the card on his deck - he is not gaining the card, you are.",
-        "name": "Royal Seal"
+        "description": "2 <*COIN*><line>Pokud je tato karta ve hře, když získáváš kartu, můžeš si získanou kartu položit nahoru na svůj dobírací balíček.",
+        "extra": "Tato karta peněz má hodnotu 2 Coins, jako stříbrňák. Když si berete nebo kupujete více karet, můžete se pro každou kartu rozhodnout zvlášť, zda ji položíte na odkládací nebo na dobírací balíček. Je-li váš dobírací balíček prázdný a rozhodnete se kartu položit na dobírací balíček, tak tato karta bude jedinou kartou vašeho dobíracího balíčku. Karty, které získáte díky kartě posedlost (Dominion - Alchymisté) v tahu jiného hráče, nemůžete položit na dobírací balíček, protože královská pečeť je platná pouze pro posedlého hráče. ",
+        "name": "Královská pečeť"
     },
     "Ruins": {
         "description": "<left><u>Opuštěný důl</u>: +1 Coin</left><left><u>Zničená knihovna</u>: +1 karta</left><left><u>Zničené tržiště</u>: +1 nákup</left><left><u>Vypálená vesnice</u>: +1 akce</left><left><u>Pozůstalí</u>: Podívej se na vrchní 2 karty svého dobíracího balíčku. Odlož je nebo vrať zpět v libovolném pořadí.</left>",
@@ -1925,9 +1925,9 @@
         "name": "Scepter"
     },
     "Scheme": {
-        "description": "+1 Card<br>+1 Action<n>At the start of Clean-up this turn, you may choose an Action card you have in play. If you discard it from play this turn, put it on your deck.",
-        "extra": "When you play this, you get +1 card and +1 Action, and set up an effect to happen later in the turn, at the start of Clean- up. At that time, you may optionally choose an Action card you have in play. If you discard that Action card from play this turn, as you normally do, you will put it on top of your deck. This happens before you draw cards for next turn. The Action card you choose can be Scheme itself, or any other Action card you have in play, which might have been played before or after you played Scheme. If the Action card is not discarded during Clean-up, for example due to being a Duration card from Seaside that was played this turn, then it does not get put on top of your deck.",
-        "name": "Scheme"
+        "description": "+1 karta<br>+1 akce<n>Na začátku fáze úklidu v tomto tahu si můžeš vybrat jednu kartu akce, kterou máš ve hře. Pokud ji v tomto kole odložíš, polož ji na svůj dobírací balíček.",
+        "extra": "Když ji zahrajete, doberete si kartu a máte k dispozici +1 akci a efekt, který se uplatní později v průběhu tahu na začátku fáze úklidu. Tehdy si můžete zvolit kartu akce, kterou máte ve hře. Jestliže tuto kartu akce v tomto tahu odložíte, k čemuž obvykle dochází, umístěte ji na svůj dobírací balíček. K tomu dojde, než si doberete karty pro další tah. Vybranou kartou může být samotná Pleticha nebo libovolná jiná karta akce, kterou máte ve hře, ať už jste ji zahráli před Pletichou nebo po ní. Jestliže se karta akce během fáze úklidu neodkládá, například jedná-li se o dlouhodobou kartu z Dominionu: Pobřeží, kterou jste zahráli v tomto tahu, nemůžete si ji dát na svůj dobírací balíček.",
+        "name": "Pleticha"
     },
     "Scholar": {
         "description": "Discard your hand.<n>+7 Cards.",
@@ -1945,9 +1945,9 @@
         "name": "Scouting Party"
     },
     "Scrying Pool": {
-        "description": "+1 Action<n>Each player (including you) reveals the top card of his deck and either discards it or puts it back, your choice. Then reveal cards from the top of your deck until revealing one that isn't an Action.<n>Put all of your revealed cards into your hand.",
-        "extra": "First you reveal the top card of each player's deck, and either have them discard it or have them put it back. After you finish making those decisions, reveal cards from the top of your deck until you reveal a card that isn't an Action card. If you run out of cards without revealing an Action card, shuffle your discard pile and keep going. If you have no discard pile left either, stop there. Put all of the revealed Action cards into your hand, plus that first non-Action you revealed. If the very first card you revealed was not an Action, that card goes into your hand. Cards with multiple types, one of which is Action, are Actions. The only cards that go into your hand are the ones revealed as part of the revealing cards until finding a non-Action; you do not get discarded cards from the first part of what Scrying Pool did, or cards from other players' decks.",
-        "name": "Scrying Pool"
+        "description": "+1 akce<n>Každý hráč (včetně tebe) ukáže vrchní kartu svého dobíracího balíčku a ty vybereš, zda ji odloží na odkládací balíček, nebo zda ji vrátí zpět. Poté ukazuj vrchní karty ze svého dobíracího balíčku, dokud neodkryješ kartu, která není akční.<br>Všechny své odkryté karty si přidej do ruky. ",
+        "extra": "Nejprve je ukázána horní karta dobíracího balíčku každého hráče, a ta je buď odložena na odkládací balíček, nebo vrácena zpět na dobírací balíček. Pokud hráčům záleží na pořadí, postupujte po směru hodinových ručiček, počínaje u sebe. U každého hráče se rozhodujete samostatně. Poté co ukončíte tato rozhodnutí, ukazujte horní karty ze svého dobíracího balíčku, dokud neukážete kartu, která není akční kartou. Pokud vyčerpáte karty v dobíracím balíčku, aniž byste ukázali kartu, která není akční kartou, zamíchejte svůj odkládací balíček a pokračujte. Pokud již nemáte ani odkládací balíček, zastavte. Vezměte si do ruky všechny ukázané akční karty plus první ukázanou kartu, která není akční kartou. Pokud úplně první ukázaná karta nebyla akční kartou, vezměte si do ruky pouze ji. Karty kombinovaného typu, z nichž jeden typ je akce, jsou akční karty. Do ruky si berete pouze karty, které otočíte před odkrytím „neakční“ karty; do ruky si neberete kartu odloženou v první části pokynu na kartě vidění nebo karty z balíčků jiných hráčů.",
+        "name": "Vidění"
     },
     "Sculptor": {
         "description": "Gain a card to your hand costing up to 4 Coin. If it's a Treasure, +1 Villager.",
@@ -2035,9 +2035,9 @@
         "name": "Silk Merchant"
     },
     "Silk Road": {
-        "description": "Worth 1 <VP> for every 4 Victory cards in your deck (round down).",
-        "extra": "This is a Victory card, not an Action card. It does nothing until the end of the game, when it is worth 1 victory point for every four Victory cards in your Deck (counting all of your cards - your Discard pile and hand are part of your Deck at that point). Silk Roads count themselves. Round down; if you have 11 Victory cards, Silk Road is worth 2 victory points. During set-up, put all 12 Silk Roads in the Supply for a game with 3 or more players, but only 8 in the Supply for a 2-player game. Cards with multiple types, one of which is Victory, are Victory cards and so are counted by Silk Road.",
-        "name": "Silk Road"
+        "description": "Má hodnotu 1 <VP>za každé 4 karty vítězných bodů ve tvém balíčku (zaokrouhleno dolů).",
+        "extra": "Jedná se o kartu vítězných bodů, nikoli kartu akce. Nemá žádný efekt až do konce hry, kdy má hodnotu 1 <VP> za každé 4 karty vítězných bodů ve vašem balíčku (sem se započítávají všechny vaše karty, včetně těch, které máte na konci hry v ruce nebo odkládacím balíčku). Samotná Hedvábná stezka se rovněž počítá. Zaokrouhluje se dolů: pokud máte 11 karet vítězných bodů, má Hedvábná stezka hodnotu 2 <VP>. V rámci přípravy hry dejte do společné zásoby všech 12 Hedvábných stezek, jestliže hraje 3 a více hráčů. Pokud hrají pouze 2 hráči, použijte pouze 8 Hedvábných stezek. Karty více typů, z nichž jeden je karta vítězných bodů, se považují za karty vítězných bodů, a proto se při určování hodnoty Hedvábné stezky zohledňují.",
+        "name": "Hedvábná stezka"
     },
     "Silos": {
         "description": "At the start of your turn, discard any number of Coppers, revealed, and draw that many cards.",
@@ -2080,9 +2080,9 @@
         "name": "Soothsayer"
     },
     "Spice Merchant": {
-        "description": "You may trash a Treasure from your hand. If you do, choose one:<n>+2 Cards and +1 Action;<br>or +2 Coins and +1 Buy.",
-        "extra": "You may trash a Treasure card from your hand. This is optional. If you did trash a Treasure card, you choose either to get +2 Cards and +1 Action, or +2 coins and +1 Buy.",
-        "name": "Spice Merchant"
+        "description": "Můžeš zahodit kartu peněz z ruky na smetiště. Pokud tak učiníš,vyber si jeden pokyn:<n>+2 karty a +1 akce;<br>nebo +2 Coins a +1 nákup.",
+        "extra": "Můžete zahodit na smetiště kartu peněz z ruky. Toto není povinné. Pokud tak učiníte, máte k dispozici buď +2 karty a +1 akci, nebo +2 Coins +1 nákup.",
+        "name": "Kořenář"
     },
     "Spices": {
         "description": "2 <*COIN*><br><br>+1 Buy<line>When you gain this, +2 Coffers.",
@@ -2105,9 +2105,9 @@
         "name": "Panoš"
     },
     "Stables": {
-        "description": "You may discard a Treasure.<br>If you do, +3 Cards and +1 Action.",
-        "extra": "You may discard a Treasure card from your hand. This is optional. If you did discard one, you get +3 Cards and +1 Action. You draw after discarding, so if you have to shuffle to get the 3 cards, you will end up shuffling in the card you discarded.",
-        "name": "Stables"
+        "description": "Můžeš odložit kartu peněz.<n>Pokud tak učiníš:<br>+3 karty a +1 akce.",
+        "extra": "Můžete odložit kartu peněz z ruky. Toto není povinné. Pokud tak učiníte, budete mít k dispozici +3 karty a +1 akci. Dobíráte si až po odložení, takže pokud budete muset kvůli dobírání zamíchat svůj odkládací balíček, bude se v něm nacházet i karta, kterou jste odložili.",
+        "name": "Stáje"
     },
     "Star Chart": {
         "description": "When you shuffle, you may pick one of the cards to go on top.",
@@ -2175,8 +2175,8 @@
         "name": "Taktik"
     },
     "Talisman": {
-        "description": "1 <*COIN*><line>While this is in play, when you buy a card costing 4 Coins or less that is not a Victory card, gain a copy of it.",
-        "extra": "This is a Treasure worth 1 coin, like Copper. Each time you buy a non-Victory card costing 4 coins or less with this in play, you gain another copy of the bought card. If there are no copies left, you do not gain one. The gained card comes from the Supply and goes into your discard pile. If you have multiple Talismans, you gain an additional copy for each one; if you buy multiple cards for 4 coins or less, Talisman applies to each one. For example if you have two Talismans, four Coppers, and two Buys, you could Buy Silver and Trade Route, gaining two more Silvers and two more Trade Routes. Talisman only affects buying cards; it does not work on cards gained other ways, such as with Expand. A card if a Victory card if Victory is any of its types; for example Great Hall from Intrigue is an Action - Victory card, so it is a Victory card. Talisman only cares about the cost of the card when you buy it, not its normal cost; so for example it can get you a Peddler if you have played two Actions this turn, thus lowering Peddler's cost to 4 coins, or can get you a Grand Market if you played Quarry. You may not choose to not gain the additional card from Talisman; you must gain an additional one for each Talisman in play if possible.",
+        "description": "1 <*COIN*><line>Pokud je tato karta ve hře, když si kupuješ kartu stojící 4 Coins nebo méně a není to karta vítězných bodů, vezmi si její kopii.",
+        "extra": "Tato karta peněz má hodnotu 1 Coin, jako měďák. Když je tato karta ve hře a kupujete si kartu, která stojí 4 Coins nebo méně a není to bodovací karta, vezmete si navíc další stejnou kartu. Tuto kartu si vezmete ze společné zásoby a odložíte ji na svůj odkládací balíček. Není-li již další karta s tímto názvem ve společné zásobě, nevezmete si nic. Máte-li ve hře více karet talisman, vezmete si za každý talisman jednu kartu navíc. Pokud kupujete více karet, které splňují příslušnou podmínku (4 Coins nebo méně, není to bodovací karta), vezmete si od každé takové karty jednu další kartu. Máte-li vyloženy např. 2 karty talisman, 4 měďáky a máte 2 nákupy a kupujete si jeden stříbrňák a jednu kartu obchodní stezka, vezmete si navíc 2 další stříbrňáky a 2 další karty obchodní stezka. Talisman působí pouze na karty, které si kupujete. Berete-li si karty nějakým jiným způsobem, např. díky kartě růst, neberete si žádnou další kartu navíc. Kombinované karty, jako např. karta velký sál (Dominion - Intriky) jsou také bodovací karty. U ceny 4 Coins nebo méně je v úvahu brána aktuálně platná cena. To nemusí bezpodmínečně být natištěná cena. Pokud jste např. ve své fázi Akce vyložili 2 akční karty, stojí karta podomní obchodník už jen 4 Coins a smíte si tedy vzít navíc další kartu podomní obchodník.",
         "name": "Talisman"
     },
     "Tax": {
@@ -2285,9 +2285,9 @@
         "name": "Žalářník"
     },
     "Tournament": {
-        "description": "+1 Action<n>Each player may reveal a Province from his hand. If you do, discard it and gain a Prize (from the Prize pile) or a Duchy, putting it on top of your deck. If no-one else does, +1 Card, +1 Coin.<n>Prizes: <u>Bag of Gold</u>, <u>Diadem</u>, <u>Followers</u>, <u>Princess</u>, <u>Trusty Steed</u>",
-        "extra": "First you get +1 Action. Then each player, including you, may reveal a Province card from his hand. Then, if you revealed a Province, discard that card, and you gain a Prize of your choice, or a Duchy, putting whatever card you took on top of your deck. If there were no cards in your deck, it becomes the only card in your deck. There are five Prizes, set out at the start of the game; see Preparation. You can only take a Prize from the Prize pile. You can take any Prize from the Prize pile; you do not have to take the top one. You can take a Duchy instead, whether or not the Prizes have run out. You can opt to take a Duchy even if the Duchy pile is empty, or a Prize even if no Prizes are left; in these cases you gain nothing. After gaining your card or not, if no other player revealed a Province, you draw a card and get +1 coin.",
-        "name": "Tournament"
+        "description": "+ 1 akce<n>Každý hráč může z ruky ukázat provincii. Pokud to uděláš, odlož ji a vezmi si odměnu (z balíčku karet odměn) nebo vévodství. Získanou kartu polož na dobírací balíček. Pokud provincii neukáže žádný jiný hráč: +1 karta, +1 Coin.<n>Karty odměn: <u>Pytel zlata</u>, <u>Diadém</u>, <u>Stoupenci</u>, <u>Princezna</u>, <u>Věrný oř</u>",
+        "extra": "Nejprve získáte + 1 akci. Poté každý hráč, včetně vás, může z ruky ukázat kartu provincie. Pak, pokud jste ukázali kartu provincie, odložte ji a vezměte si kartu odměny, kterou si vyberete, nebo kartu vévodství. Kteroukoliv kartu jste si vzali, položte na svůj dobírací balíček. Pokud nebyly ve vašem dobíracím balíčku žádné karty, stane se jedinou kartou vašeho dobíracího balíčku. V edici Dominion: Roh hojnosti je pět karet odměn, které jsou připraveny na začátku hry; viz příprava. Karty odměn si můžete vzít pouze z balíčku karet odměn. Z balíčku karet odměn si můžete vzít jakoukoliv kartu odměny; nemusíte si vzít horní kartu. Místo karty odměny si můžete vzít vévodství, ať jsou karty odměny k dispozici, nebo ne. Můžete si zvolit získání vévodství, i když je balíček karet vévodství prázdný, nebo získání odměny, i když karty odměn již nejsou k dispozici; v těchto případech si nevezmete nic. Poté, ať už si kartu vezmete či ne, pokud žádný jiný hráč neukázal z ruky provincii, doberete si kartu a získáváte +1 Coin.<br>Takže tato karta bude zahrána jedním ze čtyř způsobů:<br>1. Pokud neukážete provincii ani nikdo jiný, získáte + 1 akci a + 1 kartu a + 1 Coin;<br>2. pokud provincii ukážete, ale nikdo jiný ne, získáte kartu odměny nebo vévodství, kterou si doberete, a dostanete + 1 akci a + 1 Coin;<br>3. pokud provincii ukážete a také někdo další, získáte + 1 akci a kartu odměny nebo vévodství si položíte na dobírací balíček;<br>4. pokud provincii neukážete, ale někdo jiný ano, získáte pouze + 1 akci.<n>Když si berete kartu odměny, vezměte si, jakoukoliv zbývající kartu odměny chcete. Karty odměn, které ještě nikdo nezískal, si můžete kdykoli prohlédnout.",
+        "name": "Turnaj"
     },
     "Tournament and Prizes": {
         "description": "+1 Action<n>Each player may reveal a Province from his hand. If you do, discard it and gain a Prize (from the Prize pile) or a Duchy, putting it on top of your deck. If no-one else does, +1 Card +1 Coin.<n><justify>Prizes: <u>Bag of Gold</u>, <u>Diadem</u>, <u>Followers</u>, <u>Princess</u>, <u>Trusty Steed</u></justify>",
@@ -2315,14 +2315,14 @@
         "name": "Trade"
     },
     "Trade Route": {
-        "description": "+1 Buy<br>+1 Coin per token on the Trade Route mat.<br>Trash a card from your hand.<line>Setup: Put a token on each Victory card Supply pile. When a card is gained from that pile, move the token to the Trade Route mat.",
-        "extra": "You get an additional Buy to use in your Buy phase. You get +1 coin per token on the Trade Route mat. Then you trash a card from your hand. If you have no cards left in hand, you do not trash one. The amount you get from Trade Route is the same as +1 coin per Victory card pile that a card has been gained from this game. If Victory cards have been gained from outside the Supply piles, for example using the promotional card Black Market, then this does not count those. Put a coin token on each Victory card pile at the start of the game. When a card is gained from a Victory card pile, move its token onto the Trade Route mat. So for example if this game includes the Intrigue card Harem, and so far Harem and Duchy have been bought, but no one has bought (or otherwise gained) Estate or Province or Colony, then Trade Route makes 2 coins. It does not matter who gained the cards or how they gained them. You do not get any extra money if a pile has had multiple cards gained from it or is empty; all that matters is if at least one card has been gained from it. It does not matter if cards have been returned to a pile, such as with Ambassador from Seaside; Trade Route only cares if a card was ever gained from the pile this game. If you are using Black Market and Trade Route is in the Black Market deck, put tokens on Victory card piles at the start of the game.",
-        "name": "Trade Route"
+        "description": "+ 1 nákup<br>+ 1 Coin za každý žeton na podložce obchodní cesty.<br>Zahoď na smetiště kartu ze své ruky.<line>Příprava: Položte žeton na každý balíček bodovacích karet ve společné zásobě. Když je získána karta z takového balíčku, přemístěte tento žeton na podložku obchodní cesty.",
+        "extra": "Získáváte jeden dodatečný nákup ve své fázi Nákup a +1 Coin virtuální minci za každý žeton mince, který leží na podložce obchodní cesty, když je tato karta vyložena. Poté musíte na smetiště zahodit jednu kartu z ruky (pokud ještě nějakou kartu v ruce máte).<n><b>Příprava hry:</b> Pokud bude karta obchodní stezka použita ve hře (buď jako jedna z 10 karet království nebo v balíčku černého trhu), bude při přípravě hry také připravena podložka obchodní cesty. Navíc bude na každý balíček bodovacích karet ve společné zásobě položen jeden žeton mince. Bodovací karty jsou:<br>• <b>základní karty:</b> statek, vévodství, provincie a kolonie<br>• <b>karty království:</b> například zahrady (Dominion - základní hra) a vévoda (Dominion - Intriky)<br>• <b>kombinované karty:</b> například harém a šlechtici (Dominion - Intriky).<n>Bodovací karty, které nejsou ve společné zásobě, budou ignorovány, například v balíčku černého trhu (promokarta černý trh).<n><b>Podložka obchodní cesty:</b> Vždy, když bude v průběhu hry z některého balíčku bodovacích karet získána či koupena první karta, položí hráč žeton mince z příslušného balíčku na podložku obchodní cesty. Vyloží-li hráč kartu obchodní stezka, získá takto +1 Coin virtuální minci za každý žeton mince, který v tuto chvíli leží na podložce. Přitom je lhostejné, který hráč žeton mince na podložku položil.<n>Žeton mince zůstává po zbytek hry ležet na podložce. Žeton mince nebude z podložky odstraňován a během hry nebudou na balíčky bodovacích karet pokládány žádné nové žetony (například, když bude balíček bodovacích karet opět doplněn díky kartě velvyslanec (Dominion – Pobřeží).",
+        "name": "Obchodní stezka"
     },
     "Trader": {
-        "description": "Trash a card from your hand. Gain a number of Silvers equal to its cost in coins.<line>When you would gain a card, you may reveal this from your hand. If you do, instead, gain a silver.",
-        "extra": "When you play this, trash a card from your hand, and if you did, gain a number of Silvers equal to the cost of that card in coins. The Silvers come from the Supply and are put into your discard pile. If there are not enough Silvers left, just gain all of the Silvers that you can. You only gain Silvers if you trashed a card. If you trash a card costing 0 coins, such as Copper, you will gain zero Silvers. You can trash Silver if you want; you will gain three Silvers for it normally. If costs are different, such as due to playing Highway, then Trader will give you a different number of Silvers, based on the current costs. For example if you play Highway and then Trader, trashing an Estate you will only gain one Silver. If you trash a card with Potion in its cost from Alchemy, you do not get anything for the Potion, just for the coins that the card cost. Trader is also a Reaction. When you gain a card, whether due to buying it or due to gaining it some other way, you may reveal Trader from your hand to instead gain a Silver from the Supply. If you do this, you gain a Silver, not the card you would have gained; if something would have happened due to gaining the other card, it does not happen, because you did not gain it. For example if you buy Ill-Gotten Gains but use Trader to gain Silver instead, no-one will gain a Curse. However if something happens when you buy a card, that will still happen if you replace gaining the card with gaining Silver. For example you can buy Farmland, trash a card from your hand and gain one costing 2 more, then use Trader to gain Silver rather than Farmland. If the card you were going to gain was not going to your discard pile, the Silver still goes to your discard pile; if the card you were going to gain did not come from the Supply, the Silver still comes from the Supply. If there are no Silvers left in the Supply, you can still reveal Trader when you gain a card; you gain nothing instead of the card you would have gained.",
-        "name": "Trader"
+        "description": "Zahoď kartu z ruky na smetiště.<br>Vezmi si tolik Stříbrňáků, kolik činí její cena v mincích.<line>Pokud bys měl získat kartu, můžeš ukázat Kramáře z ruky. Pokud tak učiníš, vezmi si místo dané karty Stříbrňák.",
+        "extra": "Když tuto kartu zahrajete, zahoďte na smetiště kartu z ruky. Pokud to uděláte, vezměte si tolik Stříbrňáků, kolik činí cena zahozené karty v mincích. Stříbrňáky si vezmete ze společné zásoby a umístíte je na odkládací balíček. Jestliže ve společné zásobě není dost Stříbrňáků, vezmete si jich tolik, kolik je možné. Stříbrňáky získáte, pouze pokud zahodíte kartu z ruky na smetiště. Pokud zahodíte kartu s cenou 0 Coins, například Měďák, nedostanete žádné Stříbrňáky. Chcete-li, můžete zahodit i Stříbrňák; v tom případě za něj dostanete normálně tři Stříbrňáky. Jestliže je cena změněná, jako například zahráním Silnice, získáte díky Kramáři takový počet Stříbrňáků, jaký odpovídá aktuální ceně.<n>Pokud zahodíte kartu, jejíž cena zahrnuje elixíry z Dominionu: Alchymie, nedostanete za elixíry nic; Stříbrňáky získáte pouze za cenu v mincích.<n>Kramář je současně i kartou reakce. Když máte získat nějakou kartu, ať už nákupem nebo jiným způsobem, můžete ukázat Kramáře z ruky a místo dané karty si vezmete Stříbrňák. Pokud by mělo k něčemu dojít v důsledku toho, že získáte kartu, nenastane to, protože jste danou kartu ve skutečnosti nezískali.<n>Ovšem jestliže se má něco stát tehdy, když si kartu koupíte, k takové věci dojde, i když místo zisku dané karty si vezmete Stříbrňák.<n>Jestliže by se karta, kterou jste původně měli získat, neumisťovala na odkládací balíček, Stříbrňák se vždy umisťuje na odkládací balíček běžným způsobem. Jestliže by se karta, kterou jste původně měli získat, nebrala ze společné zásoby, Stříbrňák se vezme ze společné zásoby běžným způsobem. Pokud už se ve společné zásobě žádné Stříbrňáky nenachází, stále můžete Kramáře při získání karty ukázat; místo karty, kterou jste měli získat, nedostanete nic.",
+        "name": "Kramář"
     },
     "Trading Post": {
         "description": "Zahoď na smetiště 2 karty z ruky. Jestliže to uděláš, vezmi si do ruky stříbrňák ze společné zásoby.",
@@ -2345,9 +2345,9 @@
         "name": "Transmogrify"
     },
     "Transmute": {
-        "description": "Trash a card from your hand. If it is an...<n>Action card, gain a Duchy<n>Treasure card, gain a Transmute<n>Victory card, gain a Gold",
-        "extra": "If you have no cards left in hand to trash, you do not get anything. If you trash a Curse to this, you do not get anything - Curse is not an Action card or Victory card or Treasure card. If you trash a card with more than one type, you get each applicable thing. For example, if you trash an Action-Victory card (such as Nobles, from Intrigue), you gain both a Duchy and a Gold. Gained cards come from the Supply and go to your discard pile. If there are no appropriate cards left to gain, you don't gain those cards.",
-        "name": "Transmute"
+        "description": "Zahoď na smetiště kartu ze své ruky.<br>Pokud to je ...<n>Akční karta, získáš vévodství.<br>Karta peněz, získáš přeměnu.<br>Karta vítězných bodů, získáš zlaťák.",
+        "extra": "Pokud nemáte pro zahození na smetiště k dispozici žádnou kartu, nedostanete nic. Pokud takto zahodíte na smetiště kletbu, nedostanete nic. <i>Kletba není akční karta, bodovací karta, ani karta peněz. Pokud zahodíte kartu s více než jedním typem, získáte každou příslušnou věc. Například, pokud na smetiště zahodíte kartu „akce - vítězné body“ (například šlechtici z Dominionu - Intriky), získáte jak vévodství, tak zlaťák. Karty získáváte ze společné zásoby a pokládáte je na odkládací balíček. Pokud již nejsou příslušné karty ve společné zásobě, tyto karty nedostanete.</i>",
+        "name": "Přeměna"
     },
     "Trash": {
         "description": "Zahazovací balíček – smetiště.",
@@ -2410,19 +2410,19 @@
         "name": "Triumphal Arch"
     },
     "Trusty Steed": {
-        "description": "Choose two: +2 Cards; or +2 Actions; or +2 Coins; or gain 4 Silvers and put your deck into your discard pile.<n>(The choices must be different.)<n><i>(This is not in the Supply.)</i>",
-        "extra": "First choose any two of the four options; then do those options in the order listed. So if you choose both +2 Cards, and the last option, you will draw cards before you gain the Silvers and put your deck into your discard pile. The last option both gains you Silvers and puts your deck into your discard pile. The Silvers come from the Supply; if there are fewer than four left, just gain as many as you can. You do not get to look through your deck as you put it into your discard pile. This is a Prize; see the Additional Rules.",
-        "name": "Trusty Steed"
+        "description": "Vyber dva pokyny:<br>+2 karty<br>+2 akce<br>+2 Coins<br>Vezmi 4 stříbrňáky a svůj dobírací balíček odlož na odkládací balíček.<n><i>(Tato karta není součástí společné zásoby karet)</i>",
+        "extra": "Nejprve si vyberte jakékoliv dva pokyny ze čtyř možností; poté tyto pokyny proveďte v uvedeném pořadí. Pokud si tedy zvolíte +2 karty a poslední pokyn, doberete si karty dříve, než získáte stříbrňáky a odložíte svůj dobírací balíček na svůj odkládací balíček. Posledním pokynem získáte stříbrňáky a odložíte svůj dobírací balíček na svůj odkládací balíček. Stříbrňáky si vezmete ze společné zásoby; jsou-li ve společné zásobě méně než čtyři stříbrňáky, získáte všechny zbývající. Nemůžete si prohlédnout svůj dobírací balíček, ačkoliv jej pokládáte na svůj odkládací balíček. Věrný oř je karta odměny; podívejte se na nová pravidla výše.",
+        "name": "Věrný oř"
     },
     "Tunnel": {
-        "description": "2 <*VP*><line>When you discard this other than during a Clean-up phase, you may reveal it. If you do, gain a Gold.",
-        "extra": "This is both a Victory card and a Reaction. At the end of the game, Tunnel is worth 2<VP>. Tunnel's Reaction ability functions when you discard it. You cannot simply choose to discard it; something has to let you or make you discard it. This ability functions whether you discard Tunnel on your own turn (such as due to Oasis) or on someone else's (such as due to Margrave). It functions if Tunnel is discarded from your hand (such as due to Oasis) or from your deck, or when set aside (such as due to Cartographer). If Tunnel would normally not necessarily be revealed (such as when discarding multiple cards to Cartographer), you have to reveal it to get the Gold. Revealing it is optional, even if Tunnel was already revealed for some other reason; you are not forced to gain a Gold. This ability does not function if cards are put into your discard pile without being discarded, such as when you buy a card, when you gain a card directly (such as with Border Village), when your deck is put into your discard pile, such as with Chancellor from Dominion, or with Possession from Alchemy, when trashed cards are returned to you at end of turn. It also does not function during Clean-up, when you normally discard all of your played and unplayed cards. The key thing to look for is a card actually telling you to \"discard\" cards. The Gold you gain comes from the Supply and is put into your discard pile; if there is no Gold left in the Supply, you do not gain one.",
-        "name": "Tunnel"
+        "description": "2 <*VP*><line>Pokud tuto kartu odložíš jindy než ve fázi úklidu, můžeš ji ukázat. Pokud tak učiníš, vezmi si Zlaťák.",
+        "extra": "Jedná se současně o kartu vítězných bodů a kartu reakce. Na konci hry má Tunel hodnotu 2 <VP>. Reakční schopnost Tunelu se uplatní, pokud ho odkládáte. Nemůžete se však jednoduše rozhodnout, že ho odložíte. Musí nastat nějaká situace, jež vám odložení umožní. Tato schopnost funguje, ať již odkládáte ve vlastním tahu (například díky Oáze) nebo v tahu někoho jiného (například díky Markraběti). Funguje, jestliže Tunel odkládáte z ruky (například díky Oáze), nebo z dobíracího balíčku (například díky Kartografovi). Pokud by za normálních okolností nebylo nutné Tunel při odkládá-ní ukazovat (například při odkládání více karet díky Kartografovi), musíte ho pro získání Zlaťáku ukázat. Ukazování není povinné. Dokonce, i kdybyste Tunel ukázali z nějakého jiného důvodu, Zlaťák si brát nemusíte. Tato schopnost nefunguje, pokud se karty přemisťují do odkládacího balíčku, aniž by byly odloženy, například když si kartu koupíte, když ji rovnou získáte (například díky Pohraniční vesnici), když se váš dobírací balíček přesune na odkládací balíček (například díky Kancléři z Dominionu), nebo když se vám na konci tahu vrátí zahozené karty (díky Posedlosti z Dominionu: Alchymie). Rovněž tak nefunguje během fáze úklidu, když normálně odkládáte všechny své zahrané i nezahrané karty. Rozhodující vždy je, zda vám nějaká karta přímo ukládá, abyste karty „odložili“. Získaný Zlaťák se bere ze společné zásoby a umisťuje se na odkládací balíček. Pokud ve společné zásobě již žádné Zlaťáky nejsou, nic nedostanete.",
+        "name": "Tunel"
     },
     "University": {
-        "description": "+2 Actions<n>You may gain an Action card costing up to 5 Coins.",
-        "extra": "Gaining an Action card is optional. If you choose to gain one, it comes from the Supply, must cost no more than 5 coins, and goes to your discard pile. Cards with multiple types, one of which is Action, are Actions and can be gained this way. Cards with Potion in their cost can't be gained by this.",
-        "name": "University"
+        "description": "+2 akce<n>Můžeš si vzít akční kartu, která stojí až 5 Coins.",
+        "extra": "Získávání akční karty není povinné. Pokud se rozhodnete kartu získat, berete si ji ze společné zásoby, nesmí stát více než 5 Coins a pokládáte ji na svůj odkládací balíček. Karty s kombinovanými typy, z nichž jeden je akce, jsou akční karty a mohou být takto získány. Karty s Potion v ceně nemohou být takto získány.",
+        "name": "Univerzita"
     },
     "Upgrade": {
         "description": "+1 karta<br>+1 akce<n>Zahoď kartu z ruky na smetiště. Vezmi si kartu stojící přesně o 1 Coin více než zahozená karta.",
@@ -2460,14 +2460,14 @@
         "name": "Vazal"
     },
     "Vault": {
-        "description": "+2 Cards<n>Discard any number of cards. +1 Coin per card discarded.<n>Each other player may discard 2 cards. If he does, he draws a card.",
-        "extra": "\"Any number\" includes zero. You draw cards first; you can discard the cards you just drew. Each other player chooses whether or not to discard 2 cards, then discards 2 cards if he chose to, then draws a card if he did discard 2 cards. If one of the other players has just one card, he can choose to discard it, but will not draw a card. Another player who discards but then has no cards left to draw shuffles in the discards before drawing.",
-        "name": "Vault"
+        "description": "+ 2 karty<n>Odlož jakýkoliv počet karet.<br>+1 Coin za každou odloženou kartu.<br>Každý spoluhráč může odložit 2 karty. Kdo to udělá, dobere si jednu kartu.",
+        "extra": "Nejprve si doberete 2 karty. Poté odložíte na odkládací balíček libovolný počet karet z ruky. Můžete také odložit 0 karet. Lze takto také odložit karty, které jste si právě dobrali.<n>Poté se mohou všichni vaši protihráči rozhodnout, počínaje hráčem po vaší levici, zda karty z ruky na odkládací balíček odloží nebo ne. Když se rozhodne karty odložit, musí odložit přesně 2 karty a pak si jednu kartu dobere. Hráč se může pro odložení karet rozhodnout i v případě, kdy má v ruce pouze 1 kartu. V takovém případě tuto kartu odloží, avšak poté si nedobere žádnou kartu. Hráč se nemůže rozhodnout pro odložení karet a odložit pouze 1 kartu, pokud má v ruce 2 či více karet.",
+        "name": "Trezor"
     },
     "Venture": {
-        "description": "1 <*COIN*><n>When you play this, reveal cards from your deck until you reveal a Treasure. Discard the other cards. Play that Treasure.",
-        "extra": "This is a Treasure card worth 1 coin, like Copper. When you play it, you reveal cards from your deck until revealing a Treasure card. If you run out of cards before revealing a Treasure, shuffle your discard pile (but not the revealed cards) to get more; if you still do not find a Treasure, just discard all of the revealed cards. If you do find a Treasure, discard the other cards and play the Treasure. If that Treasure does something when played, do that something. For example if Venture finds you another Venture, you reveal cards again. Remember that you choose what order to play Treasure cards; for example if you have both Venture and Loan in hand, you can play either one first.",
-        "name": "Venture"
+        "description": "1 <*COIN*><n>Když vyložíš tuto kartu, ukazuj karty ze svého dobíracího balíčku, dokud neukážeš kartu peněz. Tuto kartu peněz vylož. Ostatní ukázané karty odlož.",
+        "extra": "Tato karta peněz má hodnotu 1 Coin jako jeden měďák. Když tuto kartu vyložíte, ukazujete karty ze svého dobíracího balíčku tak dlouho, dokud neukážete kartu peněz. Tato ukázaná karta peněz je ihned vyložena. Ostatní právě ukázané karty jsou odloženy na váš odkládací balíček. Pokud ani po zamíchání není ukázána žádná karta peněz, odložte všechny ukázané karty. Obsahuje-li právě vyložená karta peněz doplňující pokyny, proveďte nyní tyto pokyny. Pokud například díky sázce vyložíte další kartu odvážlivce, ukazujte znovu karty, dokud není ukázána další karta peněz. Pamatujte si, že karty peněz můžete z ruky vykládat v libovolném pořadí. Máte-li v ruce například odvážlivce a půjčku, můžete si vybrat, kterou kartu vyložíte dříve.",
+        "name": "Odvážlivec"
     },
     "Villa": {
         "description": "+2 Actions<br>+1 Buy<br>+1 Coin<line>When you gain this, put it into your hand, +1 Action, and if it's your Buy phase return to your Action phase.",
@@ -2485,9 +2485,9 @@
         "name": "Villain"
     },
     "Vineyard": {
-        "description": "Worth 1 <VP> for every 3 Action cards in your deck (rounded down).",
-        "extra": "This Kingdom card is a Victory card, not an Action card. It does nothing until the end of the game, when it is worth 1 victory point per 3 Action cards in your Deck (counting all of your cards - your Discard pile and hand are part of your Deck at that point). Round down; if you have 11 Action cards, Vineyard is worth 3 victory points. During set-up, put all 12 Vineyards in the Supply for a game with 3 or more players, but only 8 in the Supply for a 2-player game. Cards with multiple types, one of which is Action, are Actions and so are counted by Vineyard.",
-        "name": "Vineyard"
+        "description": "Má hodnotu 1 <VP> za každé 3 akční karty ve tvém balíčku karet (zaokrouhleno dolů).",
+        "extra": "Tato karta království je kartou vítězných bodů, ne akční kartou. V průběhu hry nemá žádnou funkci, na konci hry má cenu 1 <VP> za každé 3 akční karty ve vašem balíčku (v tomto případě se počítají všechny vaše karty). Zaokrouhluje se dolů; pokud tedy máte 11 akčních karet, přinese vám vinice 3 <VP>. Karty s kombinovanými typy, z nichž jeden je akce, jsou akčními kartami a jsou započítány do celkového počtu akčních karet. Při hře 3 a více hráčů umístěte během přípravy do společné zásoby všech 12 vinic, ale při hře 2 hráčů umístěte do společné zásoby pouze 8 vinic.",
+        "name": "Vinice"
     },
     "Wall": {
         "description": "When scoring, -1<VP> per card you have after the first 15.",
@@ -2495,9 +2495,9 @@
         "name": "Wall"
     },
     "Walled Village": {
-        "description": "+1 Card<br>+2 Actions<line>At the start of Clean-up, if you have this and no more than one other Action card in play, you may put this on top of your deck.",
-        "extra": "When you play this, you draw a card and can play two more Actions this turn. At the start of your Clean-up phase, before discarding anything and before drawing for next turn, if you have a Walled Village in play and no more than two Action cards in play (counting the Walled Village), you may put the Walled Village on top of your deck. If the only cards you have in play are two Walled Villages, you may put either or both of them on top of your deck. Walled Village has to be in play to be put on top of your deck. Walled Village only checks how many Action cards are in play when its ability resolves; Action cards you played earlier this turn but which are no longer in play (such as Feast from Dominion) are not counted, while Action cards still in play from previous turns (duration cards from Seaside) are counted, as are Action cards that are in play now but may leave play after resolving Walled Village (such as Treasury from Seaside).",
-        "name": "Walled Village"
+        "description": "+1 karta<br>+2 akce<line>Pokud nemáš na začátku úklidové fáze ve hře více jak dvě akční karty (včetně této), můžeš tuto kartu dát navrch tvého dobíracího balíčku.",
+        "extra": "Když zahrajete tuto kartu, doberte si kartu ze svého dobírácího balíčku a můžete zahrát další dvě akce. Pokud nemáte na začátku své úklidové fáze – tedy před odložením jakékoliv karty a před dobráním pro další kolo – ve hře spolu s Hrazenou vesnicí více jak jednu další akční kartu (tedy dohromady dvě), můžete dát kartu Hrazené vesnice navrch svého dobíracího balíčku. Pokud máte ve hře pouze dvě Hrazené vesnice, můžete navrch vrátit jednu nebo obě. Abyste mohli kartu Hrazené vesnice vrátit navrch balíčku, musíte ji nejprve zahrát. Pro hraní karty Hrazené vesnice je rozhodující, kolik máte akčních karet ve hře; akční karty, které jste v tomto kole zahráli, ale nenacházejí se ve hře (například Hostina ze základní sady), se nepočítají; zatímco karty, které jste zahráli v předchozím kole a zůstaly ve hře (dlouhodobé karty z Dominion: Pobřeží), se počítají, stejně tak, jako se počítají akční karty, které jsou ve hře v okamžiku posuzování karty Hrazená vesnice, přestože hru mohou poté opustit (například Pokladnice z Dominion: Pobřeží).",
+        "name": "Hrazená vesnice"
     },
     "Wandering Minstrel": {
         "description": "+1 karta<br>+2 akce<n>Ukaž vrchní 3 karty svého dobíracího balíčku. Karty akcí vrať zpět v libovolném pořadí a ostatní karty odlož.",
@@ -2520,9 +2520,9 @@
         "name": "Warrior"
     },
     "Watchtower": {
-        "description": "Draw until you have 6 cards in hand.<line>When you gain a card, you may reveal this from your hand. If you do, either trash that card, or put it on top of your deck.",
-        "extra": "When you play this, you draw cards one at a time until you have 6 cards in hand. If you have 6 or more cards in hand already, you do not draw any cards. When you gain a card, even on someone else's turn, you may reveal Watchtower from your hand, to either trash the gained card or put it on top of your deck. You may reveal Watchtower each time you gain a card; for example if another player plays Mountebank, you may use Watchtower to trash both the Curse and Copper, or to trash the Curse and put the Copper on top of your deck, or just to trash the Curse, and so on. You still did gain whatever card you gained; you just immediately trash it. So if Mountebank gives you a Curse and you trash it, the Curse pile will go down by one as the Curse gets moved to the trash pile. You may reveal Watchtower on your own turn as well, for example when buying a card, or gaining a card via something like Expand. If you use Watchtower to put a card on your deck but have no cards left in your deck, you do not shuffle; the gained card becomes the only card in your deck. Revealing Watchtower does not take it out of your hand; you could reveal Watchtower on multiple opponents' turns and still have it on your turn to draw up to 6 with. When cards are gained during a Possession turn (from Alchemy), the player who played Possession is the one who can use Watchtower, not the player who is being possessed. If a gained card is going somewhere other than to your discard pile, such as a card gained with Mine (from Dominion), you can still use Watchtower to trash it or put it on your deck.",
-        "name": "Watchtower"
+        "description": "Dober si do ruky tolik karet, abys jich měl šest.<line>Tuto kartu můžeš ukázat ze své ruky, když si nějakou kartu bereš či kupuješ. Pokud to uděláš, buď získanou kartu zahoď na smetiště, nebo ji polož nahoru na svůj dobírací balíček.",
+        "extra": "Když tuto kartu vyložíte ve svém tahu, doberete si tolik karet ze svého dobíracího balíčku, abyste jich měli v ruce 6. Máte-li po vyložení karty strážní věž v ruce 6 nebo více karet, nedoberete si žádnou kartu.<n>Vždy, když si vezmete nebo koupíte kartu, ať už ve svém tahu či během tahu některého spoluhráče, můžete kartu strážní věž ukázat ze své ruky a poté se rozhodnout, zda tuto novou kartu zahodíte na smetiště nebo položíte nahoru na svůj dobírací balíček. Jako obvykle u karet reakce, kartu strážní věž pouze ukážete a poté si ji vezmete zase zpět do své ruky. Vyloží-li spoluhráč např. kartu mastičkář, můžete kartu strážní věž ukázat pouze u jedné nebo u obou karet (měďák a kletba) a pro každou kartu rozhodovat odděleně. Kartou strážní věž můžete také postupně reagovat na více útoků různých spoluhráčů a můžete ji ukázat i ve svém vlastním tahu, např. při získání karty díky kartě růst, a poté ji ve svém tahu ještě vyložit.<n>Pokud jste se rozhodli zahodit přímo na smetiště kartu, kterou jste si měli nebo museli vzít, pro potřeby pravidel se bere za to, že jste si příslušnou kartu vzali. Tato karta již tudíž není ve společné zásobě, a jiné karty, které působí na brané karty, např. karta pašeráci (Dominion - Pobřeží), mohou být na takovéto karty použity. Pokud budou během extra tahu díky kartě posedlost (Dominion - Alchymisté) karty brány nebo kupovány, nemůžete ukázat kartu strážní věž ze své ruky, protože si karty bere posedlý hráč, tudíž pouze on může použít kartu strážní věž. Kartu strážní věž můžete také ze své ruky ukázat, i když se má získaná karta umístit jinam než na váš odkládací balíček, jako např. díky kartě důl (Dominion - základní hra), a zahodit ji na smetiště či ji položit na dobírací balíček.",
+        "name": "Strážní věž"
     },
     "Wedding": {
         "description": "+1<VP><br>Gain a Gold.",
@@ -2585,9 +2585,9 @@
         "name": "Dřevorubec"
     },
     "Worker's Village": {
-        "description": "+1 Card<br>+2 Actions<br>+1 Buy",
-        "extra": "You draw a card, can play two more Actions this turn, and can buy one more card in your Buy phase this turn.",
-        "name": "Worker's Village"
+        "description": "+ 1 karta<br>+ 2 akce<br>+ 1 nákup",
+        "extra": "Nejprve si doberete jednu kartu, poté můžete vyložit další 2 akční karty a ve fázi Nákup můžete koupit jednu další kartu.",
+        "name": "Dělnická čtvrť"
     },
     "Workshop": {
         "description": "Vezměte si kartu o ceně nejvýše 4 Coins.",
@@ -2600,9 +2600,9 @@
         "name": "Yard Dog"
     },
     "Young Witch": {
-        "description": "+2 Cards<n>Discard 2 cards. Each other player may reveal a Bane card from his hand.<n>If he doesn't, he gains a Curse.<line>Setup: Add an extra Kingdom card pile costing 2 or 3 to the Supply. Cards from that pile are Bane cards.",
-        "extra": "This card causes there to be an extra pile in the Supply, called the Bane pile; see Preparation. The extra pile is just like other Kingdom card piles - it can be bought, it can be gained via cards like Horn of Plenty, it counts for the end game condition. When you play Young Witch, after you draw 2 cards and discard 2 cards, each other player may reveal a Bane card from his hand; if he does not, he gains a Curse. This attack hits other players in turn order, which matters when the Curse pile is low. Players may still respond to a Young Witch with Reaction cards like Horse Traders or Moat (from Dominion); those happen before Bane cards are revealed. If Secret Chamber (from Intrigue) is the Bane card, first you can reveal it for its Reaction ability, and then, if it's still in your hand, you can reveal it to avoid getting a Curse.",
-        "name": "Young Witch"
+        "description": "+2 karty<n>Odhoď dvě karty. Všichni ostatní hráči mohou ukázat z ruky kartu prokletí.<br>Pokud to neudělají, musí si vzít kartu kletby.<line>Příprava: Přidejte do zásoby  sadu 10 stejných karet o ceně 2 Coins - 3 Coins. Karty z tohoto balíčku se stávají prokletím.",
+        "extra": "Díky této kartě je během přípravy přidán do společné zásoby balíček karet, nazývaný balíček „prokletí“; viz příprava. Tento balíček navíc je stejný jako ostatní balíčky karet království – karty v něm mohou být kupovány, mohou být získávány díky kartám, jako je karta roh hojnosti, jeho vyčerpání se počítá do podmínky pro zakončení hry. Při vyložení karty mladá čarodějka, poté co si doberete 2 karty a odložíte 2 karty, mohou ostatní hráči ukázat z ruky kartu „prokletí“; kdo to neudělá, vezme si kletbu. Tento útok zasáhne ostatní hráče postupně. Je to důležité v případě, kdy je v balíčku s kletbami málo karet. Hráči mohou na kartu mladá čarodějka reagovat i kartou reakce, například kartou koňští handlíři či kartou hradní příkop (edice základní Dominion); tyto karty působí dříve, než jsou ukazovány karty z balíčku „prokletí“. Pokud se v balíčku „prokletí“ nachází karta tajemná komnata (edice Dominion: Intriky), nejprve ji můžete ukázat pro její schopnost reakce a poté, pokud je stále ve vaší ruce, ji můžete ukázat, abyste se vyhnuli zisku kletby.",
+        "name": "Mladá čarodějka"
     },
     "Zombie Apprentice": {
         "description": "You may trash an Action card from your hand for +3 Cards and +1 Action.",
