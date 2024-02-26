@@ -1,9 +1,12 @@
-FROM --platform=linux/arm64 pacodrokad/fonts:latest AS fonts-image
+FROM alpine AS fonts-download
+# get the pre-converted fonts
+RUN wget "https://drive.usercontent.google.com/download?id=1_BmJ1afnSt1rR_YAWhUCFDch8Bat78ti&export=download&authuser=0" -O fonts.zip
+RUN unzip -d /fonts -j fonts.zip
 
 FROM python:3.9-slim AS compile-image
 
 # get fonts from the specified platform image
-COPY --from=fonts-image /fonts /fonts
+COPY --from=fonts-download /fonts /fonts
 
 # Add git for hooks
 RUN apt-get update && apt-get install -y --no-install-recommends python3-icu git
