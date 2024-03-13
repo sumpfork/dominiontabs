@@ -13,28 +13,20 @@ COPY --from=fonts-download /fonts /fonts
 # Combine apt-get update, software installation, and cleanup into a single RUN to reduce layers.
 # Additionally, we remove the cache files to keep the image size down.
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends python3-icu git && \
+    apt-get install -y --no-install-recommends git && \
     apt-get clean  && \
     rm -rf /var/lib/apt/lists/*
 
-# pip-tools installation
-RUN python -m pip install pip-tools
-
 WORKDIR /app
 
-# Copy the requirements file first, to cache the requirements layer as well.
-COPY requirements.in .
-
-# Now compile and install dependencies in a single layer
-RUN pip-compile --no-emit-index-url requirements.in \
-    && pip install -r requirements.txt \
-    && rm -rf ~/.cache/pip
-
-# Copy the rest of your application code. This step is done later as this part changes more often.
+# Copy the rest of application code.
 COPY . .
 
-# installation using setup.py
-RUN python setup.py develop
+# Compile and install dependencies
+# then install the local package
+RUN pip install -r requirements.txt \
+    && rm -rf ~/.cache/pip \
+    && pip install .
 
 ENTRYPOINT ["/usr/local/bin/dominion_dividers"]
 CMD ["--help"]
