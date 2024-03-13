@@ -25,8 +25,8 @@ COPY . .
 # Compile and install dependencies
 # then install the local package
 RUN pip install -r requirements.txt \
-    && rm -rf ~/.cache/pip \
-    && pip install .
+    && pip install . \
+    && rm -rf ~/.cache/pip
 
 ENTRYPOINT ["/usr/local/bin/dominion_dividers"]
 CMD ["--help"]
