@@ -1,21 +1,9 @@
 import glob
 import os
 
-import build
 from domdiv.tools import bgg_release, update_language
 
 DOIT_CONFIG = {"default_tasks": ["build"]}
-
-
-def buildit():
-    try:
-        builder = build.ProjectBuilder(".")
-        builder.prepare("wheel", "dist")
-        builder.build("sdist", "dist")
-    except Exception as e:
-        print(e)
-        return False
-    return True
 
 
 def glob_no_dirs(spec):
@@ -65,7 +53,7 @@ def task_build():
     return {
         "file_dep": files,
         "task_dep": ["update_languages"],
-        "actions": [buildit],
+        "actions": ["pip install -e .[dev]", "python -m build"],
     }
 
 
@@ -75,4 +63,4 @@ def task_make_bgg_release():
 
 def task_test():
     files = glob_no_dirs("src/domdiv/**")
-    return {"file_dep": files, "actions": ["pip install -e .[tests]", "pytest"]}
+    return {"file_dep": files, "actions": ["pip install -e .[dev]", "pytest"]}
