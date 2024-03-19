@@ -28,4 +28,5 @@ domdiv_bgg_release = "domdiv.tools.bgg_release:make_bgg_release"
 domdiv_dedupe_cards = "domdiv.tools.cleanup_language_dupes:main"
 
 [tool.setuptools_scm]
-version_file = "src/domdiv/_version.py"
+# doing this break CI as the version file gets written when just `get_version` is called
+# version_file = "src/domdiv/_version.py"
