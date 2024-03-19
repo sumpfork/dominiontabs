@@ -17,6 +17,6 @@ jobs:
           pip install -r requirements.txt
           pip install .
       - name: Lint
-        run: pre-commit run --all-files
+        run: pre-commit run --all-files --show-diff-on-failure -v
       - name: Test
         run: pytest
