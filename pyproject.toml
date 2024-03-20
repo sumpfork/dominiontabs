@@ -1,4 +1,32 @@
-[build-system]
-requires = ["setuptools>=42", "wheel", "setuptools_scm[toml]>=3.3", "pytest-runner"]
 
-[tools.setuptools_scm]
+[build-system]
+requires = ["setuptools>=61", "setuptools_scm[toml]>=6"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "domdiv"
+dynamic = ["version"]
+dependencies = ["reportlab", "Pillow", "configargparse"]
+description = "Divider Generation for the Dominion Card Game"
+keywords = ["boardgame", "cardgame", "dividers"]
+authors = [{ name = "Peter Gorniak", email = "sumpfork@mailmight.net" }]
+readme = "README.md"
+
+[project.urls]
+"Say Thanks" = "https://boardgamegeek.com/thread/926575/web-page-generate-tabbed-dividers"
+"Source" = "https://github.com/sumpfork/dominiontabs"
+"Issue Tracker" = "https://github.com/sumpfork/dominiontabs/issues"
+"Homepage" = "http://domtabs.sandflea.org"
+
+[project.optional-dependencies]
+dev = ["build", "twine", "pre-commit", "doit", "pytest"]
+
+[project.scripts]
+dominion_dividers = "domdiv.main:main"
+domdiv_update_language = "domdiv.tools.update_language:run"
+domdiv_bgg_release = "domdiv.tools.bgg_release:make_bgg_release"
+domdiv_dedupe_cards = "domdiv.tools.cleanup_language_dupes:main"
+
+[tool.setuptools_scm]
+# doing this break CI as the version file gets written when just `get_version` is called
+# version_file = "src/domdiv/_version.py"
