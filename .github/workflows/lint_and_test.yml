@@ -22,6 +22,6 @@ jobs:
           sudo apt update
           sudo apt install python3-icu
       - name: Lint
-        run: pre-commit run --all-files
+        run: pre-commit run --all-files --show-diff-on-failure -v
       - name: Test
         run: pytest

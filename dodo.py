@@ -1,4 +1,3 @@
-import distutils.core
 import glob
 import os
 
@@ -48,15 +47,13 @@ def task_build():
     files = [
         fname
         for fname in glob_no_dirs("src/domdiv/**/*")
-        + glob.glob("card_db_src/**/*.json" + "setup.py")
+        + glob.glob("card_db_src/**/*.json" + "pyproject.toml")
         if os.path.isfile(fname)
     ]
     return {
         "file_dep": files,
         "task_dep": ["update_languages"],
-        "actions": [
-            lambda: True if distutils.core.run_setup("setup.py", "sdist") else False
-        ],
+        "actions": ["pip install -e .[dev]", "python -m build"],
     }
 
 
@@ -66,4 +63,4 @@ def task_make_bgg_release():
 
 def task_test():
     files = glob_no_dirs("src/domdiv/**")
-    return {"file_dep": files, "actions": ["python setup.py test"]}
+    return {"file_dep": files, "actions": ["pip install -e .[dev]", "pytest"]}

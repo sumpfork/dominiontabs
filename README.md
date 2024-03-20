@@ -40,11 +40,11 @@ The library will be installed as `domdiv` with the main entry point being `domdi
 
 ## Developing
 
-Install requirements via `pip install -r requirements.txt`. Then, run `pre-commit install`. You can use `python setup.py develop` to install the `dominion_dividers` script so that it calls your checked out code, enabling you to run edited code without having to perform an install every time.
+Install requirements via `pip install -r requirements.txt`. Then, run `pre-commit install`. You can use `pip install -e .[dev]` to install the `dominion_dividers` script so that it calls your checked out code, enabling you to run edited code without having to perform an install every time. This also installs needed dev dependencies.
 
 Feel free to comment on boardgamegeek at <https://boardgamegeek.com/thread/926575/web-page-generate-tabbed-dividers> or file issues on github (<https://github.com/sumpfork/dominiontabs/issues>).
 
-Tests can be run (and their dependencies installed) via `python setup.py test`, which will also happen if/when you push a branch or make a PR.
+Tests can be run (and their dependencies installed) via `pip install .[dev]` and then `doit test`. They will also run if/when you push a branch or make a PR.
 
 ## Image Sources
 

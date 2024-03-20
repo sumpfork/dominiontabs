@@ -164,9 +164,9 @@ class CardPlot(object):
                 0  # Exact Centre special case, so swapping is still exact centre
             )
         elif CardPlot.tabNumber == 1:
-            self.tabIndex = (
-                self.tabIndexBack
-            ) = 1  # There is only one tab, so can only use 1 for both sides
+            self.tabIndex = self.tabIndexBack = (
+                1  # There is only one tab, so can only use 1 for both sides
+            )
         elif 1 <= self.tabIndex <= CardPlot.tabNumber:
             self.tabIndexBack = CardPlot.tabNumber + 1 - self.tabIndex
         else:
@@ -703,9 +703,11 @@ class DividerDrawer(object):
             pdfmetrics.registerFont(
                 TTFont(
                     font,
-                    fontpath
-                    if is_local
-                    else pkg_resources.resource_filename("domdiv", fontpath),
+                    (
+                        fontpath
+                        if is_local
+                        else pkg_resources.resource_filename("domdiv", fontpath)
+                    ),
                 )
             )
             registered[font] = fontpath
@@ -860,9 +862,7 @@ class DividerDrawer(object):
         line = (
             plotter.LINE
             if lineType.lower() == "line"
-            else plotter.DOT
-            if lineType.lower() == "dot"
-            else NO_LINE
+            else plotter.DOT if lineType.lower() == "dot" else NO_LINE
         )
         # lines ending at a midpoint (no dots)
         midline = NO_LINE if line == plotter.DOT else line
@@ -1086,9 +1086,7 @@ class DividerDrawer(object):
             return (
                 panelHeight
                 if panelStyle in ["tab", "strap"]
-                else item.tabHeight
-                if panelStyle == "folder"
-                else 0.0
+                else item.tabHeight if panelStyle == "folder" else 0.0
             )
 
         headTabHeight = tabHeight(self.options.head, headHeight)
@@ -1767,11 +1765,15 @@ class DividerDrawer(object):
             side = (
                 CardPlot.CENTRE
                 if self.options.tab_name_align == "centre" or self.wantCentreTab(card)
-                else CardPlot.LEFT
-                if self.options.tab_name_align == "left"
-                else CardPlot.RIGHT
-                if self.options.tab_name_align == "right"
-                else item.getClosestSide(backside=backside)
+                else (
+                    CardPlot.LEFT
+                    if self.options.tab_name_align == "left"
+                    else (
+                        CardPlot.RIGHT
+                        if self.options.tab_name_align == "right"
+                        else item.getClosestSide(backside=backside)
+                    )
+                )
             )
 
             # calculate x position and write text
@@ -2245,24 +2247,36 @@ class DividerDrawer(object):
         options.headHeight = (
             0.0
             if options.head == "none"
-            else options.head_height * cm
-            if options.head_height
-            else options.dividerBaseHeight + options.labelHeight
-            if options.head == "folder"
-            else options.dividerBaseHeight
-            if options.head == "cover"
-            else options.labelHeight  # tab or strap
+            else (
+                options.head_height * cm
+                if options.head_height
+                else (
+                    options.dividerBaseHeight + options.labelHeight
+                    if options.head == "folder"
+                    else (
+                        options.dividerBaseHeight
+                        if options.head == "cover"
+                        else options.labelHeight
+                    )
+                )
+            )  # tab or strap
         )
         options.tailHeight = (
             0.0
             if options.tail in ["none", "tab"]  # not a real tab
-            else options.tail_height * cm
-            if options.tail_height
-            else options.dividerBaseHeight + options.labelHeight
-            if options.tail == "folder"
-            else options.dividerBaseHeight
-            if options.tail == "cover"
-            else options.labelHeight  # strap
+            else (
+                options.tail_height * cm
+                if options.tail_height
+                else (
+                    options.dividerBaseHeight + options.labelHeight
+                    if options.tail == "folder"
+                    else (
+                        options.dividerBaseHeight
+                        if options.tail == "cover"
+                        else options.labelHeight
+                    )
+                )
+            )  # strap
         )
 
         # Set Height
