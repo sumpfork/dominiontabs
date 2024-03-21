@@ -7,6 +7,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+        name: publish
+        url: https://pypi.org/p/domdiv
+    permissions:
+      id-token: write
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
@@ -17,10 +22,5 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -e .[dev]
-    - name: Build and publish
-      env:
-        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: |
-        python -m build -w -s
-        twine upload dist/*
+    - name: Publish
+      uses: pypa/gh-action-pypi-publish@release/v1
