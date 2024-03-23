@@ -15,6 +15,7 @@ jobs:
           python-version: 3.9
       - run: |
           pip install -r requirements.txt
+          pip install -r dev-requirements.txt
           pip install .
       - name: Lint
         run: pre-commit run --all-files --show-diff-on-failure -v

@@ -36,7 +36,7 @@ The library will be installed as `domdiv` with the main entry point being `domdi
 
 ## Developing
 
-Install requirements via `pip install -r requirements.txt`. Then, run `pre-commit install`. You can use `pip install -e .[dev]` to install the `dominion_dividers` script so that it calls your checked out code, enabling you to run edited code without having to perform an install every time. This also installs needed dev dependencies.
+Install requirements via `pip install -r requirements.txt`. Then, run `pre-commit install`. You can use `pip install -e .[dev]` to install the `dominion_dividers` script so that it calls your checked out code, enabling you to run edited code without having to perform an install every time. This also installs needed dev dependencies, or if you want the pinned versions use `pip install -r dev-requirements.txt` instead.
 
 Feel free to comment on boardgamegeek at <https://boardgamegeek.com/thread/926575/web-page-generate-tabbed-dividers> or file issues on github (<https://github.com/sumpfork/dominiontabs/issues>).
 
@@ -52,9 +52,9 @@ The project can be compiled into a container:
 
 `docker build . -t dominiontabs`
 
-Once you have the `dominiontabs` container you can run it from your CLI and pass it arguments like so:
+Once you have the `dominiontabs` container you can run it from your CLI and pass it arguments like so, mapping the local directory to where the script will run so you can use local fonts and access the output file (example produces German dividers for Seaside 2nd edition):
 
-`docker run dominiontabs`
+`docker run -v .:/app dominiontabs --language=de --expansions=seaside2ndEdition`
 
 <!--TODO update this doc to pull pre-built images from GitHub once those are set up-->
 

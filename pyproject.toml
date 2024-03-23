@@ -11,6 +11,7 @@ description = "Divider Generation for the Dominion Card Game"
 keywords = ["boardgame", "cardgame", "dividers"]
 authors = [{ name = "Peter Gorniak", email = "sumpfork@mailmight.net" }]
 readme = "README.md"
+requires-python = ">= 3.8"
 
 [project.urls]
 "Say Thanks" = "https://boardgamegeek.com/thread/926575/web-page-generate-tabbed-dividers"
