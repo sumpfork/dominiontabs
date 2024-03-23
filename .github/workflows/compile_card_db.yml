@@ -17,6 +17,11 @@ jobs:
         run: doit update_languages
       - run: |
           pip install .
+      - name: Install PyICU
+        if: ${{ matrix.os == 'ubuntu-latest'}}
+        run: |
+          sudo apt update
+          sudo apt install python3-icu
       - name: test generation with compiled Languages
         run: pytest -k "test_languages"
       - uses: dorny/paths-filter@v2

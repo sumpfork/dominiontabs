@@ -12,6 +12,8 @@ Again, to generate tabs go to the **[Online Generator](http://domdiv.bgtools.net
 
 If you do need to install the package locally (the script provides a lot more options than the web-based generator), a simple `pip install domdiv` should suffice, providing a command by the name of `dominion_dividers`. However, see the note under Prerequisites->Fonts below as the default install will fall back on a font that doesn't match the cards (though most people don't notice). Run `dominion_dividers <outfile>` to get a pdf of all dividers with the default options, or run `dominion_dividers --help` to see the (extensive) list of options.
 
+Additionally, to ensure the card dividers are generated sorted by correct alphabetical order (especially for languages with many accented characters (e.g. Czech)), you are advised to install the optional `PyICU` [library](https://gitlab.pyicu.org/main/pyicu). If `PyICU` is installed ([instructions](https://github.com/sumpfork/dominiontabs/wiki/PyICU-Installation-Instructions)), the script will sort the card dividers based on selected language alphabet (e.g. in Czech `z < ž`). Otherwise, default sorting will be used (the cards beginning with accented characters will be at the end of the sorted set).
+
 ## Documentation
 
 The script has an extensive set of options that are relatively well documented via `dominion_dividers --help`. Some are hard to describe unless you see output samples, so we recommend running the script with various options to see which configuration you like. The help output is replicated [here](https://github.com/sumpfork/dominiontabs/wiki/Documentation-%28Script-Options%29) for reference.
@@ -27,6 +29,8 @@ If you would like to help with translations to new (or updating existing) langua
 There are a number of fonts used in Dominion and many of them we cannot distribute with the package. We use fallbacks to commonly distributed fonts that work fine if you don't care the match the game exactly. If you do want to match, the script prints the preferred fonts if it uses fallbacks. Some come with programs like Adobe Reader and you can grab them from there.
 
 Sadly, many of these fonts use features that are not support by the reportlab package. Thus, they need to first be converted to ttf (TrueType) format. I used the open source package fontforge to do the conversion. Included as 'tools/convert_font.ff' is a script for fontforge to do the conversion, on Mac OS X with fontforge installed through macports or homebrew you can just run commands like `./tools/convert_font.ff MinionPro-Regular.otf`.
+
+If you select language in `domdiv` options which is not supported in [ISO/IEC 8859-1:1998 (Latin1)](https://en.wikipedia.org/wiki/ISO/IEC_8859-1#Modern_languages_with_complete_coverage) (e.g. Czech), you will have to obtain Times Roman TTF fonts as well (see `./src/domdiv/fonts/README.md` for details).
 
 To supply fonts locally, put them in a directory and supply the relative path to it to the script via the `--font-dir` option. Alternatively you can copy the converted `.ttf` files to the `fonts` directory in the `domdiv` package/directory, then perform the package install below.
 
@@ -68,6 +72,8 @@ Which will, by default, dump the output of the help text of the CLI tool. But we
 So now we have
 
 `docker run -v $PWD/output:/app/output --rm dominiontabs --font-dir /fonts --expansions cornucopia --outfile ./output/dominion_dividers_docker.pdf`
+
+(Replace `$PWD` with `%cd%` on Windows OS)
 
 Once that runs you should have under your current directory:
 
