@@ -1340,15 +1340,15 @@
         "extra": "Un joueur qui n'a qu'une seule carte dévoile cette dernière carte et mélange ensuite sa défausse afin de pouvoir dévoiler l'autre carte ; un joueur qui n'a plus de carte dans son deck mélange afin d'obtenir les deux cartes. Un joueur qui n'a pas deux cartes à dévoiler après avoir mélangé sa pioche dévoile ce qu'il peut. Chaque joueur écarte au maximum une carte Trésor, au choix du propriétaire du Voleur, parmi les deux cartes dévoilées. Le joueur du Voleur peut prendre les cartes qu'il désire parmi les cartes ainsi écartées. Vous ne pouvez prendre que les cartes Trésor qui viennent d'être écartées et non celles écartées lors de tours précédents. Vous pouvez prendre une, des, toutes ou aucune des cartes écartées. Placez les cartes Trésor ainsi obtenues dans votre défausse. Les cartes que vous ne gardez pas demeurent au Rebut.",
         "name": "Voleur"
     },
-    "Tiara": {
-        "description": "+1 Achat<n><n>Ce tour, quand vous obtenez une carte, par achat ou autres, vous pouvez la mettre sur votre deck.<n><n>Vous pouvez jouer une carte Trésor deux fois.",
-        "extra": "Si vous gagnez plusieurs cartes dans le tour après avoir joué cette carte, vous pouvez en mettre une ou plusieurs sur le deck. Cela s'applique à la fois aux cartes achetées et aux cartes obtenues différemment, comme avec War Chest. Si vous jouez une carte Tiara avec une carte Tiara, vous pourrez jouer deux cartes Trésor deux fois chacune, vous ne jouez pas un Trésor quatre fois.",
-        "name": "Tiara"
-    },
     "Throne Room": {
         "description": "Choisissez 1 carte <i>Action</i> de votre main. Jouez-la deux fois.",
         "extra": "Vous prenez une carte Action de votre main, vous la jouez et la rejouez immédiatement après. L'utilisation de cette deuxième carte Action ne coûte pas d'action supplémentaire. Si vous utilisez la Salle du Trône pour jouer une Salle du Trône, vous jouez une action, que vous faites deux fois et vous jouez ensuite une autre action, que vous jouez aussi deux fois ; vous ne jouez pas une action quatre fois. Si vous jouez une Salle du Trône sur une carte qui vous donne +1 Action, tel un Marché, vous aurez deux actions supplémentaires à effectuer par la suite. Afin d'éviter toute confusion, rappelez-vous de compter le nombre d'actions qu'il vous reste à voix haute. Aucune action ne peut être jouée entre les deux actions de la Salle du Trône.",
         "name": "Salle du Trône"
+    },
+    "Tiara": {
+        "description": "+1 Achat<n><n>Ce tour, quand vous obtenez une carte, par achat ou autres, vous pouvez la mettre sur votre deck.<n><n>Vous pouvez jouer une carte Trésor deux fois.",
+        "extra": "Si vous gagnez plusieurs cartes dans le tour après avoir joué cette carte, vous pouvez en mettre une ou plusieurs sur le deck. Cela s'applique à la fois aux cartes achetées et aux cartes obtenues différemment, comme avec War Chest. Si vous jouez une carte Tiara avec une carte Tiara, vous pourrez jouer deux cartes Trésor deux fois chacune, vous ne jouez pas un Trésor quatre fois.",
+        "name": "Tiara"
     },
     "Torturer": {
         "description": "+3 Cartes<n>Chacun de vos adversaires choisit :<br>défausser 2 carte<br><b>OU</b> recevoir une carte <i>Malédiction</i> qui est ajoutée à sa main.",
