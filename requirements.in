@@ -1,8 +1,0 @@
-reportlab
-Pillow
-pre-commit
-pytest
-# cloudpickle is needed by doit which cannot be in this list as it
-# installs platform-specific packages
-cloudpickle
-configargparse

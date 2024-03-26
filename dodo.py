@@ -12,13 +12,9 @@ def glob_no_dirs(spec):
 
 def task_compile_requirements():
     return {
-        "file_dep": ["requirements.in"],
+        "file_dep": ["pyproject.toml"],
         "actions": [
-            "pip-compile -U --no-emit-index-url --resolver=backtracking requirements.in",
-            # pip-compile will add macfsevents on mac, which breaks installation
-            # on other platforms, so hack in the 'doit' requirement after the
-            # compile
-            'echo "doit  # hacked in via doit\n" >> requirements.txt',
+            "pip-compile -U --no-emit-index-url --resolver=backtracking pyproject.toml",
         ],
         "targets": ["requirements.txt"],
     }
