@@ -1,7 +1,10 @@
 FROM python:3.9-slim AS compile-image
 
 # Add git for hooks
-RUN apt-get update && apt-get install -y --no-install-recommends python3-icu git
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container (creating it in the process)
 WORKDIR /app
@@ -10,6 +13,6 @@ WORKDIR /app
 COPY . .
 
 # install the application
-RUN pip install .
+RUN pip install . && rm -rf ~/.cache/pip
 
 ENTRYPOINT ["/usr/local/bin/dominion_dividers"]
