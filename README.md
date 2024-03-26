@@ -50,25 +50,16 @@ There is a separate [repo](https://github.com/sumpfork/dominiontabs_img_sources)
 
 The project can be compiled into a container:
 
-`docker build . -t dominiontabs`
-
-Once you have the `dominiontabs` container you can run it from your CLI and pass it arguments like so, mapping the local directory to where the script will run so you can use local fonts and access the output file (example produces German dividers for Seaside 2nd edition):
-
-`docker run -v .:/app dominiontabs --language=de --expansions=seaside2ndEdition`
-
 <!--TODO update this doc to pull pre-built images from GitHub once those are set up-->
 
-1. Bind mount to an output directory (`-v`) and tell the script to output there so that we get a PDF in the local filesystem when things are done (`--outfile ./output/foo.pdf`).
-1. Add the `--rm` argo to tell docker not to save a container each time it runs.
-1. Point to the fonts built in to the image with `--font-dir /fonts`
-1. Add a few CLI args to reduce the runtime and file size (`--expansions cornucopia`).
+`docker build . -t dominiontabs`
 
-So now we have
+Once you have the `dominiontabs` container you can run it from your CLI and pass it arguments like so:
 
-`docker run -v $PWD/output:/app/output --rm dominiontabs --font-dir /fonts --expansions cornucopia --outfile ./output/dominion_dividers_docker.pdf`
+`docker run --rm -v .:/app dominiontabs --language=de --expansions=seaside2ndEdition`
 
-Once that runs you should have under your current directory:
+- The command should result in a file `dominion_dividers_docker.pdf` in your current directory
+- The `--rm` tells docker not to save a container run history.
+- If you have the fonts in your current dir you can add the CLI args `--font-dir .` for the script to pick them up.
 
-`./output/dominion_dividers_docker.pdf`
-
-From there you feel free to add other arguments as you like!
+From there you add other arguments to customize your output PDF.
