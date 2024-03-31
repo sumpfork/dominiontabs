@@ -672,9 +672,11 @@ class DividerDrawer(object):
             ],
             "Italic": [  # for --use-set-text-icon
                 "MinionPro-Italic",
-                "Times-Italic"
-                if langlatin1 or not timesTTFfound
-                else "Times-Italic-TTF",
+                (
+                    "Times-Italic"
+                    if langlatin1 or not timesTTFfound
+                    else "Times-Italic-TTF"
+                ),
             ],
             "Rules": [
                 "Times-Roman" if langlatin1 or not timesTTFfound else "Times-Roman-TTF",

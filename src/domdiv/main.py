@@ -18,7 +18,10 @@ from .draw import DividerDrawer
 
 try:
     from icu import Collator, Locale
+
+    have_icu = True
 except ImportError:
+    have_icu = False
     print(
         "** Warning: PyICU library not found. The dividers will be ordered by default sort key (might not be the "
         "correct alphabetical order for the selected language)."
@@ -1476,7 +1479,7 @@ class CardSorter(object):
         self.order = order
 
         # If PyICU has been successfully imported
-        if "icu" in sys.modules:
+        if have_icu:
             # Create a sort collator based on the selected language. Will be used the generate the sort keys.
             self.collator = Collator.createInstance(Locale(lang))
         else:
