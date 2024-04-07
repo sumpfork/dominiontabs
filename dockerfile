@@ -10,6 +10,6 @@ WORKDIR /app
 COPY . .
 
 # install the application
-RUN pip install .
+RUN pip install . && rm -rf ~/.cache/pip
 
 ENTRYPOINT ["/usr/local/bin/dominion_dividers"]
