@@ -17,6 +17,11 @@ jobs:
           pip install -r requirements.txt
           pip install -r dev-requirements.txt
           pip install .
+      - name: Install PyICU
+        if: ${{ matrix.os == 'ubuntu-latest'}}
+        run: |
+          sudo apt update
+          sudo apt install python3-icu
       - name: Lint
         run: pre-commit run --all-files --show-diff-on-failure -v
       - name: Test

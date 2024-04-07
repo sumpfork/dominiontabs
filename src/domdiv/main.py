@@ -16,6 +16,17 @@ from reportlab.lib.units import cm
 from .cards import Card, CardType
 from .draw import DividerDrawer
 
+try:
+    from icu import Collator, Locale
+
+    have_icu = True
+except ImportError:
+    have_icu = False
+    print(
+        "** Warning: PyICU library not found. The dividers will be ordered by default sort key (might not be the "
+        "correct alphabetical order for the selected language)."
+    )
+
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
 TAB_SIDE_CHOICES = [
@@ -1464,8 +1475,16 @@ def read_card_data(options):
 
 
 class CardSorter(object):
-    def __init__(self, order, baseCards):
+    def __init__(self, order, lang, baseCards):
         self.order = order
+
+        # If PyICU has been successfully imported
+        if have_icu:
+            # Create a sort collator based on the selected language. Will be used the generate the sort keys.
+            self.collator = Collator.createInstance(Locale(lang))
+        else:
+            self.collator = None
+
         if order == "global":
             self.sort_key = self.by_global_sort_key
         elif order == "colour":
@@ -1515,7 +1534,7 @@ class CardSorter(object):
         return (
             int(card.isExpansion()),
             self.baseIndex(card.name),
-            self.strip_accents(card.name),
+            self.get_card_name_sort_key(card.name),
         )
 
     def by_expansion_sort_key(self, card):
@@ -1523,19 +1542,27 @@ class CardSorter(object):
             card.cardset,
             int(card.isExpansion()),
             self.baseIndex(card.name),
-            self.strip_accents(card.name),
+            self.get_card_name_sort_key(card.name),
         )
 
     def by_colour_sort_key(self, card):
-        return card.getType().getTypeNames(), self.strip_accents(card.name)
+        return card.getType().getTypeNames(), self.get_card_name_sort_key(card.name)
 
     def by_cost_sort_key(self, card):
         return (
             card.cardset,
             int(card.isExpansion()),
             str(card.get_total_cost(card)),
-            self.strip_accents(card.name),
+            self.get_card_name_sort_key(card.name),
         )
+
+    def get_card_name_sort_key(self, c):
+        if (
+            self.collator
+        ):  # If the PyICU collator attribute has been set up, get the collator based sort key
+            return self.collator.getSortKey(c)
+        else:  # Default method: strip the card name character accents
+            return self.strip_accents(c)
 
     @staticmethod
     def strip_accents(s):
@@ -1938,6 +1965,7 @@ def filter_sort_cards(cards, options):
     # Set up the card sorter
     cardSorter = CardSorter(
         options.order,
+        options.language,
         {
             card.card_tag: card.name
             for card in cards
@@ -1976,7 +2004,10 @@ def filter_sort_cards(cards, options):
                     "randomizer": c.randomizer,
                     "count": 1,
                     "sort": "%03d%s"
-                    % (order, CardSorter.strip_accents(c.name.strip())),
+                    % (
+                        order,
+                        cardSorter.get_card_name_sort_key(c.name.strip()),
+                    ),
                 }
 
         for set_tag, set_values in Card.sets.items():
