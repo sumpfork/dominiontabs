@@ -8,7 +8,7 @@ chardet==5.2.0
     # via reportlab
 configargparse==1.7
     # via domdiv (pyproject.toml)
-pillow==10.2.0
+pillow==10.3.0
     # via
     #   domdiv (pyproject.toml)
     #   reportlab
