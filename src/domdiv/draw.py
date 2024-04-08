@@ -1475,7 +1475,7 @@ class DividerDrawer(object):
                 hmax = round(h * resolution / 72)
                 wnew = min(imgObj.width, wmax)
                 hnew = min(imgObj.height, hmax)
-                imgObj = imgObj.resize((wnew, hnew), Image.ANTIALIAS)
+                imgObj = imgObj.resize((wnew, hnew), Image.Resampling.LANCZOS)
             if opacity != 1.0:
                 # Set image opacity.
                 if imgObj.mode != "RGBA":
