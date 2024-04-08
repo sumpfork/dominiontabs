@@ -27,3 +27,8 @@ def test_languages(lang):
 def test_grouped():
     options = get_clean_opts(["--special-card-groups"])
     main.generate(options)
+
+
+def test_resolution():
+    options = get_clean_opts(["--tab-artwork-resolution=300"])
+    main.generate(options)
