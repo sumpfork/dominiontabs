@@ -4,7 +4,9 @@
 #
 #    pip-compile --extra=dev --no-emit-index-url --output-file=dev-requirements.txt
 #
-build==1.1.1
+backports-tarfile==1.0.0
+    # via jaraco-context
+build==1.2.1
     # via domdiv (pyproject.toml)
 certifi==2024.2.2
     # via requests
@@ -26,7 +28,7 @@ doit==0.36.0
     # via domdiv (pyproject.toml)
 exceptiongroup==1.2.0
     # via pytest
-filelock==3.13.1
+filelock==3.13.3
     # via virtualenv
 identify==2.5.35
     # via pre-commit
@@ -40,17 +42,23 @@ importlib-metadata==7.1.0
     #   twine
 iniconfig==2.0.0
     # via pytest
-jaraco-classes==3.3.1
+jaraco-classes==3.4.0
     # via keyring
-keyring==24.3.1
+jaraco-context==5.3.0
+    # via keyring
+jaraco-functools==4.0.0
+    # via keyring
+keyring==25.1.0
     # via twine
 markdown-it-py==3.0.0
     # via rich
 mdurl==0.1.2
     # via markdown-it-py
 more-itertools==10.2.0
-    # via jaraco-classes
-nh3==0.2.15
+    # via
+    #   jaraco-classes
+    #   jaraco-functools
+nh3==0.2.17
     # via readme-renderer
 nodeenv==1.8.0
     # via pre-commit
@@ -58,7 +66,7 @@ packaging==24.0
     # via
     #   build
     #   pytest
-pillow==10.2.0
+pillow==10.3.0
     # via
     #   domdiv (pyproject.toml)
     #   reportlab
@@ -68,7 +76,7 @@ platformdirs==4.2.0
     # via virtualenv
 pluggy==1.4.0
     # via pytest
-pre-commit==3.6.2
+pre-commit==3.7.0
     # via domdiv (pyproject.toml)
 pygments==2.17.2
     # via
