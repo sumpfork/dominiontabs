@@ -2,9 +2,9 @@ import functools
 import numbers
 import os
 import re
-import sys
 
 import pkg_resources
+from loguru import logger
 from PIL import Image, ImageEnhance
 from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY, TA_LEFT
 from reportlab.lib.styles import getSampleStyleSheet
@@ -586,6 +586,7 @@ class DividerDrawer(object):
                 if pkg_resources.resource_exists("domdiv", fpath):
                     fontpaths[font] = (fpath, False)
                     break
+        logger.trace(fontpaths)
         # Mark the built-in files as pre-registered
         registered = {
             font: None for font, fontpath in fontpaths.items() if fontpath is None
@@ -593,37 +594,10 @@ class DividerDrawer(object):
 
         # Check if *all three* Times Roman TTF fonts have been found and register them. If not -> remove all three
         # from the paths list
-        timesTTFfound = (
-            "Times-Roman-TTF" in fontpaths
-            and "Times-Bold-TTF" in fontpaths
-            and "Times-Italic-TTF" in fontpaths
-        )
-        if not langlatin1 and timesTTFfound:
-            pdfmetrics.registerFont(
-                TTFont(
-                    "Times-Roman-TTF",
-                    pkg_resources.resource_filename(
-                        "domdiv", fontpaths.get("Times-Roman-TTF")[0]
-                    ),
-                )
-            )
-            pdfmetrics.registerFont(
-                TTFont(
-                    "Times-Bold-TTF",
-                    pkg_resources.resource_filename(
-                        "domdiv", fontpaths.get("Times-Bold-TTF")[0]
-                    ),
-                )
-            )
-            pdfmetrics.registerFont(
-                TTFont(
-                    "Times-Italic-TTF",
-                    pkg_resources.resource_filename(
-                        "domdiv", fontpaths.get("Times-Italic-TTF")[0]
-                    ),
-                )
-            )
+        timesTTFs = set(["Times-Roman-TTF", "Times-Bold-TTF", "Times-Italic-TTF"])
+        timesTTF_not_found = timesTTFs - set(fontpaths)
 
+        if not langlatin1 and not timesTTF_not_found:
             # Register Times Roman TTF as font family. Necessary for <b> and <i> attributes to work in Platypus!
             pdfmetrics.registerFontFamily(
                 "Times-Roman-TTF",
@@ -631,55 +605,71 @@ class DividerDrawer(object):
                 bold="Times-Bold-TTF",
                 italic="Times-Italic-TTF",
             )
-
-            # Since we registered them already, mark the Times Roman TTF as pre-registered
-            registered.update({"Times-Roman-TTF": None})
-            registered.update({"Times-Bold-TTF": None})
-            registered.update({"Times-Italic-TTF": None})
         else:
-            fontpaths.pop("Times-Roman-TTF", None)
-            fontpaths.pop("Times-Bold-TTF", None)
-            fontpaths.pop("Times-Italic-TTF", None)
+            if not langlatin1:
+                logger.warning(
+                    f"Non-Latin1 language requested ({self.options.language}) "
+                    "but Times TTF font files not provided (black boxes may appear). "
+                    f"missing fonts: {timesTTF_not_found}"
+                )
+            for fontname in timesTTFs:
+                fontpaths.pop(fontname, None)
 
         # Determine the best matching fonts for each font type.
         fontprefs = {
             "Name": [  # card names & types
                 "TrajanPro-Bold",
                 "MinionPro-Regular",
-                "Times-Roman" if langlatin1 or not timesTTFfound else "Times-Roman-TTF",
+                (
+                    "Times-Roman"
+                    if langlatin1 or timesTTF_not_found
+                    else "Times-Roman-TTF"
+                ),
             ],
             "Expansion": [  # expansion names
                 "CharlemagneStd-Bold",
                 "TrajanPro-Bold",
                 "MinionPro-Regular",
-                "Times-Roman" if langlatin1 or not timesTTFfound else "Times-Roman-TTF",
+                (
+                    "Times-Roman"
+                    if langlatin1 or timesTTF_not_found
+                    else "Times-Roman-TTF"
+                ),
             ],
             "Cost": [  # card costs (coins, debt, etc)
                 "MinionStd-Black",
                 "MinionPro-Bold",
-                "Times-Bold" if langlatin1 or not timesTTFfound else "Times-Bold-TTF",
+                "Times-Bold" if langlatin1 or timesTTF_not_found else "Times-Bold-TTF",
             ],
             "PlusCost": [  # card cost superscript "+" modifiers
                 "Helvetica-Bold",
             ],
             "Regular": [  # regular text
                 "MinionPro-Regular",
-                "Times-Roman" if langlatin1 or not timesTTFfound else "Times-Roman-TTF",
+                (
+                    "Times-Roman"
+                    if langlatin1 or timesTTF_not_found
+                    else "Times-Roman-TTF"
+                ),
             ],
             "Bold": [  # miscellaneous bold text
                 "MinionPro-Bold",
-                "Times-Bold" if langlatin1 or not timesTTFfound else "Times-Bold-TTF",
+                "Times-Bold" if langlatin1 or timesTTF_not_found else "Times-Bold-TTF",
             ],
             "Italic": [  # for --use-set-text-icon
                 "MinionPro-Italic",
                 (
                     "Times-Italic"
-                    if langlatin1 or not timesTTFfound
+                    if langlatin1 or timesTTF_not_found
                     else "Times-Italic-TTF"
                 ),
             ],
             "Rules": [
-                "Times-Roman" if langlatin1 or not timesTTFfound else "Times-Roman-TTF",
+                (
+                    "Times-Roman"
+                    if langlatin1 or timesTTF_not_found
+                    else "Times-Roman-TTF"
+                ),
             ],
             "Monospaced": [
                 "Courier",
@@ -693,15 +683,13 @@ class DividerDrawer(object):
         for style, font in self.fontStyle.items():
             best = fontprefs[style][0]
             if font != best:
-                print(
-                    "Warning, {} missing from font dirs; "
-                    "using {} instead.".format(best, font),
-                    file=sys.stderr,
+                logger.warning(
+                    f"Font {best} missing from font dirs; using {font} instead."
                 )
             if font in registered:
                 continue
             fontpath, is_local = fontpaths[font]
-            # print("Registering {} = {}".format(font, fontpath))
+            logger.trace(f"Registering {font} = {fontpath}")
             pdfmetrics.registerFont(
                 TTFont(
                     font,
@@ -1725,10 +1713,9 @@ class DividerDrawer(object):
                 else:
                     name_lines = lname, (lmid + rmid + " " + rname).rstrip()
             else:  # nowhere to break
-                print(
-                    f"Could not break up long card name: {name}",
-                    round(width / cm, 2),
-                    round(textWidth / cm, 2),
+                logger.debug(
+                    f"Could not break up long card name: {name} "
+                    f"{round(width / cm, 2)} {round(textWidth / cm, 2)}",
                 )
                 name_lines = (name,)
         else:
@@ -2291,7 +2278,7 @@ class DividerDrawer(object):
         if options.wrapper:
             # Adjust height for wrapper.  Use the maximum thickness of any divider so we know anything will fit.
             maxStackHeight = max(c.getStackHeight(options.thickness) for c in cards)
-            print("Max Card Stack Height: {:.2f}cm ".format(maxStackHeight / cm))
+            logger.info(f"Max Card Stack Height: {maxStackHeight / cm:.2f}cm ")
             options.dividerHeightReserved = totalHeight(options, maxStackHeight)
 
         # Adjust for rotation

@@ -11,6 +11,7 @@ from collections import Counter, defaultdict
 import configargparse
 import pkg_resources
 import reportlab.lib.pagesizes as pagesizes
+from loguru import logger
 from reportlab.lib.units import cm
 
 from .cards import Card, CardType
@@ -22,10 +23,6 @@ try:
     have_icu = True
 except ImportError:
     have_icu = False
-    print(
-        "** Warning: PyICU library not found. The dividers will be ordered by default sort key (might not be the "
-        "correct alphabetical order for the selected language)."
-    )
 
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
@@ -296,7 +293,7 @@ def parse_opts(cmdline_args=None):
     group_tab.add_argument(
         "--tab-number",
         type=int,
-        default=1,
+        default=2,
         help="The number of tabs. When set to 1, all tabs are on the same side (specified by --tab_side). "
         "When set to 2, tabs will alternate between left and right. (starting side specified by --tab_side). "
         "When set > 2, the first tab will be on left/right side specified by --tab_side, then the rest "
@@ -949,7 +946,12 @@ def parse_opts(cmdline_args=None):
         is_write_out_config_file_arg=True,
         help="Write out the given options to the specified configuration file.",
     )
-
+    group_special.add_argument(
+        "--log-level",
+        default="WARNING",
+        help="Set the logging level.",
+        choices=["TRACE", "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
+    )
     options = parser.parse_args(args=cmdline_args)
     # Need to do these while we have access to the parser
     options.argv = sys.argv if options.info or options.info_all else None
@@ -966,11 +968,13 @@ def clean_opts(options):
 
     if options.tab_side == "full" and options.tab_name_align == "edge":
         # This case does not make sense since there are two tab edges in this case.  So picking left edge.
-        print("** Warning: Aligning card name as 'left' for 'full' tabs **")
+        logger.warning(
+            "Tab side 'full' and tab name align 'edge' are incompatible. Aligning card name as 'left' for 'full' tabs"
+        )
         options.tab_name_align = "left"
 
     if options.tab_number < 1:
-        print("** Warning: --tab-number must be 1 or greater.  Setting to 1. **")
+        logger.warning("--tab-number must be 1 or greater.  Setting to 1.")
         options.tab_number = 1
 
     if options.tab_side == "full" and options.tab_number != 1:
@@ -978,16 +982,16 @@ def clean_opts(options):
 
     if "-alternate" in options.tab_side:
         if options.tab_number != 2:
-            print(
-                "** Warning: --tab-side with 'alternate' implies 2 tabs. Setting --tab-number to 2 **"
+            logger.warning(
+                "--tab-side with 'alternate' implies 2 tabs. Setting --tab-number to 2."
             )
         options.tab_number = 2  # alternating left and right, so override tab_number
 
     if "-flip" in options.tab_side:
         # for left and right tabs
         if options.tab_number != 2:
-            print(
-                "** Warning: --tab-side with 'flip' implies 2 tabs. Setting --tab-number to 2 **"
+            logger.warning(
+                "--tab-side with 'flip' implies 2 tabs. Setting --tab-number to 2."
             )
         options.tab_number = (
             2  # alternating left and right with a flip, so override tab_number
@@ -997,7 +1001,7 @@ def clean_opts(options):
         options.flip = False
 
     if options.tab_number < 3 and options.tab_serpentine:
-        print("** Warning: --tab-serpentine only valid if --tab-number > 2. **")
+        logger.warning("--tab-serpentine only valid if --tab-number > 2.")
         options.tab_serpentine = False
 
     if options.cost is None:
@@ -1244,11 +1248,9 @@ def parse_papersize(spec):
     except AttributeError:
         try:
             paperwidth, paperheight = parseDimensions(papersize)
-            print(
+            logger.info(
                 (
-                    "Using custom paper size, {:.2f}cm x {:.2f}cm".format(
-                        paperwidth / cm, paperheight / cm
-                    )
+                    f"Using custom paper size, {paperwidth / cm:.2f}cm x {paperheight / cm:.2f}cm"
                 )
             )
         except ValueError:
@@ -1260,29 +1262,23 @@ def parse_cardsize(spec, sleeved):
     spec = spec.upper()
     if spec == "SLEEVED" or sleeved:
         dominionCardWidth, dominionCardHeight = (9.4 * cm, 6.15 * cm)
-        print(
+        logger.info(
             (
-                "Using sleeved card size, {:.2f}cm x {:.2f}cm".format(
-                    dominionCardWidth / cm, dominionCardHeight / cm
-                )
+                f"Using sleeved card size, {dominionCardWidth / cm:.2f}cm x {dominionCardHeight / cm:.2f}cm"
             )
         )
     elif spec in ["NORMAL", "UNSLEEVED"]:
         dominionCardWidth, dominionCardHeight = (9.1 * cm, 5.9 * cm)
-        print(
+        logger.info(
             (
-                "Using normal card size, {:.2f}cm x{:.2f}cm".format(
-                    dominionCardWidth / cm, dominionCardHeight / cm
-                )
+                f"Using normal card size, {dominionCardWidth / cm:.2f}cm x{dominionCardHeight / cm:.2f}cm"
             )
         )
     else:
         dominionCardWidth, dominionCardHeight = parseDimensions(spec)
-        print(
+        logger.info(
             (
-                "Using custom card size, {:.2f}cm x {:.2f}cm".format(
-                    dominionCardWidth / cm, dominionCardHeight / cm
-                )
+                f"Using custom card size, {dominionCardWidth / cm:.2f}cm x {dominionCardHeight / cm:.2f}cm"
             )
         )
     return dominionCardWidth, dominionCardHeight
@@ -1415,7 +1411,7 @@ def read_card_data(options):
         Estate_index = find_index_of_object(cards, {"card_tag": "Estate"})
         if Copper_index is None or Estate_index is None or StartDeck_index is None:
             # Something is wrong, can't find one or more of the cards that need to change
-            print("Error - cannot create Start Decks")
+            logger.warning("Cannot create Start Decks")
 
             # Remove the Start Deck prototype if we can
             if StartDeck_index is not None:
@@ -1483,6 +1479,11 @@ class CardSorter(object):
             # Create a sort collator based on the selected language. Will be used the generate the sort keys.
             self.collator = Collator.createInstance(Locale(lang))
         else:
+            logger.warning(
+                "PyICU library not found. The dividers will be ordered by default sort key (might not be the "
+                "correct alphabetical order for the selected language)."
+            )
+
             self.collator = None
 
         if order == "global":
@@ -1860,13 +1861,7 @@ def filter_sort_cards(cards, options):
         # Give indication if an imput did not match anything
         unknownExpansions = options.expansions - knownExpansions
         if unknownExpansions:
-            print(
-                (
-                    "Error - unknown expansion(s): {}".format(
-                        ", ".join(unknownExpansions)
-                    )
-                )
-            )
+            logger.warning((f"Unknown expansion(s): {', '.join(unknownExpansions)}"))
 
     # Take care of fan expansions.  Fan expansions must be explicitly named to be added.
     # If no --fan is given, then no fan cards are added.
@@ -1892,12 +1887,8 @@ def filter_sort_cards(cards, options):
         # Give indication if an imput did not match anything
         unknownExpansions = options.fan - knownExpansions
         if unknownExpansions:
-            print(
-                (
-                    "Error - unknown expansion(s): {}".format(
-                        ", ".join(unknownExpansions)
-                    )
-                )
+            logger.warning(
+                (f"Unknown fan expansion(s): {', '.join(unknownExpansions)}")
             )
 
     if options.exclude_expansions:
@@ -1923,9 +1914,8 @@ def filter_sort_cards(cards, options):
         # Give indication if an imput did not match anything
         unknownExpansions = options.exclude_expansions - knownExpansions
         if unknownExpansions:
-            print(
-                "Error - unknown exclude expansion(s): %s"
-                % ", ".join(unknownExpansions)
+            logger.warning(
+                f"Unknown exclude expansion(s): {', '.join(unknownExpansions)}"
             )
 
     # Now keep only the cards that are in the sets that have been requested
@@ -2131,25 +2121,18 @@ def generate(options):
 
     dd = calculate_layout(options, cards)
 
-    print(
-        "Paper dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
-            options.paperwidth / cm, options.paperheight / cm
-        )
+    logger.info(
+        f"Paper dimensions: {options.paperwidth / cm:.2f}cm (w) x {options.paperheight / cm:.2f}cm (h)".format
     )
-    print(
-        "Tab dimensions: {:.2f}cm (w) x {:.2f}cm (h)".format(
-            options.dividerWidthReserved / cm, options.dividerHeightReserved / cm
-        )
+    logger.info(
+        f"Tab dimensions: {options.dividerWidthReserved / cm:.2f}cm (w) "
+        f"x {options.dividerHeightReserved / cm:.2f}cm (h)"
     )
-    print(
-        "{} dividers horizontally, {} vertically".format(
-            options.numDividersHorizontal, options.numDividersVertical
-        )
+    logger.info(
+        f"{options.numDividersHorizontal} dividers horizontally, {options.numDividersVertical} vertically"
     )
-    print(
-        "Margins: {:.2f}cm h, {:.2f}cm v\n".format(
-            options.horizontalMargin / cm, options.verticalMargin / cm
-        )
+    logger.info(
+        f"Margins: {options.horizontalMargin / cm:.2f}cm h, {options.verticalMargin / cm:.2f}cm v"
     )
 
     dd.draw(cards)
@@ -2157,6 +2140,9 @@ def generate(options):
 
 def main():
     options = parse_opts()
+    logger.remove()
+    logger.add(sys.stderr, level=options.log_level)
+
     options = clean_opts(options)
     if options.preview:
         fname = "{}.{}".format(os.path.splitext(options.outfile)[0], "png")

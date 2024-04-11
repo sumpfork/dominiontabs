@@ -1,6 +1,7 @@
 import json
 import re
 
+from loguru import logger
 from reportlab.lib.units import cm
 
 
@@ -208,11 +209,7 @@ class Card(object):
                     setImage = Card.sets[self.cardset_tag]["image"]
 
         if setImage is None and self.cardset_tag != "base":
-            print(
-                'warning, no set image for set "{}", card "{}"'.format(
-                    self.cardset, self.name
-                )
-            )
+            logger.warning(f'no set image for set "{self.cardset}", card "{self.name}"')
         return setImage
 
     def setTextIcon(self):
@@ -225,11 +222,7 @@ class Card(object):
                     setTextIcon = Card.sets[self.cardset_tag]["text_icon"]
 
         if setTextIcon is None and self.cardset != "base":
-            print(
-                'warning, no set text for set "{}", card "{}"'.format(
-                    self.cardset, self.name
-                )
-            )
+            logger.warning(f'no set text for set "{self.cardset}", card "{self.name}"')
         return setTextIcon
 
     def isBlank(self):
