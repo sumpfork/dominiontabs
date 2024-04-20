@@ -2122,7 +2122,7 @@ def generate(options):
     dd = calculate_layout(options, cards)
 
     logger.info(
-        f"Paper dimensions: {options.paperwidth / cm:.2f}cm (w) x {options.paperheight / cm:.2f}cm (h)".format
+        f"Paper dimensions: {options.paperwidth / cm:.2f}cm (w) x {options.paperheight / cm:.2f}cm (h)"
     )
     logger.info(
         f"Tab dimensions: {options.dividerWidthReserved / cm:.2f}cm (w) "
