@@ -1,11 +1,11 @@
 from reportlab.lib.units import cm
 
-from domdiv import main
+from domdiv import config_options, main
 
 
 def test_horizontal():
     # should be the default
-    options = main.parse_opts([])
+    options = config_options.parse_opts([])
     assert options.orientation == "horizontal"
     main.calculate_layout(options)
     assert options.numDividersHorizontal == 2
@@ -16,7 +16,7 @@ def test_horizontal():
 
 
 def test_vertical():
-    options = main.parse_opts(["--orientation", "vertical"])
+    options = config_options.parse_opts(["--orientation", "vertical"])
     assert options.orientation == "vertical"
     main.calculate_layout(options)
     assert options.numDividersHorizontal == 3
@@ -27,7 +27,7 @@ def test_vertical():
 
 
 def test_sleeved():
-    options = main.parse_opts(["--size", "sleeved"])
+    options = config_options.parse_opts(["--size", "sleeved"])
     main.calculate_layout(options)
     assert options.dividerWidth == 9.4 * cm
     assert options.labelHeight == 0.9 * cm
@@ -35,44 +35,44 @@ def test_sleeved():
 
 
 def test_cost():
-    options = main.parse_opts([])
-    options = main.clean_opts(options)
+    options = config_options.parse_opts([])
+    options = config_options.clean_opts(options)
     assert options.cost == ["tab"]
 
-    options = main.parse_opts(["--cost=tab"])
-    options = main.clean_opts(options)
+    options = config_options.parse_opts(["--cost=tab"])
+    options = config_options.clean_opts(options)
     assert options.cost == ["tab"]
 
-    options = main.parse_opts(["--cost=body-top"])
-    options = main.clean_opts(options)
+    options = config_options.parse_opts(["--cost=body-top"])
+    options = config_options.clean_opts(options)
     assert options.cost == ["body-top"]
 
-    options = main.parse_opts(["--cost=hide"])
-    options = main.clean_opts(options)
+    options = config_options.parse_opts(["--cost=hide"])
+    options = config_options.clean_opts(options)
     assert options.cost == ["hide"]
 
-    options = main.parse_opts(["--cost=tab", "--cost=body-top"])
-    options = main.clean_opts(options)
+    options = config_options.parse_opts(["--cost=tab", "--cost=body-top"])
+    options = config_options.clean_opts(options)
     assert set(options.cost) == {"tab", "body-top"}
 
 
 def test_set_icon():
-    options = main.parse_opts([])
-    options = main.clean_opts(options)
+    options = config_options.parse_opts([])
+    options = config_options.clean_opts(options)
     assert options.set_icon == ["tab"]
 
-    options = main.parse_opts(["--set-icon=tab"])
-    options = main.clean_opts(options)
+    options = config_options.parse_opts(["--set-icon=tab"])
+    options = config_options.clean_opts(options)
     assert options.set_icon == ["tab"]
 
-    options = main.parse_opts(["--set-icon=body-top"])
-    options = main.clean_opts(options)
+    options = config_options.parse_opts(["--set-icon=body-top"])
+    options = config_options.clean_opts(options)
     assert options.set_icon == ["body-top"]
 
-    options = main.parse_opts(["--set-icon=hide"])
-    options = main.clean_opts(options)
+    options = config_options.parse_opts(["--set-icon=hide"])
+    options = config_options.clean_opts(options)
     assert options.set_icon == ["hide"]
 
-    options = main.parse_opts(["--set-icon=tab", "--set-icon=body-top"])
-    options = main.clean_opts(options)
+    options = config_options.parse_opts(["--set-icon=tab", "--set-icon=body-top"])
+    options = config_options.clean_opts(options)
     assert set(options.set_icon) == {"tab", "body-top"}

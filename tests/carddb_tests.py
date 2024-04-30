@@ -8,7 +8,7 @@ import unicodedata
 import pytest
 
 from domdiv import cards as domdiv_cards
-from domdiv import main
+from domdiv import config_options, db, main
 
 
 @pytest.fixture
@@ -25,9 +25,9 @@ def rmtestcardb(request):
 def test_cardread():
     num_cards_expected = 958
 
-    options = main.parse_opts([])
+    options = config_options.parse_opts([])
     options.data_path = "."
-    cards = main.read_card_data(options)
+    cards = db.read_card_data(options)
     assert len(cards) == num_cards_expected
     valid_cardsets = {
         "base",
@@ -78,12 +78,12 @@ def test_cardread():
         assert c.cardset_tag in valid_cardsets
 
     # Option modified card count
-    options = main.parse_opts(
+    options = config_options.parse_opts(
         ["--no-trash", "--curse10", "--start-decks", "--include-blanks", "7"]
     )
-    options = main.clean_opts(options)
+    options = config_options.clean_opts(options)
     options.data_path = "."
-    cards = main.read_card_data(options)
+    cards = db.read_card_data(options)
     # Total delta cards is +28 from
     #      Trash:       -1 * 3 sets = -3
     #      Curse:       +2 * 4 sets = +8
@@ -92,13 +92,13 @@ def test_cardread():
     assert len(cards) == num_cards_expected + 28
 
 
-@pytest.mark.parametrize("lang", main.get_languages("card_db"))
+@pytest.mark.parametrize("lang", db.get_languages("card_db"))
 def test_languages_db(lang):
     print("checking " + lang)
     # for now, just test that they load
-    options = main.parse_opts(["--language", lang])
+    options = config_options.parse_opts(["--language", lang])
     options.data_path = "."
-    cards = main.read_card_data(options)
+    cards = db.read_card_data(options)
     assert cards, '"{}" cards did not read properly'.format(lang)
     cards = main.add_card_text(cards, "en_us")
     cards = main.add_card_text(cards, lang)
@@ -119,7 +119,7 @@ def change_cwd(d):
 
 
 def test_only_type():
-    options = main.parse_opts(
+    options = config_options.parse_opts(
         [
             "--expansions",
             "base",
@@ -134,9 +134,9 @@ def test_only_type():
             "action",
         ]
     )
-    options = main.clean_opts(options)
+    options = config_options.clean_opts(options)
     options.data_path = "."
-    cards = main.read_card_data(options)
+    cards = db.read_card_data(options)
     cards = main.filter_sort_cards(cards, options)
     # Total 8 from
     #      Blank:         +5 added in options
@@ -153,7 +153,7 @@ def test_expansion():
     # works, that we can use either the
     # cardset tag or name, and that capitalization
     # doesn't matter
-    options = main.parse_opts(
+    options = config_options.parse_opts(
         [
             "--expansion",
             "advEntUres",
@@ -161,9 +161,9 @@ def test_expansion():
             "--expansions=intrigue1stEdition",
         ]
     )
-    options = main.clean_opts(options)
+    options = config_options.clean_opts(options)
     options.data_path = "."
-    cards = main.read_card_data(options)
+    cards = db.read_card_data(options)
     cards = main.filter_sort_cards(cards, options)
     card_sets = set(x.cardset.lower() for x in cards)
     assert card_sets == {
@@ -181,7 +181,7 @@ def test_exclude_expansion():
     # works, that we can use either the
     # cardset tag or name, and that capitalization
     # doesn't matter
-    options = main.parse_opts(
+    options = config_options.parse_opts(
         [
             "--expansions",
             "adventures",
@@ -194,9 +194,9 @@ def test_exclude_expansion():
             "dominion 2nd edition",
         ]
     )
-    options = main.clean_opts(options)
+    options = config_options.clean_opts(options)
     options.data_path = "."
-    cards = main.read_card_data(options)
+    cards = db.read_card_data(options)
     cards = main.filter_sort_cards(cards, options)
     card_sets = set(x.cardset.lower() for x in cards)
     assert card_sets == {
@@ -212,7 +212,7 @@ def test_expansion_description_card_order():
     # test that the expansions cards lists cards
     # in alphabetical order, like they are printed,
     # and that accents don't matter
-    options = main.parse_opts(
+    options = config_options.parse_opts(
         [
             "--expansions",
             "hinterlands1stEdition",
@@ -223,9 +223,9 @@ def test_expansion_description_card_order():
             "Expansion",
         ]
     )
-    options = main.clean_opts(options)
+    options = config_options.clean_opts(options)
     options.data_path = "."
-    cards = main.read_card_data(options)
+    cards = db.read_card_data(options)
     cards = main.filter_sort_cards(cards, options)
     card_names = [c.strip() for c in cards[0].description.split("|")]
     # The 26 french card names of the Hinterlands expansion should be sorted as if no accent
