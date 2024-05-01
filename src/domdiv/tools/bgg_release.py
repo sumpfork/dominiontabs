@@ -19,7 +19,7 @@ additional = ["--expansion-dividers", "--tab-artwork-resolution=300"]
 
 
 def run_generator(args, main):
-    args = args + " --outfile " + prefix + main + postfix
+    args = f"{args} --font-dir local_fonts --outfile {prefix}{main}{postfix}"
     args = args.split()
     fname = args[-1]
     print(args)

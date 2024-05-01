@@ -4,7 +4,7 @@
 #
 #    pip-compile --extra=dev --no-emit-index-url --output-file=dev-requirements.txt
 #
-backports-tarfile==1.0.0
+backports-tarfile==1.1.1
     # via jaraco-context
 build==1.2.1
     # via domdiv (pyproject.toml)
@@ -22,17 +22,17 @@ configargparse==1.7
     # via domdiv (pyproject.toml)
 distlib==0.3.8
     # via virtualenv
-docutils==0.20.1
+docutils==0.21.2
     # via readme-renderer
 doit==0.36.0
     # via domdiv (pyproject.toml)
-exceptiongroup==1.2.0
+exceptiongroup==1.2.1
     # via pytest
-filelock==3.13.3
+filelock==3.14.0
     # via virtualenv
-identify==2.5.35
+identify==2.5.36
     # via pre-commit
-idna==3.6
+idna==3.7
     # via requests
 importlib-metadata==7.1.0
     # via
@@ -46,10 +46,12 @@ jaraco-classes==3.4.0
     # via keyring
 jaraco-context==5.3.0
     # via keyring
-jaraco-functools==4.0.0
+jaraco-functools==4.0.1
     # via keyring
-keyring==25.1.0
+keyring==25.2.0
     # via twine
+loguru==0.7.2
+    # via domdiv (pyproject.toml)
 markdown-it-py==3.0.0
     # via rich
 mdurl==0.1.2
@@ -72,9 +74,9 @@ pillow==10.3.0
     #   reportlab
 pkginfo==1.10.0
     # via twine
-platformdirs==4.2.0
+platformdirs==4.2.1
     # via virtualenv
-pluggy==1.4.0
+pluggy==1.5.0
     # via pytest
 pre-commit==3.7.0
     # via domdiv (pyproject.toml)
@@ -82,15 +84,15 @@ pygments==2.17.2
     # via
     #   readme-renderer
     #   rich
-pyproject-hooks==1.0.0
+pyproject-hooks==1.1.0
     # via build
-pytest==8.1.1
+pytest==8.2.0
     # via domdiv (pyproject.toml)
 pyyaml==6.0.1
     # via pre-commit
 readme-renderer==43.0
     # via twine
-reportlab==4.1.0
+reportlab==4.2.0
     # via domdiv (pyproject.toml)
 requests==2.31.0
     # via
@@ -105,7 +107,6 @@ rich==13.7.1
 tomli==2.0.1
     # via
     #   build
-    #   pyproject-hooks
     #   pytest
 twine==5.0.0
     # via domdiv (pyproject.toml)
@@ -113,7 +114,7 @@ urllib3==2.2.1
     # via
     #   requests
     #   twine
-virtualenv==20.25.1
+virtualenv==20.26.1
     # via pre-commit
 zipp==3.18.1
     # via importlib-metadata
