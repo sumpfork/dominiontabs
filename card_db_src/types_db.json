@@ -241,6 +241,16 @@
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
+	{
+		"card_type": [
+			"Action",
+			"Reward"
+		],
+		"card_type_image": "action.png",
+		"defaultCardCount": 2,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
     {
         "card_type": [
             "Action",
@@ -294,10 +304,32 @@
     {
         "card_type": [
             "Action",
+            "Treasure",
+			"Reward"
+        ],
+        "card_type_image": "action-treasure.png",
+        "defaultCardCount": 2,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
             "Victory"
         ],
         "card_type_image": "action-victory.png",
         "defaultCardCount": 12,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Victory",
+			"Reward"
+        ],
+        "card_type_image": "action-victory.png",
+        "defaultCardCount": 2,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
@@ -799,6 +831,24 @@
     },
     {
         "card_type": [
+            "Reward"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 1,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Rewards"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 0,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
             "Shelters"
         ],
         "card_type_image": "shelter.png",
@@ -975,6 +1025,16 @@
         ],
         "card_type_image": "reserve-treasure.png",
         "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
+            "Reward"
+        ],
+        "card_type_image": "treasure.png",
+        "defaultCardCount": 2,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
     },
