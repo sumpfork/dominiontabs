@@ -53,14 +53,50 @@
         "set_text": "",
         "text_icon": "*"
     },
-    "cornucopia": {
+    "cornucopia1stEdition": {
+        "edition": [
+            "1"
+        ],
+        "image": "cornucopia_set.png",
+        "set_name": "*cornucopia1stEdition*",
+        "set_text": "",
+        "short_name": "Cornucopia",
+        "text_icon": "*"
+    },
+    "cornucopia1stEditionRemoved": {
         "edition": [
             "1",
+            "removed"
+        ],
+        "has_extras": false,
+        "image": "cornucopia_set.png",
+        "set_name": "*cornucopia1stEditionRemoved*",
+        "set_text": "",
+        "short_name": "Cornucopia",
+        "text_icon": "*"
+    },
+    "cornucopia2ndEditionUpgrade": {
+        "edition": [
+            "1",
+            "upgrade"
+        ],
+        "has_extras": false,
+        "image": "cornucopia_set.png",
+        "set_name": "*cornucopia2ndEditionUpgrade*",
+        "set_text": "",
+        "short_name": "Cornucopia",
+        "text_icon": "*",
+        "upgrades": "cornucopia1stEdition"
+    },
+    "cornucopiaAndGuilds2ndEdition": {
+        "edition": [
+            "2",
             "latest"
         ],
         "image": "cornucopia_set.png",
-        "set_name": "*cornucopia*",
+        "set_name": "*cornucopiaAndGuilds2ndEdition*",
         "set_text": "",
+        "short_name": "Cornucopia and Guilds",
         "text_icon": "*"
     },
     "dark ages": {
@@ -139,16 +175,6 @@
         "set_text": "",
         "text_icon": "*"
     },
-    "guilds": {
-        "edition": [
-            "1",
-            "latest"
-        ],
-        "image": "guilds_set.png",
-        "set_name": "*guilds*",
-        "set_text": "",
-        "text_icon": "*"
-    },
     "guilds-bigbox2-de": {
         "edition": [
             "1",
@@ -158,6 +184,41 @@
         "set_name": "*guilds-bigbox2-de*",
         "set_text": "",
         "text_icon": "*"
+    },
+    "guilds1stEdition": {
+        "edition": [
+            "1"
+        ],
+        "image": "guilds_set.png",
+        "set_name": "*guilds1stEdition*",
+        "set_text": "",
+        "short_name": "Guilds",
+        "text_icon": "*"
+    },
+    "guilds1stEditionRemoved": {
+        "edition": [
+            "1",
+            "removed"
+        ],
+        "has_extras": false,
+        "image": "guilds_set.png",
+        "set_name": "*guilds1stEditionRemoved*",
+        "set_text": "",
+        "short_name": "Guilds",
+        "text_icon": "*"
+    },
+    "guilds2ndEditionUpgrade": {
+        "edition": [
+            "1",
+            "upgrade"
+        ],
+        "has_extras": false,
+        "image": "guilds_set.png",
+        "set_name": "*guilds2ndEditionUpgrade*",
+        "set_text": "",
+        "short_name": "Guilds",
+        "text_icon": "*",
+        "upgrades": "guilds1stEdition"
     },
     "hinterlands1stEdition": {
         "edition": [

@@ -23,10 +23,11 @@ def rmtestcardb(request):
 
 
 def test_cardread():
-    num_cards_expected = 958
+    # we test the number of cards only to make sure it doesn't get changed
+    # inadvertently by unrelated changes
+    num_cards_expected = 1017
 
     options = config_options.parse_opts([])
-    options.data_path = "."
     cards = db.read_card_data(options)
     assert len(cards) == num_cards_expected
     valid_cardsets = {
@@ -49,14 +50,19 @@ def test_cardread():
         "prosperity2ndEdition",
         "prosperity2ndEditionUpgrade",
         "cornucopia extras",
-        "cornucopia",
+        "cornucopia1stEdition",
+        "cornucopia1stEditionRemoved",
+        "cornucopia2ndEditionUpgrade",
+        "cornucopiaAndGuilds2ndEdition",
         "hinterlands1stEdition",
         "hinterlands1stEditionRemoved",
         "hinterlands2ndEdition",
         "hinterlands2ndEditionUpgrade",
         "dark ages",
         "dark ages extras",
-        "guilds",
+        "guilds1stEdition",
+        "guilds1stEditionRemoved",
+        "guilds2ndEditionUpgrade",
         "guilds-bigbox2-de",
         "adventures",
         "adventures extras",
