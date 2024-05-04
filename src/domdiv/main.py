@@ -314,7 +314,9 @@ def filter_sort_cards(cards, options):
                 # have a card in a group
                 if (card.group_tag, card.cardset_tag) not in group_cards:
                     # First card of a group
-                    group_cards[(card.group_tag, card.cardset_tag)] = card  # save to update cost later
+                    group_cards[(card.group_tag, card.cardset_tag)] = (
+                        card  # save to update cost later
+                    )
                     # this card becomes the card holder for the whole group.
                     card.card_tag = card.group_tag
                     # These text fields should be updated later if there is a translation for this group_tag.
@@ -336,25 +338,35 @@ def filter_sort_cards(cards, options):
                     if card.group_top:
                         # this is a designated card to represent the group, so update important data
                         group_cards[(card.group_tag, card.cardset_tag)].cost = card.cost
-                        group_cards[(card.group_tag, card.cardset_tag)].potcost = card.potcost
-                        group_cards[(card.group_tag, card.cardset_tag)].debtcost = card.debtcost
-                        group_cards[(card.group_tag, card.cardset_tag)].types = card.types
-                        group_cards[(card.group_tag, card.cardset_tag)].randomizer = card.randomizer
-                        group_cards[(card.group_tag, card.cardset_tag)].image = card.image
+                        group_cards[(card.group_tag, card.cardset_tag)].potcost = (
+                            card.potcost
+                        )
+                        group_cards[(card.group_tag, card.cardset_tag)].debtcost = (
+                            card.debtcost
+                        )
+                        group_cards[(card.group_tag, card.cardset_tag)].types = (
+                            card.types
+                        )
+                        group_cards[(card.group_tag, card.cardset_tag)].randomizer = (
+                            card.randomizer
+                        )
+                        group_cards[(card.group_tag, card.cardset_tag)].image = (
+                            card.image
+                        )
 
                     group_cards[(card.group_tag, card.cardset_tag)].addCardCount(
                         card.count
                     )  # increase the count
-                    # group_cards[(card.group_tag, card.cardset_tag)].set_lowest_cost(card)  # set holder to lowest cost of the two cards
+                    # set holder to lowest cost of the two cards
+                    # group_cards[(card.group_tag, card.cardset_tag)].set_lowest_cost(card)
 
         cards = keep_cards
 
         # Now fix up card costs for groups by Type (Events, Landmarks, etc.)
         for card in cards:
-            if (
-                (card.card_tag, card.cardset_tag) in group_cards
-                and group_cards[(card.group_tag, card.cardset_tag)].get_GroupCost()
-            ):
+            if (card.card_tag, card.cardset_tag) in group_cards and group_cards[
+                (card.group_tag, card.cardset_tag)
+            ].get_GroupCost():
                 group_cards[(card.group_tag, card.cardset_tag)].cost = group_cards[
                     (card.group_tag, card.cardset_tag)
                 ].get_GroupCost()

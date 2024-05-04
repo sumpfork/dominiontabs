@@ -365,12 +365,12 @@
         "name": "Cargo Ship",
         "used": true
     },
-	"Carnival": {
-		"description": "Reveal the top 4 cards of your deck. Put one of each differently named card into your hand and discard the rest.",
-		"extra": "For example if you revealed 3 Coppers and a Farmhands, you'd put one Copper and the Farmhands into your hand, and discard the other two Coppers. Shuffle if necessary to get 4 cards to reveal; if there still aren't 4 cards, reveal what you can.",
-		"name": "Carnival",
-		"used": true
-	},
+    "Carnival": {
+        "description": "Reveal the top 4 cards of your deck. Put one of each differently named card into your hand and discard the rest.",
+        "extra": "For example if you revealed 3 Coppers and a Farmhands, you'd put one Copper and the Farmhands into your hand, and discard the other two Coppers. Shuffle if necessary to get 4 cards to reveal; if there still aren't 4 cards, reveal what you can.",
+        "name": "Carnival",
+        "used": true
+    },
     "Cartographer": {
         "description": "+1 Card<br>+1 Action<n>Look at the top 4 cards of your deck. Discard any number of them. Put the rest back on top in any order.",
         "extra": "You draw a card first, then look at the top 4 cards of your deck. If there are fewer than 4 cards left in your deck, look at the remaining cards, and shuffle your discard pile (which does not include those cards) to get the remainder needed to look at. If there are still not enough cards, just look at as many as you can. Discard any number of the cards you looked at - none, all four, or something in-between - and put the rest back on top of your deck in any order. if there were no cards left in your deck, these become the only cards in your deck. You do not reveal the cards you put back.",
@@ -551,12 +551,12 @@
         "name": "Coppersmith",
         "used": true
     },
-	"Coronet": {
-		"description": "You may play a non-Reward Action from your hand twice.<br><br>You may play a non-Reward Treasure from your hand twice.<br><br><i>(This is not in the Supply.)</i>",
-		"extra": " Playing either type of card is optional; you can play an Action twice, play a Treasure twice, do both, or do neither. If you do both, you play the Action first. This can't play Rewards. Playing a card twice with this means playing the card, resolving that completely, then playing the same card again. Playing cards with this doesn't use up Action plays for the turn. For example you could Coronet a Village and a Silver; you'd get +2 Cards and +4 Actions from the Village plays, and +4 coin from the Silver plays.",
-		"name": "Coronet",
-		"used": true
-	},
+    "Coronet": {
+        "description": "You may play a non-Reward Action from your hand twice.<br><br>You may play a non-Reward Treasure from your hand twice.<br><br><i>(This is not in the Supply.)</i>",
+        "extra": " Playing either type of card is optional; you can play an Action twice, play a Treasure twice, do both, or do neither. If you do both, you play the Action first. This can't play Rewards. Playing a card twice with this means playing the card, resolving that completely, then playing the same card again. Playing cards with this doesn't use up Action plays for the turn. For example you could Coronet a Village and a Silver; you'd get +2 Cards and +4 Actions from the Village plays, and +4 coin from the Silver plays.",
+        "name": "Coronet",
+        "used": true
+    },
     "Council Room": {
         "description": "+4 Cards<br>+1 Buy<n>Each other player draws a card.",
         "extra": "The other players must draw a card whether they want to or not. All players should shuffle as necessary.",
@@ -581,12 +581,12 @@
         "name": "Counting House",
         "used": true
     },
-	"Courser": {
-		"description": "Choose two different options:<br>+2 Cards; +2 Actions;<br>+2 coin; gain 4 Silvers.<br><br><i>(This is not in the Supply.)</i>",
-		"extra": "First choose any two of the four options, then do those options in the order listed. So if you choose both +2 Cards and \"Gain 4 Silvers,\" you will draw cards before you gain the Silvers.",
-		"name": "Courser",
-		"used": true
-	},
+    "Courser": {
+        "description": "Choose two different options:<br>+2 Cards; +2 Actions;<br>+2 coin; gain 4 Silvers.<br><br><i>(This is not in the Supply.)</i>",
+        "extra": "First choose any two of the four options, then do those options in the order listed. So if you choose both +2 Cards and \"Gain 4 Silvers,\" you will draw cards before you gain the Silvers.",
+        "name": "Courser",
+        "used": true
+    },
     "Courtier": {
         "description": "Reveal a card from your hand. For each type it has (Action, Attack, etc.), choose one: +1 Action; or +1 Buy; or +3 Coin; or gain a Gold. The choices must be different.",
         "extra": "First reveal a card from your hand, then count the types.<n>The types are the words on the bottom line including Action, Attack, Curse, Reaction, Treasure, and Victory (with more in expansions).<n>Then choose one different thing per type the card had; if you revealed a card with two types, you pick two things.<n>For example you could reveal a Copper and choose \"gain a Gold,\" or reveal a Mill and choose \"+1 Action\" and \"+3 Coin\".<n>If you gain a Gold, put the Gold into your discard pile.",
@@ -677,12 +677,12 @@
         "name": "Delve",
         "used": true
     },
-	"Demesne": {
-		"description": "+2 Actions<br>+2 Buys<br>Gain a Gold.<line>Worth 1 VP per Gold you have.<br><br><i>(This is not in the supply.)</i>",
-		"extra": "When you play this, you get +2 Actions, +2 Buys, and gain a Gold. When scoring, this is worth 1 VP per Gold you have then.",
-		"name": "Demesne",
-		"used": true
-	},
+    "Demesne": {
+        "description": "+2 Actions<br>+2 Buys<br>Gain a Gold.<line>Worth 1 VP per Gold you have.<br><br><i>(This is not in the supply.)</i>",
+        "extra": "When you play this, you get +2 Actions, +2 Buys, and gain a Gold. When scoring, this is worth 1 VP per Gold you have then.",
+        "name": "Demesne",
+        "used": true
+    },
     "Den of Sin": {
         "description": "At the start of your next turn,<n>+2 Cards.<line>This is gained to your hand (instead of your discard pile).",
         "extra": "Since Night is after the Buy phase, normally you can play this the turn you buy it.",
@@ -929,12 +929,12 @@
         "name": "Farmers' Market",
         "used": true
     },
-	"Farmhands": {
-		"description": "+1 Card<br>+2 Actions<line>When you gain this, you may set aside an Action or Treasure from your hand, and play it at the start of your next turn.",
-		"extra": "Setting aside a card when you gain this is optional. Once you do it, you have to play the card at the start of your next turn, even if you no longer want to. Playing the Action card does not \"use up\" one of your Action plays for the turn. The set aside card is face up.",
-		"name": "Farmhands",
-		"used": true
-	},
+    "Farmhands": {
+        "description": "+1 Card<br>+2 Actions<line>When you gain this, you may set aside an Action or Treasure from your hand, and play it at the start of your next turn.",
+        "extra": "Setting aside a card when you gain this is optional. Once you do it, you have to play the card at the start of your next turn, even if you no longer want to. Playing the Action card does not \"use up\" one of your Action plays for the turn. The set aside card is face up.",
+        "name": "Farmhands",
+        "used": true
+    },
     "Farming Village": {
         "description": "+2 Actions<n>Reveal cards from the top of your deck until you reveal an Action or Treasure card. Put that card into your hand and discard the other cards.",
         "extra": "Reveal cards from the top of your deck until you reveal a Treasure or Action card. If you run out of cards before finding one, shuffle your discard pile (but not the revealed cards), and keep revealing cards. If you still cannot find one, just discard all of the revealed cards. If you do find a Treasure or Action card, put it into your hand, and discard the rest of the revealed cards. A card with multiple types, one of which is Treasure or Action (for example Diadem, a Treasure - Prize), is a Treasure or Action and so will be drawn by this. You do not choose Treasure or Action - you stop on the first card matching either type.",
@@ -947,12 +947,12 @@
         "name": "Farmland",
         "used": true
     },
-	"Farrier": {
-		"description": "+1 Card<br>+1 Action<br>+1 Buy<line><b>Overpay:</b> +1 Card at the end of this turn per 1 coin overpaid.",
-		"extra": "When you gain a Farrier you overpaid for, you draw an extra card at end of turn per 1 coin you overpaid. For example you could pay 4 coin for Farrier, and draw 2 extra cards at end of turn. This doesn't happen if you gain a Farrier without paying for it (such as with Horn of Plenty).",
-		"name": "Farrier",
-		"used": true
-	},
+    "Farrier": {
+        "description": "+1 Card<br>+1 Action<br>+1 Buy<line><b>Overpay:</b> +1 Card at the end of this turn per 1 coin overpaid.",
+        "extra": "When you gain a Farrier you overpaid for, you draw an extra card at end of turn per 1 coin you overpaid. For example you could pay 4 coin for Farrier, and draw 2 extra cards at end of turn. This doesn't happen if you gain a Farrier without paying for it (such as with Horn of Plenty).",
+        "name": "Farrier",
+        "used": true
+    },
     "Fear": {
         "description": "If you have at least 5 cards in hand, discard an Action or Treasure (or reveal you can't.)",
         "extra": "You discard an Action or Treasure if you have either, and only reveal your hand if you have no Actions and no Treasures.",
@@ -977,12 +977,12 @@
         "name": "Ferry",
         "used": true
     },
-	"Ferryman": {
-		"description": "+2 Cards<br>+1 Action<br>Discard a card.<line>Setup: Choose an unused Kingdom card pile costing 3 coin or 4 coin. Gain one when you gain a Ferryman.",
-		"extra": "When you gain a Ferryman, you also gain a copy of whichever card was set aside in setup. For example in setup you might set aside Shop, which costs 3 coin; then that game, when you gained a Ferryman, you'd also gain a Shop. The card chosen for Ferryman can't be gained other ways, only by gaining a Ferryman. If the chosen card is a split pile (such as the Augurs from Dominion: Allies), different cards will be gained via Ferryman gains as they get uncovered.",
-		"name": "Ferryman",
-		"used": true
-	},
+    "Ferryman": {
+        "description": "+2 Cards<br>+1 Action<br>Discard a card.<line>Setup: Choose an unused Kingdom card pile costing 3 coin or 4 coin. Gain one when you gain a Ferryman.",
+        "extra": "When you gain a Ferryman, you also gain a copy of whichever card was set aside in setup. For example in setup you might set aside Shop, which costs 3 coin; then that game, when you gained a Ferryman, you'd also gain a Shop. The card chosen for Ferryman can't be gained other ways, only by gaining a Ferryman. If the chosen card is a split pile (such as the Augurs from Dominion: Allies), different cards will be gained via Ferryman gains as they get uncovered.",
+        "name": "Ferryman",
+        "used": true
+    },
     "Festival": {
         "description": "+2 Actions<br>+1 Buy<br>+2 Coins",
         "extra": "If you are playing multiple Festivals, keep a careful count of your Actions. Say how many you have left out loud; this trick works every time (i.e. \"I'm playing the Festival and now have two Actions remaining. I play a Market and have two Actions remaining. I play another Festival and now have three actions remaining...).",
@@ -1043,12 +1043,12 @@
         "name": "Fool's Gold",
         "used": true
     },
-	"Footpad": {
-		"description": "+2 Coffers<br>Each other player discards down to 3 cards in hand.<line>In games using this, when you gain a card in an Action phase, +1 Card.",
-		"extra": "This changes any game it's part of, even if no-one has gained a Footpad. For that entire game, any time you gain a card in an Action phase, you draw a card. For example if you played Remake to turn two Estates into two Silvers, you'd draw two cards. Drawing isn't optional. This doesn't draw you cards in Buy phases or Clean-up, just Action phases. When you play a Footpad, you get +2 Coffers, and the other players discard down to 3 cards in hand.",
-		"name": "Footpad",
-		"used": true
-	},
+    "Footpad": {
+        "description": "+2 Coffers<br>Each other player discards down to 3 cards in hand.<line>In games using this, when you gain a card in an Action phase, +1 Card.",
+        "extra": "This changes any game it's part of, even if no-one has gained a Footpad. For that entire game, any time you gain a card in an Action phase, you draw a card. For example if you played Remake to turn two Estates into two Silvers, you'd draw two cards. Drawing isn't optional. This doesn't draw you cards in Buy phases or Clean-up, just Action phases. When you play a Footpad, you get +2 Coffers, and the other players discard down to 3 cards in hand.",
+        "name": "Footpad",
+        "used": true
+    },
     "Forager": {
         "description": "+1 Action<br>+1 Buy<n>Trash a card from your hand.<n>+1 Coin per differently named Treasure in the trash.",
         "extra": "Trash a card from your hand if you can. Whether or not you can, you still get +1 Coin per differently named Treasure in the trash, plus +1 Action and +1 Buy. Multiple copies of the same Treasure card do not increase how much you get. For example, if the trash has four Coppers, a Counterfeit, and six Estates, you get +2 Coins. Cards with multiple types, one of which is Treasure (such as Harem from Intrigue), are Treasures.",
@@ -1355,24 +1355,24 @@
         "name": "Horse Traders",
         "used": true
     },
-	"Housecarl": {
-		"description": "+1 Card per differently named Action card you have in play.<br><br><i>(This is not in the supply.)</i>",
-		"extra": "This includes Housecarl itself.",
-		"name": "Housecarl",
-		"used": true
-	},
+    "Housecarl": {
+        "description": "+1 Card per differently named Action card you have in play.<br><br><i>(This is not in the supply.)</i>",
+        "extra": "This includes Housecarl itself.",
+        "name": "Housecarl",
+        "used": true
+    },
     "Hovel": {
         "description": "When you buy a Victory card, you may trash this from your hand.",
         "extra": "This is a Shelter; see Preparation. It is never in the Supply. When you buy a Victory card, if Hovel is in your hand, you may trash the Hovel. A card with multiple types, one of which is Victory, is a Victory card. You do not get anything for trashing Hovel; you just get to get rid of it.",
         "name": "Hovel",
         "used": true
     },
-	"Huge Turnip": {
-		"description": "+2 Coffers<br><br>+1 coin per Coffers you have.<br><br><i>(This is not in the Supply.)</i>",
-		"extra": "The +1 coin per Coffers you have includes the 2 you just got.",
-		"name": "Huge Turnip",
-		"used": true
-	},
+    "Huge Turnip": {
+        "description": "+2 Coffers<br><br>+1 coin per Coffers you have.<br><br><i>(This is not in the Supply.)</i>",
+        "extra": "The +1 coin per Coffers you have includes the 2 you just got.",
+        "name": "Huge Turnip",
+        "used": true
+    },
     "Hunting Grounds": {
         "description": "+ 4 Cards<line>When you trash this, gain a Duchy or 3 Estates.",
         "extra": "When you play this, draw 4 cards. If this is trashed, you either gain a Duchy or 3 Estates, your choice. These cards come from the Supply and are put into your discard pile. If you choose the 3 Estates and there are not 3 left, just gain as many as you can.",
@@ -1409,12 +1409,12 @@
         "name": "Improve",
         "used": true
     },
-	"Infirmary": {
-		"description": "+1 Card<br>You may trash a card from your hand.<line><b>Overpay:</b> Play this once per 1 coin overpaid.",
-		"extra": "When you gain an Infirmary you overpaid for, you play it once per 1 coin you overpaid. For example if you buy an Infirmary for 5 coin, you'd play the Infirmary twice - drawing a card, optionally trashing a card from your hand, drawing another card, and optionally trashing another card. This doesn't happen when you gain Infirmary without paying for it (such as with Horn of Plenty).",
-		"name": "Infirmary",
-		"used": true
-	},
+    "Infirmary": {
+        "description": "+1 Card<br>You may trash a card from your hand.<line><b>Overpay:</b> Play this once per 1 coin overpaid.",
+        "extra": "When you gain an Infirmary you overpaid for, you play it once per 1 coin you overpaid. For example if you buy an Infirmary for 5 coin, you'd play the Infirmary twice - drawing a card, optionally trashing a card from your hand, drawing another card, and optionally trashing another card. This doesn't happen when you gain Infirmary without paying for it (such as with Horn of Plenty).",
+        "name": "Infirmary",
+        "used": true
+    },
     "Inheritance": {
         "description": "Once per game: Set aside a non-Victory Action card from the Supply costing up to 4 Coin. Move your Estate token to it (your Estates gain the abilities and types of that card).",
         "extra": "You can only buy this once per game. When you do, set aside a non-Victory Action card from the Supply that costs up to 4 Coins, and put your Estate token on it (the one depicting a house). This is not gaining a card, and does not count for things that care about gaining, such as Treasure Hunter; however at the end of the game, include the card in your deck when scoring. For the rest of the game, all of your Estates have the abilities and types of the set aside card. For example if you set aside a Port, then your Estates are Action - Victory cards, that can be played for +1 Card +2 Actions. This also changes Estates you buy or otherwise gain during the game; if you used Inheritance on a Port and then later bought an Estate, that Estate would come with a Port, just as buying a Port gains you a Port. This only affects your own Estates, not Estates of other players. An Estate is yours if either it started in your deck, or you gained it or bought it, or you were passed it with Masquerade (from Intrigue). An Estate stops being yours if you trash it, return it to the Supply, pass it with Masquerade, or are stopped from gaining it due to Possession (from Alchemy) or Trader (from Hinterlands). There are no limits on the set aside card other than being a non-Victory Action from the Supply costing up to 4 Coins; it may be a Duration card, a Reaction card, and so on. It does not have to continue costing up to 4 Coins, it only has to cost up to 4 Coins when set aside. Your Estates are still worth 1 Victory Point when scoring at the end of the game. Your Estates only copy abilities and types; they do not copy cost, name, or what pile they are from (thus they don't trigger tokens like +1 Action on the copied pile, and are not the Bane for Young Witch from Cornucopia even if the copied pile is the Bane). Starting Estates come from the Estates pile.",
@@ -1475,18 +1475,18 @@
         "name": "Journeyman",
         "used": true
     },
-	"Joust": {
-		"description": "+1 Card<br>+1 Action<br>+1 coin<br>You may set aside a Province from your hand to gain any Reward to your hand. Discard the Province in Clean-up.",
-		"extra": "Use one copy of each Reward for games with 2 players, and two copies of each Reward for games with 3-6 players. With 3 or more players, it's okay to gain a Reward you already have a copy of. To gain a Reward you have to set aside a Province from your hand, discarding that Province in Clean-up with your other cards. If all Rewards have been claimed, you can still set aside a Province, but this won't do anything special for you. Rewards are not in the Supply, and can only be gained via playing Joust.",
-		"name": "Joust",
-		"used": true
-	},
-	"Joust and Rewards": {
-		"description": "+1 Card<br>+1 Action<br>+1 coin<br>You may set aside a Province from your hand to gain any Reward to your hand. Discard the Province in Clean-up.",
-		"extra": " Use one copy of each Reward for games with 2 players, and two copies of each Reward for games with 3-6 players. With 3 or more players, it's okay to gain a Reward you already have a copy of. To gain a Reward you have to set aside a Province from your hand, discarding that Province in Clean-up with your other cards. If all Rewards have been claimed, you can still set aside a Province, but this won't do anything special for you. Rewards are not in the Supply, and can only be gained via playing Joust.\nThere are two each of six rewards: Coronet, Courser, Demesne, Housecarl, Huge Turnip, Renown.<br>• These are cards which are never part of the Supply. If the Rewards run out, that does not count towards the game end condition.<br>• The Rewards may not be bought, or gained via cards like Horn of Plenty; only Joust can gain them from their pile. They can be gained from other places normally; for example Lurker from Intrigue can gain some of them from the trash.<br>• Use all 12 Rewards with 3 or more players; use just one of each with 2 players. With 3 or more players, a single player can get two of the same Reward.<br>• Trashed Rewards go to the trash pile, like other cards; they do not return to the Rewards pile.<br>• If using the promotional card Black Market, do not put Rewards into the Black Market deck. ",
-		"name": "Joust and Rewards",
-		"used": true
-	},
+    "Joust": {
+        "description": "+1 Card<br>+1 Action<br>+1 coin<br>You may set aside a Province from your hand to gain any Reward to your hand. Discard the Province in Clean-up.",
+        "extra": "Use one copy of each Reward for games with 2 players, and two copies of each Reward for games with 3-6 players. With 3 or more players, it's okay to gain a Reward you already have a copy of. To gain a Reward you have to set aside a Province from your hand, discarding that Province in Clean-up with your other cards. If all Rewards have been claimed, you can still set aside a Province, but this won't do anything special for you. Rewards are not in the Supply, and can only be gained via playing Joust.",
+        "name": "Joust",
+        "used": true
+    },
+    "Joust and Rewards": {
+        "description": "+1 Card<br>+1 Action<br>+1 coin<br>You may set aside a Province from your hand to gain any Reward to your hand. Discard the Province in Clean-up.",
+        "extra": " Use one copy of each Reward for games with 2 players, and two copies of each Reward for games with 3-6 players. With 3 or more players, it's okay to gain a Reward you already have a copy of. To gain a Reward you have to set aside a Province from your hand, discarding that Province in Clean-up with your other cards. If all Rewards have been claimed, you can still set aside a Province, but this won't do anything special for you. Rewards are not in the Supply, and can only be gained via playing Joust.\nThere are two each of six rewards: Coronet, Courser, Demesne, Housecarl, Huge Turnip, Renown.<br>• These are cards which are never part of the Supply. If the Rewards run out, that does not count towards the game end condition.<br>• The Rewards may not be bought, or gained via cards like Horn of Plenty; only Joust can gain them from their pile. They can be gained from other places normally; for example Lurker from Intrigue can gain some of them from the trash.<br>• Use all 12 Rewards with 3 or more players; use just one of each with 2 players. With 3 or more players, a single player can get two of the same Reward.<br>• Trashed Rewards go to the trash pile, like other cards; they do not return to the Rewards pile.<br>• If using the promotional card Black Market, do not put Rewards into the Black Market deck. ",
+        "name": "Joust and Rewards",
+        "used": true
+    },
     "Junk Dealer": {
         "description": "+1 Card<br>+1 Action<br>+1 Coin<n>Trash a card from your hand.",
         "extra": "You have to trash a card from your hand if you can. You draw before trashing.",
@@ -2261,12 +2261,12 @@
         "name": "Remodel",
         "used": true
     },
-	"Renown": {
-		"description": "+1 Buy<br><br>This turn, cards cost 2 coin less.<br><br><i>(This is not in the Supply.)</i>",
-		"extra": "Costs can't go below 0 coin. This applies to all cards everywhere - cards in the Supply, cards in hand, cards in decks. For example if you play Renown and then Remake, trashing a Copper, you could gain a Silver, as Silver would cost 1 coin while Copper would still cost 0 coin. Using a card like Throne Room on Renown will make cards cost 4 coin less.",
-		"name": "Renown",
-		"used": true
-	},
+    "Renown": {
+        "description": "+1 Buy<br><br>This turn, cards cost 2 coin less.<br><br><i>(This is not in the Supply.)</i>",
+        "extra": "Costs can't go below 0 coin. This applies to all cards everywhere - cards in the Supply, cards in hand, cards in decks. For example if you play Renown and then Remake, trashing a Copper, you could gain a Silver, as Silver would cost 1 coin while Copper would still cost 0 coin. Using a card like Throne Room on Renown will make cards cost 4 coin less.",
+        "name": "Renown",
+        "used": true
+    },
     "Replace": {
         "description": "Trash a card from your hand. Gain a card costing up to 2 Coins more than it. If the gained card is an Action or Treasure, put it onto your deck; if it's a Victory card, each other player gains a Curse.",
         "extra": "Like Remodel, you first trash a card from your hand, then gain a card from the Supply costing up to 2 Coin more than the trashed card, putting the gained card into your discard pile.<n>Replace gives you an additional bonus based on the types of the gained card; if it is an Action or Treasure you move it to the top of your deck, and if it is a Victory card the other players each gain a Curse.<n>It is possible to get both bonuses; if you gain Harem, Mill, or Nobles with Replace, it both goes on your deck and causes the other players to each gain a Curse.",
@@ -2519,12 +2519,12 @@
         "name": "Shepherd / Pasture",
         "used": true
     },
-	"Shop": {
-		"description": "+1 Card<br>+ 1 coin<br><br>You may play an Action card from your hand that you don’t have a copy of in play.",
-		"extra": "This lets you play an Action card from your hand, provided that you do not have a copy of that card in play. It does not matter if you played a copy of that Action that turn, only that it is not in play when you play Shop.",
-		"name": "Shop",
-		"used": true
-	},
+    "Shop": {
+        "description": "+1 Card<br>+ 1 coin<br><br>You may play an Action card from your hand that you don’t have a copy of in play.",
+        "extra": "This lets you play an Action card from your hand, provided that you do not have a copy of that card in play. It does not matter if you played a copy of that Action that turn, only that it is not in play when you play Shop.",
+        "name": "Shop",
+        "used": true
+    },
     "Silk Merchant": {
         "description": "+2 Cards<br>+1 Buy<n><line>When you gain or trash this, +1 Coffers and +1 Villager.",
         "extra": "When you play this, you get +2 Cards and +1 Buy; when you trash it or gain it, you get +1 Coffers and +1 Villager. If Silk Merchant is trashed, the player trashing it takes the +1 Coffers and +1 Villager, regardless of whose turn it is.",
