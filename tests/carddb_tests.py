@@ -23,10 +23,11 @@ def rmtestcardb(request):
 
 
 def test_cardread():
-    num_cards_expected = 958
+    # we test the number of cards only to make sure it doesn't get changed
+    # inadvertently by unrelated changes
+    num_cards_expected = 1017
 
     options = config_options.parse_opts([])
-    options.data_path = "."
     cards = db.read_card_data(options)
     assert len(cards) == num_cards_expected
     valid_cardsets = {
