@@ -40,13 +40,14 @@ def add_opt(options, option, value):
     setattr(options, option, value)
 
 
-def parse_opts(cmdline_args=None):
-    parser = configargparse.ArgParser(
-        formatter_class=configargparse.ArgumentDefaultsHelpFormatter,
-        description="Generate Dominion Dividers",
-        epilog="Source can be found at 'https://github.com/sumpfork/dominiontabs'. "
-        "An online version can be found at 'http://domdiv.bgtools.net/'. ",
-    )
+def parse_opts(cmdline_args=None, parser=None):
+    if not parser:
+        parser = configargparse.ArgParser(
+            formatter_class=configargparse.ArgumentDefaultsHelpFormatter,
+            description="Generate Dominion Dividers",
+            epilog="Source can be found at 'https://github.com/sumpfork/dominiontabs'. "
+            "An online version can be found at 'http://domdiv.bgtools.net/'. ",
+        )
 
     # Basic Divider Information
     group_basic = parser.add_argument_group(
@@ -305,6 +306,7 @@ def parse_opts(cmdline_args=None):
         nargs="*",
         action="append",
         dest="expansions",
+        choices=db.get_expansions()[0],
         help="Limit dividers to only the specified expansions. "
         "If no limits are set, then the latest expansions are included. "
         "Expansion names can also be given in the language specified by "
@@ -323,6 +325,7 @@ def parse_opts(cmdline_args=None):
         nargs="*",
         action="append",
         dest="fan",
+        choices=db.get_expansions()[0],
         help="Add dividers from the specified fan made expansions. "
         "If this option is not used, no fan expansions will be included. "
         "Fan made expansion names can also be given in the language specified by "
@@ -468,6 +471,7 @@ def parse_opts(cmdline_args=None):
         nargs="*",
         action="append",
         dest="only_type_any",
+        choices=db.get_types(),
         help="Limit dividers to only those with the specified types. "
         "A divider is kept if ANY of the provided types are associated with the divider. "
         "Default is all types are included. "
