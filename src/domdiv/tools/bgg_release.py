@@ -2,6 +2,7 @@ import os
 from zipfile import ZIP_DEFLATED, ZipFile
 
 import domdiv
+import domdiv.config_options
 import domdiv.main
 
 gen_dir = "sumpfork_dividers"
@@ -24,8 +25,8 @@ def run_generator(args, main):
     fname = args[-1]
     print(args)
     print(":::Generating " + fname)
-    options = domdiv.main.parse_opts(args)
-    options = domdiv.main.clean_opts(options)
+    options = domdiv.config_options.parse_opts(args)
+    options = domdiv.config_options.clean_opts(options)
     domdiv.main.generate(options)
     return fname
 
