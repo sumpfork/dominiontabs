@@ -1868,6 +1868,11 @@
         "extra": "Normally you cannot look through your discard pile, so you cannot look to see if you want to buy March or not.<n>Once you buy March, you look through your discard pile, and then have the option of playing an Action card from it.<n>This does not use up an Action.",
         "name": "March"
     },
+    "Marchland": {
+        "description": "Worth 1 <VP> per 3 Victory cards you have (round down).<line>When you gain this, +1 Buy and discard any number of cards for +1 Coin each.",
+        "extra": "Marchland counts itself. Round down; if you have 11 Victory cards, each Marchland is worth 3<VP>. Use 8 copies of Marchland for games with 2 players, 12 for games with 3 or more players. \"Any number\" includes zero.",
+        "name": "Marchland"
+    },
     "Margrave": {
         "description": "+3 Cards<br>+1 Buy<br>Each other player draws a card, then discards down to 3 cards in hand.",
         "extra": "You draw 3 cards and get +1 Buy. Each other player draws a card, then discards down to 3 cards in hand. Drawing a card is not optional for them. A player who only has 3 cards or fewer after drawing does not discard.",
