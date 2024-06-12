@@ -3,6 +3,11 @@
         "extra": "",
         "name": "Verlassene Mine"
     },
+    "Abundance": {
+        "description": "Das nächste Mal, wenn du eine Aktionskarte nimmst:<n>+1 Kauf und +3 Coins",
+        "extra": "Diese kombinierte Geld- und Dauerkarte spielst du normalerweise in deiner Kaufphase. Du erhältst dafür aber nicht direkt 3 Coins, sondern die Karte bleibt so lange im Spiel, bis du das nächste Mal eine Aktionskarte nimmst (egal ob du sie kaufst oder auf andere Weise nimmst).<n>Dann erhältst du +1 Kauf und +3 Coins. Sollte dies nicht in deinem Zug passieren, nutzen dir die +3 Coins und +1 Kauf normalerweise nichts.",
+        "name": "Überfluss"
+    },
     "Academy": {
         "description": "Wenn du eine Aktionskarte nimmst: + 1 Dorfbewohner.",
         "extra": "Es ist egal, auf welche Art und Weise du die Aktionskarte nimmst (also ob du sie kaufst, aufgrund einer Kartenanweisung nehmen kannst o. ä.).",
@@ -119,6 +124,8 @@
         "name": "Astrolabium"
     },
     "Augurs": {
+        "description": " Dieser Stapel besteht zu Beginn aus je 4 Karten Kräutersammlerin, Altardienerin, Meisterhexe und Prophetin (von oben nach unten).<br>Nur die oberste Karte darf genommen oder gekauft werden.",
+        "extra": "Kräutersammlerin: Dass du die Karten deines Nachziehstapels auf deinen Ablagestapel legst, löst keine \"Wenn du diese Karte ablegst\" Anweisungen aus wie beim TUNNEL (aus \"Hinterland\"). Eine Geldkarte von deinem Nachziehstapel zu spielen, ist optional, genauso wie das Rotieren der Augurinnen<n>Altardienerin: Beide Anweisungen sind optional: Du kannst eine von beiden ausführen oder beide oder keine von beiden. Du erhältst nur dann ein GOLD, wenn du tatsächlich eine Aktions- oder Punktekarte aus deiner Hand entsorgt hast. Du nimmst nur dann eine Augurinnenkarte, wenn du tatsächlich die ALTARDIENERIN entsorgt hast. Wenn du hierdurch eine Augurinnenkarte nimmst, nimmst du die aktuell oben liegende Karte der Augurinnen, auch wenn das eine weitere ALTARDIENERIN ist.<n>Meisterhexe: Nenne eine Karte und decke die oberste Karte deines Nachziehstapels auf. Ist sie die genannte, nimmt jeder Mitspieler einen FLUCH. Du nimmst die Karte unabhängig davon auf deine Hand, ob sie die von dir genannte ist oder nicht.<n>Prophetin: Wenn dein Nachziehstapel nach dem Ziehen leer ist, wird die erste Karte, die du zurücklegst, zur obersten Karte des Stapels.",
         "name": "Augurinnen"
     },
     "Avanto": {
@@ -169,6 +176,11 @@
         "description": "Beim Zählen der <VP> Punkte: -2<VP> pro Gold und Silber, das du besitzt.",
         "extra": "Hast du bei Spielende zum Beispiel 3 SILBER und 1 GOLD in deinem Kartensatz, werden dir 8<VP> abgezogen. Die Gesamtpunktzahl kann damit auch negativ sein.",
         "name": "Räuberfestung"
+    },
+    "Banish": {
+        "description": "Verbanne beliebig viele deiner Handkarten mit gleichem Namen.",
+        "extra": "Du kannst z.B. drei ANWESEN aus deiner Hand verbannen. Alle Karten, die du mit diesem Ereignis verbannst, müssen exakt den gleichen Namen haben.",
+        "name": "Verbannung"
     },
     "Bank": {
         "description": "Wert 1 Coin für jede Geldkarte, die im Spiel ist (diese eingeschlossen).",
@@ -229,6 +241,11 @@
         "description": "Nimm dir 3 Kupfer.<br>Nimm diese sofort auf die Hand.<br>Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du diese Karte ablegen.<br>Wenn du das machst: Nimm dir 2 Silber. Lege eines davon sofort auf deinen Nachziehstapel.",
         "extra": "Wenn du den Bettler in deiner Aktionsphase ausspielst, nimmst du dir 3 Kupfer aus dem Vorrat direkt auf deine Hand. Sind nicht mehr genügend Kupfer im Vorrat, nimmst du dir so viele, wie möglich. Wenn ein Mitspieler eine Angriffskarte ausspielt, darfst du den Bettler aus deiner Hand ablegen. (Achtung: Der Bettler wird nicht wie üblich nur vorgezeigt und kommt dann zurück auf die Hand, sondern er wird abgelegt.) Wenn du das machst, nimmst du dir 2 Silber aus dem Vorrat. Eines davon legst du auf deinen Nachziehstapel, das andere legst du auf deinen Ablagestapel. Ist nur noch ein Silber im Vorrat so nimmst du nur dieses und legst es auf deinen Nachziehstapel. Ist kein Silber mehr im Vorrat, nimmst du dir keines.",
         "name": "Bettler"
+    },
+    "Berserker": {
+        "description": "Nimm eine Karte, die weniger kostet als diese. Jeder Mitspieler legt seine Handkarten bis auf 3 ab.<line>Wenn du diese Karte nimmst: Falls du eine Aktionskarte im Spiel hast, spiele diese Karte.",
+        "extra": "Wenn du einen BERSERKER nimmst, während du eine Aktionskarte im Spiel hast, spielst du den genommenen BERSERKER, das heißt die genommene Karte kommt ins Spiel. Damit (oder wenn du einen BERSERKER aus der Hand spielst) wird die Anweisung über der Trennlinie aktiviert, d. h. du nimmst eine billigere Karte und dann legen alle Mitspielerinnen ihre Handkarten bis auf 3 ab. Karten wie der BURGGRABEN können von den Mitspielerinnen genutzt werden. Nimmst du einen BERSERKER und hast keine Aktionskarte im Spiel, spielst du den BERSERKER nicht.",
+        "name": "Berserker"
     },
     "Bishop": {
         "description": "+1 Coin<br>+1 <VP><br>Entsorge eine Karte aus deiner Hand. Wenn du das machst: +<VP> entsprechend der Hälfte der Geld-Kosten der entsorgten Karte (abgerundet). Jeder Mitspieler darf sofort eine Karte seiner Hand entsorgen.",
@@ -317,12 +334,18 @@
     },
     "Cabin Boy": {
         "description": "+1 Karte<br>+1 Aktion<br>Zu Beginn deines nächsten Zuges wähle eins: +2 Coin oder entsorge diese Karte, um eine Dauerkarte zu nehmen.",
+        "extra": "Du kannst einen SCHIFFSJUNGEN entsorgen, um einen SCHIFFSJUNGEN zu nehmen.",
         "name": "Schiffsjunge"
     },
     "Cache": {
         "description": "3 <*COIN*><line>Wenn du die Schatztruhe nimmst, nimm dir 2 Kupfer.",
         "extra": "Diese Geldkarte ist 3 Coins wert, wie ein GOLD. Wenn du die Schatztruhe nimmst oder kaufst, musst du dir zusätzlich 2 KUPFER nehmen. Sind nur weniger als 2 KUPFER im Vorrat, so nimmst du dir nur so viele wie möglich. Du nimmst dir die 2 KUPFER nur, wenn du die Schatztruhe nimmst oder kaufst, nicht jedes mal, wenn du sie ausspielst.",
         "name": "Schatztruhe"
+    },
+    "Cage": {
+        "description": "Lege bis zu 4 deiner Handkarten verdeckt zur Seite (auf diese Karte).<n>Das nächste Mal, wenn du eine Punktekarte nimmst, entsorge diese Karte und nimm die zur Seite gelegten Karten am Ende des Zuges auf deine Hand.",
+        "extra": "Du nimmst die Karten nach dem Ziehen deiner Kartenhand für den nächsten Zug auf deine Hand. Wenn du zum Beispiel in einem Zug zwei ANWESEN und zwei KUPFER zur Seite legst und du in einem späteren Zug eine PROVINZ kaufst, entsorgst du den KÄFIG und nimmst am Ende deines Zuges die zwei ANWESEN und zwei KUPFER auf deine Hand.",
+        "name": "Käfig"
     },
     "Camel Train": {
         "description": "Verbanne eine Nicht-Punktekarte aus deinem Vorrat<line>Wenn du diese Karte nimmst, verbanne ein Gold aus dem Vorrat.",
@@ -374,6 +397,11 @@
         "extra": "Die Karte, die du zur Seite legst, muss nicht die nächste Karte sein, die du nimmst; du könntest eine oder mehrere Karten nehmen und dann eine, die du zur Seite legst. Wenn du keine Karte zur Seite legst, wird das FRACHTSCHIFF in diesem Zug abgelegt.",
         "name": "Frachtschiff"
     },
+    "Carnival": {
+        "description": "Decke die obersten 4 Karten deines Nachzieh­stapels auf.<n>Nimm je eine mit unterschied­lichem Namen auf deine Hand und lege den Rest ab.",
+        "extra": "Wenn du zum Beispiel 3 KUPFER und LANDARBEITERRINNEN aufgedeckt hast, nimmst du 1 KUPFER und die LANDARBEITERRINNEN auf die Hand und wirfst die anderen 2 KUPFER ab.<n>Mische, wenn nötig, um 4 Karten zum Aufdecken zu erhalten; wenn es immer noch keine 4 Karten gibt, decke auf, was du kannst.",
+        "name": "Karneval"
+    },
     "Cartographer": {
         "description": "+1 Karte<br>+1 Aktion<br>Sieh dir die obersten 4 Karten von deinem Nachziehstapel an. Lege beliebig viele davon ab. Lege den Rest davon in beliebiger Reihenfolge zurück auf deinen Nachziehstapel.",
         "extra": " Du ziehst zunächst 1 Karte von deinem Nachziehstapel und erhältst +1 Aktion. Dann siehst du dir die obersten 4 Karten von deinem Nachziehstapel an. (Wenn du auch nach dem Mischen deines Ablagestapels nur weniger als 4 Karten ansehen kannst, siehst du nur so viele Karten an wie möglich.) Lege beliebig viele (also 0-4) dieser Karten ab. Lege die übrigen dieser angesehenen Karten in beliebiger Reihenfolge zurück auf deinen Nachziehstapel. Du musst die Karten, die du zurück legst, deinen Mitspielern nicht zeigen.",
@@ -403,6 +431,11 @@
         "description": "Zu Beginn deines Zuges: entsorge eine deiner Handkarten.",
         "extra": "Sobald du diese Fähigkeit hast, musst du sie zu Beginn jedes deiner Züge einsetzen. Es gibt keine Möglichkeit, deinen Holzstein zurückzulegen.",
         "name": "Kathedrale"
+    },
+    "Cauldron": {
+        "description": "2 <*COIN*><br><br>+1 Kauf<br><br>Wenn du in diesem Zug zum dritten Mal eine Aktionskarte nimmst, nimmt jeder Mitspieler einen Fluch.",
+        "extra": "Der Effekt, dass jeder Mitspieler einen FLUCH nehmen muss, liegt in der Zukunft, muss aber nicht eintreten. Wenn du in einem Zug, bevor du den HEXENKESSEL spielst, schon drei Aktionskarten genommen hast, nehmen die Mitspieler:innen keinen FLUCH. Es ist egal, wie viele Nicht-Aktionskarten du nimmst, oder wie viele Aktionskarten du nach dem Spielen des HEXENKESSELS noch nimmst, einzig relevant ist die Gesamtanzahl deiner genommenen Aktionskarten im aktuellen Zug. Geschieht das Nehmen deiner 3. Aktionskarte dieses Zuges, nachdem du einen HEXENKESSEL gespielt hast, nehmen alle Mitspieler:innen einen FLUCH. Dies ist kumulativ, d. h. wenn du mehrere HEXENKESSEL spielst, nehmen alle Mitspielerinnen pro HEXENKESSEL einen FLUCH. Der HEXENKESSEL ist eine Geldkarte, d.h. du spielst ihn regulär in deiner Kaufphase. Da er aber auch eine Angriffskarte ist, dürfen Reaktionskarten wie der WACHHUND und der BURGGRABEN genutzt werden.",
+        "name": "Hexenkessel"
     },
     "Cavalry": {
         "description": "Nimm 2 Pferde.<line>Wenn du diese Karte nimmst: +2 Karten, +1 Kauf und wenn es deine Kaufphase ist, kehre wieder in die Aktionsphase zurück.",
@@ -486,6 +519,7 @@
     },
     "Clashes": {
         "description": "Dieser Stapel besteht zu Beginn aus je 4 KartenSchlachtplan, Bogenschützin, Kriegsherrund Territorium (von oben nach unten). Nur die oberste Karte darf genommen oder gekauft werden.",
+        "extra": "Schlachtplan: Zuerst erhältst du +1 Karte und +1 Aktion, dann darfst du eine Angriffskarte aus deiner Hand aufdecken, um eine Karte zu ziehen, und dann darfst du einen beliebigen Vorratsstapel rotieren. Bei vielen Stapeln macht das Rotieren keinen sinnvollen Unterschied. Es kann aber für gemischte Stapel wichtig sein oder für die Schlösser (aus Empires) oder Ruinen und Ritter (aus Dark Ages).<n>Bogenschützin: Wenn es den Spielern wichtig ist, decken sie die Karten in Zugreihenfolge auf. Jeder Mitspieler, der 5 oder mehr Karten auf der Hand hat, wählt eine aus, die er geheim hält, und deckt die restlichen Karten auf. Du wählst jeweils eine der aufgedeckten Karten, die der betreffende Spieler ablegt.<n>Kriegsherr: Dies hält dich nicht davon ab, Karten zu spielen, die nicht auf deiner Hand sind. Z.B. kannst du mit GOLEM (aus Die Alchimisten) trotzdem die zwei Karten spielen, die zur Seite gelegt werden, unabhängig davon, wie viele gleiche Karten davon im Spiel sind. Betrifft der KRIEGSHERR dich, kannst du mit dem THRONSAAL keine Karte aus deiner Hand spielen, von der du zwei oder mehr gleiche Karten im Spiel hast. Aber du kannst mit dem THRONSAAL eine Karte spielen, von der du nur ein Exemplar im Spiel hast, und dann diese Karte wieder spielen, auch wenn du dann zwei gleiche Karten im Spiel hast. Dies betrifft nur Aktionskarten. Es betrifft z.B. nicht KUPFER.<n>Territorium: Sind z.B. in deinem Kartensatz drei ANWESEN, eine PROVINZ und ein TERRITORIUM ist das TERRITORIUM 3 <VP> wert. Wenn das Nehmen des TERRITORIUMS dazu führt, dass der Konflikte-Stapel leer ist, zählt dies für die Menge GOLD, die du erhältst.",
         "name": "Konflikte"
     },
     "Clerk": {
@@ -606,6 +640,11 @@
         "description": "In der Aktionsphase gespielt: Du darfst eine Aktionskarte aus deiner Hand zweimal ausspielen.<n>Alternativ:<n>In der Kaufphase gespielt: Du darfst eine Geldkarte aus deiner Hand zweimal ausspielen.",
         "extra": "Diese Karte ist eine kombinierte Aktions- und Geldkarte. Wenn du sie in deiner Aktionsphase ausspielst, darfst du eine Aktionskarte von deiner Hand wählen und ausspielen. Du nimmst die gewählte Karte nicht wieder auf die Hand sondern spielst die Aktion ein zweites Mal. Dafür benötigst du keine weiteren Aktionen. Wählst du eine KRONE, musst du diese auch als Aktionskarte ausspielen (und dann darfst du bis zu zwei weitere Aktionskarten jeweils zweimal spielen). Spielst du diese Karte in deiner Aktionsphase als Geldkarte aus (z.B. durch den GESCHICHTENERZÄHLER aus Abenteuer), darfst du trotzdem eine Aktionskarte zweimal ausspielen. Spielst du diese Karte in deiner Kaufphase, darfst du eine beliebige Geldkarte von deiner Hand wählen, sie ausspielen und zweimal ausführen. Wählst du eine KRONE, spielst du diese aus und dann eine weitere Geldkarte von der Hand zweimal und dann noch eine Geldkarte zweimal.",
         "name": "Krone"
+    },
+    "Crucible": {
+        "description": "Entsorge eine deiner Handkarten. +1 Coin pro 1 Coin das sie kostet.",
+        "extra": "Wenn du zum Beispiel ein ANWESEN entsorgst, das 2 Coins kostet, erhältst du +2 Coins.<n> Zusätzliche Potion oder Debt in den Kosten werden nicht berücksichtigt.",
+        "name": "Schmelztiegel"
     },
     "Crypt": {
         "description": "Lege beliebig viele Geldkarten, die du im Spiel hast, verdeckt zur Seite (unter diese Karte). Solange sich dort Karten befinden: Nimm zu Beginn deiner nächsten Züge jeweils 1 davon auf die Hand.",
@@ -932,6 +971,11 @@
         "extra": "Spielst du mehrere JAHRMÄRKTE hintereinander, zählst du am besten laut mit, wie viele Aktionen du noch ausspielen darfst, damit du den Überblick behältst.",
         "name": "Jahrmarkt"
     },
+    "Figurine": {
+        "description": "+2 Karten<n>Du darfst eine Aktionskarte ablegen für +1 Kauf und +1 Coin.",
+        "extra": "Diese Geldkarte spielst du normalerweise in deiner Kaufphase. Sie gibt dir +2 Karten.<n>So gezogene Aktionskarten können in der Kaufphase normalerweise nicht gespielt werden (wenn sie nicht auch Geldkarten sind); du darfst aber eine Aktionskarte für +1 Kauf und +1 coin ablegen.",
+        "name": "Figurine"
+    },
     "First Mate": {
         "description": "Spiele beliebig viele Aktionskarten mit gleichem Namen aus deiner Hand, dann zieh, bis du 6 Handkarten hast.",
         "extra": "Wenn du keine Aktionskarten ausspielen kannst, ziehst du trotzdem bis zu 6.<br>Wenn die ausgespielte Aktionskarte eine weitere Kopie von sich selbst zieht, kannst du diese Kopie ausspielen, und so weiter.<br>Erster Maatin kann Erste Maatin ausspielen; behalte genau im Auge, welche Karte du auflöst, wie du es bei mehreren Thronsälen tun würdest.",
@@ -1009,6 +1053,7 @@
     },
     "Forts": {
         "description": "Dieser Stapel besteht zu Beginn aus je 4 Karten Zelt, Garnison, Hügelfort und Burg (von oben nach unten). Nur die oberste Karte darf genommen oder gekauft werden.",
+        "extra": "Zelt: Wenn du mehrere ZELTE im Spiel hast, darfst du entscheiden, wie viele davon du auf deinen Nachziehstapel legen möchtest.<n>Garnison: Auf dieser Karte können nur Marker liegen, wenn sie im Spiel ist. Wenn sie aus dem Spiel geht, liegen keine Marker mehr darauf. Du kannst die Marker verwenden, die du sonst bei den Kontaktkarten nutzt, um Gefallen zu erhalten. Hier haben die Marker aber nur die Bedeutung, die auf der Karte GARNISON beschrieben ist. Wenn du den THRONSAAL auf die GARNISON anwendest und dann 3 Karten nimmst, legst du insgesamt 6 Marker darauf ab. Und im nächsten Zug ziehst du 6 Karten, nicht 12, denn du kannst die Marker nur einmal entfernen.<n>Hügelfort: Beende zuerst vollständig das Nehmen einer Karte, die bis zu 4 Coins kostet. Wähle dann aus, ob du sie deinen Handkarten hinzufügen oder stattdessen +1 Karte und +1 Aktion erhalten möchtest. Wenn die Karte sich nicht mehr dort befindet, wohin du sie genommen hast (normalerweise dein Ablagestapel), kannst du sie nicht auf die Hand nehmen, falls du diese Option wählst. Wurde die Karte in deinem Ablagestapel verdeckt, kannst du sie trotzdem auf die Hand nehmen.<n>Burg: Wenn du +3 Coins wählst, wird die BURG in diesem Zug abgelegt. Wenn du die +3 Karten im nächsten Zug wählst, legst du die BURG zur Seite bis zur Aufräumphase dieses nächsten Zuges (das passiert auch, wenn du beides mit der ÄLTESTEN wählst).",
         "name": "Bastionen"
     },
     "Fortune": {
@@ -1201,6 +1246,7 @@
     },
     "Harbor Village": {
         "description": "+1 Karte<br>+2 Aktionen<br>Nach der nächsten Aktionskarte, die du in diesem Zugspielst: Wenn sie dir +_ Coin gab: +1 Coin.",
+        "extra": "Du bekommst nur +_ Coin, wenn die nächste von dir gespielte Aktionskarte dir selbst mindestens +_ Coin gibt. Es reicht nicht, zum Beispiel mit Hilfe des Ereignisses TRAINING (aus Abenteuer) +_ Coin für das Ausspielen einer Aktionskarte zu bekommen.<n>Wenn du einen Weg nutzt, um mit Hilfe einer Aktionskarte +_ Coin zu erhalten, bekommst du den Bonus.<n>Es ist okay, wenn du das erhaltene _ Coin zum Beispiel beim GESCHICHTENERZÄHLER (aus Abenteuer) nicht mehr hast.<n>+ 1 Taler (aus Gilden und Renaissance) gilt nicht als +_ Coin. +0 Coin reicht nicht aus, um den Bonus zu erhalten.<n>Wenn du ein HAFENDORF mithilfe eines THRONSAALS (aus dem Basisspiel) zweimal spielst und dann eine MILIZ (aus dem Basisspiel), erhältst du für das erste Spielen des HAFENDORFS nichts (denn du hast danach das HAFENDORF gespielt), für das zweite Spielen bekommst du aber den Bonus von +1 Coin.",
         "name": "Hafendorf"
     },
     "Harem": {
@@ -1391,6 +1437,11 @@
         "extra": " Du erhältst zunächst +2 coins virtuelles Geld. Dann muss, beginnend mit dem Spieler links von dir, reihum jeder Mitspieler die oberste Karte von seinem Nachziehstapel ablegen. Ist es eine Punktekarte (auch eine kombinierte), so muss er sich einen FLUCH nehmen. Ist kein FLUCH mehr im Vorrat, nimmt der Spieler keinen. Ist es keine Punktekarte, kannst du wählen: Entweder der Spieler muss sich eine Karte mit gleichem Namen aus dem Vorrat nehmen und auf seinen Ablagestapel legen oder du nimmst dir eine Karte mit gleichem Namen und legst sie auf deinen Ablagestapel. Ist keine Karte mit diesem Namen mehr im Vorrat nimmt keiner von beiden eine solche Karte.",
         "name": "Harlekin"
     },
+    "Jewelled Egg": {
+        "description": "1 <*COIN*><br><br>+1 Kauf<line>Wenn du diese Karte entsorgst, nimm eine Kostbarkeit",
+        "extra": "Du darfst diese Karte nur entsorgen, wenn eine andere Karte die Anweisung gibt, dass du das tun darfst/musst. Entsorgst du ein JUWELEN-EI, nimmst du die Kostbarkeit, unabhängig davon, wer die Karte gespielt hat, die die Anweisung zur Entsorgung gegeben hat.",
+        "name": "Juwelen-Ei"
+    },
     "Journeyman": {
         "description": "Nenne eine Karte, dann decke solange Karten vom Nachziehstapel auf, bis du 3 Karten aufgedeckt hast, die nicht der genannten Karte entsprechen. Nimm diese Karten auf die Hand und lege die restlichen ab.",
         "extra": "Zunächst nennst du eine Karte. Dabei muss es sich nicht um den Namen einer Karte handeln, die in diesem Spiel verwendet wird. Dann deckst du solange Karten vom Nachziehstapel auf, bis du drei Karten aufgedeckt hast, die nicht dem von dir genannten Namen entsprechen. Nimm diese Karten auf die Hand und lege die anderen ab. Sollte dabei der Nachziehstapel aufgebraucht werden, bevor du auf drei entsprechende Karten gestoßen bist, mischst du deinen Ablagestapel und nutzt ihn als neuen Nachziehstapel. Wenn du beim weiteren Aufdecken noch immer nicht auf drei Karten mit einem anderen als dem genannten Namen kommst, beendest du das Aufdecken. Nimm die gefundenen Karten anderen Namens auf die Hand und lege den Rest auf deinen Ablagestapel.",
@@ -1415,6 +1466,11 @@
         "description": "+2 Coins<n>Von der nächsten Karte, die du in diesem Zug spielst, darfst du dir zuerst eine gleiche Karte nehmen.",
         "extra": "Mit dem <b>BRENNOFEN</b> kannst du jede Art von Karte nehmen (aber nur aus dem Vorrat), solange du eine gleiche Karte direkt nach dein <b>BRENNOFEN</b> spielst. Du nimmst (optional) eine Karte, bevor du die Anweisungen auf der gespielten Karte befolgst. Ist die Karte eine Angriffskarte und andere Spieler möchten mit Reaktionskarten wie dem <b>BURGGRABEN</b> (aus dem <b>Basisspiel</b>) reagieren. Nimmst du die Karte, bevor sie entscheiden, ob sie den <b>BURGGRABEN</b> aufdecken oder nicht.<br> Wenn du den <b>THRONSAAL</b> (aus dem <b>Basisspiel</b>) auf den <b>BRENNOFEN</b> anwendest, spielst du den <b>BRENNOFEN</b> und noch einmal den <b>BRENNOFEN</b>. Das erste Spielen des BRENNOFENS bewirkt, dass du von der nächsten gespielten Karte (dein <b>BRENNOFEN</b>) eine gleiche Karte nehmen darfst - das zweite Spielen des <b>BRENNOFENS</b> bewirkt, dass du von der danach gespielten Karte ebenfalls eine gleiche Karte nehmen darfst. Ist deine nächste gespielte Karte eine Aktionskarte und du benutzt für sie einen Weg, bewirkt das keine spezielle Interaktion mit dem <b>BRENNOFEN</b>. Du darfst trotzdem (optional) eine gleiche Karte nehmen.",
         "name": "Brennofen"
+    },
+    "King's Cache": {
+        "description": "Du darfst eine Geldkarte aus deiner Hand dreimal spielen.",
+        "extra": "Wenn du eine KÖNIGSTRUHE durch eine KÖNIGSTRUHE dreimal spielst, kannst du drei weitere Geldkarten jeweils dreimal spielen.<n>Wenn du eine kombinierte Geld-Dauerkarte mit Hilfe der KÖNIGSTRUHE dreimal spielst, bleibt die KÖNIGSTRUHE so lange wie die gespielte Geld-Dauerkarte im Spiel.",
+        "name": "Königstruhe"
     },
     "King's Court": {
         "description": "Du darfst eine Aktionskarte aus deiner Hand wählen. Spiele diese Aktionskarte dreimal aus.",
@@ -1443,6 +1499,7 @@
     },
     "Landing Party": {
         "description": "+2 Karten<br>+2 Aktionen<br>Das nächste Mal, wenn du als erste Karte in einem Zug eine Geldkarte spielst, lege diese Karte danach auf deinen Nachziehstapel.",
+        "extra": "Die Karte bleibt so lange im Spiel, bis die erste in einem Zug von dir gespielte Karte eine Geldkarte (auch ggf. kombinierte) ist.<n>Befolge erst alle Anweisungen der Geldkarte, bevor du den LANDUNGSTRUPP auf deinen Nachziehstapel legst.<n>Ist die gespielte Geldkarte beispielsweise eine FIGURINE, ziehst du zwei Karten und legst dann den LANDUNGSTRUPP auf deinen Nachziehstapel.",
         "name": "Landungstrupp"
     },
     "Lantern": {
@@ -1488,12 +1545,17 @@
     "Longship": {
         "description": "+2 Aktionen<br>Zu Beginn deines nächsten Zuges:<br>+2 Karten.",
         "extra": "Wenn du dies spielst, erhältst du +2 Aktionen und +2 Karten zu Beginn deines nächsten Zuges.",
-        "name": "Longship"
+        "name": "Langschiff"
     },
     "Lookout": {
         "description": "+1 Aktion<br>Sieh dir die obersten 3 Karten von deinem Nachziehstapel an. Entsorge eine davon. Lege eine davon ab. Lege eine davon verdeckt zurück auf deinen Nachziehstapel.",
         "extra": "Sieh dir erst alle 3 Karten an, bevor du die Anweisungen ausführst. Solltest du weniger als 3 Karten im Nachziehstapel haben, auch nachdem du ggf. den Ablagestapel gemischt hast, führst du die Anweisungen der Reihenfolge nach aus. Anweisungen, für die es keine Karten mehr im Stapel gibt, entfallen.",
         "name": "Ausguck"
+    },
+    "Loot": {
+        "description": "<left><u>Amphore</u>: Entweder jetzt oder zu Beginn deine nächsten Zuges: +1 Kauf und +3 Coin.</left><left><u>Dublonen</u>: 3 Coin; Wenn du diese Karte nimmst, nimm ein Gold.</left><left><u>Endloser Kelch</u>: Jetzt und zu Beginn aller deiner Züge bis zum Spielende: 1 Coin; +1 Kauf</left><left><u>Galionsfigur</u>: 3 Coin; Zu Beginn deines nächsten Zuges: +2 Karten.</left><left><u>Hammer</u>: 3 Coin; Nimm eine Karte, die bis zu 4 Coins kostet.</left><left><u>Insignien</u>: 3 Coin; Wenn du in diesem Zug eine Karte nimmst, darfst du sie auf deinen Nachziehstapel legen.</left><left><u>Juwelen</u>: 3 Coin; +1 Kauf; Zu Beginn deines nächsten Zuges lege diese Karte unter deinen Nachziehstapel.</left><left><u>Kugel</u>: Sieh deinen Ablagestapel durch. Wähle eins: Spiele daraus eine Aktions- oder eine Geld­karte oder +1 Kauf und +3 Coins.</left><left><u>Zuchtziege</u>: 3 Coin; +1 Kauf; Du darfst eine deiner Handkarten entsorgen.</left><left><u>Rätselschatulle</u>3 Coin; +1 Kauf; Du darfst eine deiner Hand- karten verdeckt zur Seite legen. Nimm sie am Ende des Zuges auf deine Hand.</left><left><u>Sextant</u>: 3 Coin;+1 Kauf; Sieh die obersten 5 Karten deines Nachzieh­stapels an. Lege beliebig viele davon ab und den Rest in beliebiger Reihen­folge zurück.</left><left><u>Schild</u>: 3 Coin; +1 Kauf; Spielt ein Mitspieler eine Angriffskarte, darfst du zuerst diese Karte aus deiner Hand aufdecken, um nicht betroffen zu sein.</left><left><u>Zauberrolle</u>: Entsorge diese Karte, um eine billigere Karte zu nehmen. Wenn jene Karte eine Aktions- oder Geldkarte ist, darfst du sie spielen.</left><left><u>Stab</u>: 3 Coin; +1 Kauf; Du darfst eine Aktionskarte aus deiner Hand spielen.</left><left><u>Schwert</u>: 3 Coin; +1 Kauf; Jeder Mitspieler legt seine Handkarten bis auf 4 ab.</left>",
+        "extra": "s gibt 15 verschiedene Kostbarkeiten, die jeweils 2 x vorhanden sind.<br>Die Anweisung „Nimm eine Kostbarkeit“ bedeutet, du nimmst die oberste Karte des verdeckten Kostbarkeits-Stapels.<n>Wenn du eine Kostbarkeit nimmst, zeige sie deinen Mitspieler:innen und lege sie dann auf deinen Ablagestapel.<n>Es ist nicht erlaubt, den Kostbarkeits-Stapel während des Spiels durchzusehen.<n>Der Kostbarkeits-Stapel gehört nicht zum Vorrat – die Spieler:innen dürfen davon keine Karten kaufen und nur Karten davon nehmen, wenn eine Anweisung sich ausdrücklich auf Kostbarkeiten bezieht",
+        "name": "Kostbarkeiten"
     },
     "Lost Arts": {
         "description": "Lege deinen +1 Aktion-Marker auf einen Aktions-Vorratsstapel. <n> (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst +1 Aktion.)",
@@ -1548,7 +1610,7 @@
     "Mapmaker": {
         "description": "Sieh dir die obersten 4 Karten deines Nachziehstapels an. Nimm 2 auf deine Hand und lege den Rest ab.<line>Wenn ein Spieler eine Punktekarte nimmt, darfst du diese Karte aus deiner Hand spielen.",
         "extra": "Wenn du weniger als vier Karten hast (nach dem Mischen), schaust du dir einfach an, was übrig ist.<br> Du kannst diese Karte spielen, wenn jemand (einschließlich dir) eine Punktekarte durch einen Kauf oder auf andere Weise erhält.<br> Wenn du den Kartenmacher als Reaktion darauf spielst, wenn jemand eine Punktekarte erhält, kannst du sofort danach einen weiteren Kartenmacher spielen - auch einen, den du gerade durch den ersten Kartenmacher erhalten hast.",
-        "name": "Mapmaker"
+        "name": "Kartenzeichnerin"
     },
     "Marauder": {
         "description": "Nimm dir eine Karte vom Beute-Stapel. Jeder Mitspieler muss sich eine Ruinen-Karte nehmen.",
@@ -1772,6 +1834,7 @@
     },
     "Nomads": {
         "description": "+1 Kauf<br>+2 Coin<line>Wenn du diese Karte nimmst oder entsorgst: +2 Coin.",
+        "extra": "Wenn du diese Karte während des Zuges eines Mitspielers/einer Mitspielerin nimmst oder entsorgst, erhältst du trotzdem die +2 Coins, du kannst dies aber normalerweise nicht nutzen.",
         "name": "Nomaden"
     },
     "Oasis": {
@@ -1786,6 +1849,7 @@
     },
     "Odysseys": {
         "description": "Dieser Stapel besteht zu Beginn aus je 4 Karten Alte Landkarte, Seereise, Versunkener Schatz und Ferne Küste (vonoben nach unten). Nur die oberste Karte darf genommen oder gekauft werden.",
+        "extra": "Alte Landkarte: Alle Anweisungen werden in der aufgelisteten Reihenfolge ausgeführt. Zuerst erhältst du +1 Karte, dann +1 Aktion. Danach legst du eine Karte ab und erhältst erneut +1 Karte. Danach wählst du, ob du die Irrfahrten rotierst oder nicht.<n>Seereise: Dies hält dich nicht davon ab, Karten zu spielen, die nicht auf deiner Hand sind. Wenn z.B. deine dritte gespielte Karte ein GOLEM (aus Die Alchimisten) ist, kannst du damit trotzdem die entsprechenden zwei Karten spielen, die zur Seite gelegt sind. Wenn du in einem Zug mit der SEEREISE den THRONSAAL auf eine andere Karte anwendest, zählen sowohl der THRONSAAL als auch die andere Karte als aus deiner Hand gespielt, aber das erneute Spielen der Karte mit dem THRONSAAL zählt nicht zusätzlich. Dies beschränkt das Spielen von allen Kartentypen, auch Geldkarten wie KUPFER.<n>Versunkener Schatz: Gibt es im Vorrat keine solche Aktionskarte, nimmst du keine.<n>Ferne Küste: Ein ANWESEN zu nehmen ist nicht optional. Ist der ANWESEN-Stapel leer, erhältst du trotzdem +2 Karten und +1 Aktion.",
         "name": "Irrfahrten"
     },
     "Old Witch": {
@@ -1898,6 +1962,11 @@
         "extra": "Diese Karte ist eine Karte mit variablen Kosten (vgl. NEUE REGELN; S. 6). Du erhältst + 1 Karte, + 1 Aktion sowie + 1 Coin.<n>Wenn du diese Karte in deiner Kaufphase kaufst, kostet sie für jede Aktionskarte, die du im Spiel hast, 2 Coins weniger, niemals allerdings weniger als 0 Coins. Kaufst du eine Karte außerhalb der Kaufphase (z.B. durch den SCHWARZMARKT), kostet der HAUSIERER 8 Coins, egal ob du weitere Aktionskarten im Spiel hast oder nicht. Aktionskarten, die durch den THRONSAAL (aus Basisspiel) oder den KÖNIGSHOF mehrfach ausgespielt wurden, sind trotzdem jeweils nur einmal im Spiel und reduzieren die Kosten eines HAUSIERERS um 2 Coins.",
         "name": "Hausierer"
     },
+    "Pendant": {
+        "description": "+1 Coin pro Geldkarte mit unterschiedlichem Namen, die du im Spiel hast.",
+        "extra": "Zähle auch diese Karte selbst bei der Ausführung der Anweisung mit.<n> Hast du zum Beispiel drei KUPFER und eine GONDEL aus deinem letzten Zug sowie einen ANHÄNGER im Spiel, erhältst du +3 Coin.",
+        "name": "Anhänger"
+    },
     "Philosopher's Stone": {
         "description": "Zähle die Karten in deinem Nachziehstapel und die Karten in deinem Ablagestapel. Wert 1 für je 5 Karten der Summe beider Stapel (abgerundet).",
         "extra": "Diese Karte ist eine Geldkarte mit einem variablen Wert und gehört nicht zu den Basiskarten (wie KUPFER oder TRANK), sondern zu den Königreichkarten. Ausgespielt wird sie aber - wie andere Geldkarten auch - in der Kaufphase. Wichtig: Geldkarten dürfen in der Kaufphase nur ausgespielt werden, bevor du die erste Karte kaufst. Zähle die Karten, die du in diesem Moment im Nachzieh- und Ablagestapel hast (Summe). Pro volle 5 Karten erhöht sich der Geldwert des STEIN DER WEISEN für die Kaufphase in diesem Zug um 1 . Spielst du mehrere STEIN DER WEISEN aus, hat jede Karte den entsprechenden Geldwert. Du darfst beim Durchzählen der Karten deines Nachzieh- und Ablagestapels diese weder anschauen, noch ihre Reihenfolge verändern.",
@@ -1907,6 +1976,11 @@
         "description": "Zu Beginn deines Zuges: decke die oberste Karte deines Nachziehstapels auf. Ist es eine Aktionskarte, spiele sie aus.",
         "extra": "Sobald du diese Fähigkeit hast, musst du sie zu Beginn jedes deiner Züge einsetzen. Wenn die aufgedeckte Karte keine Aktion ist, lege sie auf deinen Nachziehstapel zurück.",
         "name": "Piazza"
+    },
+    "Pickaxe": {
+        "description": "1 <*COIN*><br><br>Entsorge eine deiner Hand-karten.<n>Wenn sie 3 Coins oder mehr kostet, nimm eine Kostbarkeit auf die Hand.",
+        "extra": "Wenn du nach dem Spielen der SPITZHACKE noch mindestens 1 Karte auf deiner Hand hast, musst du eine entsorgen. Zeige die genommene Kostbarkeit deinen Mitspieler:innen.",
+        "name": "Spitzhacke"
     },
     "Pilgrim": {
         "description": "+4 Karten<br>Lege eine deiner Handkarten auf deinen Nachziehstapel",
@@ -2142,6 +2216,11 @@
         "extra": "Wenn im Müll-Stapel mindestens eine Karte ist, die 3 Coins-6 Coins kostet, musst du eine davon nehmen und auf deinen Ablagestapel legen. Du darfst nicht darauf verzichten. Du darfst den Müllstapel durchsehen, bevor du den Schurken ausspielst. Du zeigst die Karte, die du nimmst deinen Mitspielern. Du darfst keine Karten mit in den Kosten (Dominion - Die Alchemisten) nehmen. Wenn keine Karte im Müll-Stapel ist, die 3 Coins-6 Coins kostet, nimmst du dir keine Karte. Stattdessen muss jeder Mitspieler, beginnend mit dem Spieler links von dir, die obersten beiden Karten von seinem Nachziehstapel aufdecken und eine Karte davon entsorgen, die 3 Coins-6 Coins kostet. Hat der Mitspieler keine Karte aufgedeckt, die 3 Coins-6 Coins kostet, muss er keine Karte entsorgen. Er legt beide aufgedeckten Karten ab. Kostet genau eine der beiden aufgedeckten Karten 3 Coins-6 Coins, so muss er diese Karte entsorgen, die andere Karte legt er ab. Kosten beide aufgedeckten Karten 3 Coins-6 Coins, so darf der Mitspieler entscheiden, welche der beiden Karten er entsorgen muss. Die andere aufgedeckte Karte legt er ab.",
         "name": "Schurke"
     },
+    "Rope": {
+        "description": "1 <*COIN*><n>+1 Kauf<n>Zu Beginn deines nächsten Zuges:<br>+1 Karte, und du darfst eine deiner Hand­karten entsorgen.",
+        "extra": "Wenn du diese Karte spielst, erhältst du +1 Coin und +1 Kauf. Zu Beginn deines nächsten Zuges ziehst du zuerst eine Karte und darfst dann eine deiner Handkarten entsorgen.",
+        "name": "Seil"
+    },
     "Royal Blacksmith": {
         "description": "+5 Karten<n>Decke deine Handkarten auf und lege alle Kupfer ab.",
         "extra": "Du musst, nachdem du 5 Karten nachgezogen hast, alle deine Handkarten vorzeigen und jedes KUPFER, das du zu diesem Zeitpunkt auf der Hand hast, ablegen.",
@@ -2181,6 +2260,11 @@
         "description": "Jeder Mitspieler muss solange Karten von seinem Nachziehstapel aufdecken, bis er eine Karte aufdeckt, die 3 oder mehr kostet. Er muss diese Karte entsorgen und darf sich eine Karte nehmen, die mindestens 2 weniger kostet. Die übrigen aufgedeckten Karten legt er ab.",
         "extra": "Jeder Mitspieler, beginnend mit dem Spieler links vom Angreifer, muss solange Karten von seinem Nachziehstapel aufdecken, bis er eine Karte aufdeckt, die oder mehr kostet. Wenn der Nachziehstapel leer ist, mischt er die bereits aufgedeckten Karten nicht mit ein. Wenn er eine Karte aufdeckt, die oder mehr kostet, muss er diese entsorgen und darf sich dann eine Karte aus dem Vorrat nehmen, die weniger kostet oder billiger ist. Die übrigen aufgedeckten Karten legt er ab. Findet er keine Karte, die oder mehr kostet, legt er seine aufgedeckten Karten ab und nichts weiter passiert.",
         "name": "Saboteur"
+    },
+    "Sack of Loot": {
+        "description": "1 <*COIN*><br><br>+1 Kauf Nimm eine Kostbarkeit.",
+        "extra": "Wenn du diese Karte spielst, erhältst du +1 coin, +1 Kauf und du nimmst eine Kostbarkeit.",
+        "name": "Sack voll Kostbarkeiten"
     },
     "Sacred Grove": {
         "description": "+1 Kauf<br>+3 Coins<br>Empfange eine Gabe. Wenn diese nicht +1 Coins gibt, darf jeder Mitspieler sie auch empfangen.",
@@ -2402,6 +2486,11 @@
         "extra": "40 Karten pro Spiel.",
         "name": "Silber"
     },
+    "Silver Mine": {
+        "description": "Nimm eine Geldkarte auf deine Hand, die weniger kostet als diese Karte.",
+        "extra": "Du kannst ein SILBER nehmen, aber auch jede andere Geldkarte aus dem Vorrat (auch ggf. kombinierte), die weniger als die SILBERMINE kostet, z.B. GONDEL, JUWELEN-El usw.",
+        "name": "Silbermine"
+    },
     "Sinister Plot": {
         "description": "Zu Beginn deines Zuges: füge hier einen Marker hinzu oder entferne alle deine Marker von hier für jeweils + 1 Karte.",
         "extra": "Wenn du den FINSTEREN PLAN kaufst, legst du einen deiner Holzsteine darauf und zu Beginn deines nächsten Zuges einen Marker neben den Holzstein. Haltet die Marker-Stapel der einzelnen Spieler auf diesem Projekt gut voneinander getrennt.\nZu Beginn jedes deiner Züge legst du einen Marker hierher (einen unbenutzten, nicht einen vom Tableau) oder legst alle deine Marker von hier zurück und ziehst die entsprechende Anzahl Karten.",
@@ -2409,6 +2498,7 @@
     },
     "Siren": {
         "description": "Jeder Mitspieler nimmt einen Fluch. Zieh zu Beginn deines nächsten Zuges, bis du 8 Handkarten hast.<line>Wenn du diese Karte nimmst, entsorge sie, es sei denn, du entsorgsteine Aktionskarte aus deiner Hand.",
+        "extra": "Wenn du eine SIRENE nimmst, entsorge sie oder eine Aktionskarte aus deiner Hand. Wenn du (z.B. durch die Anweisung auf einer anderen Karte) die SIRENE vor dem Entsorgen bereits von dort, woher du sie genommen hast, bewegt hast (z.B. indem du sie mit Hilfe der Insignien auf deinen Nachziehstapel gelegt hast), wird die SIRENE nicht entsorgt (aber du kannst eine andere Aktionskarte aus deiner Hand entsorgen).",
         "name": "Sirene"
     },
     "Skulk": {
@@ -2681,6 +2771,11 @@
         "extra": "Dies funktioniert auch außerhalb deines Zuges (z.B. mit dem TRICKSER aus Intrige) oder wenn du eine Karte entsorgst, die nicht deine eigene ist (z.B. durch das Ereignis VERSALZTES LAND).",
         "name": "Grabmal"
     },
+    "Tools": {
+        "description": "Nimm eine Karte, von der irgendjemand eine gleiche Karte im Spiel hat.",
+        "extra": "Du darfst jede Karte nehmen, von der ein:e Spieler:in (auch du selbst) eine gleiche im Spiel hat - auch Dauerkarten.<n>WERKZEUG selbst ist durch sein Spielen im Spiel, d.h. du darfst auch ein WERKZEUG nehmen.",
+        "name": "Werkzeug"
+    },
     "Tormentor": {
         "description": "+2 Coins<n>Wenn du keine anderen Karten im Spiel hast, nimm ein Teufelchen vom Teufelchen-Stapel. Ansonsten empfängt jeder Mitspieler die nächste Plage.",
         "extra": "Du musst das TEUFELCHEN nehmen, wenn du keine anderen Karten im Spiel hast. Wenn du andere Karten im Spiel hast, decke die oberste Plage auf. Jeder Mitspieler führt die Anweisung darauf (im Uhrzeigersinn, beginnend bei deinem linken Nachbarn) aus. Lege die Plage danach auf den separaten Plagen-Ablagestapel.",
@@ -2708,6 +2803,7 @@
     },
     "Townsfolk": {
         "description": "Dieser Stapel besteht zu Beginn aus je 4 Karten Ausruferin, Eisenschmied, Müller und Älteste (von oben nach unten). Nur die oberste Karte darf genommen oder gekauft werden.",
+        "extra": "Ausruferin: Wähle zuerst, ob du +2 Coins erhalten möchtest oder ein SILBER oder +1 Karte und +1 Aktion.<n>Unabhängig davon, was du gewählt hast, darfst du dich danach entscheiden, ob du die Bürger rotierst oder nicht.<n>Eisenschmied: Du ziehst entweder Karten, bis du 6 Karten auf der Hand hast; oder du ziehst 2 Karten; oder du ziehst eine Karte und erhältst +1 Aktion.<n>Müller: Wenn du (nach dem Mischen) weniger als 4 Karten in deinem Nachziehstapel hast, siehst du alle Karten deines Nachziehstapels an.<n>Älteste: Du darfst auch eine Aktionskarte spielen, die dich nicht aus verschiedenen Optionen wählen lässt. Du führst sie einfach normal aus. Spielst du aber eine Karte mit einer Anweisung, die dich aus verschiedenen Optionen wählen lässt, darfst du optional eine zusätzliche Option wählen.",
         "name": "Bürger"
     },
     "Tracker": {
@@ -3036,6 +3132,7 @@
     },
     "Wizards": {
         "description": "Dieser Stapel bestehtzu Beginn aus 4 Karten Kräutersammlerin, Zauberschüler, Beschwörer, Altardienerin, Hexenmeister und Lich (von oben nach unten). Nur die oberste Karte darf genommen oder gekauft werden.",
+        "extra": "Zauberschüler: Das Rotieren der Zauberer ist optional, aber das Entsorgen einer Karte ist obligatorisch. Wenn du eine Geldkarte entsorgst, erhältst du +1 Gefallen und legst den ZAUBERSCHÜLER auf deinen Nachziehstapel, dies ist obligatorisch. Das bedeutet, du kannst denselben ZAUBERSCHÜLER in diesem Zug wieder ziehen und ihn wieder spielen. Wenn du eine Nicht-Geldkarte entsorgst, bleibt der ZAUBERSCHÜLER im Spiel und wird in der Aufräumphase wie andere Karten abgelegt.<n>Beschwörer: Diese Karte kehrt in jedem Zug auf deine Hand zurück, solange du sie weiterhin spielst.<n>Hexenmeister: Jeder Mitspieler nennt eine Karte und deckt die oberste Karte seines Nachziehstapels auf. Jeder Spieler, bei dem die aufgedeckte Karte nicht die von ihm genannte ist, nimmt einen FLUCH. Unabhängig davon, ob dies der Fall ist, legt jeder Mitspieler die aufgedeckte Karte wieder auf seinen Nachziehstapel. Wenn du also den HEXENMEISTER zweimal in einem Zug spielst, kennen die Mitspieler wahrscheinlich beim zweiten Spielen die Karte.<n>Lich: Einen Zug aussetzen bedeutet, dass du beim nächsten Mal, wenn du einen Zug machen würdest, keinen machst. In dem Zug passiert dann nichts: keine \"Zu Beginn deines Zuges\"-Anweisungen und keine Phasen. Das Spiel wird wie üblich mit dem Spieler links von dir fortgeführt. Du kannst einen zusätzlichen Zug aussetzen, wie z.B. einen von der SEEREISE...",
         "name": "Zauberer"
     },
     "Wolf Den": {
@@ -3082,15 +3179,65 @@
         "extra": "Ziehe eine Karte, bevor du dir die oberste Karte des Nachziehstapels ansiehst.",
         "name": "Zombie-Spion"
     },
+    "acolyte": {
+        "description": "Du darfst eine Aktions- oder Punktekarte aus deiner Hand entsorgen, um ein Gold zu nehmen.<n>Du darfst diese Karte entsorgen, um eine Augurinnenkarte zu nehmen.",
+        "extra": "Beide Anweisungen sind optional: Du kannst eine von beiden ausführen oder beide oder keine von beiden. Du erhältst nur dann ein GOLD, wenn du tatsächlich eine Aktions- oder Punktekarte aus deiner Hand entsorgt hast. Du nimmst nur dann eine Augurinnenkarte, wenn du tatsächlich die ALTARDIENERIN entsorgt hast. Wenn du hierdurch eine Augurinnenkarte nimmst, nimmst du die aktuell oben liegende Karte der Augurinnen, auch wenn das eine weitere ALTARDIENERIN ist.",
+        "name": "Altardienerin"
+    },
     "adventures events": {
         "description": "<justify>Ereignisse sind keine Königreichkarten. In der Kaufphase eines Spielers kann der Spieler, wenn er auch eine Karte kaufen könnte, stattdessen ein Ereignis erwerben. Ein Ereignis zu erwerben bedeutet, die Kosten, die auf dem Ereignis angegeben sind, zu bezahlen und dann den Effekt des Ereignis' auszuführen. Das Ereignis bleibt dabei einfach auf dem Tisch, der Spieler nimmt es sich nicht; es ist in keinster Weise möglich, dass ein Spieler ein Ereignis nimmt oder eines in seinem Deck hat. Ein Ereignis zu erwerben benötigt einen Kauf, normalerweise kann sich ein Spieler entweder eine Karte kaufen oder ein Event erwerben. Hat ein Spieler zwei Käufe, weil er beispielsweise einen WILDHÜTER gespielt hat, so kann er sich zwei Karten kaufen, oder er erwirbt zwei Ereignisse, oder er kauft sich eine Karte und erwirbt ein Ereignis (in beliebiger Reihenfolge). Das selbe Ereignis kann in derselben Runde mehrfach erworben werden, falls der Spieler genügend Käufe verfügbar hat. Manche Ereignisse geben +Käufe und erlauben somit dem Spieler, später weitere Karten oder Ereignisse zu kaufen. Spieler können in einem Zug keine weiteren Schatzkarten spielen nachdem sie ein Ereignis erworben haben. Der Erwerb eines Ereignisses gilt nicht als Kaufen einer Karte. So findet z.B. die SUMPFHEXE keine Anwendung beim Erwerb eines Ereignisses. Die Kosten eines Ereignisses werden auch nicht von Karten wie dem BRÜCKENTROLL, die die Kosten von Karten betreffen, beeinflusst.</justify>",
         "extra": "Ereignisse sind spezielle \"Wenn du diese Karte kaufst\"-Effekte, die nicht auf einer Karte stehen. Spieler können Ereignisse während ihrer Kaufphase erwerben um den jeweiligen Effekt des Ereignis' auszulösen. Ereignisse sind keine Königreichkarten; sie zählen nicht zu den 10 Königreichstäpeln die den Vorrat ausmachen. Tatsächlich sind Ereignisse in keinster Weise \"Karten\". Jeder Text, der sich auf eine \"Karte\" bezieht (wie z.B. \"Nenne eine Karte\" oder Karten, die die Kosten aller Karten senken) wird nicht auf Ereignisse angewandt. Der Effekt und die Kosten eines Ereignis' sind im Querformat auf Karten mit silberner Umrandung gedruckt. <n> Im Prinzip können beliebig viele Ereignisse in einem Spiel verwendet werden. Es ist aber empfohlen, nicht mehr als zwei Ereignisse und Wahrzeichen gemeinsam zu verwenden. Beim Erstellen eines zufälligen Königreiches können die Ereignisse mit in die Platzhalterkarten gemischt werden, jedes Ereignis, dass vor den 10 Königreichkarten gezogen wird, wird im Spiel verwendet.",
         "name": "Ereignisse Abenteuer"
     },
+    "allies": {
+        "description": "<justify>Verbündete sind keine Königreichskarten, sondern werden dem Spiel immer dann hinzugefügt, wenn eine oder mehrere Königreichskarten den Typ KONTAKT haben. In jedem Spiel, in dem KONTAKT Königreichskarten verwendet werden, wird genau ein Verbündeter ausgewählt, der bestimmt, welchen Effekt die Gefallen in diesem Spiel haben. Da Verbündete nicht als Karten gelten, können sie weder gekauft noch erworben werden. Um ihre Fähigkeiten zu nutzen, muss man Gefallen sammeln und sie dann gemäß den Anweisungen des Verbündeten einsetzen.</justify>",
+        "extra": "In Spielen, in denen Kontaktkarten verwendet werden, erhält jeder Spieler ein Gefallen-Tableau und eine einzelne Verbündeten-Karte. Die Verbündeten-Karten sind ein separater Stapel, der nicht mit Ereignissen usw. kombiniert wird.<n>Jeder Spieler erhält zu Beginn ein Marker auf dem Gefallen-Tableau (oder fünf in Spielen mit Importeur).<n>Verbündete sind Karten, die Gefallen Marker verwenden; Kontaktkarten sind Königreichskarten, die eine Möglichkeit bieten, Gefallen Marker zu erhalten.<n>Die Marker repräsentieren die Gefallen. Sie werden auf ein Gefallen-Tableau gelegt, um sie von den Talern und Dorfbewohnern (aus anderen Erweiterungen) zu unterscheiden, die auf ihren eigenen Tableaus abgelegt werden. Erhältst du durch eine Karte +1 Gefallen, lege einen Marker auf dein Gefallen-Tableau. Um einen Gefallen einzulösen, entferne einen Marker von deinem Gefallen-Tableau.<n>Gefallen können erst ab dem ersten Zug des Spiels benutzt werden, nicht davor. Gefallen einzulösen ist immer optional und kann immer nur ein einziges Mal gemacht werden, wenn es von einem Verbündeten ausgelöst wird, außer auf der Karte steht \"Wiederhole das beliebig oft.\"",
+        "name": "Verbündete"
+    },
+    "allies allies": {
+        "description": "<justify>Verbündete sind keine Königreichskarten, sondern werden dem Spiel immer dann hinzugefügt, wenn eine oder mehrere Königreichskarten den Typ KONTAKT haben. In jedem Spiel, in dem KONTAKT Königreichskarten verwendet werden, wird genau ein Verbündeter ausgewählt, der bestimmt, welchen Effekt die Gefallen in diesem Spiel haben. Da Verbündete nicht als Karten gelten, können sie weder gekauft noch erworben werden. Um ihre Fähigkeiten zu nutzen, muss man Gefallen sammeln und sie dann gemäß den Anweisungen des Verbündeten einsetzen.</justify>",
+        "extra": "In Spielen, in denen Kontaktkarten verwendet werden, erhält jeder Spieler ein Gefallen-Tableau und eine einzelne Verbündeten-Karte. Die Verbündeten-Karten sind ein separater Stapel, der nicht mit Ereignissen usw. kombiniert wird.<n>Jeder Spieler erhält zu Beginn ein Marker auf dem Gefallen-Tableau (oder fünf in Spielen mit Importeur).<n>Verbündete sind Karten, die Gefallen Marker verwenden; Kontaktkarten sind Königreichskarten, die eine Möglichkeit bieten, Gefallen Marker zu erhalten.<n>Die Marker repräsentieren die Gefallen. Sie werden auf ein Gefallen-Tableau gelegt, um sie von den Talern und Dorfbewohnern (aus anderen Erweiterungen) zu unterscheiden, die auf ihren eigenen Tableaus abgelegt werden. Erhältst du durch eine Karte +1 Gefallen, lege einen Marker auf dein Gefallen-Tableau. Um einen Gefallen einzulösen, entferne einen Marker von deinem Gefallen-Tableau.<n>Gefallen können erst ab dem ersten Zug des Spiels benutzt werden, nicht davor. Gefallen einzulösen ist immer optional und kann immer nur ein einziges Mal gemacht werden, wenn es von einem Verbündeten ausgelöst wird, außer auf der Karte steht \"Wiederhole das beliebig oft.\"",
+        "name": "Verbündete"
+    },
+    "archer": {
+        "description": "+2 Coins<n>Jeder Mitspieler mit 5 oder mehr Handkarten deckt sie alle außer einer auf und legt davon eine ab, die du wählst.",
+        "extra": "Wenn es den Spielern wichtig ist, decken sie die Karten in Zugreihenfolge auf.<n>Jeder Mitspieler, der 5 oder mehr Karten auf der Hand hat, wählt eine aus, die er geheim hält, und deckt die restlichen Karten auf.<n>Du wählst jeweils eine der aufgedeckten Karten, die der betreffende Spieler ablegt.",
+        "name": "Bogenschützin"
+    },
+    "architects_guild": {
+        "description": " Wenn du eine Karte nimmst, darfst du 2 Gefallen einlösen, um eine billigere Nicht-Punktekarte zu nehmen.",
+        "extra": "Dies wirkt nur einmal pro Nehmen, sie kann sich aber selbst auslösen:<br>Du könntest z.B. eine PROVINZ nehmen, zwei Gefallen einlösen, um ein GOLD zu nehmen (billiger als die PROVINZ), und dann 2 Gefallen einlösen, um ein LABORATORIUM zu nehmen (billiger als GOLD)",
+        "name": "Architektengilde"
+    },
+    "band_of_nomads": {
+        "description": "Wenn du eine Karte nimmst, die 3 Coins oder mehr kostet, darfst du 1 Gefallen einlösen für<n>+1 Karte oder +1 Aktion oder +1 Kauf.",
+        "extra": "Es kommt darauf an, wie viel die Karte in dem Moment kostet, in dem du sie nimmst, nicht darauf, wie viel sie normalerweise kostet.<n>Diese Karte wirkt nur einmal pro Nehmen.<n>Du kannst einen Gefallen einlösen und hast dann die Wahl zwischen +1 Karte, +1 Aktion oder +1 Kauf.",
+        "name": "Nomadenstamm"
+    },
     "barbarian": {
         "description": "+2 Coins<br>Jeder Mitspieler entsorgt die oberste Karte seines Nachziehstapels. Kostet sie 3 Coin oder mehr, nimmt er eine billigere Karte, die mit der entsorgten Karte mindestens 1 Kartentyp gemeinsam hat; ansonsten nimmt er einen Fluch.",
         "extra": "Wenn ein Spieler z.B. einen Vertrag abwirft, könnte er eine königliche Galeere nehmen, da sie den Typ \"Dauer\" teilen, oder ein Silber, da sie den Typ \"Geld\" teilen, oder einen Sykophanten.<n>Wenn die abgeworfene Karte 3 Münzen oder mehr kostet, muss er eine billigere Karte nehmen, wenn er kann; wenn es keine billigeren Karten gibt, die einen Typ teilen, nimmt er einfach keine Karte.<n>Der Angriff trifft jeden anderen Spieler in der Reihenfolge seines Zuges, beginnend mit dem Spieler links von dir; das kann wichtig sein.",
         "name": "Barbar"
+    },
+    "battle_plan": {
+        "description": "+1 Karte<br>+1 Aktion<n>Du darfst eine Angriffskarte aus deiner Hand aufdecken für +1 Karte.<n>Du darfst einen beliebigen Vorratsstapel rotieren.",
+        "extra": "Zuerst erhältst du +1 Karte und +1 Aktion, dann darfst du eine Angriffskarte aus deiner Hand aufdecken, um eine Karte zu ziehen, und dann darfst du einen beliebigen Vorratsstapel rotieren.<n>Bei vielen Stapeln macht das Rotieren keinen sinnvollen Unterschied. Es kann aber für gemischte Stapel wichtig sein oder für die Schlösser (aus Empires) oder Ruinen und Ritter (aus Dark Ages).",
+        "name": "Schlachtplan"
+    },
+    "bauble": {
+        "description": " Wähle zwei verschiedene:<n>+1 Kauf;<br>+1 Coin;<br>+1 Gefallen;<br>wenn du in diesem Zug eine Karte nimmst, darfst du sie auf deinen Nachziehstapel legen.",
+        "extra": "Wähle zwei der vier Optionen. Die ersten drei Optionen sind einfache +1 Anweisungen, die letzte Option ist der komplette Rest.<n>Du könntest also z.B. die Option +1 Kauf wählen und die Option \"wenn du in diesem Zug eine Karte nimmst, darfst du sie auf deinen Nachziehstapel legen.\"",
+        "name": "Tand"
+    },
+    "blacksmith": {
+        "description": "Wähle eins:<n>Zieh, bis du 6 Handkarten hast;<br>oder +2 Karten;<br>oder +1 Karte und +1 Aktion.",
+        "extra": "Du ziehst entweder Karten, bis du 6 Karten auf der Hand hast; oder du ziehst 2 Karten; oder du ziehst eine Karte und erhältst +1 Aktion.",
+        "name": "Eisenschmied"
+    },
+    "broker": {
+        "description": "Entsorge eine deiner Handkarten und wähle eins:<n>+1 Karte pro 1 Coin ihrer Kosten;<br>+1 Aktion pro 1 Coin ihrer Kosten;<br>+1 Coin pro 1 Coin ihrer Kosten;<br>+1 Gefallen pro 1 Coin ihrer Kosten",
+        "extra": "Wenn du z.B. ein ANWESEN entsorgst, das 2 Coin kostet, kannst du wählen zwischen +2 Karten oder +2 Aktionen oder +2 Coin oder <b>+2 Gefallen</b>.<n>Wenn du eine Karte mit Debt oder Potion in ihren Kosten entsorgst, erhältst du nichts für diese Symbole.",
+        "name": "Mittelsmann"
     },
     "capital_city": {
         "description": "+1 Karte<br>+2 Aktionen<n>Du darfst zwei Karten aus deiner Hand ablegen für +2 Coin. Du darfst 2 Coin zahlen für +2 Karten.",
@@ -3102,10 +3249,65 @@
         "extra": "Sieh zuerst nach, ob es leere Kartenstapel gibt.<n>Wenn es keine gibt, erhältst du +1 Aktion und eine Karte, die bis zu 4 Coin kostet; wenn es einen oder mehrere leere Stapel gibt, entsorgst du stattdessen eine Karte aus deiner Hand und erhältst eine Karte, die bis zu 2 Coin mehr kostet als die Karte, die du entsorgt hast.",
         "name": "Schreinerin"
     },
+    "cave_dwellers": {
+        "description": " Zu Beginn deines Zuges darfst du 1 Gefallen einlösen, um eine Karte aus deiner Hand abzulegen und danach eine Karte zu ziehen. Wiederhole das beliebig oft.",
+        "extra": "Zu Beginn deines Zuges darfst du einen Gefallen einlösen. Wenn du das tust, legst du eine Karte ab und ziehst dann eine Karte. Dann darfst du einen weiteren Gefallen einlösen, um eine weitere Karte abzulegen und eine weitere Karte zu ziehen, und so weiter, bis du aufhörst. Gefallen einzulösen.<br>Du ziehst auch dann eine Karte, wenn du keine ablegen konntest.",
+        "name": "Höhlenbewohner"
+    },
+    "circle_of_witches": {
+        "description": " Nachdem du eine Kontaktkarte gespielt hast, darfst du 3 Gefallen einlösen. Tust du das, nimmt jeder Mitspieler einen Fluch.",
+        "extra": "Nachdem du das Spielen einer Kontaktkarte vollständig ausgeführt hast, darfst du 3 Gefallen einlösen, damit jeder Mitspieler einen FLUCH nimmt. Dies ist auch mit Gefallen möglich, die du gerade eben erst durch das Spielen dieser Kontaktkarte erhalten hast.<br>Dies gilt nicht als Spielen einer Angriffskarte und kann nicht mit einem BURGGRABEN abgewehrt werden.",
+        "name": "Hexenbund"
+    },
+    "city_state": {
+        "description": "Wenn du während deines Zuges eine Aktionskarte nimmst, darfst du 2 Gefallen einlösen, um sie zu spielen. ",
+        "extra": "Wenn du in deiner Kaufphase eine Aktionskarte nimmst (wie zB. durch einen Kauf). kannst du sie mit Hilfe des STADTSTAATS spielen. Wenn du durch sie + Aktionen erhältst, erlaubt dir der STADTSTAAT nicht, mehr Aktionskarten in deiner Kaufphase zu spielen. Wenn sie dich Geldkarten ziehen lässt, kannst du jene nur spielen, wenn du in dieser Kaufphase (außer mit einem als Geldkarte gespielten SCHWARZMARKT, z.B. durch den KAPITALISMUS (aus Renaissance)) noch nichts gekauft hast. Mit dem STADTSTAAT kannst du nur eine Karte spielen, die sich immer noch dort befindet, wohin sie genommen wurde (normalerweise der Ablagestapel) - auch wenn sie im Ablagestapel durch andere Karten verdeckt wurde.<br>Der STADTSTAAT wirkt nur während deiner Züge.",
+        "name": "Stadtstaat"
+    },
+    "coastal_haven": {
+        "description": " Beim Ablegen deiner Handkarten in der Aufräumphase darfst du beliebig viele Gefallen einlösen, um genauso viele Karten für den nächsten Zug auf deiner Hand zu behalten (du ziehst trotzdem 5).",
+        "extra": "Du könntest z.B. zwei Gefallen einlösen, um ein KUPFER und ein SILBER auf der Hand zu behalten, deine restlichen Handkarten und alle deine weiteren Karten aus dem Spiel ablegen (wie üblich), dann eine neue Hand mit 5 Karten ziehen und sie zu KUPFER und SILBER hinzufügen. Wenn du aus irgendeinem Grund nicht 5 Karten ziehst (z.B. durch einen AUSSENPOSTEN aus Seaside) ändert der HÖHLENHAFEN dies nicht. Du ziehst weiterhin so viele Karten, wie du normalerweise hättest ziehen müssen, die einbehaltenen Karten werden dabei nicht angerechnet.",
+        "name": "Höhlenhafen"
+    },
+    "conjurer": {
+        "description": "Nimm eine Karte, die bis zu 4 Coins kostet.<n>Zu Beginn deines nächsten Zuges:<br>Nimm diese Karte auf deine Hand.",
+        "extra": "Diese Karte kehrt in jedem Zug auf deine Hand zurück, solange du sie weiterhin spielst.",
+        "name": "Beschwörer"
+    },
+    "contract": {
+        "description": "2 <*COIN*><n>+1 Gefallen<n>Du darfst eine Aktionkarte aus deiner Hand zur Seite legen, um sie zu Beginn deines nächsten Zuges zu spielen.",
+        "extra": "Wenn du eine Karte zur Seite legst, bleibt der VERTRAG bis zur Aufräumphase deines nächsten Zuges im Spiel. Legst du keine Karte zur Seite, wird der VERTRAG in der Aufräumphase dieses Zuges abgelegt.<n>Legst du eine Karte zur Seite, musst du sie zu Beginn deines nächsten Zuges spielen.<n>Die zur Seite gelegte Karte liegt offen.",
+        "name": "Vertrag"
+    },
     "courier": {
         "description": "+1 Coin<n>Lege die oberste Karte deines Nachziehstapels ab. Sieh deinen Ablagestapel durch; du darfst eine Aktions- oder Geldkarte daraus spielen.",
         "extra": "Lege zuerst deine oberste Karte ab und mische, falls nötig. Dann sieh dir deinen Ablagestapel an und du kannst eine Aktions- oder eine Geldkarte davon spielen.<n>Du löst alle Effekte auf, die durch das Ablegen der obersten Karte deines Decks entstehen, bevor du deinen Ablagestapel ansiehst. Wenn du also einen Tunnel abwirfst, kannst du das Gold spielen, das du von ihm erhalten hast.<n>Wenn du einen leeren Ablagestapel hast, nachdem du die oberste Karte deines Decks abgeworfen hast, kannst du keine Karte spielen.",
         "name": "Botin"
+    },
+    "crafters_guild": {
+        "description": "Zu Beginn deines Zuges darfst du 2 Gefallen einlösen, um eine Karte, die bis zu 4 Coins kostet, auf deinen Nachziehstapel zu nehmen.",
+        "extra": "Die Karte nimmst du direkt auf deinen Nachziehstapel.",
+        "name": "Handwerkergilde"
+    },
+    "desert_guides": {
+        "description": " Zu Beginn deines Zuges darfst du 1 Gefallen einlösen, um deine Handkarten abzulegen und 5 Karten zu ziehen. Wiederhole das beliebig oft.",
+        "extra": "Nachdem du deine Handkarten abgelegt und fünf Karten gezogen hast, darfst du einen weiteren Gefallen einlösen, um es noch einmal zu tun, und dies beliebig oft wiederholen.",
+        "name": "Wüstenführer"
+    },
+    "distant_shore": {
+        "description": "+2 Karten<br>+1 Aktion<n>Nimm ein Anwesen.<line>2 <*VP*>",
+        "extra": "Ein ANWESEN zu nehmen ist nicht optional.<n>Ist der ANWESEN-Stapel leer, erhältst du trotzdem +2 Karten und +1 Aktion",
+        "name": "Ferne Küste"
+    },
+    "elder": {
+        "description": "+2 Coins<n>Du darfst eine Aktionskarte aus deiner Hand spielen. Wenn sie dich in diesem Zug aus verschiedenen Anweisungen wählen lässt (z. B. „wähle eins“), darfst du eine zusätzliche, ungenutzte Option davon wählen.",
+        "extra": "Du darfst auch eine Aktionskarte spielen, die dich nicht aus verschiedenen Optionen wählen lässt. Du führst sie einfach normal aus. Spielst du aber eine Karte mit einer Anweisung, die dich aus verschiedenen Optionen wählen lässt, darfst du optional eine zusätzliche Option wählen.<n>Wenn du z.B. den GRAF (aus Dark Ages) spielst, kannst du dich entscheiden, nur eine Option der oberen \"Wähle eins\"-Anweisung zu wählen, aber zwei Optionen der unteren\"Wähle eins\"-Option. Wählst du mehrere Optionen, führst du deren Anweisungen in der Reihenfolge auf der Karte aus.<br>Wenn du z.B. mit einer ÄLTESTEN einen EISENSCHMIED spielst und dich entscheidest, die Anweisungen \"Zieh, bis du 6 Karten auf der Hand hast,\" und \"+1 Karte und +1 Aktion\" zu nutzen, ziehst du erst, bis du 6 Karten auf deiner Hand hast, und erhältst dann +1 Karte und +1 Aktion.<br>Wenn du z.B. mit einer ÄLTESTEN einen HÖFLING (aus Intrige) spielst, wählst du eine zusätzliche Option, aber nicht eine zusätzliche Option pro Kartentyp.<n>Die ÄLTESTE betrifft nicht alle Wahlmöglichkeiten auf Karten, bei denen etwas zu wählen ist, nur die Auswahl zwischen mehreren Anweisungen. Die WERKSTATT z.B. gibt dir die Wahl, welche Karte du nimmst. Wenn du mit einer ÄLTESTEN die WERKSTATT spielst, bewirkt die ÄLTESTE nichts darüber hinaus.",
+        "name": "Älteste"
+    },
+    "emissary": {
+        "description": "+3 Karten<n>Hast du dadurch gemischt (mindestens 1 Karte):<n>+1 Aktion and +2 Gefallen.",
+        "extra": "Ziehe zuerst drei Karten und schaue dann, ob du für das Ziehen der drei Karten mischen musstest.<br>Wenn du gemischt hast, erhältst du +1 Aktion und +2 Gefallen.<n>Das Mischen zählt nur dann als Mischen, wenn mindestens eine Karte in deinem Ablagestapel war.",
+        "name": "Unterhändlerin"
     },
     "empires events": {
         "description": "<justify>Ereignisse sind ein neuer Kartentyp (wie auch in Abenteuer). Jedes Ereignis ist nur einmal im Spiel enthalten. Die Anweisungen auf den Ereignissen werden sofort beim Erwerb ausgeführt</justify>",
@@ -3122,33 +3324,103 @@
         "extra": "Es gibt 20 Ereignisse, von denen jeweils 1 Karte im Spiel enthalten ist. In der Kaufphase hat ein Spieler die Möglichkeit, ein Ereignis zu erwerben. Dafür benötigt er den entsprechenden Geldwert. Außerdem verbraucht der Erwerb eines Ereignisses einen Kauf. Du darfst beliebig viele Ereignisse erwerben, auch das gleiche Ereignis mehrfach (außer dies ist explizit auf einem Ereignis ausgeschlossen), solange du für jedes Ereignis noch 1 Kauf und den entsprechenden Geldwert aufbringen kannst. Der Erwerb eines Ereignisses benötigt zwar 1 Kauf, gilt aber nicht als Kauf einer Karte. So findet z.B. die SUMPFHEXE keine Anwendung beim Erwerb eines Ereignisses. Die Kosten eines Ereignisses werden auch nicht von Karten wie dem BRÜCKENTROLL, die die Kosten von Karten betreffen, beeinflusst. Wer ein Ereignis erwirbt, führt die darauf vermerkte Anweisung sofort aus, nimmt das Ereignis aber nicht an sich.",
         "name": "Ereignisse"
     },
+    "family_of_inventors": {
+        "description": "Zu Beginn deiner Kaufphase darfst du 1 deiner Gefallen-Marker auf einen Nicht-Punkte-Vorratsstapel legen.<n>Karten kosten 1 Coin weniger pro Gefallen-Marker auf ihrem Stapel.",
+        "extra": "Hiermit darfst du keine Marker auf Punktestapel legen. Du darfst aber hiermit Marker auf gemischte Stapel legen, die Punktekarten enthalten, falls die Platzhalterkarte keine Punktekarte ist. Dies bedeutet, dass du hiermit Marker auf die 6 gemischten Stapel aus Verbündete legen kannst, aber nicht auf die Schlösser aus Empires. Die Wirkung ist kumulativ. Zwei Marker auf einem Stapel bedeuten, dass die Karten dieses Stapels 2 Coins weniger kosten. Dies reduziert die Kosten nicht unter 0 Coins. Hierdurch kosten Karten immer für alle Spieler weniger, nicht nur für den Spieler, der den Marker legt.",
+        "name": "Erfinderfamilie"
+    },
+    "fellowship_of_scribes": {
+        "description": "Hast du 4 oder weniger Handkarten, nachdem du eine Aktionskarte gespielt hast, darfst du 1 Gefallen einlösen für +1 Karte.",
+        "extra": "Du kannst dies nur einmal pro Spielen einer Aktionskarte machen. Führe die Aktionskarte vollständig aus. Wenn du dann weniger als 4 Karten au deiner Hand hast, darfst du einen Gefallen für +1 Karte einlösen.",
+        "name": "Gefolgschaft der Schreiber"
+    },
+    "forest_dweller": {
+        "description": "Zu Beginn deines Zuges darfst du 1 Gefallen einlösen, um die obersten 3 Karten deines Nachziehstapels anzusehen, beliebig viele davon ab- und den Rest in beliebiger Reihenfolge zurückzulegen.",
+        "extra": "Du kannst dies nur einmal pro Zug machen.",
+        "name": "Waldbewohner"
+    },
     "galleria": {
         "description": "+3 Coins<n>Wenn du in diesem Zug eine Karte nimmst, die 3 Coin oder 4 Coin kostet: +1 Kauf.",
         "extra": "Es kommt darauf an, wie viel eine Karte tatsächlich kostet, wenn man sie erhält. Wenn zum Beispiel Karten durch die Brücke 1 Coin weniger kosten, dann würde der Vorteil von einem Silber nicht zu +1 Kauf führen, aber der Vorteil von einem Herzogzum schon.",
         "name": "Markthalle"
+    },
+    "gang_of_pickpockets": {
+        "description": "Zu Beginn deines Zuges:<n>Lege deine Handkarten bis auf 4 ab, es sei denn, du löst 1 Gefallen ein.",
+        "extra": "Zu Beginn jedes deiner Züge entscheidest du, ob du einen Gefallen einlösen möchtest. Löst du keinen ein, legst du Handkarten ab, bis du nur noch 4 auf deiner Hand hast. Du brauchst keinen Gefallen einzulösen, wenn du schon 4 oder weniger Karten auf der Hand hattest.<n>Dies ist keine gespielte Angriffskarte und kann nicht vom BURGGRABEN abgewehrt werden.",
+        "name": "Taschendiebe"
+    },
+    "garrison": {
+        "description": "+2 Coins<n>Wenn du in diesem Zug eine Karte nimmst, lege einen Marker auf diese Karte.<n>Zu Beginn deines nächsten Zuges: Lege alle diese Marker ab für +1 Karte pro Marker.",
+        "extra": "Auf dieser Karte können nur Marker liegen, wenn sie im Spiel ist. Wenn sie aus dem Spiel geht, liegen keine Marker mehr darauf. Du kannst die Marker verwenden, die du sonst bei den Kontaktkarten nutzt, um Gefallen zu erhalten. Hier haben die Marker aber nur die Bedeutung, die auf der Karte GARNISON beschrieben ist. Wenn du den THRONSAAL auf die GARNISON anwendest und dann 3 Karten nimmst, legst du insgesamt 6 Marker darauf ab. Und im nächsten Zug ziehst du 6 Karten, nicht 12, denn du kannst die Marker nur einmal entfernen.",
+        "name": "Garnison"
+    },
+    "guildmaster": {
+        "description": "+3 Coins<n>Wenn du in diesem Zug eine Karte nimmst: +1 Gefallen.",
+        "extra": "Wird eine Fähigkeit eines Verbündeten durch das Nehmen von Karten ausgelöst (z.B. NOMADENSTAMM), kannst du dafür den Gefallen benutzen, den du gerade erhalten hast.",
+        "name": "Gildemeisterin"
+    },
+    "herb_gatherer": {
+        "description": "+1 Kauf<n>Lege die Karten deines Nachziehstapels auf deinen Ablagestapel und sieh ihn durch; du darfst eine Geldkarte daraus spielen.<n>Du darfst die Augurinnen rotieren.",
+        "extra": "Dass du die Karten deines Nachziehstapels auf deinen Ablagestapel legst, löst keine \"Wenn du diese Karte ablegst\"-Anweisungen aus wie beim TUNNEL (aus Hinterland). Eine Geldkarte von deinem Nachziehstapel zu spielen, ist optional, genauso wie das Rotieren der Augurinnen.",
+        "name": "Kräutersammlerin"
     },
     "highwayman": {
         "description": "Zu Beginn deines nächsten Zuges: Lege diese Karte aus dem Spiel ab und +3 Karten.<br>Bis dahin hat die erste Geldkarte, die jeder Mitspieler in jedem Zug spielt, bei ihrem Spielen keine Auswirkungen.",
         "extra": "Du ziehst die 3 Karten, auch wenn der Wegelagerer nicht aus dem Spiel abgeworfen werden kann.<n>Das Abwerfen des Wegelagerers geschieht zuerst, so dass es möglich ist, den Wegelagerer sogar mit den +3 Karten zu ziehen.<n>Der Angriff stoppt die erste Geldkarte jedes anderen Spielers in jedem Zug; wenn sie zusätzliche Züge machen, ist jeder Zug betroffen.<n>Dies ist nicht kumulativ; wenn mehrere Spieler Kopien des Wegelagerers spielen oder ein Spieler mehrere Kopien davon spielt, macht trotzdem nur eine Geldkarte pro Zug nichts. <n>Die Geldkarte bewirkt auch dann nichts, wenn sie gleichzeitig eine Aktion ist.<n>Dies hält die Geldkarte davon ab, das zu tun, was sie tut, wenn sie gespielt wird, aber es stoppt keine Fähigkeiten unterhalb einer Trennlinie, wie die des Kapitals.<n>Wenn die Geldkarte auch eine Aktion ist, kann immer noch ein Weg auf ihn angewendet werden, und die Verzauberung kann immer noch auf ihn wirken; der Spieler, der die Geldkarte gespielt hat, entscheidet, welcher Effekt gilt.",
         "name": "Wegelagerer"
     },
+    "hill_fort": {
+        "description": "Nimm eine Karte die bis zu 4 Coins kostet.<n>Wähle eins:<br>Nimm sie auf deine Hand<br>oder<br>+1 Karte und +1 Aktion.",
+        "extra": "Beende zuerst vollständig das Nehmen einer Karte, die bis zu 4 Coins kostet. Wähle dann aus, ob du sie deinen Handkarten hinzufügen oder stattdessen +1 Karte und +1 Aktion erhalten möchtest. Wenn die Karte sich nicht mehr dort befindet, wohin du sie genommen hast (normalerweise dein Ablagestapel), kannst du sie nicht auf die Hand nehmen, falls du diese Option wählst. Wurde die Karte in deinem Ablagestapel verdeckt, kannst du sie trotzdem auf die Hand nehmen.",
+        "name": "Hügelfort"
+    },
     "hunter": {
         "description": "+1 Aktion<n>Decke die obersten 3 Karten deines Nachziehstapels auf. Nimm davon eine Aktions-,eine Geld- und eine Punktekarte auf deine Hand. Lege den Rest ab.",
         "extra": "Von den drei Karten wählst du eine Aktion, dann einen Schatz und dann eine Siegkarte.<n>Karten mit mehreren Typen können für jeden passenden Typ gewählt werden.",
         "name": "Jägerin"
+    },
+    "importer": {
+        "description": "Zu Beginn deines nächsten Zuges:<n>Nimm eine Karte, die bis zu 5 Coins kostet.<line>Spielvorbereitung: Jeder Spieler erhält +4 Gefallen.",
+        "extra": "Zu Beginn des Spiels erhält jeder Spieler fünf Gefallen-Marker statt einem. Die IMPORTEURIN bietet keine Möglichkeit, während des Spiels mehr Gefallen zu erhalten.",
+        "name": "Importeurin"
     },
     "innkeeper": {
         "description": "+1 Aktion<n>Wähle eins: +1 Karte oder +3 Karten und lege dann 3 Karten aus deiner Hand ab oder +5 Karten und lege dann 6 Karten aus deiner Hand ab.",
         "extra": "Zuerst erhältst du +1 Aktion und wählst dann die gewünschte Option aus. <n>Du erhältst entweder +1 Karte, oder +3 Karten, legst aber 3 Karten ab, oder +5 Karten, legst aber 6 Karten ab.",
         "name": "Wirtin"
     },
+    "island_folk": {
+        "description": "Am Ende deines Zuges darfst du, wenn der vorherige Zug nicht deiner war, 5 Gefallen einlösen, um einen Extrazug zu spielen.",
+        "extra": "Dies kann nie dazu führen, dass du zwei INSELVOLK-Züge in Folge machst.",
+        "name": "Inselvolk"
+    },
     "landmarks": {
         "description": "<justify>Es gibt 21 Landmarken-Karten, von denen jeweils 1 Karte im Spiel enthalten ist. Wie die Ereignisse gehören diese nicht zu den Königreichkarten. Sie können weder gekauft noch genommen werden, bieten den Spielern aber eine zusätzliche Möglichkeit, durch das Eintreten bestimmter Situationen während des Spiels oder bei Spielende zusätzliche Siegpunkte zu erhalten. Zu Spielbeginn wird von den Spielern entschieden, mit welchen Ereignissen und Landmarken-Karten gespielt wird. Wir empfehlen maximal 2 Ereignisse und 2 Landmarken-Karten zu verwenden. In den empfohlenen Kartensätzen sind bereits schöne Kombinationen enthalten. Die Landmarken-Karten werden neben dem Vorrat bereit gelegt, gehören aber nicht zum Vorrat. Außerdem werden auf einigen Landmarken-Karten je nach Spieleranzahl Siegpunktmarker vor Spielbeginn bereitgelegt. Wie diese erlangt werden können, steht in der jeweiligen Anweisung der Landmarken-Karte. Gibt es keine Siegpunktmarker auf einer Landmarken-Karte mehr, können die Spieler von dieser Karte keine Siegpunkte mehr bekommen, auch wenn sie die Bedingung der Landmarken-Karte erfüllen. Bei Landmarken-Karten, deren Anweisungen erst bei Spielende Siegpunkte einbringen, werden die entsprechenden Siegpunkte bei der Endwertung direkt zum Ergebnis eines Spielers hinzugezählt.</justify>",
         "extra": "Die Landmarken sind in der Übersicht alphabetisch sortiert. Einmal im Spiel, haben sie für alle Spieler gleichermaßen Gültigkeit. Sie können nicht gekauft werden. Einige Landmarken enthalten Anweisungen für die Spielvorbereitung (unterhalb der Trennlinie). Spielt ihr mit einer dieser Karten, beachtet dies in der Spielvorbereitung. Darfst du dir auf Grund einer Anweisung 1<VP>-Marker von einer Landmarkenkarte oder einem Vorratsstapel nehmen und dort sind zu diesem Zeitpunkt keine 1<VP>d-Marker vorhanden, erhältst du nichts. Sind die zu Spielbeginn platzierten 1<VP>-Marker aufgebraucht, werden keine neuen 1<VP>-Marker platziert.",
         "name": "Landmarken (Wahrzeichen)"
     },
+    "league_of_bankers": {
+        "description": "Zu Beginn deiner Kaufphase: +1 Coin pro 4 Gefallen, die du hast (abgerundet).",
+        "extra": "Du löst hierfür keine Gefallen ein. Du erhältst nur +x Coin je nach der Anzahl an Gefallen, die auf deinem Gefallen-Tableau liegen.",
+        "name": "Bankiersverbund"
+    },
+    "league_of_shopkeepers": {
+        "description": "Nachdem du eine Kontaktkarte gespielt hast:<n>Hast du 5 oder mehr Gefallen: +1 Coin, und hast du 10 oder mehr: +1 Aktion und +1 Kauf.",
+        "extra": "Du löst hierfür keine Gefallen ein. Nach jedem Spielen einer Kontaktkarte erhältst du +1 Coin, wenn du 5 oder mehr Gefallen hast, und zusätzlich dazu +1 Aktion und +1 Kauf, wenn du 10 oder mehr Gefallen hast.<n>In Partien mit mehreren Kontaktkarten gilt dieser Bonus für alle Kontaktkarten, auch wenn nur eine von ihnen benutzt wurde, um die Gefallen zu erhalten.",
+        "name": "Bund der Ladenbesitzer"
+    },
+    "lich": {
+        "description": "+6 Karten<br>+2 Aktionen<n>Setze einen Zug aus.<line>Wenn du diese Karte entsorgst, lege sie ab und nimm eine billigere Karte aus dem Müll.",
+        "extra": "Einen Zug aussetzen bedeutet, dass du beim nächsten Mal, wenn du einen Zug machen würdest, keinen machst. In dem Zug passiert dann nichts: keine \"Zu Beginn deines Zuges\"-Anweisungen und keine Phasen. Das Spiel wird wie üblich mit dem Spieler links von dir fortgeführt. Du kannst einen zusätzlichen Zug aussetzen, wie z.B. einen von der SEEREISE. Ausgesetzte Züge zählen trotzdem für die Entscheidung bei Gleichstand, als ob der Spieler nicht ausgesetzt hätte. Spielst du mehrere LICH, setzt du mehrere Züge aus.<n>Wenn du einen LICH entsorgst, legst du ihn aus dem Müll auf deinen Ablagestapel, was keine Anweisungen für das Nehmen von Karten auslöst. Dann nimmst du eine Karte, die weniger als ein LICH kostet, aus dem Müll - dies löst Anweisungen für das Nehmen von Karten aus. Du musst eine billigere Karte nehmen, falls möglich.",
+        "name": "Lich"
+    },
+    "market_towns": {
+        "description": "Zu Beginn deiner Kaufphase darfst du 1 Gefallen einlösen, um eine Aktioskarte aus deiner Hand zu spielen. Wiederhole das beliebig oft.",
+        "extra": "Führe zuerst das Spielen der Aktionskarte vollständig aus, bevor du entscheidest, ob du einen Gefallen einlösen möchtest, um eine weitere zu spielen.",
+        "name": "Marktstädte"
+    },
     "marquis": {
-        "description": "+1 Kauf<n>+1 KarteproKarte auf deiner Hand. Lege deine Handkarten bis auf 10 ab.",
+        "description": "+1 Kauf<n>+1 Karte pro Karte auf deiner Hand. Lege deine Handkarten bis auf 10 ab.",
         "extra": "Auch wenn Sie nicht die volle Anzahl an Karten ziehen konnten, legen Sie danach bis auf 10 Karten auf der Hand ab.",
         "name": "Marquis"
     },
@@ -3167,10 +3439,20 @@
         "extra": "Wenn du mehrere Händlerlager im Spiel hast, kannst du wählen, wie viele du oben auf dein Deck legen möchtest.",
         "name": "Händlerlager"
     },
+    "miller": {
+        "description": "+1 Aktion<n>Sieh die obersten 4 Karten deines Nachziehstapels an. Nimm eine davon auf deine Hand und lege den Rest ab.",
+        "extra": "Wenn du (nach dem Mischen) weniger als 4 Karten in deinem Nachziehstapel hast, siehst du alle Karten deines Nachziehstapels an.",
+        "name": "Müller"
+    },
     "modify": {
         "description": "Entsorge eine deiner Handkarten. Wähle eins:<br>+1 Karte und +1 Aktion<n>oder<n>nimm eine Karte, die bis zu 2 Coin mehr kostet als die entsorgte Karte.",
         "extra": "Entsorge zuerst eine Karte aus deiner Hand. Dann kannst du wählen, ob du +1 Karte und +1 Aktion nimmst oder eine Karte erhältst, die bis zu 2 Coin mehr kostet als die abgelegte Karte.",
         "name": "Umgestaltung"
+    },
+    "mountain_folk": {
+        "description": "Zu Beginn deines Zuges darfst du 5 Gefallen einlösen für +3 Karten.",
+        "extra": "Du brauchst die kompletten 5 Gefallen, um dies zu nutzen.",
+        "name": "Bergvolk"
     },
     "nocturne boons": {
         "description": "Alle Gaben sind jeweils nur 1 x im Spiel enthalten. Sie dürfen bzw. müssen erhalten bzw. empfangen werden, wenn eine Karte mit dem Typ SEGEN dies anweist. Generell haben sie Auswirkungen, die gut für den Spieler sind.<n>Spielvorbereitung: Wenn Königreichkarten vom Typ Segen verwendet werden, dann werden die Gaben gemischt und mit der Abbildung nach unten bereitgelegt in der Nähe des Irrlicht-Stapels und bei Bedarf umgedreht.",
@@ -3186,6 +3468,41 @@
         "description": "In Nocturne gibt es drei Plagen und eine Königreichkarte, die Spielern einen Zustand verschaffen. Zustände sind Karten, die vor einem Spieler abgelegt werden und eine zusätzliche Regel beinhalten. Es gibt zwei Zustände, die einen einzelnen Zug betreffen und dann zurückgelegt werden (GETÄUSCHT und NEIDISCH), zwei Zustände, die die Punktewertung beeinflussen (ELENDIG und DOPPELT ELENDIG) und einen Zustand, der alle Züge eines Spielers beeinflusst, bis ein anderer Spieler den Zustand erhält (IM WALD VERIRRT). Die Zustände GETÄUSCHT/NEIDISCH sowie ELENDIG/ DOPPELT ELENDIG sind jeweils auf einer Karte (Vorder- und Rückseite) - die jeweils gültige Seite liegt oben. Ein Zustand ist nur so lange gültig, wie die entsprechende Karte vor einem Spieler liegt.",
         "extra": "<u>Elendig</u>: Nimm den Zustand ELENDIG, wenn du das erste Mal die Plage ELEND empfängst. Solange dieser Zustand vor dir liegt, ist dieser - 2 <VP> wert. <u>Doppelt Elendig</u>: Drehe ELENDIG auf DOPPELT ELENDIG um, wenn du das zweite Mal die Plage ELEND empfängst. Solange dieser Zustand vor dir liegt, ist dieser - 4 <VP> wert. <u>Getäuscht</u>: Nimm den Zustand GETÄUSCHT, wenn dieser (oder NEIDISCH) nicht bereits vor dir liegt, wenn du die Plage TÄUSCHUNG empfängst. Lege den Zustand zu Beginn deiner nächsten Kaufphase zurück. Ab diesem Moment bis zum Ende deines Zuges darfst du keine Aktionskarten kaufen. <u>Im Wald verirrt</u>: Nimm den Zustand IM WALD VERIRRT, wenn dieser nicht bereits vor dir liegt, wenn du die Königreichkarte NARR ausspielst. Der Zustand bleibt vor dir liegen, bis ein anderer Spieler ihn mit Hilfe des NARREN erhält. Solange der Zustand vor dir liegt, kannst du dessen Anweisung zu Beginn jedes Zuges anwenden (optional). Neidisch: Nimm den Zustand NEIDISCH, wenn dieser (oder GETÄUSCHT) nicht bereits vor dir liegt, wenn du die Plage NEID empfängst. Lege den Zustand zu Beginn deiner nächsten Kaufphase zurück. GOLD und SILBER sind ab diesem Moment bis zum Ende deines Zuges 1 Coin wert. Andere Geldkarten sind nicht betroffen.",
         "name": "Zustände"
+    },
+    "old_map": {
+        "description": "+1 Karte<br>+1 Aktion<br>Lege eine Karte aus deiner Hand ab. +1 Karte.<n>Du darfst die Irrfahrten rotieren.",
+        "extra": "Alle Anweisungen werden in der aufgelisteten Reihenfolge ausgeführt.<n>Zuerst erhältst du +1 Karte, dann +1 Aktion. Danach legst du eine Karte ab und erhältst erneut +1 Karte. Danach wählst du, ob du die Irrfahrten rotierst oder nicht.",
+        "name": "Alte Landkarte"
+    },
+    "order_of_astrologers": {
+        "description": "Wenn du mischt, darfst du pro Gefallen, den du einlöst, eine der zu mischenden Karten auswählen, um sie nach dem Mischen nach oben zu legen.",
+        "extra": "Immer wenn du mischst, kannst du Gefallen einlösen, um die Karten anzuschauen und eine Karte pro eingelöstem Gefallen zu wählen, die du nach oben legst. Mische die übrigen Karten wie üblich.<br>Du darfst deine Karten nicht anschauen, wenn du nicht mindestens einen Gefallen einlöst. Bevor du dich entscheidest, ob du Gefallen einlöst, kannst du die restlichen Karten des Nachziehstapels anschauen, die du vor dem Mischen ziehen wirst. Wenn du z.B. am Ende des Zuges mischst und zwei Karten übrig hattest, kannst du diese Karten anschauen, dann entscheiden, ob du Gefallen einlöst und welche Karten du nach oben legen möchtest.<n>Nachdem du einen Gefallen eingelöst und die Karten angeschaut hast, darfst du weitere Gefallen einlösen.<n>Die UNTERHÄNDLERIN und der UNTERGEBENE können dazu führen, dass du mischen musst, bevor du Gefallen erhältst. Die Gefallen, die du noch nicht hast, können für dieses Mischen nicht verwendet werden.",
+        "name": "Sterndeuterorden"
+    },
+    "order_of_masons": {
+        "description": "Wenn du mischst, darfst du pro Gefallen, den du einlöst, bis zu 2 der zu mischenden Karten auswählen, um sie nach dem Mischen auf deinen Ablagestapel zu legen.",
+        "extra": "Immer wenn du mischst, kannst du Gefallen einlösen, um die Karten anzuschauen und bis zu zwei Karten pro Gefallen zu wählen, die du auf deinen Ablagestapel legst. Mische die übrigen Karten wie üblich, aber mische diese Karten nicht ein. Du darfst deine Karten nicht anschauen, wenn du nicht mindestens einen Gefallen einlöst.<n>Bevor du dich entscheidest, ob du Gefallen einlöst, kannst du die restlichen Karten des Nachziehstapels anschauen, die du vor dem Mischen ziehen wirst. Nachdem du eines Gefallen eingelöst und die Karten angeschaut hast, darfst du immer noch weitere Gefallen einlösen.<n>Die UNTERHÄNDLERIN und der UNTERGEBENE können dazu führen, dass du mischen musst, bevor du von ihnen Gefallen erhältst. Die Gefallen, die du noch nicht hast, können für dieses Mischen nicht verwendet werden.",
+        "name": "Freimaurerloge"
+    },
+    "peaceful_cult": {
+        "description": "Zu Beginn deiner Kaufphase darfst du beliebig viele Gefallen einlösen, um genauso viele deiner Handkarten zu entsorgen.",
+        "extra": "Löse die beliebig vielen Gefallen alle auf einmal ein. Wähle dann alle Karten aus, die du entsorgen möchtest und entsorge sie. Führe dann die Dinge in beliebiger Reihenfolge aus, die durch das Entsorgen der Karten ausgelöst werden.",
+        "name": "Friedlicher Kult"
+    },
+    "plateau_shepherds": {
+        "description": "Beim Zählen der Punkte: Bilde Paare aus je einem deiner Gefallen mit je einer deiner Karten, die 2 Coins kosten; pro Paar 2 <VP>.",
+        "extra": "Wenn du z.B. fünf Gefallen, zwei ANWESEN und einen BURGGRABEN hast, kannst du drei Paare bilden, das ergibt 6 <VP>.",
+        "name": "Schäfer der Hochebene"
+    },
+    "plunder events": {
+        "description": "<justify>Ereignisse sind keine Königreichkarten. In der Kaufphase des Spielers kann der Spieler statt einer Karte ein Ereignis kaufen. Das Ereignis wird gekauft, indem der auf dem Ereignis angegebene Preis bezahlt wird und dann die darauf angegebene Anweisung ausgeführt wird. Das Ereignis verbleibt dabei einfach auf dem Tisch; der Spieler nimmt die Karte nicht; es gibt keine Möglichkeit, eine zu erwerben oder in den eigene Kartensatz zu bringen. Der Erwerb eines Events verbraucht den Kauf; normalerweise kann der Spieler entweder eine Karte oder ein Ereignis kaufen. Ein Spieler mit zwei Käufen, wie z.B. nach dem Ausspielen eines Wildhüters könnte zwei Karten oder zwei Ereignisse oder eine Karte und ein Ereignis kaufen (in beliebiger Reihenfolge). Das gleiche Event kann mehrfach innerhalb eines Zugs gekauft werden, wenn der Spieler genug Käufe hat. Einige Ereignisse ergeben zusätzliche Käufe und ermöglichrollen dem Spieler so anschließend weitere Karten und Ereignisse zu kaufen. Spieler können im gleichen Zug kein weiteres Geld ausspielen nach dem Kauf eines Ereignisses. Der Kauf von Ereignissen ist nicht so wie der Kauf von Karten und löst so nicht Karten wie Sumpfhexe oder Halsabschneider (aus Blütezeit) aus. Kosten von Ereignissen werden nicht von Karten wie dem Brückentroll beeinflusst.</justify>",
+        "extra": "Es gibt 20 Ereignisse, von denen jeweils 1 Karte im Spiel enthalten ist. In der Kaufphase hat ein Spieler die Möglichkeit, ein Ereignis zu erwerben. Dafür benötigt er den entsprechenden Geldwert. Außerdem verbraucht der Erwerb eines Ereignisses einen Kauf. Du darfst beliebig viele Ereignisse erwerben, auch das gleiche Ereignis mehrfach (außer dies ist explizit auf einem Ereignis ausgeschlossen), solange du für jedes Ereignis noch 1 Kauf und den entsprechenden Geldwert aufbringen kannst. Der Erwerb eines Ereignisses benötigt zwar 1 Kauf, gilt aber nicht als Kauf einer Karte. So findet z.B. die SUMPFHEXE keine Anwendung beim Erwerb eines Ereignisses. Die Kosten eines Ereignisses werden auch nicht von Karten wie dem BRÜCKENTROLL, die die Kosten von Karten betreffen, beeinflusst. Wer ein Ereignis erwirbt, führt die darauf vermerkte Anweisung sofort aus, nimmt das Ereignis aber nicht an sich.",
+        "name": "Ereignisse - Plünderer"
+    },
+    "plunder traits": {
+        "description": "<justify>Merkmale sind jeweils nur 1 x im Spiel enthalten. Sie sind keine Königreichkarten und beeinflussen nur einen einzelnen Geld- oder Aktionskartenstapel, der vor dem Spiel ausgewählt wird. Pro Merkmal, das ihr im Spiel verwendet, wählt aus den 10 Königreichkarten-Stapeln des Spiels einen beliebigen Geld- oder Aktionskartenstapel aus und legt das Merkmal so unter jenen Stapel, dass der Merkmal-Text lesbar ist.</justify>",
+        "extra": "Während des Spiels werden die Karten von jenem Stapel beeinflusst – die Art und Weise steht auf dem jeweiligen Merkmal.<n>• Merkmale sind keine Königreichkarten und können niemals gekauft oder genommen werden.<n>• Merkmale können nur auf Königreichkartenstapel angewendet werden, niemals auf Basiskarten wie z. B. SILBER oder die RUINEN (aus Dark Ages).<n>• Es dürfen niemals 2 Merkmale unter denselben Stapel gelegt werden.<n>• Die Anweisungen auf Merkmalen enthalten immer den Namen des Merkmals und beziehen sich auf Karten des Stapels, auf den das Merkmal angewendet wird, z. B. sind alle Karten des Stapels, unter dem das Merkmal Fromm liegt, Fromme Karten.<n>• Merkmale können auch auf gemischte Stapel (aus Empires und Verbündete) angewendet werden und betreffen dann alle Karten jenes Stapels.<n>• Ist ein Stapel mit einem Merkmal leer, werden die Karten trotzdem noch durch das Merkmal beeinflusst.",
+        "name": "Merkmale - Plünderer"
     },
     "projects": {
         "description": "Projekte sind Fähigkeiten, die Spieler sich bis zum Spielende kaufen können. Es gibt insgesamt 20 Projekte. Zu Spielbeginn wird von den Spielern entschieden, mit welchen Projekten gespielt wird. Wir empfehlen, pro Spiel maximal 2 Projekte zu verwenden. Die Projekte werden neben dem Vorrat bereitgelegt, gehören aber nicht zum Vorrat. Außerdem erhält jeder Spieler zu Beginn 2 Holzsteine derselben Farbe und legt sie vor sich ab. Diese Holzsteine legt ihr im Spielverlauf jeweils auf die Projekte, die ihr gekauft habt.",
@@ -3212,27 +3529,105 @@
         "extra": "Mische nach Bedarf; wenn du auch nach dem Mischen keine fünf Karten hast, schaust du dir alle an.",
         "name": "Wächter"
     },
+    "sibyl": {
+        "description": "+4 Karten<br>+1 Aktion<br>Lege eine deiner Handkarten auf deinen Nachziehstapel und eine weitere unter ihn.",
+        "extra": "Wenn dein Nachziehstapel nach dem Ziehen leer ist, wird die erste Karte, die du zurücklegst, zur obersten Karte des Stapels.",
+        "name": "Prophetin"
+    },
     "skirmisher": {
         "description": "+1 Karte<br>+1 Aktion<br>+1 Coin<n>Wenn duin diesem Zug eine Angriffskarte nimmst, legt jeder Mitspieler seine Handkarten bis auf 3 ab.",
         "extra": "Jedes Mal, wenn du eine Angriffskarte erhältst, legt jeder andere Spieler bis zu 3 Handkarten ab.<n>Das Aufdecken des Grabens, wenn der Plänkler gespielt wird, stoppt den Angriff; du kannst den Graben nicht aufdecken, wenn du später eine Angriffskarte erhältst.",
         "name": "Aufwiegler"
     },
+    "sorcerer": {
+        "description": "+1 Karte<br>+1 Aktion<br>Jeder Mitspieler nennt eine Karte und deckt dann die oberste Karte seines Nachziehstapels auf. Ist es nicht die genannte, nimmt er einen Fluch.",
+        "extra": "Jeder Mitspieler nennt eine Karte und deckt die oberste Karte seines Nachziehstapels auf. Jeder Spieler, bei dem die aufgedeckte Karte nicht die von ihm genannte ist, nimmt einen FLUCH. Unabhängig davon, ob dies der Fall ist, legt jeder Mitspieler die aufgedeckte Karte wieder auf seinen Nachziehstapel. Wenn du also den HEXENMEISTER zweimal in einem Zug spielst, kennen die Mitspieler wahrscheinlich beim zweiten Spielen die Karte.",
+        "name": "Hexenmeister"
+    },
+    "sorceress": {
+        "description": "+1 Aktion<br>Nenne eine Karte. Decke die oberste Karte deines Nachziehstapels auf und nimm sie auf deine Hand. Ist es die genannte, nimmt jeder Mitspieler einen Fluch.",
+        "extra": "Nenne eine Karte und decke die oberste Karte deines Nachziehstapels auf. Ist sie die genannte, nimmt jeder Mitspieler einen FLUCH. Du nimmst die Karte unabhängig davon auf deine Hand, ob sie die von dir genannte ist oder nicht.",
+        "name": "Meisterhexe"
+    },
     "specialist": {
         "description": "Du darfst eine Aktions- oder Geldkarte aus deiner Hand spielen. Wähle eins: Spiele sie noch einmal oder nimm eine gleiche Karte.",
+        "extra": "Zuerst darfst du eine Aktions- oder Geldkarte aus deiner Hand spielen. Hast du das getan, wählst du nach der kompletten Ausführung des Spielens der Karte, ob du sie noch einmal spielen möchtest oder eine gleiche Karte nehmen möchtest. Du kannst die Karte sogar dann noch einmal spielen, wenn sie nicht mehr im Spiel ist. Du kannst dich auch dann dafür entscheiden, eine gleiche Karte zu nehmen, wenn es keine gleichen Karten mehr zu nehmen gibt. Dann nimmst du nichts. Durch die SPEZIALISTIN kannst du nur Karten aus dem Vorrat nehmen.",
         "name": "Spezialistin"
+    },
+    "stronghold": {
+        "description": "Wähle eins:<br>+3 Coins<br>oder<br>zu Beginn deines nächsten Zuges: +3 Karten<line>2 <*VP*>",
+        "extra": "Wenn du +3 Coins wählst, wird die BURG in diesem Zug abgelegt. Wenn du die +3 Karten im nächsten Zug wählst, legst du die BURG zur Seite bis zur Aufräumphase dieses nächsten Zuges (das passiert auch, wenn du beides mit der ÄLTESTEN wählst).",
+        "name": "Burg"
+    },
+    "student": {
+        "description": "+1 Aktion<br>Du darfst die Zauberer rotieren.<n>Entsorge eine deiner Handkarten. Ist es eine Geldkarte: +1 Gefallen und lege diese Karte auf deinen Nachziehstapel.",
+        "extra": "Das Rotieren der Zauberer ist optional, aber das Entsorgen einer Karte ist obligatorisch. Wenn du eine Geldkarte entsorgst, erhältst du +1 Gefallen und legst den ZAUBERSCHÜLER auf deinen Nachziehstapel, dies ist obligatorisch. Das bedeutet, du kannst denselben ZAUBERSCHÜLER in diesem Zug wieder ziehen und ihn wieder spielen.<n>Wenn du eine Nicht-Geldkarte entsorgst, bleibt der ZAUBERSCHÜLER im Spiel und wird in der Aufräumphase wie andere Karten abgelegt.",
+        "name": "Zauberschüler"
+    },
+    "sunken_treasure": {
+        "description": "Nimm eine Aktionskarte, von der du keine gleiche Karte im Spiel hast.",
+        "extra": "Gibt es im Vorrat keine solche Aktionskarte, nimmst du keine.",
+        "name": "Versunkener Schatz"
     },
     "swap": {
         "description": "+1 Karte<br>+1 Aktion<n>Du darfst eine Aktionskarte aus deiner Hand auf ihren Stapel zurücklegen, um eine andere Aktionskarte auf deine Hand zu nehmen, die bis zu 5 Coin kostet.",
+        "extra": "Zuerst erhaltst du +1 Karte und +1 Aktion. Dann darfst du optional eine Aktionskarte aus deiner Hand auf ihren Stapel legen. Wenn du dies tust, nimm eine Aktionskarte aus dem Vorrat auf deine Hand, die bis zu 5 Coins kostet.<n>Die Karte, die du nimmst, darf nicht die gleiche Karte sein wie die Karte, die du zurückgelegt hast.<n>Die Karte zurückzulegen ist kein Entsorgen und löst keine \"Wenn du eine Karte entsorgst\"- Anweisungen aus. Die Karte zu nehmen ist aber ein Nehmen und löst \"Wenn du diese Karte nimmst\"-Anweisung aus.",
         "name": "Tausch"
+    },
+    "sycophant": {
+        "description": "+1 Aktion<br>Lege 3 Karten aus deiner Hand ab. Hast du mindestens 1 Karte abgelegt: +3 Coins.<line>Wenn du diese Karte nimmst oder entsorgst: +2 Gefallen.",
+        "extra": "Du kannst diese Karte unabhängig davon spielen, wie viele Karten noch auf deiner Hand sind.<n>Wenn du diese Karte spielst und dann mindestens drei Karten auf deiner Hand hast, legst du drei Karten ab und erhältst +3 Coins. Hast du eine oder zwei Karten, legst du diese ab und erhältst +3 Coins. Hast du keine Karte, erhältst du nicht die +3 Coins.<n>Wenn du einen SCHMEICHLER nimmst oder entsorgst, erhältst du +2 Gefallen. Du kannst diese sofort einlösen, z.B. für die Anweisung auf dem STADTSTAAT.",
+        "name": "Schmeichler"
+    },
+    "tent": {
+        "description": "+2 Coins<n>Du darfst die Bastionen rotieren.<line>Wenn du diese Karte aus dem Spiel ablegst, darfst du sie auf deinen Nachziehstapel legen.",
+        "extra": "Wenn du mehrere ZELTE im Spiel hast, darfst du entscheiden, wie viele davon du auf deinen Nachziehstapel legen möchtest.",
+        "name": "Zelt"
+    },
+    "territory": {
+        "description": "Wert 1 <VP> pro Punktekarte mit unterschiedlichem Namen im eigenen Kartensatz.<line>Wenn du diese Karte nimmst, nimm ein Gold pro leerem Vorratsstapel.",
+        "extra": "Sind z.B. in deinem Kartensatz drei ANWESEN, eine PROVINZ und ein TERRITORIUM ist das TERRITORIUM 3 <VP> wert. Wenn das Nehmen des TERRITORIUMS dazu führt, dass der Konflikte-Stapel leer ist, zählt dies für die Menge GOLD, die du erhältst.",
+        "name": "Territorium"
     },
     "town": {
         "description": "Wähle eins:<br>+1 Karte und +2 Aktionen<n>oder<n>+1 Kauf und +2 Coin.",
+        "extra": "Du wählst einfach aus, ob du +1 Karte und +2 Aktionen erhalten möchtest oder +1 Kauf und +2 coin.",
         "name": "Ortschaft"
+    },
+    "town_crier": {
+        "description": "Wähle eins:<n>+2 Coins<br>oder nimm ein Silber<br>oder +1 Karte und +1 Aktion.<n>Du darfst die Bürger rotieren.",
+        "extra": "Wähle zuerst, ob du +2 Coins erhalten möchtest oder ein SILBER oder +1 Karte und +1 Aktion.<n>Unabhängig davon, was du gewählt hast, darfst du dich danach entscheiden, ob du die Bürger rotierst oder nicht.",
+        "name": "Ausruferin"
     },
     "traits": {
         "name": "Merkmale (alle)"
     },
+    "trappers_lodge": {
+        "description": "Wenn du eine Karte nimmst, darfst du 1 Gefallen einlösen, um sie auf deinen Nachziehstapel zu legen.",
+        "extra": "Ist dein Nachziehstapel leer, wird die Karte zur einzigen Karte in deinem Nachziehstapel.",
+        "name": "Hütte der Fallensteller"
+    },
+    "underling": {
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Gefallen",
+        "extra": "Wenn du diese Karte spielst, erhältst du einfach +1 Karte, +1 Aktion und +1 Gefallen.",
+        "name": "Untergebener"
+    },
+    "voyage": {
+        "description": "+1 Aktion<n>Wenn der vorherige Zug nicht deiner war, spiele nach diesem Zug einen Extrazug, in dem du nur 3 Karten aus deiner Hand spielen darfst.",
+        "extra": "Dies hält dich nicht davon ab, Karten zu spielen, die nicht auf deiner Hand sind. Wenn z.B. deine dritte gespielte Karte ein GOLEM (aus Die Alchimisten) ist, kannst du damit trotzdem die entsprechenden zwei Karten spielen, die zur Seite gelegt sind.<n>Wenn du in einem Zug mit der SEEREISE den THRONSAAL auf eine andere Karte anwendest, zählen sowohl der THRONSAAL als auch die andere Karte als aus deiner Hand gespielt, aber das erneute Spielen der Karte mit dem THRONSAAL zählt nicht zusätzlich.<n>Dies beschränkt das Spielen von allen Kartentypen, auch Geldkarten wie KUPFER.",
+        "name": "Seereise"
+    },
+    "warlord": {
+        "description": "+1 Aktion<br>Zu Beginn deines nächsten Zuges:+2 Karten.<n>Bis dahin dürfen Mitspieler keine Aktionskarten aus ihrer Hand spielen, von der sie 2 oder mehr gleiche Karten im Spiel haben.",
+        "extra": "Dies hält dich nicht davon ab, Karten zu spielen, die nicht auf deiner Hand sind. Z.B. kannst du mit GOLEM (aus Die Alchimisten) trotzdem die zwei Karten spielen, die zur Seite gelegt werden, unabhängig davon, wie viele gleiche Karten davon im Spiel sind.<n>Betrifft der KRIEGSHERR dich, kannst du mit dem THRONSAAL keine Karte aus deiner Hand spielen, von der du zwei oder mehr gleiche Karten im Spiel hast. Aber du kannst mit dem THRONSAAL eine Karte spielen, von der du nur ein Exemplar im Spiel hast, und dann diese Karte wieder spielen, auch wenn du dann zwei gleiche Karten im Spiel hast.<n>Dies betrifft nur Aktionskarten. Es betrifft z.B. nicht KUPFER.",
+        "name": "Kriegsherr"
+    },
     "ways": {
         "name": "Wege (alle)"
+    },
+    "woodworkers_guild": {
+        "description": " Zu Beginn deiner Kaufphase darfst du 1 Gefallen einlösen, um eine Aktionskarte aus deiner Hand zu entsorgen. Hast du das getan, nimm eine Aktionskarte.",
+        "extra": "Hiermit kannst du eine Aktionskarte mit beliebigen Kosten nehmen, auch Aktionskarten mit Potion oder Debt in den Kosten. Du nimmst nur eine Aktionskarte, wenn du eine entsorgt hast.",
+        "name": "Holzarbeitergilde"
     }
 }
