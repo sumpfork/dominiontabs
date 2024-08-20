@@ -378,9 +378,7 @@ class Plotter(object):
             self.NO_LINE,
             self.DOT,
             self.DEBUG,
-        ) = range(
-            1, 9
-        )  # Constants
+        ) = range(1, 9)  # Constants
         if cropmarkLength < 0:
             cropmarkLength = 0.2
         if cropmarkSpacing < 0:
@@ -852,7 +850,9 @@ class DividerDrawer(object):
         line = (
             plotter.LINE
             if lineType.lower() == "line"
-            else plotter.DOT if lineType.lower() == "dot" else NO_LINE
+            else plotter.DOT
+            if lineType.lower() == "dot"
+            else NO_LINE
         )
         # lines ending at a midpoint (no dots)
         midline = NO_LINE if line == plotter.DOT else line
@@ -1076,7 +1076,9 @@ class DividerDrawer(object):
             return (
                 panelHeight
                 if panelStyle in ["tab", "strap"]
-                else item.tabHeight if panelStyle == "folder" else 0.0
+                else item.tabHeight
+                if panelStyle == "folder"
+                else 0.0
             )
 
         headTabHeight = tabHeight(self.options.head, headHeight)

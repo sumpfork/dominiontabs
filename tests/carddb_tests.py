@@ -25,7 +25,7 @@ def rmtestcardb(request):
 def test_cardread():
     # we test the number of cards only to make sure it doesn't get changed
     # inadvertently by unrelated changes
-    num_cards_expected = 1017
+    num_cards_expected = 1018
 
     options = config_options.parse_opts([])
     cards = db.read_card_data(options)

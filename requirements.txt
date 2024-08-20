@@ -10,9 +10,9 @@ configargparse==1.7
     # via domdiv (pyproject.toml)
 loguru==0.7.2
     # via domdiv (pyproject.toml)
-pillow==10.3.0
+pillow==10.4.0
     # via
     #   domdiv (pyproject.toml)
     #   reportlab
-reportlab==4.2.0
+reportlab==4.2.2
     # via domdiv (pyproject.toml)

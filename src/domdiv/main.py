@@ -124,9 +124,7 @@ class CardSorter(object):
         )
 
     def get_card_name_sort_key(self, c):
-        if (
-            self.collator
-        ):  # If the PyICU collator attribute has been set up, get the collator based sort key
+        if self.collator:  # If the PyICU collator attribute has been set up, get the collator based sort key
             return self.collator.getSortKey(c)
         else:  # Default method: strip the card name character accents
             return self.strip_accents(c)
@@ -338,21 +336,21 @@ def filter_sort_cards(cards, options):
                     if card.group_top:
                         # this is a designated card to represent the group, so update important data
                         group_cards[(card.group_tag, card.cardset_tag)].cost = card.cost
-                        group_cards[(card.group_tag, card.cardset_tag)].potcost = (
-                            card.potcost
-                        )
-                        group_cards[(card.group_tag, card.cardset_tag)].debtcost = (
-                            card.debtcost
-                        )
-                        group_cards[(card.group_tag, card.cardset_tag)].types = (
-                            card.types
-                        )
-                        group_cards[(card.group_tag, card.cardset_tag)].randomizer = (
-                            card.randomizer
-                        )
-                        group_cards[(card.group_tag, card.cardset_tag)].image = (
-                            card.image
-                        )
+                        group_cards[
+                            (card.group_tag, card.cardset_tag)
+                        ].potcost = card.potcost
+                        group_cards[
+                            (card.group_tag, card.cardset_tag)
+                        ].debtcost = card.debtcost
+                        group_cards[
+                            (card.group_tag, card.cardset_tag)
+                        ].types = card.types
+                        group_cards[
+                            (card.group_tag, card.cardset_tag)
+                        ].randomizer = card.randomizer
+                        group_cards[
+                            (card.group_tag, card.cardset_tag)
+                        ].image = card.image
 
                     group_cards[(card.group_tag, card.cardset_tag)].addCardCount(
                         card.count
@@ -394,9 +392,7 @@ def filter_sort_cards(cards, options):
 
     # Split out Official and Fan set information
     Official_sets = set()  # Will hold official sets
-    Official_search = (
-        []
-    )  # Will hold official sets for searching, both set key and set_name
+    Official_search = []  # Will hold official sets for searching, both set key and set_name
     Fan_sets = set()  # Will hold fan sets
     Fan_search = []  # Will hold fan sets for searching, both set key and set_name
     wantedSets = set()  # Will hold all the sets requested for printing

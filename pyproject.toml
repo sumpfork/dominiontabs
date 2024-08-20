@@ -31,3 +31,6 @@ domdiv_dedupe_cards = "domdiv.tools.cleanup_language_dupes:main"
 [tool.setuptools_scm]
 # doing this break CI as the version file gets written when just `get_version` is called
 # version_file = "src/domdiv/_version.py"
+
+[tool.ruff.lint]
+select = ["I"]
