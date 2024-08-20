@@ -677,14 +677,11 @@ def calculate_layout(options, cards=None):
     # This is in place to allow for test cases to it call directly to get
     options = config_options.clean_opts(options)
     options.dominionCardWidth, options.dominionCardHeight = (
-        config_options.parse_cardsize(options.size, options.sleeved)
+        config_options.parse_cardsize(options)
     )
-    options.paperwidth, options.paperheight = config_options.parse_papersize(
-        options.papersize
-    )
-    options.minmarginwidth, options.minmarginheight = config_options.parse_dimensions(
-        options.minmargin
-    )
+    options.paperwidth, options.paperheight = config_options.parse_papersize(options)
+    options.minmarginwidth *= cm
+    options.minmarginheight *= cm
 
     dd = DividerDrawer(options)
     dd.calculatePages(cards)

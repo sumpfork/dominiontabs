@@ -1,3 +1,4 @@
+import enum
 import os
 import sys
 
@@ -7,6 +8,18 @@ from loguru import logger
 from reportlab.lib.units import cm
 
 from . import db
+
+
+class PAPERSIZE(enum.Enum):
+    A3 = pagesizes.A3
+    A4 = pagesizes.A4
+    LETTER = pagesizes.LETTER
+    LEGAL = pagesizes.LEGAL
+
+
+PAPERSIZE_CHOICES = list(PAPERSIZE.__members__)
+
+CARDSIZE_CHOICES = ["normal", "sleeved"]
 
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
@@ -63,10 +76,23 @@ def parse_opts(cmdline_args=None, parser=None):
     group_basic.add_argument(
         "--papersize",
         dest="papersize",
+        default="LETTER",
+        choices=PAPERSIZE_CHOICES,
+        help=f"one of {','.join(PAPERSIZE_CHOICES)}",
+    )
+    group_basic.add_argument(
+        "--custom_papersize_width",
+        dest="papersize_width",
         default=None,
-        help="The size of paper to use; '<%%f>x<%%f>' (size in cm), or 'A4', or 'LETTER'. "
-        "If not specified, it will default to system defaults, and if the system defaults "
-        "are not found, then to 'LETTER'.",
+        type=float,
+        help="Custom width of paper to use in cm",
+    )
+    group_basic.add_argument(
+        "--custom_papersize_height",
+        dest="papersize_height",
+        default=None,
+        type=float,
+        help="Custom height of paper to use in cm",
     )
     group_basic.add_argument(
         "--language",
@@ -88,14 +114,26 @@ def parse_opts(cmdline_args=None, parser=None):
         help="Either horizontal or vertical divider orientation.",
     )
     group_basic.add_argument(
-        "--size",
-        dest="size",
+        "--cardsize",
+        dest="cardsize",
         default="normal",
-        help="Dimensions of the cards to use with the dividers '<%%f>x<%%f>' (size in cm), "
-        "or 'normal' = '9.1x5.9', or 'sleeved' = '9.4x6.15'.",
+        choices=CARDSIZE_CHOICES,
+        help="Dimensions of the cards to use with the dividers: "
+        "'normal' = 9.1cm x 5.9cm', or 'sleeved' = '9.4cm x 6.15cm'.",
     )
     group_basic.add_argument(
-        "--sleeved", action="store_true", dest="sleeved", help="Same as --size=sleeved."
+        "--custom_cardsize_width",
+        dest="cardsize_width",
+        default=None,
+        type=float,
+        help="Custom width of cards to use in cm",
+    )
+    group_basic.add_argument(
+        "--custom_cardsize_height",
+        dest="cardsize_height",
+        default=None,
+        type=float,
+        help="Custom height of cards to use in cm",
     )
     group_basic.add_argument(
         "--order",
@@ -661,10 +699,18 @@ def parse_opts(cmdline_args=None, parser=None):
         "Printing", "Changes how the Dividers are printed."
     )
     group_printing.add_argument(
-        "--minmargin",
-        dest="minmargin",
-        default="1x1",
-        help="Page margin in cm in the form '<%%f>x<%%f>', left/right x top/bottom).",
+        "--minmarginwidth",
+        dest="minmarginwidth",
+        type=float,
+        default=1.0,
+        help="Left/right page margin in cm.",
+    )
+    group_printing.add_argument(
+        "--minmarginheight",
+        dest="minmarginheight",
+        type=float,
+        default=1.0,
+        help="Top/bottom page margin in cm.",
     )
     group_printing.add_argument(
         "--cropmarks",
@@ -1094,57 +1140,32 @@ def clean_opts(options):
     return options
 
 
-def parse_dimensions(dimensionsStr):
-    x, y = dimensionsStr.upper().split("X", 1)
-    return (float(x) * cm, float(y) * cm)
+def parse_papersize(options):
+    paperwidth, paperheight = PAPERSIZE[options.papersize].value
+    if options.papersize_width:
+        paperwidth = options.papersize_width * cm
+    if options.papersize_height:
+        paperheight = options.papersize_height * cm
+    logger.info(
+        (f"Using paper size, {paperwidth / cm:.2f}cm x {paperheight / cm:.2f}cm")
+    )
 
-
-def parse_papersize(spec):
-    papersize = None
-    if not spec:
-        if os.path.exists("/etc/papersize"):
-            papersize = open("/etc/papersize").readline().upper()
-        else:
-            papersize = "LETTER"
-    else:
-        papersize = spec.upper()
-
-    try:
-        paperwidth, paperheight = getattr(pagesizes, papersize)
-    except AttributeError:
-        try:
-            paperwidth, paperheight = parse_dimensions(papersize)
-            logger.info(
-                (
-                    f"Using custom paper size, {paperwidth / cm:.2f}cm x {paperheight / cm:.2f}cm"
-                )
-            )
-        except ValueError:
-            paperwidth, paperheight = pagesizes.LETTER
     return paperwidth, paperheight
 
 
-def parse_cardsize(spec, sleeved):
-    spec = spec.upper()
-    if spec == "SLEEVED" or sleeved:
+def parse_cardsize(options):
+    if options.cardsize == "sleeved":
         dominionCardWidth, dominionCardHeight = (9.4 * cm, 6.15 * cm)
-        logger.info(
-            (
-                f"Using sleeved card size, {dominionCardWidth / cm:.2f}cm x {dominionCardHeight / cm:.2f}cm"
-            )
-        )
-    elif spec in ["NORMAL", "UNSLEEVED"]:
+    elif options.cardsize == "normal":
         dominionCardWidth, dominionCardHeight = (9.1 * cm, 5.9 * cm)
-        logger.info(
-            (
-                f"Using normal card size, {dominionCardWidth / cm:.2f}cm x{dominionCardHeight / cm:.2f}cm"
-            )
+    if options.cardsize_width:
+        dominionCardWidth = options.cardsize_width * cm
+    if options.cardsize_height:
+        dominionCardHeight = options.cardsize_height * cm
+    logger.info(
+        (
+            f"Using card size, {dominionCardWidth / cm:.2f}cm x {dominionCardHeight / cm:.2f}cm"
         )
-    else:
-        dominionCardWidth, dominionCardHeight = parse_dimensions(spec)
-        logger.info(
-            (
-                f"Using custom card size, {dominionCardWidth / cm:.2f}cm x {dominionCardHeight / cm:.2f}cm"
-            )
-        )
+    )
+
     return dominionCardWidth, dominionCardHeight
