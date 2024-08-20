@@ -15,11 +15,12 @@ class PAPERSIZE(enum.Enum):
     A4 = pagesizes.A4
     LETTER = pagesizes.LETTER
     LEGAL = pagesizes.LEGAL
+    CUSTOM = "CUSTOM"
 
 
 PAPERSIZE_CHOICES = list(PAPERSIZE.__members__)
 
-CARDSIZE_CHOICES = ["normal", "sleeved"]
+CARDSIZE_CHOICES = ["normal", "sleeved", "custom"]
 
 LOCATION_CHOICES = ["tab", "body-top", "hide"]
 NAME_ALIGN_CHOICES = ["left", "right", "centre", "edge"]
@@ -82,17 +83,17 @@ def parse_opts(cmdline_args=None, parser=None):
     )
     group_basic.add_argument(
         "--custom_papersize_width",
-        dest="papersize_width",
-        default=None,
+        dest="custom_papersize_width",
+        default=pagesizes.LETTER[0] * cm,
         type=float,
-        help="Custom width of paper to use in cm",
+        help="Custom width of paper to use in cm  (used if --papersize=CUSTOM)",
     )
     group_basic.add_argument(
         "--custom_papersize_height",
-        dest="papersize_height",
-        default=None,
+        dest="custom_papersize_height",
+        default=pagesizes.LETTER[1] * cm,
         type=float,
-        help="Custom height of paper to use in cm",
+        help="Custom height of paper to use in cm (used if --papersize=CUSTOM)",
     )
     group_basic.add_argument(
         "--language",
@@ -123,17 +124,17 @@ def parse_opts(cmdline_args=None, parser=None):
     )
     group_basic.add_argument(
         "--custom_cardsize_width",
-        dest="cardsize_width",
-        default=None,
+        dest="custom_cardsize_width",
+        default=9.1 * cm,
         type=float,
-        help="Custom width of cards to use in cm",
+        help="Custom width of cards to use in cm (used if --cardsize=custom)",
     )
     group_basic.add_argument(
         "--custom_cardsize_height",
-        dest="cardsize_height",
-        default=None,
+        dest="custom_cardsize_height",
+        default=5.9 * cm,
         type=float,
-        help="Custom height of cards to use in cm",
+        help="Custom height of cards to use in cm (used if --cardsize=custom)",
     )
     group_basic.add_argument(
         "--order",
@@ -1141,11 +1142,11 @@ def clean_opts(options):
 
 
 def parse_papersize(options):
-    paperwidth, paperheight = PAPERSIZE[options.papersize].value
-    if options.papersize_width:
-        paperwidth = options.papersize_width * cm
-    if options.papersize_height:
-        paperheight = options.papersize_height * cm
+    if options.papersize == PAPERSIZE.CUSTOM.value:
+        paperwidth = options.custom_papersize_width * cm
+        paperheight = options.custom_papersize_height * cm
+    else:
+        paperwidth, paperheight = PAPERSIZE[options.papersize].value
     logger.info(
         (f"Using paper size, {paperwidth / cm:.2f}cm x {paperheight / cm:.2f}cm")
     )
@@ -1154,14 +1155,13 @@ def parse_papersize(options):
 
 
 def parse_cardsize(options):
-    if options.cardsize == "sleeved":
+    if options.cardsize == "custom":
+        dominionCardWidth = options.custom_cardsize_width * cm
+        dominionCardHeight = options.custom_cardsize_height * cm
+    elif options.cardsize == "sleeved":
         dominionCardWidth, dominionCardHeight = (9.4 * cm, 6.15 * cm)
     elif options.cardsize == "normal":
         dominionCardWidth, dominionCardHeight = (9.1 * cm, 5.9 * cm)
-    if options.cardsize_width:
-        dominionCardWidth = options.cardsize_width * cm
-    if options.cardsize_height:
-        dominionCardHeight = options.cardsize_height * cm
     logger.info(
         (
             f"Using card size, {dominionCardWidth / cm:.2f}cm x {dominionCardHeight / cm:.2f}cm"
