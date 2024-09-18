@@ -84,14 +84,14 @@ def parse_opts(cmdline_args=None, parser=None):
     group_basic.add_argument(
         "--custom_papersize_width",
         dest="custom_papersize_width",
-        default=pagesizes.LETTER[0] * cm,
+        default=pagesizes.LETTER[0] / cm,
         type=float,
         help="Custom width of paper to use in cm  (used if --papersize=CUSTOM)",
     )
     group_basic.add_argument(
         "--custom_papersize_height",
         dest="custom_papersize_height",
-        default=pagesizes.LETTER[1] * cm,
+        default=pagesizes.LETTER[1] / cm,
         type=float,
         help="Custom height of paper to use in cm (used if --papersize=CUSTOM)",
     )
@@ -125,14 +125,14 @@ def parse_opts(cmdline_args=None, parser=None):
     group_basic.add_argument(
         "--custom_cardsize_width",
         dest="custom_cardsize_width",
-        default=9.1 * cm,
+        default=9.1 / cm,
         type=float,
         help="Custom width of cards to use in cm (used if --cardsize=custom)",
     )
     group_basic.add_argument(
         "--custom_cardsize_height",
         dest="custom_cardsize_height",
-        default=5.9 * cm,
+        default=5.9 / cm,
         type=float,
         help="Custom height of cards to use in cm (used if --cardsize=custom)",
     )
@@ -364,7 +364,7 @@ def parse_opts(cmdline_args=None, parser=None):
         nargs="*",
         action="append",
         dest="fan",
-        choices=db.get_expansions()[0],
+        choices=db.get_expansions()[1],
         help="Add dividers from the specified fan made expansions. "
         "If this option is not used, no fan expansions will be included. "
         "Fan made expansion names can also be given in the language specified by "
