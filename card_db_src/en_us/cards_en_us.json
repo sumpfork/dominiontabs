@@ -1753,8 +1753,8 @@
         "name": "King's Court"
     },
     "Kitsune": {
-        "description": "+1 Rising Sun<br><br>Choose two different options: +2 Actions; +2 Coins; each other player gains a Curse; gain a Silver.",
-        "extra": "First the +1 Rising Sun happens, which may trigger a Prophecy; then you choose two different options, and do them in the order listed.",
+        "description": "+1 Sun<br><br>Choose two different options: +2 Actions; +2 Coins; each other player gains a Curse; gain a Silver.",
+        "extra": "First the +1 Sun happens, which may trigger a Prophecy; then you choose two different options, and do them in the order listed.",
         "name": "Kitsune"
     },
     "Knights": {
@@ -2083,7 +2083,7 @@
         "name": "Mountain Pass"
     },
     "Mountain Shrine": {
-        "description": "+1 Rising Sun<br>+2 Coins<br><br>You may trash a card from your hand. Then, if there are any Action cards in the trash, +2 Cards.",
+        "description": "+1 Sun<br>+2 Coins<br><br>You may trash a card from your hand. Then, if there are any Action cards in the trash, +2 Cards.",
         "extra": "This costs 5 Debt; see the Debt section. It doesn't matter who trashed an Action or when, just that there is one in the trash. The Action in the trash can be one you just trashed with the same play of Mountain Shrine.",
         "name": "Mountain Shrine"
     },
@@ -2401,7 +2401,7 @@
         "name": "Poacher"
     },
     "Poet": {
-        "description": "+1 Rising Sun<br>+1 Card<br>+1 Action<br><br>Reveal the top card of your deck. If it costs 3 Coins or less, put it into your hand",
+        "description": "+1 Sun<br>+1 Card<br>+1 Action<br><br>Reveal the top card of your deck. If it costs 3 Coins or less, put it into your hand",
         "extra": "Cards with Debt in their costs do not cost \"3 Coins or less.\" The card goes back on top of your deck if it doesn't get put into your hand.",
         "name": "Poet"
     },
@@ -2645,7 +2645,7 @@
         "name": "Ritual"
     },
     "River Shrine": {
-        "description": "+1 Rising Sun<br><br>Trash up to 2 cards from your hand.  At the start of Clean-up, if you didn't gain any cards in your Buy phase this turn, gain a card costing up to 4 Coin.",
+        "description": "+1 Sun<br><br>Trash up to 2 cards from your hand.  At the start of Clean-up, if you didn't gain any cards in your Buy phase this turn, gain a card costing up to 4 Coin.",
         "extra": "It doesn't matter if you gained cards in your Action phase, only if you did in your Buy phase. If you play multiple River Shrines, they can all gain a card, provided you don't gain a card in your Buy phase. Trashing cards with this is optional; you can gain a card even if you didn't trash any cards. If you have multiple Buy phases, such as via Continue, River Shrine only gains you a card if you didn't gain a card in any of those Buy phases.",
         "name": "River Shrine"
     },
@@ -2734,8 +2734,8 @@
         "name": "Rush"
     },
     "Rustic Village": {
-        "description": "+1 Rising Sun<br>+1 Cards<br>+2 Actions<br><br>You may discard 2 cards for +1 Card.",
-        "extra": "First the +1 Rising Sun happens, which may trigger a Prophecy; then you get +1 Card, +2 Actions, and may discard 2 cards (including the one just drawn) for another +1 Card.",
+        "description": "+1 Sun<br>+1 Cards<br>+2 Actions<br><br>You may discard 2 cards for +1 Card.",
+        "extra": "First the +1 Sun happens, which may trigger a Prophecy; then you get +1 Card, +2 Actions, and may discard 2 cards (including the one just drawn) for another +1 Card.",
         "name": "Rustic Village"
     },
     "Saboteur": {
@@ -3252,8 +3252,8 @@
         "name": "Taxman"
     },
     "Tea House": {
-        "description": "+1 Rising Sun<br>+1 Card<br>+1 Action<br>+2 Coins",
-        "extra": "First the +1 Rising Sun happens, which may trigger a Prophecy; then you get +1 Card, +1 Action, and +2 Coins.",
+        "description": "+1 Sun<br>+1 Card<br>+1 Action<br>+2 Coins",
+        "extra": "First the +1 Sun happens, which may trigger a Prophecy; then you get +1 Card, +1 Action, and +2 Coins.",
         "name": "Tea House"
     },
     "Teacher": {
@@ -4218,7 +4218,7 @@
     },
     "prophecies": {
         "description": "Prophecies are rules that will eventually apply to the game.",
-        "extra": "In every game with one or more Omen cards, deal out one Prophecy for it. Only use one Prophecy no matter how many Omens you have.<br> • Put 5 Sun tokens on the Prophecy for 2 players, 8 for 3 players, 10 for 4 players, 12 for 5 players, and 13 for 6 players.<br> • +1 Rising Sun means remove a token from the Prophecy. Then if it was the last token, the rules text on the Prophecy becomes active, right then and for the rest of the game.<br> • +1 Rising Sun always appears first on Omens, before anything else the card does.<br> • +1 Rising Sun does nothing else once all the tokens are removed.<br> • Prophecy text does nothing until the last Sun token is removed.",
+        "extra": "In every game with one or more Omen cards, deal out one Prophecy for it. Only use one Prophecy no matter how many Omens you have.<br> • Put 5 Sun tokens on the Prophecy for 2 players, 8 for 3 players, 10 for 4 players, 12 for 5 players, and 13 for 6 players.<br> • +1 Sun means remove a token from the Prophecy. Then if it was the last token, the rules text on the Prophecy becomes active, right then and for the rest of the game.<br> • +1 Sun always appears first on Omens, before anything else the card does.<br> • +1 Sun does nothing else once all the tokens are removed.<br> • Prophecy text does nothing until the last Sun token is removed.",
         "name": "Prophecies - All"
     },
     "renaissance projects": {
