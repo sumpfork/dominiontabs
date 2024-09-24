@@ -1194,7 +1194,7 @@ class DividerDrawer(object):
             (r"(\d+)\s*\<\*POTION\*\>", "potion_small.png", 2, 140, 1.5),
             (r"Potion", "potion_small.png", 1.2, 100),
             # Sun
-            (r"Sun", "sun.png", 1.2, 105),
+            (r"SunToken", "sun.png", 1.2, 105),
         ]
         for args in replace_specs:
             text = replace_image_tag(text, fontsize, *args)
