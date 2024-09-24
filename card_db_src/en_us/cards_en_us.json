@@ -42,6 +42,11 @@
         "extra": "When you play this, you draw two cards and may play an additional Action card this turn. In the Clean-up Phase, when you discard this, if you have at least one Potion card in play, you may put Alchemist on top of your deck. This is optional and happens before drawing your new hand. If you have no cards in your deck when you do this, Alchemist becomes the only card in your deck. If you have multiple Alchemists and a Potion, you can put any or all of the Alchemists on top of your deck. You don't have to have used the Potion to buy anything, you only need to have played it.",
         "name": "Alchemist"
     },
+    "Alley": {
+        "description": "+1 Card<br>+1 Action<br>Discard a card.<line>You can play this from your deck as if it is in your hand.",
+        "extra": "See the Shadows section. When you play Alley, you draw a card, get +1 Action, and discard a card.",
+        "name": "Alley"
+    },
     "Alliance": {
         "description": "Gain a Province, a Duchy, an Estate, a Gold, a Silver, and a Copper.",
         "extra": "You gain each of those cards that is present in the Supply; you cannot choose not to gain one. You gain them in the order listed.",
@@ -115,6 +120,11 @@
         "extra": "With Villa it is possible for your Buy phase to start twice or more in a turn; you can make use of Arena each time.",
         "name": "Arena"
     },
+    "Aristocrat": {
+        "description": "If the number of Aristocrats you have in play is:<br><br>1 or 5: +3 Actions;<br>2 or 6: +3 Cards;<br>3 or 7: +3 Coin;<br>4 or 8: +3 Buys.",
+        "extra": "What matters is how many Aristocrats you have in play, not how many you played that turn. For example if you play Daimyo and then Aristocrat, you'll get +3 Actions for each play. If you have zero or 9 or 10 Aristocrats in play, it doesn't do anything.",
+        "name": "Aristocrat"
+    },
     "Armory": {
         "description": "Gain a card costing up to 4 Coins, putting it on top of your deck.",
         "extra": "The card you gain comes from the Supply and is put on top of your deck.",
@@ -122,13 +132,18 @@
     },
     "Artificer": {
         "description": "+1 Card<br>+1 Action<br>+1 Coin<n>Discard any number of cards. You may gain a card costing exactly 1 Coin per card discarded, putting it on top of your deck.",
-        "extra": "First you get +1 Card, +1 Action, and +1 Coin. Then you discard any number of cards. You may choose not to discard any cards. Then you may gain a card costing exactly 1 per card discarded. For example if you discarded two cards; you may gain a card costing 2 ; if you discard no cards, you may gain a card costing 0. The gained card comes from the Supply and is put on top of your deck. You may choose not to gain a card, even if you discard cards.",
+        "extra": "First you get +1 Card, +1 Action, and +1 Coin. Then you discard any number of cards. You may choose not to discard any cards. Then you may gain a card costing exactly 1 per card discarded. For example if you discarded two cards; you may gain a card costing 2; if you discard no cards, you may gain a card costing 0. The gained card comes from the Supply and is put on top of your deck. You may choose not to gain a card, even if you discard cards.",
         "name": "Artificer"
     },
     "Artisan": {
         "description": "Gain a card to your hand costing up to 5 Coins.<n>Put a card from your hand onto your deck.",
         "extra": "The card you gain comes from the Supply and is put into your hand.<n>You cannot use _ Coin&nbsp;to increase how expensive of a card you gain; it always costs from 0 Coins to 5 Coins.<n>After gaining the card, you put a card from your hand onto your deck; that can be the card you just gained, or a different card.",
         "name": "Artisan"
+    },
+    "Artist": {
+        "description": "+1 Action<br><br>+1 Card per card you have exactly one of in play.",
+        "extra": "This costs 8 Debt; see the Debt section. This counts itself, if you have exactly one Artist in play. This counts cards played on other turns that are still in play, such as a Samurai from a previous turn.",
+        "name": "Artist"
     },
     "Astrolabe": {
         "description": "Now and at the start of your next turn:<br><br>1 <*COIN*><br><br>+ 1 Buy",
@@ -490,6 +505,11 @@
         "extra": "You must resolve the Chancellor (decide whether or not to discard your Deck by flipping it into your Discard pile) before doing other things on your turn, like deciding what to buy or playing another Action card. You may not look through your Deck as you discard it.",
         "name": "Chancellor"
     },
+    "Change": {
+        "description": "If you have any Debt, +3 Coin. Otherwise, trash a card from you hand, gain a card costing more Coin than it. +Debt equal to the difference in Coin.",
+        "extra": "Remember you can repay Debt at any point during your turn, which can sometimes let you choose which thing Change will do. If you have any Debt, Change gives you +3 Coin; otherwise you trash a card from your hand, gain any card costing more Coins, and take Debt equal to the difference. For example you could trash a Copper, gain a Province, and take 8 Debt. You can't gain a card costing the same amount of Coins or less Coins. This ignores other special aspects of cost; for example you could trash an Estate and gain an Alchemist, from Alchemy, which costs 3 Coins and 1 Potion.",
+        "name": "Change"
+    },
     "Changeling": {
         "description": "Trash this. Gain a copy of a card you have in play.<line>In games using this, when you gain a card costing 3 Coins or more, you may exchange it for a Changeling.",
         "extra": "When Changeling is in the Supply, any time you gain a card costing at least 3 Coins, you may exchange it for a Changeling from the Supply. You can only do this if you can actually return the card you gained, and there is at least one Changeling in the Supply. The Changeling goes to your discard pile, no matter where the gained card went. Things that happen due to gaining the gained card still happen. So for example you could gain Skulk, exchange it for a Changeling (returning Skulk to the Supply and putting Changeling into your discard pile), and still gain a Gold from Skulk's ability. Exchanging for a Changeling is optional. You cannot do it if the gained card costs less than 3 Coins, even if it normally costs 3 Coins or more, and you cannot do it if the cost is neither more or less than 3 Coins (such as Transmute from Alchemy). When you play Changeling, you trash it and gain a copy of a card you have in play; that can be any card you have in play, including Actions, Treasures, and Night cards, and including Duration cards you played on a previous turn that are still in play.",
@@ -665,6 +685,11 @@
         "extra": "Curses are Exiled in turn order; it may be that one player Exiles a Curse while another discards the Curses from their mat.",
         "name": "Coven"
     },
+    "Craftsman": {
+        "description": "+2 Debt<br><br>Gain a card costing up to 5 Coin.",
+        "extra": "You gain a card even if you already had Debt; see the Debt section.",
+        "name": "Craftsman"
+    },
     "Crew": {
         "description": "+3 Cards<br>At the start of your next turn, put this onto your deck.",
         "extra": "Putting this onto your deck isn't optional.",
@@ -734,6 +759,11 @@
         "description": "Each other player discards down to 3 cards in hand.<br>The next time anyone gains a Treasure costing 5 Coin or more, gain a Loot.",
         "extra": "Loot itself is a Treasure costing 5 Coin or more, so a player gaining one will trigger Cutthroats.",
         "name": "Cutthroat"
+    },
+    "Daimyo": {
+        "description": "+1 Card<br>+1 Action<br><br>The next time you play a non-Command Action card this turn, replay it afterwards.",
+        "extra": "This isn't optional; whatever that next non-Command Action card is, Daimyo replays it. It replays it even if the card trashed itself. Command cards, such as Daimyo itself, are not replayed; Daimyo waits for a non-Command Action card (or fails to do anything more if the turn ends before you play one). If you play two Daimyos and then e.g. a Craftsman, you'll play the Craftsman three times total - once normally and once for each Daimyo. Daimyo costs 6 Debt; see the Debt section.",
+        "name": "Daimyo"
     },
     "Death Cart": {
         "description": "You may trash this or an Action card from your hand, for +5 Coin.<line>When you gain this, gain 2 Ruins.",
@@ -1119,6 +1149,11 @@
         "extra": "You get a coin to spend and 2 more Actions to use this turn. At the start of your next turn you get a coin and only one more Action. This means you will be able to play 2 Actions total on your next turn (counting your normal Action). Leave this in front of you until the Clean-up phase of your next turn.",
         "name": "Fishing Village"
     },
+    "Fishmonger": {
+        "description": "+1 Buy<br>+1 Coin<line>You can play this from your deck as if in your hand.",
+        "extra": "See the Shadows section. When you play Fishmonger, you get +1 Buy and +1 Coin.",
+        "name": "Fishmonger"
+    },
     "Flag": {
         "description": "When drawing your hand, +1 Card.",
         "extra": "Artifacts are effects that apply to one player, that are not tracked by normal cards or Events. They function similarly to States (from Nocturne). Artifacts are not \"cards\"; any text referring to a \"card\" does not apply to Artifacts. There is only one copy of each Artifact; when a player takes an Artifact, the Artifact card is placed in front of them until another player takes it.",
@@ -1298,6 +1333,11 @@
         "description": "3 <*COIN*>",
         "extra": "30 cards per game.",
         "name": "Gold"
+    },
+    "Gold Mine": {
+        "description": "+1 Card<br>+1 Action<br>+1 Buy<br><br>You may gain a Gold and get +4 Debt.",
+        "extra": "You can gain a Gold even if you already have Debt; see the Debt section. You can't gain a Gold without taking 4 Debt.",
+        "name": "Gold Mine"
     },
     "Golem": {
         "description": "Reveal cards from your deck until you reveal 2 Action cards other than Golem Cards.<n>Discard the other cards, then play the Action cards in either order.",
@@ -1557,6 +1597,10 @@
         "extra": "After drawing two cards, you can play an Action card from your hand, provided that you do not have a copy of that card in play. It does not matter if you played the Action card this turn, only that it is not in play when you play Imp; you can use Imp to play a card that you played but trashed and so do not have in play, like a Pixie you trashed, but cannot use it to play a card you did not play this turn that is still in play, such as a Secret Cave from your previous turn. Imp normally cannot play an Imp as that is a card you have in play.",
         "name": "Imp"
     },
+    "Imperial Envoy": {
+        "description": "+5 Cards<br>+1 Buy<br>+2 Debt",
+        "name": "Imperial Envoy"
+    },
     "Improve": {
         "description": "+2 Coin<br><br>At the start of Clean-up, you may trash an Action card you would discard from play this turn, to gain a card costing exactly 1 Coin more than it.",
         "extra": "You can only trash an Action card that would be discarded this turn; you cannot trash a non-Action like Silver, or a Duration card that will stay out (but you can trash a Duration card that will be discarded). You can trash the Improve itself. The card you gain does not have to be an Action, it just has to cost exactly 1 Coin more than the trashed Action. Using this ability is optional, but if you trash a card then you have to gain one if you can.",
@@ -1708,6 +1752,11 @@
         "extra": "This is similar to Throne Room (from Dominion), but plays the Action three times rather than twice. You pick another Action card in your hand, play it, play it again, and play it a third time. This does not use up any extra Actions you were allowed to play due to cards like Worker's Village - King's Court itself uses up one Action and that is it. You cannot play any other cards in between resolving the King's Court-ed Action card multiple times, unless that Action card specifically tells you to (such as King's Court itself does). If you King's Court a King's Court, you will play three different Actions after that, playing each one of them three times - you do not play one Action nine times. If you King's Court a card that gives you +1 Action, such as Grand Market, you will end up with 3 Actions left afterwards.",
         "name": "King's Court"
     },
+    "Kitsune": {
+        "description": "+1 Rising Sun<br><br>Choose two different options: +2 Actions; +2 Coins; each other player gains a Curse; gain a Silver.",
+        "extra": "First the +1 Rising Sun happens, which may trigger a Prophecy; then you choose two different options, and do them in the order listed.",
+        "name": "Kitsune"
+    },
     "Knights": {
         "description": "Shuffle the Knights pile before each game with it. Keep it face down except for the top card, which is the only one that can be bought or gained.<line>Each card has the same trashing attack ability - \"Each other player reveals the top 2 cards of their deck, trashes one of them costing from 3 Coin to 6 Coin, and discards the rest. If a Knight is trashed by this, trash this card\" - and a unique second ability:<left>5 Coin<u>Dame Anna</u>: You may trash up to 2 cards from your hand.</left><left>5 Coin<u>Dame Josephine</u>: 2 <VP></left><left>5 Coin<u>Dame Molly</u>: +2 Actions</left><left>5 Coin<u>Dame Natalie</u>: You may gain a card costing up to 3 Coin.</left><left>5 Coin<u>Dame Sylvia</u>: +2 Coin</left><left>5 Coin<u>Sir Bailey</u>: +1 Card +1 Action</left><left>5 Coin<u>Sir Destry </u>: +2 Cards</left><left>4 Coin<u>Sir Martin </u>: +2 Buys</left><left>5 Coin<u>Sir Michael</u>: Each other player discards down to 3 cards in hand.</left><left>5 Coin<u>Sir Vander</u>: When you trash this, gain a Gold.</left>",
         "extra": "This is a pile with 10 differently-named unique Knights with a single randomizer card. There is the same basic ability on each card, but also another ability unique to that card in the pile, and they all have different names. Follow the rules on Knights in order from top to bottom; Sir Michael causes players to discard before it trashes cards. The ability they have in common is, each other player reveals the top two cards of their deck, trashes one of them that they choose that costs from 3 Coin to 6 Coin, and discards the rest; then, if a Knight was trashed, you trash the Knight you played that caused this trashing. Resolve this ability in turn order, starting with the player to your left. Cards with Potion (from Alchemy) or Debt (from Empires) in the cost do not cost from 3 Coin to 6 Coin. The player losing a card only gets a choice if both cards revealed cost from 3 Coin to 6 Coin. If they both do and one is a Knight but the player picks the other card, that will not cause the played Knight to be trashed. When Sir Martin is the top card of the pile, it can be gained with an Armory and so on. If Sir Vander is trashed, you gain a Gold; this happens whether it is trashed on your turn or someone else's. The player who had Sir Vander is the one who gains the Gold, regardless of who played the card that trashed it. The Gold from Sir Vander, and the card gained for Dame Natalie, comes from the Supply and is put into your discard pile. When playing Dame Anna, you may choose to trash zero, one, or two cards from your hand. Dame Josephine is also a Victory card, worth 2 <VP> at the end of the game. The Knight pile is not a Victory pile, and does not get a counter for Trade Route (from Prosperity) even if Dame Josephine starts on top.  If you choose to use the Knights with Black Market (a promotional card), put a Knight directly into the Black Market deck, rather than using the randomizer card. Sir Martin only costs 4 Coins, though the other Knights all cost 5 Coins.",
@@ -1762,6 +1811,11 @@
         "description": "+1 Action<br>Now and at the start of your next turn, +1 Coin.<line>While you have this in play, when another player plays an Attack card, it doesn't affect you.",
         "extra": "You get an action and a coin this turn, but only a coin next turn. Attack cards played by other players don't affect you, even if you want them to. You could reveal Secret Chamber in order to draw 2 cards and put 2 cards from your hand back on top of your deck when an Attack card is played, and you will still not suffer from the Attack card. You do still gain the benefits (like +Cards) of Attack cards you play on your turn. Lighthouse is discarded during the Cleanup phase of your next turn.",
         "name": "Lighthouse"
+    },
+    "Litter": {
+        "description": "+2 Cards<br>+2 Actions<br>+1 Debt",
+        "extra": "This works even if you already had ; see the Debt section.",
+        "name": "Litter"
     },
     "Livery": {
         "description": "+3 Coin<br>This turn, when you gain a card costing 4 Coin or more, gain a Horse.",
@@ -2028,6 +2082,11 @@
         "extra": "This only happens the first time a player gains a Province; it does not matter if the Province was bought or not, or if Provinces have left the pile earlier due to Salt the Earth.<n>This happens between turns; Possession (from Alchemy) will not be in effect.<n>The player to the left of the player who got the Province bids first, then the player to their left and so on, ending with the player who got the Province.<n>Each bid can be a pass, or a higher bid than the previous bid.<n>Bids are in amounts of Debt, from 1 Debt to 40 Debt; a bid of 40 Debt cannot be beaten.<n>The player who bid the highest (if any) gets +8<VP> and takes the amount of Debt of their bid.",
         "name": "Mountain Pass"
     },
+    "Mountain Shrine": {
+        "description": "+1 Rising Sun<br>+2 Coins<br><br>You may trash a card from your hand. Then, if there are any Action cards in the trash, +2 Cards.",
+        "extra": "This costs 5 Debt; see the Debt section. It doesn't matter who trashed an Action or when, just that there is one in the trash. The Action in the trash can be one you just trashed with the same play of Mountain Shrine.",
+        "name": "Mountain Shrine"
+    },
     "Mountain Village": {
         "description": "+2 Actions<br><n>Look through your discard pile and put a card from it into your hand; if you can't, +1 Card.",
         "extra": "If your discard pile has any cards in it, you have to take one of them, you cannot choose to draw a card instead. You get to look through your discard pile to pick the card to take. It does not matter what order you leave your discard pile in.",
@@ -2082,6 +2141,11 @@
         "description": "Look at the top 5 cards of your deck, discard any number, and put the rest back in any order.<line>This is gained to your hand (instead of your discard pile).",
         "extra": "Since Night is after the Buy phase, normally you can play this the turn you buy it.",
         "name": "Night Watchman"
+    },
+    "Ninja": {
+        "description": "+1 Card<br><br>Each other player discards down to 3 cards in hand.<line>You can play this from your deck as if in your hand.",
+        "extra": "See the Shadows section. When you play Ninja, you draw a card, and each other player discards down to 3 cards in hand.",
+        "name": "Ninja"
     },
     "Noble Brigand": {
         "description": "+1 Coin<n>Each other player reveals the top 2 cards of their deck, trashes a revealed Silver or Gold you choose, discards the rest, and gains a Copper if they didn't reveal a Treasure. You gain the trashed cards.<line>When you buy this, do its attack.",
@@ -2336,6 +2400,11 @@
         "extra": "You draw your one card before discarding.<n>If there are no empty piles, you do not discard.<n>If there is one empty pile, you discard one card; if there are two empty piles, you discard two cards, and so on.<n>This includes all Supply piles, including Curses, Coppers, Poacher itself, etc.<n>If you do not have enough cards to discard, just discard the rest of your hand.<n><n>Non-Supply piles, such as Spoils, do not matter to Poacher.",
         "name": "Poacher"
     },
+    "Poet": {
+        "description": "+1 Rising Sun<br>+1 Card<br>+1 Action<br><br>Reveal the top card of your deck. If it costs 3 Coins or less, put it into your hand",
+        "extra": "Cards with Debt in their costs do not cost \"3 Coins or less.\" The card goes back on top of your deck if it doesn't get put into your hand.",
+        "name": "Poet"
+    },
     "Pooka": {
         "description": "You may trash a Treasure other than Cursed Gold from your hand for +4 Cards.<br><br><i>Heirloom: Cursed Gold</i>",
         "extra": "In games using Pooka, replace one of your starting Coppers with a Cursed Gold.",
@@ -2550,6 +2619,16 @@
         "extra": "For each 1 Coin the trashed card costs, you set aside the top card of your deck for next turn; for example if you trash a Silver, you set aside the top 3 cards for next turn. If there are not enough cards, just set aside as many as you can. The cards are set aside face down; you can look at them and other players cannot.",
         "name": "Research"
     },
+    "Rice": {
+        "description": "+1 Buy<br><br>+1 Coin per different type among cards you have in play.",
+        "extra": "For example, if you had a Daimyo, a Litter, a Fishmonger, three Coppers, and Rice in play, the types would be Action, Command, Shadow, and Treasure, so Rice would make +4 Coins.",
+        "name": "Rice"
+    },
+    "Rice Broker": {
+        "description": "+1 Action<br><br>Trash a card from your hand. If it's a Treasure, +2 Cards. If it's an Action, +5 Cards.",
+        "extra": "If you trash a card that's both a Treasure and an Action, you get +2 Cards and then +5 Cards. If you trash a card with neither type, such as Province, you don't draw any cards.",
+        "name": "Rice Broker"
+    },
     "Rich": {
         "description": "When you gain a Rich card, gain a Silver.",
         "extra": "Each time you gain a Rich card, you also gain a Silver.",
@@ -2565,6 +2644,16 @@
         "extra": "This does nothing once the Curse pile is empty.<n>This only gives you +1<VP> per 1 Coin the trashed card cost; it does not give anything for Debt or Potion in costs.",
         "name": "Ritual"
     },
+    "River Shrine": {
+        "description": "+1 Rising Sun<br><br>Trash up to 2 cards from your hand.  At the start of Clean-up, if you didn't gain any cards in your Buy phase this turn, gain a card costing up to 4 Coin.",
+        "extra": "It doesn't matter if you gained cards in your Action phase, only if you did in your Buy phase. If you play multiple River Shrines, they can all gain a card, provided you don't gain a card in your Buy phase. Trashing cards with this is optional; you can gain a card even if you didn't trash any cards. If you have multiple Buy phases, such as via Continue, River Shrine only gains you a card if you didn't gain a card in any of those Buy phases.",
+        "name": "River Shrine"
+    },
+    "Riverboat": {
+        "description": "At the start of your next turn, play the set aside card, leaving it there.<line>Setup: Set-aside an unused non-Duration Action card costing 5 Coins.",
+        "extra": "In setup, choose a non-Duration Action card costing exactly that isn't being used this game, and set a copy of it aside. You can use the randomizers to find such a card. If that card also requires setup, do that setup too. When you play Riverboat, it plays the set aside card at the start of your next turn. This doesn't move the set aside card; it stays set aside, even if it has instructions on it that would move it. Riverboat is normally discarded in your next turn's Clean-up, but it stays in play as long as the card it plays would have, which sometimes is longer (such as a Crown, from Empires, used on a Duration card).",
+        "name": "Riverboat"
+    },
     "Road Network": {
         "description": "When another player gains a Victory card, +1 Card.",
         "extra": "This happens every time another player gains a Victory card, whether bought or gained another way, and even if it is your turn.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
@@ -2579,6 +2668,16 @@
         "description": "+ 2 Coins<n>If there are any cards in the trash costing from 3 Coins to 6 Coins, gain one of them. Otherwise, each other player reveals the top 2 cards of his deck, trashes one of them costing from 3 Coins to 6 Coins, and discards the rest.",
         "extra": "If there is a card in the trash costing from 3 Coins to 6 Coins, you have to gain one of them; it is not optional. You can look through the trash at any time. The other players get to see what card you took. The gained card goes into your discard pile. Cards with Potion in the cost (from Alchemy) do not cost from 3 Coins to 6 Coins. If there was no card in the trash costing from 3 Coins to 6 Coins, you instead have each other player reveal the top 2 cards of his deck, trash one of them of his choice that costs from 3 Coins to 6 Coins (if possible), and discard the rest. Go in turn order, starting with the player to your left.",
         "name": "Rogue"
+    },
+    "Ronin": {
+        "description": "Draw until you have 7 cards in hand.<line>You can play this from your deck as if in your hand.",
+        "extra": "See the Shadows section. When you play this, you draw cards one at a time until you have 7 cards in hand, or can't draw any more; if you already had 7 or more cards in hand, you don't draw any.",
+        "name": "Ronin"
+    },
+    "Root Cellar": {
+        "description": "+3 Cards<br>+1 Actions<br>+3 Debt",
+        "extra": "This works even if you already had Debt; see the Debt section.",
+        "name": "Root Cellar"
     },
     "Rope": {
         "description": "1 <*COIN*><br><br>+1 Buy<br>At the start of your next turn, +1 Card and you may trash a card from your hand.",
@@ -2634,6 +2733,11 @@
         "extra": "If you Rush twice in a row, you'll still only play the Action once. You can however Rush, buy an Action and play it, Rush again, and buy another Action and play it.",
         "name": "Rush"
     },
+    "Rustic Village": {
+        "description": "+1 Rising Sun<br>+1 Cards<br>+2 Actions<br><br>You may discard 2 cards for +1 Card.",
+        "extra": "First the +1 Rising Sun happens, which may trigger a Prophecy; then you get +1 Card, +2 Actions, and may discard 2 cards (including the one just drawn) for another +1 Card.",
+        "name": "Rustic Village"
+    },
     "Saboteur": {
         "description": "Each other player reveals cards from the top of his deck until revealing one costing 3 Coins or more. He trashes that card and may gain a card costing at most 2 Coins less than it. He discards the other revealed cards.",
         "extra": "Each other player turns over the top cards of his deck until he reveals one costing 3 coins or more. If a player needs to shuffle to continue revealing cards, he does not shuffle in the already revealed cards. If he goes through all of his cards without finding a card costing 3 coins or more, he just discards everything revealed and is done. If he does find a card costing 3 coins or more, he trashes it, and then may choose to gain a card costing at most 2 coins less than the trashed card. For example, if he trashed a card costing 5 coins, he may gain a card costing up to 3 coins. The gained card must be from the Supply and is put into his discard pile, as are his revealed cards. Costs of cards are affected by Bridge.",
@@ -2673,6 +2777,11 @@
         "description": "+1 Buy<br>Trash a card from your hand.<br>+_ Coins  equal to its cost.",
         "extra": "If you have at least one card in your hand, then you must trash one. If you don't have a card in hand left to trash, you get no coins, but still get the +1 Buy.",
         "name": "Salvager"
+    },
+    "Samurai": {
+        "description": "Each other player discards down to 3 cards in hand (once).<br><br>At the start of each of your turns this game, +1 Coin.<br><i>(This stays in play.)</i>",
+        "extra": "When you play a Samurai, each other player discards down to 3 cards in hand. After that the Samurai stays in play, and produces +1 Coin at the start of each of your turns for the rest of the game. It doesn't make players discard again.",
+        "name": "Samurai"
     },
     "Sanctuary": {
         "description": "+1 Card<br>+1 Action<br>+1 Buy<br>You may Exile a card from your hand.",
@@ -2832,6 +2941,11 @@
             "This card is currently not used."
         ]
     },
+    "Shadows": {
+        "description": "These cards all have unique backs, and can be played from your deck.",
+        "extra": "<br> • When shuffling Shadow cards, put them on the bottom. If you have multiple Shadow cards, they can go in any order at the bottom. They can also be mixed with any other cards you specifically put on the bottom, such as Fated cards from Plunder.<br> • You may wish to turn your Shadow cards sideways at the bottom of your deck, so that it is easy to remember that they are there.<br> • Shadow cards will not necessarily stay on the bottom of your deck; they are just put there when shuffling them.<br> • Shadow cards are not put on the bottom when gained, or at any time other than when shuffling them.<br> • You can look through your deck at the card backs at any time, and see where your Shadow cards are.<br> • Whenever you can normally play an Action card, you can play a Shadow card from your deck. It can be anywhere in your deck. You play it exactly as if playing it from your hand; it goes into play and you follow its instructions.<br> • When a card like Throne Room tells you to play a card from your hand, you can use that opportunity to play a Shadow card from your deck.<br> • You can play Shadow cards from your deck as if in your hand, but this does not mean the Shadow card is in your hand; for example you cannot discard it to an ability like Alley's (unless it is actually in your hand).",
+        "name": "Shadows - All"
+    },
     "Shaman": {
         "description": "+1 Action<br>+1 Coin<br>You may trash a card from your hand.<line>In games using this, at the start of your turn, gain a card from the trash costing up to 6 Coin.",
         "extra": "In games using Shaman, for the whole game, at the start of each of your turns (including extra turns), you gain a card from the trash costing up to 6 Coin. This is mandatory.<br>If there's no such card, you don't gain one.<br>This applies even on your first turn (relevant with Necromancer, from Nocturne).<br>It applies even if no-one ever gets a Shaman.<br>The gained card goes into your discard pile. It's a card you gained, and can trigger things that care about that; for example gaining a Treasure would trigger Secluded Shrine ability.",
@@ -2934,6 +3048,11 @@
         "description": "Gain a copy of a card costing up to 6 Coins that the player to your right gained on his last turn.",
         "extra": "This looks at the most recent turn of the player to your right, even if you've taken multiple turns in a row. If that player gained no cards, or nothing costing 6 or less, then Smugglers does nothing. If that player gained multiple cards costing 6 or less, you choose which one to gain a copy of. Gained cards must come from the supply. They can be any card gained, whether bought or otherwise gained; you can even gain a card that the previous player gained with Smugglers. If the previous player gained a card via Black Market, you will not be able to gain a copy of it (no copies of it in the supply.) This is not an Attack; Lighthouse and Moat can't stop it. You cannot gain cards with Potion in the cost with Smugglers.",
         "name": "Smugglers"
+    },
+    "Snake Witch": {
+        "description": "+1 Card<br>+1 Action<br>If your hand has no duplicate cards, you may reveal it and return this to its pile, to have each other player gain a Curse.",
+        "extra": "Revealing your hand, if all of the cards in it have different names, is optional. If you do, you return Snake Witch to its pile, and if you did, each other player gains a Curse. If you can't return Snake Witch to its pile for some reason, the other players do not gain a Curse. Note that you reveal your hand after getting the +1 Card from Snake Witch. If you have no cards in hand, you have no duplicates.",
+        "name": "Snake Witch"
     },
     "Snowy Village": {
         "description": "+1 Card<br>+4 Actions<br>+1 Buy<br><n>Ignore any further +Actions you get this turn.",
@@ -3112,6 +3231,11 @@
         "extra": "This is a Treasure worth 1 coin, like Copper. Each time you buy a non-Victory card costing 4 coins or less with this in play, you gain another copy of the bought card. If there are no copies left, you do not gain one. The gained card comes from the Supply and goes into your discard pile. If you have multiple Talismans, you gain an additional copy for each one; if you buy multiple cards for 4 coins or less, Talisman applies to each one. For example if you have two Talismans, four Coppers, and two Buys, you could Buy Silver and Trade Route, gaining two more Silvers and two more Trade Routes. Talisman only affects buying cards; it does not work on cards gained other ways, such as with Expand. A card if a Victory card if Victory is any of its types; for example Great Hall from Intrigue is an Action - Victory card, so it is a Victory card. Talisman only cares about the cost of the card when you buy it, not its normal cost; so for example it can get you a Peddler if you have played two Actions this turn, thus lowering Peddler's cost to 4 coins, or can get you a Grand Market if you played Quarry. You may not choose to not gain the additional card from Talisman; you must gain an additional one for each Talisman in play if possible.",
         "name": "Talisman"
     },
+    "Tanuki": {
+        "description": "Trash a card from your hand. Gain a card costing up to 2 Coins more than it.<line>You can play this from your deck as if it is in your hand.",
+        "extra": "See the Shadows section. When you play this, you trash a card from your hand, and gain a card costing up to two Coins more than it, like when playing Remodel.",
+        "name": "Tanuki"
+    },
     "Taskmaster": {
         "description": "+1 Action, +1 Coin, and if you gain a card costing exactly 5 Coin this turn, then at the start of your next turn, repeat this ability.",
         "extra": "Taskmaster can end up making +1 Action and +1 Coin turn after turn, as long as you keep gaining at least one card costing 5 Coin.",
@@ -3126,6 +3250,11 @@
         "description": "You may trash a Treasure from your hand. Each other player with 5 or more cards in hand discards a copy of it (or reveals a hand without it). Gain a Treasure card costing up to 3 Coins more than the trashed card, putting it on top of your deck.",
         "extra": "You may trash a Treasure card from your hand. This is optional. Cards with multiple types, one of which is Treasure (like Harem from Intrigue), are Treasures. If you do trash a Treasure, each other player with at least five cards in hand discards a copy of it from her hand if she can, or reveals a hand with no copies of it, and you gain a Treasure costing up to 3 Coins more than the trashed Treasure, putting it on top of your deck. If there are no cards in your deck, it becomes the only card in your deck. You do not have to gain a more expensive Treasure; you may gain a Treasure with the same cost, or a cheaper Treasure. You have to gain a card if you trashed one though, if possible. The gained Treasure comes from the Supply.",
         "name": "Taxman"
+    },
+    "Tea House": {
+        "description": "+1 Rising Sun<br>+1 Card<br>+1 Action<br>+2 Coins",
+        "extra": "First the +1 Rising Sun happens, which may trigger a Prophecy; then you get +1 Card, +1 Action, and +2 Coins.",
+        "name": "Tea House"
     },
     "Teacher": {
         "description": "Put this on your Tavern mat.<line>At the start of your turn, you may call this, to move your +1 Card token, +1 Action token, +1 Buy token, or +1 Coin token to an Action Supply pile you have no tokens on (when you play a card from that pile, you first get that bonus).<n><i>(This is not in the Supply.)</i>",
@@ -4086,6 +4215,11 @@
         "description": "<justify>Events are not Kingdom cards. In a player's Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.</justify>",
         "extra": "Events are not Kingdom cards. In a player's Buy phase, when the player can buy a card, the player can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for a player to gain one or end up with one in his deck. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Ranger, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and available to do it. Some Events give +Buys and so let the player buy further cards/Events afterwards. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Swamp Hag or Goons (from Prosperity). Costs of Events are not affected by cards like Bridge Troll.",
         "name": "Events - Promos"
+    },
+    "prophecies": {
+        "description": "Prophecies are rules that will eventually apply to the game.",
+        "extra": "In every game with one or more Omen cards, deal out one Prophecy for it. Only use one Prophecy no matter how many Omens you have.<br> • Put 5 Sun tokens on the Prophecy for 2 players, 8 for 3 players, 10 for 4 players, 12 for 5 players, and 13 for 6 players.<br> • +1 Rising Sun means remove a token from the Prophecy. Then if it was the last token, the rules text on the Prophecy becomes active, right then and for the rest of the game.<br> • +1 Rising Sun always appears first on Omens, before anything else the card does.<br> • +1 Rising Sun does nothing else once all the tokens are removed.<br> • Prophecy text does nothing until the last Sun token is removed.",
+        "name": "Prophecies - All"
     },
     "renaissance projects": {
         "description": "<justify>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.</justify>",

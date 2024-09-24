@@ -25,7 +25,7 @@ def rmtestcardb(request):
 def test_cardread():
     # we test the number of cards only to make sure it doesn't get changed
     # inadvertently by unrelated changes
-    num_cards_expected = 1018
+    num_cards_expected = 1068
 
     options = config_options.parse_opts([])
     cards = db.read_card_data(options)
@@ -78,6 +78,7 @@ def test_cardread():
         "extras",
         "animals",
         "allies",
+        "risingSun",
     }
     for c in cards:
         assert isinstance(c, domdiv_cards.Card)
