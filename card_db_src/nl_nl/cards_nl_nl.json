@@ -964,7 +964,7 @@
     "Figurine": {
         "description": "+2 Kaarten<br>Je mag een actiekaart uit je hand afleggen voor +1 Aanschaf en +1 Coin.",
         "extra": "Dit is een geldkaart en wordt dus in je aanschaffase gespeld, maar het trekt kaarten. Dat betekent normaal gesproken dat je een getrokken actiekaart die beurt niet meer kunt spelen, behalve dat je met Beeldje zelf een Actiekaart kunt afleggen voor +1 Aanschaf en +1 Coin.12",
-        "name": "Beeldje"
+        "name": "Figurine"
     },
     "First Mate": {
         "description": "Speel zoveel actiekaarten uit je hand als je wilt. Trek daarna kaarten totdat je er 6 in je hand hebt.",
@@ -2105,7 +2105,7 @@
         "name": "Steengroeve"
     },
     "Quartermaster": {
-        "description": "Aan het begin van je beurt voor de rest van het spel:<br>kies er één: Pak een kaart die ten hoogste 4 Coin kost en leg die op deze \"Kwartiermeester\" opzij;<br>of neem een kaart van deze \"Kwartiermeester\" in je hand. ",
+        "description": "Aan het begin van je beurt voor de rest van het spel:<br>kies er één: Pak een kaart die ten hoogste 4 Coin kost en leg die op deze \"Kwartiermeester\" opzij;<br>of neem een kaart van deze \"Kwartiermeester\" in je hand.",
         "extra": "Kwartiermeester blijft de rest van het spel in het spel.<br>Elke Beurt pak je een kaart en leg je die op Kwartiermeester, of je neemt éénvan de erder met Kwartiermeester gepakte kaarten en doet die in je hand.<br>Speel je 2 Kwartiermeesters dan hebben die elk hun eigen set kaarten. Speel je echter een Troonzaal op Kwartiermeester, dan heeft die maar 1 set kaarten, en je kunt in elke beurt tweemaal kiezen voor het pakken of nemen van een kaart.",
         "name": "Kwartiermeester"
     },
@@ -2215,7 +2215,7 @@
         "name": "Schurk"
     },
     "Rope": {
-        "description": "1 Coin<br><br>+1 Aanschaf<br>Aan het begin van je volgende beurt:<br>+1 Kaart ven je mach een kaart uit je hand vernietigen.",
+        "description": "1 <*Coin*><br><br>+1 Aanschaf<br>Aan het begin van je volgende beurt:<br>+1 Kaart ven je mach een kaart uit je hand vernietigen.",
         "extra": "Speel je deze kaart, dan krijg je +1 Coin en +1 Aanschaf, en aan het begin van je volgende beurt trek je eerst een kaart, waarna je een kaart uit je hand mag vernietigen.",
         "name": "Touw"
     },
