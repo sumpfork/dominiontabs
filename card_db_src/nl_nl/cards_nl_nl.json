@@ -3319,6 +3319,16 @@
         "description": "Vorm bij de puntentelling paren van 1 Dienst en 1 kaart die 2 Coins kost, voor 2 <VP> per paar.",
         "name": "Hooglandherders"
     },
+    "plunder events": {
+        "description": "<justify>Plunderen bevat gebeurtenissen, die in Avonturen voor het eerst verschenen. Als je in je aanschaffase een kaart mag kopen, mag je in plaats daarvan een gebeurtenis kopen. Je betaald de op de gebeurtenis aangegeven kosten en voert dan de gevolgen uit.</justify>",
+        "extra": "Gebeurtenissen zijn geen koninkrijkkaarten; ze blijven op tafel liggen en bieden een effect dat je kunt kopen. je kunt er nooit een pakken of er een in je trekstapel hebben.<n>Het kopen van een gebeurtenis verbruikt 1 aanschaf; normaal gesproken kun je 1 kaart of 1 gebeurtenis kopen. Heb je meerdere aanschaffen, zoals na het spelen van Zak met buit, dan mag je 2 kaarten, 2 gebeurtenissenof 1 gebeurtenis en 1 kaart (in en volgorde naar keuze) kopen.<n>Je mag dezelfde gebeurtenis meermaals per beurt kopen als je voldoende aanschaffen en _ Coin hebt.<n>Na het kopen van een gebeurtenis mag je geen geldkaarten meer spelen.<n>Het kopen van een gebeurtenis is niet gelijk aan het kopen van een kaart voor dingen die daarnaar verwijzen, zoals Sjacheraar (uit Het Achterland).<n>De kosten van gebeurtenissen worden niet beïnvloed door kaarten zoals Brug (uit Intrige).",
+        "name": "Gebeurtenissen - Plunderen"
+    },
+    "plunder traits": {
+        "description": "<justify>Plunderen bevat Eigenschappen, een nieuwe soort landschapskaart, die een stapel, actie- of geldkaarten beïnvloed. Aan het begin van het spel met een eigenschap bepaal je wilkeurig een stapel koninkrijkkaarten met Actie of Gend, waar je de eigenschapkaart onder schuift; tijdens het spel worden de kaarten in die stapel beïnvloed zoals op de eigenschap is aangegeven.</justify>",
+        "extra": "Eigenschappen zijn geen koninkrijkkaarten en kunnen nooit woorden gekocht of gepakt.<n>Eigenschappen kunnen uitsluitend aan koninkrijkkaarten woorden toegekend, niet aan bijvoorbeeld Zilver of Ruines (uit De Donkere Middeleeuwen).<n>Shuif nooit 2 eigenschappen onder dezelfde stapel.<n>Eigenschappen verwijzen naar de stapel die de naam fan de eigenschap gebruikt; voorbeeld: Vroom verwijst naar \"vrome kaarten\". Dat betekend elke kaart van die stapel.<n>Een Eigenschap onder een gecombineerde stapel (uit Keizerrijken en Bondgenoten) beïnvloedt al deze verschillende kaarten.<n>Eigenschappen beïnvloeden de kaarten uit de stapel ook als de stapel leeg is.",
+        "name": "Eigenschappen - Plunderen"
+    },
     "projects": {
         "description": "<justify>Projectkaarten bieden vaardigheden die de spelers kunnen kopen. Een speler kan een project in zijn aanschaffase kopen en hij verbruikt daar 1 aanschaf mee. Een project kost het in de hoek aangegeven aantal _ Coin. Na het kopen van een project legt de speler één van zijn markeerstenen erop. De rest van het spel heeft hij de beschikking over de betreffende vaardigheid.</justify>",
         "extra": "<i><b>Voorbeeld: </b>als Braderie (uit Dominion Renaissance) in het spel is, kan de speler 4 Coins betalen om er een markeersteen op te leggen. De rest van het spel heeft hij elke beurt +1 Aanschaf</i>.<n>Normaal gesproken zijn er niet meer dan 2 projecten in het spel. Gebruiken de spelers er meer, dan mag iedere speler alsnog maximaal 2 markeerstenen leggen.<n>Een speler mag niet meer dan 1 markeersteen op een project leggen.<n>Een speler mag zijn markeersteen niet meer van een project verwijderen.<n>Er is geen limiet aan het aantal spelers dat een markeersteen op een project mag leggen.<n>Het betalen voor een project is niet hetzelfde als \"het kopen van een kaart\" en wordt dus niet goedkoper door kaarten zoals de Uitvinder en heeft geen invloed op kaarten zoals Ontdekkingsreis.<n>Een speler mag niet voor een project betalen als hij schulden (uit Keizerrijken) heeft.",
@@ -3413,6 +3423,14 @@
         "description": "Kies 1 van de volgende: +2 Coins; of pak een Zilver; of +1 Kaart en +1 Actie<n>Je mag de Stedelingen draaien.",
         "extra": "Kies eerst of je +2 Coins krijgt, of een Zilver pakt, of +1 Kaart en +1 Actie krijgt. Ongeacht je keuze kies je daarna of je de stapel Stedelingen als dan niet draait.",
         "name": "Omroeper"
+    },
+    "traits": {
+        "description": "<justify>Plunderen bevat Eigenschappen, een nieuwe soort landschapskaart, die een stapel, actie- of geldkaarten beïnvloed. Aan het begin van het spel met een eigenschap bepaal je wilkeurig een stapel koninkrijkkaarten met Actie of Gend, waar je de eigenschapkaart onder schuift; tijdens het spel worden de kaarten in die stapel beïnvloed zoals op de eigenschap is aangegeven.</justify>",
+        "extra": "Eigenschappen zijn geen koninkrijkkaarten en kunnen nooit woorden gekocht of gepakt.<n>Eigenschappen kunnen uitsluitend aan koninkrijkkaarten woorden toegekend, niet aan bijvoorbeeld Zilver of Ruines (uit De Donkere Middeleeuwen).<n>Shuif nooit 2 eigenschappen onder dezelfde stapel.<n>Eigenschappen verwijzen naar de stapel die de naam fan de eigenschap gebruikt; voorbeeld: Vroom verwijst naar \"vrome kaarten\". Dat betekend elke kaart van die stapel.<n>Een Eigenschap onder een gecombineerde stapel (uit Keizerrijken en Bondgenoten) beïnvloedt al deze verschillende kaarten.<n>Eigenschappen beïnvloeden de kaarten uit de stapel ook als de stapel leeg is.",
+        "name": "Eigenschappen - Alle",
+        "notes": [
+            "This card is currently not used."
+        ]
     },
     "trappers_lodge": {
         "description": "Als je een kaart pakt, mag je een Dienst besteden om die kaart op je trekstapel te leggen.",
