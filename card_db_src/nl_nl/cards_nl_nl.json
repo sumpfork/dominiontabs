@@ -2246,6 +2246,11 @@
         "extra": "Bij het kopen van deze kaart pakt je eerst een actiekaart met een waarde van 4 Coins of minder. Pak deze uit de voorraad en leg hem op je aflegstapel. Verplaats daarna je +1 Aanschaf-fiche naar de stapel waar de gepakte kaart vandaan kwam. Dit fiche geeft je +1 Aanschaf als je een kaart van die stapel speelt (zie \"Fiches\" in de spelregels). Het is niet van belang of de waarde van de kaarten in de betreffende stapel later hoger is dan 4 Coins. Je mag de Zeeroute niet kopen om je +1 Aanschaf-fiche naar een lege stapel te verplaatsen. Je moet een stapel kiezen waar je daadwerkelijk een kaart van pakt.",
         "name": "Zeeroute"
     },
+    "Secluded Shrine": {
+        "description": "+1 Coin<br>De volgende keer dat je een geldkaart pakt, vernietig ten hoogste 2 kaarten uit je hand.",
+        "extra": "Deze kaart kan in de beurt van welke speler dan ook geactiveerd worden.<br>De kaart wordt zelfs actief als de speler niets kan of wil vernietigen; vernietigen is niet verplicht, maar Verlaten tempel is dan wel afgehandeld en wordt die beurt afgelegd.",
+        "name": "Verlaten Tempel"
+    },
     "Secret Cave": {
         "description": "+1 Kaart\n+1 Actie\nJe mag 3 kaarten afleggen. Doe je dat, dan aan het begin van je volgende beurt: +3 Coins.",
         "extra": "Als je niet 3 kaarten aflegt, leg je Geheime Grot aan het einde van de beurt af. Leg je wel 3 kaarten af, dan blijft Geheime Grot tot de opschoonfase van je volgende beurt in het spel, en je krijgt aan het begin van die beurt +3 Coins. Je mag ook kiezen voor de optie \"3 kaarten afleggen\" als er minder dan 3 hebt. In dat geval leg je al je kaarten af, maar krijg je de bonus niet. In spellen met Geheime Grot vervangt iedere speler één van zijn startkoperkaarten door een Magische Lamp.",
@@ -2351,6 +2356,11 @@
         "extra": "Iedere speler heeft een gescheiden voorraad muntenfiches op de Duistere Samenzwering. Bewaar de jouwe bij je markeersteen. Elke beurt leg je er 1 fiche bij (uit de voorraad, niet van een tableau) of verwijder je al je fiches om even zoveel kaarten te trekken.",
         "name": "Duistere Samenzwering"
     },
+    "Siren": {
+        "description": "Iedere andere speler pakt een Vloek. Aan het begin van je volgende beurt:<br>trek kaarten totdat je 8 in hand hebt.<line>Als je deze kaart pakt, vernietig hem dan, tenzij je een actiekaart uit je hand vernietigt.",
+        "extra": "Pak je een Sirene, dan wordt die direct vernietigd, tenzij je een actiekaart uit je hand vernietigd. Als je er echter in slaagt om de Sirene te verplaatsen van waar die is gepakt (ongeacht de bestemming ervan) voordat deze eigenschap wordt afgehandelt (zoals de kaart met insignie op de trekstapel leggen), dan gaat het vernietigen ervan niet door (je mag dan alsnog een actiekaart uit je hand vernietigen als je dat wilt).",
+        "name": "Sirene"
+    },
     "Skulk": {
         "description": "+1 Aanschaf\nIedere andere speler ontvangt de volgende Spreuk.<line>Als je deze kaart pakt, pak dan een Goud.",
         "extra": "Je pakt het Goud, ongeacht of je Skulk gekocht hebt of op een andere manier hebt gepakt.",
@@ -2455,6 +2465,11 @@
         "extra": "Deze kaart staat je toe geldkaarten in je actiefase te spelen. Ze gaan daarmee \"in het spel\" en produceren _ Coins, net als geldkaarten in de aanschaffase. De Verteller ruilt al deze _ Coins tegen + Kaarten. Voor elke 1 Coins in het spel verlies je 1 Coin en krijg je +1 Kaart. De Verteller zorgt ervoor dat je alle _ Coins die je tot dan toe hebt gespeeld (inclusief de 1 Coins die de Verteller zelf geeft) verliest. Je kunt dit bijhouden door de \"omgeruilde\" kaarten onder de Verteller te schuiven. Een Potion (uit Dominion: De Alchemisten) is geen _ Coin, gaat daardoor niet verloren en geeft je geen kaart.",
         "name": "Verteller"
     },
+    "Stowaway": {
+        "description": "Aan het begin van je volgende beurt: +2 Kaarten.<line>Als een speler een duurzame kaart pakt mag jij deze \"Bergruimte\" uit je hand spelen.",
+        "extra": "je mag deze kaart uit je hand spelen als je zelf een duurzame kaart spelt of als een andere speler dat doet.",
+        "name": "Bergruimte"
+    },
     "Summon": {
         "description": "<b>Deze promokaart is nooit in het Nederlands verschenen</b><line>Gain an Action card costing up to 4 coins. Set it aside. If you do, then at the start of your next turn, play it.",
         "name": "Summon"
@@ -2501,6 +2516,11 @@
         "description": "1 <*COIN*><line>Zolang je deze kaart in het spel hebt en je koopt een kaart met een waarde van 4 Coins of minder die geen overwinningskaart is, pak dan nog een exemplaar van de gekocht kaart.",
         "extra": "Deze geldkaart heeft een geldwaarde van 1 Coin, net als Koper. Als je deze kaart in het spel hebt en je koopt een kaart die 4 Coins of minder kost en geen overwinningskaart is, dan pak je nog een exemplaar van de gekocht kaart. Deze pak je uit de voorraad en leg je op je aflegstapel. Is er geen tweede kaart meer, dan krijg je niets. Heb je meerdere kaarten \"Talisman\" in het spel, dan pak je voor elk van deze 1 exemplaar van de gekochte kaart. Koop je meer kaarten in je beurt die aan de voorwaarde voldoen (kosten 4 Coins of minder en geen overwinningskaart), dan pak je van elk van de gekochte kaarten 1 extra exemplaar. Voorbeeld: je hebt 2 kaarten \"Talisman\" en 4 Koper gespeeld en je hebt 2 aanschaffen. Je koopt 1 Zilver en 1 Handelsroute. Je pakt nu 2 extra Zilver en 2 Extra kaarten \"Handelsroute\".\nDe kaart \"Talisman\" heeft uitsluitend effect op gekochte kaarten. Pak je een kaart op een andere manier (zoals bijvoorbeeld met de kaart \"Uitbreiden\"), dan krijg je geen extra exemplaar. Gecombineerde kaarten (zoals de Grote Zaal uit Dominion: Intrige) gelden ook als puntenkaarten. Bij het bepalen van de kosten van een kaart worden eventuele kortingen meegeteld. Voorbeeld: je hebt 2 actiekaarten gespeeld en je speelt nu in de aanschaffase de Talisman. Nu kost de Venter 4 Coins, waardoor je er nog een exemplaar bij krijgt.",
         "name": "Talisman"
+    },
+    "Taskmaster": {
+        "description": "+1 Action, +1 Coin en als je deze beurt een kaart pakt die precies 5 Coin kost, herhaal je deze eigenschap aan het begin van je volgende beurt.",
+        "extra": "De Opziener kan na beurt +1 Actie en +1 Coin geven zolang je elke beurt ten minste 1 kaart die 5 Coin kost pakt. Het is Uitsluitend van toepassing hoeveel de kaart bij het pakken kost. Opziener houdt geen rekening met kaarten die voor het spelen ervan zijn gepakt.",
+        "name": "Opziener"
     },
     "Tax": {
         "description": "Voeg 2 Debt aan een voorraadstapel toe.<line>Voorbereiding: voeg 1 Debt aan elke voorraadstapel toe. Koopt een speler een kaart, dan neemt hij de _ Debt van de betreffende stapel.",
