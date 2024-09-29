@@ -1456,6 +1456,11 @@
         "extra": "Oven kan elke soort kaart pakken, zolang de kaart direct na de Oven is gespeeld.<n>De Oven kan uitsluitend kaarten uit de voorraad pakken.<n>Je pakt (optioneel) een exemplaar van de kaart, voordat je de aanwijzingen op de kaart opvolgt.<n>Is de kaart een Aanval en willen andere spelers kaarten zoals Slotgracht gebruiken, dan pak je de kaart, voordat zij al dan niet de Slotgracht gebruiken.<n>Als je de Troonzaal op een Oven gebruikt, dan speel je de Oven, speel je de Oven weer, pak je (optioneel) een Oven en kun je daarna nog steeds een exemplaar pakken van de volgende kaart die je speelt.<n>Is de volgende kaart een Actie waarvoor je een spoor gebruikt, dan mag je alsnog een exemplaar van die kaart pakken.",
         "name": "Oven"
     },
+    "King's Cache": {
+        "description": "Je mag een geldkaart uit je hand driemaal spelen.",
+        "extra": "Speel je Koninklijke Schatkamer op Koninklijke Schatkamer dan speel je nog 3 geldkaarten elk driemaal.<br>Speel je Koninklijke Schatkamer op een Geld-Duurzaam-kaart, dan blijft Koninklijke Schatkamer net zolang in het spel als die kaart.",
+        "name": "Koninklijke Schatkamer"
+    },
     "King's Court": {
         "description": "Je mag een actiekaart uit je hand kiezen. Speel deze driemaal.",
         "extra": "Deze kaart is gelijk aan de Troonzaal (uit Dominion: basisspel) met dit verschil dat je de gekozen kaart driemaal speelt. Je kiest dus 1 kaart uit je hand, legt deze op tafel en voert de instructies erop volledig uit. Daarna neem je de kaart weer in je hand en speel je de kaart nogmaals en voer je de instructies opnieuw uit. Vervolgens doe je hetzelfde een derde keer. Dit driemalig spelen van de actiekaart kost je geen acties (het spelen van het Koningshof kost je wel 1 actie). Je mag geen andere actiekaarten spelen voordat je een gekozen actiekaart 3 keer hebt gespeeld, tenzij de gekozen actiekaart dit expliciet aangeeft (zoals bijvoorbeeld het Koningshof zelf). Kies je een kaart die je +1 Actie oplevert, dan heb je na driemaal spelen +3 Acties. Speel je een Koningshof, dan kies je na elkaar 3 kaarten en speel je deze één voor één 3 keer. Je mag dus niet 1 kaart 9 keer spelen.<line><b>Errata</b>: In de oorspronkelijke Nederlandse versie staat dat je dit moet doen, in tegenstelling tot de Engelstalige versie. Dit is later gecorrigeerd op de kaart zelf, maar staat nog wel foutief in het spelregelboekje.",
@@ -2262,6 +2267,11 @@
         "description": "Iedere andere speler moet kaarten van zijn trekstapel tonen todat hij een kaart toont die 3 Coins of meer waard is. Hij moet deze kaart vernietigen en mag daarna een kaart pakken die ten hoogste 2 Coins minder waard is dan de vernietigde kaart. Hij legt de andere getoonde kaarten af.",
         "extra": "Iedere andere speler toont één voor één kaarten van zijn trekstapel totdat hij er één toont die 3 Coins of meer waar is. Als een speler zijn aflegstapel voor dit doel moet schudden, schudt hij de al getoonde kaarten niet mee. Als hij al zijn kaarten heeft geschud getoond en geen kaart met een waarde van 3 of meer vindt, legt hij alle getoonde kaarten af en is klaar. Als hij er wel één vindt, moet hij deze vernietigen en een kaart pakken die ten hoogste 2 Coins minder waard is. Als hij bijvoorbeeld een kaart die 5 Coins kost vernietigt, mag hij een kaart pakken die maximaal 3 Coins kost. Hij pakt de kaart uit de voorraad en legt deze op zijn aflegstapel. De Brug beïnvloedt de kosten van de kaart.",
         "name": "Saboteur"
+    },
+    "Sack of Loot": {
+        "description": "1 <*COIN*><br><br>+1 Aanschaf<br>Pak een Buit",
+        "extra": "Speel je deze kaart, dan krijg je +1 Coin en +1 Aanschaf, en je pakt een Buit",
+        "name": "Zak met Buit"
     },
     "Sacred Grove": {
         "description": "+1 Aanschaf\n+3 Coins<n>Ontvang een Gunst. Als deze geen +1 Coin geeft, mag iedere andere speler de Gunst ontvangen.",
