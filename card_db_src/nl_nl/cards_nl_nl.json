@@ -314,6 +314,11 @@
         "extra": "Dit is een geldkaart met een waarde van 3 Coins munten, net als Goud. Pak je deze kaart, dan pak je ook 2 Koper uit de voorraad. Is er niet voldoende Koper, pak er dan zoveel mogelijk. Je pakt uitsluitend 2 Koper als je de Bewaarplaats pakt, niet als je de Bewaarplaats speelt. Je pakt 2 Koper in alle gevallen waarin je een Bewaarplaats pakt (na het kopen ervan of als je de kaart op een andere manier pakt).",
         "name": "Bewaarplaats"
     },
+    "Cage": {
+        "description": "Leg ten hoogste 4 kaarten ui je hand opzij (op deze kaart). De volgende keer dat je een overwinningskaart pakt vernietig je deze \"Kooi\" en neem je aan het einde van je beurt de opzijgelegde kaarten in je hand.",
+        "extra": "De kaarten gaan naar je hand na het trekken van je gebruikelijke 5 kaarten voor je volgende beurt.<br><i><b>Voorbeeld:</b> je hebt in eeen eerdere beurt 2 Landgoederen en 2 Koper op een Kooi opzijgelegd; in een late beurt koop je een Provincie, vernietig je de Kooi en voeg je aan het einde van je beurt de 2 Landgoederen en 2 Koper aan je hand toe.</i>",
+        "name": "Kooi"
+    },
     "Camel Train": {
         "description": "Verban een niet-overwinningskaart uit de voorraad.<line>Als je deze kaart pakt, verban je een Goud uit de voorraad.",
         "extra": "Als je deze kaart speelt, verban je een niet-overwinningskaart uit de voorraad. Als je deze kaart pakt, verban je een Goud uit de voorraad.",
@@ -1118,6 +1123,11 @@
         "extra": "Pak eerst een kaart en pas dan de bonussen in de aangegeven volgorde.<n>Een kaart kan meerdere bonussen geven. <i><b>Voorbeeld: </b>als je een Molen (uit Intrige) pakt, pak je een Paard en krijg je dan +1 Kaart en +1 Actie.</i>",
         "name": "Rijknecht"
     },
+    "Grotto": {
+        "description": "+1 Actie<br>Leg ten hoogste 4 kaarten uit je hand opzij (op deze kaart).<br>Aan het begin van je volgende beurt: leg deze opzijgelegde kaarten af en trek hetzelfde aantaal.",
+        "extra": "<i><b>Voorbeeld:</b> Je zou 3 kaarten uit je hand opzij kunnen leggen en die 3 kaarten aan het begin van je volgende beurt kunnen afleggen om 3 nieuwe kaarten te trekken.</i>",
+        "name": "Spelonk"
+    },
     "Groundskeeper": {
         "description": "+1 Kaart\n+1 Actie<line>Zolang deze kaart in het spel is: als je een overwinningskaart pakt, +1<VP>.",
         "extra": "Deze kaart kan meermaals in een beurt geactiveerd worden door kaarten die op verschillende manieren zijn gepakt.\n <i><b>Voorbeeld:</b> je speelt een Kasteelhovenier. Daarna speel je een Ingenieur, waarmee je een Landgoed pakt en 1 <VP> neemt. In je aanschaffase koop je een Hertogdom en neem je nog 1 <VP>.</i>\n Meerdere Kasteelhoveniers zijn cumulatief. Speel je de Kroon op een Kasteelhovenier, dan is er nog altijd maar 1 Kasteelhovenier in het spel en krijg je maar 1 <VP> per gepakte overwinningskaart.",
@@ -1345,6 +1355,11 @@
         "description": "+2 Coins\nIedere andere speler legt de bovenste kaart van zijn trekstapel af. Is dit een overwinningskaart, dan pakt hij een Vloekkaart. Anders mag jij kiezen of hij een exemplaar van de afgelegde kaart pakt of dat jij dat doet.",
         "extra": "Iedere speler zonder kaarten in zijn trekstapel schudt zijn aflegstapel om een kaart te kunnen afleggen. Is ook zijn aflegstapel leeg, dan legt hij geen kaart af. Voor iedere speler die een kaart heeft afgelegd, geldt: is de afgelegde kaart een overwinningskaart, dan pakt hij een Vloek. Is de afgelegde kaart van een andere soort, dan kies jij of deze speler nog een exemplaar van de getoonde kaart pakt of dat jij dat doet. Gepakte Vloekkaarten en nieuwe exemplaren komen uit de voorraad en worden op de aflegstapel gelegd van de speler die de kaart pakt. Is er geen exemplaar in de voorraad van een getoonde kaart, dan pakt niemand er een. Deze aanvalskaart treft de andere spelers in beurtvolgorde. Dit kan van toepassing zijn als bepaalde stapels bijna leeg zijn. Kaarten van meer soorten, waaronder Overwinning (zoals bijvoorbeeld Adel uit Dominion: Intrige), gelden als overwinningskaarten.",
         "name": "Nar"
+    },
+    "Jewelled Egg": {
+        "description": "1 <*COIN*><br><br>+1 Aanschaf<line>Als je deze kaart vernietigt, pak je een buit.",
+        "extra": "De speler die gedecoreerd ei vernietigd, krijgd de buit, ongeacht welke speler de kaart speelde die het vernietigen veroorzaakte.",
+        "name": "Gedecoreerd Ei"
     },
     "Journeyman": {
         "description": "Noem een kaart. Toon kaarten van je gedekte stapel totdat je 3 niet genoemde kaarten hebt getoond. Neem deze in je hand en leg de resterende kaarten af.",
@@ -2221,6 +2236,11 @@
         "extra": "Is de trekstapel van een speler leeg, dan schud hij zijn aflegstapel en legt de bovenste kaart van zijn nieuwe trekstapel af. Daarna moeten alle andere spelers, te beginnen met de speler links van de aanvaller, Vloekkaart pakken en op hun trekstapel leggen. Zijn er niet voldoende Vloekkaarten in voorraad, dan worden de resterende Vloekkaarten in beurtvolgorde verdeeld.",
         "name": "Zeeheks"
     },
+    "Search": {
+        "description": "+2 Coin<br> De volgende keer dat een vooraadsstapel leegraakt vernietig je deze \"Zoektocht\" en pak je een Buit.",
+        "extra": "Spel je een Troonzaal op Zoektocht, dan blijft Troonzaal samen met zoektocht totdat er een stapel leeg is. Dan vernietig je Zoektocht eenmaal, maar je pakt 2 buitkaarten (en legd Troonzaal die beurt af).",
+        "name": "Zoektocht"
+    },
     "Seaway": {
         "description": "Pak een actiekaart die ten hoogste 4 Coins waard is.\nVerplaats je +1 Aanschaf-fiche naar de betreffende stapel (speel je een kaart van die stapel, dan ontvang je eerst +1 Aanschaf).",
         "extra": "Bij het kopen van deze kaart pakt je eerst een actiekaart met een waarde van 4 Coins of minder. Pak deze uit de voorraad en leg hem op je aflegstapel. Verplaats daarna je +1 Aanschaf-fiche naar de stapel waar de gepakte kaart vandaan kwam. Dit fiche geeft je +1 Aanschaf als je een kaart van die stapel speelt (zie \"Fiches\" in de spelregels). Het is niet van belang of de waarde van de kaarten in de betreffende stapel later hoger is dan 4 Coins. Je mag de Zeeroute niet kopen om je +1 Aanschaf-fiche naar een lege stapel te verplaatsen. Je moet een stapel kiezen waar je daadwerkelijk een kaart van pakt.",
@@ -2280,6 +2300,11 @@
         "description": "+2 Acties\nToon je hand.\nAls je geen actiekaarten in je hand hebt: +2 Kaarten.",
         "extra": "Je krijgt hoe dan ook 2 extra acties. Je moet je volledige hand tonen. Als je geen actiekaarten in je hand hebt, trek je 2 kaarten. Ook als de eerste kaart die je trekt een actiekaart is, mag je een tweede kaart trekken. Kaarten met \"ACTIE - OVERWINNING\" gelden als actiekaarten.",
         "name": "Sloppenwijk"
+    },
+    "Shaman": {
+        "description": "+1 Actie<br>+1 Coin<br>Je mag een kaart uit je hand vernietigen.<line>Aan het begin van je beurt in een spel met deze kaart:<br>pak een kaart die ten hoogste 6 Coins kost uit de stapel \"Vernietigde Kaarten\"",
+        "extra": "In spellen met de Sjamaan geldt voor iedere speler dat hij het hele spel aan het begin van zijn beurt (inclusief extra beurten) een kaart die ten hoogste 6 Coin kost uit de stapen \"Vernietigde kaarten\" pakt.<br>Dit is verplicht<br>Is er niet zo'n kaart, dan pakt hij er geen.<br>Dit geldt ook voor zijn eerste beurt (relevant voor de Dodenbezweerder uit Nocturne).<br>Dit Geldt ook als nooid iemand Sjamaan pakt.<br>De gepakte kaart komt op zijn aflegstapel. Het is een gepakte kaart en kan dingen activeren die daarnaar verwijzen.<br><i><b>Voorbeeld:</b> een Landgoed pakken zou de eigenschap van de Kooi activeren</i>",
+        "name": "Sjamaan"
     },
     "Sheepdog": {
         "description": "+2 Kaarten<line>Als je een kaart pakt, mag je de Herdershond uit je hand spelen.",
