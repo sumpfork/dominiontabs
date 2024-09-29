@@ -6,6 +6,11 @@
             "This card is currently not used."
         ]
     },
+    "Abundance": {
+        "description": "De volgende keer dat je een actiekaart pakt: +1 Aanschaf en +3 Coin.",
+        "extra": "Deze wordt actief als je een Actiekaart als gevolg van een Aanschaf of op een andere manier pakt.<br>Gebeurt dat in de beurt van een andere speler, dan kun je de +3 Coin en +1 Aanschaf niet gebruiken.",
+        "name": "Overvloed"
+    },
     "Academy": {
         "description": "Als je een actiekaart pakt, +1 Dorpsbewoner.",
         "extra": "Dit gebeurt bij het kopen van een actiekaart of als je er één op een andere manier pakt.",
@@ -309,6 +314,11 @@
         "extra": "Neem eerst 2 munten. Daarna mag je een kaart uit je hand vernietigen en zoveel munten in de voorraad terugleggen als je wilt. Dit aantal mag 0 zijn. De gespeelde Slager is geen onderdeel meer van je hand en kan niet vernietigd worden (een andere slager in je hand wel). Heb je een kaart vernietigd, dan pak je een kaart die maximaal zoveel waard is als de vernietigde kaart plus het aantal betaalde munten. Het is toegestaan om de met deze kaart ontvangen munten direct uit te geven. De op deze manier uitgegeven munten kun je niet gebruiken om in de aanschaffase kaarten te kopen.",
         "name": "Slager"
     },
+    "Cabin Boy": {
+        "description": "+1 Kaart<br>+1 Actie<br>Aan het begin van je volgende beurt, kies er één:<br>+2 Coin; of vernietig deze kaart om een duurzame kaart te pakken.",
+        "extra": "Je mag een Scheepjesjongen vernietigen om een nieuwe Scheepjesjongen te pakken.",
+        "name": "Scheepjesjongen"
+    },
     "Cache": {
         "description": "3 <*COIN*><line>Als je deze kaart pakt pak dan ook direct 2 Koper.",
         "extra": "Dit is een geldkaart met een waarde van 3 Coins munten, net als Goud. Pak je deze kaart, dan pak je ook 2 Koper uit de voorraad. Is er niet voldoende Koper, pak er dan zoveel mogelijk. Je pakt uitsluitend 2 Koper als je de Bewaarplaats pakt, niet als je de Bewaarplaats speelt. Je pakt 2 Koper in alle gevallen waarin je een Bewaarplaats pakt (na het kopen ervan of als je de kaart op een andere manier pakt).",
@@ -594,6 +604,11 @@
         "description": "Als het jouw actiefase is, mag je een actiekaart uit je hand tweemaal spelen. Als het jouw aanschaffase is, mag je een geldkaart uit je hand tweemaal spelen.",
         "extra": "Speel je deze kaart in je actiefase, dan speel je een actiekaart uit je hand en daarna dezelfde kaart nogmaals. Dit verbruikt geen extra acties in je bezit. Speel je deze kaart in je aanschaffase, dan speel je een geldkaart uit je hand en daarna dezelfde kaart nogmaals. Dit verbruikt in het geheel geen acties. De Kroon kan worden gebruikt om een andere Kroon in de actie- of aanschaffase te spelen, waardoor je respectievelijk 2 actiekaarten of 2 geldkaarten tweemaal mag spelen. Speel je de Kroon in je actiefase als gevolg van iets dat je geldkaarten laat spelen (zoals de Verteller uit Dominion: Avonturen), dan speel je met de Kroon alsnog een actiekaart tweemaal.",
         "name": "Kroon"
+    },
+    "Crucible": {
+        "description": "Vernietig een kaart uit je hand.<br>+1 Coin per 1 Coin dat de vernietigde kaart kost.",
+        "extra": "<i><b>Voorbeeld:</b> vernietig je een Landgoed, dat 2 Coin kost, dan krijg je +2 Coin.</i><br>Vernietig je een kaart met Potion of _ Debt in de kosten (uit andere uitbreidingen), dan krijg je niets voor die symbolen.",
+        "name": "Smeltkroes"
     },
     "Crypt": {
         "description": "Leg van de geldkaarten die je in het spel hebt er zoveel gedekt onder deze kaart opzij als je wilt. Zolang er geldkaarten onder de Crypte liggen, neem je er aan het begin van elk van je beurten één van in je hand.",
@@ -951,6 +966,11 @@
         "extra": "Als je de Vaandeldrager pakt of vernietigt, neem je het Vaandel. Het Vaandel zorgt ervoor dat je bij het trekken van een nieuwe hand in de opschoonfase 1 extra kaart mag trekken. Dat geldt ook als je hand om een of andere reden uit minder dan 5 kaarten bestaat. <i><b>Voorbeeld: </b>je hebt Voorpost (uit Hijs de Zeilen!) gespeeld. In je Voorpostbeurt trek je dan 4 kaarten (in plaats van 3).</i> Als je Vaandeldrager wordt vernietigd, pak je altijd het Vaandel, ongeacht wie er aan de beurt is.",
         "name": "Vaandeldrager / Vaandel"
     },
+    "Flagship": {
+        "description": "+2 Coin<br>De volgende keer dat je een actiekaart zoncer Bevel speelt, speel je die nog een keer.",
+        "extra": "Dit is niet optioneel; Wat de volgende niet-Bevel-actiekaart ook doet, Vlaggenschip speel die nogmaals, ook al vernietigd de kaart zichzelf of is het niet jouw beurt.<br>Bevelkaarten zoals Vlaggenschip zelf, worden niet opnieuw gespeeld; Vlaggenschip wacht op een niet-Bevel-actiekaart.<br>Speel je 2 Vlaggenschippen en dan bijvoorbeeld een Havendorp, dan speel je Havendorp 3 keer, eenmaal normaal en eenmaal voor elk Vlaggenschip.",
+        "name": "Vlaggenschip"
+    },
     "Fleet": {
         "description": "Nadat het spel is afgelopen komt iedere speler met dit project nog één keer aan de beurt.",
         "extra": "De extra beurten gaan in beurtvolgorde, te beginnen met de speler na de speler die net aan de beurt is geweest. Andere extra beurten, zoals die van Voorpost (uit Hijs de Zeilen!) zouden tussen die beurten kunnen plaatsvinden: na de laatste beurt als gevolg van Vloot kunnen geen extra beurten meer plaatsvinden (omdat Voorpost er bijvoorbeeld niet voor zorgt dat het spel na afloop verdergaat). De spelers sorteren hun kaarten nog niet (ook de spelers zonder Vloot niet) totdat alle Vlootbeurten zijn afgehandeld. Het spel is na de Vlootbeurten afgelopen, ook al wordt niet meer aan de voorwaarden voor het einde van het spel voldaan.",
@@ -1000,6 +1020,11 @@
         "description": "+1 Aanschaf<n>Verdubbel bij het spelen van deze kaart je _ Coin als je dat deze beurt nog niet hebt gedaan.<line>Als je deze kaart pakt, pak dan een Goud per Gladiator die je in het spel hebt.",
         "extra": "Je verdubbelt je _ Coin alleen bij de eerste keer dat je Fortuin in je beurt speelt, bij elk volgende krijg je uitsluitend +1 Aanschaf",
         "name": "Fortuin"
+    },
+    "Fortune Hunter": {
+        "description": "+2 Coin<br>Bekijk de bovenste 3 kaarten van je trekstapel. Je mag daaruit 1 geldkaart spelen. Leg de rest in een volgorde naar keuze terug.",
+        "extra": "Handel het spelen van de geldkaart volledig af voordat je de andere kaarten op de trekstapel teruglegt;<br><i><b>Voorbeeld:</b> is de geldkaart een Beeldje, dan zijn de 2 kaarten die je trekt niet de kaarten die je met de Fortuinzoeker hebt bekeken.</i>",
+        "name": "Fortuinzoeker"
     },
     "Fortune Teller": {
         "description": "+2 Coin\nIedere andere speler toont kaarten van zijn trekstapel totdat hij een overwinningskaart of een Vloekkaart toont. Hij legt deze terug op zijn trekstapel en de andere getoonde kaarten af.",
@@ -1090,6 +1115,11 @@
         "extra": "Toon één voor één kaarten van je trekstapel totdat je twee actiekaarten hebt getoond die geen Golem zijn. Als je geen kaarten meer in je trekstapel hebt voordat je deze twee actiekaarten (niet-Golem) hebt getoond, schud dan je aflegstapel (zonder de tot dan toe getoonde kaarten) en ga verder. Is je trekstapel leeg en heb je ook geen aflegstapel meer voordat je de twee actiekaarten (niet-Golem) hebt gevonden, dan krijg je alleen de gevonden actiekaart. Leg alle getoonde kaarten, met uitzondering van de actiekaarten (niet-Golem), open op je aflegstapel. Heb je geen actiekaarten gevonden, dan ben je klaar. Heb je er één gevonden, speel deze dan direct. Heb je twee actiekaarten gevonden, speel deze dan direct in een volgorde naar keuze. Je mag er niet voor kiezen om ze niet te spelen. Deze actiekaarten bevinden zich niet in je hand en worden dus niet beïnvloed door kaarten die om kaarten in je hand vragen. Voorbeeld: als één van de twee kaarten een Troonzaal (uit Dominion) is, kun je deze niet gebruiken op de andere van deze twee kaarten.",
         "name": "Golem"
     },
+    "Gondola": {
+        "description": "Nu of an het begin van je volgende beurt: +2 Coin.<line>Als je deze kaart pakt, mag je een actiekaart uit je hand spelen.",
+        "extra": "Kies bij het spelen van de Gondel of je direct +2 Coin krijgt of aan het begin van je volgende beurt.<br>Bij \"direct\" leg je Gondel in de opschoonfase van dezelfde beurt af;<br>bij \"volgende beurt\" leg je Gondel die beurt af.<br>Speel je Gondel meermaals, zoals met een Koninklijke schatkamer, dan kies je elke keer opnieuw of je de +2 Coin nu of volgende beurt krijgt. Gondel blijft dan uitsluitend in het spel als ten minste 1 van die keuzes \"volgende beurt\" is (in dat geval blijft ook de koninklijke schatkamer in het spel).",
+        "name": "Gondel"
+    },
     "Goons": {
         "description": "+1 Aanschaf\n+2 Coins\nIedere andere speler legt naar zijn keuze kaarten af totdat hij er 3 op handen heeft.<line>Als deze kaart in het spel is, +1 <VP> voor elke kaart die je koopt.",
         "extra": "Voor deze kaart zijn de overwinningspuntenfiches nodig. Eerst krijg je 1 extra aanschaf en 2 Coins extra virtueel geld. Daarna moet iedere andere speler zoveel handkaarten afleggen dat hij er nog 3 in zijn hand over heeft. Voor elke kaart die je deze beurt koopt, krijg je 1 overwinningspuntenfiche, die je op je tableau legt. Heb je meer kaarten \"Domkoppen\" in het spel, dan krijg je voor elke kaart \"Domkoppen\" die je in het spel hebt 1 overwinningspuntenfiche per gekochte kaart. Speel je een kaart \"Domkoppen\" op een Koningshof of een Troonzaal uit Dominion: basisspel), dan krijg je maar 1 overwinningspuntenfiche, omdat de kaart maar één keer in het spel is.",
@@ -1162,6 +1192,11 @@
         "description": "+1 Kaart<br>+1 Actie<n>Kijk door je aflegstapel. Je mag 1 kaart daaruit op je trekstapel leggen.",
         "extra": "Trek eerst een kaart en ontvang +1 Actie. Kijk daarna door je aflegstapel en leg er, als je dat wilt, een kaart van op je trekstapel.",
         "name": "Voorbode"
+    },
+    "Harbor Village": {
+        "description": "+1 Kaart<br>+2 Acties<br>Na de volgende actiekaart die je deze beurt spelt: geeft die je +_ Coin, dan +1 Coin.",
+        "extra": "Dit is uitsluitend van toepassing als je de +_ Coin van de actie zelf hebt gekregen, niet als je de +_ Coin heb gekregen van het spelen ervan (zoals door Training (Uit avonturen) of Gift van het bos (uit Nocturne))<br>Het is oké als je de +_ Coin niet meer hebt (zoals door Verteller).<br>+Geldkisten (uit Gilden en Renaissance) is geen +_ Coin. +0 Coin geeft je de bonus niet. Het gebruik van een spoor (uit Menagerie) om +_ Coin te krijgen (bijvoorbeeld Spoor van het schaap) geeft je de bonus niet.Speel je Troonzaal op Havendorp en dan een Militie, dan speel je Havendorp, dan Havendorp, dan Militie, dus je krijgt niets voor de eerste keer dat je Havendorp speelt en +1 Coin voor de tweede keer.",
+        "name": "Havendorp"
     },
     "Harem": {
         "extra": "Deze kaart is zowel een geldkaart als een overwinningskaart. Je kunt de kaart net als een Zilver voor 2 Coins gebruiken. Aan het einde van het spel is de kaart 2 <VP> waard. In een spel met 2 spelers gebruik je 8 Haremkaarten, in een spel met 3 of 4 spelers 12 Haremkaarten.",
@@ -1411,6 +1446,11 @@
         "extra": "Het spelen hiervan geeft +2 Kaarten, het pakken ervan geeft +2 Dorpsbewoners.",
         "name": "Kamerbedienden"
     },
+    "Landing Party": {
+        "description": "+2 Cards<br>+2 Acties<br>De volgende keer dat de eerste kaart die je in je beurt speelt een geldkaart is, leg deze \"Landingstroepen\" dan op je Trekstapel.",
+        "extra": "Handel de geldkaartaf voordat je Landingstroepen op je trekstapel legt. Het is oké als de geldkaart meerdere soorten heeft, inclusief Actie (zoals Toverrol).<br><i><b>Voorbeeld:<b> is de geldkaart een Beeldje dan trek je 2 kaarten voordat je Landingstroepen op je Trekstapel legt.<i>",
+        "name": "Landingstroepen"
+    },
     "Lantern": {
         "description": "Je Grenswachten tonen 3 kaarten en leggen er 2 af. (Om de Hoorn te nemen, moeten ze alle 3 Acties tonen.)",
         "extra": "Speel je de Grenswacht en heb je de Lantaarn wel, dan toon je de bovenste 3 kaarten van je trekstapel. Je kiest er één en doet die in je hand. De andere 2 leg je af. Waren deze alle drie actiekaarten, dan mag je de Hoorn nemen. Toon je minder dan 2 kaarten, of minder dan 3 kaarten als je de Lantaarn hebt, dan mag je geen artefact nemen. Zowel de Hoorn als de Lantaarn functioneren in de beurt dat je ze neemt.",
@@ -1506,6 +1546,11 @@
         "extra": "Bij het spelen van deze kaart krijg je +3 Coins en leg je een kaart uit je hand op je trekstapel. Heb je geen kaarten meer in je hand, dan leg je niets op je trekstapel. Is je trekstapel leeg, dan is de zojuist gelegde kaart de enige kaart in je trekstapel. Bij het pakken van deze kaart leg je alle geldkaarten die je in het spel hebt op je trekstapel in een volgorde naar keuze. Je hoeft de volgorde niet aan andere spelers te tonen. Je moet al je geldkaarten op je trekstapel leggen, niet slechts een deel. Je kunt geen geldkaarten uit je hand op je trekstapel leggen. Je mag de munten van de gespeelde kaarten wel spenderen. Voorbeeld: je hebt +1 Aanschaf en je speelt 4 Goud. Je koopt een Mandarijn en legt het Goud op je trekstapel. Nu mag je nog 1 Coin spenderen. Je kunt de eigenschap van Mandarijn gebruiken als je deze koopt of als je deze op een andere manier pakt (hoewel je normaal gesproken alleen geld in het spel hebt tijdens je aanschaffase).",
         "name": "Mandarijn"
     },
+    "Mapmaker": {
+        "description": "Bekijk de bovenste 4 kaarten van je trekstapel. Neem er 2 van in je hand en leg de rest af.<line>Als een speler een overwinningskaart pakt, mag jij deze \"Kaartenmaker\" uit je hand spelen.",
+        "extra": "Heb je minder dan 4 kaarten (na schudden), dan bekijk je wat je wel hebt. Je mag deze kaart spelen als iemand (inclusief jij) een overwinningskaart pakt door een koop of andere manier.<br>Speel je Kaartenmaker als reactie op iemand die een overwinningskaart pakt, dan kun je direct darna nog kaartenmaker spelen, zelfs als je die via de eerste Kaartenmaker hebt verkregen.",
+        "name": "Kaartenmaker"
+    },
     "Marauder": {
         "description": "Pak een buitkaart van de buitstapel.\nIedere andere speler pakt een Ruïne.",
         "extra": "Eerst pak je een Buit van de stapel buitkaarten, die geen onderdeel van de voorraad is, en legt deze op je aflegstapel. Zijn er geen buitkaarten in voorraad, dan pak je er geen. Daarna pakt iedere andere speler 1 Ruïne van de stapel ruïnekaarten en legt deze op zijn aflegstapel. Doe dit in beurtvolgorde, te beginnen bij de speler links van je. Draai de bovenste Ruïne steeds open voordat een speler er een pakt. Is de ruïnestapel leeg, dan pakken de spelers vanaf dat moment geen Ruïnes meer.",
@@ -1530,6 +1575,11 @@
         "description": "+1 Kaart\n+1 Actie\n+1 Aanschaf<line>Als een van je kaarten wordt vernietigd, mag je het Marktplein uit je hand afleggen. Doe je dat, pak dan een Goud.",
         "extra": "Bij het spelen van deze kaart trek je 1 kaart en krijg je +1 Actie en +1 Aanschaf. Wordt een van je kaarten vernietigd, dan mag je het Marktplein uit je hand afleggen. Doe je dat, dan pak je een Goud uit de voorraad en leg je dit op je aflegstapel. Is er geen Goud in voorraad, dan pak je er geen. Je mag meerdere Marktpleinen afleggen, ook al wordt er maar 1 kaart van je vernietigd.",
         "name": "Marktplein"
+    },
+    "Maroon": {
+        "description": "Vernietig een kaart uit je hand.<br>+2 Kaarten per soort dat die kaart heeft (Actie, Aanval, enzovoort)",
+        "extra": "Soorten zijn de woorden in het kader aan de overkant van de kaarten (Actie, Aanval enzovoort).<br><i><b>Voorbeeld:</b> vernietig je Gestrand en Kooi, dan trek je 4 kaarten, omdat het een geldkaart en een duurzame kaart is, 2 soorten.</i>",
+        "name": "Gestrand"
     },
     "Masquerade": {
         "description": "+2 Kaarten\nIedere speler moet direct 1 kaart uit zijn hand neer links doorgeven. Daarna mag jij 1 kaart uit je hand vernietigen.",
@@ -2094,6 +2144,11 @@
         "extra": "Zijn er kaarten in de stapel \"Vernietigde Kaarten\" die 3 Coins, 4 Coins, 5 Coins of 6 Coins waard zijn, dan moet je er één pakken. Je mag de stapel \"Vernietigde Kaarten\" op elk moment doorkijken. Laat de gekozen kaart aan de andere spelers zien en leg deze op de trekstapel. Kaarten die ten minste een Potion kosten, kunnen niet worden gepakt (deze zijn geen 3 Coins, 4 Coins, 5 Coins of 6 Coins waard). Zijn er geen kaarten in de stapel \"Vernietigde Kaarten\" die 3 Coins, 4 Coins, 5 Coins of 6 Coins waard zijn, dan moet iedere andere speler de bovenste 2 kaarten van zijn trekstapel tonen en er één naar zijn keuze vernietigen die 3 Coins, 4 Coins, 5 Coins of 6 Coins waard is (indien mogelijk). Hij legt de rest van de kaarten af. Doe dit in beurtvolgorde, te beginnen met de speler links van je.<line><b>Errata</b>: De oorspronkelijke Nederlandse versie stelde dat <i>iedere speler</i> (dus inclusief jijzelf) de bovenste 2 kaarten moest tonen. Dit is later correct vertaald als <i>ieder andere speler</i>.",
         "name": "Schurk"
     },
+    "Rope": {
+        "description": "1 Coin<br><br>+1 Aanschaf<br>Aan het begin van je volgende beurt:<br>+1 Kaart ven je mach een kaart uit je hand vernietigen.",
+        "extra": "Speel je deze kaart, dan krijg je +1 Coin en +1 Aanschaf, en aan het begin van je volgende beurt trek je eerst een kaart, waarna je een kaart uit je hand mag vernietigen.",
+        "name": "Touw"
+    },
     "Royal Blacksmith": {
         "description": "+5 Kaarten<n>Toon je hand; leg alle getoonde Koperkaarten af.",
         "extra": "Je legt zowel de Koperkaarten in je hand als die in de +5 Kaarten af.",
@@ -2492,6 +2547,11 @@
         "extra": "Het spelen van deze kaart heeft 2 toekomstige gevolgen: je krijgt +3 Coins aan het begin van je volgende beurt en tot dat moment pakt iedere andere speler 1 Vloek als hij een kaart koopt. Een speler die meer kaarten koopt, pakt 1 Vloek per gekochte kaart. Een speler die geen kaarten koopt, krijgt geen Vloek. Deze kaart werkt cumulatief. De Heks uit het Moeras heeft geen invloed op kaarten die op een andere manier worden gepakt. Speel je de Heks uit het Moeras en voer je direct een extra beurt uit (als gevolg van Missie of Voorpost uit Dominion: Hijs de Zeilen!), dan krijg je +3 Coins aan het begin van de extra beurt en worden de andere spelers niet door de kaart beïnvloed. Wil je met een reactiekaart, zoals de Slotgracht, op een Heks uit het Moeras reageren, dan moet je dat doen op het moment dat de Heks uit het Moeras wordt gespeeld.",
         "name": "Heks uit het Moeras"
     },
+    "Swamp Shacks": {
+        "description": "+2 Acties<br>+1 Kaart per 3 kaarten die je in het spel hebt (naar beneden Afgerond).",
+        "extra": "De Moerasthutten zelf en Duurzame Kaarten uit vorige Beurten die nog in het spel zijn tellen ook mee.<br>Geldkaarten tellen mee als je die in het spel hebt, zoals Geld-Duurzaam-kaarten of als gevolg van Fortuinzoeker. Opzijgelegde kaarten tellen niet mee, zoals die op Kwartiermeester. Rond het aantal te trekken kaarten naar beneden af; heb je 8 kaarten in het spel, dan trek je er 2.",
+        "name": "Moerasthutten"
+    },
     "Swashbuckler": {
         "description": "+3 Kaarten<n>Als je aflegstapel ten minste 1 kaart bevat, +1 Geldkist. Daarna: heb je ten minste 4 Geldkistfiches, neem dan de Schatkist.",
         "extra": "Eerst trek je 3 kaarten. Daarna controleer je of er ten minste 1 kaart in je aflegstapel is. Als het trekken van de kaarten tot schudden leidt, is de aflegstapel leeg. Bevat je aflegstapel ten minste 1 kaart, dan krijg je +1 Geldkist. Heb je daarna 4 of meer fiches op je Geldkisttableau, dan neem je de Schatkist. Je kunt de Schatkist nooit nemen als je aflegstapel leeg is. Schatkist zorgt ervoor dat je elke beurt aan het begin van je aanschaffase een Goud pakt, met inbegrip van de beurt waarin je de Schatkist neemt. Dit is niet optioneel.",
@@ -2617,6 +2677,11 @@
         "description": "Als je een kaart vernietigt: +1<VP>.",
         "extra": "Deze kaart functioneert ook als je niet aan de beurt bent (zoals bij het vernietigen van een kaart met de Oplichter uit Dominion: Intrige) en bij het vernietigen van een kaart die niet van jou is (zoals bij Zout der Aarde).",
         "name": "Tombe"
+    },
+    "Tools": {
+        "description": "Pak een exemplaar van een kaart die iemand in het spel heeft.",
+        "extra": "Deze kaart kan een exemplaar pakken van een kaart die welke speler dan ook in het spel heeft;<br>andere spelers zouden bijvoorbeeld duurzame kaarten in het speel kunnen hebben.<br>Gereedschappenzelf is in het spel, dus zou je ook daar een examplaar van kunnen pakken.",
+        "name": "Gereedschappen"
     },
     "Tormentor": {
         "description": "+2 Coins<n>Heb je geen andere kaarten in het spel, pak dan een Duiveltje van de betreffende stapel. Anders krijgt iedere andere speler de volgende Spreuk.",
