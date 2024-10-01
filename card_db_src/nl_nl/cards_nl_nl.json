@@ -330,8 +330,8 @@
         "name": "Bewaarplaats"
     },
     "Cage": {
-        "description": "Leg ten hoogste 4 kaarten ui je hand opzij (op deze kaart). De volgende keer dat je een overwinningskaart pakt vernietig je deze \"Kooi\" en neem je aan het einde van je beurt de opzijgelegde kaarten in je hand.",
-        "extra": "De kaarten gaan naar je hand na het trekken van je gebruikelijke 5 kaarten voor je volgende beurt.<br><i><b>Voorbeeld:</b> je hebt in eeen eerdere beurt 2 Landgoederen en 2 Koper op een Kooi opzijgelegd; in een late beurt koop je een Provincie, vernietig je de Kooi en voeg je aan het einde van je beurt de 2 Landgoederen en 2 Koper aan je hand toe.</i>",
+        "description": "Leg ten hoogste 4 kaarten uit je hand opzij (op deze kaart). De volgende keer dat je een overwinningskaart pakt vernietig je deze \"Kooi\" en neem je aan het einde van je beurt de opzijgelegde kaarten in je hand.",
+        "extra": "De kaarten gaan naar je hand na het trekken van je gebruikelijke 5 kaarten voor je volgende beurt.<br><i><b>Voorbeeld:</b> Je hebt in eeen eerdere beurt 2 Landgoederen en 2 Koper op een Kooi opzijgelegd; in een late beurt koop je een Provincie, vernietig je de Kooi en voeg je aan het einde van je beurt de 2 Landgoederen en 2 Koper aan je hand toe.</i>",
         "name": "Kooi"
     },
     "Camel Train": {
@@ -963,12 +963,12 @@
     },
     "Figurine": {
         "description": "+2 Kaarten<br>Je mag een actiekaart uit je hand afleggen voor +1 Aanschaf en +1 Coin.",
-        "extra": "Dit is een geldkaart en wordt dus in je aanschaffase gespeld, maar het trekt kaarten. Dat betekent normaal gesproken dat je een getrokken actiekaart die beurt niet meer kunt spelen, behalve dat je met Beeldje zelf een Actiekaart kunt afleggen voor +1 Aanschaf en +1 Coin.12",
-        "name": "Figurine"
+        "extra": "Dit is een geldkaart en wordt dus in je aanschaffase gespeld, maar het trekt kaarten. Dat betekent normaal gesproken dat je een getrokken actiekaart die beurt niet meer kunt spelen, behalve dat je met Beeldje zelf een Actiekaart kunt afleggen voor +1 Aanschaf en +1 Coin.",
+        "name": "Beeldje"
     },
     "First Mate": {
         "description": "Speel zoveel actiekaarten uit je hand als je wilt. Trek daarna kaarten totdat je er 6 in je hand hebt.",
-        "extra": "Heb je geen actiekaarten om te speelen, dan trek je alsnog tot 6 kaarten.<br>Trek je met de gespeelde actiekaart een ander exemplaar van zichzelf, dan kun je die spelen, enzovoort. Eerste Stuurman kan Eerste Stuurmannen spelen; houd goed bij welke kaart je afhandelt, zoals je met meerdere Troonzalen zou doen.",
+        "extra": "Heb je geen actiekaarten om te spelen, dan trek je alsnog tot 6 kaarten.<br>Trek je met de gespeelde actiekaart een ander exemplaar van zichzelf, dan kun je die spelen, enzovoort. Eerste Stuurman kan Eerste Stuurmannen spelen; houd goed bij welke kaart je afhandelt, zoals je met meerdere Troonzalen zou doen.",
         "name": "Eerste Stuurman"
     },
     "Fisherman": {
@@ -997,7 +997,7 @@
         "name": "Vaandeldrager / Vaandel"
     },
     "Flagship": {
-        "description": "+2 Coin<br>De volgende keer dat je een actiekaart zoncer Bevel speelt, speel je die nog een keer.",
+        "description": "+2 Coin<br>De volgende keer dat je een actiekaart zonder Bevel speelt, speel je die nog een keer.",
         "extra": "Dit is niet optioneel; Wat de volgende niet-Bevel-actiekaart ook doet, Vlaggenschip speel die nogmaals, ook al vernietigd de kaart zichzelf of is het niet jouw beurt.<br>Bevelkaarten zoals Vlaggenschip zelf, worden niet opnieuw gespeeld; Vlaggenschip wacht op een niet-Bevel-actiekaart.<br>Speel je 2 Vlaggenschippen en dan bijvoorbeeld een Havendorp, dan speel je Havendorp 3 keer, eenmaal normaal en eenmaal voor elk Vlaggenschip.",
         "name": "Vlaggenschip"
     },
@@ -1072,7 +1072,7 @@
         "name": "Fontein"
     },
     "Frigate": {
-        "description": "+3 Coin<br> Tot de staart van je volgende beurt: elke keer dat een andere speler een actiekaart speelt, moet hij daarna kaarten uit zijn hand afleggen totdat hij er 4 heeft.",
+        "description": "+3 Coin<br>Tot de staart van je volgende beurt: elke keer dat een andere speler een actiekaart speelt, moet hij daarna kaarten uit zijn hand afleggen totdat hij er 4 heeft.",
         "extra": "Dit is elke keer dat een andere speler een actiekaart speelt van toepassing, tot je volgende beurt. Dat is met inbegrip van later in je eigen beurt als iemand dan een actie weet te spelen (Zoals een Bergruimte). De speler handelt zijn Actie volledig af voordat het Fregat wordt afgelegd.",
         "name": "Fregat"
     },
@@ -1488,7 +1488,7 @@
     },
     "Landing Party": {
         "description": "+2 Cards<br>+2 Acties<br>De volgende keer dat de eerste kaart die je in je beurt speelt een geldkaart is, leg deze \"Landingstroepen\" dan op je Trekstapel.",
-        "extra": "Handel de geldkaartaf voordat je Landingstroepen op je trekstapel legt. Het is oké als de geldkaart meerdere soorten heeft, inclusief Actie (zoals Toverrol).<br><i><b>Voorbeeld:<b> is de geldkaart een Beeldje dan trek je 2 kaarten voordat je Landingstroepen op je Trekstapel legt.<i>",
+        "extra": "Handel de geldkaartaf voordat je Landingstroepen op je trekstapel legt. Het is oké als de geldkaart meerdere soorten heeft, inclusief Actie (zoals Toverrol).<br><i><b>Voorbeeld:</b> is de geldkaart een Beeldje dan trek je 2 kaarten voordat je Landingstroepen op je Trekstapel legt.</i>",
         "name": "Landingstroepen"
     },
     "Lantern": {
@@ -1623,7 +1623,7 @@
     },
     "Maroon": {
         "description": "Vernietig een kaart uit je hand.<br>+2 Kaarten per soort dat die kaart heeft (Actie, Aanval, enzovoort)",
-        "extra": "Soorten zijn de woorden in het kader aan de overkant van de kaarten (Actie, Aanval enzovoort).<br><i><b>Voorbeeld:</b> vernietig je Gestrand en Kooi, dan trek je 4 kaarten, omdat het een geldkaart en een duurzame kaart is, 2 soorten.</i>",
+        "extra": "Soorten zijn de woorden in het kader aan de overkant van de kaarten (Actie, Aanval, enzovoort).<br><i><b>Voorbeeld:</b> vernietig je Gestrand en Kooi, dan trek je 4 kaarten, omdat het een geldkaart en een duurzame kaart is, 2 soorten.</i>",
         "name": "Gestrand"
     },
     "Masquerade": {
@@ -1687,8 +1687,8 @@
         "name": "Mijn"
     },
     "Mining Road": {
-        "description": "+1 Actie<br>+1 Aanschaf<br>+2 Coin<br> Eenmaal in deze beurt: pak je een geldkaart, dan mag je die spelen.",
-        "extra": "Het spelen van de geldkaart is optioneel.<br>Deze vaardigheit is cumulatief; speel je 2 Mijnwegen, dan mag je die beurt tweemaal een Geldkaart spelen als je die pakt. Je kunt met2 Mijnwegen echer niet dezelfde gepakte geldkaart tweemaal spelen. Mijnweg is van toepassing op gepakte kaarten als gevolg van een koop of een andere manier. De kaart werkt in je actiefase als je dan een geldkaart pakt.",
+        "description": "+1 Actie<br>+1 Aanschaf<br>+2 Coin<br>Eenmaal in deze beurt: pak je een geldkaart, dan mag je die spelen.",
+        "extra": "Het spelen van de geldkaart is optioneel.<br>Deze vaardigheit is cumulatief; speel je 2 Mijnwegen, dan mag je die beurt tweemaal een Geldkaart spelen als je die pakt. Je kunt met 2 Mijnwegen echter niet dezelfde gepakte geldkaart tweemaal spelen. Mijnweg is van toepassing op gepakte kaarten als gevolg van een koop of een andere manier. De kaart werkt in je actiefase als je dan een geldkaart pakt.",
         "name": "Mijnweg"
     },
     "Mining Village": {
@@ -1943,7 +1943,7 @@
     },
     "Pendant": {
         "description": "+1 Coin per geldkaart met een verschillende naam die je in het spel hebt.",
-        "extra": "Deze kaart telt zelf ook mee.<br><i><b>Voorbeeld:</b> je hebt 3 Koper, een vorige beurt gespeelde Gondel en Pendant in het spel. Dat maakt +3 Coin.",
+        "extra": "Deze kaart telt zelf ook mee.<br><i><b>Voorbeeld:</b> je hebt 3 Koper, een vorige beurt gespeelde Gondel en Pendant in het spel. Dat maakt +3 Coin.</i>",
         "name": "Pendant"
     },
     "Philosopher's Stone": {
@@ -1957,7 +1957,7 @@
         "name": "Plein"
     },
     "Pickaxe": {
-        "description": "1 <*COIN*><br><br>Vernietig een kaart uit je hand.<br> Als die 3 Coin of meer kost, pak dan een buit en neem die in je hand.",
+        "description": "1 <*COIN*><br><br>Vernietig een kaart uit je hand.<br>Als die 3 Coin of meer kost, pak dan een buit en neem die in je hand.",
         "extra": "Vernietigen is verplicht als je nog kaarten in je hand over hebt. Onthoud dat je de gepakte Buit moet tonen.",
         "name": "Houweel"
     },
@@ -2106,7 +2106,7 @@
     },
     "Quartermaster": {
         "description": "Aan het begin van je beurt voor de rest van het spel:<br>kies er één: Pak een kaart die ten hoogste 4 Coin kost en leg die op deze \"Kwartiermeester\" opzij;<br>of neem een kaart van deze \"Kwartiermeester\" in je hand.",
-        "extra": "Kwartiermeester blijft de rest van het spel in het spel.<br>Elke Beurt pak je een kaart en leg je die op Kwartiermeester, of je neemt éénvan de erder met Kwartiermeester gepakte kaarten en doet die in je hand.<br>Speel je 2 Kwartiermeesters dan hebben die elk hun eigen set kaarten. Speel je echter een Troonzaal op Kwartiermeester, dan heeft die maar 1 set kaarten, en je kunt in elke beurt tweemaal kiezen voor het pakken of nemen van een kaart.",
+        "extra": "Kwartiermeester blijft de rest van het spel in het spel.<br>Elke Beurt pak je een kaart en leg je die op Kwartiermeester, of je neemt één van de erder met Kwartiermeester gepakte kaarten en doet die in je hand.<br>Speel je 2 Kwartiermeesters dan hebben die elk hun eigen set kaarten. Speel je echter een Troonzaal op Kwartiermeester, dan heeft die maar 1 set kaarten, en je kunt in elke beurt tweemaal kiezen voor het pakken of nemen van een kaart.",
         "name": "Kwartiermeester"
     },
     "Quest": {
@@ -2270,7 +2270,7 @@
     },
     "Sack of Loot": {
         "description": "1 <*COIN*><br><br>+1 Aanschaf<br>Pak een Buit",
-        "extra": "Speel je deze kaart, dan krijg je +1 Coin en +1 Aanschaf, en je pakt een Buit",
+        "extra": "Speel je deze kaart, dan krijg je +1 Coin en +1 Aanschaf, en je pakt een Buit.",
         "name": "Zak met Buit"
     },
     "Sacred Grove": {
@@ -2367,8 +2367,8 @@
         "name": "Zeeheks"
     },
     "Search": {
-        "description": "+2 Coin<br> De volgende keer dat een vooraadsstapel leegraakt vernietig je deze \"Zoektocht\" en pak je een Buit.",
-        "extra": "Spel je een Troonzaal op Zoektocht, dan blijft Troonzaal samen met zoektocht totdat er een stapel leeg is. Dan vernietig je Zoektocht eenmaal, maar je pakt 2 buitkaarten (en legd Troonzaal die beurt af).",
+        "description": "+2 Coin<br>De volgende keer dat een vooraadsstapel leegraakt vernietig je deze \"Zoektocht\" en pak je een Buit.",
+        "extra": "Speel je een Troonzaal op Zoektocht, dan blijft Troonzaal samen met zoektocht totdat er een stapel leeg is. Dan vernietig je Zoektocht eenmaal, maar je pakt 2 buitkaarten (en legd Troonzaal die beurt af).",
         "name": "Zoektocht"
     },
     "Seaway": {
@@ -2433,7 +2433,7 @@
     },
     "Shaman": {
         "description": "+1 Actie<br>+1 Coin<br>Je mag een kaart uit je hand vernietigen.<line>Aan het begin van je beurt in een spel met deze kaart:<br>pak een kaart die ten hoogste 6 Coins kost uit de stapel \"Vernietigde Kaarten\"",
-        "extra": "In spellen met de Sjamaan geldt voor iedere speler dat hij het hele spel aan het begin van zijn beurt (inclusief extra beurten) een kaart die ten hoogste 6 Coin kost uit de stapen \"Vernietigde kaarten\" pakt.<br>Dit is verplicht<br>Is er niet zo'n kaart, dan pakt hij er geen.<br>Dit geldt ook voor zijn eerste beurt (relevant voor de Dodenbezweerder uit Nocturne).<br>Dit Geldt ook als nooid iemand Sjamaan pakt.<br>De gepakte kaart komt op zijn aflegstapel. Het is een gepakte kaart en kan dingen activeren die daarnaar verwijzen.<br><i><b>Voorbeeld:</b> een Landgoed pakken zou de eigenschap van de Kooi activeren</i>",
+        "extra": "In spellen met de Sjamaan geldt voor iedere speler dat hij het hele spel aan het begin van zijn beurt (inclusief extra beurten) een kaart die ten hoogste 6 Coin kost uit de stapel \"Vernietigde kaarten\" pakt.<br>Dit is verplicht<br>Is er niet zo'n kaart, dan pakt hij er geen.<br>Dit geldt ook voor zijn eerste beurt (relevant voor de Dodenbezweerder uit Nocturne).<br>Dit Geldt ook als nooit iemand Sjamaan pakt.<br>De gepakte kaart komt op zijn aflegstapel. Het is een gepakte kaart en kan dingen activeren die daarnaar verwijzen.<br><i><b>Voorbeeld:</b> een Landgoed pakken zou de eigenschap van de Kooi activeren</i>",
         "name": "Sjamaan"
     },
     "Shanty Town": {
@@ -2483,7 +2483,7 @@
     },
     "Silver Mine": {
         "description": "Pak een geldkaart die minder kost dan deze kaart en neem die in je hand.",
-        "extra": "Deze kaart kan Zilver pakken, maar ook andere geldkaarten die minder kosten dan Zilver als die zih in de voorraad bevinden: Gondel, Gedecoreerd ei, enzovoort.",
+        "extra": "Deze kaart kan Zilver pakken, maar ook andere geldkaarten die minder kosten dan Zilver als die zich in de voorraad bevinden: Gondel, Gedecoreerd ei, enzovoort.",
         "name": "Zilvermijn"
     },
     "Sinister Plot": {
@@ -2492,7 +2492,7 @@
         "name": "Duistere Samenzwering"
     },
     "Siren": {
-        "description": "Iedere andere speler pakt een Vloek. Aan het begin van je volgende beurt:<br>trek kaarten totdat je 8 in hand hebt.<line>Als je deze kaart pakt, vernietig hem dan, tenzij je een actiekaart uit je hand vernietigt.",
+        "description": "Iedere andere speler pakt een Vloek. Aan het begin van je volgende beurt:<br>trek kaarten totdat je 8 in je hand hebt.<line>Als je deze kaart pakt, vernietig hem dan, tenzij je een actiekaart uit je hand vernietigt.",
         "extra": "Pak je een Sirene, dan wordt die direct vernietigd, tenzij je een actiekaart uit je hand vernietigd. Als je er echter in slaagt om de Sirene te verplaatsen van waar die is gepakt (ongeacht de bestemming ervan) voordat deze eigenschap wordt afgehandelt (zoals de kaart met insignie op de trekstapel leggen), dan gaat het vernietigen ervan niet door (je mag dan alsnog een actiekaart uit je hand vernietigen als je dat wilt).",
         "name": "Sirene"
     },
@@ -2602,7 +2602,7 @@
     },
     "Stowaway": {
         "description": "Aan het begin van je volgende beurt: +2 Kaarten.<line>Als een speler een duurzame kaart pakt mag jij deze \"Bergruimte\" uit je hand spelen.",
-        "extra": "je mag deze kaart uit je hand spelen als je zelf een duurzame kaart spelt of als een andere speler dat doet.",
+        "extra": "Je mag deze kaart uit je hand spelen als je zelf een duurzame kaart spelt of als een andere speler dat doet.",
         "name": "Bergruimte"
     },
     "Summon": {
@@ -2658,7 +2658,7 @@
         "name": "Talisman"
     },
     "Taskmaster": {
-        "description": "+1 Action, +1 Coin en als je deze beurt een kaart pakt die precies 5 Coin kost, herhaal je deze eigenschap aan het begin van je volgende beurt.",
+        "description": "+1 Actie, +1 Coin en als je deze beurt een kaart pakt die precies 5 Coin kost, herhaal je deze eigenschap aan het begin van je volgende beurt.",
         "extra": "De Opziener kan na beurt +1 Actie en +1 Coin geven zolang je elke beurt ten minste 1 kaart die 5 Coin kost pakt. Het is Uitsluitend van toepassing hoeveel de kaart bij het pakken kost. Opziener houdt geen rekening met kaarten die voor het spelen ervan zijn gepakt.",
         "name": "Opziener"
     },
@@ -2760,7 +2760,7 @@
     },
     "Tools": {
         "description": "Pak een exemplaar van een kaart die iemand in het spel heeft.",
-        "extra": "Deze kaart kan een exemplaar pakken van een kaart die welke speler dan ook in het spel heeft;<br>andere spelers zouden bijvoorbeeld duurzame kaarten in het speel kunnen hebben.<br>Gereedschappenzelf is in het spel, dus zou je ook daar een examplaar van kunnen pakken.",
+        "extra": "Deze kaart kan een exemplaar pakken van een kaart die welke speler dan ook in het spel heeft;<br>andere spelers zouden bijvoorbeeld duurzame kaarten in het speel kunnen hebben.<br>Gereedschappen zelf is in het spel, dus zou je ook daar een examplaar van kunnen pakken.",
         "name": "Gereedschappen"
     },
     "Tormentor": {
