@@ -299,15 +299,15 @@
         "extra": "Deze kaart geeft iedere andere speler zijn -1 Coin-fiche (zie \"Fiches\" in de spelregels). Daarnaast krijg je +1 Aanschaf in de beurt dat je de Brugtrol speelt en in je volgende beurt. Zolang je de Brugtrol in het spel hebt, kosten kaarten jou in je eigen beurt 1 Coin minder, maar niet minder dan 0 Coins. Dit geldt voor alle kaarten, waaronder kaarten in de voorraad, handkaarten en kaarten in je stapels. Brugtrollen zijn cumulatief.",
         "name": "Brugtrol"
     },
-    "Buried Treasure": {
-        "description": "Aan het begin van je volgende beurt: +1 Aanschaf en +3 Coin.<line>Als je deze kaart pakt speel je hem.",
-        "extra": "Pak je deze kaart, dan moet je hem spelen; dat is niet optioneel.",
-        "name": "Begraven Schat"
-    },
     "Bureaucrat": {
         "description": "Leg uit de algemene voorraad een Zilverkaart op je trekstapel. Iedere andere speler legt een overwinningskaart uit zijn hand op zijn trekstapel (of laat zien dat hij deze niet heeft).",
         "extra": "Als je geen kaarten in je trekstapel hebt op het moment dat je de Bureaucraat speelt, wordt de Zilverkaart die je ontvangt, de enige kaart in je trekstapel. Hetzelfde geldt voor een andere speler zonder kaarten in zijn trekstapel. De overwinningskaart die hij bovenop legt, wordt de enige kaart in zijn trekstapel.<line><b>Errata</b>: Op de oorspronkelijke Engelse kaart staat dat de spelers de afgelegde kaart moeten tonen. Dit is niet vertaald naar de Nederlandse editie.",
         "name": "Bureaucraat"
+    },
+    "Buried Treasure": {
+        "description": "Aan het begin van je volgende beurt: +1 Aanschaf en +3 Coin.<line>Als je deze kaart pakt speel je hem.",
+        "extra": "Pak je deze kaart, dan moet je hem spelen; dat is niet optioneel.",
+        "name": "Begraven Schat"
     },
     "Bustling Village": {
         "description": "+1 Kaart\n+3 Acties<n>Kijk door je aflegstapel. Je mag een Kolonisten uit deze stapel tonen en in je hand nemen.",
@@ -2431,15 +2431,15 @@
         "extra": "Dit geldt, ongeacht de manier waarop een kaart wordt vernietigd. Het geldt bijvoorbeeld bij het vernietigen van een kaart door Priester, het vernietigen van een Vloek door Oude Heks, het vernietigen van Toneelgezelschap bij het spelen ervan en het vernietigen van een kaart uit de voorraad door Voyeur (uit Intrige). De kaart die je met Riolen vernietigt, moet uit je hand komen en kan een kaart naar keuze zijn, ook al kon hetgeen dat de Riolen activeerde uitsluitend bepaalde kaarten vernietigen.",
         "name": "Riolen"
     },
-    "Shanty Town": {
-        "description": "+2 Acties\nToon je hand.\nAls je geen actiekaarten in je hand hebt: +2 Kaarten.",
-        "extra": "Je krijgt hoe dan ook 2 extra acties. Je moet je volledige hand tonen. Als je geen actiekaarten in je hand hebt, trek je 2 kaarten. Ook als de eerste kaart die je trekt een actiekaart is, mag je een tweede kaart trekken. Kaarten met \"ACTIE - OVERWINNING\" gelden als actiekaarten.",
-        "name": "Sloppenwijk"
-    },
     "Shaman": {
         "description": "+1 Actie<br>+1 Coin<br>Je mag een kaart uit je hand vernietigen.<line>Aan het begin van je beurt in een spel met deze kaart:<br>pak een kaart die ten hoogste 6 Coins kost uit de stapel \"Vernietigde Kaarten\"",
         "extra": "In spellen met de Sjamaan geldt voor iedere speler dat hij het hele spel aan het begin van zijn beurt (inclusief extra beurten) een kaart die ten hoogste 6 Coin kost uit de stapen \"Vernietigde kaarten\" pakt.<br>Dit is verplicht<br>Is er niet zo'n kaart, dan pakt hij er geen.<br>Dit geldt ook voor zijn eerste beurt (relevant voor de Dodenbezweerder uit Nocturne).<br>Dit Geldt ook als nooid iemand Sjamaan pakt.<br>De gepakte kaart komt op zijn aflegstapel. Het is een gepakte kaart en kan dingen activeren die daarnaar verwijzen.<br><i><b>Voorbeeld:</b> een Landgoed pakken zou de eigenschap van de Kooi activeren</i>",
         "name": "Sjamaan"
+    },
+    "Shanty Town": {
+        "description": "+2 Acties\nToon je hand.\nAls je geen actiekaarten in je hand hebt: +2 Kaarten.",
+        "extra": "Je krijgt hoe dan ook 2 extra acties. Je moet je volledige hand tonen. Als je geen actiekaarten in je hand hebt, trek je 2 kaarten. Ook als de eerste kaart die je trekt een actiekaart is, mag je een tweede kaart trekken. Kaarten met \"ACTIE - OVERWINNING\" gelden als actiekaarten.",
+        "name": "Sloppenwijk"
     },
     "Sheepdog": {
         "description": "+2 Kaarten<line>Als je een kaart pakt, mag je de Herdershond uit je hand spelen.",
