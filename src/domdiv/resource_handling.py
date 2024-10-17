@@ -5,6 +5,14 @@ import importlib.resources
 import os
 
 
+def iter_resource_dir(path):
+    return importlib.resources.files(f"domdiv").joinpath(path).iterdir()
+
+
+def is_resource_dir(path):
+    return importlib.resources.files(f"domdiv").joinpath(path).is_dir()
+
+
 @contextlib.contextmanager
 def get_resource_stream(path):
     ref = importlib.resources.files("domdiv").joinpath(path)

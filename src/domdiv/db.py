@@ -1,6 +1,5 @@
 import copy
 import functools
-import importlib.resources
 import json
 import os
 
@@ -20,18 +19,18 @@ LANGUAGE_XX = "xx"  # a dummy language for starting translations
 @functools.lru_cache()
 def get_languages(path="card_db"):
     languages = []
-    for name in importlib.resources.files(f"domdiv").joinpath(path).iterdir():
-        dir_path = os.path.join(path, name)
-        if importlib.resources.files("domdiv").joinpath(dir_path).is_dir():
-            cards_file = os.path.join(dir_path, f"cards_{name}.json.gz")
-            sets_file = os.path.join(dir_path, f"sets_{name}.json.gz")
-            types_file = os.path.join(dir_path, f"types_{name}.json.gz")
+    for name in resource_handling.iter_resource_dir(path):
+        lang = os.path.basename(name)
+        if resource_handling.is_resource_dir(name):
+            cards_file = os.path.join(name, f"cards_{lang}.json.gz")
+            sets_file = os.path.join(name, f"sets_{lang}.json.gz")
+            types_file = os.path.join(name, f"types_{lang}.json.gz")
             if (
                 resource_handling.resource_exists(cards_file)
                 and resource_handling.resource_exists(sets_file)
                 and resource_handling.resource_exists(types_file)
             ):
-                languages.append(name)
+                languages.append(lang)
     if LANGUAGE_XX in languages:
         languages.remove(LANGUAGE_XX)
     return languages
