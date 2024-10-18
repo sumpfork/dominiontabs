@@ -8,7 +8,7 @@ from collections import Counter, defaultdict
 from loguru import logger
 from reportlab.lib.units import cm
 
-from . import config_options, db
+from . import config_options, db, resource_handling
 from .cards import Card
 from .draw import DividerDrawer
 
@@ -147,7 +147,7 @@ def add_card_text(cards, language="en_us"):
     card_text_filepath = os.path.join(
         "card_db", language, "cards_" + language.lower() + ".json.gz"
     )
-    with db.get_resource_stream(card_text_filepath) as card_text_file:
+    with resource_handling.get_resource_stream(card_text_filepath) as card_text_file:
         card_text = json.loads(card_text_file.read().decode("utf-8"))
     assert language, "Could not load card text for %r" % language
 
@@ -167,7 +167,7 @@ def add_set_text(options, sets, language="en_us"):
     language = language.lower()
     # Read in the set text and store for later
     set_text_filepath = os.path.join("card_db", language, f"sets_{language}.json.gz")
-    with db.get_resource_stream(set_text_filepath) as set_text_file:
+    with resource_handling.get_resource_stream(set_text_filepath) as set_text_file:
         set_text = json.loads(set_text_file.read().decode("utf-8"))
     assert set_text, "Could not load set text for %r" % language
 
@@ -185,7 +185,7 @@ def add_type_text(types=None, language="en_us"):
     language = language.lower()
     # Read in the type text and store for later
     type_text_filepath = os.path.join("card_db", language, f"types_{language}.json.gz")
-    with db.get_resource_stream(type_text_filepath) as type_text_file:
+    with resource_handling.get_resource_stream(type_text_filepath) as type_text_file:
         type_text = json.loads(type_text_file.read().decode("utf-8"))
     assert type_text, "Could not load type text for %r" % language
 
@@ -209,7 +209,9 @@ def add_bonus_regex(options, language="en_us"):
     bonus_regex_filepath = os.path.join(
         "card_db", language, f"bonuses_{language}.json.gz"
     )
-    with db.get_resource_stream(bonus_regex_filepath) as bonus_regex_file:
+    with resource_handling.get_resource_stream(
+        bonus_regex_filepath
+    ) as bonus_regex_file:
         bonus_regex = json.loads(bonus_regex_file.read().decode("utf-8"))
     assert bonus_regex, "Could not load bonus keywords for %r" % language
 
