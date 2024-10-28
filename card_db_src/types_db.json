@@ -67,6 +67,17 @@
         "card_type": [
             "Action",
             "Attack",
+            "Omen"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Attack",
             "Prize"
         ],
         "card_type_image": "action.png",
@@ -92,6 +103,17 @@
             "Attack"
         ],
         "card_type_image": "reaction.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Attack",
+            "Shadow"
+        ],
+        "card_type_image": "action.png",
         "defaultCardCount": 10,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
@@ -203,6 +225,16 @@
     {
         "card_type": [
             "Action",
+            "Omen"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
             "Prize"
         ],
         "card_type_image": "action.png",
@@ -257,6 +289,16 @@
             "Ruins"
         ],
         "card_type_image": "ruins.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Shadow"
+        ],
+        "card_type_image": "action.png",
         "defaultCardCount": 10,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0
@@ -805,6 +847,27 @@
             "Projects"
         ],
         "card_type_image": "project.png",
+        "defaultCardCount": 0,
+        "group_cost": "*",
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Prophecy"
+        ],
+        "card_type_image": "prophecy.png",
+        "defaultCardCount": 1,
+        "group_cost": "*",
+        "group_global_type": "Prophecies",
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Prophecies"
+        ],
+        "card_type_image": "prophecy.png",
         "defaultCardCount": 0,
         "group_cost": "*",
         "tabCostHeightOffset": -1,

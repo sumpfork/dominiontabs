@@ -1,13 +1,11 @@
 import copy
 import functools
-import gzip
 import json
 import os
 
-import pkg_resources
 from loguru import logger
 
-from . import config_options, db
+from . import config_options, db, resource_handling
 from .cards import Card, CardType
 
 EXPANSION_EXTRA_POSTFIX = " extras"
@@ -21,33 +19,27 @@ LANGUAGE_XX = "xx"  # a dummy language for starting translations
 @functools.lru_cache()
 def get_languages(path="card_db"):
     languages = []
-    for name in pkg_resources.resource_listdir("domdiv", path):
-        dir_path = os.path.join(path, name)
-        if pkg_resources.resource_isdir("domdiv", dir_path):
-            cards_file = os.path.join(dir_path, f"cards_{name}.json.gz")
-            sets_file = os.path.join(dir_path, f"sets_{name}.json.gz")
-            types_file = os.path.join(dir_path, f"types_{name}.json.gz")
+    for name in resource_handling.iter_resource_dir(path):
+        lang = os.path.basename(name)
+        if resource_handling.is_resource_dir(name):
+            cards_file = os.path.join(name, f"cards_{lang}.json.gz")
+            sets_file = os.path.join(name, f"sets_{lang}.json.gz")
+            types_file = os.path.join(name, f"types_{lang}.json.gz")
             if (
-                pkg_resources.resource_exists("domdiv", cards_file)
-                and pkg_resources.resource_exists("domdiv", sets_file)
-                and pkg_resources.resource_exists("domdiv", types_file)
+                resource_handling.resource_exists(cards_file)
+                and resource_handling.resource_exists(sets_file)
+                and resource_handling.resource_exists(types_file)
             ):
-                languages.append(name)
+                languages.append(lang)
     if LANGUAGE_XX in languages:
         languages.remove(LANGUAGE_XX)
     return languages
 
 
-def get_resource_stream(path):
-    return gzip.GzipFile(
-        fileobj=pkg_resources.resource_stream("domdiv", path),
-    )
-
-
 @functools.lru_cache()
 def get_expansions():
     set_db_filepath = os.path.join("card_db", "sets_db.json.gz")
-    with get_resource_stream(set_db_filepath) as setfile:
+    with resource_handling.get_resource_stream(set_db_filepath) as setfile:
         set_file = json.loads(setfile.read().decode("utf-8"))
     assert set_file, "Could not load any sets from database"
 
@@ -69,7 +61,7 @@ def get_expansions():
 @functools.lru_cache()
 def get_global_groups():
     type_db_filepath = os.path.join("card_db", "types_db.json.gz")
-    with get_resource_stream(type_db_filepath) as typefile:
+    with resource_handling.get_resource_stream(type_db_filepath) as typefile:
         type_file = json.loads(typefile.read().decode("utf-8"))
     assert type_file, "Could not load any card types from database"
 
@@ -90,7 +82,7 @@ def get_types(language=LANGUAGE_DEFAULT):
     # get a list of valid types
     language = language.lower()
     type_text_filepath = os.path.join("card_db", language, f"types_{language}.json.gz")
-    with get_resource_stream(type_text_filepath) as type_text_file:
+    with resource_handling.get_resource_stream(type_text_filepath) as type_text_file:
         type_text = json.loads(type_text_file.read().decode("utf-8"))
     assert type_text, "Could not load type file for %r" % language
 
@@ -105,7 +97,7 @@ def get_label_data():
     label_choices = []
     label_keys = []
     label_selections = []
-    with get_resource_stream(labels_db_filepath) as labelfile:
+    with resource_handling.get_resource_stream(labels_db_filepath) as labelfile:
         label_info = json.loads(labelfile.read().decode("utf-8"))
     assert label_info, "Could not load label information from database"
     for label in label_info:
@@ -151,7 +143,7 @@ def find_index_of_object(lst=None, attributes=None):
 def read_card_data(options):
     # Read in the card types
     types_db_filepath = os.path.join("card_db", "types_db.json.gz")
-    with db.get_resource_stream(types_db_filepath) as typefile:
+    with resource_handling.get_resource_stream(types_db_filepath) as typefile:
         Card.types = json.loads(
             typefile.read().decode("utf-8"), object_hook=CardType.decode_json
         )
@@ -171,14 +163,14 @@ def read_card_data(options):
 
     # Read in the card database
     card_db_filepath = os.path.join("card_db", "cards_db.json.gz")
-    with get_resource_stream(card_db_filepath) as cardfile:
+    with resource_handling.get_resource_stream(card_db_filepath) as cardfile:
         cards = json.loads(
             cardfile.read().decode("utf-8"), object_hook=Card.decode_json
         )
     assert cards, "Could not load any cards from database"
 
     set_db_filepath = os.path.join("card_db", "sets_db.json.gz")
-    with get_resource_stream(set_db_filepath) as setfile:
+    with resource_handling.get_resource_stream(set_db_filepath) as setfile:
         Card.sets = json.loads(setfile.read().decode("utf-8"))
     assert Card.sets, "Could not load any sets from database"
     new_sets = {}

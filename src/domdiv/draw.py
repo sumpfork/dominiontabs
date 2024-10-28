@@ -3,7 +3,6 @@ import numbers
 import os
 import re
 
-import pkg_resources
 from loguru import logger
 from PIL import Image, ImageEnhance
 from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY, TA_LEFT
@@ -16,6 +15,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 from reportlab.platypus import Paragraph, XPreformatted
 
+from . import resource_handling
 from .cards import Card
 
 
@@ -476,10 +476,6 @@ class DividerDrawer(object):
         self.pages = None
         self.options = options
 
-    @staticmethod
-    def get_image_filepath(fname):
-        return pkg_resources.resource_filename("domdiv", os.path.join("images", fname))
-
     def draw(self, cards=None, options=None):
         if cards is None:
             cards = []
@@ -581,7 +577,7 @@ class DividerDrawer(object):
                         fontpaths[font] = (fpath, True)
                         break
                 fpath = os.path.join("fonts", fname)
-                if pkg_resources.resource_exists("domdiv", fpath):
+                if resource_handling.resource_exists(fpath):
                     fontpaths[font] = (fpath, False)
                     break
         logger.trace(fontpaths)
@@ -694,7 +690,7 @@ class DividerDrawer(object):
                     (
                         fontpath
                         if is_local
-                        else pkg_resources.resource_filename("domdiv", fontpath)
+                        else resource_handling.get_resource_filepath(fontpath)
                     ),
                 )
             )
@@ -1163,7 +1159,7 @@ class DividerDrawer(object):
                     )
                     replace = font_replace + replace
                 replace = replace.format(
-                    fpath=DividerDrawer.get_image_filepath(fname),
+                    fpath=resource_handling.get_image_filepath(fname),
                     width=fontsize * fontsize_multiplier,
                     height_percent=height_percent,
                 )
@@ -1193,6 +1189,8 @@ class DividerDrawer(object):
             # Potion
             (r"(\d+)\s*\<\*POTION\*\>", "potion_small.png", 2, 140, 1.5),
             (r"Potion", "potion_small.png", 1.2, 100),
+            # Sun
+            (r"SunToken", "sun.png", 1.2, 120),
         ]
         for args in replace_specs:
             text = replace_image_tag(text, fontsize, *args)
@@ -1256,7 +1254,7 @@ class DividerDrawer(object):
             width += 16
             x -= 16
             self.canvas.drawImage(
-                DividerDrawer.get_image_filepath("card.png"),
+                resource_handling.get_image_filepath("card.png"),
                 x,
                 countHeight,
                 16,
@@ -1361,7 +1359,7 @@ class DividerDrawer(object):
             self.canvas.restoreState()
 
         def scaleImage(name, x, y, h, mask="auto"):
-            path = DividerDrawer.get_image_filepath(name)
+            path = resource_handling.get_image_filepath(name)
             with Image.open(path) as img:
                 w0, h0 = img.size
             scale = h / h0
@@ -1393,7 +1391,7 @@ class DividerDrawer(object):
     def drawSetIcon(self, setImage, x, y):
         # set image
         size = self.SET_ICON_SIZE
-        path = DividerDrawer.get_image_filepath(setImage)
+        path = resource_handling.get_image_filepath(setImage)
         self.canvas.drawImage(
             path, x, y, size, size, mask="auto", preserveAspectRatio=True
         )
@@ -1454,7 +1452,7 @@ class DividerDrawer(object):
         from io import BytesIO
 
         # Get the original image.
-        artwork = DividerDrawer.get_image_filepath(image)
+        artwork = resource_handling.get_image_filepath(image)
 
         # Make any optional adjustments.
         if resolution != 0 or opacity != 1.0:

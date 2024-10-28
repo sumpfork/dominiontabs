@@ -6,6 +6,11 @@
             "This card is currently not used."
         ]
     },
+    "Abundance": {
+        "description": "De volgende keer dat je een actiekaart pakt: +1 Aanschaf en +3 Coin.",
+        "extra": "Deze wordt actief als je een Actiekaart als gevolg van een Aanschaf of op een andere manier pakt.<br>Gebeurt dat in de beurt van een andere speler, dan kun je de +3 Coin en +1 Aanschaf niet gebruiken.",
+        "name": "Overvloed"
+    },
     "Academy": {
         "description": "Als je een actiekaart pakt, +1 Dorpsbewoner.",
         "extra": "Dit gebeurt bij het kopen van een actiekaart of als je er één op een andere manier pakt.",
@@ -70,6 +75,11 @@
         "description": "Kijk door je aflegstapel. Laat er ten hoogste 5 kaarten in liggen en schud de rest door je trekstapel. Pak een Hertogdom.",
         "extra": "Je kunt dit ook doen als de stapel Hertogdomkaarten leeg is.<n>De gekozen kaarten blijven in je aflegstapel als de andere kaarten door de trekstapel worden geschud.",
         "name": "Overname"
+    },
+    "Anvil": {
+        "description": "1 <*COIN*><n><n>Je mag een geldkaart afleggen om een kaart te pakken die ten hoogste 4 Coin kost",
+        "extra": "Het afleggen van een Geldkaart is optioneel.<br>Leg je er 1 af, dan pak je een kaart die ten hoogste 4 Coin kost. Die kaart komt uit de voorraad en gaat naar je aflegstapel.",
+        "name": "Aambeeld"
     },
     "Apothecary": {
         "description": "+1 Kaart\n+1 Actie\nToon de bovenste 4 kaarten van je trekstapel. Neem Koperkaarten en Toverdranken in je hand. Leg de resterende getoonde kaarten naar believen gedekt terug op de trekstapel.",
@@ -294,6 +304,11 @@
         "extra": "Als je geen kaarten in je trekstapel hebt op het moment dat je de Bureaucraat speelt, wordt de Zilverkaart die je ontvangt, de enige kaart in je trekstapel. Hetzelfde geldt voor een andere speler zonder kaarten in zijn trekstapel. De overwinningskaart die hij bovenop legt, wordt de enige kaart in zijn trekstapel.<line><b>Errata</b>: Op de oorspronkelijke Engelse kaart staat dat de spelers de afgelegde kaart moeten tonen. Dit is niet vertaald naar de Nederlandse editie.",
         "name": "Bureaucraat"
     },
+    "Buried Treasure": {
+        "description": "Aan het begin van je volgende beurt: +1 Aanschaf en +3 Coin.<line>Als je deze kaart pakt speel je hem.",
+        "extra": "Pak je deze kaart, dan moet je hem spelen; dat is niet optioneel.",
+        "name": "Begraven Schat"
+    },
     "Bustling Village": {
         "description": "+1 Kaart\n+3 Acties<n>Kijk door je aflegstapel. Je mag een Kolonisten uit deze stapel tonen en in je hand nemen.",
         "extra": "Je mag ook door je aflegstapel kijken als je weet dat er geen kaart \"Kolonisten\" in zit.",
@@ -304,10 +319,20 @@
         "extra": "Neem eerst 2 munten. Daarna mag je een kaart uit je hand vernietigen en zoveel munten in de voorraad terugleggen als je wilt. Dit aantal mag 0 zijn. De gespeelde Slager is geen onderdeel meer van je hand en kan niet vernietigd worden (een andere slager in je hand wel). Heb je een kaart vernietigd, dan pak je een kaart die maximaal zoveel waard is als de vernietigde kaart plus het aantal betaalde munten. Het is toegestaan om de met deze kaart ontvangen munten direct uit te geven. De op deze manier uitgegeven munten kun je niet gebruiken om in de aanschaffase kaarten te kopen.",
         "name": "Slager"
     },
+    "Cabin Boy": {
+        "description": "+1 Kaart<br>+1 Actie<br>Aan het begin van je volgende beurt, kies er één:<br>+2 Coin; of vernietig deze kaart om een duurzame kaart te pakken.",
+        "extra": "Je mag een Scheepjesjongen vernietigen om een nieuwe Scheepjesjongen te pakken.",
+        "name": "Scheepjesjongen"
+    },
     "Cache": {
         "description": "3 <*COIN*><line>Als je deze kaart pakt pak dan ook direct 2 Koper.",
         "extra": "Dit is een geldkaart met een waarde van 3 Coins munten, net als Goud. Pak je deze kaart, dan pak je ook 2 Koper uit de voorraad. Is er niet voldoende Koper, pak er dan zoveel mogelijk. Je pakt uitsluitend 2 Koper als je de Bewaarplaats pakt, niet als je de Bewaarplaats speelt. Je pakt 2 Koper in alle gevallen waarin je een Bewaarplaats pakt (na het kopen ervan of als je de kaart op een andere manier pakt).",
         "name": "Bewaarplaats"
+    },
+    "Cage": {
+        "description": "Leg ten hoogste 4 kaarten uit je hand opzij (op deze kaart). De volgende keer dat je een overwinningskaart pakt vernietig je deze \"Kooi\" en neem je aan het einde van je beurt de opzijgelegde kaarten in je hand.",
+        "extra": "De kaarten gaan naar je hand na het trekken van je gebruikelijke 5 kaarten voor je volgende beurt.<br><i><b>Voorbeeld:</b> Je hebt in eeen eerdere beurt 2 Landgoederen en 2 Koper op een Kooi opzijgelegd; in een late beurt koop je een Provincie, vernietig je de Kooi en voeg je aan het einde van je beurt de 2 Landgoederen en 2 Koper aan je hand toe.</i>",
+        "name": "Kooi"
     },
     "Camel Train": {
         "description": "Verban een niet-overwinningskaart uit de voorraad.<line>Als je deze kaart pakt, verban je een Goud uit de voorraad.",
@@ -433,6 +458,11 @@
         "extra": "Jij en je linkerbuurman tonen de bovenste kaart van jullie trekstapel: die van jou gaat in je hand, die van hem terug op zijn trekstapel. Is jouw kaart meer waard, dan krijg je +1 Coins en +1 <VP>. Je kunt het <VP>-fiche op de Strijdwagenrace leggen om je eraan te herinneren dat de kaart deze beurt + 1 Coin heeft opgeleverd. Bij gelijke waarden kost jouw kaart niet méér. Staan er _ Debt op de kaart, dan is je kaart uitsluitend meer waard als zowel _ Coins als _ Debt groter zijn, of de ene groter is en de andere gelijk.\n<i><b>Voorbeeld:</b> Fortuin (8 Coins 8 Debt) is meer waard dan Despoot (8 Debt), maar Despoot is niet meer waard dan Zilver, en Zilver is niet meer waard dan Despoot.</i>\nKunnen niet beide spelers een kaart tonen, dan is jouw kaart niet meer waard.",
         "name": "Strijdwagenrace"
     },
+    "Charlatan": {
+        "description": "+3 Coin<n><n>Iedere andere speler pakt een vloek.<line>In spellen met deze kaart is Vloek ook en geldkaart met waarde 1 Coin.",
+        "extra": "Deze kaart maakt het hele spel in alle situaties geldkaarten van Vloeken; het is alsof in het kader aan de onderkant \"Vloek - Geld\" staat.<br>Vloeken mogen in de aanschaffase voor +1 Coin per stuk woorden gespeeld. Ze woorden uit het speel vernietigd bij het pakken van Aanmunten, Magnaat telt deze in je hand mee, Makelaar (uit Intrige) geeft je 2 keuzes als je er een toont, enzovoort. Het zijn nog steeds Vloeken en ze zijn aan het einde van het spel gewoon -1<VP> waard.",
+        "name": "Kwakzalver"
+    },
     "Charm": {
         "description": "Kies bij het spelen van deze kaart één van deze 2: +1 Aanschaf en +2 Coin; of de volgende keer dat je deze beurt een kaart koopt, mag je daarnaast een kaart met een andere naam van dezelfde waarde pakken.",
         "extra": "Deze zijn cumulatief en verschillende Geluksbrengers hoeven niet verschillende kaarten te pakken, maar wel anders dan de gekochte kaart. Speel je bijvoorbeeld 2 Geluksbrengers en koop je een Forum, dan mag je 2 Hertogdommen kopen. Een kaart die je met de Geluksbrenger pakt, pak je voordat je de gekochte kaart pakt (dat kan van belang zijn als kaarten iets doen als ze worden gepakt).\n<i><b>Voorbeeld:</b> je koopt een Villa en pakt Rotsblokken met de Geluksbrenger. Je pakt eerst het Zilver met Rotsblokken en legt het op je trekstapel. Dan krijgt je +1 Actie en ga je terug naar je actiefase vanwege Villa. De waarden van de kaarten moeten identiek zijn.</i>\n<i><b>Voorbeeld:</b> je speelt een Geluksbrenger en je koopt de Despoot. Je kunt nu de Stadswijk pakken die ook 8 Debt kost, maar niet het Fortuin, dat 8 Coins 8 Debt kost.</i>",
@@ -467,6 +497,11 @@
         "extra": "<b>Strijdplan</b>: Eerst krijg je +1 Kaart en +1 Actie. Daarna mag je een aanvalskaart uit je hand tonen om een kaart te trekken en tot slot mag je een voorraadstapel naar keuze draaien. Veel stapels doen daarbij niets functioneels. Het draaien kan echter relevant zijn voor gecombineerde stapels of voor de Kastelen uit Keizerrijken of de Ridders of Ruïnes uit De Donkere Middeleeuwen.<n><b>Boogschutter</b>: De spelers kunnen dit in beurtvolgorde uitvoeren als ze dat willen. Iedere andere speler, als hij 5 of meer handkaarten heeft, kiest 1 handkaart die hij geheim houdt en veilig is, en toont de rest. Jij kiest 1 van de getoonde kaarten die hij moet afleggen.<n><b>Krijgsheer</b>: Deze kaart houdt spelers niet tegen om kaarten te spelen die zich niet in hun handen bevinden; bijvoorbeeld Golem (uit De Alchemisten) zou nog steeds zijn 2 opzijgelegde kaarten kunnen spelen, ongeacht het aantal exemplaren daarvan in het spel. Word je door Krijgsheer getroffen, dan kun je met Troonzaal geen kaart spelen waarvan je 2 exemplaren in het spel hebt, maar Troonzaal kan een kaart spelen waarvan je 1 kaart in het spel hebt en die kaart opnieuw spelen, ook al heb je er nu 2 exemplaren van in het spel. Dit beïnvloedt uitsluitend actiekaarten, dus bijvoorbeeld geen koperkaarten.<n><b>Gebied</b>: Voorbeeld; als je trekstapel 3 Landgoederen, 1 Provincie en 1 Gebied bevat, is Gebied 3 <VP> waard. Zorgt het pakken van een Gebied ervoor dat de stapel Conflicten leegraakt, dan telt deze stapel mee met betrekking tot de hoeveelheid Goud die je krijgt.",
         "name": "Conflicten"
     },
+    "Clerk": {
+        "description": "+2 Coin<n>Iedere andere speler met 5 of meer kaarten in zijn hand legt er 1 van op zijn trekstapel<line>Aan het begin van je beurt mag je deze kaart uit je hand spelen.",
+        "extra": "Voor een speler zonder kaarten in zijn trekstapel wordt de kaart die hij erop legt de enige kaart van zijn trekstapel.<br>Aan het begin van je beurt mag je één voor één zoveel Klerkkaarten uit je hand spelen als je wilt zonder daarbij Acties te verbruiken.",
+        "name": "Klerk"
+    },
     "Cobbler": {
         "description": "Pak aan het begin van je volgende beurt een kaart die ten hoogste 4 Coins kost en neem deze in je hand.",
         "extra": "Als je met deze kaart een Nomadenkamp (uit Dominion: Achterland) pakt, gaat die naar je hand.",
@@ -476,6 +511,11 @@
         "description": "1 <*COIN*><n>Als je deze kaart speelt, leg deze dan op je Herbergtableau.<line>Direct na het afhandelen van een actie mag je deze kaart oproepen, voor +2 Acties.",
         "extra": "Deze geldkaart is 1 Coin waard. Je speelt de kaart in je aanschaffase, net als andere geldkaarten. Leg de kaart bij het spelen ervan op je Herbergtableau. Het geeft je nog steeds de 1 Coin, maar is niet meer \"in het spel\". De kaart blijft op je Herbergtableau totdat je deze oproept. Je mag de kaart oproepen nadat je een gespeelde actiekaart hebt afgehandeld. De Koninklijke Munt geeft je in die beurt dan +2 Acties, maar geen 1 Coin. Leg de Koninklijke Munt daarna zoals gebruikelijk af.",
         "name": "Koninklijke Munt"
+    },
+    "Collection": {
+        "description": "2 <*COIN*><n><n>+1 Aanschaf<n><n>Deze beurt: als je een actiekaart pakt: +1<VP>.",
+        "extra": "Je krijgt +1<VP> voor elke actiekaart die je pakt, ongeacht of je die koopt of op een andere manier pakt.<br>Meerdere exemplaren van deze kaart zijn cumulatief; heb je 2 Collecties in het spel en koop je een dorp, dan krijg je +2<VP>.",
+        "name": "Collectie"
     },
     "Colonnade": {
         "description": "Als je een actiekaart koopt waarvan je er een in het spel hebt, neem je 2<VP> van deze kaart.<n> Voorbereiding: leg per speler 6<VP> op deze kaart.",
@@ -555,6 +595,11 @@
         "extra": "Vloeken worden in beurtvolgorde verbannen; het is mogelijk dat de ene speler een Vloek verbant, terwijl een andere Vloeken van zijn tableau aflegt.",
         "name": "Heksenkring"
     },
+    "Crew": {
+        "description": "+3 Kaarten<br>Aan het begin van je volgende beurt: leg deze kaart op je trekstapel",
+        "extra": "Het op je trekstapel leggen van deze kaart is niet optioneel.",
+        "name": "Bemanning"
+    },
     "Crop Rotation": {
         "description": "Aan het begin van je beurt: je mag een Overwinningskaart afleggen voor +2 Kaarten.",
         "extra": "Als het trekken tot schudden leidt, schud je de afgelegde overwinningskaart mee.",
@@ -570,10 +615,20 @@
         "extra": "Speel je deze kaart in je actiefase, dan speel je een actiekaart uit je hand en daarna dezelfde kaart nogmaals. Dit verbruikt geen extra acties in je bezit. Speel je deze kaart in je aanschaffase, dan speel je een geldkaart uit je hand en daarna dezelfde kaart nogmaals. Dit verbruikt in het geheel geen acties. De Kroon kan worden gebruikt om een andere Kroon in de actie- of aanschaffase te spelen, waardoor je respectievelijk 2 actiekaarten of 2 geldkaarten tweemaal mag spelen. Speel je de Kroon in je actiefase als gevolg van iets dat je geldkaarten laat spelen (zoals de Verteller uit Dominion: Avonturen), dan speel je met de Kroon alsnog een actiekaart tweemaal.",
         "name": "Kroon"
     },
+    "Crucible": {
+        "description": "Vernietig een kaart uit je hand.<br>+1 Coin per 1 Coin dat de vernietigde kaart kost.",
+        "extra": "<i><b>Voorbeeld:</b> vernietig je een Landgoed, dat 2 Coin kost, dan krijg je +2 Coin.</i><br>Vernietig je een kaart met Potion of _ Debt in de kosten (uit andere uitbreidingen), dan krijg je niets voor die symbolen.",
+        "name": "Smeltkroes"
+    },
     "Crypt": {
         "description": "Leg van de geldkaarten die je in het spel hebt er zoveel gedekt onder deze kaart opzij als je wilt. Zolang er geldkaarten onder de Crypte liggen, neem je er aan het begin van elk van je beurten één van in je hand.",
         "extra": "Als je bijvoorbeeld 3 geldkaarten opzij legt, neem je er aan het begin van elk van je 3 volgende beurten steeds 1 van in je hand. Aan het einde van de laatste van die beurten leg je Crypte af. Je legt de geldkaarten gedekt onder Crypte. Jij mag ze op elk moment bekijken, de andere spelers niet.",
         "name": "Crypte"
+    },
+    "Crystal Ball": {
+        "description": "1 <*COIN*><n><n>Bekijk de bovenste kaart van je trekstapel. Je mag deze vernietigen, afleggen of, als het een actie-of geldkaart is, spelen.",
+        "extra": "Kies je ervoor om geen van deze dingen te doen, dan laat je de kaart op je trekstapel liggen. Zorgt deze kaart ervoor dat je tijdens je aanschaffase een actiekaart speelt, die je +Acties geeft, dan geeft dat je niet het recht om meer actiekaarten in je aanschaffase te spelen; zorgt deze kaart ervoor dat je geldkaarten trekt, dan mag je die nog spelen.",
+        "name": "Kristallen Bol"
     },
     "Cultist": {
         "description": "+2 Kaarten\nIedere andere speler pakt een Ruïne. Jij mag een Cultist uit je hand spelen.<line>Als je deze kaart vernietigt: +3 Kaarten.",
@@ -598,6 +653,11 @@
         "description": "+2 Coins\nIedere andere speler moet één Koperkaart uit zijn hand afleggen. Heeft een speler geen Koperkaart in zijn hand, dan moet hij zijn handkaarten aan de andere spelers laten zien.",
         "extra": "Alle andere spelers moeten 1 Koperkaart uit hun hand afleggen. Een speler die geen Koperkaart in zijn hand heeft, moet zijn handkaarten aan de andere spelers laten zien.",
         "name": "Beurzensnijder"
+    },
+    "Cutthroat": {
+        "description": "Iedere andere speler legt kaarten af totdat hij er 3 in zijn hand heeft.<br><br>De volgende keer dat een speler een geldkaart pakt die 5 Coin of meer kost, pak jij een Buit.",
+        "extra": "Buit is zelf een geldkaart die 5 Coin of meer kost, dus een speler die er een pakt, activeert Moordenaressen.",
+        "name": "Moordenares"
     },
     "Death Cart": {
         "description": "+5 Coins\nJe mag een actiekaart uit je hand vernietigen. Doe je dat niet, vernietig dan deze kaart.<line>Als je deze kaart pakt, pak dan 2 Ruïnes.",
@@ -778,6 +838,11 @@
         "extra": "Vernietig je een kaart, dan moet je een kaart pakken die ten hoogste 2 Coin meer kost dan de vernietigde kaart.",
         "name": "Verhoging"
     },
+    "Enlarge": {
+        "description": "Nu en aan het begin van je volgende beurt:<br>vernietig een kaart uit je hand en pak een kaart die ten hoogste 2 Coin meer kost.",
+        "extra": "Heb je Vergroten gespeeld, dan is het vernietigen van een kaart aan het begin van je volgende beurt verplicht.",
+        "name": "Vergroten"
+    },
     "Envious - Deluded": {
         "description": "<left><u>Jaloers</u>:</left>\nLeg deze kaart aan het begin van je aanschaffase terug. Zilver en Goud geven deze beurt maar 1 Coin.\n<left><u>Misleid</u>:</left>\nLeg deze kaart aan het begin van je aanschaffase terug. Je mag deze beurt geen actiekaarten kopen.",
         "extra": "<left><u>Jaloers:</u>:</left>\ndeze kaart zorgt ervoor dat in de aanschaffase van 1 beurt Zilver en Goud maar 1 Coin geven in plaats van hun gebruikelijke 2 Coins en 3 Coins, te beginnen in je aanschaffase. De kaart beïnvloedt geen andere geldkaarten. Als je Jaloers vóór de aanschaffase van je beurt krijgt (zoals met Leprechaun), geldt de kaart voor de betreffende beurt. Anders geldt de kaart voor je volgende beurt.\n<left><u>Misleid</u>:</left>\nDeze kaart zorgt ervoor dat je 1 beurt lang geen actiekaarten mag kopen, te beginnen in je aanschaffase. Als je Misleid vóór de aanschaffase van je beurt krijgt (zoals met Leprechaun), geldt de kaart voor de betreffende beurt. Anders geldt de kaart voor je volgende beurt.",
@@ -896,6 +961,16 @@
         "extra": "Als je meerdere Festivals speelt, houd dan hardop bij hoeveel acties je nog hebt. Voorbeeld: \"ik speel het Festival en heb nog 2 acties over. Ik speel nog een Markt en heb nog 2 acties over. Ik speel weer een Festival en heb 3 acties over, enzovoort.\" ",
         "name": "Festival"
     },
+    "Figurine": {
+        "description": "+2 Kaarten<br>Je mag een actiekaart uit je hand afleggen voor +1 Aanschaf en +1 Coin.",
+        "extra": "Dit is een geldkaart en wordt dus in je aanschaffase gespeld, maar het trekt kaarten. Dat betekent normaal gesproken dat je een getrokken actiekaart die beurt niet meer kunt spelen, behalve dat je met Beeldje zelf een Actiekaart kunt afleggen voor +1 Aanschaf en +1 Coin.",
+        "name": "Beeldje"
+    },
+    "First Mate": {
+        "description": "Speel zoveel actiekaarten uit je hand als je wilt. Trek daarna kaarten totdat je er 6 in je hand hebt.",
+        "extra": "Heb je geen actiekaarten om te spelen, dan trek je alsnog tot 6 kaarten.<br>Trek je met de gespeelde actiekaart een ander exemplaar van zichzelf, dan kun je die spelen, enzovoort. Eerste Stuurman kan Eerste Stuurmannen spelen; houd goed bij welke kaart je afhandelt, zoals je met meerdere Troonzalen zou doen.",
+        "name": "Eerste Stuurman"
+    },
     "Fisherman": {
         "description": "+1 Kaart<br>+1 Actie<br>+1 Coin<line>Tijdens jouw beurten: is je aflegstapel leeg, dan kost deze kaart 3 Coin minder.",
         "extra": "Deze kaart kost standaard 5 Coin, maar 2 Coin als de speler die aan de beurt is een lege aflegstapel heeft.<n>Heb je 4 Coin en 2 Aanschaffen met een lege aflegstapel, dan kun je Visser voor 2 Coin kopen, maar omdat je dan geen lege aflegstapel meer hebt, kun je geen tweede voor 2 Coin kopen.",
@@ -920,6 +995,11 @@
         "description": "<left><u>Vaandeldrager</u>:</left>\n+2 Coins<line>Als je deze kaart pakt of vernietigt, neem het Vaandel.\n<left><u>Vaandel</u>:</left>\nBij het trekken van je hand: +1 Kaart.",
         "extra": "Als je de Vaandeldrager pakt of vernietigt, neem je het Vaandel. Het Vaandel zorgt ervoor dat je bij het trekken van een nieuwe hand in de opschoonfase 1 extra kaart mag trekken. Dat geldt ook als je hand om een of andere reden uit minder dan 5 kaarten bestaat. <i><b>Voorbeeld: </b>je hebt Voorpost (uit Hijs de Zeilen!) gespeeld. In je Voorpostbeurt trek je dan 4 kaarten (in plaats van 3).</i> Als je Vaandeldrager wordt vernietigd, pak je altijd het Vaandel, ongeacht wie er aan de beurt is.",
         "name": "Vaandeldrager / Vaandel"
+    },
+    "Flagship": {
+        "description": "+2 Coin<br>De volgende keer dat je een actiekaart zonder Bevel speelt, speel je die nog een keer.",
+        "extra": "Dit is niet optioneel; Wat de volgende niet-Bevel-actiekaart ook doet, Vlaggenschip speel die nogmaals, ook al vernietigd de kaart zichzelf of is het niet jouw beurt.<br>Bevelkaarten zoals Vlaggenschip zelf, worden niet opnieuw gespeeld; Vlaggenschip wacht op een niet-Bevel-actiekaart.<br>Speel je 2 Vlaggenschippen en dan bijvoorbeeld een Havendorp, dan speel je Havendorp 3 keer, eenmaal normaal en eenmaal voor elk Vlaggenschip.",
+        "name": "Vlaggenschip"
     },
     "Fleet": {
         "description": "Nadat het spel is afgelopen komt iedere speler met dit project nog één keer aan de beurt.",
@@ -971,6 +1051,11 @@
         "extra": "Je verdubbelt je _ Coin alleen bij de eerste keer dat je Fortuin in je beurt speelt, bij elk volgende krijg je uitsluitend +1 Aanschaf",
         "name": "Fortuin"
     },
+    "Fortune Hunter": {
+        "description": "+2 Coin<br>Bekijk de bovenste 3 kaarten van je trekstapel. Je mag daaruit 1 geldkaart spelen. Leg de rest in een volgorde naar keuze terug.",
+        "extra": "Handel het spelen van de geldkaart volledig af voordat je de andere kaarten op de trekstapel teruglegt;<br><i><b>Voorbeeld:</b> is de geldkaart een Beeldje, dan zijn de 2 kaarten die je trekt niet de kaarten die je met de Fortuinzoeker hebt bekeken.</i>",
+        "name": "Fortuinzoeker"
+    },
     "Fortune Teller": {
         "description": "+2 Coin\nIedere andere speler toont kaarten van zijn trekstapel totdat hij een overwinningskaart of een Vloekkaart toont. Hij legt deze terug op zijn trekstapel en de andere getoonde kaarten af.",
         "extra": "Iedere andere speler toont kaarten van zijn trekstapel totdat hij een overwinningskaart of een Vloekkaart toont. Raakt je trekstapel voor de tijd op, schud dan je aflegstapel (zonder de tot dan toe getoonde kaarten) en ga door met kaarten tonen. Vind je een overwinnings- of een Vloekkaart, leg deze dan op je trekstapel en leg de overige getoonde kaarten af. Bevat je trekstapel geen kaarten, dan wordt deze kaart de enige kaart van je trekstapel. Kaarten van meer soorten, waaronder Overwinning (zoals bijvoorbeeld Adel uit Dominion: Intrige), gelden als overwinningskaarten en worden door de Waarzegster betroffen. Je mag niet voor één van beide soorten kiezen. Je moet stoppen met kaarten tonen als je een van beide soorten vindt.",
@@ -985,6 +1070,11 @@
         "description": "Bij de puntentelling: <b>15</b><VP> als je ten minste 10 Koper hebt.",
         "extra": "Je krijgt 15<VP> of 0<VP>. Er is geen extra bonus voor 20 of meer Koper.",
         "name": "Fontein"
+    },
+    "Frigate": {
+        "description": "+3 Coin<br>Tot de staart van je volgende beurt: elke keer dat een andere speler een actiekaart speelt, moet hij daarna kaarten uit zijn hand afleggen totdat hij er 4 heeft.",
+        "extra": "Dit is elke keer dat een andere speler een actiekaart speelt van toepassing, tot je volgende beurt. Dat is met inbegrip van later in je eigen beurt als iemand dan een actie weet te spelen (Zoals een Bergruimte). De speler handelt zijn Actie volledig af voordat het Fregat wordt afgelegd.",
+        "name": "Fregat"
     },
     "Fugitive": {
         "description": "+2 Kaarten\n+1 Actie\nLeg 1 kaart af.<line>Als je deze kaart vanuit het spel aflegt, mag je deze tegen een Leerknecht ruilen.\n<i>(Deze kaart bevindt zich niet in de voorraad.)</i>",
@@ -1060,6 +1150,11 @@
         "extra": "Toon één voor één kaarten van je trekstapel totdat je twee actiekaarten hebt getoond die geen Golem zijn. Als je geen kaarten meer in je trekstapel hebt voordat je deze twee actiekaarten (niet-Golem) hebt getoond, schud dan je aflegstapel (zonder de tot dan toe getoonde kaarten) en ga verder. Is je trekstapel leeg en heb je ook geen aflegstapel meer voordat je de twee actiekaarten (niet-Golem) hebt gevonden, dan krijg je alleen de gevonden actiekaart. Leg alle getoonde kaarten, met uitzondering van de actiekaarten (niet-Golem), open op je aflegstapel. Heb je geen actiekaarten gevonden, dan ben je klaar. Heb je er één gevonden, speel deze dan direct. Heb je twee actiekaarten gevonden, speel deze dan direct in een volgorde naar keuze. Je mag er niet voor kiezen om ze niet te spelen. Deze actiekaarten bevinden zich niet in je hand en worden dus niet beïnvloed door kaarten die om kaarten in je hand vragen. Voorbeeld: als één van de twee kaarten een Troonzaal (uit Dominion) is, kun je deze niet gebruiken op de andere van deze twee kaarten.",
         "name": "Golem"
     },
+    "Gondola": {
+        "description": "Nu of an het begin van je volgende beurt: +2 Coin.<line>Als je deze kaart pakt, mag je een actiekaart uit je hand spelen.",
+        "extra": "Kies bij het spelen van de Gondel of je direct +2 Coin krijgt of aan het begin van je volgende beurt.<br>Bij \"direct\" leg je Gondel in de opschoonfase van dezelfde beurt af;<br>bij \"volgende beurt\" leg je Gondel die beurt af.<br>Speel je Gondel meermaals, zoals met een Koninklijke schatkamer, dan kies je elke keer opnieuw of je de +2 Coin nu of volgende beurt krijgt. Gondel blijft dan uitsluitend in het spel als ten minste 1 van die keuzes \"volgende beurt\" is (in dat geval blijft ook de koninklijke schatkamer in het spel).",
+        "name": "Gondel"
+    },
     "Goons": {
         "description": "+1 Aanschaf\n+2 Coins\nIedere andere speler legt naar zijn keuze kaarten af totdat hij er 3 op handen heeft.<line>Als deze kaart in het spel is, +1 <VP> voor elke kaart die je koopt.",
         "extra": "Voor deze kaart zijn de overwinningspuntenfiches nodig. Eerst krijg je 1 extra aanschaf en 2 Coins extra virtueel geld. Daarna moet iedere andere speler zoveel handkaarten afleggen dat hij er nog 3 in zijn hand over heeft. Voor elke kaart die je deze beurt koopt, krijg je 1 overwinningspuntenfiche, die je op je tableau legt. Heb je meer kaarten \"Domkoppen\" in het spel, dan krijg je voor elke kaart \"Domkoppen\" die je in het spel hebt 1 overwinningspuntenfiche per gekochte kaart. Speel je een kaart \"Domkoppen\" op een Koningshof of een Troonzaal uit Dominion: basisspel), dan krijg je maar 1 overwinningspuntenfiche, omdat de kaart maar één keer in het spel is.",
@@ -1092,6 +1187,11 @@
         "description": "Pak een kaart die ten hoogste 4 Coin kost. Is deze een...<n>actiekaart, pak dan een Paard;<n>geldkaart, pak dan een Zilver;<n>overwinningskaart, dan +1 Kaart and +1 Actie.<n>",
         "extra": "Pak eerst een kaart en pas dan de bonussen in de aangegeven volgorde.<n>Een kaart kan meerdere bonussen geven. <i><b>Voorbeeld: </b>als je een Molen (uit Intrige) pakt, pak je een Paard en krijg je dan +1 Kaart en +1 Actie.</i>",
         "name": "Rijknecht"
+    },
+    "Grotto": {
+        "description": "+1 Actie<br>Leg ten hoogste 4 kaarten uit je hand opzij (op deze kaart).<br>Aan het begin van je volgende beurt: leg deze opzijgelegde kaarten af en trek hetzelfde aantaal.",
+        "extra": "<i><b>Voorbeeld:</b> Je zou 3 kaarten uit je hand opzij kunnen leggen en die 3 kaarten aan het begin van je volgende beurt kunnen afleggen om 3 nieuwe kaarten te trekken.</i>",
+        "name": "Spelonk"
     },
     "Groundskeeper": {
         "description": "+1 Kaart\n+1 Actie<line>Zolang deze kaart in het spel is: als je een overwinningskaart pakt, +1<VP>.",
@@ -1127,6 +1227,11 @@
         "description": "+1 Kaart<br>+1 Actie<n>Kijk door je aflegstapel. Je mag 1 kaart daaruit op je trekstapel leggen.",
         "extra": "Trek eerst een kaart en ontvang +1 Actie. Kijk daarna door je aflegstapel en leg er, als je dat wilt, een kaart van op je trekstapel.",
         "name": "Voorbode"
+    },
+    "Harbor Village": {
+        "description": "+1 Kaart<br>+2 Acties<br>Na de volgende actiekaart die je deze beurt spelt: geeft die je +_ Coin, dan +1 Coin.",
+        "extra": "Dit is uitsluitend van toepassing als je de +_ Coin van de actie zelf hebt gekregen, niet als je de +_ Coin heb gekregen van het spelen ervan (zoals door Training (Uit avonturen) of Gift van het bos (uit Nocturne))<br>Het is oké als je de +_ Coin niet meer hebt (zoals door Verteller).<br>+Geldkisten (uit Gilden en Renaissance) is geen +_ Coin. +0 Coin geeft je de bonus niet. Het gebruik van een spoor (uit Menagerie) om +_ Coin te krijgen (bijvoorbeeld Spoor van het schaap) geeft je de bonus niet.Speel je Troonzaal op Havendorp en dan een Militie, dan speel je Havendorp, dan Havendorp, dan Militie, dus je krijgt niets voor de eerste keer dat je Havendorp speelt en +1 Coin voor de tweede keer.",
+        "name": "Havendorp"
     },
     "Harem": {
         "extra": "Deze kaart is zowel een geldkaart als een overwinningskaart. Je kunt de kaart net als een Zilver voor 2 Coins gebruiken. Aan het einde van het spel is de kaart 2 <VP> waard. In een spel met 2 spelers gebruik je 8 Haremkaarten, in een spel met 3 of 4 spelers 12 Haremkaarten.",
@@ -1291,6 +1396,11 @@
         "extra": "Het is uitsluitend van belang dat de kaart die je verbant een Actie is, niet de hele stapel hoeft dat te zijn.<n>Zolang de kaart verbannen is, trek je elke keer dat een andere speler er een exemplaar van pakt of Investeren gebruikt om er een exemplaar van te pakken, 2 kaarten.<n>Dit is niet optioneel.<n>Dit is cumulatief: inversteer je tweemaal in dezelfde kaart, dan krijg je elke keer dat een andere speler een exemplaar pakt of erin investeert, 4 kaarten.<n>Bevat het spel andere manieren om kaarten te verbannen, hou de kaarten waarin je investeert dan gescheiden van de andere, bijvoorbeeld door ze half onder het tableau te schuiven.<n>Deze andere verbannen kaarten gelden niet als kaarten waarin je hebt geïnvesteerd en leveren je geen extra kaarten op.<n>Met Investeren verbannen kaarten kun je op de gebruikelijke manier van je tableau afleggen door een nieuw exemplaar van de kaart te pakken. In dat geval trek je geen kaarten meer voor spelers die in de betreffende kaart investeren of er een pakken.",
         "name": "Investeren"
     },
+    "Investment": {
+        "description": "Vernietig een kaart uit je hand.<n>Kies er 1: +1 Coin; of vernietig deze kaart om je hand te tonen voor +1<VP> per geldkaart met een verschillende naam in je hand.",
+        "extra": "Je vernietigd hoe dan ook een kaart; het is prima als Investering de laatste kaart in je hand was, het mislukt dan gewoon om een kaart te vernietigen.<br>Je kunt dan kiezen om +1 Coin te krijgen of Investering te vernietigen. Vernietig je Investering, dan toon je je hand en krijg je +1<VP> per geldkaart met een verschillende naam in je hand.<br><i><b>Voorbeeld:</b> je toont 2 Koper en 1 Zilver. Je krijgt dan +2<VP>.</i><br>Je kunt getoonde geldkaarten nog spelen na het afhandelen van Investering.",
+        "name": "Investering"
+    },
     "Ironmonger": {
         "description": "+1 Kaart\n+1 Actie\nToon de bovenste kaart van je trekstapel. Je mag deze afleggen. Hoe dan ook, is de getoonde kaart een \nActiekaart: +1 Actie\nGeldkaart: +1 Coin\nOverwinningskaart: +1 Kaart",
         "extra": "Trek eerst een kaart en toon daarna de bovenste kaart van je trekstapel. Leg deze kaart af of leg hem terug op je trekstapel. Daarna krijg je bonussen op basis van de soort(en) van de getoonde kaart. Een kaart van 2 soorten geeft je beide bonussen. Voorbeeld: je toont een Harem (uit Dominion: Intrige). Je trekt een kaart en krijgt +1 Coins.",
@@ -1315,6 +1425,11 @@
         "description": "+2 Coins\nIedere andere speler legt de bovenste kaart van zijn trekstapel af. Is dit een overwinningskaart, dan pakt hij een Vloekkaart. Anders mag jij kiezen of hij een exemplaar van de afgelegde kaart pakt of dat jij dat doet.",
         "extra": "Iedere speler zonder kaarten in zijn trekstapel schudt zijn aflegstapel om een kaart te kunnen afleggen. Is ook zijn aflegstapel leeg, dan legt hij geen kaart af. Voor iedere speler die een kaart heeft afgelegd, geldt: is de afgelegde kaart een overwinningskaart, dan pakt hij een Vloek. Is de afgelegde kaart van een andere soort, dan kies jij of deze speler nog een exemplaar van de getoonde kaart pakt of dat jij dat doet. Gepakte Vloekkaarten en nieuwe exemplaren komen uit de voorraad en worden op de aflegstapel gelegd van de speler die de kaart pakt. Is er geen exemplaar in de voorraad van een getoonde kaart, dan pakt niemand er een. Deze aanvalskaart treft de andere spelers in beurtvolgorde. Dit kan van toepassing zijn als bepaalde stapels bijna leeg zijn. Kaarten van meer soorten, waaronder Overwinning (zoals bijvoorbeeld Adel uit Dominion: Intrige), gelden als overwinningskaarten.",
         "name": "Nar"
+    },
+    "Jewelled Egg": {
+        "description": "1 <*COIN*><br><br>+1 Aanschaf<line>Als je deze kaart vernietigt, pak je een buit.",
+        "extra": "De speler die gedecoreerd ei vernietigd, krijgd de buit, ongeacht welke speler de kaart speelde die het vernietigen veroorzaakte.",
+        "name": "Gedecoreerd Ei"
     },
     "Journeyman": {
         "description": "Noem een kaart. Toon kaarten van je gedekte stapel totdat je 3 niet genoemde kaarten hebt getoond. Neem deze in je hand en leg de resterende kaarten af.",
@@ -1341,6 +1456,11 @@
         "extra": "Oven kan elke soort kaart pakken, zolang de kaart direct na de Oven is gespeeld.<n>De Oven kan uitsluitend kaarten uit de voorraad pakken.<n>Je pakt (optioneel) een exemplaar van de kaart, voordat je de aanwijzingen op de kaart opvolgt.<n>Is de kaart een Aanval en willen andere spelers kaarten zoals Slotgracht gebruiken, dan pak je de kaart, voordat zij al dan niet de Slotgracht gebruiken.<n>Als je de Troonzaal op een Oven gebruikt, dan speel je de Oven, speel je de Oven weer, pak je (optioneel) een Oven en kun je daarna nog steeds een exemplaar pakken van de volgende kaart die je speelt.<n>Is de volgende kaart een Actie waarvoor je een spoor gebruikt, dan mag je alsnog een exemplaar van die kaart pakken.",
         "name": "Oven"
     },
+    "King's Cache": {
+        "description": "Je mag een geldkaart uit je hand driemaal spelen.",
+        "extra": "Speel je Koninklijke Schatkamer op Koninklijke Schatkamer dan speel je nog 3 geldkaarten elk driemaal.<br>Speel je Koninklijke Schatkamer op een Geld-Duurzaam-kaart, dan blijft Koninklijke Schatkamer net zolang in het spel als die kaart.",
+        "name": "Koninklijke Schatkamer"
+    },
     "King's Court": {
         "description": "Je mag een actiekaart uit je hand kiezen. Speel deze driemaal.",
         "extra": "Deze kaart is gelijk aan de Troonzaal (uit Dominion: basisspel) met dit verschil dat je de gekozen kaart driemaal speelt. Je kiest dus 1 kaart uit je hand, legt deze op tafel en voert de instructies erop volledig uit. Daarna neem je de kaart weer in je hand en speel je de kaart nogmaals en voer je de instructies opnieuw uit. Vervolgens doe je hetzelfde een derde keer. Dit driemalig spelen van de actiekaart kost je geen acties (het spelen van het Koningshof kost je wel 1 actie). Je mag geen andere actiekaarten spelen voordat je een gekozen actiekaart 3 keer hebt gespeeld, tenzij de gekozen actiekaart dit expliciet aangeeft (zoals bijvoorbeeld het Koningshof zelf). Kies je een kaart die je +1 Actie oplevert, dan heb je na driemaal spelen +3 Acties. Speel je een Koningshof, dan kies je na elkaar 3 kaarten en speel je deze één voor één 3 keer. Je mag dus niet 1 kaart 9 keer spelen.<line><b>Errata</b>: In de oorspronkelijke Nederlandse versie staat dat je dit moet doen, in tegenstelling tot de Engelstalige versie. Dit is later gecorrigeerd op de kaart zelf, maar staat nog wel foutief in het spelregelboekje.",
@@ -1365,6 +1485,11 @@
         "description": "+2 Kaarten<line>Als je deze kaart pakt, +2 Dorpsbewoners.",
         "extra": "Het spelen hiervan geeft +2 Kaarten, het pakken ervan geeft +2 Dorpsbewoners.",
         "name": "Kamerbedienden"
+    },
+    "Landing Party": {
+        "description": "+2 Cards<br>+2 Acties<br>De volgende keer dat de eerste kaart die je in je beurt speelt een geldkaart is, leg deze \"Landingstroepen\" dan op je Trekstapel.",
+        "extra": "Handel de geldkaartaf voordat je Landingstroepen op je trekstapel legt. Het is oké als de geldkaart meerdere soorten heeft, inclusief Actie (zoals Toverrol).<br><i><b>Voorbeeld:</b> is de geldkaart een Beeldje dan trek je 2 kaarten voordat je Landingstroepen op je Trekstapel legt.</i>",
+        "name": "Landingstroepen"
     },
     "Lantern": {
         "description": "Je Grenswachten tonen 3 kaarten en leggen er 2 af. (Om de Hoorn te nemen, moeten ze alle 3 Acties tonen.)",
@@ -1406,6 +1531,11 @@
         "extra": "Soorten zijn de woorden die in het onderste kader staan, zoals actie en aanval. Als er geen goedkopere kaart is met een gelijke soort (bijvoorbeeld als de vernietigde kaart een Vloek is), pakt de speler niets.",
         "name": "Sprinkhanen"
     },
+    "Longship": {
+        "description": "+2 Acties<br>Aan het begin van je volgende beurt: +2 Kaarten.",
+        "extra": "Het spelen hiervan geeft je +2 Acties dan en +2 Kaarten aan het begin van je volgende beurt.",
+        "name": "Langschip"
+    },
     "Lookout": {
         "description": "+1 Actie\nBekijk de bovenste 3 kaarten van je trekstapel. Vernietig er één van. Leg er één van af. Leg de overgebleven kaart gedekt terug op je trekstapel.",
         "extra": "Bekijk alle 3 de kaarten voordat je beslist welke je vernietigt, welke aflegt en welke je op je trekstapel legt. Als je minder dan 3 kaarten in je trekstapel hebt (ook na het eventueel schudden van je aflegstapel), volg je de instructies in volgorde op. Dus: eerst een kaart vernietigen, dan een kaart afleggen.",
@@ -1446,6 +1576,11 @@
         "extra": "Deze kaart telt zelf mee als één van de 6 kaarten. Een kaart waarvan je meerdere exemplaren hebt, telt niet mee. Om een kaart mee te tellen, moet je er precies 1 exemplaar van in het spel hebben. Je kunt meer geldkaarten spelen na het vernietigen van de Magische Lamp en er die beurt nog steeds 1 Coin van krijgen.",
         "name": "Magische Lamp"
     },
+    "Magnate": {
+        "description": "Took je hand.<n>+1 Card per geldkaart in je hand.",
+        "extra": "<i><b>Voorbeeld:</b> bevat je hand 2 Koper en 1 Zilver, dan trek je 3 kaarten.</i>",
+        "name": "Magnaat"
+    },
     "Magpie": {
         "description": "+1 Kaart\n+1 Actie\nToon de bovenste kaart van je gedekte stapel. Is het een geldkaart, neem deze dan in je hand. Is het een actie- of een overwinningskaart, pak dan een Ekster.",
         "extra": "Is de bovenste kaart van je gedekte stapel een geldkaart, dan gaat deze naar je hand. Is deze kaart geen geldkaart, leg deze dan terug op je gedekte stapel. Is de kaart een actie- of een overwinningskaart, dan pak je een Ekster. Is de stapel \"Ekster\" leeg, dan krijg je niets voor het tonen van een actie- of overwinningskaart. Toon je een Harem (uit Dominion: Intrige), dan neem je deze in je hand en pak je een Ekster (omdat de kaart zowel een geld- als een overwinningskaart is).",
@@ -1455,6 +1590,11 @@
         "description": "+3 Coins\nLeg een kaart uit je hand op je trekstapel.<line>Als je deze kaart pakt, leg dan alle geldkaarten die je in het spel hebt op je trekstapel in een volgorde naar keuze.",
         "extra": "Bij het spelen van deze kaart krijg je +3 Coins en leg je een kaart uit je hand op je trekstapel. Heb je geen kaarten meer in je hand, dan leg je niets op je trekstapel. Is je trekstapel leeg, dan is de zojuist gelegde kaart de enige kaart in je trekstapel. Bij het pakken van deze kaart leg je alle geldkaarten die je in het spel hebt op je trekstapel in een volgorde naar keuze. Je hoeft de volgorde niet aan andere spelers te tonen. Je moet al je geldkaarten op je trekstapel leggen, niet slechts een deel. Je kunt geen geldkaarten uit je hand op je trekstapel leggen. Je mag de munten van de gespeelde kaarten wel spenderen. Voorbeeld: je hebt +1 Aanschaf en je speelt 4 Goud. Je koopt een Mandarijn en legt het Goud op je trekstapel. Nu mag je nog 1 Coin spenderen. Je kunt de eigenschap van Mandarijn gebruiken als je deze koopt of als je deze op een andere manier pakt (hoewel je normaal gesproken alleen geld in het spel hebt tijdens je aanschaffase).",
         "name": "Mandarijn"
+    },
+    "Mapmaker": {
+        "description": "Bekijk de bovenste 4 kaarten van je trekstapel. Neem er 2 van in je hand en leg de rest af.<line>Als een speler een overwinningskaart pakt, mag jij deze \"Kaartenmaker\" uit je hand spelen.",
+        "extra": "Heb je minder dan 4 kaarten (na schudden), dan bekijk je wat je wel hebt. Je mag deze kaart spelen als iemand (inclusief jij) een overwinningskaart pakt door een koop of andere manier.<br>Speel je Kaartenmaker als reactie op iemand die een overwinningskaart pakt, dan kun je direct darna nog kaartenmaker spelen, zelfs als je die via de eerste Kaartenmaker hebt verkregen.",
+        "name": "Kaartenmaker"
     },
     "Marauder": {
         "description": "Pak een buitkaart van de buitstapel.\nIedere andere speler pakt een Ruïne.",
@@ -1480,6 +1620,11 @@
         "description": "+1 Kaart\n+1 Actie\n+1 Aanschaf<line>Als een van je kaarten wordt vernietigd, mag je het Marktplein uit je hand afleggen. Doe je dat, pak dan een Goud.",
         "extra": "Bij het spelen van deze kaart trek je 1 kaart en krijg je +1 Actie en +1 Aanschaf. Wordt een van je kaarten vernietigd, dan mag je het Marktplein uit je hand afleggen. Doe je dat, dan pak je een Goud uit de voorraad en leg je dit op je aflegstapel. Is er geen Goud in voorraad, dan pak je er geen. Je mag meerdere Marktpleinen afleggen, ook al wordt er maar 1 kaart van je vernietigd.",
         "name": "Marktplein"
+    },
+    "Maroon": {
+        "description": "Vernietig een kaart uit je hand.<br>+2 Kaarten per soort dat die kaart heeft (Actie, Aanval, enzovoort)",
+        "extra": "Soorten zijn de woorden in het kader aan de overkant van de kaarten (Actie, Aanval, enzovoort).<br><i><b>Voorbeeld:</b> vernietig je Gestrand en Kooi, dan trek je 4 kaarten, omdat het een geldkaart en een duurzame kaart is, 2 soorten.</i>",
+        "name": "Gestrand"
     },
     "Masquerade": {
         "description": "+2 Kaarten\nIedere speler moet direct 1 kaart uit zijn hand neer links doorgeven. Daarna mag jij 1 kaart uit je hand vernietigen.",
@@ -1540,6 +1685,11 @@
         "description": "Vernietig een geldkaart uit je hand. Neem een geldkaart die ten hoogste 3 Coins meer waard is en neem deze op handen.",
         "extra": "Meestal vernietig je een Koperkaart en pak je een Zilverkaart, of vernietig je een Zilverkaart en pak je een Goudkaart. Als je wilt, mag je echter een geldkaart vernietigen en eenzelfde of een goedkopere geldkaart terugpakken. De gepakte geldkaart komt in je hand en mag je direct uitgeven. als je geen geldkaart in je hand hebt, kun je niets vernietigen en ook niets pakken.<line><b>Errata</b>: In de oorsponkelijke Engelstalige versie staat dat je de een geldkaart uit je hand <i>mag</i> vernietigen, dat is dus niet verplicht als de Mijn speelt.",
         "name": "Mijn"
+    },
+    "Mining Road": {
+        "description": "+1 Actie<br>+1 Aanschaf<br>+2 Coin<br>Eenmaal in deze beurt: pak je een geldkaart, dan mag je die spelen.",
+        "extra": "Het spelen van de geldkaart is optioneel.<br>Deze vaardigheit is cumulatief; speel je 2 Mijnwegen, dan mag je die beurt tweemaal een Geldkaart spelen als je die pakt. Je kunt met 2 Mijnwegen echter niet dezelfde gepakte geldkaart tweemaal spelen. Mijnweg is van toepassing op gepakte kaarten als gevolg van een koop of een andere manier. De kaart werkt in je actiefase als je dan een geldkaart pakt.",
+        "name": "Mijnweg"
     },
     "Mining Village": {
         "description": "+1 Kaart\n+2 Acties\nJe mag deze kaart direct vernietigen. Als je dat doet: +2 Coins.",
@@ -1791,6 +1941,11 @@
         "extra": "Deze kaart kost in principe 8 Coins. Voor elke actiekaart die je tijdens de aanschaffase zelf in het spel hebt, kost de Venter 2 Coins minder. Deze kosten gelden ook voor Venters in je hand of in de decks van andere spelers. Een Venter kan nooit minder kosten 0 Coins. Als je bijvoorbeeld een Arbeidersdorp op een Koningshof speelt, geldt dit als 2 gespeelde actiekaarten. Pak of koop je een Venter buiten de aanschaffase om, dan kost deze 8 Coins.",
         "name": "Venter"
     },
+    "Pendant": {
+        "description": "+1 Coin per geldkaart met een verschillende naam die je in het spel hebt.",
+        "extra": "Deze kaart telt zelf ook mee.<br><i><b>Voorbeeld:</b> je hebt 3 Koper, een vorige beurt gespeelde Gondel en Pendant in het spel. Dat maakt +3 Coin.</i>",
+        "name": "Pendant"
+    },
     "Philosopher's Stone": {
         "description": "Tel het aantal kaarten in je trekstapel en die in je aflegstapel.\n+1 Coin voor elke 5 kaarten in de som van beide stapels (naar beneden afronden).",
         "extra": "Dit is een geldkaart. Het is een koninkrijkkaart die uitsluitend in het spel is als deze aan het begin van het spel bij de 10 uitgekozen of getrokken koninkrijkkaarten behoort. De kaart kan uitsluitend tijdens je aanschaffase gespeeld worden, net als andere geldkaarten. Tel op het moment van spelen alle kaarten in je trekstapel en je aflegstapel en deel dit totaal door 5 (rond naar beneden af). Dat is de hoeveelheid geld die je in je aanschaffase extra kunt gebruiken. Dit totaal kan deze beurt niet meer veranderen ongeacht wat er in deze beurt verder nog gebeurt. Als je de kaart later in het spel nogmaals speelt, tel de kaarten dan opnieuw. Speel je meerdere Steen der Wijzen-kaarten tegelijkertijd, dan geldt de hoeveelheid geld voor elk van de kaarten. Zorg er bij het tellen van de kaarten voor dat de volgorde in de trekstapel niet verandert. De volgorde van de aflegstapel is niet van belang. Het is toegestaan om tijdens het tellen de kaarten in je aflegstapel te bekijken. Je telt uitsluitend de kaarten in je trekstapel en je aflegstapel, niet je gespeelde, opzij gelegde en handkaarten. Nadat je in je aanschaffase iets gekocht hebt, kun je geen nieuwe geldkaarten meer spelen. Voorbeeld: je mag niet eerst een kaart kopen, dan de Steen der Wijzen spelen en nog een kaart kopen.",
@@ -1800,6 +1955,16 @@
         "description": "Aan het begin van je beurt: toon de bovenste kaart van je trekstapel. Is het een Actiekaart, speel deze dan.",
         "extra": "Zodra je deze vaardigheid hebt geclaimd, geldt deze verplicht. Is de getoonde kaart geen actiekaart, leg deze dan op je trekstapel terug.",
         "name": "Plein"
+    },
+    "Pickaxe": {
+        "description": "1 <*COIN*><br><br>Vernietig een kaart uit je hand.<br>Als die 3 Coin of meer kost, pak dan een buit en neem die in je hand.",
+        "extra": "Vernietigen is verplicht als je nog kaarten in je hand over hebt. Onthoud dat je de gepakte Buit moet tonen.",
+        "name": "Houweel"
+    },
+    "Pilgrim": {
+        "description": "+4 Kaarten<br>Leg een kaart uit je hand op je trekstapel.",
+        "extra": "De kaart die je op de stapel legt, hoeft niet een van die 4 net getrokken kaarten te zijn.",
+        "name": "Pelgrim"
     },
     "Pilgrimage": {
         "description": "Eenmaal per beurt: draai je reisfiche om (het start open). Ligt het nu open, kies dan 3 kaarten met een verschillende titel de je in het spel hebt en pak van elk een exemplaar.",
@@ -1939,6 +2104,11 @@
         "extra": "Deze geldkaart heeft een geldwaarde van 1 Coin, net als Koper. Als je deze kaart in het spel hebt, kost elke actiekaart 2 Coins minder. Deze korting cumulatief. Voorbeeld: je speelt in de aanschaffase 2 Steengroeves. Actiekaarten kosten nu 4 Coins minder. Ook kortingen van andere kaarten zijn cumulatief. Voorbeeld: je speelt in de actiefase een Arbeidersdorp en in de aanschaffase 2 Steengroeves. De Venter kost nu nog maar 2 Coins. Ook de kosten van handkaarten, kaarten in de trekstapel en kaarten in de aflegstapel worden door de Steengroeve veranderd. Gecombineerde kaarten (zoals Adel uit Dominion: Intrige) gelden ook als actiekaarten.",
         "name": "Steengroeve"
     },
+    "Quartermaster": {
+        "description": "Aan het begin van je beurt voor de rest van het spel:<br>kies er één: Pak een kaart die ten hoogste 4 Coin kost en leg die op deze \"Kwartiermeester\" opzij;<br>of neem een kaart van deze \"Kwartiermeester\" in je hand.",
+        "extra": "Kwartiermeester blijft de rest van het spel in het spel.<br>Elke Beurt pak je een kaart en leg je die op Kwartiermeester, of je neemt één van de erder met Kwartiermeester gepakte kaarten en doet die in je hand.<br>Speel je 2 Kwartiermeesters dan hebben die elk hun eigen set kaarten. Speel je echter een Troonzaal op Kwartiermeester, dan heeft die maar 1 set kaarten, en je kunt in elke beurt tweemaal kiezen voor het pakken of nemen van een kaart.",
+        "name": "Kwartiermeester"
+    },
     "Quest": {
         "description": "Je mag een aanvalskaart, 2 Vloeken of 6 Kaarten afleggen. Doe je dat, pak dan een Goud.",
         "extra": "Je mag een aanvalskaart afleggen om 1 Goud te pakken, of 2 Vloeken afleggen om 1 Goud te pakken, of 6 kaarten naar keuze afleggen om 1 Goud te pakken. Leg het gepakte Goud op je aflegstapel. Je mag ervoor kiezen om 6 kaarten af te leggen, ook al heb je er geen 6. Je legt dan al je kaarten af, maar pakt dan geen Goud. Je mag ervoor kiezen om 2 Vloeken af te leggen, ook al heb je er geen 2. Je legt dan 1 Vloek af, maar pakt dan geen Goud.",
@@ -2044,6 +2214,11 @@
         "extra": "Zijn er kaarten in de stapel \"Vernietigde Kaarten\" die 3 Coins, 4 Coins, 5 Coins of 6 Coins waard zijn, dan moet je er één pakken. Je mag de stapel \"Vernietigde Kaarten\" op elk moment doorkijken. Laat de gekozen kaart aan de andere spelers zien en leg deze op de trekstapel. Kaarten die ten minste een Potion kosten, kunnen niet worden gepakt (deze zijn geen 3 Coins, 4 Coins, 5 Coins of 6 Coins waard). Zijn er geen kaarten in de stapel \"Vernietigde Kaarten\" die 3 Coins, 4 Coins, 5 Coins of 6 Coins waard zijn, dan moet iedere andere speler de bovenste 2 kaarten van zijn trekstapel tonen en er één naar zijn keuze vernietigen die 3 Coins, 4 Coins, 5 Coins of 6 Coins waard is (indien mogelijk). Hij legt de rest van de kaarten af. Doe dit in beurtvolgorde, te beginnen met de speler links van je.<line><b>Errata</b>: De oorspronkelijke Nederlandse versie stelde dat <i>iedere speler</i> (dus inclusief jijzelf) de bovenste 2 kaarten moest tonen. Dit is later correct vertaald als <i>ieder andere speler</i>.",
         "name": "Schurk"
     },
+    "Rope": {
+        "description": "1 <*Coin*><br><br>+1 Aanschaf<br>Aan het begin van je volgende beurt:<br>+1 Kaart ven je mach een kaart uit je hand vernietigen.",
+        "extra": "Speel je deze kaart, dan krijg je +1 Coin en +1 Aanschaf, en aan het begin van je volgende beurt trek je eerst een kaart, waarna je een kaart uit je hand mag vernietigen.",
+        "name": "Touw"
+    },
     "Royal Blacksmith": {
         "description": "+5 Kaarten<n>Toon je hand; leg alle getoonde Koperkaarten af.",
         "extra": "Je legt zowel de Koperkaarten in je hand als die in de +5 Kaarten af.",
@@ -2092,6 +2267,11 @@
         "description": "Iedere andere speler moet kaarten van zijn trekstapel tonen todat hij een kaart toont die 3 Coins of meer waard is. Hij moet deze kaart vernietigen en mag daarna een kaart pakken die ten hoogste 2 Coins minder waard is dan de vernietigde kaart. Hij legt de andere getoonde kaarten af.",
         "extra": "Iedere andere speler toont één voor één kaarten van zijn trekstapel totdat hij er één toont die 3 Coins of meer waar is. Als een speler zijn aflegstapel voor dit doel moet schudden, schudt hij de al getoonde kaarten niet mee. Als hij al zijn kaarten heeft geschud getoond en geen kaart met een waarde van 3 of meer vindt, legt hij alle getoonde kaarten af en is klaar. Als hij er wel één vindt, moet hij deze vernietigen en een kaart pakken die ten hoogste 2 Coins minder waard is. Als hij bijvoorbeeld een kaart die 5 Coins kost vernietigt, mag hij een kaart pakken die maximaal 3 Coins kost. Hij pakt de kaart uit de voorraad en legt deze op zijn aflegstapel. De Brug beïnvloedt de kosten van de kaart.",
         "name": "Saboteur"
+    },
+    "Sack of Loot": {
+        "description": "1 <*COIN*><br><br>+1 Aanschaf<br>Pak een Buit",
+        "extra": "Speel je deze kaart, dan krijg je +1 Coin en +1 Aanschaf, en je pakt een Buit.",
+        "name": "Zak met Buit"
     },
     "Sacred Grove": {
         "description": "+1 Aanschaf\n+3 Coins<n>Ontvang een Gunst. Als deze geen +1 Coin geeft, mag iedere andere speler de Gunst ontvangen.",
@@ -2186,10 +2366,20 @@
         "extra": "Is de trekstapel van een speler leeg, dan schud hij zijn aflegstapel en legt de bovenste kaart van zijn nieuwe trekstapel af. Daarna moeten alle andere spelers, te beginnen met de speler links van de aanvaller, Vloekkaart pakken en op hun trekstapel leggen. Zijn er niet voldoende Vloekkaarten in voorraad, dan worden de resterende Vloekkaarten in beurtvolgorde verdeeld.",
         "name": "Zeeheks"
     },
+    "Search": {
+        "description": "+2 Coin<br>De volgende keer dat een vooraadsstapel leegraakt vernietig je deze \"Zoektocht\" en pak je een Buit.",
+        "extra": "Speel je een Troonzaal op Zoektocht, dan blijft Troonzaal samen met zoektocht totdat er een stapel leeg is. Dan vernietig je Zoektocht eenmaal, maar je pakt 2 buitkaarten (en legd Troonzaal die beurt af).",
+        "name": "Zoektocht"
+    },
     "Seaway": {
         "description": "Pak een actiekaart die ten hoogste 4 Coins waard is.\nVerplaats je +1 Aanschaf-fiche naar de betreffende stapel (speel je een kaart van die stapel, dan ontvang je eerst +1 Aanschaf).",
         "extra": "Bij het kopen van deze kaart pakt je eerst een actiekaart met een waarde van 4 Coins of minder. Pak deze uit de voorraad en leg hem op je aflegstapel. Verplaats daarna je +1 Aanschaf-fiche naar de stapel waar de gepakte kaart vandaan kwam. Dit fiche geeft je +1 Aanschaf als je een kaart van die stapel speelt (zie \"Fiches\" in de spelregels). Het is niet van belang of de waarde van de kaarten in de betreffende stapel later hoger is dan 4 Coins. Je mag de Zeeroute niet kopen om je +1 Aanschaf-fiche naar een lege stapel te verplaatsen. Je moet een stapel kiezen waar je daadwerkelijk een kaart van pakt.",
         "name": "Zeeroute"
+    },
+    "Secluded Shrine": {
+        "description": "+1 Coin<br>De volgende keer dat je een geldkaart pakt, vernietig ten hoogste 2 kaarten uit je hand.",
+        "extra": "Deze kaart kan in de beurt van welke speler dan ook geactiveerd worden.<br>De kaart wordt zelfs actief als de speler niets kan of wil vernietigen; vernietigen is niet verplicht, maar Verlaten tempel is dan wel afgehandeld en wordt die beurt afgelegd.",
+        "name": "Verlaten Tempel"
     },
     "Secret Cave": {
         "description": "+1 Kaart\n+1 Actie\nJe mag 3 kaarten afleggen. Doe je dat, dan aan het begin van je volgende beurt: +3 Coins.",
@@ -2241,6 +2431,11 @@
         "extra": "Dit geldt, ongeacht de manier waarop een kaart wordt vernietigd. Het geldt bijvoorbeeld bij het vernietigen van een kaart door Priester, het vernietigen van een Vloek door Oude Heks, het vernietigen van Toneelgezelschap bij het spelen ervan en het vernietigen van een kaart uit de voorraad door Voyeur (uit Intrige). De kaart die je met Riolen vernietigt, moet uit je hand komen en kan een kaart naar keuze zijn, ook al kon hetgeen dat de Riolen activeerde uitsluitend bepaalde kaarten vernietigen.",
         "name": "Riolen"
     },
+    "Shaman": {
+        "description": "+1 Actie<br>+1 Coin<br>Je mag een kaart uit je hand vernietigen.<line>Aan het begin van je beurt in een spel met deze kaart:<br>pak een kaart die ten hoogste 6 Coins kost uit de stapel \"Vernietigde Kaarten\"",
+        "extra": "In spellen met de Sjamaan geldt voor iedere speler dat hij het hele spel aan het begin van zijn beurt (inclusief extra beurten) een kaart die ten hoogste 6 Coin kost uit de stapel \"Vernietigde kaarten\" pakt.<br>Dit is verplicht<br>Is er niet zo'n kaart, dan pakt hij er geen.<br>Dit geldt ook voor zijn eerste beurt (relevant voor de Dodenbezweerder uit Nocturne).<br>Dit Geldt ook als nooit iemand Sjamaan pakt.<br>De gepakte kaart komt op zijn aflegstapel. Het is een gepakte kaart en kan dingen activeren die daarnaar verwijzen.<br><i><b>Voorbeeld:</b> een Landgoed pakken zou de eigenschap van de Kooi activeren</i>",
+        "name": "Sjamaan"
+    },
     "Shanty Town": {
         "description": "+2 Acties\nToon je hand.\nAls je geen actiekaarten in je hand hebt: +2 Kaarten.",
         "extra": "Je krijgt hoe dan ook 2 extra acties. Je moet je volledige hand tonen. Als je geen actiekaarten in je hand hebt, trek je 2 kaarten. Ook als de eerste kaart die je trekt een actiekaart is, mag je een tweede kaart trekken. Kaarten met \"ACTIE - OVERWINNING\" gelden als actiekaarten.",
@@ -2286,10 +2481,20 @@
         "extra": "40 kaarten per spel.",
         "name": "Zilver"
     },
+    "Silver Mine": {
+        "description": "Pak een geldkaart die minder kost dan deze kaart en neem die in je hand.",
+        "extra": "Deze kaart kan Zilver pakken, maar ook andere geldkaarten die minder kosten dan Zilver als die zich in de voorraad bevinden: Gondel, Gedecoreerd ei, enzovoort.",
+        "name": "Zilvermijn"
+    },
     "Sinister Plot": {
         "description": "Aan het begin van je beurt: leg hier een fiche, of verwijder al je fiches hier voor +1 Kaart per stuk.",
         "extra": "Iedere speler heeft een gescheiden voorraad muntenfiches op de Duistere Samenzwering. Bewaar de jouwe bij je markeersteen. Elke beurt leg je er 1 fiche bij (uit de voorraad, niet van een tableau) of verwijder je al je fiches om even zoveel kaarten te trekken.",
         "name": "Duistere Samenzwering"
+    },
+    "Siren": {
+        "description": "Iedere andere speler pakt een Vloek. Aan het begin van je volgende beurt:<br>trek kaarten totdat je 8 in je hand hebt.<line>Als je deze kaart pakt, vernietig hem dan, tenzij je een actiekaart uit je hand vernietigt.",
+        "extra": "Pak je een Sirene, dan wordt die direct vernietigd, tenzij je een actiekaart uit je hand vernietigd. Als je er echter in slaagt om de Sirene te verplaatsen van waar die is gepakt (ongeacht de bestemming ervan) voordat deze eigenschap wordt afgehandelt (zoals de kaart met insignie op de trekstapel leggen), dan gaat het vernietigen ervan niet door (je mag dan alsnog een actiekaart uit je hand vernietigen als je dat wilt).",
+        "name": "Sirene"
     },
     "Skulk": {
         "description": "+1 Aanschaf\nIedere andere speler ontvangt de volgende Spreuk.<line>Als je deze kaart pakt, pak dan een Goud.",
@@ -2395,6 +2600,11 @@
         "extra": "Deze kaart staat je toe geldkaarten in je actiefase te spelen. Ze gaan daarmee \"in het spel\" en produceren _ Coins, net als geldkaarten in de aanschaffase. De Verteller ruilt al deze _ Coins tegen + Kaarten. Voor elke 1 Coins in het spel verlies je 1 Coin en krijg je +1 Kaart. De Verteller zorgt ervoor dat je alle _ Coins die je tot dan toe hebt gespeeld (inclusief de 1 Coins die de Verteller zelf geeft) verliest. Je kunt dit bijhouden door de \"omgeruilde\" kaarten onder de Verteller te schuiven. Een Potion (uit Dominion: De Alchemisten) is geen _ Coin, gaat daardoor niet verloren en geeft je geen kaart.",
         "name": "Verteller"
     },
+    "Stowaway": {
+        "description": "Aan het begin van je volgende beurt: +2 Kaarten.<line>Als een speler een duurzame kaart pakt mag jij deze \"Bergruimte\" uit je hand spelen.",
+        "extra": "Je mag deze kaart uit je hand spelen als je zelf een duurzame kaart spelt of als een andere speler dat doet.",
+        "name": "Bergruimte"
+    },
     "Summon": {
         "description": "<b>Deze promokaart is nooit in het Nederlands verschenen</b><line>Gain an Action card costing up to 4 coins. Set it aside. If you do, then at the start of your next turn, play it.",
         "name": "Summon"
@@ -2416,6 +2626,11 @@
         "description": "Tot jouw volgende beurt moet iedere andere speler die een kaart koopt 1 Vloek pakken.\nAan het begin van je volgende beurt:\n+3 Coins",
         "extra": "Het spelen van deze kaart heeft 2 toekomstige gevolgen: je krijgt +3 Coins aan het begin van je volgende beurt en tot dat moment pakt iedere andere speler 1 Vloek als hij een kaart koopt. Een speler die meer kaarten koopt, pakt 1 Vloek per gekochte kaart. Een speler die geen kaarten koopt, krijgt geen Vloek. Deze kaart werkt cumulatief. De Heks uit het Moeras heeft geen invloed op kaarten die op een andere manier worden gepakt. Speel je de Heks uit het Moeras en voer je direct een extra beurt uit (als gevolg van Missie of Voorpost uit Dominion: Hijs de Zeilen!), dan krijg je +3 Coins aan het begin van de extra beurt en worden de andere spelers niet door de kaart beïnvloed. Wil je met een reactiekaart, zoals de Slotgracht, op een Heks uit het Moeras reageren, dan moet je dat doen op het moment dat de Heks uit het Moeras wordt gespeeld.",
         "name": "Heks uit het Moeras"
+    },
+    "Swamp Shacks": {
+        "description": "+2 Acties<br>+1 Kaart per 3 kaarten die je in het spel hebt (naar beneden Afgerond).",
+        "extra": "De Moerasthutten zelf en Duurzame Kaarten uit vorige Beurten die nog in het spel zijn tellen ook mee.<br>Geldkaarten tellen mee als je die in het spel hebt, zoals Geld-Duurzaam-kaarten of als gevolg van Fortuinzoeker. Opzijgelegde kaarten tellen niet mee, zoals die op Kwartiermeester. Rond het aantal te trekken kaarten naar beneden af; heb je 8 kaarten in het spel, dan trek je er 2.",
+        "name": "Moerasthutten"
     },
     "Swashbuckler": {
         "description": "+3 Kaarten<n>Als je aflegstapel ten minste 1 kaart bevat, +1 Geldkist. Daarna: heb je ten minste 4 Geldkistfiches, neem dan de Schatkist.",
@@ -2441,6 +2656,11 @@
         "description": "1 <*COIN*><line>Zolang je deze kaart in het spel hebt en je koopt een kaart met een waarde van 4 Coins of minder die geen overwinningskaart is, pak dan nog een exemplaar van de gekocht kaart.",
         "extra": "Deze geldkaart heeft een geldwaarde van 1 Coin, net als Koper. Als je deze kaart in het spel hebt en je koopt een kaart die 4 Coins of minder kost en geen overwinningskaart is, dan pak je nog een exemplaar van de gekocht kaart. Deze pak je uit de voorraad en leg je op je aflegstapel. Is er geen tweede kaart meer, dan krijg je niets. Heb je meerdere kaarten \"Talisman\" in het spel, dan pak je voor elk van deze 1 exemplaar van de gekochte kaart. Koop je meer kaarten in je beurt die aan de voorwaarde voldoen (kosten 4 Coins of minder en geen overwinningskaart), dan pak je van elk van de gekochte kaarten 1 extra exemplaar. Voorbeeld: je hebt 2 kaarten \"Talisman\" en 4 Koper gespeeld en je hebt 2 aanschaffen. Je koopt 1 Zilver en 1 Handelsroute. Je pakt nu 2 extra Zilver en 2 Extra kaarten \"Handelsroute\".\nDe kaart \"Talisman\" heeft uitsluitend effect op gekochte kaarten. Pak je een kaart op een andere manier (zoals bijvoorbeeld met de kaart \"Uitbreiden\"), dan krijg je geen extra exemplaar. Gecombineerde kaarten (zoals de Grote Zaal uit Dominion: Intrige) gelden ook als puntenkaarten. Bij het bepalen van de kosten van een kaart worden eventuele kortingen meegeteld. Voorbeeld: je hebt 2 actiekaarten gespeeld en je speelt nu in de aanschaffase de Talisman. Nu kost de Venter 4 Coins, waardoor je er nog een exemplaar bij krijgt.",
         "name": "Talisman"
+    },
+    "Taskmaster": {
+        "description": "+1 Actie, +1 Coin en als je deze beurt een kaart pakt die precies 5 Coin kost, herhaal je deze eigenschap aan het begin van je volgende beurt.",
+        "extra": "De Opziener kan na beurt +1 Actie en +1 Coin geven zolang je elke beurt ten minste 1 kaart die 5 Coin kost pakt. Het is Uitsluitend van toepassing hoeveel de kaart bij het pakken kost. Opziener houdt geen rekening met kaarten die voor het spelen ervan zijn gepakt.",
+        "name": "Opziener"
     },
     "Tax": {
         "description": "Voeg 2 Debt aan een voorraadstapel toe.<line>Voorbereiding: voeg 1 Debt aan elke voorraadstapel toe. Koopt een speler een kaart, dan neemt hij de _ Debt van de betreffende stapel.",
@@ -2523,6 +2743,11 @@
         "extra": "Kies een actiekaart uit je hand, speel deze en speel deze daarna nog een keer. Dit kost geen extra acties. Handel alles wat bij het spelen van de kaart hoort af, voordat je de kaart voor de tweede keer speelt. Als je de Troonzaal op een andere Troonzaal speelt, kies je een actie, die je twee keer speelt. Als je de Troonzaal op een andere Troonzaal speelt, kies je een actie, die je twee keer speelt, en daarna een andere actie, die je twee keer speelt. Je mag niet een actie viermaal uitvoeren. Je kunt tussen het spelen van de dubbele actie geen andere acties spelen.<line><b>Errata</b>: In de Engelstalige versie <i>mag</i> je de actie kaart twee maal spelen, dit is geen verplichting.",
         "name": "Troonzaal"
     },
+    "Tiara": {
+        "description": "+1 Aanschaf<n><n>Deze beurt: als je een kaart pakt, mag je die op je trekstapel leggen.<n><n>Je mag een geldkaart uit je hand tweemaal spelen.",
+        "extra": "Als je later in de beurt na het spelen van Hoofdtooi meerdere kaarten pakt, mag je somige of al die kaarten op je trekstapel leggen. Dit geldt zowel voor gepakte kaarten die je hebt gekocht als voor kaarten die je op een andere manier hebt gepakt, zoals Krijgskas.<br>Speel je Hoofdtooi met Hoofdtooi, dan mag je 2 geldkaarten uit je hand elk 2 keer spelen, niet 1 geldkaart uit je hand 4 keer.",
+        "name": "Hoofdtooi"
+    },
     "Toil": {
         "description": "+1 Aanschaf<n>Je mag een actiekaart uit je hand spelen.",
         "extra": "Het op deze manier spelen van een actiekaart verbruikt geen Actie.",
@@ -2532,6 +2757,11 @@
         "description": "Als je een kaart vernietigt: +1<VP>.",
         "extra": "Deze kaart functioneert ook als je niet aan de beurt bent (zoals bij het vernietigen van een kaart met de Oplichter uit Dominion: Intrige) en bij het vernietigen van een kaart die niet van jou is (zoals bij Zout der Aarde).",
         "name": "Tombe"
+    },
+    "Tools": {
+        "description": "Pak een exemplaar van een kaart die iemand in het spel heeft.",
+        "extra": "Deze kaart kan een exemplaar pakken van een kaart die welke speler dan ook in het spel heeft;<br>andere spelers zouden bijvoorbeeld duurzame kaarten in het speel kunnen hebben.<br>Gereedschappen zelf is in het spel, dus zou je ook daar een examplaar van kunnen pakken.",
+        "name": "Gereedschappen"
     },
     "Tormentor": {
         "description": "+2 Coins<n>Heb je geen andere kaarten in het spel, pak dan een Duiveltje van de betreffende stapel. Anders krijgt iedere andere speler de volgende Spreuk.",
@@ -2667,6 +2897,11 @@
         "extra": "Als je linkerbuurman minder dan 2 kaarten in zijn trekstapel heeft, toont hij eerst de eventuele kaart van zijn trekstapel, schud daarna zijn aflegstapel (zonder de getoonde kaart) en toont daarna de resterende kaart(en). Hij legt getoonde kaarten af. Heeft hij niet voldoende kaarten, dan toont hij er zoveel mogelijk. Jij krijgt bonussen voor de getoonde kaarten. Alleen verschillende kaarten gelden. Voor een kaart die bij 2 soorten hoort, krijg je beide bonussen. Als je linkerbuurman bijvoorbeeld een Koper en Harem toont, krijg je 4 Coins en mag je 2 kaarten trekken. Als hij 2 Zilverkaarten toont, krijg je 2 Coins. Voor getoonde Vloekkaarten krijg je geen bonus.<line><b>Errata</b>: In eerste instantie zat er een vertaalfout in de Nederlandse versie, waarbij de getoonde kaarten niet afgelegd hoefden te worden. Dit is later gecorrigeerd.",
         "name": "Tolheffing"
     },
+    "Trickster": {
+        "description": "Iedere andere speler pakt een Vloek<br>Eenmaal in deze beurt: leg je een Geldkaart uit het spel af, dan mag je deze opzijleggen.<br>Doe die an het einde van je beurt in je hand.",
+        "extra": "Deze kaart is cumulatief; speel je 2 Bedriegers, dan kun je ten hoogste 2 geldkaarten die je uit het spel aflegt opzijleggen en die aan het einde van je beurt, na het trekken van kaarten, in je hand nemen.",
+        "name": "Bedrieger"
+    },
     "Triumph": {
         "description": "Pak een Landgoed. Deed je dit, dan +1<VP> per kaart die je deze beurt hebt gepakt.",
         "extra": "Je krijgt +1<VP> voor elke kaart die je hebt gepakt, met inbegrip van het Landgoed en alle kaarten die je hebt gekocht of op een andere manier hebt gepakt. Je krijgt geen <VP> voor gekochte gebeurtenissen. Deze kaart doet niets meer zodra de stapel Landgoedkaarten leeg is.",
@@ -2781,6 +3016,11 @@
         "extra": "Als je geen kaart vindt die 3 Coins of 4 Coins kost, eindigt je volledige trekstapel op je aflegstapel en wordt er niets vernietigd.",
         "name": "Oorlog"
     },
+    "War Chest": {
+        "description": "De speler links van je noemt een kaart. Pak een kaart die ten hoogste 5 Coin kost die deze beurt niet bij Krijgskassen is genoemd.",
+        "extra": "De eerste Krijgskas die je speelt kan niet de genoemde kaart pakken; de tweede niet de genoemde kaart en de eerder genoemde kaart pakken, enzovoort.<br> De gepakte kaart komt uit de voorraad naar je aflegstapel. Je kunt genoemde kaarten wel op andere manieren pakken, alleen niet via Krijgskassen. De speler links van je hoeft geen kaart uit de voorraad te noemen, maar Krijgskas pat ook dan een kaart en legt die op je aflegstapel.",
+        "name": "Krijgskas"
+    },
     "Warehouse": {
         "description": "+3 Kaarten\n+1 Actie\nLeg 3 kaarten uit je hand af.",
         "extra": "Als je niet voldoende kaarten kunt trekken (ook na het eventueel schudden van je aflegstapel), trek je er zoveel mogelijk. Daarna moet je 3 kaarten afleggen, ook als je minder kaarten getrokken hebt. Heb je minder dan 3 kaarten in je hand, leg dan al je handkaarten af.",
@@ -2889,6 +3129,11 @@
         "description": "+3 Kaarten<br>Je mag een Zilver pakken.<line>De Voetreiziger kost net zoveel als de laatste andere kaart die deze beurt is gepakt, indien van toepassing.",
         "extra": "Voetreiziger kost standaard 6 Coin. Als iemand een andere kaart dan Voetreiziger pakt, verandert de prijs van Voetreiziger de rest van de beurt (of totdat een andere kaart wordt gepakt) naar de prijs van die kaart. <i><b>Voorbeeld: </b>je speelt een Voetreiziger en kiest om Zilver te pakken. Voetreiziger kost dan 3 Coin, gelijk aan Zilver. Speel je een Heks, dan pakt iedere andere speler een Vloek en Voetreiziger kost 0 Coin, gelijk aan een Vloek.</i> Kaarten die kosten verlagen, zoals Brug uit Intrige, gelden alleen voor de andere kaart, niet ook nog op Voetreiziger (hoewel de kaart voor Voetreiziger geldt als er nog geen kaarten zijn gepakt). <i><b>Voorbeeld: </b>speel je Brug, dan kost Voetreiziger 5 Coin. Koop je dan een Zilver, dan kost Voetreiziger 2 Coin, gelijk aan Zilver.</i><n>Voetreiziger kan kosten hebben met een Potion (uit De Alchemisten) of Debt (uit Keizerrijken) erin.<n>Het kopen van Dierenmarkt als gevolg van het vernietigen van een actiekaart, verandert de kosten van Voetreiziger naar 7 Coin, de kosten van Dierenmarkt, niet die van de vernietigde actiekaart.<n>",
         "name": "Voetreiziger"
+    },
+    "Wealthy Village": {
+        "description": "+1 Kaart<br>+2 Acties<line>Bij het pakken van deze kaart:<br>Heb je geldkaarten met ten minste 3 verschillende namen in het spel, dan pak je een Buit.",
+        "extra": "De 3 Geldkaarten met een verschillende naam kunnen ook in een erdere beurt gespeelde Geld-Duurzaam-kaarten en buitkaarten zelf bevatten.",
+        "name": "Welvarend Dorp"
     },
     "Wedding": {
         "description": "+1<VP>\nPak een Goud.",
@@ -3274,6 +3519,16 @@
         "description": "Vorm bij de puntentelling paren van 1 Dienst en 1 kaart die 2 Coins kost, voor 2 <VP> per paar.",
         "name": "Hooglandherders"
     },
+    "plunder events": {
+        "description": "<justify>Plunderen bevat gebeurtenissen, die in Avonturen voor het eerst verschenen. Als je in je aanschaffase een kaart mag kopen, mag je in plaats daarvan een gebeurtenis kopen. Je betaald de op de gebeurtenis aangegeven kosten en voert dan de gevolgen uit.</justify>",
+        "extra": "Gebeurtenissen zijn geen koninkrijkkaarten; ze blijven op tafel liggen en bieden een effect dat je kunt kopen. je kunt er nooit een pakken of er een in je trekstapel hebben.<n>Het kopen van een gebeurtenis verbruikt 1 aanschaf; normaal gesproken kun je 1 kaart of 1 gebeurtenis kopen. Heb je meerdere aanschaffen, zoals na het spelen van Zak met buit, dan mag je 2 kaarten, 2 gebeurtenissenof 1 gebeurtenis en 1 kaart (in en volgorde naar keuze) kopen.<n>Je mag dezelfde gebeurtenis meermaals per beurt kopen als je voldoende aanschaffen en _ Coin hebt.<n>Na het kopen van een gebeurtenis mag je geen geldkaarten meer spelen.<n>Het kopen van een gebeurtenis is niet gelijk aan het kopen van een kaart voor dingen die daarnaar verwijzen, zoals Sjacheraar (uit Het Achterland).<n>De kosten van gebeurtenissen worden niet beïnvloed door kaarten zoals Brug (uit Intrige).",
+        "name": "Gebeurtenissen - Plunderen"
+    },
+    "plunder traits": {
+        "description": "<justify>Plunderen bevat Eigenschappen, een nieuwe soort landschapskaart, die een stapel, actie- of geldkaarten beïnvloed. Aan het begin van het spel met een eigenschap bepaal je wilkeurig een stapel koninkrijkkaarten met Actie of Gend, waar je de eigenschapkaart onder schuift; tijdens het spel worden de kaarten in die stapel beïnvloed zoals op de eigenschap is aangegeven.</justify>",
+        "extra": "Eigenschappen zijn geen koninkrijkkaarten en kunnen nooit woorden gekocht of gepakt.<n>Eigenschappen kunnen uitsluitend aan koninkrijkkaarten woorden toegekend, niet aan bijvoorbeeld Zilver of Ruines (uit De Donkere Middeleeuwen).<n>Shuif nooit 2 eigenschappen onder dezelfde stapel.<n>Eigenschappen verwijzen naar de stapel die de naam fan de eigenschap gebruikt; voorbeeld: Vroom verwijst naar \"vrome kaarten\". Dat betekend elke kaart van die stapel.<n>Een Eigenschap onder een gecombineerde stapel (uit Keizerrijken en Bondgenoten) beïnvloedt al deze verschillende kaarten.<n>Eigenschappen beïnvloeden de kaarten uit de stapel ook als de stapel leeg is.",
+        "name": "Eigenschappen - Plunderen"
+    },
     "projects": {
         "description": "<justify>Projectkaarten bieden vaardigheden die de spelers kunnen kopen. Een speler kan een project in zijn aanschaffase kopen en hij verbruikt daar 1 aanschaf mee. Een project kost het in de hoek aangegeven aantal _ Coin. Na het kopen van een project legt de speler één van zijn markeerstenen erop. De rest van het spel heeft hij de beschikking over de betreffende vaardigheid.</justify>",
         "extra": "<i><b>Voorbeeld: </b>als Braderie (uit Dominion Renaissance) in het spel is, kan de speler 4 Coins betalen om er een markeersteen op te leggen. De rest van het spel heeft hij elke beurt +1 Aanschaf</i>.<n>Normaal gesproken zijn er niet meer dan 2 projecten in het spel. Gebruiken de spelers er meer, dan mag iedere speler alsnog maximaal 2 markeerstenen leggen.<n>Een speler mag niet meer dan 1 markeersteen op een project leggen.<n>Een speler mag zijn markeersteen niet meer van een project verwijderen.<n>Er is geen limiet aan het aantal spelers dat een markeersteen op een project mag leggen.<n>Het betalen voor een project is niet hetzelfde als \"het kopen van een kaart\" en wordt dus niet goedkoper door kaarten zoals de Uitvinder en heeft geen invloed op kaarten zoals Ontdekkingsreis.<n>Een speler mag niet voor een project betalen als hij schulden (uit Keizerrijken) heeft.",
@@ -3368,6 +3623,14 @@
         "description": "Kies 1 van de volgende: +2 Coins; of pak een Zilver; of +1 Kaart en +1 Actie<n>Je mag de Stedelingen draaien.",
         "extra": "Kies eerst of je +2 Coins krijgt, of een Zilver pakt, of +1 Kaart en +1 Actie krijgt. Ongeacht je keuze kies je daarna of je de stapel Stedelingen als dan niet draait.",
         "name": "Omroeper"
+    },
+    "traits": {
+        "description": "<justify>Plunderen bevat Eigenschappen, een nieuwe soort landschapskaart, die een stapel, actie- of geldkaarten beïnvloed. Aan het begin van het spel met een eigenschap bepaal je wilkeurig een stapel koninkrijkkaarten met Actie of Gend, waar je de eigenschapkaart onder schuift; tijdens het spel worden de kaarten in die stapel beïnvloed zoals op de eigenschap is aangegeven.</justify>",
+        "extra": "Eigenschappen zijn geen koninkrijkkaarten en kunnen nooit woorden gekocht of gepakt.<n>Eigenschappen kunnen uitsluitend aan koninkrijkkaarten woorden toegekend, niet aan bijvoorbeeld Zilver of Ruines (uit De Donkere Middeleeuwen).<n>Shuif nooit 2 eigenschappen onder dezelfde stapel.<n>Eigenschappen verwijzen naar de stapel die de naam fan de eigenschap gebruikt; voorbeeld: Vroom verwijst naar \"vrome kaarten\". Dat betekend elke kaart van die stapel.<n>Een Eigenschap onder een gecombineerde stapel (uit Keizerrijken en Bondgenoten) beïnvloedt al deze verschillende kaarten.<n>Eigenschappen beïnvloeden de kaarten uit de stapel ook als de stapel leeg is.",
+        "name": "Eigenschappen - Alle",
+        "notes": [
+            "This card is currently not used."
+        ]
     },
     "trappers_lodge": {
         "description": "Als je een kaart pakt, mag je een Dienst besteden om die kaart op je trekstapel te leggen.",
