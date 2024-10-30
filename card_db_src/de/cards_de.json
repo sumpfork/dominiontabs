@@ -38,6 +38,11 @@
         "extra": "Wenn du zusätzlich zu dieser Karte einen TRANK im Spiel hast, darfst du diese Karte in der Aufräumphase zurück auf den Nachziehstapel legen, statt sie abzulegen. Wenn du mindestens 1 TRANK im Spiel hast, darfst du beliebig viele ausgespielte ALCHEMISTEN zurück auf den Nachziehstapel legen.",
         "name": "Alchemist"
     },
+    "Alley": {
+        "description": "+1 Karte<br>+1 Aktion<br>Lege eine Karte ab.<line>Du kannst diese Karte aus deinem Nachziehstapel spielen, als wäre sie in deiner Hand.",
+        "extra": "Siehe Abschnitt Schattenkarten. Wenn du Gasse spielst, ziehst du eine Karte, erhältst +1 Aktion und legst eine Karte ab.",
+        "name": "Gasse"
+    },
     "Alliance": {
         "description": "Nimm eine Provinz, ein Herzogtum, ein Anwesen, ein Gold, ein Silber und ein Kupfer",
         "extra": "Nimm je eine der Karten, die noch im Vorrat sind. Man muss die Karte nehmen, wenn diese im Vorrat verfügbar ist. Die Karten werden in der Reihefolge gezogen, wie auf der Karte genannt.",
@@ -103,6 +108,11 @@
         "extra": "Beginnst du (z.B. durch die VILLA) in deinem Zug mehrfach mit deiner Kaufphase, kannst du die ARENA mehrfach nutzen.",
         "name": "Arena"
     },
+    "Aristocrat": {
+        "description": "Ist die Anzahl der Aristokratinnen, die du im Spiel hast:<br><br>1 oder 5: +3 Aktionen;<br>2 oder 6: +3 Karten;<br>3 oder 7: +3 <*COIN*>;<br>4 oder 8: +3 Käufe.",
+        "extra": "Es kommt darauf an, wie viele Aristokratinnen du im Spiel hast, nicht wie viele du in diesem Zug gespielt hast. Spielst du z.B. Daimyo und dann Aristokratin, erhältst du zweimal +3 Aktionen. Hast du 0, 9 oder 10 Aristokratinnen im Spiel, passiert nichts.",
+        "name": "Aristokratin"
+    },
     "Armory": {
         "description": "Nimm dir eine Karte, die bis zu 4 kostet. Lege diese Karte sofort auf deinen Nachziehstapel.",
         "extra": "Wenn du diese Karte ausspielst, nimmst du dir eine Karte, die bis zu 4 Coins kostet vom Vorrat. Du legst diese sofort verdeckt auf deinen Nachziehstapel, anstatt auf den Ablagestapel wie üblich.",
@@ -117,6 +127,11 @@
         "description": "Nimm eine Karte vom Vorrat auf die Hand, die bis zu 5 kostet.<n>Lege eine Handkarte auf deinen Nachziehstapel.",
         "extra": "Nimm eine Karte vom Vorrat, die zu diesem Zeitpunkt maximal 5 kostet.<n>Du darfst kein zusätzliches _ Coin&nbsp; einsetzen, um dir eine teurere Karte zu nehmen.<n>Außer _ Coin&nbsp; darf die Karte keine zusätzlichen Kosten enthalten.<n>Du darfst dir zum Beispiel keine Karte mit Trank (aus Alchemie) oder Schulden (aus Empires) in den Kosten nehmen.<n>Die genommene Karte nimmst du direkt auf die Hand.<n>Anschließend legst du eine beliebige Handkarte (das kann die gerade genommene oder eine andere sein) oben auf deinen Nachziehstapel.",
         "name": "Töpferei"
+    },
+    "Artist": {
+        "description": "+1 Aktion<br><br>+1 Karte pro Karte, von der du genau ein Exemplar im Spiel hast.",
+        "extra": "Diese Karte kostet 8 Debt, siehe Schulden im Debt Abschnitt. Sie zählt selbst mit. Für diese Karte zählen auch Karten aus anderen Zügen, die noch im Spiel sind, wie Samurai aus einem früheren Zug.",
+        "name": "Künstlerin"
     },
     "Astrolabe": {
         "description": "Jetzt und zu Beginn deines nächsten Zuges:<br><br>1 <*COIN*><br><br>+ 1 Kauf",
@@ -467,6 +482,11 @@
         "extra": "Legst du deinen Nachziehstapel auf deinen Ablagestapel, musst du dies tun, bevor du eine weitere Aktion ausspielst oder zur Kaufphase übergehst. Du darfst deinen Nachziehstapel nicht einsehen, bevor du ihn ablegst.",
         "name": "Kanzler"
     },
+    "Change": {
+        "description": "Wenn du Debt hast, +3 Coin. Ansonsten entsorge eine deiner Handkarten und nimm eine Karte, die mehr _ Coin kostet als jene. +Debt in Höhe der Differenz in _ Coin.",
+        "extra": "Denke daran, dass du Debt zu einem beliebigen Zeitpunkt während deines Zuges tilgen kannst. Dadurch kannst du manchmal steuern, wie Wandel wirkt. Hast du mindestens einen Debt, gibt Wandel dir +3 Coin; wenn nicht, entsorgst du eine Handkarte, nimmst eine beliebige Karte, die mehr Coin kostet, und nimmst Debt in der Höhe der Differenz in Coin. Du könntest z.B. ein Kupfer entsorgen, eine Provinz nehmen und 8 Debt nehmen. Du darfst keine Karte nehmen, die gleich viel oder weniger Coin kostet. Hierbei werden andere, spezielle Aspekte von Kosten ignoriert; du könntest z.B. ein Anwesen entsorgen und einen Alchemisten nehmen (aus Alchemisten), der 3 Coin und Potion kostet.",
+        "name": "Wandel"
+    },
     "Changeling": {
         "description": "Entsorge diese Karte. Nimm eine Karte, die Du im Spiel hast.<line>In Spielen mit dieser Karte: Wenn du eine Karte nimmst, die 3 Coins oder mehr kostet, darfst du sie in einen Wechselbalg eintauschen.",
         "extra": "Immer wenn ihr mit der Königreichkarte WECHSELBALG spielt und sich noch WECHSELBALG-Karten im Vorrat befinden, darfst du, wenn du eine Karte nimmst, die in diesem Moment mindestens 3 Coins kostet, die genommene Karte in einen WECHSELBALG eintauschen. Lege die genommene Karte zurück auf den entsprechenden Stapel (Anweisungen, die beim Nehmen der Karte eintreten, treten noch ein), nimm einen WECHSELBALG und lege ihn auf den Ablagestapel. Karten, die gar kein empty Coin oder weniger als 3 Coin sowie z.B. Potion (aus Alchemisten) oder empty Debt (aus Empires) kosten, dürfen nicht getauscht werden, da sie niemals mehr als 3 Coins kosten, egal wie hoch die zusätzlichen Kosten in Form von Potion oder empty Debt sind. So darf z.B. eine VERWANDLUNG (aus Alchemisten) nicht getauscht werden, da sie nur Potion aber kein empty Coin kostet. Der ALCHEMIST (aus Alchemisten) hingegen darf eingetauscht werden, da dieser 3 Coins Potion kostet. Diese Karte ist eine Nachtkarte und kann nur in der Nachtphase ausgespielt werden. Wenn du das tust, entsorge diesen WECHSELBALG und nimm dir für eine Karte, die du im Spiel hast (das können Aktions-, Geld- und/oder Nachtkarten sein), eine gleiche Karte vom entsprechenden Stapel.",
@@ -621,6 +641,11 @@
         "extra": "Flüche werden in Zugreihenfolge verbannt (beginnend bei dein im Uhrzeigersinn auf den aktuellen Spieler folgenden Spiele). Es ist möglich, dass ein Spieler einen <b>FLUCH</b> verbannt. Während ein Mitspieler die Flüche von seinem <b>Exil</b>-Tableau ablegt.",
         "name": "Hexenzirkel"
     },
+    "Craftsman": {
+        "description": "+2 Debt<br><br>Nimm eine Karte, die bis zu 5 Coin kostet.",
+        "extra": "Du nimmst eine Karte, auch wenn du bereits Debt hattest, siehe Abschnitt Debt.",
+        "name": "Handwerker"
+    },
     "Crew": {
         "description": "+3 Karten<br>Zu Beginn deines nächsten Zuges lege diese Karte auf deinen Nachziehstapel.",
         "extra": "Diese Karte auf den Nachziehstapel zu legen ist nicht optional",
@@ -684,6 +709,11 @@
         "description": "Jeder Mitspieler legt seine Handkarten bis auf 3 ab.<br>Das nächste Mal, wenn irgendjemand eine Geldkarte nimmt, die 5 oder mehr kostet, nimm eine Kostbarkeit.",
         "extra": "Kostbarkeiten sind ebenfalls Geldkarten. Wenn eine Kostbarkeit, die +5 Coin kostet, dann wird die Daueraktion ausgelöst.",
         "name": "Meuchlerin"
+    },
+    "Daimyo": {
+        "description": "+1 Karte<br>+1 Aktion<br><br>Das nächste Mal, wenn du in diesem Zug eine Aktionskarte spielst, die keine Befehlskarte ist, spiele sie danach erneut.",
+        "extra": "Dies ist nicht optional. Was auch immer deine nächste Aktionskarte ist, die keine Befehlskarte ist, durch Daimyo spielst du sie erneut. Dies tust du sogar, wenn die Karte sich selbst entsorgt hat. Befehlskarten wie z.B. Daimyo spielst du nicht erneut. Daimyo wartet auf eine Aktionskarte, die keine Befehlskarte ist (bzw. bewirkt nichts weiter, wenn du deinen Zug beendest, ohne eine solche Karte gespielt zu haben). Wenn du zwei Daimyos spielst, und dann z.B. einen Handwerker, spielst du den Handwerker insgesamt dreimal - einmal normal plus je einmal für jeden Daimyo. Daimyo kostet 6 Debt, siehe Abschnitt Debt.",
+        "name": "Daimyo"
     },
     "Death Cart": {
         "description": "+ 5 Coin<br>Du darfst eine Aktionskarte aus deiner Hand entsorgen. Wenn du das nicht machst: Entsorge diese Karte. Wenn du diese Karte nimmst, nimm dir 2 Ruinen-Karten.",
@@ -991,6 +1021,11 @@
         "extra": "Das FISCHERDORF ist eine Dauerkarte. Du darfst 2 weitere Aktionen ausführen und erhältst für die Kaufphase +1 Coins. In deinem nächsten Zug darfst du eine weitere Aktion ausführen und erhältst für die Kaufphase +1 Coins.",
         "name": "Fischerdorf"
     },
+    "Fishmonger": {
+        "description": "+1 Kauf<br>+1 Coin<line>Du kannst diese Karte aus deinem Nachziehstapel spielen, als wäre sie in deiner Hand.",
+        "extra": "Siehe Abschnitt Schattenkarten. Wenn du Fischhändlerin spielst, erhältst du +1 Kauf und +1 Coin.",
+        "name": "Fischhändlerin"
+    },
     "Flag": {
         "description": "Wenn du die Handkarten für deinen nächsten Zug ziehst: + 1 Karte.",
         "extra": "Die FAHNE veranlasst dich, eine weitere Karte zu ziehen, wenn du in der Aufräumphase deine Karten vom Nachziehstapel ziehst. Dies gilt auch, wenn auf deiner Hand normalerweise weniger oder mehr als 5 Karten wären; wenn du zum Beispiel einen AUSSENPOSTEN (aus Seaside) ausgespielt hast, würdest du statt 3 Karten für den AUSSENPOSTEN-Zug 4 Karten ziehen.",
@@ -1150,6 +1185,11 @@
         "description": "+3 <*COIN*>",
         "extra": "30 Karten pro Spiel.",
         "name": "Gold"
+    },
+    "Gold Mine": {
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Kauf<br><br>Du darfst ein Gold nehmen und +4 Debt erhalten.",
+        "extra": "Du darfst ein Gold nehmen, auch wenn du schon Debt hast, siehe Abschnitt Debt. Du kannst kein Gold nehmen, ohne 4 Debt zu erhalten.",
+        "name": "Goldmine"
     },
     "Golem": {
         "description": "Decke solange Karten von deinem Nachziehstapel auf, bis 2 Aktionskarten (außer Golem-Karten) offen liegen. Lege sofort alle übrigen aufgedeckten Karten ab und spiele die beiden Aktionskarten in beliebiger Reihenfolge.",
@@ -1382,6 +1422,11 @@
         "extra": "Diese ERSCHEINUNG wird nur verwendet, wenn mindestens eine der Königreichkarten EXORZISTIN, TEUFELSWERKSTATT und/oder FOLTERKNECHT verwendet wird. Diese Karte kann nicht gekauft werden - sie kann nur durch eine Anweisung auf den Königreichkarten EXORZISTIN, TEUFELSWERKSTATT oder FOLTERKNECHT genommen werden. Du darfst eine Aktionskarte aus deiner Hand ausspielen, von der du gerade keine gleiche im Spiel hast. Du kannst eine Karte ausspielen, die du in diesem Zug gespielt, aber bereits entsorgt hast. Dauerkarten aus vergangenen Zügen befinden sich im Spiel und dürfen entsprechend nicht ausgespielt werden. Nicht ausgespielt werden darf ein weiteres TEUFELCHEN, da ein solches sich bereits im Spiel befindet.",
         "name": "Teufelchen"
     },
+    "Imperial Envoy": {
+        "description": "+5 Karten<br>+1 Kauf<br>+2 Debt",
+        "extra": "Die Debt nimmst du auch, wenn du schon Debt hattest. Siehe Abschnitt Debt.",
+        "name": "Kaiserlicher Gesandter"
+    },
     "Improve": {
         "description": "+2 Coin<br><br>Zu Beginn deiner Aufräumphase darfst du eine Aktionskarte entsorgen, die du in diesem Zug aus dem Spiel ablegen würdest, um eine Karte zu nehmen, die genau 1 Coin mehr kostet.",
         "extra": "Du darfst nur eine Aktionskarte entsorgen, die in diesem Zug abgelegt werden würde. Du darfst keine Nicht-Aktionskarte wie SILBER oder eine Dauerkarte entsorgen, die nicht in diesem Zug abgelegt wird. Den ausgespielten FORTSCHRITT selbst darfst du entsorgen. Die Karte, die du nimmst, muss keine Aktionskarte sein, sie muss nur genau 1 Coin mehr kosten als die entsorgte Aktionskarte. Die Benutzung dieser Fähigkeit ist optional, aber wenn du eine Karte entsorgst, musst du eine Karte nehmen, wenn möglich.",
@@ -1477,6 +1522,11 @@
         "extra": "Diese Karte ist ähnlich dem THRONSAAL aus dem Basisspiel - mit dem Unterschied, dass du die Aktionskarte, die du aus deiner Hand wählst, dreimal (statt zweimal) ausspielst. Lege die gewählte Aktionskarte aus, führe die Anweisungen darauf komplett aus, nimm sie zurück auf die Hand, spiele sie erneut aus, führe die Anweisungen darauf komplett aus, nimm sie zurück auf die Hand und spiele sie ein drittes Mal aus und führe die Anweisungen darauf komplett aus. Für das dreimalige Ausspielen der Aktionskarte benötigst du keine Aktionen. Du darfst zwischen dem dreimaligen Ausspielen der Aktionskarte keine andere Aktion ausspielen, außer die Aktionskarte selbst gibt dazu die Anweisung.",
         "name": "Königshof"
     },
+    "Kitsune": {
+        "description": "+1 SunToken<br><br>Wähle zwei verschiedene: +2 Aktionen; +2 Coin; jeder Mitspieler nimmt einen Fluch; nimm ein Silber.",
+        "extra": "Zuerst wird +1 SunToken ausgeführt, wodurch eine Prophezeiung ausgelöst werden kann. Wähle dann zwei verschiedene Optionen und führe sie in der aufgeführten Reihenfolge aus.",
+        "name": "Kitsune"
+    },
     "Knights": {
         "description": "Werden die Ritter im Spiel verwendet, werden alle Ritter-Karten gemischt und als verdeckter Stapel in den Vorrat gelegt. Die oberste Karte wird aufgedeckt. Nur die oberste Karte kann gekauft oder genommen werden.",
         "extra": "Im Ritter-Stapel befinden sich bei Spielbeginn 10 unterschiedliche Karten. Alle Ritter haben die selbe Basisfähigkeit, zusätzlich jedoch noch eine individuelle Anweisung. Jede Ritterkarte hat einen individuellen Namen. Wenn die Ritter als Königreichkarte für ein Spiel gewählt werden, wird der Stapel gemischt und verdeckt in den Vorrat gelegt. Siehe hierzu auch unter Spielvorbereitung 'gemischte Stapel' und 'Ritter'. Die Anweisungen auf den Ritterkarten werden wie üblich von oben nach unten ausgeführt. Sir Michael z.B. lässt die Mitspieler Karten ablegen, bevor seine Basisfähigkeit ausgeführt wird. Die Basisfähigkeit, die alle Ritter gemeinsam haben, wird wie folgt ausgeführt: Beginnend mit dem Spieler links von dir, muss jeder Mitspieler die obersten beiden Karten von seinem Nachziehstapel aufdecken. Hat der Mitspieler keine Karte aufgedeckt, die 3 Coins - 6 Coins kostet, muss er keine Karte entsorgen. Er legt beide aufgedeckten Karten ab. Kostet genau eine der beiden aufgedeckten Karten 3 Coins - 6 Coins, so muss er diese Karte entsorgen, die andere Karte legt er ab. Kosten beide aufgedeckten Karten 3 Coins - 6 Coins, so darf der Mitspieler entscheiden, welche der beiden Karten er entsorgen muss. Die andere aufgedeckte Karte legt er ab. Entsorgt ein Mitspieler auf diese Weise eine andere Ritter-Karte, so musst auch du den Ritter entsorgen, der den Angriff ausgelöst hat. Die Mitspieler dürfen keine Karten mit Potion in den Kosten (Dominion - Die Alchemisten) entsorgen. Die individuellen Fähigkeiten der einzelnen Ritter sind selbsterklärend. Darum hier nur kurze Anmerkungen zu einzelnen Rittern: Sir Martin: Es ist beabsichtigt, dass Sir Martin nur 4 Coins kostet. Sir Martin ist der einzige Ritter, den ein Spieler z.B. durch die Waffenkammer nehmen kann (natürlich nur, wenn er offen liegt). Sir Vander: Das Gold nimmst du aus dem Vorrat und legst es auf deinen Ablagestapel. Es ist egal, ob du Sir Vander in deinem eigenen Zug oder im Zug eines Mitspielers entsorgst. Dame Natalie: Die Karte nimmst du aus dem Vorrat und legst sie auf deinen Ablagestapel. Dame Anna: Du musst keine Karten entsorgen. Dame Josephine ist eine Punktekarte. Der Ritter-Stapel ist jedoch dadurch kein Punktestapel. Wird die Handelsroute (Dominion - Blütezeit) verwendet, wird kein Marker auf den Ritter-Stapel gelegt. Sollen die Ritter im Schwarzmarktstapel verwendet werden, so wird einer der 10 Ritter zufällig gezogen und in den Schwarzmarktstapel eingemischt.",
@@ -1526,6 +1576,11 @@
         "description": "+1 Aktion<br>+1 Coin<br>Bei Beginn deines nächsten Zuges: +1 Coin - Solange diese Karte im Spiel ist, bist du von Angriffen deiner Mitspieler nicht betroffen.",
         "extra": "Der LEUCHTTURM ist eine Dauerkarte. Solange der LEUCHTTURM offen vor dir liegt (im Spielbereich oder darüber), bist du grundsätzlich nicht betroffen, wenn Mitspieler Angriffskarten ausspielen (sogar wenn du das möchtest). Selber ausgespielte Angriffskarten werden vom LEUCHTTURM nicht abgewehrt. Auf Angriffe von Mitspielern darfst du weiterhin zusätzlich Reaktionskarten ausspielen. Lege den LEUCHTTURM in der Aufräumphase des nächsten Zuges ab.",
         "name": "Leuchtturm"
+    },
+    "Litter": {
+        "description": "+2 Karten<br>+2 Aktionen<br>+1 Debt",
+        "extra": "Die Debt nimmst du auch, wenn du schon Debt hast; siehe Abschnitt Debt.",
+        "name": "Sänfte"
     },
     "Livery": {
         "description": "+3 Coins<n>Wenn du in diesem Zug eine Karte nimmst, die 4 Coins oder mehr kostet: Nimm ein Pferd.",
@@ -1767,6 +1822,11 @@
         "extra": "Diese Landmarken-Karte wird genau einmal pro Spiel ausgeführt - nämlich nach Beendigung des Zuges, in dem ein Spieler die erste PROVINZ aus dem Vorrat nimmt. Entsorgt vorher ein Spieler bereits eine PROVINZ (z.B. durch das Ereignis VERSALZTES LAND), hat jener Spieler diese PROVINZ aber nicht vorher genommen und erfüllt deshalb diese Bedingung auch noch nicht. In einem Spiel, indem keine PROVINZ genommen wird, findet diese Landmarken-Karte keine Anwendung.",
         "name": "Gebirgspass"
     },
+    "Mountain Shrine": {
+        "description": "+1 SunToken<br>+2 Coin<br><br>Du darfst eine deiner Handkarten entsorgen. Wenn dann mindestens eine Aktionskarte im Müll ist: <b>+2 Karten.</b>",
+        "extra": "Diese Karte kostet 5 Debt; siehe Abschnitt Debt. Es ist egal, wer einee Aktionskarte entsorgt hat und wann, solange eine Aktionskarte im Müll liegt. Die Aktionskarte im Müll kann auch eine Karte sein, die du gerade durch das Spielen von Bergschrein entsorgt hast.",
+        "name": "Bergschrein"
+    },
     "Mountain Village": {
         "description": "+2 Aktionen<br><n>Sieh deinen Ablagestapel durch und nimm eine Karte daraus auf deine Hand; wenn du das nicht kannst: + 1 Karte.",
         "extra": "Wenn dein Ablagestapel Karten enthält, musst du eine von ihnen nehmen. Du kannst dich nicht bewusst dafür entscheiden, stattdessen eine Karte zu ziehen. Du darfst deinen Ablagestapel durchschauen und eine Karte heraussuchen, die du nimmst. Die Reihenfolge der Karten in deinem Ablagestapel spielt danach keine Rolle.",
@@ -1816,6 +1876,11 @@
         "description": "Sieh die obersten 5 Karten deines Nachziehstapels an, lege beliebig viele davon ab und den Rest in beliebiger Reihenfolge zurück auf den Nachziehstapel.<line>Diese Karte wird auf die Hand genommen (anstatt auf den Ablagestapel).",
         "extra": "Diese Karte ist eine Nachtkarte und kann nur in der Nachtphase ausgespielt werden. Wenn du diese Karte nimmst, nimm sie direkt auf die Hand, anstatt sie auf den Ablagestapel zu legen. Da die Nachtphase nach der Kaufphase kommt, kannst du diese Karte in dem Zug ausspielen, in der du sie gekauft oder auf andere Weise vorher im Zug genommen hast.",
         "name": "Nachtwache"
+    },
+    "Ninja": {
+        "description": "+1 Karte<br><br>Jeder Mitspieler legt seine Handkarten bis auf 3 ab.<line>Du kannst diese Karte aus deinem Nachziehstapel spielen, als wäre sie in deiner Hand.",
+        "extra": "Siehe Abschnitt Schattenkarten. Wenn du Ninja spielst, ziehst du eine Karte, dann legt jede andere Person so viele Handkarten ab, bis sie nur noch 3 Handkarten hat.",
+        "name": "Ninja"
     },
     "Noble Brigand": {
         "description": "+1 Coin<br>Wenn du diese Karte kaufst oder ausspielst, muss jeder Mitspieler die obersten 2 Karten von seinem Nachziehstapel aufdecken. Hat er ein Gold oder ein Silber aufgedeckt, muss er dieses entsorgen. Hat der Spieler beides aufgedeckt, entscheidest du, welche er entsorgen muss. Hat der Spieler keine Geldkarte aufgedeckt, muss er sich ein Kupfer nehmen. Die übrigen aufgedeckten Karten muss der Spieler ablegen. Du musst alle entsorgten Karten nehmen.",
@@ -2045,6 +2110,11 @@
         "extra": "Du ziehst 1 Karte, erhältst + 1 Aktion und + 1 Geld.<n>Dann schaust du, wie viele Vorratsstapel (Fluch-, Geld-, Punkte- und Aktionskarten, ggf. Ruinenkarten etc.) bereits leer sind.<n>Ist kein Stapel leer, musst du keine Handkarten ablegen.<n>Ist ein Stapel leer, legst du 1 Handkarte ab usw.<n>Wenn du nicht so viele Karten auf der Hand hast, wie Vorratsstapel leer sind, legst du so viele Karten ab, wie du kannst.",
         "name": "Wilddiebin"
     },
+    "Poet": {
+        "description": "+1 SunToken<br>+1 Karte<br>+1 Aktion<br><br>Decke die oberste Karte deines Nachziehstapels auf. Wenn sie 3 Coins oder weniger kostet, nimm sie auf deine Hand.",
+        "extra": "Karten mit Debt in ihren Kosten kosten nicht \"3 Coins oder weniger\". Die aufgedeckte Karte legst du oben auf deinen Nachziehstapel zurück, wenn sie nicht auf deine Hand genommen wird.",
+        "name": "Dichterin"
+    },
     "Pooka": {
         "description": "Du darfst eine Geldkarte aus deiner Hand, außer Verfluchtes Gold, entsorgen. Wenn du das tust: + 4 Karten.<br><br><i>Erbstück: Verfluchtes Gold</i>",
         "extra": "In der Spielvorbereitung erhält jeder Spieler ein ERBSTÜCK VERFLUCHTES GOLD und dafür ein KUPFER weniger.",
@@ -2196,10 +2266,30 @@
         "extra": "Für jedes 1 Coin, das die entsorgte Karte kostet, legst du die oberste Karte deines Nachziehstapels für den nächsten Zug zur Seite (auf diese Forscherin). Wenn du zum Beispiel ein SILBER entsorgst, legst du die obersten 3 Karten deines Nachziehstapels für deinen nächsten Zug zur Seite. Sind nicht genügend Karten im Nachziehstapel, mischst du zuerst deinen Ablagestapel und legst die Karten verdeckt als Nachziehstapel bereit. Sind dann immer noch nicht genügend Karten im Nachziehstapel, legst du so viele Karten zur Seite, wie du kannst. Die Karten werden verdeckt zur Seite gelegt. Du darfst sie anschauen, die anderen Spieler nicht.",
         "name": "Forscherin"
     },
+    "Rice": {
+        "description": "+1 Kauf<br><br>+1 Coin pro unterschiedlichem Kartentyp der Karten, die du im Spiel hast.",
+        "extra": "Hast du z.B. Daimyo, Sänfte, Fischhändlerin, drei Kupfer und Reis im Spiel, sind die Kartentypen Aktion, Befehl, Schatten und Geld, also erhältst du durch Reis +4 Coins.",
+        "name": "Reis"
+    },
+    "Rice Broker": {
+        "description": "+1 Aktion<br><br>Entsorge eine deiner Handkarten. Ist es eine Geldkarte: +2 Karten. Ist es eine Aktionskarte: +5 Karten.",
+        "extra": "Wenn du eine Karte entsorgst, die sowohl Geld- als auch Aktionskarte ist, ziehst du erst +2 Karten und dann +5 Karten. Entsorgst du eine Karte, die weder Geld- noch Aktionskarte ist, ziehst du keine Karten.",
+        "name": "Reismakler"
+    },
     "Ritual": {
         "description": "Nimm einen Fluch. Wenn du das tust: Entsorge eine Handkarte. +1 <VP>-Marker pro _ Coin, das die entsorgte Karte kostet.",
         "extra": "Wenn du keinen FLUCH nehmen kannst (z.B. weil der Vorratsstapel leer ist), passiert nichts. Es werden nur die Coin-Kosten gezählt - für Debt-Kosten oder Potion-Kosten (aus Alchemisten) erhältst du nichts.",
         "name": "Ritual"
+    },
+    "River Shrine": {
+        "description": "+1 SunToken<br><br>Entsorge bis zu 2 deiner Handkarten. Zu Beginn der Aufräumphase: Wenn du in deiner Kaufphase dieses Zuges keine Karte genommen hast, nimm eine Karte, die bis zu 4 Coins kostet.",
+        "extra": "Es ist egal, ob du in deiner Aktionsphase Karten genommen hast, es zählt hier nur die Kaufphase. Spielst du mehrere Flussschreine, nimmst du für jeden eine Karte, vorausgesetzt, du hast in deiner Kaufphase keine Karte genommen. Das Entsorgen von Karten mit dem Flusschrein ist optional; du nimmst auch eine Karte, wenn du keine Karten entsorgt hast. Hast du mehrere Kaufphasen in deinem Zug, wie z.B. durch Fortsetzung, nimmst du durch Flussschrein nur dann eine Karte, wenn du in keiner dieser Kaufphasen eine Karte genommen hast.",
+        "name": "Flussschrein"
+    },
+    "Riverboat": {
+        "description": "Zu Beginn deines nächsten Zuges: Spiele die zur Seite gelegte Karte; lass sie dabei dort liegen.<line>Spielvorbereitung: Legt eine ungenutzte Aktionskarte zur Seite, die 5 Coins kostet und keine Dauerkarte ist.",
+        "extra": "Wählt bei der Spielvorbereitung eine Aktionskarte, die keine Dauerkarte ist, 5 Coins kostet und in diesem Spiel nicht genutzt wird, und legt ein Exemplar davon zur Seite. Zum Auslosen einer soclhen Karte könnt ihr die Platzhalterkarten benutzen. Erfordert diese Karte eine bestimmte Spielvorbereitung, führt diese Spielvorbereitung ebenfalls durch. Wenn du Flussboot spielst, spielst du dadurch die zur Seite gelegte Karte zu Beginn deines nächsten Zuges. Dadurch wird die zur Seite gelegte Karte nicht bewegt; sie bleibt zur Seite gelegt, sogar wenn auf ihr Anweisungen stehen, aufgrund derer sie bewegt würde. Flussboot wird normalerweise in der Aufräumphase deines nächsten Zuges abgelegt, bleibt aber so lange im Spiel wie die Karte, die du durch sie spielst, was manchmal länger dauert (wie z.B. bei Vogelfreie aus Dark Ages, benutzt für eine Dauerkarte).",
+        "name": "Flussboot"
     },
     "Road Network": {
         "description": "Wenn ein Mitspieler eine Punktekarte nimmt: + 1 Karte.",
@@ -2215,6 +2305,16 @@
         "description": "+2 Coin<br>Wenn im Müll-Stapel eine oder mehrere Karten sind, die 3 bis 6 Coin kosten, nimm dir eine davon. Wenn das nicht der Fall ist, muss jeder Mitspieler die obersten beiden Karten von seinem Nachziehstapel aufdecken und eine solche Karte entsorgen. Lege die übrigen aufgedeckten Karten ab.",
         "extra": "Wenn im Müll-Stapel mindestens eine Karte ist, die 3 Coins-6 Coins kostet, musst du eine davon nehmen und auf deinen Ablagestapel legen. Du darfst nicht darauf verzichten. Du darfst den Müllstapel durchsehen, bevor du den Schurken ausspielst. Du zeigst die Karte, die du nimmst deinen Mitspielern. Du darfst keine Karten mit in den Kosten (Dominion - Die Alchemisten) nehmen. Wenn keine Karte im Müll-Stapel ist, die 3 Coins-6 Coins kostet, nimmst du dir keine Karte. Stattdessen muss jeder Mitspieler, beginnend mit dem Spieler links von dir, die obersten beiden Karten von seinem Nachziehstapel aufdecken und eine Karte davon entsorgen, die 3 Coins-6 Coins kostet. Hat der Mitspieler keine Karte aufgedeckt, die 3 Coins-6 Coins kostet, muss er keine Karte entsorgen. Er legt beide aufgedeckten Karten ab. Kostet genau eine der beiden aufgedeckten Karten 3 Coins-6 Coins, so muss er diese Karte entsorgen, die andere Karte legt er ab. Kosten beide aufgedeckten Karten 3 Coins-6 Coins, so darf der Mitspieler entscheiden, welche der beiden Karten er entsorgen muss. Die andere aufgedeckte Karte legt er ab.",
         "name": "Schurke"
+    },
+    "Ronin": {
+        "description": "Zieh, bis du 7 Handkarten hast.<line>Du kannst diese Karte aus deinem Nachziehstapel spielen, als wäre sie in deiner Hand.",
+        "extra": "Siehe Abschnitt Schattenkarten. Wenn du diese Karte spielst, ziehst du einzeln nacheinander Karten, bis du 7 Handkarten hast. Ggf. mischst du deinen Ablagestabel, falls der Nachziehstapel nicht ausreicht. Hast du bereits 7 oder mehr Handkarten, ziehst du keine.",
+        "name": "Ronin"
+    },
+    "Root Cellar": {
+        "description": "+3 Karten<br>+1 Aktion<br>+3 Debt",
+        "extra": "Die Debt nimmst du auch, wenn du schon Debt hast; siehe Abschnitt Debt.",
+        "name": "Erdkeller"
     },
     "Rope": {
         "description": "1 <*COIN*><n>+1 Kauf<n>Zu Beginn deines nächsten Zuges:<br>+1 Karte, und du darfst eine deiner Hand­karten entsorgen.",
@@ -2256,6 +2356,11 @@
         "extra": "Der Ruinen-Stapel besteht aus bis zu 5 unterschiedlichen Karten. Siehe hierzu auch unter Spielvorbereitung 'gemischte Stapel' und 'Ruinen'. Der Ruinen-Stapel ist Teil des Vorrats. Die offenliegende Karte (und nur diese) kann bzw. muss durch eine entsprechende Kartenanweisung genommen oder auch gekauft werden. Wenn du die Überlebenden ausspielst, siehst du dir die obersten beiden Karten von deinem Nachziehstapel an und entscheidest dich dann, ob du beide Karten auf deinen Ablagestapel legst oder ob du beide Karten in beliebiger Reihenfolge zurück auf deinen Nachziehstapel legst. Du darfst nicht eine Karte ablegen und die andere zurück auf den Nachziehstapel legen. Die übrigen 4 Ruinen-Karten sind selbsterklärend.",
         "name": "Ruinen"
     },
+    "Rustic Village": {
+        "description": "+1 SunToken<br>+1 Karte<br>+2 Aktionen<br><br>Du darfst 2 Karten ablegen für +1 Karte.",
+        "extra": "Zuerst wird +1 SunToken ausgeführt, was eine Prophezeiung auslösen kann. Dann ziehst du +1 Karte und erhältst +2 Aktionen und du darfst 2 Karten ablegen (optional einschließlich der gerade gezogenen) für zusätzlich +1 Karte",
+        "name": "Rustikales Dorf"
+    },
     "Saboteur": {
         "description": "Jeder Mitspieler muss solange Karten von seinem Nachziehstapel aufdecken, bis er eine Karte aufdeckt, die 3 oder mehr kostet. Er muss diese Karte entsorgen und darf sich eine Karte nehmen, die mindestens 2 weniger kostet. Die übrigen aufgedeckten Karten legt er ab.",
         "extra": "Jeder Mitspieler, beginnend mit dem Spieler links vom Angreifer, muss solange Karten von seinem Nachziehstapel aufdecken, bis er eine Karte aufdeckt, die oder mehr kostet. Wenn der Nachziehstapel leer ist, mischt er die bereits aufgedeckten Karten nicht mit ein. Wenn er eine Karte aufdeckt, die oder mehr kostet, muss er diese entsorgen und darf sich dann eine Karte aus dem Vorrat nehmen, die weniger kostet oder billiger ist. Die übrigen aufgedeckten Karten legt er ab. Findet er keine Karte, die oder mehr kostet, legt er seine aufgedeckten Karten ab und nichts weiter passiert.",
@@ -2295,6 +2400,11 @@
         "description": "+1 Kauf<br>Entsorge eine Karte aus deiner Hand. + X entsprechend den Kosten der entsorgten Karte.",
         "extra": "Du musst eine Karte entsorgen, sofern du eine auf der Hand hast. Entsprechend der Kosten der entsorgten Karte erhältst du für die Kaufphase + X Coins. Wenn du keine Karte entsorgen kannst, erhältst du kein zusätzliches Geld.",
         "name": "Müllverwerter"
+    },
+    "Samurai": {
+        "description": "Jeder Mitspieler legt seine Handkarten bis auf 3 ab (einmalig).<br><br>Zu Beginn jedes deiner Züge bis zum Spielende: +1 Coin.<br><i>(Diese Karte bleibt im Spiel.)</i>",
+        "extra": "Wenn du Samurai spielst, legt jede andere Person so viele Handkarten ab, bis sie nur noch 3 hat. Danach bleibt Samurai im Spiel und du erhältst durch ihn +1 Coin zu Beginn jeder deiner Züge bis zum Spielende. Die anderen Personen müssen aber nicht erneut Karten ablegen.",
+        "name": "Samurai"
     },
     "Sanctuary": {
         "description": "+1 Karte<br>+1 Aktion<br>+1 Kauf<br>Du darfst eine deiner Handkarten verbannen.",
@@ -2521,6 +2631,11 @@
         "extra": "Hat der rechts von dir sitzende Mitspieler in seinem letzten Zug eine Karte mit Kosten von 6 Coins oder weniger genommen, gekauft oder auf andere Art erhalten, nimmst du dir eine gleiche Karte vom Vorrat. Hat der Spieler mehrere Karten genommen, darfst du wählen, welche du nimmst. Da der SCHMUGGLER keine Angriffskarte ist, dürfen keine Reaktionskarten ausgespielt werden.",
         "name": "Schmuggler"
     },
+    "Snake Witch": {
+        "description": "+1 Karte<br>+1 Aktion<br>Sind alle deine Handkarten verschieden, darfst du sie aufdecken und diese Karte auf ihren Stapel zurücklegen, damit jeder Mitspieler einen Fluch nimmt.",
+        "extra": "Deine Hand aufzudeccken, wenn alle deine Handkarten unterschiedliche Namen haben, ist optional. Wenn du es tust, legst du Schlangenhexe auf ihren Stapel zurück, dann nehmen sich alle anderen Personen einen Fluch. Wenn du aus irgendeinem Grund Schlangenhexe nicht auf ihren Stapel zurücklegen kannst, nehmen die anderen Personen keinen Flich. Du dekcst deine Hand erst auf, nachdem du +1 Karte durch die Schlangenhexe gezogen hast. Die Bedingung \"alle deine Handkarten verschieden\" ist auch erfüllt, wenn du keine Handkarten hast.",
+        "name": "Schlangenhexe"
+    },
     "Snowy Village": {
         "description": "+1 Karte<br>+4 Aktionen<br>+1 Kauf<br><br>Ignoriere alle weiteren <b>+ Aktionen</b> die du in diesem Zug erhältst.",
         "extra": "Alle zusätzlichen Aktionen, die du schon hattest, bevor du diese Karte gespielt hast, verfallen nicht, auch Z.B. zurückgelegte <b>DORFBEWOHNER</b> (aus <b>Renaissance</b>). Wenn du z.B. das <b>DORF</b> spielst und dann das <b>VERSCHNEITE DORF</b>, hast du 5 weitere Aktionen danach. Alle weiteren +X Aktionen, die du in diesem Zug noch erhältst, stehen dir nicht zur Verfügung, einschließlich diejenigen vom Spielen eines weiteren <b>VERSCHNEITE DORFES</b> oder vom Eintausch von <b>DORFBEWOHNER</b> ( aus <b>Renaissance</b>). Anweisungen, die dich anderweitig dazu auffordern, weiter Karten zu spielen, z.B. durch den <b>THRONSAAL</b>, sind nicht betroffen - nur explizite +X Aktionen.",
@@ -2670,6 +2785,11 @@
         "extra": "Diese Karte ist eine Geldkarte mit zusätzlichen Anweisungen. Sie hat den Wert 1 Coin. Solange diese Karte im Spiel ist und du eine Nicht-Punktekarte kaufst (nicht wenn du sie auf andere Weise nimmst), die zu diesem Zeitpunkt maximal 4 Coins kostet, nimmst du dir eine weitere gleiche Karte vom Vorrat. Ist keine gleiche Karte im Vorrat, nimmst du dir keine weitere Karte. Kaufst du in einem Zug mehrere Karten, die maximal 4 Coins kosten, wendest du den Effekt des TALISMANS auf alle diese Karten an.",
         "name": "Talisman"
     },
+    "Tanuki": {
+        "description": "Entsorge eine deiner Handkarten. Nimm eine Karte, die bis zu 2 Coins mehr kostet als jene..<line>Du kannst diese Karte aus deinem Nachziehstapel spielen, als wäre sie in deiner Hand.",
+        "extra": "Siehe Abschnitt Schattenkarten. Wenn du diese Karte spielst, entsorgst du eine deiner Handkarten und nimmst eine Karte, die bis zu 2 Coins mehr kostet als die eben entsorgte, so als wenn du Umbau spielst.",
+        "name": "Tanuki"
+    },
     "Taskmaster": {
         "description": "+1 Aktion, + 1 Coin und wenn du in diesem Zug eine Karte nimmst, die genau 5 kostet, wiederhole diese Fähigkeit zu Beginn deines nächsten Zuges.",
         "extra": "Der Vorarbeiter kann Runde für Runde +1 Aktion und +1 Münze geben, solange du immer mindestens eine Karte mit den Kosten von genau 5 Münzen erhältst.",
@@ -2684,6 +2804,11 @@
         "description": "Du darfst eine Geldkarte aus deiner Hand entsorgen. Jeder Mitspieler mit 5 oder mehr Karten auf der Hand muss die gleiche Karte ablegen (oder zeigt seine Handkarten ohne die entsprechende Karte). Nimm dir eine Geldkarte, die bis zu 3 Coin mehr kostet als die entsorgte Karte und lege sie auf deinen Nachziehstapel.",
         "extra": "Du darfst eine Geldkarte aus deiner Hand entsorgen. Karten, die mehreren Kartentypen angehören, von denen einer GELD ist (wie der HAREM aus Die Intrige), sind Geldkarten. Wenn du eine Geldkarte entsorgst, muss jeder Mitspieler, der mindestens fünf Karten in der Hand hat, die gleiche Karte aus seiner Hand auf seinen Ablagestapel legen oder seine Handkarten vorzeigen, damit die anderen Spieler sehen, dass er diese Karte nicht auf der Hand hat. Nimm dir für die entsorgte Karte eine Geldkarte, die bis zu 3 Coin mehr kostet als die entsorgte Geldkarte, und lege sie oben auf deinen Nachziehstapel. Wenn dein Nachziehstapel aufgebraucht ist, wird dies die einzige Karte deines Nachziehstapels. Du musst dir keine teurere Geldkarte nehmen, sondern darfst dir auch eine gleich teure oder preiswertere Geldkarte nehmen.",
         "name": "Steuereintreiber"
+    },
+    "Tea House": {
+        "description": "+1 SunToken<br>+1 Karte<br>+1 Aktion<br>+2 Coins",
+        "extra": "Zuerst wird +1 SunToken ausgeführt, was eine Prophezeiung auslösen kann. Dann ziehst du +1 Karte und erhältst +1 Aktion und +2 Coins.",
+        "name": "Teehaus"
     },
     "Teacher": {
         "description": "Lege diese Karte auf dein Wirtshaustableau.<line> Zu Beginn deines Zuges darfst du diese Karte von deinem Tableau aufrufen. Wenn du das tust, darfst du deinen +1 Karte-, +1 Aktion-, +1 Kauf- oder +1 Coin- -Marker auf einen Aktions-Vorratsstapel legen, auf dem keiner deiner Marker liegt. (Wenn du eine Karte von diesem Stapel ausspielst, erhältst du zuerst den Bonus des Markers.) <n> (Diese Karte gehört nicht zum Vorrat.)",
@@ -3518,6 +3643,16 @@
         "description": "Projekte sind Fähigkeiten, die Spieler sich bis zum Spielende kaufen können. Es gibt insgesamt 20 Projekte. Zu Spielbeginn wird von den Spielern entschieden, mit welchen Projekten gespielt wird. Wir empfehlen, pro Spiel maximal 2 Projekte zu verwenden. Die Projekte werden neben dem Vorrat bereitgelegt, gehören aber nicht zum Vorrat. Außerdem erhält jeder Spieler zu Beginn 2 Holzsteine derselben Farbe und legt sie vor sich ab. Diese Holzsteine legt ihr im Spielverlauf jeweils auf die Projekte, die ihr gekauft habt.",
         "extra": "",
         "name": "Projekte"
+    },
+    "risingSun events": {
+        "description": "<justify>Ereignisse sind keine Königreichkarten. In der Kaufphase des Spielers kann der Spieler statt einer Karte ein Ereignis kaufen. Das Ereignis wird gekauft, indem der auf dem Ereignis angegebene Preis bezahlt wird und dann die darauf angegebene Anweisung ausgeführt wird. Das Ereignis verbleibt dabei einfach auf dem Tisch; der Spieler nimmt die Karte nicht; es gibt keine Möglichkeit, eine zu erwerben oder in den eigene Kartensatz zu bringen. Der Erwerb eines Events verbraucht den Kauf; normalerweise kann der Spieler entweder eine Karte oder ein Ereignis kaufen. Ein Spieler mit zwei Käufen, wie z.B. nach dem Ausspielen eines Wildhüters könnte zwei Karten oder zwei Ereignisse oder eine Karte und ein Ereignis kaufen (in beliebiger Reihenfolge). Das gleiche Event kann mehrfach innerhalb eines Zugs gekauft werden, wenn der Spieler genug Käufe hat. Einige Ereignisse ergeben zusätzliche Käufe und ermöglichen dem Spieler so anschließend weitere Karten und Ereignisse zu kaufen. Spieler können im gleichen Zug kein weiteres Geld ausspielen nach dem Kauf eines Ereignisses. Der Kauf von Ereignissen ist nicht so wie der Kauf von Karten und löst so nicht Karten wie Sumpfhexe oder Halsabschneider (aus Blütezeit) aus. Kosten von Ereignissen werden nicht von Karten wie dem Brückentroll beeinflusst.</justify>",
+        "extra": "<b>Ereignisse</b> sind keine Königreichkarten. Sie liegen lediglich aus und liefern einen Effekt, den du kaufen kannst. Es gibt keine Möglichkeit, dass du ein <b>Ereignis</b> nehmen kannst oder das ein <b>Ereignis</b> in deinem Kartensatz ist.",
+        "name": "Ereignisse - Rising Sun"
+    },
+    "risingSun prophecies": {
+        "description": "Prophezeiungen sind Regeln, die ggf. im Spiel zur Anwendung kommen.",
+        "extra": "In jedem Spiel mit einer oder mehreren Omenkarten teilt eine Prophezeiung für sie aus. Verwendet nur eine einzige Prophezeiung, egal wie viele Omenkarten ihr verwendet.<br> • Legt auf die Prophezeiung 5 Sonnenmarker bei 2 Personen, 8 Sonnenmarker bei 3 Personen, 10 bei 4 Personen, 12 bei 5 Personen und 13 bei 6 Personen.<br> • \"+1 SunToken\" bedeutet, dass du einen Sonnenmarker von der Prophezeiung entfernst. Wenn dies der letzte Marker war, kommt der Regeltext auf der Prophezeiung sofort und für den Rest des Spiels zur Anwendung.<br> • \"+1 SunToken\" steht immer als Erstes auf Omenkarten, vor allem anderen, was die Karte macht.<br> • \"+1 SunToken\" hat keine weiteren Auswirkungen, nachdem alle Marker entfernt sind.<br> • Der Text auf Prophezeiungen ist wirkungslos, bis der letzte Sonnenmarker von ihr entfernt wurde.",
+        "name": "Prophezeiungen - Rising Sun"
     },
     "royal_galley": {
         "description": "+1 Karte<n>Du darfst eine Aktionskarte aus deiner Hand spielen, die keine Dauerkarte ist. Lege sie zur Seite. Wenn du das getan hast, spiele sie zu Beginn deines nächsten Zuges.",
