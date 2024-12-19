@@ -1,19 +1,22 @@
 {
     "exclude": [
+        "token",
         "Token",
         "Tokens",
         "Marker"
     ],
     "include": [
-        "Coins",
-        "Coin",
-        "Gefallen",
-        "Karten",
-        "Karte",
-        "Käufe",
-        "Kauf",
-        "Aktionen",
         "Aktion",
+        "Aktionen",
+        "Kauf",
+        "Käufe",
+        "Karte",
+        "Karten",
+        "Taler",
+        "Coin",
+        "Coins",
+        "Gefallen",
+        "Dorfbewohner",
         "Punkt",
         "Punkte"
     ]
