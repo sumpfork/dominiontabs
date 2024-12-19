@@ -1,6 +1,5 @@
 {
     "Abandoned Mine": {
-        "description": "+1 Coin",
         "extra": "",
         "name": "Verlassene Mine"
     },
@@ -10,7 +9,7 @@
         "name": "Überfluss"
     },
     "Academy": {
-        "description": "Wenn du eine Aktionskarte nimmst: +1 Dorfbewohner.",
+        "description": "Wenn du eine Aktionskarte nimmst: + 1 Dorfbewohner.",
         "extra": "Es ist egal, auf welche Art und Weise du die Aktionskarte nimmst (also ob du sie kaufst, aufgrund einer Kartenanweisung nehmen kannst o. ä.).",
         "name": "Akademie"
     },
@@ -1339,7 +1338,10 @@
     },
     "Grey Mustang": {
         "description": "+1 Karte<n>(Punktekarten werden überquert)<n>+2 Aktionen<n>-1 Coin<br>Das Geld dient bei Ausspielen dem Unterhalt des kostbaren Vollblüters.<line>1 <*VP*><br>Den Siegpunkt gibt es einmalig bei Spielende.",
-        "name": "Edler Schimmel"
+        "name": "Edler Schimmel",
+        "notes": [
+            "Fan Expansion: Animals"
+        ]
     },
     "Groom": {
         "description": "Nimm eine Karte, die bis zu 4 Coins kostet. Ist es eine ...<br> Aktionskarte: nimm ein Pferd;<br>Geldkarte: nimm ein Silber;<br>Punktekarte: +1 Karte und +1 Aktion.",
@@ -2455,7 +2457,10 @@
     },
     "Rabbits": {
         "description": "+1 Karte<n>+1 Aktion<br>Alle Mitspiele legen eine Punktekarten aus der Hand (sofern vorhanden) auf den Ablagestapel.<br>Beim <b>2. Karnickel</b> im selben Zug muss auch der Ablagestapel nach Punktekarte durchsucht werden, falls keine auf der Hand ist.<br>Beim <b>3. Karnickel</b> (Karnickelplage):<br> Alle Mitspiele müssen alle Punktekarten aus Hand und Ablagestapel auf den Nachziehstapel legen.<br><b>Karnickel können nur durch den Hofhund abgewehrt werden.</b>",
-        "name": "Karnickel"
+        "name": "Karnickel",
+        "notes": [
+            "Fan expansion: Animals"
+        ]
     },
     "Rabble": {
         "description": "+3 Karten<br>Jeder Mitspieler deckt die obersten 3 Karten von seinem Nachziehstapel auf. Er muss alle aufgedeckten Aktions- und Geldkarten ablegen. Die übrigen aufgedeckten Karten legt er in beliebiger Reihenfolge zurück auf seinen Nachziehstapel.",
@@ -3733,7 +3738,10 @@
     },
     "Yard Dog": {
         "description": "+1 Karte<n>+1 Aktion<br>Wehrt Angriffe gegen den Bereich (Hand, Nachzieh- oder Ablagestapel) ab, in dem er sich befindet, sofern er sichtbar ist/wird oder vorgezeigt werden kann.",
-        "name": "Hofhund"
+        "name": "Hofhund",
+        "notes": [
+            "Fan expansion: Animals"
+        ]
     },
     "Young Witch": {
         "description": "+2 Karten<br>Lege 2 Karten aus deiner Hand ab. Jeder Mitspieler darf eine Bannkarte aus seiner Hand aufdecken. Wenn er das nicht macht, muss er sich einen Fluch nehmen.",
