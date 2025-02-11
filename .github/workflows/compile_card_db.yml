@@ -45,7 +45,7 @@ jobs:
           mkdir -p ./pr
           echo $PR_NUMBER > ./pr/pr_number
       - name: Upload PR Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pr_number
           path: pr/
