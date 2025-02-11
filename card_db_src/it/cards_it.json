@@ -10,8 +10,8 @@
         "name": "Alchimista"
     },
     "Alms": {
-        "description": " Una volta a turno: se non hai carte Tesoro in gioco, Ottieni una carta dal costo massimo di 4 <*COIN*>.",
-        "extra": " Puoi comprare questo Evento soltanto una volta per turno. Quando lo fai, se non hai Tesori in gioco, Ottieni una carta che costi al massimo 4 <*COIN*>. La carta Ottenuta viene dalla Riserva.",
+        "description": " Una volta a turno: se non hai carte Tesoro in gioco, Ottieni una carta dal costo massimo di 4 Coin.",
+        "extra": " Puoi comprare questo Evento soltanto una volta per turno. Quando lo fai, se non hai Tesori in gioco, Ottieni una carta che costi al massimo 4 Coin. La carta Ottenuta viene dalla Riserva.",
         "name": "Elemosina"
     },
     "Altar": {
@@ -23,7 +23,7 @@
         "name": "Ambasciatore"
     },
     "Amulet": {
-        "description": "Adesso, e all'inizio del tuo prossimo turno, scegli: +1 <*COIN*> oppure Elimina una carta dalla tua mano oppure Ottieni una carta Argento.",
+        "description": "Adesso, e all'inizio del tuo prossimo turno, scegli: +1 Coin oppure Elimina una carta dalla tua mano oppure Ottieni una carta Argento.",
         "extra": "Scegli qualcosa quando giochi questa carta, e scegli ancora all'inizio del tuo prossimo turno; le scelte possono essere uguali o diverse.",
         "name": "Amuleto"
     },
@@ -41,7 +41,14 @@
         "name": "Armeria"
     },
     "Artificer": {
+        "description": "+1 Carta\n+1 Azione\n+1 Coin\nScarta un qualsiasi numero di carte.\nPuoi Ottenere una carta dal costo esattamente pari a 1 Coin per carta scartata, e posizionarla in cima al tuo mazzo.",
+        "extra": "Per prima cosa Ottieni +1 Carta, +1 Azione e +1 Coin. Poi, scarti un qualsiasi numero di carte. Puoi anche scegliere di non scartare alcuna carta. Dopodiché, puoi Ottenere una carta dal costo esatto di 1 Coin per ogni carta scartata. Per esempio, se hai scartato due carte puoi Ottenere una carta dal costo di 2 Coin; se non scarti alcuna carta, puoi Ottenere una carta dal costo 0 Coin. La carta Ottenuta proviene dalla Riserva e viene posizionata in cima al tuo mazzo. Puoi scegliere di non Ottenere alcuna carta, anche se scarti carte.",
         "name": "Artigiano"
+    },
+    "Artisan": {
+        "description": "Ottieni una carta che costa fino a 5 Coin.\nMetti una carta della tua mano sulla cima del tuo mazzo",
+        "extra": "La carta che ottieni proviene dalla Riserva ed è messa direttamente in mano.\nNon puoi utilizzare _ Coin per incrementare il costo della carta che ottieni, il cui costo deve oscillare tra 0 Coin e 5 Coin.\nDopo aver ottenuto la carta, metti una carta dalla mano sul tuo mazzo di pesca; può essere la stessa carta, oppure una carta diversa.",
+        "name": "Arti e Mestieri"
     },
     "Bag of Gold": {
         "description": "+1 Azione\nOttieni una carta Oro, mettendola in cima al tuo mazzo.\n(Questa carta non è nella Riserva.)",
@@ -53,6 +60,11 @@
     },
     "Band of Misfits": {
         "name": "Banda di Reietti"
+    },
+    "Bandit": {
+        "description": "Ottieni un Oro.\nOgni altro giocatore rivela le prime due carte del proprio mazzo, elimina una carta Tesoro che non sia Rame e scarta il resto.",
+        "extra": "Prima ottieni una carta Oro dalla Riserva, da collocare sui suoi scarti.\nPoi ogni giocatore, in ordine di turno, rivela le prime due carte del proprio mazzo, elimina una carta Tesoro a sua scelta che non sia Rame (quindi Argento od Oro), e scarta le carte rivelate.\nIl giocatore che non rivela carte Tesoro se non carte Rame semplicemente scarta le due carte.",
+        "name": "Bandito"
     },
     "Bandit Camp": {
         "name": "Accampamento dei Banditi"
@@ -100,6 +112,8 @@
         "name": "Ponte"
     },
     "Bridge Troll": {
+        "description": "Ciascun altro giocatore prende un segnalino -1 Coin. Adesso, e all'inizio del tuo prossimo turno:\n+1 Acquisto<line>Fintanto che questa carta rimane in gioco, le carte costano 1 Coin in meno durante i tuoi turni, ma mai meno di 0 Coin.",
+        "extra": "Questa carta fornisce a ciascun altro giocatore un segnalino -1 Coin, che fa sì che gli altri giocatori ottengano 1 Coin in meno la prossima volta che ottengono _ Coin; vedi la sezione Segnalini. Ti fornisce, inoltre, +1 Acquisto, sia nel turno in cui la giochi sia nel tuo turno succesivo. Fintanto che il Troll del ponte rimane in gioco, le carte costano 1 Coin in meno solamente durante i tuoi turni, ma mai meno di 0 Coin. Questo si applica a tutte le carte, comprese le carte nella Riserva, quelle in mano e quelle nei mazzi. Per esempio, avendo in gioco il Troll del ponte, giocare la Demolizione ed eliminare la Tenuta consentirà di guardare una sola carta anziché due, perché la Tenuta costerà solo 1 Coin. Questo effetto è comulativo; avendo in gioco tre Troll del ponte, uno giocato in questo turno e altri due ancora in gioco dal turno scorso, tutte le carte costeranno 3 Coin in meno questo turno (fino ad un minimo di 0 Coin).",
         "name": "Troll del Ponte"
     },
     "Bureaucrat": {
@@ -118,6 +132,8 @@
         "name": "Carovana"
     },
     "Caravan Guard": {
+        "description": "+1 Carta\n+1 Azione\nAll'inizio del prossimo turno, +1 Coin<line>Se un altro giocatore gioca una carta Attacco,puoi giocare questa carta dalla tua mano.\n<i>(+1 Azione non ha effetto se non stai goicando il tuo turno.)</i>",
+        "extra": "Questa carta ti fornisce +1 Carta e +1 Azione quando la giochi, e +1 Coin all'inizio del tuo prossimo turno. Questa carta ha inoltre un'abilità Reazione per la quale puoi giocarla quando un altro giocatore gioca una carta Attacco. Giocare questa carta durante il turno di un altro giocatore è molto simile a giocarla durante il uto turno: metti in gioco la Guardia della carovana, Ottieni +1 Carta e +1 Azione, e Ottieni +1 Coin all'inizio del tuo prossimo turno. Tuttavia, Ottenere +1 Azione durante il turno di un altro giocatore non ha alcun effetto reale; non puoi infatti giocare carte Azione durante il turno di un altro giocatore. Allo stesso modo, se un segnalino ti dà +1 Coin o +1 Acquisto durante il turno di un altro giocatore, questo non ti permette di Acquistare carte durante il turno di quel giocatore (ma il +1 Coin può cancellare il -1 Coin proveniente, per esempio, dal segnalino del Troll del ponte). Il +1 Azione (o un altro possibile +) non viene conservato per il turno successivo. Dopo aver utilizzato una Guardia della carovana come Reazione, puoi usarne un'altra, anche quella appena pescata e puoi altresì usare altre Reazioni, anche quelle appena pescate; puoi andare avanti fiino a quando non avrai altre Reazioni con le quali desideri rispondere all'Attacco.",
         "name": "Guardia della Carovana"
     },
     "Cartographer": {
@@ -152,6 +168,8 @@
         "name": "Città"
     },
     "Coin of the Realm": {
+        "description": "1 <*COIN*>\nQuando giochi questa carta posizionala sulla tua plancia Taverna.<line>Subito dopo aver risolto un'Azione, puoi chiamare questa carta per ottenere +2 Azioni.",
+        "extra": "Si tratta di una carta Tesoro del valore di 1 Coin. Dev'essere giocata nella fase degli Acquisti, come tutte le altre carte Tesoro. Quando giochi questa carta, posizionala sulla tua plancia Taverna. Produce 1 Coin durante quel turno, ma non è più in gioco. Rimane sulla plancia fino a quando non la chiami. Puioi chiamarla subito dopo aver giocato 1 Azione per Ottenere +2 Azioni (il che ti permetterà di giocare altre carte Azione). Sposta in gioco la Moneta del Regno quando la chiami, ma in quel turno non ti dà +1 Coin, solo +2 Azioni. Viene scartata al termine del turno in cui è stata chiamata, insieme alle altre carte in gioco.",
         "name": "Moneta del Regno"
     },
     "Colony": {
@@ -193,6 +211,11 @@
         "extra": " Questa carta ti fa cercare nella tua pila degli scarti, qualcosa che generalmente non ti è permesso. Puoi guardare nei tuoi scarti solo mentre giochi questa carta. Non devi mostrare agli altri giocatori la tua intera pila degli scarti, solo i Rame che ne ricavi. Dopo che hai preso i Rame, puoi lasciare le carte nello scarto in qualsiasi ordine.",
         "name": "Contabilità"
     },
+    "Courtier": {
+        "description": "Rivela una carta dalla mano. Per ogni tipologia che possiede (Azione, Attacco etc.) scegli uno tra: +1 Azione; <b>oppure</b> +1 Acquisto; <b>oppure</b> +3 Coin; <b>oppure</b> Ottieni una carta Oro. Le scelte devono essere differenti.",
+        "extra": "Per prima cosa devi rivelare una carta dalla tua mano, quindi contare le tipologie della carta rivlata. Le tipologie sono le parole in fondo alla carta e possono includere Azione, Attacco, Maledizione, Reazione, Tesoro e Vittoria (e altre parole con ulteriori espansioni di Dominion). Quindi scegli una differente opzione per ogni tipo riportato sulla carta rivelata. Se rivelate una carta con 2 tipi scegliete 2 delle 4 opzioni. Per esempio potete rivelare una carta Rame e scegliere di Ottenere una carta Oro o rivelare un Mulino a Vento e scegliere +1 Azione e +3 Coin. Se scegliete di ottenere una carta Oro questa va negli scarti.",
+        "name": "Cortigiano"
+    },
     "Courtyard": {
         "description": "+3 Carte<n>Metti una carta dalla tua mano in cima al tuo mazzo.",
         "extra": " Peschi carte e le aggiungi alla tua mano prima di metterne una sul mazzo. La carta che poni sul mazzo può essere qualsiasi carta nella tua mano, non deve per forza essere una delle tre appena pescate.",
@@ -228,10 +251,17 @@
         "extra": " Questo è un Tesoro che vale 2 Coins, come Argento. Lo giochi nella tua fase Acquisto, come gli altri Tesori. Quando lo giochi, ricevi +1 Coin extra per ogni Azione inutilizzata che ti resta. Questo significa Azioni, non carte Azione. Quindi per esempio se giochi Villaggio Agricolo (che ti da' +2 Azioni) e poi Diadema, il Diadema ti darà +2 Coins extra, per 4 Coins totali. Se non giochi carte Azione del tutto nel tuo turno, ne avrai una inutilizzata, ottenendo 3 Coins in totale dal Diadema. Questo è un Premio; vedi le Regole Addizionali.  ",
         "name": "Diadema"
     },
+    "Diplomat": {
+        "description": "+2 Carte\nSe hai 5 o meno carte in mano, (dopo la pesca), +2 Azioni<line>Quando un altro giocatore gioca una carta Attacco, se nella mano hai 5 o più carte, puoi rivelare il Diplomatico, pescare 2 carte e poi scartarne 3.",
+        "extra": "Quando giochi questa carta, ottenete di pescare +2 Carte, quindi contate le carte che avete in mano, se avete 5 o meno carte ottenete anche +2 Azioni. Quindi se giocate questa carta da una mano di 5 carte, mettete questa in gioco e quindi rimanete con 4 carte in mano, pescate 2 carte arrivando a 6 carte in mano, quindi avrete più di 5 carte in mano senza poter ottenere +2 Azioni. Il Diplomatico può anche essere usato quando un altro giocatore gioca una carta Attacco, se avete almeno 5 carte in mano. Prima che la carta Attacco abbia il suo effetto potete rivelare il Diplomatico dalla vostra mano, se lo fate pescate 2 carte, quindi scartate 3 carte dalla vostra mano (che possono anche includere il Diplomatico). Se avete ancora 5 carte in mano dopo questa procedura (per esempio perchè precedentemente era stata giocata una Sala in Grande) potete nuovamente rivelare il Diplomatico (se non l'avete scartato) e ripetere l'operazione. Le carte Reazione sono rivelate una volta per volta, non potete rivelare due carte Diplomatico contemporenaemente. Potete rivelare un Fossato dalla vostra mano (per essere immune dall'Attacco) sia prima che dopo aver risolto l'effetto di Reazione del Diplomatico. (Potete usare il Fossato anche se non l'avevate in mano prima di risolvere il Diplomatico ma l'avere pescato grazie a lui).",
+        "name": "Diplomatico"
+    },
     "Disciple": {
         "name": "Discepolo"
     },
     "Distant Lands": {
+        "description": "Posiziona questa carta sulla tua plancia Taverna.<line>Vale 4 <VP> se si trova sulla tua plancia Taverna alla fine della partita (altrimenti, vale 0 <VP>).",
+        "extra": "Questa carta è una carta Vittoria. Devono esserne usate 8 in caso di partita a 2 giocatori oppure 12 in caso di partita a 3 o più giocatori. È anche una carta Azione; quando giochi questa carta, posizionala sulla tua plancia Taverna. Rimarrà nella plancia per tutto il resto della partita; non c'è modo di chiamarla. Al termine della partita, Terre lontane vale 4 <VP> se si trova sulla plancia oppure 0 <VP> se non è sulla plancia. In entrambi i casi fa parte del tuo mazzo; per esempio, viene conteggiata per definire quanti <VP> vale una carta Giardini al termine della partita.",
         "name": "Terre Lontane"
     },
     "Duchess": {
@@ -248,7 +278,14 @@
         "extra": " Questa carta non fa nulla fino alla fine della partita, quando varrà 1 PV per ogni Ducato in tuo possesso. Se contino tutte le tue carte, la tua pila degli scarti e la tua mano sono parte del mazzo a quel punto. Durante la preparazione, metti 12 Duchi nella Riserva per una partita con 3, 4, 5 o 6 giocatori, 8 nella Riserva per una partita a 2 giocatori.",
         "name": "Duca"
     },
+    "Dungeon": {
+        "description": "+1 Azione\nAdesso e all'inizio del tuo prossimo turno: +2 Carte, quindi scarta 2 carte.",
+        "extra": "Quando giochi questa carta, Ottieni +1 Azione, peschi 2 carte e scarti 2 carte; poi, all'inizio del tuo prossimo turno, peschi altre 2 carte e scarti altre 2 carte.",
+        "name": "Dungeon"
+    },
     "Duplicate": {
+        "description": "Posiziona questa carta sulla tua plancia Taverna.<line>Quando Ottieni una carta dal costo massimo di 6 Coin, puoi chiamare questa carta per Ottenere una copia di quella carta.",
+        "extra": "Quando giochi questa carta, posizionala sulla tua plancia Taverna. Rimane sulla plancia fino a quando non la chiami. Puoi chiamarla quando Ottieni una carta dal costo massimo di 6 Coin, per Ottenere un'altra copia di quella carta. La carta Ottenuta proviene dalla Riserva e viene posizionata nel tuo scarto; Replica non può farti Ottenere carte che non provengono dalla Riserva, come per esempio l'Insegnante. La Replica può essere chiamata durante il turno di altri giocatori, se Ottieni carte; per esempio, un altro giocatore può Acquistare il Messaggero e decidere che ogni altro giocatore Ottenga una Tenuta, e in quel caso puoi utilizzare la Replica per Ottenere un'altra carta Tenuta. Puoi chiamare più di una Replica per ottenere più di una copia della stessa carta. La Replica viene scartata durante la fase di Pulizia del turno nel quale l'hai chiamata, anche se non era il tuo turno.",
         "name": "Replica"
     },
     "Embargo": {
@@ -357,6 +394,8 @@
         "name": "Giardini"
     },
     "Gear": {
+        "description": "+2 Carte\nMetti da parte fino a 2 carte dalla tua mano, a faccia in giù. All'inizio del tuo prossimo turno, prendi quelle carte e aggiungile alla tua mano.",
+        "extra": "Puoi mettere da parte zero, una o due carte dalla tua mano. Mettile a faccia in giù sotto gli Attrezzi; puoi guardarle in qualsiasi momento. Non è obbligatorio che siano carte pescate tramite gli Attrezzi. Se metti da parte zero carte, la carta Attrezzi verrà scartata nello stesso turno in cui l'hai giocata; se metti da parte una o due carte, le aggiungi alla tua mano all'inizio del tuo prossimo turno e la carta Attrezzi viene scartata al termine di quel turno.",
         "name": "Attrezzi"
     },
     "Ghost Ship": {
@@ -365,6 +404,8 @@
         "name": "Nave Fantasma"
     },
     "Giant": {
+        "description": "Gira il tuo segnalino Viaggio (all'inizio della partita è a faccia in su). Se dopo averlo girato è a faccia in giù, +1 Coin. Se è a faccia in su, +5 Coin e ciascun altro giocatore rivela la carta in cima al proprio mazzo e la Elimina se costa da 3 Coin a 6 Coin; altrimenti, la scarta e guadagna una Maledizione.",
+        "extra": "All'inizio della partita posiziona il tuo segnalino Viaggio (su cui è raffigurato uno stivale) a faccia in su. Quando giochi questa carta, gira il segnalino Viaggio. Dopodiché, se è a faccia in giù, Ottieni +1 Coin e non accade nient'altro. Se è a faccia in su, Ottieni +5 Coin e si attiva l'effetto Attacco. L'Attacco si risolve in ordine di turno, iniziando dal giocatore alla tua sinistra. Il giocatore rivela la carta in cima al proprio mazzo e la elimina se costa da 3 Coin a 6 Coin o altrimenti la scarta e guadagna una Maledizione. Le carte con Potion nel costo (Dominion - Alchimia) non costano mai da 3 Coin a 6 Coin. Le carte che riportano * o + nel costo e che costano da 3 Coin a 6 Coin (come ad esempio l'Insegnante oppure il Capolavoro di Dominion - Gilde) vengono eliminate. I giocatori possono rispondere al Gigante giocando delle Reazioni in risposta all'Attacco (per esempio Guardia della carovana) anche se il Gigante produce solo + 1 Coin quando viene giocata.",
         "name": "Gigante"
     },
     "Gold": {
@@ -395,6 +436,8 @@
         "name": "Grande Salone"
     },
     "Guide": {
+        "description": "+1 Carta\n+1 Azione\nPosiziona questa carta sulla tua plancia Taverna.<line>All'inizio del tuo turno puoi chiamare questa carta per scartare la tua mano e pescare 5 carte.",
+        "extra": "Quando giochi questa carta, Ottieni +1 Carta e +1 Azione e la posizioni sulla tua plancia Taverna. Rimane sulla plancia fino a quando non la chiami all'inizio di uno dei tuoi turni. Nel caso in cui ci siano vari effetti che si attivano all'inizio di un turno, scegli tu in che ordine risolverli. Quando chiami la Guida, la sposti dalla plancia in gioco e scarti la tua mano, dopodiché peschi 5 carte. Viene scartata al termine del turno in cui è stata chiamata, insieme alle altre carte in gioco.",
         "name": "Guida"
     },
     "Haggler": {
@@ -407,6 +450,11 @@
         "extra": " Prima peschi una carta, e ricevi +1 Azione. Quindi puoi scartare una carta per ricevere un ulteriore +1 Azione, o scartare una carta per ricevere +1 Acquisto, o scartare 2 carte per ricevere entrambi i bonus, o non scartare nulla per non ricevere nulla. Ricevi solo il +1 Azione e +1 Acquisto extra se hai davvero scartato una carta per essi. Non puoi scartare più carte per ricevere più +1 Azione o più +1 Acquisto. ",
         "name": "Borgo"
     },
+    "Harbinger": {
+        "description": "+1 Carta\n+1 Azione\n Guarda i tuoi scarti. Se vuoi puoi mettere una carta dai tuoi scarti sulla cima del tuo mazzo.",
+        "extra": "Prima peschi una carta e ottieni +1 Azione; poi guardi i tuoi scarti e, se lo vuoi, metti una carta presa dagli scarti sulla cima del tuo mazzo. Ricorda che non è obbligatorio.",
+        "name": "Avanscoperta"
+    },
     "Harem": {
         "extra": " Questa è sia una carta Tesoro che una carta Vittoria. Puoi giocarla per 2 Coins, proprio come una carta Argento. Alla fine della partita, vale 2 PV. Durante la preparazione, metti 12 Harem nella Riserva per una partita con 3, 4, 5 o 6 giocatori, 8 nella Riserva per una partita a 2 giocatori.",
         "name": "Harem"
@@ -417,6 +465,8 @@
         "name": "Mietitura"
     },
     "Haunted Woods": {
+        "description": "Fino al tuo prossimo turno, quando un qualsiasi altro giocatore Acquista una carta, posiziona la propria mano in cima al proprio mazzo nell'ordine che preferisce. All'inizio del tuo prossimo turno:\n+3 Carte",
+        "extra": "Su questa carta sono riportati due effetti che non si attivano appena viene giocata: pescherai 3 carte all'inizio del tuo prossimo turno, e fino a quel momento gli altri giocatori posizioneranno il resto della loro mano sul proprio mazzo ogniqualvolta Acquistano una carta. Un giocatore può non avere carte in mano quando acquista una carta; generalmente, le carte rimaste in mano sono carte Vittoria, Maledizioni e Azioni non giocate. Un giocatore può evitare intenzionalmente di giocare carte Tesoro o Azione per trarre vantaggio dall'effetto di questa carta che lo costringe a posizionare la priopria mano sul mazzo. Al termine del turno i giocatori che decidono di non Acquistare carte scarteranno la loro mano come di consueto. In caso di acquisto di Eventi (che non contano come carte), questo effetto non si attiva. Se giochi la Foresta Infestata e poi svolgi immediatamente un altro turno, per esempio per effetto delle carte Missione o Avamposto (Dominion - Seaside), peschi le 3 carte all'inizio di quel turno e scarti la Foresta infestata al termine dello stesso: gli altri giocatori non verranno mai influenzati da questa carta. Se vuoi usare una carta Reazione come il Fossato contro la Foresta infestata, devi usarla non appena quest'ultima viene giocata.",
         "name": "Foresta Infestata"
     },
     "Haven": {
@@ -441,6 +491,8 @@
         "name": "Strada Maestra"
     },
     "Hireling": {
+        "description": "All'inizio di ciascuno dei tuoi turni, per il resto della partita:\n+1 Carta\n<i>(Questa carta rimane in gioco)</i>",
+        "extra": "Dopo aver giocato questa carta, peschi una carta aggiuntiva all'inizio di ciascuno dei tuoi turni, per il resto della partita. Il Bravo rimane in gioco per tutto il resto della partita, per ricordarti del suo effetto. Se usi il Discepolo (o una carta simile come per esempio la Sala del Trono) per giocare due volte il Bravo, pescherai due carte aggiuntive all'inizio di ciascun turno, e anche il Discepolo rimarrà in gioco per il resto della partita.",
         "name": "Bravo"
     },
     "Hoard": {
@@ -545,12 +597,21 @@
         "name": "Arti Perdute"
     },
     "Lost City": {
+        "description": "+2 Carte\n+2 Azioni<line>Quando Ottieni questa carta, ciascun altro giocatore pesca una carta.",
+        "extra": "Quando ottieni questa carta, ciascun altro giocatore pesca una carta. Questo effetto si applica sia che tu abbia Acquistato la carta sia che tu l'abbia Ottenuta in un altro modo.",
         "name": "Città Perduta"
+    },
+    "Lurker": {
+        "description": "+1 Azione\nScegli: Elimina una carta Azione dalla Riserva; oppure Ottieni una carta Azione dal Cestino",
+        "extra": "La carta che viene eliminata o ottenuta deve essere una carta Azione, ma può anche avere altri tipi. Per esempio, l'Osservatore può eliminare dalla Riserva una carta Nobili e ottenere dal Cestino la carta Nobili. Quando ottenete una carta con l'Osservatore questa va negli scarti.",
+        "name": "Osservatore"
     },
     "Madman": {
         "name": "Folle"
     },
     "Magpie": {
+        "description": "+1 Carta\n+1 Azione\nRivela la carta in cima al tuo mazzo. Se è una carta Tesoro, aggiungila alla tua mano. Se è una carta Azione o Vittoria, Ottieni una Gazza Ladra.",
+        "extra": "Se la prima carta del tuo mazzo è una carta Tesoro, la aggiungi alla tua mano; altrimenti, la posizioni nuovamente in cima al tuo mazzo. Se la carta è una carta Azione o una carta Vittoria, Ottieni una Gazza Ladra; se il mazzetto delle Gazze Ladre è terminato, rivelare una carta Azione o una carta Vittoria non avrà alcun effetto. Se riveli un Harem (Dominion - Intrigo), lo aggiungi alla tua mano e guadagni una Gazza Ladra, dal momento che è sia una carta Tesoro sia una carta Vittoria.",
         "name": "Gazza Ladra"
     },
     "Mandarin": {
@@ -587,18 +648,30 @@
     "Mercenary": {
         "name": "Mercenario"
     },
+    "Merchant": {
+        "description": "+1 Carta\n+1 Azione\nLa prima volta che giochi una carta Argento in questo turno, +1 Coin",
+        "extra": "Quando giochi Banco del Mercato peschi una carta e hai un'azione in più.\nSe nel tuo turno giochi una carta Argento ti fornisce anche un +1 Coin.\nSe giochi piu' carte Banco del Mercato, ciascuna ti darrà +1 Coin quando e se giocherai il primo Argento; se però ne dovessi giocare più di un Argento, solo il primo ti darà un +1 Coin",
+        "name": "Banco del Mercato"
+    },
     "Merchant Ship": {
         "description": "Ora e all'inizio del tuo prossimo turno: +2 Coins.",
         "extra": " Ricevi 2 Coins da spendere in questo turno, e altre 2 nel tuo prossimo turno. Lascia questa carta davanti a te fino alla fase Pulizia del tuo prossimo turno.",
         "name": "Nave Mercantile"
     },
     "Messenger": {
+        "description": "+1 Acquisto\n+2 Coin\nPuoi posizionare il tuo mazzo nello scarto.<line>Quando questa carta è il tuo primo acquisto del turno, Ottieni una carta dal costo massimo di 4 Coin e ciascun altro giocatore Ottiene una copia di quella carta.",
+        "extra": "Quando giochi questa carta Ottieni +1 Acquisto, +2 Coin e puoi posizionare il tuo mazzo nello scarto (anche se non è obbligatorio farlo). Quest'azione non comporta scartare carte e non attiva la Galleria (Dominion - Nuovi orizzonti). Quando acquisti il Messaggero, se è la prima carta o Evento che hai Acquistato in questo turno, Ottieni una carta dal costo massimo di 4 Coin dalla Riserva, la metti nel tuo scarto, quindi ogni altro giocatore Ottiene una copia di quella stessa carta, in ordine di turno. Una volta che un giocatore Ottiene l'ultima copia di quella carta presente nella Riserva, gli altri giocatori non Ottengono alcuna carta.",
         "name": "Messaggero"
     },
     "Militia": {
         "description": "+2 Coins<n>Ogni altro giocatore scarta fino ad avere 3 carte nella sua mano.",
         "extra": " I giocatori attaccati scartano carte fino ad avere solo 3 carte in mano. I giocatori che avevano 3 o meno carte in mano quando Milizia è stata giocata non scartano nessuna carta.",
         "name": "Milizia"
+    },  
+    "Mill": {
+        "description": "+1 Carta\n+1 Azione\nPuoi scartare due carte, per ottenere +2 Coin<line>1 <*VP*>",
+        "extra": "Puoi scegliere di scartare due carte dalla tua mano, anche se ne hai una sola, ma otterrai +2 Coin solo se scarti effettivamente due carte.<line>Usa 8 carte Mulino a Vento nelle partite con 2 giocatori, 12 Carte Mulino a Vento da 3 giocatori in su.",
+        "name": "Mulino a Vento"
     },
     "Mine": {
         "description": "Elimina una carta Tesoro dalla tua mano. Ottieni una carta Tesoro che costi fino a 3 Coins in più; mettila nella tua mano.",
@@ -621,6 +694,8 @@
         "name": "Zecca"
     },
     "Miser": {
+        "description": "Scegli una delle seguenti opzioni: posiziona una carta Rame dalla tua mano sulla tua plancia Taverna oppure +1 Coin per ciascuna carta Rame presente sulla tua plancia Taverna.",
+        "extra": "Puoi scegliere di posizionare una carte Rame dalla tua mano sulla plancia Taverna anche se non hai carte Rame in mano; in questo caso, non succede nulla. Puoi scegliere di ottenere +1 Coin per ogni carta Rame sulla plancia anche se non ci sono carte Rame sulla plancia; anche in questo caso, non succede nulla. Posizionare una carta Rame dalla tua mano sulla plancia Taverna non equivale a eliminarla; le carte Rame sulla tua plancia non sono in gioco, ma fanno ancora parte del tuo mazzo ai fini del conteggio dei punti finale.",
         "name": "Spilorcio"
     },
     "Mission": {
@@ -698,8 +773,18 @@
     "Page": {
         "name": "Paggio"
     },
+    "Page -> Champion": {
+        "description": "<justify>Il Paggio può essere scambiato per il Cacciatore di tesori, che viene scambiato per il Guerriero, che viene scambiato per l'Eroe, che viene scambiato per il Campione.</justify><left><u>Paggio</u>: +1 Carta; +1 Azione</left><left><u>Cacciatore di Tesori</u>: +1 Azione; +1 Coin; Ottieni 1 carta Argento per ogni carta che il giocatore alla tua destra ha Ottenuto nel proprio turno.<br><u>Guerriero</u>: +2 Carte; Per ciascun Viaggiatore che hai in gioco (compreso questo), ciascun altro giocatore scarta la carta in cima al proprio mazzo e la Elimina se costa 3 Coin o 4 Coin.<br><u>Eroe</u>: +2 Coins; Ottieni un Tesoro.<br><u>Campione</u>: +1 Azione; Per il resto della partita, quando un altro giocatore gioca una carta Attacco, questa carta non ha effetti su di te, e quando tu giochi un'Azione, guadagni +1 Azione. <i>(Questa carta rimane in gioco)</i>.</left>",
+        "extra": "Il Paggio é una carta Regno che è un Viaggiatore. Queste carte hanno una freccia sulla casella di testo, per ricordare ai giocatori che possono essere potenziate e trasformate in un'altra carta. Il Paggio può essere scambiato per il Cacciatore di tesori, che viene scambiato per il Guerriero, che viene scambiato per l'Eroe, che viene scambiato per il Campione. Il Campione non è un Viaggiatore; non può essere ulteriormente scambiato. Il Paggio può essere Acquistato od Ottenuto in altro modo durante una partita; le altre carte invece possono solo essere scambiate perché non sono nella Riserva. Quando un mazzetto di carte Viaggiatore che non fa parte della Riserva si svuota, non conta come uno dei tre mazzetti vuoti ai fini del conteggio per determinare la fine della partita oppure del conteggio per la Città (Dominion - Prosperità).<n><n>Quando un giocatore scarta un Viaggiatore, può scambiarlo con la carta indicata; posiziona nuovamente la carta scambiata sul rispettivo mazzetto, prende la nuova carta e la posiziona nel nuovo scarto. Scambiare non equivale a eliminare o a Ottenere, quindi non attiva abilità come quella della Fiera itinerante. È facoltativo. È possibile solamente quando la carta viene scartata; scartarla dalla mano, per esempio perché non è stata giocata, non attiva l'abilità. È possibile solamente se sono ancora disponibili copie della carta che si desidera ottenere dallo scambio. Se ci sono varie carte che attivano un'abilità quando vengono scartate; è il giocatore che le ha scartate che decide l'ordine di risoluzione dei loro effetti",
+        "name": "Paggio → Campione"
+    },
     "Pathfinding": {
         "name": "Esplorazione"
+    },
+    "Patrol": {
+        "description": "+3 Carte\nRivela le prime 4 carte del tuo mazzo. Prendi in mano le carte Vittoria e Maledizione e rimetti nell'ordine che vuoi le carte rimanenti sulla cima del tuo mazzo.",
+        "extra": "Pescate prima 3 carte, quindi rivelate le successive 4 carte dalla cima del mazzo. Aggiungete le carte Vittoria e le Maledizioni rivelate alla vostra mano; dovete prenderle tutte. Mettete le rimanenti carte rivelate sulla cima del mazzo nell'ordine che preferite.",
+        "name": "Pattuglia"
     },
     "Pawn": {
         "description": "Scegli due: +1 Carta, +1 Azione, +1 Acquisto, +1 Coin.<br>(le scelte devono essere diverse).",
@@ -713,6 +798,11 @@
     },
     "Peasant": {
         "name": "Contadino"
+    },
+    "Peasant -> Teacher": {
+        "description": "<justify>Il Contadino può essere scambiato per il Soldato, che viene scambiato per il Fuggitivo, che viene scambiato per il Discepolo, che viene scambiato per l'Insegnante.</justify><n><left><u>Contadino</u>: + 1 Acquisto; +1 Coin</left><left><u>Soldato</u>: +2 Coin; +1 Coin per per ciascun altro Attacco che hai in gioco. Ciascun altro giocatore con 4 o più carte in mano scarta una carta.<br><u>Fuggitivo</u>: +2 Carte; +1 Azione; Scarta una carta.<br><u>Discepolo</u>: Puoi giocare una carta Azione dalla tua mano due volte. Ottieni una copia di quella carta.<br><u>Insegnante</u>: Posiziona questa carta nella tua plancia taverna. All'inizio del tuo turno puoi chiamare questa carta per spostare il tuo segnalino +1 Carta, +1 Azione, +1 Acquisto o +1 Coin su un mazzetto di carte Azione della Riserva sul quale non sono presenti segnalini (quando giochi una carta da quel mazzetto, Ottieni prima quel bonus).</left>",
+        "extra": "Il Contadino é una carta Regno che è un Viaggiatore. Queste carte hanno una freccia sulla casella di testo, per ricordare ai giocatori che possono essere potenziate e trasformate in un'altra carta. Il Contadino può essere scambiato per il Soldato, che viene scambiato per il Fuggitivo, che viene scambiato per il Discepolo, che viene scambiato per l'Insegnante. L'Insegnante non è un Viaggiatore; non può essere ulteriormente scambiato. Il Contadino può essere Acquistato od Ottenuto in altro modo durante una partita; le altre carte invece possono solo essere scambiate perché non sono nella Riserva. Quando un mazzetto di carte Viaggiatore che non fa parte della Riserva si svuota, non conta come uno dei tre mazzetti vuoti ai fini del conteggio per determinare la fine della partita oppure del conteggio per la Città (Dominion - Prosperità).<n><n>Quando un giocatore scarta un Viaggiatore, può scambiarlo con la carta indicata; posiziona nuovamente la carta scambiata sul rispettivo mazzetto, prende la nuova carta e la posiziona nel nuovo scarto. Scambiare non equivale a eliminare o a Ottenere, quindi non attiva abilità come quella della Fiera itinerante. È facoltativo. È possibile solamente quando la carta viene scartata; scartarla dalla mano, per esempio perché non è stata giocata, non attiva l'abilità. È possibile solamente se sono ancora disponibili copie della carta che si desidera ottenere dallo scambio. Se ci sono varie carte che attivano un'abilità quando vengono scartate; è il giocatore che le ha scartate che decide l'ordine di risoluzione dei loro effetti",
+        "name": "Contadino → Insegnante"
     },
     "Peddler": {
         "description": "+1 Carta<br>+1 Azione<br>+2 Coins<line>Durante la tua fase Acquisto, questa carta costas 2 Coins in meno per ogni carta Azione che hai in gioco, ma non meno di 0 Coins.",
@@ -742,10 +832,17 @@
         "extra": " Questa non è una carta Regno. Non la usi in ogni partita. E' un tesoro che vale 5 Coins. Se ci sono solo carte da Prosperità in questa partita, aggiungi i mazzetti Platino e Colonia alle carte base nella Riserva per la partita. Se è un mix di carte regno da Prosperità e da altri set, l'inclusione di Platino e Colonia va determinata casualmente, in base alla proporzione di carte Prosperità e non-Prosperità in uso. Per esempio, scegli una carta Regno a caso fra quelle usate (come la prima carta uscita di quelle scelte a caso, il che è equivalente a tirare 1d10 dopo che son state scelte tutte le carte) e se viene da Prosperità, aggiungi Platino e Colonia alla Riserva. Platino e Colonia non sono carte Regno; quando sono incluse, ci sono 10 carte Regno, più Rame, Argento, Oro, Platino, Tenuta, Ducato, Provincia, Colonia e Maledizione nella Riserva. Durante la preparazione, metti 12 Colonie nella Riserva per una partita con 3, 4, 5 o 6 giocatori, 8 nella Riserva per una partita a 2 giocatori. [Usa tutti e 12 i Platino a prescindere dal numero dei giocatori. Platino e Colonia si usano assieme, non una senza l'altra.]",
         "name": "Platino"
     },
+    "Poacher": {
+        "description": "+1 Carta\n+1 Azione\n+1 Coin\nScarta una carta per ogni mazzo esaurito della Riserva.",
+        "extra": "Peschi la carta prima di scartare, se non ci sono mazzetti vuoti non scarti. Se ce n'è uno solo, scarti una carta. Se ce ne sono due ne scarti due, e così via. Il tutto considerando anche il mazzo delle Maledizioni, delle carte Rame, della stessa carta Bracconiere, ovvero di tutti i mazzi di carte della Riserva. Se non hai abbastanza carte da scartare, scarta l'intera mano.",
+        "name": "Bracconiere"
+    },
     "Poor House": {
         "name": "Stamberga"
     },
     "Port": {
+        "description": "+1 Carta\n+2 Azioni<line>Quando Acquisti questa carta, ottieni un altro Porto.",
+        "extra": "Quando Acquisti un Porto, Ottieni un altro Porto. Se Ottieni un Porto in qualsiasi altra maniera, non Ottieni alcun Porto aggiuntivo. Nel mazzetto dei Porti ci sono 12 carte Porto, che vanno tutte utilizzate indipendentemente dal numero di giocatori della partita.",
         "name": "Porto"
     },
     "Possession": {
@@ -786,21 +883,29 @@
         "name": "Incursione"
     },
     "Ranger": {
+        "description": "+1 Acquisto\nGira il tuo segnalino Viaggio (all'inizio della partita è a faccia in su). Se dopo averlo girato è a faccia in su, +5 Carte.",
+        "extra": "All'inizio della partita posiziona il tuo segnalino Viaggio (su cui è raffigurato uno stivale) a faccia in su. Quando giochi questa carta, Ottieni +1 Acquisto e giri il segnalino. Dopodiché, se è faccia in giù, non accade nient'altro. Se è a faccia in su, peschi 5 carte. Quindi, la prossima volta che giocherai un Ricognitore pescherai 5 carte. Il motivo per cui il segnalino Viaggio è stato girato a faccia in giù non importa; potrebbe essere stato il Gigante oppure un altro Ricognitore.",
         "name": "Ricognitore"
     },
     "Ratcatcher": {
+        "description": "+1 Carta\n+1 Azione\nPosiziona questa carta sulla tua plancia Taverna.<line>All'inizio del tuo turno puoi chiamare questa carta per Eliminare una carta dalla tua mano.",
+        "extra": "Quando giochi questa carta. Ottieni +1 Carta e +1 Azione e la posizioni sulla tua plancia Taverna. Rimane sulla plancia fino a quando non la chiami, all'inizio di uno dei tuoi turni. Nel caso in cui ci siano vari effetti che si attivano all'inizio di un tuo turno, scegli tu in che ordine risolverli. Quando chiami il Cacciatore di topi, lo sposti dalla plancia in gioco ed elimini una carta dalla tua mano. La carta Cacciatore di topi viene scartata al termine del turno in cui è stata chiamata, insieme alle altre carte in gioco.",
         "name": "Cacciatore di Topi"
     },
     "Rats": {
         "name": "Ratti"
     },
     "Raze": {
+        "description": "+1 Azione\nElimina dalla tua mano questa carta o un'altra carta. Guarda un numero di carte dalla cima del tuo mazzo pari al costo in _ Coin della carta eliminata. Aggiungine una alla tua mano e scarta le altre.",
+        "extra": "Se elimini una carta dal costo pari a 0 Coin tramite questa carta, non Ottieni alcuna altra carta. Se elimini una carta dal costo pari a 1 Coin o superiore, guardi un numero di carte dalla cima del tuo mazzo pari al costo in _ Coin della carta eliminata, ne aggiungi una alla tua mano e scarti le altre. Per esempio, se elimini una Tenuta, guardi le prime due carte del tuo mazzo, ne aggiungi una alla tua mano e scarti l'altra. Puoi eliminare anche la stessa carta Demolizione; normalmente costa 2 Coin, quindi avresti la facoltà di guardare due carte. Tuttavia, i costi possono essere influenzati da carte com eil Troll del ponte. La Demolizione non viene influenzata dal segnalino -1 Carta; se si trova in cima al tuo mazzo, dopo aver risolto la Demolizione tornerà in cima al mazzo.",
         "name": "Demolizione"
     },
     "Rebuild": {
         "name": "Ricostruzione"
     },
     "Relic": {
+        "description": "2 Coin\nQuando giochi questa carta, ciascun altro giocatore posiziona il proprio segnalino -1 Carta in cima al proprio mazzo.",
+        "extra": "Si tratta di una carta Tesoro dal valore di 2 Coin. Dev'essere giocata nella fase Acquisti, come tutte le altre carte Tesoro. Quando la giochi, tutti gli altri giocatori posizionano il proprio segnalino -1 Carta in cima al mazzo, che farà sì che peschino una carta in meno la prossima volta in cui dovranno pescare carte; vedi la sezione Segnalini. La Reliquia è una carta Attacco, ma non è una carta Azione. Essendo una carta Attacco, può essere bloccata dal Fossato e possono essere giocate carte Reazione quali la Guardia della carovana e così via. Un giocatore che risponde alla Reliquia con la Guardia della carovana per prima cosa gioca la Guardia della carovana (e pesca una carta), dopodiché posiziona il proprio segnalino -1 Carta sul mazzo.",
         "name": "Reliquia"
     },
     "Remake": {
@@ -813,10 +918,17 @@
         "extra": " Non puoi eliminare la Miglioria dal momento che non si trova nella tua mano nel momento in cui risolvi l'Azione (puoi eliminare un'altra carta Miglioria dalla tua mano). Se non hai una carta da eliminare, non puoi ottenere carte dalla Miglioria. La carta ottenuta finisce nella tua pila degli scarti. Puoi ottenere carte solo dalla Riserva. La carta ottenuta non deve per forza costare esattamente 2 Coins in più della carta eliminata; può costare qualunque valore uguale o inferiore. Non puoi usare Monete da carte Tesoro o precedenti Azioni (come il Mercato) per aumentare il costo della carta che ottieni. Puoi eliminare una carta per ottenere una copia della stessa carta.",
         "name": "Miglioria"
     },
+    "Replace": {
+        "description": "Elimina una carta dalla mano. Ottieni una carta che costi fino a 2 Coin in più del costo della carta eliminata. Se la carta ottenuta è una carta Azione o Tesoro, mettila sulla cima del tuo mazzo; se è una carta Vittoria, tutti gli altri giocatori ottengono una Maledizione.",
+        "extra": "Come la carta Miglioria, prima elimini una carta dalla tua mano, quindi ottieni una carta dalla Riserva che costi al massimo 2 Coin in più della carta eliminata, metti la carta ottenuta negli scarti. Sostituzione da un bonus ulteriore basato sul tipo della carta ottenuta; se è un'Azione o un Tesoro mettete la carta ottenuta in cima al vostro mazzo, se è una carta Vittoria gli altri giocatori ottengono ciascuno una Maledizione. È anche possibile ottenere tutti e due i bonus; se per esempio ottenete un Harem, o un Mulino a Vento, o un Nobile con Sostituzione, questi vanno sul vostro mazzo e gli altri giocatori ottengono una Maledizione (perché Mulino a Vento e Nobili hanno sia il tipo Azione che il tipo Vittoria, Harem ha sia il tipo Tesoro che il tipo Vittoria).",
+        "name": "Sostituzione"
+    },
     "Rogue": {
         "name": "Furfante"
     },
     "Royal Carriage": {
+        "description": "+1 Azione\nPosiziona questa carta sulla tua plancia Taverna.<line>Subito dopo aver risolto un'Azione, se questa carta è ancora in gioco, puoi chiamarla per rigiocare quell'Azione.",
+        "extra": "Quando giochi questa carta, Ottieni +1 Azione e la posizioni sulla tua plancia Taverna. Rimane sulla plancia fino a quando non la chiami, subito dopo aver risolto l'effetto di una carta Azione giocata che è ancora in gioco. La Carrozza reale non risponde a carte Azione che non sono più in gioco (per esempio, a una carta Provvista che è stata posizionata sulla plancia Taverna, o a una carta che si è auto-eliminata come ad esempio una Demolizione utilizzata per eliminare se stessa). Una volta chiamata, la Carrozza reale ti consente di rigiocare la carta appena giocata. Puoi chiamare più di una Carrozza reale per rigiocare la stessa carta Azione più volte (sempre che l'Azione sia ancora in gioco). L'Azione va risolta completamente prima di decidere se giocare o meno la Carrozza reale su di essa. Se usi la Carrozza reale per rigiocare una carta Durata, la Carrozza reale rimane in gioco fino a quando la carta Durata non viene scartata, per indicare che la carta Durata è stata giocata due volte.",
         "name": "Carrozza Reale"
     },
     "Royal Seal": {
@@ -877,6 +989,16 @@
         "extra": " Quando giochi questa carta come Azione nel tuo turno, prima scarti qualsiasi numero di carte dalla tua mano, quindi ottieni 1 Coin per ogni carta scartata. Puoi scegliere di scartare 0 carte, ottenendo 0 Coins. L'altra abilità non fa nulla in questo caso in quanto si usa solo come Reazione. Quando qualcun'altro usa una carta Attacco, puoi rivelare Stanza Segreta dalla tua mano. Se lo fai, innanzitutto pesca 2 carte, quindi metti sul tuo mazzo 2 carte dalla tua mano in qualsiasi ordine. Le carte che metti sul mazzo non devono necessariamente essere quelle che hai pescato. Puoi anche mettere sul mazzo la Stanza Segreta stessa; è ancora nella tua mano quando la riveli. Rivelare la Stanza Segreta avviene prima che qualsiasi Attacco abbia effetto su di te. Per esempio, se un altro giocatore usa Ladro, puoi rivelare Stanza Segreta, pescare 2 carte, metterne sul mazzo 2, e quindi risolvere il venir colpito dal Ladro. Puoi rivelare Stanza Segreta ogni volta che un giocatore usa una carta Attacco, anche se quell'attacco non ti influenzerebbe. Inoltre, puoi rivelare più di una carta Reazione in risposta a un Attacco. Per esempio, dopo aver rivelato Stanza Segreta in risposta ad un Attacco ed averne risolto l'effetto, puoi ancora rivelare un Fossato per evitare completamente l'Attacco.",
         "name": "Stanza Segreta"
     },
+    "Secret Passage": {
+        "description": "+2 Carte\n+1 Azione\nPrendi una carta dalla mano e ponila dove desideri nel tuo mazzo.",
+        "extra": "Pescate 2 carte e ottenete +1 Azione; quindi mettete una carta dalla vostra mano nel vostro mazzo dove preferite. La carte che mettete nel mazzo può essere una qualsiasi di quelle che avete in mano. Può essere messa in cima, sul fondo o in qualsiasi altra posizione del mazzo, potete contare il numero di carte che volete stiano sopra o sotto la carta che mettete, per esempio 4 carte dalla cima. Naturalmente se il mazzo di pesca non ha carte la carta sarà l'unica carta del mazzo di pesca.",
+        "name": "Passaggio Segreto"
+    },
+    "Sentry": {
+        "description": "+1 Carta\n+1 Azione\nGuarda le due carte in cima al tuo mazzo. Puoi eliminare e/o scartare quelle che vuoi. Rimetti le rimanenti in cima al tuo mazzo nell'ordine che vuoi.",
+        "extra": "Prima peschi una carta e poi ottieni +1 Azione. Poi guarda le prime 2 carte del tuo mazzo. Puoi decidere per entrambe di eliminarle, scartarle, oppure rimetterle sulla cima in qualunque ordine; puoi anche eliminarne una e scartare l'altra, o scartarne una e rimettere sulla cima l'altra.",
+        "name": "Sentinella"
+    },
     "Shanty Town": {
         "description": "+2 Azioni<n>Rivela la tua mano. Se non hai carte Azione in mano, +2 Carte.",
         "extra": " Ricevi 2 ulteriori Azioni da giocare a prescindere da tutto. Quindi devi rivelare la tua mano. Se non hai carte Azione in mano, peschi 2 carte. Se la prima carta che peschi è una carta Azione, peschi comunque la seconda carta. Le carte Azione - Vittoria sono carte Azione.",
@@ -926,6 +1048,11 @@
         "extra": " Puoi scartare un Tesoro dalla tua mano. E' opzionale. Se ne hai scartato uno, ricevi +3 Carte e +1 Azione. Peschi dopo aver scartato, così se devi rimescolare per avere le 3 carte, mescoli anche la carta appena scartata. ",
         "name": "Stalla"
     },
+    "Start Deck": {
+        "description": "Il mazzo di carte di partenza del giocatore:<n>7 carte Rame<n>3 carte Tenuta",
+        "extra": "",
+        "name": "Mazzo di partenza"
+    },
     "Stash": {
         "name": "Gruzzolo"
     },
@@ -938,9 +1065,13 @@
         "name": "Deposito"
     },
     "Storyteller": {
+        "description": "+1 Azione\n+1 Coin\nGioca fino a 3 carte Tesoro dalla tua mano. Spendi tutti i tuoi _ Coin; +1 Carta per ogni _ Coin speso.",
+        "extra": "Questa carta ti consente di giocare carte Tesoro durante la tua fase delle Azioni. Le carte Tesoro entrano in gioco e producono _ Coin proprio come se fossero state giocate durante la fase degli Acquisti. Dopodiché, il Cantastorie trasforma tutti i tuoi _ Coin in + Carte; per ciascun 1 Coin in tuo possesso, perdi il +1 Coin e Ottieni +1 Carta. Per esempio, se avevi 4 Coin, perdi i 4 Coin, ma peschi 4 Carte. In questo modo perdi tutto l'_ Coin Ottenuto fino a quel momento nel turno, compreso l'_ Coin Ottenuto giocando le carte Tesoro, il +1 Coin che ti dà il Cantastorie e qualsiasi altro _ Coin accumulato in precendenza nel turno. Puoi tenere il conto delle carte Tesoro \"speso\" per il cantastorie posizionando quelle carte al di sotto del Cantastorie. Le Potion prodotte mediante le carte Pozione (Dominion - Alchimia) non sono _ Coin, non vengono perse e non ti consentono di Ottenere alcuna Carta.",
         "name": "Cantastorie"
     },
     "Swamp Hag": {
+        "description": "Fino al tuo prossimo turno, quando un qualsiasi altro giocatore Acquista una carta, quel giocatore ottiene una Maledizione.\nAll'inizio del tuo prossimo turno:\n+3 Coin",
+        "extra": "Su questa carta sono riportati due effetti che non si attivano appena viene giocata: Ottieni +3 Coin all'inizio del tuo prossimo turno, e fino a quel momento gli altri giocatori Ottengono una Maledizione ogniqualvolta Acquistano una carta. Se un giocatore Acquista più di una carta, Otterrà una Maledizione per ciascuna carta Acquistata; i giocatori che non Acquistano carte invece non Otterranno alcuna Maledizione. L'effetto è cumulativo; se giochi due carte Megera della palude, e il giocatore successivo ne gioca un'altra, il giocatore ancora successivo Otterrà tre Maledizioni per ogni carta Acquistata. Questo effetto non si applica alle carte Ottenute altrimenti, ma solo alle carte Acquistate. In caso di acquisto di Eventi (che non contano come carte), questo effetto non si attiva. Se giochi la Megera della palude e poi svolgi immediatamente un altro turno, ad esempio, per effetto delle carte Missione o Avamposto (Dominion - Seaside), Ottieni +3 Coin all'inizio di quel turno e scarti la Megera della palude al termine dello stesso: gli altri giocatori non verranno mai influenzati da questa carta. Se vuoi usare una carta Reazione come il Fossato contro la Megera della palude, devi usarla non appena quest'ultima viene giocata.",
         "name": "Megera della Palude"
     },
     "Swindler": {
@@ -981,6 +1112,11 @@
         "extra": " Per prima cosa ricevi +1 Azione. Quindi ogni altro giocatore, te incluso, può rivelare una carta Provincia dalla propria mano. Quindi, se hai rivelato una Provincia, scarta quella carte e ottieni un Premio a tua scelta oppure un Ducato, mettendo la carta ottenuta in cima al tuo mazzo. Se non c'erano carte nel tuo mazzo, essa diventa l'unica carta nel tuo mazzo. Ci sono 5 Premi, disposti all'inizio della partita; vedi la Preparazione. Puoi ottenere Premi solo dal mazzetto Premi. Puoi ottenere qualsiasi Premio dal mazzetto Premi; non sei obbligato ad ottenere quello in cima. Puoi ottenere un Ducato, che i Premi siano o no terminati. Puoi scegliere di ottenere un Ducato anche se il mazzetto Ducati è vuoto, o un Premio anche se non ne sono rimasti; in questi casi non ottieni nulla. Dopo aver ottenuto o meno la tua carta, se nessun'altro giocatore ha rivelato Province peschi una carta e ricevi +1 Coin. ",
         "name": "Torneo"
     },
+    "Tournament and Prizes": {
+        "description": "+1 Azione\nOgni giocatore può rivelare una carta Provincia dalla sua mano. Se tu lo fai, scartala ed ottieni un Premio (dal mazzetto Premio) o un Ducato, mettendo la carta ottenuta in cima al tuo mazzo. Se nessun'altro rivela una carta Provincia, +1 Carta +1 Coin.<n><justify>Premi: <u>Borsa d'Oro</u>, <u>Destriero Fedele</u>, <u>Diadema</u>, <u>Principessa</u>, <u>Seguaci</u></justify>",
+        "extra": " Per prima cosa ricevi +1 Azione. Quindi ogni altro giocatore, te incluso, può rivelare una carta Provincia dalla propria mano. Quindi, se hai rivelato una Provincia, scarta quella carte e ottieni un Premio a tua scelta oppure un Ducato, mettendo la carta ottenuta in cima al tuo mazzo. Se non c'erano carte nel tuo mazzo, essa diventa l'unica carta nel tuo mazzo. Ci sono 5 Premi, disposti all'inizio della partita; vedi la Preparazione. Puoi ottenere Premi solo dal mazzetto Premi. Puoi ottenere qualsiasi Premio dal mazzetto Premi; non sei obbligato ad ottenere quello in cima. Puoi ottenere un Ducato, che i Premi siano o no terminati. Puoi scegliere di ottenere un Ducato anche se il mazzetto Ducati è vuoto, o un Premio anche se non ne sono rimasti; in questi casi non ottieni nulla. Dopo aver ottenuto o meno la tua carta, se nessun'altro giocatore ha rivelato Province peschi una carta e ricevi +1 Coin. ",
+        "name": "Torneo e Premi"
+    },
     "Trade": {
         "name": "Scambio"
     },
@@ -1003,6 +1139,8 @@
         "name": "Addestramento"
     },
     "Transmogrify": {
+        "description": "+1 Azione\nPosiziona questa carta sulla tua plancia Taverna.<line>All'inizio del tuo turno puoi chiamare questa carta per Eliminare una carta dalla tua mano, Ottenere una carta che costa fino a 1 Coin in più rispetto alla carta Eliminata e aggiungere questa carta alla tua mano.",
+        "extra": "Quando giochi questa carta, Ottieni +1 Azione e la posizioni sulla tua plancia Taverna. Rimane sulla plancia fino a quando non la chiami, all'inizio di uno dei tuoi turni. Nel caso in qui ci siano vari effetti che si attivano all'inizio di un turno, scegli tu in che ordine risolverli. Quando chiami la Trasformazione, al sposti dalla plancia in gioco, elimini una carta dalla tua mano e Ottieni una carta dal costo massimo di 1 Coin in più rispetto alla carta eliminata. La carta Ottenuta proviene dalla Riserva e viene posizionata nella tua mano; se non hai carte da eliminare in mano, non ne Ottieni nessuna. La carta Trasformazione viene scartata al termine del turno in cui è stata chiamata, insieme alle altre carte in gioco. Puoi eliminare una carta per Ottenerne un'altra dal costo pari a 1 Coin in più, ma anche per Ottenerne una dello stesso costo o dal costo inferiore rispetto alla carta eliminata. Puoi eliminare una carta per Ottenere una copia della stessa carta.",
         "name": "Trasformazione"
     },
     "Transmute": {
@@ -1026,6 +1164,8 @@
         "name": "Mappa del Tesoro"
     },
     "Treasure Trove": {
+        "description": "2 Coin\nQuando giochi questa carta, Ottieni una carta Oro e una carta Rame.",
+        "extra": "Si tratta di una carta Tesoro dal valore di 2 Coin. Dev'essere giocata nella fase degli Acquisti, come tutte le altre carte Tesoro. Quando giochi questa carta, Ottieni una carta Rame e una carta Oro dalla Riserva, e li posizioni nel tuo scarto. Se uno dei due mazzetti è vuoto, Ottieni comunque la carta dall'altro mazzetto.",
         "name": "Raccolta di Tesori"
     },
     "Treasury": {
@@ -1063,6 +1203,11 @@
     },
     "Vagrant": {
         "name": "Vagabondo"
+    },
+    "Vassal": {
+        "description": "+2 Coin\n Scarta la carta in cima al tuo mazzo. Se è una carta Azione puoi decidere di giocarla.",
+        "extra": "Se la carta è una carta Azione, puoi decidere di giocarla, ma non è obbligatorio.\nSe decidi di giocarla, spostala nella tua area di gioco e segui le sue istruzioni; questa carta non intacca il numero di Azioni che hai a disposizione in questo turno.",
+        "name": "Vassallo"
     },
     "Vault": {
         "description": "+2 Carte\nScarta qualsiasi numero di  carte. +1 Coin per carta scartata.\nOgni altro giocatore può scartare 2 carte. Se lo fa, pesca una carta.",
@@ -1106,6 +1251,8 @@
         "name": "Molo"
     },
     "Wine Merchant": {
+        "description": "+1 Acquisto\n+4 Coin\nPosiziona questa carta sulla tua plancia Taverna.<line>Al termine della tua fase degli Acquisti, se hai almeno 2 Coin non spesi, puoi scartare questa carta dalla tua plancia Taverna.",
+        "extra": "Quando giochi questa carta, Ottieni +1 Acquisto e +4 Coin e la posizioni sulla tua plancia Taverna. Rimane sulla tua plancia fino al termine di una tua fase degli Acquisti in cui non hai utilizzato 2 Coin o più. In quel momento, puoi scartare il Mercante di vino dalla tua plancia. Se hai più di un Mercante di vino sulla tua plancia, non hai bisogno di 2 Coin inutilizzato per ogni Mercante di vino, ma solo di 2 Coin complessivo.",
         "name": "Mercante di Vino"
     },
     "Wishing Well": {
@@ -1137,5 +1284,10 @@
         "description": "+2 Carte\nScarta 2 carte. Ogni altro giocatore può rivelare una carta Scongiuro dalla sua mano.\nSe non lo fa, ottiene una Maledizione.\nPreparazione: Aggiungi un mazzetto extra di carte Regno che costi 2 o 3 Coins alla Riserva. Le carte da quel mazzetto sono carte Scongiuro.",
         "extra": " Questa carta fa sì che ci sia un mazzetto extra nella Riserva, chiamato mazzetto Scongiuro; vedi Preparazione. Il mazzetto extra è come tutti gli altri mazzetti Regno: può essere comprato, ottenuto con carte come Cornucopia, conta per il fine partita. Quando giochi Giovane Strega, dopo aver pescato 2 carte e scartato 2 carte, ogni altro giocatore può rivelare una carta Scongiuro dalla sua mano; se non lo fa, ottiene una Maledizione. Questo Attacco colpisce gli altri giocatori in ordine di turno. I giocatori possono comunque rispondere alla Giovane Strega con carte Reazione come Mercante di Cavalli o Fossato; questi si applicano prima dello Scongiuro. Se la carta Stanza Segreta è lo Scongiuro, prima puoi rivelarla per la sua abilità di Reazione, e poi, se è ancora nella tua mano, puoi rivelarla come Scongiuro per evitare di ottenere una Maledizione. ",
         "name": "Giovane Strega"
+    },
+    "adventures events": {
+        "description": "<justify>Le carte Evento non sono da considerarsi carte Regno. Durante la fase degli Acquisti di un giocatore, il giocatore può Acquistare uno o più Eventi invece di una o più carte. Acquistare un Evento significa pagarne il costo indicato sull'Evento, quindi risolverne l'effetto. L'evento rimane fermo sul tavolo (il giocatore non se ne impossessa mai; non c'è modo per il giocatore di Ottenerne uno o aggiungerlo al proprio mazzo). Acquistare un Evento consuma un Acquisto; in generale, un giocatore può Acquistare una carta o un Evento a turno. Tuttavia, un giocatore che ha due Acquisti a disposizione (per esempio, dopo aver giocato la carta Ricognitore) può Acquistare due carte oppure due Eventi oppure ancora una carta e un Evento (nell'ordine che preferisce): lo stesso Evento può anche essere acquistato più di una volta per turno, sempre che il giocatore che intende farlo abbia Acquisti e _ Coin a sufficienza per farlo. Alcuni Eventi danno + Acquisti, consentendo in questo modo al giocatore di Acquistare ulteriori carte o Eventi nel prosieguo del turno. Acquistare un Evento non è equivalente ad Acquistare una carta; pertanto, Acquistare un Evento non attiva carte come Megera della palude o Scagnozzi (Dominion - Prosperità). Il costo degli Eventi non può essere influenzato da carte come il Troll della ponte.</justify>",
+        "extra": "Le carte Eventi sono effetti speciali disponibili da acquistare non allegati alle carte. I giocatori possono Acquistare Eventi durante la fase degli Acquisti per attivare qualsiasi effetto sia scritto, come un'alternativa (or in aggiunta) all'Acquisto di carte dalla Riserva.<n>Le carte Evento non sono da considerarsi \"carte\". Qualsiasi testo che si riferisce ad una \"carta\" (come le istruzioni di \"nominare una carta\", o gli effetti di riduzione del costo delle carte) non si applicano agli Eventi. Inoltre, le carte Evento sono stampate su carte in orizzontale con una cornice d'argento.<n>Le carte Evento possono essere mescolate nel mazzo segnaposto. Gli Eventi non fanno parte delle 10 carte Regno utilizzate durante una partita; quando viene scoperta una carta Evento, posizionatela sul tavolo ma continuate a scoprire carte fino a quando non otterrete 10 carte Regno. Per partite normali è consigliato di usare al massimo due Eventi a partita, saltando eventuali altri Eventi che dovessero essere scoperti.<n>Saltate gli Eventi anche quando utilizzate una carta segnaposto per determinare se usare Platino/Colonia (Dominion - Prosperità) o i Rifugi (Dominion - Secoli Bui) durante una partita. Gli eventi non possono essere gli Scongiuri della Giovane Strega (Dominion - Cornucopia)",
+        "name": "Eventi - Avventure"
     }
 }
