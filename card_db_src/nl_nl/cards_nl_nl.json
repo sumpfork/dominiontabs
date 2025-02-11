@@ -121,6 +121,11 @@
         "extra": "De kaart die je pakt komt uit de voorraad en gaat naar je hand. Je mag geen _ Coin gebruiken om de kosten van de te pakken kaart te verhogen; de kaart kost altijd ten minste 0 Coin en ten hoogste 5 Coin. Na het pakken van de kaart leg je een kaart uit je hand op je trekstapel. Dat mag ook de juist gepakte kaart zijn.",
         "name": "Ambachtsman"
     },
+    "Astrolabe": {
+        "description": "Nu en aan het begin van je volgende beurt:<br><br>1 <*COIN*><br><br>+ 1 Aanschaf",
+        "extra": "Deze kaart geeft je +1 Aanschaf en +1 Coin in de beurt dat je hem speelt en ook +1 Buy en +1 Coin in je volgende beurt.",
+        "name": "Sextant"
+    },
     "Augurs": {
         "description": "<justify>Deze stapel start het spel met 4 exemplaren van Kruidenverzamelaar, Misdienaar, Toverheks en Sibille, in die volgorde. Alleen de bovenste kan worden gepakt of gekocht.</justify><line><left><u>Kruidenverzamelaar</u>:</left><n>+1 Actie<n>+1 Aanschaf<n>Leg je trekstapel op je aflegstapel. Doorzoek deze en je mag er een geldkaart uit spelen.<br>Je mag de Voorspellers draaien.<n><left><u>Misdienaar</u>:</left><n>Je mag een actie- of overwinningskaart uit je hand vernietigen om een Goud te pakken.<br>Je mag deze kaart vernietigen om een Voorspeller te pakken.<n><left><u>Toverheks</u>:</left><n>+1 Actie<n>Noem een kaart. Toon de bovenste kaart van je trekstapel en neem de kaart in je hand.<n>Is het de genoemde kaart, dan pakt iedere andere speler een Vloek.<n><left><u>Sibille</u>:</left><n>+4 Kaarten<br>+1 Actie<n>leg een kaart uit je hand op je trekstapel en schuif een andere kaart onder je trekstapel.",
         "extra": "<b>Kruidenverzamelaar</b>: Het op je aflegstapel leggen van je trekstapel archiveert geen \"als je deze kaart aflegt\"-eigenschappen, zoals Tunnel (uit Het Achterland). Het spelen van een geldkaart uit je aflegstapel is optioneel, net als het draaien van de Voorspellers.<n><b>Misdienaar</b>: Beide eigenschappen zijn optioneel. Je mag er één van, beide of geen uitvoeren. Je pakt uitsluitend een Goud als je daadwerkelijk een actie- of overwinningskaart uit je hand hebt vernietigd. Je pakt uitsluitend een Voorspeller als je Misdienaar daadwerkelijk hebt vernietigd. Het pakken van een Voorspeller geeft je de huidige bovenste kaart van de stapel, ook al is dat weer een Misdienaar.<n><b>Toverheks</b>: Noem een kaart. Heeft de bovenste kaart van je trekstapel die naam, dan pakt iedere andere speler een Vloek. Ongeacht het resultaat neem jij de kaart in je hand.<n><b>Sibille</b>: Bevat je trekstapel na het trekken geen kaarten, dan wordt de eerste kaart die je teruglegt de bovenste kaart ervan.",
@@ -258,6 +263,11 @@
         "description": "+1 Kaart\n+2 Acties<line>Als je deze kaart pakt, neem dan een Gunst. Ontvang deze nu of aan het begin van je volgende beurt.",
         "extra": "Je ziet de Gunst, voordat je bepaalt of je deze direct afhandelt of aan het begin van je volgende beurt. Bewaar je de Gunst, dan ligt deze voor je tot je deze afhandelt (of tot het einde van die beurt als de Gunst aangeeft dat je deze tot de opschoonfase moet houden).",
         "name": "Gezegend Dorp"
+    },
+    "Blockade": {
+        "description": "Pak een kaart die ten hoogste 4 Coin kost en leg die opzij.<br>Aan het begin van je volgende beurt: doe de kaart in je hand.<br>Terwijl de kaart opzijgelegd is: Pakt een andere speler er in zijn beurt een exemplaar van, dan pakt hij een Vloek.",
+        "extra": "De gepakte kaart komt uit de voorraad en wordt op de <i>Blokkade</i> opzijgelegd om te onthouden welke kaart bij de <i>Blokkade</i>.<br>Eindigt de gepakte kaart om de een of andere reden niet opzijgelegd (bijvoorbeeld als je die met <i>Wachttoren</i> (uit Welvaart) vernietigt), dan gebeurt er verder niets; is de kaart opzijgelegd, dan neem je deze de volgende beurt in je hand. Tot dan pakt iedere speler die in zijn eigen beurt een exemplaar van de opzijgelegde kaart pakt ook een Vloek.",
+        "name": "Blokkade"
     },
     "Bonfire": {
         "description": "Vernietig ten hoogste 2 kaarten die je in het spel hebt.",
@@ -559,6 +569,11 @@
         "description": "Elke Koperkaart is deze beurt 1 Coin meer waard.",
         "extra": "Deze kaart verandert uitsluitend de geldwaarde van Koper in deze beurt. Ook dit effect is cumulatief. Als je de Troonzaal voor een Kopersmid gebruikt, is elke Koperkaart 3 coins waard.",
         "name": "Kopersmid"
+    },
+    "Corsair": {
+        "description": "+2 Coin<br><br>Aan het begin van je volgende beurt: +1 Kaart. Tot dan vernietigt iedere andere speler het eerste Zilver of Goud dat hij in zijn beurt speelt.",
+        "extra": "Het vernietigde Zilver of Goud geeft de speler nog wel _ Coin om die beurt te besteden",
+        "name": "Zeerover"
     },
     "Council Room": {
         "description": "+4 Kaarten\n+1 Aanschaf\nIedere andere speler trekt 1 kaart.",
@@ -1741,6 +1756,11 @@
         "extra": "Als je geen Koperkaart kunt vernietigen, krijg je ook de 3 extra geld niet.<line><b>Errata</b>: De oorsponkelijke Engelse versie was dat je de Koperkaart <i>moet</i> vernietigen, maar dit is in de 2e editie aangepast dat dit <i>mag</i>. In het Nederlands was het in de 1e editie juist vertaald als <i>het mag</i>, wat later, ook in de 2e editie, is aangepast naar [Vernietig een Koperkaart uit je hand. Als je dat doet, heb je deze beurt +3 Coins.]. Maar als je de Engelse versie volgt is <i>mag</i> dus de correcte versie.",
         "name": "Geldschieter"
     },
+    "Monkey": {
+        "description": "Tot je volgende beurt:<br>Als de speler rechts van je een kaart pakt:<br>+1 Kaart.<br><br>Aan het begin van je volgende beurt:<br>+1 Kaart.",
+        "extra": "Dit geldt ook voor kaarten die de speler in een beurt van een andere speler pakt, zoals bijvoorbeeld een Vloek die hij pakt als een andere speler de <i>Heks</i> speelt.",
+        "name": "Aap"
+    },
     "Monument": {
         "description": "+2 Coins\n+1 <VP>",
         "extra": "Voor deze kaart zijn de overwinningspuntenfiches nodig. + x <VP> - de speler neemt x overwinningspuntenfiches (1<VP>) uit de voorraad en legt deze op zijn tableau voor overwinningspuntenfiches. Hij kan deze niet meer verliezen. Hij mag 5 van deze fiches op elk moment tegen een fiche van 5<VP> wisselen.",
@@ -1975,6 +1995,11 @@
         "description": "Vernietig deze kaart.\nIedere andere speler met ten minste 5 handkaarten moet zijn hand tonen en legt 1 kaart naar jouw keuze af.\nPak 2 buitkaarten van de buitstapel.",
         "extra": "Vernietig eerst de Plundering. Daarna toont iedere andere speler met 5 of meer kaarten zijn hand en legt daarvan 1 kaart naar jouw keuze af. Dit gebeurt in beurtvolgorde, te beginnen met de speler links van je. Vervolgens pak je 2 buitkaarten van de stapel buitkaarten, die geen onderdeel van de voorraad is, en legt deze op je aflegstapel. Zijn er niet voldoende buitkaarten in voorraad, dan pak je er zoveel je kunt.",
         "name": "Plundering"
+    },
+    "Pirate": {
+        "description": "Aan het begin van je volgende beurt: pak een geldkaart die ten hoogste 6 Coin kost en neem die in je hand.<line>Als een speler een Geldkaart pakt, mag je deze kaart uit je hand spelen.",
+        "extra": "Je kunt deze kaart spelen als jij een geldkaart pakt of als een andere speler een geldkaart pakt. Speel je deze kaart in de beurt van een andere speler, dan is jouw volgende beurt de beurt waarin je de geldkaart van de <i>Piraat</i> pakt. De geldkaart die je pakt, komt uit de voorraad en gaat direct naar jouw hand.",
+        "name": "Piraat"
     },
     "Pirate Ship": {
         "description": "Kies één van de volgende 2 mogelijkheden: Iedere andere speler toont de 2 bovenste kaarten van zijn trekstapel. Tonen de andere spelers één of meer geldkaarten, dan moet ieder van hen één geldkaart (naar jouw keuze) vernietigen. Als je op deze manier ten minste één geldkaart hebt vernietigd, leg je 1 geldfiche op je piratenschiptableau. De spelers leggen alle overige getoonde kaarten af; of: + 1 Coin voor elk geldfiche op je piratenschiptableau.",
@@ -2288,6 +2313,11 @@
         "extra": "Is je trekstapel leeg voordat je alle kaarten hebt getoond, schud dan je aflegstapel (zonder de tot dan toe getoonde kaarten) en ga door met tonen. Zijn je trekstapel en je aflegstapel beide leeg, stop dan met tonen. Leg alle getoonde kaarten af, je krijgt geen kaart. Vind je een kaart die ten minste 3 Coins waard is, neem deze dan in je hand en leg de resterend getoonde kaarten af. Voorbeeld: je toont achtereenvolgens Koper, Koper, Vloek, Provincie. De Provincie kost 8 Coins, dus je stopt daar. Je neemt de Provincie in je hand en legt de 2 Koper en de Vloek af.",
         "name": "Wijsgeer"
     },
+    "Sailor": {
+        "description": "+1 Action<br> Eenmaal in deze beurt: als je een Duurzame kaart pakt, mag je die spelen.<br><br>Aan het begin van je volgende beurt: +2 Coin en je mag een kaart uit je hand vernietigen",
+        "extra": "Pak je een Duurzame kaart in de beurt dat je <i>Matroos</i> speelt, dan is het spelen ervan optioneel. Dit is cumulatief; speel je 2 <i>Matrozen</i>, dan mag je ten hoogste 2 gepakte Duurzame kaarten spelen. Twee <i>Matrozen</i> kunnen echter niet dezelfde gepakte Duurzame kaart tweemaal spelen. <i>Matroos</i> mag worden toegepast op kaarten die zijn gekocht of op andere manieren zijn gepakt, zoals met <i>Werkplaats</i>. Pak je een Duurzame kaart in je aanschaffase, dan kan <i>Matroos</i> deze spelen, ook al is het je aanschaffase. Geeft zo'n kaart je +Acties, dan mag je in je aanschaffase niet meer actiekaarten spelen; geeft zo'n kaart je geldkaarten, dan mag je die uitsluitend spelen als je nog geen kaarten hebt gekocht. De mogelijkheid om Duurzame kaarten te spelen geldt uitsluitend in de beurt dat je <i>Matroos</i> speelt; in je volgende beurt krijg je uitsluiten +2 Coin en mag je een kaart uit je hand vernietigen.",
+        "name": "Matroos"
+    },
     "Salt the Earth": {
         "description": "+1<VP><n>Vernietig een overwinningskaart uit de voorraad.",
         "extra": "Doet de vernietigde kaart iets als deze wordt vernietigd (zoals het Vervallen Kasteel), dan voer je dat uit.",
@@ -2361,10 +2391,20 @@
         "extra": "Je doet de gepakte kaart in je hand, dit is niet optioneel. Pak je hiermee een Nomadenkamp (uit Het Achterland), dan neem je die in je hand.",
         "name": "Beeldhouwer"
     },
+    "Sea Chart": {
+        "description": "+1 Kaart<br>+1 Actie<br><br>Toon de bovenste kaart van je trekstapel. Heb je er een exemplaar van in het spel, dan neem je de getoonde kaart in je hand.",
+        "extra": "Heb je een exemplaar van de getoonde kaart in het spel, met inbegrip van de zojuist gespeelde <i>Zeekaart</i> of een Duurzame kaart die je in een voorgaande beurt hebt gespeeld, dan neem je de getoonde kaart in je hand; anders laat je de kaart op je trekstapel liggen.",
+        "name": "Zeekaart"
+    },
     "Sea Hag": {
         "description": "Iedere andere speler moet de bovenste kaart van zijn trekstapel afleggen en daarna een Vloekkaart pakken, die hij op zijn trekstapel legt.",
         "extra": "Is de trekstapel van een speler leeg, dan schud hij zijn aflegstapel en legt de bovenste kaart van zijn nieuwe trekstapel af. Daarna moeten alle andere spelers, te beginnen met de speler links van de aanvaller, Vloekkaart pakken en op hun trekstapel leggen. Zijn er niet voldoende Vloekkaarten in voorraad, dan worden de resterende Vloekkaarten in beurtvolgorde verdeeld.",
         "name": "Zeeheks"
+    },
+    "Sea Witch": {
+        "description": "+2 Kaarten<br>Iedere andere speler pakt een Vloek.<br><br>Aan het begin van je volgende beurt: +2 Kaarten, leg dan 2 kaarten af.",
+        "extra": "Bij het spelen van deze kaart trek je 2 kaarten en pakt iedere andere speler een Vloek. Aan het begin van je volgende beurt trek je eerst twee kaarten en daarna leg je er 2 af.",
+        "name": "Zeekol"
     },
     "Search": {
         "description": "+2 Coin<br>De volgende keer dat een vooraadsstapel leegraakt vernietig je deze \"Zoektocht\" en pak je een Buit.",
@@ -2747,6 +2787,11 @@
         "description": "+1 Aanschaf<n><n>Deze beurt: als je een kaart pakt, mag je die op je trekstapel leggen.<n><n>Je mag een geldkaart uit je hand tweemaal spelen.",
         "extra": "Als je later in de beurt na het spelen van Hoofdtooi meerdere kaarten pakt, mag je somige of al die kaarten op je trekstapel leggen. Dit geldt zowel voor gepakte kaarten die je hebt gekocht als voor kaarten die je op een andere manier hebt gepakt, zoals Krijgskas.<br>Speel je Hoofdtooi met Hoofdtooi, dan mag je 2 geldkaarten uit je hand elk 2 keer spelen, niet 1 geldkaart uit je hand 4 keer.",
         "name": "Hoofdtooi"
+    },
+    "Tide Pools": {
+        "description": "+3 Kaarten<br>+1 Actie<br><br>Aan het begin van je volgende beurt: leg 2 kaarten af.",
+        "extra": "Bij het spelen van deze kaart krijg je +3 Kaarten en +1 Actie, maar aan het begin van je volgende beurt moet je 2 kaarten afleggen. Heb je maar 1 kaart in je hand over, dan leg je die af. Heb je geen kaarten in je hand, dan leg je niets af. Heb je meerdere Duurzame kaarten die iets aan het begin van je beurt doen, dan bepaal je zelf de volgorde ervan. Bijvoorbeeld: heb je 4 <i>Getijdenpoelen</i> en een <i>Scheepswerf</i>, dan zou je als gevolg van de <i>Getijdenpoelen</i> eerst alle kaarten in je hand kunnen afleggen en daarna de kaarten van de <i>Scheepswerf</i> kunnen trekken.",
+        "name": "Getijdenpoelen"
     },
     "Toil": {
         "description": "+1 Aanschaf<n>Je mag een actiekaart uit je hand spelen.",
