@@ -359,6 +359,16 @@ def filter_sort_cards(cards, options):
                     ].randomizer = card.randomizer
                     group_holders[(card.group_tag, card.cardset_tag)].image = card.image
 
+        # If there's only one card in the group (Summon is the only event in Promos), undo all of this and
+        # just keep the single card.
+        if options.no_single_card_groups:
+            for i, card in enumerate(keep_cards):
+                if (card.group_tag, card.cardset_tag) in group_holders:
+                    if len(cards_in_group[(card.group_tag, card.cardset_tag)]) == 1:
+                        keep_cards[i] = cards_in_group[
+                            (card.group_tag, card.cardset_tag)
+                        ][0]
+
         cards = keep_cards
 
     # Get the final type names in the requested language

@@ -390,6 +390,12 @@ def parse_opts(cmdline_args=None):
         "(e.g., Shelters, Tournament and Prizes, Urchin/Mercenary, etc.).",
     )
     group_select.add_argument(
+        "--no-single-card-groups",
+        action="store_true",
+        dest="no_single_card_groups",
+        help="If there are any groups of cards with only one card in them, ungroup them.",
+    )
+    group_select.add_argument(
         "--group-kingdom",
         action="store_true",
         dest="group_kingdom",
