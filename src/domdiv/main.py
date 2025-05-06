@@ -269,6 +269,11 @@ def filter_sort_cards(cards, options):
             if Card.sets[card.cardset_tag]["upgrades"]:
                 options.exclude_expansions.append(card.cardset_tag.lower())
                 card.cardset_tag = Card.sets[card.cardset_tag]["upgrades"]
+    if options.removed_with_expansion:
+        for card in cards:
+            if Card.sets[card.cardset_tag].get("removed", False):
+                options.exclude_expansions.append(card.cardset_tag.lower())
+                card.cardset_tag = Card.sets[card.cardset_tag]["removed"]
 
     # Combine globally all cards of the given types
     # For example, Events, Landmarks, Projects, Ways, Traits
@@ -487,7 +492,7 @@ def filter_sort_cards(cards, options):
                 if s.lower() == e or Card.sets[s].get("set_name", "").lower() == e:
                     wantedSets.discard(s)
                     knownExpansions.add(e)
-        # Give indication if an imput did not match anything
+        # Give indication if an input did not match anything
         unknownExpansions = options.exclude_expansions - knownExpansions
         if unknownExpansions:
             logger.warning(

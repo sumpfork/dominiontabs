@@ -1668,13 +1668,19 @@ class DividerDrawer(object):
                     )
             else:
                 setImage = card.setImage(self.options.use_set_icon)
-                if setImage:
+                set_images = [setImage] if setImage else []
+                if (
+                    self.options.expansion_dividers_multiple_icons
+                    and card.isExpansion()
+                ):
+                    expansion = Card.sets[card.cardset_tag]
+                    set_images = expansion.get("all_images", set_images)
+
+                for image in set_images:
                     textInsetRight += self.SET_ICON_SIZE  # they're all square
-                    self.drawSetIcon(
-                        setImage, tabWidth - textInsetRight, setImageHeight
-                    )
-            # leave extra room between the set icon and text
-            textInsetRight += padding / 2
+                    self.drawSetIcon(image, tabWidth - textInsetRight, setImageHeight)
+                    # leave extra room between the set icon and text or next icon
+                    textInsetRight += padding / 2
 
         # add padding between the text and any icons or margins
         textInset += padding
