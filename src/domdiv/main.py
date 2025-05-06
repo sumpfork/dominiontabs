@@ -676,8 +676,6 @@ def filter_sort_cards(cards, options):
 def calculate_layout(options, cards=None):
     if cards is None:
         cards = []
-    # This is in place to allow for test cases to it call directly to get
-    options = config_options.clean_opts(options)
     options.dominionCardWidth, options.dominionCardHeight = (
         config_options.parse_cardsize(options.size, options.sleeved)
     )
