@@ -626,7 +626,7 @@
         "name": "Conquest"
     },
     "Conspirator": {
-        "description": "+2 Coins<n>If you've played 3 or more Actions this turn (counting this), +1 Card, +1 Action.",
+        "description": "+2 Coins<n>If you've played 3 or more Actions this turn (counting this), +1 Card and +1 Action.",
         "extra": "You evaluate whether or not Conspirator gives you +1 Card and +1 Action when you play it. Action cards played later in the turn do not change this evaluation. For the purposes of counting actions, if you Throne Room an Action, that's one Action of the Throne Room, one for the selected Action played the first time, and one for the selected Action played the second time. For example, if you play Throne Room on Conspirator, the first conspirator will be your second Action, and won't give you +1 Card or +1 Action, but the second Conspirator will be your third Action, and you will get +1 Card and +1 Action for that second Conspirator. Action - Victory cards are Actions.",
         "name": "Conspirator"
     },
@@ -1825,7 +1825,7 @@
         "name": "Library"
     },
     "Lighthouse": {
-        "description": "+1 Action<br>Now and at the start of your next turn, +1 Coin.<line>While you have this in play, when another player plays an Attack card, it doesn't affect you.",
+        "description": "+1 Action<br>+1 Coin<br>At the start of your next turn, +1 Coin. Until then, when another player plays an Attack card, it doesn't affect you.",
         "extra": "You get an action and a coin this turn, but only a coin next turn. Attack cards played by other players don't affect you, even if you want them to. You could reveal Secret Chamber in order to draw 2 cards and put 2 cards from your hand back on top of your deck when an Attack card is played, and you will still not suffer from the Attack card. You do still gain the benefits (like +Cards) of Attack cards you play on your turn. Lighthouse is discarded during the Cleanup phase of your next turn.",
         "name": "Lighthouse"
     },
