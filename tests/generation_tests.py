@@ -32,3 +32,45 @@ def test_grouped():
 def test_resolution():
     options = get_clean_opts(["--tab-artwork-resolution=300"])
     main.generate(options)
+
+
+def test_no_group_global():
+    options = get_clean_opts([])
+    assert not options.group_global
+
+
+def test_group_global():
+    options = get_clean_opts(["--group-global"])
+    expected_groups = [
+        "prophecies",
+        "traits",
+        "hexes",
+        "events",
+        "landmarks",
+        "state",
+        "trait",
+        "way",
+        "prophecy",
+        "boons",
+        "projects",
+        "event",
+        "boon",
+        "landmark",
+        "ally",
+        "allies",
+        "hex",
+        "states",
+        "project",
+        "ways",
+    ]
+    for expected in expected_groups:
+        assert expected in options.group_global
+    assert len(options.group_global) == len(expected_groups)
+
+
+def test_exclude_events():
+    options = get_clean_opts(["--exclude-events"])
+    expected_groups = ["events"]
+    for expected in expected_groups:
+        assert expected in options.group_global
+    assert len(options.group_global) == len(expected_groups)
