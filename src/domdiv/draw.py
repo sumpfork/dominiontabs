@@ -1675,6 +1675,8 @@ class DividerDrawer(object):
                 ):
                     expansion = Card.sets[card.cardset_tag]
                     set_images = expansion.get("all_images", set_images)
+                    # reverse sort so that they're in the original order after being drawn right to left
+                    set_images.reverse()
 
                 for image in set_images:
                     textInsetRight += self.SET_ICON_SIZE  # they're all square
