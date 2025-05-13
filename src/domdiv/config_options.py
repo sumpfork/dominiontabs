@@ -837,6 +837,25 @@ def parse_opts(cmdline_args=None):
     return options
 
 
+def flatten_lower_and_deduplicate(l: any) -> set:
+    out = set()
+    if l is None:
+        return out
+    for item in l:
+        if isinstance(item, list):
+            # The arg parser sometimes generates a list of lists
+            out.update(flatten_lower_and_deduplicate(item))
+        elif isinstance(item, set):
+            out.update(item)
+        elif isinstance(item, str):
+            out.add(item.lower())
+        else:
+            logger.warning(
+                f"Ignoring configuration option {item} with type {type(item)} as it has an unexpected type."
+            )
+    return out
+
+
 def clean_opts(options):
     if "center" in options.tab_side:
         options.tab_side = str(options.tab_side).replace("center", "centre")
@@ -911,79 +930,55 @@ def clean_opts(options):
 
     if options.expansions is None:
         # No instance given, so default to the latest Official expansions
-        options.expansions = ["*"]
+        options.expansions = {"*"}
         if options.edition is None:
             options.edition = "latest"
     else:
-        # options.expansions is a list of lists.  Reduce to single lowercase list
-        options.expansions = [
-            item.lower() for sublist in options.expansions for item in sublist
-        ]
+        options.expansions = flatten_lower_and_deduplicate(options.expansions)
     if "none" in options.expansions:
         # keyword to indicate no options.  Same as --expansions without any expansions given.
-        options.expansions = []
+        options.expansions.clear()
 
     if options.exclude_expansions:
-        # options.exclude_expansions is a list of lists.  Reduce to single lowercase list
-        options.exclude_expansions = [
-            item.lower() for sublist in options.exclude_expansions for item in sublist
-        ]
+        # options.exclude_expansions is a list of lists.  Reduce to single lowercase set
+        options.exclude_expansions = flatten_lower_and_deduplicate(
+            options.exclude_expansions
+        )
 
     if options.edition is None:
-        # set the default
+        # This is the default unless there were also no expansions given.
         options.edition = "all"
 
-    if options.fan is None:
-        # No instance given, so default to no Fan expansions
-        options.fan = []
-    else:
-        # options.fan is a list of lists.  Reduce to single lowercase list
-        options.fan = [item.lower() for sublist in options.fan for item in sublist]
+    options.fan = flatten_lower_and_deduplicate(options.fan)
     if "none" in options.fan:
         # keyword to indicate no options.  Same as --fan without any expansions given
-        options.fan = []
+        options.fan.clear()
 
-    if options.only_type_any is None:
-        # No instance given, so default to empty list
-        options.only_type_any = []
-    else:
-        # options.only_type_any is a list of lists.  Reduce to single lowercase list
-        options.only_type_any = list(
-            set([item.lower() for sublist in options.only_type_any for item in sublist])
-        )
+    options.only_type_any = flatten_lower_and_deduplicate(options.only_type_any)
+    options.only_type_all = flatten_lower_and_deduplicate(options.only_type_all)
 
-    if options.only_type_all is None:
-        # No instance given, so default to empty list
-        options.only_type_all = []
-    else:
-        # options.only_type_any is a list of lists.  Reduce to single lowercase list
-        options.only_type_all = list(
-            set([item.lower() for sublist in options.only_type_all for item in sublist])
-        )
-
-    if options.group_global is None:
-        options.group_global = []
-    elif not any(options.group_global):
-        # option given with nothing indicates all possible global groupings
-        options.group_global = db.get_global_groups()[1]
-    else:
-        # options.group_global is a list of lists.  Reduce to single lowercase list
-        options.group_global = [
-            item.lower() for sublist in options.group_global for item in sublist
-        ]
+    legacy_groups = set()
     # For backwards compatibility
     if options.exclude_events:
-        options.group_global.append("events")
+        legacy_groups.add("events")
     if options.exclude_landmarks:
-        options.group_global.append("landmarks")
+        legacy_groups.add("landmarks")
     if options.exclude_projects:
-        options.group_global.append("projects")
+        legacy_groups.add("projects")
     if options.exclude_ways:
-        options.group_global.append("ways")
+        legacy_groups.add("ways")
     if options.exclude_traits:
-        options.group_global.append("traits")
-    # Remove duplicates from the list
-    options.group_global = list(set(options.group_global))
+        legacy_groups.add("traits")
+
+    if options.group_global is None:
+        options.group_global = legacy_groups
+    # if --group-global was given on the command line at least once (otherwise group_global would be None)
+    # but each time it was given, it had no arguments (otherwise at least one element of the list would be truthy)
+    elif isinstance(options.group_global, list) and not any(options.group_global):
+        # option given with nothing indicates all possible global groupings
+        options.group_global = set(db.get_global_groups()[1])
+    else:
+        options.group_global = flatten_lower_and_deduplicate(options.group_global)
 
     if options.tabs_only and options.label_name is None:
         # default is Avery 8867

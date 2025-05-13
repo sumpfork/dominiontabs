@@ -248,26 +248,23 @@ def combine_cards(cards, old_card_type, new_card_tag, new_cardset_tag, new_type)
 def filter_sort_cards(cards, options):
     # Filter out cards by edition
     if options.edition and options.edition != "all":
-        keep_sets = []
-        for set_tag in Card.sets:
-            for edition in Card.sets[set_tag]["edition"]:
-                if options.edition == edition:
-                    keep_sets.append(set_tag)
+        keep_sets = {
+            set_tag
+            for set_tag, set_data in Card.sets.items()
+            if options.edition in set_data["edition"]
+        }
 
-        keep_cards = []  # holds the cards that are to be kept
-        for card in cards:
-            if card.cardset_tag in keep_sets:
-                keep_cards.append(card)
-
-        cards = keep_cards
+        cards = [card for card in cards if card.cardset_tag in keep_sets]
 
     # Combine upgrade cards with their expansion
     if options.upgrade_with_expansion:
         if options.exclude_expansions is None:
-            options.exclude_expansions = []
+            options.exclude_expansions = set()
+        else:
+            options.exclude_expansions = set(options.exclude_expansions)
         for card in cards:
             if Card.sets[card.cardset_tag]["upgrades"]:
-                options.exclude_expansions.append(card.cardset_tag.lower())
+                options.exclude_expansions.add(card.cardset_tag.lower())
                 card.cardset_tag = Card.sets[card.cardset_tag]["upgrades"]
 
     # Combine globally all cards of the given types
@@ -296,12 +293,12 @@ def filter_sort_cards(cards, options):
                 new_cardset_tag=config_options.EXPANSION_GLOBAL_GROUP,
             )
         if options.expansions:
-            options.expansions.append(config_options.EXPANSION_GLOBAL_GROUP)
+            options.expansions.add(config_options.EXPANSION_GLOBAL_GROUP)
 
     # Take care of any blank cards
     if options.include_blanks > 0:
         if options.expansions:
-            options.expansions.append(config_options.EXPANSION_GLOBAL_GROUP)
+            options.expansions.add(config_options.EXPANSION_GLOBAL_GROUP)
 
     # Group all the special cards together
     if options.group_special:
@@ -469,18 +466,16 @@ def filter_sort_cards(cards, options):
 
     if options.exclude_expansions:
         # Expand out any wildcards, matching set key or set name in the given language
-        expanded_expansions = []
+        expanded_expansions = set()
         for e in options.exclude_expansions:
             matches = fnmatch.filter(All_search, e)
             if matches:
-                expanded_expansions.extend(matches)
+                expanded_expansions.update(matches)
             else:
-                expanded_expansions.append(e)
+                expanded_expansions.add(e)
 
         # Now get the actual sets that are matched above
-        options.exclude_expansions = set(
-            [e for e in expanded_expansions]
-        )  # Remove duplicates
+        options.exclude_expansions = expanded_expansions
         knownExpansions = set()
         for e in options.exclude_expansions:
             for s in Card.sets:
