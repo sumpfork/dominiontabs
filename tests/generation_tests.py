@@ -8,6 +8,8 @@ from domdiv import config_options, db, main
 def get_clean_opts(opts):
     options = config_options.parse_opts(opts)
     options = config_options.clean_opts(options)
+    # Clean a second time to ensure it's idempotent
+    options = config_options.clean_opts(options)
     return options
 
 
