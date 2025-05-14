@@ -246,7 +246,7 @@ def combine_cards(cards, old_card_type, new_card_tag, new_cardset_tag, new_type)
     return filteredCards
 
 
-def filter_sort_cards(cards, options):
+def filter_sort_cards(cards: list[Card], options) -> list[Card]:
     # Filter out cards by edition
     if options.edition and options.edition != "all":
         keep_sets = []
