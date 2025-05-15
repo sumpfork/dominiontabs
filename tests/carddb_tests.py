@@ -16,7 +16,7 @@ def rmtestcardb(request):
     def rmd():
         testcardb_dir = os.path.join(str(request.config.rootdir), "tools/card_db")
         if os.path.exists(testcardb_dir):
-            print("removing {}".format(testcardb_dir))
+            print(f"removing {testcardb_dir}")
             shutil.rmtree(testcardb_dir)
 
     request.addfinalizer(rmd)
@@ -106,7 +106,7 @@ def test_languages_db(lang):
     options = config_options.parse_opts(["--language", lang])
     options.data_path = "."
     cards = db.read_card_data(options)
-    assert cards, '"{}" cards did not read properly'.format(lang)
+    assert cards, f'"{lang}" cards did not read properly'
     cards = main.add_card_text(cards, "en_us")
     cards = main.add_card_text(cards, lang)
     if lang == "it":

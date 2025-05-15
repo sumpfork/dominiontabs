@@ -1159,9 +1159,7 @@ class DividerDrawer(object):
                 if text_fontsize_multiplier is not None:
                     font_replace = re.sub(
                         tag_pattern,
-                        "<font size={}>\\1</font>".format(
-                            fontsize * text_fontsize_multiplier
-                        ),
+                        f"<font size={fontsize * text_fontsize_multiplier}>\\1</font>",
                         tag,
                     )
                     replace = font_replace + replace
@@ -1274,7 +1272,7 @@ class DividerDrawer(object):
 
             # now draw the number of sets
             if count > 1:
-                count_string = "{}\u00d7".format(count)
+                count_string = f"{count}\u00d7"
                 width_string = stringWidth(count_string, self.fontStyle["Regular"], 10)
                 width_string -= 1  # adjust to make it closer to image
                 width += width_string
@@ -1705,7 +1703,7 @@ class DividerDrawer(object):
         if tooLong:
             # Break on a delimiter, if possible
             for delimiter in "/-–—→":  # slashes, dashes, and arrows
-                name_lines = name.partition(" {:s} ".format(delimiter))
+                name_lines = name.partition(f" {delimiter:s} ")
                 if name_lines[1]:
                     delimiterText = name_lines[1][:2]
                     break
@@ -2020,9 +2018,7 @@ class DividerDrawer(object):
                     p = Paragraph(dmod, s)
                 except ValueError as e:
                     raise ValueError(
-                        'Error rendering text from "{}": {} ("{}")'.format(
-                            card.name, e, dmod
-                        )
+                        f'Error rendering text from "{card.name}": {e} ("{dmod}")'
                     )
                 h += p.wrap(textBoxWidth, textBoxHeight)[1]
                 paragraphs.append(p)
