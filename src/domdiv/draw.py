@@ -668,6 +668,13 @@ class DividerDrawer(object):
             "Monospaced": [
                 "Courier",
             ],
+            "Arrow": [  # The custom fonts don't have the → character used for e.g. traveller card groups
+                (
+                    "Times-Bold"
+                    if langlatin1 or timesTTF_not_found
+                    else "Times-Bold-TTF"
+                ),
+            ],
         }
         self.fontStyle = {
             # select the first matching preference for each font type
@@ -1152,9 +1159,7 @@ class DividerDrawer(object):
                 if text_fontsize_multiplier is not None:
                     font_replace = re.sub(
                         tag_pattern,
-                        "<font size={}>\\1</font>".format(
-                            fontsize * text_fontsize_multiplier
-                        ),
+                        f"<font size={fontsize * text_fontsize_multiplier}>\\1</font>",
                         tag,
                     )
                     replace = font_replace + replace
@@ -1267,7 +1272,7 @@ class DividerDrawer(object):
 
             # now draw the number of sets
             if count > 1:
-                count_string = "{}\u00d7".format(count)
+                count_string = f"{count}\u00d7"
                 width_string = stringWidth(count_string, self.fontStyle["Regular"], 10)
                 width_string -= 1  # adjust to make it closer to image
                 width += width_string
@@ -1435,7 +1440,10 @@ class DividerDrawer(object):
         for i, part in enumerate(name_parts):
             if i != 0:
                 w += pdfmetrics.stringWidth(" ", font, caps)
-            if small == caps:
+            # Render arrows in Times Bold, because the other Name fonts don't support it.
+            if part == "→":
+                w += pdfmetrics.stringWidth(part, self.fontStyle["Arrow"], fontSize)
+            elif small == caps:
                 w += pdfmetrics.stringWidth(part, font, caps)
             else:
                 w += pdfmetrics.stringWidth(part[0], font, caps)
@@ -1685,8 +1693,6 @@ class DividerDrawer(object):
         textWidth -= textInsetRight
 
         name = card.name
-        # arrows don't format properly in all fonts, so convert them to en dashes
-        name = name.replace("→", "–")
         style = "Expansion" if card.isExpansion() else "Name"
         width = self.nameWidth(name, fontSize, style)
         while width > textWidth and fontSize > minFontSize:
@@ -1697,7 +1703,7 @@ class DividerDrawer(object):
         if tooLong:
             # Break on a delimiter, if possible
             for delimiter in "/-–—→":  # slashes, dashes, and arrows
-                name_lines = name.partition(" {:s} ".format(delimiter))
+                name_lines = name.partition(f" {delimiter:s} ")
                 if name_lines[1]:
                     delimiterText = name_lines[1][:2]
                     break
@@ -1789,10 +1795,14 @@ class DividerDrawer(object):
         # Print small caps text, simulating it if necessary
 
         def drawWordPiece(text, fontSize):
-            self.canvas.setFont(font, fontSize)
+            this_font = font
+            if text == "→":
+                this_font = self.fontStyle["Arrow"]
+            self.canvas.setFont(this_font, fontSize)
             if text != " ":
                 self.canvas.drawString(x, y, text)
-            return pdfmetrics.stringWidth(text, font, fontSize)
+            self.canvas.setFont(font, fontSize)
+            return pdfmetrics.stringWidth(text, this_font, fontSize)
 
         # Improve typography
         text = text.replace("'", "’")
@@ -2008,9 +2018,7 @@ class DividerDrawer(object):
                     p = Paragraph(dmod, s)
                 except ValueError as e:
                     raise ValueError(
-                        'Error rendering text from "{}": {} ("{}")'.format(
-                            card.name, e, dmod
-                        )
+                        f'Error rendering text from "{card.name}": {e} ("{dmod}")'
                     )
                 h += p.wrap(textBoxWidth, textBoxHeight)[1]
                 paragraphs.append(p)

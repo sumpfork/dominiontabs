@@ -315,9 +315,7 @@ def parse_opts(cmdline_args=None):
         "'*' any number of characters, '?' matches any single character, "
         "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
         "For example, 'dominion*' will match all expansions that start with 'dominion'. "
-        "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in db.get_expansions()[0])
-        ),
+        f"Choices available in all languages include: {', '.join(db.get_expansions()[0])}",
     )
     group_select.add_argument(
         "--fan",
@@ -332,9 +330,7 @@ def parse_opts(cmdline_args=None):
         "Values are not case sensitive. Wildcards may be used: "
         "'*' any number of characters, '?' matches any single character, "
         "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
-        "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in db.get_expansions()[1])
-        ),
+        f"Choices available in all languages include: {', '.join(db.get_expansions()[1])}",
     )
     group_select.add_argument(
         "--exclude-expansions",
@@ -404,9 +400,7 @@ def parse_opts(cmdline_args=None):
         dest="group_global",
         help="Group all cards of the specified types across all expansions into one 'Extras' divider. "
         "This may be called multiple times. Values are not case sensitive. "
-        "Choices available include: {}".format(
-            ", ".join("%s" % x for x in db.get_global_groups()[1])
-        ),
+        f"Choices available include: {', '.join(db.get_global_groups()[1])}",
     )
     group_select.add_argument(
         "--no-trash",
@@ -474,9 +468,7 @@ def parse_opts(cmdline_args=None):
         "Default is all types are included. "
         "Any type with a space in the name must be enclosed in double quotes. "
         "Values are not case sensitive. "
-        "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in db.get_types())
-        ),
+        f"Choices available in all languages include: {', '.join(db.get_types())}",
     )
     group_select.add_argument(
         "--only-type-all",
@@ -488,9 +480,7 @@ def parse_opts(cmdline_args=None):
         "A divider is kept if ALL of the provided types are associated with the divider. "
         "Any type with a space in the name must be enclosed in double quotes. "
         "Values are not case sensitive. "
-        "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in db.get_types())
-        ),
+        f"Choices available in all languages include: {', '.join(db.get_types())}",
     )
 
     # Divider Sleeves/Wrappers
@@ -997,9 +987,7 @@ def clean_opts(options):
                 options.label = label
                 break
 
-        assert options.label is not None, "Label '{}' not defined".format(
-            options.label_name
-        )
+        assert options.label is not None, f"Label '{options.label_name}' not defined"
 
         # Defaults for missing values
         label = options.label

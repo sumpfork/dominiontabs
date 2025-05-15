@@ -20,7 +20,7 @@ def test_standard_opts():
 @pytest.mark.parametrize("lang", db.get_languages("card_db"))
 def test_languages(lang):
     print("checking " + lang)
-    options = get_clean_opts(["--language={}".format(lang)])
+    options = get_clean_opts([f"--language={lang}"])
     main.generate(options)
 
 
