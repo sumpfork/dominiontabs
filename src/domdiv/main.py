@@ -58,6 +58,8 @@ class CardSorter(object):
             self.sort_key = self.by_colour_sort_key
         elif order == "cost":
             self.sort_key = self.by_cost_sort_key
+        elif order == "kingdom":
+            self.sort_key = self.by_expansion_kingdom_sort_key
         else:
             self.sort_key = self.by_expansion_sort_key
 
@@ -109,6 +111,15 @@ class CardSorter(object):
             card.cardset,
             int(card.isExpansion()),
             self.baseIndex(card.name),
+            self.get_card_name_sort_key(card.name),
+        )
+
+    def by_expansion_kingdom_sort_key(self, card):
+        return (
+            card.cardset,
+            int(card.isExpansion()),
+            self.baseIndex(card.name),
+            card.randomizer * -1,
             self.get_card_name_sort_key(card.name),
         )
 
