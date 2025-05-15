@@ -140,7 +140,7 @@ def find_index_of_object(lst=None, attributes=None):
     return None
 
 
-def read_card_data(options):
+def read_card_data(options) -> list[Card]:
     # Read in the card types
     types_db_filepath = os.path.join("card_db", "types_db.json.gz")
     with resource_handling.get_resource_stream(types_db_filepath) as typefile:
