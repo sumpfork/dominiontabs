@@ -668,6 +668,13 @@ class DividerDrawer(object):
             "Monospaced": [
                 "Courier",
             ],
+            "Arrow": [  # The custom fonts don't have the → character used for e.g. traveller card groups
+                (
+                    "Times-Bold"
+                    if langlatin1 or timesTTF_not_found
+                    else "Times-Bold-TTF"
+                ),
+            ],
         }
         self.fontStyle = {
             # select the first matching preference for each font type
@@ -1433,7 +1440,10 @@ class DividerDrawer(object):
         for i, part in enumerate(name_parts):
             if i != 0:
                 w += pdfmetrics.stringWidth(" ", font, caps)
-            if small == caps:
+            # Render arrows in Times Bold, because the other Name fonts don't support it.
+            if part == "→":
+                w += pdfmetrics.stringWidth(part, self.fontStyle["Arrow"], fontSize)
+            elif small == caps:
                 w += pdfmetrics.stringWidth(part, font, caps)
             else:
                 w += pdfmetrics.stringWidth(part[0], font, caps)
@@ -1683,8 +1693,6 @@ class DividerDrawer(object):
         textWidth -= textInsetRight
 
         name = card.name
-        # arrows don't format properly in all fonts, so convert them to en dashes
-        name = name.replace("→", "–")
         style = "Expansion" if card.isExpansion() else "Name"
         width = self.nameWidth(name, fontSize, style)
         while width > textWidth and fontSize > minFontSize:
@@ -1787,10 +1795,14 @@ class DividerDrawer(object):
         # Print small caps text, simulating it if necessary
 
         def drawWordPiece(text, fontSize):
-            self.canvas.setFont(font, fontSize)
+            this_font = font
+            if text == "→":
+                this_font = self.fontStyle["Arrow"]
+            self.canvas.setFont(this_font, fontSize)
             if text != " ":
                 self.canvas.drawString(x, y, text)
-            return pdfmetrics.stringWidth(text, font, fontSize)
+            self.canvas.setFont(font, fontSize)
+            return pdfmetrics.stringWidth(text, this_font, fontSize)
 
         # Improve typography
         text = text.replace("'", "’")
