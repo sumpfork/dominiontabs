@@ -7,6 +7,7 @@ from domdiv import config_options, main
 def test_text_tabs_default():
     # should be the default
     options = config_options.parse_opts([])
+    options = config_options.clean_opts(options)
     assert options.text_front == "card"
     assert options.text_back == "rules"
     assert options.tab_name_align == "left"
@@ -22,72 +23,84 @@ def test_text_tabs_default():
 
 def test_text_card_rules():
     options = config_options.parse_opts(["--front", "card", "--back", "rules"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "card"
     assert options.text_back == "rules"
 
 
 def test_text_card_blank():
     options = config_options.parse_opts(["--front", "card", "--back", "blank"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "card"
     assert options.text_back == "blank"
 
 
 def test_text_card_card():
     options = config_options.parse_opts(["--front", "card", "--back", "card"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "card"
     assert options.text_back == "card"
 
 
 def test_text_card_none():
     options = config_options.parse_opts(["--front", "card", "--back", "none"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "card"
     assert options.text_back == "none"
 
 
 def test_text_rules_rules():
     options = config_options.parse_opts(["--front", "rules", "--back", "rules"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "rules"
     assert options.text_back == "rules"
 
 
 def test_text_rules_blank():
     options = config_options.parse_opts(["--front", "rules", "--back", "blank"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "rules"
     assert options.text_back == "blank"
 
 
 def test_text_rules_card():
     options = config_options.parse_opts(["--front", "rules", "--back", "card"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "rules"
     assert options.text_back == "card"
 
 
 def test_text_rules_none():
     options = config_options.parse_opts(["--front", "rules", "--back", "none"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "rules"
     assert options.text_back == "none"
 
 
 def test_text_blank_rules():
     options = config_options.parse_opts(["--front", "blank", "--back", "rules"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "blank"
     assert options.text_back == "rules"
 
 
 def test_text_blank_blank():
     options = config_options.parse_opts(["--front", "blank", "--back", "blank"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "blank"
     assert options.text_back == "blank"
 
 
 def test_text_blank_card():
     options = config_options.parse_opts(["--front", "blank", "--back", "card"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "blank"
     assert options.text_back == "card"
 
 
 def test_text_blank_none():
     options = config_options.parse_opts(["--front", "blank", "--back", "none"])
+    options = config_options.clean_opts(options)
     assert options.text_front == "blank"
     assert options.text_back == "none"
 
@@ -104,6 +117,7 @@ def test_tab_left_left():
     )
     assert options.tab_name_align == "left"
     assert options.tab_side == "left"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "left"
     assert options.tab_side == "left"
@@ -115,6 +129,7 @@ def test_tab_left_right():
     )
     assert options.tab_name_align == "left"
     assert options.tab_side == "right"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "left"
     assert options.tab_side == "right"
@@ -126,6 +141,7 @@ def test_tab_left_leftalt():
     )
     assert options.tab_name_align == "left"
     assert options.tab_side == "left-alternate"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "left"
     assert options.tab_side == "left-alternate"
@@ -137,6 +153,7 @@ def test_tab_left_rightalt():
     )
     assert options.tab_name_align == "left"
     assert options.tab_side == "right-alternate"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "left"
     assert options.tab_side == "right-alternate"
@@ -148,6 +165,7 @@ def test_tab_left_full():
     )
     assert options.tab_name_align == "left"
     assert options.tab_side == "full"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "left"
     assert options.tab_side == "full"
@@ -161,6 +179,7 @@ def test_tab_right_left():
     )
     assert options.tab_name_align == "right"
     assert options.tab_side == "left"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "right"
     assert options.tab_side == "left"
@@ -172,6 +191,7 @@ def test_tab_right_right():
     )
     assert options.tab_name_align == "right"
     assert options.tab_side == "right"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "right"
     assert options.tab_side == "right"
@@ -183,6 +203,7 @@ def test_tab_right_leftalt():
     )
     assert options.tab_name_align == "right"
     assert options.tab_side == "left-alternate"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "right"
     assert options.tab_side == "left-alternate"
@@ -194,6 +215,7 @@ def test_tab_right_rightalt():
     )
     assert options.tab_name_align == "right"
     assert options.tab_side == "right-alternate"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "right"
     assert options.tab_side == "right-alternate"
@@ -205,6 +227,7 @@ def test_tab_right_full():
     )
     assert options.tab_name_align == "right"
     assert options.tab_side == "full"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "right"
     assert options.tab_side == "full"
@@ -219,6 +242,7 @@ def test_tab_edge_left():
     )
     assert options.tab_name_align == "edge"
     assert options.tab_side == "left"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "edge"
     assert options.tab_side == "left"
@@ -230,6 +254,7 @@ def test_tab_edge_right():
     )
     assert options.tab_name_align == "edge"
     assert options.tab_side == "right"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "edge"
     assert options.tab_side == "right"
@@ -241,6 +266,7 @@ def test_tab_edge_leftalt():
     )
     assert options.tab_name_align == "edge"
     assert options.tab_side == "left-alternate"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "edge"
     assert options.tab_side == "left-alternate"
@@ -252,6 +278,7 @@ def test_tab_edge_rightalt():
     )
     assert options.tab_name_align == "edge"
     assert options.tab_side == "right-alternate"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "edge"
     assert options.tab_side == "right-alternate"
@@ -277,6 +304,7 @@ def test_tab_centre_left():
     )
     assert options.tab_name_align == "centre"
     assert options.tab_side == "left"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "centre"
     assert options.tab_side == "left"
@@ -288,6 +316,7 @@ def test_tab_centre_right():
     )
     assert options.tab_name_align == "centre"
     assert options.tab_side == "right"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "centre"
     assert options.tab_side == "right"
@@ -299,6 +328,7 @@ def test_tab_centre_leftalt():
     )
     assert options.tab_name_align == "centre"
     assert options.tab_side == "left-alternate"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "centre"
     assert options.tab_side == "left-alternate"
@@ -310,6 +340,7 @@ def test_tab_centre_rightalt():
     )
     assert options.tab_name_align == "centre"
     assert options.tab_side == "right-alternate"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "centre"
     assert options.tab_side == "right-alternate"
@@ -321,6 +352,7 @@ def test_tab_centre_full():
     )
     assert options.tab_name_align == "centre"
     assert options.tab_side == "full"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.tab_name_align == "centre"
     assert options.tab_side == "full"

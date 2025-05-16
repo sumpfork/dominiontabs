@@ -5,7 +5,7 @@ import os
 
 from loguru import logger
 
-from . import config_options, db, resource_handling
+from . import config_options, resource_handling
 from .cards import Card, CardType
 
 EXPANSION_EXTRA_POSTFIX = " extras"
@@ -183,9 +183,9 @@ def read_card_data(options):
         new_sets[s] = Card.sets[s]
         # Make an "Extras" set for normal expansions
         if Card.sets[s]["has_extras"]:
-            e = s + db.EXPANSION_EXTRA_POSTFIX
+            e = s + EXPANSION_EXTRA_POSTFIX
             new_sets[e] = copy.deepcopy(Card.sets[s])
-            new_sets[e]["set_name"] = "*" + s + db.EXPANSION_EXTRA_POSTFIX + "*"
+            new_sets[e]["set_name"] = "*" + s + EXPANSION_EXTRA_POSTFIX + "*"
             new_sets[e]["no_randomizer"] = True
             new_sets[e]["has_extras"] = False
     Card.sets = new_sets
