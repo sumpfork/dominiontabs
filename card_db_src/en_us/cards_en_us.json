@@ -105,6 +105,11 @@
         "extra": "If you do not have any cards left in hand to trash, you do not draw any cards. If you trash a card costing 0 coins, such as Curse or Copper, you do not draw any cards. Otherwise you draw a card per _ Coin the card you trashed cost, and another two cards if it had Potion in its cost. For example, if you trash a Golem, which costs 4 Coins and 1 Potion, you draw 6 cards.",
         "name": "Apprentice"
     },
+    "Approaching Army": {
+        "description": "After you play an Attack card, +1 Coin.<line><b>Setup:</b> Add an Attack kingdom card pile to the Supply.",
+        "extra": "The Attack card added in setup is in addition to the usual 10 Kingdom cards, even if those already included an Attack card. For split piles (from Allies and Empires), a pile is an Attack pile if the randomizer card for it is an Attack. The added pile is a regular Kingdom card pile, and can be gained from like other piles. This setup occurs at the start of the game, and so affects the game even if the Prophecy never happens. Once the Prophecy has happened, you get +1 Coin from each Attack card you play; for Duration Attacks, this applies only on the turn the Duration Attack was played. The +1 Coin is the last thing the Attack card does when it's played. You get the +1 Coin even if you didn't follow the instructions on the Attack card; for example if you used a Way (from Menagerie).",
+        "name": "Approaching Army"
+    },
     "Aqueduct": {
         "description": "When you gain a Treasure, move 1 <VP> from its pile to this. When you gain a Victory card, take the <VP> from this.<line>Setup: Put 8 <VP> on the Silver and Gold piles.",
         "extra": "If you gain a card that is both a Treasure and a Victory card, such as Humble Castle, you can resolve the abilities in either order.",
@@ -279,6 +284,11 @@
         "description": "Gain a card costing less than this. Each other player discards down to 3 cards in hand.<line>When you gain this, if you have an Action in play, play this.",
         "extra": "When you gain a Berserker, if you have an Action card in play, you play the Berserker; this means it will go into play, and you'll gain a cheaper card and then the other players will discard down to 3 cards in hand. They can still use cards like Moat then. If you gain a Berserker with no Actions in play, however, you don't play it. If you gain and play this with Innovation, Berserker loses track of itself, so Berserker telling you to play it will fail. If you gain this on another player's turn (e.g. their Barbarian trashes your Border Village), and you have an Action in play (most likely a Duration card), you can play the Berserker and attack them during their own turn. You'll discard the Berserker from play during their Clean-up. If you played 5 Highways, Berserker will cost 0 Coin, so it'll fail to gain a card.",
         "name": "Berserker"
+    },
+    "Biding Time": {
+        "description": "At the start of your Clean-up, set aside your hand face down. At the start of your next turn, put those cards into your hand.",
+        "extra": "Instead of discarding unplayed cards in Clean-up, you set them aside, and put them back into your hand at the start of your next turn.",
+        "name": "Biding Time"
     },
     "Bishop": {
         "description": "+1 Coin<br>+1 <VP><n>Trash a card from your hand. +<VP> equal to half its cost in coins, rounded down.<n>Each other player may trash a card from his hand.",
