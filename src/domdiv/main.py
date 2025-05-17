@@ -59,6 +59,8 @@ class CardSorter(object):
             self.sort_key = self.by_colour_sort_key
         elif order == "cost":
             self.sort_key = self.by_cost_sort_key
+        elif order == "kingdom":
+            self.sort_key = self.by_expansion_kingdom_sort_key
         else:
             self.sort_key = self.by_expansion_sort_key
 
@@ -110,6 +112,15 @@ class CardSorter(object):
             card.cardset,
             int(card.isExpansion()),
             self.baseIndex(card.name),
+            self.get_card_name_sort_key(card.name),
+        )
+
+    def by_expansion_kingdom_sort_key(self, card):
+        return (
+            card.cardset,
+            int(card.isExpansion()),
+            self.baseIndex(card.name),
+            card.randomizer * -1,
             self.get_card_name_sort_key(card.name),
         )
 
@@ -598,9 +609,7 @@ def filter_sort_cards(cards: list[Card], options) -> list[Card]:
                         n["name"] = "<i>" + n["name"] + "</i>"
                     if n["count"] > 1:
                         # Add number of copies
-                        n["name"] = (
-                            "{}&nbsp;\u00d7&nbsp;".format(n["count"]) + n["name"]
-                        )
+                        n["name"] = f"{n['count']}&nbsp;\u00d7&nbsp;" + n["name"]
                     card_names.append(n["name"])
 
                 c = Card(
@@ -646,9 +655,7 @@ def filter_sort_cards(cards: list[Card], options) -> list[Card]:
                 type_unknown.append(x)
 
         # Indicate if unknown types are given
-        assert not type_unknown, "Error - unknown type(s): {}".format(
-            ", ".join(type_unknown)
-        )
+        assert not type_unknown, "Error - unknown type(s): {', '.join(type_unknown)}"
 
         # If there are any valid Types left, go through the cards and keep cards that match
         if type_known_any or type_known_all:
@@ -723,7 +730,7 @@ def main():
 
     options = config_options.clean_opts(options)
     if options.preview:
-        fname = "{}.{}".format(os.path.splitext(options.outfile)[0], "png")
+        fname = f"{os.path.splitext(options.outfile)[0]}.png"
         open(fname, "wb").write(generate_sample(options).getvalue())
     else:
         generate(options)
