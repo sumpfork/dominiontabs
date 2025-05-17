@@ -30,7 +30,7 @@ SPINE_CHOICES = ["name", "types", "tab", "blank"]
 
 EDITION_CHOICES = ["1", "2", "latest", "upgrade", "removed", "all"]
 
-ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
+ORDER_CHOICES = ["expansion", "global", "colour", "cost", "kingdom"]
 
 EXPANSION_GLOBAL_GROUP = "extras"
 
@@ -104,6 +104,7 @@ def parse_opts(cmdline_args=None):
         help="Sort order for the dividers: "
         " 'global' will sort by card name;"
         " 'expansion' will sort by expansion, then card name;"
+        " 'kingdom' will sort by expansion, then card name of all kingdom cards (with dividers), then card name of all non-kingdom cards;"
         " 'colour' will sort by card type, then card name;"
         " 'cost' will sort by expansion, then card cost, then name.",
     )
