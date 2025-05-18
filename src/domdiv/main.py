@@ -284,7 +284,7 @@ def filter_sort_cards(cards: list[Card], options) -> list[Card]:
     if options.removed_with_expansion:
         for card in cards:
             if Card.sets[card.cardset_tag].get("removed", False):
-                options.exclude_expansions.append(card.cardset_tag.lower())
+                options.exclude_expansions.add(card.cardset_tag.lower())
                 card.cardset_tag = Card.sets[card.cardset_tag]["removed"]
 
     # Combine globally all cards of the given types
