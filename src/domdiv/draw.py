@@ -344,6 +344,10 @@ class CardPlot(object):
             sideBottom = self.cropOnRight
             sideRight = self.cropOnTop
             sideLeft = self.cropOnBottom
+        else:
+            raise Exception(
+                f"Invalid rotation: {self.rotation} must be 0, 90, 180 or 270"
+            )
 
         # Now can return the proper value based upon what side is requested
         if side == self.TOP:
@@ -1207,8 +1211,8 @@ class DividerDrawer(object):
         text = card.getBonusBoldText(text)
 
         # <line>: 11 em dashes, but not wider than the text box
-        replace = "<center>{}</center>\n".format("&mdash;" * min(11, int(emWidth)))
-        text = re.sub(r"\<line\>", replace, text)
+        line = "<center>{}</center>\n".format("&mdash;" * min(11, int(emWidth)))
+        text = re.sub(r"\<line\>", line, text)
         #  <tab> and \t
         text = re.sub(r"\<tab\>", "\t", text)
         text = re.sub(r"\<t\>", "\t", text)
