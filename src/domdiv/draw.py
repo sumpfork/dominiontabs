@@ -2010,9 +2010,10 @@ class DividerDrawer(object):
             descriptions = self.add_inline_text(card, descriptions, emWidth)
         descriptions = re.split("\n", descriptions)
         while True:
-            paragraphs = []
+            paragraphs: list[Paragraph] = []
             # this accounts for the spacers we insert between paragraphs
             h = (len(descriptions) - 1) * spacerHeight
+            w = 0
             for d in descriptions:
                 if card.isExpansion():
                     dmod = d
@@ -2024,10 +2025,16 @@ class DividerDrawer(object):
                     raise ValueError(
                         f'Error rendering text from "{card.name}": {e} ("{dmod}")'
                     )
-                h += p.wrap(textBoxWidth, textBoxHeight)[1]
+                width, height = p.wrapOn(self.canvas, textBoxWidth, textBoxHeight)
+                h += height
+                w = max(w, width)
                 paragraphs.append(p)
 
-            if h <= textBoxHeight or s.fontSize <= 1 or s.leading <= 1:
+            if (
+                (h <= textBoxHeight and w <= textBoxWidth)
+                or s.fontSize <= 1
+                or s.leading <= 1
+            ):
                 break
             else:
                 s.fontSize -= 1
