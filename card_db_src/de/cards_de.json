@@ -405,7 +405,7 @@
     },
     "Captain": {
         "description": "Jetzt und zu Beginn deines nächsten Zuges: Spiele eine Aktionskarte im Vorrat, die keine Dauerkarte ist und bis zu 4 Coins kostet und lasse sie dort liegen",
-        "extra": "In der zweiten Runde kannst du eine andere Karte ausspielen oder dieselbe Karte, wenn sich noch eine Kopie davon im Vorrat befindet.<n>Kapitän Tobias kann nur eine sichtbare Karte aus dem Vorrat und die oberste Karte eines Stapels ausspielen; er kann keine Karte von einem leeren Stapel, eine nicht aufgedeckte Karte von einem geteilten Stapel, eine Karte von einem geteilten Stapel, die aufgekauft wurde, oder eine Karte, die nicht aus dem Vorrat stammt (z.B. Söldner), ausspielen. <n>Die Aktionskarte bleibt im Vorrat; wenn ein Effekt versucht, sie zu bewegen (z.B. eine Insel, die sich selbst auf die Inselmatte legt), wird sie nicht bewegt.<n>Kapitän Tobias kann eine Karte spielen, die sich selbst zerstört, wenn sie gespielt wird; wenn die Karte überprüft, ob sie zerstört wurde (z.B. Bergwerk), wurde sie nicht zerstört, aber wenn die Karte nicht überprüft wird (z.B. Schauspieltruppe), funktioniert sie normal. <n>Karten, die normalerweise andere Karten aus dem Vorrat bewegen, können sich selbst bewegen, wenn sie über Kapitän Tobias gespielt werden; z.B. kann eine gespielte Werkstatt sich selbst gewinnen, und ein gespielter Herumtreiberin kann sich selbst zerstören.<n>Da die gespielte Karte nicht im Spiel ist, bewirken die Fähigkeiten 'Solange sie im Spiel ist' (z.B. Halsabschneider) nichts. <n>Wenn in dem Zug, in dem du Kapitän Tobias spielst, keine Aktionskarten ohne Dauer im Vorrat sind, die bis zu 4 Coin kosten, bleibt Kapitän Tobias trotzdem im Spiel und versucht, zu Beginn deines nächsten Zuges eine Karte auszuspielen.<n>Wenn Kapitän Tobias eine Karte ausspielt, die eine Dauerkarte spielt, hat das keinen Einfluss darauf, in welchem Zug Kapitän Tobias aus dem Spiel genommen wird.<n>Du kannst mit Kapitän Tobias, Vogelfreie, Überfahrt und Kostenreduktion in eine Endlosschleife geraten: Mit deiner -2 Coins -Kostenmarke auf Kapitän-Tobias-Vorratsstapel kann Vogelfreie als Kapitän Tobias gespielt werden, und mit der Kostenreduktion kann Kapitän Tobias Vogelfreie spielen. Da dies dazu führt, dass Kapitän Tobias beliebig oft gespielt werden kann, kannst du zu Beginn deines nächsten Zuges beliebig viele Aktionen spielen, die bis zu 4 Münzen kosten.",
+        "extra": "In der zweiten Runde kannst du eine andere Karte ausspielen oder dieselbe Karte, wenn sich noch eine Kopie davon im Vorrat befindet.<n>KAPITÄN TOBIAS kann nur eine sichtbare Karte aus dem Vorrat und die oberste Karte eines Stapels ausspielen; er kann keine Karte von einem leeren Stapel, eine nicht aufgedeckte Karte von einem geteilten Stapel, eine Karte von einem geteilten Stapel, die aufgekauft wurde, oder eine Karte, die nicht aus dem Vorrat stammt (z.B. SÖLDNER), ausspielen. <n>Die Aktionskarte bleibt im Vorrat; wenn ein Effekt versucht, sie zu bewegen (z.B. eine INSEL, die sich selbst auf die Inselmatte legt), wird sie nicht bewegt.<n>KAPITÄN TOBIAS kann eine Karte spielen, die sich selbst zerstört, wenn sie gespielt wird; wenn die Karte überprüft, ob sie zerstört wurde (z.B. BERGWERK), wurde sie nicht zerstört, aber wenn die Karte nicht überprüft wird (z.B. SCHAUSPIELTRUPPE), funktioniert sie normal. <n>Karten, die normalerweise andere Karten aus dem Vorrat bewegen, können sich selbst bewegen, wenn sie über KAPITÄN TOBIAS gespielt werden; z.B. kann eine gespielte WERKSTATT sich selbst gewinnen, und eine gespielter HERUMTREIBERIN kann sich selbst zerstören.<n>Da die gespielte Karte nicht im Spiel ist, bewirken die Fähigkeiten 'Solange sie im Spiel ist' (z.B. HALSABSCHNEIDER) nichts. <n>Wenn in dem Zug, in dem du KAPITÄN TOBIAS spielst, keine Aktionskarten ohne Dauer im Vorrat sind, die bis zu 4 Coin kosten, bleibt KAPITÄN TOBIAS trotzdem im Spiel und versucht, zu Beginn deines nächsten Zuges eine Karte auszuspielen.<n>Wenn KAPITÄN TOBIAS eine Karte ausspielt, die eine Dauerkarte spielt, hat das keinen Einfluss darauf, in welchem Zug KAPITÄN TOBIAS aus dem Spiel genommen wird.<n>Du kannst mit KAPITÄN TOBIAS, VOGELFREIE, ÜBERFAHRT und Kostenreduktion in eine Endlosschleife geraten: Mit deiner -2 Coins -Kostenmarke auf KAPITÄN-TOBIAS-Vorratsstapel kann Vogelfreie als Kapitän Tobias gespielt werden, und mit der Kostenreduktion kann KAPITÄN TOBIAS VOGELFREIE spielen. Da dies dazu führt, dass KAPITÄN TOBIAS beliebig oft gespielt werden kann, kannst du zu Beginn deines nächsten Zuges beliebig viele Aktionen spielen, die bis zu 4 coin kosten.",
         "name": "Kapitän Tobias"
     },
     "Caravan": {
@@ -630,7 +630,7 @@
     },
     "Coronet": {
         "description": "Du darfst eine Aktionskarte, die keine Belohnung ist, aus deiner Hand zweimal spielen.<br><br>Du darfst eine Geldkarte, die keine Belohnung ist, aus deiner Hand zweimal spielen.<br><br><i>(Diese Karte gehört nicht zum Vorrat.)</i>",
-        "extra": "",
+        "extra": "Du kannst eine Aktion zweimal spielen, einen Schatz zweimal spielen, beides tun oder keines von beidem tun. Wenn du beides tust, spielst du die Aktion zuerst. Damit kann man keine Belohnungen ausspielen. Eine Karte zweimal zu spielen bedeutet, dass man die Karte ausspielt, sie vollständig auflöst und dann dieselbe Karte erneut spielt. Das Spielen von Karten mit dieser Funktion verbraucht keine Aktionen für die Runde. Du könntest z.B. ein DORF und eine SILBER spielen; du würdest +2 Karten und +4 Aktionen durch das DORF und +4 coin durch das SILBER erhalten.",
         "name": "Adelskrone"
     },
     "Corsair": {
@@ -659,8 +659,8 @@
         "name": "Leihhaus"
     },
     "Courser": {
-        "description": "Choose two different options:<br>+2 Cards; +2 Actions;<br>+2 coin; gain 4 Silvers.<br><br><i>(This is not in the Supply.)</i>",
-        "extra": "First choose any two of the four options, then do those options in the order listed. So if you choose both +2 Cards and \"Gain 4 Silvers,\" you will draw cards before you gain the Silvers.",
+        "description": "Wähle zwei verschiedene:<br>+2 Karten oder +2 Aktionen oder +2 coin oder nimm 4 Silber.<br><br><i>(Diese Karte gehört nicht zum Vorrat.)</i>",
+        "extra": "Wähle zuerst zwei der vier Optionen und führe sie dann in der angegebenen Reihenfolge aus. Wenn du also sowohl +2 Karten als auch „4 SILBER nehmen“ wählst, ziehst du Karten, bevor du die SILBER nimmst.",
         "name": "Rennpferd"
     },
     "Courtier": {
@@ -780,7 +780,7 @@
     },
     "Demesne": {
         "description": "+2 Aktionen<br>+2 Käufe<br>Nimm ein Gold.<line>Wert 1 <VP> pro eigenes Gold.<br><br><i>(Diese Karte gehört nicht zum Vorrat.)</i>",
-        "extra": "",
+        "extra": "Wenn du diese Karte spielst, erhältst du +2 Aktionen, +2 Käufe und nimmst ein Gold. Wenn du Punkte zählst, ist diese Karte 1 <VP> pro Gold wert, das du hast.",
         "name": "Landsitz"
     },
     "Den of Sin": {
@@ -969,7 +969,7 @@
         "name": "Exorzistin"
     },
     "Expand": {
-        "description": "Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die bis zu 3 Geld mehr kostet, als die entsorgte Karte.",
+        "description": "Entsorge eine Karte aus deiner Hand. Nimm dir eine Karte, die bis zu 3 coin mehr kostet, als die entsorgte Karte.",
         "extra": "Entsorge eine beliebige Handkarte und nimm eine Karte vom Vorrat, die bis zu 3 Coins mehr kostet als die entsorgte Karte. Du darfst den Betrag nicht mit zusätzlichem Coin erhöhen. Hast du keine Karte auf der Hand, die du entsorgen kannst, darfst du dir keine Karte vom Vorrat nehmen. Den ausgespielten AUSBAU selbst darfst du nicht entsorgen, da er sich nicht mehr auf deiner Hand befindet.",
         "name": "Ausbau"
     },
@@ -1030,7 +1030,7 @@
     },
     "Farmhands": {
         "description": "+1 Karte<br>+2 Aktionen<line>Wenn du diese Karte nimmst, darfst du eine Aktions- oder Geldkarte aus deiner Hand zur Seite legen und sie zu Beginn deines nächsten Zuges spielen.",
-        "extra": "",
+        "extra": "Eine Karte beiseite zu legen, wenn man sie erhält, ist optional. Wenn du es machst, musst du die Karte zu Beginn deines nächsten Zuges spielen, auch wenn du es nicht mehr willst. Das Ausspielen der Aktionskarte verbraucht nicht eine deiner Aktionen für diesen Zug. Die beiseitegelegte Karte wird offen ausgelegt.",
         "name": "Landarbeiterinnen"
     },
     "Farming Village": {
@@ -1044,9 +1044,9 @@
         "name": "Fruchtbares Land"
     },
     "Farrier": {
-        "description": "+1 Card<br>+1 Action<br>+1 Buy<line><b>Overpay:</b> +1 Card at the end of this turn per 1 coin overpaid.",
-        "extra": "When you gain a Farrier you overpaid for, you draw an extra card at end of turn per 1 coin you overpaid. For example you could pay 4 coin for Farrier, and draw 2 extra cards at end of turn. This doesn't happen if you gain a Farrier without paying for it (such as with Horn of Plenty).",
-        "name": "Farrier"
+        "description": "+1 Karte<br>+1 Aktion<br>+1 Kauf<line><b>Überzahlen:</b> +1 Karte am Ende deines Zuges pro überzahltem 1 coin.",
+        "extra": "Wenn du einen HUFSCHMIED nimmst für den du überzahlt hast, ziehst du am Ende des Zuges eine zusätzliche Karte pro 1 coin, das du überzahlt hast. Du könntest zum Beispiel 4 coin für den HUFSCHMIED bezahlen und am Ende des Zuges 2 zusätzliche Karten ziehen. Das passiert nicht, wenn du einen HUFSCHMIED bekommst, ohne dafür zu bezahlen (wie z.B. mit FÜLLHORN).",
+        "name": "Hufschmied"
     },
     "Fated": {
         "description": "Beim Mischen darfst du die Karten durchsehen und Vorherbestimmte Karten aufdecken, um sie nach oben oder unten zu legen.",
@@ -1080,7 +1080,7 @@
     },
     "Ferryman": {
         "description": "+2 Karten<br>+1 Aktion<br>Lege eine deiner Handkarten ab.<line>Spielvorbereitung: Wählt einen ungenutzten Königreichkarten-Stapel, der 3 coin oder 4 coin kostet. Ein Spieler nimmt davon eine Karte, indem er einen Fährmann nimmt.",
-        "extra": "",
+        "extra": "Wenn du einen FÄHRMANN nimmst, nimmst du auch eine Karte, die bei der Spielvorbereitung beiseitegelegt wurde. Zum Beispiel könnte man GESCHÄFT beiseitelegen, das kostet 3 coin; dann würde man in diesem Spiel, wenn man einen FÄHRMANN nimmt, auch ein GESCHÄFT nehmen. Die für den FÄHRMANN gewählte Karte kann nicht auf andere Weise erstmalig genommen werden, sondern nur durch einen FÄHRMANN. Wenn die gewählte Karte ein geteilter Stapel ist (wie z.B. die AUGURINNEN aus Dominion: Verbündete), werden verschiedene Karten über den Fährmann genommen, wenn sie aufgedeckt werden.",
         "name": "Fährmann"
     },
     "Festival": {
@@ -1165,7 +1165,7 @@
     },
     "Footpad": {
         "description": "+2 Taler<br>Jeder Mitspieler legt Handkarten ab, bis er nur noch 3 hat.<line>In Spielen mit dieser Karte, wenn du in einer Aktionsphase eine Karte nimmst: +1 Karte.",
-        "extra": "",
+        "extra": "Dies verändert jedes Spiel, in dem er existiert, auch wenn niemand einen STRAßENRÄUBER genommen hat. Für das ganze Spiel gilt, dass jedes Mal, wenn du in einer Aktionsphase eine Karte nimmst, du eine Karte ziehst. Wenn du zum Beispiel NACHBAU spielst, um zwei ANWESEN in zwei SILBER umzuwandeln, ziehst du zwei Karten. Ziehen ist nicht optional. Du ziehst keine Karten in der Kauf- oder Aufräumphase, nur in der Aktionsphase.",
         "name": "Straßenräuber"
     },
     "Forager": {
@@ -1502,7 +1502,7 @@
     },
     "Housecarl": {
         "description": "+1 Karte pro Aktionskarte mit unterschiedlichem Namen, die du im Spiel hast.<br><br><i>(Diese Karte gehört nicht zum Vorrat.)</i>",
-        "extra": "",
+        "extra": "Diese Karte zählt sich auch selbst mit.",
         "name": "Leibgardist"
     },
     "Hovel": {
@@ -1512,7 +1512,7 @@
     },
     "Huge Turnip": {
         "description": "+2 Taler<br><br>+1 coin pro Taler, die du hast.<br><br><i>(Diese Karte gehört nicht zum Vorrat.)</i>",
-        "extra": "",
+        "extra": "Die +1 coin für jeden TALER, den du hast, schließt die 2 Taler ein, die du gerade bekommen hast.",
         "name": "Riesenrübe"
     },
     "Hunting Grounds": {
@@ -1557,7 +1557,7 @@
     },
     "Infirmary": {
         "description": "+1 Karte<br>Du darfst eine deiner Handkarten entsorgen.<line><b>Überzahlen:</b> Spiele diese Karte einmal pro überzahltem 1 coin.",
-        "extra": "",
+        "extra": "Wenn du ein KRANKENHAUS bekommst, für das du überzahlt hast, spielst du es einmal pro 1 coin, das du zu viel bezahlt hast. Wenn du z.B. ein KRANKENHAUS für 5 coin kaufst, spielst du das KRANKENHAUS zweimal - ziehst 1 Karte, entsorgst optional eine Karte aus deiner Hand, ziehst eine weitere Karte und kannst eine weitere Karte entsorgen. Das passiert nicht, wenn du das KRANKENHAUS erhältst, ohne dafür zu bezahlen (wie z.B. mit FÜLLHORN).",
         "name": "Krankenhaus"
     },
     "Inheritance": {
@@ -1657,12 +1657,12 @@
     },
     "Joust": {
         "description": "+1 Karte<br>+1 Aktion<br>+1 coin<br>Du darfst eine Provinz aus deiner Hand zur Seite legen, um eine beliebige Belohnung auf deine Hand zu nehmen. Lege die Provinz in der Aufräumphase ab.",
-        "extra": "",
+        "extra": "Verwende eine Kopie jeder Belohnung für Spiele mit 2 Spielern und zwei Kopien jeder Belohnung für Spiele mit 3-6 Spielern. Bei 3 oder mehr Spielern ist es erlaubt eine Belohnung zu erhalten, von der man bereits eine Kopie hat. Um eine Belohnung zu erhalten, musst du eine Provinz aus deiner Hand beiseitelegen und diese Provinz beim Aufräumen mit deinen anderen Karten abwerfen. Wenn alle Belohnungen genommen wurden, kannst du immer noch eine Provinz beiseitelegen, aber das hat keinen weiteren Effekt. Belohnungen sind nie im Vorrat, zählen nicht als aufgebrauchter Stapel für das Spielende und können nur durch das Spielen des Ritterkampfes erstmalig genommen werden. Entsorgte Belohnungen kommen auf den Müllstapel und können, wie auch von anderen Orten, genommen werden, z. B. kann die HERUMTREIBERIN einige von ihnen aus dem Müllstapel nehmen. Wenn du die Promokarte SCHWARZMARKT benutzt, lege keine Belohnungen in den Schwarzmarktstapel.",
         "name": "Ritterkampf"
     },
     "Joust and Rewards": {
         "description": "+1 Karte<br>+1 Aktion<br>+1 coin<br>Du darfst eine Provinz aus deiner Hand zur Seite legen, um eine beliebige Belohnung auf deine Hand zu nehmen. Lege die Provinz in der Aufräumphase ab.",
-        "extra": "",
+        "extra": "Verwende eine Kopie jeder Belohnung für Spiele mit 2 Spielern und zwei Kopien jeder Belohnung für Spiele mit 3-6 Spielern. Bei 3 oder mehr Spielern ist es erlaubt eine Belohnung zu erhalten, von der man bereits eine Kopie hat. Um eine Belohnung zu erhalten, musst du eine Provinz aus deiner Hand beiseitelegen und diese Provinz beim Aufräumen mit deinen anderen Karten abwerfen. Wenn alle Belohnungen genommen wurden, kannst du immer noch eine Provinz beiseitelegen, aber das hat keinen weiteren Effekt. Belohnungen sind nie im Vorrat, zählen nicht als aufgebrauchter Stapel für das Spielende und können nur durch das Spielen des Ritterkampfes erstmalig genommen werden. Entsorgte Belohnungen kommen auf den Müllstapel und können, wie auch von anderen Orten, genommen werden, z. B. kann die HERUMTREIBERIN einige von ihnen aus dem Müllstapel nehmen. Wenn du die Promokarte SCHWARZMARKT benutzt, lege keine Belohnungen in den Schwarzmarktstapel.",
         "name": "Ritterkampf und Belohnungen"
     },
     "Junk Dealer": {
@@ -1916,8 +1916,8 @@
         "name": "Söldner"
     },
     "Merchant": {
-        "description": "+1 Karte<br>+1 Aktion<n>Spielst du in diesem Zug das erste Mal ein Silber aus: +1 Geld",
-        "extra": "Du ziehst 1 Karte und erhältst +1 Aktion.<n>Wenn du in diesem Zug vor dem Ausspielen dieser Händlerin noch kein Silber ausgespielt hast, erhältst du für das erste danach ausgespielte Silber +1 Geld.<n>Für jedes weitere ausgespielte Silber erhältst du keinen zusätzlichen Bonus.<n>Hast du mehrere Händlerinnen ausgespielt, erhältst du pro Händlerin +1 Geld.",
+        "description": "+1 Karte<br>+1 Aktion<n>Spielst du in diesem Zug das erste Mal ein Silber aus: +1 coin",
+        "extra": "Du ziehst 1 Karte und erhältst +1 Aktion.<n>Wenn du in diesem Zug vor dem Ausspielen dieser Händlerin noch kein Silber ausgespielt hast, erhältst du für das erste danach ausgespielte Silber +1 coin.<n>Für jedes weitere ausgespielte Silber erhältst du keinen zusätzlichen Bonus.<n>Hast du mehrere Händlerinnen ausgespielt, erhältst du pro Händlerin +1 coin.",
         "name": "Händlerin"
     },
     "Merchant Guild": {
@@ -1941,8 +1941,8 @@
         "name": "Miliz"
     },
     "Mill": {
-        "description": "+1 Karte<br>+1 Aktion<br>Du darfst 2 Handkarten ablegen.<n>Wenn du das tust: +2 Geld.<line>1 <*VP*>",
-        "extra": " Diese Karte ist eine kombinierte Aktions- und Punktekarte.<n>Als Punktekarte bringt sie beim Zählen der Punkte 1 .<n>Spielst du die MÜHLE als Aktionskarte aus, ziehst du 1 Karte und erhältst +1 Aktion.<n>Du darfst 2 Karten aus deiner Hand ablegen. Wenn du das tust, erhältst du +2 Geld. Tust du das nicht (weil du zum Beispiel nicht genügend Karten auf der Hand hast), erhältst du nichts.<n>Nur, wenn du nicht mehr als eine Karte auf der Hand hast, darfst du genau eine Karte ablegen, erhältst dafür aber kein Geld.",
+        "description": "+1 Karte<br>+1 Aktion<br>Du darfst 2 Handkarten ablegen.<n>Wenn du das tust: +2 coin.<line>1 <*VP*>",
+        "extra": " Diese Karte ist eine kombinierte Aktions- und Punktekarte.<n>Als Punktekarte bringt sie beim Zählen der Punkte 1 .<n>Spielst du die MÜHLE als Aktionskarte aus, ziehst du 1 Karte und erhältst +1 Aktion.<n>Du darfst 2 Karten aus deiner Hand ablegen. Wenn du das tust, erhältst du +2 coin. Tust du das nicht (weil du zum Beispiel nicht genügend Karten auf der Hand hast), erhältst du nichts.<n>Nur, wenn du nicht mehr als eine Karte auf der Hand hast, darfst du genau eine Karte ablegen, erhältst dafür aber kein Geld.",
         "name": "Mühle"
     },
     "Mine": {
@@ -2529,12 +2529,12 @@
     },
     "Renown": {
         "description": "+1 Kauf<br><br>In diesem Zug kosten alle Karten 2 coin weniger.<br><br><i>(Diese Karte gehört nicht zum Vorrat.)</i>",
-        "extra": "",
+        "extra": "Die Kosten können nicht unter 0 coin sinken. Dies gilt für alle Karten überall - Karten im Vorrat, Karten auf der Hand, Karten in Decks. Wenn du zum Beispiel RUHM spielst und dann NACHBAU spielst und dabei ein KUPFER abwirfst, könntest du ein SILBER gewinnen, da SILBER 1 coin kosten würde, während KUPFER immer noch 0 coin kosten würde. Wenn man eine Karte wie THRONSAAL auf RUHM spielt, kosten die Karten 4 coin weniger.",
         "name": "Ruhm"
     },
     "Replace": {
-        "description": "Entsorge eine Handkarte.<n>Nimm eine Karte vom Vorrat, die bis zu 2 Geld mehr kostet als die entsorgte Karte.<n>Ist die genommene Karte eine Aktions- oder Geldkarte, lege sie auf deinen Nachziehstapel.<n>Ist es eine Punktekarte, nimmt jeder Mitspieler einen Fluch vom Vorrat.",
-        "extra": "Entsorge zuerst eine Karte aus deiner Hand.<n>Dann nimmst du dir eine Karte vom Vorrat, die maximal 2 Geld mehr kostet als die entsorgte Karte.<n>Eine Karte kostet nur dann maximal 2 Geld mehr, wenn die restlichen Kosten (z.B. Schulden aus Empires oder Trank aus Alchemie) gleich oder niedriger sind.<n>Wenn die genommene Karte eine Aktions- und/oder Geldkarte ist, legst du die Karte oben auf deinen Nachziehstapel.<n>Ansonsten legst du die Karte auf den Ablagestapel.<n>Ist die genommene Karte eine Punktekarte, nimmt sich jeder Mitspieler - beginnend bei deinem linken Mitspieler - einen Fluch.<n>Ist die genommene Karte eine Punktekarte sowie eine Aktions- oder Geldkarte (z.B. MÜHLE), legst du die Karte oben auf deinen Nachziehstapel und jeder Mitspieler muss sich einen Fluch nehmen.",
+        "description": "Entsorge eine Handkarte.<n>Nimm eine Karte vom Vorrat, die bis zu 2 coin mehr kostet als die entsorgte Karte.<n>Ist die genommene Karte eine Aktions- oder Geldkarte, lege sie auf deinen Nachziehstapel.<n>Ist es eine Punktekarte, nimmt jeder Mitspieler einen Fluch vom Vorrat.",
+        "extra": "Entsorge zuerst eine Karte aus deiner Hand.<n>Dann nimmst du dir eine Karte vom Vorrat, die maximal 2 coin nmehr kostet als die entsorgte Karte.<n>Eine Karte kostet nur dann maximal 2 coin mehr, wenn die restlichen Kosten (z.B. Schulden aus Empires oder Trank aus Alchemie) gleich oder niedriger sind.<n>Wenn die genommene Karte eine Aktions- und/oder Geldkarte ist, legst du die Karte oben auf deinen Nachziehstapel.<n>Ansonsten legst du die Karte auf den Ablagestapel.<n>Ist die genommene Karte eine Punktekarte, nimmt sich jeder Mitspieler - beginnend bei deinem linken Mitspieler - einen Fluch.<n>Ist die genommene Karte eine Punktekarte sowie eine Aktions- oder Geldkarte (z.B. MÜHLE), legst du die Karte oben auf deinen Nachziehstapel und jeder Mitspieler muss sich einen Fluch nehmen.",
         "name": "Austausch"
     },
     "Research": {
@@ -2889,7 +2889,7 @@
     },
     "Shop": {
         "description": "+1 Karte<br>+1 coin<br><br>Du darfst eine Aktionskarte, von der du keine gleiche im Spiel hast, aus deiner Hand spielen.",
-        "extra": "",
+        "extra": "Damit kannst du eine Aktionskarte aus deiner Hand spielen, vorausgesetzt, du hast keine Kopie dieser Karte im Spiel. Es spielt keine Rolle, ob du in diesem Zug eine Kopie dieser Aktion gespielt hast, nur dass sie nicht im Spiel ist, wenn du Geschäft spielst.",
         "name": "Geschäft"
     },
     "Shy": {
