@@ -43,26 +43,27 @@ def test_no_group_global():
 
 def test_group_global():
     options = get_clean_opts(["--group-global"])
+    # It's confusing that this includes both singular and plural. Perhaps a future refactor can simplify it.
     expected_groups = [
-        "prophecies",
-        "traits",
-        "hexes",
-        "events",
-        "landmarks",
-        "state",
-        "trait",
-        "way",
-        "prophecy",
-        "boons",
-        "projects",
-        "event",
-        "boon",
-        "landmark",
-        "ally",
         "allies",
+        "ally",
+        "boon",
+        "boons",
+        "event",
+        "events",
         "hex",
-        "states",
+        "hexes",
+        "landmark",
+        "landmarks",
         "project",
+        "projects",
+        "prophecies",
+        "prophecy",
+        "state",
+        "states",
+        "trait",
+        "traits",
+        "way",
         "ways",
     ]
     for expected in expected_groups:

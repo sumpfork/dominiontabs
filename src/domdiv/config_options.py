@@ -847,7 +847,7 @@ def flatten_lower_and_deduplicate(l: any) -> set:
         elif isinstance(item, str):
             out.add(item.lower())
         else:
-            logger.warning(
+            raise Exception(
                 f"Ignoring configuration option {item} with type {type(item)} as it has an unexpected type."
             )
     return out
