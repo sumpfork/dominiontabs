@@ -491,7 +491,7 @@ def filter_sort_cards(cards: list[Card], options) -> list[Card]:
                 if s.lower() == e or Card.sets[s].get("set_name", "").lower() == e:
                     wantedSets.discard(s)
                     knownExpansions.add(e)
-        # Give indication if an imput did not match anything
+        # Give indication if an input did not match anything
         unknownExpansions = options.exclude_expansions - knownExpansions
         if unknownExpansions:
             logger.warning(
