@@ -295,6 +295,12 @@ def parse_opts(cmdline_args=None):
         help="Use the long name with edition information on the expansion divider tab. "
         "Without this, the shorter expansion name is used on the expansion divider tab.",
     )
+    group_expansion.add_argument(
+        "--expansion-dividers-multiple-icons",
+        action="store_true",
+        dest="expansion_dividers_multiple_icons",
+        help="For sets with multiple editions, put both set icons on the expansion divider.",
+    )
 
     # Divider Selection
     group_select = parser.add_argument_group(
@@ -370,6 +376,12 @@ def parse_opts(cmdline_args=None):
         action="store_true",
         dest="upgrade_with_expansion",
         help="Include any new edition upgrade cards with the expansion being upgraded.",
+    )
+    group_select.add_argument(
+        "--removed-with-expansion",
+        action="store_true",
+        dest="removed_with_expansion",
+        help="Include any cards removed from the 1st edition with the corresponding 2nd edition.",
     )
     group_select.add_argument(
         "--base-cards-with-expansion",
