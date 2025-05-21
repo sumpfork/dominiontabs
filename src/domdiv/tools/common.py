@@ -86,10 +86,10 @@ def write_data(data, fname, do_gzip=True, check_changed=True):
         lang_out.write("\n")
 
 
-def write_language_cards(cards, lang, card_db_dir):
+def write_language_cards(cards, lang, card_db_dir, do_gzip=True):
     lang_file = f"cards_{lang}.json"
     fname = os.path.join(card_db_dir, lang, lang_file)
-    write_data(cards, fname)
+    write_data(cards, fname, do_gzip=do_gzip)
 
 
 def load_card_data(card_db_dir):
