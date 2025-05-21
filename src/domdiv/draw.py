@@ -13,10 +13,12 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
+from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import Paragraph, XPreformatted
 
 from . import resource_handling
 from .cards import Card
+from .inline_images import IMAGES, expand_wiki_nowrap_template, replace_wiki_templates
 
 
 def split(seq, n):
@@ -1184,6 +1186,7 @@ class DividerDrawer(object):
         replace_specs = [
             # Coins
             # TODO: coin text baseline should align with surrounding text
+            # TODONE: fixed in the version that uses wiki markup
             (r"(\d+)\s\<\*COIN\*\>", "coin_small_\\1.png", 2.4, 200),
             (r"(\d+)\s(c|C)oin(s)?", "coin_small_\\1.png", 1.2, 100),
             (r"([Xx])\s(c|C)oin(s)?", "coin_small_x.png", 1.2, 100),
@@ -1210,38 +1213,43 @@ class DividerDrawer(object):
         # Bonuses
         text = card.getBonusBoldText(text)
 
+        # wiki markup for bold and italics
+        text = re.sub(r"'''([^']+?)'''", r"<b>\1</b>", text)
+        text = re.sub(r"''([^']+?)''", r"<i>\1</i>", text)
+
         # <line>: 11 em dashes, but not wider than the text box
-        line = "<center>{}</center>\n".format("&mdash;" * min(11, int(emWidth)))
-        text = re.sub(r"\<line\>", line, text)
+        line = f'<center>{"&mdash;" * min(11, int(emWidth))}</center>\n'
+        text = re.sub(r"<line>", line, text)
+        text = re.sub(r"{{[dD]ivline}}", line, text)
         #  <tab> and \t
-        text = re.sub(r"\<tab\>", "\t", text)
-        text = re.sub(r"\<t\>", "\t", text)
+        text = re.sub(r"<tab>", "\t", text)
+        text = re.sub(r"<t>", "\t", text)
         text = re.sub(r"\t", "&nbsp;" * 4, text)
 
         # various breaks
-        text = re.sub(r"\<br\>", "<br />", text)
-        text = re.sub(r"\<n\>", "\n", text)
+        text = re.sub(r"<br>", "<br />", text)
+        text = re.sub(r"<n>", "\n", text)
 
         # alignments
-        text = re.sub(r"\<c\>", "<center>", text)
-        text = re.sub(r"\<center\>", "\n<para alignment='center'>", text)
-        text = re.sub(r"\</c\>", "</center>", text)
-        text = re.sub(r"\</center\>", "</para>", text)
+        text = re.sub(r"<c>", "<center>", text)
+        text = re.sub(r"<center>", "\n<para alignment='center'>", text)
+        text = re.sub(r"</c>", "</center>", text)
+        text = re.sub(r"</center>", "</para>", text)
 
-        text = re.sub(r"\<l\>", "<left>", text)
-        text = re.sub(r"\<left\>", "\n<para alignment='left'>", text)
-        text = re.sub(r"\</l\>", "</left>", text)
-        text = re.sub(r"\</left\>", "</para>", text)
+        text = re.sub(r"<l>", "<left>", text)
+        text = re.sub(r"<left>", "\n<para alignment='left'>", text)
+        text = re.sub(r"</l>", "</left>", text)
+        text = re.sub(r"</left>", "</para>", text)
 
-        text = re.sub(r"\<r\>", "<right>", text)
-        text = re.sub(r"\<right\>", "\n<para alignment='right'>", text)
-        text = re.sub(r"\</r\>", "</right>", text)
-        text = re.sub(r"\</right\>", "</para>", text)
+        text = re.sub(r"<r>", "<right>", text)
+        text = re.sub(r"<right>", "\n<para alignment='right'>", text)
+        text = re.sub(r"</r>", "</right>", text)
+        text = re.sub(r"</right>", "</para>", text)
 
-        text = re.sub(r"\<j\>", "<justify>", text)
-        text = re.sub(r"\<justify\>", "\n<para alignment='justify'>", text)
-        text = re.sub(r"\</j\>", "</justify>", text)
-        text = re.sub(r"\</justify\>", "</para>", text)
+        text = re.sub(r"<j>", "<justify>", text)
+        text = re.sub(r"<justify>", "\n<para alignment='justify'>", text)
+        text = re.sub(r"</j>", "</justify>", text)
+        text = re.sub(r"</justify>", "</para>", text)
 
         return text.strip().strip("\n")
 
@@ -1286,11 +1294,10 @@ class DividerDrawer(object):
 
         return width + 1
 
-    def drawCost(self, card, x, y, costOffset=-1, scale=1):
+    def drawCost(self, card, x, y, scale=1):
         # card = subject card
         # x = left side of coin
         # y = baseline height for text
-        # (costOffset is no longer used)
 
         # Measured card metrics:
         # coin and debt icons are 17 pt with a 1 pt drop shadow (18 pt total)
@@ -1979,12 +1986,20 @@ class DividerDrawer(object):
 
         # Figure out what text is to be printed on this divider
         descriptions = None
+        do_legacy_substitutions = True
         if divider_text == "card" and card.description:
             # Add the card text to the divider
             descriptions = card.description
         elif divider_text == "rules" and card.extra:
             # Add the extra rules text to the divider
             descriptions = card.extra
+        elif (
+            divider_text == "wiki-text"
+            and hasattr(card, "wiki_text")
+            and card.wiki_text
+        ):
+            do_legacy_substitutions = False
+            descriptions = card.wiki_text
 
         if descriptions is None:
             # No text to print, so exit early and cleanly
@@ -1993,12 +2008,16 @@ class DividerDrawer(object):
 
         s = getSampleStyleSheet()["BodyText"]
         s.fontName = self.fontStyle["Rules"]
-        if divider_text == "card" and not card.isExpansion():
+        if divider_text == "wiki-text":
+            s.fontSize = 11  # Dominion cards seem to be printed in 11 point font
+            s.leading = 13  # This is the space between adjacent lines
+            s.autoLeading = "max"
+        if divider_text in {"card", "wiki-text"} and not card.isExpansion():
             s.alignment = TA_CENTER
         else:
             s.alignment = TA_JUSTIFY
 
-        textHorizontalMargin = 0.5 * cm
+        textHorizontalMargin = 0.4 * cm
         textVerticalMargin = 0.3 * cm
         textBoxWidth = item.cardWidth - 2 * textHorizontalMargin
         textBoxHeight = totalHeight - usedHeight - 2 * textVerticalMargin
@@ -2008,21 +2027,25 @@ class DividerDrawer(object):
         if not card.isExpansion():
             emWidth = textBoxWidth / s.fontSize
             descriptions = self.add_inline_text(card, descriptions, emWidth)
-        descriptions = re.split("\n", descriptions)
+        descriptions = re.split("\n|</?p>", descriptions)
+        # Remove the last item if it's empty
+        if descriptions[-1] == "":
+            descriptions = descriptions[:-1]
         while True:
             paragraphs = []
             # this accounts for the spacers we insert between paragraphs
             h = (len(descriptions) - 1) * spacerHeight
             for d in descriptions:
-                if card.isExpansion():
-                    dmod = d
-                else:
-                    dmod = self.add_inline_images(d, s.fontSize)
+                if not card.isExpansion():
+                    if do_legacy_substitutions:
+                        d = self.add_inline_images(d, s.fontSize)
+                    d = replace_wiki_templates(d, s.fontSize)
+                    d = expand_wiki_nowrap_template(d)
                 try:
-                    p = Paragraph(dmod, s)
+                    p = Paragraph(d, s)
                 except ValueError as e:
                     raise ValueError(
-                        f'Error rendering text from "{card.name}": {e} ("{dmod}")'
+                        f'Error rendering text from "{card.name}": {e} ("{d}")'
                     )
                 h += p.wrap(textBoxWidth, textBoxHeight)[1]
                 paragraphs.append(p)
