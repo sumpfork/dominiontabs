@@ -5,6 +5,53 @@ from loguru import logger
 from reportlab.lib.units import cm
 
 
+class CardType(object):
+    @staticmethod
+    def decode_json(obj):
+        return CardType(**obj)
+
+    def __init__(
+        self,
+        card_type,
+        card_type_image,
+        group_global_type=None,
+        group_cost=None,
+        defaultCardCount=10,
+        tabTextHeightOffset=0,
+        tabCostHeightOffset=-1,
+    ):
+        self.typeNames = tuple(card_type)
+        self.tabImageFile = card_type_image
+        self.group_global_type = group_global_type
+        self.group_cost = group_cost
+        self.defaultCardCount = defaultCardCount
+        self.tabTextHeightOffset = tabTextHeightOffset
+        self.tabCostHeightOffset = tabCostHeightOffset
+
+    def getTypeDefaultCardCount(self):
+        return self.defaultCardCount
+
+    def getTypeNames(self):
+        return self.typeNames
+
+    def getTabImageFile(self):
+        if not self.tabImageFile:
+            return None
+        return self.tabImageFile
+
+    def getGroupGlobalType(self):
+        return self.group_global_type
+
+    def getGroupCost(self):
+        return self.group_cost
+
+    def getTabTextHeightOffset(self):
+        return self.tabTextHeightOffset
+
+    def getTabCostHeightOffset(self):
+        return self.tabCostHeightOffset
+
+
 class Card(object):
     sets = None
     types = None
@@ -83,10 +130,10 @@ class Card(object):
         self.count.extend(value)
 
     def getStackHeight(self, thickness):
-        # return height of the stacked cards in cm.  Using hight in cm of a stack of 60 Copper cards as thickness.
+        # return height of the stacked cards in cm.  Using height in cm of a stack of 60 Copper cards as thickness.
         return self.getCardCount() * cm * (thickness / 60.0) + 2
 
-    def getType(self):
+    def getType(self) -> CardType:
         return Card.types[tuple(self.types)]
 
     def getBonusBoldText(self, text):
@@ -235,50 +282,3 @@ class BlankCard(Card):
 
     def isBlank(self):
         return True
-
-
-class CardType(object):
-    @staticmethod
-    def decode_json(obj):
-        return CardType(**obj)
-
-    def __init__(
-        self,
-        card_type,
-        card_type_image,
-        group_global_type=None,
-        group_cost=None,
-        defaultCardCount=10,
-        tabTextHeightOffset=0,
-        tabCostHeightOffset=-1,
-    ):
-        self.typeNames = tuple(card_type)
-        self.tabImageFile = card_type_image
-        self.group_global_type = group_global_type
-        self.group_cost = group_cost
-        self.defaultCardCount = defaultCardCount
-        self.tabTextHeightOffset = tabTextHeightOffset
-        self.tabCostHeightOffset = tabCostHeightOffset
-
-    def getTypeDefaultCardCount(self):
-        return self.defaultCardCount
-
-    def getTypeNames(self):
-        return self.typeNames
-
-    def getTabImageFile(self):
-        if not self.tabImageFile:
-            return None
-        return self.tabImageFile
-
-    def getGroupGlobalType(self):
-        return self.group_global_type
-
-    def getGroupCost(self):
-        return self.group_cost
-
-    def getTabTextHeightOffset(self):
-        return self.tabTextHeightOffset
-
-    def getTabCostHeightOffset(self):
-        return self.tabCostHeightOffset
