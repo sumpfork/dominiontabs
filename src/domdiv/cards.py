@@ -216,31 +216,31 @@ class Card(object):
     def get_GroupCost(self):
         return self.getType().getGroupCost()
 
-    def get_total_cost(self, c):
+    def get_total_cost(self):
         # Return a tuple that represents the total cost of card c
         # Hightest cost cards are in order:
         # - Types with group cost of "" sort at the very end
         # - cards with * since that can mean anything
         # - cards with numeric errors
         # convert cost (a string) into a number
-        if c.get_GroupCost() == "":
+        if self.get_GroupCost() == "":
             c_cost = 999
-        elif not c.cost:
+        elif not self.cost:
             c_cost = 0  # if no cost, treat as 0
-        elif "*" in c.cost:
+        elif "*" in self.cost:
             c_cost = 998  # make it a really big number
         else:
             try:
-                c_cost = int(c.cost)
+                c_cost = int(self.cost)
             except ValueError:
                 c_cost = 997  # can't, so make it a really big number
 
-        return c_cost, c.potcost, c.debtcost
+        return c_cost, self.potcost, self.debtcost
 
     def set_lowest_cost(self, other):
         # set self cost fields to the lower of the two's total cost
-        self_cost = self.get_total_cost(self)
-        other_cost = self.get_total_cost(other)
+        self_cost = self.get_total_cost()
+        other_cost = self.get_total_cost()
         if other_cost < self_cost:
             self.cost = other.cost
             self.potcost = other.potcost

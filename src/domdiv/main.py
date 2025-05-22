@@ -131,7 +131,7 @@ class CardSorter(object):
         return (
             card.cardset,
             int(card.isExpansion()),
-            str(card.get_total_cost(card)),
+            str(card.get_total_cost()),
             self.get_card_name_sort_key(card.name),
         )
 
