@@ -1252,7 +1252,9 @@ class DividerDrawer(object):
             return 0
 
         #  draw_list = [(card.getCardCount(), 1)]
-        draw_list = sorted([(i, card.count.count(i)) for i in set(card.count)])
+        draw_list = sorted(
+            [(i, card.getCardCounts().count(i)) for i in set(card.getCardCounts())]
+        )
 
         cardIconHeight = y + offset
         countHeight = cardIconHeight - 4
