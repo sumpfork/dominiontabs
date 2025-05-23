@@ -58,8 +58,8 @@ def test_cardread():
         "hinterlands1stEditionRemoved",
         "hinterlands2ndEdition",
         "hinterlands2ndEditionUpgrade",
-        "dark ages",
-        "dark ages extras",
+        "darkAges",
+        "darkAges extras",
         "guilds1stEdition",
         "guilds1stEditionRemoved",
         "guilds2ndEditionUpgrade",
@@ -83,6 +83,8 @@ def test_cardread():
     for c in cards:
         assert isinstance(c, domdiv_cards.Card)
         assert c.cardset_tag in valid_cardsets
+        assert all(t in valid_cardsets for t in c.cardset_tags)
+        assert len(c.cardset_tags) >= 1
 
     # Option modified card count
     options = config_options.parse_opts(
