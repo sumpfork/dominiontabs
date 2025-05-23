@@ -13,7 +13,7 @@ def test_group_special():
     ]
     assert len(empires_event_cards) == 1
     empires_events = empires_event_cards[0]
-    assert empires_events.count == [1] * 13
+    assert empires_events.getCardCounts() == [1] * 13
     assert empires_events.name == "Events: Empires"
     assert empires_events.types == ["Event"]
 
@@ -23,7 +23,7 @@ def test_group_special():
     gladiator_fortune = gladiator_matches[0]
     gladiator_fortune.name.startswith("Gladiator")
     assert "Fortune" in gladiator_fortune.name
-    assert gladiator_fortune.count == [5, 5]
+    assert gladiator_fortune.getCardCounts() == [5, 5]
     assert gladiator_fortune.types == ["Action"]
     assert gladiator_fortune.cost == "3"
 
@@ -32,8 +32,9 @@ def test_group_special():
     joust_rewards = joust_matches[0]
     assert joust_rewards.name.startswith("Joust")
     assert "Rewards" in joust_rewards.name
-    joust_rewards.count.sort()
-    assert joust_rewards.count == 6 * [2] + [10]
+    counts = joust_rewards.getCardCounts()
+    counts.sort()
+    assert counts == 6 * [2] + [10]
     assert joust_rewards.types == ["Action"]
 
     allies_ally_cards = [
@@ -42,4 +43,4 @@ def test_group_special():
     assert len(allies_ally_cards) == 1
     allies_allies = allies_ally_cards[0]
     assert allies_allies.name == "Allies: Allies"
-    assert allies_allies.count == [1] * 23
+    assert allies_allies.getCardCounts() == [1] * 23

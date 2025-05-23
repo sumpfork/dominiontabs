@@ -78,7 +78,7 @@ class Card(object):
         potcost=0,
         debtcost=0,
         extra="",
-        count=-1,
+        count=None,
         card_tag="missing card_tag",
         cardset_tags=None,
         group_tag="",
@@ -108,26 +108,43 @@ class Card(object):
         self.cardset_tags = cardset_tags
         self.group_tag = group_tag
         self.group_top = group_top
-        self.image = image
+        self.image = image  # used for promo cards with unique "set" images
         self.text_icon = text_icon
         self.cardset_tag = cardset_tag
-        self.setCardCount(count)
         self.randomizer = randomizer
+        self.count = None
+
+        if count is not None:
+            if isinstance(count, int):
+                self._counts = [count]
+            elif isinstance(count, str) and count.isdigit():
+                self._counts = [int(count)]
+            else:
+                raise TypeError(
+                    f"{name or card_tag}: Count must be int or str: {count} has type {type(count)}"
+                )
+        else:
+            self._counts = None
 
     def getCardCount(self):
-        return sum(i for i in self.count)
+        return sum(self.getCardCounts())
+
+    def getCardCounts(self):
+        if self._counts is None:
+            return [self.getType().getTypeDefaultCardCount()]
+        return self._counts
 
     def setCardCount(self, value):
-        value = int(value)
-        if value < 0:
-            self.count = [self.getType().getTypeDefaultCardCount()]
-        elif value == 0:
-            self.count = []
+        if value == 0:
+            self._counts = []
         else:
-            self.count = [value]
+            self._counts = [int(value)]
 
-    def addCardCount(self, value):
-        self.count.extend(value)
+    def mergeCardCount(self, value: list):
+        if self._counts is None:
+            self._counts = value
+        else:
+            self._counts.extend(value)
 
     def getStackHeight(self, thickness):
         # return height of the stacked cards in cm.  Using height in cm of a stack of 60 Copper cards as thickness.

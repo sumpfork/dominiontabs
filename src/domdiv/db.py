@@ -250,7 +250,7 @@ def read_card_data(options) -> list[Card]:
 
             # Add correct card counts to Start Deck prototype.  This will be used to make copies.
             cards[StartDeck_index].setCardCount(STARTDECK_COPPERS)
-            cards[StartDeck_index].addCardCount([int(STARTDECK_ESTATES)])
+            cards[StartDeck_index].mergeCardCount([int(STARTDECK_ESTATES)])
 
             # Make new Start Deck Dividers and adjust the corresponding card counts
             for x in range(0, STARTDECK_NUMBER):
