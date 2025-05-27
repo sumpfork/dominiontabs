@@ -112,7 +112,6 @@ class Card(object):
         self.text_icon = text_icon
         self.cardset_tag = cardset_tag
         self.randomizer = randomizer
-        self.count = None
 
         if count is not None:
             if isinstance(count, int):
@@ -126,10 +125,10 @@ class Card(object):
         else:
             self._counts = None
 
-    def getCardCount(self):
+    def getCardCount(self) -> int:
         return sum(self.getCardCounts())
 
-    def getCardCounts(self):
+    def getCardCounts(self) -> list[int]:
         if self._counts is None:
             return [self.getType().getTypeDefaultCardCount()]
         return self._counts
@@ -233,13 +232,15 @@ class Card(object):
     def get_GroupCost(self):
         return self.getType().getGroupCost()
 
-    def get_total_cost(self):
-        # Return a tuple that represents the total cost of card c
-        # Hightest cost cards are in order:
-        # - Types with group cost of "" sort at the very end
-        # - cards with * since that can mean anything
-        # - cards with numeric errors
-        # convert cost (a string) into a number
+    def cost_sort_key(self):
+        """Return a tuple that represents the total cost of this card in (coins, potions, debt)
+        used for sorting cards by cost.
+        Highest cost cards are in order:
+        - Types with group cost of "" sort at the very end
+        - cards with * since that can mean anything
+        - cards with numeric errors
+        convert cost (a string) into a number
+        """
         if self.get_GroupCost() == "":
             c_cost = 999
         elif not self.cost:
@@ -253,15 +254,6 @@ class Card(object):
                 c_cost = 997  # can't, so make it a really big number
 
         return c_cost, self.potcost, self.debtcost
-
-    def set_lowest_cost(self, other):
-        # set self cost fields to the lower of the two's total cost
-        self_cost = self.get_total_cost()
-        other_cost = self.get_total_cost()
-        if other_cost < self_cost:
-            self.cost = other.cost
-            self.potcost = other.potcost
-            self.debtcost = other.debtcost
 
     def setImage(self, use_set_icon=False):
         setImage = None
