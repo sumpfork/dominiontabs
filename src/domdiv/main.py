@@ -131,7 +131,7 @@ class CardSorter(object):
         return (
             card.cardset,
             int(card.isExpansion()),
-            str(card.get_total_cost(card)),
+            str(card.cost_sort_key()),
             self.get_card_name_sort_key(card.name),
         )
 
@@ -247,7 +247,9 @@ def combine_cards(cards, old_card_type, new_card_tag, new_cardset_tag, new_type)
     filteredCards = []
     for c in cards:
         if c.isType(old_card_type):
-            holder.addCardCount(c.count)  # keep track of count and skip card
+            holder.mergeCardCount(
+                c.getCardCounts()
+            )  # keep track of count and skip card
         else:
             filteredCards.append(c)  # Not the right type, keep card
 
@@ -354,8 +356,8 @@ def filter_sort_cards(cards: list[Card], options) -> list[Card]:
                 cards_in_group.setdefault(
                     (card.group_tag, card.cardset_tag), []
                 ).append(card)
-                group_holders[(card.group_tag, card.cardset_tag)].addCardCount(
-                    card.count
+                group_holders[(card.group_tag, card.cardset_tag)].mergeCardCount(
+                    card.getCardCounts()
                 )
                 if card.group_top:
                     # this is a designated card to represent the group, so update important data

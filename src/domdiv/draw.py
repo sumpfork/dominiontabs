@@ -1245,16 +1245,26 @@ class DividerDrawer(object):
 
         return text.strip().strip("\n")
 
-    def drawCardCount(self, card, x, y, offset=-1):
-        # Note that this is right justified.
-        # x represents the right most for the image (image grows to the left)
-        if card.getCardCount() < 1:
+    def drawCardCount(self, card, x, y) -> int:
+        """Draw the card counts for this card. (x, y) is the bottom right corner of the images,
+        which are right aligned.
+
+        Returns the width used in points.
+        """
+
+        card_counts = card.getCardCounts()
+        if sum(card_counts) < 1:
             return 0
 
-        #  draw_list = [(card.getCardCount(), 1)]
-        draw_list = sorted([(i, card.count.count(i)) for i in set(card.count)])
+        # make a list of all the (num cards in pile, num piles with that size) pairs for each unique pile size
+        draw_list = sorted(
+            [
+                (pile_size, card_counts.count(pile_size))
+                for pile_size in set(card_counts)
+            ]
+        )
 
-        cardIconHeight = y + offset
+        cardIconHeight = y
         countHeight = cardIconHeight - 4
         width = 0
 

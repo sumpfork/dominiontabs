@@ -5,6 +5,53 @@ from loguru import logger
 from reportlab.lib.units import cm
 
 
+class CardType(object):
+    @staticmethod
+    def decode_json(obj):
+        return CardType(**obj)
+
+    def __init__(
+        self,
+        card_type,
+        card_type_image,
+        group_global_type=None,
+        group_cost=None,
+        defaultCardCount=10,
+        tabTextHeightOffset=0,
+        tabCostHeightOffset=-1,
+    ):
+        self.typeNames = tuple(card_type)
+        self.tabImageFile = card_type_image
+        self.group_global_type = group_global_type
+        self.group_cost = group_cost
+        self.defaultCardCount = defaultCardCount
+        self.tabTextHeightOffset = tabTextHeightOffset
+        self.tabCostHeightOffset = tabCostHeightOffset
+
+    def getTypeDefaultCardCount(self):
+        return self.defaultCardCount
+
+    def getTypeNames(self):
+        return self.typeNames
+
+    def getTabImageFile(self):
+        if not self.tabImageFile:
+            return None
+        return self.tabImageFile
+
+    def getGroupGlobalType(self):
+        return self.group_global_type
+
+    def getGroupCost(self):
+        return self.group_cost
+
+    def getTabTextHeightOffset(self):
+        return self.tabTextHeightOffset
+
+    def getTabCostHeightOffset(self):
+        return self.tabCostHeightOffset
+
+
 class Card(object):
     sets = None
     types = None
@@ -31,7 +78,7 @@ class Card(object):
         potcost=0,
         debtcost=0,
         extra="",
-        count=-1,
+        count=None,
         card_tag="missing card_tag",
         cardset_tags=None,
         group_tag="",
@@ -61,32 +108,48 @@ class Card(object):
         self.cardset_tags = cardset_tags
         self.group_tag = group_tag
         self.group_top = group_top
-        self.image = image
+        self.image = image  # used for promo cards with unique "set" images
         self.text_icon = text_icon
         self.cardset_tag = cardset_tag
-        self.setCardCount(count)
         self.randomizer = randomizer
 
-    def getCardCount(self):
-        return sum(i for i in self.count)
+        if count is not None:
+            if isinstance(count, int):
+                self._counts = [count]
+            elif isinstance(count, str) and count.isdigit():
+                self._counts = [int(count)]
+            else:
+                raise TypeError(
+                    f"{name or card_tag}: Count must be int or str: {count} has type {type(count)}"
+                )
+        else:
+            self._counts = None
+
+    def getCardCount(self) -> int:
+        return sum(self.getCardCounts())
+
+    def getCardCounts(self) -> list[int]:
+        if self._counts is None:
+            return [self.getType().getTypeDefaultCardCount()]
+        return self._counts
 
     def setCardCount(self, value):
-        value = int(value)
-        if value < 0:
-            self.count = [self.getType().getTypeDefaultCardCount()]
-        elif value == 0:
-            self.count = []
+        if value == 0:
+            self._counts = []
         else:
-            self.count = [value]
+            self._counts = [int(value)]
 
-    def addCardCount(self, value):
-        self.count.extend(value)
+    def mergeCardCount(self, value: list):
+        if self._counts is None:
+            self._counts = value
+        else:
+            self._counts.extend(value)
 
     def getStackHeight(self, thickness):
-        # return height of the stacked cards in cm.  Using hight in cm of a stack of 60 Copper cards as thickness.
+        # return height of the stacked cards in cm.  Using height in cm of a stack of 60 Copper cards as thickness.
         return self.getCardCount() * cm * (thickness / 60.0) + 2
 
-    def getType(self):
+    def getType(self) -> CardType:
         return Card.types[tuple(self.types)]
 
     def getBonusBoldText(self, text):
@@ -169,35 +232,28 @@ class Card(object):
     def get_GroupCost(self):
         return self.getType().getGroupCost()
 
-    def get_total_cost(self, c):
-        # Return a tuple that represents the total cost of card c
-        # Hightest cost cards are in order:
-        # - Types with group cost of "" sort at the very end
-        # - cards with * since that can mean anything
-        # - cards with numeric errors
-        # convert cost (a string) into a number
-        if c.get_GroupCost() == "":
+    def cost_sort_key(self):
+        """Return a tuple that represents the total cost of this card in (coins, potions, debt)
+        used for sorting cards by cost.
+        Highest cost cards are in order:
+        - Types with group cost of "" sort at the very end
+        - cards with * since that can mean anything
+        - cards with numeric errors
+        convert cost (a string) into a number
+        """
+        if self.get_GroupCost() == "":
             c_cost = 999
-        elif not c.cost:
+        elif not self.cost:
             c_cost = 0  # if no cost, treat as 0
-        elif "*" in c.cost:
+        elif "*" in self.cost:
             c_cost = 998  # make it a really big number
         else:
             try:
-                c_cost = int(c.cost)
+                c_cost = int(self.cost)
             except ValueError:
                 c_cost = 997  # can't, so make it a really big number
 
-        return c_cost, c.potcost, c.debtcost
-
-    def set_lowest_cost(self, other):
-        # set self cost fields to the lower of the two's total cost
-        self_cost = self.get_total_cost(self)
-        other_cost = self.get_total_cost(other)
-        if other_cost < self_cost:
-            self.cost = other.cost
-            self.potcost = other.potcost
-            self.debtcost = other.debtcost
+        return c_cost, self.potcost, self.debtcost
 
     def setImage(self, use_set_icon=False):
         setImage = None
@@ -235,50 +291,3 @@ class BlankCard(Card):
 
     def isBlank(self):
         return True
-
-
-class CardType(object):
-    @staticmethod
-    def decode_json(obj):
-        return CardType(**obj)
-
-    def __init__(
-        self,
-        card_type,
-        card_type_image,
-        group_global_type=None,
-        group_cost=None,
-        defaultCardCount=10,
-        tabTextHeightOffset=0,
-        tabCostHeightOffset=-1,
-    ):
-        self.typeNames = tuple(card_type)
-        self.tabImageFile = card_type_image
-        self.group_global_type = group_global_type
-        self.group_cost = group_cost
-        self.defaultCardCount = defaultCardCount
-        self.tabTextHeightOffset = tabTextHeightOffset
-        self.tabCostHeightOffset = tabCostHeightOffset
-
-    def getTypeDefaultCardCount(self):
-        return self.defaultCardCount
-
-    def getTypeNames(self):
-        return self.typeNames
-
-    def getTabImageFile(self):
-        if not self.tabImageFile:
-            return None
-        return self.tabImageFile
-
-    def getGroupGlobalType(self):
-        return self.group_global_type
-
-    def getGroupCost(self):
-        return self.group_cost
-
-    def getTabTextHeightOffset(self):
-        return self.tabTextHeightOffset
-
-    def getTabCostHeightOffset(self):
-        return self.tabCostHeightOffset
