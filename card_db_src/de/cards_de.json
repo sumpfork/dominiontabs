@@ -2930,7 +2930,7 @@
     "Nobles": {
         "description": "Wähle eins: +3 Karten oder +2 Aktionen.<line>2 <*VP*>",
         "extra": "Diese Karte ist zugleich eine Aktions- und eine Punktekarte. Wenn du sie ausspielst , kannst du wählen, 3 Karten nachzuziehen oder 2 zusätzliche Aktionen zu erhalten. Die beiden Anweisungen können jedoch nicht geteilt und gemischt werden. Bei Spielende sind die ADELIGEN 2 <VP> wert. Im Spiel zu 3. und zu 4. werden 12 Karten verwendet, im Spiel zu 2. werden 8 Karten verwendet.",
-        "name": "Adelige / Adlige",
+        "name": "Adlige",
         "text": "Wähle eins:<br>'''+3 Karten''' oder<br>'''+2 Aktionen'''{{divline}}{{VP|2|l}}"
     },
     "Nomad Camp": {
@@ -3133,7 +3133,7 @@
     "Peddler": {
         "description": "+1 Karte<br>+1 Aktion<br>+1 Coin<br>Diese Karte kostet in der Kaufphase 2 Coin weniger für jede Aktionskarte, die du im Spiel hast, niemals jedoch weniger als 0 .",
         "extra": "Diese Karte ist eine Karte mit variablen Kosten (vgl. NEUE REGELN; S. 6). Du erhältst +1 Karte, +1 Aktion sowie +1 Coin.<n>Wenn du diese Karte in deiner Kaufphase kaufst, kostet sie für jede Aktionskarte, die du im Spiel hast, 2 Coins weniger, niemals allerdings weniger als 0 Coins. Kaufst du eine Karte außerhalb der Kaufphase (z.B. durch den SCHWARZMARKT), kostet der HAUSIERER 8 Coins, egal ob du weitere Aktionskarten im Spiel hast oder nicht. Aktionskarten, die durch den THRONSAAL (aus Basisspiel) oder den KÖNIGSHOF mehrfach ausgespielt wurden, sind trotzdem jeweils nur einmal im Spiel und reduzieren die Kosten eines HAUSIERERS um 2 Coins.",
-        "name": "Hausiererin / <br>Hausierer",
+        "name": "Hausiererin",
         "text": "'''+1 Karte<br>+1 Aktion'''<br>{{Costplus|1}}{{divline}}Während der Kaufphase eines Spielers kostet diese Karte {{Cost|2}} weniger pro Aktionskarte, die er im Spiel hat."
     },
     "Pendant": {
@@ -4078,7 +4078,7 @@
     "Soothsayer": {
         "description": "Nimm dir ein Gold. Jeder Mitspieler nimmt sich eine Fluchkarte. Wer eine Fluchkarte nimmt, zieht eine Karte vom Nachziehstapel.",
         "extra": "Das GOLD und die Fluchkarten stammen aus dem Vorrat und werden auf den Ablagestapel gelegt. Wenn kein GOLD mehr vorhanden ist, erhältst du keins. Sind nicht mehr genügend Fluchkarten da, teilst du sie reihum aus, beginnend mit deinem linken Nachbarn. Jeder Spieler, der eine Fluchkarte erhalten hat, muss eine Karte vom Nachziehstapel ziehen. Falls ein Spieler keine Fluchkarte bekommen hat - weil nicht genügend Fluchkarten da waren oder aus einem anderen Grund -, zieht er keine Karte. Nutzt ein Spieler den Wachturm (Blütezeit), um den Fluch zu entsorgen, hat er dennoch eine Fluchkarte erhalten und zieht deshalb eine Karte. Nutzt ein Spieler den FAHRENDEN HÄNDLER (Hinterland), um stattdessen ein SILBER zu nehmen, hat er keine Fluchkarte erhalten und zieht infolgedessen auch keine Karte.",
-        "name": "Hellseherin / Wahrsagerin / Wahrsager",
+        "name": "Hellseherin",
         "text": "Nimm ein Gold. Jeder Mitspieler nimmt einen Fluch und wenn er es tut, zieht er eine Karte."
     },
     "Soothsayer BB2DE": {
@@ -4802,7 +4802,7 @@
     "Walled Village": {
         "description": "+1 Karte<br>+2 Aktionen<br>Wenn du zu Beginn deiner Aufräumphase außer dieser Karte nur noch eine weitere Aktionskarte im Spiel hast, darfst du die Karte Befestigtes Dorf auf deinen Nachziehstapel legen.",
         "extra": "Wenn Du diese Karte spielst, ziehst Du eine Karte und kannst dann in diesem Zug zwei weitere Aktionen ausführen. Zu Beginn der Aufräumphase, bevor Du eine Karte ablegst und bevor Du für die nächste Runde ziehst kannst Du Befestigtes Dorf oben auf Deinen Nachziehstapel legen, wenn Du Befestigtes Dorf im Spiel und nicht mehr als zwei Aktionskarten (inklusive Befestigtes Dorf) im Spiel hast. Wenn die einzigen beiden Aktionskarten, die Du im Spiel hast beides Befestigtes-Dorf-Karten sind darfst Du eine oder beide auf Deinen Nachziehstapel legen. Befestigtes Dorf muss im Spiel sein, um während er Aufräumphase oben auf den Nachziehstapel gelegt zu werden. Befestigtes Dorf wird zum Zeitpunkt des Ausspielens überprüft auf die Anzahl der im Spiel befindlichen Aktionskarten; Aktionskarten, die früher im Zug ausgespielt wurden aber nicht mehr im Spiel sind (wie z.B. Festmahl) werden nicht mitgezählt, währenddessen Aktionskarten, die aus früheren Spielzügen immer noch im Spiel sind (z.B. Dauerkarten aus Seaside) mitgezählt werden, genauso wie Aktionskarten, die gerade im Spiel sind aber nach dem Ausspielen von Befestigtes Dorf aus dem Spiel genommen werden (wie z.B. die Schatzkammer).",
-        "name": "[[Hans im Glück|HiG]]: Carcassonne <ref group=notes>named after the game, which is named after the french city</ref><br>[[ASS Altenburger|ASS]]: Befestigtes Dorf",
+        "name": "Befestigtes Dorf",
         "text": "'''+1 Karte<br>+2 Aktionen'''{{divline}}Zu Beginn deiner Aufräumphase:<br>Wenn du diese Karte und nicht mehr als eine weitere Aktionskarte im Spiel hast, darfst du diese Karte auf deinen Nachziehstapel legen."
     },
     "Walled Village BB2DE": {

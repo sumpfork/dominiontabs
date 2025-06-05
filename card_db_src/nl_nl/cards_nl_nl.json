@@ -95,7 +95,7 @@
     "Annex": {
         "description": "Kijk door je aflegstapel. Laat er ten hoogste 5 kaarten in liggen en schud de rest door je trekstapel. Pak een Hertogdom.",
         "extra": "Je kunt dit ook doen als de stapel Hertogdomkaarten leeg is.<n>De gekozen kaarten blijven in je aflegstapel als de andere kaarten door de trekstapel worden geschud.",
-        "name": "Overname<br>{lit. ''overtake'')",
+        "name": "Overname",
         "text": "Kijk door je aflegstapel. Laat er ten hoogste 5 kaarten in liggen<br>en schud de rest door je trekstapel. Pak een Hertogdom."
     },
     "Anvil": {
@@ -401,7 +401,7 @@
     "Bridge": {
         "description": "+1 Aanschaf\n+1 Coin\nAlle kaarten (ook die in je hand) kosten deze beurt 1 Coin minder, maar nooit minder dan 0 Coins.",
         "extra": "Je betaalt voor elke afzonderlijke situatie 1 Coins minder. Bijvoorbeeld: je speelt achtereenvolgens Dorp, Brug en Werkplaats. Je kunt nu met je Werkplaats een Hertogdom pakken (omdat deze door de Brug nog maar 4 Coins kost). Stel dat je daarnaast ook 3 Coins speelt, kun je een Zilver (voor 2 Coins) en een Landgoed (voor 1 Coins) kopen. De Brug heeft ook invloed op de kaarten in de trekstapel van een speler. De gevolgen zijn cumulatief. Als je de Troonzaal voor een Brug gebruikt, kost alles je 2 Coins minder deze beurt. Kosten kunnen nooit onder de 0 Coins komen. Voorbeeld: je speelt een Brug en daarna de Opwaardering. Nu kun je een Koper vernietigen (deze is ondanks het spelen van de Brug 0 waard) en een Pion pakken (die 1 waard is na het spelen van de Brug).",
-        "name": "Maskerade",
+        "name": "Brug",
         "text": "'''+1 Aanschaf'''<br>{{Costplus|1}}<br>Alle kaarten (ook die in je hand)<br>kosten deze beurt {{Cost|1}} minder,<br>maar nooit minder dan {{Cost|0}}."
     },
     "Bridge Troll": {
@@ -615,7 +615,7 @@
     "Chariot Race": {
         "description": "+1 Actie<n>Toon de bovenste kaart van je trekstapel en neem deze in je hand. Je linkerbuurman toont nu de bovenste kaart van zijn trekstapel. Als jouw kaart meer waard is, +1 Coin en +1<VP>.",
         "extra": "Jij en je linkerbuurman tonen de bovenste kaart van jullie trekstapel: die van jou gaat in je hand, die van hem terug op zijn trekstapel. Is jouw kaart meer waard, dan krijg je +1 Coins en +1 <VP>. Je kunt het <VP>-fiche op de Strijdwagenrace leggen om je eraan te herinneren dat de kaart deze beurt + 1 Coin heeft opgeleverd. Bij gelijke waarden kost jouw kaart niet méér. Staan er _ Debt op de kaart, dan is je kaart uitsluitend meer waard als zowel _ Coins als _ Debt groter zijn, of de ene groter is en de andere gelijk.\n<i><b>Voorbeeld:</b> Fortuin (8 Coins 8 Debt) is meer waard dan Despoot (8 Debt), maar Despoot is niet meer waard dan Zilver, en Zilver is niet meer waard dan Despoot.</i>\nKunnen niet beide spelers een kaart tonen, dan is jouw kaart niet meer waard.",
-        "name": "Kolonisten",
+        "name": "Strijdwagenrace",
         "text": "'''+1 Actie'''<br>Toon de bovenste kaart van je<br>trekstapel en neem deze in je hand. Je<br>linkerbuurman toont nu de bovenste<br>kaart van zijn trekstapel. Als jouw<br>kaart meer waard is, {{Costplus|1}} en {{VP|'''+1'''}}."
     },
     "Charlatan": {
@@ -1781,7 +1781,7 @@
     "Hill Fort": {
         "description": "Pak een kaart die ten hoogste 4 Coins kost. Kies 1 van de volgende: Doe de kaart in je hand; of +1 Kaart en +1 Actie.",
         "extra": "Handel eerst het pakken van een kaart die ten hoogste 4 Coins kost volledig af. Kies daarna of je deze in je hand neemt of +1 Kaart en +1 Actie krijgt. Is de kaart niet meer waar je die bij het pakken had neergelegd (normaal gesproken je aflegstapel), dan kun je deze niet in je hand nemen (als je dat had gewild). Is de kaart door andere kaarten in de aflegstapel bedekt, dan mag je hem wel in je hand nemen.",
-        "name": "Huivelfort",
+        "name": "Heuvelfort",
         "text": "Pak een kaart die<br>ten hoogste {{Coin|4}} kost.<br>Kies 1 van de volgende:<br>Doe de kaart in je hand;<br>of '''+1 Kaart'''en '''+1 Actie'''."
     },
     "Hireling": {
@@ -2019,7 +2019,7 @@
     "King's Cache": {
         "description": "Je mag een geldkaart uit je hand driemaal spelen.",
         "extra": "Speel je Koninklijke Schatkamer op Koninklijke Schatkamer dan speel je nog 3 geldkaarten elk driemaal.<br>Speel je Koninklijke Schatkamer op een Geld-Duurzaam-kaart, dan blijft Koninklijke Schatkamer net zolang in het spel als die kaart.",
-        "name": "Koningklijke Schatkamer",
+        "name": "Koninklijke Schatkamer",
         "text": "Je mag een geldkaart uit je hand driemaal spelen."
     },
     "King's Castle": {
@@ -2614,7 +2614,7 @@
     "Palace": {
         "description": "Bij de puntentelling: <b>3</b><VP> per set Koper - Zilver - Goud in je bezit.",
         "extra": "<i><b>Voorbeeld:</b> je hebt 7 Koper, 5 Zilver en 2 Goud. Je hebt dan 2 sets van Koper - Zilver - Goud, die samen 6<VP> waard zijn.</i>",
-        "name": "Palace",
+        "name": "Paleis",
         "text": "Bij de puntentelling: {{VP|'''3'''}} per<br>set Koper - Zilver - Goud in je bezit."
     },
     "Pasture": {
@@ -2960,7 +2960,7 @@
     "Reap": {
         "description": "Pak een Goud. Leg dat opzij. Doe je dat, speel het dan aan het begin van je volgende beurt.",
         "extra": "Dit betekent dat je je volgende beurt begint met een Goud in het spel en +3 Coin ervan.<n>Je legt het Goud die beurt op de gebruikelijke manier af.<n>Gebeuren er meer dingen aan het begin van je beurt, dan kies je zelf de volgorde.<n>Je actiefase wordt hierdoor niet overgeslagen.",
-        "name": "Reap",
+        "name": "Maaien",
         "text": "Pak een Goud. Leg dat opzij. Doe je dat,<br>speel het dan aan het begin van je volgende beurt."
     },
     "Rebuild": {
@@ -3051,7 +3051,7 @@
     "Royal Blacksmith": {
         "description": "+5 Kaarten<n>Toon je hand; leg alle getoonde Koperkaarten af.",
         "extra": "Je legt zowel de Koperkaarten in je hand als die in de +5 Kaarten af.",
-        "name": "Koningklijke smid",
+        "name": "Koninklijke Smid",
         "text": "'''+5 Kaarten'''<br>Toon je hand; leg alle<br>getoonde koperkaarten af."
     },
     "Royal Carriage": {
@@ -3063,7 +3063,7 @@
     "Royal Galley": {
         "description": "+1 Kaart<n>Je mag een niet-duurzame actiekaart uit je hand spelen. Leg deze opzij: heb je dat gedaan, dan speel je deze aan het begin van je volgende beurt.",
         "extra": "Het via deze kaart spelen van een niet-Duurzame kaart is optioneel. Speel je er één, dan handel je de kaart volledig af, waarna je deze opzijlegt. Gaat de kaart ergens anders naartoe (deze vernietigd zichzelf bijvoorbeeld), dan is het niet gelukt om de kaart opzij te leggen en Koninklijk Galeischip wordt dan in de huidige beurt zoals gebruikelijk afgelegd. Lukt het wel om de kaart opzij te leggen, dan blijft Koninklijk Galeischip deze beurt bij de opzijgelegde kaart in het spel en aan het begin van je volgende beurt speel je de kaart opnieuw. In die beurt worden Koninklijk Galeischip en de opzijgelegde kaart beide afgelegd. Het spelen van een kaart via Koninklijk Galeischip verbruikt geen actie (het spelen van Koninklijk Galeischip zelf wel).",
-        "name": "Koninklijke Galeischip",
+        "name": "Koninklijk Galeischip",
         "text": "'''+1 Kaart'''<br>Je mag een niet-duurzame<br>actiekaart uit je hand spelen. Leg<br>deze opzij; heb je dat gedaan, dan<br>speel je deze aan het begin van je<br>volgende beurt."
     },
     "Royal Seal": {
@@ -3146,7 +3146,7 @@
     "Salt the Earth": {
         "description": "+1<VP><n>Vernietig een overwinningskaart uit de voorraad.",
         "extra": "Doet de vernietigde kaart iets als deze wordt vernietigd (zoals het Vervallen Kasteel), dan voer je dat uit.",
-        "name": "Zout der aarde<br>{lit. ''salt of the earth'')",
+        "name": "Zout der aarde",
         "text": "{{VP|'''+1'''}}<br>Vernietig een overwinningskaart uit de voorraad."
     },
     "Salvager": {
@@ -3483,7 +3483,7 @@
     "Soldier": {
         "description": "+2 Coins\n+1 Coin per andere aanvalskaart die je in het spel hebt. Iedere andere speler met 4 of meer handkaarten legt 1 kaart af.<line>Als je deze kaart vanuit het spel aflegt, mag je deze tegen een Vluchteling ruilen.\n<i>(Deze kaart bevindt zich niet in de voorraad.)</i>",
         "extra": "Deze kaart geeft je +2 Coins en +1 Coins extra voor elke aanvalskaart die je in het spel hebt. Daarna legt iedere andere speler met 4 of meer kaarten in zijn hand 1 kaart af. Een Landknecht heeft uitsluitend betrekking op aanvalskaarten in het spel, niet op in die beurt gespeelde aanvalskaarten. Duurzame aanvalskaarten die de vorige beurt zijn gespeeld, zijn in het spel en tellen mee voor de Landknecht.",
-        "name": "Landsknecht<hr>",
+        "name": "Landsknecht",
         "text": "{{Costplus|2}}<br>{{Costplus|1}} per andere aanvalskaart die je in het spel hebt. Iedere andere speler met 4 of meer handkaarten legt er 1 af.{{Divline}}Als je deze kaart vanuit het spel aflegt, mag je deze tegen een Vluchteling ruilen.<br>''(Deze kaart bevindt zich niet in de voorraad).''"
     },
     "Soothsayer": {
@@ -3880,7 +3880,7 @@
     "Townsfolk": {
         "description": "<justify>Deze stapel start het spel met 4 exemplaren van Omroeper, Kachelsmid, Molenaar en Ouderling, in die volgorde. Alleen de bovenste kan worden gepakt of gekocht.</justify><line><left><u>Omroeper</u>:</left><n>Kies 1 van de volgende: +2 Coins; of pak een Zilver; of +1 Kaart en +1 Actie<n>Je mag de Stedelingen draaien.<n><left><u>Kachelsmid</u>:</left><n>Kies 1 van de volgende: Trek kaarten tot je er 6 in je hand hebt; of +2 Kaarten; of +1 Kaart en +1 Actie.<n><left><u>Molenaar</u>:</left><n>+1 Actie<n>Bekijk de bovenste 4 kaarten van je trekstapel. Doe er 1 van in je hand en leg de rest af.<n><left><u>Ouderling</u>:</left><n>+2 Coins<n>Je mag een actiekaart uit je hand spelen. Geeft deze je deze beurt een keuze uit opties (bijvoorbeeld \"kies 1\"), dan mag je een extra (verschillende) optie kiezen.",
         "extra": "<b>Omroeper</b>: Kies eerst of je +2 Coins krijgt, of een Zilver pakt, of +1 Kaart en +1 Actie krijgt. Ongeacht je keuze kies je daarna of je de stapel Stedelingen als dan niet draait.<n><b>Kachelsmid</b>: Je trekt kaarten totdat je er 6 in je hand hebt, of je trekt 2 kaarten, of je trekt 1 kaart en krijgt +1 Actie.<n><b>Molenaar</b>: Heb je minder dan 4 kaarten (na schudden), dan bekijk je uitsluitend wat je wel hebt.<n><b>Ouderling</b>: Speel je een actiekaart zonder \"kies\"-eigenschap, dan mag je één 1 extra optie kiezen, maar dat is niet verplicht. Kies je meerdere dingen, dan voer je die in de op de kaart aangegeven volgorde uit. Ouderling beïnvloed niet alle keuzes, uitsluitend een keuze tussen eigenschappen.",
-        "name": "Stedling",
+        "name": "Stedelingen",
         "text": "Deze stapel start het spel met<br>4 exemplaren van Omroeper,<br>Kachelsmid, Molenaar, en<br>Ouderling, in die volgorde. Alleen<br>de bovenste kaart kan worden<br>gepakt of gekocht."
     },
     "Tracker": {
@@ -4090,7 +4090,7 @@
     "Vault": {
         "description": "+2 Kaarten\nLeg zoveel kaarten af als je wilt. +1 Coin per afgelegde kaart. Iedere andere speler mag 2 kaarten afleggen. Als hij dat doet trekt hij 1 kaart.",
         "extra": "Trek eerst 2 kaarten. Leg daarna naar believen een aantal handkaarten af. Je mag ook 0 kaarten afleggen of kaarten afleggen die je net getrokken heeft.\nIedere andere speler, te beginnen met de speler links van je en daarna met de klok mee, beslist nu of hij handkaarten wil afleggen of niet. Wil hij dat, dan moet hij precies 2 kaarten afleggen en trekt hij 1 nieuwe kaart.",
-        "name": "Schatkelder<br>(lit. ''treasure cellar''",
+        "name": "Schatkelder",
         "text": "'''+2 Kaarten'''<br>Leg zoveel kaarten als je wilt<br>af voor {{Costplus|1}} per stuk.<br>Iedere andere speler mag<br>2 kaarten afleggen om<br>er 1 te trekken."
     },
     "Venture": {
