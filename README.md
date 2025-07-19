@@ -10,6 +10,8 @@ Again, to generate tabs go to the **[Online Generator](http://domdiv.bgtools.net
 
 ## Installation
 
+If you install [`uv`](https://docs.astral.sh/uv/getting-started/installation/) you can just run `uvx --from domdiv dominion_dividers`. It should work, but see notes on better fonts and multilingual sorting below (the warnings will mention these).
+
 If you do need to install the package locally (the script provides a lot more options than the web-based generator), a simple `pip install domdiv` should suffice, providing a command by the name of `dominion_dividers`. However, see the note under Prerequisites->Fonts below as the default install will fall back on a font that doesn't match the cards (though most people don't notice). Run `dominion_dividers <outfile>` to get a pdf of all dividers with the default options, or run `dominion_dividers --help` to see the (extensive) list of options.
 
 Additionally, to ensure the card dividers are generated sorted by correct alphabetical order (especially for languages with many accented characters (e.g. Czech)), you are advised to install the optional `PyICU` [library](https://gitlab.pyicu.org/main/pyicu). If `PyICU` is installed ([instructions](https://github.com/sumpfork/dominiontabs/wiki/PyICU-Installation-Instructions)), the script will sort the card dividers based on selected language alphabet (e.g. in Czech `z < ž`). Otherwise, default sorting will be used (the cards beginning with accented characters will be at the end of the sorted set).
