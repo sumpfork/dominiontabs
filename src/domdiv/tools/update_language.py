@@ -171,18 +171,18 @@ def main(card_db_dir, output_dir):
                 if lang == LANGUAGE_DEFAULT:
                     lang_default = lang_data
                     extra_fields = set(lang_card) - VALID_CARD_FIELD_NAMES
-                    assert (
-                        len(extra_fields) == 0
-                    ), f"invalid extra field names for {card_tag} ({lang}): {extra_fields}"
+                    assert len(extra_fields) == 0, (
+                        f"invalid extra field names for {card_tag} ({lang}): {extra_fields}"
+                    )
                 else:
                     #  All other languages should get the default languages' text
                     lang_card = lang_default.get(card_tag, {}).copy()
             elif lang != LANGUAGE_DEFAULT:
                 # Card exists, figure out what needs updating
                 extra_fields = set(lang_card) - VALID_CARD_FIELD_NAMES
-                assert (
-                    len(extra_fields) == 0
-                ), f"invalid extra field names for {card_tag} ({lang}): {extra_fields}"
+                assert len(extra_fields) == 0, (
+                    f"invalid extra field names for {card_tag} ({lang}): {extra_fields}"
+                )
                 lang_card.update(
                     {
                         field: value
