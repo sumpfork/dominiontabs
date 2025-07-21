@@ -104,9 +104,9 @@ class ExpectedSetCardCount:
 
     def assert_total_card_count(self, cards: list[Card]):
         total_card_count = sum([c.getCardCount() for c in self.filter_in_set(cards)])
-        assert (
-            total_card_count == self.num_individual_cards
-        ), f"{self.cardset_tag} had {total_card_count} individual cards, not {self.num_individual_cards} as expected"
+        assert total_card_count == self.num_individual_cards, (
+            f"{self.cardset_tag} had {total_card_count} individual cards, not {self.num_individual_cards} as expected"
+        )
 
 
 expected_card_counts = [

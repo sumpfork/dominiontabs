@@ -2389,12 +2389,12 @@ class DividerDrawer(object):
             options.minHorizontalMargin = options.minmarginheight
             options.minVerticalMargin = options.minmarginwidth
 
-        assert (
-            options.numDividersVertical > 0
-        ), "Could not vertically fit the divider on the page"
-        assert (
-            options.numDividersHorizontal > 0
-        ), "Could not horizontally fit the divider on the page"
+        assert options.numDividersVertical > 0, (
+            "Could not vertically fit the divider on the page"
+        )
+        assert options.numDividersHorizontal > 0, (
+            "Could not horizontally fit the divider on the page"
+        )
 
         if not options.fixedMargins:
             # dynamically max margins
