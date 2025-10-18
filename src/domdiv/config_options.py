@@ -20,7 +20,13 @@ TAB_SIDE_CHOICES = [
     "centre",
     "full",
 ]
-TEXT_CHOICES = ["card", "rules", "blank"]
+TEXT_CHOICES = [
+    "card",
+    "rules",
+    "blank",
+    "image",
+    "wiki-text",
+]
 LINE_CHOICES = ["line", "dot", "cropmarks", "line-cropmarks", "dot-cropmarks"]
 
 HEAD_CHOICES = ["tab", "strap", "cover", "none"]
