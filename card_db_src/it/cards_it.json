@@ -10,7 +10,7 @@
         "name": "Alchimista"
     },
     "Alms": {
-        "description": " Una volta a turno: se non hai carte Tesoro in gioco, Ottieni una carta dal costo massimo di 4 Coin.",
+        "description": "Una volta a turno: se non hai carte Tesoro in gioco, Ottieni una carta dal costo massimo di 4 Coin.",
         "extra": " Puoi comprare questo Evento soltanto una volta per turno. Quando lo fai, se non hai Tesori in gioco, Ottieni una carta che costi al massimo 4 Coin. La carta Ottenuta viene dalla Riserva.",
         "name": "Elemosina"
     },
@@ -56,6 +56,7 @@
         "name": "Borsa d'Oro"
     },
     "Ball": {
+        "description": "Prendi il tuo segnalino - 1 Coin. Ottieni 2 carte, ciascuna dal costo massimo di 4 Coin.",
         "name": "Ballo"
     },
     "Band of Misfits": {
@@ -96,6 +97,7 @@
         "name": "Mercato Nero"
     },
     "Bonfire": {
+        "description": "Elimina fino a 2 carte che hai in gioco.",
         "name": "Falò"
     },
     "Border Village": {
@@ -104,6 +106,7 @@
         "name": "Villaggio di Frontiera"
     },
     "Borrow": {
+        "description": "+1 Acquisto<n>Una volta a turno: se il tuo segnalino -1 Carta non si trova sul tuo mazzo, posizionalo in cima al tuo mazzo e ottieni +1 Coin.",
         "name": "Prestito"
     },
     "Bridge": {
@@ -150,6 +153,7 @@
         "name": "Sotterraneo"
     },
     "Champion": {
+        "description": "+1 Azione<n>Per il resto della partita, quando un altro giocatore gioca una carta Attacco, questa carta non ha effettti su di te, e quando tu giochi un'Azione, guadagni +1 Azione.<n><i>(Questa carta rimane in gioco. Questa carta non si trova nella Riserva)</i>.",
         "name": "Campione"
     },
     "Chancellor": {
@@ -257,6 +261,7 @@
         "name": "Diplomatico"
     },
     "Disciple": {
+        "description": "Puoi giocare una carta Azione dalla tua mano due volte. Ottieni una copia di quella carta.<line>Quando scarti questa carta dal gioco, puoi scambiarla per un Insegnante.<n><i>(Questa carta non si trova nella Riserva)</i>.",
         "name": "Discepolo"
     },
     "Distant Lands": {
@@ -311,6 +316,7 @@
         "name": "Ampliamento"
     },
     "Expedition": {
+        "description": "Pesca 2 carte aggiuntive per la tua prossima mano.",
         "name": "Spedizione"
     },
     "Explorer": {
@@ -347,6 +353,7 @@
         "name": "Feudo"
     },
     "Ferry": {
+        "description": "Sposta il tuo segnalino costo - 2 Coin su un mazzetto di carte Azione della Riserva (le carte di quel mazzetto costano 2 Coin in meno durante i tuoi turni, ma mai meno di 0 Coin).",
         "name": "Traghetto"
     },
     "Festival": {
@@ -386,6 +393,7 @@
         "name": "Indovina"
     },
     "Fugitive": {
+        "description": "+2 Carte<br>+1 Azione<n>Scarta una carta.<line>Quando scarti questa carta dal gioco, puoi scambiarla per un Discepolo.<n><i>(Questa carta non si trova nella Riserva)</i>.",
         "name": "Fuggitivo"
     },
     "Gardens": {
@@ -480,6 +488,7 @@
         "name": "Erborista"
     },
     "Hermit": {
+        "description": "+2 Coin<n>Ottieni un Tesoro.<line>Quando scarti questa carta dal gioco, puoi scambiarla per un Campione.<n><i>(Questa carta non si trova nella Riserva)</i>.",
         "name": "Eremita"
     },
     "Hero": {
@@ -527,6 +536,7 @@
         "name": "Infame Profitto"
     },
     "Inheritance": {
+        "description": "Una volta a partita: metti da parte una carta Azione non Vittoria dalla Riserva, dal costo massimo di 4 Coin. Sposta il tuo segnalino Tenuta su questa carta (le tue carte Tenuta ottengono le abilità e le tipologia di quella carta).",
         "name": "Eredità"
     },
     "Inn": {
@@ -594,6 +604,7 @@
         "name": "Vedetta"
     },
     "Lost Arts": {
+        "description": "Sposta il tuo segnalino +1 Azione su un mazzetto di carte Azione della Riserva (quando giochi una carta proveniente da quel mazzetto, ottieni prima +1 Azione).",
         "name": "Arti Perdute"
     },
     "Lost City": {
@@ -699,6 +710,7 @@
         "name": "Spilorcio"
     },
     "Mission": {
+		"description": "Una volta a turno: se il turno precedente non è stato il tuo, esegui un altro turno dopo questo, nel quale non potrai Acquistare carte.",
         "name": "Missione"
     },
     "Moat": {
@@ -771,6 +783,7 @@
         "name": "Tenuta Trascurata"
     },
     "Page": {
+        "description": "+1 Carta<n>+1 Azione<line>Quando scarti questa carta dal gioco, puoi scambiarla per un Cacciatore di tesori.",
         "name": "Paggio"
     },
     "Page -> Champion": {
@@ -779,6 +792,7 @@
         "name": "Paggio → Campione"
     },
     "Pathfinding": {
+        "description": "Sposta il tuo segnalino +1 Carta su un mazzetto di carte Azione della Riserva (quando giochi una carta proveniente da quel mazzetto, ottieni prima +1 Carta).",
         "name": "Esplorazione"
     },
     "Patrol": {
@@ -797,6 +811,7 @@
         "name": "Pescatore di Perle"
     },
     "Peasant": {
+		"description": "+1 Acquisto<n>+1 Coin<line>Quando scarti questa carta dal gioco, puoi scambiarla per un Soldato.",
         "name": "Contadino"
     },
     "Peasant -> Teacher": {
@@ -805,7 +820,7 @@
         "name": "Contadino → Insegnante"
     },
     "Peddler": {
-        "description": "+1 Carta<br>+1 Azione<br>+2 Coins<line>Durante la tua fase Acquisto, questa carta costas 2 Coins in meno per ogni carta Azione che hai in gioco, ma non meno di 0 Coins.",
+        "description": "+1 Carta<br>+1 Azione<br>+2 Coins<line>Durante la tua fase Acquisto, questa carta costa 2 Coins in meno per ogni carta Azione che hai in gioco, ma non meno di 0 Coins.",
         "extra": " La maggior parte delle volte, questa carta costa 8 Coins. Durante le fasi Acquisti, costa 2 Coins in meno per ogni carta Azione che hai in gioco. Questo costo si applica a tutti gli Ambulanti, inclusi quelli in mano o nei mazzi. Non costa mai meno di 0 Coins. Se giochi Corte su Cantiere, per esempio, hai solo due carte Azione in gioco, anche se hai giocato tre volte il Cantiere. Comprare carte usando la carta promo Mercato Nero non avviene durante la fase Acquisto, quindi in quel momento Ambulante costa ancora 8 Coins.",
         "name": "Ambulante"
     },
@@ -815,6 +830,7 @@
         "name": "Pietra Filosofale"
     },
     "Pilgrimage": {
+        "description": "Una volta a turno: gira il tuo segnalino Viaggio (all'inizio della partita è a faccia in su); se dopo averlo girato è a faccia in su, scegli fino a 3 Carte che hai in gioco, ciascuna con un nome diverso, e ottieni una copia di ciascuna di queste carte.",
         "name": "Pellegrinaggio"
     },
     "Pillage": {
@@ -826,6 +842,7 @@
         "name": "Nave Pirata"
     },
     "Plan": {
+        "description": "Sposta il tuo segnalino Eliminazione su un mazzetto di carte Azione della Riserva (quando acquisti una carta proveniente da quel mazzetto, puoi Eliminare una carta dalla tua mano).",
         "name": "Pianificazione"
     },
     "Platinum": {
@@ -872,6 +889,7 @@
         "name": "Cava"
     },
     "Quest": {
+        "description": "Puoi scartare un Attacco, due Maledizioni o sei carte. Se lo fai, ottieni una carta Oro.",
         "name": "Ricerca"
     },
     "Rabble": {
@@ -880,6 +898,7 @@
         "name": "Tumulto"
     },
     "Raid": {
+        "description": "Ottieni una carta Argento per ciascuna carta Argento che hai in gioco. Ciascun altro giocatore posiziona il proprio segnalino -1 Carta in cima al proprio mazzo.",
         "name": "Incursione"
     },
     "Ranger": {
@@ -953,6 +972,7 @@
         "name": "Recupero"
     },
     "Save": {
+		"description": "+1 Acquisto<n>Una volta a turno: metti da parte una carta dalla tua mano e riprendila in mano al termine del turno (dopo aver pescato).",
         "name": "Salvezza"
     },
     "Scavenger": {
@@ -969,6 +989,7 @@
         "name": "Scout"
     },
     "Scouting Party": {
+        "description": "+1 Acquisto<n>Guarda le prime 5 carte del tuo mazzo. Scartane 3 e posiziona nuovamente le altre in cima al mazzo nell'ordine che preferisci.",
         "name": "Unità di Ricognizione"
     },
     "Scrying Pool": {
@@ -982,6 +1003,7 @@
         "name": "Megera dei Mari"
     },
     "Seaway": {
+        "description": "Ottieni una carta Azione dal costo massimo di 4 Coin. Sposta il tuo segnalino +1 Acquisto sul mazzetto corrispondente a quella carta (quando giochi una carta proveniente da quel mazzetto, ottieni prima +1 Acquisto).",
         "name": "Canale Navigabile"
     },
     "Secret Chamber": {
@@ -1025,6 +1047,7 @@
         "name": "Contrabbandieri"
     },
     "Soldier": {
+        "description": "+2 Coin<br>+1 Coin per ciascun altro Attacco che hai in gioco. Ciascun altro giocatore con 4 o più carte in mano scarta una carta.<line>Quando scarti questa carta dal gioco, puoi scambiarla per un Fuggitivo.<n><i>(Questa carta non si trova nella Riserva)</i>.",
         "name": "Soldato"
     },
     "Spice Merchant": {
@@ -1090,6 +1113,7 @@
         "name": "Talismano"
     },
     "Teacher": {
+	    "description": "Posiziona questa carta sulla tua plancia Taverna.<line>All'inizio del tuo turno puoi chiamare questa carta per spostare il tuo segnalino +1 Carta, +1 Azione, +1 Acquisto o +1 Coin su un mazzetto di carte Azione della Riserva sul quale non sono presenti segnalini (quando giochi una carta da quel mazzetto, Ottieni prima quel bonus).<n><i>(Questa carta non si trova nella Riserva)</i>.",
         "name": "Insegnante"
     },
     "Thief": {
@@ -1118,6 +1142,7 @@
         "name": "Torneo e Premi"
     },
     "Trade": {
+		"description": "Elimina fino a 2 carte dalla tua mano.<n>Ottieni una carta Argento per ciascuna carta eliminata in questo modo.",
         "name": "Scambio"
     },
     "Trade Route": {
@@ -1136,6 +1161,7 @@
         "name": "Stazione Commerciale"
     },
     "Training": {
+		"description": "Sposta il tuo segnalino +1 Coin su un mazzetto di carte Azione della Riserva (quando giochi una carta proveniente da quel mazzetto, ottieni prima +1 Coin).",
         "name": "Addestramento"
     },
     "Transmogrify": {
@@ -1153,9 +1179,11 @@
         "name": "Carte Eliminate"
     },
     "Travelling Fair": {
+		"description": "+2 Acquisti<n>Quando Ottieni una carta nel corso di questo turno, puoi posizionarla in cima al tuo mazzo.",
         "name": "Fiera Itinerante"
     },
     "Treasure Hunter": {
+		"description": "+1 Azione<br>+1 Coin<n>Ottieni 1 carta Argento per ogni carta che il giocatore alla tua destra ha Ottenuto nel proprio ultimo turno.<line>Quando scarti questa carta dal gioco, puoi scambiarla per un Guerriero.<n><i>(Questa carta non si trova nella Riserva)</i>.",
         "name": "Cacciatore di Tesori"
     },
     "Treasure Map": {
@@ -1238,6 +1266,7 @@
         "name": "Magazzino"
     },
     "Warrior": {
+        "description": "+2 Carte<n>Per ciascun Viaggiatore che hai in gioco (compreso questo), ciascun altro giocatore scarta la carta in cima al proprio mazzo e la Elimina se costa 3 Coin o 4 Coin.<line>Quando scarti questa carta dal gioco, puoi scambiarla per un Eroe.<n><i>(Questa carta non si trova nella Riserva)</i>.",
         "name": "Guerriero"
     },
     "Watchtower": {
