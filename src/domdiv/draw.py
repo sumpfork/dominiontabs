@@ -344,6 +344,10 @@ class CardPlot(object):
             sideBottom = self.cropOnRight
             sideRight = self.cropOnTop
             sideLeft = self.cropOnBottom
+        else:
+            raise Exception(
+                f"Invalid rotation: {self.rotation} must be 0, 90, 180 or 270"
+            )
 
         # Now can return the proper value based upon what side is requested
         if side == self.TOP:
@@ -667,6 +671,13 @@ class DividerDrawer(object):
             ],
             "Monospaced": [
                 "Courier",
+            ],
+            "Arrow": [  # The custom fonts don't have the → character used for e.g. traveller card groups
+                (
+                    "Times-Bold"
+                    if langlatin1 or timesTTF_not_found
+                    else "Times-Bold-TTF"
+                ),
             ],
         }
         self.fontStyle = {
@@ -1152,9 +1163,7 @@ class DividerDrawer(object):
                 if text_fontsize_multiplier is not None:
                     font_replace = re.sub(
                         tag_pattern,
-                        "<font size={}>\\1</font>".format(
-                            fontsize * text_fontsize_multiplier
-                        ),
+                        f"<font size={fontsize * text_fontsize_multiplier}>\\1</font>",
                         tag,
                     )
                     replace = font_replace + replace
@@ -1202,8 +1211,8 @@ class DividerDrawer(object):
         text = card.getBonusBoldText(text)
 
         # <line>: 11 em dashes, but not wider than the text box
-        replace = "<center>{}</center>\n".format("&mdash;" * min(11, int(emWidth)))
-        text = re.sub(r"\<line\>", replace, text)
+        line = "<center>{}</center>\n".format("&mdash;" * min(11, int(emWidth)))
+        text = re.sub(r"\<line\>", line, text)
         #  <tab> and \t
         text = re.sub(r"\<tab\>", "\t", text)
         text = re.sub(r"\<t\>", "\t", text)
@@ -1236,16 +1245,26 @@ class DividerDrawer(object):
 
         return text.strip().strip("\n")
 
-    def drawCardCount(self, card, x, y, offset=-1):
-        # Note that this is right justified.
-        # x represents the right most for the image (image grows to the left)
-        if card.getCardCount() < 1:
+    def drawCardCount(self, card, x, y) -> int:
+        """Draw the card counts for this card. (x, y) is the bottom right corner of the images,
+        which are right aligned.
+
+        Returns the width used in points.
+        """
+
+        card_counts = card.getCardCounts()
+        if sum(card_counts) < 1:
             return 0
 
-        #  draw_list = [(card.getCardCount(), 1)]
-        draw_list = sorted([(i, card.count.count(i)) for i in set(card.count)])
+        # make a list of all the (num cards in pile, num piles with that size) pairs for each unique pile size
+        draw_list = sorted(
+            [
+                (pile_size, card_counts.count(pile_size))
+                for pile_size in set(card_counts)
+            ]
+        )
 
-        cardIconHeight = y + offset
+        cardIconHeight = y
         countHeight = cardIconHeight - 4
         width = 0
 
@@ -1267,7 +1286,7 @@ class DividerDrawer(object):
 
             # now draw the number of sets
             if count > 1:
-                count_string = "{}\u00d7".format(count)
+                count_string = f"{count}\u00d7"
                 width_string = stringWidth(count_string, self.fontStyle["Regular"], 10)
                 width_string -= 1  # adjust to make it closer to image
                 width += width_string
@@ -1435,7 +1454,10 @@ class DividerDrawer(object):
         for i, part in enumerate(name_parts):
             if i != 0:
                 w += pdfmetrics.stringWidth(" ", font, caps)
-            if small == caps:
+            # Render arrows in Times Bold, because the other Name fonts don't support it.
+            if part == "→":
+                w += pdfmetrics.stringWidth(part, self.fontStyle["Arrow"], fontSize)
+            elif small == caps:
                 w += pdfmetrics.stringWidth(part, font, caps)
             else:
                 w += pdfmetrics.stringWidth(part[0], font, caps)
@@ -1668,13 +1690,21 @@ class DividerDrawer(object):
                     )
             else:
                 setImage = card.setImage(self.options.use_set_icon)
-                if setImage:
+                set_images = [setImage] if setImage else []
+                if (
+                    self.options.expansion_dividers_multiple_icons
+                    and card.isExpansion()
+                ):
+                    expansion = Card.sets[card.cardset_tag]
+                    set_images = expansion.get("all_images", set_images)
+                    # reverse sort so that they're in the original order after being drawn right to left
+                    set_images.reverse()
+
+                for image in set_images:
                     textInsetRight += self.SET_ICON_SIZE  # they're all square
-                    self.drawSetIcon(
-                        setImage, tabWidth - textInsetRight, setImageHeight
-                    )
-            # leave extra room between the set icon and text
-            textInsetRight += padding / 2
+                    self.drawSetIcon(image, tabWidth - textInsetRight, setImageHeight)
+                    # leave extra room between the set icon and text or next icon
+                    textInsetRight += padding / 2
 
         # add padding between the text and any icons or margins
         textInset += padding
@@ -1685,8 +1715,6 @@ class DividerDrawer(object):
         textWidth -= textInsetRight
 
         name = card.name
-        # arrows don't format properly in all fonts, so convert them to en dashes
-        name = name.replace("→", "–")
         style = "Expansion" if card.isExpansion() else "Name"
         width = self.nameWidth(name, fontSize, style)
         while width > textWidth and fontSize > minFontSize:
@@ -1697,7 +1725,7 @@ class DividerDrawer(object):
         if tooLong:
             # Break on a delimiter, if possible
             for delimiter in "/-–—→":  # slashes, dashes, and arrows
-                name_lines = name.partition(" {:s} ".format(delimiter))
+                name_lines = name.partition(f" {delimiter:s} ")
                 if name_lines[1]:
                     delimiterText = name_lines[1][:2]
                     break
@@ -1789,10 +1817,14 @@ class DividerDrawer(object):
         # Print small caps text, simulating it if necessary
 
         def drawWordPiece(text, fontSize):
-            self.canvas.setFont(font, fontSize)
+            this_font = font
+            if text == "→":
+                this_font = self.fontStyle["Arrow"]
+            self.canvas.setFont(this_font, fontSize)
             if text != " ":
                 self.canvas.drawString(x, y, text)
-            return pdfmetrics.stringWidth(text, font, fontSize)
+            self.canvas.setFont(font, fontSize)
+            return pdfmetrics.stringWidth(text, this_font, fontSize)
 
         # Improve typography
         text = text.replace("'", "’")
@@ -1996,9 +2028,10 @@ class DividerDrawer(object):
             descriptions = self.add_inline_text(card, descriptions, emWidth)
         descriptions = re.split("\n", descriptions)
         while True:
-            paragraphs = []
+            paragraphs: list[Paragraph] = []
             # this accounts for the spacers we insert between paragraphs
             h = (len(descriptions) - 1) * spacerHeight
+            w = 0
             for d in descriptions:
                 if card.isExpansion():
                     dmod = d
@@ -2008,14 +2041,18 @@ class DividerDrawer(object):
                     p = Paragraph(dmod, s)
                 except ValueError as e:
                     raise ValueError(
-                        'Error rendering text from "{}": {} ("{}")'.format(
-                            card.name, e, dmod
-                        )
+                        f'Error rendering text from "{card.name}": {e} ("{dmod}")'
                     )
-                h += p.wrap(textBoxWidth, textBoxHeight)[1]
+                width, height = p.wrapOn(self.canvas, textBoxWidth, textBoxHeight)
+                h += height
+                w = max(w, width)
                 paragraphs.append(p)
 
-            if h <= textBoxHeight or s.fontSize <= 1 or s.leading <= 1:
+            if (
+                (h <= textBoxHeight and w <= textBoxWidth)
+                or s.fontSize <= 1
+                or s.leading <= 1
+            ):
                 break
             else:
                 s.fontSize -= 1
@@ -2352,12 +2389,12 @@ class DividerDrawer(object):
             options.minHorizontalMargin = options.minmarginheight
             options.minVerticalMargin = options.minmarginwidth
 
-        assert (
-            options.numDividersVertical > 0
-        ), "Could not vertically fit the divider on the page"
-        assert (
-            options.numDividersHorizontal > 0
-        ), "Could not horizontally fit the divider on the page"
+        assert options.numDividersVertical > 0, (
+            "Could not vertically fit the divider on the page"
+        )
+        assert options.numDividersHorizontal > 0, (
+            "Could not horizontally fit the divider on the page"
+        )
 
         if not options.fixedMargins:
             # dynamically max margins

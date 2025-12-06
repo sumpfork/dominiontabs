@@ -4,6 +4,7 @@ import os
 import sys
 import unicodedata
 from collections import Counter, defaultdict
+from copy import deepcopy
 
 from loguru import logger
 from reportlab.lib.units import cm
@@ -58,6 +59,8 @@ class CardSorter(object):
             self.sort_key = self.by_colour_sort_key
         elif order == "cost":
             self.sort_key = self.by_cost_sort_key
+        elif order == "kingdom":
+            self.sort_key = self.by_expansion_kingdom_sort_key
         else:
             self.sort_key = self.by_expansion_sort_key
 
@@ -112,6 +115,15 @@ class CardSorter(object):
             self.get_card_name_sort_key(card.name),
         )
 
+    def by_expansion_kingdom_sort_key(self, card):
+        return (
+            card.cardset,
+            int(card.isExpansion()),
+            self.baseIndex(card.name),
+            card.randomizer * -1,
+            self.get_card_name_sort_key(card.name),
+        )
+
     def by_colour_sort_key(self, card):
         return card.getType().getTypeNames(), self.get_card_name_sort_key(card.name)
 
@@ -119,7 +131,7 @@ class CardSorter(object):
         return (
             card.cardset,
             int(card.isExpansion()),
-            str(card.get_total_cost(card)),
+            str(card.cost_sort_key()),
             self.get_card_name_sort_key(card.name),
         )
 
@@ -235,7 +247,9 @@ def combine_cards(cards, old_card_type, new_card_tag, new_cardset_tag, new_type)
     filteredCards = []
     for c in cards:
         if c.isType(old_card_type):
-            holder.addCardCount(c.count)  # keep track of count and skip card
+            holder.mergeCardCount(
+                c.getCardCounts()
+            )  # keep track of count and skip card
         else:
             filteredCards.append(c)  # Not the right type, keep card
 
@@ -245,30 +259,32 @@ def combine_cards(cards, old_card_type, new_card_tag, new_cardset_tag, new_type)
     return filteredCards
 
 
-def filter_sort_cards(cards, options):
+def filter_sort_cards(cards: list[Card], options) -> list[Card]:
     # Filter out cards by edition
     if options.edition and options.edition != "all":
-        keep_sets = []
-        for set_tag in Card.sets:
-            for edition in Card.sets[set_tag]["edition"]:
-                if options.edition == edition:
-                    keep_sets.append(set_tag)
+        keep_sets = {
+            set_tag
+            for set_tag, set_data in Card.sets.items()
+            if options.edition in set_data["edition"]
+        }
 
-        keep_cards = []  # holds the cards that are to be kept
-        for card in cards:
-            if card.cardset_tag in keep_sets:
-                keep_cards.append(card)
-
-        cards = keep_cards
+        cards = [card for card in cards if card.cardset_tag in keep_sets]
 
     # Combine upgrade cards with their expansion
     if options.upgrade_with_expansion:
         if options.exclude_expansions is None:
-            options.exclude_expansions = []
+            options.exclude_expansions = set()
+        else:
+            options.exclude_expansions = set(options.exclude_expansions)
         for card in cards:
             if Card.sets[card.cardset_tag]["upgrades"]:
-                options.exclude_expansions.append(card.cardset_tag.lower())
+                options.exclude_expansions.add(card.cardset_tag.lower())
                 card.cardset_tag = Card.sets[card.cardset_tag]["upgrades"]
+    if options.removed_with_expansion:
+        for card in cards:
+            if Card.sets[card.cardset_tag].get("removed", False):
+                options.exclude_expansions.add(card.cardset_tag.lower())
+                card.cardset_tag = Card.sets[card.cardset_tag]["removed"]
 
     # Combine globally all cards of the given types
     # For example, Events, Landmarks, Projects, Ways, Traits
@@ -296,82 +312,79 @@ def filter_sort_cards(cards, options):
                 new_cardset_tag=config_options.EXPANSION_GLOBAL_GROUP,
             )
         if options.expansions:
-            options.expansions.append(config_options.EXPANSION_GLOBAL_GROUP)
+            options.expansions.add(config_options.EXPANSION_GLOBAL_GROUP)
 
     # Take care of any blank cards
     if options.include_blanks > 0:
         if options.expansions:
-            options.expansions.append(config_options.EXPANSION_GLOBAL_GROUP)
+            options.expansions.add(config_options.EXPANSION_GLOBAL_GROUP)
 
     # Group all the special cards together
     if options.group_special:
         keep_cards = []  # holds the cards that are to be kept
-        group_cards = {}  # holds the cards for each group
+        group_holders = {}  # map from (group_tag, cardset_tag) to the group holder card
+        cards_in_group = {}  # map from (group_tag, cardset_tag) to a list of the unmodified cards in that group
         for card in cards:
             if not card.group_tag:
                 keep_cards.append(card)  # not part of a group, so just keep the card
             else:
-                # have a card in a group
-                if (card.group_tag, card.cardset_tag) not in group_cards:
-                    # First card of a group
-                    group_cards[(card.group_tag, card.cardset_tag)] = (
-                        card  # save to update cost later
-                    )
-                    # this card becomes the card holder for the whole group.
-                    card.card_tag = card.group_tag
+                # this card is in a group
+                if (card.group_tag, card.cardset_tag) not in group_holders:
+                    # This is the first card in this group
+                    # clone the card to be the group holder, so that the original can remain unchanged.
+                    group_holder = deepcopy(card)
+                    group_holder.setCardCount(0)
+                    group_holder.card_tag = card.group_tag
                     # These text fields should be updated later if there is a translation for this group_tag.
                     error_msg = (
                         "ERROR: Missing language entry for group_tab '%s'."
                         % card.group_tag
                     )
-                    card.name = (
+                    group_holder.name = (
                         card.group_tag
                     )  # For now, change the name to the group_tab
-                    card.description = error_msg
-                    card.extra = error_msg
-                    if card.get_GroupCost():
-                        card.cost = card.get_GroupCost()
+                    group_holder.description = error_msg
+                    group_holder.extra = error_msg
+                    if group_holder.get_GroupCost():
+                        group_holder.cost = card.get_GroupCost()
+                        group_holder.debtcost = 0
+                        group_holder.potioncost = 0
                     # now save the card
-                    keep_cards.append(card)
-                else:
-                    # subsequent cards in the group. Update group info, but don't keep the card.
-                    if card.group_top:
-                        # this is a designated card to represent the group, so update important data
-                        group_cards[(card.group_tag, card.cardset_tag)].cost = card.cost
-                        group_cards[
-                            (card.group_tag, card.cardset_tag)
-                        ].potcost = card.potcost
-                        group_cards[
-                            (card.group_tag, card.cardset_tag)
-                        ].debtcost = card.debtcost
-                        group_cards[
-                            (card.group_tag, card.cardset_tag)
-                        ].types = card.types
-                        group_cards[
-                            (card.group_tag, card.cardset_tag)
-                        ].randomizer = card.randomizer
-                        group_cards[
-                            (card.group_tag, card.cardset_tag)
-                        ].image = card.image
+                    group_holders[(card.group_tag, card.cardset_tag)] = group_holder
+                    keep_cards.append(group_holder)
+                # Regardless of whether this is the first card or not, update the group info and store a reference to this card
+                cards_in_group.setdefault(
+                    (card.group_tag, card.cardset_tag), []
+                ).append(card)
+                group_holders[(card.group_tag, card.cardset_tag)].mergeCardCount(
+                    card.getCardCounts()
+                )
+                if card.group_top:
+                    # this is a designated card to represent the group, so update important data
+                    group_holders[(card.group_tag, card.cardset_tag)].cost = card.cost
+                    group_holders[
+                        (card.group_tag, card.cardset_tag)
+                    ].potcost = card.potcost
+                    group_holders[
+                        (card.group_tag, card.cardset_tag)
+                    ].debtcost = card.debtcost
+                    group_holders[(card.group_tag, card.cardset_tag)].types = card.types
+                    group_holders[
+                        (card.group_tag, card.cardset_tag)
+                    ].randomizer = card.randomizer
+                    group_holders[(card.group_tag, card.cardset_tag)].image = card.image
 
-                    group_cards[(card.group_tag, card.cardset_tag)].addCardCount(
-                        card.count
-                    )  # increase the count
-                    # set holder to lowest cost of the two cards
-                    # group_cards[(card.group_tag, card.cardset_tag)].set_lowest_cost(card)
+        # If there's only one card in the group (Summon is the only event in Promos), undo all of this and
+        # just keep the single card.
+        if options.no_single_card_groups:
+            for i, card in enumerate(keep_cards):
+                if (card.group_tag, card.cardset_tag) in group_holders:
+                    if len(cards_in_group[(card.group_tag, card.cardset_tag)]) == 1:
+                        keep_cards[i] = cards_in_group[
+                            (card.group_tag, card.cardset_tag)
+                        ][0]
 
         cards = keep_cards
-
-        # Now fix up card costs for groups by Type (Events, Landmarks, etc.)
-        for card in cards:
-            if (card.card_tag, card.cardset_tag) in group_cards and group_cards[
-                (card.group_tag, card.cardset_tag)
-            ].get_GroupCost():
-                group_cards[(card.group_tag, card.cardset_tag)].cost = group_cards[
-                    (card.group_tag, card.cardset_tag)
-                ].get_GroupCost()
-                group_cards[(card.group_tag, card.cardset_tag)].debtcost = 0
-                group_cards[(card.group_tag, card.cardset_tag)].potcost = 0
 
     # Get the final type names in the requested language
     Card.type_names = add_type_text(Card.type_names, db.LANGUAGE_DEFAULT)
@@ -469,25 +482,23 @@ def filter_sort_cards(cards, options):
 
     if options.exclude_expansions:
         # Expand out any wildcards, matching set key or set name in the given language
-        expanded_expansions = []
+        expanded_expansions = set()
         for e in options.exclude_expansions:
             matches = fnmatch.filter(All_search, e)
             if matches:
-                expanded_expansions.extend(matches)
+                expanded_expansions.update(matches)
             else:
-                expanded_expansions.append(e)
+                expanded_expansions.add(e)
 
         # Now get the actual sets that are matched above
-        options.exclude_expansions = set(
-            [e for e in expanded_expansions]
-        )  # Remove duplicates
+        options.exclude_expansions = expanded_expansions
         knownExpansions = set()
         for e in options.exclude_expansions:
             for s in Card.sets:
                 if s.lower() == e or Card.sets[s].get("set_name", "").lower() == e:
                     wantedSets.discard(s)
                     knownExpansions.add(e)
-        # Give indication if an imput did not match anything
+        # Give indication if an input did not match anything
         unknownExpansions = options.exclude_expansions - knownExpansions
         if unknownExpansions:
             logger.warning(
@@ -600,9 +611,7 @@ def filter_sort_cards(cards, options):
                         n["name"] = "<i>" + n["name"] + "</i>"
                     if n["count"] > 1:
                         # Add number of copies
-                        n["name"] = (
-                            "{}&nbsp;\u00d7&nbsp;".format(n["count"]) + n["name"]
-                        )
+                        n["name"] = f"{n['count']}&nbsp;\u00d7&nbsp;" + n["name"]
                     card_names.append(n["name"])
 
                 c = Card(
@@ -648,9 +657,7 @@ def filter_sort_cards(cards, options):
                 type_unknown.append(x)
 
         # Indicate if unknown types are given
-        assert not type_unknown, "Error - unknown type(s): {}".format(
-            ", ".join(type_unknown)
-        )
+        assert not type_unknown, "Error - unknown type(s): {', '.join(type_unknown)}"
 
         # If there are any valid Types left, go through the cards and keep cards that match
         if type_known_any or type_known_all:
@@ -676,8 +683,6 @@ def filter_sort_cards(cards, options):
 def calculate_layout(options, cards=None):
     if cards is None:
         cards = []
-    # This is in place to allow for test cases to it call directly to get
-    options = config_options.clean_opts(options)
     options.dominionCardWidth, options.dominionCardHeight = (
         config_options.parse_cardsize(options.size, options.sleeved)
     )
@@ -725,7 +730,7 @@ def main():
 
     options = config_options.clean_opts(options)
     if options.preview:
-        fname = "{}.{}".format(os.path.splitext(options.outfile)[0], "png")
+        fname = f"{os.path.splitext(options.outfile)[0]}.png"
         open(fname, "wb").write(generate_sample(options).getvalue())
     else:
         generate(options)

@@ -30,7 +30,7 @@ SPINE_CHOICES = ["name", "types", "tab", "blank"]
 
 EDITION_CHOICES = ["1", "2", "latest", "upgrade", "removed", "all"]
 
-ORDER_CHOICES = ["expansion", "global", "colour", "cost"]
+ORDER_CHOICES = ["expansion", "global", "colour", "cost", "kingdom"]
 
 EXPANSION_GLOBAL_GROUP = "extras"
 
@@ -104,6 +104,7 @@ def parse_opts(cmdline_args=None):
         help="Sort order for the dividers: "
         " 'global' will sort by card name;"
         " 'expansion' will sort by expansion, then card name;"
+        " 'kingdom' will sort by expansion, then card name of all kingdom cards (with dividers), then card name of all non-kingdom cards;"
         " 'colour' will sort by card type, then card name;"
         " 'cost' will sort by expansion, then card cost, then name.",
     )
@@ -294,6 +295,12 @@ def parse_opts(cmdline_args=None):
         help="Use the long name with edition information on the expansion divider tab. "
         "Without this, the shorter expansion name is used on the expansion divider tab.",
     )
+    group_expansion.add_argument(
+        "--expansion-dividers-multiple-icons",
+        action="store_true",
+        dest="expansion_dividers_multiple_icons",
+        help="For sets with multiple editions, put both set icons on the expansion divider.",
+    )
 
     # Divider Selection
     group_select = parser.add_argument_group(
@@ -314,9 +321,7 @@ def parse_opts(cmdline_args=None):
         "'*' any number of characters, '?' matches any single character, "
         "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
         "For example, 'dominion*' will match all expansions that start with 'dominion'. "
-        "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in db.get_expansions()[0])
-        ),
+        f"Choices available in all languages include: {', '.join(db.get_expansions()[0])}",
     )
     group_select.add_argument(
         "--fan",
@@ -331,9 +336,7 @@ def parse_opts(cmdline_args=None):
         "Values are not case sensitive. Wildcards may be used: "
         "'*' any number of characters, '?' matches any single character, "
         "'[seq]' matches any character in seq, and '[!seq]' matches any character not in seq. "
-        "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in db.get_expansions()[1])
-        ),
+        f"Choices available in all languages include: {', '.join(db.get_expansions()[1])}",
     )
     group_select.add_argument(
         "--exclude-expansions",
@@ -375,6 +378,12 @@ def parse_opts(cmdline_args=None):
         help="Include any new edition upgrade cards with the expansion being upgraded.",
     )
     group_select.add_argument(
+        "--removed-with-expansion",
+        action="store_true",
+        dest="removed_with_expansion",
+        help="Include any cards removed from the 1st edition with the corresponding 2nd edition.",
+    )
+    group_select.add_argument(
         "--base-cards-with-expansion",
         action="store_true",
         help="Print the base cards as part of the expansion (i.e., a divider for 'Silver' "
@@ -390,6 +399,12 @@ def parse_opts(cmdline_args=None):
         "(e.g., Shelters, Tournament and Prizes, Urchin/Mercenary, etc.).",
     )
     group_select.add_argument(
+        "--no-single-card-groups",
+        action="store_true",
+        dest="no_single_card_groups",
+        help="If there are any groups of cards with only one card in them, ungroup them.",
+    )
+    group_select.add_argument(
         "--group-kingdom",
         action="store_true",
         dest="group_kingdom",
@@ -403,9 +418,7 @@ def parse_opts(cmdline_args=None):
         dest="group_global",
         help="Group all cards of the specified types across all expansions into one 'Extras' divider. "
         "This may be called multiple times. Values are not case sensitive. "
-        "Choices available include: {}".format(
-            ", ".join("%s" % x for x in db.get_global_groups()[1])
-        ),
+        f"Choices available include: {', '.join(db.get_global_groups()[1])}",
     )
     group_select.add_argument(
         "--no-trash",
@@ -473,9 +486,7 @@ def parse_opts(cmdline_args=None):
         "Default is all types are included. "
         "Any type with a space in the name must be enclosed in double quotes. "
         "Values are not case sensitive. "
-        "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in db.get_types())
-        ),
+        f"Choices available in all languages include: {', '.join(db.get_types())}",
     )
     group_select.add_argument(
         "--only-type-all",
@@ -487,9 +498,7 @@ def parse_opts(cmdline_args=None):
         "A divider is kept if ALL of the provided types are associated with the divider. "
         "Any type with a space in the name must be enclosed in double quotes. "
         "Values are not case sensitive. "
-        "Choices available in all languages include: {}".format(
-            ", ".join("%s" % x for x in db.get_types())
-        ),
+        f"Choices available in all languages include: {', '.join(db.get_types())}",
     )
 
     # Divider Sleeves/Wrappers
@@ -837,6 +846,25 @@ def parse_opts(cmdline_args=None):
     return options
 
 
+def flatten_lower_and_deduplicate(l: any) -> set:
+    out = set()
+    if l is None:
+        return out
+    for item in l:
+        if isinstance(item, list):
+            # The arg parser sometimes generates a list of lists
+            out.update(flatten_lower_and_deduplicate(item))
+        elif isinstance(item, set):
+            out.update(item)
+        elif isinstance(item, str):
+            out.add(item.lower())
+        else:
+            raise Exception(
+                f"Ignoring configuration option {item} with type {type(item)} as it has an unexpected type."
+            )
+    return out
+
+
 def clean_opts(options):
     if "center" in options.tab_side:
         options.tab_side = str(options.tab_side).replace("center", "centre")
@@ -911,79 +939,55 @@ def clean_opts(options):
 
     if options.expansions is None:
         # No instance given, so default to the latest Official expansions
-        options.expansions = ["*"]
+        options.expansions = {"*"}
         if options.edition is None:
             options.edition = "latest"
     else:
-        # options.expansions is a list of lists.  Reduce to single lowercase list
-        options.expansions = [
-            item.lower() for sublist in options.expansions for item in sublist
-        ]
+        options.expansions = flatten_lower_and_deduplicate(options.expansions)
     if "none" in options.expansions:
         # keyword to indicate no options.  Same as --expansions without any expansions given.
-        options.expansions = []
+        options.expansions.clear()
 
     if options.exclude_expansions:
-        # options.exclude_expansions is a list of lists.  Reduce to single lowercase list
-        options.exclude_expansions = [
-            item.lower() for sublist in options.exclude_expansions for item in sublist
-        ]
+        # options.exclude_expansions is a list of lists.  Reduce to single lowercase set
+        options.exclude_expansions = flatten_lower_and_deduplicate(
+            options.exclude_expansions
+        )
 
     if options.edition is None:
-        # set the default
+        # This is the default unless there were also no expansions given.
         options.edition = "all"
 
-    if options.fan is None:
-        # No instance given, so default to no Fan expansions
-        options.fan = []
-    else:
-        # options.fan is a list of lists.  Reduce to single lowercase list
-        options.fan = [item.lower() for sublist in options.fan for item in sublist]
+    options.fan = flatten_lower_and_deduplicate(options.fan)
     if "none" in options.fan:
         # keyword to indicate no options.  Same as --fan without any expansions given
-        options.fan = []
+        options.fan.clear()
 
-    if options.only_type_any is None:
-        # No instance given, so default to empty list
-        options.only_type_any = []
-    else:
-        # options.only_type_any is a list of lists.  Reduce to single lowercase list
-        options.only_type_any = list(
-            set([item.lower() for sublist in options.only_type_any for item in sublist])
-        )
+    options.only_type_any = flatten_lower_and_deduplicate(options.only_type_any)
+    options.only_type_all = flatten_lower_and_deduplicate(options.only_type_all)
 
-    if options.only_type_all is None:
-        # No instance given, so default to empty list
-        options.only_type_all = []
-    else:
-        # options.only_type_any is a list of lists.  Reduce to single lowercase list
-        options.only_type_all = list(
-            set([item.lower() for sublist in options.only_type_all for item in sublist])
-        )
-
-    if options.group_global is None:
-        options.group_global = []
-    elif not any(options.group_global):
-        # option given with nothing indicates all possible global groupings
-        options.group_global = db.get_global_groups()[1]
-    else:
-        # options.group_global is a list of lists.  Reduce to single lowercase list
-        options.group_global = [
-            item.lower() for sublist in options.group_global for item in sublist
-        ]
+    legacy_groups = set()
     # For backwards compatibility
     if options.exclude_events:
-        options.group_global.append("events")
+        legacy_groups.add("events")
     if options.exclude_landmarks:
-        options.group_global.append("landmarks")
+        legacy_groups.add("landmarks")
     if options.exclude_projects:
-        options.group_global.append("projects")
+        legacy_groups.add("projects")
     if options.exclude_ways:
-        options.group_global.append("ways")
+        legacy_groups.add("ways")
     if options.exclude_traits:
-        options.group_global.append("traits")
-    # Remove duplicates from the list
-    options.group_global = list(set(options.group_global))
+        legacy_groups.add("traits")
+
+    if options.group_global is None:
+        options.group_global = legacy_groups
+    # if --group-global was given on the command line at least once (otherwise group_global would be None)
+    # but each time it was given, it had no arguments (otherwise at least one element of the list would be truthy)
+    elif isinstance(options.group_global, list) and not any(options.group_global):
+        # option given with nothing indicates all possible global groupings
+        options.group_global = set(db.get_global_groups()[1])
+    else:
+        options.group_global = flatten_lower_and_deduplicate(options.group_global)
 
     if options.tabs_only and options.label_name is None:
         # default is Avery 8867
@@ -996,9 +1000,7 @@ def clean_opts(options):
                 options.label = label
                 break
 
-        assert options.label is not None, "Label '{}' not defined".format(
-            options.label_name
-        )
+        assert options.label is not None, f"Label '{options.label_name}' not defined"
 
         # Defaults for missing values
         label = options.label

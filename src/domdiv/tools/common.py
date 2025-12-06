@@ -40,7 +40,7 @@ def get_lang_dirs(path):
 
 
 def get_json_data(json_file_path):
-    print(("reading {}".format(json_file_path)))
+    print((f"reading {json_file_path}"))
     # Read in the json from the specified file
     with codecs.open(json_file_path, "r", "utf-8") as json_file:
         data = json.load(json_file)
@@ -86,10 +86,10 @@ def write_data(data, fname, do_gzip=True, check_changed=True):
         lang_out.write("\n")
 
 
-def write_language_cards(cards, lang, card_db_dir):
+def write_language_cards(cards, lang, card_db_dir, do_gzip=True):
     lang_file = f"cards_{lang}.json"
     fname = os.path.join(card_db_dir, lang, lang_file)
-    write_data(cards, fname)
+    write_data(cards, fname, do_gzip=do_gzip)
 
 
 def load_card_data(card_db_dir):

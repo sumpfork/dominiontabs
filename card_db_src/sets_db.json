@@ -54,6 +54,10 @@
         "text_icon": "*"
     },
     "cornucopia1stEdition": {
+        "all_images": [
+            "cornucopia_set.png",
+            "cornucopia_guilds_set.png"
+        ],
         "edition": [
             "1"
         ],
@@ -64,18 +68,27 @@
         "text_icon": "*"
     },
     "cornucopia1stEditionRemoved": {
+        "all_images": [
+            "cornucopia_set.png",
+            "cornucopia_guilds_set.png"
+        ],
         "edition": [
             "1",
             "removed"
         ],
         "has_extras": false,
         "image": "cornucopia_set.png",
+        "removed": "cornucopiaAndGuilds2ndEdition",
         "set_name": "*cornucopia1stEditionRemoved*",
         "set_text": "",
         "short_name": "Cornucopia",
         "text_icon": "*"
     },
     "cornucopia2ndEditionUpgrade": {
+        "all_images": [
+            "cornucopia_set.png",
+            "cornucopia_guilds_set.png"
+        ],
         "edition": [
             "1",
             "upgrade"
@@ -89,6 +102,11 @@
         "upgrades": "cornucopia1stEdition"
     },
     "cornucopiaAndGuilds2ndEdition": {
+        "all_images": [
+            "cornucopia_set.png",
+            "guilds_set.png",
+            "cornucopia_guilds_set.png"
+        ],
         "edition": [
             "2",
             "latest"
@@ -99,17 +117,21 @@
         "short_name": "Cornucopia and Guilds",
         "text_icon": "*"
     },
-    "dark ages": {
+    "darkAges": {
         "edition": [
             "1",
             "latest"
         ],
         "image": "dark_ages_set.png",
-        "set_name": "*dark ages*",
+        "set_name": "*darkAges*",
         "set_text": "",
         "text_icon": "*"
     },
     "dominion1stEdition": {
+        "all_images": [
+            "dominion1stEdition_set.png",
+            "dominion2ndEdition_set.png"
+        ],
         "edition": [
             "1"
         ],
@@ -120,17 +142,26 @@
         "text_icon": "*"
     },
     "dominion1stEditionRemoved": {
+        "all_images": [
+            "dominion1stEdition_set.png",
+            "dominion2ndEdition_set.png"
+        ],
         "edition": [
             "1",
             "removed"
         ],
         "has_extras": false,
         "image": "dominion1stEdition_set.png",
+        "removed": "dominion2ndEdition",
         "set_name": "*dominion1stEditionRemoved*",
         "set_text": "",
         "text_icon": "*"
     },
     "dominion2ndEdition": {
+        "all_images": [
+            "dominion1stEdition_set.png",
+            "dominion2ndEdition_set.png"
+        ],
         "edition": [
             "2",
             "latest"
@@ -142,6 +173,10 @@
         "text_icon": "*"
     },
     "dominion2ndEditionUpgrade": {
+        "all_images": [
+            "dominion1stEdition_set.png",
+            "dominion2ndEdition_set.png"
+        ],
         "edition": [
             "1",
             "upgrade"
@@ -186,6 +221,10 @@
         "text_icon": "*"
     },
     "guilds1stEdition": {
+        "all_images": [
+            "guilds_set.png",
+            "cornucopia_guilds_set.png"
+        ],
         "edition": [
             "1"
         ],
@@ -196,18 +235,27 @@
         "text_icon": "*"
     },
     "guilds1stEditionRemoved": {
+        "all_images": [
+            "guilds_set.png",
+            "cornucopia_guilds_set.png"
+        ],
         "edition": [
             "1",
             "removed"
         ],
         "has_extras": false,
         "image": "guilds_set.png",
+        "removed": "cornucopiaAndGuilds2ndEdition",
         "set_name": "*guilds1stEditionRemoved*",
         "set_text": "",
         "short_name": "Guilds",
         "text_icon": "*"
     },
     "guilds2ndEditionUpgrade": {
+        "all_images": [
+            "guilds_set.png",
+            "cornucopia_guilds_set.png"
+        ],
         "edition": [
             "1",
             "upgrade"
@@ -221,6 +269,10 @@
         "upgrades": "guilds1stEdition"
     },
     "hinterlands1stEdition": {
+        "all_images": [
+            "hinterlands1stEdition_set.png",
+            "hinterlands2ndEdition_set.png"
+        ],
         "edition": [
             "1"
         ],
@@ -231,18 +283,27 @@
         "text_icon": "*"
     },
     "hinterlands1stEditionRemoved": {
+        "all_images": [
+            "hinterlands1stEdition_set.png",
+            "hinterlands2ndEdition_set.png"
+        ],
         "edition": [
             "1",
             "removed"
         ],
         "has_extras": false,
         "image": "hinterlands1stEdition_set.png",
+        "removed": "hinterlands2ndEdition",
         "set_name": "*hinterlands1stEditionRemoved*",
         "set_text": "",
         "short_name": "Hinterlands",
         "text_icon": "*"
     },
     "hinterlands2ndEdition": {
+        "all_images": [
+            "hinterlands1stEdition_set.png",
+            "hinterlands2ndEdition_set.png"
+        ],
         "edition": [
             "2",
             "latest"
@@ -254,6 +315,10 @@
         "text_icon": "*"
     },
     "hinterlands2ndEditionUpgrade": {
+        "all_images": [
+            "hinterlands1stEdition_set.png",
+            "hinterlands2ndEdition_set.png"
+        ],
         "edition": [
             "1",
             "upgrade"
@@ -267,6 +332,10 @@
         "upgrades": "hinterlands1stEdition"
     },
     "intrigue1stEdition": {
+        "all_images": [
+            "intrigue1stEdition_set.png",
+            "intrigue2ndEdition_set.png"
+        ],
         "edition": [
             "1"
         ],
@@ -277,17 +346,26 @@
         "text_icon": "*"
     },
     "intrigue1stEditionRemoved": {
+        "all_images": [
+            "intrigue1stEdition_set.png",
+            "intrigue2ndEdition_set.png"
+        ],
         "edition": [
             "1",
             "removed"
         ],
         "has_extras": false,
         "image": "intrigue1stEdition_set.png",
+        "removed": "intrigue2ndEdition",
         "set_name": "*intrigue1stEditionRemoved*",
         "set_text": "",
         "text_icon": "*"
     },
     "intrigue2ndEdition": {
+        "all_images": [
+            "intrigue1stEdition_set.png",
+            "intrigue2ndEdition_set.png"
+        ],
         "edition": [
             "2",
             "latest"
@@ -299,6 +377,10 @@
         "text_icon": "*"
     },
     "intrigue2ndEditionUpgrade": {
+        "all_images": [
+            "intrigue1stEdition_set.png",
+            "intrigue2ndEdition_set.png"
+        ],
         "edition": [
             "1",
             "upgrade"
@@ -341,6 +423,15 @@
         "text_icon": "*"
     },
     "promo": {
+        "all_images": [
+            "promo_set.png",
+            "envoy_set.png",
+            "black_market_set.png",
+            "stash_set.png",
+            "walled_village_set.png",
+            "governor_set.png",
+            "prince_set.png"
+        ],
         "edition": [
             "1",
             "latest"
@@ -362,6 +453,10 @@
         "text_icon": "*"
     },
     "prosperity1stEdition": {
+        "all_images": [
+            "prosperity1stEdition_set.png",
+            "prosperity2ndEdition_set.png"
+        ],
         "edition": [
             "1"
         ],
@@ -371,17 +466,26 @@
         "text_icon": "*"
     },
     "prosperity1stEditionRemoved": {
+        "all_images": [
+            "prosperity1stEdition_set.png",
+            "prosperity2ndEdition_set.png"
+        ],
         "edition": [
             "1",
             "removed"
         ],
         "has_extras": false,
         "image": "prosperity1stEdition_set.png",
+        "removed": "prosperity2ndEdition",
         "set_name": "*prosperity1stEditionRemoved*",
         "set_text": "",
         "text_icon": "*"
     },
     "prosperity2ndEdition": {
+        "all_images": [
+            "prosperity1stEdition_set.png",
+            "prosperity2ndEdition_set.png"
+        ],
         "edition": [
             "2",
             "latest"
@@ -392,6 +496,10 @@
         "text_icon": "*"
     },
     "prosperity2ndEditionUpgrade": {
+        "all_images": [
+            "prosperity1stEdition_set.png",
+            "prosperity2ndEdition_set.png"
+        ],
         "edition": [
             "1",
             "upgrade"
@@ -424,6 +532,10 @@
         "text_icon": "*"
     },
     "seaside1stEdition": {
+        "all_images": [
+            "seaside1stEdition_set.png",
+            "seaside2ndEdition_set.png"
+        ],
         "edition": [
             "1"
         ],
@@ -434,17 +546,26 @@
         "text_icon": "*"
     },
     "seaside1stEditionRemoved": {
+        "all_images": [
+            "seaside1stEdition_set.png",
+            "seaside2ndEdition_set.png"
+        ],
         "edition": [
             "1",
             "removed"
         ],
         "has_extras": false,
         "image": "seaside1stEdition_set.png",
+        "removed": "seaside2ndEdition",
         "set_name": "*seaside1stEditionRemoved*",
         "set_text": "",
         "text_icon": "*"
     },
     "seaside2ndEdition": {
+        "all_images": [
+            "seaside1stEdition_set.png",
+            "seaside2ndEdition_set.png"
+        ],
         "edition": [
             "2",
             "latest"
@@ -456,6 +577,10 @@
         "text_icon": "*"
     },
     "seaside2ndEditionUpgrade": {
+        "all_images": [
+            "seaside1stEdition_set.png",
+            "seaside2ndEdition_set.png"
+        ],
         "edition": [
             "1",
             "upgrade"

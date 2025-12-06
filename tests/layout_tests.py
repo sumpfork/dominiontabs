@@ -7,6 +7,7 @@ def test_horizontal():
     # should be the default
     options = config_options.parse_opts([])
     assert options.orientation == "horizontal"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.numDividersHorizontal == 2
     assert options.numDividersVertical == 3
@@ -18,6 +19,7 @@ def test_horizontal():
 def test_vertical():
     options = config_options.parse_opts(["--orientation", "vertical"])
     assert options.orientation == "vertical"
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.numDividersHorizontal == 3
     assert options.numDividersVertical == 2
@@ -28,6 +30,7 @@ def test_vertical():
 
 def test_sleeved():
     options = config_options.parse_opts(["--size", "sleeved"])
+    options = config_options.clean_opts(options)
     main.calculate_layout(options)
     assert options.dividerWidth == 9.4 * cm
     assert options.labelHeight == 0.9 * cm

@@ -5,7 +5,7 @@ import os
 
 from loguru import logger
 
-from . import config_options, db, resource_handling
+from . import config_options, resource_handling
 from .cards import Card, CardType
 
 EXPANSION_EXTRA_POSTFIX = " extras"
@@ -140,7 +140,7 @@ def find_index_of_object(lst=None, attributes=None):
     return None
 
 
-def read_card_data(options):
+def read_card_data(options) -> list[Card]:
     # Read in the card types
     types_db_filepath = os.path.join("card_db", "types_db.json.gz")
     with resource_handling.get_resource_stream(types_db_filepath) as typefile:
@@ -183,9 +183,9 @@ def read_card_data(options):
         new_sets[s] = Card.sets[s]
         # Make an "Extras" set for normal expansions
         if Card.sets[s]["has_extras"]:
-            e = s + db.EXPANSION_EXTRA_POSTFIX
+            e = s + EXPANSION_EXTRA_POSTFIX
             new_sets[e] = copy.deepcopy(Card.sets[s])
-            new_sets[e]["set_name"] = "*" + s + db.EXPANSION_EXTRA_POSTFIX + "*"
+            new_sets[e]["set_name"] = "*" + s + EXPANSION_EXTRA_POSTFIX + "*"
             new_sets[e]["no_randomizer"] = True
             new_sets[e]["has_extras"] = False
     Card.sets = new_sets
@@ -250,7 +250,7 @@ def read_card_data(options):
 
             # Add correct card counts to Start Deck prototype.  This will be used to make copies.
             cards[StartDeck_index].setCardCount(STARTDECK_COPPERS)
-            cards[StartDeck_index].addCardCount([int(STARTDECK_ESTATES)])
+            cards[StartDeck_index].mergeCardCount([int(STARTDECK_ESTATES)])
 
             # Make new Start Deck Dividers and adjust the corresponding card counts
             for x in range(0, STARTDECK_NUMBER):
