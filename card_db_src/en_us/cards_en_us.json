@@ -67,6 +67,11 @@
         "extra": "You trash a card from your hand if you can, and then gain a card whether or not you trashed one. The gained card comes from the Supply and is put into your discard pile.",
         "name": "Altar"
     },
+    "Amass": {
+        "description": "If you have no Action cards in play, gain an Action card costing up to 5 Coin.",
+        "extra": "",
+        "name": "Amass"
+    },
     "Ambassador": {
         "description": "Reveal a card from your hand. Return up to 2 copies of it from your hand to the Supply. Then each other player gains a copy of it.",
         "extra": "First you choose and reveal a card from your hand. You may place up to 2 copies of that card from your hand back in the Supply. You may choose not to put any of them back in the Supply. Then the other players each gain a copy of it from the Supply. If the pile for the chosen card runs out, some players may not get one; cards are given out in turn order starting with the next player. If you have no other cards in hand when you play this, it does nothing.",
@@ -164,6 +169,11 @@
         "description": "+1 Action<br><br>+1 Card per card you have exactly one of in play.",
         "extra": "This costs 8 Debt; see the Debt section. This counts itself, if you have exactly one Artist in play. This counts cards played on other turns that are still in play, such as a Samurai from a previous turn.",
         "name": "Artist"
+    },
+    "Asceticism": {
+        "description": "Pay any amount of Coin to trash that many cards from your hand.",
+        "extra": "",
+        "name": "Asceticism"
     },
     "Astrolabe": {
         "description": "Now and at the start of your next turn:<br><br>1 <*COIN*><br><br>+1 Buy",
@@ -399,6 +409,11 @@
         "description": "Trash a card from your hand and choose one: +1 Card per 1 Coin it costs; or +1 Action per 1 Coin it costs; or +1 Coin per 1 Coin it costs; or +1 Favor per 1 Coin it costs.",
         "extra": "For example, if you trash an Estate, which costs 2 Coins, you could choose to get +2 Cards, or +2 Actions, or +2 Coins, or +2 Favors.<n>If you trash a card with Debt or Potions in the cost, you get nothing for those symbols.",
         "name": "Broker"
+    },
+    "Bureaucracy": {
+        "description": "When you gain a card that doesn't cost 0 Coin, gain a Copper.",
+        "extra": "",
+        "name": "Bureaucracy"
     },
     "Bureaucrat": {
         "description": "Gain a silver card; put it on top of your deck. Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards).",
@@ -710,6 +725,11 @@
         "extra": "You evaluate whether or not Conspirator gives you +1 Card and +1 Action when you play it. Action cards played later in the turn do not change this evaluation. For the purposes of counting actions, if you Throne Room an Action, that's one Action of the Throne Room, one for the selected Action played the first time, and one for the selected Action played the second time. For example, if you play Throne Room on Conspirator, the first conspirator will be your second Action, and won't give you +1 Card or +1 Action, but the second Conspirator will be your third Action, and you will get +1 Card and +1 Action for that second Conspirator. Action - Victory cards are Actions.",
         "name": "Conspirator"
     },
+    "Continue": {
+        "description": "Once per turn: Gain a non-Attack Action card costing up to 4 Coin. Return to your Action phase and play it. +1 Action and +1 Buy.",
+        "extra": "",
+        "name": "Continue"
+    },
     "Contraband": {
         "description": "3 <*COIN*><br><br>+1 Buy<n>The player to your left names a card. You can’t buy that card this turn.",
         "extra": "This is a Treasure worth 3 coins, like Gold. When you play it, you get +1 Buy, the player to your left names a card, and you cannot buy the named card this turn. This does not stop you from gaining the card in ways other than buying it (such as via Hoard). He does not have to name a card in the Supply. If you play multiple Contrabands in one turn, the player to your left names a card each time; if he names different cards, you cannot buy any of the named cards this turn. You can play Treasures in any order, and you resolve this ability right when you play it, before playing any further Treasure cards. Note that once you buy a card in the Buy phase, you cannot play more Treasures. The number of cards left in a player's hand is public information; you can ask whenever you want to know it (for example, when that player plays Contraband).",
@@ -794,6 +814,11 @@
         "description": "+2 Debt<br><br>Gain a card costing up to 5 Coin.",
         "extra": "You gain a card even if you already had Debt; see the Debt section.",
         "name": "Craftsman"
+    },
+    "Credit": {
+        "description": "Gain an Action or Treasure costing up to 8 Coin. +Debt equal to its cost.",
+        "extra": "",
+        "name": "Credit"
     },
     "Crew": {
         "description": "+3 Cards<br>At the start of your next turn, put this onto your deck.",
@@ -975,6 +1000,11 @@
         "extra": "Gaining an Estate isn't optional. If the Estate pile is empty you still get +2 Cards and +1 Action.",
         "name": "Distant Shore"
     },
+    "Divine Wind": {
+        "description": "When you remove the last Sun, remove all Kingdom card piles from the Supply, and set up 10 new random piles.",
+        "extra": "",
+        "name": "Divine Wind"
+    },
     "Doctor": {
         "description": "Name a card. Reveal the top 3 cards of your deck. Trash the matches. Put the rest back on top in any order.<line>When you buy this, you may overpay for it. For each 1 Coin you overpaid, look at the top card of your deck; trash it, discard it, or put it back.",
         "extra": "When you play this, you name a card, reveal the top three cards of your deck, trash each of those cards that has that name, and put the other cards back on your deck in any order. You do not have to name a card being used this game. If there are fewer than three cards left in your deck, reveal the remaining cards, and shuffle your discard pile (which does not include those cards) to get the remainder needed to reveal. If there are still not enough cards, just reveal as many as you can. When you buy this, for each extra 1 Coin you pay over the cost, you look at the top card of your deck, and either trash it, discard it, or put it back on top. If there are no cards left in your deck, shuffle your discard pile into your deck (including any cards already discarded to this overpay ability this turn), and if there still are no cards in it, you do not look at one. If you overpay more than 1 Coin, you may do different things for each card you look at, and you will look at the same card again if you put it back on top. For example if you bought Doctor for 7 Coins, you would look at the top card four times; you might end up first trashing a Copper, then discarding a Province, then putting a Silver back on top, then putting that Silver back on top again.",
@@ -1100,6 +1130,11 @@
         "description": "Now and at the start of your next turn: Trash a card from your hand, and gain one costing up to 2 Coin more.",
         "extra": "Once you've played Enlarge, trashing a card at the start of your next turn is mandatory.",
         "name": "Enlarge"
+    },
+    "Enlightenment": {
+        "description": "Treasures are also Actions. When you play a Treasure in an Action phase, instead of following its instructions, +1 Card and +1 Action.",
+        "extra": "",
+        "name": "Enlightenment"
     },
     "Envious / Deluded": {
         "description": "This is a double-sided card.<left><u>Envious</u>:</left><center>At the start of your Buy phase, return this, and Silver and Gold make 1 Coin this turn.</center><left><u>Deluded</u>:</left><center>At the start of your Buy phase, return this, and you can’t buy Actions this turn.</center>",
@@ -1314,6 +1349,11 @@
         "extra": "The extra turns go in order starting with the next player after the one that just took a turn. Other extra turns, such as from Outpost (in Seaside) can happen in-between those turns; however after the last extra turn due to Fleet, no other extra turns can happen (since e.g. Outpost does not keep the game going after it ends). Players do not sort through their cards and add up their scores until all of the Fleet turns are done, even the players without Fleet. If the game end conditions are no longer met after Fleet turns, the game is still over.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
         "name": "Fleet"
     },
+    "Flourishing Trade": {
+        "description": "Cards cost 1 Coin less. You may use Action plays as Buys.",
+        "extra": "",
+        "name": "Flourishing Trade"
+    },
     "Followers": {
         "description": "+2 Cards<n>Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand.<n><i>(This is not in the Supply.)</i>",
         "extra": "Do the things in the order listed. You draw 2 cards; then you gain an Estate from the Supply, putting it into your discard pile; then each other player gains a Curse from the Supply, putting it into his discard pile; then each other player discards down to 3 cards in hand. A player with 3 or fewer cards in hand does not discard any cards. If there are no Estates left, you do not gain one. If there are not enough Curses left, deal out the remaining Curses in turn order. This is a Prize; see the Additional Rules.",
@@ -1348,6 +1388,11 @@
         "description": "Discard 3 cards, revealing them. If they have 3 different names, gain a Loot.",
         "extra": "If you didn't have 3 cards to discard, you don't gain a Loot.",
         "name": "Foray"
+    },
+    "Foresight": {
+        "description": "Reveal cards from your deck until revealing an Action. Set it aside and discard the rest. Put it into your hand at end of turn.",
+        "extra": "",
+        "name": "Foresight"
     },
     "Forest Dwellers": {
         "description": "At the start of your turn, you may spend a Favor to look at the top 3 cards of your deck, discard any number and put the rest back in any order.",
@@ -1439,6 +1484,11 @@
         "extra": "While under this attack, whenever you gain an Action or Treasure that you do not have a copy of on your Exile mat, you Exile the gained card.<n>Gaining a card that you do have a copy of on your Exile mat is unaffected, and lets you discard copies from your Exile mat if you want to as usual.<n>Other abilities that happen when you gain a card happen at the same time, and you can only put the card on your mat if it has not moved anywhere since gaining it; so you can, for example, use a Sleigh to put a gained card into your hand, then fail to put it on your Exile mat.<n>Gatekeeper only Exiles Actions and Treasures, it does not Exile, for example, Province.<n>It only cares about cards in Exile, it does not care how they got there.",
         "name": "Gatekeeper"
     },
+    "Gather": {
+        "description": "Gain a card costing exactly 3 Coin, a card costing exactly 4 Coin, and a card costing exactly 5 Coin.",
+        "extra": "",
+        "name": "Gather"
+    },
     "Gear": {
         "description": "+2 Cards<n>Set aside up to 2 cards from your hand face down. At the start of your next turn, put them into your hand.",
         "extra": "You may set aside zero, one, or two cards from your hand. Put them face down under the Gear; you may look at them. They do not have to be cards you drew with Gear. If you set aside zero cards, Gear will be discarded the same turn you played it; if you set aside one or two cards, you put them into your hand at the start of your next turn, and Gear is discarded at the end of that turn.",
@@ -1504,6 +1554,11 @@
         "extra": "When playing Gondola, choose whether to get +2 Coin immediately, or at the start of your next turn.<br>If you play Gondola multiple times, such as with King's Cache, you choose each time whether to get the +2 Coin now or next turn, and Gondola only stays in play if at least one of the plays was for next turn (in which case the King's Cache also stays in play).",
         "name": "Gondola"
     },
+    "Good Harvest": {
+        "description": "The first time you play each differently named Treasure each turn, first, +1 Buy and +1 Coin.",
+        "extra": "",
+        "name": "Good Harvest"
+    },
     "Goons": {
         "description": "+1 Buy<br>+2 Coins<n>Each other player discards down to 3 cards in hand.<line>While you have this in play, when you buy a card, +1 <VP>.",
         "extra": "You get 1 <VP> token for each card you buy, but do not get a <VP> token for gaining a card some other way. Multiple copies of Goons are cumulative; if you have two Goons in play and buy a Silver, you get 2 <VP> tokens. However if you King's Court a Goons, despite having played the card 3 times, there is still only one copy of it in play, so buying Silver would only get you 1 <VP> token.<n>When a player takes <VP> tokens, he takes a player mat to put them on. <VP> tokens are not private and anyone can count them. <VP> tokens come in 1 <VP> and 5 <VP> denominations and players can make change as needed. Tokens are unlimited and if they run out, use something else to track any further tokens. At the end of the game, players add the total value of their <VP> tokens to their score.",
@@ -1528,6 +1583,11 @@
         "description": "+1 Card<br>+1 Action<line>1 <*VP*>",
         "extra": "This is both an Action card and a Victory card. When you play it, you draw a card and may play another Action. At the end of the game, it's worth 1 <VP>, like an Estate. <line>Use 8 Great Halls for games with 2 players, 12 for games with 3 or more players.",
         "name": "Great Hall"
+    },
+    "Great Leader": {
+        "description": "After each Action card you play, +1 Action.",
+        "extra": "",
+        "name": "Great Leader"
     },
     "Greed": {
         "description": "Gain a Copper onto your deck.",
@@ -1556,6 +1616,11 @@
         "description": "+1 Card<br>+1 Action<line>While this is in play, when you gain a Victory card, +1 <VP>",
         "extra": "This can trigger multiple times in a turn, for cards gained different ways. For example you could play Groundskeeper, then play Engineer gaining an Estate and taking 1 <VP>, then in your Buy phase buy a Duchy taking another +1 <VP>. Multiple Groundskeepers are cumulative. If you Crown a Groundskeeper, there is still just one Groundskeeper in play, so you only get +1 <VP> per Victory card gained.",
         "name": "Groundskeeper"
+    },
+    "Growth": {
+        "description": "When you gain a Treasure, gain a cheaper card.",
+        "extra": "",
+        "name": "Growth"
     },
     "Guard Dog": {
         "description": "+2 Cards<br>If you have 5 or fewer cards in hand, +2 Cards.<line>When another player plays an Attack, you may first play this from your hand.",
@@ -1614,6 +1679,11 @@
         "description": "2 <*COIN*><line>2 <*VP*>",
         "extra": "This is both a Treasure card and a Victory card. You can play it for 2 coins, just like a Silver card. At the end of the game, it's worth 2 <VP>. <line>Use 8 Harems for games with 2 players, 12 for games with 3 or more players.",
         "name": "Harem / Farm"
+    },
+    "Harsh Winter": {
+        "description": "When you gain a card on your turn, if there's Debt on its pile, take it; otherwise put 2 Debt on its pile.",
+        "extra": "",
+        "name": "Harsh Winter"
     },
     "Harvest": {
         "description": "Reveal the top 4 cards of your deck, then discard them. +1 Coin per differently named card revealed.",
@@ -1941,6 +2011,11 @@
         "extra": "Kiln can gain any type of card, as long as the card is played directly after Kiln.<n>It can only gain cards from the Supply.<n>You (optionally) gain a copy of the card before following the instructions on the card.<n>If the card is an Attack and other players want to use cards like Moat, you gain the card before they choose to use Moat or not.<n>If you Throne Room a Kiln, you will play Kiln, play Kiln again, first gaining a Kiln (optionally), and then can still gain a copy of the next card you play after that.<n>If the next card you play is an Action and you use a Way for it, that has no special interaction with Kiln; you still may optionally gain a copy of that card.",
         "name": "Kiln"
     },
+    "Kind Emperor": {
+        "description": "At the start of your turn, and when you remove the last Sun: Gain an Action to your hand.",
+        "extra": "",
+        "name": "Kind Emperor"
+    },
     "King's Cache": {
         "description": "You may play a Treasure from your hand 3 times.",
         "extra": "If you King's Cache a King's Cache, you will play three more Treasures three times each.<br>If you King's Cache a Treasure-Duration card, King's Cache will stay in play as long as that card does.",
@@ -1950,6 +2025,11 @@
         "description": "You may choose an Action card in your hand. Play it three times.",
         "extra": "This is similar to Throne Room (from Dominion), but plays the Action three times rather than twice. You pick another Action card in your hand, play it, play it again, and play it a third time. This does not use up any extra Actions you were allowed to play due to cards like Worker's Village - King's Court itself uses up one Action and that is it. You cannot play any other cards in between resolving the King's Court-ed Action card multiple times, unless that Action card specifically tells you to (such as King's Court itself does). If you King's Court a King's Court, you will play three different Actions after that, playing each one of them three times - you do not play one Action nine times. If you King's Court a card that gives you +1 Action, such as Grand Market, you will end up with 3 Actions left afterwards.",
         "name": "King's Court"
+    },
+    "Kintsugi": {
+        "description": "Trash a card from your hand. If you've gained a Gold this game, gain a card costing up to 2 Coin more than the trashed card.",
+        "extra": "",
+        "name": "Kintsugi"
     },
     "Kitsune": {
         "description": "+1 SunToken<br><br>Choose two different options: +2 Actions; +2 Coins; each other player gains a Curse; gain a Silver.",
@@ -2507,6 +2587,11 @@
         "extra": "For example, if you had 7 Coppers, 5 Silvers, and 2 Golds, that would be two sets of Copper - Silver - Gold, for 6 <VP> total.",
         "name": "Palace"
     },
+    "Panic": {
+        "description": "When you play a Treasure, +2 Buys, and when you discard one from play, return it to its pile.",
+        "extra": "",
+        "name": "Panic"
+    },
     "Pasture": {
         "description": "1 <*COIN*><br><line><br>Worth 1 <VP> per Estate you have.",
         "extra": "For example if you have three Estates, then Pasture is worth 3 <VP>.",
@@ -2730,6 +2815,11 @@
         "extra": "",
         "name": "Poverty"
     },
+    "Practice": {
+        "description": "You may play an Action card from your hand twice.",
+        "extra": "",
+        "name": "Practice"
+    },
     "Prepare": {
         "description": "Set aside your hand face up.<br>At the start of your next turn, play those Actions and Treasures in any order, then discard the rest.",
         "extra": "Once you've set the cards aside, playing all of those Actions and Treasures next turn is mandatory.",
@@ -2762,6 +2852,11 @@
         "description": "You may play a non-Duration Action card from your hand twice. Trash it. Gain an Action card costing exactly 1 Coin more than it.",
         "extra": "Playing an Action card from your hand is optional. If you do play one, you then play it a second time, then trash it, then gain an Action card costing exactly 1 Coin more than it (even if somehow you failed to trash it). Gaining a card is not optional once you choose to play an Action card, but will fail to happen if no card in the Supply costs the exact amount needed. If something happens due to trashing the card - for example drawing 3 cards due to trashing a Cultist - that will resolve before you gain a card. The gained card comes from the Supply and is put into your discard pile. This does not use up any extra Actions you were allowed to play due to cards like Fortress - Procession itself uses up one Action and that is it. You cannot play any other cards in between resolving the Procession-ed Action card multiple times, unless that Action card specifically tells you to (such as Procession itself does). If you Procession a Procession, you will play one Action twice, trash it, gain an Action card costing 1 Coin more, then play another Action twice, trash it, gain an Action card costing 1 Coin more, then trash the Procession and gain an Action costing 1 Coin more than it. If you Procession a card that gives you +1 Action, such as Vagrant, you will end up with 2 Actions to use afterwards, rather than the one you would have left if you just played two Vagrants. If you use Procession on a Duration card (from Seaside), Procession will stay out until your next turn and the Duration card will have its effect twice on your next turn, even though the Duration card is trashed.",
         "name": "Procession"
+    },
+    "Progress": {
+        "description": "When you gain a card, put it onto your deck.",
+        "extra": "",
+        "name": "Progress"
     },
     "Prosper": {
         "description": "Gain a Loot, plus any number of differently named Treasures.",
@@ -2829,6 +2924,10 @@
         "extra": "At the start of the game, place your Journey token (the one with the boot) face up. When you play this, you get +1 Buy, and turn the token over. Then if it is face down, nothing more happens. If it is face up, you draw 5 cards. So, every other time you play a Ranger, you will draw 5 cards. It does not matter what turned over the Journey token; you could turn it face down with Giant, then face up with Ranger.",
         "name": "Ranger"
     },
+    "Rapid Expansion": {
+        "description": "When you gain an Action or Treasure, set it aside, and play it at the start of your next turn.",
+        "name": "Rapid Expansion"
+    },
     "Ratcatcher": {
         "description": "+1 Card<br>+1 Action<n>Put this on your Tavern mat.<line>At the start of your turn, you may call this, to trash a card from your hand.",
         "extra": "When you play this, you get +1 Card and +1 Action, and put it on your Tavern mat. It stays on your mat until you call it at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Ratcatcher, you move it from the mat into play, and you trash a card from your hand. Ratcatcher is discarded that turn with your other cards in play.",
@@ -2853,6 +2952,11 @@
         "description": "+1 Action<n>Name a card. Reveal cards from the top of your deck until you reveal a Victory card that is not the named card. Discard the other cards. Trash the Victory card and gain a Victory card costing up to 3 Coins more than it.",
         "extra": "You can name any card, whether or not it is being used this game or is a Victory card. Then reveal cards from your deck until you reveal a Victory card that is not what you named. If you run out of cards, shuffle your discard pile and continue, without shuffling in the revealed cards. If you run out of cards with no cards left in your discard pile, stop there, discard everything, and nothing more happens. If you did find a Victory card that was not what you named, you discard the other revealed cards, trash the Victory card, and gain a Victory card costing up to 3 Coins more than the trashed card. The card you gain comes from the Supply and is put into your discard pile.",
         "name": "Rebuild"
+    },
+    "Receive Tribute": {
+        "description": "If you've gained at least 3 cards this turn, gain up to 3 differently named Action cards you don't have copies of in play.",
+        "extra": "",
+        "name": "Receive Tribute"
     },
     "Reckless": {
         "description": "Follow the instructions of played Reckless cards twice. When discarding one from play, return it to its pile.",
@@ -3143,6 +3247,11 @@
         "extra": "A player with no cards left in his deck shuffles first in order to get a card to discard. If he still has no cards, he doesn't discard one. A player discarding his last card to this has the gained Curse become the only card in his deck. If there aren't enough Curses left to go around, deal them out in turn order, starting with the player to the left of the player who played Sea Hag.",
         "name": "Sea Hag"
     },
+    "Sea Trade": {
+        "description": "+1 Card per Action card you have in play. Trash up to that many cards from your hand.",
+        "extra": "",
+        "name": "Sea Trade"
+    },
     "Sea Witch": {
         "description": "+2 Cards<br>Each other player gains a Curse.<br><br>At the start of your next turn, +2 Cards, then discard 2 cards.",
         "extra": "When you play this, you draw 2 cards and each other player gains a Curse; then at the start of your next turn, you draw 2 cards and then discard 2 cards.",
@@ -3283,6 +3392,11 @@
         "description": "+4 Cards<br>+1 Action<n>Put a card from your hand on top of your deck, and another on the bottom.",
         "extra": "If after drawing your deck has no cards in it, the first card you put back will become the top card of it.",
         "name": "Sibyl"
+    },
+    "Sickness": {
+        "description": "At the start of your turn, choose one: Gain a Curse onto your deck; or discard 3 cards.",
+        "extra": "",
+        "name": "Sickness"
     },
     "Silk Merchant": {
         "description": "+2 Cards<br>+1 Buy<n><line>When you gain or trash this, +1 Coffers and +1 Villager.",
