@@ -796,7 +796,7 @@
         "name": "Courtier"
     },
     "Courtyard": {
-        "description": "+3 Card<br>Put a card from your hand on top of your deck.",
+        "description": "+3 Cards<br>Put a card from your hand on top of your deck.",
         "extra": "You draw cards and add them to your hand before putting one back. The card you put on top of your deck can be any card in your new hand and doesn't have to be one of the 3 you just drew.",
         "name": "Courtyard"
     },
@@ -946,7 +946,7 @@
         "name": "Desert Guides"
     },
     "Desperation": {
-        "description": "Once per turn: You may gain a Curse. If you do, +1 Buy and +2  Coin",
+        "description": "Once per turn: You may gain a Curse. If you do, +1 Buy and +2 Coin",
         "extra": "If the Curse pile is empty, you fail to gain one and do not get +1 Buy and +2 Coin.",
         "name": "Desperation"
     },
@@ -956,7 +956,7 @@
         "name": "Destrier"
     },
     "Develop": {
-        "description": "Trash a card from your hand. Gain a card costing exactly 1 coin more than it and a card costing exactly 1 less than it, in either order, putting them on top of your deck.",
+        "description": "Trash a card from your hand. Gain a card costing exactly 1 coin more than it and a card costing exactly 1 coin less than it, in either order, putting them on top of your deck.",
         "extra": "First trash a card from your hand, if you have any cards in hand. Develop itself is no longer in your hand and so cannot trash itself (though it can trash other copies of Develop). If you trashed a card, gain two cards, one costing exactly 1 coin more than the trashed card, and one costing exactly 1 coin less than the trashed card. The gained cards come from the Supply; gain them in either order. If there is no card in the Supply at one of the costs, you still gain the other card if you can. Put the gained cards on top of your deck rather than into your discard pile. If you trash a Copper with Develop, which costs 0 coins, you will try and fail to gain a card costing -1 coins (and also try to gain a card costing 1 coin).",
         "name": "Develop"
     },
@@ -1500,7 +1500,7 @@
         "name": "Ghost"
     },
     "Ghost Ship": {
-        "description": "+2 Card<n>Each other player with 4 or more cards in hand puts cards from his hand on top of his deck until he has 3 cards in his hand.",
+        "description": "+2 Cards<n>Each other player with 4 or more cards in hand puts cards from his hand on top of his deck until he has 3 cards in his hand.",
         "extra": "The other players choose which cards they put on their decks and in what order. This has no effect on another player who already has only 3 cards in hand. A player with no cards left in their deck does not shuffle; the cards put back become the only cards in their deck.",
         "name": "Ghost Ship"
     },
@@ -2045,7 +2045,7 @@
         ]
     },
     "Laboratory": {
-        "description": "+2 Cards<br>+1 Action.",
+        "description": "+2 Cards<br>+1 Action",
         "extra": "Draw two cards. You may play another Action card during your Action phase.",
         "name": "Laboratory"
     },
@@ -2708,7 +2708,7 @@
         "name": "Pirate"
     },
     "Pirate Ship": {
-        "description": "Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you +1 Coffers (take a Coin token); or, +1 Coin per Coin token you've taken with Pirate Ships this game.",
+        "description": "Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you take a Coin token; or, +1 Coin per Coin token you've taken with Pirate Ships this game.",
         "extra": "When you first take this card, take a Pirate Ship player mat. If you use the Pirate Ship to trash treasures, a player with just one card left reveals that last card and then shuffles to get the other card to reveal (without including the revealed card); a player with no cards left shuffles to get both of them. A player who still doesn't have two cards to reveal after shuffling just reveals what he can. Each player trashes one Treasure card at most, of the attacker's choice from the two revealed cards. As long as you trashed at least one Treasure card in this way, place a Coin token on your Pirate Ship player mat. You can't get more than one Coin token each time you play Pirate Ship, no matter how many treasures it trashes. If you choose not to try to trash treasures from the other players, the Pirate Ship is worth one coin for each Coin token on your Pirate Ship player mat. The Coin tokens are cumulative, so after you have used your Pirate Ships to trash coins 3 times (and you trash at least one Treasure card each time), any Pirate Ship you play could be worth 3 coins. Pirate Ship is an Action- Attack and players can reveal Secret Chamber even if you choose to use Pirate Ship for the coin value. [You make your choice on how to use Pirate Ship after other players are done revealing Reactions.]",
         "name": "Pirate Ship"
     },
@@ -3283,7 +3283,7 @@
         "name": "Secret Cave / Magic Lamp"
     },
     "Secret Chamber": {
-        "description": "Discard any number of cards. +1 Coin per card discarded.<line>When another player plays an Attack card, you may reveal this from your hand. If you do, +2 cards, then put 2 cards from your hand on top of your deck.",
+        "description": "Discard any number of cards. +1 Coin per card discarded.<line>When another player plays an Attack card, you may reveal this from your hand. If you do, +2 Cards, then put 2 cards from your hand on top of your deck.",
         "extra": "When you play this as an Action on your turn, you first discard any number of cards from your hand, then get 1 coin per card you discarded. You may choose to discard zero cards, but then you will get zero additional coins. The other ability does nothing at that time as it is only used as a Reaction. When someone else plays an Attack card, you may reveal Secret Chamber from your hand. If you do, first you draw 2 cards, then you put at 2 cards from your hand on top of your deck (in any order). The cards you put back do not have to be the ones you drew. You can put Secret Chamber itself on top of your deck; it's still on your hand when you reveal it. Revealing Secret Chamber happens prior to resolving what an Attack does to you. For example, if another player plays Thief, you can reveal Secret Chamber, draw 2 cards, put 2 back, and then you resolve getting hit by the Thief. You can reveal Secret Chamber whenever another player plays an Attack card, even if that Attack would not affect you. Also, you can reveal more than one Reaction card in response to an Attack. For example, after revealing the Secret Chamber in response to an Attack and resolving the effect of the Secret Chamber, you can still reveal a Moat to avoid the Attack completely.",
         "name": "Secret Chamber"
     },
@@ -3489,7 +3489,7 @@
         "name": "Sorceress"
     },
     "Souk": {
-        "description": "+1 Buy<br>+7 Coin<br>–1 Coin per card in your hand (you can't go below 0 Coin).<line>When you gain this, trash up to 2 cards from your hand.",
+        "description": "+1 Buy<br>+7 Coin<br>-1 Coin per card in your hand (you can't go below 0 Coin).<line>When you gain this, trash up to 2 cards from your hand.",
         "extra": "For example, if you play Souk and have 3 other cards left in your hand, you'd get +7 Coin (and +1 Buy), and then lose 3 Coin for a net gain of +4 Coin. You can't go below 0 Coin but might end up with less _ Coin than you started with. When you gain Souk, trash up to 2 cards from your hand; you don't have to trash any.",
         "name": "Souk"
     },
@@ -3643,7 +3643,7 @@
         "name": "Swap"
     },
     "Swashbuckler": {
-        "description": "+3 Cards<n>If your discard pile has any cards in it:<n>+1 Coffer, then if you have at least 4 Coffers tokens, take the Treasure Chest",
+        "description": "+3 Cards<n>If your discard pile has any cards in it:<n>+1 Coffer, then if you have at least 4 Coffers tokens, take the Treasure Chest.",
         "extra": "First you draw 3 cards, then you check to see if your discard pile has any cards in it; if drawing those cards caused you to shuffle, your discard pile would be empty. If your discard pile has at least one card, you get +1 Coffers, and if you then have 4 or more tokens on your Coffers, you take the Treasure Chest. You cannot get the Treasure Chest unless your discard pile had at least one card. Treasure Chest simply causes you to gain a Gold at the start of your Buy phase each turn, including the turn you take it; this is not optional.",
         "name": "Swashbuckler"
     },
@@ -3836,7 +3836,7 @@
         "name": "Torturer"
     },
     "Tournament": {
-        "description": "+1 Action<n>Each player may reveal a Province from his hand. If you do, discard it and gain a Prize (from the Prize pile) or a Duchy, putting it on top of your deck. If no-one else does, +1 Card, +1 Coin.<n>Prizes: <u>Bag of Gold</u>, <u>Diadem</u>, <u>Followers</u>, <u>Princess</u>, <u>Trusty Steed</u>",
+        "description": "+1 Action<n>Each player may reveal a Province from his hand. If you do, discard it and gain a Prize (from the Prize pile) or a Duchy, putting it on top of your deck. If no-one else does, +1 Card, +1 Coin.",
         "extra": "First you get +1 Action. Then each player, including you, may reveal a Province card from his hand. Then, if you revealed a Province, discard that card, and you gain a Prize of your choice, or a Duchy, putting whatever card you took on top of your deck. If there were no cards in your deck, it becomes the only card in your deck. There are five Prizes, set out at the start of the game; see Preparation. You can only take a Prize from the Prize pile. You can take any Prize from the Prize pile; you do not have to take the top one. You can take a Duchy instead, whether or not the Prizes have run out. You can opt to take a Duchy even if the Duchy pile is empty, or a Prize even if no Prizes are left; in these cases you gain nothing. After gaining your card or not, if no other player revealed a Province, you draw a card and get +1 coin.",
         "name": "Tournament"
     },
@@ -4046,7 +4046,7 @@
         "name": "Vampire / Bat"
     },
     "Vassal": {
-        "description": "+2 Coin<n>Discard the top card of your deck. If it's an Action card, you may play it",
+        "description": "+2 Coin<n>Discard the top card of your deck. If it's an Action card, you may play it.",
         "extra": "If the card is an Action card, you can play it, but do not have to.<n>If you do play it, you move it into your play area and follow its instructions; this does not use up one of your Action plays for the turn.",
         "name": "Vassal"
     },
