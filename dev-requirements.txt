@@ -110,7 +110,7 @@ tomli==2.0.1
     #   pytest
 twine==5.1.1
     # via domdiv (pyproject.toml)
-urllib3==2.2.2
+urllib3==2.6.3
     # via
     #   requests
     #   twine
