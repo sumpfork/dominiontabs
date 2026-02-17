@@ -21,12 +21,14 @@ requires-python = ">= 3.8"
 
 [project.optional-dependencies]
 dev = ["build", "twine", "pre-commit", "doit", "pytest"]
+fontfix = ["cu2qu", "fonttools"]
 
 [project.scripts]
 dominion_dividers = "domdiv.main:main"
 domdiv_update_language = "domdiv.tools.update_language:run"
 domdiv_bgg_release = "domdiv.tools.bgg_release:make_bgg_release"
 domdiv_dedupe_cards = "domdiv.tools.cleanup_language_dupes:main"
+fontfix = "domdiv.tools.fontfix:main"
 
 [tool.setuptools_scm]
 # doing this break CI as the version file gets written when just `get_version` is called
