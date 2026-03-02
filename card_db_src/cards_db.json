@@ -2903,6 +2903,20 @@
         ]
     },
     {
+        "card_tag": "Catapult - Rocks",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "3*",
+        "count": "0",
+        "group_tag": "Catapult - Rocks",
+        "group_top": true,
+        "types": [
+            "Action",
+            "Attack"
+        ]
+    },
+    {
         "card_tag": "Catapult",
         "cardset_tags": [
             "empires"
@@ -2910,7 +2924,7 @@
         "cost": "3",
         "count": "5",
         "group_tag": "Catapult - Rocks",
-        "group_top": true,
+        "group_top": false,
         "types": [
             "Action",
             "Attack"
@@ -3045,6 +3059,19 @@
         ]
     },
     {
+        "card_tag": "Encampment - Plunder",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "2*",
+        "count": "0",
+        "group_tag": "Encampment - Plunder",
+        "group_top": true,
+        "types": [
+            "Action"
+        ]
+    },
+    {
         "card_tag": "Encampment",
         "cardset_tags": [
             "empires"
@@ -3052,7 +3079,7 @@
         "cost": "2",
         "count": "5",
         "group_tag": "Encampment - Plunder",
-        "group_top": true,
+        "group_top": false,
         "types": [
             "Action"
         ]
@@ -3128,6 +3155,19 @@
         ]
     },
     {
+        "card_tag": "Gladiator - Fortune",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "3*",
+        "count": "0",
+        "group_tag": "Gladiator - Fortune",
+        "group_top": true,
+        "types": [
+            "Action"
+        ]
+    },
+    {
         "card_tag": "Gladiator",
         "cardset_tags": [
             "empires"
@@ -3135,7 +3175,7 @@
         "cost": "3",
         "count": "5",
         "group_tag": "Gladiator - Fortune",
-        "group_top": true,
+        "group_top": false,
         "types": [
             "Action"
         ]
@@ -3258,6 +3298,19 @@
         ]
     },
     {
+        "card_tag": "Patrician - Emporium",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "2*",
+        "count": "0",
+        "group_tag": "Patrician - Emporium",
+        "group_top": true,
+        "types": [
+            "Action"
+        ]
+    },
+    {
         "card_tag": "Patrician",
         "cardset_tags": [
             "empires"
@@ -3265,7 +3318,7 @@
         "cost": "2",
         "count": "5",
         "group_tag": "Patrician - Emporium",
-        "group_top": true,
+        "group_top": false,
         "types": [
             "Action"
         ]
@@ -3342,6 +3395,19 @@
         ]
     },
     {
+        "card_tag": "Settlers - Bustling Village",
+        "cardset_tags": [
+            "empires"
+        ],
+        "cost": "2*",
+        "count": "0",
+        "group_tag": "Settlers - Bustling Village",
+        "group_top": true,
+        "types": [
+            "Action"
+        ]
+    },
+    {
         "card_tag": "Settlers",
         "cardset_tags": [
             "empires"
@@ -3349,7 +3415,7 @@
         "cost": "2",
         "count": "5",
         "group_tag": "Settlers - Bustling Village",
-        "group_top": true,
+        "group_top": false,
         "types": [
             "Action"
         ]
@@ -7350,6 +7416,19 @@
         ]
     },
     {
+        "card_tag": "Sauna - Avanto",
+        "cardset_tags": [
+            "promo"
+        ],
+        "cost": "4*",
+        "count": "0",
+        "group_tag": "Sauna - Avanto",
+        "group_top": true,
+        "types": [
+            "Action"
+        ]
+    },
+    {
         "card_tag": "Sauna",
         "cardset_tags": [
             "promo"
@@ -7357,7 +7436,7 @@
         "cost": "4",
         "count": "5",
         "group_tag": "Sauna - Avanto",
-        "group_top": true,
+        "group_top": false,
         "types": [
             "Action"
         ]
