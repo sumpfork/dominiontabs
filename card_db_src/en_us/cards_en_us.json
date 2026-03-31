@@ -541,7 +541,7 @@
         "name": "Catapult"
     },
     "Catapult - Rocks": {
-        "description": "<left><u>Catapult</u>:</left><n>+1 Coin<n>Trash a card from your hand. If it costs 3 Coins or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.<n><left><u>Rocks</u>:</left><n>+1 Coin<line>When you gain or trash this, gain a Silver; if it is your Buy phase, put the Silver on your deck, otherwise put it into your hand.",
+        "description": "This pile starts with 5 copies of Catapult on top, then 5 copies of Rocks. Only the top card of the pile can be gained or bought.",
         "extra": "If the card you trash is a treasure, each other player discards down to 3 cards in hand; if the card you trash costs 3 Coins or more, each other player gains a Curse; if it is both (e.g. Silver), both things happen; if it is neither, neither thing happens. Rocks: If you have no cards in hand left to trash, neither thing happens. If it is another player's turn, then it is not your Buy phase, so the Silver goes to your hand.",
         "name": "Catapult / Rocks"
     },
@@ -1094,7 +1094,7 @@
         "name": "Encampment"
     },
     "Encampment - Plunder": {
-        "description": "<left><u>Encampment</u>:</left><n>+2 Cards<br>+2 Actions<n>You may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up.<n><left><u>Plunder</u>:</left><n>+2 Coin<br>+1 <VP>",
+        "description": "This pile starts with 5 copies of Encampment on top, then 5 copies of Plunder. Only the top card of the pile can be gained or bought.",
         "extra": "Revealing a Plunder or Gold is optional. When you return Encampment to the Supply, it goes on top of its pile, potentially covering up a Plunder. Plunder: This gives you a <VP> token every time you play it.",
         "name": "Encampment / Plunder"
     },
@@ -1520,7 +1520,7 @@
         "name": "Gladiator"
     },
     "Gladiator - Fortune": {
-        "description": "<left><u>Gladiator</u>:</left><n>If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator.<n><left><u>Fortune</u>:</left><n>+1 Buy<n>When you play this, double your Coin if you haven't yet this turn.<line>When you gain this, gain a Gold per Gladiator you have in play.",
+        "description": "This pile starts with 5 copies of Gladiator on top, then 5 copies of Fortune. Only the top card of the pile can be gained or bought.",
         "extra": "If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +1 Coin. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +1 Coin and trash a Gladiator. Fortune: You only double your Coin the first time you play a Fortune in a turn; any further times only get you +1 Buy.",
         "name": "Gladiator / Fortune"
     },
@@ -1603,7 +1603,7 @@
         ]
     },
     "Groom": {
-        "description": "Gain a card costing up to 4 Coin If it's an...<br>Action card, gain a Horse;<br>Treasure card, gain a Silver;<br>Victory card, +1 Card and +1 Action.",
+        "description": "Gain a card costing up to 4 Coin. If it's an...<br>Action card, gain a Horse;<br>Treasure card, gain a Silver;<br>Victory card, +1 Card and +1 Action.",
         "extra": "First gain a card, then apply the bonuses in the order listed.<n>A card can give you multiple bonuses; for example, if you gain a Mill (from Intrigue), you gain a Horse and then get +1 Card and +1 Action.",
         "name": "Groom"
     },
@@ -2613,7 +2613,7 @@
         "name": "Patrician"
     },
     "Patrician - Emporium": {
-        "description": "<left><u>Patrician</u>:</left><n>+1 Card<br>+1 Action<n>Reveal the top card of your deck. If it costs 5 Coin or more, put it into your hand.<n><left><u>Emporium</u>:</left><n>+1 Card<br>+1 Action<br>+1 Coin<line>When you gain this, if you have at least 5 Action cards in play, +2 <VP>.",
+        "description": "This pile starts with 5 copies of Patrician on top, then 5 copies of Emporium. Only the top card of the pile can be gained or bought.",
         "extra": "Cards costing Debt do not cost 5 Coin or more unless they also have a Coin cost of 5 Coin or more. So Fortune does but City Quarter does not. Emporium: This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Adventures) called into play this turn.",
         "name": "Patrician / Emporium"
     },
@@ -3178,7 +3178,7 @@
         "name": "Sauna"
     },
     "Sauna - Avanto": {
-        "description": "<left><u>Sauna</u>:</left><n>+1 Card<br>+1 Action<n>You may play an Avanto from your hand.<n>While this is in play, when you play a Silver, you may trash a card from your hand.<n><left><u>Avanto</u>:</left><n>+3 Cards<n>You may play a Sauna from your hand.",
+        "description": "This pile starts with 5 copies of Sauna on top, then 5 copies of Avanto. Only the top card of the pile can be gained or bought.",
         "extra": "Sauna / Avanto is a split pile with five copies of Sauna placed on top of five copies of Avanto during setup. Sauna is a cantrip that allows you to trash a card when you play a Silver. Avanto is a terminal draw card that can potentially become non-terminal if you have a Sauna in your hand to play.",
         "name": "Sauna / Avanto"
     },
@@ -3318,7 +3318,7 @@
         "name": "Settlers"
     },
     "Settlers - Bustling Village": {
-        "description": "<left><u>Settlers</u>:</left><n>+1 Card<br>+1 Action<n>Look through your discard pile. You may reveal a Copper from it and put it into your hand.<br><left><u>Bustling Village</u>:</left><n>+1 Card<br>+3 Actions<n>Look through your discard pile. You may reveal a Settlers from it and put it into your hand.",
+        "description": "This pile starts with 5 copies of Settlers on top, then 5 copies of Bustling Village. Only the top card of the pile can be gained or bought.",
         "extra": "<u>Settlers</u>: You can look through your discard pile even if you know there is no Copper in it.<n><u>Bustling Village</u>: You can look through your discard pile even if you know there are no Settlers in it.",
         "name": "Settlers / Bustling Village"
     },
