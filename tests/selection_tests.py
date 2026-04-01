@@ -23,9 +23,9 @@ def test_group_special():
     gladiator_fortune = gladiator_matches[0]
     gladiator_fortune.name.startswith("Gladiator")
     assert "Fortune" in gladiator_fortune.name
-    assert gladiator_fortune.getCardCounts() == [5, 5]
+    assert gladiator_fortune.getCardCounts() == [5, 5, 0]
     assert gladiator_fortune.types == ["Action"]
-    assert gladiator_fortune.cost == "3"
+    assert gladiator_fortune.cost == "3*"
 
     joust_matches = [c for c in cards if c.group_tag == "Joust and Rewards"]
     assert len(joust_matches) == 1
