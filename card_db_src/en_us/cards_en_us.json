@@ -171,7 +171,7 @@
         "name": "Artist"
     },
     "Asceticism": {
-        "description": "Pay any amount of Coin to trash that many cards from your hand.",
+        "description": "Pay any amount of _ Coin to trash that many cards from your hand.",
         "extra": "",
         "name": "Asceticism"
     },
@@ -591,7 +591,7 @@
         "name": "Chancellor"
     },
     "Change": {
-        "description": "If you have any Debt, +3 Coin. Otherwise, trash a card from you hand, gain a card costing more Coin than it. +Debt equal to the difference in Coin.",
+        "description": "If you have any Debt, +3 Coin. Otherwise, trash a card from you hand, gain a card costing more _ Coin than it. +Debt equal to the difference in _ Coin.",
         "extra": "Remember you can repay Debt at any point during your turn, which can sometimes let you choose which thing Change will do. If you have any Debt, Change gives you +3 Coin; otherwise you trash a card from your hand, gain any card costing more Coins, and take Debt equal to the difference. For example you could trash a Copper, gain a Province, and take 8 Debt. You can't gain a card costing the same amount of Coins or less Coins. This ignores other special aspects of cost; for example you could trash an Estate and gain an Alchemist, from Alchemy, which costs 3 Coins and 1 Potion.",
         "name": "Change"
     },
@@ -1415,7 +1415,7 @@
         "name": "Forts"
     },
     "Fortune": {
-        "description": "+1 Buy<n>When you play this, double your Coin if you haven't yet this turn.<line>When you gain this, gain a Gold per Gladiator you have in play.",
+        "description": "+1 Buy<n>When you play this, double your _ Coin if you haven't yet this turn.<line>When you gain this, gain a Gold per Gladiator you have in play.",
         "extra": "You only double your Coin the first time you play a Fortune in a turn; any further times only get you +1 Buy.",
         "name": "Fortune"
     },
@@ -3585,7 +3585,7 @@
         "name": "Storeroom"
     },
     "Storyteller": {
-        "description": "+1 Action<br>+1 Coin<n>Play up to 3 Treasures from your hand. Pay all of your _ Coins. +1 Card per Coin paid.",
+        "description": "+1 Action<br>+1 Coin<n>Play up to 3 Treasures from your hand. Pay all of your _ Coins. +1 Card per _ Coin paid.",
         "extra": "This lets you play Treasures in your Action phase. They go into play and produce Coins, just like Treasures played in the Buy phase. Then Storyteller turns all of your Coins into +Cards; for each Coin you have you lose the Coin and get +1 Card. For example if you had 4 Coins, you lose the 4 Coins and draw 4 cards. This makes you lose all Coins you have so far that turn, including the Coins you get from playing the Treasures, the +1 Coin Storyteller gives you directly, and any you made earlier in the turn. You can track that the Treasures have been \"spent\" by putting them under the Storyteller. Potions, produced by Potions from Alchemy, is not Coin and so is not lost and does not get you any cards.",
         "name": "Storyteller"
     },
