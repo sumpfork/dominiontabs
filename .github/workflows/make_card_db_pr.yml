@@ -13,6 +13,19 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v4
+      - name: Determine source PR number
+        id: source-pr
+        uses: actions/github-script@v6
+        with:
+          result-encoding: string
+          script: |
+            const prs = context.payload.workflow_run.pull_requests || [];
+            if (prs.length > 0) {
+              const prNumber = String(prs[0].number);
+              console.log(`source PR number (from workflow_run payload): ${prNumber}`);
+              return prNumber;
+            }
+            core.setFailed('No source PR number found in workflow_run payload.');
       - uses: actions/github-script@v6
         id: get-artifact
         with:
@@ -40,53 +53,61 @@ jobs:
             } else {
               return 'no_artifact'
             }
+      - name: Close stale auto PRs if no card DB changes
+        if: steps.get-artifact.outputs.result == 'no_artifact'
+        uses: actions/github-script@v6
+        env:
+          SOURCE_PR_NUMBER: ${{ steps.source-pr.outputs.result }}
+        with:
+          script: |
+            const sourcePrNumber = Number(process.env.SOURCE_PR_NUMBER);
+            const targetTitle = `Auto Card DB compile for #${sourcePrNumber}`;
+            let page = 1;
+            let openAutoPrs = [];
+
+            while (true) {
+              const { data: prs } = await github.rest.pulls.list({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                per_page: 100,
+                page,
+              });
+
+              if (prs.length === 0) {
+                break;
+              }
+
+              openAutoPrs = openAutoPrs.concat(prs.filter((pr) => pr.title === targetTitle));
+              page += 1;
+            }
+
+            if (openAutoPrs.length === 0) {
+              console.log(`No open auto PR found for title: ${targetTitle}`);
+              return;
+            }
+
+            for (const pr of openAutoPrs) {
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number,
+                state: 'closed',
+              });
+              console.log(`Closed stale auto PR #${pr.number}`);
+            }
       - run: unzip -o -d src/domdiv/card_db card_db.zip
         if: steps.get-artifact.outputs.result == 'found_artifact'
       - run: rm -f card_db.zip
         if: steps.get-artifact.outputs.result == 'found_artifact'
-      - name: 'Download PR number artifact'
-        if: steps.get-artifact.outputs.result == 'found_artifact'
-        uses: actions/github-script@v6
-        with:
-          script: |
-            let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               run_id: ${{github.event.workflow_run.id }},
-            });
-            let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "pr_number"
-            })[0];
-            let download = await github.rest.actions.downloadArtifact({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               artifact_id: matchArtifact.id,
-               archive_format: 'zip',
-            });
-            let fs = require('fs');
-            fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/pr_number.zip`, Buffer.from(download.data));
-      - name: 'Unzip PR Number artifact'
-        if: steps.get-artifact.outputs.result == 'found_artifact'
-        run: unzip pr_number.zip
-      - name: 'Read PR number'
-        id: read-pr-number
-        if: steps.get-artifact.outputs.result == 'found_artifact'
-        uses: actions/github-script@v6
-        with:
-          result-encoding: string
-          script: |
-            let fs = require('fs');
-            let pr_number = Number(fs.readFileSync('./pr_number'));
-            console.log(`original pr number: ${pr_number}`)
-            return pr_number
       - name: Make PR
         id: make-pr
         if: steps.get-artifact.outputs.result == 'found_artifact'
         uses: peter-evans/create-pull-request@v5
         with:
-          title: 'Auto Card DB compile for #${{ steps.read-pr-number.outputs.result }}'
+          title: 'Auto Card DB compile for #${{ steps.source-pr.outputs.result }}'
           body: |
-            Auto-generate package card DB to from source card DB for PR #${{ steps.read-pr-number.outputs.result }}
+            Auto-generate package card DB to from source card DB for PR #${{ steps.source-pr.outputs.result }}
           delete-branch: true
           reviewers: sumpfork
           assignees: sumpfork
@@ -104,8 +125,7 @@ jobs:
             console.log(process.env)
             const { THIS_PR_NUMBER } = process.env
             console.log(`new PR number: ${THIS_PR_NUMBER}`)
-            let fs = require('fs');
-            let issue_number = Number(fs.readFileSync('./pr_number'));
+            let issue_number = Number('${{ steps.source-pr.outputs.result }}');
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,

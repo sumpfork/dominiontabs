@@ -39,12 +39,14 @@ jobs:
           name: card_db
           path: src/domdiv/card_db/
       - name: Save PR number
+        if: steps.filter.outputs.cardb_target == 'true'
         env:
           PR_NUMBER: ${{ github.event.number }}
         run: |
           mkdir -p ./pr
           echo $PR_NUMBER > ./pr/pr_number
       - name: Upload PR Artifact
+        if: steps.filter.outputs.cardb_target == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: pr_number
