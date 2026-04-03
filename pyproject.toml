@@ -19,9 +19,6 @@ requires-python = ">= 3.8"
 "Issue Tracker" = "https://github.com/sumpfork/dominiontabs/issues"
 "Homepage" = "http://domtabs.sandflea.org"
 
-[project.optional-dependencies]
-dev = ["build", "twine", "pre-commit", "doit", "pytest"]
-
 [project.scripts]
 dominion_dividers = "domdiv.main:main"
 domdiv_update_language = "domdiv.tools.update_language:run"
@@ -34,3 +31,6 @@ domdiv_dedupe_cards = "domdiv.tools.cleanup_language_dupes:main"
 
 [tool.ruff.lint]
 select = ["I"]
+
+[dependency-groups]
+dev = ["build", "twine", "pre-commit", "doit", "pytest"]
