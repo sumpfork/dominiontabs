@@ -10,11 +10,16 @@ on:
 jobs:
   make_pr:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request' }}
+    permissions:
+      actions: read
+      contents: write
+      issues: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v6
-      - name: Determine source PR number
-        id: source-pr
+      - name: Determine source PR number from workflow payload
+        id: source-pr-payload
         uses: actions/github-script@v8
         with:
           result-encoding: string
@@ -25,7 +30,8 @@ jobs:
               console.log(`source PR number (from workflow_run payload): ${prNumber}`);
               return prNumber;
             }
-            core.setFailed('No source PR number found in workflow_run payload.');
+            console.log('No source PR number found in workflow_run payload.');
+            return '';
       - uses: actions/github-script@v8
         id: get-artifact
         with:
@@ -39,6 +45,9 @@ jobs:
             var matchArtifacts = artifacts.data.artifacts.filter((artifact) => {
               return artifact.name == "card_db"
             });
+            var prNumberArtifacts = artifacts.data.artifacts.filter((artifact) => {
+              return artifact.name == "pr_number"
+            });
             if (matchArtifacts.length > 0) {
               var matchArtifact = matchArtifacts[0];
               var download = await github.rest.actions.downloadArtifact({
@@ -49,10 +58,43 @@ jobs:
               });
               var fs = require('fs');
               fs.writeFileSync('${{github.workspace}}/card_db.zip', Buffer.from(download.data));
+              if (prNumberArtifacts.length > 0) {
+                var prNumberArtifact = prNumberArtifacts[0];
+                var prNumberDownload = await github.rest.actions.downloadArtifact({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  artifact_id: prNumberArtifact.id,
+                  archive_format: 'zip',
+                });
+                fs.writeFileSync('${{github.workspace}}/pr_number.zip', Buffer.from(prNumberDownload.data));
+              }
               return 'found_artifact';
             } else {
               return 'no_artifact'
             }
+      - name: Resolve source PR number
+        id: source-pr
+        env:
+          PAYLOAD_PR_NUMBER: ${{ steps.source-pr-payload.outputs.result }}
+        run: |
+          PR_NUMBER=""
+          if [ -f pr_number.zip ]; then
+            mkdir -p pr_meta
+            unzip -o -d pr_meta pr_number.zip
+            PR_NUMBER="$(tr -d '\r\n' < pr_meta/pr_number)"
+          fi
+
+          if [ -z "$PR_NUMBER" ]; then
+            PR_NUMBER="$PAYLOAD_PR_NUMBER"
+          fi
+
+          if [ -z "$PR_NUMBER" ]; then
+            echo "Unable to determine source PR number."
+            exit 1
+          fi
+
+          echo "Resolved source PR number: $PR_NUMBER"
+          echo "result=$PR_NUMBER" >> "$GITHUB_OUTPUT"
       - name: Close stale auto PRs if no card DB changes
         if: steps.get-artifact.outputs.result == 'no_artifact'
         uses: actions/github-script@v8
