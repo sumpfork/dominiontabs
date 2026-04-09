@@ -6,8 +6,8 @@ jobs:
   compile_card_db:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: 3.9
       - run: |
@@ -24,7 +24,7 @@ jobs:
           sudo apt install python3-icu
       - name: test generation with compiled Languages
         run: pytest -k "test_languages"
-      - uses: dorny/paths-filter@v2
+      - uses: dorny/paths-filter@v3
         id: filter
         with:
           base: HEAD
@@ -32,7 +32,7 @@ jobs:
             cardb_target:
               - src/domdiv/card_db/**
       - name: Create Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: steps.filter.outputs.cardb_target == 'true'
         with:
           name: card_db
@@ -46,7 +46,7 @@ jobs:
           echo $PR_NUMBER > ./pr/pr_number
       - name: Upload PR Artifact
         if: steps.filter.outputs.cardb_target == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: pr_number
           path: pr/
