@@ -19,7 +19,6 @@ jobs:
       - run: |
           pip install .
       - name: Install PyICU
-        if: ${{ matrix.os == 'ubuntu-latest'}}
         run: |
           sudo apt update
           sudo apt install python3-icu

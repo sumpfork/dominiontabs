@@ -279,7 +279,7 @@ def main(card_db_dir, output_dir):
         ) as f:
             data = f.read()
             output_fname = os.path.join(output_dir, lang, f"bonuses_{lang}.json.gz")
-            if check_compressed_json_change(output_fname, data):
+            if not check_compressed_json_change(output_fname, data):
                 with gzip.open(
                     output_fname,
                     "wt",
