@@ -160,15 +160,26 @@ jobs:
         if: steps.get-artifact.outputs.result == 'found_artifact'
         uses: actions/github-script@v8
         env:
+          SOURCE_PR_NUMBER: ${{ steps.source-pr.outputs.result }}
           THIS_PR_NUMBER: ${{ steps.make-pr.outputs.pull-request-number }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            console.log(`new PR number: ${{ steps.make-pr.outputs.pull-request-number }}`)
-            console.log(process.env)
-            const { THIS_PR_NUMBER } = process.env
-            console.log(`new PR number: ${THIS_PR_NUMBER}`)
-            let issue_number = Number('${{ steps.source-pr.outputs.result }}');
+            const { SOURCE_PR_NUMBER, THIS_PR_NUMBER } = process.env;
+            console.log(`source PR number: ${SOURCE_PR_NUMBER}`);
+            console.log(`new PR number: ${THIS_PR_NUMBER}`);
+
+            if (!SOURCE_PR_NUMBER) {
+              core.setFailed('SOURCE_PR_NUMBER was empty in comment step.');
+              return;
+            }
+
+            const issue_number = Number(SOURCE_PR_NUMBER);
+            if (!Number.isInteger(issue_number) || issue_number <= 0) {
+              core.setFailed(`Invalid SOURCE_PR_NUMBER in comment step: ${SOURCE_PR_NUMBER}`);
+              return;
+            }
+
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
