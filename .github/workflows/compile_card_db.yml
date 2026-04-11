@@ -1,6 +1,9 @@
 name: Compile Card DB
 
-on: [pull_request, workflow_dispatch, push]
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  workflow_dispatch:
 
 jobs:
   compile_card_db:
@@ -9,6 +12,31 @@ jobs:
       cardb_target: ${{ steps.filter.outputs.cardb_target }}
     steps:
       - uses: actions/checkout@v6
+      - name: Debug event context
+        run: |
+          echo "event_name=${{ github.event_name }}"
+          echo "ref=${{ github.ref }}"
+          echo "sha=${{ github.sha }}"
+          echo "event_number=${{ github.event.number }}"
+          echo "pull_request_number=${{ github.event.pull_request.number }}"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          event_path = Path(os.environ["GITHUB_EVENT_PATH"])
+          payload = json.loads(event_path.read_text())
+          summary = {
+              "action": payload.get("action"),
+              "number": payload.get("number"),
+              "pull_request_number": (payload.get("pull_request") or {}).get("number"),
+              "pull_request_head_ref": ((payload.get("pull_request") or {}).get("head") or {}).get("ref"),
+              "pull_request_base_ref": ((payload.get("pull_request") or {}).get("base") or {}).get("ref"),
+              "repository_default_branch": (payload.get("repository") or {}).get("default_branch"),
+              "keys": sorted(payload.keys()),
+          }
+          print(json.dumps(summary, indent=2))
+          PY
       - uses: actions/setup-python@v6
         with:
           python-version: 3.9
@@ -44,7 +72,7 @@ jobs:
           path: compiled_card_db.tgz
   make_card_db_pr:
     needs: compile_card_db
-    if: ${{ github.event.pull_request.number != null }}
+    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.number != null }}
     uses: ./.github/workflows/make_card_db_pr.yml
     secrets: inherit
     with:
