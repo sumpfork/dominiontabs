@@ -3,6 +3,7 @@ name: Compile Card DB
 on:
   pull_request:
     types: [opened, reopened, synchronize]
+  push:
   workflow_dispatch:
 
 jobs:
@@ -10,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       cardb_target: ${{ steps.filter.outputs.cardb_target }}
+      source_pr_number: ${{ steps.resolve-pr.outputs.source_pr_number }}
+      base_branch: ${{ steps.resolve-pr.outputs.base_branch }}
     steps:
       - uses: actions/checkout@v6
       - name: Debug event context
@@ -37,6 +40,47 @@ jobs:
           }
           print(json.dumps(summary, indent=2))
           PY
+      - name: Resolve PR context
+        id: resolve-pr
+        uses: actions/github-script@v8
+        with:
+          result-encoding: string
+          script: |
+            const eventName = context.eventName;
+            const payload = context.payload;
+            const defaultBranch = payload.repository?.default_branch || '';
+
+            if (eventName === 'pull_request') {
+              const prNumber = String(payload.pull_request?.number || '');
+              const baseBranch = String(payload.pull_request?.base?.ref || defaultBranch);
+              core.setOutput('source_pr_number', prNumber);
+              core.setOutput('base_branch', baseBranch);
+              return `pull_request:${prNumber}:${baseBranch}`;
+            }
+
+            if (eventName === 'push') {
+              const branch = (payload.ref || '').replace('refs/heads/', '');
+              const head = `${context.repo.owner}:${branch}`;
+              const { data: prs } = await github.rest.pulls.list({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                head,
+                per_page: 1,
+              });
+
+              if (prs.length > 0) {
+                const prNumber = String(prs[0].number);
+                const baseBranch = String(prs[0].base.ref || defaultBranch);
+                core.setOutput('source_pr_number', prNumber);
+                core.setOutput('base_branch', baseBranch);
+                return `push_pr:${prNumber}:${baseBranch}`;
+              }
+            }
+
+            core.setOutput('source_pr_number', '');
+            core.setOutput('base_branch', defaultBranch);
+            return `no_pr:${defaultBranch}`;
       - uses: actions/setup-python@v6
         with:
           python-version: 3.9
@@ -72,10 +116,10 @@ jobs:
           path: compiled_card_db.tgz
   make_card_db_pr:
     needs: compile_card_db
-    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.number != null }}
+    if: ${{ needs.compile_card_db.outputs.source_pr_number != '' }}
     uses: ./.github/workflows/make_card_db_pr.yml
     secrets: inherit
     with:
-      source_pr_number: ${{ github.event.pull_request.number }}
-      base_branch: ${{ github.event.repository.default_branch }}
+      source_pr_number: ${{ needs.compile_card_db.outputs.source_pr_number }}
+      base_branch: ${{ needs.compile_card_db.outputs.base_branch }}
       cardb_target: ${{ needs.compile_card_db.outputs.cardb_target }}
