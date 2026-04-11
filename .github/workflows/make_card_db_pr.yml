@@ -9,9 +9,9 @@ on:
       base_branch:
         required: true
         type: string
-      has_changes:
+      cardb_target:
         required: true
-        type: boolean
+        type: string
 
 jobs:
   make_pr:
@@ -26,7 +26,7 @@ jobs:
         with:
           ref: ${{ inputs.base_branch }}
       - name: Close stale auto PRs if no card DB changes
-        if: ${{ !inputs.has_changes }}
+        if: ${{ inputs.cardb_target != 'true' }}
         uses: actions/github-script@v8
         env:
           SOURCE_PR_NUMBER: ${{ inputs.source_pr_number }}
@@ -69,18 +69,18 @@ jobs:
               console.log(`Closed stale auto PR #${pr.number}`);
             }
       - name: Download compiled card DB
-        if: ${{ inputs.has_changes }}
+        if: ${{ inputs.cardb_target == 'true' }}
         uses: actions/download-artifact@v8
         with:
           name: compiled-card-db
           path: .
           skip-decompress: true
       - name: Extract compiled card DB
-        if: ${{ inputs.has_changes }}
+        if: ${{ inputs.cardb_target == 'true' }}
         run: tar -xzf compiled_card_db.tgz
       - name: Make PR
         id: make-pr
-        if: ${{ inputs.has_changes }}
+        if: ${{ inputs.cardb_target == 'true' }}
         uses: peter-evans/create-pull-request@v8
         with:
           branch: auto-card-db/pr-${{ inputs.source_pr_number }}
@@ -93,7 +93,7 @@ jobs:
           add-paths: |
             src/domdiv/card_db/
       - name: Comment on PR
-        if: ${{ inputs.has_changes }}
+        if: ${{ inputs.cardb_target == 'true' }}
         uses: actions/github-script@v8
         env:
           SOURCE_PR_NUMBER: ${{ inputs.source_pr_number }}
