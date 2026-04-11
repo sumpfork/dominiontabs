@@ -5,6 +5,8 @@ on: [pull_request, workflow_dispatch, push]
 jobs:
   compile_card_db:
     runs-on: ubuntu-latest
+    outputs:
+      cardb_target: ${{ steps.filter.outputs.cardb_target }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
@@ -31,22 +33,21 @@ jobs:
           filters: |
             cardb_target:
               - src/domdiv/card_db/**
-      - name: Create Artifact
+      - name: Archive compiled card DB
+        if: steps.filter.outputs.cardb_target == 'true'
+        run: tar -czf compiled_card_db.tgz src/domdiv/card_db
+      - name: Upload compiled card DB artifact
         uses: actions/upload-artifact@v6
         if: steps.filter.outputs.cardb_target == 'true'
         with:
-          name: card_db
-          path: src/domdiv/card_db/
-      - name: Save PR number
-        if: steps.filter.outputs.cardb_target == 'true'
-        env:
-          PR_NUMBER: ${{ github.event.number }}
-        run: |
-          mkdir -p ./pr
-          echo $PR_NUMBER > ./pr/pr_number
-      - name: Upload PR Artifact
-        if: steps.filter.outputs.cardb_target == 'true'
-        uses: actions/upload-artifact@v6
-        with:
-          name: pr_number
-          path: pr/
+          name: compiled-card-db
+          path: compiled_card_db.tgz
+  make_card_db_pr:
+    needs: compile_card_db
+    if: ${{ github.event_name == 'pull_request' }}
+    uses: ./.github/workflows/make_card_db_pr.yml
+    secrets: inherit
+    with:
+      source_pr_number: ${{ github.event.pull_request.number }}
+      base_branch: ${{ github.event.repository.default_branch }}
+      has_changes: ${{ needs.compile_card_db.outputs.cardb_target == 'true' }}

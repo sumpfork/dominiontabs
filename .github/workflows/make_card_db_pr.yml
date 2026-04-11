@@ -1,16 +1,21 @@
 name: Make Card DB PR
 
 on:
-  workflow_run:
-    workflows:
-      - Compile Card DB
-    types:
-      - completed
+  workflow_call:
+    inputs:
+      source_pr_number:
+        required: true
+        type: string
+      base_branch:
+        required: true
+        type: string
+      has_changes:
+        required: true
+        type: boolean
 
 jobs:
   make_pr:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request' }}
     permissions:
       actions: read
       contents: write
@@ -18,88 +23,13 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v6
-      - name: Determine source PR number from workflow payload
-        id: source-pr-payload
-        uses: actions/github-script@v8
         with:
-          result-encoding: string
-          script: |
-            const prs = context.payload.workflow_run.pull_requests || [];
-            if (prs.length > 0) {
-              const prNumber = String(prs[0].number);
-              console.log(`source PR number (from workflow_run payload): ${prNumber}`);
-              return prNumber;
-            }
-            console.log('No source PR number found in workflow_run payload.');
-            return '';
-      - uses: actions/github-script@v8
-        id: get-artifact
-        with:
-          result-encoding: string
-          script: |
-            var artifacts = await github.rest.actions.listWorkflowRunArtifacts({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               run_id: ${{github.event.workflow_run.id }},
-            });
-            var matchArtifacts = artifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "card_db"
-            });
-            var prNumberArtifacts = artifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "pr_number"
-            });
-            if (matchArtifacts.length > 0) {
-              var matchArtifact = matchArtifacts[0];
-              var download = await github.rest.actions.downloadArtifact({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                artifact_id: matchArtifact.id,
-                archive_format: 'zip',
-              });
-              var fs = require('fs');
-              fs.writeFileSync('${{github.workspace}}/card_db.zip', Buffer.from(download.data));
-              if (prNumberArtifacts.length > 0) {
-                var prNumberArtifact = prNumberArtifacts[0];
-                var prNumberDownload = await github.rest.actions.downloadArtifact({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  artifact_id: prNumberArtifact.id,
-                  archive_format: 'zip',
-                });
-                fs.writeFileSync('${{github.workspace}}/pr_number.zip', Buffer.from(prNumberDownload.data));
-              }
-              return 'found_artifact';
-            } else {
-              return 'no_artifact'
-            }
-      - name: Resolve source PR number
-        id: source-pr
-        env:
-          PAYLOAD_PR_NUMBER: ${{ steps.source-pr-payload.outputs.result }}
-        run: |
-          PR_NUMBER=""
-          if [ -f pr_number.zip ]; then
-            mkdir -p pr_meta
-            unzip -o -d pr_meta pr_number.zip
-            PR_NUMBER="$(tr -d '\r\n' < pr_meta/pr_number)"
-          fi
-
-          if [ -z "$PR_NUMBER" ]; then
-            PR_NUMBER="$PAYLOAD_PR_NUMBER"
-          fi
-
-          if [ -z "$PR_NUMBER" ]; then
-            echo "Unable to determine source PR number."
-            exit 1
-          fi
-
-          echo "Resolved source PR number: $PR_NUMBER"
-          echo "result=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          ref: ${{ inputs.base_branch }}
       - name: Close stale auto PRs if no card DB changes
-        if: steps.get-artifact.outputs.result == 'no_artifact'
+        if: ${{ !inputs.has_changes }}
         uses: actions/github-script@v8
         env:
-          SOURCE_PR_NUMBER: ${{ steps.source-pr.outputs.result }}
+          SOURCE_PR_NUMBER: ${{ inputs.source_pr_number }}
         with:
           script: |
             const sourcePrNumber = Number(process.env.SOURCE_PR_NUMBER);
@@ -138,29 +68,35 @@ jobs:
               });
               console.log(`Closed stale auto PR #${pr.number}`);
             }
-      - run: unzip -o -d src/domdiv/card_db card_db.zip
-        if: steps.get-artifact.outputs.result == 'found_artifact'
-      - run: rm -f card_db.zip
-        if: steps.get-artifact.outputs.result == 'found_artifact'
+      - name: Download compiled card DB
+        if: ${{ inputs.has_changes }}
+        uses: actions/download-artifact@v8
+        with:
+          name: compiled-card-db
+          path: .
+          skip-decompress: true
+      - name: Extract compiled card DB
+        if: ${{ inputs.has_changes }}
+        run: tar -xzf compiled_card_db.tgz
       - name: Make PR
         id: make-pr
-        if: steps.get-artifact.outputs.result == 'found_artifact'
+        if: ${{ inputs.has_changes }}
         uses: peter-evans/create-pull-request@v8
         with:
-          branch: auto-card-db/pr-${{ steps.source-pr.outputs.result }}
-          title: 'Auto Card DB compile for #${{ steps.source-pr.outputs.result }}'
+          branch: auto-card-db/pr-${{ inputs.source_pr_number }}
+          title: 'Auto Card DB compile for #${{ inputs.source_pr_number }}'
           body: |
-            Auto-generate package card DB to from source card DB for PR #${{ steps.source-pr.outputs.result }}
+            Auto-generate package card DB to from source card DB for PR #${{ inputs.source_pr_number }}
           delete-branch: true
           reviewers: sumpfork
           assignees: sumpfork
           add-paths: |
             src/domdiv/card_db/
-      - name: 'Comment on PR'
-        if: steps.get-artifact.outputs.result == 'found_artifact'
+      - name: Comment on PR
+        if: ${{ inputs.has_changes }}
         uses: actions/github-script@v8
         env:
-          SOURCE_PR_NUMBER: ${{ steps.source-pr.outputs.result }}
+          SOURCE_PR_NUMBER: ${{ inputs.source_pr_number }}
           THIS_PR_NUMBER: ${{ steps.make-pr.outputs.pull-request-number }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -183,7 +119,7 @@ jobs:
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: issue_number,
+              issue_number,
               body: `It seems compiling the card DB on this PR produced changes.\n` +
                     `Ideally, please run "doit update-language" yourself on this PR and check in the results.\n` +
                     `Otherwise, PR #${THIS_PR_NUMBER} has the necessary (but unreviewed) changes.\n`
