@@ -44,10 +44,10 @@ jobs:
           path: compiled_card_db.tgz
   make_card_db_pr:
     needs: compile_card_db
-    if: ${{ github.event_name == 'pull_request' }}
+    if: ${{ github.event.pull_request.number != null && needs.compile_card_db.outputs.cardb_target == 'true' }}
     uses: ./.github/workflows/make_card_db_pr.yml
     secrets: inherit
     with:
       source_pr_number: ${{ github.event.pull_request.number }}
       base_branch: ${{ github.event.repository.default_branch }}
-      has_changes: ${{ needs.compile_card_db.outputs.cardb_target == 'true' }}
+      has_changes: true
