@@ -105,15 +105,12 @@ jobs:
           filters: |
             cardb_target:
               - src/domdiv/card_db/**
-      - name: Archive compiled card DB
-        if: steps.filter.outputs.cardb_target == 'true'
-        run: tar -czf compiled_card_db.tgz src/domdiv/card_db
       - name: Upload compiled card DB artifact
         uses: actions/upload-artifact@v6
         if: steps.filter.outputs.cardb_target == 'true'
         with:
           name: compiled-card-db
-          path: compiled_card_db.tgz
+          path: src/domdiv/card_db
   make_card_db_pr:
     needs: compile_card_db
     if: ${{ needs.compile_card_db.outputs.source_pr_number != '' }}

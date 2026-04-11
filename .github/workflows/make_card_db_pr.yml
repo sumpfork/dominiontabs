@@ -74,10 +74,6 @@ jobs:
         with:
           name: compiled-card-db
           path: .
-          skip-decompress: true
-      - name: Extract compiled card DB
-        if: ${{ inputs.cardb_target == 'true' }}
-        run: tar -xzf compiled_card_db.tgz
       - name: Make PR
         id: make-pr
         if: ${{ inputs.cardb_target == 'true' }}
