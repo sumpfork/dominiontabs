@@ -15,36 +15,10 @@ jobs:
       base_branch: ${{ steps.resolve-pr.outputs.base_branch }}
     steps:
       - uses: actions/checkout@v6
-      - name: Debug event context
-        run: |
-          echo "event_name=${{ github.event_name }}"
-          echo "ref=${{ github.ref }}"
-          echo "sha=${{ github.sha }}"
-          echo "event_number=${{ github.event.number }}"
-          echo "pull_request_number=${{ github.event.pull_request.number }}"
-          python - <<'PY'
-          import json
-          import os
-          from pathlib import Path
-
-          event_path = Path(os.environ["GITHUB_EVENT_PATH"])
-          payload = json.loads(event_path.read_text())
-          summary = {
-              "action": payload.get("action"),
-              "number": payload.get("number"),
-              "pull_request_number": (payload.get("pull_request") or {}).get("number"),
-              "pull_request_head_ref": ((payload.get("pull_request") or {}).get("head") or {}).get("ref"),
-              "pull_request_base_ref": ((payload.get("pull_request") or {}).get("base") or {}).get("ref"),
-              "repository_default_branch": (payload.get("repository") or {}).get("default_branch"),
-              "keys": sorted(payload.keys()),
-          }
-          print(json.dumps(summary, indent=2))
-          PY
       - name: Resolve PR context
         id: resolve-pr
         uses: actions/github-script@v8
         with:
-          result-encoding: string
           script: |
             const eventName = context.eventName;
             const payload = context.payload;
@@ -55,7 +29,7 @@ jobs:
               const baseBranch = String(payload.pull_request?.base?.ref || defaultBranch);
               core.setOutput('source_pr_number', prNumber);
               core.setOutput('base_branch', baseBranch);
-              return `pull_request:${prNumber}:${baseBranch}`;
+              return;
             }
 
             if (eventName === 'push') {
@@ -74,13 +48,12 @@ jobs:
                 const baseBranch = String(prs[0].base.ref || defaultBranch);
                 core.setOutput('source_pr_number', prNumber);
                 core.setOutput('base_branch', baseBranch);
-                return `push_pr:${prNumber}:${baseBranch}`;
+                return;
               }
             }
 
             core.setOutput('source_pr_number', '');
             core.setOutput('base_branch', defaultBranch);
-            return `no_pr:${defaultBranch}`;
       - uses: actions/setup-python@v6
         with:
           python-version: 3.9
