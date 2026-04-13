@@ -75,7 +75,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: compiled-card-db
-          path: .
+          path: src/domdiv/card_db
       - name: Debug auto PR branch
         run: |
           echo "source_pr_number=${{ inputs.source_pr_number }}"
