@@ -1,8 +1,6 @@
 name: Compile Card DB
 
 on:
-  pull_request:
-    types: [opened, reopened, synchronize]
   push:
   workflow_dispatch:
 
