@@ -16,6 +16,8 @@ on:
 jobs:
   make_pr:
     runs-on: ubuntu-latest
+    env:
+      AUTO_PR_BRANCH: auto-card-db/source-pr-${{ inputs.source_pr_number }}
     permissions:
       actions: read
       contents: write
@@ -74,12 +76,18 @@ jobs:
         with:
           name: compiled-card-db
           path: .
+      - name: Debug auto PR branch
+        run: |
+          echo "source_pr_number=${{ inputs.source_pr_number }}"
+          echo "base_branch=${{ inputs.base_branch }}"
+          echo "cardb_target=${{ inputs.cardb_target }}"
+          echo "auto_pr_branch=${AUTO_PR_BRANCH}"
       - name: Make PR
         id: make-pr
         if: ${{ inputs.cardb_target == 'true' }}
         uses: peter-evans/create-pull-request@v8
         with:
-          branch: auto-card-db/pr-${{ inputs.source_pr_number }}
+          branch: ${{ env.AUTO_PR_BRANCH }}
           title: 'Auto Card DB compile for #${{ inputs.source_pr_number }}'
           body: |
             Auto-generate package card DB to from source card DB for PR #${{ inputs.source_pr_number }}
