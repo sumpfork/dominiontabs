@@ -1,7 +1,9 @@
-FROM python:3.9-slim AS compile-image
+FROM python:3.10-slim AS compile-image
 
 # Add git for hooks
 RUN apt-get update && apt-get install -y --no-install-recommends python3-icu git
+
+COPY --from=ghcr.io/astral-sh/uv:0.7.2 /uv /uvx /bin/
 
 # Set the working directory in the container (creating it in the process)
 WORKDIR /app
@@ -10,6 +12,6 @@ WORKDIR /app
 COPY . .
 
 # install the application
-RUN pip install . && rm -rf ~/.cache/pip
+RUN uv pip install --system .
 
 ENTRYPOINT ["/usr/local/bin/dominion_dividers"]

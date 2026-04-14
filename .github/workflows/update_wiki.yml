@@ -11,27 +11,27 @@ jobs:
   publish-wiki:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           repository: ${{github.repository}}.wiki
           path: wiki_repo
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
             path: repo
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
-          python-version: 3.9
+          python-version: 3.10
+      - uses: astral-sh/setup-uv@v6
       - name: Install dominion-dividers
         run: |
           cd repo
-          pip install -r requirements.txt
-          pip install .
+          uv sync
       - name: Generate Options Doc
         shell: bash
         run: |
             cd wiki_repo
             echo '```' > "Documentation-(Script-Options).md"
-            dominion_dividers --help >> "Documentation-(Script-Options).md"
+            uv run --directory ../repo dominion_dividers --help >> "Documentation-(Script-Options).md"
             echo '```' >> "Documentation-(Script-Options).md"
       - name: Commit files
         run: |
