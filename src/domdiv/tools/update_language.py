@@ -20,7 +20,6 @@ from shutil import copyfile
 from domdiv.tools.common import (
     LANGUAGE_DEFAULT,
     LANGUAGE_XX,
-    check_compressed_json_change,
     get_json_data,
     get_languages,
     load_card_data,
@@ -274,18 +273,10 @@ def main(card_db_dir, output_dir):
         if lang == LANGUAGE_XX:
             fromLanguage = LANGUAGE_DEFAULT
 
-        with open(
-            os.path.join(card_db_dir, fromLanguage, "bonuses_" + fromLanguage + ".json")
-        ) as f:
-            data = f.read()
-            output_fname = os.path.join(output_dir, lang, f"bonuses_{lang}.json.gz")
-            if not check_compressed_json_change(output_fname, data):
-                with gzip.open(
-                    output_fname,
-                    "wt",
-                    encoding="utf-8",
-                ) as fout:
-                    fout.write(data)
+        data = get_json_data(
+            os.path.join(card_db_dir, fromLanguage, f"bonuses_{fromLanguage}.json")
+        )
+        write_data(data, os.path.join(output_dir, lang, f"bonuses_{lang}.json"))
 
     ###########################################################################
     # translation.txt
