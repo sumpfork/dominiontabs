@@ -8,7 +8,7 @@ jobs:
   compile_card_db:
     runs-on: ubuntu-latest
     outputs:
-      cardb_target: ${{ steps.filter.outputs.cardb_target }}
+      cardb_target: ${{ steps.compare.outputs.cardb_target }}
       source_pr_number: ${{ steps.resolve-pr.outputs.source_pr_number }}
       base_branch: ${{ steps.resolve-pr.outputs.base_branch }}
     steps:
@@ -69,16 +69,26 @@ jobs:
           sudo apt install python3-icu
       - name: test generation with compiled Languages
         run: pytest -k "test_languages"
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          base: HEAD
-          filters: |
-            cardb_target:
-              - src/domdiv/card_db/**
+      - name: Fetch target branch for comparison
+        if: ${{ steps.resolve-pr.outputs.source_pr_number != '' }}
+        run: git fetch --no-tags origin "${{ steps.resolve-pr.outputs.base_branch }}"
+      - name: Compare compiled card DB to target branch
+        id: compare
+        shell: bash
+        run: |
+          if [ -z "${{ steps.resolve-pr.outputs.source_pr_number }}" ]; then
+            echo "cardb_target=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if git diff --quiet "origin/${{ steps.resolve-pr.outputs.base_branch }}" -- src/domdiv/card_db/; then
+            echo "cardb_target=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "cardb_target=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Upload compiled card DB artifact
         uses: actions/upload-artifact@v6
-        if: steps.filter.outputs.cardb_target == 'true'
+        if: steps.compare.outputs.cardb_target == 'true'
         with:
           name: compiled-card-db
           path: src/domdiv/card_db
