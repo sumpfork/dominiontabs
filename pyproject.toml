@@ -20,8 +20,10 @@ requires-python = ">= 3.8"
 "Homepage" = "http://domtabs.sandflea.org"
 
 [project.optional-dependencies]
-dev = ["build", "twine", "pre-commit", "doit", "pytest"]
 fontfix = ["cu2qu", "fonttools"]
+
+[dependency-groups]
+dev = ["build", "twine", "pre-commit", "doit", "pytest"]
 
 [project.scripts]
 dominion_dividers = "domdiv.main:main"
