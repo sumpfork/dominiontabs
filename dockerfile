@@ -1,4 +1,4 @@
-FROM python:3.9-slim AS compile-image
+FROM python:3.10-slim AS compile-image
 
 # Add git for hooks
 RUN apt-get update && apt-get install -y --no-install-recommends python3-icu git
