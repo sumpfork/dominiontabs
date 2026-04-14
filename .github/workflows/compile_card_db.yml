@@ -55,20 +55,17 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: 3.9
+      - uses: astral-sh/setup-uv@v6
       - run: |
-          pip install -r requirements.txt
-          pip install -r dev-requirements.txt
-          pip install .
+          uv sync
       - name: Update Languages
-        run: doit update_languages
-      - run: |
-          pip install .
+        run: uv run doit update_languages
       - name: Install PyICU
         run: |
           sudo apt update
           sudo apt install python3-icu
       - name: test generation with compiled Languages
-        run: pytest -k "test_languages"
+        run: uv run pytest -k "test_languages"
       - name: Fetch target branch for comparison
         if: ${{ steps.resolve-pr.outputs.source_pr_number != '' }}
         run: git fetch --no-tags origin "${{ steps.resolve-pr.outputs.base_branch }}"

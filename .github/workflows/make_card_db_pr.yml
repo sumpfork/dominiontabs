@@ -125,6 +125,6 @@ jobs:
               repo: context.repo.repo,
               issue_number,
               body: `It seems compiling the card DB on this PR produced changes.\n` +
-                    `Ideally, please run "doit update-language" yourself on this PR and check in the results.\n` +
+                    `Ideally, please run "uv run doit update_languages" yourself on this PR and check in the results.\n` +
                     `Otherwise, PR #${THIS_PR_NUMBER} has the necessary (but unreviewed) changes.\n`
             });
