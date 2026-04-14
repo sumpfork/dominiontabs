@@ -12,7 +12,7 @@ Again, to generate tabs go to the **[Online Generator](http://domdiv.bgtools.net
 
 If you install [`uv`](https://docs.astral.sh/uv/getting-started/installation/) you can just run `uvx --from domdiv dominion_dividers`. It should work, but see notes on better fonts and multilingual sorting below (the warnings will mention these).
 
-If you do need to install the package locally (the script provides a lot more options than the web-based generator), a simple `pip install domdiv` should suffice, providing a command by the name of `dominion_dividers`. However, see the note under Prerequisites->Fonts below as the default install will fall back on a font that doesn't match the cards (though most people don't notice). Run `dominion_dividers <outfile>` to get a pdf of all dividers with the default options, or run `dominion_dividers --help` to see the (extensive) list of options.
+If you do need to install the package locally (the script provides a lot more options than the web-based generator), run `uv tool install domdiv`, which will provide a command named `dominion_dividers`. However, see the note under Prerequisites->Fonts below as the default install will fall back on a font that doesn't match the cards (though most people don't notice). Run `dominion_dividers <outfile>` to get a pdf of all dividers with the default options, or run `dominion_dividers --help` to see the (extensive) list of options.
 
 Additionally, to ensure the card dividers are generated sorted by correct alphabetical order (especially for languages with many accented characters (e.g. Czech)), you are advised to install the optional `PyICU` [library](https://gitlab.pyicu.org/main/pyicu). If `PyICU` is installed ([instructions](https://github.com/sumpfork/dominiontabs/wiki/PyICU-Installation-Instructions)), the script will sort the card dividers based on selected language alphabet (e.g. in Czech `z < ž`). Otherwise, default sorting will be used (the cards beginning with accented characters will be at the end of the sorted set).
 
@@ -22,7 +22,7 @@ The script has an extensive set of options that are relatively well documented v
 
 ## Translations
 
-When changing any of the [card database files](card_db_src) you should run the language update tool via `doit update_languages`. This produces [the package version of the card db](src/domdiv/card_db) from the card db source. This will also be run automatically and checked into git when you push to github. You should make sure that the resulting changes to the package are what you intend by generating dividers in the relevant languages.
+When changing any of the [card database files](card_db_src) you should run the language update tool via `uv run doit update_languages`. This produces [the package version of the card db](src/domdiv/card_db) from the card db source. This will also be run automatically and checked into git when you push to github. You should make sure that the resulting changes to the package are what you intend by generating dividers in the relevant languages.
 
 If you would like to help with translations to new (or updating existing) languages, please see [instructions here](src/domdiv/card_db/translation.md).
 
@@ -38,7 +38,7 @@ To supply fonts locally, put them in a directory and supply the relative path to
 
 ### tools/fontfixer
 There is a python native fontfixer.py that can be run with: \
-```uv sync --extra fontfix && uv run fontifx -d path/to/fonts``` \
+```uv sync --extra fontfix && uv run fontfix -d path/to/fonts``` \
 Reads .otf fonts and outputs .ttf fonts to local_fonts diretory.
 
 ## Using as a library
@@ -47,11 +47,11 @@ The library will be installed as `domdiv` with the main entry point being `domdi
 
 ## Developing
 
-Install requirements via `pip install -r requirements.txt`. Then, run `pre-commit install`. You can use `pip install -e .[dev]` to install the `dominion_dividers` script so that it calls your checked out code, enabling you to run edited code without having to perform an install every time. This also installs needed dev dependencies, or if you want the pinned versions use `pip install -r dev-requirements.txt` instead.
+Install [`uv`](https://docs.astral.sh/uv/getting-started/installation/) and run `uv sync --extra dev`. Then, run `uv run pre-commit install`. The editable project install and dev dependencies are managed through `.venv`, so commands like `uv run dominion_dividers`, `uv run pytest`, and `uv run python -m build` all use your checked out code without needing a separate `pip install -e`.
 
 Feel free to comment on boardgamegeek at <https://boardgamegeek.com/thread/926575/web-page-generate-tabbed-dividers> or file issues on github (<https://github.com/sumpfork/dominiontabs/issues>).
 
-Tests can be run (and their dependencies installed) via `pip install .[dev]` and then `doit test`. They will also run if/when you push a branch or make a PR.
+Tests can be run via `uv run doit test`. They will also run if/when you push a branch or make a PR.
 
 ## Image Sources
 
