@@ -31,11 +31,13 @@ jobs:
         if: ${{ inputs.cardb_target != 'true' }}
         uses: actions/github-script@v8
         env:
+          AUTO_PR_BRANCH: ${{ env.AUTO_PR_BRANCH }}
           SOURCE_PR_NUMBER: ${{ inputs.source_pr_number }}
         with:
           script: |
             const sourcePrNumber = Number(process.env.SOURCE_PR_NUMBER);
             const targetTitle = `Auto Card DB compile for #${sourcePrNumber}`;
+            const targetHeadRef = process.env.AUTO_PR_BRANCH;
             let page = 1;
             let openAutoPrs = [];
 
@@ -52,7 +54,11 @@ jobs:
                 break;
               }
 
-              openAutoPrs = openAutoPrs.concat(prs.filter((pr) => pr.title === targetTitle));
+              openAutoPrs = openAutoPrs.concat(
+                prs.filter(
+                  (pr) => pr.head.ref === targetHeadRef || pr.title === targetTitle
+                )
+              );
               page += 1;
             }
 
