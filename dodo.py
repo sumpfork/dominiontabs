@@ -49,7 +49,7 @@ def task_build():
     return {
         "file_dep": files,
         "task_dep": ["update_languages"],
-        "actions": ["uv sync --extra dev", "uv run python -m build"],
+        "actions": ["uv sync", "uv run python -m build"],
     }
 
 
@@ -59,4 +59,4 @@ def task_make_bgg_release():
 
 def task_test():
     files = glob_no_dirs("src/domdiv/**")
-    return {"file_dep": files, "actions": ["uv sync --extra dev", "uv run pytest"]}
+    return {"file_dep": files, "actions": ["uv sync", "uv run pytest"]}

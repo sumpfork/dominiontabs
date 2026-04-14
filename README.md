@@ -47,7 +47,7 @@ The library will be installed as `domdiv` with the main entry point being `domdi
 
 ## Developing
 
-Install [`uv`](https://docs.astral.sh/uv/getting-started/installation/) and run `uv sync --extra dev`. Then, run `uv run pre-commit install`. The editable project install and dev dependencies are managed through `.venv`, so commands like `uv run dominion_dividers`, `uv run pytest`, and `uv run python -m build` all use your checked out code without needing a separate `pip install -e`.
+Install [`uv`](https://docs.astral.sh/uv/getting-started/installation/) and run `uv sync`. The `dev` dependency group is included by default, so this will install the development tooling too. Then, run `uv run pre-commit install`. The editable project install and dev dependencies are managed through `.venv`, so commands like `uv run dominion_dividers`, `uv run pytest`, and `uv run python -m build` all use your checked out code without needing a separate `pip install -e`.
 
 Feel free to comment on boardgamegeek at <https://boardgamegeek.com/thread/926575/web-page-generate-tabbed-dividers> or file issues on github (<https://github.com/sumpfork/dominiontabs/issues>).
 

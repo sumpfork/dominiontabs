@@ -12,7 +12,7 @@ jobs:
           python-version: 3.9
       - uses: astral-sh/setup-uv@v6
       - run: |
-          uv sync --extra dev
+          uv sync
       - name: Update Languages
         run: uv run doit update_languages
       - name: Install PyICU
