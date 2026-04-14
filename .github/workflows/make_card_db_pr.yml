@@ -1,115 +1,129 @@
 name: Make Card DB PR
 
 on:
-  workflow_run:
-    workflows:
-      - Compile Card DB
-    types:
-      - completed
+  workflow_call:
+    inputs:
+      source_pr_number:
+        required: true
+        type: string
+      base_branch:
+        required: true
+        type: string
+      cardb_target:
+        required: true
+        type: string
 
 jobs:
   make_pr:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    env:
+      AUTO_PR_BRANCH: auto-card-db/source-pr-${{ inputs.source_pr_number }}
+    permissions:
+      actions: read
+      contents: write
+      issues: write
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/github-script@v6
-        id: get-artifact
+      - uses: actions/checkout@v6
         with:
-          result-encoding: string
+          ref: ${{ inputs.base_branch }}
+      - name: Close stale auto PRs if no card DB changes
+        if: ${{ inputs.cardb_target != 'true' }}
+        uses: actions/github-script@v8
+        env:
+          AUTO_PR_BRANCH: ${{ env.AUTO_PR_BRANCH }}
+          SOURCE_PR_NUMBER: ${{ inputs.source_pr_number }}
+        with:
           script: |
-            var artifacts = await github.rest.actions.listWorkflowRunArtifacts({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               run_id: ${{github.event.workflow_run.id }},
-            });
-            var matchArtifacts = artifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "card_db"
-            });
-            if (matchArtifacts.length > 0) {
-              var matchArtifact = matchArtifacts[0];
-              var download = await github.rest.actions.downloadArtifact({
+            const sourcePrNumber = Number(process.env.SOURCE_PR_NUMBER);
+            const targetTitle = `Auto Card DB compile for #${sourcePrNumber}`;
+            const targetHeadRef = process.env.AUTO_PR_BRANCH;
+            let page = 1;
+            let openAutoPrs = [];
+
+            while (true) {
+              const { data: prs } = await github.rest.pulls.list({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                artifact_id: matchArtifact.id,
-                archive_format: 'zip',
+                state: 'open',
+                per_page: 100,
+                page,
               });
-              var fs = require('fs');
-              fs.writeFileSync('${{github.workspace}}/card_db.zip', Buffer.from(download.data));
-              return 'found_artifact';
-            } else {
-              return 'no_artifact'
+
+              if (prs.length === 0) {
+                break;
+              }
+
+              openAutoPrs = openAutoPrs.concat(
+                prs.filter(
+                  (pr) => pr.head.ref === targetHeadRef || pr.title === targetTitle
+                )
+              );
+              page += 1;
             }
-      - run: unzip -o -d src/domdiv/card_db card_db.zip
-        if: steps.get-artifact.outputs.result == 'found_artifact'
-      - run: rm -f card_db.zip
-        if: steps.get-artifact.outputs.result == 'found_artifact'
-      - name: 'Download PR number artifact'
-        if: steps.get-artifact.outputs.result == 'found_artifact'
-        uses: actions/github-script@v6
+
+            if (openAutoPrs.length === 0) {
+              console.log(`No open auto PR found for title: ${targetTitle}`);
+              return;
+            }
+
+            for (const pr of openAutoPrs) {
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number,
+                state: 'closed',
+              });
+              console.log(`Closed stale auto PR #${pr.number}`);
+            }
+      - name: Download compiled card DB
+        if: ${{ inputs.cardb_target == 'true' }}
+        uses: actions/download-artifact@v8
         with:
-          script: |
-            let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               run_id: ${{github.event.workflow_run.id }},
-            });
-            let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
-              return artifact.name == "pr_number"
-            })[0];
-            let download = await github.rest.actions.downloadArtifact({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               artifact_id: matchArtifact.id,
-               archive_format: 'zip',
-            });
-            let fs = require('fs');
-            fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/pr_number.zip`, Buffer.from(download.data));
-      - name: 'Unzip PR Number artifact'
-        if: steps.get-artifact.outputs.result == 'found_artifact'
-        run: unzip pr_number.zip
-      - name: 'Read PR number'
-        id: read-pr-number
-        if: steps.get-artifact.outputs.result == 'found_artifact'
-        uses: actions/github-script@v6
-        with:
-          result-encoding: string
-          script: |
-            let fs = require('fs');
-            let pr_number = Number(fs.readFileSync('./pr_number'));
-            console.log(`original pr number: ${pr_number}`)
-            return pr_number
+          name: compiled-card-db
+          path: src/domdiv/card_db
       - name: Make PR
         id: make-pr
-        if: steps.get-artifact.outputs.result == 'found_artifact'
-        uses: peter-evans/create-pull-request@v5
+        if: ${{ inputs.cardb_target == 'true' }}
+        uses: peter-evans/create-pull-request@v8
         with:
-          title: 'Auto Card DB compile for #${{ steps.read-pr-number.outputs.result }}'
+          branch: ${{ env.AUTO_PR_BRANCH }}
+          title: 'Auto Card DB compile for #${{ inputs.source_pr_number }}'
           body: |
-            Auto-generate package card DB to from source card DB for PR #${{ steps.read-pr-number.outputs.result }}
+            Auto-generate package card DB to from source card DB for PR #${{ inputs.source_pr_number }}
           delete-branch: true
           reviewers: sumpfork
           assignees: sumpfork
           add-paths: |
             src/domdiv/card_db/
-      - name: 'Comment on PR'
-        if: steps.get-artifact.outputs.result == 'found_artifact'
-        uses: actions/github-script@v6
+      - name: Comment on PR
+        if: ${{ inputs.cardb_target == 'true' }}
+        uses: actions/github-script@v8
         env:
+          SOURCE_PR_NUMBER: ${{ inputs.source_pr_number }}
           THIS_PR_NUMBER: ${{ steps.make-pr.outputs.pull-request-number }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            console.log(`new PR number: ${{ steps.make-pr.outputs.pull-request-number }}`)
-            console.log(process.env)
-            const { THIS_PR_NUMBER } = process.env
-            console.log(`new PR number: ${THIS_PR_NUMBER}`)
-            let fs = require('fs');
-            let issue_number = Number(fs.readFileSync('./pr_number'));
+            const { SOURCE_PR_NUMBER, THIS_PR_NUMBER } = process.env;
+            console.log(`source PR number: ${SOURCE_PR_NUMBER}`);
+            console.log(`new PR number: ${THIS_PR_NUMBER}`);
+
+            if (!SOURCE_PR_NUMBER) {
+              core.setFailed('SOURCE_PR_NUMBER was empty in comment step.');
+              return;
+            }
+
+            const issue_number = Number(SOURCE_PR_NUMBER);
+            if (!Number.isInteger(issue_number) || issue_number <= 0) {
+              core.setFailed(`Invalid SOURCE_PR_NUMBER in comment step: ${SOURCE_PR_NUMBER}`);
+              return;
+            }
+
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: issue_number,
+              issue_number,
               body: `It seems compiling the card DB on this PR produced changes.\n` +
                     `Ideally, please run "uv run doit update_languages" yourself on this PR and check in the results.\n` +
                     `Otherwise, PR #${THIS_PR_NUMBER} has the necessary (but unreviewed) changes.\n`

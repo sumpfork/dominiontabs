@@ -27,13 +27,10 @@ def task_update_languages():
         + ["src/domdiv/tools/update_language.py", "src/domdiv/tools/common.py"],
         "actions": [lambda: update_language.main("card_db_src", "src/domdiv/card_db")],
         "targets": [
-            os.path.join(
-                "src",
-                "domdiv",
-                "card_db",
-                os.path.sep.join(fname.split(os.path.sep)[1:]),
-            )
+            os.path.join("src", "domdiv", "card_db", fname.removeprefix("card_db_src/"))
+            + ".gz"
             for fname in files
+            if fname.endswith(".json")
         ],
         "clean": True,
     }
