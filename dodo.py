@@ -14,9 +14,9 @@ def task_compile_requirements():
     return {
         "file_dep": ["pyproject.toml"],
         "actions": [
-            "pip-compile -U --no-emit-index-url --resolver=backtracking pyproject.toml",
+            "uv lock",
         ],
-        "targets": ["requirements.txt"],
+        "targets": ["uv.lock"],
     }
 
 
@@ -27,13 +27,10 @@ def task_update_languages():
         + ["src/domdiv/tools/update_language.py", "src/domdiv/tools/common.py"],
         "actions": [lambda: update_language.main("card_db_src", "src/domdiv/card_db")],
         "targets": [
-            os.path.join(
-                "src",
-                "domdiv",
-                "card_db",
-                os.path.sep.join(fname.split(os.path.sep)[1:]),
-            )
+            os.path.join("src", "domdiv", "card_db", fname.removeprefix("card_db_src/"))
+            + ".gz"
             for fname in files
+            if fname.endswith(".json")
         ],
         "clean": True,
     }
@@ -49,7 +46,7 @@ def task_build():
     return {
         "file_dep": files,
         "task_dep": ["update_languages"],
-        "actions": ["pip install -e .[dev]", "python -m build"],
+        "actions": ["uv sync", "uv run python -m build"],
     }
 
 
@@ -59,4 +56,4 @@ def task_make_bgg_release():
 
 def task_test():
     files = glob_no_dirs("src/domdiv/**")
-    return {"file_dep": files, "actions": ["pip install -e .[dev]", "pytest"]}
+    return {"file_dep": files, "actions": ["uv sync", "uv run pytest"]}

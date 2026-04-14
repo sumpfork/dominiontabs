@@ -9,20 +9,19 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
-          python-version: 3.9
+          python-version: "3.10"
+      - uses: astral-sh/setup-uv@v6
       - run: |
-          pip install -r requirements.txt
-          pip install -r dev-requirements.txt
-          pip install .
+          uv sync
       - name: Install PyICU
         if: ${{ matrix.os == 'ubuntu-latest'}}
         run: |
           sudo apt update
           sudo apt install python3-icu
       - name: Lint
-        run: pre-commit run --all-files --show-diff-on-failure -v
+        run: uv run pre-commit run --all-files --show-diff-on-failure -v
       - name: Test
-        run: pytest
+        run: uv run pytest
