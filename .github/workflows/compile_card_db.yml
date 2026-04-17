@@ -8,10 +8,6 @@ on:
 jobs:
   compile_card_db:
     runs-on: ubuntu-latest
-    outputs:
-      cardb_target: ${{ steps.compare.outputs.cardb_target }}
-      source_pr_number: ${{ steps.resolve-pr.outputs.source_pr_number }}
-      base_branch: ${{ steps.resolve-pr.outputs.base_branch }}
     steps:
       - uses: actions/checkout@v6
       - name: Resolve PR context
@@ -19,53 +15,26 @@ jobs:
         uses: actions/github-script@v8
         with:
           script: |
-            const eventName = context.eventName;
             const payload = context.payload;
             const defaultBranch = payload.repository?.default_branch || '';
+            const prNumber = String(payload.pull_request?.number || '');
+            const baseBranch = String(payload.pull_request?.base?.ref || defaultBranch);
 
-            if (eventName === 'pull_request') {
-              const prNumber = String(payload.pull_request?.number || '');
-              const baseBranch = String(payload.pull_request?.base?.ref || defaultBranch);
-              core.setOutput('source_pr_number', prNumber);
-              core.setOutput('base_branch', baseBranch);
-              return;
-            }
-
-            if (eventName === 'push') {
-              const branch = (payload.ref || '').replace('refs/heads/', '');
-              const head = `${context.repo.owner}:${branch}`;
-              const { data: prs } = await github.rest.pulls.list({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                state: 'open',
-                head,
-                per_page: 1,
-              });
-
-              if (prs.length > 0) {
-                const prNumber = String(prs[0].number);
-                const baseBranch = String(prs[0].base.ref || defaultBranch);
-                core.setOutput('source_pr_number', prNumber);
-                core.setOutput('base_branch', baseBranch);
-                return;
-              }
-            }
-
-            core.setOutput('source_pr_number', '');
-            core.setOutput('base_branch', defaultBranch);
+            core.setOutput('source_pr_number', prNumber);
+            core.setOutput('base_branch', baseBranch);
       - uses: actions/setup-python@v6
         with:
           python-version: "3.10"
       - uses: astral-sh/setup-uv@v6
-      - run: |
-          uv sync
+      - run: uv sync
       - name: Update Languages
         run: uv run doit update_languages
       - name: Install PyICU
+        if: ${{ runner.os == 'Linux' }}
         run: |
           sudo apt update
           sudo apt install python3-icu
-      - name: test generation with compiled Languages
+      - name: Test generation with compiled languages
         run: uv run pytest -k "test_languages"
       - name: Fetch target branch for comparison
         if: ${{ steps.resolve-pr.outputs.source_pr_number != '' }}
@@ -84,18 +53,25 @@ jobs:
           else
             echo "cardb_target=true" >> "$GITHUB_OUTPUT"
           fi
-      - name: Upload compiled card DB artifact
+      - name: Save PR context artifact
+        if: ${{ steps.resolve-pr.outputs.source_pr_number != '' }}
+        shell: bash
+        run: |
+          mkdir -p pr_context
+          printf '%s\n' "${{ steps.resolve-pr.outputs.source_pr_number }}" > pr_context/pr_number
+          printf '%s\n' "${{ steps.resolve-pr.outputs.base_branch }}" > pr_context/base_branch
+      - name: Upload PR context artifact
+        if: ${{ steps.resolve-pr.outputs.source_pr_number != '' }}
         uses: actions/upload-artifact@v6
-        if: steps.compare.outputs.cardb_target == 'true'
+        with:
+          name: pr_context
+          path: pr_context
+      - name: Archive compiled card DB
+        if: ${{ steps.compare.outputs.cardb_target == 'true' }}
+        run: tar -czf compiled_card_db.tgz src/domdiv/card_db
+      - name: Upload compiled card DB artifact
+        if: ${{ steps.compare.outputs.cardb_target == 'true' }}
+        uses: actions/upload-artifact@v6
         with:
           name: compiled-card-db
-          path: src/domdiv/card_db
-  make_card_db_pr:
-    needs: compile_card_db
-    if: ${{ needs.compile_card_db.outputs.source_pr_number != '' }}
-    uses: ./.github/workflows/make_card_db_pr.yml
-    secrets: inherit
-    with:
-      source_pr_number: ${{ needs.compile_card_db.outputs.source_pr_number }}
-      base_branch: ${{ needs.compile_card_db.outputs.base_branch }}
-      cardb_target: ${{ needs.compile_card_db.outputs.cardb_target }}
+          path: compiled_card_db.tgz
