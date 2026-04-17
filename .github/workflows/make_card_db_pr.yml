@@ -53,8 +53,8 @@ jobs:
         if: ${{ steps.pr-context.outputs.result == 'found_pr_context' }}
         shell: bash
         run: |
-          echo "pr_number=$(tr -d '\r\n' < pr_context/pr_number)" >> "$GITHUB_OUTPUT"
-          echo "base_branch=$(tr -d '\r\n' < pr_context/base_branch)" >> "$GITHUB_OUTPUT"
+          echo "pr_number=$(tr -d '\r\n' < pr_number)" >> "$GITHUB_OUTPUT"
+          echo "base_branch=$(tr -d '\r\n' < base_branch)" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v6
         if: ${{ steps.pr-context.outputs.result == 'found_pr_context' }}
         with:
