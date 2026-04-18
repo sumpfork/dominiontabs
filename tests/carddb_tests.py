@@ -15,7 +15,7 @@ from tests import parse_and_clean_args
 def test_cardread():
     # we test the number of cards only to make sure it doesn't get changed
     # inadvertently by unrelated changes
-    num_cards_expected = 1068
+    num_cards_expected = 1074
 
     total_cards = sum(c.num_ungrouped_cards for c in expected_card_counts)
     assert total_cards == num_cards_expected
@@ -294,7 +294,8 @@ expected_card_counts = [
     ),
     ExpectedSetCardCount(
         "empires",
-        24 + 5 + 13 + 21,  # 24 kingdom, 5 split pile, 13 events, 21 landmarks
+        # TODO this includes all the split pile cards and also their randomizers.
+        24 + 10 + 13 + 21,  # 24 kingdom, 10 2-card split piles, 13 events, 21 landmarks
         24 + 2,
         300 - 24,
     ),
@@ -339,7 +340,7 @@ expected_card_counts = [
     ),
     ExpectedSetCardCount(
         "promo",
-        12 + 1,  # sauna/avanto split
+        12 + 2,  # sauna/avanto split pile (+ the randomizer in the main list)
         12,
         113,  # 1 victory, summon
     ),
