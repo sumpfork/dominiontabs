@@ -44,6 +44,17 @@
         "card_type": [
             "Action",
             "Attack",
+            "Knight"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Attack",
             "Looter"
         ],
         "card_type_image": "action.png",
@@ -347,6 +358,17 @@
         "card_type": [
             "Action",
             "Treasure",
+            "Loot"
+        ],
+        "card_type_image": "action-treasure.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Treasure",
             "Reward"
         ],
         "card_type_image": "action-treasure.png",
@@ -357,6 +379,29 @@
     {
         "card_type": [
             "Action",
+            "Victory"
+        ],
+        "card_type_image": "action-victory.png",
+        "defaultCardCount": 12,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Victory",
+            "Castle"
+        ],
+        "card_type_image": "action-victory.png",
+        "defaultCardCount": 12,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Attack",
+            "Knight",
             "Victory"
         ],
         "card_type_image": "action-victory.png",
@@ -912,7 +957,7 @@
     },
     {
         "card_type": [
-            "Shelters"
+            "Shelter"
         ],
         "card_type_image": "shelter.png",
         "defaultCardCount": 0,
@@ -992,6 +1037,27 @@
         "card_type": [
             "Treasure",
             "Attack"
+        ],
+        "card_type_image": "treasure.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
+            "Attack",
+            "Loot"
+        ],
+        "card_type_image": "treasure.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
+            "Command"
         ],
         "card_type_image": "treasure.png",
         "defaultCardCount": 10,
@@ -1105,6 +1171,17 @@
         "card_type": [
             "Treasure",
             "Victory"
+        ],
+        "card_type_image": "treasure-victory.png",
+        "defaultCardCount": 12,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
+            "Victory",
+            "Castle"
         ],
         "card_type_image": "treasure-victory.png",
         "defaultCardCount": 12,

@@ -28,7 +28,7 @@ def test_group_special():
     assert gladiator_fortune.cost == "3*"
 
     joust_matches = [c for c in cards if c.group_tag == "Joust and Rewards"]
-    assert len(joust_matches) == 1
+    assert len(joust_matches) == 2
     joust_rewards = joust_matches[0]
     assert joust_rewards.name.startswith("Joust")
     assert "Rewards" in joust_rewards.name

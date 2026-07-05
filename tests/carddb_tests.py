@@ -15,7 +15,7 @@ from tests import parse_and_clean_args
 def test_cardread():
     # we test the number of cards only to make sure it doesn't get changed
     # inadvertently by unrelated changes
-    num_cards_expected = 1074
+    num_cards_expected = 1148
 
     total_cards = sum(c.num_ungrouped_cards for c in expected_card_counts)
     assert total_cards == num_cards_expected
@@ -44,6 +44,7 @@ def test_cardread():
         "prosperity2ndEditionUpgrade",
         "cornucopia1stEdition",
         "cornucopia1stEditionRemoved",
+        "cornucopia2ndEdition",
         "cornucopia2ndEditionUpgrade",
         "cornucopiaAndGuilds2ndEdition",
         "hinterlands1stEdition",
@@ -53,6 +54,7 @@ def test_cardread():
         "darkAges",
         "guilds1stEdition",
         "guilds1stEditionRemoved",
+        "guilds2ndEdition",
         "guilds2ndEditionUpgrade",
         "guilds-bigbox2-de",
         "adventures",
@@ -191,14 +193,18 @@ expected_card_counts = [
     ),
     ExpectedSetCardCount(
         "prosperity1stEdition",
-        25 + 2,  # 25 kingdom, 2 base
-        25 + 2,  # no grouping
+        25
+        + 2
+        + 1,  # 25 kingdom, 2 base (Colony/Platinum), Colony-Platinum group header
+        25 + 2 - 1,  # Colony + Platinum grouped into Colony-Platinum
         300 - 25 - 1,  # 300 cards printed, 25 blue kingdom randomizers, 1 blank
     ),
     ExpectedSetCardCount(
         "prosperity2ndEdition",
-        25 + 2,  # 25 kingdom, 2 base
-        25 + 2,  # no grouping
+        25
+        + 2
+        + 1,  # 25 kingdom, 2 base (Colony/Platinum), Colony-Platinum group header
+        25 + 2 - 1,  # Colony + Platinum grouped into Colony-Platinum
         300 - 25 - 1,  # 300 cards printed, 25 blue kingdom randomizers, 1 blank
     ),
     ExpectedSetCardCount(
@@ -250,6 +256,12 @@ expected_card_counts = [
         55,
     ),
     ExpectedSetCardCount(
+        "cornucopia2ndEdition",
+        19,  # 8 original + Joust + 10 rewards
+        13,  # rewards grouped with Joust
+        144,
+    ),
+    ExpectedSetCardCount(
         "cornucopia2ndEditionUpgrade",
         5 + 6,  # 6 rewards
         5,  # 5 kingdom. Rewards grouped with Joust
@@ -268,6 +280,12 @@ expected_card_counts = [
         30,
     ),
     ExpectedSetCardCount(
+        "guilds2ndEdition",
+        13,  # 10 original + 3 new cards
+        13,  # no grouping
+        130,
+    ),
+    ExpectedSetCardCount(
         "guilds2ndEditionUpgrade",
         3,
         3,
@@ -281,9 +299,8 @@ expected_card_counts = [
     ),
     ExpectedSetCardCount(  # There was only ever one upgrade pack sold for both cornucopia and guilds combined
         "darkAges",
-        # TODO update when ungrouping ruins
-        35 + 4 + 3,  # 35 kingdom, spoils, ruins, madman, mercenary, 3 shelters.
-        35 + 3,  # spoils, ruins, shelters
+        58,  # 35 kingdom + Knights header + 10 individual knights + Ruins header + 5 individual ruins + Shelters header + 3 shelters + spoils + madman + mercenary
+        39,  # grouped: individual knights/ruins/shelters merged into group headers
         500 - 35,  # 500 cards printed, 35 randomizers
     ),
     ExpectedSetCardCount(
@@ -294,8 +311,7 @@ expected_card_counts = [
     ),
     ExpectedSetCardCount(
         "empires",
-        # TODO this includes all the split pile cards and also their randomizers.
-        24 + 10 + 13 + 21,  # 24 kingdom, 10 2-card split piles, 13 events, 21 landmarks
+        76,  # 24 kingdom, split pile cards, events, landmarks
         24 + 2,
         300 - 24,
     ),
@@ -327,8 +343,7 @@ expected_card_counts = [
     ),
     ExpectedSetCardCount(
         "plunder",
-        # TODO update when ungrouping loot
-        40 + 15 + 15 + 1,  # 40 kingdom, 15 trait, 15 event, loot
+        86,  # 40 kingdom, traits, events, loot cards
         40 + 1 + 1 + 1,  # 40 kingdom, traits, events, loot
         500 - 40,
     ),
@@ -346,8 +361,8 @@ expected_card_counts = [
     ),
     ExpectedSetCardCount(
         "base",
-        11,  # Curse, 4 victory, 4 treasure, potion, trash
-        11,
+        12,  # Curse, 4 victory, 4 treasure, potion, trash, Colony-Platinum group header
+        10,  # Colony + Platinum grouped into Colony-Platinum
         250 - 1,  # 250 printed, including 1 trash, 1 blank
     ),
     ExpectedSetCardCount(
