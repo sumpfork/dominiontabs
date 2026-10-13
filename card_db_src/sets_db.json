@@ -47,7 +47,7 @@
             "latest"
         ],
         "has_extras": false,
-        "image": "",
+        "image": "base_set.png",
         "no_randomizer": true,
         "set_name": "*base*",
         "set_text": "",
@@ -80,6 +80,21 @@
         "image": "cornucopia_set.png",
         "removed": "cornucopiaAndGuilds2ndEdition",
         "set_name": "*cornucopia1stEditionRemoved*",
+        "set_text": "",
+        "short_name": "Cornucopia",
+        "text_icon": "*"
+    },
+    "cornucopia2ndEdition": {
+        "all_images": [
+            "cornucopia_set.png",
+            "cornucopia_guilds_set.png"
+        ],
+        "edition": [
+            "2",
+            "latest"
+        ],
+        "image": "cornucopia_guilds_set.png",
+        "set_name": "*cornucopia2ndEdition*",
         "set_text": "",
         "short_name": "Cornucopia",
         "text_icon": "*"
@@ -247,6 +262,21 @@
         "image": "guilds_set.png",
         "removed": "cornucopiaAndGuilds2ndEdition",
         "set_name": "*guilds1stEditionRemoved*",
+        "set_text": "",
+        "short_name": "Guilds",
+        "text_icon": "*"
+    },
+    "guilds2ndEdition": {
+        "all_images": [
+            "guilds_set.png",
+            "cornucopia_guilds_set.png"
+        ],
+        "edition": [
+            "2",
+            "latest"
+        ],
+        "image": "cornucopia_guilds_set.png",
+        "set_name": "*guilds2ndEdition*",
         "set_text": "",
         "short_name": "Guilds",
         "text_icon": "*"
