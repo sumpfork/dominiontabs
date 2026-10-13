@@ -35,10 +35,7 @@ jobs:
           sudo apt install python3-icu
       - name: Test generation with compiled languages
         run: uv run pytest -k "test_languages"
-      - name: Fetch target branch for comparison
-        if: ${{ steps.resolve-pr.outputs.source_pr_number != '' }}
-        run: git fetch --no-tags origin "${{ steps.resolve-pr.outputs.base_branch }}"
-      - name: Compare compiled card DB to target branch
+      - name: Check whether compiling changed the checked-in card DB
         id: compare
         shell: bash
         run: |
@@ -47,7 +44,8 @@ jobs:
             exit 0
           fi
 
-          if git diff --quiet "origin/${{ steps.resolve-pr.outputs.base_branch }}" -- src/domdiv/card_db/; then
+          # Compare against the PR's own checked-in files (including new untracked ones), not the target branch
+          if [ -z "$(git status --porcelain -- src/domdiv/card_db/)" ]; then
             echo "cardb_target=false" >> "$GITHUB_OUTPUT"
           else
             echo "cardb_target=true" >> "$GITHUB_OUTPUT"
