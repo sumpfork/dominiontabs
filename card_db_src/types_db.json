@@ -22,6 +22,17 @@
         "card_type": [
             "Action",
             "Attack",
+            "Knight"
+        ],
+        "card_type_image": "action.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Action",
+            "Attack",
             "Doom"
         ],
         "card_type_image": "action.png",
@@ -412,6 +423,16 @@
             "Liaison"
         ],
         "card_type_image": "action.png",
+        "defaultCardCount": 10,
+        "tabCostHeightOffset": -1,
+        "tabTextHeightOffset": 0
+    },
+    {
+        "card_type": [
+            "Treasure",
+            "Command"
+        ],
+        "card_type_image": "treasure.png",
         "defaultCardCount": 10,
         "tabCostHeightOffset": -1,
         "tabTextHeightOffset": 0

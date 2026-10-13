@@ -2139,7 +2139,9 @@
         ],
         "cost": "5",
         "types": [
-            "Action"
+            "Action",
+            "Attack",
+            "Knight"
         ]
     },
     {
@@ -2895,7 +2897,7 @@
         "cardset_tags": [
             "empires"
         ],
-        "cost": "3",
+        "cost": "3*",
         "count": "12",
         "types": [
             "Victory",
@@ -7347,7 +7349,8 @@
         "cost": "6",
         "types": [
             "Action",
-            "Duration"
+            "Duration",
+            "Command"
         ]
     },
     {
@@ -7412,7 +7415,9 @@
         "cost": "8",
         "image": "prince_set.png",
         "types": [
-            "Action"
+            "Action",
+            "Duration",
+            "Command"
         ]
     },
     {
@@ -8283,7 +8288,8 @@
         ],
         "cost": "5",
         "types": [
-            "Treasure"
+            "Treasure",
+            "Command"
         ]
     },
     {
@@ -9025,6 +9031,7 @@
         "cardset_tags": [
             "risingSun"
         ],
+        "cost": "2",
         "group_tag": "risingSun events",
         "randomizer": false,
         "types": [
@@ -9036,6 +9043,7 @@
         "cardset_tags": [
             "risingSun"
         ],
+        "cost": "2",
         "group_tag": "risingSun events",
         "randomizer": false,
         "types": [
@@ -9047,6 +9055,8 @@
         "cardset_tags": [
             "risingSun"
         ],
+        "cost": "0",
+        "debtcost": "8",
         "group_tag": "risingSun events",
         "randomizer": false,
         "types": [
@@ -9058,6 +9068,7 @@
         "cardset_tags": [
             "risingSun"
         ],
+        "cost": "2",
         "group_tag": "risingSun events",
         "randomizer": false,
         "types": [
@@ -9069,6 +9080,7 @@
         "cardset_tags": [
             "risingSun"
         ],
+        "cost": "2",
         "group_tag": "risingSun events",
         "randomizer": false,
         "types": [
@@ -9080,6 +9092,7 @@
         "cardset_tags": [
             "risingSun"
         ],
+        "cost": "7",
         "group_tag": "risingSun events",
         "randomizer": false,
         "types": [
@@ -9091,6 +9104,7 @@
         "cardset_tags": [
             "risingSun"
         ],
+        "cost": "3",
         "group_tag": "risingSun events",
         "randomizer": false,
         "types": [
@@ -9102,6 +9116,7 @@
         "cardset_tags": [
             "risingSun"
         ],
+        "cost": "3",
         "group_tag": "risingSun events",
         "randomizer": false,
         "types": [
@@ -9113,6 +9128,7 @@
         "cardset_tags": [
             "risingSun"
         ],
+        "cost": "5",
         "group_tag": "risingSun events",
         "randomizer": false,
         "types": [
@@ -9124,6 +9140,7 @@
         "cardset_tags": [
             "risingSun"
         ],
+        "cost": "4",
         "group_tag": "risingSun events",
         "randomizer": false,
         "types": [
