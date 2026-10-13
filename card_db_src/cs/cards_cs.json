@@ -1,4 +1,8 @@
 {
+    "Abandoned Mine": {
+        "name": "Opuštěný důl",
+        "text": "{{Costplus|1}}"
+    },
     "Academy": {
         "description": "When you gain an Action card, +1 Villager.",
         "extra": "This happens whether you gain an Action card due to buying it, or some other way.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
@@ -37,7 +41,8 @@
     "Altar": {
         "description": "Zahoď kartu z ruky na smetiště.<n>Vezmi si kartu s cenou až 5 Coins.",
         "extra": "Zahoďte na smetiště kartu z ruky, pokud můžete, a poté získáte kartu, ať už jste zahazovali nebo ne. Získaná karta se bere ze společné zásoby a pokládá se na odkládací balíček.",
-        "name": "Oltář"
+        "name": "Oltář",
+        "text": "Zahoď kartu z ruky na smetiště.<br>Vezmi si kartu s cenou až {{Cost|5}}."
     },
     "Ambassador": {
         "description": "Ukaž kartu ze své ruky. Vrať do společné zásoby až dvě kopie této karty ze své ruky. Všichni ostatní hráči si vezmou po jedné této kartě.",
@@ -82,7 +87,8 @@
     "Armory": {
         "description": "Vezmi si kartu s cenou až 4 Coins a polož ji na svůj dobírací balíček.",
         "extra": "Získaná karta se bere ze společné zásoby a pokládá se na dobírací balíček.",
-        "name": "Zbrojnice"
+        "name": "Zbrojnice",
+        "text": "Vezmi si kartu s cenou až {{Cost|4}} a polož ji na svůj dobírací balíček."
     },
     "Artificer": {
         "description": "+1 Card<br>+1 Action<br>+1 Coin<n>Discard any number of cards. You may gain a card costing exactly 1 Coin per card discarded, putting it on top of your deck.",
@@ -122,7 +128,8 @@
     "Band of Misfits": {
         "description": "Zahraj tuto kartu, jako by byla kartou akce s nižší cenou než Zkrachovalci, která se nachází ve společné zásobě.<n>Zkrachovalci se považují za vybranou kartu, dokud jsou ve hře.",
         "extra": "Když tuto kartu hrajete, vyberte si kartu akce ze společné zásoby, která stojí méně než Zkrachovalci (tedy zpravidla nanejvýš 4 Coins). Se Zkrachovalci pak nadále zacházejte jako s touto kartou. Za normálních okolností to znamená, že se prostě budete řídit pokyny na zvolené kartě.<br><i>Příklad: Zahrajete Zkrachovalce jako Pevnost. Doberete si kartu a máte k dispozici +2 akce, protože když jste Zkrachovalce hráli, představovali Pevnost</i>.<br>Zkrachovalci rovněž přebírají cenu, název a typ zvolené karty. Pokud Zkrachovalce použijete jako kartu, jež sama sebe zahazuje na smetiště (jako Pohřební kára), zahodíte Zkrachovalce. Od tohoto momentu se opět jedná pouze o Zkrachovalce na smetišti. Když použijete Zkrachovalce jako dlouhodobou kartu z Dominionu: Pobřeží, zůstanou ve hře až do vašeho dalšího tahu, stejně jako jakákoli dlouhodobá karta. Pokud použijete Trůnní sál z Dominionu, Královský dvůr z Dominionu: Prosperity nebo Procesí, abyste nějakou kartu prostřednictvím Zkrachovalců zahráli vícekrát, vyberete si pouze jednu kartu, poté už ji jen kopírujete.<br><i>Příklad: Jestliže použijete Procesí, abyste mohli zahrát Zkrachovalce dvakrát, a vyberete si, že budou představovat Pevnost, podruhé je rovněž zahrajete jako Pevnost. Poté Zkrachovalce zahodíte na smetiště, vrátíte si je do ruky (ve chvíli, kdy jste je zahazovali, představovali Pevnost, a Pevnost má schopnost, která se aktivuje při zahození a která vám ji vrátí do ruky) a vezmete si kartu akce stojící přesně 6 Coins (o 1 Coin více než Zkrachovalci, kteří opustili hru a nejsou tak již nadále kopií Pevnosti)</i>.<br>Pokud použijete Zkrachovalce jako kartu, která něco provádí během fáze úklidu (jako Poustevník), provedou tuto věc během úklidu také.<br>Pokud zahrajete Roh hojnosti z Dominionu: Rohu hojnosti, počítají se Zkrachovalci za každou kartu, kterou představují.<br><i>Příklad: Zahrajete Zkrachovalce jako Pevnost, další Zkrachovalce jako Metaře a poté Roh hojnosti. Díky tomu můžete získat kartu s cenou až 3 Coins</i>.<br>Zkrachovalci mohou být hráni pouze jako karta, která se dosud nachází ve společné zásobě. Nemohou být hráni jako karta, jejíž balíček ve společné zásobě je již prázdný, nebo se ve společné zásobě vůbec nenachází (například Žoldnéř). V případě balíčku ruin nebo rytířů je lze hrát pouze jako vrchní kartu z obou balíčků.",
-        "name": "Zkrachovalci"
+        "name": "Zkrachovalci",
+        "text": "Zahraj tuto kartu, jako by byla kartou akce s nižší cenou než Zkrachovalci, která se nachází ve společné zásobě.<br>Zkrachovalci se považují za vybranou kartu, dokud jsou ve hře."
     },
     "Bandit": {
         "description": "Vezmi si zlaťák. Všichni ostatní hráči odhalí 2 vrchní karty svého dobíracího balíčku, odhodí na smetiště všechny karty peněz kromě měďáků a zbytek odloží na odkládací balíček.",
@@ -132,7 +139,8 @@
     "Bandit Camp": {
         "description": "+1 karta<br>+2 akce<n>Vezmi si Kořist z balíčku karet Kořisti.",
         "extra": "Doberte si kartu předtím, než si vezmete Kořist. Kořist se vezme z balíčku karet Kořistí, který není součástí společné zásoby, a položí se na odkládací balíček. Pokud už v balíčku nejsou žádné karty Kořist, nic nedostanete.",
-        "name": "Tábor banditů "
+        "name": "Tábor banditů",
+        "text": "'''+1 karta<br>+2 akce'''<br>Vezmi si Kořist z balíčku karet Kořisti."
     },
     "Bandit Fort": {
         "description": "When scoring, -2<VP> for each Silver and each Gold you have.",
@@ -192,7 +200,8 @@
     "Beggar": {
         "description": "Vezmi si do ruky 3 Měďáky.<line>Pokud jiný hráč zahraje kartu útoku, můžeš Žebráka odložit. Když to učiníš, vezmi si 2 Stříbrňáky a jeden z nich polož na svůj dobírací balíček.",
         "extra": "Když tuto kartu zahrajete, vezměte si ze společné zásoby do ruky tři Měďáky. Pokud už jich tam není dost, vezměte si tolik, kolik je možné. Když nějaký jiný hráč zahraje kartu útoku, můžete Žebráka odložit. V takovém případě získáte dva Stříbrňáky: jeden položíte na svůj odkládací a druhý na dobírací balíček. Pokud už ve společné zásobě zbývá poslední Stříbrňák, položte ho na dobírací balíček. Jestliže už není k dispozici žádný, nic nedostanete.",
-        "name": "Žebrák"
+        "name": "Žebrák",
+        "text": "Vezmi si do ruky 3&nbsp;Měďáky.{{divline}}Pokud jiný hráč zahraje kartu útoku, můžeš Žebráka odložit. Když to učiníš, vezmi si 2&nbsp;Stříbrňáky a jeden z nich polož na svůj dobírací balíček."
     },
     "Bishop": {
         "description": "+ 1 Coin<br>+1 <VP><n>Zahoď kartu z ruky na smetiště.<br>+<VP> se rovná polovině její ceny v mincích, zaokrouhleno dolů.<br>Všichni ostatní hráči mohou zahodit kartu z ruky na smetiště.",
@@ -317,7 +326,8 @@
     "Catacombs": {
         "description": "Podívej se na vrchní 3 karty svého dobíracího balíčku. Vyber si jeden pokyn:<br>vezmi si tyto karty do ruky;<br>odlož tyto karty a +3 karty.<line>Pokud tuto kartu zahodíš na smetiště, vezmi si kartu, která stojí méně než Katakomby.",
         "extra": "Když tuto kartu zahrajete, podíváte se na vrchní 3 karty svého dobíracího balíčku, a buď si všechny vezmete do ruky, nebo všechny odložíte a doberete si nové 3 karty. Jestliže je odložíte a musíte karty zamíchat, abyste si mohli 3 karty dobrat, mícháte i právě odložené karty a může se klidně stát, že si některé z nich doberete znovu. Pokud Katakomby zahazujete na smetiště, vezměte si kartu, která stojí méně než ony. K tomu dojde, ať již Katakomby zahodíte ve svém tahu nebo tahu někoho jiného, bez ohledu na to, kdo zahrál kartu, která zahazování způsobila. Získaná karta se bere ze společné zásoby a pokládá se na odkládací balíček.",
-        "name": "Katakomby"
+        "name": "Katakomby",
+        "text": "Podívej se na vrchní 3 karty svého dobíracího balíčku. Vyber si jeden pokyn: vezmi si tyto karty do ruky; odlož tyto karty a '''+3&nbsp;karty'''.{{divline}}Pokud tuto kartu zahodíš na smetiště, vezmi si kartu, která stojí méně než Katakomby."
     },
     "Catapult": {
         "description": "+1 Coin<n>Trash a card from your hand. If it costs 3 Coins or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.",
@@ -462,12 +472,14 @@
     "Count": {
         "description": "Vyber si jeden pokyn:<br>odlož 2 karty;<br>polož kartu z ruky na svůj dobírací balíček;<br>vezmi si Měďák.<n><n>Vyber si jeden pokyn:<br>+3 Coins;<br>zahoď všechny karty z ruky na smetiště;<br>vezmi si Vévodství.",
         "extra": "Tato karta vám nabízí dvě oddělené volby. Nejprve buď odložíte 2 karty, nebo položíte kartu z ruky na dobírací balíček, nebo si vezmete Měďák. Když si vyberete, můžete dále buď dostat k dispozici +3 Coins, zahodit všechny karty z ruky na smetiště nebo získat Vévodství. Takto se například můžete rozhodnout odložit 2 karty z ruky a vzít si Vévodství. Získané karty se berou ze společné zásoby a pokládají se na odkládací balíček. Můžete si vybrat i možnost, kterou nebudete schopni provést. Jestliže zahodíte více karet se schopnostmi, které se aktivují při zahození, nejprve všechny zahoďte a poté určete pořadí, v němž se tyto schopnosti vyhodnotí.",
-        "name": "Hrabě"
+        "name": "Hrabě",
+        "text": "<p>Vyber si jeden pokyn: odlož 2&nbsp;karty&#59; polož kartu z ruky na svůj dobírací balíček&#59; vezmi si Měďák.</p>Vyber si jeden pokyn:{{Costplus|3}}&#59; zahoď všechny karty z ruky na smetiště&#59; vezmi si Vévodství."
     },
     "Counterfeit": {
         "description": "1 <*COIN*><br><br>+1 nákup<n>Když tuto kartu zahraješ, můžeš zahrát kartu peněz ze své ruky dvakrát. Pokud tak učiníš, zahoď ji na smetiště.",
         "extra": "Jedná se o kartu peněz s hodnotou 1 Coin. Vykládáte ji ve své fázi nákupu, stejně jako jiné karty peněz. Když ji zahrajete, máte navíc k dispozici +1 nákup a můžete zahrát další kartu peněz z ruky dvakrát. Jestliže se pro tuto možnost rozhodnete, danou kartu peněz zahoďte na smetiště. Stále máte k dispozici všechny mince získané díky zahrání této karty, ačkoli jste ji zahodili. Pokud se rozhodnete zahrát pomocí Padělku dvakrát Kořist, dostanete +6 Coins (navíc k 1 Coin ze samotného Padělku) a vrátíte Kořist zpět na její hromádku. Kořist nebudete zahazovat, protože její text uvádí, že se má po zahrání vrátit na svůj balíček, a tento pokyn se vyhodnotí před pokynem z Padělku. Karty více typů, z nichž jeden představuje kartu peněz (například Harém z Dominionu: Intrik), se považují za karty peněz, a proto je lze pomocí Padělku zahrát.  ",
-        "name": "Padělek"
+        "name": "Padělek",
+        "text": "{{Cost|1|l}}<br>'''+1 nákup'''<br>Když tuto kartu zahraješ, můžeš zahrát kartu peněz ze své ruky dvakrát. Pokud tak učiníš, zahoď ji na smetiště."
     },
     "Counting House": {
         "description": "Prohlédni si svůj odkládací balíček, ukaž z něj libovolný počet měďáků a ty si vezmi do své ruky.",
@@ -507,7 +519,8 @@
     "Cultist": {
         "description": "+2 karty<n>Všichni ostatní hráči si vezmou ruinu. Můžeš zahrát Vyznavače z ruky.<line>Pokud tuto kartu zahodíš na smetiště, +3 karty.",
         "extra": "Když tuto kartu zahrajete, doberete si 2 karty a poté si všichni ostatní hráči vezmou ruinu. Ty se berou z balíčku ruin a pokládají se na odkládací balíček. Postupuje se podle pořadí tahů, počínaje hráčem po vaší levici. Každý hráč si vezme vrchní kartu ruiny a následující otočí lícem nahoru. Pokud v průběhu přidělování ruiny dojdou, hráči, na něž ruiny nevyšly, žádné nedostanou. Po přidělení ruin můžete zahrát dalšího Vyznavače z ruky. Toto zahrání nevyžaduje žádnou akci navíc, kterou byste museli získat pomocí karet jako Pevnost. Akce je zapotřebí pouze k zahrání původního Vyznavače. Jestliže zahazujete Vyznavače na smetiště, doberte si 3 karty. K tomu dojde, ať již Vyznavače zahodíte ve svém tahu nebo tahu někoho jiného, a bez ohledu na to, kdo zahrál kartu, která zahazování způsobila. Pokud Vyznavače zahazujete při ukazování karet, například při útoku rytíře, nedobíráte si karty, které se mají odložit.",
-        "name": "Vyznavač"
+        "name": "Vyznavač",
+        "text": "'''+2&nbsp;karty'''<br>Všichni ostatní hráči si vezmou ruinu. Můžeš zahrát Vyznavače z ruky.{{divline}}Pokud tuto kartu zahodíš na smetiště, '''+3&nbsp;karty'''."
     },
     "Curse": {
         "description": "–1 <*VP*>",
@@ -529,10 +542,30 @@
         "extra": "Vaši protihráči musí odložit pouze 1 kartu měďák ze své ruky. Nemá-li některý protihráč v ruce žádný měďák, musí své karty v ruce ukázat.",
         "name": "Kapsář"
     },
+    "Dame Anna": {
+        "name": "Lady Anna",
+        "text": "Můžeš zahodit až 2&nbsp;karty z ruky na smetiště.<br>Všichni ostatní hráči ukážou vrchní 2&nbsp;karty svých dobíracích balíčků a zahodí na smetiště jednu kartu v ceně {{Cost|3}} až {{Cost|6}}. Ostatní karty odloží.<br>Pokud je takto zahozen nějaký rytíř, zahoď na smetiště i Lady Annu."
+    },
+    "Dame Josephine": {
+        "name": "Lady Josefína"
+    },
+    "Dame Molly": {
+        "name": "Lady Molly",
+        "text": "'''+2 akce'''<br>Všichni ostatní hráči ukážou vrchní 2&nbsp;karty svých dobíracích balíčků a zahodí na smetiště jednu kartu v ceně {{Cost|3}} až {{Cost|6}}. Ostatní karty odloží.<br>Pokud je takto zahozen nějaký rytíř, zahoď na smetiště i Lady Molly."
+    },
+    "Dame Natalie": {
+        "name": "Lady Natálie",
+        "text": "Můžeš si vzít kartu s cenou až {{Cost|3}}.<br>Všichni ostatní hráči ukážou vrchní 2&nbsp;karty svých dobíracích balíčků a zahodí na smetiště jednu kartu v ceně {{Cost|3}} až {{Cost|6}}. Ostatní karty odloží.<br>Pokud je takto zahozen nějaký rytíř, zahoď na smetiště i Lady Natálii."
+    },
+    "Dame Sylvia": {
+        "name": "Lady Sylvie",
+        "text": "{{Costplus|2}}<br>Všichni ostatní hráči ukážou vrchní 2&nbsp;karty svých dobíracích balíčků a zahodí na smetiště jednu kartu v ceně {{Cost|3}} až {{Cost|6}}. Ostatní karty odloží.<br>Pokud je takto zahozen nějaký rytíř, zahoď na smetiště i Lady Sylvii."
+    },
     "Death Cart": {
         "description": "+5 Coins<n>Můžeš zahodit na smetiště kartu akce z ruky. Pokud tak neučiníš, zahoď na smetiště tuto kartu.<line>Když tuto kartu získáš, vezmi si 2 ruiny.",
         "extra": "Když tuto kartu zahrajete, dostanete +5 Coins, a buď zahoďte kartu akce z ruky, nebo Pohřební káru. Pokud v ruce nemáte žádnou kartu akce, musíte zahodit Pohřební káru. Můžete ji zahodit vždy, ať už v ruce nějakou kartu akce máte nebo ne. Karty více typů, z nichž jeden představuje kartu akce, se považují za karty akce. Když Pohřební káru získáte, ať již koupí nebo nějakým jiným způsobem, dostanete rovněž 2 ruiny. Jednoduše si vezměte vrchní 2 karty z balíčku ruin, ať už jsou jakékoli. Karty ruin se berou ze společné zásoby a pokládají se na odkládací balíček. Ostatní hráčům ukažte, jaké ruiny jste získali. Když Pohřební káru získáte, ruiny si vezmete pouze vy. Použijete-li jako reakci na získání Pohřební káry Kramáře z Dominionu: Vzdálených krajů, můžete si místo této karty vzít Stříbrňák a tím pádem žádné ruiny nedostanete. Stejně tak můžete Kramáře použít na samotné ruiny a místo ruiny si vzít Stříbrňák (Pohřební káru získáte běžným způsobem). Jestliže pomocí Posedlosti z Dominionu: Alchymie přinutíte jiného hráče, aby si Pohřební káru koupil, získáte ruiny vy, protože jste si díky Posedlosti Pohřební káru také ve skutečnosti koupili. Je jedno, o čí tah se jedná. Pokud použijete Velvyslance z Dominionu: Pobřeží a s jeho pomocí přidělíte všem ostatním hráčům Pohřební káru, dostanou rovněž ruiny. Předávání karet pomocí Maškar z Dominionu: Intrik se tohoto případu netýká.",
-        "name": "Pohřební kára"
+        "name": "Pohřební kára",
+        "text": "{{Costplus|5}}<br>Můžeš zahodit na smetiště kartu akce z ruky. Pokud tak neučiníš, zahoď na smetiště tuto kartu.{{divline}}Když tuto kartu získáš, vezmi si 2&nbsp;ruiny."
     },
     "Defiled Shrine": {
         "description": "When you gain an Action, move 1<VP> from its pile to this. When you buy a Curse, take the <VP> from this.<line>Setup: Put 2<VP> on each non-Gathering Action Supply pile.",
@@ -749,6 +782,9 @@
         "extra": "The revealed cards that are not Actions are shuffled back into your deck.",
         "name": "Famine"
     },
+    "Farm": {
+        "name": "Harém"
+    },
     "Farmers' Market": {
         "description": "+1 Buy<n>If there are 4 <VP> or more on the Farmers' Market Supply pile, take them and trash this. Otherwise, add 1 <VP> to the pile and then +1 Coin per 1 <VP> on the pile.",
         "extra": "The first time this is played, it produces +1 Coin (and +1 Buy), the next time +2 Coin, then +3 Coin, then +4 Coin, then the next time the player takes the 4 <VP> (and gets no + _ Coin), then the next time it is back to +1 Coin. This still functions if the Farmers' Market pile is empty.",
@@ -777,7 +813,8 @@
     "Feodum": {
         "description": "Má hodnotu 1 <VP> za každé 3 Stříbrňáky ve tvém balíčku (zaokrouhleno dolů).",
         "extra": "Jedná se o kartu vítězných bodů. Ve hře 2 hráčů se použije 8 karet, ve hře 3 a více hráčů 12 karet. Na konci hry má každé Léno hodnotu 1<VP> za každé 3 Stříbrňáky ve vašem balíčku (sem se počítají karty v ruce a dobíracím i odkládacím balíčku), zaokrouhleno dolů. Pokud máte například 11 Stříbrňáků, má každé vaše Léno hodnotu 3<VP>. Pokud je Léno zahozeno na smetiště, získáváte 3 Stříbrňáky. Berou se ze společné zásoby a pokládají se na odkládací balíček. Když tam již nezbývá dostatek Stříbrňáků, vezměte si jich tolik, kolik lze.",
-        "name": "Léno"
+        "name": "Léno",
+        "text": "Má hodnotu {{VP|1}} za každé 3&nbsp;Stříbrňáky ve tvém balíčku (zaokrouhleno dolů).{{divline}}Pokud tuto kartu zahodíš na smetiště, vezmi si 3&nbsp;Stříbrňáky."
     },
     "Ferry": {
         "description": "Move your - 2 Coin cost token to an Action Supply pile (cards from that pile cost 2 Coin less on your turns, but not less than 0 Coin).",
@@ -837,7 +874,8 @@
     "Forager": {
         "description": "+1 akce<br>+1 nákup<n>Zahoď kartu z ruky na smetiště.<n>+1 Coin za každou kartu peněz s odlišným názvem na smetišti.",
         "extra": "Zahoďte kartu z ruky na smetiště, pokud můžete. Ať už to uděláte nebo ne, stále dostáváte +1 Coin za každou kartu peněz s odlišným názvem na smetišti, stejně jako +1 akci a +1 nákup. Více kopií téže karty peněz váš příjem nezvýší. Karty více typů, z nichž jeden představuje kartu peněz (například Harém z Dominionu: Intrik), se považují za karty peněz.<br><i>Příklad: Na smetišti se nachází čtyři Měďáky, jeden Padělek a šest Statků. Díky Sběrači tak získáte +2 Coins</i>.",
-        "name": "Sběrač"
+        "name": "Sběrač",
+        "text": "'''+1 akce<br>+1 nákup'''<br>Zahoď kartu z ruky na smetiště.<br>{{Costplus|1}} za každou kartu peněz s odlišným názvem na smetišti."
     },
     "Forge": {
         "description": "Zahoď libovolný počet karet ze své ruky na smetiště. Vezmi si kartu s přesně stejnou cenou, jaká je celková cena v mincích všech těchto zahozených karet.",
@@ -847,7 +885,8 @@
     "Fortress": {
         "description": "+1 karta<br>+2 akce<line>Když tuto kartu zahodíš na smetiště, vezmi si ji do ruky.",
         "extra": "Když tuto kartu zahrajete, doberete si jednu kartu a máte k dispozici +2 akce. Jestliže Pevnost zahodíte, vezměte ji ze smetiště a vraťte si ji do ruky. Dojde k tomu bez ohledu na to, čí tah právě probíhá. Tento krok je povinný. Pevnost se považuje za zahozenou, i když ji dostanete zpátky.<br><i>Příklad: Zahrajete Pohřební káru a rozhodnete se zahodit Pevnost. Tím je zahazovací pokyn na Pohřební káře splněn a Pohřební kára se proto nezahazuje</i>.",
-        "name": "Pevnost"
+        "name": "Pevnost",
+        "text": "'''+1 karta<br>+2 akce'''{{divline}}Když tuto kartu zahodíš na smetiště, vezmi si ji do ruky."
     },
     "Fortune": {
         "description": "+1 Buy<n>When you play this, double your Coin if you haven't yet this turn.<line>When you gain this, gain a Gold per Gladiator you have in play.",
@@ -947,7 +986,8 @@
     "Graverobber": {
         "description": "Vyber si jeden pokyn: vezmi si ze smetiště kartu v ceně 3 Coins až 6 Coins a polož ji na svůj dobírací balíček;<br>zahoď na smetiště kartu akce z ruky a vezmi si kartu která je až o 3 Coins dražší než zahozená karta.",
         "extra": "Vybíráte si jednu možnost a poté ji vyhodnotíte co možná nejúplněji. Můžete si vybrat i takovou, kterou nebudete schopni provést. Smetiště si můžete prohlédnout kdykoliv. Jestliže se rozhodnete vzít si kartu ze smetiště, ukažte ostatním hráčům, o jakou kartu jde. Tuto kartu pokládáte na svůj dobírací balíček. Pokud v dobíracím balíčku nemáte momentálně žádné karty, stává se jedinou kartou vašeho dobíracího balíčku. Jestliže se na smetišti nenachází žádná karta v ceně 3 Coins až 6 Coins, žádnou kartu nezískáte. Karty z Dominionu: Alchymie, jež mají v ceně Potion, do rozmezí 3 Coins až  Coins nepatří. Jestliže se rozhodnete zahodit na smetiště kartu akce z ruky, získaná karta se bere ze společné zásoby a pokládá se na odkládací balíček.",
-        "name": "Vykradač hrobů"
+        "name": "Vykradač hrobů",
+        "text": "Vyber si jeden pokyn: vezmi si ze smetiště kartu v ceně {{Cost|3}} až {{Cost|6}} a polož ji na svůj dobírací balíček; zahoď na smetiště kartu akce z ruky a vezmi si kartu která je až o {{Cost|3}} dražší než zahozená karta."
     },
     "Great Hall": {
         "description": "+1 karta<br>+1 akce<line>1 <*VP*>",
@@ -1042,7 +1082,8 @@
     "Hermit": {
         "description": "Prohlédni si svůj odkládací balíček. Můžeš zahodit na smetiště kartu z odkládacího balíčku nebo z ruky, která není kartou peněz.<br>Vezmi si kartu s cenou až 3 Coins.<line>Pokud odkládáš Poustevníka ze hry v tahu, kdy jsi nekoupil žádnou kartu, zahoď ho místo toho na smetiště a vezmi si Šílence z balíčku karet Šílenců.",
         "extra": "Když tuto kartu zahrajete, prohlédněte si svůj odkládací balíček a poté se můžete rozhodnout zahodit na smetiště kartu, která není kartou peněz, a to buď z ruky, nebo z odkládacího balíčku. Nemusíte zahazovat žádnou kartu a nesmíte zahodit kartu peněz. Karty více typů, z nichž jeden představuje kartu peněz (například Harém z Dominionu: Intrik), se považují za karty peněz. Ať již budete zahazovat nebo ne, následně získáte kartu s cenou až 3 Coins. Získání karty je povinné, je-li to možné. Když pak odložíte Poustevníka ze hry (obvykle ve fázi úklidu) a nekoupili jste v tomto tahu žádnou kartu, zahodíte Poustevníka na smetiště a získáte Šílence. Šílenec se bere z balíčku karet Šílenců, který není součástí společné zásoby, a pokládá se na odkládací balíček. Zde není důležité, zda jste nějaké karty získali nebo nezískali jiným způsobem, pouze zda jste nějakou kartu koupili nebo ne. Pokud Poustevníka během fáze úklidu neodložíte (například díky Pletiše z Dominionu: Vzdálených krajů), potom se jeho zahazovací vlastnost neaktivuje.",
-        "name": "Poustevník"
+        "name": "Poustevník",
+        "text": "Prohlédni si svůj odkládací balíček. Můžeš zahodit na smetiště kartu z odkládacího balíčku nebo z ruky, která není kartou peněz.<br>Vezmi si kartu s cenou {{nowrap|až {{Cost|3}}.}}{{divline}}Pokud odkládáš Poustevníka ze hry v tahu, kdy jsi nekoupil žádnou kartu, zahoď ho místo toho na smetiště a vezmi si Šílence z balíčku karet Šílenců."
     },
     "Hermit - Madman": {
         "description": "<justify><u>Hermit</u>: When you play this, look through your discard pile, and then you may choose to trash a card that is not a Treasure, from either your hand or your discard pile. You do not have to trash a card and cannot trash Treasures. A card with multiple types, one of which is Treasure (such as Harem from Intrigue), is a Treasure. After trashing or not, you gain a card costing up to 3 Coins. The card you gain comes from the Supply and is put into your discard pile. Gaining a card is mandatory if it is possible. Then, when you discard Hermit from play - normally, in Clean-up, after playing it in your Action phase - if you did not buy any cards this turn, you trash Hermit and gain a Madman. It does not matter whether or not you gained cards other ways, only whether or not you bought a card. If there are no Madman cards left, you do not gain one. If Hermit is not discarded from play during Clean-up - for example, if you put it on your deck with Scheme (from Hinterlands) - then the ability that trashes it will not trigger.</justify>",
@@ -1092,12 +1133,14 @@
     "Hovel": {
         "description": "Když si koupíš kartu vítězných bodů, můžeš zahodit Chýši z ruky na smetiště.",
         "extra": "Jedná se o útočiště, viz Příprava hry výše. Nepatří do společné zásoby. Když si koupíte kartu vítězných bodů a máte Chýši v ruce, můžete ji zahodit na smetiště. Karty více typů, z nichž jeden představuje kartu vítězných bodů, se považují za karty vítězných bodů. Za samotné zahození Chýše nic nezískáte, máte tak pouze možnost se jí zbavit.",
-        "name": "Chýše"
+        "name": "Chýše",
+        "text": "Když si koupíš kartu vítězných bodů, můžeš zahodit Chýši z ruky na smetiště."
     },
     "Hunting Grounds": {
         "description": "+4 karty<line>Když zahodíš tuto kartu na smetiště, vezmi si Vévodství nebo 3 Statky.",
         "extra": "Když tuto kartu zahrajete, doberte si 4 karty. Pokud ji zahodíte na smetiště, získáte podle své volby Vévodství nebo 3 Statky. Tyto karty se berou ze společné zásoby a pokládají se na odkládací balíček. Jestliže se rozhodnete pro 3 Statky a ve společné zásobě jich už tolik nezbývá, dostanete jich tolik, kolik lze.",
-        "name": "Revír"
+        "name": "Revír",
+        "text": "'''+4 karty'''{{divline}}Když zahodíš tuto kartu na smetiště, vezmi si Vévodství nebo 3&nbsp;Statky."
     },
     "Hunting Party": {
         "description": "+1 karta<br>+1 akce<n>Ukaž karty z ruky. Ukazuj karty ze svého dobíracího balíčku, dokud neukážeš kartu, která není stejná s žádnou kartou v tvé ruce. Poslední ukázanou kartu si dejte do ruky a zbytek ukázaných karet odložte.",
@@ -1147,7 +1190,8 @@
     "Ironmonger": {
         "description": "+1 karta<br>+1 akce<n>Ukaž vrchní kartu svého dobíracího balíčku. Můžeš ji odložit nebo vrátit na dobírací balíček. Pokud je to:<br>karta akce, +1 akce,<br>karta peněz,+1 Coin,<br>karta vítězných bodů, +1 karta.",
         "extra": "Nejprve si doberete kartu a poté ukážete vrchní kartu svého dobíracího balíčku. Pak ji podle své volby buď odložíte, nebo vrátíte na dobírací balíček. Nakonec získáte výhody v závislosti na typu ukázané karty. Karta více typů vám poskytne více bonusů.<br><i>Příklad: Pokud ukážete Harém z Dominionu: Intrik, doberete si jednu kartu (v případě, že jste Harém vrátili na dobírací balíček, si doberete právě jej) a dostanete +1 Coins</i>.",
-        "name": "Železářství"
+        "name": "Železářství",
+        "text": "'''+1 karta<br>+1 akce'''<br>Ukaž vrchní kartu svěho dobíracího balíčku. Můžeš jí odložit nebo vrátit na dobírací balíček. Pokud je to:<br>karta akce, '''+1&nbsp;akce,'''<br>karta penez, {{Costplus|1}},<br>karta vítězných bodů, '''+1&nbsp;karta.'''"
     },
     "Ironworks": {
         "description": "Vezmi si kartu v ceně nanejvýš 4 Coins.<n>Jestliže to je:<n>karta akce: +1 akce<br>karta peněz: +1 Coins<br>karta bodů: +1 karta",
@@ -1177,7 +1221,8 @@
     "Junk Dealer": {
         "description": "+1 karta<br>+1 akce<br>+1 Coin<n>Zahoď kartu z ruky na smetiště.",
         "extra": "Musíte zahodit na smetiště kartu z ruky, je-li to možné. Nejprve si dobíráte, až potom zahazujete.",
-        "name": "Vetešník"
+        "name": "Vetešník",
+        "text": "'''+1 karta<br>+1 akce'''<br>{{Costplus|1}}<br>Zahoď kartu z ruky na smetiště."
     },
     "Keep": {
         "description": "When scoring, 5<VP> per differently named Treasure you have, that you have more copies of than each other player, or tied for most.",
@@ -1197,7 +1242,8 @@
     "Knights": {
         "description": "Před každou hrou, v niž se používají rytíři, zamíchej jejich balíček. Polož ho lícem dolů s výjimkou vrchní karty. Tu jedinou je možné získat.<n>V balíčku rytířů je každá karta jiná. Všechny karty mají společnou základní vlastnost, ale zároveň i svou vlastní jedinečnou schopnost. Všechny karty mají různé názvy. Pokud budete s rytíři hrát, zamíchejte před hrou jejich balíček a položte ho lícem dolů s výjimkou první karty, která se otočí lícem nahoru a jako jedinou ji je možné získat, viz Speciální pravidla pro Temné časy a Příprava hry. Pokyny na kartách rytířů provádějte od shora dolů, tj. Sir Michael donutí hráče k odložení karet předtím, než dojde k zahazování.",
         "extra": "Schopnost, kterou mají všichni rytíři společnou, spočívá v tom, že všichni ostatní hráči ukážou vrchní 2 karty svého dobíracího balíčku a podle své volby zahodí na smetiště jednu z nich, jejíž cena je 3 Coins až 6 Coins. Zbytek se odloží. Pokud byl takto zahozen nějaký rytíř, následně musíte zahodit rytíře, který zahazování způsobil. Tato schopnost se vyhodnocuje v pořadí tahů, počínaje hráčem po vaší levici. Karty z Dominionu: Alchymie, jež mají v ceně Potion, do rozmezí 3 Coins až 6 Coins nepatří. Pokud ani jedna z ukázaných karet nepatří do uvedeného rozmezí, obě karty se odloží. Pokud do něj patří obě, jedna z nich je rytíř, ale hráč se rozhodne zahodit tu druhou, k zahození zahraného rytíře nedojde. Jestliže je Sir Martin vrchní kartou balíčku rytířů, lze ho získat pomocí Zbrojnice. Pokud Sira Vandera zahodíte, získáte Zlaťák, ať už k zahození došlo ve vašem tahu nebo tahu někoho jiného, bez ohledu na to, kdo zahrál kartu, jež způsobila jeho zahození. Zlaťák za Sira Vandera a karta za Lady Natálii se berou ze společné zásoby a pokládají se na odkládací balíček. Když zahrajete Lady Annu, můžete si vybrat, zda z ruky zahodíte jednu, dvě nebo žádnou kartu. Lady Josefína je zároveň kartou vítězných bodů, která má na konci hry hodnotu 2 <VP>. Balíček rytířů však není balíčkem karet vítězných bodů, a proto se na něj nedává žeton za Obchodní stezku z Dominionu: Prosperity, i když je Lady Josefína vrchní kartou. Pokud budete chtít používat rytíře spolu s promo kartou Černý trh, zařaďte do balíčku Černého trhu místo podkladové karty jednoho rytíře. Sir Martin stojí pouze 4 Coins, zatímco všichni ostatní rytíři 5 Coins.",
-        "name": "Rytíři"
+        "name": "Rytíři",
+        "text": "Před každou hrou, v niž se používají řytíři, zamíchej jejich balíček.  Polož ho lícem dolů s výjimkou vrchní karty. Tu jedinou je možné ziskat."
     },
     "Laboratory": {
         "description": "+2 karty<br>+1 akce",
@@ -1282,7 +1328,8 @@
     "Madman": {
         "description": "+2 akce<n><n>Vrať tuto kartu do balíčku karet Šílenců. Pokud tak učiníš, +1 karta za každou kartu, kterou máš v ruce.<br><i>(Nepatři do společné zásoby.)</i>",
         "extra": "Tato karta není součástí společné zásoby, lze ji získat pouze prostřednictvím Poustevníka. Když ji zahrajete, dostanete +2 akce, vrátíte Šílence na balíček karet Šílenců (toto je povinné). Když tak učiníte, doberete si jednu kartu za každou kartu, kterou máte v ruce. Například pokud máte po zahrání Šílence v ruce 3 karty, doberete si 3 karty. Za normálních okolností návratu Šílence na jeho balíček nic nezabrání, ale nemusí se to podařit, jestliže zahrajete Šílence dvakrát prostřednictvím Procesí (viz příklad v bodě Ztracená stopa výše), Trůnního sálu z Dominionu nebo Královského dvora z Dominionu: Prosperity.",
-        "name": "Šílenec"
+        "name": "Šílenec",
+        "text": "'''+2 akce'''<br>Vrať tuto kartu do balíčku karet Šílenců. Pokud tak učiníš, '''+1&nbsp;karta''' za každou kartu, kterou máš v ruce.<br>''(Nepatři do společné zásoby.)''"
     },
     "Magic Lamp": {
         "description": "1 <*COIN*><br><br>When you play this, if there are at least 6 cards that you have exactly 1 copy of in play, trash this. If you do, gain 3 Wishes from their pile.",
@@ -1302,7 +1349,8 @@
     "Marauder": {
         "description": " Vezmi si Kořist z balíčku karet Kořisti. Všichni ostatní hráči si vezmou ruinu.",
         "extra": "Nejprve dostanete Kořist; vezme se z balíčku karet Kořistí, který není součástí společné zásoby, a položí se na odkládací balíček. Pokud už v balíčku Kořistí nejsou žádné karty, nic nedostanete. Poté si všichni ostatní hráči vezmou ruinu. Ty se berou z balíčku ruin ve společné zásobě a pokládají se na odkládací balíček. Postupuje se podle pořadí tahů počínaje hráčem po vaší levici. Každý hráč si vezme vrchní kartu ruiny a následující otočí lícem nahoru. Pokud v průběhu přidělování ruiny dojdou, hráči, na něž ruiny nevyšly, žádné nedostanou.",
-        "name": "Nájezdník"
+        "name": "Nájezdník",
+        "text": "Vezmi si Kořist z balíčku karet Kořisti. Všichni ostatní hráči si vezmou ruinu."
     },
     "Margrave": {
         "description": "+3 karty<br>+1 nákup<n>Všichni ostatní hráči si doberou jednu kartu a poté odloží tolik karet, aby jim zbyly v ruce 3.",
@@ -1317,7 +1365,8 @@
     "Market Square": {
         "description": "+1 karta<br>+1 akce<br>+1 nákup<line>Jestliže je některá tvá karta zahozena na smetiště, můžeš odložit Náměstí z ruky. Pokud tak učiníš, vezmi si Zlaťák.",
         "extra": "Když tuto kartu zahrajete, doberete si kartu a dostanete k dispozici +1 akci a +1 nákup. Když některou svou kartu zahodíte, můžete odložit Náměstí z ruky. Pokud to učiníte, získáte Zlaťák. Ten se vezme ze společné zásoby a položí se na odkládací balíček. Pokud tam už žádný Zlaťák nezbyl, žádný nedostanete. Můžete odložit více karet Náměstí, i když zahodíte pouze jednu kartu.",
-        "name": "Náměstí"
+        "name": "Náměstí",
+        "text": "'''+1 karta<br>+1 akce<br>+1 nákup'''{{divline}}Jestliže je některá tvá karta zahozena na smetiště, můžeš odložit Náměstí z ruky. Pokud tak učiníš, vezmi si Zlaťák."
     },
     "Masquerade": {
         "description": "+2 karty<n>Každý hráč předá kartu ze své ruky hráči po levici. Pak můžeš zahodit na smetiště kartu ze své ruky.",
@@ -1337,7 +1386,8 @@
     "Mercenary": {
         "description": "Můžeš zahodit 2 karty z ruky na smetiště.<n>Pokud tak učiníš, +2 karty, +2 Coins a všichni ostatní hráči odloží tolik karet z ruky, aby jim zbyly 3.<br><i>(Nepatří do společné zásoby.)</i>",
         "extra": "Tato karta není součástí společné zásoby, lze ji získat pouze prostřednictvím Darebáka. Když ji zahrajete, můžete zahodit na smetiště 2 karty z ruky. Pokud tak učiníte, doberete si 2 karty, dostanete k dispozici +2 Coins a všichni ostatní hráči musí odložit karty z ruky, aby jim zbyly 3. Hráči, kteří již mají v ruce 3 a méně karet, žádné karty neodkládají. Hráči reagující na tento útok pomocí karet jako Žebrák se pro reakci musí rozhodnout předtím, než se vy rozhodnete, zda budete zahazovat karty z ruky nebo ne. Když Žoldnéře zahrajete a máte v ruce jen jednu kartu, můžete ji zahodit, avšak není tím splněna podmínka „pokud tak učiníte“, vázaná na zahození 2 karet, takže si žádné karty nedoberete atd. Pokud zahozené karty mají nějakou schopnost spojenou se zahozením, nejprve obě zahoďte a poté určete pořadí, v němž se tyto schopnosti vyhodnotí.",
-        "name": "Žoldnéř"
+        "name": "Žoldnéř",
+        "text": "Můžeš zahodit 2&nbsp;karty z ruky na smetiště.<br>Pokud tak učiníš, +2&nbsp;karty, {{Costplus|2}} a všichni ostatní hráči odloží tolik karet z ruky, aby jim zbyly&nbsp;3.<br>''(Nepatří do společné zásoby.)''"
     },
     "Merchant": {
         "description": "+1 karta<br>+1 akce<n>Poprvé, když zahrajete stříbrňák toto kolo, +1 Coin.",
@@ -1452,7 +1502,8 @@
     "Mystic": {
         "description": "+1 akce<br>+ 2 Coins<n>Řekni název karty.<br>Ukaž vrchní kartu svého dobíracího balíčku. Je-li to jmenovaná karta, vezmi si ji do ruky.",
         "extra": "Když tuto kartu zahrajete, dostanete k dispozici +1 akci a +2 Coins . Poté řekněte název karty (například „Měďák“, ne „karta peněz“) a ukažte vrchní kartu svého dobíracího balíčku. Pokud jste jmenovali stejnou kartu, jakou jste ukázali, vezměte si ukázanou kartu do ruky. Pokud jste se netreﬁli, vraťte ji na dobírací balíček. Nemusíte jmenovat kartu, která se v dané hře používá. Pro získání karty se oba názvy musí přesně shodovat; například Sir Martin a Sir Destry nejsou totožní. Nemusíte jmenovat kartu, která je momentálně dostupná ve společné zásobě.",
-        "name": "Šamanka"
+        "name": "Šamanka",
+        "text": "'''+1 akce'''<br>{{Costplus|2}}<br>Řekni název karty.<br>Ukaž vrchní kartu svého dobíracího balíčku. Je-li to jmenovaná karta, vezmi si ji do ruky."
     },
     "Native Village": {
         "description": "+2 akce<n>Vyber si jeden pokyn: Polož stranou vrchní kartu ze svého dobíracího balíčku, lícem dolů na tabulku domorodé vesnice; nebo si vezmi všechny karty ze své tabulky do ruky.<n>Na karty na své tabulce se můžeš kdykoli podívat; karty ležící na tabulce vrať na konci hry mezi své karty.",
@@ -1477,7 +1528,8 @@
     "Necropolis": {
         "description": "+2 akce",
         "extra": "Jedná se o útočiště, viz Příprava hry výše. Nikdy není součástí společné zásoby. Je to karta akce; pokud ji zahrajete, máte k dispozici +2 akce.",
-        "name": "Vylidněné město"
+        "name": "Vylidněné město",
+        "text": "'''+2 akce'''"
     },
     "Night Watchman": {
         "description": "Look at the top 5 cards of your deck, discard any number, and put the rest back in any order.<line>This is gained to your hand (instead of your discard pile).",
@@ -1532,7 +1584,8 @@
     "Overgrown Estate": {
         "description": "0<*VP*><line>Pokud zahodíš tuto kartu na smetiště, +1 karta.",
         "extra": "Jedná se o útočiště, viz Příprava hry výše. Nikdy není součástí společné zásoby. Je to karta vítězných bodů, i když má hodnotu 0 <VP>. Pokud ji zahodíte, doberete si okamžitě kartu, i kdyby se tak dělo v průběhu vyhodnocování jiné karty.<br><i>Příklad: Použijete Oltář k zahození Zpustlého statku. Nejdříve si doberete kartu a pak si vezmete kartu s cenou až 5 Coins</i>.<br>Zpustlý statek sám o sobě zahození neumožňuje, pouze vám poskytne možnost dobrat si kartu, jestliže se vám ho podaří zahodit nějakým jiným způsobem.",
-        "name": "Zpustlý statek"
+        "name": "Zpustlý statek",
+        "text": "{{VP|0|l}}{{divline}}Pokud zahodíš tuto kartu na smetiště, '''+1&nbsp;karta'''."
     },
     "Overlord": {
         "description": "Play this as if it were an Action card in the Supply costing up to 5 Coin. This is that card until it leaves play.",
@@ -1617,7 +1670,8 @@
     "Philosopher's Stone": {
         "description": "Když zahraješ tuto kartu, sečti dohromady karty ve svém dobíracím a odkládacím balíčku.<br>Získáš 1 Coin za každých 5 karet ve svých balíčcích (zaokrouhleno dolů). ",
         "extra": "Tato karta je karta peněz. Patří ovšem mezi karty království; tudíž se do hry dostane pouze tehdy, když bude vybrána jako jedna z 10 karet království při přípravě hry. Vykládá se během vaší fáze nákup, stejně jako ostatní karty peněz. Když tuto kartu vyložíte, sečtěte dohromady počet karet ve svém dobíracím a odkládacím balíčku, vydělte 5 a zaokrouhlete dolů. Výsledek je počet mincí, které vám kámen mudrců přinese. Jakmile je tato karta vyložena, tak se počet mincí, které dostanete, nemění, i kdyby se později v tahu změnil poměr karet v balíčcích. Až příště zahrajete tuto kartu, spočítejte její hodnotu znovu. Pokud hrajete více kopií ve stejném tahu, bude hodnota pravděpodobně stejná pro všechny z nich. Na pořadí vašich karet v odkládacím balíčku nezáleží, avšak záleží na pořadí karet ve vašem dobíracím balíčku. Neměňte tedy pořadí karet při počítání! Neprohlížejte si při počítání své odložené karty v odkládacím balíčku. Počítejte pouze karty v dobíracím a odkládacím balíčku, ne karty ve své ruce či karty ve hře či karty odložené stranou. Nemůžete vyložit další peníze poté, co ve své fázi nákup něco nakoupíte; tedy například nemůžete koupit kartu, poté vyložit kámen mudrců a pak koupit další kartu.",
-        "name": "Kámen mudrců"
+        "name": "Kámen mudrců",
+        "text": "Když zahraješ tuto kartu, sečti dohromady karty ve svém dobíracím a odkládacím balíčku.<br>Získáš {{Cost|1}} za každých 5&nbsp;karet ve svých balíčcích (zaokrouhleno dolů)."
     },
     "Piazza": {
         "description": "At the start of your turn, reveal the top card of your deck.  If it's an Action, play it.",
@@ -1632,7 +1686,8 @@
     "Pillage": {
         "description": "Zahoď tuto kartu na smetiště.<br>Všichni ostatní hráči, kteří mají v ruce 5 a více karet, ukážou karty v ruce a odloží jednu kartu, kterou určíš.<br>Vezmi si 2 karty Kořisti z balíčku karet Kořistí.",
         "extra": "Nejprve zahoďte Drancování na smetiště. Poté všichni ostatní hráči, kteří mají v ruce 5 a více karet, ukážou všechny karty v ruce a podle vaší volby jednu z nich odloží. Toto probíhá v pořadí tahů, počínaje hráčem po vaší levici. Následně získáte 2 karty Kořist. Ty se vezmou z balíčku karet Kořistí, který není součástí společné zásoby, a položí se na odkládací balíček. Pokud už v balíčku Kořistí nejsou žádné karty, nic nedostanete. Jestliže se tam nachází už pouze jedna karta, získáte jen ji.",
-        "name": "Drancování"
+        "name": "Drancování",
+        "text": "Zahoď tuto kartu na smetiště.<br>Všichni ostatní hráči, kteří mají v ruce 5 a více karet, ukážou karty v ruce a odloži jednu kartu, kterou určíš.<br>Vezmi si 2&nbsp;karty Kořisti z balíčku karet Kořistí."
     },
     "Pirate Ship": {
         "description": "Vyber si jeden pokyn:<n>Každý protihráč ukáže 2 vrchní karty svého dobíracího balíčku, z nich zahodí na smetiště jednu kartu peněz, kterou vybereš ty, zbylé karty odloží, a pokud kdokoli zahodil kartu peněz, tak si vezmi žeton mince;<br>nebo +1 Coin za každý žeton mince, který jsi v této hře dosud získal díky pirátské lodi.",
@@ -1692,7 +1747,8 @@
     "Poor House": {
         "description": "+4 Coins<n>Ukaž karty v ruce: –1 Coin za každou takto ukázanou kartu peněz (až do minima 0 Coins).",
         "extra": "Nejprve dostanete +4 Coins. Poté ukážete karty v ruce a přijdete o 1 Coin za každou takto ukázanou kartu peněz. Můžete takto ztratit více než 4 Coins, ale celkový počet mincí, které máte k dispozici, nesmí klesnout pod 0 Coins. Karty více typů, z nichž jeden představuje kartu peněz (například Harém z Dominionu: Intrik), se považují za karty peněz.",
-        "name": "Chudobinec"
+        "name": "Chudobinec",
+        "text": "{{Costplus|4}}<br>Ukaž karty v ruce: {{nowrap|–{{Cost|1}}}} za každou takto ukázanou kartu peněz (až do {{nowrap|minima {{Cost|0}}).}}"
     },
     "Port": {
         "description": "+1 Card<br>+2 Actions<line>When you buy this, gain another Port.",
@@ -1737,7 +1793,8 @@
     "Procession": {
         "description": " Můžeš zahrát kartu akce z ruky dvakrát. Zahoď ji na smetiště. Vezmi si kartu akce, která stojí přesně o 1 Coin vice než zahozená karta.",
         "extra": "Zahrání karty akce z ruky není povinné. Pokud ji zahrajete, zahrajte ji potom podruhé, pak ji zahoďte na smetiště a nakonec si vezměte kartu akce s cenou přesně o 1 Coin vyšší, než měla zahraná karta akce (dokonce i když vám něco zabránilo v jejím zahození). Získání karty je povinné, jakmile se rozhodnete kartu akce zahrát, ale nemusí se podařit, pokud se ve společné zásobě nenachází karta akce s přesně vyžadovanou cenou. Pokud k něčemu dojde během zahazování karet (například k dobírání karet díky Vyznavači), vyhodnotí se to dříve, než kartu získáte. Tato karta se bere ze společné zásoby a pokládá se na odkládací balíček. To nevyžaduje žádnou akci navíc, kterou byste museli získat pomocí karet jako Pevnost. Akce je zapotřebí pouze k zahrání samotného Procesí. Nemůžete hrát žádné další karty, zatímco se vyhodnocuje vícenásobné zahrání karty umožněné Procesím, pokud to nějaká karta akce přímo nedovoluje (například Procesí samotné).<br><i>Příklad: Pokud použijete Procesí k zahrání dalšího Procesí, nejprve zahrajete jednu kartu akce dvakrát, zahodíte ji, získáte kartu akce s cenou o vyšší, poté zahrajete další kartu akce dvakrát, zahodíte ji a získáte kartu akce s cenou o vyšší.<br>Příklad: Jestliže prostřednictvím Procesí zahrajete kartu, jež vám dává k dispozici další akce, například Tuláka (+1 akce), skončíte s +2 akcemi pro pozdější použití, místo toho, aby vám zůstala pouze jedna, kdybyste zahráli dva Tuláky samostatně</i>.<br>Pokud použijete Procesí na dlouhodobé karty z Dominionu: Pobřeží, zůstane Procesí ve hře do vašeho dalšího tahu a daná dlouhodobá karta bude mít ve vašem dalším tahu zdvojený efekt, i když kartu samotnou jste zahodili.",
-        "name": "Procesí"
+        "name": "Procesí",
+        "text": "Můžeš zahrát kartu akce z ruky dvakrát. Zahoď ji na smetiště. Vezmi si kartu akce, která stojí přesně o {{Cost|1}} vice než zahozená karta."
     },
     "Province": {
         "description": "6 <*VP*>",
@@ -1787,7 +1844,8 @@
     "Rats": {
         "description": "+1 karta<br>+1 akce<n>Vezmi si Krysy. Zahoď na smetiště jinou kartu z ruky než Krysu (nebo ukaž karty v ruce, pokud v ní máš samé Krysy).<line>Pokud tuto kartu zahodíš na smetiště, +1 karta.",
         "extra": "Provádějte pokyny v pořadí, v jakém jsou uvedeny na kartě. Nejprve si doberte kartu, poté si vezměte Krysy ze společné zásoby a položte je na odkládací balíček. Následně zahoďte na smetiště jinou kartu z ruky než Krysy. Pokud již ve společné zásobě žádné Krysy nejsou, žádné nezískáte. Jestliže máte v ruce pouze Krysy, ukažte karty v ruce a žádnou nebudete zahazovat. Pokud Krysy zahazujete na smetiště, doberte si kartu. K tomu dojde, ať již jsou Krysy zahozeny ve vašem tahu nebo tahu někoho jiného, bez ohledu na to, kdo zahrál kartu, která zahazování způsobila. Balíček Krys obsahuje 20 karet místo obvyklých 10. Při hře se použije všech 20 Krys bez ohledu na počet hráčů.",
-        "name": "Krysy"
+        "name": "Krysy",
+        "text": "'''+1 karta<br>+1 akce'''<br>Vezmi si Krysy. Zahoď na smetiště jinou kartu z ruky než Krysu (nebo ukaž karty v ruce, pokud v ní máš samé Krysy).{{divline}}Pokud tut kartu zahodíš na smetiště, '''+1&nbsp;karta'''."
     },
     "Raze": {
         "description": "+1 Action<n>Trash this or a card from your hand. Look at the number of cards from the top of your deck equal to the cost in _ Coins of the trashed card. Put one into your hand and discard the rest.",
@@ -1797,7 +1855,8 @@
     "Rebuild": {
         "description": "+1 akce<n>Řekni název karty. Ukazuj karty z vršku svého dobíracího balíčku, dokud neukážeš kartu vítězných bodů, která není jmenovanou kartou. Ostatní ukázané karty odlož. Tuto kartu vítězných bodů zahoď na smetiště a vezmi si kartu vítězných bodů, která je až 3 Coins dražší. ",
         "extra": "Můžete jmenovat jakoukoli kartu bez ohledu na to, zda se v dané hře používá nebo ne, včetně karet vítězných bodů. Tím danou kartu chráníte před zahozením na smetiště. Poté ukazujte karty z vršku dobíracího balíčku, dokud neukážete kartu vítězných bodů, kterou jste případně nejmenovali. Pokud vám v dobíracím balíčku dojdou karty, zamíchejte odkládací balíček a pokračujte v ukazování, aniž byste však míchali již ukázané karty. Pokud by vám karty došly a v odkládacím balíčku byste neměli žádné karty, všechny karty odložte a nic dalšího se nestane. Jestliže jste našli jinou kartu vítězných bodů než tu, kterou jste případně jmenovali, ostatní ukázané karty odložte, danou kartu vítězných bodů zahoďte na smetiště a vezměte si kartu vítězných bodů s cenou až o 3 Coins vyšší, než měla zahozená karta. Takto získaná karta se bere ze společné zásoby a pokládá se na odkládací balíček.<br><i>Příklad: Vyberete si Darebáka. Jako první ukázaná karta vítězných bodů se objeví Statek. Zahodíte ho na smetiště a vezmete si Vévodství</i>.<br><i>Příklad: Vyberete si Statek. Při následném ukazování se mezi jinými objeví dva Statky, ale protože se jedná o vámi jmenovanou kartu, pokračujete v ukazování. Další kartou vítězných bodů je Vévodství, které zahodíte a vezmete si Provincii.</i>",
-        "name": "Obnova"
+        "name": "Obnova",
+        "text": "'''+1 akce'''<br>Řekni název karty. Ukazuj karty z vršku svého dobíracího balíčku, dokud neukážeš kartu vítězných bodů, která není jmenovanou kartou. Ostatní ukázané karty odlož. Tuto kartu vítězných bodů zahoď na smetiště a vezmi si kartu vítězných bodů, která je až {{Cost|3}} dražší."
     },
     "Recruiter": {
         "description": "+2 Cards<br><n>Trash a card from your hand. +1 Villager per 1 Coin it costs.",
@@ -1847,7 +1906,8 @@
     "Rogue": {
         "description": "+2 Coins<n>Vezmi si ze smetiště kartu v ceně 3 Coins až 6 Coins. Pokud tam žádná taková karta není, všichni ostatní hráči ukážou vrchní 2 karty svých dobíracích balíčků a zahodí podle své volby na smetiště jednu z nich v ceně 3 Coins až 6 Coins. Ostatní karty odloží.",
         "extra": "Pokud se na smetišti nachází karta s cenou v rozmezí 3 Coins až 6 Coins, musíte si jednu z nich vzít. Toto je povinné. Smetiště si můžete kdykoliv prohlédnout. Ostatním hráčům ukažte, jakou kartu získáte. Karty z Dominionu: Alchymie, jež mají v ceně Potion, do rozmezí 3 Coins až 6 Coins nepatří. Pokud se na smetišti žádná taková karta nenalézá, musí místo toho všichni ostatní hráči ukázat vrchní 2 karty svých dobíracích balíčků a pokud otočí kartu s cenou v rozmezí 3 Coins až 6 Coins, musí ji zahodit na smetiště. Zbylé karty odloží. Jestliže do uvedeného rozmezí patří obě karty, jejich vlastník si vybere, kterou z nich zahodí. Jestliže do něj naopak nepatří žádná z nich, obě odloží. Postupuje se podle pořadí tahů, počínaje hráčem po vaší levici.",
-        "name": "Padouch"
+        "name": "Padouch",
+        "text": "{{Costplus|2}}<br>Vezmi si ze smetiště kartu v ceně {{Cost|3}} až {{Cost|6}}. Pokud tam žádná taková karta neni, všichni ostatní hráči ukážou vrchní 2&nbsp;karty svých dobíracích balíčků a zahodí podle své volby na smetiště jednu z nich v ceně {{Cost|3}} až {{Cost|6}}. Ostatní karty odloží."
     },
     "Royal Blacksmith": {
         "description": "+5 Cards<n>Reveal your hand; discard the Coppers.",
@@ -1863,6 +1923,18 @@
         "description": "2 <*COIN*><line>Pokud je tato karta ve hře, když získáváš kartu, můžeš si získanou kartu položit nahoru na svůj dobírací balíček.",
         "extra": "Tato karta peněz má hodnotu 2 Coins, jako stříbrňák. Když si berete nebo kupujete více karet, můžete se pro každou kartu rozhodnout zvlášť, zda ji položíte na odkládací nebo na dobírací balíček. Je-li váš dobírací balíček prázdný a rozhodnete se kartu položit na dobírací balíček, tak tato karta bude jedinou kartou vašeho dobíracího balíčku. Karty, které získáte díky kartě posedlost (Dominion - Alchymisté) v tahu jiného hráče, nemůžete položit na dobírací balíček, protože královská pečeť je platná pouze pro posedlého hráče. ",
         "name": "Královská pečeť"
+    },
+    "Ruined Library": {
+        "name": "Zničená knihovna",
+        "text": "'''+1&nbsp;karta'''"
+    },
+    "Ruined Market": {
+        "name": "Zničené tržiště",
+        "text": "'''+1&nbsp;nákup'''"
+    },
+    "Ruined Village": {
+        "name": "Vypálená vesnice",
+        "text": "'''+1&nbsp;akce'''"
     },
     "Ruins": {
         "description": "<left><u>Opuštěný důl</u>: +1 Coin</left><left><u>Zničená knihovna</u>: +1 karta</left><left><u>Zničené tržiště</u>: +1 nákup</left><left><u>Vypálená vesnice</u>: +1 akce</left><left><u>Pozůstalí</u>: Podívej se na vrchní 2 karty svého dobíracího balíčku. Odlož je nebo vrať zpět v libovolném pořadí.</left>",
@@ -1887,7 +1959,8 @@
     "Sage": {
         "description": "+1 akce<n>Ukazuj karty z vršku svého dobírací balíčku, dokud neukážeš kartu s cenou alespoň 3 Coins. Vezmi si ji do ruky a ostatní ukázané karty odlož. ",
         "extra": "Jestliže vám během ukazování dojdou karty v dobíracím balíčku, zamíchejte odkládací balíček (ne ukázané karty) a pokračujte v ukazování. Jestliže vám i potom dojdou karty a odkládací balíček je prázdný, všechny ukázané karty odložte a žádnou kartu nezískáte. Pokud naleznete kartu s cenou 3 Coins a více, vezměte si ji do ruky a ostatní ukázané karty odložte.<br><i>Příklad: Ukazujete postupně Měďák, Měďák, Kletbu a Provincii. Provincie stojí 8 Coins, takže tady s ukazováním přestanete, vezmete si Provincii do ruky a oba Měďáky a Kletbu odložíte</i>.",
-        "name": "Mudrc"
+        "name": "Mudrc",
+        "text": "'''+1 akce'''<br>Ukazuj karty z vršku svého dobírací balíčku, dokud neukážeš kartu s cenou alespoň {{nowrap|{{Cost|3}}.}} Vezmi si ji do ruky a ostatní ukázané karty odlož."
     },
     "Salt the Earth": {
         "description": "+1<VP><n>Trash a Victory card from the Supply.",
@@ -1917,7 +1990,8 @@
     "Scavenger": {
         "description": "+2 Coins<n>Můžeš položit svůj dobírací balíček na odkládací balíček. Prohlédni si odkládací balíček a polož z něj jednu kartu na dobírací balíček.",
         "extra": "Umístění dobíracího balíčku na odkládací balíček není povinné, ale položení karty z odkládacího balíčku na dobírací ano. Umístění dobíracího balíčku na odkládací balíček neaktivuje schopnost Tunelu z Dominionu: Vzdálených krajů. Jestliže v dobíracím balíčku nemáte žádné karty, například protože jste ho umístili na odkládací balíček, stane se karta položená na dobírací balíček jeho jedinou kartou.",
-        "name": "Metař"
+        "name": "Metař",
+        "text": "{{Costplus|2}}<br>Můžeš položit svůj dobírací balíček na odkládací balíček. Prohlédni si odkládací balíček a polož z něj jednu kartu na dobírací balíček."
     },
     "Scepter": {
         "description": "When you play this, choose one:<br>+2 Coin; or replay an Action card you played this turn that's still in play.",
@@ -1947,7 +2021,8 @@
     "Scrying Pool": {
         "description": "+1 akce<n>Každý hráč (včetně tebe) ukáže vrchní kartu svého dobíracího balíčku a ty vybereš, zda ji odloží na odkládací balíček, nebo zda ji vrátí zpět. Poté ukazuj vrchní karty ze svého dobíracího balíčku, dokud neodkryješ kartu, která není akční.<br>Všechny své odkryté karty si přidej do ruky. ",
         "extra": "Nejprve je ukázána horní karta dobíracího balíčku každého hráče, a ta je buď odložena na odkládací balíček, nebo vrácena zpět na dobírací balíček. Pokud hráčům záleží na pořadí, postupujte po směru hodinových ručiček, počínaje u sebe. U každého hráče se rozhodujete samostatně. Poté co ukončíte tato rozhodnutí, ukazujte horní karty ze svého dobíracího balíčku, dokud neukážete kartu, která není akční kartou. Pokud vyčerpáte karty v dobíracím balíčku, aniž byste ukázali kartu, která není akční kartou, zamíchejte svůj odkládací balíček a pokračujte. Pokud již nemáte ani odkládací balíček, zastavte. Vezměte si do ruky všechny ukázané akční karty plus první ukázanou kartu, která není akční kartou. Pokud úplně první ukázaná karta nebyla akční kartou, vezměte si do ruky pouze ji. Karty kombinovaného typu, z nichž jeden typ je akce, jsou akční karty. Do ruky si berete pouze karty, které otočíte před odkrytím „neakční“ karty; do ruky si neberete kartu odloženou v první části pokynu na kartě vidění nebo karty z balíčků jiných hráčů.",
-        "name": "Vidění"
+        "name": "Vidění",
+        "text": "'''+1 akce'''<br>Každý hráč (včetně tebe) ukáže vrchní kartu svého dobíracího balíčku a ty vybereš, zda ji odloží na odkládací balíček, nebo zda ji vrátí zpět. Poté ukazuj vrchní karty ze svého dobíracího balíčku, dokud neodkryješ kartu, která není akční.<br>Všechny své odkryté karty si přidej do ruky."
     },
     "Sculptor": {
         "description": "Gain a card to your hand costing up to 4 Coin. If it's a Treasure, +1 Villager.",
@@ -2054,6 +2129,26 @@
         "extra": "Each player has a separate pile of coin tokens on Sinister Plot; keep yours by your cube. Each turn you either add a token (an unused one, not one from a mat), or remove all of your tokens to draw as many cards.<n><n>Projects are special, permanent, on-buy effects not attached to cards. Players can buy Projects during their Buy phase whenever they might instead buy a card or Event. When a player buys a Project, they put a wooden cube of their color on it, to track which Projects' effects they receive. Each player has only two cubes to put on Projects.\n\nProjects are not Kingdom cards; including one or more Projects in a game does not count toward the 10 Kingdom card piles the Supply includes. In fact, Projects are not considered \"cards\" at all; any text referring to a \"card\" does not apply to Projects.\n\nAny number of Projects may be used in a game, though it is recommended to not use  more than two total Events, Landmarks, and Projects.",
         "name": "Sinister Plot"
     },
+    "Sir Bailey": {
+        "name": "Sir Bailey",
+        "text": "'''+1 karta<br>+1 akce'''<br>Všichni ostatní hráči ukážou vrchní 2&nbsp;karty svých dobíracích balíčků a zahodí na smetiště jednu kartu v ceně {{Cost|3}} až {{Cost|6}}. Ostatní karty odloží.<br>Pokud je takto zahozen nějaký rytíř, zahoď na smetiště i Sira Baileyho."
+    },
+    "Sir Destry": {
+        "name": "Sir Destry",
+        "text": "'''+2 karty'''<br>Všichni ostatní hráči ukážou vrchní 2&nbsp;karty svých dobíracích balíčků a zahodí na smetiště jednu kartu v ceně {{Cost|3}} až {{Cost|6}}. Ostatní karty odloží.<br>Pokud je takto zahozen nějaký rytíř, zahoď na smetiště i Sira Destryho."
+    },
+    "Sir Martin": {
+        "name": "Sir Martin",
+        "text": "'''+2 nákupy'''<br>Všichni ostatní hráči ukážou vrchní 2&nbsp;karty svých dobíracích balíčků a zahodí na smetiště jednu kartu v ceně {{Cost|3}} až {{Cost|6}}. Ostatní karty odloží.<br>Pokud je takto zahozen nějaký rytíř, zahoď na smetiště i Sira Martina."
+    },
+    "Sir Michael": {
+        "name": "Sir Michal",
+        "text": "Všichni ostatní hráči odloží tolik karet z ruky, aby jim zbyly&nbsp;3.<br>Všichni ostatní hráči ukážou vrchní 2&nbsp;karty svých dobíracích balíčků a zahodí na smetiště jednu kartu v ceně {{Cost|3}} až {{Cost|6}}. Ostatní karty odloží.<br>Pokud je takto zahozen nějaký rytíř, zahoď na smetiště i Sira Michala."
+    },
+    "Sir Vander": {
+        "name": "Sir Vander",
+        "text": "Všichni ostatní hráči ukážou vrchní 2&nbsp;karty svých dobíracích balíčků a zahodí na smetiště jednu kartu v ceně {{Cost|3}} až {{Cost|6}}. Ostatní karty odloží.<br>Pokud je takto zahozen nějaký rytíř, zahoď na smetiště i Sira Vandera.{{divline}}Pokud tuto kartu zahodíš na smetiště, vezmi si Zlaťák."
+    },
     "Skulk": {
         "description": "+1 Buy<br>Each other player receives the next Hex.<line>When you gain this, gain a Gold.",
         "extra": "You gain the Gold whether you gained Skulk due to buying it, or gained it some other way.",
@@ -2092,17 +2187,19 @@
     "Spoils": {
         "description": "3 <*COIN*><n><n>Když tuto kartu zahraješ, vrať ji na její balíček.<br><i>(Nepatři do společné zásoby.)</i>",
         "extra": "Tato karta není součástí společné zásoby, lze ji získat pouze prostřednictvím Tábora banditů, Nájezdníka a Drancování. Když ji zahrajete, dostanete k dispozici +3 Coins na nákupy v tomto tahu. Poté ji vraťte do balíčku karet Kořisti. Nemusíte hrát karty peněz z ruky.",
-        "name": "Kořist"
+        "name": "Kořist",
+        "text": "<p>{{Cost|3|l}}<br>Když tuto kartu zahraješ, vrať ji na jeji balíček.</p>''(Nepatři do společné zásoby.)''"
     },
     "Spy": {
         "description": "+1 karta<br>+1 akce<n>Všichni hráči (včetně tebe) ukážou vrchní kartu ze svého balíčku a podle tvojí volby ji buď vrátí zpět, nebo odloží na svůj odkládací balíček.",
         "extra": "Špion nutí všechny hráče, včetně hráče, který kartu zahrál, aby ukázali vrchní kartu ze svého dobíracího balíčku. Kartu, kterou získá hráč navíc, když vyloží kartu špiona, si lízne z dobíracího balíčku předtím, než se začnou ukazovat karty. Všichni hráči, kteří nemají v dobíracím balíčku žádné karty, nejprve zamíchají svůj odkládací balíček, aby měli co ukázat. Ten, kdo ani po zamíchání nemá žádnou kartu, kterou by mohl ukázat, není povinen kartu ukazovat. Pokud chcete dodržovat pořadí hráčů, ukáže kartu nejprve hráč, který kartu vyložil, a poté ostatní po směru hodinových ručiček. Odhalené karty, které hráči neodložili na odkládací balíček, se vrátí navrch jejich dobíracího balíčku.",
-        "name": "Špión"
+        "name": "Špion"
     },
     "Squire": {
         "description": "+1 Coin<n>Vyber si jeden pokyn:<br>+2 akce;<br>+2 nákupy;<br>vezmi si Stříbrňák.<line>Pokud tuto kartu zahodíš na smetiště, vezmi si kartu útoku.",
         "extra": "Když tuto kartu zahrajete, dostanete k dispozici +1 Coin a podle své volby buď +2 akce, +2 nákupy nebo si vezmete Stříbrňák. Stříbrňák se bere ze společné zásoby a pokládá se na odkládací balíček. Jestliže Panoše zahodíte na smetiště, získáte kartu útoku; bere se ze společné zásoby a pokládá se na odkládací balíček. Můžete si vzít jakoukoli kartu útoku ze společné zásoby, ale pokud tam žádná není, nic nedostanete.",
-        "name": "Panoš"
+        "name": "Panoš",
+        "text": "{{Costplus|1}}<br>Vyber si jeden pokyn:<br>'''+2 akce''';<br>'''+2 nákupy''';<br>vezmi si Stříbrňák.{{divline}}Pokud tuto kartu zahodíš na smetiště, vezmi si kartu útoku."
     },
     "Stables": {
         "description": "Můžeš odložit kartu peněz.<n>Pokud tak učiníš:<br>+3 karty a +1 akce.",
@@ -2122,7 +2219,8 @@
     "Stash": {
         "description": "2 <*COIN*><line>When you shuffle, you may put this anywhere in your deck.",
         "extra": "Stash is a Treasure that produces 2 coins when played, like Silver. Whenever you shuffle your deck, you can choose where in your deck each copy of Stash that you have goes. You can't look at the fronts of the other cards in your deck to see where to put it; Stash itself has a different card back, so that's how you'll know where it is. If you have multiple copies of Stash, you can clump them together or spread them out or whatever you want. Since Stash has a different card back, you will also know if it's in a player's hand, or set aside for someone's Haven (from Seaside), and so on.",
-        "name": "Stash"
+        "name": "Tajná skrýš",
+        "text": "{{Cost|2|l}}{{divline}}Po zamíchání můžeš změnit pozici této karty ve svém balíčku."
     },
     "Steward": {
         "description": "Vyberte jeden pokyn:<br>+2 karty;<br>nebo +2 Coins;<br>nebo<br>zahoď 2 karty z ruky na smetiště.",
@@ -2137,7 +2235,8 @@
     "Storeroom": {
         "description": "+1 nákup<n>Odlož libovolný počet karet.<n>+1 karta za každou takto odloženou kartu.<n>Odlož libovolný počet karet.<n>+ 1 Coins za každou takto odloženou kartu.",
         "extra": "Odložte libovolný počet karet z ruky a doberte si stejný počet karet. Potom odložte znovu libovolný počet karet, mezi nimiž mohou být i právě dobrané karty, a za každou takto odloženou kartu dostanete k dispozici +1 Coins.",
-        "name": "Komora"
+        "name": "Komora",
+        "text": "'''+1 nákup'''<br>Odlož libovolný počet karet. <br>'''+1 karta''' za každou takto odloženou kartu. Odlož libovolný počet karet. <br>{{Costplus|1}} za každou takto odloženou kartu."
     },
     "Storyteller": {
         "description": "+1 Action<br>+1 Coin<n>Play up to 3 Treasures from your hand. Pay all of your _ Coins. +1 Card per Coin paid.",
@@ -2148,6 +2247,10 @@
         "description": "Gain an Action card costing up to 4 coins. Set it aside. If you do, then at the start of your next turn, play it.",
         "extra": "When you buy this, you gain an Action card costing up to 4 coins from the Supply and set it aside face up.<n>If you did set it aside, then at the start of your next turn, play that Action card. This doesn't use up your default Action for the turn.<n>In order to remember to play the card on your next turn, you may want to turn it sideways or diagonally, turning it right side up when you play it.<n>If you move the Action card after you gain it but before you set it aside (e.g. by putting it on top of your deck with Watchtower, from Prosperity), then Summon will ''lose track'' of it and be unable to set it aside; in that case you will not play it at the start of your next turn.<n>If you use Summon to gain a Nomad Camp (from Hinterlands), Summon will know to find the Nomad Camp on your deck, so you will set it aside in that case (unless you have moved it elsewhere via another ability).",
         "name": "Summon"
+    },
+    "Survivors": {
+        "name": "Pozůstalí",
+        "text": "Podívej se na vrchní 2&nbsp;karty svého dobíracího balíčku. Odlož je nebo vrať zpět v libovolném pořadí."
     },
     "Swamp Hag": {
         "description": "Until your next turn, when any other player buys a card, he gains a Curse.<n>At the start of your next turn:<n>+3 Coins",
@@ -2267,7 +2370,7 @@
     "Throne Room": {
         "description": "Vyberte si 1 akční kartu z ruky a zahrajte ji dvakrát.",
         "extra": "Když vyložíte trůnní sál, vyberte si 1 další akční kartu ze své ruky, vyložte ji lícem nahoru a proveďte na ní uvedený(é) pokyn(y). Poté si vezměte tuto kartu zpět do ruky, vyložte ji podruhé a proveďte uvedený(é) pokyn(y) ještě jednou. Toto druhé vyložení akční karty nestojí žádné akce. Předtím, než začnete hrát kartu podruhé, musíte splnit všechny pokyny, které jsou na kartě uvedeny. Pokud použijete trůnní sál k zahrání druhé karty trůnního sálu, vyložíte jednu akční kartu dvakrát a poté vyberete další akční kartu, kterou opět zahrajete dvakrát, tzn. nehrajete stejnou akční kartu čtyřikrát po sobě. Pokud vyberete po zahrání trůnního sálu akční kartu, která vám dává akci navíc, např. trh, budete mít po odehrání obou karet + 2 akce navíc, což je výhodné, neboť kdybyste zahráli dvakrát po sobě trh, zbyla by vám pouze 1 akce. Abyste předešli problémům, můžete odpočítávat zbývající akce nahlas! Mezi zahráním trůnního sálu a příslušné dvojité akční karty, nesmíte hrát žádné jiné akční karty.",
-        "name": "Trůní sál"
+        "name": "Trůnní sál"
     },
     "Tomb": {
         "description": "When you trash a card, +1<VP>.",
@@ -2432,7 +2535,8 @@
     "Urchin": {
         "description": "+1 karta<br>+1 akce<n>Všichni ostatní hráči odloží z ruky tolik karet, aby jim zůstaly 4.<line>Jestliže zahraješ další kartu útoku, zatímco je Darebák ve hře, můžeš ho zahodit na smetiště. Pokud tak učiníš, vezmi si Žoldnéře z baličku karet Žoldnéřů.",
         "extra": "Když tuto kartu zahrajete, doberete si kartu a dostanete k dispozici +1 akci. Poté všichni ostatní hráči odloží tolik karet, aby jim zbyly 4. Hráči, kteří již mají v ruce 4 a méně karet, nic neodkládají. Když je Darebák ve hře a vy zahrajete jinou kartu útoku, ještě předtím, než ji vyhodnotíte, můžete Darebáka zahodit na smetiště. Pokud tak učiníte, získáte Žoldnéře. Vezměte ho z balíčku karet Žoldnéřů a položte ho na odkládací balíček. Pokud už žádní Žoldnéři nejsou k dispozici, žádného nezískáte. Jestliže zahrajete téhož Darebáka v jednom tahu dvakrát, například díky Procesí, pro získání Žoldnéře ho nemůžete zahodit. Jestliže však zahrajete dva různé Darebáky, zahrání toho druhého vám umožní zahodit toho prvního.",
-        "name": "Darebák"
+        "name": "Darebák",
+        "text": "'''+1 karta<br>+1 akce'''<br>Všichni ostatní hráči odloží z ruky tolik karet, aby jím zústaly&nbsp;4.{{divline}}Jestliže zahraješ další kartu útoku, zatímco je Darebák ve hře,  můžeš ho zahodit na smetiště. Pokud tak učiníš, vezmi si Žoldnéře z baličku karet Žoldnéřů."
     },
     "Urchin - Mercenary": {
         "description": "<justify><u>Urchin</u>: When you play this, you draw a card and get +1 Action, then each other player discards down to 4 cards in hand. Players who already have 4 or fewer cards in hand do not do anything. While Urchin is in play, when you play another Attack card, before resolving it, you may trash the Urchin. If you do, you gain a Mercenary. If there are no Mercenaries left you do not gain one. If you play the same Urchin twice in one turn, such as via Procession, that does not let you trash it for a Mercenary. If you play two different Urchins however, playing the second one will let you trash the first one.</justify>",
@@ -2442,7 +2546,8 @@
     "Vagrant": {
         "description": "+1 karta<br>+1 akce<n>Ukaž vrchní kartu svého dobíracího balíčku. Pokud je to Kletba, ruina, útočiště nebo karta vítězných bodů, vezmi si ji do ruky.",
         "extra": "Nejprve si doberete kartu a až poté ukážete vrchní kartu dobíracího balíčku. Jestliže to je Kletba, ruina, útočiště nebo karta vítězných bodů, vezmete si ji do ruky, jinak se vrátí zpět na dobírací balíček. Kartu více druhů si vezmete do ruky, pokud alespoň jeden druh je Kletba, ruina, útočiště nebo karta vítězných bodů.",
-        "name": "Tulák"
+        "name": "Tulák",
+        "text": "'''+1 karta<br>+1 akce'''<br>Ukáž vrchní kartu svého dobíracího balíčku. Pokud je to Kletba, ruina, útočiště nebo karta vítězných bodů, vezmi si ji do ruky."
     },
     "Vampire": {
         "description": "Each other player receives the next Hex.<br>Gain a card costing up to 5 Coin other than a Vampire.<br>Exchange this for a Bat.",
@@ -2502,7 +2607,8 @@
     "Wandering Minstrel": {
         "description": "+1 karta<br>+2 akce<n>Ukaž vrchní 3 karty svého dobíracího balíčku. Karty akcí vrať zpět v libovolném pořadí a ostatní karty odlož.",
         "extra": "Nejprve si doberete kartu a poté ukažte vrchní 3 karty svého dobíracího balíčku. Pokud v něm není dostatek karet, zamíchejte odkládací balíček. Jestliže ani poté nemáte dost karet na dobrání, doberte si tolik, kolik lze. Ukázané karty akcí vraťte na dobírací balíček v libovolném pořadí a zbývající karty odložte. Karta více typů, z nichž jeden představuje kartu akce, se považuje za kartu akce. Pokud jste neukázali žádné karty akcí, na dobírací balíček se žádné karty nevrátí.",
-        "name": "Bard"
+        "name": "Bard",
+        "text": "'''+1 karta<br>+2 akce'''<br>Ukáž vrchní  3&nbsp;karty svého dobíracího balíčku. Karty akcí vrať zpět v libovolném pořadi a ostatní karty odlož."
     },
     "War": {
         "description": "Reveal cards from your deck until revealing one costing 3 Coin or 4 Coin. Trash it and discard the rest.",

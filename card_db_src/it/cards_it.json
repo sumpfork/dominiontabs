@@ -183,7 +183,7 @@
     "Conspirator": {
         "description": "+2 Coins<n>Se hai giocato 3 o più carte Azione in questo turno (questa inclusa): +1 Carta, +1 Azione.",
         "extra": " Verifichi se Cospiratori ti conferisce +1 Carta e +1 Azione dopo averlo giocato. Le carte Azione giocate successivamente nel turno non cambiano questa valutazione. Ai fini del contare le Azioni, se usi Sala del Trono su di una Azione, è un'Azione per la Sala del Trono, una per l'Azione selezionata giocata la prima volta, e una per l'Azione selezionata giocata la seconda volta. Per esempio, se usi Sala del Trono su Cospiratori, il primo Cospiratori sarà la tua seconda Azione, e non ti darà +1 Carta e +1 Azione, ma il secondo Cospiratori sarà la tua terza Azione, ed otterrai +1 Carta e +1 Azione per questo secondo Cospiratori. Le carte Azione - Vittoria sono Azioni.",
-        "name": "Cospiratore"
+        "name": "Cospiratori"
     },
     "Contraband": {
         "description": "3 <*COIN*><br><br>+1 Acquisto\nQuando giochi questa carta, il giocatore alla tua sinistra nomina una carta. Non puoi comprare quella carta in questo turno.",
@@ -334,6 +334,9 @@
         "extra": " Se non ci sono abbastanza Maledizioni per tutti quando giochi Famiglio, distribuiscile in ordine di turno a cominciare dal giocatore alla tua sinistra. Se giochi Famiglio senza Maledizioni rimaste, ricevi comunque +1 Carta e +1 Azione. Un giocatore che ottenga una Maledizione la mette scoperta nella sua pila degli scarti.",
         "name": "Famiglio"
     },
+    "Farm": {
+        "name": "Harem"
+    },
     "Farming Village": {
         "description": "+2 Azioni\nRivela carte dalla cima del tuo mazzo fin quando non riveli una carta Azione o una Carta Tesoro. Metti quella carta nella tua mano e scarta le altre carte rivelate.",
         "extra": " Rivela carte dalla cima del tuo mazzo fin quando non riveli una carta Tesoro o Azione. Se finisci le carte prima di trovarne una, mescola il tuo scarto (ma non le carte rivelate), e continua a rivelare carte. Se ancora non ne trovi una, scarta semplicemente tutte le carte rivelate. Se trovi una carta Azione o Tesoro, mettila nella tua mano e scarta il resto delle carte rivelate. Una carta di tipi multipli, uno dei quali sia Tesoro o Azione (per esempio Diadema, che è Tesoro - Premio), è una carta Tesoro o Azione e quindi verrà pescata da questo. Non scegli Azione o Tesoro; ti fermi sulla prima carta che sia di uno dei due tipi. ",
@@ -369,7 +372,7 @@
     "Followers": {
         "description": "+2 Carte\nOttieni una Tenuta. Ogni altro giocatore ottiene una Maledizione e scarta fino ad avere 3 carte in mano.\n(Questa carta non è nella Riserva.)",
         "extra": " Fai le cose nell'ordine riportato. Peschi 2 carte; poi ottieni una Tenuta dalla Riserva, mettendola nel tuo scarto; quindi ogni altro giocatore ottiene una Maledizione dalla riserva, mettendola nel suo scarto; quindi ogni altro giocatore scarta fino ad avere 3 carte in mano. Un giocatore con 3 o meno carte in mano non scarta nessuna carta. Se non ci sono Tenute rimaste, non ne ottieni. Se non ci sono abbastanza Maledizioni rimasta, distribuisci quelle che ci sono in ordine di turno. Questo è un Premio; vedi le Regole Addizionali. ",
-        "name": "Seguaci"
+        "name": "Sostenitori"
     },
     "Fool's Gold": {
         "description": "Se questa è la prima volta che giochi un Oro dello Stolto in questo turno, questa carta vale 1 Coin, altrimenti vale 4 Coins.<line>Quando un altro giocatore ottiene una Provincia, puoi eliminare questa carta dalla tua mano. Se lo fai, ottieni un Oro, mettendolo in cima al tuo mazzo.",
