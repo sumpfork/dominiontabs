@@ -78,6 +78,49 @@ def test_cost_sorter_applies_debt_and_potion_weights():
     assert zero_weight_sorter.by_cost_sort_key(coin)[2] == 4.0
 
 
+def test_debt_and_potion_weights_change_cost_ordering():
+    def card(name, cost):
+        return SimpleNamespace(
+            name=name,
+            cardset="Empires",
+            isExpansion=lambda: False,
+            cost_sort_key=lambda: cost,
+        )
+
+    cards = [
+        card("0C/0P/4D", (0, 0, "4")),
+        card("3C/1P/0D", (3, "1", 0)),
+        card("1C/0P/0D", (1, 0, 0)),
+        card("8C/0P/0D", (8, 0, 0)),
+    ]
+
+    no_debt_weight = main.CardSorter("cost", "en_us", {}, debt_cost=0.0)
+    assert [c.name for c in sorted(cards, key=no_debt_weight)] == [
+        "0C/0P/4D",
+        "1C/0P/0D",
+        "3C/1P/0D",
+        "8C/0P/0D",
+    ]
+
+    debt_as_coin = main.CardSorter("cost", "en_us", {}, debt_cost=1.0)
+    assert [c.name for c in sorted(cards, key=debt_as_coin)] == [
+        "1C/0P/0D",
+        "3C/1P/0D",
+        "0C/0P/4D",
+        "8C/0P/0D",
+    ]
+
+    potion_as_coin = main.CardSorter(
+        "cost", "en_us", {}, debt_cost=0.0, potion_cost=4.0
+    )
+    assert [c.name for c in sorted(cards, key=potion_as_coin)] == [
+        "0C/0P/4D",
+        "1C/0P/0D",
+        "3C/1P/0D",
+        "8C/0P/0D",
+    ]
+
+
 def test_no_group_global():
     options = get_clean_opts([])
     assert not options.group_global
