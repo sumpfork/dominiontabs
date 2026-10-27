@@ -38,8 +38,10 @@ def generate_sample(options):
 
 
 class CardSorter(object):
-    def __init__(self, order, lang, baseCards):
+    def __init__(self, order, lang, baseCards, debt_cost=None, potion_cost=None):
         self.order = order
+        self.debt_cost = debt_cost
+        self.potion_cost = potion_cost
 
         # If PyICU has been successfully imported
         if have_icu:
@@ -128,10 +130,23 @@ class CardSorter(object):
         return card.getType().getTypeNames(), self.get_card_name_sort_key(card.name)
 
     def by_cost_sort_key(self, card):
+        cost = card.cost_sort_key()
+        if self.debt_cost is None and self.potion_cost is None:
+            # No weighting options means preserve the exact original sort key.
+            weighted_cost = str(cost)
+        else:
+            coin_cost, potion_cost, debt_cost = cost
+            debt_weight = 1.0 if self.debt_cost is None else self.debt_cost
+            potion_weight = 0.0 if self.potion_cost is None else self.potion_cost
+            weighted_cost = (
+                int(coin_cost)
+                + int(debt_cost or 0) * debt_weight
+                + int(potion_cost or 0) * potion_weight
+            )
         return (
             card.cardset,
             int(card.isExpansion()),
-            str(card.cost_sort_key()),
+            weighted_cost,
             self.get_card_name_sort_key(card.name),
         )
 
@@ -548,6 +563,8 @@ def filter_sort_cards(cards: list[Card], options) -> list[Card]:
             for card in cards
             if "base" in [set_name.lower() for set_name in card.cardset_tags]
         },
+        debt_cost=options.debt_cost,
+        potion_cost=options.potion_cost,
     )
 
     # Optionally remove base cards from expansions that have them

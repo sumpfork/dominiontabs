@@ -108,6 +108,18 @@ def parse_opts(cmdline_args=None):
         " 'colour' will sort by card type, then card name;"
         " 'cost' will sort by expansion, then card cost, then name.",
     )
+    group_basic.add_argument(
+        "--debt-cost",
+        type=float,
+        default=None,
+        help="Debt multiplier for weighted cost sorting; omitted by default.",
+    )
+    group_basic.add_argument(
+        "--potion-cost",
+        type=float,
+        default=None,
+        help="Potion multiplier for weighted cost sorting; omitted by default.",
+    )
 
     # Divider Body
     group_body = parser.add_argument_group(
