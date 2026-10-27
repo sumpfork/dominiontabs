@@ -61,6 +61,8 @@ class CardSorter(object):
             self.sort_key = self.by_colour_sort_key
         elif order == "cost":
             self.sort_key = self.by_cost_sort_key
+        elif order == "cost-alpha":
+            self.sort_key = self.by_cost_alpha_sort_key
         elif order == "kingdom":
             self.sort_key = self.by_expansion_kingdom_sort_key
         else:
@@ -134,6 +136,15 @@ class CardSorter(object):
             card.cardset,
             int(card.isExpansion()),
             card.cost_sort_key(debt_cost=self.debt_cost, potion_cost=self.potion_cost),
+            self.get_card_name_sort_key(card.name),
+        )
+
+    def by_cost_alpha_sort_key(self, card):
+        coin_cost, potion_cost, debt_cost = card.cost_sort_key()
+        return (
+            int(coin_cost),
+            int(potion_cost or 0),
+            int(debt_cost or 0),
             self.get_card_name_sort_key(card.name),
         )
 
