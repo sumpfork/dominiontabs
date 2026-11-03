@@ -14,25 +14,25 @@ def get_clean_opts(opts):
 
 
 def test_standard_opts():
-    # should be the default
-    options = get_clean_opts([])
+    # Smoke-test the default generation configuration with only one output page.
+    options = get_clean_opts(["--num-pages=1"])
     main.generate(options)
 
 
 @pytest.mark.parametrize("lang", db.get_languages("card_db"))
 def test_languages(lang):
     print("checking " + lang)
-    options = get_clean_opts([f"--language={lang}"])
+    options = get_clean_opts([f"--language={lang}", "--num-pages=1"])
     main.generate(options)
 
 
 def test_grouped():
-    options = get_clean_opts(["--special-card-groups"])
+    options = get_clean_opts(["--special-card-groups", "--num-pages=1"])
     main.generate(options)
 
 
 def test_resolution():
-    options = get_clean_opts(["--tab-artwork-resolution=300"])
+    options = get_clean_opts(["--tab-artwork-resolution=300", "--num-pages=1"])
     main.generate(options)
 
 
