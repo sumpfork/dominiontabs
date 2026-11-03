@@ -133,9 +133,7 @@ class CardSorter(object):
         return (
             card.cardset,
             int(card.isExpansion()),
-            card.cost_sort_key(
-                debt_cost=self.debt_cost, potion_cost=self.potion_cost
-            ),
+            card.cost_sort_key(debt_cost=self.debt_cost, potion_cost=self.potion_cost),
             self.get_card_name_sort_key(card.name),
         )
 
