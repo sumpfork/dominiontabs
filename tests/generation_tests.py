@@ -1,10 +1,9 @@
 from __future__ import print_function
 
-from types import SimpleNamespace
-
 import pytest
 
 from domdiv import config_options, db, main
+from domdiv.cards import Card, CardType
 
 
 def get_clean_opts(opts):
@@ -47,75 +46,69 @@ def test_cost_weights_default_and_override():
     assert zero_costs.debt_cost == 0.0
     assert zero_costs.potion_cost == 0.0
 
+    debt_only = get_clean_opts(["--debt-cost=2"])
+    assert debt_only.debt_cost == 2.0
+    assert debt_only.potion_cost is None
 
-def test_cost_sorter_applies_debt_and_potion_weights():
-    def card(name, cost):
-        return SimpleNamespace(
-            name=name,
-            cardset="Test",
-            isExpansion=lambda: False,
-            cost_sort_key=lambda: cost,
-        )
+    potion_only = get_clean_opts(["--potion-cost=3"])
+    assert potion_only.debt_cost is None
+    assert potion_only.potion_cost == 3.0
 
-    debt = card("Debt", (0, 0, "4"))
-    potion = card("Potion", (0, "1", 0))
-    coin = card("Coin", (4, 0, 0))
 
-    default_sorter = main.CardSorter("cost", "en_us", {})
-    assert default_sorter.by_cost_sort_key(debt)[2] == str(debt.cost_sort_key())
-    assert default_sorter.by_cost_sort_key(potion)[2] == str(potion.cost_sort_key())
-    assert default_sorter.by_cost_sort_key(coin)[2] == str(coin.cost_sort_key())
-
-    debt_one_sorter = main.CardSorter("cost", "en_us", {}, debt_cost=1.0)
-    assert debt_one_sorter.by_cost_sort_key(debt)[2] == 4.0
-    assert debt_one_sorter.by_cost_sort_key(coin)[2] == 4.0
-
-    zero_weight_sorter = main.CardSorter(
-        "cost", "en_us", {}, debt_cost=0.0, potion_cost=0.0
+def test_weighted_cost_sorting_is_independent_and_keeps_raw_cost_tiebreaks(
+    monkeypatch,
+):
+    monkeypatch.setattr(
+        Card,
+        "types",
+        {("Action",): CardType(["Action"], "action.png")},
     )
-    assert zero_weight_sorter.by_cost_sort_key(debt)[2] == 0.0
-    assert zero_weight_sorter.by_cost_sort_key(potion)[2] == 0.0
-    assert zero_weight_sorter.by_cost_sort_key(coin)[2] == 4.0
 
-
-def test_debt_and_potion_weights_change_cost_ordering():
-    def card(name, cost):
-        return SimpleNamespace(
+    def card(name, coin, potion=0, debt=0):
+        return Card(
             name=name,
             cardset="Empires",
-            isExpansion=lambda: False,
-            cost_sort_key=lambda: cost,
+            cardset_tag="empires",
+            types=("Action",),
+            cost=str(coin),
+            potcost=potion,
+            debtcost=debt,
         )
 
     cards = [
-        card("0C/0P/4D", (0, 0, "4")),
-        card("3C/1P/0D", (3, "1", 0)),
-        card("1C/0P/0D", (1, 0, 0)),
-        card("8C/0P/0D", (8, 0, 0)),
+        card("0C/0P/4D", 0, debt="4"),
+        card("1C/0P/0D", 1),
+        card("3C/1P/0D", 3, potion="1"),
+        card("4C/0P/0D", 4),
+        card("8C/0P/0D", 8),
     ]
 
-    no_debt_weight = main.CardSorter("cost", "en_us", {}, debt_cost=0.0)
-    assert [c.name for c in sorted(cards, key=no_debt_weight)] == [
+    # Unweighted sorting starts with coin cost and retains the original costs as tie-breakers.
+    default_sorter = main.CardSorter("cost", "en_us", {})
+    assert [c.name for c in sorted(cards, key=default_sorter)] == [
         "0C/0P/4D",
         "1C/0P/0D",
         "3C/1P/0D",
+        "4C/0P/0D",
         "8C/0P/0D",
     ]
 
+    # A debt weight of 1 makes 4 Debt tie with 4 Coins; raw costs break the tie.
     debt_as_coin = main.CardSorter("cost", "en_us", {}, debt_cost=1.0)
     assert [c.name for c in sorted(cards, key=debt_as_coin)] == [
         "1C/0P/0D",
         "3C/1P/0D",
         "0C/0P/4D",
+        "4C/0P/0D",
         "8C/0P/0D",
     ]
 
-    potion_as_coin = main.CardSorter(
-        "cost", "en_us", {}, debt_cost=0.0, potion_cost=4.0
-    )
+    # Specifying a Potion weight does not implicitly apply a Debt weight.
+    potion_as_coin = main.CardSorter("cost", "en_us", {}, potion_cost=4.0)
     assert [c.name for c in sorted(cards, key=potion_as_coin)] == [
         "0C/0P/4D",
         "1C/0P/0D",
+        "4C/0P/0D",
         "3C/1P/0D",
         "8C/0P/0D",
     ]

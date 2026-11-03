@@ -130,23 +130,12 @@ class CardSorter(object):
         return card.getType().getTypeNames(), self.get_card_name_sort_key(card.name)
 
     def by_cost_sort_key(self, card):
-        cost = card.cost_sort_key()
-        if self.debt_cost is None and self.potion_cost is None:
-            # No weighting options means preserve the exact original sort key.
-            weighted_cost = str(cost)
-        else:
-            coin_cost, potion_cost, debt_cost = cost
-            debt_weight = 1.0 if self.debt_cost is None else self.debt_cost
-            potion_weight = 0.0 if self.potion_cost is None else self.potion_cost
-            weighted_cost = (
-                int(coin_cost)
-                + int(debt_cost or 0) * debt_weight
-                + int(potion_cost or 0) * potion_weight
-            )
         return (
             card.cardset,
             int(card.isExpansion()),
-            weighted_cost,
+            card.cost_sort_key(
+                debt_cost=self.debt_cost, potion_cost=self.potion_cost
+            ),
             self.get_card_name_sort_key(card.name),
         )
 

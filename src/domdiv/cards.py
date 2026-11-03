@@ -232,9 +232,10 @@ class Card(object):
     def get_GroupCost(self):
         return self.getType().getGroupCost()
 
-    def cost_sort_key(self):
+    def cost_sort_key(self, debt_cost=None, potion_cost=None):
         """Return a tuple that represents the total cost of this card in (coins, potions, debt)
-        used for sorting cards by cost.
+        used for sorting cards by cost. A weighted aggregate is the first element; the raw
+        numeric costs follow it to provide deterministic ordering when aggregate costs tie.
         Highest cost cards are in order:
         - Types with group cost of "" sort at the very end
         - cards with * since that can mean anything
@@ -253,7 +254,16 @@ class Card(object):
             except ValueError:
                 c_cost = 997  # can't, so make it a really big number
 
-        return c_cost, self.potcost, self.debtcost
+        potion_cost_value = int(self.potcost or 0)
+        debt_cost_value = int(self.debtcost or 0)
+        weighted_cost = c_cost
+        if c_cost < 997:
+            if debt_cost is not None:
+                weighted_cost += debt_cost_value * debt_cost
+            if potion_cost is not None:
+                weighted_cost += potion_cost_value * potion_cost
+
+        return weighted_cost, c_cost, potion_cost_value, debt_cost_value
 
     def setImage(self, use_set_icon=False):
         setImage = None
