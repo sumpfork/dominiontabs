@@ -20,7 +20,7 @@ requires-python = ">= 3.10"
 "Homepage" = "http://domtabs.sandflea.org"
 
 [dependency-groups]
-dev = ["build", "twine", "pre-commit", "doit", "pytest"]
+dev = ["build", "twine", "pre-commit", "doit", "pytest", "pytest-xdist"]
 
 [project.optional-dependencies]
 fontfix = ["cu2qu", "fonttools"]
