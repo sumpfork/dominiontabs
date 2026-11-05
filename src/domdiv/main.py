@@ -38,8 +38,10 @@ def generate_sample(options):
 
 
 class CardSorter(object):
-    def __init__(self, order, lang, baseCards):
+    def __init__(self, order, lang, baseCards, debt_cost=None, potion_cost=None):
         self.order = order
+        self.debt_cost = debt_cost
+        self.potion_cost = potion_cost
 
         # If PyICU has been successfully imported
         if have_icu:
@@ -131,7 +133,7 @@ class CardSorter(object):
         return (
             card.cardset,
             int(card.isExpansion()),
-            str(card.cost_sort_key()),
+            card.cost_sort_key(debt_cost=self.debt_cost, potion_cost=self.potion_cost),
             self.get_card_name_sort_key(card.name),
         )
 
@@ -548,6 +550,8 @@ def filter_sort_cards(cards: list[Card], options) -> list[Card]:
             for card in cards
             if "base" in [set_name.lower() for set_name in card.cardset_tags]
         },
+        debt_cost=options.debt_cost,
+        potion_cost=options.potion_cost,
     )
 
     # Optionally remove base cards from expansions that have them
