@@ -123,6 +123,8 @@ def test_weighted_cost_sorting_is_independent_and_keeps_raw_cost_tiebreaks(
         "3C/1P/0D",
         "8C/0P/0D",
     ]
+
+
 def test_cost_alpha_sort_mixes_expansions_and_sorts_names():
     options = get_clean_opts(["--order=cost-alpha"])
     assert options.order == "cost-alpha"
