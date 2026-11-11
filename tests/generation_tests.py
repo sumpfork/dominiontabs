@@ -1,5 +1,7 @@
 from __future__ import print_function
 
+from types import SimpleNamespace
+
 import pytest
 
 from domdiv import config_options, db, main
@@ -121,6 +123,30 @@ def test_weighted_cost_sorting_is_independent_and_keeps_raw_cost_tiebreaks(
         "3C/1P/0D",
         "8C/0P/0D",
     ]
+
+
+def test_cost_alpha_sort_mixes_expansions_and_sorts_names():
+    options = get_clean_opts(["--order=cost-alpha"])
+    assert options.order == "cost-alpha"
+
+    def card(name, cardset, cost):
+        return SimpleNamespace(
+            name=name,
+            cardset=cardset,
+            isExpansion=lambda: False,
+            cost_sort_key=lambda: cost,
+        )
+
+    cards = [
+        card("Zulu", "First Edition", (3, 0, 0)),
+        card("Cheap", "Second Edition", (2, 0, 0)),
+        card("Alpha", "Second Edition", (3, 0, 0)),
+    ]
+    sorter = main.CardSorter("cost-alpha", "en_us", {})
+
+    cards.sort(key=sorter)
+
+    assert [card.name for card in cards] == ["Cheap", "Alpha", "Zulu"]
 
 
 def test_no_group_global():
