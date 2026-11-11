@@ -2220,6 +2220,11 @@ class DividerDrawer(object):
             options.labelWidth = (
                 options.label["width"] - 2 * options.label["pad-horizontal"]
             ) * cm
+            # Explicitly given tab size overrides the label dimensions
+            if options.tabwidth is not None:
+                options.labelWidth = options.tabwidth * cm
+            if options.tabheight is not None:
+                options.labelHeight = options.tabheight * cm
             # Set spacing between labels
             options.verticalBorderSpace = (
                 options.label["gap-vertical"] + 2 * options.label["pad-vertical"]
@@ -2256,13 +2261,21 @@ class DividerDrawer(object):
 
             # Fix up the label dimentions
             if options.tab_side != "full":
-                options.labelWidth = options.tabwidth * cm
+                options.labelWidth = (
+                    options.tabwidth if options.tabwidth is not None else 4.0
+                ) * cm
 
         else:
             # Margins already set
             # Set Label size
-            options.labelHeight = self.LABEL_HEIGHT
-            options.labelWidth = options.tabwidth * cm
+            options.labelHeight = (
+                options.tabheight * cm
+                if options.tabheight is not None
+                else self.LABEL_HEIGHT
+            )
+            options.labelWidth = (
+                options.tabwidth if options.tabwidth is not None else 4.0
+            ) * cm
             if options.tab_side == "full" or options.labelWidth > options.dividerWidth:
                 options.labelWidth = options.dividerWidth
             # Set spacing between labels
