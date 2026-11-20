@@ -591,9 +591,13 @@ def filter_sort_cards(cards: list[Card], options) -> list[Card]:
                     ),
                 }
 
+        generated_expansions = set()
         for set_tag, set_values in Card.sets.items():
             exp = set_values["set_name"]
+            if exp in generated_expansions:
+                continue
             if exp in cardnamesByExpansion:
+                generated_expansions.add(exp)
                 exp_name = exp
 
                 count = randomizerCountByExpansion[exp]
