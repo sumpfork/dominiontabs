@@ -1252,7 +1252,7 @@ class DividerDrawer(object):
         Returns the width used in points.
         """
 
-        card_counts = card.getCardCounts()
+        card_counts = [count for count in card.getCardCounts() if count]
         if sum(card_counts) < 1:
             return 0
 
