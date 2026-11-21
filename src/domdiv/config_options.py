@@ -40,7 +40,7 @@ def add_opt(options, option, value):
     setattr(options, option, value)
 
 
-def parse_opts(cmdline_args=None):
+def build_parser():
     parser = configargparse.ArgParser(
         formatter_class=configargparse.ArgumentDefaultsHelpFormatter,
         description="Generate Dominion Dividers",
@@ -851,6 +851,11 @@ def parse_opts(cmdline_args=None):
         help="Set the logging level.",
         choices=["TRACE", "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
     )
+    return parser
+
+
+def parse_opts(cmdline_args=None):
+    parser = build_parser()
     options = parser.parse_args(args=cmdline_args)
     # Need to do these while we have access to the parser
     options.argv = sys.argv if options.info or options.info_all else None
