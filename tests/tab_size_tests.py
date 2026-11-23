@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+import base64
 import re
 import zlib
 from collections import Counter
@@ -13,20 +14,12 @@ MM_TO_PT = 72.0 / 25.4
 
 
 def _ascii85_decode(data):
-    # reportlab writes streams with /Filter [/ASCII85Decode /FlateDecode]
     data = data.strip()
-    if data.endswith(b"~>"):
-        data = data[:-2]
-    data = data.replace(b"z", b"!!!!")
-    if len(data) % 5:
-        data += b"~" * (5 - len(data) % 5)
-    out = bytearray()
-    for i in range(0, len(data), 5):
-        value = 0
-        for c in data[i : i + 5]:
-            value = value * 85 + (c - 33)
-        out += value.to_bytes(4, "big")
-    return bytes(out)
+    if not data.startswith(b"<~"):
+        data = b"<~" + data
+    if not data.endswith(b"~>"):
+        data += b"~>"
+    return base64.a85decode(data, adobe=True)
 
 
 def _collect_rects(path):
