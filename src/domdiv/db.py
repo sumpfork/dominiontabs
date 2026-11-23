@@ -169,6 +169,26 @@ def read_card_data(options) -> list[Card]:
         )
     assert cards, "Could not load any cards from database"
 
+    with open(
+        os.path.join("src", "domdiv", "tools", "merged_cards_en_us.json"),
+        "r",
+        encoding="utf-8",
+    ) as wiki_json:
+        wiki_cards = json.load(wiki_json)
+
+    for c in cards:
+        if c.name in wiki_cards:
+            c.wiki_text = wiki_cards[c.name].get("raw_wikitext")
+        else:
+            c.wiki_text = ""
+            print("Could not find card %r" % c.name)
+
+    for c in cards:
+        if not hasattr(c, "wiki_text"):
+            print(f"{c.name} has no wiki_text")
+        elif not c.wiki_text:
+            print(f"{c.name} has falsey wiki_text: [{c.wiki_text}]")
+
     set_db_filepath = os.path.join("card_db", "sets_db.json.gz")
     with resource_handling.get_resource_stream(set_db_filepath) as setfile:
         Card.sets = json.loads(setfile.read().decode("utf-8"))
