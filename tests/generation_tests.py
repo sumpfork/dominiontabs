@@ -1,7 +1,5 @@
 from __future__ import print_function
 
-from types import SimpleNamespace
-
 import pytest
 
 from domdiv import config_options, db, main
@@ -125,28 +123,55 @@ def test_weighted_cost_sorting_is_independent_and_keeps_raw_cost_tiebreaks(
     ]
 
 
-def test_cost_alpha_sort_mixes_expansions_and_sorts_names():
+def test_cost_alpha_sort_mixes_expansions_and_sorts_names(monkeypatch):
     options = get_clean_opts(["--order=cost-alpha"])
     assert options.order == "cost-alpha"
 
-    def card(name, cardset, cost):
-        return SimpleNamespace(
+    monkeypatch.setattr(
+        Card,
+        "types",
+        {("Action",): CardType(["Action"], "action.png")},
+    )
+
+    def card(name, cardset, cost, potion=0, debt=0):
+        return Card(
             name=name,
             cardset=cardset,
-            isExpansion=lambda: False,
-            cost_sort_key=lambda: cost,
+            cardset_tag=cardset.lower().replace(" ", "_"),
+            types=("Action",),
+            cost=str(cost),
+            potcost=potion,
+            debtcost=debt,
         )
 
     cards = [
-        card("Zulu", "First Edition", (3, 0, 0)),
-        card("Cheap", "Second Edition", (2, 0, 0)),
-        card("Alpha", "Second Edition", (3, 0, 0)),
+        card("Zulu", "First Edition", 3),
+        card("Cheap", "Second Edition", 2),
+        card("Alpha", "Second Edition", 3),
+        card("Alpha Potion", "Third Edition", 3, potion=1),
+        card("Beta Debt", "Fourth Edition", 3, debt=1),
+        card("Four Coins", "Fifth Edition", 4),
     ]
     sorter = main.CardSorter("cost-alpha", "en_us", {})
 
-    cards.sort(key=sorter)
+    assert [card.name for card in sorted(cards, key=sorter)] == [
+        "Cheap",
+        "Alpha",
+        "Zulu",
+        "Beta Debt",
+        "Alpha Potion",
+        "Four Coins",
+    ]
 
-    assert [card.name for card in cards] == ["Cheap", "Alpha", "Zulu"]
+    weighted_sorter = main.CardSorter("cost-alpha", "en_us", {}, potion_cost=2.0)
+    assert [card.name for card in sorted(cards, key=weighted_sorter)] == [
+        "Cheap",
+        "Alpha",
+        "Zulu",
+        "Beta Debt",
+        "Four Coins",
+        "Alpha Potion",
+    ]
 
 
 def test_no_group_global():
