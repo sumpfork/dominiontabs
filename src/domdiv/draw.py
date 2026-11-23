@@ -2191,9 +2191,7 @@ class DividerDrawer(object):
     def calculatePages(self, cards):
         options = self.options
         tabwidth = (
-            options.tabwidth
-            if options.tabwidth is not None
-            else DEFAULT_TAB_WIDTH_CM
+            options.tabwidth if options.tabwidth is not None else DEFAULT_TAB_WIDTH_CM
         )
 
         # Adjust for Vertical vs Horizontal
