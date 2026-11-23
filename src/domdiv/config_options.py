@@ -33,6 +33,8 @@ EDITION_CHOICES = ["1", "2", "latest", "upgrade", "removed", "all"]
 ORDER_CHOICES = ["expansion", "global", "colour", "cost", "kingdom"]
 
 EXPANSION_GLOBAL_GROUP = "extras"
+DEFAULT_TAB_WIDTH_CM = 4.0
+DEFAULT_TAB_HEIGHT_CM = 0.9
 
 
 def add_opt(options, option, value):
@@ -214,8 +216,20 @@ def build_parser():
     group_tab.add_argument(
         "--tabwidth",
         type=float,
-        default=4.0,
-        help="Width in cm of stick-up tab (ignored if --tab_side is 'full' or --tabs_only is used).",
+        default=None,
+        help="Width in cm of stick-up tab. "
+        f"If not given, defaults to {DEFAULT_TAB_WIDTH_CM}cm (or to the label width in label/tabs-only mode). "
+        "When given, it also overrides the tab width in label/tabs-only mode "
+        "(still ignored if --tab_side is 'full').",
+    )
+    group_tab.add_argument(
+        "--tabheight",
+        type=float,
+        default=None,
+        help="Height in cm of stick-up tab. "
+        f"If not given, defaults to {DEFAULT_TAB_HEIGHT_CM}cm (or to the label tab height in label/tabs-only mode). "
+        "When given, it also overrides the tab height in label/tabs-only mode. "
+        "For example, '--tabwidth 4.0 --tabheight 1.0' gives 40x10mm tabs.",
     )
     group_tab.add_argument(
         "--cost",
@@ -1070,8 +1084,10 @@ def clean_opts(options):
             # Not enough room to make vertical
             options.orientation = "horizontal"
         if (
-            options.label["width"] - 2 * options.label["pad-horizontal"]
-        ) < MIN_WIDTH_CM_FOR_FULL:
+            options.tabwidth is None
+            and (options.label["width"] - 2 * options.label["pad-horizontal"])
+            < MIN_WIDTH_CM_FOR_FULL
+        ):
             options.tab_side = "full"
         options.label = label
 
