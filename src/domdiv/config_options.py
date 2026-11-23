@@ -33,6 +33,8 @@ EDITION_CHOICES = ["1", "2", "latest", "upgrade", "removed", "all"]
 ORDER_CHOICES = ["expansion", "global", "colour", "cost", "kingdom"]
 
 EXPANSION_GLOBAL_GROUP = "extras"
+DEFAULT_TAB_WIDTH_CM = 4.0
+DEFAULT_TAB_HEIGHT_CM = 0.9
 
 
 def add_opt(options, option, value):
@@ -216,7 +218,7 @@ def parse_opts(cmdline_args=None):
         type=float,
         default=None,
         help="Width in cm of stick-up tab. "
-        "If not given, defaults to 4.0cm (or to the label width in label/tabs-only mode). "
+        f"If not given, defaults to {DEFAULT_TAB_WIDTH_CM}cm (or to the label width in label/tabs-only mode). "
         "When given, it also overrides the tab width in label/tabs-only mode "
         "(still ignored if --tab_side is 'full').",
     )
@@ -225,7 +227,7 @@ def parse_opts(cmdline_args=None):
         type=float,
         default=None,
         help="Height in cm of stick-up tab. "
-        "If not given, defaults to 0.9cm (or to the label tab height in label/tabs-only mode). "
+        f"If not given, defaults to {DEFAULT_TAB_HEIGHT_CM}cm (or to the label tab height in label/tabs-only mode). "
         "When given, it also overrides the tab height in label/tabs-only mode. "
         "For example, '--tabwidth 4.0 --tabheight 1.0' gives 40x10mm tabs.",
     )

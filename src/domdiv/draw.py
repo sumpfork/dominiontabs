@@ -17,6 +17,7 @@ from reportlab.platypus import Paragraph, XPreformatted
 
 from . import resource_handling
 from .cards import Card
+from .config_options import DEFAULT_TAB_HEIGHT_CM, DEFAULT_TAB_WIDTH_CM
 
 
 def split(seq, n):
@@ -472,7 +473,7 @@ class Plotter(object):
 
 class DividerDrawer(object):
     HEAD, SPINE, BODY, TAIL = range(200, 204)  # panel identifiers
-    LABEL_HEIGHT = 0.9 * cm
+    LABEL_HEIGHT = DEFAULT_TAB_HEIGHT_CM * cm
     SET_ICON_SIZE = 10
 
     def __init__(self, options=None):
@@ -2189,6 +2190,11 @@ class DividerDrawer(object):
 
     def calculatePages(self, cards):
         options = self.options
+        tabwidth = (
+            options.tabwidth
+            if options.tabwidth is not None
+            else DEFAULT_TAB_WIDTH_CM
+        )
 
         # Adjust for Vertical vs Horizontal
         if options.orientation == "vertical":
@@ -2261,9 +2267,7 @@ class DividerDrawer(object):
 
             # Fix up the label dimentions
             if options.tab_side != "full":
-                options.labelWidth = (
-                    options.tabwidth if options.tabwidth is not None else 4.0
-                ) * cm
+                options.labelWidth = tabwidth * cm
 
         else:
             # Margins already set
@@ -2273,9 +2277,7 @@ class DividerDrawer(object):
                 if options.tabheight is not None
                 else self.LABEL_HEIGHT
             )
-            options.labelWidth = (
-                options.tabwidth if options.tabwidth is not None else 4.0
-            ) * cm
+            options.labelWidth = tabwidth * cm
             if options.tab_side == "full" or options.labelWidth > options.dividerWidth:
                 options.labelWidth = options.dividerWidth
             # Set spacing between labels
